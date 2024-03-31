@@ -48,3 +48,18 @@ body {
     background: #2da0e0;
     text-align: center;
 }
+
+.swf {
+    padding: 20px 0px;
+    text-align: center;
+}
+
+div.centerimg {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+div.centerimg img {
+    padding: 0 10px;
+}
