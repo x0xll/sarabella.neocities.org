@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>Help</help_btn>
+	<pause_btn>Pause</pause_btn>
+	<start_btn>Start Game</start_btn>
+
+	<turbobtn>Play Turbo</turbobtn>
+
+	<pauseheading>Your Game is Paused</pauseheading>
+	<pause2>Close this window to resume play.</pause2>
+
+	<how_to_play_btn>How To Play</how_to_play_btn>
+
+	<play_again_btn>Play Again</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro From XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>How To Play</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>Help Pegasus collect special flowers as you fly across the kingdom sky. 
+
+Press the space bar or mouse click to flap her wings.
+
+Collect as many flowers as you can before sundown and arriving at you castle.
+
+Good luck!</how_to_play2>
+
+	<!-- win message -->
+	<win>Congratulations</win>
+	
+	<win2>You did great! Would you like to play again and collect even more flowers?</win2>
+	
+	<!-- control panel score text goes here -->
+	<score>Score:</score>
+
+</root>
