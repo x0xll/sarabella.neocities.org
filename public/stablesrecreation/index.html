@@ -4,6 +4,7 @@
         <link rel="icon" href="./images/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
+        <script src="/header.js"></script>
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
 		<script src="./SpinePlugin.min.js"></script>
         <script src="./stable.js"></script> 
@@ -14,15 +15,18 @@
         </style>
     </head>
     <body style="text-align: center;">
-        <a href="/index.html"><img src="./images/logo-bellasara.png" style="margin: 10px;"></a>
-        <div>
+        <div style="padding-top: 10px;">
             <script type="text/javascript">
 
                 const config = {
                     type: Phaser.AUTO,
-                    width: 853,
-                    height: 501,
-                    scene: Example
+                    width: 888,
+                    height: 521,
+                    backgroundColor: '#110c27',
+                    scene: [
+                        Load,
+                        Stable
+                    ]
                 };
 
                 const game = new Phaser.Game(config);
