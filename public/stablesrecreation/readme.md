@@ -81,32 +81,19 @@ All the original textures, animations, sounds and the gameplay itself were taken
   - [x] help button
 - [ ] Horse animations (these are being reanimated with pine animations)
   - [ ] Idle animations should be chosen randomly and start after a random delay. (*[onCompleteEvent](https://labs.phaser.io/view.html?src=src\animation\on%20complete%20event.js) could be used to queue the next animation, and random numbers could be used to pick an animation and start it after a [random delay](https://labs.phaser.io/view.html?src=src\animation\random%20delay.js)?*)
-  - Placeholder
-    - [ ] eat food
-    - [ ] eat apple
-    - [x] drink
-    - [x] rear
-    - [ ] paw with foreleg
-    - [ ] raise head
-    - [ ] raise head slow
-    - [ ] shift in place
-    - [ ] ear twitch
-    - [ ] breath
-    - [ ] sway
-    - [ ] tail swish
   - Final
     - [ ] eat food
     - [ ] eat apple
     - [x] drink
     - [x] rear
-    - [ ] paw with foreleg
-    - [ ] raise head
-    - [ ] raise head slow
-    - [ ] shift in place
-    - [ ] ear twitch
-    - [ ] breath
-    - [ ] sway
-    - [ ] tail swish
+    - [x] tail swish
+    - [x] ear twitch
+    - [ ] head turn
+    - [ ] head shake
+    - [ ] flank twitch
+    - [ ] shift weight
+    - [ ] paw ground
+    - [x] nod
 - [ ] Textures
   - [ ] Horses
     - [x] Peter
