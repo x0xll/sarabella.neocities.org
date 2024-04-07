@@ -1113,15 +1113,15 @@ class Stable extends Phaser.Scene
         else if (horse_state === horse_states.idle && !horse_busy && !horse_busy_idling) {
             horse_state = horse_states.busy
             horse_busy_idling = true
-            this.time.delayedCall(randomIntFromInterval(4500, 6000), function () {
+            this.time.delayedCall(randomIntFromInterval(3000, 5000), function () {
                 if ( horse_state === horse_states.busy && !horse_busy) {
-                    const horse_idle_animations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
+                    const horse_idle_animations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift weight', 'tail_swish']
                     horse.play(horse_idle_animations[Math.floor(Math.random()*horse_idle_animations.length)]);
                     if (horse_state === horse_states.busy) {
                         horse_state = horse_states.idle; 
                     }
+                    horse_busy_idling = false
                 };
-                horse_busy_idling = false
             })
         }
 
