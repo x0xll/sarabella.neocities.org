@@ -52,7 +52,22 @@ hoofpick_held_sprite = null
 apple_held_sprite = null
 
 // Gets info about the horse from data.json file
-const horse_name = 'peter'
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+horse_name = urlParams.get('name')
+
+function UrlExists(url)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+}
+
+if (!horse_name || !UrlExists(`./images/horse/${horse_name}`)) {
+    horse_name ='peter'
+}
 let horse_data
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
@@ -1045,7 +1060,6 @@ class Stable extends Phaser.Scene
             }
             // allow next animation to play
             horse_busy = false
-            console.log(horse_state)
         }
 
         function randomIntFromInterval(min, max) { // min and max included 
@@ -1096,7 +1110,7 @@ class Stable extends Phaser.Scene
         }
         else if (horse_state === horse_states.idle && !horse_busy) {
             horse_state = horse_states.busy
-            this.time.delayedCall(randomIntFromInterval(3500, 6000), function () {
+            this.time.delayedCall(randomIntFromInterval(4500, 6000), function () {
                 if ( horse_state === horse_states.busy && !horse_busy) {
                     const horse_idle_animations = ['idle', 'ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
                     horse.play(horse_idle_animations[Math.floor(Math.random()*horse_idle_animations.length)]);
