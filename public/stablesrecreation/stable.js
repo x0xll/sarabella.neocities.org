@@ -32,6 +32,7 @@ const horse_states = {
 horse_state = horse_states.idle
 
 horse = null
+horse_dirty = null
 trough = null
 trough_mask = null
 water_drink = null
@@ -152,6 +153,7 @@ class Stable extends Phaser.Scene
         this.load.atlas('hoofpick', './images/stable/hoofpick.png', './images/stable/hoofpick.json');
 
         this.load.spine('horse', `./images/horse/${horse_name}/skeleton.json`, [`./images/horse/${horse_name}/skeleton.atlas`], true);
+        this.load.spine('horse_dirty', `./images/stable/horse_dirty/dirt_skeleton.json`, [`./images/stable/horse_dirty/dirt_skeleton.atlas`], true);
         this.load.image('horse_image', `./images/horse/${horse_name}/card_image.jpg`);
         this.load.spritesheet('hooves', './images/stable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
@@ -395,6 +397,7 @@ class Stable extends Phaser.Scene
 
             // Horse
             horse = this.add.spine(418, 295, 'horse', 'idle').setAngle(90);
+            horse_dirty = this.add.spine(418, 295, 'horse_dirty', 'idle').setAngle(90);
             rear_sound = this.sound.add('rear_sound');
             const horse_interactive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(230, 100, 356, 256), Phaser.Geom.Rectangle.Contains);
                 // interact with horse
@@ -425,12 +428,14 @@ class Stable extends Phaser.Scene
                         brushlevel += 1;
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
+                        horse_dirty.setAlpha(0.25 * (4 - brushlevel))
                     }
                     else if (brushlevel === 2) {
                         brushlevel += 1;
                         horse_state = horse_states.rear
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
+                        horse_dirty.setAlpha(0)
                     }
                 }
 
@@ -1072,6 +1077,7 @@ class Stable extends Phaser.Scene
             start_animation()
             rear_sound.play();
             horse.play('rear');
+            horse_dirty.play('rear');
             this.time.delayedCall(3000, function () { 
                 end_animation()
              });
@@ -1083,6 +1089,7 @@ class Stable extends Phaser.Scene
                 trough.play('water_trough_drink')
                 trough_mask.play('mask_water_trough_drink')
                 horse.play('drink')
+                horse_dirty.play('drink')
             });
             this.time.delayedCall(3330, function () {
                 water_drink.play()
@@ -1096,7 +1103,7 @@ class Stable extends Phaser.Scene
         }
         else if (horse_busy === false && horse_state === horse_states.eating_food) {
             start_animation()
-            this.time.delayedCall(800, function () {horse.play('eat_food')});
+            this.time.delayedCall(800, function () {horse.play('eat_food'); horse_dirty.play('eat_food')});
             this.time.delayedCall(1000, function () {oats_eat.play()});
             this.time.delayedCall(3000, function () { 
                 end_animation()
@@ -1106,6 +1113,7 @@ class Stable extends Phaser.Scene
             start_animation()
             apple_munch.play();
             horse.play('eat_apple')
+            horse_dirty.play('eat_apple')
             this.time.delayedCall(3000, function () { 
                 end_animation()
             });
@@ -1116,7 +1124,9 @@ class Stable extends Phaser.Scene
             this.time.delayedCall(randomIntFromInterval(3000, 5000), function () {
                 if ( horse_state === horse_states.busy && !horse_busy) {
                     const horse_idle_animations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift weight', 'tail_swish']
-                    horse.play(horse_idle_animations[Math.floor(Math.random()*horse_idle_animations.length)]);
+                    let animation = horse_idle_animations[Math.floor(Math.random()*horse_idle_animations.length)]
+                    horse.play(animation);
+                    horse_dirty.play(animation);
                     if (horse_state === horse_states.busy) {
                         horse_state = horse_states.idle; 
                     }
