@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "Ysf+1Soea7E",
+	"hash": "tuSZ6RKedu0",
 	"spine": "4.1.24",
 	"x": -245.98,
 	"y": -164.97,
@@ -54,10 +54,10 @@
 	{ "name": "HeadJaw", "bone": "Jaw", "attachment": "HeadJaw" },
 	{ "name": "Apple", "bone": "Apple", "attachment": "Apple" },
 	{ "name": "HeadUpper", "bone": "Head", "attachment": "HeadUpper" },
+	{ "name": "Eye", "bone": "Head", "attachment": "Eye1" },
 	{ "name": "Mane", "bone": "Mane", "attachment": "Mane" },
 	{ "name": "Forelock", "bone": "Head", "attachment": "Forelock" },
-	{ "name": "Ear", "bone": "Ear", "attachment": "Ear" },
-	{ "name": "Eye", "bone": "Head", "attachment": "Eye1" }
+	{ "name": "Ear", "bone": "Ear", "attachment": "Ear" }
 ],
 "skins": [
 	{

@@ -20,6 +20,7 @@ play_inspiration = true
 can_play_inspiration = false
 
 horse_busy = false
+horse_busy_idling = false
 const horse_states = {
     busy: 'busy',
     idle: 'idle',
@@ -391,6 +392,48 @@ class Stable extends Phaser.Scene
                 }
             });
 
+
+            // Horse
+            horse = this.add.spine(418, 295, 'horse', 'idle').setAngle(90);
+            rear_sound = this.sound.add('rear_sound');
+            const horse_interactive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(230, 100, 356, 256), Phaser.Geom.Rectangle.Contains);
+                // interact with horse
+                horse_interactive.on('pointerdown', function (pointer)
+                {
+                    if (handcurrent === hand.apple) {
+                        handcurrent = hand.empty;
+                        horse_state = horse_states.eating_apple
+                    }
+                    else if (handcurrent === hand.brush) {
+                        brush_held_sprite.play('brush')
+                        brush_sound.play();
+                        horse_brushed();
+                    }
+                    else if (handcurrent === hand.brush_small) {
+                        brush_small_held_sprite.play('brush_small')
+                        brush_sound_small.play();
+                        horse_brushed()
+                    }
+                });
+    
+                /**
+                 * Updates the horse stats, increments the count of how many times the horse has been brushed
+                 * and makes the horse rear when clean
+                 */
+                function horse_brushed() {
+                    if (brushlevel < 2) {
+                        brushlevel += 1;
+                        updateBar(cleanlinessBar, 1/3)
+                        updateBar(happinessBar, 1/6)
+                    }
+                    else if (brushlevel === 2) {
+                        brushlevel += 1;
+                        horse_state = horse_states.rear
+                        updateBar(cleanlinessBar, 1/3)
+                        updateBar(happinessBar, 1/6)
+                    }
+                }
+
         /**
          * Displays the 'hover' frame of a sprite and plays the hover sound if the hand is empty
          * @param {sprite} sprite The sprite to change
@@ -507,63 +550,6 @@ class Stable extends Phaser.Scene
                 else if (handcurrent === hand.shovel) {
                     handcurrent = hand.empty;
                     shovel.setFrame('idle')
-                }
-            });
-
-
-        // Apple Bin
-        const apple_bin = this.add.image(680, 505, 'apple_bin', 'idle').setInteractive();
-        apple_munch = this.sound.add('apple_munch');
-            apple_bin.on('pointerover', function (pointer) { pointerover (apple_bin, hover1) });
-            apple_bin.on('pointerout', function (pointer) { apple_bin.setFrame('idle') });
-            apple_bin.on('pointerdown', function (pointer)
-            {
-                if (handcurrent === hand.empty) {
-                    handcurrent = hand.apple;
-                    apple_bin.setFrame('idle')
-                    pickup.play();
-                }
-            });
-        
-        // Grain Bin
-        const grain_bin = this.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
-        const grain_sound = this.sound.add('grain_sound');
-            this.anims.create({
-                key: 'pickup',
-                frames: this.anims.generateFrameNumbers('grain_bin', { frames: [
-                    'idle',
-                    'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009', 'pickup0010',
-                    'pickup0011', 'pickup0012', 'pickup0013', 'pickup0013', 'pickup0015', 'pickup0016', 'pickup0017',
-                    'empty'
-                ] }),
-                frameRate: 24
-            });
-            this.anims.create({
-                key: 'place',
-                frames: this.anims.generateFrameNumbers('grain_bin', { frames: [
-                    'empty',
-                    'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'place0006', 'place0007',
-                    'idle'
-                ] }),
-                frameRate: 24
-            });
-            grain_bin.on('pointerover', function (pointer) { pointerover (grain_bin, hover2) });
-            grain_bin.on('pointerout', function (pointer)
-            {
-                if (handcurrent === hand.grain_scoop) {
-                    grain_bin.setFrame('empty')
-                }
-                else {
-                    grain_bin.setFrame('idle')
-                }
-            });
-            grain_bin.on('pointerdown', function (pointer)
-            {
-                if (handcurrent === hand.empty) {
-                    handcurrent = hand.grain_scoop
-                    grain_bin.play('pickup')
-                    pickup.play();
-                    grain_sound.play()
                 }
             });
 
@@ -694,48 +680,6 @@ class Stable extends Phaser.Scene
             hoofpick_interactive.on('pointerout', function (pointer) { pointerout (hoofpick)});
 
 
-        // Horse
-        horse = this.add.spine(418, 295, 'horse', 'idle').setAngle(90);
-        rear_sound = this.sound.add('rear_sound');
-        const horse_interactive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(230, 100, 356, 256), Phaser.Geom.Rectangle.Contains);
-            // interact with horse
-            horse_interactive.on('pointerdown', function (pointer)
-            {
-                if (handcurrent === hand.apple) {
-                    handcurrent = hand.empty;
-                    horse_state = horse_states.eating_apple
-                }
-                else if (handcurrent === hand.brush) {
-                    brush_held_sprite.play('brush')
-                    brush_sound.play();
-                    horse_brushed();
-                }
-                else if (handcurrent === hand.brush_small) {
-                    brush_small_held_sprite.play('brush_small')
-                    brush_sound_small.play();
-                    horse_brushed()
-                }
-            });
-
-            /**
-             * Updates the horse stats, increments the count of how many times the horse has been brushed
-             * and makes the horse rear when clean
-             */
-            function horse_brushed() {
-                if (brushlevel < 2) {
-                    brushlevel += 1;
-                    updateBar(cleanlinessBar, 1/3)
-                    updateBar(happinessBar, 1/6)
-                }
-                else if (brushlevel === 2) {
-                    brushlevel += 1;
-                    horse_state = horse_states.rear
-                    updateBar(cleanlinessBar, 1/3)
-                    updateBar(happinessBar, 1/6)
-                }
-            }
-
-
         // Hoof highlight circles
         const hooves1 = this.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
         const hooves2 = this.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
@@ -754,6 +698,63 @@ class Stable extends Phaser.Scene
             }
             hooves1.on('pointerdown', function (pointer) { clean_hooves(hooves1) });
             hooves2.on('pointerdown', function (pointer) { clean_hooves(hooves2) });
+
+
+            // Apple Bin
+            const apple_bin = this.add.image(680, 505, 'apple_bin', 'idle').setInteractive();
+            apple_munch = this.sound.add('apple_munch');
+                apple_bin.on('pointerover', function (pointer) { pointerover (apple_bin, hover1) });
+                apple_bin.on('pointerout', function (pointer) { apple_bin.setFrame('idle') });
+                apple_bin.on('pointerdown', function (pointer)
+                {
+                    if (handcurrent === hand.empty) {
+                        handcurrent = hand.apple;
+                        apple_bin.setFrame('idle')
+                        pickup.play();
+                    }
+                });
+            
+            // Grain Bin
+            const grain_bin = this.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
+            const grain_sound = this.sound.add('grain_sound');
+                this.anims.create({
+                    key: 'pickup',
+                    frames: this.anims.generateFrameNumbers('grain_bin', { frames: [
+                        'idle',
+                        'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009', 'pickup0010',
+                        'pickup0011', 'pickup0012', 'pickup0013', 'pickup0013', 'pickup0015', 'pickup0016', 'pickup0017',
+                        'empty'
+                    ] }),
+                    frameRate: 24
+                });
+                this.anims.create({
+                    key: 'place',
+                    frames: this.anims.generateFrameNumbers('grain_bin', { frames: [
+                        'empty',
+                        'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'place0006', 'place0007',
+                        'idle'
+                    ] }),
+                    frameRate: 24
+                });
+                grain_bin.on('pointerover', function (pointer) { pointerover (grain_bin, hover2) });
+                grain_bin.on('pointerout', function (pointer)
+                {
+                    if (handcurrent === hand.grain_scoop) {
+                        grain_bin.setFrame('empty')
+                    }
+                    else {
+                        grain_bin.setFrame('idle')
+                    }
+                });
+                grain_bin.on('pointerdown', function (pointer)
+                {
+                    if (handcurrent === hand.empty) {
+                        handcurrent = hand.grain_scoop
+                        grain_bin.play('pickup')
+                        pickup.play();
+                        grain_sound.play()
+                    }
+                });
 
         
         trough_mask = this.add.sprite(153, 455, 'trough_mask', 'water0000').setVisible(false);
@@ -1060,6 +1061,7 @@ class Stable extends Phaser.Scene
             }
             // allow next animation to play
             horse_busy = false
+            horse_busy_idling = false
         }
 
         function randomIntFromInterval(min, max) { // min and max included 
@@ -1108,16 +1110,18 @@ class Stable extends Phaser.Scene
                 end_animation()
             });
         }
-        else if (horse_state === horse_states.idle && !horse_busy) {
+        else if (horse_state === horse_states.idle && !horse_busy && !horse_busy_idling) {
             horse_state = horse_states.busy
+            horse_busy_idling = true
             this.time.delayedCall(randomIntFromInterval(4500, 6000), function () {
                 if ( horse_state === horse_states.busy && !horse_busy) {
-                    const horse_idle_animations = ['idle', 'ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
+                    const horse_idle_animations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
                     horse.play(horse_idle_animations[Math.floor(Math.random()*horse_idle_animations.length)]);
                     if (horse_state === horse_states.busy) {
                         horse_state = horse_states.idle; 
                     }
                 };
+                horse_busy_idling = false
             })
         }
 
