@@ -33,6 +33,7 @@ horse_state = horse_states.idle
 
 horse = null
 horse_dirty = null
+horse_overlay= null
 trough = null
 trough_mask = null
 water_drink = null
@@ -79,25 +80,6 @@ xmlhttp.onload = function() {
 xmlhttp.open("GET", `./images/horse/${horse_name}/data.json`);
 xmlhttp.send();
 
-
-// This scene is just used to load the image for the loading screen
-class Load extends Phaser.Scene 
-{
-    constructor ()
-    {
-        super({ key: 'Load' });
-    }
-
-    preload ()
-    {
-        this.load.image('card_back', './images/stable/card_back.png');
-    }
-
-    create ()
-    { 
-        this.scene.start('Stable');
-    }
-}
 
 // Actual game start
 class Stable extends Phaser.Scene
@@ -153,6 +135,7 @@ class Stable extends Phaser.Scene
         this.load.atlas('hoofpick', './images/stable/hoofpick.png', './images/stable/hoofpick.json');
 
         this.load.spine('horse', `./images/horse/${horse_name}/skeleton.json`, [`./images/horse/${horse_name}/skeleton.atlas`], true);
+        this.load.spine('horse_overlay', `./images/horse/${horse_name}/skeleton_overlay.json`, [`./images/horse/${horse_name}/skeleton_overlay.atlas`], true);
         this.load.spine('horse_dirty', `./images/stable/horse_dirty/dirt_skeleton.json`, [`./images/stable/horse_dirty/dirt_skeleton.atlas`], true);
         this.load.image('horse_image', `./images/horse/${horse_name}/card_image.jpg`);
         this.load.spritesheet('hooves', './images/stable/hooves.png', { frameWidth: 53, frameHeight: 53 });
@@ -395,10 +378,7 @@ class Stable extends Phaser.Scene
             });
 
 
-            // Horse
-            horse = this.add.spine(418, 295, 'horse', 'idle').setAngle(90);
-            horse_dirty = this.add.spine(418, 295, 'horse_dirty', 'idle').setAngle(90);
-            rear_sound = this.sound.add('rear_sound');
+            // Horse hit box
             const horse_interactive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(230, 100, 356, 256), Phaser.Geom.Rectangle.Contains);
                 // interact with horse
                 horse_interactive.on('pointerdown', function (pointer)
@@ -438,6 +418,35 @@ class Stable extends Phaser.Scene
                         horse_dirty.setAlpha(0)
                     }
                 }
+
+
+            // Inspirational message frame
+            const frame = this.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
+            this.add.image(517, 126, 'horse_image').setScale(.32);
+            const inspiration_hover = this.sound.add('inspiration_hover');
+            const inspiration_sound = this.sound.add('inspiration_sound');
+            const frame_interactive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(478, 65, 75, 110), Phaser.Geom.Rectangle.Contains);
+                frame_interactive.on('pointerover', function (pointer)
+                {
+                    if (can_play_inspiration) {
+                        frame.setFrame('hover');
+                        inspiration_hover.play()
+                    }
+                });
+                frame_interactive.on('pointerout', function (pointer) { frame.setFrame('idle') });
+                frame_interactive.on('pointerdown', function (pointer) { 
+                    if (can_play_inspiration) {
+                        play_inspiration = true 
+                        inspiration_sound.play()
+                    }
+                })
+
+
+            // Horse
+            horse = this.add.spine(418, 295, 'horse', 'idle').setAngle(90);
+            horse_dirty = this.add.spine(418, 295, 'horse_dirty', 'idle').setAngle(90);
+            horse_overlay = this.add.spine(418, 295, 'horse_overlay', 'idle').setAngle(90);
+            rear_sound = this.sound.add('rear_sound');
 
         /**
          * Displays the 'hover' frame of a sprite and plays the hover sound if the hand is empty
@@ -791,28 +800,6 @@ class Stable extends Phaser.Scene
             });
 
 
-        // Inspirational message frame
-        const frame = this.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
-        this.add.image(517, 126, 'horse_image').setScale(.32);
-        const inspiration_hover = this.sound.add('inspiration_hover');
-        const inspiration_sound = this.sound.add('inspiration_sound');
-        const frame_interactive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(478, 65, 75, 110), Phaser.Geom.Rectangle.Contains);
-            frame_interactive.on('pointerover', function (pointer)
-            {
-                if (can_play_inspiration) {
-                    frame.setFrame('hover');
-                    inspiration_hover.play()
-                }
-            });
-            frame_interactive.on('pointerout', function (pointer) { frame.setFrame('idle') });
-            frame_interactive.on('pointerdown', function (pointer) { 
-                if (can_play_inspiration) {
-                    play_inspiration = true 
-                    inspiration_sound.play()
-                }
-            })
-
-
         // Lucky Horseshoe
         const luck = this.add.sprite(453, 268, 'luck', 'idle').setInteractive({ pixelPerfect: true });
         const luck_sound = this.sound.add('luck_sound');
@@ -851,17 +838,18 @@ class Stable extends Phaser.Scene
             });
 
 
-        // Inspirational message
-        inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
-        inspiration_message = this.add.text(431, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 56, color: '#ffffff', align: 'center' }).setVisible(false);
-        inspiration_message.text = horse_data.message;
-        inspiration_message.setPosition(431-inspiration_message.width/2, 133-inspiration_message.height/2);
-        inspiration_message.setShadow(2, 2, '#000000', 7, true, true)
-
-
 
         // ---------- Stable foreground and UI ---------- //
         this.add.image(444, 261, 'stable_fg');
+
+
+        // Inspirational message
+        inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
+        inspiration_message = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 55, color: '#ffffff', align: 'center' }).setVisible(false);
+        inspiration_message.text = horse_data.message;
+        inspiration_message.setPosition(444-inspiration_message.width/2, 133-inspiration_message.height/2);
+        inspiration_message.setShadow(2, 2, '#000000', 7, true, true)
+
 
         // Horse name
         const horse_name = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
@@ -1078,6 +1066,7 @@ class Stable extends Phaser.Scene
             rear_sound.play();
             horse.play('rear');
             horse_dirty.play('rear');
+            horse_overlay.play('rear');
             this.time.delayedCall(3000, function () { 
                 end_animation()
              });
@@ -1090,11 +1079,12 @@ class Stable extends Phaser.Scene
                 trough_mask.play('mask_water_trough_drink')
                 horse.play('drink')
                 horse_dirty.play('drink')
+                horse_overlay.play('drink')
             });
             this.time.delayedCall(3330, function () {
                 water_drink.play()
             });
-            this.time.delayedCall(5000, function () {
+            this.time.delayedCall(5500, function () {
                 trough_mask.setVisible(false)
             });
             this.time.delayedCall(6000, function () { 
@@ -1103,7 +1093,10 @@ class Stable extends Phaser.Scene
         }
         else if (horse_busy === false && horse_state === horse_states.eating_food) {
             start_animation()
-            this.time.delayedCall(800, function () {horse.play('eat_food'); horse_dirty.play('eat_food')});
+            this.time.delayedCall(800, function () {
+                horse.play('eat_food'); 
+                horse_dirty.play('eat_food'); 
+                horse_overlay.play('eat_food')});
             this.time.delayedCall(1000, function () {oats_eat.play()});
             this.time.delayedCall(3000, function () { 
                 end_animation()
@@ -1114,6 +1107,7 @@ class Stable extends Phaser.Scene
             apple_munch.play();
             horse.play('eat_apple')
             horse_dirty.play('eat_apple')
+            horse_overlay.play('eat_apple')
             this.time.delayedCall(3000, function () { 
                 end_animation()
             });
@@ -1123,10 +1117,11 @@ class Stable extends Phaser.Scene
             horse_busy_idling = true
             this.time.delayedCall(randomIntFromInterval(3000, 5000), function () {
                 if ( horse_state === horse_states.busy && !horse_busy) {
-                    const horse_idle_animations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift weight', 'tail_swish']
+                    const horse_idle_animations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
                     let animation = horse_idle_animations[Math.floor(Math.random()*horse_idle_animations.length)]
                     horse.play(animation);
                     horse_dirty.play(animation);
+                    horse_overlay.play(animation);
                     if (horse_state === horse_states.busy) {
                         horse_state = horse_states.idle; 
                     }
