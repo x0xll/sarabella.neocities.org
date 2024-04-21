@@ -66,13 +66,13 @@ let page = 0
 // Gets the actual horse names
 let horseNames = []
 for (let index = 0; index < horses.length; index++) {
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.onload = function() {
         const myObj = JSON.parse(this.responseText);
         horseNames[index] = myObj.name
     }
-    xmlhttp.open("GET", `./images/horse/${horses[index]}/data.json`);
-    xmlhttp.send();
+    xmlHttp.open("GET", `./images/horse/${horses[index]}/data.json`);
+    xmlHttp.send();
 };
 
 

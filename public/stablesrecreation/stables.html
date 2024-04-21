@@ -5,10 +5,9 @@
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
-        <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
+		<script src="./SpinePlugin.min.js"></script>
         <script src="./js/loadScreen.js"></script> 
-        <script src="./js/landStable.js"></script> 
-        <script src="./js/airStable.js"></script> 
+        <script src="./js/stable.js"></script> 
         <style type="text/css">
             body {
                 margin: 0;
@@ -17,26 +16,20 @@
     </head>
     <body style="text-align: center;">
         <script src="/header.js"></script>
-        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px">
+        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
 
-                let loadInto = `Stable`
+                const loadInto = 'Stable'
 
-                let config = {
+                const config = {
                     parent: "gameDiv",
                     type: Phaser.AUTO,
                     width: 888,
                     height: 521,
                     backgroundColor: '#110c27',
-                    plugins: {
-                        scene: [
-                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
-                        ]
-                    },
                     scene: [
                         Load,
-                        LandStable,
-                        AirStable
+                        Stable
                     ]
                 };
 
