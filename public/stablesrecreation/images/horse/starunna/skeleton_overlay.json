@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "RLFelo/25og",
+	"hash": "zjMyHiISY0M",
 	"spine": "4.1.24",
-	"x": -412.73,
-	"y": -251.15,
-	"width": 765,
-	"height": 692,
+	"x": -334.77,
+	"y": -171.4,
+	"width": 629.82,
+	"height": 362.47,
 	"images": "./Parts/",
 	"audio": "C:/Users/antsg/OneDrive/Documents/Bella Sara Shennanigans/stables game/images/horse/peter"
 },
@@ -63,6 +63,20 @@
 	}
 ],
 "animations": {
+	"constant": {
+		"attachments": {
+			"default": {
+				"Shiny/1": {
+					"Shiny/1": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 },
+							{ "time": 5.6667, "mode": "loop", "index": 24 }
+						]
+					}
+				}
+			}
+		}
+	},
 	"drink": {
 		"bones": {
 			"Mane": {
@@ -150,13 +164,6 @@
 							{ "time": 0.4, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 9, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -183,13 +190,6 @@
 						"sequence": [
 							{ "time": 0.1667, "mode": "loop", "delay": 0.0417 },
 							{ "time": 0.3333, "mode": "onceReverse" }
-						]
-					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "delay": 0.0833 }
 						]
 					}
 				}
@@ -279,13 +279,6 @@
 							{ "time": 1.2, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 11, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -355,13 +348,6 @@
 							{ "time": 1.1, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 49, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -422,13 +408,6 @@
 							{ "time": 1.5667, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 43, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -462,13 +441,6 @@
 						"sequence": [
 							{ "time": 0.3667, "mode": "loop", "delay": 0.0417 },
 							{ "time": 0.5333, "mode": "onceReverse" }
-						]
-					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "delay": 0.0833 }
 						]
 					}
 				}
@@ -535,13 +507,6 @@
 							{ "time": 2.2333, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 17, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -561,13 +526,6 @@
 						"sequence": [
 							{ "mode": "loop", "delay": 0.0417 },
 							{ "time": 0.1667, "mode": "onceReverse" }
-						]
-					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "delay": 0.0833 }
 						]
 					}
 				}
@@ -622,13 +580,6 @@
 							{ "time": 0.9333, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 43, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -664,13 +615,6 @@
 						"sequence": [
 							{ "time": 0.4, "mode": "loop", "delay": 0.0417 },
 							{ "time": 0.5667, "mode": "onceReverse" }
-						]
-					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 24, "delay": 0.0833 }
 						]
 					}
 				}
@@ -793,13 +737,6 @@
 							{ "time": 0.8333, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 43, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -836,13 +773,6 @@
 							{ "time": 0.3333, "mode": "onceReverse" }
 						]
 					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "index": 27, "delay": 0.0833 }
-						]
-					}
 				}
 			}
 		}
@@ -862,13 +792,6 @@
 						"sequence": [
 							{ "time": 0.1333, "mode": "loop", "delay": 0.0417 },
 							{ "time": 0.3, "mode": "onceReverse" }
-						]
-					}
-				},
-				"Shiny/1": {
-					"Shiny/1": {
-						"sequence": [
-							{ "mode": "loop", "delay": 0.0833 }
 						]
 					}
 				}

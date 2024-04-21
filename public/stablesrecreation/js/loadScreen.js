@@ -8,11 +8,14 @@ class Load extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('card_back', './images/stable/card_back.png');
+        this.load.image('card_back', './images/selector/card_back.png');
     }
 
     create ()
     { 
+        if (loadInto === "Stable") {
+            loadInto = `${horseData.type}Stable`
+        }
         this.scene.start(loadInto);
     }
 }

@@ -1,7 +1,6 @@
 skeleton_overlay.png
 size:244,151
 filter:Linear,Linear
-pma:true
 Ear
 bounds:201,68,12,24
 offsets:0,0,12,25
