@@ -103,14 +103,14 @@ class LandStable extends Phaser.Scene
         this.load.atlas('brush_small', './images/landStable/brush_small.png', './images/landStable/brush_small.json');
         this.load.atlas('hoofpick', './images/landStable/hoofpick.png', './images/landStable/hoofpick.json');
         
-        this.load.spineAtlas("horse-atlas", `./images/horse/${horseName}/skeleton.atlas`);
-        this.load.spineAtlas("horse_overlay-atlas", `./images/horse/${horseName}/skeleton_overlay.atlas`);
+        this.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
+        this.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
         this.load.spineAtlas("horse_dirty-atlas", `./images/landStable/horse_dirty/dirt_skeleton.atlas`);
-        this.load.spineJson("horse-json", `./images/horse/${horseName}/skeleton.json`);
-        this.load.spineJson("horse_overlay-json", `./images/horse/${horseName}/skeleton_overlay.json`);
+        this.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
+        this.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
         this.load.spineJson("horse_dirty-json", `./images/landStable/horse_dirty/dirt_skeleton.json`);
 
-        this.load.image('horse_image', `./images/horse/${horseName}/card_image.jpg`);
+        this.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
         this.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
         this.load.atlas('luck', './images/landStable/luck.png', './images/landStable/luck.json');
