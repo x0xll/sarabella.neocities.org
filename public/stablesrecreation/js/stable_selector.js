@@ -71,7 +71,7 @@ for (let index = 0; index < horses.length; index++) {
         const myObj = JSON.parse(this.responseText);
         horseNames[index] = myObj.name
     }
-    xmlHttp.open("GET", `./images/horse/${horses[index]}/data.json`);
+    xmlHttp.open("GET", `./images/horses/${horses[index]}/data.json`);
     xmlHttp.send();
 };
 
@@ -103,7 +103,7 @@ class Selector extends Phaser.Scene
         this.load.atlas('sparkle', './images/selector/sparkle.png', './images/selector/sparkle.json');
 
         horses.forEach(horse => {
-            this.load.image(`${horse}`, `./images/horse/${horse}/card_image.jpg`);
+            this.load.image(`${horse}`, `./images/horses/${horse}/card_image.jpg`);
         });
 
         this.load.atlas('next', './images/selector/next.png', './images/selector/next.json');

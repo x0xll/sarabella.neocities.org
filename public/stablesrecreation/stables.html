@@ -34,7 +34,7 @@
                     return http.status!=404;
                 }
 
-                if (!horseName || !urlExists(`./images/horse/${horseName}`)) {
+                if (!horseName || !urlExists(`./images/horses/${horseName}`)) {
                     horseName ='peter'
                 }
                 let horseData
@@ -43,7 +43,7 @@
                 const myObj = JSON.parse(this.responseText);
                 horseData = myObj
                 }
-                xmlHttp.open("GET", `./images/horse/${horseName}/data.json`);
+                xmlHttp.open("GET", `./images/horses/${horseName}/data.json`);
                 xmlHttp.send();
 
                 let loadInto = `Stables`
@@ -73,7 +73,7 @@
         
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link">Home</a> |
-            <a href="./index.html" class="global-lowernav-link">Magical Horse</a> |
+            <a href="./index.html" class="global-lowernav-link">Magical Horses</a> |
             <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" class="global-lowernav-link">Wiki Page</a>
           </div>
 
