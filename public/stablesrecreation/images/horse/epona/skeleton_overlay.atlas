@@ -1,6 +1,7 @@
 skeleton_overlay.png
 size:359,153
 filter:Linear,Linear
+pma:true
 Cloak
 bounds:2,2,188,149
 offsets:0,6,188,165

@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "tgBxCbNrLvE",
+	"hash": "KMbAHahVaQE",
 	"spine": "4.1.24",
 	"x": -257.18,
-	"y": -164.97,
-	"width": 552.24,
-	"height": 362.12,
+	"y": -85.08,
+	"width": 376.24,
+	"height": 282.24,
 	"images": "./Parts/",
 	"audio": "C:/Users/antsg/OneDrive/Documents/Bella Sara Shennanigans/stables game/images/horse/peter"
 },
@@ -112,56 +112,6 @@
 	}
 ],
 "animations": {
-	"constant": {
-		"attachments": {
-			"default": {
-				"Eye": {
-					"Eye1": {
-						"sequence": [
-							{ "mode": "loop", "delay": 0.0417 },
-							{ "time": 0.1667, "mode": "onceReverse" }
-						]
-					}
-				},
-				"Sparkle/frame0000": {
-					"Sparkle/frame0000": {
-						"sequence": [
-							{ "mode": "loop", "delay": 0.0833 }
-						]
-					}
-				},
-				"Sparkle/frame0001": {
-					"Sparkle/frame0000": {
-						"sequence": [
-							{ "mode": "loop", "index": 7, "delay": 0.0833 },
-							{ "time": 4, "mode": "loop", "index": 7 }
-						]
-					}
-				},
-				"Sparkle/frame0002": {
-					"Sparkle/frame0000": {
-						"sequence": [
-							{ "mode": "loop", "index": 12, "delay": 0.0833 }
-						]
-					}
-				},
-				"Sparkle/frame0003": {
-					"Sparkle/frame0000": {
-						"sequence": [
-							{ "mode": "loop", "index": 5, "delay": 0.0833 }
-						]
-					}
-				},
-				"Sparkle/frame0005": {
-					"Sparkle/frame0000": {
-						"sequence": [
-							{ "mode": "loop", "index": 8, "delay": 0.0833 }
-						]
-					}
-				}
-			}
-		}
-	},
 	"drink": {
 		"bones": {
 			"Mane": {
@@ -247,6 +197,18 @@
 					{ "time": 2.6 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.2333, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.4, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"ear_twitch": {
@@ -262,6 +224,18 @@
 				"translate": [
 					{ "time": 0.6667 }
 				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.1667, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.3333, "mode": "onceReverse" }
+						]
+					}
+				}
 			}
 		}
 	},
@@ -352,6 +326,18 @@
 					{ "time": 2.6667 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 1.0333, "mode": "loop", "delay": 0.0417 },
+							{ "time": 1.2, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"eat_food": {
@@ -423,6 +409,18 @@
 					{ "time": 2.5 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.9333, "mode": "loop", "delay": 0.0417 },
+							{ "time": 1.1, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"flank_twitch": {
@@ -483,6 +481,18 @@
 					{ "time": 2 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 1.4, "mode": "loop", "delay": 0.0417 },
+							{ "time": 1.5667, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"head_shake": {
@@ -505,6 +515,18 @@
 					{ "time": 0.9333, "x": 1.95, "y": -1.82 },
 					{ "time": 1.8333 }
 				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.3667, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.5333, "mode": "onceReverse" }
+						]
+					}
+				}
 			}
 		}
 	},
@@ -558,14 +580,38 @@
 					{ "time": 2.6667 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 2.0667, "mode": "loop", "delay": 0.0417 },
+							{ "time": 2.2333, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"idle": {
-		"bones": {
-			"Head": {
-				"translate": [
-					{ "time": 0.4 }
-				]
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.1667, "mode": "onceReverse" }
+						]
+					}
+				},
+				"Sparkle/frame0001": {
+					"Sparkle/frame0000": {
+						"sequence": [
+							{ "time": 4, "mode": "loop", "index": 7, "delay": 0.0833 }
+						]
+					}
+				}
 			}
 		}
 	},
@@ -607,6 +653,18 @@
 					{ "time": 0.6333 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.7667, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.9333, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"paw_ground": {
@@ -638,6 +696,18 @@
 					{ "time": 0.5333, "value": 0.74 },
 					{ "time": 1 }
 				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.4, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.5667, "mode": "onceReverse" }
+						]
+					}
+				}
 			}
 		}
 	},
@@ -766,6 +836,18 @@
 					{ "time": 1.5333 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.6667, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.8333, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"shift_weight": {
@@ -802,6 +884,18 @@
 					{ "time": 1.6667 }
 				]
 			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.1667, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.3333, "mode": "onceReverse" }
+						]
+					}
+				}
+			}
 		}
 	},
 	"tail_swish": {
@@ -810,6 +904,18 @@
 				"translate": [
 					{ "time": 0.6667 }
 				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Eye": {
+					"Eye1": {
+						"sequence": [
+							{ "time": 0.1333, "mode": "loop", "delay": 0.0417 },
+							{ "time": 0.3, "mode": "onceReverse" }
+						]
+					}
+				}
 			}
 		}
 	}

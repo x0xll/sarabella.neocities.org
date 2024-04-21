@@ -1,6 +1,7 @@
 skeleton.png
 size:587,264
 filter:Linear,Linear
+pma:true
 Apple
 bounds:274,14,19,17
 offsets:16,15,55,37
