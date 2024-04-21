@@ -5,9 +5,10 @@
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
-		<script src="./SpinePlugin.min.js"></script>
+        <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script> 
-        <script src="./js/stable.js"></script> 
+        <script src="./js/landStable.js"></script> 
+        <script src="./js/airStable.js"></script> 
         <style type="text/css">
             body {
                 margin: 0;
@@ -16,20 +17,52 @@
     </head>
     <body style="text-align: center;">
         <script src="/header.js"></script>
-        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
+        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px">
             <script type="text/javascript">
 
-                const loadInto = 'Stable'
+                
+                // Gets info about the horse from data.json file
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                horseName = urlParams.get('name')
 
-                const config = {
+                function urlExists(url)
+                {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status!=404;
+                }
+
+                if (!horseName || !urlExists(`./images/horse/${horseName}`)) {
+                    horseName ='peter'
+                }
+                let horseData
+                const xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                const myObj = JSON.parse(this.responseText);
+                horseData = myObj
+                }
+                xmlhttp.open("GET", `./images/horse/${horseName}/data.json`);
+                xmlhttp.send();
+
+                let loadInto = `Stable`
+
+                let config = {
                     parent: "gameDiv",
                     type: Phaser.AUTO,
                     width: 888,
                     height: 521,
                     backgroundColor: '#110c27',
+                    plugins: {
+                        scene: [
+                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
+                        ]
+                    },
                     scene: [
                         Load,
-                        Stable
+                        LandStable,
+                        AirStable
                     ]
                 };
 

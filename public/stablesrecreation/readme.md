@@ -79,28 +79,30 @@ All the original textures, animations, sounds and the gameplay itself were taken
   - [ ] awards?
   - [x] music button
   - [x] help button
-- [ ] Horse animations (these are being reanimated with pine animations)
-  - [ ] Idle animations should be chosen randomly and start after a random delay. (*[onCompleteEvent](https://labs.phaser.io/view.html?src=src\animation\on%20complete%20event.js) could be used to queue the next animation, and random numbers could be used to pick an animation and start it after a [random delay](https://labs.phaser.io/view.html?src=src\animation\random%20delay.js)?*)
-  - Final
-    - [ ] eat food
-    - [ ] eat apple
-    - [x] drink
-    - [x] rear
-    - [x] tail swish
-    - [x] ear twitch
-    - [ ] head turn
-    - [ ] head shake
-    - [ ] flank twitch
-    - [ ] shift weight
-    - [ ] paw ground
-    - [x] nod
+- [x] Horse animations (these have been reanimated with spine animations)
+  - [x] Idle animations are chosen randomly and start after a random delay.
+    - [ ] These still don't always queue correctly, might need some adjustment
+  - [x] eat food
+  - [x] eat apple
+  - [x] drink
+  - [x] rear
+  - [x] tail swish
+  - [x] ear twitch
+  - [x] head turn
+  - [x] head shake
+  - [x] flank twitch
+  - [x] shift weight (this one needs to be renamed in the spine files)
+  - [x] paw ground
+  - [x] nod
 - [ ] Textures
   - [ ] Horses
     - [x] Peter
     - [ ] Jewel
-    - [ ] Fiona
+    - [x] Fiona
+    - [ ] Thunder
     - [ ] ...
-  - [ ] dirt overlay
+  - [x] dirt overlay
+    - [x] Separate horse sprites into a main body layer and a mane, ear and forelock layer so dirt overlay can go in the middle
 - [ ] Sounds
   - [x] background music
   - [x] pour water

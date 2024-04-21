@@ -1,7 +1,6 @@
 skeleton_overlay.png
 size:332,142
 filter:Linear,Linear
-pma:true
 BridleTassle
 bounds:264,24,12,42
 offsets:0,0,13,42
