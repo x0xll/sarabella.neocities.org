@@ -53,7 +53,29 @@ brushSmallHeldSprite = null
 hoofpickHeldSprite = null
 appleHeldSprite = null
 
+// Gets info about the horse from data.json file
+queryString = window.location.search;
+urlParams = new URLSearchParams(queryString);
+horseName = urlParams.get('name')
 
+function urlExists(url)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+}
+
+if (!horseName || !urlExists(`./images/horse/${horseName}`)) {
+    horseName ='peter'
+}
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+myObj = JSON.parse(this.responseText);
+horseData = myObj
+}
+xmlhttp.open("GET", `./images/horse/${horseName}/data.json`);
+xmlhttp.send();
 
 // Actual game start
 class LandStable extends Phaser.Scene
