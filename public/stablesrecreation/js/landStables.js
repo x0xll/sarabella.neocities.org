@@ -420,11 +420,11 @@ class LandStable extends Phaser.Scene
 
 
             // Horse
-            horse = this.add.spine(418, 295, 'horse-json', 'horse-atlas')//.setAngle(90);
+            horse = this.add.spine(418, 295, 'horse-json', 'horse-atlas').setAngle(90);
             horse.animationState.setAnimation(0, "idle", false)
-            horseDirty = this.add.spine(418, 295, 'horse_dirty-json', 'horse_dirty-atlas')//.setAngle(90);
+            horseDirty = this.add.spine(418, 295, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(90);
             horseDirty.animationState.setAnimation(0, "idle", false)
-            horseOverlay = this.add.spine(418, 295, 'horse_overlay-json', 'horse_overlay-atlas')//.setAngle(90);
+            horseOverlay = this.add.spine(418, 295, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(90);
             horseOverlay.animationState.setAnimation(0, "idle", false)
             addConstantAnimation()
             rearSound = this.sound.add('rear_sound');

@@ -7,8 +7,8 @@
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script> 
-        <script src="./js/landStable.js"></script> 
-        <script src="./js/airStable.js"></script> 
+        <script src="./js/landStables.js"></script> 
+        <script src="./js/airStables.js"></script> 
         <style type="text/css">
             body {
                 margin: 0;
@@ -50,7 +50,7 @@
 
                 let config = {
                     parent: "gameDiv",
-                    type: Phaser.AUTO,
+                    type: Phaser.CANVAS,
                     width: 888,
                     height: 521,
                     backgroundColor: '#110c27',
