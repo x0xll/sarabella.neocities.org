@@ -289,10 +289,10 @@ class Selector extends Phaser.Scene
             card.on('pointerup', () => {
                 // link to horse
                 if (displayHorses[i] !== 'card_empty') {
-                    window.open(`./stables.html?name=${displayHorses[i]}`, '_self');
+                    window.open(`./stable.html?name=${displayHorses[i]}`, '_self');
                 }
                 else if (i === 9) {
-                    window.open(`./stables.html?name=nostalgia`, '_self');
+                    window.open(`./stable.html?name=nostalgia`, '_self');
                 }
             });
             card.on('pointerdown', () => {
@@ -319,7 +319,7 @@ class Selector extends Phaser.Scene
             nameplate.on('pointerup', () => {
                 // link to horse
                 if (displayHorses[i] !== 'card_empty') {
-                    window.open(`./stables.html?name=${displayHorses[i]}`, '_self');
+                    window.open(`./stable.html?name=${displayHorses[i]}`, '_self');
                 }
             });
             nameplate.on('pointerdown', () => {
