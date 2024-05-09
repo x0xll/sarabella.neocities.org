@@ -43,6 +43,7 @@ appleMunch = null
 hoofpick1 = null
 hoofpick2 = null
 inspiration = null
+inspirationCloseSound = null
 inspirationMessage = null
 
 shovelHeldSprite = null
@@ -133,6 +134,7 @@ class LandStable extends Phaser.Scene
         this.load.audio('hover2', ['./sounds/hover1.mp3']);
         this.load.audio('inspiration_hover', ['./sounds/inspiration_hover.mp3']);
         this.load.audio('inspiration_sound', ['./sounds/inspiration.mp3']);
+        this.load.audio('inspiration_close', ['./sounds/inspiration_close.mp3']);
         this.load.audio('luck_sound', ['./sounds/luck_sound.mp3']);
         this.load.audio('oats_eat', ['./sounds/oats_eat.mp3']);
         this.load.audio('pickup', ['./sounds/pickup.mp3']);
@@ -402,6 +404,7 @@ class LandStable extends Phaser.Scene
             this.add.image(517, 126, 'horse_image').setScale(.32);
             const inspirationHover = this.sound.add('inspiration_hover');
             const inspirationSound = this.sound.add('inspiration_sound');
+            inspirationCloseSound = this.sound.add('inspiration_close');
             const frameInteractive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(478, 65, 75, 110), Phaser.Geom.Rectangle.Contains);
                 frameInteractive.on('pointerover', function (pointer)
                 {
@@ -420,11 +423,11 @@ class LandStable extends Phaser.Scene
 
 
             // Horse
-            horse = this.add.spine(418, 295, 'horse-json', 'horse-atlas')//.setAngle(90);
+            horse = this.add.spine(418, 295, 'horse-json', 'horse-atlas').setAngle(90);
             horse.animationState.setAnimation(0, "idle", false)
-            horseDirty = this.add.spine(418, 295, 'horse_dirty-json', 'horse_dirty-atlas')//.setAngle(90);
+            horseDirty = this.add.spine(418, 295, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(90);
             horseDirty.animationState.setAnimation(0, "idle", false)
-            horseOverlay = this.add.spine(418, 295, 'horse_overlay-json', 'horse_overlay-atlas')//.setAngle(90);
+            horseOverlay = this.add.spine(418, 295, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(90);
             horseOverlay.animationState.setAnimation(0, "idle", false)
             addConstantAnimation()
             rearSound = this.sound.add('rear_sound');
@@ -1130,7 +1133,7 @@ class LandStable extends Phaser.Scene
             this.time.delayedCall(320, function () {inspiration.setAlpha(.8); inspirationMessage.setAlpha(0.8)});
             this.time.delayedCall(360, function () {inspiration.setAlpha(.9); inspirationMessage.setAlpha(0.9)});
             this.time.delayedCall(400, function () {inspiration.setAlpha(1); inspirationMessage.setAlpha(1)});
-            this.time.delayedCall(2960, function () {inspiration.setAlpha(.9); inspirationMessage.setAlpha(0.9)});
+            this.time.delayedCall(2960, function () {inspiration.setAlpha(.9); inspirationMessage.setAlpha(0.9); inspirationCloseSound.play()});
             this.time.delayedCall(3000, function () {inspiration.setAlpha(.8); inspirationMessage.setAlpha(0.8)});
             this.time.delayedCall(3040, function () {inspiration.setAlpha(.7); inspirationMessage.setAlpha(0.7)});
             this.time.delayedCall(3080, function () {inspiration.setAlpha(.6); inspirationMessage.setAlpha(0.6)});

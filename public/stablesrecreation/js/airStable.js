@@ -84,7 +84,8 @@ class AirStable extends Phaser.Scene
 
         this.load.atlas('leaf_tree_shake', './images/airStable/leaf_tree_shake.png', './images/airStable/leaf_tree_shake.json');
         this.load.atlas('leaf_chimes', './images/airStable/leaf_chimes.png', './images/airStable/leaf_chimes.json');
-        this.load.atlas('leaves', './images/airStable/leaves.png', './images/airStable/leaves.json');
+        this.load.atlas('leaves_fall', './images/airStable/leaves_fall.png', './images/airStable/leaves_fall.json');
+        this.load.atlas('leaves_wind', './images/airStable/leaves_wind.png', './images/airStable/leaves_wind.json');
 
         this.load.image('left_tree', './images/airStable/leftTree.png');
         this.load.atlas('fountain', './images/airStable/fountain.png', './images/airStable/fountain.json');
@@ -121,11 +122,13 @@ class AirStable extends Phaser.Scene
         this.load.audio('fork_fill', ['./sounds/fork_fill.mp3']);
         this.load.audio('fork_place', ['./sounds/fork_place.mp3']);
         this.load.audio('grain_sound', ['./sounds/grain_sound.mp3']);
-        this.load.audio('soothe_sound', ['./sounds/soothe_sound.mp3']);
+        this.load.audio('soothe_sound', ['./sounds/air_soothe_sound.mp3']);
+        this.load.audio('soothe_sound_length', ['./sounds/air_soothe_sound_length.mp3']);
         this.load.audio('hover1', ['./sounds/hover1.mp3']);
         this.load.audio('hover2', ['./sounds/hover1.mp3']);
         this.load.audio('inspiration_hover', ['./sounds/inspiration_hover.mp3']);
         this.load.audio('inspiration_sound', ['./sounds/inspiration.mp3']);
+        this.load.audio('inspiration_close', ['./sounds/inspiration_close.mp3']);
         this.load.audio('oats_eat', ['./sounds/oats_eat.mp3']);
         this.load.audio('pickup', ['./sounds/pickup.mp3']);
         this.load.audio('shovel_sound', ['./sounds/shovel_sound.mp3']);
@@ -297,28 +300,26 @@ class AirStable extends Phaser.Scene
 
             
         // Leaves (on floor)
-        const leaves = this.add.sprite(670, 300, 'leaves', 'dirty').setScale(0.9);
+        const leaves = this.add.sprite(520, 261, 'leaves_wind', 'wind0000');
             this.anims.create({
                 key: 'leaves_wind',
-                frames: this.anims.generateFrameNumbers('leaves', { frames: [
+                frames: this.anims.generateFrameNumbers('leaves_wind', { frames: [
                     'wind0000', 'wind0001', 'wind0002', 'wind0003', 'wind0004', 'wind0005', 'wind0006', 'wind0007', 'wind0008', 'wind0009',
                     'wind0010', 'wind0011', 'wind0012', 'wind0013', 'wind0014', 'wind0015', 'wind0016', 'wind0017', 'wind0018', 'wind0019',
                     'wind0020', 'wind0021', 'wind0022', 'wind0023', 'wind0024', 'wind0025', 'wind0026', 'wind0027', 'wind0028', 'wind0029',
-                    'wind0030', 'wind0031', 'wind0032',
-                    'no_leaves'
                 ] }),
                 frameRate: 24
             });
             this.anims.create({
                 key: 'leaves_fall',
-                frames: this.anims.generateFrameNumbers('leaves', { frames: [
+                frames: this.anims.generateFrameNumbers('leaves_fall', { frames: [
                     'fall0000', 'fall0001', 'fall0002', 'fall0003', 'fall0004', 'fall0005', 'fall0006', 'fall0007', 'fall0008', 'fall0009',
                     'fall0010', 'fall0011', 'fall0012', 'fall0013', 'fall0014', 'fall0015', 'fall0016', 'fall0017', 'fall0018', 'fall0019',
                     'fall0020', 'fall0021', 'fall0022', 'fall0023', 'fall0024', 'fall0025', 'fall0026', 'fall0027', 'fall0028', 'fall0029',
                     'fall0030', 'fall0031', 'fall0032', 'fall0033', 'fall0034', 'fall0035', 'fall0036', 'fall0037', 'fall0038', 'fall0039',
                     'fall0040', 'fall0041', 'fall0042', 'fall0043', 'fall0044', 'fall0045', 'fall0046', 'fall0047', 'fall0048', 'fall0049',
                     'fall0050', 'fall0051', 'fall0052', 'fall0053', 'fall0054', 'fall0055', 'fall0056', 'fall0057', 'fall0058', 'fall0059',
-                    'fall0060', 'fall0061'
+                    'fall0060', 'fall0061', 'fall0062'
                 ] }),
                 frameRate: 24
             });
@@ -329,6 +330,7 @@ class AirStable extends Phaser.Scene
         const frame = this.add.sprite(165, 73, 'frame', 'idle').setInteractive();
         const inspirationHover = this.sound.add('inspiration_hover');
         const inspirationSound = this.sound.add('inspiration_sound');
+        inspirationCloseSound = this.sound.add('inspiration_close');
         // const frameInteractive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(478, 65, 75, 110), Phaser.Geom.Rectangle.Contains);
             frame.on('pointerover', function (pointer)
             {
@@ -409,43 +411,7 @@ class AirStable extends Phaser.Scene
 
             // Food Trough
             branch = this.add.spine(-35, 230, 'branch-json', 'branch-atlas').setScale(.35)//.setAngle(90);
-            this.add.image(92, 285, 'left_tree');
-            foodTrough = this.add.sprite(-164, 299, 'food_interactive', 'idle').setInteractive({ pixelPerfect: true });
             oatsEat = this.sound.add('oats_eat');
-                this.anims.create({
-                    key: 'pull_back',
-                    frames: this.anims.generateFrameNumbers('food_interactive', { frames: [
-                        'bounce0000', 'bounce0001', 'bounce0002', 'bounce0003', 'bounce0004', 'bounce0005', 'bounce0006', 'bounce0007', 'bounce0008',
-                        'idle'
-                    ] }),
-                    frameRate: 24
-                });
-                foodTrough.on('pointerdown', function (pointer)
-                {
-                    if (handCurrent === HAND.empty) {
-                        // grainBin.play('place');
-                        // this.play(foodFilled ? 'fill_again' : 'fill')
-                        // grainSound.play()
-                        this.play('pull_back')
-                        horseAnimationQueue.push(HORSE_STATES.eatingFood)
-                        if (!foodFilled) {
-                            updateBar(hungerBar, 2)
-                            updateBar(happinessBar, 1.05)
-                        }
-                        foodFilled = true;
-                    }
-                });
-                foodTrough.on('pointerover', function (pointer) { 
-                    if (foodTrough.frame.name === 'idle') {
-                        this.setFrame('hover')
-                    }
-                });
-                foodTrough.on('pointerout', function (pointer)
-                {
-                    if (foodTrough.frame.name === 'hover') {
-                        this.setFrame('idle')
-                    }
-                });
 
 
             // Horse hit box
@@ -538,7 +504,7 @@ class AirStable extends Phaser.Scene
                 });
                 windchimes.on('pointerover', function (pointer)
                 {
-                    if (handCurrent === HAND.empty && leaves.frame.name === 'dirty') {
+                    if (handCurrent === HAND.empty && leaves.frame.name === 'wind0000') {
                         this.setFrame('hover');
                         hover2.play();
                     }
@@ -550,7 +516,7 @@ class AirStable extends Phaser.Scene
                 });
                 windchimes.on('pointerdown', function (pointer)
                 {
-                    if (handCurrent === HAND.empty && leaves.frame.name === 'dirty') {
+                    if (handCurrent === HAND.empty && leaves.frame.name === 'wind0000') {
                         leaves.play('leaves_wind');
                         this.play('windchimes_blow');
                         cleanLeaves.play();
@@ -559,11 +525,11 @@ class AirStable extends Phaser.Scene
 
 
             // Horse
-            horse = this.add.spine(430, 295, 'horse-json', 'horse-atlas')//.setAngle(90);
+            horse = this.add.spine(430, 295, 'horse-json', 'horse-atlas').setAngle(90);
             horse.animationState.setAnimation(0, "idle", false)
-            horseDirty = this.add.spine(430, 295, 'horse_dirty-json', 'horse_dirty-atlas')//.setAngle(90);
+            horseDirty = this.add.spine(430, 295, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(90);
             horseDirty.animationState.setAnimation(0, "idle", false)
-            horseOverlay = this.add.spine(430, 295, 'horse_overlay-json', 'horse_overlay-atlas')//.setAngle(90);
+            horseOverlay = this.add.spine(430, 295, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(90);
             horseOverlay.animationState.setAnimation(0, "idle", false)
             addConstantAnimation()
             rearSound = this.sound.add('rear_sound');
@@ -612,6 +578,42 @@ class AirStable extends Phaser.Scene
                 }
                 // event: (entry, event) => console.log(`Custom event for ${entry.animation.name}: ${event.data.name}`)          
              })
+
+             
+        this.add.image(92, 285, 'left_tree');
+        foodTrough = this.add.sprite(-164, 299, 'food_interactive', 'idle').setInteractive({ pixelPerfect: true });
+            this.anims.create({
+                key: 'pull_back',
+                frames: this.anims.generateFrameNumbers('food_interactive', { frames: [
+                    'bounce0000', 'bounce0001', 'bounce0002', 'bounce0003', 'bounce0004', 'bounce0005', 'bounce0006', 'bounce0007', 'bounce0008',
+                    'idle'
+                ] }),
+                frameRate: 24
+            });
+            foodTrough.on('pointerdown', function (pointer)
+            {
+                if (handCurrent === HAND.empty) {
+                    this.play('pull_back')
+                    horseAnimationQueue.push(HORSE_STATES.eatingFood)
+                    if (!foodFilled) {
+                        updateBar(hungerBar, 2)
+                        updateBar(happinessBar, 1.05)
+                    }
+                    foodFilled = true;
+                }
+            });
+            foodTrough.on('pointerover', function (pointer) { 
+                if (foodTrough.frame.name === 'idle') {
+                    this.setFrame('hover')
+                }
+            });
+            foodTrough.on('pointerout', function (pointer)
+            {
+                if (foodTrough.frame.name === 'hover') {
+                    this.setFrame('idle')
+                }
+            });
+
 
 
 
@@ -672,18 +674,14 @@ class AirStable extends Phaser.Scene
                     'shake0030', 'shake0031', 'shake0032', 'shake0033', 'shake0034', 'shake0035', 'shake0036', 'shake0037', 'shake0038', 'shake0039',
                     'shake0040', 'shake0041', 'shake0042', 'shake0043', 'shake0044', 'shake0045', 'shake0046', 'shake0047', 'shake0048', 'shake0049',
                     'shake0050', 'shake0051', 'shake0052', 'shake0053', 'shake0054', 'shake0055', 'shake0056', 'shake0057', 'shake0058', 'shake0059',
-                    'shake0060', 'shake0061', 'shake0062', 'shake0063', 'shake0064', 'shake0065', 'shake0066', 'shake0067',// 'shake0068', 'shake0069',
-                    // 'shake0070', 'shake0071', 'shake0072', 'shake0073', 'shake0074', 'shake0075', 'shake0076', 'shake0077', 'shake0078', 'shake0079',
-                    // 'shake0080', 'shake0081', 'shake0082', 'shake0083', 'shake0084', 'shake0085', 'shake0086', 'shake0087', 'shake0088', 'shake0089',
-                    // 'shake0090', 'shake0091', 'shake0092', 'shake0093', 'shake0094', 'shake0095', 'shake0096', 'shake0097', 'shake0098', 'shake0099',
-                    // 'shake0100',
+                    'shake0060', 'shake0061', 'shake0062', 'shake0063', 'shake0064', 'shake0065', 'shake0066', 'shake0067',
                      'idle'
                 ] }),
                 frameRate: 24
             });
             treeInteractive.on('pointerover', function (pointer)
             {
-                if (handCurrent === HAND.empty && leaves.frame.name === 'no_leaves') {
+                if (handCurrent === HAND.empty && leaves.frame.name === 'wind0029') {
                     leafTree.setFrame('hover');
                     hover2.play();
                 }
@@ -695,7 +693,7 @@ class AirStable extends Phaser.Scene
                 });
             treeInteractive.on('pointerdown', function (pointer)
             {
-                if (handCurrent === HAND.empty && leaves.frame.name === 'no_leaves') {
+                if (handCurrent === HAND.empty && leaves.frame.name === 'wind0029') {
                     leaves.play('leaves_fall')
                     leafTree.play('tree_shake')
                     shakeLeaves.play()
@@ -707,6 +705,7 @@ class AirStable extends Phaser.Scene
         // Horn
         const horn = this.add.sprite(10, 120, 'horn', 'idle').setInteractive({ pixelPerfect: true });
         const sootheSound = this.sound.add('soothe_sound');
+        const sootheSoundLength = this.sound.add('soothe_sound_length');
             this.anims.create({
                 key: 'soothe',
                 frames: this.anims.generateFrameNumbers('horn', { frames: [
@@ -774,10 +773,13 @@ class AirStable extends Phaser.Scene
                 if (handCurrent === HAND.empty && !soothed) {
                     soothed = true
                     horn.play('soothe')
-                    backgroundMusic.setVolume(0)
+                    backgroundMusic.stop()
                     sootheSound.play();
-                    sootheSound.on('complete', function (sound) {
-                        backgroundMusic.setVolume(1)
+                    sootheSoundLength.play();
+                    sootheSoundLength.on('complete', function (sound) {
+                        if (playMusic) {
+                            backgroundMusic.play()
+                        }
                     });
                     updateBar(happinessBar, 0.5 + 0.1)
                 }
@@ -1004,7 +1006,7 @@ class AirStable extends Phaser.Scene
             this.time.delayedCall(320, function () {inspiration.setAlpha(.8); inspirationMessage.setAlpha(0.8)});
             this.time.delayedCall(360, function () {inspiration.setAlpha(.9); inspirationMessage.setAlpha(0.9)});
             this.time.delayedCall(400, function () {inspiration.setAlpha(1); inspirationMessage.setAlpha(1)});
-            this.time.delayedCall(2960, function () {inspiration.setAlpha(.9); inspirationMessage.setAlpha(0.9)});
+            this.time.delayedCall(2960, function () {inspiration.setAlpha(.9); inspirationMessage.setAlpha(0.9); inspirationCloseSound.play()});
             this.time.delayedCall(3000, function () {inspiration.setAlpha(.8); inspirationMessage.setAlpha(0.8)});
             this.time.delayedCall(3040, function () {inspiration.setAlpha(.7); inspirationMessage.setAlpha(0.7)});
             this.time.delayedCall(3080, function () {inspiration.setAlpha(.6); inspirationMessage.setAlpha(0.6)});
