@@ -2,6 +2,8 @@
 
 This is a fan recreation of the [Bella Sara horse stable game](https://bellasara.wiki.gg/wiki/Magical_Horses) intended for archival purposes since the original is no longer available.
 
+The recreation includes the land, air and water stables along with multiple horses from the orignal game.
+
 
 ## Set Up
 
@@ -32,90 +34,12 @@ After starting a server locally, you can usually access it from http://localhost
 
 All the original textures, animations, sounds and the gameplay itself were taken from the horse care game on Bella Sara and belong to the Bella Sara Company, LLC.
 
-- Most of the spritees, animations and sounds come from a recovered cache of many of the original game files was recovered by Crystallinetearz and extracted by Mewfantasy and al_2713 (from the North of North discord)
+- Most of the spritees, animations and sounds come from a recovered cache containing many of the original game files recovered by Crystallinetearz and extracted by Mewfantasy and al_2713 (from discord)
 - Additional screen recordings and screenshots of the game have been taken from the following and have been used / referenced whilst remaking the game:
   - The [Bella Sara Wiki](https://bellasara.wiki.gg/wiki/Bella_Sara_Wiki) has many  different screenshots of the stable and different horses.
   - [This video](https://www.youtube.com/watch?v=uaQ2FjKgHKQ&t=627s) was heavily referenced for recreating the actual gameplay.
 - Other tools used:
   - The [Phaser](https://phaser.io/) game framework has been used to keep most of the coding pretty simple.
+  - [Spine Animations](https://blog.ourcade.co/posts/2020/phaser-3-parcel-typescript-spine/) are used for animating the horses
   - The [Leshy Sprite Sheet Tool](https://www.leshylabs.com/apps/sstool/) and [Codeshack Sprite Sheet Generator](https://codeshack.io/images-sprite-sheet-generator/) have been used to generate the texture atlas files and sprite sheets.
-  - [This](https://fpscalculator.com/frames-to-time-calculator/) frame to time calculator was used to calculate timings and delays
-  - [Spine Animations](https://blog.ourcade.co/posts/2020/phaser-3-parcel-typescript-spine/) are used for the horse
-
-## Progress
-- [ ] Basic gameplay
-  - [x] remove dirty straw
-  - [x] add new straw
-  - [x] brush
-  - [x] small brush
-  - [x] hoofpick
-  - [x] fill water
-  - [x] give food
-  - [x] apple
-  - [x] click card for positive message
-  - [x] click horseshoe for good luck
-  - [ ] awards?
-  - [x] music on/off
-  - [x] help button
-  - [x] progress bars for hunger, cleanliness and happiness
-- [ ] Original sprites
-  - [x] stable background
-  - [x] shovel
-  - [x] pitchfork
-  - [x] hay loft
-  - [x] hay (on ground)
-  - [x] brush
-  - [x] small brush
-  - [x] hoofpick
-  - [x] hoofpick circles
-  - [x] water trough
-  - [x] oats bin
-  - [x] oats scoop
-  - [x] food trough
-  - [x] apple bin
-  - [x] apple
-  - [x] card image
-  - [x] good luck
-  - [ ] awards?
-  - [x] music button
-  - [x] help button
-- [x] Horse animations (these have been reanimated with spine animations)
-  - [x] Idle animations are chosen randomly and start after a random delay.
-    - [ ] These still don't always queue correctly, might need some adjustment
-  - [x] eat food
-  - [x] eat apple
-  - [x] drink
-  - [x] rear
-  - [x] tail swish
-  - [x] ear twitch
-  - [x] head turn
-  - [x] head shake
-  - [x] flank twitch
-  - [x] shift weight (this one needs to be renamed in the spine files)
-  - [x] paw ground
-  - [x] nod
-- [ ] Textures
-  - [ ] Horses
-    - [x] Peter
-    - [ ] Jewel
-    - [x] Fiona
-    - [ ] Thunder
-    - [ ] ...
-  - [x] dirt overlay
-    - [x] Separate horse sprites into a main body layer and a mane, ear and forelock layer so dirt overlay can go in the middle
-- [ ] Sounds
-  - [x] background music
-  - [x] pour water
-  - [x] pick up / pour grain
-  - [x] feed apple
-  - [x] use shovel
-  - [x] pick up straw
-  - [x] place straw
-  - [x] brush
-  - [x] small brush
-  - [x] use hoofpick
-  - [x] good luck
-  - [x] rear / neigh
-  - [ ] pawing
-  - [ ] hooves shifting
-  - [ ] ...
+  - [This](https://fpscalculator.com/frames-to-time-calculator/) frame to time calculator was used to calculate some of the timings and delays
