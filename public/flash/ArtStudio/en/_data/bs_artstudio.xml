@@ -1,0 +1,240 @@
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=t1Bf4PY_" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.bellasara.com/en/_data/bs_artstudio.xml","20140724153458","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1406216098");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+<artstudio>
+	<builtintexts>
+    <texts debugmode="false">  
+      <text id="txtBellas">
+		    <p><font size="40">Bella's </font></p>
+	    </text>
+	    <text id="txtArtStudio">
+		    <p><font size="40">Art Studio</font></p>
+	    </text>
+	    <text id="txtChooseaHorse">
+		    <p><font size="22">Choose a Horse</font></p>
+	    </text>
+	    <text id="txtAllHorses">
+		    <p><font size="22">All Horses</font></p>
+	    </text>
+	    <text id="txtBeautyBoxGallery">
+		    <p><font size="22">Beauty Box Gallery</font></p>
+	    </text>
+	    <text id="txtDeleteButton">
+		    <p><font size="16">Delete</font></p>
+	    </text>
+	    <text id="txtEditButton">
+		    <p><font size="16">Edit</font></p>
+	    </text>
+		<text id="txtDoneButton">
+		    <p><font size="18"><b>DONE</b></font></p>
+	    </text>
+	    <text id="txtArtStudioHeader">
+		    <p><font size="22">Select a Canvas</font></p>
+	    </text>
+		<text id="txtGallerySubText">
+		    <p><font size="18">Choose which canvas you’d like to start with. Select Blank for an empty canvas or one of the horses if you wish to have that horse in your picture.</font></p>
+	    </text>
+	    <text id="txtAnimatedCardFromTheKeeperOf">
+		    <p><font size="18"><b>A work of art by:</b></font></p>
+	    </text>
+		<text id="txtPrintAngel">
+		<p><font size="24">Angel</font></p>
+		</text>
+		<text id="txtPrintBlank">
+			<p><font size="24">My Masterpiece</font></p>
+		</text>
+		<text id="txtPrintPeter">
+			<p><font size="24">Peter</font></p>
+		</text>
+		<text id="txtPrintTiffi">
+			<p><font size="24">Tiffi</font></p>
+		</text>
+		<text id="txtFromMe">
+		    <p><font size="16">Me</font></p>
+	    </text>
+	    <text id="txtEraseAll">
+		    <p><font size="13">Erase</font></p><p><font size="13">All</font></p>
+	    </text>
+	    <text id="txtErase">
+		    <p><font size="13">Erase</font></p>
+	    </text>
+		<text id="txtChangePaper2">
+		    <p><font size="13">Change Paper Color</font></p>
+	    </text>
+		<text id="txtBackButton">
+		    <p><font size="16">Back</font></p>
+	    </text>
+      <text id="txtNoButton">
+		<p><font size="10">No</font></p>
+	</text>
+	<text id="txtYesButton">
+		<p><font size="10">Yes</font></p>
+	</text>
+	<text id="txtOkayButton">
+		<p><font size="10">OK</font></p>
+	</text>
+	<text id="txtAreYouSure">
+		<p><font size="15">Are you sure?</font></p>
+	</text>
+  <text id="txtSaveButton">
+		<p><font size="26">SAVE</font></p>
+	</text>
+	<text id="txtPrintButton">
+		<p><font size="26">PRINT</font></p>
+	</text>
+	<text id="txtQuitButton">
+		<p><font size="26">QUIT</font></p>
+	</text>
+	<text id="txtSaveComplete">
+		<p><font size="15">Your creation has been saved.</font></p>
+	</text>
+      <text id="txtLoading">
+		<p><font size="9">Loading...</font></p>
+	</text>
+	<text id="txtNewButton">
+		<p><font size="26">NEW</font></p>
+	</text>
+	<text id="txtAngelButton">
+		<p><font size="18">Angel</font></p>
+	</text>
+	<text id="txtBlankButton">
+		<p><font size="18">Blank</font></p>
+	</text>
+	<text id="txtPeterButton">
+		<p><font size="18">Peter</font></p>
+	</text>
+	<text id="txtTiffiButton">
+		<p><font size="18">Tiffi</font></p>
+	</text>
+	<text id="txtAreYouSureDialog">
+		<p><font size="15">Are you sure you would like to delete this creation from your gallery?</font></p><p><font size="15"/></p>
+	</text>
+	<text id="txtAreYouSureLeave">
+    <p> </p><p> </p><p><font size="15">Are you sure?</font></p>
+	</text>
+	<text id="txtSaveDialog">
+		<p><font size="15">Select a Save Slot for your Creation</font></p>
+	</text>
+	<text id="txtSaveConfirmDialog">
+		<p><font size="15">Click YES if you wish to overwrite what you've already saved with your new art.</font></p>
+  </text>
+	<text id="txtCloseCard">
+     <p><font size="14">CLOSE the card.</font></p>
+  </text>
+  <text id="txtWisdomCard">
+		 <p><font size="16">Wisdom</font></p>
+	</text>
+  <text id="txtLoadingCard">
+		 <p><font size="20">Loading...</font></p>
+	</text>
+  <text id="txtCloseHelp">
+		<p><font size="13"><b>Close Help</b></font></p>
+	</text>
+	<text id="txtMusic">
+		<p><font size="14">Turn music ON and OFF.</font></p>
+	</text>
+	<text id="txtEditSaved3">
+		<p><font size="14">EDIT saved artwork.</font></p>
+	</text>
+	<text id="txtDeleteCreation2">
+		<p><font size="14">DELETE artwork.</font></p>
+	</text>
+	<text id="txtNewArt">
+		<p><font size="14">CREATE new art.</font></p>
+	</text>
+	<text id="txtEmptySlot">
+		<p><font size="9">Empty</font></p>
+	</text>
+	<text id="txtDecorateHorse">
+		<p><font size="14">Click a HORSE to decorate.</font></p>
+	</text>
+	<text id="txtViewCard">
+		<p><font size="14">Click here to VIEW card.</font></p>
+	</text>
+	<text id="txtDecorateBB">
+		<p><font size="14">Click a BEAUTY BOX CREATION to decorate.</font></p>
+	</text>
+	<text id="txtSeeHorses">
+		<p><font size="14">SEE MORE horses.</font></p>
+	</text>
+	<text id="txtSeeBB">
+		<p><font size="14">SEE MORE Beauty Box creations.</font></p>
+	</text>
+	<text id="txtWisdomMsg">
+		<p><font size="14">View WISDOM MESSAGE.</font></p>
+	</text>
+	<text id="txtSeePaints">
+		<p><font size="14">SEE MORE paints.</font></p>
+	</text>
+	<text id="txtGoBack">
+		<p><font size="14">GO BACK to the main page.</font></p>
+	</text>
+	<text id="txtPaintStrokes">
+		<p><font size="14">PAINT with SMALL, MEDIUM or LARGE strokes.</font></p>
+	</text>
+	<text id="txtSaveSubmit">
+		<p><font size="14">PRINT your creation, SAVE, or QUIT</font></p>
+	</text>
+	<text id="txtClearStrokes">
+		<p><font size="14">CLEAR ALL strokes.</font></p>
+	</text>
+	<text id="txtEraseStrokes">
+		<p><font size="14">ERASE strokes.</font></p>
+	</text>
+	<text id="txtChangePaper">
+		<p><font size="14">Change PAPER COLOR.</font></p>
+	</text>
+    <text id="txtEditArt">
+		<p><font size="14">EDIT artwork.</font></p>
+	</text>
+	<text id="txtHelpBlank">
+		<p><font size="14">CREATE new art with a blank canvas.</font></p>
+	</text>
+	<text id="txtHelpHorseA">
+		<p><font size="14">CREATE new art with Peter on the canvas.</font></p>
+	</text>
+	<text id="txtHelpHorseB">
+		<p><font size="14">CREATE new art with Angel on the canvas.</font></p>
+	</text>
+	<text id="txtHelpHorseC">
+		<p><font size="14">CREATE new art with Tiffi on the canvas.</font></p>
+	</text>
+  <text id="txtHelpSavedCreations">
+		<p><font size="14">EDIT or DELETE your previously saved creations.</font></p>
+	</text>
+  <text id="txtSlotAButton">
+		<p><font size="10">Slot A</font></p>
+	</text>
+  <text id="txtSlotBButton">
+		<p><font size="10">Slot B</font></p>
+	</text>
+    </texts>
+	</builtintexts>
+</artstudio><!--
+     FILE ARCHIVED ON 15:34:58 Jul 24, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:57:14 Mar 22, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  exclusion.robots: 0.08
+  exclusion.robots.policy: 0.068
+  cdx.remote: 0.101
+  esindex: 0.011
+  LoadShardBlock: 351.242 (6)
+  PetaboxLoader3.datanode: 255.167 (7)
+  load_resource: 101.441
+  PetaboxLoader3.resolve: 47.573
+-->

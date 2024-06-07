@@ -1,0 +1,100 @@
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=t1Bf4PY_" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.bellasara.com/xml/bellasara.xml","20081113161841","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1226593121");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+<bellasara>
+  <world>
+    <settings>
+      <webservice url="http://www.bellasara.com/BellaSara/BellaWSService?WSDL"/>
+      <locations>
+        <location id="airStablePage" url="/flashloader_allstalls.aspx"/>
+        <location id="awardsAlbum" url="/AwardsAlbum.aspx"/>
+        <location id="bazaarLoc" url="/xml/en/bazaar.xml"/>
+        <location id="bazaarPage" url="/bazaar.aspx"/>
+        <location id="cardActivationPage" url="/activate.aspx"/>
+        <location id="cardSwf" url="/Card/card.swf"/>
+        <location id="cottageFrameSwf" url="/Wrapper/cottageframe.swf"/>
+        <location id="cottageFrame521Swf" url="/Wrapper/cottageframe521.swf"/>
+        <location id="cottageHelpSwf" url="/help/cottagehelp.swf"/>
+        <location id="cottageMusicSwf" url="/wrapper/cottagemusic.swf"/>
+        <location id="cottageWrapperSwf" url="/Wrapper/cottagewrapper.swf"/>
+        <location id="cottageBedroomPage" url="/room.aspx?roomId=6"/>
+        <location id="cottageConservatoryPage" url="/cottageconservatory.aspx"/>
+        <location id="cottageEntryPage" url="/cottageentry.aspx"/>
+        <location id="cottageLoc" url="/xml/en/cottage.xml"/>
+        <location id="cottageMediaRoom" url="/cottagemediaroom.aspx"/>
+        <location id="cottageRecRoom" url="/cottagerecroom.aspx"/>
+        <location id="roomPage" url="/room.aspx"/>
+        <location id="galleryLoc" url="/xml/en/gallery.xml"/>
+        <location id="galleryPage" url="/gallery.aspx"/>
+        <location id="headerSettings" url="/xml/en/header.xml"/>
+        <location id="horsesPage" url="/flashloader_stablechooser.aspx"/>
+        <location id="landStablePage" url="/flashloader_allstalls.aspx"/>
+        <location id="livingRoomPage" url="/room.aspx?roomId=3"/>
+        <location id="mapLoc" url="/xml/en/map.xml"/>
+        <location id="mapPage" url="/map.aspx"/>
+        <location id="myFriendsCottagesPage" url="/cottageentry.aspx"/>
+        <location id="navHelpSwf" url="/help/navhelp.swf"/>
+        <location id="navSettings" url="/xml/en/nav.xml"/>
+        <location id="ponyMailPage" url="/index.html"/>
+        <location id="stablechooser" url="/flashloader_stablechooser.aspx"/>
+        <location id="stall" url="/flashloader_allstalls.aspx"/>
+        <location id="waterStablePage" url="/flashloader_allstalls.aspx"/>
+        <location id="whatsnew" url="/whatsnext.aspx"/>
+        <location id="worldPage" url="/world.aspx"/>
+        <location id="cardcollecting" url="/collecting.aspx"/>
+        <location id="gamerules" url="/gamerules.aspx"/>
+        <location id="cards" url="/cards2.aspx"/>
+        <!-- games -->
+        <location id="bubblegame" url="/bubblewand.aspx"/>
+        <location id="treasureshunt" url="/treasureshunt.aspx"/>
+        <location id="cloudjumper" url="/cloudjumper.aspx"/>
+        <location id="lanceriding" url="/lanceriding.aspx"/>
+        <location id="jumpinggame" url="/flashloader.aspx?flash=main"/>
+        <location id="memorygame" url="/flashloader.aspx?flash=memorygame"/>
+        <location id="bellapedia" url="/Bellapedia.aspx"/>
+        <!-- Castle links -->
+        <location id="asksara" url="/asksara.aspx"/>
+        <location id="friendquiz" url="/flashloader.aspx?flash=quizgame"/>
+        <location id="knowledge" url="/flashloader.aspx?flash=anatomygame"/>
+        <location id="desktopwallpapers" url="/wallpapers.aspx"/>
+        <location id="beautybox" url="/beautybox_load.aspx"/>
+        <location id="coloring" url="/coloring.aspx"/>
+        <location id="puzzles" url="/puzzles.aspx"/>
+      </locations>
+      <avatars>
+        <avatar id="1" avatarpath="images/avatars/i267.jpg" cardpath="/images/cards/en-us/267.jpg"/>
+        <avatar id="2" avatarpath="images/avatars/006.png" cardpath="/images/cards/en-us/006.png"/>
+        <avatar id="3" avatarpath="images/avatars/083.png" cardpath="/images/cards/en-us/083.png"/>
+        <avatar id="4" avatarpath="images/avatars/268.png" cardpath="/images/cards/en-us/268.png"/>
+        <avatar id="5" avatarpath="images/avatars/269.png" cardpath="/images/cards/en-us/269.png"/>
+      </avatars>
+    </settings>
+  </world>
+</bellasara><!--
+     FILE ARCHIVED ON 16:18:41 Nov 13, 2008 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:57:12 Mar 22, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  exclusion.robots: 0.066
+  exclusion.robots.policy: 0.058
+  cdx.remote: 0.091
+  esindex: 0.009
+  LoadShardBlock: 173.645 (6)
+  PetaboxLoader3.resolve: 105.847 (3)
+  PetaboxLoader3.datanode: 167.96 (7)
+  load_resource: 117.02
+-->
