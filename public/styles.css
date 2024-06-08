@@ -8,11 +8,12 @@
     background: #48174e;
     color: white;
     vertical-align: sup;
+    margin: 8;
 }
 
 body {
     background-image:url(images/bg.jpeg);
-
+    margin: 8;
 }
 
 .content {
@@ -47,6 +48,7 @@ body {
     color: white;
     background: #2da0e0;
     text-align: center;
+    margin: 8;
 }
 
 .swf {
@@ -63,3 +65,61 @@ div.centerimg {
 div.centerimg img {
     padding: 0 10px;
 }
+
+.textbox-parent {
+    border-radius: 25px;
+    border: 2px solid #F5D267;
+    background-color: #ffffff60;
+    width: 50vw;
+    height: 50vh;
+    overflow: hidden;
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+.textbox {
+    border-radius: 25px;
+    color: #000;
+    width: calc(50vw - 40px);
+    height: calc(50vh - 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 12px;
+    margin: 0px auto;
+    font-size: 16px;
+}
+
+.textbox h2 {
+    font-size: 16px;
+    text-decoration-line: underline;
+    color: #fff;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+}
+
+
+.alert {
+    padding: 10px;
+    background-color: #e0bb4e;
+    color: #000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: #000;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.closebtn:hover {
+    color: black;
+} 
