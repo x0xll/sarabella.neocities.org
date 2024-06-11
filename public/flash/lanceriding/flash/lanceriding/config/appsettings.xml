@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appsettings>
+	<add key="gateway" value="/Gateway.aspx"/>
+
+	<!-- THIS SHOULD BE "1" ON US SERVER -->
+	<add key="useWebService" value="1"/>
+	<add key="exitSWF" value="map.swf"/>
+	<add key="exitURL" value="/index.html"/>
+</appsettings>
