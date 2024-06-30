@@ -1,9 +1,13 @@
-// list of all horses
+// Font for horse names
+const font_name = 'Arial'
+
+// List of all horses - these should match the folder names for the horses which should appear in the selector
 const horses = [
     'peter',
     'amor',
     'anemone',
     'aphaia',
+    'bella',
     'beran',
     'blossom',
     'bosi',
@@ -24,11 +28,14 @@ const horses = [
     'jewel',
     'juno',
     'kendra',
+    'king',
     'lillova',
     'mellonie',
+    'mireldis',
     'nike',
     'nori',
     'nuala',
+    'pegasus',
     'persephone',
     'sarah',
     'savros',
@@ -40,43 +47,13 @@ const horses = [
     'vesta',
     'virstan'
 ]
-const displayHorses = Array.apply(null, Array(10)) // creates an all null array of length 3 -> change to 10 for final
-let card0 = null
-let card1 = null
-let card2 = null
-let card3 = null
-let card4 = null
-let card5 = null
-let card6 = null
-let card7 = null
-let card8 = null
-let card9 = null
+// Array of length 10 to keep track of which horses are displayed on the current page
+const displayHorses = Array.apply(null, Array(10)) 
 
-let card0Text = null
-let card1Text = null
-let card2Text = null
-let card3Text = null
-let card4Text = null
-let card5Text = null
-let card6Text = null
-let card7Text = null
-let card8Text = null
-let card9Text = null
-
-let nameplate0 = null
-let nameplate1 = null
-let nameplate2 = null
-let nameplate3 = null
-let nameplate4 = null
-let nameplate5 = null
-let nameplate6 = null
-let nameplate7 = null
-let nameplate8 = null
-let nameplate9 = null
-
+// Variable to Keep track of the current page number
 let page = 0
 
-// Gets the actual horse names
+// Creates an array of the horses actual names to be displayed
 let horseNames = []
 for (let index = 0; index < horses.length; index++) {
     const xmlHttp = new XMLHttpRequest();
@@ -87,7 +64,6 @@ for (let index = 0; index < horses.length; index++) {
     xmlHttp.open("GET", `./images/horses/${horses[index]}/data.json`);
     xmlHttp.send();
 };
-
 
 
 class Selector extends Phaser.Scene 
@@ -109,6 +85,8 @@ class Selector extends Phaser.Scene
         this.add.graphics().fillStyle(0x000000).fillRect(386, 334, 116, 12);
         const progressBar = this.add.graphics();
 
+
+        // Load in the images and sounds for the selector screen
         this.load.image('card_empty', './images/selector/card_back.png');
         this.load.image('frame', './images/selector/frame.png');
         this.load.image('nameplate', './images/selector/nameplate.png');
@@ -129,14 +107,16 @@ class Selector extends Phaser.Scene
 
     create ()
     { 
+        // Add the sounds for the selector screen
         const backgroundMusic = this.sound.add('soundtrack');
         backgroundMusic.loop = true; 
         backgroundMusic.play();
         const hoverSound = this.sound.add('hover_sound');
         const clickSound = this.sound.add('click_sound');
 
+
         /**
-         * Sets the horses to be displayed on the page
+         * Finds which horses should be displayed on the current page
          */
         function setDisplayHorses() {
             for (let index = 0; index < displayHorses.length; index++) {
@@ -150,57 +130,59 @@ class Selector extends Phaser.Scene
         setDisplayHorses()
 
 
-        // Horse display cards
-        card0 = this.add.image(122, 124, displayHorses[0]).setInteractive()
-        nameplate0 = this.add.image(122, 240, 'nameplate').setInteractive()
-        card0Text = this.add.text(122, 240, horseNames[0], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card0Text.setPosition(122-card0Text.width/2, 240-card0Text.height/2);
+        // Add horse display cards and names to screen
+        this.card0 = this.add.image(122, 124, displayHorses[0]).setInteractive()
+        this.nameplate0 = this.add.image(122, 240, 'nameplate').setInteractive()
+        this.card0Text = this.add.text(122, 240, horseNames[0], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card0Text.setPosition(122-this.card0Text.width/2, 240-this.card0Text.height/2);
 
-        card1 = this.add.image(280, 124, displayHorses[1]).setInteractive()
-        nameplate1 = this.add.image(280, 240, 'nameplate').setInteractive()
-        card1Text = this.add.text(280, 228, horseNames[1], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card1Text.setPosition(280-card1Text.width/2, 240-card1Text.height/2);
+        this.card1 = this.add.image(280, 124, displayHorses[1]).setInteractive()
+        this.nameplate1 = this.add.image(280, 240, 'nameplate').setInteractive()
+        this.card1Text = this.add.text(280, 228, horseNames[1], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card1Text.setPosition(280-this.card1Text.width/2, 240-this.card1Text.height/2);
 
-        card2 = this.add.image(440, 124, displayHorses[2]).setInteractive()
-        nameplate2 = this.add.image(440, 240, 'nameplate').setInteractive()
-        card2Text = this.add.text(440, 228, horseNames[2], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card2Text.setPosition(440-card2Text.width/2, 240-card2Text.height/2);
+        this.card2 = this.add.image(440, 124, displayHorses[2]).setInteractive()
+        this.nameplate2 = this.add.image(440, 240, 'nameplate').setInteractive()
+        this.card2Text = this.add.text(440, 228, horseNames[2], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card2Text.setPosition(440-this.card2Text.width/2, 240-this.card2Text.height/2);
 
-        card3 = this.add.image(601, 124, displayHorses[3]).setInteractive()
-        nameplate3 = this.add.image(601, 240, 'nameplate').setInteractive()
-        card3Text = this.add.text(601, 228, horseNames[3], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card3Text.setPosition(601-card3Text.width/2, 240-card3Text.height/2);
+        this.card3 = this.add.image(601, 124, displayHorses[3]).setInteractive()
+        this.nameplate3 = this.add.image(601, 240, 'nameplate').setInteractive()
+        this.card3Text = this.add.text(601, 228, horseNames[3], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card3Text.setPosition(601-this.card3Text.width/2, 240-this.card3Text.height/2);
 
-        card4 = this.add.image(761, 124, displayHorses[4]).setInteractive()
-        nameplate4 = this.add.image(761, 240, 'nameplate').setInteractive()
-        card4Text = this.add.text(761, 228, horseNames[4], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card4Text.setPosition(761-card4Text.width/2, 240-card4Text.height/2);
+        this.card4 = this.add.image(761, 124, displayHorses[4]).setInteractive()
+        this.nameplate4 = this.add.image(761, 240, 'nameplate').setInteractive()
+        this.card4Text = this.add.text(761, 228, horseNames[4], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card4Text.setPosition(761-this.card4Text.width/2, 240-this.card4Text.height/2);
 
-        card5 = this.add.image(122, 370, displayHorses[5]).setInteractive()
-        nameplate5 = this.add.image(122, 488, 'nameplate').setInteractive()
-        card5Text = this.add.text(122, 488, horseNames[5], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card5Text.setPosition(122-card5Text.width/2, 488-card5Text.height/2);
+        this.card5 = this.add.image(122, 370, displayHorses[5]).setInteractive()
+        this.nameplate5 = this.add.image(122, 488, 'nameplate').setInteractive()
+        this.card5Text = this.add.text(122, 488, horseNames[5], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card5Text.setPosition(122-this.card5Text.width/2, 488-this.card5Text.height/2);
 
-        card6 = this.add.image(280, 370, displayHorses[6]).setInteractive()
-        nameplate6 = this.add.image(280, 488, 'nameplate').setInteractive()
-        card6Text = this.add.text(280, 488, horseNames[6], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card6Text.setPosition(280-card6Text.width/2, 488-card6Text.height/2);
+        this.card6 = this.add.image(280, 370, displayHorses[6]).setInteractive()
+        this.nameplate6 = this.add.image(280, 488, 'nameplate').setInteractive()
+        this.card6Text = this.add.text(280, 488, horseNames[6], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card6Text.setPosition(280-this.card6Text.width/2, 488-this.card6Text.height/2);
 
-        card7 = this.add.image(440, 370, displayHorses[7]).setInteractive()
-        nameplate7 = this.add.image(440, 488, 'nameplate').setInteractive()
-        card7Text = this.add.text(440, 488, horseNames[7], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card7Text.setPosition(440-card7Text.width/2, 488-card7Text.height/2);
+        this.card7 = this.add.image(440, 370, displayHorses[7]).setInteractive()
+        this.nameplate7 = this.add.image(440, 488, 'nameplate').setInteractive()
+        this.card7Text = this.add.text(440, 488, horseNames[7], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card7Text.setPosition(440-this.card7Text.width/2, 488-this.card7Text.height/2);
 
-        card8 = this.add.image(601, 370, displayHorses[8]).setInteractive()
-        nameplate8 = this.add.image(601, 488, 'nameplate').setInteractive()
-        card8Text = this.add.text(601, 488, horseNames[8], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card8Text.setPosition(601-card8Text.width/2, 488-card8Text.height/2);
+        this.card8 = this.add.image(601, 370, displayHorses[8]).setInteractive()
+        this.nameplate8 = this.add.image(601, 488, 'nameplate').setInteractive()
+        this.card8Text = this.add.text(601, 488, horseNames[8], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card8Text.setPosition(601-this.card8Text.width/2, 488-this.card8Text.height/2);
 
-        card9 = this.add.image(761, 370, displayHorses[9]).setInteractive()
-        nameplate9 = this.add.image(761, 488, 'nameplate').setInteractive()
-        card9Text = this.add.text(761, 488, horseNames[9], { fontFamily: 'Arial', fontSize: 18, color: '#ffffff', align: 'center' })
-        card9Text.setPosition(761-card9Text.width/2, 488-card9Text.height/2);
+        this.card9 = this.add.image(761, 370, displayHorses[9]).setInteractive()
+        this.nameplate9 = this.add.image(761, 488, 'nameplate').setInteractive()
+        this.card9Text = this.add.text(761, 488, horseNames[9], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+        this.card9Text.setPosition(761-this.card9Text.width/2, 488-this.card9Text.height/2);
 
+
+        // Add the glow and sparkle effect which will become visible when hovering over a card
         const hoverGlow = this.add.image(122, 124, 'hover_glow').setVisible(false);
         const sparkle = this.add.sprite(122, 124, 'sparkle', '1').setVisible(false).setScale(.8);
             this.anims.create({
@@ -211,10 +193,28 @@ class Selector extends Phaser.Scene
             });
             sparkle.play('sparkle');
 
-        
-        const frame = this.add.image(444, 275, 'frame')
 
+        // Add the main UI elements
+        this.add.image(444, 275, 'frame')
         const previousButton = this.add.sprite(22, 498, 'previous', 'idle').setScale(.75).setInteractive({ pixelPerfect: true });
+            previousButton.on('pointerdown', function (pointer) {
+                // Change the page being displayed
+                if (page > 0) {
+                    page -= 1
+                }
+                checkNext()
+                checkPrev()
+                setDisplayHorses()
+            });
+            previousButton.on('pointerover', function (pointer) {
+                // Display hover
+                if (page > 0) {
+                    previousButton.setFrame('hover')
+                }
+            });
+            previousButton.on('pointerout', function (pointer) {
+                checkPrev()
+            });
         const nextButton = this.add.sprite(864, 498, 'next', 'idle').setScale(.75).setInteractive({ pixelPerfect: true });
             nextButton.on('pointerdown', function (pointer) {
                 // Change the page being displayed
@@ -233,35 +233,10 @@ class Selector extends Phaser.Scene
             nextButton.on('pointerout', function (pointer) {
                 checkNext()
             });
-            function checkNext() {
-                if (horses.length > (page + 1)*displayHorses.length) {
-                    // previous page
-                    nextButton.setFrame('idle')
-                } else {
-                    nextButton.setFrame('dull')
-                }
-            }
-            checkNext()
 
-        
-        previousButton.on('pointerdown', function (pointer) {
-            // Change the page being displayed
-            if (page > 0) {
-                page -= 1
-            }
-            checkNext()
-            checkPrev()
-            setDisplayHorses()
-        });
-        previousButton.on('pointerover', function (pointer) {
-            // Display hover
-            if (page > 0) {
-                previousButton.setFrame('hover')
-            }
-        });
-        previousButton.on('pointerout', function (pointer) {
-            checkPrev()
-        });
+        /**
+         * Check if there is a previous page and dull the previous button if no previous page exists
+         */
         function checkPrev() {
             if (page > 0) {
                 // previous page
@@ -271,20 +246,29 @@ class Selector extends Phaser.Scene
             }
         }
         checkPrev()
+        /**
+         * Check if there is a next page and dull the next button if no next page exists
+         */
+        function checkNext() {
+            if (horses.length > (page + 1)*displayHorses.length) {
+                // previous page
+                nextButton.setFrame('idle')
+            } else {
+                nextButton.setFrame('dull')
+            }
+        }
+        checkNext()
 
-
-        setupCard(card0, nameplate0, 0, 122, 124)
-        setupCard(card1, nameplate1, 1, 281, 124)
-        setupCard(card2, nameplate2, 2, 440, 124)
-        setupCard(card3, nameplate3, 3, 601, 124)
-        setupCard(card4, nameplate4, 4, 761, 124)
-        setupCard(card5, nameplate5, 5, 122, 370)
-        setupCard(card6, nameplate6, 6, 281, 370)
-        setupCard(card7, nameplate7, 7, 440, 370)
-        setupCard(card8, nameplate8, 8, 601, 370)
-        setupCard(card9, nameplate9, 9, 761, 370)
-
-        function setupCard(card, nameplate, i, xPos, yPos) {
+        
+        // Set the cards up for display
+        /**
+         * Sets up the card, makes the nameplate visible if the card is not empty and makes the
+         * sparkles and glow effect visible over the card if it is not empty and the card is hovered over
+         * @param {*} card The display card image at the display position
+         * @param {*} nameplate The nameplate image at the display position
+         * @param {*} i The index of the display position
+         */
+        function setupCard(card, nameplate, i) {
             hoverGlow.setScale(1.05)
 
             if (displayHorses[i] !== 'card_empty') {
@@ -310,12 +294,12 @@ class Selector extends Phaser.Scene
             card.on('pointerover', () => {
                 if (displayHorses[i] !== 'card_empty') {
                     hoverSound.play()
-                    hoverGlow.setPosition(xPos, yPos).setVisible(true)
-                    sparkle.setPosition(xPos, yPos).setVisible(true)
+                    hoverGlow.setPosition(card.x, card.y).setVisible(true)
+                    sparkle.setPosition(card.x, card.y).setVisible(true)
                 }
                 else if (i === 9) {
                     hoverSound.play()
-                    sparkle.setPosition(xPos, yPos + 15).setVisible(true)
+                    sparkle.setPosition(card.x, card.y + 15).setVisible(true)
                 }
             });
             card.on('pointerout', () => {
@@ -337,8 +321,8 @@ class Selector extends Phaser.Scene
             nameplate.on('pointerover', () => {
                 if (displayHorses[i] !== 'card_empty') {
                     hoverSound.play()
-                    hoverGlow.setPosition(xPos, yPos).setVisible(true)
-                    sparkle.setPosition(xPos, yPos).setVisible(true)
+                    hoverGlow.setPosition(card.x, card.y).setVisible(true)
+                    sparkle.setPosition(card.x, card.y).setVisible(true)
                 }
             });
             nameplate.on('pointerout', () => {
@@ -346,14 +330,28 @@ class Selector extends Phaser.Scene
                 sparkle.setVisible(false)
             });
         }
-        
 
-
+        setupCard(this.card0, this.nameplate0, 0)
+        setupCard(this.card1, this.nameplate1, 1)
+        setupCard(this.card2, this.nameplate2, 2)
+        setupCard(this.card3, this.nameplate3, 3)
+        setupCard(this.card4, this.nameplate4, 4)
+        setupCard(this.card5, this.nameplate5, 5)
+        setupCard(this.card6, this.nameplate6, 6)
+        setupCard(this.card7, this.nameplate7, 7)
+        setupCard(this.card8, this.nameplate8, 8)
+        setupCard(this.card9, this.nameplate9, 9)
     }
 
     update ()
     {
-        
+        /**
+         * Updates the display card images and names when the page is changed
+         * @param {*} card The display card image at the display position
+         * @param {*} nameplate The nameplate image at the display position
+         * @param {*} text The text at the display position
+         * @param {*} cardNumber The index of the display position
+         */  
         function updateCard(card, nameplate, text, cardNumber) {
             card.setTexture(displayHorses[cardNumber])
 
@@ -383,16 +381,16 @@ class Selector extends Phaser.Scene
             } 
         }
         
-        updateCard(card0, nameplate0, card0Text, 0)
-        updateCard(card1, nameplate1, card1Text, 1)
-        updateCard(card2, nameplate2, card2Text, 2)
-        updateCard(card3, nameplate3, card3Text, 3)
-        updateCard(card4, nameplate4, card4Text, 4)
-        updateCard(card5, nameplate5, card5Text, 5)
-        updateCard(card6, nameplate6, card6Text, 6)
-        updateCard(card7, nameplate7, card7Text, 7)
-        updateCard(card8, nameplate8, card8Text, 8)
-        updateCard(card9, nameplate9, card9Text, 9)
+        updateCard(this.card0, this.nameplate0, this.card0Text, 0)
+        updateCard(this.card1, this.nameplate1, this.card1Text, 1)
+        updateCard(this.card2, this.nameplate2, this.card2Text, 2)
+        updateCard(this.card3, this.nameplate3, this.card3Text, 3)
+        updateCard(this.card4, this.nameplate4, this.card4Text, 4)
+        updateCard(this.card5, this.nameplate5, this.card5Text, 5)
+        updateCard(this.card6, this.nameplate6, this.card6Text, 6)
+        updateCard(this.card7, this.nameplate7, this.card7Text, 7)
+        updateCard(this.card8, this.nameplate8, this.card8Text, 8)
+        updateCard(this.card9, this.nameplate9, this.card9Text, 9)
 
     }
 }
