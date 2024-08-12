@@ -79,10 +79,17 @@ class WaterStable extends Phaser.Scene
             progressBar.clear();
             progressBar.fillStyle(0x35a3d5, 1);
             progressBar.fillRect(389, 337, 100 * value, 6);
-        });    
+        });
         this.add.image(444, 261, 'card_back');  
         this.add.graphics().fillStyle(0x000000).fillRect(386, 334, 116, 12);
         const progressBar = this.add.graphics();
+        // Display file names whilst loading
+        this.load.on('fileprogress', function (file) {
+            if (urlParameters.get('debug')) {
+                progressText.text = file.src;
+            }
+        });
+        const progressText = this.add.text(344, 133, '', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
             
         // Load in images and sounds
         this.load.image('stable_bg', './images/waterStable/stable-bg.png');
@@ -98,7 +105,9 @@ class WaterStable extends Phaser.Scene
         this.load.atlas('brush', './images/waterStable/brush.png', './images/waterStable/brush.json');
         this.load.atlas('brush_small', './images/waterStable/brush_small.png', './images/waterStable/brush_small.json');
         this.load.atlas('polisher', './images/waterStable/polisher.png', './images/waterStable/polisher.json');
-        this.load.atlas('oxygen', './images/waterStable/oxygen.png', './images/waterStable/oxygen.json');
+        this.load.atlas('oxygen1', './images/waterStable/oxygen1.png', './images/waterStable/oxygen1.json');
+        this.load.atlas('oxygen2', './images/waterStable/oxygen2.png', './images/waterStable/oxygen2.json');
+        this.load.atlas('oxygen3', './images/waterStable/oxygen3.png', './images/waterStable/oxygen3.json');
         this.load.atlas('speaker', './images/waterStable/speaker.png', './images/waterStable/speaker.json');
         this.load.atlas('treat_dispenser', './images/waterStable/treat_dispenser.png', './images/waterStable/treat_dispenser.json');
         this.load.image('treatHeld', './images/waterStable/treat_held.png');
@@ -726,21 +735,36 @@ class WaterStable extends Phaser.Scene
             });
 
         // Bubbles
-        oxygen = this.add.sprite(525, 225, 'oxygen', 'idle').setInteractive({ pixelPerfect: true });
+        oxygen = this.add.sprite(525, 75, 'oxygen3', 'idle').setInteractive({ pixelPerfect: true });
         bubbleSound = this.sound.add('bubbles');
         bubbleReplaceSound = this.sound.add('bubble_new');
         const bubbleClick = this.sound.add('bubble_click');
+            this.anims.create({
+                    key: 'oxygen1',
+                    frames: this.anims.generateFrameNumbers('oxygen1', { frames: [
+                        'bubbles0000', 'bubbles0001', 'bubbles0002', 'bubbles0003', 'bubbles0004', 'bubbles0005', 'bubbles0006', 'bubbles0007', 'bubbles0008', 'bubbles0009',
+                        'bubbles0010', 'bubbles0011', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
+                        'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
+                        'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035'
+                    ] }),
+                    frameRate: 24,
+                });
+                
         this.anims.create({
-                key: 'oxygen',
-                frames: this.anims.generateFrameNumbers('oxygen', { frames: [
-                    'bubbles0000', 'bubbles0001', 'bubbles0002', 'bubbles0003', 'bubbles0004', 'bubbles0005', 'bubbles0006', 'bubbles0007', 'bubbles0008', 'bubbles0009',
-                    'bubbles0010', 'bubbles0011', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
-                    'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                    'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                    'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                    'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                    'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 'bubbles0068', 'bubbles0069',
-                    'bubbles0070', 'bubbles0071', 'bubbles0072', 'bubbles0073', 'bubbles0074', 'bubbles0075', 'bubbles0076', 'bubbles0077', 'bubbles0078', 'bubbles0079',
+            key: 'oxygen2',
+            frames: this.anims.generateFrameNumbers('oxygen2', { frames: [
+                'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
+                'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
+                'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
+                'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 'bubbles0068', 'bubbles0069',
+                'bubbles0070', 'bubbles0071'
+            ] }),
+            frameRate: 24,
+        });
+        this.anims.create({
+                key: 'oxygen3',
+                frames: this.anims.generateFrameNumbers('oxygen3', { frames: [
+                    'bubbles0072', 'bubbles0073', 'bubbles0074', 'bubbles0075', 'bubbles0076', 'bubbles0077', 'bubbles0078', 'bubbles0079',
                     'bubbles0080', 'bubbles0081', 'bubbles0082', 'bubbles0083', 'bubbles0084', 'bubbles0085', 'bubbles0086', 'bubbles0087', 'bubbles0088', 'bubbles0089',
                     'bubbles0090', 'bubbles0091', 'bubbles0092', 'bubbles0093', 'bubbles0094', 'bubbles0095', 'bubbles0096', 'bubbles0097', 'bubbles0098', 'bubbles0099',
                     'bubbles0100', 'bubbles0101', 'bubbles0102', 'bubbles0103', 'bubbles0104',
@@ -752,13 +776,14 @@ class WaterStable extends Phaser.Scene
             oxygen.on('pointerout', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
-                    oxygen.setFrame('idle')
+                    oxygen.setTexture('oxygen3', 'idle')
+                    // oxygen.setFrame('idle')
                 }
             });
             oxygen.on('pointerdown', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
-                    oxygen.play('oxygen')
+                    oxygen.play('oxygen1')
                     bubbleClick.play()
                     if (!waterFilled) {
                         waterFilled = true
@@ -985,6 +1010,14 @@ class WaterStable extends Phaser.Scene
         }
         else {
             clearCursor()
+        }
+        
+
+        // play water clean animation
+        if (oxygen.frame.name === 'bubbles0035') {
+            oxygen.play('oxygen2')
+        } else if (oxygen.frame.name === 'bubbles0071') {
+            oxygen.play('oxygen3')
         }
 
         // play water clean sound when fountain is at correct frame
