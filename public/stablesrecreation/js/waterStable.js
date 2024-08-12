@@ -80,13 +80,16 @@ class WaterStable extends Phaser.Scene
             progressBar.fillStyle(0x35a3d5, 1);
             progressBar.fillRect(389, 337, 100 * value, 6);
         });
-        // this.load.on('fileprogress', function (file) {
-        //     progressText.text = file.src;
-        // });
         this.add.image(444, 261, 'card_back');  
         this.add.graphics().fillStyle(0x000000).fillRect(386, 334, 116, 12);
         const progressBar = this.add.graphics();
-        // const progressText = this.add.text(444, 133, '', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
+        // Display file names whilst loading
+        this.load.on('fileprogress', function (file) {
+            if (urlParameters.get('debug')) {
+                progressText.text = file.src;
+            }
+        });
+        const progressText = this.add.text(344, 133, '', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
             
         // Load in images and sounds
         this.load.image('stable_bg', './images/waterStable/stable-bg.png');
