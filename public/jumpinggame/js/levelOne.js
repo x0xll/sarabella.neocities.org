@@ -18,6 +18,10 @@ class LevelOne extends Phaser.Scene
     skidLoop = 0
     levelEnd = 22941
     levelTime = 50
+    jumpCtrl
+    jumpButton
+    runCtrl
+    runButton
 
     constructor ()
     {
@@ -54,6 +58,7 @@ class LevelOne extends Phaser.Scene
         // Inputs
         this.cursors = this.input.keyboard.createCursorKeys();
         this.spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        this.input.addPointer(1);
 
 
         // BG
@@ -170,7 +175,7 @@ class LevelOne extends Phaser.Scene
             this.anims.create({
                 key: 'jump',
                 frames: this.anims.generateFrameNumbers('horse', { frames: [
-                    'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'jump0011'
+                    'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'land0000'
                 ] }),
                 frameRate: 16
             });
@@ -506,14 +511,26 @@ class LevelOne extends Phaser.Scene
 
         this.timerText.text = millisToMinutesAndSeconds(this.clock.now)
 
+        // combining Button and Touch inputs
+        if (this.spaceBar.isDown || (this.input.pointer1.isDown && this.input.pointer1.x < 443) || (this.input.pointer2.isDown && this.input.pointer2.x < 443)) {
+            this.jumpCtrl = true
+        } else {
+            this.jumpCtrl = false
+        }
+        
+        if (this.cursors.right.isDown || (this.input.pointer1.isDown && this.input.pointer1.x >= 443) || (this.input.pointer2.isDown && this.input.pointer2.x >= 443)) {
+            this.runCtrl = true
+        } else {
+            this.runCtrl = false
+        }
 
         // Horse movement
         // Controls
-        if (this.spaceBar.isDown && this.horseMovement !== this.horseMovements.skidding) {
+        if (this.jumpCtrl && this.horseMovement !== this.horseMovements.skidding) {
             // Horse jump if spacebar is pressed
             this.horseMovement = this.horseMovements.jumping
         }
-        else if (this.cursors.right.isDown && this.horseMovement !== this.horseMovements.skidding && this.horseMovement !== this.horseMovements.jumping) {
+        else if (this.runCtrl && this.horseMovement !== this.horseMovements.skidding && this.horseMovement !== this.horseMovements.jumping) {
             // Horse gallop when right arrow key is down and horse is not jumping or sliding
             this.horseMovement = this.horseMovements.galloping
         }
@@ -521,7 +538,7 @@ class LevelOne extends Phaser.Scene
             // Allow backwards movement in debug mode when left arrow key is down and horse is not jumping or sliding
             this.horseMovement = this.horseMovements.backwards
         }
-        else if (!this.cursors.right.isDown && this.horseMovement !== this.horseMovements.skidding && this.horseMovement !== this.horseMovements.jumping) {
+        else if (!this.runCtrl && this.horseMovement !== this.horseMovements.skidding && this.horseMovement !== this.horseMovements.jumping) {
             // Horse canter if right arrow key is not down and horse is not jumping or sliding
             this.horseMovement = this.horseMovements.cantering
         }
@@ -536,7 +553,7 @@ class LevelOne extends Phaser.Scene
             }
             // Loop sliding animation
             else if ((this.horse.frame.name === 'slide0001' || this.horse.frame.name === 'slide0006') && this.skidLoop < 3) {
-                console.log('Frame: ' + this.horse.frame.name + ' Loop: ' + this.skidLoop)
+                // console.log('Frame: ' + this.horse.frame.name + ' Loop: ' + this.skidLoop)
                 this.horse.play('slide')
                 this.skidLoop += 1
             }
@@ -587,7 +604,7 @@ class LevelOne extends Phaser.Scene
                     this.horse.body.setSize(150, 105, false).setOffset(110, 55);
                     break;
                     
-                case 'jump0011':
+                case 'land0000':
                     this.horse.body.setSize(150, 105, false).setOffset(90, 85);
                     this.horseMovement = this.horseMovements.cantering
                     break;
@@ -598,7 +615,7 @@ class LevelOne extends Phaser.Scene
                     break;
             }
             // Adjust speed
-            if (this.cursors.right.isDown && this.horseMovement !== this.horseMovements.skidding) {
+            if (this.runCtrl && this.horseMovement !== this.horseMovements.skidding) {
                 // Horse gallop speed when right arrow key is down
                 this.horse.setVelocityX(this.gallopSpeed);
             }
@@ -606,7 +623,7 @@ class LevelOne extends Phaser.Scene
                 // Backwards movement in debug mode when left arrow key is down
                 this.horse.setVelocityX(-this.gallopSpeed);
             }
-            else if (!this.cursors.right.isDown && this.horseMovement !== this.horseMovements.skidding) {
+            else if (!this.runCtrl && this.horseMovement !== this.horseMovements.skidding) {
                 // Horse canter speed if right arrow key is not down
                 this.horse.setVelocityX(this.canterSpeed);
             }

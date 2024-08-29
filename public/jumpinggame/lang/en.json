@@ -10,5 +10,10 @@
     "succeed_title": "Great Jumping",
     "succeed_level_select": "Continue to the Next Level!",
     "fail_title": "Nice Try.",
-    "fail_level_select": "Not quite fast enough. Try again!"
+    "fail_level_select": "Not quite fast enough. Try again!",
+    "levels":"Complete Levels to Unlock Fiona, Jewel and Thunder!",
+    "level_one": "Level One",
+    "level_two": "Level Two",
+    "level_three": "Level Three",
+    "level_four": "Level Four"
 }
