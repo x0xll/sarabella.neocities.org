@@ -119,10 +119,15 @@ class WaterStable extends Phaser.Scene
         
         this.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
         this.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        this.load.spineAtlas("horse_dirty-atlas", `./images/waterStable/horse_dirty/dirt_skeleton.atlas`);
         this.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
         this.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        this.load.spineJson("horse_dirty-json", `./images/waterStable/horse_dirty/dirt_skeleton.json`);
+        if (horseName === 'wavebreaker') {
+            this.load.spineAtlas("horse_dirty-atlas", `./images/waterStable/hippocampus_dirty/dirt_skeleton.atlas`);
+            this.load.spineJson("horse_dirty-json", `./images/waterStable/hippocampus_dirty/dirt_skeleton.json`);
+        } else {
+            this.load.spineAtlas("horse_dirty-atlas", `./images/waterStable/horse_dirty/dirt_skeleton.atlas`);
+            this.load.spineJson("horse_dirty-json", `./images/waterStable/horse_dirty/dirt_skeleton.json`);
+        }
 
         this.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
 
