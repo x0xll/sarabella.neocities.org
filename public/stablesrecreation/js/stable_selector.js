@@ -16,11 +16,14 @@ const horses = [
     'clio',
     'colour',
     'cosima',
+    'donn',
     'echo',
     'epona',
     'falcha',
     'faxon',
     'fiona',
+    'ghost',
+    'halloween',
     'hercules',
     'icarus',
     'ivy',
@@ -39,13 +42,16 @@ const horses = [
     'persephone',
     'sarah',
     'savros',
+    'skeleton',
     'sleipnir',
     'socorro',
     'starunna',
     'thunder',
     'uranus',
     'vesta',
-    'virstan'
+    'virstan',
+    'wavebreaker',
+    'zombie'
 ]
 // Array of length 10 to keep track of which horses are displayed on the current page
 const displayHorses = Array.apply(null, Array(10)) 
