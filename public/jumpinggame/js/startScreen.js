@@ -10,7 +10,6 @@ class StartScreen extends Phaser.Scene
         this.load.image('start', './images/start_screen.png');
         this.load.image('UI', './images/UI.png');
         this.load.atlas('music_button', './images/music.png', './images/music.json');
-        this.load.audio('background_music', ['./game_soundtrack.mp3']);
         this.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
 
     }
@@ -58,7 +57,7 @@ class StartScreen extends Phaser.Scene
     {
         if (nextScreen) {
             nextScreen = false
-            this.scene.start('LevelOne', {backgroundMusic: this.data.backgroundMusic, playMusic: this.data.playMusic});
+            this.scene.start('LevelOne', {backgroundMusic: this.data.backgroundMusic, runningSound: this.data.runningSound, playMusic: this.data.playMusic});
         }
     }
 
