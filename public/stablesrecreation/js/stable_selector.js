@@ -22,6 +22,7 @@ const horses = [
     'falcha',
     'faxon',
     'fiona',
+    'firewalker',
     'ghost',
     'halloween',
     'hercules',
