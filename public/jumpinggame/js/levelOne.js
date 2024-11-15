@@ -484,7 +484,7 @@ class LevelOne extends Phaser.Scene
         // UI
         const UI = this.add.image(443, 234, 'UI').setScrollFactor(0)
         // Music button
-        const musicButton = this.add.sprite(871, 453, 'music_button', 'music_on').setInteractive({ pixelPerfect: true }).setScale(0.7).setScrollFactor(0);
+        const musicButton = this.add.sprite(871, 453, 'music_button', 'music_on').setInteractive({ pixelPerfect: true }).setScale(0.7).setScrollFactor(0).setFrame(`music_${data.playMusic ? 'on' : 'off'}`);
             musicButton.on('pointerdown', function (pointer)
             {
                 if (data.playMusic) {
@@ -544,6 +544,7 @@ class LevelOne extends Phaser.Scene
         }
         // Animation
         if (this.horseMovement === this.horseMovements.skidding) {
+            this.data.runningSound.stop()
             // Start slide animation
             if (!this.horse.frame.name.includes('slide')) {
                 this.horse.play('slideStart')
@@ -567,6 +568,7 @@ class LevelOne extends Phaser.Scene
             }
         }
         else if (this.horseMovement === this.horseMovements.jumping) {
+            this.data.runningSound.stop()
             // Play jump animation
             if (!this.horse.frame.name.includes('jump')) {
                 this.horse.play('jump')
@@ -633,6 +635,7 @@ class LevelOne extends Phaser.Scene
                 this.horse.setVelocityX(this.gallopSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
                 this.horse.play('gallop')
+                this.data.runningSound.play()
             }
         }
         else if (this.horseMovement === this.horseMovements.backwards) {
@@ -640,9 +643,11 @@ class LevelOne extends Phaser.Scene
                 this.horse.setVelocityX(-this.gallopSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
                 this.horse.play('gallop')
+                this.data.runningSound.play()
             }
         }
         else if (this.horseMovement === this.horseMovements.cantering) {
+            this.data.runningSound.stop()
             if (!this.horse.frame.name.includes('canter')) {
                 this.horse.setVelocityX(this.canterSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
@@ -799,7 +804,8 @@ class LevelOne extends Phaser.Scene
 
             if (nextScreen) {
                 nextScreen = false
-                this.scene.start('StartScreen', {backgroundMusic: this.data.backgroundMusic, playMusic: this.data.playMusic});
+                this.data.runningSound.stop()
+                this.scene.start('StartScreen', {backgroundMusic: this.data.backgroundMusic, runningSound: this.data.runningSound, playMusic: this.data.playMusic});
                 this.scene.stop('LevelOne')
             }
     }
