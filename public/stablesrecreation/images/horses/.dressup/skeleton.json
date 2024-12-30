@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "cuXGV7E6wV0",
+	"hash": "s39rdKHR8Co",
 	"spine": "4.2.38",
 	"x": -418.4,
 	"y": -226.86,
@@ -36,12 +36,16 @@
 	{ "name": "HoofHR", "bone": "LowerHindR", "attachment": "HoofHR" },
 	{ "name": "UpperHR", "bone": "HindLegR", "attachment": "UpperHR" },
 	{ "name": "FeatheringHR", "bone": "LowerHindR", "attachment": "FeatheringHR" },
+	{ "name": "DarkHR2", "bone": "HindLegR", "attachment": "DarkHR" },
+	{ "name": "DarkHR", "bone": "LowerHindR", "attachment": "DarkHR" },
 	{ "name": "MarkingHR2", "bone": "HindLegR", "attachment": "MarkingHR2" },
 	{ "name": "MarkingHR", "bone": "LowerHindR", "attachment": "MarkingHR" },
 	{ "name": "UpperFR", "bone": "ForelegR", "attachment": "UpperFR" },
 	{ "name": "LowerFR", "bone": "LowerForeR", "attachment": "LowerFR" },
 	{ "name": "HoofFR", "bone": "LowerForeR", "attachment": "HoofFR" },
 	{ "name": "FeatheringFR", "bone": "LowerForeR", "attachment": "FeatheringFR" },
+	{ "name": "DarkFR2", "bone": "ForelegR", "attachment": "DarkFR" },
+	{ "name": "DarkFR", "bone": "LowerForeR", "attachment": "DarkFR" },
 	{ "name": "MarkingFR2", "bone": "ForelegR", "attachment": "MarkingFR" },
 	{ "name": "MarkingFR", "bone": "LowerForeR", "attachment": "MarkingFR" },
 	{ "name": "Neck", "bone": "Neck", "attachment": "Neck" },
@@ -49,6 +53,7 @@
 	{ "name": "NeckFlecked", "bone": "Neck", "attachment": "NeckFlecked" },
 	{ "name": "NeckAppy", "bone": "Neck", "attachment": "NeckAppy" },
 	{ "name": "Body", "bone": "Body", "attachment": "Body" },
+	{ "name": "DarkBody", "bone": "Body", "attachment": "DarkBody" },
 	{ "name": "BodyPinto", "bone": "Body", "attachment": "BodyPinto" },
 	{ "name": "BodyFlecked", "bone": "Body", "attachment": "BodyFlecked" },
 	{ "name": "BodyAppy", "bone": "Body", "attachment": "BodyAppy" },
@@ -56,6 +61,8 @@
 	{ "name": "LowerFL", "bone": "LowerForeL", "attachment": "LowerFL" },
 	{ "name": "HoofFL", "bone": "LowerForeL", "attachment": "HoofFL" },
 	{ "name": "FeatheringFL", "bone": "LowerForeL", "attachment": "FeatheringFL" },
+	{ "name": "DarkFL2", "bone": "ForelegL", "attachment": "DarkFL" },
+	{ "name": "DarkFL", "bone": "LowerForeL", "attachment": "DarkFL" },
 	{ "name": "FLPinto", "bone": "ForelegL", "attachment": "FLPinto" },
 	{ "name": "FLFlecked", "bone": "ForelegL", "attachment": "FLFlecked" },
 	{ "name": "FLAppy", "bone": "ForelegL", "attachment": "FLAppy" },
@@ -65,26 +72,30 @@
 	{ "name": "LowerHL", "bone": "LowerHindL", "attachment": "LowerHL" },
 	{ "name": "HoofHL", "bone": "LowerHindL", "attachment": "HoofHL" },
 	{ "name": "FeatheringHL", "bone": "LowerHindL", "attachment": "FeatheringHL" },
+	{ "name": "DarkHL2", "bone": "HindLegL", "attachment": "DarkHL" },
+	{ "name": "DarkHL", "bone": "LowerHindL", "attachment": "DarkHL" },
 	{ "name": "HLPinto", "bone": "HindLegL", "attachment": "HLPinto" },
 	{ "name": "HLFlecked", "bone": "HindLegL", "attachment": "HLFlecked" },
 	{ "name": "HLAppy", "bone": "HindLegL", "attachment": "HLAppy" },
 	{ "name": "MarkingHL2", "bone": "HindLegL", "attachment": "MarkingHL" },
 	{ "name": "MarkingHL", "bone": "LowerHindL", "attachment": "MarkingHL" },
 	{ "name": "Head", "bone": "Head", "attachment": "Head" },
+	{ "name": "HeadDark", "bone": "Head", "attachment": "HeadDark" },
 	{ "name": "HeadMarkingStripe", "bone": "Head", "attachment": "HeadMarkingStripe" },
 	{ "name": "HeadJaw", "bone": "Jaw", "attachment": "HeadJaw" },
+	{ "name": "HeadJDark", "bone": "Jaw", "attachment": "HeadJDark" },
 	{ "name": "HeadJMarkingStripe", "bone": "Jaw", "attachment": "HeadMarkingStripe" },
 	{ "name": "HeadJMarkingSnip", "bone": "Jaw", "attachment": "HeadMarkingSnip" },
 	{ "name": "HeadJawInner", "bone": "Jaw", "attachment": "HeadJawInner" },
 	{ "name": "Apple", "bone": "Apple", "attachment": "Apple" },
 	{ "name": "HeadUpper", "bone": "Head", "attachment": "HeadUpper" },
+	{ "name": "HeadUDark", "bone": "Head", "attachment": "HeadUDark" },
 	{ "name": "HeadUPinto", "bone": "Head", "attachment": "HeadUPinto" },
 	{ "name": "HeadUFlecked", "bone": "Head", "attachment": "HeadUFlecked" },
 	{ "name": "HeadUAppy", "bone": "Head", "attachment": "HeadUAppy" },
 	{ "name": "HeadUMarkingStripe", "bone": "Head", "attachment": "HeadMarkingStripe" },
 	{ "name": "HeadUMarkingSnip", "bone": "Head", "attachment": "HeadMarkingSnip" },
 	{ "name": "HeadUMarkingStar", "bone": "Head", "attachment": "HeadMarkingStar" },
-	{ "name": "HeadUMarkingErase", "bone": "Head", "attachment": "HeadMarkingErase" },
 	{ "name": "Eye", "bone": "Head", "attachment": "Eye1" },
 	{ "name": "Forelock", "bone": "Head", "attachment": "Forelock" },
 	{ "name": "Mane", "bone": "Mane", "attachment": "Mane" },
@@ -1301,71 +1312,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Erase/M/0",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/M/1",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "MarkingHeadEraseSpotsM", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/M/2",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "MarkingHeadEraseStripeM", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/M/3",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "MarkingHeadEraseBoltM", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/ML/0",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/ML/1",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "MarkingHeadEraseSpotsML", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/ML/2",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "MarkingHeadEraseStripeML", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Erase/ML/3",
-		"attachments": {
-			"HeadUMarkingErase": {
-				"HeadMarkingErase": { "name": "MarkingHeadEraseBolt", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
-			}
-		}
-	},
-	{
-		"name": "Marking/Head/Snip/0",
+		"name": "Marking/Head/Irr0/Snip/0",
 		"attachments": {
 			"HeadJMarkingSnip": {
 				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1376,7 +1323,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Snip/1",
+		"name": "Marking/Head/Irr0/Snip/1",
 		"attachments": {
 			"HeadJMarkingSnip": {
 				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1387,7 +1334,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Snip/2",
+		"name": "Marking/Head/Irr0/Snip/2",
 		"attachments": {
 			"HeadJMarkingSnip": {
 				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1398,7 +1345,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Snip/3",
+		"name": "Marking/Head/Irr0/Snip/3",
 		"attachments": {
 			"HeadJMarkingSnip": {
 				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1409,7 +1356,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Snip/4",
+		"name": "Marking/Head/Irr0/Snip/4",
 		"attachments": {
 			"HeadJMarkingSnip": {
 				"HeadMarkingSnip": { "name": "MarkingHeadJSnipL", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1420,7 +1367,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Star/0",
+		"name": "Marking/Head/Irr0/Star/0",
 		"attachments": {
 			"HeadUMarkingStar": {
 				"HeadMarkingStar": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1428,7 +1375,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Star/1",
+		"name": "Marking/Head/Irr0/Star/1",
 		"attachments": {
 			"HeadUMarkingStar": {
 				"HeadMarkingStar": { "name": "MarkingHeadStarS", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1436,7 +1383,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Star/2",
+		"name": "Marking/Head/Irr0/Star/2",
 		"attachments": {
 			"HeadUMarkingStar": {
 				"HeadMarkingStar": { "name": "MarkingHeadStarM", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1444,7 +1391,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Star/3",
+		"name": "Marking/Head/Irr0/Star/3",
 		"attachments": {
 			"HeadUMarkingStar": {
 				"HeadMarkingStar": { "name": "MarkingHeadStarL", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1452,7 +1399,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Stripe/0",
+		"name": "Marking/Head/Irr0/Stripe/0",
 		"attachments": {
 			"HeadJMarkingStripe": {
 				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1466,7 +1413,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Stripe/1",
+		"name": "Marking/Head/Irr0/Stripe/1",
 		"attachments": {
 			"HeadJMarkingStripe": {
 				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1480,7 +1427,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Stripe/2",
+		"name": "Marking/Head/Irr0/Stripe/2",
 		"attachments": {
 			"HeadJMarkingStripe": {
 				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1494,7 +1441,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Stripe/3",
+		"name": "Marking/Head/Irr0/Stripe/3",
 		"attachments": {
 			"HeadJMarkingStripe": {
 				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1508,7 +1455,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Stripe/4",
+		"name": "Marking/Head/Irr0/Stripe/4",
 		"attachments": {
 			"HeadJMarkingStripe": {
 				"HeadMarkingStripe": { "name": "HeadJaw", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1522,7 +1469,7 @@
 		}
 	},
 	{
-		"name": "Marking/Head/Stripe/5",
+		"name": "Marking/Head/Irr0/Stripe/5",
 		"attachments": {
 			"HeadJMarkingStripe": {
 				"HeadMarkingStripe": { "name": "HeadJaw", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
@@ -1532,6 +1479,296 @@
 			},
 			"HeadUMarkingStripe": {
 				"HeadMarkingStripe": { "name": "MarkingHeadUStripeL", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr0/Stripe/6",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeBolt", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Snip/1",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadSnipSI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Snip/2",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadSnipMSI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Snip/3",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadSnipMLI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Snip/4",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadJSnipL", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadUSnipLI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Star/1",
+		"attachments": {
+			"HeadUMarkingStar": {
+				"HeadMarkingStar": { "name": "MarkingHeadStarSI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Star/2",
+		"attachments": {
+			"HeadUMarkingStar": {
+				"HeadMarkingStar": { "name": "MarkingHeadStarMI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Star/3",
+		"attachments": {
+			"HeadUMarkingStar": {
+				"HeadMarkingStar": { "name": "MarkingHeadStarLI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Stripe/1",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeSI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Stripe/2",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeMSI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Stripe/3",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeMI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Stripe/4",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "HeadJaw", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadUStripeMLI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr1/Stripe/5",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "HeadJaw", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeL", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadUStripeLI1", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Snip/1",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadSnipSI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Snip/2",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadSnipMSI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Snip/3",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadSnipMLI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Snip/4",
+		"attachments": {
+			"HeadJMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadJSnipL", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingSnip": {
+				"HeadMarkingSnip": { "name": "MarkingHeadUSnipLI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Star/1",
+		"attachments": {
+			"HeadUMarkingStar": {
+				"HeadMarkingStar": { "name": "MarkingHeadStarSI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Star/2",
+		"attachments": {
+			"HeadUMarkingStar": {
+				"HeadMarkingStar": { "name": "MarkingHeadStarMI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Star/3",
+		"attachments": {
+			"HeadUMarkingStar": {
+				"HeadMarkingStar": { "name": "MarkingHeadStarLI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Stripe/1",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeSI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Stripe/2",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeMSI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Stripe/3",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeMI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Stripe/4",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "HeadJaw", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadUStripeMLI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Marking/Head/Irr2/Stripe/5",
+		"attachments": {
+			"HeadJMarkingStripe": {
+				"HeadMarkingStripe": { "name": "HeadJaw", "x": -129.68, "y": 198.56, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadStripeL", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUMarkingStripe": {
+				"HeadMarkingStripe": { "name": "MarkingHeadUStripeLI2", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
 			}
 		}
 	},
@@ -2773,6 +3010,1031 @@
 			},
 			"NeckAppy": {
 				"NeckAppy": { "name": "AppyLSNeck", "x": -85.9, "y": -68.22, "rotation": -134.14, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/0/1",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "WBayLowerFL", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "WBayLowerFR", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "WBayLowerHL", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "WBayLowerHR", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/0/2",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "LowerFL", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "LowerFR", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "LowerHL", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "LowerHR", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/0/3",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "LowerFL", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "LowerFR", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "LowerHL", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "LowerHR", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/0/4",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "LowerFL", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "DunBarUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "LowerFR", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "DunBarUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "LowerHL", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "DunBarUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "LowerHR", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "DunBarUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/1/1",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "WBayLowerFL1", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "WBayLowerFR1", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "WBayLowerHL1", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "WBayLowerHR1", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/1/2",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL1", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR1", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL1", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR1", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/1/3",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL1", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR1", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL1", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR1", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/1/4",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL1", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "DunBarUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR1", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "DunBarUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL1", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "DunBarUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR1", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "DunBarUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/2/1",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "WBayLowerFL2", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "WBayLowerFR2", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "WBayLowerHL2", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "WBayLowerHR2", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/2/2",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL2", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR2", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL2", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR2", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/2/3",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL2", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR2", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL2", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR2", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/2/4",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL2", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "DunBarUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR2", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "DunBarUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL2", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "DunBarUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR2", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "DunBarUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/3/1",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "WBayLowerFL3", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "WBayLowerFR3", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "WBayLowerHL3", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "WBayLowerHR3", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/3/2",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL3", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR3", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL3", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR3", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/3/3",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL3", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR3", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL3", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR3", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/3/4",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL3", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "DunBarUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR3", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "DunBarUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL3", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "DunBarUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR3", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "DunBarUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/4/1",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "WBayLowerFL4", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "WBayLowerFR4", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "WBayLowerHL4", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "WBayLowerHR4", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/4/2",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL4", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR4", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL4", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR4", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/4/3",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL4", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR4", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL4", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR4", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/4/4",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL4", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "DunBarUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR4", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "DunBarUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL4", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "DunBarUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR4", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "DunBarUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/5/1",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "WBayLowerFL5", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "WBayLowerFR5", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "WBayLowerHL5", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "WBayLowerHR5", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/5/2",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL5", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR5", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL5", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR5", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/5/3",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL5", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "BayUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR5", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "BayUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL5", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "BayUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR5", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "BayUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/5/4",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "DunBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "FeatheringFL5", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "DunBarUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "FeatheringFR5", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "DunBarUpperFR", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "FeatheringHL5", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "DunBarUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "FeatheringHR5", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "DunBarUpperHR", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "BayHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "BayHeadJ", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "BayHeadU", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Dark/0",
+		"attachments": {
+			"DarkBody": {
+				"DarkBody": { "name": "Empty", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"DarkFL": {
+				"DarkFL": { "name": "Empty", "x": -124.02, "y": 112.91, "rotation": 94.38, "width": 888, "height": 521 }
+			},
+			"DarkFL2": {
+				"DarkFL": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"DarkFR": {
+				"DarkFR": { "name": "Empty", "x": -88.4, "y": 118.41, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkFR2": {
+				"DarkFR": { "name": "Empty", "x": -20.74, "y": 117.1, "rotation": 83.42, "width": 888, "height": 521 }
+			},
+			"DarkHL": {
+				"DarkHL": { "name": "Empty", "x": -112.07, "y": -57.28, "rotation": 78.43, "width": 888, "height": 521 }
+			},
+			"DarkHL2": {
+				"DarkHL": { "name": "Empty", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"DarkHR": {
+				"DarkHR": { "name": "Empty", "x": -88.52, "y": -51.86, "rotation": 93.61, "width": 888, "height": 521 }
+			},
+			"DarkHR2": {
+				"DarkHR": { "name": "Empty", "x": -16.08, "y": -32.17, "rotation": 80, "width": 888, "height": 521 }
+			},
+			"HeadDark": {
+				"HeadDark": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadJDark": {
+				"HeadJDark": { "name": "Empty", "x": -131.49, "y": 197.92, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HeadUDark": {
+				"HeadUDark": { "name": "Empty", "x": -82.7, "y": 207.7, "rotation": 135.68, "width": 888, "height": 521 }
 			}
 		}
 	},
