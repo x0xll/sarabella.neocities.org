@@ -163,73 +163,81 @@ class dressupStable extends Phaser.Scene
         });
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
 
+        horseData = {
+            type: 'dressup',
+            name: urlParameters.get('name'),
+            message: urlParameters.get('message'),
+            bodyColor: 0,
+            hairColor: 0,
+            eyeColor: 0,
+            whiteColor: 0,
+            feathering: 0,
+            forelock: 0,
+            mane: 0,
+            tail: 0,
+            flWhite: 0,
+            hlWhite: 0,
+            frWhite: 0,
+            hrWhite: 0,
+            headStripe: 0,
+            headSnip: 0,
+            headStar: 0,
+            headErase: 0,
+            whiteMatches: 0,
+            appyPattern: 0,
+            pintoPattern: 0, 
+            pintoExpression: 0, 
+            fleckedPattern: 0,
+            darkMarkings: 0,
+            darkLevel: 0
+        }
+        let endData = 0
+        let URLdata = urlParameters.get('data') ? urlParameters.get('data') : "0"
         switch (urlParameters.get('v')) {
             case '1':
                 makeRandomHorse = false
-                let data = urlParameters.get('data')
-                let optionsData = data.slice(21)
-                
-                while (optionsData.length < 17) {
-                    optionsData = "0" + optionsData;
-                }
-                horseData = {
-                    type: 'dressup',
-                    name: urlParameters.get('name') ? urlParameters.get('name') : '',
-                    message: urlParameters.get('message') ? urlParameters.get('message') : '',
-                    bodyColor: parseInt(data.slice(0, 6), 16),
-                    hairColor: parseInt(data.slice(7, 13), 16),
-                    eyeColor: 0, // to add
-                    whiteColor: parseInt(data.slice(14, 20), 16),
-                    feathering: parseInt(optionsData.slice(0, 1)),
-                    forelock: parseInt(optionsData.slice(1, 2)),
-                    mane: parseInt(optionsData.slice(2, 3)),
-                    tail: parseInt(optionsData.slice(3, 4)),
-                    flWhite: parseInt(optionsData.slice(4, 5)),
-                    frWhite: parseInt(optionsData.slice(5, 6)),
-                    hrWhite: parseInt(optionsData.slice(6, 7)),
-                    hlWhite: parseInt(optionsData.slice(7, 8)),
-                    headStripe: parseInt(optionsData.slice(8, 9)),
-                    headSnip: parseInt(optionsData.slice(9, 10)),
-                    headStar: parseInt(optionsData.slice(10, 11)),
-                    headErase: parseInt(optionsData.slice(11, 12)),
-                    whiteMatches: parseInt(optionsData.slice(12, 13)),
-                    appyPattern: parseInt(optionsData.slice(13, 14)),
-                    pintoPattern: parseInt(optionsData.slice(14, 15)),
-                    pintoExpression: parseInt(optionsData.slice(15, 16)),
-                    fleckedPattern: parseInt(optionsData.slice(16, 17))
-                }
+                endData = 17
+                horseData.bodyColor = parseInt(URLdata.slice(0, 6), 16)
+                horseData.hairColor = parseInt(URLdata.slice(7, 13), 16)
+                horseData.whiteColor = parseInt(URLdata.slice(14, 20), 16)
+                break;
+            case '2':
+                makeRandomHorse = false
+                endData = 19
                 break;
         
             default:
-                horseData = {
-                    type: 'dressup',
-                    name: urlParameters.get('name'),
-                    message: urlParameters.get('message'),
-                    bodyColor: 0,
-                    hairColor: 0,
-                    eyeColor: 0,
-                    whiteColor: 0,
-                    feathering: 0,
-                    forelock: 0,
-                    mane: 0,
-                    tail: 0,
-                    flWhite: 0,
-                    hlWhite: 0,
-                    frWhite: 0,
-                    hrWhite: 0,
-                    headStripe: 0,
-                    headSnip: 0,
-                    headStar: 0,
-                    headErase: 0,
-                    whiteMatches: 0,
-                    appyPattern: 0,
-                    pintoPattern: 0, 
-                    pintoExpression: 0, 
-                    fleckedPattern: 0
-                }
                 makeRandomHorse = true
+                endData = 0
                 break;
         }
+            let optionsData = URLdata !== "0" ? URLdata.slice(21) : "0"
+            // Make data correct length
+            while (optionsData.length < endData) {
+                optionsData = "0" + optionsData;
+            }
+            while (optionsData.length < 19) {
+                optionsData = optionsData + "0";
+            }
+            horseData.feathering = parseInt(optionsData.slice(0, 1))
+            horseData.forelock = parseInt(optionsData.slice(1, 2))
+            horseData.mane = parseInt(optionsData.slice(2, 3))
+            horseData.tail = parseInt(optionsData.slice(3, 4))
+            horseData.flWhite = parseInt(optionsData.slice(4, 5))
+            horseData.frWhite = parseInt(optionsData.slice(5, 6))
+            horseData.hrWhite = parseInt(optionsData.slice(6, 7))
+            horseData.hlWhite = parseInt(optionsData.slice(7, 8))
+            horseData.headStripe = parseInt(optionsData.slice(8, 9))
+            horseData.headSnip = parseInt(optionsData.slice(9, 10))
+            horseData.headStar = parseInt(optionsData.slice(10, 11))
+            horseData.headErase = parseInt(optionsData.slice(11, 12))
+            horseData.whiteMatches = parseInt(optionsData.slice(12, 13))
+            horseData.appyPattern = parseInt(optionsData.slice(13, 14))
+            horseData.pintoPattern = parseInt(optionsData.slice(14, 15))
+            horseData.pintoExpression = parseInt(optionsData.slice(15, 16))
+            horseData.fleckedPattern = parseInt(optionsData.slice(16, 17))
+            horseData.darkMarkings = parseInt(optionsData.slice(17, 18))
+            horseData.darkLevel = parseInt(optionsData.slice(18, 19))
     }
 
     create (data)
@@ -251,8 +259,217 @@ class dressupStable extends Phaser.Scene
         }
 
         this.add.image(444, 261, 'stable_bg');
+
+        /**
+         * Generates a random integer between two values
+         * @param {number} min The minimum number that could be returned
+         * @param {number} max The maximum number that could be returned
+         * @returns 
+         */
+        function randomIntFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        
+        /**
+         * Resets the horse sprite to show the correct features and colours
+         */
+        function resetHorseSprite() {
+            for (let index = 0; index < horse.skeleton.slots.length; index++) {
+                horse.skeleton.slots[index].darkColor = null;
+                
+            }
+            for (let index = 0; index < horseOverlay.skeleton.slots.length; index++) {
+                horseOverlay.skeleton.slots[index].darkColor = null;
+                
+            }
+            setSkin(horse)
+            hideSlots(horse, ['EarAppy', 'EarFlecked', 'Ear', 'Mane', 'Forelock'])
+            setSkin(horseOverlay)
+            hideSlots(horseOverlay, [
+                'Eye', `Apple`, 'Shadow1', `Tail`, 
+                'HeadUAppy', 'HeadUFlecked', 'HeadUPinto', //'HeadUMarkingErase', 
+                'HeadUMarkingStar', 'HeadUMarkingSnip', 'HeadUMarkingStripe', 'HeadUDark', `HeadUpper`, 
+                'HeadJawInner', 'HeadJMarkingStripe', 'HeadJMarkingSnip', 'HeadJDark', 'HeadJaw', 
+                'HeadMarkingStripe', 'HeadDark', 'Head',
+                'MarkingHL', 'MarkingHL2', 'HLAppy', 'HLPinto', 'HLFlecked', 'DarkHL', 'DarkHL2', `FeatheringHL`, 'HoofHL', `LowerHL`, `UpperHL`, 
+                'MarkingFL', 'MarkingFL2', 'FLAppy', 'FLPinto', 'FLFlecked', 'DarkFL', 'DarkFL2', `FeatheringFL`, 'HoofFL', `LowerFL`, `UpperFL`, 
+                'BodyAppy', 'BodyFlecked', 'BodyPinto', 'DarkBody', `Body`, 
+                'NeckAppy', 'NeckFlecked', 'NeckPinto', 'Neck', 
+                'MarkingFR', 'MarkingFR2', 'DarkFR', 'DarkFR2', `FeatheringFR`, 'HoofFR', `LowerFR`, `UpperFR`,
+                'MarkingHR', 'MarkingHR2', 'DarkHR', 'DarkHR2', `FeatheringHR`, 'HoofHR', `LowerHR`, `UpperHR`
+            ])
+
+            tintHorse()
+            tintHoof('FL', horseData.flWhite)
+            tintHoof('HL', horseData.hlWhite)
+            tintHoof('FR', horseData.frWhite)
+            tintHoof('HR', horseData.hrWhite)
+        }
+
+        /**
+         * Sets the skin for the sprite to display the current features
+         * @param {*} skeleton the horse skeleton to set the skin of
+         */
+        function setSkin(skeleton){
+            const skeletonData = skeleton.skeleton.data;
+            const skin = new spine.Skin("custom");
+                skin.addSkin(skeletonData.findSkin(`Marking/FL/F${horseData.feathering}M${horseData.flWhite}`));
+                skin.addSkin(skeletonData.findSkin(`Marking/FR/F${horseData.feathering}M${horseData.frWhite}`));
+                skin.addSkin(skeletonData.findSkin(`Marking/HL/F${horseData.feathering}M${horseData.hlWhite}`));
+                skin.addSkin(skeletonData.findSkin(`Marking/HR/F${horseData.feathering}M${horseData.hrWhite}`));
+                skin.addSkin(skeletonData.findSkin(`Pattern/Dark/${horseData.darkMarkings ? `${horseData.feathering}/${horseData.darkMarkings}` : 0}`));
+                switch (horseData.headStripe) {
+                    case 0:
+                    case 6:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Stripe/${horseData.headStripe}`));
+                        break;
+                
+                    default:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Stripe/${horseData.headStripe}`));
+                        break;
+                }
+                switch (horseData.headSnip) {
+                    case 0:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Snip/${horseData.headSnip}`));
+                        break;
+                
+                    default:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Snip/${horseData.headSnip}`));
+                        break;
+                }
+                switch (horseData.headStar) {
+                    case 0:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Star/${horseData.headStar}`));
+                        break;
+                
+                    default:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Star/${horseData.headStar}`));
+                        break;
+                }
+                // skin.addSkin(skeletonData.findSkin(`Marking/Head/Erase/${horseData.headStripe < 4 ? 'M' : 'ML'}/${horseData.headErase}`));
+                skin.addSkin(skeletonData.findSkin(`Mane/${horseData.mane}`));
+                skin.addSkin(skeletonData.findSkin(`Tail/${horseData.tail}`));
+                skin.addSkin(skeletonData.findSkin(`Forelock/${horseData.forelock}`));
+                skin.addSkin(skeletonData.findSkin(`Pattern/Appy/${horseData.appyPattern}`));
+                skin.addSkin(skeletonData.findSkin(`Pattern/Pinto/${horseData.pintoExpression === 0 ? 0 : `Expression${horseData.pintoExpression}/${horseData.pintoPattern}`}`));
+                skin.addSkin(skeletonData.findSkin(`Pattern/Flecked/${horseData.fleckedPattern}`));
+            skeleton.skeleton.setSkin(skin);
+            skeleton.skeleton.setToSetupPose();
+        }
+
+        function tintHoof(hoof, lighten) {
+            if (lighten) {
+                horse.skeleton.findSlot(`Hoof${hoof}`).darkColor = {r: 197/255, g: 156/255, b: 110/255, a: 1}
+            }
+            else {
+                horse.skeleton.findSlot(`Hoof${hoof}`).darkColor = {r: 0, g: 0, b: 0, a: 1}
+            }
+
+        }
+
+        function tintHorse() {
+            let shade = 1
+
+            // Hair
+            changeTint(horse, 'Tail', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+            changeTint(horseOverlay, 'Mane', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+            changeTint(horseOverlay, 'Forelock', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+
+            // Body
+            // changeTint(horse, 'HeadUMarkingErase', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horseOverlay, 'Ear', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'Body', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'Head', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'HeadUpper', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'HeadJaw', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'Neck', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'UpperFL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'LowerFL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'UpperHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'LowerHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'UpperFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'LowerFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'UpperHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'LowerHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'FeatheringFL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'FeatheringFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'FeatheringHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horse, 'FeatheringHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+
+            // Dark
+            let dark = ['DarkBody', 'HeadDark', 'HeadUDark', 'HeadJDark', 'DarkFL', 'DarkFL2', 'DarkHL', 'DarkHL2', 'DarkFR', 'DarkFR2', 'DarkHR', 'DarkHR2']
+            for (let index = 0; index < dark.length; index++) {
+                let darkLevel = 1 - ((horseData.darkLevel + 1) * 2 * 0.1)
+                changeTint(horse, dark[index], horseData.bodyColor.r*darkLevel, horseData.bodyColor.g*darkLevel, horseData.bodyColor.b*darkLevel, shade)
+            }
+
+            // White
+            changeTint(horseOverlay, 'EarAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'HeadUAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'BodyAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'NeckAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'HLAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'FLAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+            changeTint(horseOverlay, 'EarFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'HeadUFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'BodyFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'NeckFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'HLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'FLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+            changeTint(horse, 'HeadUPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'BodyPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'NeckPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'HLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'FLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+            if (horseData.whiteMatches) {
+                changeTint(horse, 'HeadUMarkingStar', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'HeadUMarkingSnip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'HeadJMarkingSnip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'HeadUMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'HeadMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'HeadJMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+                changeTint(horse, 'MarkingHL', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingHL2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingFL', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingFL2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingFR', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingFR2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingHR', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horse, 'MarkingHR2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            }
+            if (horseData.headErase === 3) {
+                changeTint(horse, 'HeadJMarkingSnip', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+                changeTint(horse, 'HeadJMarkingStripe', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+                changeTint(horse, 'HeadMarkingStripe', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            }
+        }
+
+        function changeTint(skeleton, part, r, g, b, shade) {
+            skeleton.skeleton.findSlot(`${part}`).color.r = r
+            skeleton.skeleton.findSlot(`${part}`).color.g = g
+            skeleton.skeleton.findSlot(`${part}`).color.b = b
+            
+            if (shade !== 0) {
+                skeleton.skeleton.findSlot(`${part}`).darkColor = {r: r-shade, g: g-shade, b: b-shade, a: 1}
+            } else {
+                skeleton.skeleton.findSlot(`${part}`).darkColor = null
+            }
+        }
+
+        const sharedData = {
+            horseData: horseData, 
+            backgroundMusic: game.backgroundMusic, 
+            playMusic: game.playMusic,
+            randomIntFromInterval: randomIntFromInterval,
+            resetHorseSprite: resetHorseSprite
+        }
+
         if (!data.horseData && urlParameters.get('data')) {
-            this.scene.start('dressupLandStable', {horseData: horseData, backgroundMusic: game.backgroundMusic, playMusic: game.playMusic});
+            this.scene.start('dressupLandStable', sharedData);
         }
 
         const hover1 = this.sound.add('hover1');
@@ -284,6 +501,7 @@ class dressupStable extends Phaser.Scene
         const luck = this.add.sprite(453, 268, 'luck', 'idle')//.setInteractive({ pixelPerfect: true });
         // Inspirational message frame
         const frame = this.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
+            canPlayInspiration = true
         // this.add.image(517, 126, 'horse_image').setScale(.32);
         const inspirationHover = this.sound.add('inspiration_hover');
         const inspirationSound = this.sound.add('inspiration_sound');
@@ -358,7 +576,7 @@ class dressupStable extends Phaser.Scene
             horseData.hrWhite = randomIntFromInterval(0,5)
             horseData.headStar = randomIntFromInterval(0,3)
             horseData.headSnip = randomIntFromInterval(0,4)
-            horseData.headStripe = randomIntFromInterval(0,5)
+            horseData.headStripe = randomIntFromInterval(0,6)
             horseData.headErase = randomIntFromInterval(0,2)
             horseData.whiteMatches = randomIntFromInterval(0,1)
             
@@ -395,66 +613,9 @@ class dressupStable extends Phaser.Scene
                     break;
             }
 
-        }
-    
-        /**
-         * Resets the horse sprite to show the correct features and colours
-         */
-        function resetHorseSprite() {
-            for (let index = 0; index < horse.skeleton.slots.length; index++) {
-                horse.skeleton.slots[index].darkColor = null;
-                
-            }
-            for (let index = 0; index < horseOverlay.skeleton.slots.length; index++) {
-                horseOverlay.skeleton.slots[index].darkColor = null;
-                
-            }
-            setSkin(horse)
-            hideSlots(horse, ['EarAppy', 'EarFlecked', 'Ear', 'Mane', 'Forelock'])
-            setSkin(horseOverlay)
-            hideSlots(horseOverlay, [
-                'Eye', `Apple`, 'Shadow1', `Tail`, 
-                'HeadUAppy', 'HeadUFlecked', 'HeadUPinto', 'HeadUMarkingErase', 'HeadUMarkingStar', 'HeadUMarkingSnip', 'HeadUMarkingStripe', `HeadUpper`, 
-                'HeadJawInner', 'HeadJMarkingStripe', 'HeadJMarkingSnip', 'HeadJaw', 
-                'HeadMarkingStripe', 'Head',
-                'MarkingHL', 'MarkingHL2', 'HLAppy', 'HLPinto', 'HLFlecked', `FeatheringHL`, 'HoofHL', `LowerHL`, `UpperHL`, 
-                'MarkingFL', 'MarkingFL2', 'FLAppy', 'FLPinto', 'FLFlecked', `FeatheringFL`, 'HoofFL', `LowerFL`, `UpperFL`, 
-                'BodyAppy', 'BodyFlecked', 'BodyPinto', `Body`, 
-                'NeckAppy', 'NeckFlecked', 'NeckPinto', 'Neck', 
-                'MarkingFR', 'MarkingFR2', `FeatheringFR`, 'HoofFR', `LowerFR`, `UpperFR`,
-                'MarkingHR', 'MarkingHR2', `FeatheringHR`, 'HoofHR', `LowerHR`, `UpperHR`
-            ])
+            horseData.darkMarkings = randomIntFromInterval(0,4)
+            horseData.darkLevel = randomIntFromInterval(0,3)
 
-            tintHorse()
-            tintHoof('FL', horseData.flWhite)
-            tintHoof('HL', horseData.hlWhite)
-            tintHoof('FR', horseData.frWhite)
-            tintHoof('HR', horseData.hrWhite)
-        }
-
-        /**
-         * Sets the skin for the sprite to display the current features
-         * @param {*} skeleton the horse skeleton to set the skin of
-         */
-        function setSkin(skeleton){
-            const skeletonData = skeleton.skeleton.data;
-            const skin = new spine.Skin("custom");
-                skin.addSkin(skeletonData.findSkin(`Marking/FL/F${horseData.feathering}M${horseData.flWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/FR/F${horseData.feathering}M${horseData.frWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/HL/F${horseData.feathering}M${horseData.hlWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/HR/F${horseData.feathering}M${horseData.hrWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/Head/Stripe/${horseData.headStripe}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/Head/Snip/${horseData.headSnip}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/Head/Star/${horseData.headStar}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/Head/Erase/${horseData.headStripe < 4 ? 'M' : 'ML'}/${horseData.headErase}`));
-                skin.addSkin(skeletonData.findSkin(`Mane/${horseData.mane}`));
-                skin.addSkin(skeletonData.findSkin(`Tail/${horseData.tail}`));
-                skin.addSkin(skeletonData.findSkin(`Forelock/${horseData.forelock}`));
-                skin.addSkin(skeletonData.findSkin(`Pattern/Appy/${horseData.appyPattern}`));
-                skin.addSkin(skeletonData.findSkin(`Pattern/Pinto/${horseData.pintoExpression === 0 ? 0 : `Expression${horseData.pintoExpression}/${horseData.pintoPattern}`}`));
-                skin.addSkin(skeletonData.findSkin(`Pattern/Flecked/${horseData.fleckedPattern}`));
-            skeleton.skeleton.setSkin(skin);
-            skeleton.skeleton.setToSetupPose();
         }
 
 
@@ -468,103 +629,6 @@ class dressupStable extends Phaser.Scene
                 skeleton.skeleton.findSlot(slotArray[index]).color.a = 0;
             }
         }
-        
-
-        function tintHoof(hoof, lighten) {
-            if (lighten) {
-                horse.skeleton.findSlot(`Hoof${hoof}`).darkColor = {r: 197/255, g: 156/255, b: 110/255, a: 1}
-            }
-            else {
-                horse.skeleton.findSlot(`Hoof${hoof}`).darkColor = {r: 0, g: 0, b: 0, a: 1}
-            }
-
-        }
-        function tintHorse() {
-            let shade = 1
-
-            // Hair
-            changeTint(horse, 'Tail', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
-            changeTint(horseOverlay, 'Mane', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
-            changeTint(horseOverlay, 'Forelock', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
-
-            // Body
-            changeTint(horse, 'HeadUMarkingErase', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horseOverlay, 'Ear', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'Body', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'Head', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'HeadUpper', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'HeadJaw', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'Neck', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'Body', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'UpperFL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'LowerFL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'UpperHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'LowerHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'UpperFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'LowerFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'UpperHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'LowerHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'FeatheringFL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'FeatheringFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'FeatheringHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            changeTint(horse, 'FeatheringHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-
-            // White
-            changeTint(horseOverlay, 'EarAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'HeadUAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'BodyAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'NeckAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'HLAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'FLAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-
-            changeTint(horseOverlay, 'EarFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'HeadUFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'BodyFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'NeckFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'HLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'FLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-
-            changeTint(horse, 'HeadUPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'BodyPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'NeckPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'HLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'FLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-
-            if (horseData.whiteMatches) {
-                changeTint(horse, 'HeadUMarkingStar', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'HeadUMarkingSnip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'HeadJMarkingSnip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'HeadUMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'HeadMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'HeadJMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-
-                changeTint(horse, 'MarkingHL', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingHL2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingFL', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingFL2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingFR', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingFR2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingHR', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-                changeTint(horse, 'MarkingHR2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            }
-            if (horseData.headErase === 3) {
-                changeTint(horse, 'HeadJMarkingSnip', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-                changeTint(horse, 'HeadJMarkingStripe', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-                changeTint(horse, 'HeadMarkingStripe', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
-            }
-        }
-
-        function changeTint(skeleton, part, r, g, b, shade) {
-            skeleton.skeleton.findSlot(`${part}`).color.r = r
-            skeleton.skeleton.findSlot(`${part}`).color.g = g
-            skeleton.skeleton.findSlot(`${part}`).color.b = b
-            
-            if (shade !== 0) {
-                skeleton.skeleton.findSlot(`${part}`).darkColor = {r: r-shade, g: g-shade, b: b-shade, a: 1}
-            } else {
-                skeleton.skeleton.findSlot(`${part}`).darkColor = null
-            }
-        }
 
         function splitHex(color) {
             let r = ((color & 0xff0000) >> 16)/255
@@ -572,16 +636,6 @@ class dressupStable extends Phaser.Scene
             let b = (color & 0x0000ff)/255
             return { color: color, r:r, g:g, b:b };
           }
-
-        /**
-         * Generates a random integer between two values
-         * @param {number} min The minimum number that could be returned
-         * @param {number} max The maximum number that could be returned
-         * @returns 
-         */
-        function randomIntFromInterval(min, max) { // min and max included 
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
 
 
         // Apple Bin
@@ -591,7 +645,6 @@ class dressupStable extends Phaser.Scene
         
         this.add.image(618, 40, 'info_box').setOrigin(0,0).setAlpha(0.75);
         
-        console.log(horseData.hairColor)
         const hairColorPicker = this.rexUI.add.colorPicker({
             x: 723, y: 160,
             background: this.rexUI.add.roundRectangle(0, 0, 0, 0, 10, COLOR_SECONDARY),
@@ -700,7 +753,8 @@ class dressupStable extends Phaser.Scene
         nameInputText.on('textchange', function(inputText, e){ 
             horseData.name = nameInputText.text
             horseNameText.text = horseData.name;
-        });
+        });        
+        if (horseData.name) { nameInputText.text = horseData.name }
         nameInputText.placeholder = 'Name'
 
         const messageInputText = this.add.rexInputText(723, 160, 150, 60, {
@@ -715,33 +769,36 @@ class dressupStable extends Phaser.Scene
             horseData.message = messageInputText.text
             inspirationMessage.text = horseData.message;
         });
+        if (horseData.message) { messageInputText.text = horseData.message }
         messageInputText.placeholder = 'Message'
 
 
-        const featheringSlider = makeSlider(723, 270, 6, 'feathering', 'Feathering')
+        const featheringSlider = makeSelector(723, 270, 6, 'feathering', 'Feathering')
+        const darkSlider = makeSelector(723, 300, 5, 'darkMarkings', 'Bay / Dun')
+        const darkLevelSlider = makeSelector(723, 330, 4, 'darkLevel', 'Marking Darkness')
 
-        const forelockSlider = makeSlider(723, 270, 3, 'forelock', 'Forelock')
-        const maneSlider = makeSlider(723, 300, 3, 'mane', 'Mane')
-        const tailSlider = makeSlider(723, 330, 3, 'tail', 'Tail')
+        const forelockSlider = makeSelector(723, 270, 3, 'forelock', 'Forelock')
+        const maneSlider = makeSelector(723, 300, 3, 'mane', 'Mane')
+        const tailSlider = makeSelector(723, 330, 3, 'tail', 'Tail')
 
-        const markingHeadStarSlider = makeSlider(723, 100, 4, 'headStar', 'Star')
-        const markingHeadSnipSlider = makeSlider(723, 130, 5, 'headSnip', 'Snip')
-        const markingHeadStripeSlider = makeSlider(723, 160, 6, 'headStripe', 'Stripe')
-        const markingHeadEraseSlider = makeSlider(723, 190, 3, 'headErase', 'Irregularity')
+        const markingHeadStarSlider = makeSelector(723, 100, 4, 'headStar', 'Star')
+        const markingHeadSnipSlider = makeSelector(723, 130, 5, 'headSnip', 'Snip')
+        const markingHeadStripeSlider = makeSelector(723, 160, 7, 'headStripe', 'Stripe')
+        const markingHeadEraseSlider = makeSelector(723, 190, 3, 'headErase', 'Irregularity')
 
-        const markingflSlider = makeSlider(723, 240, 6, 'flWhite', 'Front Left Leg')
-        const markingfrSlider = makeSlider(723, 270, 6, 'frWhite', 'Front Right Leg')
-        const markinghrSlider = makeSlider(723, 300, 6, 'hrWhite', 'Hind Right Leg')
-        const markinghlSlider = makeSlider(723, 330, 6, 'hlWhite', 'Hind Left Leg')
+        const markingflSlider = makeSelector(723, 240, 6, 'flWhite', 'Front Left Leg')
+        const markingfrSlider = makeSelector(723, 270, 6, 'frWhite', 'Front Right Leg')
+        const markinghrSlider = makeSelector(723, 300, 6, 'hrWhite', 'Hind Right Leg')
+        const markinghlSlider = makeSelector(723, 330, 6, 'hlWhite', 'Hind Left Leg')
 
-        const markingMatchSlider = makeSlider(723, 380, 2, 'whiteMatches', 'Match Pattern "White"')
+        const markingMatchSlider = makeSelector(723, 380, 2, 'whiteMatches', 'Match Pattern "White"')
         
-        const patternAppySlider = makeSlider(723, 270, 7, 'appyPattern', 'Appaloosa Patterns')
-        const patternPintoSlider = makeSlider(723, 300, 4, 'pintoPattern', 'Pinto Patterns')
-        const expressionPintoSlider = makeSlider(723, 330, 4, 'pintoExpression', 'Pinto Expression')
-        const patternFleckedSlider = makeSlider(723, 360, 4, 'fleckedPattern', 'Grey / Roan')
+        const patternAppySlider = makeSelector(723, 270, 7, 'appyPattern', 'Appaloosa Patterns')
+        const patternPintoSlider = makeSelector(723, 300, 4, 'pintoPattern', 'Pinto Patterns')
+        const expressionPintoSlider = makeSelector(723, 330, 4, 'pintoExpression', 'Pinto Expression')
+        const patternFleckedSlider = makeSelector(723, 360, 4, 'fleckedPattern', 'Grey / Roan')
 
-        function makeSlider(x, y, options, key, lable) {
+        function makeSelector(x, y, options, key, lable) {
             const slider = game.add.container(100, 24);
 
             const text = game.add.text(0, 0, lable, {
@@ -804,7 +861,7 @@ class dressupStable extends Phaser.Scene
 
 
         const infoTab = [nameInputText, messageInputText]
-        const mainTab = [bodyColorPicker, featheringSlider]
+        const mainTab = [bodyColorPicker, featheringSlider, darkSlider, darkLevelSlider]
         const hairTab = [hairColorPicker, forelockSlider, maneSlider, tailSlider]
         const markingTab = [
             markingHeadSnipSlider, markingHeadStarSlider, markingHeadStripeSlider, markingHeadEraseSlider,
@@ -898,7 +955,8 @@ class dressupStable extends Phaser.Scene
                 horseData.appyPattern.toString() +
                 horseData.pintoPattern.toString() +
                 horseData.pintoExpression.toString() +
-                horseData.fleckedPattern.toString()
+                horseData.fleckedPattern.toString() +
+                horseData.darkMarkings.toString()
 
             return string
         }
@@ -929,7 +987,13 @@ class dressupStable extends Phaser.Scene
 
         // Inspirational message
         inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
-        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 55, color: '#ffffff', align: 'center' }).setVisible(false);
+        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { 
+            fontFamily: 'Arial', 
+            fontSize: 55, 
+            color: '#ffffff', 
+            align: 'center',
+            wordWrap: { width: 800 } 
+        }).setVisible(false);
         inspirationMessage.text = horseData.message;
         inspirationMessage.setOrigin(0.5);
         inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
@@ -1054,8 +1118,8 @@ class dressupStable extends Phaser.Scene
             copyButton.on('pointerdown', () => {
                 let copyText = `${location.origin + location.pathname}` +
                     '?v=1' +
-                    `&name=${horseData.name}` +
-                    `&message=${horseData.message}` +
+                    `&name=${encodeURIComponent(horseData.name)}` +
+                    `&message=${encodeURIComponent(horseData.message)}` +
                     `&data=${horseDataToString()}`
 
                 // Copy the text
@@ -1107,7 +1171,7 @@ class dressupStable extends Phaser.Scene
                 playButton.setBackgroundColor(COLOR_PRIMARY_HEX);
             });
             playButton.on('pointerdown', () => {
-                this.scene.start('dressupLandStable', {horseData: horseData, playMusic: game.playMusic, backgroundMusic: game.backgroundMusic});
+                this.scene.start('dressupLandStable', sharedData);
             })
     }
 
