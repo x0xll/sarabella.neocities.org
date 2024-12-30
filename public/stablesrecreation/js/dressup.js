@@ -37,6 +37,7 @@ horseAnimationQueue = []
 makeRandomHorse = true
 
 horse = null
+horsePic = null
 horseDirty = null
 horseOverlay= null
 trough = null
@@ -59,6 +60,8 @@ brushHeldSprite = null
 brushSmallHeldSprite = null
 hoofpickHeldSprite = null
 appleHeldSprite = null
+
+urlVersion = 1
 
 
 
@@ -93,6 +96,7 @@ class dressupStable extends Phaser.Scene
         const progressText = this.add.text(344, 133, '', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
             
         // Load in images and sounds
+        this.load.image('card_back', './images/selector/card_back.png');
         this.load.image('stable_bg', './images/landStable/stable-bg.png');
         this.load.image('stable_fg', './images/landStable/stable-fg.png');
         this.load.image('hunger_scale', './images/landStable/hunger.png');
@@ -121,8 +125,8 @@ class dressupStable extends Phaser.Scene
 
         this.load.spineAtlas("horseAtlas", `./images/horses/${horseName}/skeleton.atlas`);
         this.load.spineJson("horseJson", `./images/horses/${horseName}/skeleton.json`);
-
-        this.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.load.spineAtlas("horsePicAtlas", `./images/horses/${horseName}/picture/skeleton.atlas`);
+        this.load.spineJson("horsePicJson", `./images/horses/${horseName}/picture/skeleton.json`);
 
         this.load.atlas('luck', './images/landStable/luck.png', './images/landStable/luck.json');
         this.load.atlas('frame', './images/landStable/frame.png', './images/landStable/frame.json');
@@ -204,6 +208,9 @@ class dressupStable extends Phaser.Scene
             case '2':
                 makeRandomHorse = false
                 endData = 19
+                horseData.bodyColor = parseInt(URLdata.slice(0, 6), 16)
+                horseData.hairColor = parseInt(URLdata.slice(7, 13), 16)
+                horseData.whiteColor = parseInt(URLdata.slice(14, 20), 16)
                 break;
         
             default:
@@ -282,9 +289,14 @@ class dressupStable extends Phaser.Scene
                 horseOverlay.skeleton.slots[index].darkColor = null;
                 
             }
-            setSkin(horse)
+            for (let index = 0; index < horsePic.skeleton.slots.length; index++) {
+                horsePic.skeleton.slots[index].darkColor = null;
+                
+            }
+            setSkin(horsePic, true)
+            setSkin(horse, false)
             hideSlots(horse, ['EarAppy', 'EarFlecked', 'Ear', 'Mane', 'Forelock'])
-            setSkin(horseOverlay)
+            setSkin(horseOverlay, false)
             hideSlots(horseOverlay, [
                 'Eye', `Apple`, 'Shadow1', `Tail`, 
                 'HeadUAppy', 'HeadUFlecked', 'HeadUPinto', //'HeadUMarkingErase', 
@@ -310,15 +322,17 @@ class dressupStable extends Phaser.Scene
          * Sets the skin for the sprite to display the current features
          * @param {*} skeleton the horse skeleton to set the skin of
          */
-        function setSkin(skeleton){
+        function setSkin(skeleton, isPic){
             const skeletonData = skeleton.skeleton.data;
             const skin = new spine.Skin("custom");
-                skin.addSkin(skeletonData.findSkin(`Marking/FL/F${horseData.feathering}M${horseData.flWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/FR/F${horseData.feathering}M${horseData.frWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/HL/F${horseData.feathering}M${horseData.hlWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Marking/HR/F${horseData.feathering}M${horseData.hrWhite}`));
-                skin.addSkin(skeletonData.findSkin(`Pattern/Dark/${horseData.darkMarkings ? `${horseData.feathering}/${horseData.darkMarkings}` : 0}`));
-                switch (horseData.headStripe) {
+                if (!isPic) {
+                    skin.addSkin(skeletonData.findSkin(`Marking/FL/F${horseData.feathering}M${horseData.flWhite}`));
+                    skin.addSkin(skeletonData.findSkin(`Marking/FR/F${horseData.feathering}M${horseData.frWhite}`));
+                    skin.addSkin(skeletonData.findSkin(`Marking/HL/F${horseData.feathering}M${horseData.hlWhite}`));
+                    skin.addSkin(skeletonData.findSkin(`Marking/HR/F${horseData.feathering}M${horseData.hrWhite}`));
+                    skin.addSkin(skeletonData.findSkin(`Pattern/Dark/${horseData.darkMarkings ? `${horseData.feathering}/${horseData.darkMarkings}` : 0}`));
+                    skin.addSkin(skeletonData.findSkin(`Tail/${horseData.tail}`));
+                }switch (horseData.headStripe) {
                     case 0:
                     case 6:
                         skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Stripe/${horseData.headStripe}`));
@@ -346,13 +360,11 @@ class dressupStable extends Phaser.Scene
                         skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Star/${horseData.headStar}`));
                         break;
                 }
-                // skin.addSkin(skeletonData.findSkin(`Marking/Head/Erase/${horseData.headStripe < 4 ? 'M' : 'ML'}/${horseData.headErase}`));
-                skin.addSkin(skeletonData.findSkin(`Mane/${horseData.mane}`));
-                skin.addSkin(skeletonData.findSkin(`Tail/${horseData.tail}`));
-                skin.addSkin(skeletonData.findSkin(`Forelock/${horseData.forelock}`));
                 skin.addSkin(skeletonData.findSkin(`Pattern/Appy/${horseData.appyPattern}`));
                 skin.addSkin(skeletonData.findSkin(`Pattern/Pinto/${horseData.pintoExpression === 0 ? 0 : `Expression${horseData.pintoExpression}/${horseData.pintoPattern}`}`));
                 skin.addSkin(skeletonData.findSkin(`Pattern/Flecked/${horseData.fleckedPattern}`));
+                skin.addSkin(skeletonData.findSkin(`Mane/${horseData.mane}`));
+                skin.addSkin(skeletonData.findSkin(`Forelock/${horseData.forelock}`));
             skeleton.skeleton.setSkin(skin);
             skeleton.skeleton.setToSetupPose();
         }
@@ -374,9 +386,10 @@ class dressupStable extends Phaser.Scene
             changeTint(horse, 'Tail', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
             changeTint(horseOverlay, 'Mane', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
             changeTint(horseOverlay, 'Forelock', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+            changeTint(horsePic, 'Mane', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+            changeTint(horsePic, 'Forelock', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
 
             // Body
-            // changeTint(horse, 'HeadUMarkingErase', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
             changeTint(horseOverlay, 'Ear', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
             changeTint(horse, 'Body', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
             changeTint(horse, 'Head', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
@@ -395,6 +408,8 @@ class dressupStable extends Phaser.Scene
             changeTint(horse, 'FeatheringFR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
             changeTint(horse, 'FeatheringHL', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
             changeTint(horse, 'FeatheringHR', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horsePic, 'Ear', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horsePic, 'Base', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
 
             // Dark
             let dark = ['DarkBody', 'HeadDark', 'HeadUDark', 'HeadJDark', 'DarkFL', 'DarkFL2', 'DarkHL', 'DarkHL2', 'DarkFR', 'DarkFR2', 'DarkHR', 'DarkHR2']
@@ -402,6 +417,8 @@ class dressupStable extends Phaser.Scene
                 let darkLevel = 1 - ((horseData.darkLevel + 1) * 2 * 0.1)
                 changeTint(horse, dark[index], horseData.bodyColor.r*darkLevel, horseData.bodyColor.g*darkLevel, horseData.bodyColor.b*darkLevel, shade)
             }
+            let darkLevel = 1 - ((horseData.darkLevel + 1) * 2 * 0.1)
+            changeTint(horsePic, 'Dark', horseData.bodyColor.r*darkLevel, horseData.bodyColor.g*darkLevel, horseData.bodyColor.b*darkLevel, shade)
 
             // White
             changeTint(horseOverlay, 'EarAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
@@ -410,27 +427,33 @@ class dressupStable extends Phaser.Scene
             changeTint(horse, 'NeckAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'HLAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'FLAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horsePic, 'Appy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
 
             changeTint(horseOverlay, 'EarFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'HeadUFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'BodyFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'NeckFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'HLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'FLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'FLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horsePic, 'Flecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
 
             changeTint(horse, 'HeadUPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'BodyPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'NeckPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
             changeTint(horse, 'HLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
-            changeTint(horse, 'FLFlecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horse, 'FLPinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            changeTint(horsePic, 'Pinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
 
             if (horseData.whiteMatches) {
                 changeTint(horse, 'HeadUMarkingStar', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horsePic, 'Star', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
                 changeTint(horse, 'HeadUMarkingSnip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
                 changeTint(horse, 'HeadJMarkingSnip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horsePic, 'Snip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
                 changeTint(horse, 'HeadUMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
                 changeTint(horse, 'HeadMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
                 changeTint(horse, 'HeadJMarkingStripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horsePic, 'Stripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
 
                 changeTint(horse, 'MarkingHL', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
                 changeTint(horse, 'MarkingHL2', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
@@ -502,7 +525,8 @@ class dressupStable extends Phaser.Scene
         // Inspirational message frame
         const frame = this.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
             canPlayInspiration = true
-        // this.add.image(517, 126, 'horse_image').setScale(.32);
+
+        horsePic = game.add.spine(518, 125, 'horsePicJson', `horsePicAtlas`).setScale(.35);
         const inspirationHover = this.sound.add('inspiration_hover');
         const inspirationSound = this.sound.add('inspiration_sound');
         inspirationCloseSound = this.sound.add('inspiration_close');
@@ -1117,7 +1141,7 @@ class dressupStable extends Phaser.Scene
             });
             copyButton.on('pointerdown', () => {
                 let copyText = `${location.origin + location.pathname}` +
-                    '?v=1' +
+                    `?v=${urlVersion}` +
                     `&name=${encodeURIComponent(horseData.name)}` +
                     `&message=${encodeURIComponent(horseData.message)}` +
                     `&data=${horseDataToString()}`
