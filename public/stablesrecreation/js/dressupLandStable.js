@@ -60,7 +60,8 @@ class dressupLandStable extends Phaser.Scene
         this.load.spineAtlas("horse_dirty-atlas", `./images/landStable/horse_dirty/dirt_skeleton.atlas`);
         this.load.spineJson("horse_dirty-json", `./images/landStable/horse_dirty/dirt_skeleton.json`);
 
-        this.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.load.spineAtlas("horsePicAtlas", `./images/horses/${horseName}/picture/skeleton.atlas`);
+        this.load.spineJson("horsePicJson", `./images/horses/${horseName}/picture/skeleton.json`);
         this.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
         this.load.atlas('luck', './images/landStable/luck.png', './images/landStable/luck.json');
@@ -91,6 +92,8 @@ class dressupLandStable extends Phaser.Scene
         this.load.audio('water_sound', ['./sounds/water_sound.mp3']);
         this.load.audio('water_drink', ['./sounds/water_drink.mp3']);
         this.load.audio('rear_sound', ['./sounds/rear.mp3']);
+
+        this.add.image(444, 261, 'stable_bg');
     }
 
     create (data)
@@ -352,6 +355,7 @@ class dressupLandStable extends Phaser.Scene
             const frame = this.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
                 canPlayInspiration = true
             // this.add.image(517, 126, 'horse_image').setScale(.32);
+            horsePic = game.add.spine(518, 125, 'horsePicJson', `horsePicAtlas`).setScale(.35);
             const inspirationHover = this.sound.add('inspiration_hover');
             const inspirationSound = this.sound.add('inspiration_sound');
             inspirationCloseSound = this.sound.add('inspiration_close');
