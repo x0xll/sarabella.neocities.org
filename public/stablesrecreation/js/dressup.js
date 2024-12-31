@@ -181,7 +181,7 @@ class dressupStable extends Phaser.Scene
             message: urlParameters.get('message'),
             bodyColor: 0,
             hairColor: 0,
-            darkColor: 0,
+            darkColor: -1,
             whiteColor: 0,
             feathering: 0,
             forelock: 0,
@@ -216,7 +216,7 @@ class dressupStable extends Phaser.Scene
                 
                 let darkLevel = 1 - (3 * 0.1)
                 let bodyColor =  splitHex(horseData.bodyColor)
-                horseData.darkColor = [bodyColor.r*darkLevel, bodyColor.g*darkLevel, bodyColor.b*darkLevel]
+                horseData.darkColor = parseInt(bodyColor.r*darkLevel.toString(16) + bodyColor.g*darkLevel.toString(16) + bodyColor.b*darkLevel.toString(16))
                 break;
             case '2':
                 makeRandomHorse = false
@@ -816,7 +816,7 @@ class dressupStable extends Phaser.Scene
                 
                 tintHorse()
             },
-            value: horseData.darkColor ? horseData.darkColor : randomDark()
+            value: horseData.darkColor !== -1 ? horseData.darkColor : randomDark()
         }).layout()
 
         const whiteColorPicker = this.rexUI.add.colorPicker({

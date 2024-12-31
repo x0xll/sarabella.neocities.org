@@ -982,7 +982,7 @@ class dressupLandStable extends Phaser.Scene
             });
             copyButton.on('pointerdown', () => {
                 let copyText = `${location.origin + location.pathname}` +
-                    '?v=1' +
+                    `?v=${urlVersion}` +
                     `&name=${horseData.name}` +
                     `&message=${horseData.message}` +
                     `&data=${data.horseDataToString()}`
