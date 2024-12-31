@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "s39rdKHR8Co",
+	"hash": "JZD6dZJ5Xis",
 	"spine": "4.2.38",
 	"x": -418.4,
 	"y": -226.86,
@@ -4211,6 +4211,26 @@
 		}
 	},
 	{
+		"name": "Pattern/Pinto/Expression1/4",
+		"attachments": {
+			"BodyPinto": {
+				"BodyPinto": { "name": "BoltSBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"FLPinto": {
+				"FLPinto": { "name": "Empty", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"HeadUPinto": {
+				"HeadUPinto": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HLPinto": {
+				"HLPinto": { "name": "BoltSUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"NeckPinto": {
+				"NeckPinto": { "name": "Empty", "x": -85.9, "y": -68.22, "rotation": -134.14, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
 		"name": "Pattern/Pinto/Expression2/0",
 		"attachments": {
 			"BodyPinto": {
@@ -4291,6 +4311,26 @@
 		}
 	},
 	{
+		"name": "Pattern/Pinto/Expression2/4",
+		"attachments": {
+			"BodyPinto": {
+				"BodyPinto": { "name": "BoltMBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"FLPinto": {
+				"FLPinto": { "name": "BoltMUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"HeadUPinto": {
+				"HeadUPinto": { "name": "Empty", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HLPinto": {
+				"HLPinto": { "name": "BoltMUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"NeckPinto": {
+				"NeckPinto": { "name": "Empty", "x": -85.9, "y": -68.22, "rotation": -134.14, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
 		"name": "Pattern/Pinto/Expression3/0",
 		"attachments": {
 			"BodyPinto": {
@@ -4367,6 +4407,26 @@
 			},
 			"NeckPinto": {
 				"NeckPinto": { "name": "SabinoLNeck", "x": -85.9, "y": -68.22, "rotation": -134.14, "width": 888, "height": 521 }
+			}
+		}
+	},
+	{
+		"name": "Pattern/Pinto/Expression3/4",
+		"attachments": {
+			"BodyPinto": {
+				"BodyPinto": { "name": "BoltLBody", "x": 34.96, "y": 0.94, "rotation": 173.91, "width": 888, "height": 521 }
+			},
+			"FLPinto": {
+				"FLPinto": { "name": "BoltLUpperFL", "x": -25.14, "y": 127.9, "rotation": 86.48, "width": 888, "height": 521 }
+			},
+			"HeadUPinto": {
+				"HeadUPinto": { "name": "BoltLHead", "x": -81.55, "y": 207.4, "rotation": 135.68, "width": 888, "height": 521 }
+			},
+			"HLPinto": {
+				"HLPinto": { "name": "BoltLUpperHL", "x": -23.55, "y": -33.42, "rotation": 67.25, "width": 888, "height": 521 }
+			},
+			"NeckPinto": {
+				"NeckPinto": { "name": "BoltLNeck", "x": -84.32, "y": -67.66, "rotation": -134.14, "width": 888, "height": 521 }
 			}
 		}
 	},
@@ -4534,9 +4594,10 @@
 				],
 				"translate": [
 					{ "time": 0.0333 },
-					{ "time": 0.6333, "x": 36.57, "y": 14.57 },
-					{ "time": 0.6667, "x": 38.19, "y": 17.16, "curve": "stepped" },
-					{ "time": 2.2, "x": 38.19, "y": 17.16 },
+					{ "time": 0.6333, "x": 36.73, "y": 15.59 },
+					{ "time": 0.6667, "x": 38.19, "y": 17.16 },
+					{ "time": 0.8333, "x": 38.54, "y": 19.33, "curve": "stepped" },
+					{ "time": 2.2, "x": 38.54, "y": 19.33 },
 					{ "time": 2.6 }
 				]
 			},
