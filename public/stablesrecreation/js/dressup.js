@@ -61,7 +61,7 @@ brushSmallHeldSprite = null
 hoofpickHeldSprite = null
 appleHeldSprite = null
 
-urlVersion = 1
+urlVersion = 2
 
 
 
@@ -167,13 +167,21 @@ class dressupStable extends Phaser.Scene
         });
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
 
+        
+        function splitHex(color) {
+            let r = ((color & 0xff0000) >> 16)/255
+            let g = ((color & 0x00ff00) >> 8)/255
+            let b = (color & 0x0000ff)/255
+            return { color: color, r:r, g:g, b:b };
+        }
+
         horseData = {
             type: 'dressup',
             name: urlParameters.get('name'),
             message: urlParameters.get('message'),
             bodyColor: 0,
             hairColor: 0,
-            eyeColor: 0,
+            darkColor: -1,
             whiteColor: 0,
             feathering: 0,
             forelock: 0,
@@ -192,35 +200,42 @@ class dressupStable extends Phaser.Scene
             pintoPattern: 0, 
             pintoExpression: 0, 
             fleckedPattern: 0,
-            darkMarkings: 0,
-            darkLevel: 0
+            darkMarkings: 0
         }
-        let endData = 0
+        let dataLength = 0
+        let startData = 0
         let URLdata = urlParameters.get('data') ? urlParameters.get('data') : "0"
         switch (urlParameters.get('v')) {
             case '1':
                 makeRandomHorse = false
-                endData = 17
+                dataLength = 17
+                startData = 21
                 horseData.bodyColor = parseInt(URLdata.slice(0, 6), 16)
                 horseData.hairColor = parseInt(URLdata.slice(7, 13), 16)
                 horseData.whiteColor = parseInt(URLdata.slice(14, 20), 16)
+                
+                let darkLevel = 1 - (3 * 0.1)
+                let bodyColor =  splitHex(horseData.bodyColor)
+                horseData.darkColor = parseInt(bodyColor.r*darkLevel.toString(16) + bodyColor.g*darkLevel.toString(16) + bodyColor.b*darkLevel.toString(16))
                 break;
             case '2':
                 makeRandomHorse = false
-                endData = 19
+                dataLength = 18
+                startData = 28
                 horseData.bodyColor = parseInt(URLdata.slice(0, 6), 16)
                 horseData.hairColor = parseInt(URLdata.slice(7, 13), 16)
-                horseData.whiteColor = parseInt(URLdata.slice(14, 20), 16)
+                horseData.darkColor = parseInt(URLdata.slice(14, 20), 16)
+                horseData.whiteColor = parseInt(URLdata.slice(21, 27), 16)
                 break;
         
             default:
                 makeRandomHorse = true
-                endData = 0
+                dataLength = 0
                 break;
         }
-            let optionsData = URLdata !== "0" ? URLdata.slice(21) : "0"
+            let optionsData = URLdata !== "0" ? URLdata.slice(startData) : "0"
             // Make data correct length
-            while (optionsData.length < endData) {
+            while (optionsData.length < dataLength) {
                 optionsData = "0" + optionsData;
             }
             while (optionsData.length < 19) {
@@ -244,7 +259,6 @@ class dressupStable extends Phaser.Scene
             horseData.pintoExpression = parseInt(optionsData.slice(15, 16))
             horseData.fleckedPattern = parseInt(optionsData.slice(16, 17))
             horseData.darkMarkings = parseInt(optionsData.slice(17, 18))
-            horseData.darkLevel = parseInt(optionsData.slice(18, 19))
     }
 
     create (data)
@@ -332,7 +346,12 @@ class dressupStable extends Phaser.Scene
                     skin.addSkin(skeletonData.findSkin(`Marking/HR/F${horseData.feathering}M${horseData.hrWhite}`));
                     skin.addSkin(skeletonData.findSkin(`Pattern/Dark/${horseData.darkMarkings ? `${horseData.feathering}/${horseData.darkMarkings}` : 0}`));
                     skin.addSkin(skeletonData.findSkin(`Tail/${horseData.tail}`));
-                }switch (horseData.headStripe) {
+                } else {
+                    if (horseData.darkMarkings !== 0) {
+                        skin.addSkin(skeletonData.findSkin(`Pattern/Dark`));
+                    }
+                }
+                switch (horseData.headStripe) {
                     case 0:
                     case 6:
                         skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Stripe/${horseData.headStripe}`));
@@ -414,11 +433,9 @@ class dressupStable extends Phaser.Scene
             // Dark
             let dark = ['DarkBody', 'HeadDark', 'HeadUDark', 'HeadJDark', 'DarkFL', 'DarkFL2', 'DarkHL', 'DarkHL2', 'DarkFR', 'DarkFR2', 'DarkHR', 'DarkHR2']
             for (let index = 0; index < dark.length; index++) {
-                let darkLevel = 1 - ((horseData.darkLevel + 1) * 2 * 0.1)
-                changeTint(horse, dark[index], horseData.bodyColor.r*darkLevel, horseData.bodyColor.g*darkLevel, horseData.bodyColor.b*darkLevel, shade)
+                changeTint(horse, dark[index], horseData.darkColor.r, horseData.darkColor.g, horseData.darkColor.b, shade)
             }
-            let darkLevel = 1 - ((horseData.darkLevel + 1) * 2 * 0.1)
-            changeTint(horsePic, 'Dark', horseData.bodyColor.r*darkLevel, horseData.bodyColor.g*darkLevel, horseData.bodyColor.b*darkLevel, shade)
+            changeTint(horsePic, 'Dark', horseData.darkColor.r, horseData.darkColor.g, horseData.darkColor.b, shade)
 
             // White
             changeTint(horseOverlay, 'EarAppy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
@@ -483,12 +500,48 @@ class dressupStable extends Phaser.Scene
             }
         }
 
+        function horseDataToString() {
+            let string = getColorHexCode(horseData.bodyColor.color) + '+' +
+                getColorHexCode(horseData.hairColor.color) + '+' +
+                getColorHexCode(horseData.darkColor.color) + '+' +
+                getColorHexCode(horseData.whiteColor.color) + '+' +
+                horseData.feathering.toString() +
+                horseData.forelock.toString() +
+                horseData.mane.toString() +
+                horseData.tail.toString() +
+                horseData.flWhite.toString() +
+                horseData.frWhite.toString() +
+                horseData.hrWhite.toString() +
+                horseData.hlWhite.toString() +
+                horseData.headStripe.toString() +
+                horseData.headSnip.toString() +
+                horseData.headStar.toString() +
+                horseData.headErase.toString() +
+                horseData.whiteMatches.toString() +
+                horseData.appyPattern.toString() +
+                horseData.pintoPattern.toString() +
+                horseData.pintoExpression.toString() +
+                horseData.fleckedPattern.toString() +
+                horseData.darkMarkings.toString()
+
+            return string
+        }
+
+        function getColorHexCode(color) {
+            color = color.toString(16)
+            while (color.length < 6) {
+                color = "0" + color;
+            }
+            return color
+        }
+
         const sharedData = {
             horseData: horseData, 
             backgroundMusic: game.backgroundMusic, 
             playMusic: game.playMusic,
             randomIntFromInterval: randomIntFromInterval,
-            resetHorseSprite: resetHorseSprite
+            resetHorseSprite: resetHorseSprite,
+            horseDataToString: horseDataToString
         }
 
         if (!data.horseData && urlParameters.get('data')) {
@@ -612,7 +665,7 @@ class dressupStable extends Phaser.Scene
                     horseData.appyPattern = randomIntFromInterval(0,6)
                     break;
                 case 1:
-                    horseData.pintoPattern = randomIntFromInterval(0,3)
+                    horseData.pintoPattern = randomIntFromInterval(0,4)
                     horseData.pintoExpression = randomIntFromInterval(0,3)
                     break;
                 case 2:
@@ -638,7 +691,6 @@ class dressupStable extends Phaser.Scene
             }
 
             horseData.darkMarkings = randomIntFromInterval(0,4)
-            horseData.darkLevel = randomIntFromInterval(0,3)
 
         }
 
@@ -734,6 +786,39 @@ class dressupStable extends Phaser.Scene
             value: horseData.bodyColor ? horseData.bodyColor : Phaser.Math.Between(0, 0x1000000)
         }).layout()
 
+        const darkColorPicker = this.rexUI.add.colorPicker({
+            x: 723, y: 160,
+            background: this.rexUI.add.roundRectangle(0, 0, 0, 0, 10, COLOR_SECONDARY),
+            svPalette: {
+                width: 128,
+                height: 128
+            },
+            hPalette: {
+                size: 16
+            },
+            space: {
+                left: 10, right: 10, top: 10, bottom: 10,
+                item: 10,
+            },
+
+            setAlpha(visible) {
+                if (visible) {
+                    x = 730
+                    y = 150
+                } else {
+                    x = -100
+                    y = -100
+                }
+            },
+
+            valuechangeCallback(value) {
+                horseData.darkColor = splitHex(value)
+                
+                tintHorse()
+            },
+            value: horseData.darkColor !== -1 ? horseData.darkColor : randomDark()
+        }).layout()
+
         const whiteColorPicker = this.rexUI.add.colorPicker({
             x: 723, y: 160,
             background: this.rexUI.add.roundRectangle(0, 0, 0, 0, 10, COLOR_SECONDARY),
@@ -798,8 +883,8 @@ class dressupStable extends Phaser.Scene
 
 
         const featheringSlider = makeSelector(723, 270, 6, 'feathering', 'Feathering')
-        const darkSlider = makeSelector(723, 300, 5, 'darkMarkings', 'Bay / Dun')
-        const darkLevelSlider = makeSelector(723, 330, 4, 'darkLevel', 'Marking Darkness')
+
+        const darkSlider = makeSelector(723, 270, 5, 'darkMarkings', 'Bay / Dun')
 
         const forelockSlider = makeSelector(723, 270, 3, 'forelock', 'Forelock')
         const maneSlider = makeSelector(723, 300, 3, 'mane', 'Mane')
@@ -818,7 +903,7 @@ class dressupStable extends Phaser.Scene
         const markingMatchSlider = makeSelector(723, 380, 2, 'whiteMatches', 'Match Pattern "White"')
         
         const patternAppySlider = makeSelector(723, 270, 7, 'appyPattern', 'Appaloosa Patterns')
-        const patternPintoSlider = makeSelector(723, 300, 4, 'pintoPattern', 'Pinto Patterns')
+        const patternPintoSlider = makeSelector(723, 300, 5, 'pintoPattern', 'Pinto Patterns')
         const expressionPintoSlider = makeSelector(723, 330, 4, 'pintoExpression', 'Pinto Expression')
         const patternFleckedSlider = makeSelector(723, 360, 4, 'fleckedPattern', 'Grey / Roan')
 
@@ -885,7 +970,8 @@ class dressupStable extends Phaser.Scene
 
 
         const infoTab = [nameInputText, messageInputText]
-        const mainTab = [bodyColorPicker, featheringSlider, darkSlider, darkLevelSlider]
+        const mainTab = [bodyColorPicker, featheringSlider]
+        const darkTab = [darkColorPicker, darkSlider]
         const hairTab = [hairColorPicker, forelockSlider, maneSlider, tailSlider]
         const markingTab = [
             markingHeadSnipSlider, markingHeadStarSlider, markingHeadStripeSlider, markingHeadEraseSlider,
@@ -898,7 +984,7 @@ class dressupStable extends Phaser.Scene
          * @param {*} tab The tab to show (all others will be hidden)
          */
         function showTab(tab) {
-            let tabs = [infoTab, mainTab, hairTab, markingTab, patternTab]
+            let tabs = [infoTab, mainTab, darkTab, hairTab, markingTab, patternTab]
             tabs = tabs.filter(e => e !== tab)
             for (let index = 0; index < tabs.length; index++) {
                 tabs[index].forEach(element => {
@@ -911,11 +997,12 @@ class dressupStable extends Phaser.Scene
         }
 
 
-        makeChoiceButton('Info', infoTab, 200)
-        makeChoiceButton('Main', mainTab, 325)
-        makeChoiceButton('Hair', hairTab, 450)
-        makeChoiceButton('White Markings', markingTab, 575)
-        makeChoiceButton('White Patterns', patternTab, 700)
+        makeChoiceButton('Info', infoTab, 155)
+        makeChoiceButton('Main', mainTab, 270)
+        makeChoiceButton('Dark Patterns', darkTab, 385)
+        makeChoiceButton('Hair', hairTab, 500)
+        makeChoiceButton('White Markings', markingTab, 615)
+        makeChoiceButton('White Patterns', patternTab, 730)
 
         function makeChoiceButton(text, tab, x) {
             const button = game.add.text(x, 20, text, {
@@ -959,38 +1046,27 @@ class dressupStable extends Phaser.Scene
 
         }
 
-        function horseDataToString() {
-            let string = getColorHexCode(horseData.bodyColor.color) + '+' +
-                getColorHexCode(horseData.hairColor.color) + '+' +
-                getColorHexCode(horseData.whiteColor.color) + '+' +
-                horseData.feathering.toString() +
-                horseData.forelock.toString() +
-                horseData.mane.toString() +
-                horseData.tail.toString() +
-                horseData.flWhite.toString() +
-                horseData.frWhite.toString() +
-                horseData.hrWhite.toString() +
-                horseData.hlWhite.toString() +
-                horseData.headStripe.toString() +
-                horseData.headSnip.toString() +
-                horseData.headStar.toString() +
-                horseData.headErase.toString() +
-                horseData.whiteMatches.toString() +
-                horseData.appyPattern.toString() +
-                horseData.pintoPattern.toString() +
-                horseData.pintoExpression.toString() +
-                horseData.fleckedPattern.toString() +
-                horseData.darkMarkings.toString()
-
-            return string
-        }
-
-        function getColorHexCode(color) {
-            color = color.toString(16)
-            while (color.length < 6) {
-                color = "0" + color;
+        function randomDark() {
+            let color
+            switch (randomIntFromInterval(0, 1)) {
+                case 0:
+                    let darkLevel = randomIntFromInterval(1, 8)
+                    darkLevel = 1 - (darkLevel * 0.1)
+                    color = [horseData.bodyColor.r*darkLevel, horseData.bodyColor.g*darkLevel, horseData.bodyColor.b*darkLevel]
+                    break;
+                    
+                default:
+                    const r = 255*horseData.bodyColor.r - Phaser.Math.Between(0x20, 0x70)
+                    const g = 255*horseData.bodyColor.g - Phaser.Math.Between(0x20, 0x70)
+                    const b = 255*horseData.bodyColor.b - Phaser.Math.Between(0x20, 0x70)
+                    color = [r, g, b]
+                    for (let index = 0; index < color.length; index++) {
+                        if (color[index] < 0) { color[index] = 0}
+                    }
+                    break;
             }
-            return color
+            let newColor = parseInt(color[0].toString(16) + color[1].toString(16) + color[2].toString(16), 16)
+            return newColor
         }
 
         
@@ -1173,6 +1249,7 @@ class dressupStable extends Phaser.Scene
                 randomiseHorse()
                 hairColorPicker.value = Phaser.Math.Between(0, 0x1000000)
                 bodyColorPicker.value = Phaser.Math.Between(0, 0x1000000)
+                darkColorPicker.value = randomDark()
                 whiteColorPicker.value = randomWhite()
                 resetHorseSprite()
             })
