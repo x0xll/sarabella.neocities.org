@@ -981,17 +981,7 @@ class dressupLandStable extends Phaser.Scene
                 copyButton.setBackgroundColor(COLOR_PRIMARY_HEX);
             });
             copyButton.on('pointerdown', () => {
-                let copyText = `${location.origin + location.pathname}` +
-                    `?v=${urlVersion}` +
-                    `&name=${horseData.name}` +
-                    `&message=${horseData.message}` +
-                    `&data=${data.horseDataToString()}`
-
-                // Copy the text
-                navigator.clipboard.writeText(copyText);
-
-                // Alert the copied text
-                alert("Copied the text: " + copyText);
+                data.copy()
             })
 
 

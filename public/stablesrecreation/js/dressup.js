@@ -534,6 +534,40 @@ class dressupStable extends Phaser.Scene
             }
             return color
         }
+        
+        function copy() {
+            let copyText = `${location.origin + location.pathname}` +
+                `?v=${urlVersion}` +
+                `&name=${encodeURIComponent(horseData.name)}` +
+                `&message=${encodeURIComponent(horseData.message)}` +
+                `&data=${horseDataToString()}`
+
+            let input = document.getElementById('copy');
+            input.value = copyText
+            input.style.display = 'inline'
+            document.getElementById('copyLable').style.display = 'inline'
+
+            if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+                // handle iOS devices
+                input.contenteditable = true;
+                input.readonly = false;
+            
+                let range = document.createRange();
+                range.selectNodeContents(input);
+            
+                let selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                input.setSelectionRange(0, 999999);
+                } else {
+                // other devices are easy
+                input.select()
+                }
+                document.execCommand('copy');
+                
+            // Alert the copied text
+            alert("The link to this horse is: " + copyText);
+        }
 
         const sharedData = {
             horseData: horseData, 
@@ -541,7 +575,8 @@ class dressupStable extends Phaser.Scene
             playMusic: game.playMusic,
             randomIntFromInterval: randomIntFromInterval,
             resetHorseSprite: resetHorseSprite,
-            horseDataToString: horseDataToString
+            horseDataToString: horseDataToString,
+            copy: copy
         }
 
         if (!data.horseData && urlParameters.get('data')) {
@@ -1220,40 +1255,6 @@ class dressupStable extends Phaser.Scene
                 copy()
 
             })
-
-            function copy() {
-                let copyText = `${location.origin + location.pathname}` +
-                    `?v=${urlVersion}` +
-                    `&name=${encodeURIComponent(horseData.name)}` +
-                    `&message=${encodeURIComponent(horseData.message)}` +
-                    `&data=${horseDataToString()}`
-
-                let input = document.getElementById('copy');
-                input.value = copyText
-                input.style.display = 'inline'
-                document.getElementById('copyLable').style.display = 'inline'
-
-                if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-                    // handle iOS devices
-                    input.contenteditable = true;
-                    input.readonly = false;
-                
-                    let range = document.createRange();
-                    range.selectNodeContents(input);
-                
-                    let selection = window.getSelection();
-                    selection.removeAllRanges();
-                    selection.addRange(range);
-                    input.setSelectionRange(0, 999999);
-                    } else {
-                    // other devices are easy
-                    input.select()
-                    }
-                    document.execCommand('copy');
-                    
-                // Alert the copied text
-                alert("The link to this horse is: " + copyText);
-            }
 
         // Random Button
         const randomButton = game.add.text(150, 500, 'Randomise', {
