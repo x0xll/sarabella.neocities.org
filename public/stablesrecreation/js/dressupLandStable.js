@@ -985,7 +985,7 @@ class dressupLandStable extends Phaser.Scene
                     '?v=1' +
                     `&name=${horseData.name}` +
                     `&message=${horseData.message}` +
-                    `&data=${horseDataToString()}`
+                    `&data=${data.horseDataToString()}`
 
                 // Copy the text
                 navigator.clipboard.writeText(copyText);
@@ -993,38 +993,6 @@ class dressupLandStable extends Phaser.Scene
                 // Alert the copied text
                 alert("Copied the text: " + copyText);
             })
-            function horseDataToString() {
-                let string = getColorHexCode(horseData.bodyColor.color) + '+' +
-                    getColorHexCode(horseData.hairColor.color) + '+' +
-                    getColorHexCode(horseData.whiteColor.color) + '+' +
-                    horseData.feathering.toString() +
-                    horseData.forelock.toString() +
-                    horseData.mane.toString() +
-                    horseData.tail.toString() +
-                    horseData.flWhite.toString() +
-                    horseData.frWhite.toString() +
-                    horseData.hrWhite.toString() +
-                    horseData.hlWhite.toString() +
-                    horseData.headStripe.toString() +
-                    horseData.headSnip.toString() +
-                    horseData.headStar.toString() +
-                    horseData.headErase.toString() +
-                    horseData.whiteMatches.toString() +
-                    horseData.appyPattern.toString() +
-                    horseData.pintoPattern.toString() +
-                    horseData.pintoExpression.toString() +
-                    horseData.fleckedPattern.toString()
-    
-                return string
-            }
-    
-            function getColorHexCode(color) {
-                color = color.toString(16)
-                while (color.length < 6) {
-                    color = "0" + color;
-                }
-                return color
-            }
 
 
         // ---------- Held items ---------- //
