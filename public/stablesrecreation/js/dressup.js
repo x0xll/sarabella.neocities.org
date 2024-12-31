@@ -1228,37 +1228,31 @@ class dressupStable extends Phaser.Scene
                     `&message=${encodeURIComponent(horseData.message)}` +
                     `&data=${horseDataToString()}`
 
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(copyText);
+                let input = document.getElementById('copy');
+                input.value = copyText
+                input.style.display = 'inline'
+                document.getElementById('copyLable').style.display = 'inline'
+
+                if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+                    // handle iOS devices
+                    input.contenteditable = true;
+                    input.readonly = false;
+                
+                    let range = document.createRange();
+                    range.selectNodeContents(input);
+                
+                    let selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    input.setSelectionRange(0, 999999);
+                    } else {
+                    // other devices are easy
+                    input.select()
+                    }
+                    document.execCommand('copy');
                     
-                    // Alert the copied text
-                    alert("Copied the link to this horse: " + copyText);
-                } else {
-                    let input = document.getElementById('copy');
-                    input.value = copyText
-                    input.style.display = 'inline'
-                    document.getElementById('copyLable').style.display = 'inline'
-                    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-                        // handle iOS devices
-                        input.contenteditable = true;
-                        input.readonly = false;
-                    
-                        let range = document.createRange();
-                        range.selectNodeContents(input);
-                    
-                        let selection = window.getSelection();
-                        selection.removeAllRanges();
-                        selection.addRange(range);
-                        input.setSelectionRange(0, 999999);
-                      } else {
-                        // other devices are easy
-                        input.select()
-                      }
-                      document.execCommand('copy');
-                      
-                    // Alert the copied text
-                    alert("The link to this horse is: " + copyText);
-                }
+                // Alert the copied text
+                alert("The link to this horse is: " + copyText);
             }
 
         // Random Button
