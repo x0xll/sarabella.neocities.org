@@ -1216,18 +1216,50 @@ class dressupStable extends Phaser.Scene
                 copyButton.setBackgroundColor(COLOR_PRIMARY_HEX);
             });
             copyButton.on('pointerdown', () => {
+                // Copy the text
+                copy()
+
+            })
+
+            function copy() {
                 let copyText = `${location.origin + location.pathname}` +
                     `?v=${urlVersion}` +
                     `&name=${encodeURIComponent(horseData.name)}` +
                     `&message=${encodeURIComponent(horseData.message)}` +
                     `&data=${horseDataToString()}`
 
-                // Copy the text
-                navigator.clipboard.writeText(copyText);
-
-                // Alert the copied text
-                alert("Copied the text: " + copyText);
-            })
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(copyText);
+                    
+                    // Alert the copied text
+                    alert("Copied the link to this horse: " + copyText);
+                } else {
+                    let input = document.getElementById('copy');
+                    input.value = copyText
+                    input.style.display = 'inline'
+                    document.getElementById('copyLable').style.display = 'inline'
+                    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+                        // handle iOS devices
+                        input.contenteditable = true;
+                        input.readonly = false;
+                    
+                        let range = document.createRange();
+                        range.selectNodeContents(input);
+                    
+                        let selection = window.getSelection();
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                        input.setSelectionRange(0, 999999);
+                      } else {
+                        // other devices are easy
+                        input.select()
+                      }
+                      document.execCommand('copy');
+                      
+                    // Alert the copied text
+                    alert("The link to this horse is: " + copyText);
+                }
+            }
 
         // Random Button
         const randomButton = game.add.text(150, 500, 'Randomise', {
