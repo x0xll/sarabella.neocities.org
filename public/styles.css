@@ -123,3 +123,13 @@ ul {
 .closebtn:hover {
     color: black;
 } 
+
+.languages {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.languages img {
+    margin: 0;
+    padding: 0;
+}

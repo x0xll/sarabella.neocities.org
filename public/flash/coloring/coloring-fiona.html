@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <title data-il8n="game_coloringgamefiona">Coloring Game (Fiona)</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
     </head>
-    <body class="game">
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref()">
         <script src="/header.js"></script>
 
         <script>
@@ -21,10 +25,12 @@
             <embed height="521" width="887" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="./flash/coloring.swf?pages=bsColoring_fiona" type="application/x-shockwave-flash">
         </div>
 
+        <script src="/flags.js"></script>
+
         <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a> | 
-            <a href="https://web.archive.org/web/20071021025330/http://www.bellasara.com/coloring-fiona.html" class="global-lowernav-link">Web Archive Page</a> | 
-            <a href="./images/Fiona.svg" class="global-lowernav-link">SVG Image</a>
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> | 
+            <a href="https://web.archive.org/web/20071021025330/http://www.bellasara.com/coloring-fiona.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a> | 
+            <a href="./images/Fiona.svg" class="global-lowernav-link" data-il8n="footer_svgimg_linktxt">SVG Image</a>
         </div>
   </body>
 </html>
