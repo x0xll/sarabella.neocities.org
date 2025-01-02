@@ -9,6 +9,7 @@ var defaultLocas;
 function checkBrowserLanguage() {
     var lang = navigator.language;
 
+    // TODO : handle region based languages too
     lang = lang.slice(0, 2);
 
     changeLanguage(lang);
