@@ -133,7 +133,7 @@ class dressupStable extends Phaser.Scene
         this.load.image('inspiration', './images/landStable/inspiration.png');
 
         this.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
-        this.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
+        //this.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
         this.load.atlas('next_button', './images/selector/next.png', './images/selector/next.json');
         this.load.atlas('previous_button', './images/selector/previous.png', './images/selector/previous.json');
 
@@ -1157,9 +1157,9 @@ class dressupStable extends Phaser.Scene
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}`) });
         // help button
-        const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
+        /*const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
             helpButton.on('pointerover', function (pointer) { this.setFrame('help') });
-            helpButton.on('pointerout', function (pointer) { this.setFrame('idle') });
+            helpButton.on('pointerout', function (pointer) { this.setFrame('idle') });*/
 
 
         // Progress bars
