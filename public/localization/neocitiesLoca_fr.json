@@ -11,6 +11,10 @@
     "footer_maininfos" : "For questions, comments, or help:<br> @Archiving on the Bella Sara Discord or open a discussion on <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Our Github</a>",
     "footer_home_linktxt" : "Home",
     "footer_wiki_linktxt" : "Wiki Page",
+    "footer_webarchive_linktxt" : "Web Archive Page",
+    "footer_github_linktxt" : "Github",
+    "footer_svgimg_linktxt" : "SVG Image",
+    "footer_magicalhorses_linktxt" : "Magical Horses",
 
     "ressources_flashpointcacheguide" : "Flashpoint Cache Guide",
     "ressources_mewfantasyarchivingguide" : "Mewfantasy's Archiving Guide",
@@ -37,7 +41,7 @@
     "gamestables" : "Stables",
     "game_spectacularjumpinggame" : "Spectacular Jumping Game (WIP)",
     "game_artstudio" : "Art studio",
-    "game_lancegame" : "Lance game",
+    "game_lancegame" : "Lance Riding",
     "game_storybook" : "Storybook",
     "game_babybella" : "Baby Bella",
     "game_myhorse" : "My Horse (white foal sprite)",
@@ -157,5 +161,30 @@
     "herd_starlight" : "Starlight",
     "herd_mustang" : "Mustang",
     "herd_pantheon" : "Pantheon",
-    "herd_elemyn" : "Elemyn"
+    "herd_elemyn" : "Elemyn",
+
+    "artstudio_warning" : "This game is missing the files for the original horses and is currently unable to load the text correctly.",
+    
+    "babybella_warning" : "This game / ad seems to be missing some of the original functionality",    
+
+    "lanceriding_warning" : "This game only has the files for the first level. It also has issues loading consistently and the page may need to be reloaded a few times before the level will start.",
+
+    "storybook_warning": "This game seems to be unable to turn off sounds when going to the next page in the book and does not always play the videos as expected.",
+
+    "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
+    "puzzle_customTitle" : "Custom",
+    "puzzle_moonfairies" : "Moonfairies",
+    "puzzle_sunflowers" : "Sunflowers",
+    "puzzle_bellaball" : "Bella's Ball",
+    "puzzle_bellasaraadventures" : "Bella Sara Adventures",
+    "puzzle_royalty" : "Royalty",
+    "puzzle_treasures" : "Treasures",
+    "puzzle_babybella" : "Baby Bella",
+    "puzzle_magicalfriends" : "Magical Friends",
+    "puzzle_nativelights" : "Native Lights",
+    "puzzle_bellasara" : "Bella Sara",
+    "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
+    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+
+    "stables_title" : "Welcome to the World of Bella Sara"
 }

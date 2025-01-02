@@ -86,6 +86,7 @@ function getLocalizedText(key)
     var txt = localizedDatas[key];
     if (txt == undefined) // Go back to english if the translation is not done yet
          return defaultLocas[key];
-
+               
+    //return key + " - " + currentLang; // To check if all the text was setup with the localization system just uncomment this    
     return txt;
 }
