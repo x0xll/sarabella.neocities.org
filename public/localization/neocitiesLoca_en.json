@@ -14,6 +14,7 @@
     "footer_webarchive_linktxt" : "Web Archive Page",
     "footer_github_linktxt" : "Github",
     "footer_svgimg_linktxt" : "SVG Image",
+    "footer_magicalhorses_linktxt" : "Magical Horses",
 
     "ressources_flashpointcacheguide" : "Flashpoint Cache Guide",
     "ressources_mewfantasyarchivingguide" : "Mewfantasy's Archiving Guide",
@@ -183,5 +184,7 @@
     "puzzle_nativelights" : "Native Lights",
     "puzzle_bellasara" : "Bella Sara",
     "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
-    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!"
+    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+
+    "stables_title" : "Welcome to the World of Bella Sara"
 }
