@@ -3,7 +3,7 @@ document.write('\
     <div class="languages">\
         <img src="/images/Flags/flag_us.gif" onclick="changeLanguage(\'en\', true)" title="United States" alt="United States">\
         <!--<img src="/images/Flags/flag_it.gif" onclick="changeLanguage(\'it\', true)" title="Italia" alt="Italia">-->\
-        <img src="/images/Flags/flag_fr.gif" onclick="changeLanguage(\'fr\', true)" title="France" alt="France">\
+        <!--<img src="/images/Flags/flag_fr.gif" onclick="changeLanguage(\'fr\', true)" title="France" alt="France">-->\
         <!--<img src="/images/Flags/flag_de.gif" onclick="changeLanguage(\'de\', true)" title="Deutschland" alt="Deutschland">-->\
         <!--<img src="/images/Flags/flag_dk.gif" onclick="changeLanguage(\'da\', true)" title="Danmark" alt="Danmark">-->\
         <!--<img src="/images/Flags/flag_se.gif" onclick="changeLanguage(\'sv\', true)" title="Sverige" alt="Sverige">-->\
