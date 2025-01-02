@@ -9,11 +9,7 @@ var defaultLocas;
 function checkBrowserLanguage() {
     var lang = navigator.language;
 
-    // Add the new languages to the fail-safe to make sure all variants will be shown correctly
-    if (lang.includes('fr'))
-        lang = 'fr';
-    else        
-        lang = 'en';
+    lang = lang.slice(0, 2);
 
     changeLanguage(lang);
 }
@@ -23,7 +19,6 @@ function saveLanguagePref(langSelected) {
 }
 
 function loadLanguagePref(updatePage = true) {
-
     // Get the elements to update with the json
     localizedElements = document.querySelectorAll('[data-il8n]');
 
