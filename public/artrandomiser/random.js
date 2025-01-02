@@ -908,6 +908,7 @@ function load() {
     }
     const herds = {
         categoryName: "Herd: ",
+        localizedCategoryName: "artrandomizer_herd",
         dataBank: herdList,
         caption: document.getElementById("herd-caption"),
         link: document.getElementById("herd-link"),
@@ -915,27 +916,32 @@ function load() {
     }
     const types = {
         categoryName: "Horse Type: ",
+        localizedCategoryName: "artrandomizer_horsetype",
         dataBank: typeList,
         caption: document.getElementById("type-caption")
     }
     const themes = {
         categoryName: "Theme/Accessory: ",
+        localizedCategoryName: "artrandomizer_theme",
         dataBank: themeList,
         caption: document.getElementById("theme-caption")
     }
     const coats = {
         categoryName: "Coat: ",
+        localizedCategoryName: "artrandomizer_coat",
         dataBank: coatList,
         caption: document.getElementById("coat-caption"),
         image: document.getElementById("coat-icon")
     }
     const patterns = {
         categoryName: "Pattern: ",
+        localizedCategoryName: "artrandomizer_pattern",
         dataBank: patternList,
         caption: document.getElementById("pattern-caption")
     }
     const accents = {
         categoryName: "Accent Colour: ",
+        localizedCategoryName: "artrandomizer_accentColor",
         dataBank: accentList,
         caption: document.getElementById("accent-caption")
     }
@@ -978,7 +984,7 @@ function load() {
             category.image.src = category.dataBank[n].src
         }
         if ('caption' in category) {
-            category.caption.innerText = category.categoryName + category.dataBank[n].caption
+            category.caption.innerText = getLocalizedText(category.localizedCategoryName) + ": " + category.dataBank[n].caption
         }
         if ('link' in category) {
             category.caption.innerHTML = category.categoryName + `<a id="herd-link" target="_blank" href="${category.dataBank[n].link}">${category.dataBank[n].caption}</a>`
