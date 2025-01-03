@@ -43,7 +43,12 @@
           swfPlayer.type = 'application/x-shockwave-flash';
           // root.loaderInfo.parameters.xmlPath;
           var pathXML = "lang/game_" + locale + ".xml";
-          swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}`);
+
+          // Default firework
+          //const customFireworks = "45567-1-0-4-0-2-1-3-4-0-2-2-0-4-0-2-2-3-4-0-2-3-0-4-0-2-3-3-4-0-2-4-0-4-0-2-4-3-4-0-2-5-0-4-0-2-5-3-4-0-2-6-0-4-0-2-6-3-4-0-2-7-0-4-0-2-7-3-4-0-2-8-0-4-0-2-8-3-4-0-2-10-0-4-0-2-10-3-4-0-2-11-0-4-0-2-11-3-4-0-2-12-0-4-0-2-12-3-4-0-2-0-4-4-0-2-1-4-4-0-2-2-4-4-0-2-3-4-4-0-2-4-4-4-0-2-5-4-4-0-2-6-4-4-0-2-7-4-4-0-2-8-4-4-0-2-9-4-4-0-2-10-4-4-0-2";
+          const customFireworks = "45567-1-0-4-0-2-1-3-4-0-2-2-0-4-0-2";
+
+          swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}&customShow=${customFireworks}`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>
