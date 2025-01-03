@@ -3,8 +3,9 @@
 
 	<play>Play</play>
 	<pause>Pause</pause>
-    <beautyeh>Exit</beautyeh>
-    <greatshow>GreatShow!</greatshow>
+    <beautyeh>You created a beautiful firework display.</beautyeh>
+    <greatshow>Great Show!</greatshow>
     <replay>Replay</replay>
     <newshow>New Show</newshow>
+    <quit>Quit</quit>
 </root>
