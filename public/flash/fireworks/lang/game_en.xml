@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+	<play>Play</play>
+	<pause>Pause</pause>
+    <beautyeh>You created a beautiful firework display.</beautyeh>
+    <greatshow>Great Show!</greatshow>
+    <replay>Replay</replay>
+    <newshow>New Show</newshow>
+    <quit>Quit</quit>
+</root>

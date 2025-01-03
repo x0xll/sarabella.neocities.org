@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title data-il8n="game_firelightFestival">Firelight Festival</title>
+        <script src="/ruffle/ruffle.js"></script>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <!--<script src="/language.js"></script>-->
+
+    <body class="game"> <!-- onload="loadLanguagePref()" -->
+        <script src="/header.js"></script>
+        
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+        </div>
+
+        <!--<script src="/flags.js"></script>-->
+
+        <div class="footer">
+          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+          <a href="https://bellasara.wiki.gg/wiki/Firelight_Festival" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
+        </div>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          /*loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();*/
+          const locale = "en"; // Todo : modify to use the loca system
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '521';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'FireworksViewer_modified.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          // root.loaderInfo.parameters.xmlPath;
+          var pathXML = "lang/game_" + locale + ".xml";
+          swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+  </body>
+</html>
