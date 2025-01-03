@@ -154,6 +154,8 @@ class LandStable extends Phaser.Scene
         this.load.audio('water_sound', ['./sounds/water_sound.mp3']);
         this.load.audio('water_drink', ['./sounds/water_drink.mp3']);
         this.load.audio('rear_sound', ['./sounds/rear.mp3']);
+
+        console.log(localeData)
     }
 
     create ()
@@ -503,6 +505,13 @@ class LandStable extends Phaser.Scene
                 hoverSound.play();
             }
         }
+        function pointeroverNew(sprite, hoverSound, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('hover')
+                hoverSound.play();
+                spriteText.setAlpha(1)
+            }
+        }
         /**
          * Displays the 'idle' frame of a sprite if the hand is empty
          * @param {sprite} sprite The sprite to change
@@ -513,11 +522,28 @@ class LandStable extends Phaser.Scene
             }
         }
 
+        function pointeroutNew(sprite, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('idle')
+                spriteText.setAlpha(0)
+            }
+        }
 
+
+        // Text boxes
+        const hoverTextSettings = { 
+            font: 'bold 16px Arial', 
+            align: 'center',
+            color: '#ffffff',
+            wordWrap: { width: 150 } 
+        }
         // Pitchfork
         const fork = this.add.sprite(718, 177, 'fork', 'idle').setInteractive({ pixelPerfect: true });
         const forkFill = this.sound.add('fork_fill');
         const forkPlace = this.sound.add('fork_place');
+        const forkText = this.add.text(645, 225, 'Static Text Object', hoverTextSettings).setAlpha(0);
+            forkText.text = localeData.txtPitchForkHilite2;
+            forkText.setOrigin(0.5)
             this.anims.create({
                 key: 'fork_fill',
                 frames: this.anims.generateFrameNumbers('fork', { frames: [
@@ -542,32 +568,41 @@ class LandStable extends Phaser.Scene
             fork.on('pointerover', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
-                    if (straw1.frame.name === 1 || straw2.frame.name === 1 || straw3.frame.name === 1) {
+                    if (straw1.frame.name !== 'frame0000' && straw2.frame.name !== 'frame0000' && straw3.frame.name !== 'frame0000') {
                         this.setFrame('hover_use');
+                        forkText.text = localeData.txtRollOverPitchFork;
+                        forkText.setAlpha(1)
                     }
                     else {
                         this.setFrame('hover_wait');
+                        forkText.text = localeData.txtPitchForkHilite2;
+                        forkText.setAlpha(1)
                     }
                     hover2.play();
                 }
             });
-            fork.on('pointerout', function (pointer) { pointerout(fork) });
+            fork.on('pointerout', function (pointer) { pointeroutNew(fork, forkText) });
             fork.on('pointerdown', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
                     handCurrent = HAND.fork;
                     this.setFrame('in_use')
+                    forkText.setAlpha(0)
                     pickup.play();
                 }
                 else if (handCurrent === HAND.fork || handCurrent === HAND.forkFilled) {
                     handCurrent = HAND.empty;
                     this.setFrame('idle')
+                    forkText.setAlpha(0)
                 }
             });
+            
 
         // Shovel
         const shovel = this.add.sprite(742, 189, 'shovel', 'idle').setInteractive({ pixelPerfect: true });
         const shovelSound = this.sound.add('shovel_sound');
+        const shovelText = this.add.text(620, 245, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        shovelText.text = localeData.txtShovelHilite2;
             this.anims.create({
                 key: 'shovel_pickup',
                 frames: this.anims.generateFrameNumbers('shovel', { frames: [
@@ -588,26 +623,32 @@ class LandStable extends Phaser.Scene
             shovel.on('pointerover', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
-                    if (straw1.frame.name === 1 || straw2.frame.name === 1 || straw3.frame.name === 1) {
+                    if (straw1.frame.name !== 'frame0000' && straw2.frame.name !== 'frame0000' && straw3.frame.name !== 'frame0000') {
                         this.setFrame('hover_done');
+                        shovelText.text = localeData.txtShovelHilite2;
+                        shovelText.setAlpha(1)
                     }
                     else {
                         this.setFrame('hover_use');
+                        shovelText.text = localeData.txtRollOverShovel;
+                        shovelText.setAlpha(1)
                     }
                     hover2.play();
                 }
             });
-            shovel.on('pointerout', function (pointer) { pointerout (shovel) });
+            shovel.on('pointerout', function (pointer) { pointeroutNew (shovel, shovelText) });
             shovel.on('pointerdown', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
                     handCurrent = HAND.shovel;
                     shovel.setFrame('in_use')
+                    shovelText.setAlpha(0)
                     pickup.play();
                 }
                 else if (handCurrent === HAND.shovel) {
                     handCurrent = HAND.empty;
                     shovel.setFrame('idle')
+                    shovelText.setAlpha(0)
                 }
             });
 
@@ -776,6 +817,8 @@ class LandStable extends Phaser.Scene
             // Grain Bin
             const grainBin = this.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
             const grainSound = this.sound.add('grain_sound');
+            const grainText = this.add.text(610, 325, 'Static Text Object', hoverTextSettings).setAlpha(0);
+                grainText.text = localeData.txtOatsRollOver;
                 this.anims.create({
                     key: 'pickup',
                     frames: this.anims.generateFrameNumbers('grain_bin', { frames: [
@@ -795,20 +838,23 @@ class LandStable extends Phaser.Scene
                     ] }),
                     frameRate: 24
                 });
-                grainBin.on('pointerover', function (pointer) { pointerover (grainBin, hover2) });
+                grainBin.on('pointerover', function (pointer) { pointeroverNew (grainBin, hover2, grainText) });
                 grainBin.on('pointerout', function (pointer)
                 {
                     if (handCurrent === HAND.grainScoop) {
                         grainBin.setFrame('empty')
+                        grainText.setAlpha(0)
                     }
                     else {
                         grainBin.setFrame('idle')
+                        grainText.setAlpha(0)
                     }
                 });
                 grainBin.on('pointerdown', function (pointer)
                 {
                     if (handCurrent === HAND.empty) {
                         handCurrent = HAND.grainScoop
+                        grainText.setAlpha(0)
                         grainBin.play('pickup')
                         pickup.play();
                         grainSound.play()
@@ -890,15 +936,21 @@ class LandStable extends Phaser.Scene
 
         // Inspirational message
         inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
-        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 55, color: '#ffffff', align: 'center' }).setVisible(false);
-        inspirationMessage.text = horseData.message;
-        inspirationMessage.setPosition(444-inspirationMessage.width/2, 133-inspirationMessage.height/2);
+        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { 
+            fontFamily: 'Arial', 
+            fontSize: 55, 
+            color: '#ffffff', 
+            align: 'center' ,
+            wordWrap: { width: 800 } 
+        }).setVisible(false);
+        inspirationMessage.text = localeData[horseName + "Quote"];
+        inspirationMessage.setOrigin(0.5)
         inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
 
 
         // Horse name
         const horseNameText = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
-        horseNameText.text = horseData.name;
+        horseNameText.text = localeData[horseName + "Name"];
         horseNameText.setPosition(444-horseNameText.width/2, 478-horseNameText.height/2)
 
         // Buttons
@@ -926,6 +978,11 @@ class LandStable extends Phaser.Scene
 
         // Progress bars
         const bar = 13
+        const statTextSettings = { 
+            fontFamily: 'Arial', 
+            fontSize: 11.5, 
+            align: 'center'
+        }
         // hunger
         const hungerLevel = 1.5
         const hungerPos = 353 - 32 + (hungerLevel*bar/2)
@@ -941,6 +998,10 @@ class LandStable extends Phaser.Scene
                 level: hungerLevel
             }
             this.add.image(351, 509, 'hunger_scale');
+            const hungerText = this.add.text(351, 498, 'Static Text Object', statTextSettings);
+            hungerText.text = localeData.txtStatHunger;
+            hungerText.setColor("#fa91b9");
+            hungerText.setOrigin(0.5)
 
         // cleanliness
         const cleanlinessLevel = 1
@@ -957,6 +1018,10 @@ class LandStable extends Phaser.Scene
                 level: cleanlinessLevel
             }
             this.add.image(444, 509, 'cleanliness_scale');
+            const cleanlinessText = this.add.text(444, 498, 'Static Text Object', statTextSettings);
+            cleanlinessText.text = localeData.txtStatClean;
+            cleanlinessText.setColor("#33cc00");
+            cleanlinessText.setOrigin(0.5)
 
         // happiness
         const happinessLevel = 1.75
@@ -973,6 +1038,10 @@ class LandStable extends Phaser.Scene
                 level: happinessLevel
             }
             this.add.image(540, 509, 'happiness_scale');
+            const happinessText = this.add.text(540, 498, 'Static Text Object', statTextSettings);
+            happinessText.text = localeData.txtStatHappy;
+            happinessText.setColor("#00ccff");
+            happinessText.setOrigin(0.5)
 
         /**
          * Adds additional progress to the provided stat bar.

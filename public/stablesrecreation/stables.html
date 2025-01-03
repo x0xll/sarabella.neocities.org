@@ -26,6 +26,8 @@
                 const searchQueryString = window.location.search;
                 const urlParameters = new URLSearchParams(searchQueryString);
                 horseName = urlParameters.get('name')
+                locale = urlParameters.get('lang')
+                let localeData
 
                 function urlExists(url)
                 {

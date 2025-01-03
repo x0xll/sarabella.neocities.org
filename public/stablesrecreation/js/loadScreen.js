@@ -1,4 +1,6 @@
-// This scene is just used to load the image for the loading screen
+// This scene is just used to load the image for the loading screen                
+
+// Load screen scene
 class Load extends Phaser.Scene 
 {
     constructor ()
@@ -14,6 +16,18 @@ class Load extends Phaser.Scene
     create ()
     { 
         if (loadInto === "Stables") {
+
+            if (!locale || !urlExists(`./lang/${locale}.json`)) {
+                locale ='en'
+            }
+            const xmlHttplocale = new XMLHttpRequest();
+            xmlHttplocale.onload = function() {
+                const myObj = JSON.parse(this.responseText);
+                localeData = myObj
+            }
+            xmlHttplocale.open("GET", `./lang/${horseData.type}_${locale}.json`);
+            xmlHttplocale.send();
+
             loadInto = `${horseData.type}Stable`
         }
         this.scene.start(loadInto);
