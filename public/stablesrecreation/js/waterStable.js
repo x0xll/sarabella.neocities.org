@@ -186,7 +186,15 @@ class WaterStable extends Phaser.Scene
         splash2Sound = this.sound.add('water_splash2');
         splash3Sound = this.sound.add('water_splash3');
 
-        
+        // Text boxes
+        const hoverTextSettings = { 
+            font: 'bold 16px Arial', 
+            align: 'center',
+            color: '#ffffff',
+            wordWrap: { width: 125 } ,
+            lineSpacing: -3
+        }
+     
         // Temp Change BG
         const temperatureBG = this.add.sprite(560, 110, 'temperature_bg', 'idle').setScale(1.02)
             this.anims.create({
@@ -352,14 +360,18 @@ class WaterStable extends Phaser.Scene
                     hoofpick.play('polisher_place')
                 }
             });
+            const hoofpickText = this.add.text(792, 198, 'Static Text Object', hoverTextSettings).setAlpha(0);
+            hoofpickText.text = localeData.txtWandHilite;
+            hoofpickText.setOrigin(0.5)
             hoofpickInteractive.on('pointerover', function (pointer) { 
                 if (handCurrent === HAND.empty && brushLevel === 3) {
                     hoofpick.setFrame('hover')
                 } else if (handCurrent === HAND.empty && brushLevel !== 3) {
                     hoofpick.setFrame('hover_wait')
+                    hoofpickText.setAlpha(1)
                 }
              });
-             hoofpickInteractive.on('pointerout', function (pointer) { pointerout (hoofpick)});
+             hoofpickInteractive.on('pointerout', function (pointer) { pointeroutNew (hoofpick, hoofpickText)});
         
 
              // Speaker
@@ -690,9 +702,6 @@ class WaterStable extends Phaser.Scene
                 }
             });
 
-
-
-
         /**
          * Displays the 'hover' frame of a sprite and plays the hover sound if the hand is empty
          * @param {sprite} sprite The sprite to change
@@ -704,6 +713,22 @@ class WaterStable extends Phaser.Scene
                 hoverSound.play();
             }
         }
+
+        function pointeroverNew(sprite, hoverSound, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('hover')
+                hoverSound.play();
+                spriteText.setAlpha(1)
+            }
+        }
+
+        function pointeroutNew(sprite, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('idle')
+                spriteText.setAlpha(0)
+            }
+        }
+
         /**
          * Displays the 'idle' frame of a sprite if the hand is empty
          * @param {sprite} sprite The sprite to change
@@ -864,15 +889,21 @@ class WaterStable extends Phaser.Scene
 
         // Inspirational message
         inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
-        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 55, color: '#ffffff', align: 'center' }).setVisible(false);
-        inspirationMessage.text = horseData.message;
-        inspirationMessage.setPosition(444-inspirationMessage.width/2, 133-inspirationMessage.height/2);
+        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { 
+            fontFamily: 'Arial', 
+            fontSize: 55, 
+            color: '#ffffff', 
+            align: 'center' ,
+            wordWrap: { width: 800 } 
+        }).setVisible(false);
+        inspirationMessage.text = localeData[horseName + "Quote"];
+        inspirationMessage.setOrigin(0.5)
         inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
 
 
         // Horse name
         const horseNameText = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
-        horseNameText.text = horseData.name;
+        horseNameText.text = localeData[horseName + "Name"];
         horseNameText.setPosition(444-horseNameText.width/2, 478-horseNameText.height/2)
 
         // Buttons
@@ -900,6 +931,11 @@ class WaterStable extends Phaser.Scene
 
         // Progress bars
         const bar = 13
+        const statTextSettings = { 
+            fontFamily: 'Arial', 
+            fontSize: 11.5, 
+            align: 'center'
+        }
         // hunger
         const hungerLevel = 1.5
         const hungerPos = 353 - 32 + (hungerLevel*bar/2)
@@ -915,6 +951,10 @@ class WaterStable extends Phaser.Scene
                 level: hungerLevel
             }
             this.add.image(351, 509, 'hunger_scale');
+            const hungerText = this.add.text(351, 498, 'Static Text Object', statTextSettings);
+            hungerText.text = localeData.txtStatHunger;
+            hungerText.setColor("#fa91b9");
+            hungerText.setOrigin(0.5)
 
         // cleanliness
         const cleanlinessLevel = 1
@@ -931,6 +971,10 @@ class WaterStable extends Phaser.Scene
                 level: cleanlinessLevel
             }
             this.add.image(444, 509, 'cleanliness_scale');
+            const cleanlinessText = this.add.text(444, 498, 'Static Text Object', statTextSettings);
+            cleanlinessText.text = localeData.txtStatClean;
+            cleanlinessText.setColor("#33cc00");
+            cleanlinessText.setOrigin(0.5)
 
         // happiness
         const happinessLevel = 2 - (tempWrong * 0.2)
@@ -947,6 +991,10 @@ class WaterStable extends Phaser.Scene
                 level: happinessLevel
             }
             this.add.image(540, 509, 'happiness_scale');
+            const happinessText = this.add.text(540, 498, 'Static Text Object', statTextSettings);
+            happinessText.text = localeData.txtStatHappy;
+            happinessText.setColor("#00ccff");
+            happinessText.setOrigin(0.5)
 
         /**
          * Adds additional progress to the provided stat bar.
