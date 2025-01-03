@@ -24,6 +24,7 @@ class Load extends Phaser.Scene
             xmlHttplocale.onload = function() {
                 const myObj = JSON.parse(this.responseText);
                 localeData = myObj
+                console.log(localeData)
             }
             xmlHttplocale.open("GET", `./lang/${horseData.type}_${locale}.json`);
             xmlHttplocale.send();
