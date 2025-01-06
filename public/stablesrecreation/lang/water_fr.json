@@ -17,19 +17,19 @@
     "txtHelpBrushes": "Click to select a brush. Click again to gently clean the scales of your horse.",
     "txtHelpOxygen": "Click to replenish the water's oxygen.",
 
-    "txtFullHorse": "Your horse is no longer hungry." ,
+    "txtFullHorse": "Ton cheval n'a plus faim." ,
     "txtCleanHorse": "Your horse is gleaming. Well done!" ,
-    "txtCleanWater": "The water has been replenished with oxygen." ,
+    "txtCleanWater": "L'eau est pleine d'oxygène." ,
     "txtMusic": "Your horse has been soothed." ,
-    "txtCleanTank": "The water is clean and clear." ,
+    "txtCleanTank": "L'eau est propre et claire." ,
     "txtTemperature": "The temperature is perfect." ,
-    "txtBrushClean": "Your horse has been brushed clean." ,
+    "txtBrushClean": "Ton cheval est bien brossé." ,
 
-    "txtToWorld": "To Bella Sara World" ,
+    "txtToWorld": "Vers Bella Sara World" ,
 
-    "txtStatHunger": "HUNGER",
-    "txtStatClean": "CLEANLINESS",
-    "txtStatHappy": "HAPPINESS",
+    "txtStatHunger": "FAIM",
+    "txtStatClean": "PROPRETE",
+    "txtStatHappy": "BONHEUR",
 
     "aleutName": "Aleut",
     "anoukName": "Anouk",

@@ -24,6 +24,7 @@ document.write('\
         <!--<img src="/images/Flags/flag_ch.gif" onclick="changeLanguage(\'de\', true)" title="Schweiz" alt="Schweiz">-->\
         <!--<img src="/images/Flags/flag_pl.gif" onclick="changeLanguage(\'pl\', true)" title="Polska" alt="Polska">-->\
         <!--<img src="/images/Flags/flag_cz.gif" onclick="changeLanguage(\'cs\', true)" title="Česká republika" alt="Česká republika">-->\
+        <img src="/images/Flags/flag_ja.gif" onclick="changeLanguage(\'ja\', true)" title="日本" alt="日本">\
     </div>\
 \
 ');
