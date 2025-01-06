@@ -23,13 +23,13 @@
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
-
+                loadLanguagePref(false);
                 
                 // Gets info about the horse from data.json file
                 const searchQueryString = window.location.search;
                 const urlParameters = new URLSearchParams(searchQueryString);
                 horseName = urlParameters.get('name')
-                locale = urlParameters.get('lang')
+                locale = getCurrentLanguageCode()
                 let localeData
 
                 function urlExists(url)
@@ -77,6 +77,8 @@
         
             </script>
         </div>
+
+        <script src="/flags.js"></script>
         
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
