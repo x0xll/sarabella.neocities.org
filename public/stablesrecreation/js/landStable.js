@@ -154,8 +154,6 @@ class LandStable extends Phaser.Scene
         this.load.audio('water_sound', ['./sounds/water_sound.mp3']);
         this.load.audio('water_drink', ['./sounds/water_drink.mp3']);
         this.load.audio('rear_sound', ['./sounds/rear.mp3']);
-
-        console.log(localeData)
     }
 
     create ()
