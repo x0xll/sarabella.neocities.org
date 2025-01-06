@@ -17,7 +17,7 @@ class Load extends Phaser.Scene
     { 
         if (loadInto === "Stables") {
 
-            if (!locale || !urlExists(`./lang/${locale}.json`)) {
+            if (!locale || !urlExists(`./lang/${horseData.type}_${locale}.json`)) {
                 locale ='en'
             }
             const xmlHttplocale = new XMLHttpRequest();

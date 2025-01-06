@@ -27,9 +27,9 @@
 
     "txtToWorld": "To Bella Sara World" ,
 
-    "txtStatHunger": "HUNGER",
-    "txtStatClean": "CLEANLINESS",
-    "txtStatHappy": "HAPPINESS",
+    "txtStatHunger": "ЕДА",
+    "txtStatClean": "ЧИСТОТА",
+    "txtStatHappy": "СЧАСТЬЕ",
 
     "aleutName": "Aleut",
     "anoukName": "Anouk",
@@ -53,7 +53,7 @@
     "kallistaName": "Kallista",
     "konaName": "Kona",
     "koraName": "Kora",
-    "lienName": "Lien",
+    "lienName": "Лотос",
     "mahaloName": "Mahalo",
     "mahinaName": "Mahina",
     "mariannisName": "Mariannis",
@@ -104,7 +104,7 @@
     "kallistaQuote": "You are in this world to make it better.",
     "konaQuote": "Look beneath the surface and find your inner power.",
     "koraQuote": "I am proud to be your friend.",
-    "lienQuote": "The most important time in your life is right now.",
+    "lienQuote": "Самое важное время в твоей жизни - прямо сейчас, не пропусти!",
     "mahaloQuote": "A little help can be a big gift to someone who needs it.",
     "mahinaQuote": "Let wisdom light your way.",
     "mariannisQuote": "Learning to swim is a fun way to exercise.",

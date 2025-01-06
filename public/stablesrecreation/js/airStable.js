@@ -150,6 +150,8 @@ class AirStable extends Phaser.Scene
         this.load.audio('feather_oil_use', ['./sounds/feather_oil_use.mp3']);
     }
 
+
+    
     create ()
     {
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
@@ -165,6 +167,14 @@ class AirStable extends Phaser.Scene
         const hover2 = this.sound.add('hover2');
         const pickup = this.sound.add('pickup');
 
+        // Text boxes
+        const hoverTextSettings = { 
+            font: 'bold 16px Arial', 
+            align: 'center',
+            color: '#ffffff',
+            wordWrap: { width: 170 } ,
+            lineSpacing: -3
+        }
 
         // Brush
         const brush = this.add.sprite(659, 231, 'brush', 'idle').setScale(0.76).setInteractive({ pixelPerfect: true });
@@ -296,14 +306,18 @@ class AirStable extends Phaser.Scene
                     hoofpick.play('feather_oil_place')
                 }
             });
+            const hoofpickText = this.add.text(685, 150, 'Static Text Object', hoverTextSettings).setAlpha(0);
+            hoofpickText.text = localeData.txtOilHilite2;
+            hoofpickText.setOrigin(0.5)
             hoofpick.on('pointerover', function (pointer) { 
                 if (handCurrent === HAND.empty && brushLevel === 3) {
                     hoofpick.setFrame('hover')
                 } else if (handCurrent === HAND.empty && brushLevel !== 3) {
                     hoofpick.setFrame('hover_wait')
+                    hoofpickText.setAlpha(1)
                 }
              });
-            hoofpick.on('pointerout', function (pointer) { pointerout (hoofpick)});
+             hoofpick.on('pointerout', function (pointer) { pointeroutNew (hoofpick, hoofpickText)});
 
             
         // Leaves (on floor)
@@ -623,27 +637,42 @@ class AirStable extends Phaser.Scene
 
 
 
-
-        /**
+/**
          * Displays the 'hover' frame of a sprite and plays the hover sound if the hand is empty
          * @param {sprite} sprite The sprite to change
          * @param {audio} hoverSound The sound to play on hover
          */
-        function pointerover(sprite, hoverSound) {
-            if (handCurrent === HAND.empty) {
-                sprite.setFrame('hover')
-                hoverSound.play();
-            }
-        }
-        /**
-         * Displays the 'idle' frame of a sprite if the hand is empty
-         * @param {sprite} sprite The sprite to change
-         */
-        function pointerout(sprite) {
-            if (handCurrent === HAND.empty) {
-                sprite.setFrame('idle')
-            }
-        }
+function pointerover(sprite, hoverSound) {
+    if (handCurrent === HAND.empty) {
+        sprite.setFrame('hover')
+        hoverSound.play();
+    }
+}
+
+function pointeroverNew(sprite, hoverSound, spriteText) {
+    if (handCurrent === HAND.empty) {
+        sprite.setFrame('hover')
+        hoverSound.play();
+        spriteText.setAlpha(1)
+    }
+}
+
+function pointeroutNew(sprite, spriteText) {
+    if (handCurrent === HAND.empty) {
+        sprite.setFrame('idle')
+        spriteText.setAlpha(0)
+    }
+}
+
+/**
+ * Displays the 'idle' frame of a sprite if the hand is empty
+ * @param {sprite} sprite The sprite to change
+ */
+function pointerout(sprite) {
+    if (handCurrent === HAND.empty) {
+        sprite.setFrame('idle')
+    }
+}
 
 
         // Berries
@@ -800,15 +829,20 @@ class AirStable extends Phaser.Scene
 
         // Inspirational message
         inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
-        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 55, color: '#ffffff', align: 'center' }).setVisible(false);
-        inspirationMessage.text = horseData.message;
+        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { 
+            fontFamily: 'Arial', 
+            fontSize: 55, 
+            color: '#ffffff', 
+            align: 'center' ,
+            wordWrap: { width: 800 }}).setVisible(false);
+        inspirationMessage.text = localeData[horseName + "Quote"];
         inspirationMessage.setPosition(444-inspirationMessage.width/2, 133-inspirationMessage.height/2);
         inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
 
 
         // Horse name
         const horseNameText = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
-        horseNameText.text = horseData.name;
+        horseNameText.text = localeData[horseName + "Name"];
         horseNameText.setPosition(444-horseNameText.width/2, 478-horseNameText.height/2)
 
         // Buttons
@@ -836,6 +870,11 @@ class AirStable extends Phaser.Scene
 
         // Progress bars
         const bar = 13
+        const statTextSettings = { 
+            fontFamily: 'Arial', 
+            fontSize: 11.5, 
+            align: 'center'
+        }
         // hunger
         const hungerLevel = 1.5
         const hungerPos = 353 - 32 + (hungerLevel*bar/2)
@@ -851,6 +890,10 @@ class AirStable extends Phaser.Scene
                 level: hungerLevel
             }
             this.add.image(351, 509, 'hunger_scale');
+            const hungerText = this.add.text(351, 498, 'Static Text Object', statTextSettings);
+            hungerText.text = localeData.txtStatHunger;
+            hungerText.setColor("#fa91b9");
+            hungerText.setOrigin(0.5)
 
         // cleanliness
         const cleanlinessLevel = 1
@@ -867,6 +910,10 @@ class AirStable extends Phaser.Scene
                 level: cleanlinessLevel
             }
             this.add.image(444, 509, 'cleanliness_scale');
+            const cleanlinessText = this.add.text(444, 498, 'Static Text Object', statTextSettings);
+            cleanlinessText.text = localeData.txtStatClean;
+            cleanlinessText.setColor("#33cc00");
+            cleanlinessText.setOrigin(0.5)
 
         // happiness
         const happinessLevel = 1.75
@@ -883,6 +930,10 @@ class AirStable extends Phaser.Scene
                 level: happinessLevel
             }
             this.add.image(540, 509, 'happiness_scale');
+            const happinessText = this.add.text(540, 498, 'Static Text Object', statTextSettings);
+            happinessText.text = localeData.txtStatHappy;
+            happinessText.setColor("#00ccff");
+            happinessText.setOrigin(0.5)
 
         /**
          * Adds additional progress to the provided stat bar.

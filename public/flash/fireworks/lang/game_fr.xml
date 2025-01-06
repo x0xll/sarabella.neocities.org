@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+	<play>Jouer</play>
+	<pause>Pause</pause>
+    <beautyeh>Tu as créé un magnifique feu d’artifice.</beautyeh>
+    <greatshow>Great Show!</greatshow>
+    <replay>Rejouer</replay>
+    <newshow>Nouveau Spectacle</newshow>
+    <quit>Quitter</quit>
+</root>
