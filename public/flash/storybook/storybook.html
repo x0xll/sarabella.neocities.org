@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <title data-il8n="game_storybook">Storybook</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
     </head>
-    <body class="game">
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref()">
         <script src="/header.js"></script>
 
         <div class="alert">
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          This game seems to be unable to turn off sounds when going to the next page in the book and
-           does not always play the videos as expected.
+          <p data-il8n="storybook_warning">This game seems to be unable to turn off sounds when going to the next page in the book and
+           does not always play the videos as expected.</p>
         </div> 
         
         <script>
@@ -26,10 +30,12 @@
           <embed width="887" height="521" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="storybook.swf" type="application/x-shockwave-flash">
         </div>
 
+        <script src="/flags.js"></script>
+
         <div class="footer">
-                <a href="/index.html" class="global-lowernav-link">Home</a> |
-                <a href="https://bellasara.wiki.gg/wiki/Bella%27s_Storybook" class="global-lowernav-link">Wiki Page</a> |
-                <a href="https://web.archive.org/web/20170504130036/http://www.bellasara.com/flash/storybook/storybook.aspx" class="global-lowernav-link">Web Archive Page</a>
+                <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+                <a href="https://bellasara.wiki.gg/wiki/Bella%27s_Storybook" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a> |
+                <a href="https://web.archive.org/web/20170504130036/http://www.bellasara.com/flash/storybook/storybook.aspx" data-il8n="footer_webarchive_linktxt" class="global-lowernav-link">Web Archive Page</a>
         </div>
   </body>
 </html>

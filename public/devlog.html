@@ -3,17 +3,19 @@
 <html>
 
     <head>
-        <title>Bella Sara Digital Archive</title>
+        <title data-il8n="title">Bella Sara Digital Archive</title>
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <body>
+    <script src="/language.js"></script>
+
+    <body onload="loadLanguagePref()">
         <script src="/header.js"></script>
 
         
         <div class="content textbox-parent">
             <div class="textbox">
-                <p style="text-align: left;"> This is a super quick and dirty summary of the progress that's been made on repairing old Bella Sara games.<br><br>
+                <p style="text-align: left;" data-il8n="devlog_summary"> This is a super quick and dirty summary of the progress that's been made on repairing old Bella Sara games.<br><br>
                 <i>Flash files we currently have: Cloud Jumper, Treasure's Hunt, Storybook, Puzzles, Coloring, Bella's Beauty Box, Lance Riding, World Map, Home Page, Stables, Art Studio</i><br>
                 Of these, only Cloud Jumper, Storybook and Treasure's Hunt are currently publicly playable. Storybook is available through Flashpoint.<br>
                 World Map, Home Page, and Art Studio are fully functional and will be available through Flashpoint shortly.<br>
@@ -24,8 +26,10 @@
             </div>
         </div>
 
+        <script src="/flags.js"></script>
+
         <div class="footer">
-            <p>For questions, comments, or help:<br>
+            <p data-il8n="footer_maininfos">For questions, comments, or help:<br>
             @Archiving on the Bella Sara Discord or open a discussion on <a href="https://github.com/x0xll/sarabella.neocities.org/discussions">Our Github</a></p>
         </div>
         
