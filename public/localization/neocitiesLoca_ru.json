@@ -31,7 +31,9 @@
     "play_partiallyrecoveredgames_desc" : "Des jeux qui ont été archivés à partir du site d'origine, mais pour lesquels certains fichiers ou fonctionnalités de base sont manquants.",
     "play_newgames_title" : "Nouveaux jeux",
     "play_newgames_desc" : "De nouveaux jeux sur le thème ou inspirés de Bella Sara.",
-    
+    "play_activities_title" : "Recovered Activities",
+    "play_activities_desc" : "These are activities that were archived from the original site.",
+
     "game_cloudjumper" : "Cloudjumper",
     "game_treasurehunt" : "Treasure's Hunt",
     "game_puzzles" : "Puzzles",
@@ -48,6 +50,8 @@
     "game_randomartideagenerator" : "Random Art Idea Generator",
     "game_dressupstables" : "Dress Up Game",
     "game_firelightFestival" : "Festival de Feux d'Artifice",
+
+    "activity_coloringpages" : "Coloring Pages",
 
     "artrandomizer_title" : "Art Randomizer",
     "artrandomizer_randombtn" : "Randomize!",
@@ -189,5 +193,17 @@
 
     "stables_title" : "Welcome to the World of Bella Sara",
 
-    "dressup_horselink" : "Horse Link"
+    "dressup_horselink" : "Horse Link",
+
+    "bellaName" : "Bella",
+    "honoraName" : "Honora",
+    "kittyName" : "Kitty",
+    "koraName" : "Kora",
+    "belloName" : "Bello",
+    "brydaName" : "Bryda",
+    "diamondName" : "Diamond",
+    "empressName" : "Empress",
+    "jewelName" : "Jewel",
+    "lienName" : "Lien",
+    "mahinaName" : "Mahina"
 }

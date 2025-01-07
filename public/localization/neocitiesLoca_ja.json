@@ -31,6 +31,8 @@
     "play_partiallyrecoveredgames_desc" : "このゲームはオリジナルサイトからアーカイブされたが、部分復旧ファイルがあります。",
     "play_newgames_title" : "新しいゲーム",
     "play_newgames_desc" : "このゲームはベラセラをモチーフにしたゲームです。",
+    "play_activities_title" : "Recovered Activities",
+    "play_activities_desc" : "These are activities that were archived from the original site.",
     
     "game_cloudjumper" : "Cloudjumper（クラウドジャンパー）",
     "game_treasurehunt" : "Treasure's Hunt（トレジャーズハント）",
@@ -48,6 +50,8 @@
     "game_randomartideagenerator" : "アートアイデアジェネレーター",
     "game_dressupstables" : "ドレスアップゲーム",
     "game_firelightFestival" : "Firelight Festival",
+
+    "activity_coloringpages" : "Coloring Pages",
 
     "artrandomizer_title" : "アートランダマイザー",
     "artrandomizer_randombtn" : "ランダム化!",
@@ -189,5 +193,17 @@
 
     "stables_title" : "ベラセラの世界へようこそ",
 
-    "dressup_horselink" : "馬のリンク"
+    "dressup_horselink" : "馬のリンク",
+
+    "bellaName" : "Bella",
+    "honoraName" : "Honora",
+    "kittyName" : "Kitty",
+    "koraName" : "Kora",
+    "belloName" : "Bello",
+    "brydaName" : "Bryda",
+    "diamondName" : "Diamond",
+    "empressName" : "Empress",
+    "jewelName" : "Jewel",
+    "lienName" : "Lien",
+    "mahinaName" : "Mahina"
 }

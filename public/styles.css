@@ -133,3 +133,14 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+.flexboxColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.boldText
+{
+    font-weight: bold; 
+    font-family: Trebuchet MS, sans-serif;
+}
