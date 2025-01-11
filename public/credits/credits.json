@@ -1,0 +1,34 @@
+{
+    "section" :[
+    {
+        "title" : "Archivists",
+        "people" :[
+        {
+            "name": "Person 1"
+        }
+        ]
+    },
+    {
+        "title" : "Developers",
+        "people" :[
+        {
+            "name": "x0xll"
+        },
+        {
+            "name": "Gridloch"
+        },
+        {
+            "name": "SinGala"
+        }
+        ]
+    },
+    {
+        "title" : "Japanese Translator",
+        "people" :[
+        {
+            "name": "bellasaraarchivist"
+        }
+        ]
+    }
+    ]
+}
