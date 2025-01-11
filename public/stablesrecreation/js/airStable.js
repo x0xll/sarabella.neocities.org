@@ -121,6 +121,7 @@ class AirStable extends Phaser.Scene
 
         this.load.atlas('music_button', './images/airStable/music.png', './images/airStable/music.json');
         this.load.atlas('help_button', './images/airStable/help.png', './images/airStable/help.json');
+        this.load.image('stat_box', './images/StatBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -479,6 +480,7 @@ class AirStable extends Phaser.Scene
                     }
                     else if (brushLevel === 2) {
                         brushLevel += 1;
+                        statBoxQueue.push(localeData.txtReadyToBeOiled)
                         checkClean()
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
@@ -505,6 +507,7 @@ class AirStable extends Phaser.Scene
                 }
                 function checkClean() {
                     if (brushLevel === 3 && extraCleanLevel === 2) {
+                        statBoxQueue.push(localeData.txtCleanHorse)
                         horseAnimationQueue.push(HORSE_STATES.rear)
                     }
                 }
@@ -585,6 +588,23 @@ class AirStable extends Phaser.Scene
                 // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
                 // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
                 complete: function endAnimation(entry) { 
+                switch (entry.animation.name) {
+                    case 'eat_food':
+                        horseFullLevel[0] += 1
+                        if (horseFullLevel[0] === 1 && horseFullLevel[1] >= 1) {
+                            statBoxQueue.push(localeData.txtFullHorse)
+                        }
+                        break;
+                    case 'drink':
+                        horseFullLevel[1] += 1
+                        if (horseFullLevel[0] >= 1 && horseFullLevel[1] === 1) {
+                            statBoxQueue.push(localeData.txtFullHorse)
+                        }
+                        break;
+                
+                    default:
+                        break;
+                }
                     if (horseAnimationQueue.length === 0) {
                         const horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
                         let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
@@ -733,6 +753,7 @@ function pointerout(sprite) {
                     leaves.play('leaves_fall')
                     leafTree.play('tree_shake')
                     shakeLeaves.play()
+                    statBoxQueue.push(localeData.txtNoMoreLeaves)
                     updateBar(cleanlinessBar, 2)
                     updateBar(happinessBar, 1/2 + 0.05)
                 }
@@ -812,6 +833,7 @@ function pointerout(sprite) {
                     backgroundMusic.stop()
                     sootheSound.play();
                     sootheSoundLength.play();
+                    statBoxQueue.push(localeData.txtMusic)
                     sootheSoundLength.on('complete', function (sound) {
                         if (playMusic) {
                             backgroundMusic.play()
@@ -820,6 +842,12 @@ function pointerout(sprite) {
                     updateBar(happinessBar, 0.5 + 0.1)
                 }
             });
+
+
+            // Text box to display stat messages
+            statBox = this.add.image(695, 120, 'stat_box').setAlpha(0)
+            statBoxText = this.add.text(695, 120, 'Static Text Object', hoverTextSettings).setAlpha(0);
+            statBoxText.setOrigin(.5, .5)
 
 
 
@@ -1134,7 +1162,16 @@ function pointerout(sprite) {
                 inspirationMessage.setAlpha(0); 
                 canPlayInspiration = true;
             });
-            
+        }
+        
+        if (statBoxQueue.length > 0) {
+            statBox.setAlpha(1)
+            statBoxText.setAlpha(1)
+            statBoxText.text = statBoxQueue.shift()
+            this.time.delayedCall(3280, function () {
+                statBox.setAlpha(0)
+                statBoxText.setAlpha(0)
+            });
         }
     }
 }

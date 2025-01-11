@@ -136,6 +136,7 @@ class WaterStable extends Phaser.Scene
 
         this.load.atlas('music_button', './images/waterStable/music.png', './images/waterStable/music.json');
         this.load.atlas('help_button', './images/waterStable/help.png', './images/waterStable/help.json');
+        this.load.image('stat_box', './images/StatBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -449,6 +450,7 @@ class WaterStable extends Phaser.Scene
                  {
                      if (handCurrent === HAND.empty && !soothed) {
                          soothed = true
+                         statBoxQueue.push(localeData.txtMusic)
                          speaker.play('soothe')
                          backgroundMusic.stop()
                          sootheSound.play();
@@ -571,6 +573,7 @@ class WaterStable extends Phaser.Scene
                     }
                     else if (brushLevel === 2) {
                         brushLevel += 1;
+                        statBoxQueue.push(localeData.txtBrushClean)
                         checkClean()
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
@@ -585,6 +588,7 @@ class WaterStable extends Phaser.Scene
                     if (extraCleanLevel <1 && handCurrent === HAND.hoofpick) {
                         extraCleanLevel += 1
                         checkClean()
+                        statBoxQueue.push(localeData.txtCleanHorse)
                         hoofpickHeldSprite.play('polisher_use')
                         polisherSound.play();
                         updateBar(cleanlinessBar, 1)
@@ -644,6 +648,12 @@ class WaterStable extends Phaser.Scene
                 // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
                 // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
                 complete: function endAnimation(entry) { 
+                    if (entry.animation.name === 'eat_food') {
+                        horseFullLevel[0] += 1
+                        if (horseFullLevel[0] === 1) {
+                            statBoxQueue.push(localeData.txtFullHorse)
+                        }
+                    }
                     if (horseAnimationQueue.length === 0) {
                         const horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'paw_ground', 'shift_weight', 'tail_swish']
                         let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
@@ -695,6 +705,7 @@ class WaterStable extends Phaser.Scene
                         temperatureButtons.setVisible(false)
                         temperatureBar.setFrame('perfect')
                         tempPerfect.play()
+                        statBoxQueue.push(localeData.txtTemperature)
                     }
                     updateBar(happinessBar, 0.2)
                     tempChange.play()
@@ -880,6 +891,12 @@ class WaterStable extends Phaser.Scene
             waterSpinnerHolder.on('pointerover', cleanWaterHover)
             waterSpinnerHolder.on('pointerout', cleanWaterPointerOut)
             waterSpinnerHolder.on('pointerdown', cleanWater)
+
+
+        // Text box to display stat messages
+        statBox = this.add.image(665, 150, 'stat_box').setAlpha(0)
+        statBoxText = this.add.text(665, 150, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        statBoxText.setOrigin(.5, .5)
 
 
 
@@ -1138,12 +1155,15 @@ class WaterStable extends Phaser.Scene
         // play water clean sound when fountain is at correct frame
         if (water.frame.name === 'dirtywater0015') {
             drainWater.play();
+        } else if (water.frame.name === 'dirtywater0065') {
+            statBoxQueue.push(localeData.txtCleanTank)
         }
         if (oxygen.frame.name === 'bubbles0006') {
             bubbleSound.play();
         }
         else if (oxygen.frame.name === 'bubbles0090') {
             bubbleReplaceSound.play();
+            statBoxQueue.push(localeData.txtCleanWater)
         }
         if (foodTrough.frame.name === 'feed0006') {
             foodDispenseSound.play();
@@ -1209,7 +1229,24 @@ class WaterStable extends Phaser.Scene
                 inspirationMessage.setAlpha(0); 
                 canPlayInspiration = true;
             });
-            
+        }
+        
+        if (statBoxQueue.length > 0) {
+            if (statBoxQueue[0] === localeData.txtBrushClean) {
+                statBox.setPosition(665, 225)
+                statBoxText.setPosition(665, 225)
+            } else {
+                statBox.setPosition(665, 150)
+                statBoxText.setPosition(665, 150)
+            }
+
+            statBox.setAlpha(1)
+            statBoxText.setAlpha(1)
+            statBoxText.text = statBoxQueue.shift()
+            this.time.delayedCall(3280, function () {
+                statBox.setAlpha(0)
+                statBoxText.setAlpha(0)
+            });
         }
     }
 }
