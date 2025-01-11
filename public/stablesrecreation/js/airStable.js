@@ -862,11 +862,67 @@ function pointerout(sprite) {
             });
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}`) });
-        // help button
-        const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
-            helpButton.on('pointerover', function (pointer) { this.setFrame('help') });
-            helpButton.on('pointerout', function (pointer) { this.setFrame('idle') });
+        
+        
+            // help button
+            var helpPopups = [];
+            function showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings, scene)
+            {
+                const helpTxt = scene.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
+                helpTxt.text = localeTxtKey;
+                helpTxt.setOrigin(0.5)
+                helpPopups.push(helpTxt);
+            }
 
+            const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));         
+            const hoverTextSettingsHelp = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 100},
+                lineSpacing: -2
+            }
+
+            const hoverTextSettingsHelpBiggerBox = {
+                font: 'bold 11px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 150},
+                lineSpacing: -2
+            }
+
+            const hoverTextSettingsHelpOneLine = {
+                font: 'bold 11px Arial', 
+                align: 'center',
+                color: '#ffffff',
+            }
+
+            showLocalizedHelpTexts(585, 30, localeData.txtHelpTrophyRoom, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(180, 285, localeData.txtHelpFountain, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(365, 409, localeData.txtHelpStats, hoverTextSettingsHelpOneLine, this);
+            showLocalizedHelpTexts(245, 140, localeData.txtHelpSpeaker, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(250, 75, localeData.txtHelpInspiration, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(425, 110, localeData.txtHelpWindChime, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(780, 90, localeData.txtHelpBerries, hoverTextSettingsHelpBiggerBox, this);
+            showLocalizedHelpTexts(125, 380, localeData.txtHelpAcorn, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(750, 175, localeData.txtHelpWorld, hoverTextSettingsHelpOneLine, this);
+            showLocalizedHelpTexts(827, 290, localeData.txtHelpOil, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(540, 240, localeData.txtHelpBrush, hoverTextSettingsHelp, this);
+            //showLocalizedHelpTexts(605, 365, localeData.txtHelpLuck, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(650, 410, localeData.txtHelpBranch, hoverTextSettingsHelp, this);
+        
+            helpButton.on('pointerover', function (pointer) { 
+                this.setFrame('help') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(1);
+                });
+            });
+            helpButton.on('pointerout', function (pointer) { 
+                this.setFrame('idle') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(0);
+                });
+            });
 
         // Progress bars
         const bar = 13
