@@ -14,9 +14,13 @@ const HAND = {
 handCurrent = HAND.empty;
 waterFilled = false;
 foodFilled = false;
+horseFullLevel = [0, 0]
 brushLevel = 0
 playInspiration = true
 canPlayInspiration = false
+statBox = null
+statBoxText = null
+statBoxQueue = []
 
 horseBusy = false
 const HORSE_STATES = {
@@ -132,6 +136,7 @@ class LandStable extends Phaser.Scene
 
         this.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
         this.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
+        this.load.image('stat_box', './images/StatBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -398,6 +403,9 @@ class LandStable extends Phaser.Scene
                     }
                     else if (brushLevel === 2) {
                         brushLevel += 1;
+                        if (brushLevel === 3) {
+                            statBoxQueue.push(localeData.txtBrushClean)
+                        }
                         checkClean()
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
@@ -475,6 +483,23 @@ class LandStable extends Phaser.Scene
                 // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
                 // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
                 complete: function endAnimation(entry) { 
+                    switch (entry.animation.name) {
+                        case 'eat_food':
+                            horseFullLevel[0] += 1
+                            if (horseFullLevel[0] === 1 && horseFullLevel[1] >= 1) {
+                                statBoxQueue.push(localeData.txtFullHorse)
+                            }
+                            break;
+                        case 'drink':
+                            horseFullLevel[1] += 1
+                            if (horseFullLevel[0] >= 1 && horseFullLevel[1] === 1) {
+                                statBoxQueue.push(localeData.txtFullHorse)
+                            }
+                            break;
+                    
+                        default:
+                            break;
+                    }
                     if (horseAnimationQueue.length === 0) {
                         const horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
                         let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
@@ -539,9 +564,8 @@ class LandStable extends Phaser.Scene
         const fork = this.add.sprite(718, 177, 'fork', 'idle').setInteractive({ pixelPerfect: true });
         const forkFill = this.sound.add('fork_fill');
         const forkPlace = this.sound.add('fork_place');
-        const forkText = this.add.text(645, 225, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        const forkText = this.add.text(643, 225, 'Static Text Object', hoverTextSettings).setAlpha(0).setOrigin(0.5);
             forkText.text = localeData.txtPitchForkHilite2;
-            forkText.setOrigin(0.5)
             this.anims.create({
                 key: 'fork_fill',
                 frames: this.anims.generateFrameNumbers('fork', { frames: [
@@ -599,7 +623,7 @@ class LandStable extends Phaser.Scene
         // Shovel
         const shovel = this.add.sprite(742, 189, 'shovel', 'idle').setInteractive({ pixelPerfect: true });
         const shovelSound = this.sound.add('shovel_sound');
-        const shovelText = this.add.text(620, 245, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        const shovelText = this.add.text(685, 270, 'Static Text Object', hoverTextSettings).setAlpha(0).setOrigin(.5, .5);
         shovelText.text = localeData.txtShovelHilite2;
             this.anims.create({
                 key: 'shovel_pickup',
@@ -788,6 +812,13 @@ class LandStable extends Phaser.Scene
             function cleanHooves(sprite) {
                 if (sprite.frame.name <2 && handCurrent === HAND.hoofpick) {
                     sprite.setFrame(sprite.frame.name + 1)
+                    if (sprite.frame.name === 2) {
+                        if (sprite === hooves1) {
+                            statBoxQueue.push(localeData.txtFrontHooves)
+                        } else {
+                            statBoxQueue.push(localeData.txtRearHooves)
+                        }
+                    }
                     checkClean()
                     hoofpickHeldSprite.play('hoofpick_use')
                     updateBar(cleanlinessBar, 0.25)
@@ -926,6 +957,12 @@ class LandStable extends Phaser.Scene
                 }
             });
 
+        // Text box to display stat messages
+        statBox = this.add.image(625, 130, 'stat_box').setAlpha(0)
+        statBoxText = this.add.text(625, 130, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        // statBoxText.text = localeData[horseName + "Name"];
+        statBoxText.setOrigin(.5, .5)
+
 
 
         // ---------- Stable foreground and UI ---------- //
@@ -947,9 +984,9 @@ class LandStable extends Phaser.Scene
 
 
         // Horse name
-        const horseNameText = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
+        const horseNameText = this.add.text(444, 478, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
         horseNameText.text = localeData[horseName + "Name"];
-        horseNameText.setPosition(444-horseNameText.width/2, 478-horseNameText.height/2)
+        horseNameText.setOrigin(.5, .5)
 
         // Buttons
         // music button
@@ -1291,7 +1328,16 @@ class LandStable extends Phaser.Scene
                 inspirationMessage.setAlpha(0); 
                 canPlayInspiration = true;
             });
-            
+        }
+
+        if (statBoxQueue.length > 0) {
+            statBox.setAlpha(1)
+            statBoxText.setAlpha(1)
+            statBoxText.text = statBoxQueue.shift()
+            this.time.delayedCall(3280, function () {
+                statBox.setAlpha(0)
+                statBoxText.setAlpha(0)
+            });
         }
     }
 }

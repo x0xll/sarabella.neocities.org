@@ -1,8 +1,8 @@
 {
-    "txtRollOverPitchFork": "In with the new! Use the pitchfork to collect and spread fresh straw.",
-    "txtRollOverShovel": "Out with the old! Scoop away the soiled straw.",
-    "txtShovelHilite2": "Use the pitchfork to add new straw for your horse.",
-    "txtPitchForkHilite2": "First use the shovel to remove the soiled straw.",
+    "txtRollOverPitchFork": "Nimm die Heugabel und rein mit dem frischen Heu!",
+    "txtRollOverShovel": "Nimm die Schaufel und raus mit der alten Heu!",
+    "txtShovelHilite2": "Nimm die Heugabel und verteile das frischen Heu!",
+    "txtPitchForkHilite2": "Nimm zuerst die Schaufel und entfeme das schmetzlge Heu.",
     "txtOatsRollOver": "Add oats to the trough in front of your horse.",
 
     "txtHelpTrophyRoom": "Click to visit the trophy room.",
@@ -19,19 +19,19 @@
     "txtHelpBrush": "Click to select a brush. Click again to gently clean the dust from your horse.",
     "txtHelpLuck": "Click for good luck!",
 
-    "txtFullHorse": "Your horse is full.",
-    "txtCleanHorse": "Your horse is clean.",
+    "txtFullHorse": "Dein Pferd ist satt.",
+    "txtCleanHorse": "Dein Pferd is clean.",
     "txtCleanStable": "The stable is clean.",
-    "txtFrontHooves": "The front hooves are clean.",
-    "txtRearHooves": "The rear hooves are clean.",
-    "txtNoMoreHay": "Well Done! No more fresh straw is needed at this time.",
-    "txtBrushClean": "Your horse has been brushed clean.",
+    "txtFrontHooves": "Die Vorderhufe sind sauber.",
+    "txtRearHooves": "Die Hinterhufe sind sauber.",
+    "txtNoMoreHay": "Gut gemacht! Im Moment brauchst du kein frisches Heu mehr.",
+    "txtBrushClean": "Dein Pferd ist sauber gestriegelt.",
 
     "txtToWorld": "To Bella Sara World.",
 
     "txtStatHunger": "HUNGER",
-    "txtStatClean": "CLEANLINESS",
-    "txtStatHappy": "HAPPINESS",
+    "txtStatClean": "SAUBERNETT",
+    "txtStatHappy": "STIMMUNG",
 
     "abenakiName": "Abenaki",
     "absarokeName": "Absaroke",
