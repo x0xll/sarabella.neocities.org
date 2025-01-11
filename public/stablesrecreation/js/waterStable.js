@@ -924,23 +924,32 @@ class WaterStable extends Phaser.Scene
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}`) });
         // help button
+        var helpPopups = [];
+        function showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings, scene)
+        {
+            const helpTxt = scene.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
+            helpTxt.text = localeTxtKey;
+            helpTxt.setOrigin(0.5)
+            helpPopups.push(helpTxt);
+        }
+
         const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
+            const hoverTextSettingsHelp = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 100},
+                lineSpacing: -2
+            }
+        
             const hoverTextSettingsStatsHelp = {
                 font: 'bold 11px Arial', 
                 align: 'center',
                 color: '#ffffff',
             }
 
-            const hoverTextSettingsChestutHelp = {
-                font: 'bold 14px Arial', 
-                align: 'center',
-                color: '#ffffff',
-                wordWrap: {width: 200},
-                lineSpacing: -2
-            }
-
             const hoverTextSettingsBrushHelp = {
-                font: 'bold 14px Arial', 
+                font: 'bold 12px Arial', 
                 align: 'center',
                 color: '#ffffff',
                 wordWrap: {width: 100},
@@ -948,79 +957,37 @@ class WaterStable extends Phaser.Scene
             }
 
             const hoverTextSettingsLaserHelp = {
-                font: 'bold 15px Arial', 
+                font: 'bold 12px Arial', 
                 align: 'center',
                 color: '#ffffff',
                 wordWrap: {width: 150},
                 lineSpacing: -2
             }
 
-            const helpTrophyText = this.add.text(545, 280, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpTrophyText.text = localeData.txtHelpTrophyRoom;
-            helpTrophyText.setOrigin(0.5)
-            const helpThermostatText = this.add.text(197, 125, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpThermostatText.text = localeData.txtHelpThermostat;
-            helpThermostatText.setOrigin(0.5)
-            const helpStatsText = this.add.text(445, 420, 'Static Text Object', hoverTextSettingsStatsHelp).setAlpha(0);
-            helpStatsText.text = localeData.txtHelpStats;
-            helpStatsText.setOrigin(0.5)
-            const helpMusicText = this.add.text(560, 35, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpMusicText.text = localeData.txtHelpMusic;
-            helpMusicText.setOrigin(0.5)
-            const helpInspirationText = this.add.text(175, 240, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpInspirationText.text = localeData.txtHelpInspiration;
-            helpInspirationText.setOrigin(0.5)
-            const helpCleanerText = this.add.text(730, 27, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpCleanerText.text = localeData.txtHelpCleaner;
-            helpCleanerText.setOrigin(0.5)
-            const helpChestnutText = this.add.text(215, 410, 'Static Text Object', hoverTextSettingsChestutHelp).setAlpha(0);
-            helpChestnutText.text = localeData.txtHelpChestnut;
-            helpChestnutText.setOrigin(0.5)
-            const helpFoodText = this.add.text(347, 47, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpFoodText.text = localeData.txtHelpFood;
-            helpFoodText.setOrigin(0.5)
-            const helpWorldText = this.add.text(792, 243, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpWorldText.text = localeData.txtHelpWorld1;
-            helpWorldText.setOrigin(0.5)
-            const helpLaserText = this.add.text(525, 210, 'Static Text Object', hoverTextSettingsLaserHelp).setAlpha(0);
-            helpLaserText.text = localeData.txtHelpLaserThing;
-            helpLaserText.setOrigin(0.5)
-            const helpBrushText = this.add.text(550, 120, 'Static Text Object', hoverTextSettingsBrushHelp).setAlpha(0);
-            helpBrushText.text = localeData.txtHelpBrushes;
-            helpBrushText.setOrigin(0.5)
-            const helpOxygenText = this.add.text(605, 365, 'Static Text Object', hoverTextSettings).setAlpha(0);
-            helpOxygenText.text = localeData.txtHelpOxygen;
-            helpOxygenText.setOrigin(0.5)
+            showLocalizedHelpTexts(545, 280, localeData.txtHelpTrophyRoom, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(197, 125, localeData.txtHelpThermostat, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(445, 420, localeData.txtHelpStats, hoverTextSettingsStatsHelp, this);
+            showLocalizedHelpTexts(560, 35, localeData.txtHelpMusic, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(175, 240, localeData.txtHelpInspiration, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(730, 27, localeData.txtHelpCleaner, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(215, 410, localeData.txtHelpChestnut, hoverTextSettingsLaserHelp, this);
+            showLocalizedHelpTexts(347, 47, localeData.txtHelpFood, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(792, 243, localeData.txtHelpWorld1, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(525, 210, localeData.txtHelpLaserThing, hoverTextSettingsLaserHelp, this);
+            showLocalizedHelpTexts(550, 120, localeData.txtHelpBrushes, hoverTextSettingsBrushHelp, this);
+            showLocalizedHelpTexts(605, 365, localeData.txtHelpOxygen, hoverTextSettingsHelp, this);
         
             helpButton.on('pointerover', function (pointer) { 
                 this.setFrame('help') 
-                helpTrophyText.setAlpha(1);
-                helpThermostatText.setAlpha(1);
-                helpStatsText.setAlpha(1);
-                helpMusicText.setAlpha(1);
-                helpInspirationText.setAlpha(1);
-                helpCleanerText.setAlpha(1);
-                helpChestnutText.setAlpha(1);
-                helpFoodText.setAlpha(1);
-                helpWorldText.setAlpha(1);
-                helpLaserText.setAlpha(1);
-                helpBrushText.setAlpha(1);
-                helpOxygenText.setAlpha(1);
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(1);
+                });
             });
             helpButton.on('pointerout', function (pointer) { 
                 this.setFrame('idle') 
-                helpTrophyText.setAlpha(0);
-                helpThermostatText.setAlpha(0);
-                helpStatsText.setAlpha(0);
-                helpMusicText.setAlpha(0);
-                helpInspirationText.setAlpha(0);
-                helpCleanerText.setAlpha(0);
-                helpChestnutText.setAlpha(0);
-                helpFoodText.setAlpha(0);
-                helpWorldText.setAlpha(0);
-                helpLaserText.setAlpha(0);
-                helpBrushText.setAlpha(0);
-                helpOxygenText.setAlpha(0);
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(0);
+                });
             });
 
 
