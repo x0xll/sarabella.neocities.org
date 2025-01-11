@@ -11,7 +11,7 @@ async function setCreditsDatas()
                             creditsDatas = json;
                         })
     
-    console.log(creditsDatas);
+    //console.log(creditsDatas);
 
     for(var i = 0; i < creditsDatas.section.length; i++)
     {
