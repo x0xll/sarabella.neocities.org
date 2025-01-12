@@ -249,6 +249,9 @@ class LandStable extends Phaser.Scene
                 updateBar(cleanlinessBar, 1/3)
                 updateBar(happinessBar, 1/6 + 0.05)
             }
+            if (parseInt(straw1.frame.name.substr(7)) + parseInt(straw2.frame.name.substr(7)) + parseInt(straw3.frame.name.substr(7)) > 24) {
+                statBoxQueue.push(localeData.txtNoMoreHay)
+            }
         }
         straw1Interactive.on('pointerdown', function (pointer) {cleanStraw(straw1, 'straw1_pickup', 'straw1_place')});
         straw2Interactive.on('pointerdown', function (pointer) {cleanStraw(straw2, 'straw2_pickup', 'straw2_place')});
@@ -1007,7 +1010,7 @@ class LandStable extends Phaser.Scene
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}`) });
 
         // help button
-        var helpPopups = [];
+        let helpPopups = [];
         function showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings, scene)
         {
             const helpTxt = scene.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);

@@ -17,7 +17,13 @@ class Load extends Phaser.Scene
     { 
         if (loadInto === "Stables") {
 
-            if (!locale || !urlExists(`./lang/${horseData.type}_${locale}.json`)) {
+            let langFile = null
+            if (horseData.type === 'dressup') {
+                langFile = `./lang/dressup`
+            } else {
+                langFile = `./lang/${horseData.type}`
+            }
+            if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
                 locale ='en'
             }
             const xmlHttplocale = new XMLHttpRequest();
@@ -25,7 +31,7 @@ class Load extends Phaser.Scene
                 const myObj = JSON.parse(this.responseText);
                 localeData = myObj
             }
-            xmlHttplocale.open("GET", `./lang/${horseData.type}_${locale}.json`);
+            xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
             xmlHttplocale.send();
 
             loadInto = `${horseData.type}Stable`

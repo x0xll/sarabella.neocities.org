@@ -15,16 +15,21 @@
             }
         </style>
     </head>
-    <body style="text-align: center;">
+
+    <script src="/language.js"></script>
+    
+    <body style="text-align: center;" onload="loadLanguagePref()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
-
+                loadLanguagePref(false);
                 
                 // Gets info about the horse from data.json file
                 const searchQueryString = window.location.search;
                 const urlParameters = new URLSearchParams(searchQueryString);
                 horseName = urlParameters.get('name')
+                locale = getCurrentLanguageCode()
+                let localeData
 
                 function urlExists(url)
                 {

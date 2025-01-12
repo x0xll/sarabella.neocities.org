@@ -566,7 +566,7 @@ class dressupStable extends Phaser.Scene
                 document.execCommand('copy');
                 
             // Alert the copied text
-            alert("The link to this horse is: " + copyText);
+            alert(localeData.txtDressupLinkInfo + copyText);
         }
 
         const sharedData = {
@@ -917,30 +917,30 @@ class dressupStable extends Phaser.Scene
         messageInputText.placeholder = 'Message'
 
 
-        const featheringSlider = makeSelector(723, 270, 6, 'feathering', 'Feathering')
+        const featheringSlider = makeSelector(723, 270, 6, 'feathering', localeData.txtDressupFeathering)
 
-        const darkSlider = makeSelector(723, 270, 5, 'darkMarkings', 'Bay / Dun')
+        const darkSlider = makeSelector(723, 270, 5, 'darkMarkings', localeData.txtDressupBay)
 
-        const forelockSlider = makeSelector(723, 270, 3, 'forelock', 'Forelock')
-        const maneSlider = makeSelector(723, 300, 3, 'mane', 'Mane')
-        const tailSlider = makeSelector(723, 330, 3, 'tail', 'Tail')
+        const forelockSlider = makeSelector(723, 270, 3, 'forelock', localeData.txtDressupForelock)
+        const maneSlider = makeSelector(723, 300, 3, 'mane', localeData.txtDressupMane)
+        const tailSlider = makeSelector(723, 330, 3, 'tail', localeData.txtDressupTail)
 
-        const markingHeadStarSlider = makeSelector(723, 100, 4, 'headStar', 'Star')
-        const markingHeadSnipSlider = makeSelector(723, 130, 5, 'headSnip', 'Snip')
-        const markingHeadStripeSlider = makeSelector(723, 160, 7, 'headStripe', 'Stripe')
-        const markingHeadEraseSlider = makeSelector(723, 190, 3, 'headErase', 'Irregularity')
+        const markingHeadStarSlider = makeSelector(723, 100, 4, 'headStar', localeData.txtDressupStar)
+        const markingHeadSnipSlider = makeSelector(723, 130, 5, 'headSnip', localeData.txtDressupSnip)
+        const markingHeadStripeSlider = makeSelector(723, 160, 7, 'headStripe', localeData.txtDressupStripe)
+        const markingHeadEraseSlider = makeSelector(723, 190, 3, 'headErase', localeData.txtDressupIrregularity)
 
-        const markingflSlider = makeSelector(723, 240, 6, 'flWhite', 'Front Left Leg')
-        const markingfrSlider = makeSelector(723, 270, 6, 'frWhite', 'Front Right Leg')
-        const markinghrSlider = makeSelector(723, 300, 6, 'hrWhite', 'Hind Right Leg')
-        const markinghlSlider = makeSelector(723, 330, 6, 'hlWhite', 'Hind Left Leg')
+        const markingflSlider = makeSelector(723, 240, 6, 'flWhite', localeData.txtDressupFLLeg)
+        const markingfrSlider = makeSelector(723, 270, 6, 'frWhite', localeData.txtDressupFRLeg)
+        const markinghrSlider = makeSelector(723, 300, 6, 'hrWhite', localeData.txtDressupHRLeg)
+        const markinghlSlider = makeSelector(723, 330, 6, 'hlWhite', localeData.txtDressupHLLeg)
 
-        const markingMatchSlider = makeSelector(723, 380, 2, 'whiteMatches', 'Match Pattern "White"')
+        const markingMatchSlider = makeSelector(723, 380, 2, 'whiteMatches', localeData.txtDressupMarkingWhite)
         
-        const patternAppySlider = makeSelector(723, 270, 7, 'appyPattern', 'Appaloosa Patterns')
-        const patternPintoSlider = makeSelector(723, 300, 5, 'pintoPattern', 'Pinto Patterns')
-        const expressionPintoSlider = makeSelector(723, 330, 4, 'pintoExpression', 'Pinto Expression')
-        const patternFleckedSlider = makeSelector(723, 360, 4, 'fleckedPattern', 'Grey / Roan')
+        const patternAppySlider = makeSelector(723, 270, 7, 'appyPattern', localeData.txtDressupAppaloosa)
+        const patternPintoSlider = makeSelector(723, 300, 5, 'pintoPattern', localeData.txtDressupPintoP)
+        const expressionPintoSlider = makeSelector(723, 330, 4, 'pintoExpression', localeData.txtDressupPintoE)
+        const patternFleckedSlider = makeSelector(723, 360, 4, 'fleckedPattern', localeData.txtDressupGrey)
 
         function makeSelector(x, y, options, key, lable) {
             const slider = game.add.container(100, 24);
@@ -1032,12 +1032,12 @@ class dressupStable extends Phaser.Scene
         }
 
 
-        makeChoiceButton('Info', infoTab, 155)
-        makeChoiceButton('Main', mainTab, 270)
-        makeChoiceButton('Dark Patterns', darkTab, 385)
-        makeChoiceButton('Hair', hairTab, 500)
-        makeChoiceButton('White Markings', markingTab, 615)
-        makeChoiceButton('White Patterns', patternTab, 730)
+        makeChoiceButton(localeData.txtDressupInfo, infoTab, 155)
+        makeChoiceButton(localeData.txtDressupMain, mainTab, 270)
+        makeChoiceButton(localeData.txtDressupDarkPatterns, darkTab, 385)
+        makeChoiceButton(localeData.txtDressupHair, hairTab, 500)
+        makeChoiceButton(localeData.txtDressupWhiteMarkings, markingTab, 615)
+        makeChoiceButton(localeData.txtDressupWhitePatterns, patternTab, 730)
 
         function makeChoiceButton(text, tab, x) {
             const button = game.add.text(x, 20, text, {
@@ -1164,6 +1164,11 @@ class dressupStable extends Phaser.Scene
 
         // Progress bars
         const bar = 13
+        const statTextSettings = { 
+            fontFamily: 'Arial', 
+            fontSize: 11.5, 
+            align: 'center'
+        }
         // hunger
         const hungerLevel = 1.5
         const hungerPos = 353 - 32 + (hungerLevel*bar/2)
@@ -1179,6 +1184,10 @@ class dressupStable extends Phaser.Scene
                 level: hungerLevel
             }
             this.add.image(351, 509, 'hunger_scale');
+            const hungerText = this.add.text(351, 498, 'Static Text Object', statTextSettings);
+            hungerText.text = localeData.txtStatHunger;
+            hungerText.setColor("#fa91b9");
+            hungerText.setOrigin(0.5)
 
         // cleanliness
         const cleanlinessLevel = 1
@@ -1195,6 +1204,10 @@ class dressupStable extends Phaser.Scene
                 level: cleanlinessLevel
             }
             this.add.image(444, 509, 'cleanliness_scale');
+            const cleanlinessText = this.add.text(444, 498, 'Static Text Object', statTextSettings);
+            cleanlinessText.text = localeData.txtStatClean;
+            cleanlinessText.setColor("#33cc00");
+            cleanlinessText.setOrigin(0.5)
 
         // happiness
         const happinessLevel = 1.75
@@ -1211,6 +1224,10 @@ class dressupStable extends Phaser.Scene
                 level: happinessLevel
             }
             this.add.image(540, 509, 'happiness_scale');
+            const happinessText = this.add.text(540, 498, 'Static Text Object', statTextSettings);
+            happinessText.text = localeData.txtStatHappy;
+            happinessText.setColor("#00ccff");
+            happinessText.setOrigin(0.5)
 
         /**
          * Adds additional progress to the provided stat bar.
@@ -1235,7 +1252,7 @@ class dressupStable extends Phaser.Scene
         
 
         // Copy Button
-        const copyButton = game.add.text(730, 500, 'Copy Link', {
+        const copyButton = game.add.text(730, 500, localeData.txtDressupCopy, {
             fontFamily: 'Arial',
             fontSize: '12px',
             color: '#ffffff',
@@ -1257,7 +1274,7 @@ class dressupStable extends Phaser.Scene
             })
 
         // Random Button
-        const randomButton = game.add.text(150, 500, 'Randomise', {
+        const randomButton = game.add.text(150, 500, localeData.txtDressupRandomise, {
             fontFamily: 'Arial',
             fontSize: '12px',
             color: '#ffffff',
@@ -1283,7 +1300,7 @@ class dressupStable extends Phaser.Scene
             
 
         // Play Button
-        const playButton = game.add.text(730, 465, 'Play', {
+        const playButton = game.add.text(730, 465, localeData.txtDressupPlay, {
             fontFamily: 'Arial',
             fontSize: '12px',
             color: '#ffffff',
