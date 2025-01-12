@@ -1,0 +1,20 @@
+{
+    "horses":[
+    {
+        "name": "Bella",
+        "imgAdventurePath": "./images/horses/adventure/Bella_Adventures.png"
+    },
+    {
+        "name": "Bello",
+        "imgAdventurePath": "./images/horses/adventure/Bello_Adventures.png"
+    },
+    {
+        "name": "Fiona",
+        "imgAdventurePath": "./images/horses/adventure/Fiona_Adventures.png"
+    },
+    {
+        "name": "Bellisimo",
+        "imgAdventurePath": "./images/horses/adventure/Fiona_Adventures.png"
+    }
+]
+}
