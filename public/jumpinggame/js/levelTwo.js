@@ -35,7 +35,7 @@ class LevelTwo extends Phaser.Scene
         this.load.image('infoButton', './images/infoButton.png');
         this.load.image('mountains', './images/mountains.png');
         this.load.image('path', './images/path.png');
-        this.load.atlas('horse', './images/horse.png', './images/horse.json');
+        this.load.atlas('horse2', './images/horseFiona.png', './images/horse.json');
         this.load.atlas('jumps', './images/jumps.png', './images/jumps.json');
         this.load.atlas('gems', './images/gems.png', './images/gems.json');
         this.load.atlas('horseshoe', './images/horseshoe.png', './images/horseshoe.json');
@@ -45,7 +45,7 @@ class LevelTwo extends Phaser.Scene
         this.clock = this.plugins.get('rexclockplugin').add(this, config);
 
         // Level reference
-        this.load.image('Level2', './images/LevelScreens/Level2.png');
+        this.load.image('Level2', './images/Level Screens/Level2.png');
     }
 
     create (data)
@@ -105,49 +105,49 @@ class LevelTwo extends Phaser.Scene
         this.add.sprite(2290, 325, 'backgroundObjects', 'bridge2Back')
 
         // Horse
-        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse', 'canter0000')
-        if (!this.anims.exists('canter')) {
+        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse2', 'canter0000')
+        if (!this.anims.exists('canter2')) {
             this.anims.create({
-                key: 'canter',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                key: 'canter2',
+                frames: this.anims.generateFrameNumbers('horse2', { frames: [
                     'canter0000', 'canter0001', 'canter0002', 'canter0003', 'canter0004', 'canter0005', 'canter0006', 'canter0007', 'canter0008', 'canter0009', 'canter0010', 'canter0011'
                 ] }),
                 frameRate: 20,
                 repeat: -1
             });
             this.anims.create({
-                key: 'gallop',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                key: 'gallop2',
+                frames: this.anims.generateFrameNumbers('horse2', { frames: [
                     'gallop0000', 'gallop0001', 'gallop0002', 'gallop0003', 'gallop0004', 'gallop0005', 'gallop0006'
                 ] }),
                 frameRate: 20,
                 repeat: -1
             });
             this.anims.create({
-                key: 'jump',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                key: 'jump2',
+                frames: this.anims.generateFrameNumbers('horse2', { frames: [
                     'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'land0000'
                 ] }),
                 frameRate: 16
             });
             this.anims.create({
-                key: 'slideStart',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                key: 'slideStart2',
+                frames: this.anims.generateFrameNumbers('horse2', { frames: [
                     'slide0000', 'slide0001'
                 ] }),
                 frameRate: 20
             });
             this.anims.create({
-                key: 'slide',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                key: 'slide2',
+                frames: this.anims.generateFrameNumbers('horse2', { frames: [
                     'slide0002', 'slide0003', 'slide0004', 'slide0005', 'slide0006'
                 ] }),
                 frameRate: 20,
                 repeat: -1
             });
             this.anims.create({
-                key: 'slideEnd',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                key: 'slideEnd2',
+                frames: this.anims.generateFrameNumbers('horse2', { frames: [
                     'slide0007', 'slide0008', 'slide0009'
                 ] }),
                 frameRate: 20
@@ -156,7 +156,7 @@ class LevelTwo extends Phaser.Scene
         this.horseMovement = this.horseMovements.cantering
         this.horse.setVelocityX(this.canterSpeed);
         this.horse.body.setSize(150, 105, false).setOffset(70, 95);
-        this.horse.play('canter')
+        this.horse.play('canter2')
 
 
         // Camera
@@ -224,7 +224,7 @@ class LevelTwo extends Phaser.Scene
             this.physics.add.sprite(11805, 230, 'gems', 'gemBlue35'),
             this.physics.add.sprite(11940, 270, 'gems', 'gemBlue35'),
             this.physics.add.sprite(12310, 230, 'gems', 'gemBlue5'),
-            this.physics.add.sprite(12495, 370, 'gems', 'gemBlue20'),
+            this.physics.add.sprite(12495, 365, 'gems', 'gemBlue20'),
             this.physics.add.sprite(13155, 360, 'gems', 'gemPink40'),
             this.physics.add.sprite(13575, 340, 'gems', 'gemPink70'),
             this.physics.add.sprite(13375, 225, 'gems', 'gemBlue20'),
@@ -403,7 +403,7 @@ class LevelTwo extends Phaser.Scene
             this.data.runningSound.stop()
             // Start slide animation
             if (!this.horse.frame.name.includes('slide')) {
-                this.horse.play('slideStart')
+                this.horse.play('slideStart2')
                 this.skidLoop = 0
                 this.horse.setVelocityX(this.skidSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
@@ -411,12 +411,12 @@ class LevelTwo extends Phaser.Scene
             // Loop sliding animation
             else if ((this.horse.frame.name === 'slide0001' || this.horse.frame.name === 'slide0006') && this.skidLoop < 3) {
                 // console.log('Frame: ' + this.horse.frame.name + ' Loop: ' + this.skidLoop)
-                this.horse.play('slide')
+                this.horse.play('slide2')
                 this.skidLoop += 1
             }
             // End slide animation
             else if (this.horse.frame.name === 'slide0006' && this.skidLoop >= 3) {
-                this.horse.play('slideEnd')
+                this.horse.play('slideEnd2')
             }
             // Return to running after done sliding
             else if (this.horse.frame.name === 'slide0009') {
@@ -427,7 +427,7 @@ class LevelTwo extends Phaser.Scene
             this.data.runningSound.stop()
             // Play jump animation
             if (!this.horse.frame.name.includes('jump')) {
-                this.horse.play('jump')
+                this.horse.play('jump2')
             }
             // Adjust horse hitbox position whilst jumping
             switch (this.horse.frame.name) {
@@ -490,7 +490,7 @@ class LevelTwo extends Phaser.Scene
             if (!this.horse.frame.name.includes('gallop')) {
                 this.horse.setVelocityX(this.gallopSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
-                this.horse.play('gallop')
+                this.horse.play('gallop2')
                 this.data.runningSound.play()
             }
         }
@@ -498,7 +498,7 @@ class LevelTwo extends Phaser.Scene
             if (!this.horse.frame.name.includes('gallop')) {
                 this.horse.setVelocityX(-this.gallopSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
-                this.horse.play('gallop')
+                this.horse.play('gallop2')
                 this.data.runningSound.play()
             }
         }
@@ -507,7 +507,7 @@ class LevelTwo extends Phaser.Scene
             if (!this.horse.frame.name.includes('canter')) {
                 this.horse.setVelocityX(this.canterSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
-                this.horse.play('canter')
+                this.horse.play('canter2')
             }
         }
 
@@ -661,7 +661,7 @@ class LevelTwo extends Phaser.Scene
             if (nextScreen) {
                 nextScreen = false
                 this.data.runningSound.stop()
-                this.scene.start('StartScreen', {backgroundMusic: this.data.backgroundMusic, runningSound: this.data.runningSound, playMusic: this.data.playMusic});
+                this.scene.start('StartScreen', this.data);
                 this.scene.stop('LevelOne')
             }
     }

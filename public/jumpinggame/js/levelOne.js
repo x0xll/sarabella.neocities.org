@@ -35,7 +35,7 @@ class LevelOne extends Phaser.Scene
         this.load.image('infoButton', './images/infoButton.png');
         this.load.image('mountains', './images/mountains.png');
         this.load.image('path', './images/path.png');
-        this.load.atlas('horse', './images/horse.png', './images/horse.json');
+        this.load.atlas('horse1', './images/horseBella.png', './images/horse.json');
         this.load.atlas('jumps', './images/jumps.png', './images/jumps.json');
         this.load.atlas('gems', './images/gems.png', './images/gems.json');
         this.load.atlas('horseshoe', './images/horseshoe.png', './images/horseshoe.json');
@@ -45,7 +45,7 @@ class LevelOne extends Phaser.Scene
         this.clock = this.plugins.get('rexclockplugin').add(this, config);
 
         // Level reference
-        // this.load.image('Level1', './images/Level1.png');
+        // this.load.image('Level1', './images/Level Screens/Level1.png');
     }
 
     create (data)
@@ -154,11 +154,11 @@ class LevelOne extends Phaser.Scene
 
 
         // Horse
-        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse', 'canter0000')
+        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse1', 'canter0000')
         if (!this.anims.exists('canter')) {
             this.anims.create({
                 key: 'canter',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'canter0000', 'canter0001', 'canter0002', 'canter0003', 'canter0004', 'canter0005', 'canter0006', 'canter0007', 'canter0008', 'canter0009', 'canter0010', 'canter0011'
                 ] }),
                 frameRate: 20,
@@ -166,7 +166,7 @@ class LevelOne extends Phaser.Scene
             });
             this.anims.create({
                 key: 'gallop',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'gallop0000', 'gallop0001', 'gallop0002', 'gallop0003', 'gallop0004', 'gallop0005', 'gallop0006'
                 ] }),
                 frameRate: 20,
@@ -174,21 +174,21 @@ class LevelOne extends Phaser.Scene
             });
             this.anims.create({
                 key: 'jump',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'land0000'
                 ] }),
                 frameRate: 16
             });
             this.anims.create({
                 key: 'slideStart',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'slide0000', 'slide0001'
                 ] }),
                 frameRate: 20
             });
             this.anims.create({
                 key: 'slide',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'slide0002', 'slide0003', 'slide0004', 'slide0005', 'slide0006'
                 ] }),
                 frameRate: 20,
@@ -196,7 +196,7 @@ class LevelOne extends Phaser.Scene
             });
             this.anims.create({
                 key: 'slideEnd',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'slide0007', 'slide0008', 'slide0009'
                 ] }),
                 frameRate: 20
@@ -772,6 +772,7 @@ class LevelOne extends Phaser.Scene
                         if (timeBonus > 0) {
                             levelText.text = langData.succeed_title;
                             buttonText.text = langData.succeed_level_select;
+                            this.data.levelUnlocked[1] = true
                         }
                         else {
                             levelText.text = langData.fail_title;
@@ -805,7 +806,7 @@ class LevelOne extends Phaser.Scene
             if (nextScreen) {
                 nextScreen = false
                 this.data.runningSound.stop()
-                this.scene.start('StartScreen', {backgroundMusic: this.data.backgroundMusic, runningSound: this.data.runningSound, playMusic: this.data.playMusic});
+                this.scene.start('StartScreen', this.data);
                 this.scene.stop('LevelOne')
             }
     }

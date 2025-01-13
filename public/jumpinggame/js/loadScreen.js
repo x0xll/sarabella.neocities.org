@@ -1,6 +1,7 @@
 nextScreen = false
 
 
+
 class Load extends Phaser.Scene 
 {
     constructor ()
@@ -18,6 +19,10 @@ class Load extends Phaser.Scene
     create ()
     {
         this.playMusic = true
+        this.levelUnlocked = [true, false, false, false]
+        if (this.physics.config.debug) { 
+            this.levelUnlocked = [true, true, false, false]
+        }
 
         // Music
         this.backgroundMusic = this.sound.add('background_music');
@@ -27,6 +32,6 @@ class Load extends Phaser.Scene
         this.runningSound = this.sound.add('running_sound');
         this.runningSound.loop = true; 
 
-        this.scene.start('StartScreen', {backgroundMusic: this.backgroundMusic, runningSound: this.runningSound, playMusic: this.playMusic});
+        this.scene.start('StartScreen', {backgroundMusic: this.backgroundMusic, runningSound: this.runningSound, playMusic: this.playMusic, levelUnlocked: this.levelUnlocked, started: false});
     }
 }
