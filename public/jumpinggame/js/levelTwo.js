@@ -6,7 +6,7 @@ class LevelTwo extends Phaser.Scene
     canterSpeed = 350
     gallopSpeed = 500
     skidSpeed = 300
-    runHeight = 280
+    runHeight = 290
     horseMovements = {
         backwards: 'backwards',
         cantering: 'cantering',
@@ -17,7 +17,7 @@ class LevelTwo extends Phaser.Scene
     horseMovement = this.horseMovements.cantering
     skidLoop = 0
     levelEnd = 31628
-    levelTime = 50
+    levelTime = 130
     jumpCtrl
     jumpButton
     runCtrl
@@ -45,7 +45,7 @@ class LevelTwo extends Phaser.Scene
         this.clock = this.plugins.get('rexclockplugin').add(this, config);
 
         // Level reference
-        this.load.image('Level2', './images/Level Screens/Level2.png');
+        //this.load.image('Level2', './images/Level Screens/Level2.png');
     }
 
     create (data)
@@ -67,7 +67,7 @@ class LevelTwo extends Phaser.Scene
             this.add.image(444 + (index * 888), 234, 'path')
         }
         // Level Reference
-        this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
+        //this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
 
 
         // Display
@@ -236,9 +236,9 @@ class LevelTwo extends Phaser.Scene
             this.physics.add.sprite(15525, 281, 'gems', 'gemYellow60'),
             this.physics.add.sprite(15751, 338, 'gems', 'gemBlue5'),
             this.physics.add.sprite(16082, 212, 'gems', 'gemYellow30'),
-            this.physics.add.sprite(16616, 206, 'gems', 'gemPink40'),
-            this.physics.add.sprite(17341, 223, 'gems', 'gemBlue50'),
-            this.physics.add.sprite(17629, 223, 'gems', 'gemBlue50'),
+            this.physics.add.sprite(16616, 206, 'gems', 'gemPink55'),
+            this.physics.add.sprite(17341, 223, 'gems', 'gemBlue35'),
+            this.physics.add.sprite(17629, 223, 'gems', 'gemBlue35'),
             this.physics.add.sprite(18085, 352, 'gems', 'gemBlue5'),
             this.physics.add.sprite(18462, 215, 'gems', 'gemPink25'),
             this.physics.add.sprite(18576, 336, 'gems', 'gemPink70'),
@@ -376,7 +376,7 @@ class LevelTwo extends Phaser.Scene
         // Extra settings for debug mode
         if (this.physics.config.debug) {
             // Start at specified x
-            this.horse.x = 28400
+            this.horse.x = 50
             // Keep horse still unless buttons are pressed
             this.canterSpeed = 0
             this.horse.setVelocityX(this.canterSpeed);
