@@ -22,7 +22,7 @@
         </script>
 
         <div class="swf" dir="ltr" rbidi="on">
-            <embed height="521" width="887" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="./flash/coloring.swf?pages=bsColoring_fiona" type="application/x-shockwave-flash">
+
         </div>
 
         <script src="/flags.js"></script>
@@ -32,6 +32,22 @@
             <a href="https://web.archive.org/web/20071021025330/http://www.bellasara.com/coloring-fiona.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a> | 
             <a href="./images/Fiona.svg" class="global-lowernav-link" data-il8n="footer_svgimg_linktxt">SVG Image</a>
         </div>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '521';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = './flash/coloring.swf?pages=bsColoring_fiona&locale=' + locale;
+          swfPlayer.type = 'application/x-shockwave-flash';
+          if (locale != "en")
+            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
   </body>
 </html>
 
