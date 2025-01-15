@@ -166,6 +166,7 @@ class LevelTwo extends Phaser.Scene
         // Start and End Gates
         this.endGate = this.physics.add.image(this.levelEnd - 83, 270, 'endGate').setOrigin(0, .5)
         this.endGate.body.setOffset(70, 0);
+        this.add.sprite(this.levelEnd, 0, 'backgroundObjects', 'rainbow').setOrigin(1, 0)
 
 
         // Horseshoe
