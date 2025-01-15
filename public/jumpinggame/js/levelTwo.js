@@ -17,7 +17,7 @@ class LevelTwo extends Phaser.Scene
     horseMovement = this.horseMovements.cantering
     skidLoop = 0
     levelEnd = 31628
-    levelTime = 130
+    levelTime = 67
     jumpCtrl
     jumpButton
     runCtrl
@@ -317,40 +317,57 @@ class LevelTwo extends Phaser.Scene
         ]
 
         this.jumpsArray.forEach(jump => {
+            let x = 0
+            let y = 0
             switch (jump.frame.name) {
                 case 'blueFence':
-                    jump.body.setSize(5, 50, false).setOffset(20, 60);
+                    x = 20
+                    y = 60
                     break;
                 case 'hayBale':
-                    jump.body.setSize(5, 40, false).setOffset(15, 25);
+                    x = 15
+                    y = 25
                     break;
                 case 'hedge':
-                    jump.body.setSize(5, 40, false).setOffset(30, 30);
+                    x = 30
+                    y = 30
                     break;
                 case 'hedgeSmall':
-                    jump.body.setSize(5, 40, false).setOffset(20, 35);
+                    x = 20
+                    y = 35
                     break;
                 case 'log':
-                    jump.body.setSize(5, 40, false).setOffset(10, 20);
+                    x = 10
+                    y = 20
                     break;
                 case 'stump':
-                    jump.body.setSize(5, 40, false).setOffset(30, 20);
+                    x = 30
+                    y = 20
                     break;
                 case 'wall':
                 case 'wallGreen':
-                    jump.body.setSize(5, 50, false).setOffset(10, 60);
+                    x = 10
+                    y = 60
                     break;
                 case 'waterTrough':
-                    jump.body.setSize(5, 40, false).setOffset(10, 20);
+                    x = 10
+                    y = 20
                     break;
                 case 'woodenFence':
-                    jump.body.setSize(5, 50, false).setOffset(20, 50);
+                    x = 20
+                    y = 50
                     break;
             
                 default:
                     console.log("Unknown jump type: " + jump.frame.name)
                     break;
             }
+            if (jump.y + y >= 400) {
+                y = 400 - jump.y 
+            } else if (jump.y + y <= 375) {
+                y = 375 - jump.y 
+            }
+            jump.body.setSize(5, 40, false).setOffset(x, y);
         });
 
         this.jumps = this.physics.add.group({immovable: true});
