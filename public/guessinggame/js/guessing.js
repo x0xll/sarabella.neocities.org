@@ -92,8 +92,8 @@ class Guessing extends Phaser.Scene
         usedHorses = [];
         choiceBtns = [];
 
-        turnsTxt = this.add.text(50, 30, `Turns Left: ${turnsLeft}`, datasTextSettings);
-        scoreTxt = this.add.text(50, 50, `Score: ${score}`, datasTextSettings);
+        turnsTxt = this.add.text(50, 30, `Turns`, datasTextSettings);
+        scoreTxt = this.add.text(50, 50, `Score`, datasTextSettings);
 
         this.add.image(300, 261, "container")
         guessImg = this.add.image(300, 261, `${horseDatas[0].name}_img`).setScale(0.5);
@@ -121,8 +121,8 @@ class Guessing extends Phaser.Scene
 
         function updateGuessQuestion()
         {
-            scoreTxt.text = `Score: ${score}`;
-            turnsTxt.text = `Turns Left: ${turnsLeft}`;
+            scoreTxt.text = `${localeData.score} ${score}`;
+            turnsTxt.text = `${localeData.turns} ${turnsLeft}`;
 
             var randHorse = -1;
             var failsafe = 100;
@@ -171,15 +171,10 @@ class Guessing extends Phaser.Scene
 
         function makeGuess(buttonClicked)
         {
+            // TODO: Show visually when we get good / bad
+
             if (choiceBtns[buttonClicked].goodChoice)
-            {
                 score++;
-                console.log("Good Answer!");
-            }
-            else
-            {
-                console.log("Wrong Answer!");
-            }
 
             turnsLeft--;
 
@@ -206,10 +201,10 @@ class Guessing extends Phaser.Scene
             scene.add.text(444, 250, `Score: ${score} / ${MAX_TURNS}`).setOrigin(.5, .5);
 
             var retryBtn = scene.add.image(300, 350, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
-            scene.add.text(300, 350, "Retry").setOrigin(.5, .5);
+            scene.add.text(300, 350, localeData.retry).setOrigin(.5, .5);
 
             var categoryBtn = scene.add.image(500, 350, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
-            scene.add.text(500, 350, "Categories").setOrigin(.5, .5);
+            scene.add.text(500, 350, localeData.categories).setOrigin(.5, .5);
 
             retryBtn.on("pointerdown", function(pointer)
             {

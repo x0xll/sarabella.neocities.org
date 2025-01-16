@@ -50,7 +50,7 @@ class ChooseCategory extends Phaser.Scene
                                         .setInteractive({pixelPerfect: true});
         this.add.image(150, 261, 'bella_test').setScale(0.5);
         this.add.image(150, 440, "button").setScale(1.4);
-        this.add.text(83, 428, "Adventures", globalTextSettings)
+        this.add.text(83, 428, localeData.categoryAdventure, globalTextSettings)
 
         adventureChoice.on('pointerdown', () => 
         {
@@ -65,7 +65,7 @@ class ChooseCategory extends Phaser.Scene
                                     .setInteractive({pixelPerfect: true});
         this.add.image(738, 261, 'bella_test').setScale(0.5);
         this.add.image(738, 440, "button").setScale(1.4);
-        this.add.text(671, 428, "Cards", globalTextSettings)
+        this.add.text(671, 428, localeData.categoryCards, globalTextSettings)
 
         cardsChoice.on('pointerdown', () => 
             {

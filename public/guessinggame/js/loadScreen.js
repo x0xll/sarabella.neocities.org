@@ -12,7 +12,18 @@ class Load extends Phaser.Scene
     }
 
     create ()
-    { 
+    {  
+        if (!locale || !urlExists(`./lang/guessing_${locale}.json`)) {
+            locale ='en'
+        }
+        const xmlHttplocale = new XMLHttpRequest();
+        xmlHttplocale.onload = function() {
+            const myObj = JSON.parse(this.responseText);
+            localeData = myObj
+        }
+        xmlHttplocale.open("GET", `./lang/guessing_${locale}.json`);
+        xmlHttplocale.send();
+
         this.scene.start('chooseCategory');
     }
 }

@@ -3,7 +3,6 @@
     <head>
         <title>Guessing Game</title>
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
-        <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script>
         <script src="./js/chooseCategory.js"></script>
         <script src="./js/guessing.js"></script>
@@ -18,6 +17,19 @@
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
+                //loadLanguagePref(false);
+                //locale = getCurrentLanguageCode()
+                locale = "en";
+                let localeData;
+
+                function urlExists(url)
+                {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status!=404;
+                }
+
                 let config = {
                     parent: "gameDiv",
                     dom: {
@@ -27,11 +39,6 @@
                     width: 888,
                     height: 521,
                     backgroundColor: '#110c27',
-                    plugins: {
-                        scene: [
-                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
-                        ]
-                    },
                     scene: [
                         Load,
                         ChooseCategory,
@@ -43,15 +50,10 @@
         
             </script>
         </div>
-        <input id="copy" style="display: none">
-        <label id="copyLable" for="copy" style="display: none; color: white;">Horse Link</label>
-        
+
         <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a> |
-            <a href="./index.html" class="global-lowernav-link">Magical Horses</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" class="global-lowernav-link">Wiki Page</a> |
-            <a href="https://github.com/x0xll/sarabella.neocities.org" class="global-lowernav-link">GitHub</a>
-          </div>
+            <a href="/index.html" class="global-lowernav-link">Home</a>
+        </div>
 
     </body>
 </html>

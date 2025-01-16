@@ -1,0 +1,19 @@
+{
+    "categoryAdventure": "Adventures",
+    "categoryCards": "Cards",
+
+    "end_perfectTitle": "Perfection!",
+    "end_perfectDesc": "You know the Bella Sara horses perfectly! Congrats!",
+    "end_goodTitle": "Well Done!",
+    "end_goodDesc": "You know your horses quite well!",
+    "end_badTitle": "Not Great...",
+    "end_badDesc": "You can probably do better!",
+
+    "score": "Score: ",
+    "turns": "Turns: ",
+    
+    "end_score": "Your score: ",
+
+    "retry": "Retry",
+    "categories": "Categories"
+}
