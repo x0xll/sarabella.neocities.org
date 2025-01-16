@@ -16,12 +16,19 @@ xmlHttp.send();
 const MAX_TURNS = 10;
 const MAX_CHOICE_BTN = 3;
 const SCORE_SAVE_PATH = "neocities_bellaSara_guessingGame_highscore";
+
 var turnsLeft = MAX_TURNS;
+var turnsTxt;
+
+var scoreTxt;
 var score = 0;
 var highScore = 0;
+
 var usedHorses = [];
 var choiceBtns = [];
 var guessImg;
+
+var scene;
 
 // Actual game
 class Guessing extends Phaser.Scene
@@ -54,14 +61,9 @@ class Guessing extends Phaser.Scene
 
         this.load.image('button', './images/nameplate.png');
         this.load.image('container', './images/InfoBox.png');
+        this.load.image('background', './images/background.png');
 
-        /*this.load.atlas('music_button', './images/airStable/music.png', './images/airStable/music.json');
-        
-        this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
-        
-        this.load.audio('inspiration_hover', ['./sounds/inspiration_hover.mp3']);
-        this.load.audio('inspiration_sound', ['./sounds/inspiration.mp3']);
-        this.load.audio('inspiration_close', ['./sounds/inspiration_close.mp3']);*/
+        scene = this;
     }
 
     create ()
@@ -69,28 +71,42 @@ class Guessing extends Phaser.Scene
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
         this.input.topOnly = true;
 
+        this.add.image(0, 0, 'background').setOrigin(0, 0);
+
         const globalTextSettings = {
-            font: 'bold 25px Arial',
+            font: 'bold 20px Arial',
             color: 'white',
-            align: 'center',
+            align: 'center'
         }
 
-        /*const backgroundMusic = this.sound.add('background_music');
-        backgroundMusic.loop = true;
-        backgroundMusic.play();*/
+        const datasTextSettings = {
+            font: 'bold 15px Arial',
+            color: 'white',
+            align: 'left'
+        }
 
-        this.add.image(150, 261, "container")
-        guessImg = this.add.image(150, 261, `${horseDatas[0].name}_img`).setScale(0.5);
+        turnsLeft = MAX_TURNS;
+        score = 0;
+        highScore = 0; // TODO : Get from local storage
+
+        usedHorses = [];
+        choiceBtns = [];
+
+        turnsTxt = this.add.text(50, 30, `Turns Left: ${turnsLeft}`, datasTextSettings);
+        scoreTxt = this.add.text(50, 50, `Score: ${score}`, datasTextSettings);
+
+        this.add.image(300, 261, "container")
+        guessImg = this.add.image(300, 261, `${horseDatas[0].name}_img`).setScale(0.5);
 
         initializeGuessButtons(this);
         updateGuessQuestion();
 
-        function initializeGuessButtons(scene)
+        function initializeGuessButtons()
         {
             for (let i = 0; i < MAX_CHOICE_BTN; i++)
                 {
-                    var btn = scene.add.image(500, 201 + (50 * i), 'button').setScale(1.4).setInteractive({pixelPerfect: true});
-                    var btnTxt = scene.add.text(500, 201 + (50 * i), `Bella Sara`);
+                    var btn = scene.add.image(620, 201 + (50 * i), 'button').setScale(1.4).setInteractive({pixelPerfect: true});
+                    var btnTxt = scene.add.text(620, 203 + (50 * i), `Bella Sara`, globalTextSettings).setOrigin(.5, .5);
             
                     var btnObj = {
                         button : btn,
@@ -105,6 +121,9 @@ class Guessing extends Phaser.Scene
 
         function updateGuessQuestion()
         {
+            scoreTxt.text = `Score: ${score}`;
+            turnsTxt.text = `Turns Left: ${turnsLeft}`;
+
             var randHorse = -1;
             var failsafe = 100;
 
@@ -163,7 +182,44 @@ class Guessing extends Phaser.Scene
             }
 
             turnsLeft--;
+
+            if (turnsLeft <= 0)
+            {
+                showEndPopup();
+                return;
+            }
+            
             updateGuessQuestion();
+        }
+
+        function showEndPopup()
+        {
+            scoreTxt.setAlpha(0);
+            turnsTxt.setAlpha(0);
+
+            scene.add.image(444, 260, 'container')
+                     .setOrigin(.5, .5)
+                     .setScale(3.5, 1.15)
+
+            scene.add.text(444, 100, "Well Done!").setOrigin(.5, .5);
+            scene.add.text(444, 150, "You know your horses well!").setOrigin(.5, .5);
+            scene.add.text(444, 250, `Score: ${score} / ${MAX_TURNS}`).setOrigin(.5, .5);
+
+            var retryBtn = scene.add.image(300, 350, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
+            scene.add.text(300, 350, "Retry").setOrigin(.5, .5);
+
+            var categoryBtn = scene.add.image(500, 350, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
+            scene.add.text(500, 350, "Categories").setOrigin(.5, .5);
+
+            retryBtn.on("pointerdown", function(pointer)
+            {
+                scene.scene.restart();
+            })
+
+            categoryBtn.on("pointerdown", function(pointer)
+            {
+                scene.scene.start("chooseCategory");
+            })
         }
     }
 }
