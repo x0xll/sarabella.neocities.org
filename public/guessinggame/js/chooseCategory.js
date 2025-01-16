@@ -28,7 +28,7 @@ class ChooseCategory extends Phaser.Scene
         // Load in images and sounds
         this.load.image('bella_test', './images/horses/adventure/Bella_Adventures.png');
         this.load.image('button', './images/nameplate.png');
-        this.load.image('container', './images/infoBox.png');
+        this.load.image('container', './images/InfoBox.png');
 
         /*this.load.atlas('music_button', './images/airStable/music.png', './images/airStable/music.json');
         

@@ -53,7 +53,7 @@ class Guessing extends Phaser.Scene
         });
 
         this.load.image('button', './images/nameplate.png');
-        this.load.image('container', './images/infoBox.png');
+        this.load.image('container', './images/InfoBox.png');
 
         /*this.load.atlas('music_button', './images/airStable/music.png', './images/airStable/music.json');
         
@@ -79,61 +79,30 @@ class Guessing extends Phaser.Scene
         backgroundMusic.loop = true;
         backgroundMusic.play();*/
 
-        var randHorse = Math.floor(Math.random()*horseDatas.length);
-        usedHorses.push = randHorse;
-
         this.add.image(150, 261, "container")
-        guessImg = this.add.image(150, 261, `${horseDatas[randHorse].name}_img`).setScale(0.5);
-        console.log("Picked: " + horseDatas[randHorse].name);
+        guessImg = this.add.image(150, 261, `${horseDatas[0].name}_img`).setScale(0.5);
 
-        var alreadyPickedNums = [];
-        alreadyPickedNums.push(randHorse);
-        var randGoodChoice = Math.floor(Math.random()*MAX_CHOICE_BTN);
+        initializeGuessButtons(this);
+        updateGuessQuestion();
 
-        var btn = this.add.image(500, 201 + (50 * randGoodChoice), 'button').setScale(1.4).setInteractive({pixelPerfect: true});
-        var btnTxt = this.add.text(500, 201 + (50 * randGoodChoice), `${horseDatas[randHorse].name}`);
-
-        var btnObj = {
-            button : btn,
-            text : btnTxt,
-            goodChoice : true
-        }
-
-        choiceBtns.push(btnObj);
-        btn.on("pointerdown", () => {makeGuess(btnObj)});  
-
-        for (let i = 0; i < MAX_CHOICE_BTN; i++)
+        function initializeGuessButtons(scene)
         {
-            if (randGoodChoice == i)
-            {
-                continue;
-            }
-
-            var otherChoice;
-
-            var failsafe = 100;
-
-            do{
-                otherChoice = Math.floor(Math.random()*horseDatas.length);
-                failsafe--;
-            }
-            while (alreadyPickedNums.includes(otherChoice) && failsafe > 0);
-
-            alreadyPickedNums.push(otherChoice);
-            var btn = this.add.image(500, 201 + (50 * otherChoice), 'button').setScale(1.4).setInteractive({pixelPerfect: true});
-            var btnTxt = this.add.text(500, 201 + (50 * otherChoice), `${horseDatas[otherChoice].name}`);
-
-            var btnObj = {
-                name : "Button ${}",
-                button : btn,
-                text : btnTxt,
-                goodChoice : false
-            }
-    
-            choiceBtns.splice(otherChoice, 0, btnObj);
-            btn.on("pointerdown", () => {makeGuess(btnObj)});         
+            for (let i = 0; i < MAX_CHOICE_BTN; i++)
+                {
+                    var btn = scene.add.image(500, 201 + (50 * i), 'button').setScale(1.4).setInteractive({pixelPerfect: true});
+                    var btnTxt = scene.add.text(500, 201 + (50 * i), `Bella Sara`);
+            
+                    var btnObj = {
+                        button : btn,
+                        text : btnTxt,
+                        goodChoice : false
+                    }
+        
+                    choiceBtns.push(btnObj);
+                    btn.on("pointerdown", () => {makeGuess(i)});  
+                }        
         }
- 
+
         function updateGuessQuestion()
         {
             var randHorse = -1;
@@ -144,11 +113,10 @@ class Guessing extends Phaser.Scene
                 randHorse = Math.floor(Math.random()*horseDatas.length);
                 failsafe--;
             }
-            while (usedHorses.includes(randHorse) && failsafe > 0)
-            usedHorses.push = randHorse;
+            while (usedHorses.length > 0 && usedHorses.includes(randHorse) && failsafe > 0)
+            usedHorses.push(randHorse);
             
             guessImg.setTexture(`${horseDatas[randHorse].name}_img`)
-            console.log("Picked: " + horseDatas[randHorse].name);
 
             var alreadyPickedNums = [];
             alreadyPickedNums.push(randHorse);
@@ -176,7 +144,7 @@ class Guessing extends Phaser.Scene
                 while (alreadyPickedNums.includes(otherChoice) || failsafe <= 0);
 
                 alreadyPickedNums.push(otherChoice);
-                var btnDatas = choiceBtns[otherChoice];
+                var btnDatas = choiceBtns[i];
                 btnDatas.text.text = `${horseDatas[otherChoice].name}`;
                 btnDatas.goodChoice = false;   
             }
@@ -184,23 +152,18 @@ class Guessing extends Phaser.Scene
 
         function makeGuess(buttonClicked)
         {
-            choiceBtns.forEach(btn => {
-                if (btn == buttonClicked)
-                {
-                    if (btn.goodChoice)
-                    {
-                        score++;
-                        console.log("Good Answer");
-                    }
-                    else
-                        console.log("Wrong Answer");
-        
-                    turnsLeft--;
-        
-                    updateGuessQuestion();
-                    return;
-                }
-            });
+            if (choiceBtns[buttonClicked].goodChoice)
+            {
+                score++;
+                console.log("Good Answer!");
+            }
+            else
+            {
+                console.log("Wrong Answer!");
+            }
+
+            turnsLeft--;
+            updateGuessQuestion();
         }
     }
 }
