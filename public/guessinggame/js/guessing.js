@@ -196,9 +196,28 @@ class Guessing extends Phaser.Scene
                      .setOrigin(.5, .5)
                      .setScale(3.5, 1.15)
 
-            scene.add.text(444, 100, "Well Done!").setOrigin(.5, .5);
-            scene.add.text(444, 150, "You know your horses well!").setOrigin(.5, .5);
-            scene.add.text(444, 250, `Score: ${score} / ${MAX_TURNS}`).setOrigin(.5, .5);
+            var endTitle = "TITLE";
+            var endDesc = "DESCRIPTION";
+
+            if (score == MAX_TURNS)
+            {
+                endTitle = localeData.end_perfectTitle;
+                endDesc = localeData.end_perfectDesc;
+            }
+            else if (score > (MAX_TURNS / 2) && score < MAX_TURNS)
+            {
+                endTitle = localeData.end_goodTitle;
+                endDesc = localeData.end_goodDesc;
+            }
+            else
+            {
+                endTitle = localeData.end_badTitle;
+                endDesc = localeData.end_badDesc;
+            }
+
+            scene.add.text(444, 100, endTitle).setOrigin(.5, .5);
+            scene.add.text(444, 150, endDesc).setOrigin(.5, .5);
+            scene.add.text(444, 250, `${localeData.end_score} ${score} / ${MAX_TURNS}`).setOrigin(.5, .5);
 
             var retryBtn = scene.add.image(300, 350, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
             scene.add.text(300, 350, localeData.retry).setOrigin(.5, .5);
