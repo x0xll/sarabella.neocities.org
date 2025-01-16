@@ -1,14 +1,6 @@
 {
     "section" :[
     {
-        "title" : "Archivists",
-        "people" :[
-        {
-            "name": "Person 1"
-        }
-        ]
-    },
-    {
         "title" : "Developers",
         "people" :[
         {
@@ -27,6 +19,14 @@
         "people" :[
         {
             "name": "bellasaraarchivist"
+        }
+        ]
+    },
+    {
+        "title" : "Swedish Translator",
+        "people" :[
+        {
+            "name": "Rubenite"
         }
         ]
     }
