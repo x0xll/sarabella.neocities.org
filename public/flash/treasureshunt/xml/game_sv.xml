@@ -22,7 +22,7 @@
 	<how_to_play_title>Hur Man Spelar</how_to_play_title>
 
 	<!-- how to play text goes here -->
-	<how_to_play2>Ju längre ifrån musen är från Treasure desto snabbare rör du dig.
+	<intro_howto>Ju längre ifrån musen är från Treasure desto snabbare rör du dig.
 
 Elektriska ålar och maneter kommer att bränna dig, då kommer du att röra dig långsammare.
 
@@ -32,7 +32,7 @@ Fiskstim hjälper dig simma snabbare.
 
 Pärlor håller dig säker från alla faror en kort stund. 
 
-Spelet är slut när bubbel timern (under poängen) spricker..</how_to_play2>
+Spelet är slut när bubbel timern (under poängen) spricker..</intro_howto>
 
 	<!-- win message -->
 	<win>Bra Simmat!</win>

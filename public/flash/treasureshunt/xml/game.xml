@@ -22,7 +22,7 @@
 	<how_to_play_title>How To Play</how_to_play_title>
 
 	<!-- how to play text goes here -->
-	<how_to_play2>The further your mouse is from Treasure, the faster you'll move.
+	<intro_howto>The further your mouse is from Treasure, the faster you'll move.
 
 Electric eels and Jelly fish will zap you and cause you to move slowly.
 
@@ -32,7 +32,7 @@ Schools of fish allow you to swim faster.
 
 Pearls keep you safe from all danger for a short time.
 
-The game is over when the bubble timer, located below your score, pops.</how_to_play2>
+The game is over when the bubble timer, located below your score, pops.</intro_howto>
 
 	<!-- win message -->
 	<win>Great Swimming!</win>
