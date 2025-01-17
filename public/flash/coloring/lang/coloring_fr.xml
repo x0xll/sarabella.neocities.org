@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+    <print>Imprimer</print>
+    <reset>Recommencer</reset>
+    <help>Aide</help>
+    <currentColor>Couleur Actuelle</currentColor>
+    <moreColor>Plus de couleurs</moreColor>
+    
+    <fionaTxt>Sois le héros de ta propre histoire.</fionaTxt>
+</root>
