@@ -13,8 +13,34 @@
         "imgAdventurePath": "./images/horses/adventure/Fiona_Adventures.png"
     },
     {
-        "name": "Bellisimo",
-        "imgAdventurePath": "./images/horses/adventure/Fiona_Adventures.png"
+        "name": "Amor",
+        "imgAdventurePath": "./images/horses/adventure/Amor_Adventures.png"
+    },
+    {
+        "name": "Ani",
+        "imgAdventurePath": "./images/horses/adventure/Ani_Adventures.png"
+    }
+    ,
+    {
+        "name": "Apollo",
+        "imgAdventurePath": "./images/horses/adventure/Apollo_Adventures.png"
+    }
+    ,
+    {
+        "name": "Ash",
+        "imgAdventurePath": "./images/horses/adventure/Ash_Adventures.png"
+    },
+    {
+        "name": "Aster",
+        "imgAdventurePath": "./images/horses/adventure/Aster_Adventures.png"
+    },
+    {
+        "name": "Athena",
+        "imgAdventurePath": "./images/horses/adventure/Athena_Adventures.png"
+    },
+    {
+        "name": "Autumn",
+        "imgAdventurePath": "./images/horses/adventure/Autumn_Adventures.png"
     }
 ]
 }
