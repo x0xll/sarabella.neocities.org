@@ -47,9 +47,11 @@
                 <div id="body">
                         
                     <script type="text/javascript">
+                        loadLanguagePref(false); 
+                        lang = getCurrentLanguageCode()
                         var fo = new FlashObject("fakeloader.swf", "body", "912", "520", "8", "493D75");
                         fo.addParam("wmode", "transparent");
-                        fo.addVariable("language=en&lang=en&id=Lanceriding");
+                        fo.addVariable(`language=${lang}&lang=${lang}&id=Lanceriding`);
                         fo.write("body");
                     </script>
                     
@@ -61,6 +63,8 @@
             <a href="https://bellasara.wiki.gg/wiki/Lance_Riding_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
             <a href="https://web.archive.org/web/20071030090442/http://www.bellasara.com/lanceriding.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
         </div>
+
+        <script src="/flags.js"></script>
   </body>
 </html>
 

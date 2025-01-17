@@ -28,10 +28,9 @@
 
 
                 // Gets lang file
-                const searchQueryString = window.location.search;
-                const urlParameters = new URLSearchParams(searchQueryString);
-                lang = urlParameters.get('lang')
-
+                loadLanguagePref(false); 
+                lang = getCurrentLanguageCode()
+                console.log(lang)
                 function urlExists(url)
                 {
                     var http = new XMLHttpRequest();
@@ -80,14 +79,14 @@
         
             </script>
         </div>
-
-        <script src="/flags.js"></script>
         
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
             <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
             <a href="https://github.com/Gridloch/bellasarajumpinggame" class="global-lowernav-link" data-il8n="footer_github_linktxt">GitHub</a>
         </div>
+
+        <script src="/flags.js"></script>
 
     </body>
 </html>

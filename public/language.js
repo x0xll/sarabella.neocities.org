@@ -67,6 +67,7 @@ function getCurrentLanguageCode()
 
 function getLocalizedText(key, name = NEOCITIES_KEY)
 {
+    // Note that the key should be a string!
     var txt = localizedDatas[name][key];
     if (txt == undefined) // Go back to english if the translation is not done yet
          return defaultLocas[name][key];
