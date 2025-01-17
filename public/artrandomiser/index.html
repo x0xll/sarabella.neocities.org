@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="/styles.css">
     </head>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); 
+                                loadNewLocalizationFile('./lang/artrandomizer_' + currentLang + '.json', './lang/artrandomizer_en.json', 'artrandomizer');">
         <script src="/header.js"></script>
         <button id="random" data-il8n="artrandomizer_randombtn">Randomise!</button>
         <div class="image-grid">

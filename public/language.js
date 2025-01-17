@@ -1,9 +1,14 @@
-const savedVar = "selectedLanguageBellaSaraNeoCity";
 var currentLang = 'en';
 
+const NEOCITIES_PATH = '/localization/neocitiesLoca_';
+const NEOCITIES_DEFAULT_PATH = '/localization/neocitiesLoca_en.json';
+const NEOCITIES_KEY = "neocities";
+
+const savedVar = "selectedLanguageBellaSaraNeoCity";
+
 var localizedElements;
-var localizedDatas;
-var defaultLocas;
+var localizedDatas = {};
+var defaultLocas = {};
 
 // Used for first time users
 function checkBrowserLanguage() {
@@ -49,28 +54,7 @@ async function changeLanguage(langSelected, reload = false) {
         location.reload();
     else
     {
-        // Load the json file to use
-        var pathjson = '/localization/neocitiesLoca_' + lang + '.json';
-        var pathjsonDefault = '/localization/neocitiesLoca_en.json';
-        const jsonFile = await fetch(pathjson)
-                            .then(function(file) {return file.json();})
-                            .then(function(json) {
-                                localizedDatas = json;
-                            })
-
-        const jsonFileDefault = await fetch(pathjsonDefault)
-        .then(function(file) {return file.json();})
-        .then(function(json) {
-            defaultLocas = json;
-        })
-
-        // Update the texts elements based on HTML
-        localizedElements.forEach(element => 
-            {
-                var locaKey = element.getAttribute('data-il8n');
-                element.innerHTML = getLocalizedText(locaKey);
-            }
-        )    
+        loadNewLocalizationFile()    
 
         document.documentElement.lang = lang;
     }
@@ -81,12 +65,38 @@ function getCurrentLanguageCode()
     return currentLang;
 }
 
-function getLocalizedText(key)
+function getLocalizedText(key, name = NEOCITIES_KEY)
 {
-    var txt = localizedDatas[key];
+    var txt = localizedDatas[name][key];
     if (txt == undefined) // Go back to english if the translation is not done yet
-         return defaultLocas[key];
+         return defaultLocas[name][key];
                
     //return key + " - " + currentLang; // To check if all the text was setup with the localization system just uncomment this    
     return txt;
+}
+
+async function loadNewLocalizationFile(pathjson = NEOCITIES_PATH + currentLang + '.json', pathjsonDefault = NEOCITIES_DEFAULT_PATH, name = NEOCITIES_KEY)
+{
+    const jsonFile = await fetch(pathjson)
+                        .then(function(file) {return file.json();})
+                        .then(function(json) {
+                            localizedDatas[name] = json;
+                        })
+
+    const jsonFileDefault = await fetch(pathjsonDefault)
+    .then(function(file) {return file.json();})
+    .then(function(json) {
+        defaultLocas[name] = json;
+    })
+
+    // Update the texts elements based on HTML
+    localizedElements.forEach(element => 
+        {
+            var locaKey = element.getAttribute('data-il8n');
+
+            var locaTxt = getLocalizedText(locaKey, name);
+            if (locaTxt != undefined)
+                element.innerHTML = locaTxt;
+        }
+    )
 }
