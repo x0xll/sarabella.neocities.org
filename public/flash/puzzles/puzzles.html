@@ -9,7 +9,8 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); 
+                                loadNewLocalizationFile('./lang/website/puzzle_' + currentLang + '.json', './lang/website/puzzle_en.json', 'puzzles');">
         <script src="/header.js"></script>
 
         <div class="content textbox-parent">

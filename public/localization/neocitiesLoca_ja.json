@@ -57,21 +57,6 @@
 
     "storybook_warning": "このゲームは次のページに進んでも音が消すできません。またビデオが正しく再生されないことがあります。",
 
-    "puzzle_goCustom" : "ここを&nbsp;<a href=\"puzzle custom.html\">クリック</a>&nbsp;はカスタムイメージを作るできます。",
-    "puzzle_customTitle" : "カスタム",
-    "puzzle_moonfairies" : "ムーンフェアリー",
-    "puzzle_sunflowers" : "ひまわり",
-    "puzzle_bellaball" : "ベラの舞踏会",
-    "puzzle_bellasaraadventures" : "ベラセラの冒険",
-    "puzzle_royalty" : "王族",
-    "puzzle_treasures" : "宝物",
-    "puzzle_babybella" : "ベビーベラ",
-    "puzzle_magicalfriends" : "魔法の動物の友達",
-    "puzzle_nativelights" : "ネイティブライト（ネイティブアメリカンのテーマ）",
-    "puzzle_bellasara" : "ベラセラ",
-    "puzzle_custom_warning" : "700 x 450より大きい画像は、大きすぎて正しく表示されない場合があります。",
-    "puzzle_custom_warning2" : "気をつけてください！700 x 450より大きい画像は、大きすぎて正しく表示されない場合があります。",
-
     "stables_title" : "ベラセラの世界へようこそ",
 
     "dressup_horselink" : "馬のリンク"
