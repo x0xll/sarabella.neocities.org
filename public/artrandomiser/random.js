@@ -984,10 +984,10 @@ function load() {
             category.image.src = category.dataBank[n].src
         }
         if ('caption' in category) {
-            category.caption.innerText = getLocalizedText(category.localizedCategoryName) + ": " + getLocalizedText(category.dataBank[n].localizedCaption)
+            category.caption.innerText = getLocalizedText(category.localizedCategoryName, "artrandomizer") + ": " + getLocalizedText(category.dataBank[n].localizedCaption, "artrandomizer")
         }
         if ('link' in category) {
-            category.caption.innerHTML = getLocalizedText(category.localizedCategoryName) + ": " + `<a id="herd-link" target="_blank" href="${category.dataBank[n].link}">${getLocalizedText(category.dataBank[n].localizedCaption)}</a>`
+            category.caption.innerHTML = getLocalizedText(category.localizedCategoryName, "artrandomizer") + ": " + `<a id="herd-link" target="_blank" href="${category.dataBank[n].link}">${getLocalizedText(category.dataBank[n].localizedCaption, "artrandomizer")}</a>`
         }
     }
 }
