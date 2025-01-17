@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>AIDE</help_btn>
+	<pause_btn>PAUSE</pause_btn>
+	<start_btn>Commencer</start_btn>
+
+	<turbobtn>Play Turbo</turbobtn>
+
+	<pauseheading>Your Game is Paused</pauseheading>
+	<pause2>Close this window to resume play.</pause2>
+
+	<how_to_play_btn>Règles du jeu</how_to_play_btn>
+
+	<play_again_btn>Play Again</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro From XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>How To Play</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>The further your mouse is from Treasure, the faster you'll move.
+
+Electric eels and Jelly fish will zap you and cause you to move slowly.
+
+Bubbles replenish your energy so you can move faster.
+
+Schools of fish allow you to swim faster.
+
+Pearls keep you safe from all danger for a short time.
+
+The game is over when the bubble timer, located below your score, pops.</how_to_play2>
+
+	<!-- win message -->
+	<win>Great Swimming!</win>
+	
+	<win2>You have come to the end of your journey.
+There is no more to collect.</win2>
+	
+	<!-- control panel score text goes here -->
+	<score>Score:</score>
+
+</root>

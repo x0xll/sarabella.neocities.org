@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+	<play>Jouer</play>
+	<pause>Pause</pause>
+    <beautyeh>Tu as créé un magnifique feu d’artifice.</beautyeh>
+    <greatshow>Super Spectacle !</greatshow>
+    <replay>Rejouer</replay>
+    <newshow>Nouveau Spectacle</newshow>
+    <quit>Quitter</quit>
+
+    <welcome>Bienvenue au</welcome>
+    <gameTitle>Festival des Feux d'Artifice</gameTitle>
+    <playPuzzle>Jouer une partie puzzle</playPuzzle>
+    
+    <rulesTime>Le spectacle commence quand la nuit tombe !</rulesTime>
+    <rulesCounter>Le compteur indique combien de feux d'artifice contient chaque tube.</rulesCounter>
+    <rulesPinwheels>Les roues multicolores tourbillonneront hors de l'écran.</rulesPinwheels>
+    <rulesUncoveredFireworks>Tu ne peux retirer que des feux d'artifice que rien ne recouvre.</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Clique sur les feux d'artifice ou utilise la barre d'espace pour les ajouter à ton spectacle.</rulesCollectFireworks>
+
+    <intro>Un jeu époustouflant qui se termine par TON spectacle de feux d'artifice !</intro>
+    <howToPlayTitle>Comment jouer:</howToPlayTitle>
+    <howToPlayDesc>Clique sur les roues multicolores pour découvrir et rassembler autant de feux d'artifice que possible. Plus tu en auras, plus ton spectacle sera fabuleux ! Une fois le soleil couché, le temps est écoulé et ton spectacle commence.</howToPlayDesc>
+    <goodLuck>Bonne chance !</goodLuck>
+
+    <begin>Commencer</begin>
+
+    <score>Ton score</score>
+    <continue>Continuer</continue>
+    <won>Tu as gagné</won>
+
+    <outroGreat>Tu as très bien joué.</outroGreat>
+    <outroWatchShow>Clique sur le bouton ci-dessous pour regarder ton spectacle.</outroWatchShow>
+    <outroEnjoy>Amusez-vous bien !</outroEnjoy>
+</root>

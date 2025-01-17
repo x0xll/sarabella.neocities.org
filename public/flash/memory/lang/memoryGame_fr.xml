@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Jeu de memory</gameTitle>
+
+    <rules1>Derrière les carrés à droite se trouvent 8 chevaux différents. Chaque image est présente à deux endroits.</rules1>
+    <rules2>Trouve toutes les pairs pour finir le jeu.</rule2>
+    <rules3>Si tu réussis avant que le temps ne s'écoule, tu auras gagné le jeu...</rules3>
+
+    <easy>Facile</easy>
+    <medium>Moyen</easy>
+    <hard>Difficile</hard>
+    
+    <start>Commencer</start>
+    <seconds>sec.</seconds>
+
+    <congrats>Félicitations - tu as gagné le jeu</congrats>
+    <retry>--&gt; Rejouer &lt;--</retry>
+    <lost>Dommage - tu n'as pas été assez rapide</lost>
+</root>

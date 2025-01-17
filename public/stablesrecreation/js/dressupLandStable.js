@@ -1,4 +1,7 @@
-
+statBox = null
+statBoxText = null
+statBoxQueue = []
+horseFullLevel = [0, 0]
 
 // Actual game start
 class dressupLandStable extends Phaser.Scene
@@ -70,6 +73,7 @@ class dressupLandStable extends Phaser.Scene
 
         this.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
         this.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
+        this.load.image('stat_box', './images/StatBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -183,6 +187,9 @@ class dressupLandStable extends Phaser.Scene
                 forkPlace.play()
                 updateBar(cleanlinessBar, 1/3)
                 updateBar(happinessBar, 1/6 + 0.05)
+            }
+            if (parseInt(straw1.frame.name.substr(7)) + parseInt(straw2.frame.name.substr(7)) + parseInt(straw3.frame.name.substr(7)) > 24) {
+                statBoxQueue.push(localeData.txtLandNoMoreHay)
             }
         }
         straw1Interactive.on('pointerdown', function (pointer) {cleanStraw(straw1, 'straw1_pickup', 'straw1_place')});
@@ -338,6 +345,9 @@ class dressupLandStable extends Phaser.Scene
                     }
                     else if (brushLevel === 2) {
                         brushLevel += 1;
+                        if (brushLevel === 3) {
+                            statBoxQueue.push(localeData.txtLandBrushClean)
+                        }
                         checkClean()
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
@@ -420,6 +430,23 @@ class dressupLandStable extends Phaser.Scene
                 // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
                 // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
                 complete: function endAnimation(entry) { 
+                    switch (entry.animation.name) {
+                        case 'eat_food':
+                            horseFullLevel[0] += 1
+                            if (horseFullLevel[0] === 1 && horseFullLevel[1] >= 1) {
+                                statBoxQueue.push(localeData.txtLandFullHorse)
+                            }
+                            break;
+                        case 'drink':
+                            horseFullLevel[1] += 1
+                            if (horseFullLevel[0] >= 1 && horseFullLevel[1] === 1) {
+                                statBoxQueue.push(localeData.txtLandFullHorse)
+                            }
+                            break;
+                    
+                        default:
+                            break;
+                    }
                     if (horseAnimationQueue.length === 0) {
                         const horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
                         let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
@@ -448,6 +475,13 @@ class dressupLandStable extends Phaser.Scene
                 hoverSound.play();
             }
         }
+        function pointeroverNew(sprite, hoverSound, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('hover')
+                hoverSound.play();
+                spriteText.setAlpha(1)
+            }
+        }
         /**
          * Displays the 'idle' frame of a sprite if the hand is empty
          * @param {sprite} sprite The sprite to change
@@ -457,12 +491,27 @@ class dressupLandStable extends Phaser.Scene
                 sprite.setFrame('idle')
             }
         }
+        function pointeroutNew(sprite, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('idle')
+                spriteText.setAlpha(0)
+            }
+        }
 
 
+        // Text boxes
+        const hoverTextSettings = { 
+            font: 'bold 16px Arial', 
+            align: 'center',
+            color: '#ffffff',
+            wordWrap: { width: 150 } 
+        }
         // Pitchfork
         const fork = this.add.sprite(718, 177, 'fork', 'idle').setInteractive({ pixelPerfect: true });
         const forkFill = this.sound.add('fork_fill');
         const forkPlace = this.sound.add('fork_place');
+        const forkText = this.add.text(643, 225, 'Static Text Object', hoverTextSettings).setAlpha(0).setOrigin(0.5);
+            forkText.text = localeData.txtLandPitchForkHilite2;
             this.anims.create({
                 key: 'fork_fill',
                 frames: this.anims.generateFrameNumbers('fork', { frames: [
@@ -489,30 +538,38 @@ class dressupLandStable extends Phaser.Scene
                 if (handCurrent === HAND.empty) {
                     if (straw1.frame.name === 1 || straw2.frame.name === 1 || straw3.frame.name === 1) {
                         this.setFrame('hover_use');
+                        forkText.text = localeData.txtLandRollOverPitchFork;
+                        forkText.setAlpha(1)
                     }
                     else {
                         this.setFrame('hover_wait');
+                        forkText.text = localeData.txtLandPitchForkHilite2;
+                        forkText.setAlpha(1)
                     }
                     hover2.play();
                 }
             });
-            fork.on('pointerout', function (pointer) { pointerout(fork) });
+            fork.on('pointerout', function (pointer) { pointeroutNew(fork, forkText) });
             fork.on('pointerdown', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
                     handCurrent = HAND.fork;
                     this.setFrame('in_use')
+                    forkText.setAlpha(0)
                     pickup.play();
                 }
                 else if (handCurrent === HAND.fork || handCurrent === HAND.forkFilled) {
                     handCurrent = HAND.empty;
                     this.setFrame('idle')
+                    forkText.setAlpha(0)
                 }
             });
 
         // Shovel
         const shovel = this.add.sprite(742, 189, 'shovel', 'idle').setInteractive({ pixelPerfect: true });
         const shovelSound = this.sound.add('shovel_sound');
+        const shovelText = this.add.text(685, 270, 'Static Text Object', hoverTextSettings).setAlpha(0).setOrigin(.5, .5);
+            shovelText.text = localeData.txtLandShovelHilite2;
             this.anims.create({
                 key: 'shovel_pickup',
                 frames: this.anims.generateFrameNumbers('shovel', { frames: [
@@ -535,24 +592,30 @@ class dressupLandStable extends Phaser.Scene
                 if (handCurrent === HAND.empty) {
                     if (straw1.frame.name === 1 || straw2.frame.name === 1 || straw3.frame.name === 1) {
                         this.setFrame('hover_done');
+                        shovelText.text = localeData.txtLandShovelHilite2;
+                        shovelText.setAlpha(1)
                     }
                     else {
                         this.setFrame('hover_use');
+                        shovelText.text = localeData.txtLandRollOverShovel;
+                        shovelText.setAlpha(1)
                     }
                     hover2.play();
                 }
             });
-            shovel.on('pointerout', function (pointer) { pointerout (shovel) });
+            shovel.on('pointerout', function (pointer) { pointeroutNew(shovel, shovelText) });
             shovel.on('pointerdown', function (pointer)
             {
                 if (handCurrent === HAND.empty) {
                     handCurrent = HAND.shovel;
                     shovel.setFrame('in_use')
+                    shovelText.setAlpha(0)
                     pickup.play();
                 }
                 else if (handCurrent === HAND.shovel) {
                     handCurrent = HAND.empty;
                     shovel.setFrame('idle')
+                    shovelText.setAlpha(0)
                 }
             });
 
@@ -694,6 +757,13 @@ class dressupLandStable extends Phaser.Scene
             function cleanHooves(sprite) {
                 if (sprite.frame.name <2 && handCurrent === HAND.hoofpick) {
                     sprite.setFrame(sprite.frame.name + 1)
+                    if (sprite.frame.name === 2) {
+                        if (sprite === hooves1) {
+                            statBoxQueue.push(localeData.txtLandFrontHooves)
+                        } else {
+                            statBoxQueue.push(localeData.txtLandRearHooves)
+                        }
+                    }
                     checkClean()
                     hoofpickHeldSprite.play('hoofpick_use')
                     updateBar(cleanlinessBar, 0.25)
@@ -721,6 +791,8 @@ class dressupLandStable extends Phaser.Scene
             // Grain Bin
             const grainBin = this.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
             const grainSound = this.sound.add('grain_sound');
+            const grainText = this.add.text(610, 325, 'Static Text Object', hoverTextSettings).setAlpha(0);
+                grainText.text = localeData.txtLandOatsRollOver;
                 this.anims.create({
                     key: 'pickup',
                     frames: this.anims.generateFrameNumbers('grain_bin', { frames: [
@@ -740,20 +812,23 @@ class dressupLandStable extends Phaser.Scene
                     ] }),
                     frameRate: 24
                 });
-                grainBin.on('pointerover', function (pointer) { pointerover (grainBin, hover2) });
+                grainBin.on('pointerover', function (pointer) { pointeroverNew(grainBin, hover2, grainText) });
                 grainBin.on('pointerout', function (pointer)
                 {
                     if (handCurrent === HAND.grainScoop) {
                         grainBin.setFrame('empty')
+                        grainText.setAlpha(0)
                     }
                     else {
                         grainBin.setFrame('idle')
+                        grainText.setAlpha(0)
                     }
                 });
                 grainBin.on('pointerdown', function (pointer)
                 {
                     if (handCurrent === HAND.empty) {
                         handCurrent = HAND.grainScoop
+                        grainText.setAlpha(0)
                         grainBin.play('pickup')
                         pickup.play();
                         grainSound.play()
@@ -827,6 +902,12 @@ class dressupLandStable extends Phaser.Scene
                 }
             });
 
+        // Text box to display stat messages
+        statBox = this.add.image(625, 130, 'stat_box').setAlpha(0)
+        statBoxText = this.add.text(625, 130, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        // statBoxText.text = localeData[horseName + "Name"];
+        statBoxText.setOrigin(.5, .5)
+
 
 
         // ---------- Stable foreground and UI ---------- //
@@ -869,14 +950,83 @@ class dressupLandStable extends Phaser.Scene
             });
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}`) });
-        // help button
+        
+            // help button
+        let helpPopups = [];
+        function showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings, scene)
+        {
+            const helpTxt = scene.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
+            helpTxt.text = localeTxtKey;
+            helpTxt.setOrigin(0.5)
+            helpPopups.push(helpTxt);
+        }
+
         const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
-            helpButton.on('pointerover', function (pointer) { this.setFrame('help') });
-            helpButton.on('pointerout', function (pointer) { this.setFrame('idle') });
+            const hoverTextSettingsHelp = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 100},
+                lineSpacing: -2
+            }
+
+            const hoverTextSettingsOneLine = {
+                font: 'bold 11px Arial', 
+                align: 'center',
+                color: '#ffffff',
+            }
+
+            const hoverTextSettingsBigBox = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 200},
+                lineSpacing: -2
+            }
+            
+            const hoverTextSettingsMediumBox = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 150},
+                lineSpacing: -2
+            }
+
+            showLocalizedHelpTexts(115, 85, localeData.txtLandHelpTrophyRoom, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(103, 300, localeData.txtLandHelpWater, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(315, 400, localeData.txtLandHelpStats, hoverTextSettingsOneLine, this);
+            showLocalizedHelpTexts(400, 200, localeData.txtLandHelpPitchFork, hoverTextSettingsBigBox, this);
+            showLocalizedHelpTexts(427, 115, localeData.txtLandHelpInspiration, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(515, 270, localeData.txtLandHelpShovel, hoverTextSettingsBigBox, this);
+            showLocalizedHelpTexts(537, 410, localeData.txtLandHelpApple, hoverTextSettingsMediumBox, this);
+            showLocalizedHelpTexts(535, 345, localeData.txtLandHelpOats, hoverTextSettingsMediumBox, this);
+            //showLocalizedHelpTexts(792, 243, localeData.txtLandHelpBottle, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(490, 63, localeData.txtLandHelpWorld, hoverTextSettingsOneLine, this);
+            showLocalizedHelpTexts(755, 33, localeData.txtLandHelpHoofPick, hoverTextSettingsBigBox, this);
+            showLocalizedHelpTexts(670, 107, localeData.txtLandHelpBrush, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(507, 23, localeData.txtLandHelpLuck, hoverTextSettingsOneLine, this);
+
+            helpButton.on('pointerover', function (pointer) { 
+                this.setFrame('help') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(1);
+                });
+            });
+            helpButton.on('pointerout', function (pointer) { 
+                this.setFrame('idle') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(0);
+                });
+            });
 
 
         // Progress bars
         const bar = 13
+        const statTextSettings = { 
+            fontFamily: 'Arial', 
+            fontSize: 11.5, 
+            align: 'center'
+        }
         // hunger
         const hungerLevel = 1.5
         const hungerPos = 353 - 32 + (hungerLevel*bar/2)
@@ -892,6 +1042,10 @@ class dressupLandStable extends Phaser.Scene
                 level: hungerLevel
             }
             this.add.image(351, 509, 'hunger_scale');
+            const hungerText = this.add.text(351, 498, 'Static Text Object', statTextSettings);
+            hungerText.text = localeData.txtStatHunger;
+            hungerText.setColor("#fa91b9");
+            hungerText.setOrigin(0.5)
 
         // cleanliness
         const cleanlinessLevel = 1
@@ -908,6 +1062,10 @@ class dressupLandStable extends Phaser.Scene
                 level: cleanlinessLevel
             }
             this.add.image(444, 509, 'cleanliness_scale');
+            const cleanlinessText = this.add.text(444, 498, 'Static Text Object', statTextSettings);
+            cleanlinessText.text = localeData.txtStatClean;
+            cleanlinessText.setColor("#33cc00");
+            cleanlinessText.setOrigin(0.5)
 
         // happiness
         const happinessLevel = 1.75
@@ -924,6 +1082,10 @@ class dressupLandStable extends Phaser.Scene
                 level: happinessLevel
             }
             this.add.image(540, 509, 'happiness_scale');
+            const happinessText = this.add.text(540, 498, 'Static Text Object', statTextSettings);
+            happinessText.text = localeData.txtStatHappy;
+            happinessText.setColor("#00ccff");
+            happinessText.setOrigin(0.5)
 
         /**
          * Adds additional progress to the provided stat bar.
@@ -946,7 +1108,7 @@ class dressupLandStable extends Phaser.Scene
         }
 
         // Play Button
-        const playButton = this.add.text(150, 465, 'Dress Up', {
+        const playButton = this.add.text(150, 465, localeData.txtDressupBack, {
             fontFamily: 'Arial',
             fontSize: '12px',
             color: '#ffffff',
@@ -965,7 +1127,7 @@ class dressupLandStable extends Phaser.Scene
                 this.scene.start('dressupStable', {horseData: horseData, backgroundMusic: game.backgroundMusic, playMusic: game.playMusic});
             })
         // Copy Button
-        const copyButton = this.add.text(150, 500, 'Copy Link', {
+        const copyButton = this.add.text(150, 500, localeData.txtDressupCopy, {
             fontFamily: 'Arial',
             fontSize: '12px',
             color: '#ffffff',
@@ -1150,7 +1312,16 @@ class dressupLandStable extends Phaser.Scene
                 inspirationMessage.setAlpha(0); 
                 canPlayInspiration = true;
             });
-            
+        }
+
+        if (statBoxQueue.length > 0) {
+            statBox.setAlpha(1)
+            statBoxText.setAlpha(1)
+            statBoxText.text = statBoxQueue.shift()
+            this.time.delayedCall(3280, function () {
+                statBox.setAlpha(0)
+                statBoxText.setAlpha(0)
+            });
         }
     }
 }

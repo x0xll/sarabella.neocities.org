@@ -1,0 +1,11 @@
+17 Jan 2025
+    - Merge conflict between main and localization branch
+    - Refixed the print btn like on 11 Jan 2025
+
+14 Jan 2025
+    - Allow coloring.swf to load a xml language file based on a locale flashvar (commit 547d631790cd58d45db79dd11011b2528dce35a5)
+            - Loca.as added
+
+11 Jan 2025
+    - Fixed print btn in coloring.swf (commit 5f9d8501a10834f0c85520241f6c6b6b2f37b4bf)
+            - getURL("print:","/print"); function modified to getURL("./images/" + pages + ".svg","/print");
