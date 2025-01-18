@@ -1,0 +1,3 @@
+18 Jan 2025
+    - Change path to localized xml to allow us to have all the files in the same folder
+        - "./" + _root.locale + "/_data/bs_artstudio.xml" becomes "./_data/bs_artstudio_" + _root.locale + ".xml" in frame4 DoAction
