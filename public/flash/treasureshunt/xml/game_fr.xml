@@ -2,45 +2,57 @@
 <root>
 
 	<!-- button text goes here -->
-	<help_btn>AIDE</help_btn>
-	<pause_btn>PAUSE</pause_btn>
+	<help_btn>Aide</help_btn>
+	<pause_btn>Pause</pause_btn>
 	<start_btn>Commencer</start_btn>
 
-	<turbobtn>Play Turbo</turbobtn>
+	<turbobtn>Joue en mode Turbo</turbobtn>
 
-	<pauseheading>Your Game is Paused</pauseheading>
-	<pause2>Close this window to resume play.</pause2>
+	<pauseheading>Ton Jeu est en Pause</pauseheading>
+	<pause2>Ferme cette fenêtre pour reprendre le jeu.</pause2>
 
 	<how_to_play_btn>Règles du jeu</how_to_play_btn>
 
-	<play_again_btn>Play Again</play_again_btn>
+	<play_again_btn>Rejouer</play_again_btn>
 
 	<!-- intro text goes here -->
 	<intro>Intro From XML!</intro>
 
 	<!-- how to play title goes here -->
-	<how_to_play_title>How To Play</how_to_play_title>
+	<how_to_play_title>Comment Jouer</how_to_play_title>
 
 	<!-- how to play text goes here -->
-	<intro_howto>The further your mouse is from Treasure, the faster you'll move.
+	<how_to_play2>Plus ta souris est éloignée de Treasure, plus tu te déplaceras rapidement.
+	
+	Les anguilles électriques et les méduses t'électrocuteront et te feront avancer lentement.
 
-Electric eels and Jelly fish will zap you and cause you to move slowly.
+	Les bulles reconstituent ton énergie pour que tu puisses te déplacer plus rapidement.
 
-Bubbles replenish your energy so you can move faster.
+	Les bancs de poissons te permettent de nager plus vite.
 
-Schools of fish allow you to swim faster.
+	Les perles te protègent de tout danger pendant un court moment.
 
-Pearls keep you safe from all danger for a short time.
+	Le jeu est terminé lorsque le minuteur à bulles, situé sous ton score, éclate !
+	</how_to_play2>
 
-The game is over when the bubble timer, located below your score, pops!</intro_howto>
+		<intro_howto>Utilises ta souris pour guider Treasure à travers la mer et récupérer des poissons spéciaux, des coquillages et d'autres objets magiques avant la fin du temps imparti. Méfies-toi des méduses et des anguilles électriques ! Elles te ralentiront. Les bancs de poissons et les bulles t'aideront à te déplacer plus rapidement.</intro_howto>
 
 	<!-- win message -->
-	<win>Great Swimming!</win>
+	<win>Bonne nage !</win>
 	
-	<win2>You have come to the end of your journey.
-There is no more to collect.</win2>
+	<win2>Tu es arrivé au bout du voyage. Il n'y a plus rien à collecter.</win2>
 	
 	<!-- control panel score text goes here -->
-	<score>Score:</score>
+	<current_score>Score</current_score>
+
+	<!-- combos texts -->
+	<ofakind>1-de-chaque: </ofakind>
+	<variety>Variété </variety>
+	<plus>Plus: </plus>
+	<cross>Croix: </cross>
+	<corners>Coins: </corners>
+	<threerow>3 en ligne: </threerow>
+	<threecol>3 en colonne: </threecol>
+	<threediag>3 en diagonale: </threediag>
 
 </root>
