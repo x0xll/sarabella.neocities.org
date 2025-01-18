@@ -4,12 +4,12 @@
 	<!-- button text goes here -->
 	<help_btn>Aide</help_btn>
 	<pause_btn>Pause</pause_btn>
-	<start_btn>Commencer partie</start_btn>
+	<start_btn>Commencer la partie</start_btn>
 
-	<turbobtn>Play Turbo</turbobtn>
+	<turbobtn>Joue en mode Turbo</turbobtn>
 
-	<pauseheading>Your Game is Paused</pauseheading>
-	<pause2>Close this window to resume play.</pause2>
+	<pauseheading>Ton Jeu est en Pause</pauseheading>
+	<pause2>Ferme cette fenêtre pour continuer à jouer.</pause2>
 
 	<how_to_play_btn>Comment jouer</how_to_play_btn>
 
@@ -19,7 +19,7 @@
 	<intro>Intro From XML!</intro>
 
 	<!-- how to play title goes here -->
-	<how_to_play_title>How To Play</how_to_play_title>
+	<how_to_play_title>Comment jouer</how_to_play_title>
 
 	<!-- how to play text goes here -->
 	<how_to_play2>Help Pegasus collect special flowers as you fly across the kingdom sky. 
