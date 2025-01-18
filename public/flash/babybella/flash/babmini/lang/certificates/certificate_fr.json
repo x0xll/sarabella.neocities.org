@@ -1,0 +1,36 @@
+{
+    "title": "Certificat de Naissance",
+    "name": "Nom :",
+    "birtDate": "Date de Naissance :",
+    "birthPlace": "Lieu de Naissance :",
+    "mother": "Mère :",
+    "father": "Père ",
+    
+    "bellisimo_name": "Bellisimo",
+    "bellisimo_birtDate": "25 Septembre",
+    "bellisimo_birthPlace": "Nord du Septentrion",
+    "bellisimo_mother": "Bella",
+    "bellisimo_fater": "Bello",
+    "bellisimo_quote": "Crois en toi et la vie n'aura pas de secret pour toi.",
+
+    "cirra_name": "Cirra",
+    "cirra_birtDate": "12 Septembre",
+    "cirra_birthPlace": "Nord du Septentrion",
+    "cirra_mother": "Anemone",
+    "cirra_fater": "Uranus",
+    "cirra_quote": "Sache voir toute la beauté intérieure de tes amis.",
+
+    "petal_name": "Petal",
+    "petal_birtDate": "4 Septembre",
+    "petal_birthPlace": "Nord du Septentrion",
+    "petal_mother": "Rosebriar",
+    "petal_fater": "Beran",
+    "petal_quote": "Prépare une gentille surprise pour quelqu’un.",
+
+    "belissa_name": "Belissa",
+    "belissa_birtDate": "6 Novembre",
+    "belissa_birthPlace": "Nord du Septentrion",
+    "belissa_mother": "Bella",
+    "belissa_fater": "Bello",
+    "belissa_quote": "Deviens celle que tu veux être. Tu découvriras la joie le long du chemin."
+}

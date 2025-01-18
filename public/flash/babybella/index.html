@@ -25,9 +25,7 @@
           };
         </script>
 
-        <div class="swf" dir="ltr" rbidi="on">
-          <embed width="884" height="580"  pluginspage=" http://www.macromedia.com/go/getflashplayer" src="flash/babmini/babminiFullSite.swf" type="application/x-shockwave-flash" flashvars="language=en&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=20111112&showFamilyReunion=true">
-        </div>
+        <div class="swf" dir="ltr" rbidi="on"></div>
 
         <div class="footer">
           <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
@@ -36,5 +34,20 @@
         </div>
 
         <script src="/flags.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '580';
+          swfPlayer.width = '884';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'flash/babmini/babminiFullSite.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=20111112&showFamilyReunion=true`);
+          swfParent.appendChild(swfPlayer);
+        </script>
   </body>
 </html>

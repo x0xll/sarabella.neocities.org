@@ -1,0 +1,3 @@
+18 Jan 2025
+    - Change path to localized xml to allow us to have all the files in the same folder
+        - contentDataURL = __swfDirectoryURL + "/" + __language + "/data.xml" becomes contentDataURL = __swfDirectoryURL + "./lang/data_" + __language + ".xml" in BabyBellaDocument.as
