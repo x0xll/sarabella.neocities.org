@@ -32,5 +32,12 @@
     "belissa_birthPlace": "Nord du Septentrion",
     "belissa_mother": "Bella",
     "belissa_fater": "Bello",
-    "belissa_quote": "Deviens celle que tu veux être. Tu découvriras la joie le long du chemin."
+    "belissa_quote": "Deviens celle que tu veux être. Tu découvriras la joie le long du chemin.",
+
+    "janie_name": "Janie",
+    "janie_birtDate": "18 Septembre",
+    "janie_birthPlace": "Nord du Septentrion",
+    "janie_mother": "Ondine",
+    "janie_fater": "Flipper",
+    "janie_quote": "Apprends les leçons d’hier, apprécie les moments d’aujourd’hui et imagine les splendeurs de demain."
 }
