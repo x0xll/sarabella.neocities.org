@@ -54,4 +54,8 @@ There is no more to collect.</win2>
 	<threerow>3 in a row: </threerow>
 	<threecol>3 in a column: </threecol>
 	<threediag>3 in a diagonal: </threediag>
+
+	<!-- Non translated texts in original -->
+	<goodLuck>Good Luck!</goodLuck>
+	<bonusTime>Bonus Time</bonusTime>
 </root>

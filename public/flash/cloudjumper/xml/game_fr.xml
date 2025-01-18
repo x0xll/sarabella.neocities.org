@@ -35,7 +35,12 @@ Good luck!</how_to_play2>
 	
 	<win2>Bien joué ! Veux-tu rejouer et ramasser encore plus de fleurs ?</win2>
 	
-	<!-- control panel score text goes here -->
-	<score>Score:</score>
+	<!-- Non translated texts in original -->
+	<score>Score Actuel</score>
+	<intro_howto>Help Pegasus collect special flowers as you fly across the kingdom sky. Press the space bar or mouse click to flap her wings.Collect as many flowers as you can before sundown and arriving at the castle.</intro_howto>
+	<enterName>Please Enter your Name</enterName>
+	<greatFlying>Great Flying!</greatFlying>
+	<end>You have come to the end of your journey.</end>
+	<end2>There are no more flowers to collect.</end2>
 
 </root>
