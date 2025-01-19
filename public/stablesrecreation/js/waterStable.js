@@ -136,6 +136,7 @@ class WaterStable extends Phaser.Scene
 
         this.load.atlas('music_button', './images/waterStable/music.png', './images/waterStable/music.json');
         this.load.atlas('help_button', './images/waterStable/help.png', './images/waterStable/help.json');
+        this.load.image('stat_box', './images/StatBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -186,7 +187,15 @@ class WaterStable extends Phaser.Scene
         splash2Sound = this.sound.add('water_splash2');
         splash3Sound = this.sound.add('water_splash3');
 
-        
+        // Text boxes
+        const hoverTextSettings = { 
+            font: 'bold 16px Arial', 
+            align: 'center',
+            color: '#ffffff',
+            wordWrap: { width: 125 } ,
+            lineSpacing: -3
+        }
+     
         // Temp Change BG
         const temperatureBG = this.add.sprite(560, 110, 'temperature_bg', 'idle').setScale(1.02)
             this.anims.create({
@@ -352,14 +361,18 @@ class WaterStable extends Phaser.Scene
                     hoofpick.play('polisher_place')
                 }
             });
+            const hoofpickText = this.add.text(792, 198, 'Static Text Object', hoverTextSettings).setAlpha(0);
+            hoofpickText.text = localeData.txtWandHilite;
+            hoofpickText.setOrigin(0.5)
             hoofpickInteractive.on('pointerover', function (pointer) { 
                 if (handCurrent === HAND.empty && brushLevel === 3) {
                     hoofpick.setFrame('hover')
                 } else if (handCurrent === HAND.empty && brushLevel !== 3) {
                     hoofpick.setFrame('hover_wait')
+                    hoofpickText.setAlpha(1)
                 }
              });
-             hoofpickInteractive.on('pointerout', function (pointer) { pointerout (hoofpick)});
+             hoofpickInteractive.on('pointerout', function (pointer) { pointeroutNew (hoofpick, hoofpickText)});
         
 
              // Speaker
@@ -437,6 +450,7 @@ class WaterStable extends Phaser.Scene
                  {
                      if (handCurrent === HAND.empty && !soothed) {
                          soothed = true
+                         statBoxQueue.push(localeData.txtMusic)
                          speaker.play('soothe')
                          backgroundMusic.stop()
                          sootheSound.play();
@@ -559,6 +573,7 @@ class WaterStable extends Phaser.Scene
                     }
                     else if (brushLevel === 2) {
                         brushLevel += 1;
+                        statBoxQueue.push(localeData.txtBrushClean)
                         checkClean()
                         updateBar(cleanlinessBar, 1/3)
                         updateBar(happinessBar, 1/6)
@@ -573,6 +588,7 @@ class WaterStable extends Phaser.Scene
                     if (extraCleanLevel <1 && handCurrent === HAND.hoofpick) {
                         extraCleanLevel += 1
                         checkClean()
+                        statBoxQueue.push(localeData.txtCleanHorse)
                         hoofpickHeldSprite.play('polisher_use')
                         polisherSound.play();
                         updateBar(cleanlinessBar, 1)
@@ -632,6 +648,12 @@ class WaterStable extends Phaser.Scene
                 // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
                 // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
                 complete: function endAnimation(entry) { 
+                    if (entry.animation.name === 'eat_food') {
+                        horseFullLevel[0] += 1
+                        if (horseFullLevel[0] === 1) {
+                            statBoxQueue.push(localeData.txtFullHorse)
+                        }
+                    }
                     if (horseAnimationQueue.length === 0) {
                         const horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'paw_ground', 'shift_weight', 'tail_swish']
                         let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
@@ -683,15 +705,13 @@ class WaterStable extends Phaser.Scene
                         temperatureButtons.setVisible(false)
                         temperatureBar.setFrame('perfect')
                         tempPerfect.play()
+                        statBoxQueue.push(localeData.txtTemperature)
                     }
                     updateBar(happinessBar, 0.2)
                     tempChange.play()
                     temperatureBG.play(`BG_${temp}`)
                 }
             });
-
-
-
 
         /**
          * Displays the 'hover' frame of a sprite and plays the hover sound if the hand is empty
@@ -704,6 +724,22 @@ class WaterStable extends Phaser.Scene
                 hoverSound.play();
             }
         }
+
+        function pointeroverNew(sprite, hoverSound, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('hover')
+                hoverSound.play();
+                spriteText.setAlpha(1)
+            }
+        }
+
+        function pointeroutNew(sprite, spriteText) {
+            if (handCurrent === HAND.empty) {
+                sprite.setFrame('idle')
+                spriteText.setAlpha(0)
+            }
+        }
+
         /**
          * Displays the 'idle' frame of a sprite if the hand is empty
          * @param {sprite} sprite The sprite to change
@@ -857,6 +893,12 @@ class WaterStable extends Phaser.Scene
             waterSpinnerHolder.on('pointerdown', cleanWater)
 
 
+        // Text box to display stat messages
+        statBox = this.add.image(665, 150, 'stat_box').setAlpha(0)
+        statBoxText = this.add.text(665, 150, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        statBoxText.setOrigin(.5, .5)
+
+
 
         // ---------- Stable foreground and UI ---------- //
         this.add.image(444, 260, 'stable_fg');
@@ -864,15 +906,21 @@ class WaterStable extends Phaser.Scene
 
         // Inspirational message
         inspiration = this.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
-        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 55, color: '#ffffff', align: 'center' }).setVisible(false);
-        inspirationMessage.text = horseData.message;
-        inspirationMessage.setPosition(444-inspirationMessage.width/2, 133-inspirationMessage.height/2);
+        inspirationMessage = this.add.text(444, 133, 'Static Text Object', { 
+            fontFamily: 'Arial', 
+            fontSize: 55, 
+            color: '#ffffff', 
+            align: 'center' ,
+            wordWrap: { width: 800 } 
+        }).setVisible(false);
+        inspirationMessage.text = localeData[horseName + "Quote"];
+        inspirationMessage.setOrigin(0.5)
         inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
 
 
         // Horse name
         const horseNameText = this.add.text(444, 133, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
-        horseNameText.text = horseData.name;
+        horseNameText.text = localeData[horseName + "Name"];
         horseNameText.setPosition(444-horseNameText.width/2, 478-horseNameText.height/2)
 
         // Buttons
@@ -893,13 +941,80 @@ class WaterStable extends Phaser.Scene
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${playMusic ? 'on' : 'off'}`) });
         // help button
+        var helpPopups = [];
+        function showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings, scene)
+        {
+            const helpTxt = scene.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
+            helpTxt.text = localeTxtKey;
+            helpTxt.setOrigin(0.5)
+            helpPopups.push(helpTxt);
+        }
+
         const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
-            helpButton.on('pointerover', function (pointer) { this.setFrame('help') });
-            helpButton.on('pointerout', function (pointer) { this.setFrame('idle') });
+            const hoverTextSettingsHelp = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 100},
+                lineSpacing: -2
+            }
+        
+            const hoverTextSettingsStatsHelp = {
+                font: 'bold 11px Arial', 
+                align: 'center',
+                color: '#ffffff',
+            }
+
+            const hoverTextSettingsBrushHelp = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 100},
+                lineSpacing: -2
+            }
+
+            const hoverTextSettingsLaserHelp = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 150},
+                lineSpacing: -2
+            }
+
+            showLocalizedHelpTexts(545, 280, localeData.txtHelpTrophyRoom, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(197, 125, localeData.txtHelpThermostat, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(445, 420, localeData.txtHelpStats, hoverTextSettingsStatsHelp, this);
+            showLocalizedHelpTexts(560, 35, localeData.txtHelpMusic, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(175, 240, localeData.txtHelpInspiration, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(730, 27, localeData.txtHelpCleaner, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(215, 410, localeData.txtHelpChestnut, hoverTextSettingsLaserHelp, this);
+            showLocalizedHelpTexts(347, 47, localeData.txtHelpFood, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(792, 243, localeData.txtHelpWorld1, hoverTextSettingsHelp, this);
+            showLocalizedHelpTexts(525, 210, localeData.txtHelpLaserThing, hoverTextSettingsLaserHelp, this);
+            showLocalizedHelpTexts(550, 120, localeData.txtHelpBrushes, hoverTextSettingsBrushHelp, this);
+            showLocalizedHelpTexts(605, 365, localeData.txtHelpOxygen, hoverTextSettingsHelp, this);
+        
+            helpButton.on('pointerover', function (pointer) { 
+                this.setFrame('help') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(1);
+                });
+            });
+            helpButton.on('pointerout', function (pointer) { 
+                this.setFrame('idle') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(0);
+                });
+            });
 
 
         // Progress bars
         const bar = 13
+        const statTextSettings = { 
+            fontFamily: 'Arial', 
+            fontSize: 11.5, 
+            align: 'center'
+        }
         // hunger
         const hungerLevel = 1.5
         const hungerPos = 353 - 32 + (hungerLevel*bar/2)
@@ -915,6 +1030,10 @@ class WaterStable extends Phaser.Scene
                 level: hungerLevel
             }
             this.add.image(351, 509, 'hunger_scale');
+            const hungerText = this.add.text(351, 498, 'Static Text Object', statTextSettings);
+            hungerText.text = localeData.txtStatHunger;
+            hungerText.setColor("#fa91b9");
+            hungerText.setOrigin(0.5)
 
         // cleanliness
         const cleanlinessLevel = 1
@@ -931,6 +1050,10 @@ class WaterStable extends Phaser.Scene
                 level: cleanlinessLevel
             }
             this.add.image(444, 509, 'cleanliness_scale');
+            const cleanlinessText = this.add.text(444, 498, 'Static Text Object', statTextSettings);
+            cleanlinessText.text = localeData.txtStatClean;
+            cleanlinessText.setColor("#33cc00");
+            cleanlinessText.setOrigin(0.5)
 
         // happiness
         const happinessLevel = 2 - (tempWrong * 0.2)
@@ -947,6 +1070,10 @@ class WaterStable extends Phaser.Scene
                 level: happinessLevel
             }
             this.add.image(540, 509, 'happiness_scale');
+            const happinessText = this.add.text(540, 498, 'Static Text Object', statTextSettings);
+            happinessText.text = localeData.txtStatHappy;
+            happinessText.setColor("#00ccff");
+            happinessText.setOrigin(0.5)
 
         /**
          * Adds additional progress to the provided stat bar.
@@ -1028,12 +1155,15 @@ class WaterStable extends Phaser.Scene
         // play water clean sound when fountain is at correct frame
         if (water.frame.name === 'dirtywater0015') {
             drainWater.play();
+        } else if (water.frame.name === 'dirtywater0065') {
+            statBoxQueue.push(localeData.txtCleanTank)
         }
         if (oxygen.frame.name === 'bubbles0006') {
             bubbleSound.play();
         }
         else if (oxygen.frame.name === 'bubbles0090') {
             bubbleReplaceSound.play();
+            statBoxQueue.push(localeData.txtCleanWater)
         }
         if (foodTrough.frame.name === 'feed0006') {
             foodDispenseSound.play();
@@ -1099,7 +1229,24 @@ class WaterStable extends Phaser.Scene
                 inspirationMessage.setAlpha(0); 
                 canPlayInspiration = true;
             });
-            
+        }
+        
+        if (statBoxQueue.length > 0) {
+            if (statBoxQueue[0] === localeData.txtBrushClean) {
+                statBox.setPosition(665, 225)
+                statBoxText.setPosition(665, 225)
+            } else {
+                statBox.setPosition(665, 150)
+                statBoxText.setPosition(665, 150)
+            }
+
+            statBox.setAlpha(1)
+            statBoxText.setAlpha(1)
+            statBoxText.text = statBoxQueue.shift()
+            this.time.delayedCall(3280, function () {
+                statBox.setAlpha(0)
+                statBoxText.setAlpha(0)
+            });
         }
     }
 }

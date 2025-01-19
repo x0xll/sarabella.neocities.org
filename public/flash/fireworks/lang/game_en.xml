@@ -7,4 +7,29 @@
     <replay>Replay</replay>
     <newshow>New Show</newshow>
     <quit>Quit</quit>
+
+    <welcome>Welcome to</welcome>
+    <gameTitle>Firelight Festival</gameTitle>
+    <playPuzzle>Play Puzzle Game</playPuzzle>
+    
+    <rulesTime>When the Sun sets the show will begin!</rulesTime>
+    <rulesCounter>Counter shows how many Fireworks are in each tube.</rulesCounter>
+    <rulesPinwheels>Pinwheels will spin off the screen.</rulesPinwheels>
+    <rulesUncoveredFireworks>You can only remove Fireworks that are completely uncovered</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Click on fireworks or use the spacebar to add them to your show</rulesCollectFireworks>
+
+    <intro>An exciting game that ends in YOUR spectacular firework show!</intro>
+    <howToPlayTitle>How to Play:</howToPlayTitle>
+    <howToPlayDesc>Click on pinwheels to uncover and collect as many fireworks as possible. The more you collect, the bigger your show! Once the sun has set, time is up and your show will begin.</howToPlayDesc>
+    <goodLuck>Good luck!</goodLuck>
+
+    <begin>Begin</begin>
+
+    <score>Your Score</score>
+    <continue>Continue</continue>
+    <won>You Won</won>
+
+    <outroGreat>You did great.</outroGreat>
+    <outroWatchShow>Click the button below when you're ready to watch your show.</outroWatchShow>
+    <outroEnjoy>Enjoy!</outroEnjoy>
 </root>

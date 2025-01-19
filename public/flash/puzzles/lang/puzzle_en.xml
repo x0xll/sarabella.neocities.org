@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+    <won>GREAT JOB!</won>
+    
+    <help>HELP!!</help>
+
+    <back>Back</back>
+    
+    <diff>DIFFICULTY</diff>
+    <easiest>Easiest</easiest>
+    <easier>Easier</easier>
+    <harder>Harder</harder>
+    <hardest>Hardest</hardest>
+
+    <solve>Solve Puzzle</solve>
+    <preview>Preview</preview>
+    <edges>Edges Only</edges>
+    <move>Move Pieces</move>
+
+    <retry>Try another puzzle or go back to play other Bella Sara games.</retry>
+</root>
