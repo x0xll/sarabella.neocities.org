@@ -888,6 +888,10 @@ class LevelTwo extends Phaser.Scene
             // Handle gem score text
             for (var i = this.gemsScoreTxt.length - 1; i >= 0; i--)
                 {
+                    this.gemsScoreTxt[i].txt.setPosition(
+                        this.gemsScoreTxt[i].txt.x,
+                        this.gemsScoreTxt[i].txt.y -= .1)
+
                     if (this.gemsScoreTxt[i].currenFrameVisible >= this.maxTimeScoreTxtAppear)
                     {
                         this.gemsScoreTxt[i].txt.alpha -= this.scoreTxtAlphaAnimation
