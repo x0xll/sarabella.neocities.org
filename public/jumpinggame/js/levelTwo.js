@@ -45,7 +45,7 @@ class LevelTwo extends Phaser.Scene
         this.clock = this.plugins.get('rexclockplugin').add(this, config);
 
         // Level reference
-        this.load.image('Level2', './images/Level Screens/Level2.png');
+        //this.load.image('Level2', './images/Level Screens/Level2.png');
     }
 
     create (data)
@@ -67,7 +67,7 @@ class LevelTwo extends Phaser.Scene
             this.add.image(444 + (index * 888), 234, 'path')
         }
         // Level Reference
-        this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
+        //this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
 
 
         // Display
@@ -439,10 +439,63 @@ class LevelTwo extends Phaser.Scene
         // Foreground Objects
         this.add.sprite(46, 285, 'backgroundObjects', 'startGateFront')
         this.add.sprite(185, 430, 'backgroundObjects', 'bush').setScale(.9, .85)
-        this.add.sprite(605, 430, 'backgroundObjects', 'rock')
+        this.add.sprite(609, 430, 'backgroundObjects', 'rock')
         this.add.sprite(1160, 440, 'backgroundObjects', 'bush').setScale(.8, .70)
         this.add.sprite(2290, 390, 'backgroundObjects', 'bridge2Front')
         this.add.sprite(2490, 440, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(3929, 430, 'backgroundObjects', 'bush')
+        this.add.sprite(5206, 450, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(5806, 470, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(6650, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(6940, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(7225, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(8589, 440, 'backgroundObjects', 'bush').setScale(.8, .70)
+        this.add.sprite(9559, 450, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(9768, 470, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(12497, 430, 'backgroundObjects', 'rock')
+        this.add.sprite(13534, 430, 'backgroundObjects', 'rock')
+        this.add.sprite(13639, 440, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(14248, 450, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(14442, 470, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(15073, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(15363, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(15653, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(16003, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(16293, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(16582, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(17346, 450, 'backgroundObjects', 'bush').setScale(.8, .70)
+        this.add.sprite(18766, 470, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(19928, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(20298, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(20704, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(21249, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(21639, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(22010, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(22575, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(22948, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(22902, 470, 'backgroundObjects', 'bush')
+        this.add.sprite(23527, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(23523, 470, 'backgroundObjects', 'bush')
+        this.add.sprite(23897, 440, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(24394, 440, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(24666, 430, 'backgroundObjects', 'rock')
+        this.add.sprite(26383, 450, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(26591, 470, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(27230, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(27518, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(27808, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(28599, 440, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(29104, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(29393, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(29680, 390, 'backgroundObjects', 'bridge2Front').setScale(.85, .9)
+        this.add.sprite(29993, 400, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30204, 400, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30415, 400, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30626, 400, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30915, 420, 'backgroundObjects', 'fence').setScale(.6, .9)
+        this.add.sprite(31126, 420, 'backgroundObjects', 'fence').setScale(.6, .9)
+        this.add.sprite(31336, 420, 'backgroundObjects', 'fence').setScale(.6, .9)
+        this.add.sprite(31547, 420, 'backgroundObjects', 'fence').setScale(.6, .9)
 
         this.infoScreen = this.add.image(443, 234, 'info').setScrollFactor(0).setVisible(false)
         this.infoButton = this.add.image(443, 304, 'infoButton').setScrollFactor(0).setVisible(false)
@@ -455,7 +508,7 @@ class LevelTwo extends Phaser.Scene
         // Extra settings for debug mode
         if (this.physics.config.debug) {
             // Start at specified x
-            this.horse.x = 29993
+            this.horse.x = 50
             // Keep horse still unless buttons are pressed
             this.canterSpeed = 0
             this.horse.setVelocityX(this.canterSpeed);
