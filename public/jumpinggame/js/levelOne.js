@@ -78,11 +78,19 @@ class LevelOne extends Phaser.Scene
         // Level Reference
         // this.add.image(0, 0, 'Level1').setOrigin(0, 0).setAlpha(.6) 
 
+        this.displayTxtStyle = 
+        {
+            font: "italic 32px StempelGaramond",
+            color: "white",
+            stroke: "rgba(110, 195, 221, 20)",
+            strokeThickness: 3,
+            align: "center"
+        }
 
         // Display
         this.add.image(444, 30, 'scoreBoard').setScrollFactor(0) 
         // Horseshoe Display
-        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
         this.horseshoeText.text = this.horseshoes + " x ";
         this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
         // Score Display
@@ -90,7 +98,7 @@ class LevelOne extends Phaser.Scene
         this.scoreNameText.text = langData.score;
         this.scoreNameText.setPosition(445-this.scoreNameText.width/2, 18-this.scoreNameText.height/2);
 
-        this.scoreText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.scoreText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
         this.scoreText.text = this.score;
         this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
         // Clock
@@ -99,10 +107,9 @@ class LevelOne extends Phaser.Scene
         this.clockNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
         this.clockNameText.text = langData.time;
         this.clockNameText.setPosition(570-this.clockNameText.width/2, 18-this.clockNameText.height/2);
-        this.timerText = this.add.text(443, 234, 'Static Text Object', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff', align: 'center' }).setScrollFactor(0)//.setVisible(false);
+        this.timerText = this.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
         this.timerText.text = "0:00";
         this.timerText.setPosition(575-this.timerText.width/2, 40-this.timerText.height/2);
-
 
         // Background Elements
         this.add.sprite(165, 285, 'backgroundObjects', 'bush').setAngle(3)
