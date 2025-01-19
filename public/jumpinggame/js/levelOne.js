@@ -23,6 +23,15 @@ class LevelOne extends Phaser.Scene
     runCtrl
     runButton
 
+    gemsScoreTxtStyle = {
+        font: "italic 20px StempelGaramond",
+        color: "white",
+        stroke: "#5D3073",
+        strokeThickness: 1.2
+    }
+    maxTimeScoreTxtAppear = 50
+    scoreTxtAlphaAnimation = .15
+
     constructor ()
     {
         super({ key: 'LevelOne' });
@@ -337,7 +346,7 @@ class LevelOne extends Phaser.Scene
         
         this.gems = this.physics.add.group({immovable: true});
         this.gems.addMultiple(this.gemsArray);
-
+        this.gemsScoreTxt = [];
 
         // Jumps
         this.jumpsArray = [
@@ -716,6 +725,16 @@ class LevelOne extends Phaser.Scene
                                 console.log("Unknown gem: " + gem.frame.name)
                                 break;
                         }
+
+                        var gemTxt = this.add.text(gem.x, gem.y, points, this.gemsScoreTxtStyle).setOrigin(.5, .5)
+                        gemTxt.alpha = 0
+                        var gemsTxtDatas = 
+                        {
+                            txt : gemTxt,
+                            currenFrameVisible : 0
+                        }
+                        this.gemsScoreTxt.push(gemsTxtDatas)
+                    
                         this.score += points
                         this.scoreText.text = this.score
                         this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
@@ -809,6 +828,32 @@ class LevelOne extends Phaser.Scene
                 this.data.runningSound.stop()
                 this.scene.start('StartScreen', this.data);
                 this.scene.stop('LevelOne')
+            }
+
+            // Handle gem score text
+            for (var i = this.gemsScoreTxt.length - 1; i >= 0; i--)
+            {
+                if (this.gemsScoreTxt[i].currenFrameVisible >= this.maxTimeScoreTxtAppear)
+                {
+                    this.gemsScoreTxt[i].txt.alpha -= this.scoreTxtAlphaAnimation
+
+                    if (this.gemsScoreTxt[i].txt.alpha <= 0)
+                    {
+                        this.gemsScoreTxt[i].txt.destroy();
+                        this.gemsScoreTxt.splice(i, 1);           
+                    }
+                    continue;
+                }
+                else
+                {
+                    if (this.gemsScoreTxt[i].txt.alpha < 1)
+                    {
+                        this.gemsScoreTxt[i].txt.alpha += this.scoreTxtAlphaAnimation
+                        continue;
+                    }
+
+                    this.gemsScoreTxt[i].currenFrameVisible++;
+                }
             }
     }
 }
