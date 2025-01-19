@@ -45,7 +45,7 @@ class LevelTwo extends Phaser.Scene
         this.clock = this.plugins.get('rexclockplugin').add(this, config);
 
         // Level reference
-        //this.load.image('Level2', './images/Level Screens/Level2.png');
+        this.load.image('Level2', './images/Level Screens/Level2.png');
     }
 
     create (data)
@@ -67,7 +67,7 @@ class LevelTwo extends Phaser.Scene
             this.add.image(444 + (index * 888), 234, 'path')
         }
         // Level Reference
-        //this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
+        this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
 
 
         // Display
@@ -103,6 +103,67 @@ class LevelTwo extends Phaser.Scene
         this.add.sprite(1885, 285, 'backgroundObjects', 'bush').setScale(.4, .8)
         this.add.sprite(2306, 285, 'backgroundObjects', 'bush')
         this.add.sprite(2290, 325, 'backgroundObjects', 'bridge2Back')
+        this.add.sprite(3409, 282, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(3961, 285, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(4348, 284, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(5158, 285, 'backgroundObjects', 'bush')
+        this.add.sprite(5475, 285, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(5742, 287, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(6239, 288, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(6650, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(6940, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(7225, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(8575, 290, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(9102, 290, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(10606, 295, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(11819, 295, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(12620, 287, 'backgroundObjects', 'bush')
+        this.add.sprite(13518, 295, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(15073, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(15363, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(15653, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(16003, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(16293, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(16582, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(16874, 295, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(19171, 285, 'backgroundObjects', 'bush')
+        this.add.sprite(19492, 295, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(20113, 285, 'backgroundObjects', 'bush')
+        this.add.sprite(19928, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(20298, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(20704, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(21054, 295, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(21249, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(21752, 282, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(21639, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(21994, 289, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(22010, 285, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(22575, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(23165, 300, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(22948, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(23451, 300, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(23527, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(23897, 290, 'backgroundObjects', 'fence').setScale(1.05, 1.1)
+        this.add.sprite(24784, 285, 'backgroundObjects', 'bush')
+        this.add.sprite(25969, 300, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(27230, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(27518, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(27808, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(28131, 300, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(28531, 285, 'backgroundObjects', 'bush')
+        this.add.sprite(29104, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(29393, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(29680, 330, 'backgroundObjects', 'bridge2Back').setScale(.85, .9)
+        this.add.sprite(29974, 300, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(29993, 310, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30204, 310, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30415, 310, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30626, 310, 'backgroundObjects', 'fence').setScale(.6)
+        this.add.sprite(30915, 300, 'backgroundObjects', 'fence').setScale(.6, .9)
+        this.add.sprite(31250, 285, 'backgroundObjects', 'bush').setScale(.4, .8)
+        this.add.sprite(31126, 300, 'backgroundObjects', 'fence').setScale(.6, .9)
+        this.add.sprite(31336, 300, 'backgroundObjects', 'fence').setScale(.6, .9)
+        this.add.sprite(31547, 300, 'backgroundObjects', 'fence').setScale(.6, .9)
 
         // Horse
         this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse2', 'canter0000')
@@ -394,7 +455,7 @@ class LevelTwo extends Phaser.Scene
         // Extra settings for debug mode
         if (this.physics.config.debug) {
             // Start at specified x
-            this.horse.x = 50
+            this.horse.x = 29993
             // Keep horse still unless buttons are pressed
             this.canterSpeed = 0
             this.horse.setVelocityX(this.canterSpeed);
