@@ -1,0 +1,63 @@
+{
+    "title" : "Bella Sara Digitala Arkiv",
+
+    "header_play_btn" : "Spela!",
+    "header_ressources_btn" : "Resurser",
+    "header_updates_btn" : "Updateringar",
+    "header_besaofficial_btn" : "Officiella BeSa",
+    "header_wiki_btn" : "Wiki.gg",
+    "header_discord_btn" : "Discord",
+
+    "footer_maininfos" : "För frågor, kommentarer, eller hjälp:<br> @Archiving i Bella Sara Discord eller öppna en diskussion på <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Our Github</a>",
+    "footer_home_linktxt" : "Hem",
+    "footer_wiki_linktxt" : "Wiki Sida",
+    "footer_webarchive_linktxt" : "Webbarkiv Sida",
+    "footer_github_linktxt" : "Github",
+    "footer_svgimg_linktxt" : "SVG Bild",
+    "footer_magicalhorses_linktxt" : "Magiska Hästar",
+
+    "ressources_flashpointcacheguide" : "Flashpoint Cache Guide",
+    "ressources_mewfantasyarchivingguide" : "Mewfantasys Arkiv Guide",
+    "ressources_gridlochressdump" : "Gridlochs Resurs Hörna",
+    "ressources_gridlochstablerecreation" : "Gridlochs Stall Rekreation",
+    
+    "devlog_summary" : "Det här är en supersnabb och hafsig sammanfattning av den utveckling som gjorts för att återskapa de gamla Bella Sara spelen.<br><br><i>Flash filer som vi har för tillfället: Molnhoppning, Treasures Jakt, Sagoboken, Pussel, Färgläggning, Bellas Skönhetsbox, Lansridning, Världskartan, Startsida, Stall, Konst Studio</i><br>Av dessa är bara Molnhoppning, Sagoboken och Treasures Jakt spelbara för tillfället. Sagoboken är tillgänglig genom Flashpoint.<br>Världskartan, Startsida och Konststudio är fullt fungerande och kommer att bli tillgängliga via Flashpoint inom kort.<br>Lansridning och Stall är delvis fungerande och kommer att släppas genom Flashpoint.<br><br><b>STALL ÄR ÄNNU INTE TILLGÄNGLIGA FÖR ALLMÄNHETEN. Det är viktigt för oss att publiceringen av dessa filer görs ordentligt. De kommer att bli tillgängliga via Flashpoint Arkivens allmänna Flashspelbibliotek så snart som de klarat av Arkivens krav.</b><br><br>Bellas Skönhetsbox är troligtvis permanent sönder.",
+    
+    "play_recoveredflashgames_title" : "Återhämtade Flashspel",
+    "play_recoveredflashgames_desc" : "Detta är spel som var arkiverade från original sidan",
+    "play_recreatedgames_title" : "Återskapade Spel",
+    "play_recreatedgames_desc" : "Detta är spel som har blivit återskapade med ny kodning",
+    "play_partiallyrecoveredgames_title" : "Halvt Återhämtade Spel",
+    "play_partiallyrecoveredgames_desc" : "Detta är spel som var arkiverade från original sidan men som saknar vissa filer eller grundläggande funktioner.",
+    "play_newgames_title" : "Nya Spel",
+    "play_newgames_desc" : "Detta är spel som har Bella Sara tema eller är Bella Sara inspirerade.",
+    
+    "game_cloudjumper" : "Molnhoppning",
+    "game_treasurehunt" : "Treasures Jakt",
+    "game_puzzles" : "Pussel",
+    "game_coloringgamefiona" : "Färgläggning (Fiona)",
+    "game_memorygame" : "Memory Spel",
+    "game_quizgame" : "Frågesport",
+    "gamestables" : "Stall",
+    "game_spectacularjumpinggame" : "Spektakulär Hoppning Spel (WIP)",
+    "game_artstudio" : "Konststudio",
+    "game_lancegame" : "Lansridning",
+    "game_storybook" : "Sagoboken",
+    "game_babybella" : "Baby Bella",
+    "game_myhorse" : "Min Häst (vita föl varianten)",
+    "game_randomartideagenerator" : "Slumpmässiga Konstidé Generatorn",
+    "game_dressupstables" : "Utklädning Spel",
+    "game_firelightFestival" : "Firelight Festival",
+
+    "artstudio_warning" : "Detta spel saknar filerna till original hästarna och kan för tillfället inte ladda texten rätt.",
+    
+    "babybella_warning" : "Detta spel/denna reklam verkar sakna några original funktioner.",    
+
+    "lanceriding_warning" : "Detta spel har endast filerna för första nivån. Spelet har även problem med att ladda effektivt och därför kan det krävas att man laddar om sidan ett par gånger innan det funkar.",
+
+    "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid som förväntat.",
+
+    "stables_title" : "Välkommen till Bella Sara Världen",
+
+    "dressup_horselink" : "Häst Länk"
+}

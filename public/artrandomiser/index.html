@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Art Randomiser</title>
+        <title data-il8n="title">Art Randomiser</title>
         <link rel="icon" href="./unknownHorse.png">
+        <script src="/language.js"></script>
         <script src="random.js"></script>
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="/styles.css">
     </head>
-    <body class="game">
+
+    <body class="game" onload="loadLanguagePref(); 
+        loadNewLocalizationFile('./lang/artrandomizer_' + currentLang + '.json', './lang/artrandomizer_en.json', 'artrandomizer');">
         <script src="/header.js"></script>
-        <button id="random">Randomise!</button>
+        <button id="random" data-il8n="artrandomizer_randombtn">Randomise!</button>
         <div class="image-grid">
             <!-- horse 1 -->
             <div class="image-container">
                 <a id="horse-1-link" target="_blank"><img id="horse-1-image" class="image" src="unknownHorse.png" alt="blank image"></a>
-                <div id="horse-1-title" class="image-title">Horse 1</div>
+                <div id="horse-1-title" class="image-title" data-il8n="artrandomizer_horse1">Horse 1</div>
             </div>
             <!-- herd -->
             <div class="image-container">
                 <div class="overlay keep-overlay">
                     <div class="caption">
                         <img id="herd-icon" class="icon" src="unknown.png" alt="blank image">
-                        <div id="herd-caption">Herd<a id="herd-link" target="_blank"></a></div>
+                        <div id="herd-caption" data-il8n="artrandomizer_herd">Herd<a id="herd-link" target="_blank"></a></div>
                     </div>
                 </div>
             </div>
             <!-- horse type -->
             <div class="image-container">
                 <div class="overlay keep-overlay">
-                    <div id="type-caption" class="caption">Type</div>
+                    <div id="type-caption" class="caption" data-il8n="artrandomizer_type">Type</div>
                 </div>
             </div>
             <!-- theme -->
             <div class="image-container">
                 <div class="overlay keep-overlay">
-                    <div id="theme-caption" class="caption">Theme/Accessory</div>
+                    <div id="theme-caption" class="caption" data-il8n="artrandomizer_theme">Theme/Accessory</div>
                 </div>
             </div>
             <!-- horse 2 -->
             <div class="image-container">
                 <a id="horse-2-link" target="_blank"><img id="horse-2-image" class="image" src="unknownHorse.png" alt="blank image"></a>
-                <div id="horse-2-title" class="image-title">Horse 2</div>
+                <div id="horse-2-title" class="image-title" data-il8n="artrandomizer_horse2">Horse 2</div>
             </div>
             <!-- coat -->            
             <div class="image-container">
                 <div class="overlay keep-overlay">
                     <div class="caption">
                         <img id="coat-icon" class="icon" src="unknown.png" alt="blank image">
-                        <div id="coat-caption">Coat</div>
+                        <div id="coat-caption" data-il8n="artrandomizer_coat">Coat</div>
                     </div>
                 </div>
             </div>
             <!-- pattern -->
             <div class="image-container">
                 <div class="overlay keep-overlay">
-                    <div id="pattern-caption" class="caption">Pattern</div>
+                    <div id="pattern-caption" class="caption" data-il8n="artrandomizer_pattern">Pattern</div>
                 </div>
             </div>
             <!-- accent -->
             <div class="image-container">
                 <div class="overlay keep-overlay">
-                    <div id="accent-caption" class="caption">Accent Colour</div>
+                    <div id="accent-caption" class="caption" data-il8n="artrandomizer_accentColor">Accent Colour</div>
                 </div>
             </div>
         </div>
-        
+
         <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a>
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a>
           </div>
+        
+          <script src="/flags.js"></script>
     </body>
 </html>

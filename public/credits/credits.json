@@ -1,0 +1,50 @@
+{
+    "section" :[
+    {
+        "title" : "Developers",
+        "people" :[
+        {
+            "name": "x0xll"
+        },
+        {
+            "name": "Gridloch"
+        },
+        {
+            "name": "SinGala"
+        }
+        ]
+    },
+    {
+        "title" : "Japanese Translator",
+        "people" :[
+        {
+            "name": "bellasaraarchivist"
+        }
+        ]
+    },
+    {
+        "title" : "Swedish Translator",
+        "people" :[
+        {
+            "name": "Rubenite"
+        }
+        ]
+    },
+    {
+        "title" : "Czech Translator",
+        "people" :[
+        {
+            "name": "Shailynn"
+        }
+        ]
+    },
+    {
+        "title" : "French Translator",
+        "people" :[
+        {
+            "name": "SinGala"
+        }
+        ]
+    }
+    ]
+}

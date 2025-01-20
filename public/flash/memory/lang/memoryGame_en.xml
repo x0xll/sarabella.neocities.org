@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Memory game</gameTitle>
+
+    <rules1>Behind the squares on the right are 8 different horses. Each image will be in two places.</rules1>
+    <rules2>Find all the pairs to finish the game.</rule2>
+    <rules3>If you succeed before time runs out, you have won the game...</rules3>
+
+    <easy>Easy</easy>
+    <medium>Medium</easy>
+    <hard>Hard</hard>
+    
+    <start>Start</start>
+    <seconds>sec.</seconds>
+
+    <congrats>Congratulations - you've won the game</congrats>
+    <retry>--&gt; Play again &lt;--</retry>
+    <lost>Too bad - you weren't fast enough</lost>
+</root>

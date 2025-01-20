@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Spectacular Jumping Game</title>
+        <title data-il8n="game_spectacularjumpinggame">Spectacular Jumping Game</title>
         <link rel="icon" href="./images/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
@@ -18,17 +18,29 @@
             }
         </style>
     </head>
-    <body style="text-align: center;">
+
+    <script src="/language.js"></script>
+
+    <body style="text-align: center;"  onload="loadLanguagePref()"></body>>
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
+                // Load custom font
+                function loadFont(name, url) {
+                    var newFont = new FontFace(name, `url(${url})`);
+                    newFont.load().then(function (loaded) {
+                        document.fonts.add(loaded);
+                    }).catch(function (error) {
+                        return error;
+                    });
+                }
 
+                loadFont("StempelGaramond", ".\fonts\Stempel Garamond LT Std Italic.otf");
 
                 // Gets lang file
-                const searchQueryString = window.location.search;
-                const urlParameters = new URLSearchParams(searchQueryString);
-                lang = urlParameters.get('lang')
-
+                loadLanguagePref(false); 
+                lang = getCurrentLanguageCode()
+                console.log(lang)
                 function urlExists(url)
                 {
                     var http = new XMLHttpRequest();
@@ -60,7 +72,7 @@
                     physics: {
                         default: 'arcade',
                         arcade: {
-                            // debug: true
+                            debug: false
                         }
                     },
                     scene: [
@@ -79,10 +91,12 @@
         </div>
         
         <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link">Wiki Page</a> |
-            <a href="https://github.com/Gridloch/bellasarajumpinggame" class="global-lowernav-link">GitHub</a>
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+            <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
+            <a href="https://github.com/Gridloch/bellasarajumpinggame" class="global-lowernav-link" data-il8n="footer_github_linktxt">GitHub</a>
         </div>
+
+        <script src="/flags.js"></script>
 
     </body>
 </html>

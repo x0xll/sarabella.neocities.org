@@ -1,0 +1,63 @@
+{
+    "title" : "ベラセラのデジタルアーカイブ",
+
+    "header_play_btn" : "スタート!",
+    "header_ressources_btn" : "資源",
+    "header_updates_btn" : "アップデート",
+    "header_besaofficial_btn" : "ベラセラの公式サイト",
+    "header_wiki_btn" : "Wiki.gg",
+    "header_discord_btn" : "Discord 馬小屋再現",
+    "footer_maininfos" : "質問とか、助けが必要とか、心配なことががあれば、Discordをご利用ください。または、<a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Our Github</a> にメッセージを送てください。",
+
+    "footer_home_linktxt" : "メインページ",
+    "footer_wiki_linktxt" : "ウィキページ",
+    "footer_webarchive_linktxt" : "ウェブアーカイブページ",
+    "footer_github_linktxt" : "Github",
+    "footer_svgimg_linktxt" : "SVGイメージ",
+    "footer_magicalhorses_linktxt" : "魔法の馬",
+
+    "ressources_flashpointcacheguide" : "Flashpointのキャッシュガイド",
+    "ressources_mewfantasyarchivingguide" : "Mewfantasyのアーカイブガイド",
+    "ressources_gridlochressdump" : "Gridlochの資源",
+    "ressources_gridlochstablerecreation" : "Gridlochの馬小屋再現",
+    
+    "devlog_summary" : "こちらは我々のベラセラ進捗状況です。簡単にまとめるとこうなります。<br><br>今あるFlashのファイルは：Cloudjumper（クラウドジャンパー）、Treasure's Hunt（トレジャーズハント）、絵本、パズル、塗り絵のゲーム、Bella's Beauty Box（ベラのビューティーボックス）、槍のゲーム、世界地図、メインページ、馬小屋、アートスタジオ<br>このうち、クラウドジャンパーと絵本とトレジャーズハントだけプレーできます。絵本はFlashpointだけでプレーできます。世界地図とメインページとアートスタジオは完全に機能しています。Flashpointでもうすぐにご覧いただけます。<br>今、槍のゲームと馬小屋は部分復旧です。プレーできません。Flashpointでもうすぐにご覧いただけます。<br><br>！！馬小屋は公には入手できません。！！ちゃんと出版するは大切です。それが終われば、Flashpointでもうすぐにご覧いただけます。<br><br>ベラのビューティーボックスは部分復旧です。おそらく永久に壊れ続けるだろう。",
+
+    "play_recoveredflashgames_title" : "復元ゲーム",
+    "play_recoveredflashgames_desc" : "このゲームはオリジナルサイトからアーカイブされていました。",
+    "play_recreatedgames_title" : "再現ゲーム",
+    "play_recreatedgames_desc" : "このゲームは新しいコードで再現されていました。",
+    "play_partiallyrecoveredgames_title" : "部分復旧ゲーム",
+    "play_partiallyrecoveredgames_desc" : "このゲームはオリジナルサイトからアーカイブされたが、部分復旧ファイルがあります。",
+    "play_newgames_title" : "新しいゲーム",
+    "play_newgames_desc" : "このゲームはベラセラをモチーフにしたゲームです。",
+    
+    "game_cloudjumper" : "Cloudjumper（クラウドジャンパー）",
+    "game_treasurehunt" : "Treasure's Hunt（トレジャーズハント）",
+    "game_puzzles" : "パズル",
+    "game_coloringgamefiona" : "塗り絵のゲーム（フィオナ）",
+    "game_memorygame" : "かるた",
+    "game_quizgame" : "クイズゲーム",
+    "gamestables" : "馬小屋",
+    "game_spectacularjumpinggame" : "Spectacular Jumping Game（素晴らしいなジャンプゲーム）（作業中）",
+    "game_artstudio" : "アートスタジオ",
+    "game_lancegame" : "槍のゲーム",
+    "game_storybook" : "絵本",
+    "game_babybella" : "Baby Bella（ベビーベラ）",
+    "game_myhorse" : "私の馬（白い子馬）",
+    "game_randomartideagenerator" : "アートアイデアジェネレーター",
+    "game_dressupstables" : "ドレスアップゲーム",
+    "game_firelightFestival" : "Firelight Festival",
+
+    "artstudio_warning" : "このゲームはオリジナル馬のファイルがありませんから、テキストが正しく読み込まれません。",
+    
+    "babybella_warning" : "このゲームは本来の機能がいくつか欠けています。",    
+
+    "lanceriding_warning" : "このゲームは第1レベルのファイルだけがあります。またローディングが安定しないことがあります。レベルが開始しない場合は、数回ロードしてください。",
+
+    "storybook_warning": "このゲームは次のページに進んでも音が消すできません。またビデオが正しく再生されないことがあります。",
+
+    "stables_title" : "ベラセラの世界へようこそ",
+
+    "dressup_horselink" : "馬のリンク"
+}

@@ -23,6 +23,15 @@ class LevelOne extends Phaser.Scene
     runCtrl
     runButton
 
+    gemsScoreTxtStyle = {
+        font: "italic 20px StempelGaramond",
+        color: "white",
+        stroke: "#5D3073",
+        strokeThickness: 1.2
+    }
+    maxTimeScoreTxtAppear = 50
+    scoreTxtAlphaAnimation = .15
+
     constructor ()
     {
         super({ key: 'LevelOne' });
@@ -35,7 +44,7 @@ class LevelOne extends Phaser.Scene
         this.load.image('infoButton', './images/infoButton.png');
         this.load.image('mountains', './images/mountains.png');
         this.load.image('path', './images/path.png');
-        this.load.atlas('horse', './images/horse.png', './images/horse.json');
+        this.load.atlas('horse1', './images/horseBella.png', './images/horse.json');
         this.load.atlas('jumps', './images/jumps.png', './images/jumps.json');
         this.load.atlas('gems', './images/gems.png', './images/gems.json');
         this.load.atlas('horseshoe', './images/horseshoe.png', './images/horseshoe.json');
@@ -45,7 +54,7 @@ class LevelOne extends Phaser.Scene
         this.clock = this.plugins.get('rexclockplugin').add(this, config);
 
         // Level reference
-        // this.load.image('Level1', './images/Level1.png');
+        // this.load.image('Level1', './images/Level Screens/Level1.png');
     }
 
     create (data)
@@ -69,11 +78,19 @@ class LevelOne extends Phaser.Scene
         // Level Reference
         // this.add.image(0, 0, 'Level1').setOrigin(0, 0).setAlpha(.6) 
 
+        this.displayTxtStyle = 
+        {
+            font: "italic 32px StempelGaramond",
+            color: "white",
+            stroke: "rgba(110, 195, 221, 20)",
+            strokeThickness: 3,
+            align: "center"
+        }
 
         // Display
         this.add.image(444, 30, 'scoreBoard').setScrollFactor(0) 
         // Horseshoe Display
-        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
         this.horseshoeText.text = this.horseshoes + " x ";
         this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
         // Score Display
@@ -81,7 +98,7 @@ class LevelOne extends Phaser.Scene
         this.scoreNameText.text = langData.score;
         this.scoreNameText.setPosition(445-this.scoreNameText.width/2, 18-this.scoreNameText.height/2);
 
-        this.scoreText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.scoreText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
         this.scoreText.text = this.score;
         this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
         // Clock
@@ -90,10 +107,9 @@ class LevelOne extends Phaser.Scene
         this.clockNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
         this.clockNameText.text = langData.time;
         this.clockNameText.setPosition(570-this.clockNameText.width/2, 18-this.clockNameText.height/2);
-        this.timerText = this.add.text(443, 234, 'Static Text Object', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff', align: 'center' }).setScrollFactor(0)//.setVisible(false);
+        this.timerText = this.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
         this.timerText.text = "0:00";
         this.timerText.setPosition(575-this.timerText.width/2, 40-this.timerText.height/2);
-
 
         // Background Elements
         this.add.sprite(165, 285, 'backgroundObjects', 'bush').setAngle(3)
@@ -154,11 +170,11 @@ class LevelOne extends Phaser.Scene
 
 
         // Horse
-        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse', 'canter0000')
+        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse1', 'canter0000')
         if (!this.anims.exists('canter')) {
             this.anims.create({
                 key: 'canter',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'canter0000', 'canter0001', 'canter0002', 'canter0003', 'canter0004', 'canter0005', 'canter0006', 'canter0007', 'canter0008', 'canter0009', 'canter0010', 'canter0011'
                 ] }),
                 frameRate: 20,
@@ -166,7 +182,7 @@ class LevelOne extends Phaser.Scene
             });
             this.anims.create({
                 key: 'gallop',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'gallop0000', 'gallop0001', 'gallop0002', 'gallop0003', 'gallop0004', 'gallop0005', 'gallop0006'
                 ] }),
                 frameRate: 20,
@@ -174,21 +190,21 @@ class LevelOne extends Phaser.Scene
             });
             this.anims.create({
                 key: 'jump',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'land0000'
                 ] }),
                 frameRate: 16
             });
             this.anims.create({
                 key: 'slideStart',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'slide0000', 'slide0001'
                 ] }),
                 frameRate: 20
             });
             this.anims.create({
                 key: 'slide',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'slide0002', 'slide0003', 'slide0004', 'slide0005', 'slide0006'
                 ] }),
                 frameRate: 20,
@@ -196,7 +212,7 @@ class LevelOne extends Phaser.Scene
             });
             this.anims.create({
                 key: 'slideEnd',
-                frames: this.anims.generateFrameNumbers('horse', { frames: [
+                frames: this.anims.generateFrameNumbers('horse1', { frames: [
                     'slide0007', 'slide0008', 'slide0009'
                 ] }),
                 frameRate: 20
@@ -215,6 +231,7 @@ class LevelOne extends Phaser.Scene
         // Start and End Gates
         this.endGate = this.physics.add.image(this.levelEnd - 83, 270, 'endGate').setOrigin(0, .5)
         this.endGate.body.setOffset(70, 0);
+        this.add.sprite(this.levelEnd, 0, 'backgroundObjects', 'rainbow').setOrigin(1, 0)
 
 
         // Horseshoe
@@ -336,7 +353,7 @@ class LevelOne extends Phaser.Scene
         
         this.gems = this.physics.add.group({immovable: true});
         this.gems.addMultiple(this.gemsArray);
-
+        this.gemsScoreTxt = [];
 
         // Jumps
         this.jumpsArray = [
@@ -715,6 +732,16 @@ class LevelOne extends Phaser.Scene
                                 console.log("Unknown gem: " + gem.frame.name)
                                 break;
                         }
+
+                        var gemTxt = this.add.text(gem.x, gem.y, points, this.gemsScoreTxtStyle).setOrigin(.5, .5)
+                        gemTxt.alpha = 0
+                        var gemsTxtDatas = 
+                        {
+                            txt : gemTxt,
+                            currenFrameVisible : 0
+                        }
+                        this.gemsScoreTxt.push(gemsTxtDatas)
+                    
                         this.score += points
                         this.scoreText.text = this.score
                         this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
@@ -772,6 +799,7 @@ class LevelOne extends Phaser.Scene
                         if (timeBonus > 0) {
                             levelText.text = langData.succeed_title;
                             buttonText.text = langData.succeed_level_select;
+                            this.data.levelUnlocked[1] = true
                         }
                         else {
                             levelText.text = langData.fail_title;
@@ -805,8 +833,38 @@ class LevelOne extends Phaser.Scene
             if (nextScreen) {
                 nextScreen = false
                 this.data.runningSound.stop()
-                this.scene.start('StartScreen', {backgroundMusic: this.data.backgroundMusic, runningSound: this.data.runningSound, playMusic: this.data.playMusic});
+                this.scene.start('StartScreen', this.data);
                 this.scene.stop('LevelOne')
+            }
+
+            // Handle gem score text
+            for (var i = this.gemsScoreTxt.length - 1; i >= 0; i--)
+            {
+                this.gemsScoreTxt[i].txt.setPosition(
+                    this.gemsScoreTxt[i].txt.x,
+                    this.gemsScoreTxt[i].txt.y -= .1)
+
+                if (this.gemsScoreTxt[i].currenFrameVisible >= this.maxTimeScoreTxtAppear)
+                {
+                    this.gemsScoreTxt[i].txt.alpha -= this.scoreTxtAlphaAnimation
+
+                    if (this.gemsScoreTxt[i].txt.alpha <= 0)
+                    {
+                        this.gemsScoreTxt[i].txt.destroy();
+                        this.gemsScoreTxt.splice(i, 1);           
+                    }
+                    continue;
+                }
+                else
+                {
+                    if (this.gemsScoreTxt[i].txt.alpha < 1)
+                    {
+                        this.gemsScoreTxt[i].txt.alpha += this.scoreTxtAlphaAnimation
+                        continue;
+                    }
+
+                    this.gemsScoreTxt[i].currenFrameVisible++;
+                }
             }
     }
 }
