@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Vende spil</gameTitle>
+
+    <rules1>Bag firkanterne til højre gemmer sig 8 forskellige heste. Hvert billede findes to steder.</rules1>
+    <rules2>Vende spillet går ud på at finde alle parrene.</rule2>
+    <rules3>Lykkedes det inden den tildelte tid løber ud, har du vundet spillet...</rules3>
+
+    <easy>Begynder</easy>
+    <medium>Letøvede</easy>
+    <hard>Øvede</hard>
+    
+    <start>Start</start>
+    <seconds>sek.</seconds>
+
+    <congrats>Tillykke - du har vundet spillet</congrats>
+    <retry>--&gt; Prøv igen &lt;--</retry>
+    <lost>Det var ærgerligt - du var ikke hurtig nok</lost>
+</root>
