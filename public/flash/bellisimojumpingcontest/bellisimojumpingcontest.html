@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title data-il8n="game_bellisimojumpingcontest">Bellisimo's Jumping Contest</title>
+        <script src="/ruffle/ruffle.js"></script>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref()">
+        <script src="/header.js"></script>
+        
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+        </div>
+
+        <div class="footer">
+          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+          <a href="https://bellasara.wiki.gg/wiki/Treasure%27s_Hunt" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
+          <a href="https://web.archive.org/web/20170504130036/http://www.bellasara.com/flash/treasureshunt/treasureshunt.aspx" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
+        </div>
+
+        <script src="/flags.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '521';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'main.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("flashvars", `language=${locale}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+  </body>
+</html>
+
+
