@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
-<root>
+<root length="3000">
     <!-- Possible tags 
         - sections : 
             - section :
+                - id attribute
+                - x number attribute
+                - y number attribute
                 - prop :
                     - name attribute
                     - x number attribute
@@ -38,4 +41,21 @@
                 - y number attribute
     -->
 
+   <sections>
+      <section id="1" x="0" y="0">
+         <prop name="BG_Krat" x="100" y="200">
+            <pos x="50" y="50" />
+            <scale x="100" y="100" />
+            <layer value="background" />
+            <path value="straight" />
+            <solid value="false" />
+            <collidable value="false" />
+            <pickup value="false" />
+         </prop>
+      </section>
+   </sections>
+   <!--
+   <grid random="false">
+      <track id="1" x="0" y="0" />
+   </grid>-->
 </root>
