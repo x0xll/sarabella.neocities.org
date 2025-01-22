@@ -1,4 +1,41 @@
 <?xml version="1.0"?>
 <root>
+    <!-- Possible tags 
+        - sections : 
+            - section :
+                - prop :
+                    - name attribute
+                    - x number attribute
+                    - y number attribute
+                    - pos : 
+                        - x number attribute
+                        - y number attribute
+                    - scale
+                        - x number attribute
+                        - y number attribute
+                    - vel
+                        - x number attribute
+                        - y number attribute
+                    - path
+                        - name attribute
+                            - possible values: "straight"
+                    - layer
+                        - value attribute
+                            - possible values: "background", "center", "foreground"
+                    - solid
+                        - value bool attribute
+                    - collidable
+                        - value bool attribute
+                    - destructable
+                        - value bool attribute
+                    - pickup
+                        - value bool attribute
+        - grid :
+            - random bool attribute
+            - track :
+                - id attribute
+                - x number attribute
+                - y number attribute
+    -->
 
 </root>
