@@ -1,0 +1,20 @@
+{
+    "title": "Magic Bubble Wand",
+    
+    "btn_continue": "Continue",
+    "btn_begin": "Begin",
+
+    "help_bugs": "Bugs add to your score.",
+    "help_movement": "Move mouse to move wand. Move wand over bugs. Click the mouse to make bubbles, and catch bugs.",
+    "help_specialcritters": "Special creatures and raindrops give you more bubble solution. Special creatures also give you a bigger wand.",
+    "help_end": "Game is over when bubble solution runs out.",
+
+    "collectedbugs": "Bugs collected",
+    "score": "Score",
+
+    "end_txt": "You are out of magic solution!",
+    "end_congrats": "Congratulations!",
+    "end_collected": "You've collected ${bugsCollected} bugs and ${horseshoeCollected} horseshoes.",
+    "end_score": "Your Score: ",
+    "end_playagain": "Play Again!"
+}
