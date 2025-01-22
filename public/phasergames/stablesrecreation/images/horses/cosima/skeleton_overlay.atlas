@@ -1,0 +1,155 @@
+skeleton_overlay.png
+size:2032,1840
+filter:Linear,Linear
+Ear
+bounds:1855,1543,11,20
+offsets:2,4,13,26
+Eye1
+bounds:367,800,10,6
+offsets:1,1,12,8
+Eye2
+bounds:649,903,10,6
+offsets:1,1,12,8
+Eye3
+bounds:377,1471,11,5
+offsets:1,1,12,8
+rotate:90
+Eye4
+bounds:1855,1536,11,5
+offsets:1,0,12,8
+Eye5
+bounds:1501,1530,12,4
+offsets:0,0,12,8
+Forelock
+bounds:1771,1218,70,56
+offsets:0,2,70,58
+Key Sparkle/1
+bounds:1550,72,275,261
+offsets:110,135,527,496
+Key Sparkle/36
+bounds:1550,72,275,261
+offsets:110,135,527,496
+Key Sparkle/10
+bounds:2,383,350,368
+offsets:88,63,527,496
+Key Sparkle/11
+bounds:770,1504,334,367
+offsets:97,65,527,496
+rotate:90
+Key Sparkle/12
+bounds:2,16,317,365
+offsets:106,67,527,496
+Key Sparkle/13
+bounds:1139,1530,308,360
+offsets:107,70,527,496
+rotate:90
+Key Sparkle/14
+bounds:1501,1536,302,352
+offsets:103,75,527,496
+rotate:90
+Key Sparkle/15
+bounds:321,38,298,343
+offsets:99,80,527,496
+Key Sparkle/16
+bounds:1464,1208,305,320
+offsets:95,93,527,496
+Key Sparkle/17
+bounds:1139,1214,314,323
+offsets:91,94,527,496
+rotate:90
+Key Sparkle/18
+bounds:354,437,311,314
+offsets:92,102,527,496
+Key Sparkle/19
+bounds:649,911,310,303
+offsets:93,113,527,496
+Key Sparkle/2
+bounds:1771,1276,258,242
+offsets:118,145,527,496
+rotate:90
+Key Sparkle/20
+bounds:667,601,308,300
+offsets:94,114,527,496
+rotate:90
+Key Sparkle/21
+bounds:667,301,306,298
+offsets:95,115,527,496
+Key Sparkle/22
+bounds:1580,912,303,294
+offsets:97,117,527,496
+Key Sparkle/23
+bounds:975,300,307,290
+offsets:98,119,527,496
+rotate:90
+Key Sparkle/24
+bounds:770,1216,311,286
+offsets:99,121,527,496
+Key Sparkle/25
+bounds:367,808,311,280
+offsets:101,124,527,496
+rotate:90
+Key Sparkle/26
+bounds:621,22,311,277
+offsets:102,125,527,496
+Key Sparkle/27
+bounds:934,18,308,280
+offsets:104,118,527,496
+Key Sparkle/28
+bounds:1270,919,308,287
+offsets:103,113,527,496
+Key Sparkle/29
+bounds:969,609,306,294
+offsets:101,108,527,496
+rotate:90
+Key Sparkle/3
+bounds:384,1269,241,222
+offsets:127,155,527,496
+Key Sparkle/30
+bounds:961,917,307,295
+offsets:100,108,527,496
+Key Sparkle/31
+bounds:1244,2,296,279
+offsets:100,125,527,496
+rotate:90
+Key Sparkle/32
+bounds:1265,618,297,280
+offsets:99,124,527,496
+rotate:90
+Key Sparkle/33
+bounds:1267,321,295,281
+offsets:100,124,527,496
+rotate:90
+Key Sparkle/34
+bounds:1547,630,294,280
+offsets:100,124,527,496
+Key Sparkle/35
+bounds:1550,335,293,280
+offsets:101,124,527,496
+rotate:90
+Key Sparkle/4
+bounds:1827,109,224,203
+offsets:135,164,527,496
+rotate:90
+Key Sparkle/5
+bounds:1832,415,213,193
+offsets:141,168,527,496
+rotate:90
+Key Sparkle/6
+bounds:384,1493,384,345
+offsets:68,69,527,496
+Key Sparkle/7
+bounds:2,1484,380,354
+offsets:71,66,527,496
+Key Sparkle/8
+bounds:2,1121,373,361
+offsets:75,64,527,496
+Key Sparkle/9
+bounds:2,753,363,366
+offsets:81,63,527,496
+Keys
+bounds:1958,1752,68,86
+Mane
+bounds:627,1341,139,150
+WingL
+bounds:1855,1565,273,101
+rotate:90

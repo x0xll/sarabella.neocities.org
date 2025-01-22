@@ -1,0 +1,19 @@
+{
+    "title": "La roue des merveilles",
+
+    "btn_help": "Aide",
+    "btn_play": "Activer",
+    "btn_no": "Non",
+    "btn_yes": "Oui",
+    "btn_objects": "Mes objets",
+    "btn_ok": "OK",
+
+    "spin": "Faire tourner la roue",
+    "spinconfirmation": "Es-tu sûre ?",
+
+    "receive_price": "Recevoir ton prix",
+    "receice_price_confirmation": "Ton prix a été ajouté à tes Bibelots dans Mes objets.",
+    "won": "Tu as gagné le prix ${itemName} !",
+
+    "item_keychain_joygreenhorse": "Porte-bonheur cheval vert"
+}

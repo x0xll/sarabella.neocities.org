@@ -1,0 +1,224 @@
+{
+    "frames": [
+        {
+            "filename": "hedgeSmall",
+            "frame": {
+                "x": 0,
+                "y": 116,
+                "w": 80,
+                "h": 87
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 80,
+                "h": 87
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 87
+            }
+        },
+        {
+            "filename": "hedge",
+            "frame": {
+                "x": 81,
+                "y": 116,
+                "w": 109,
+                "h": 87
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 109,
+                "h": 87
+            },
+            "sourceSize": {
+                "w": 109,
+                "h": 87
+            }
+        },
+        {
+            "filename": "blueFence",
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 40,
+                "h": 115
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 40,
+                "h": 115
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 115
+            }
+        },
+        {
+            "filename": "log",
+            "frame": {
+                "x": 107,
+                "y": 0,
+                "w": 90,
+                "h": 85
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 90,
+                "h": 85
+            },
+            "sourceSize": {
+                "w": 90,
+                "h": 85
+            }
+        },
+        {
+            "filename": "waterTrough",
+            "frame": {
+                "x": 159,
+                "y": 204,
+                "w": 80,
+                "h": 58
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 80,
+                "h": 58
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 58
+            }
+        },
+        {
+            "filename": "stump",
+            "frame": {
+                "x": 60,
+                "y": 204,
+                "w": 98,
+                "h": 68
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 98,
+                "h": 68
+            },
+            "sourceSize": {
+                "w": 98,
+                "h": 68
+            }
+        },
+        {
+            "filename": "woodenFence",
+            "frame": {
+                "x": 41,
+                "y": 0,
+                "w": 65,
+                "h": 104
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 65,
+                "h": 104
+            },
+            "sourceSize": {
+                "w": 65,
+                "h": 104
+            }
+        },
+        {
+            "filename": "wall",
+            "frame": {
+                "x": 198,
+                "y": 97,
+                "w": 52,
+                "h": 96
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 52,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 52,
+                "h": 96
+            }
+        },
+        {
+            "filename": "wallGreen",
+            "frame": {
+                "x": 198,
+                "y": 0,
+                "w": 52,
+                "h": 96
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 52,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 52,
+                "h": 96
+            }
+        },
+        {
+            "filename": "hayBale",
+            "frame": {
+                "x": 0,
+                "y": 204,
+                "w": 59,
+                "h": 72
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 59,
+                "h": 72
+            },
+            "sourceSize": {
+                "w": 59,
+                "h": 72
+            }
+        }
+    ],
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "jumps",
+        "size": {
+            "w": 250,
+            "h": 276
+        },
+        "scale": 1
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "title": "Trailblazer",
+
+    "btn_play": "Jouer",
+    "btn_menu": "Menu",
+    "btn_playagain": "Play Again",
+
+    "score": "SCORE",
+    "scoreEnd": "Score",
+    "balls": "Balles restantes",
+
+    "help1": "Quand les blocs explosent, essaie de faire rebondir la balle jusqu'en haut de l'écran.",
+    "help2": "Les tuiles magiques peuvent t'aider.",
+    "help3": "Déplace la souris dans cette zone pour positioner ton bumper",
+    "help4": "Fais rebondir la balle vers le haut avec ton bumper pour casser les blocs. Plus tu en casses, plus tu gagnes de points !",
+    "help5": "Ne laisse pas tomber la balle ! 3 chutes et le jeu est terminé !",
+
+    "thunder_name": "Thunder",
+    "thunder_quote": "Je te donne le courage. Libère-toi de tes peurs.",
+    "jewel_name": "Jewel",
+    "jewel_quote": "Grâce à moi, tu ne manqueras jamais de rien.",
+    "nike_name": "Nike",
+    "nike_quote": "Aie le courage de croire en toi.",
+    "fiona_name": "Fiona",
+    "fiona_quote": "Sois le héros de ta propre histoire.",
+    "bella_name": "Bella",
+    "bella_quoete": "Think positive every day! Feel the bliss of joy and energy that comes with it."
+}
