@@ -1,61 +1,40 @@
 <?xml version="1.0"?>
-<root length="3000">
-    <!-- Possible tags 
-        - sections : 
-            - section :
-                - id attribute
-                - x number attribute
-                - y number attribute
-                - prop :
-                    - name attribute
-                    - x number attribute
-                    - y number attribute
-                    - pos : 
-                        - x number attribute
-                        - y number attribute
-                    - scale
-                        - x number attribute
-                        - y number attribute
-                    - vel
-                        - x number attribute
-                        - y number attribute
-                    - path
-                        - name attribute
-                            - possible values: "straight"
-                    - layer
-                        - value attribute
-                            - possible values: "background", "center", "foreground"
-                    - solid
-                        - value bool attribute
-                    - collidable
-                        - value bool attribute
-                    - destructable
-                        - value bool attribute
-                    - pickup
-                        - value bool attribute
-        - grid :
-            - random bool attribute
-            - track :
-                - id attribute
-                - x number attribute
-                - y number attribute
-    -->
+<root length="2000">
+    <grid random="false">
+        <track id="1" x="0" y="0"/>
+        <track id="2" x="50" y="0"/>
+    </grid>
 
-   <sections>
-      <section id="1" x="0" y="0">
-         <prop name="BG_Krat" x="100" y="200">
-            <pos x="50" y="50" />
-            <scale x="100" y="100" />
-            <layer value="background" />
-            <path value="straight" />
-            <solid value="false" />
-            <collidable value="false" />
-            <pickup value="false" />
-         </prop>
-      </section>
-   </sections>
-   <!--
-   <grid random="false">
-      <track id="1" x="0" y="0" />
-   </grid>-->
+    <sections>
+        <section id="1" x="0">
+            <prop name="Bund_Bakke1" x="-7" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="-2" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="BG_Krat" x ="-3" y="-85">
+                <layer value="background" />
+            </prop>
+            <prop name="Pickup_Aeble" x="-9" y="-70">
+                <layer value="center" />
+                <pickup value="true" />
+            </prop>
+            <prop name="Pickup_Aeble" x="-5" y="-70">
+                <layer value="center" />
+                <pickup value="true" />
+            </prop>
+            <prop name="Pickup_KeySlange" x="0" y="-70">
+                <layer value="center" />
+                <pickup value="true" />
+            </prop> 
+            <prop name="MG_Statue" x="5" y="-50">
+                <layer value="foreground" />
+            </prop> 
+            <prop name="Col_MurSmall" x="7" y="0">
+                <layer value="center" />
+                <collidable value="true" />
+            </prop>
+        </section>
+    </sections>
 </root>
