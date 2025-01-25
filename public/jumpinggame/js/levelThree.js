@@ -6,7 +6,7 @@ class LevelThree extends Phaser.Scene
     canterSpeed = 350
     gallopSpeed = 500
     skidSpeed = 300
-    runHeight = 290
+    runHeight = 277
     horseMovements = {
         backwards: 'backwards',
         cantering: 'cantering',
@@ -16,7 +16,7 @@ class LevelThree extends Phaser.Scene
     }
     horseMovement = this.horseMovements.cantering
     skidLoop = 0
-    levelEnd = 31628
+    levelEnd = 37440
     levelTime = 67
     jumpCtrl
     jumpButton
@@ -182,7 +182,7 @@ class LevelThree extends Phaser.Scene
 
 
         // Horseshoe
-        this.horseshoe = this.physics.add.sprite(20300, 240, 'horseshoe', '1')
+        this.horseshoe = this.physics.add.sprite(19069, 213, 'horseshoe', '1')
         if (!this.anims.exists('horseshoe')) {
             this.anims.create({
                 key: 'horseshoe',
@@ -198,6 +198,48 @@ class LevelThree extends Phaser.Scene
 
         // Gems
         this.gemsArray = [
+            this.physics.add.sprite(680, 271, 'gems', 'gemPink10'),
+            this.physics.add.sprite(803, 271, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(1397, 315, 'gems', 'gemPink10'),
+            this.physics.add.sprite(1452, 260, 'gems', 'gemPink10'),
+            this.physics.add.sprite(1526, 217, 'gems', 'gemBlue35'),
+            this.physics.add.sprite(1596, 360, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(1782, 303, 'gems', 'gemPink25'),
+            this.physics.add.sprite(1960, 303, 'gems', 'gemPink25'),
+            this.physics.add.sprite(2092, 200, 'gems', 'gemBlue50'),
+            this.physics.add.sprite(2883, 267, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(3017, 267, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(3139, 200, 'gems', 'gemPink55'),
+            this.physics.add.sprite(3500, 220, 'gems', 'gemPink25'),
+            this.physics.add.sprite(3604, 203, 'gems', 'gemYellow75'),
+            this.physics.add.sprite(3707, 215, 'gems', 'gemPink25'),
+            this.physics.add.sprite(3835, 268, 'gems', 'gemPink25'),
+            this.physics.add.sprite(3985, 326, 'gems', 'gemPink25'),
+            this.physics.add.sprite(4587, 317, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(4686, 317, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(4807, 317, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(4911, 317, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(5730, 230, 'gems', 'gemBlue5'),
+            this.physics.add.sprite(5791, 288, 'gems', 'gemBlue5'),
+            this.physics.add.sprite(5829, 230, 'gems', 'gemBlue5'),
+            this.physics.add.sprite(5892, 192, 'gems', 'gemPink55'),
+            this.physics.add.sprite(6329, 314, 'gems', 'gemPink10'),
+            this.physics.add.sprite(6440, 314, 'gems', 'gemPink10'),
+            this.physics.add.sprite(6541, 314, 'gems', 'gemPink10'),
+            this.physics.add.sprite(6637, 314, 'gems', 'gemPink10'),
+            this.physics.add.sprite(7432, 322, 'gems', 'gemYellow75'),
+            this.physics.add.sprite(7458, 251, 'gems', 'gemPink10'),
+            this.physics.add.sprite(7509, 193, 'gems', 'gemPink10'),
+            this.physics.add.sprite(7778, 258, 'gems', 'gemBlue5'),
+            this.physics.add.sprite(7840, 217, 'gems', 'gemBlue5'),
+            this.physics.add.sprite(7917, 204, 'gems', 'gemBlue35'),
+            this.physics.add.sprite(8787, 257, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(8921, 190, 'gems', 'gemPink70'),
+            this.physics.add.sprite(8921, 357, 'gems', 'gemBlue50'),
+            this.physics.add.sprite(9034, 257, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(9822, 171, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(9868, 225, 'gems', 'gemYellow15'),
+            this.physics.add.sprite(9822, 284, 'gems', 'gemYellow15'),
         ]
         
         this.gems = this.physics.add.group({immovable: true});
