@@ -51,8 +51,6 @@
 
     "artstudio_warning" : "This game is missing the files for the original horses.",
     
-    "babybella_warning" : "This game / ad seems to be missing some of the original functionality",    
-
     "lanceriding_warning" : "This game only has the files for the first level. It also has issues loading consistently and the page may need to be reloaded a few times before the level will start.",
 
     "storybook_warning": "This game seems to be unable to turn off sounds when going to the next page in the book and does not always play the videos as expected.",
@@ -74,5 +72,14 @@
 
     "stables_title" : "Welcome to the World of Bella Sara",
 
-    "dressup_horselink" : "Horse Link"
+    "dressup_horselink" : "Horse Link",
+
+    "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
+    "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",
+    "babybella_13Sept": "13th of September, 2008 - Cirra's Birth",
+    "babybella_19Sept": "19th of September, 2008 - Janie's Birth",
+    "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
+    "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
+    "babybella_17Dec": "17th of December, 2008 - After the event's end",
+    "footer_timeline_link": "Timeline"
 }
