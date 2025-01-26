@@ -8,17 +8,17 @@
 	<babyBella_babyBookModule_newBaby_digitalCode><![CDATA[Code digital:<br/>BAB#BAB34OAL]]></babyBella_babyBookModule_newBaby_digitalCode>
 	<babyBella_babyBookModule_newBaby_activateThisCode><![CDATA[Elle est là ! Entre le code digital au-dessus pour la rajouter à ton<br/>écurie. Partage le avec tes amis aussi. Mais fais vite ! Le code<br/> expire le 1er Décembre.]]></babyBella_babyBookModule_newBaby_activateThisCode>
 	<babyBella_digitalGiftPopup_footer><![CDATA[Tu peux partager ce code<br/> avec un ami !]]></babyBella_digitalGiftPopup_footer>
-	<babyBella_digitalGiftPromo_headerTopLine><![CDATA[Cadeau du <br />Jour]]></babyBella_digitalGiftPromo_headerTopLine>
-	<babyBella_digitalGiftPromo_headerBottomLine><![CDATA[]]></babyBella_digitalGiftPromo_headerBottomLine>
+	<babyBella_digitalGiftPromo_headerTopLine><![CDATA[Cadeau du]]></babyBella_digitalGiftPromo_headerTopLine>
+	<babyBella_digitalGiftPromo_headerBottomLine><![CDATA[Jour]]></babyBella_digitalGiftPromo_headerBottomLine>
 	<babyBella_countdown_cardsAreHere><![CDATA[Les cartes sont là !]]></babyBella_countdown_cardsAreHere>
 	<babyBella_sweepsPromo_enterButton><![CDATA[Entrer]]></babyBella_sweepsPromo_enterButton>
 	<babyBella_whereToBuy_buyButton><![CDATA[Acheter]]></babyBella_whereToBuy_buyButton>
 	<babyBella_babyBookModule_submitButton><![CDATA[Envoyer]]></babyBella_babyBookModule_submitButton>
-	<babyBella_babyBookModule_BellissimosStoryButton><![CDATA[L&#8217;histoire de<br/>Bellisimo]]></babyBella_babyBookModule_BellissimosStoryButton>
+	<babyBella_babyBookModule_BellissimosStoryButton><![CDATA[L'histoire de<br/>Bellisimo]]></babyBella_babyBookModule_BellissimosStoryButton>
 	<babyBella_tvSpotPromo_loading><![CDATA[Chargement]]></babyBella_tvSpotPromo_loading>
-	<babyBella_babyBookModule_babyStoryButton><![CDATA[L&#8217;histoire du Bébé]]></babyBella_babyBookModule_babyStoryButton>
+	<babyBella_babyBookModule_babyStoryButton><![CDATA[L'histoire du Bébé]]></babyBella_babyBookModule_babyStoryButton>
 	<babyBella_babyBookModule_printButton><![CDATA[Imprimer]]></babyBella_babyBookModule_printButton>
-	<babyBella_babyBookModule_parentsStoryButton><![CDATA[L&#8217;histoire des Parents]]></babyBella_babyBookModule_parentsStoryButton>
+	<babyBella_babyBookModule_parentsStoryButton><![CDATA[L'histoire des<br>Parents]]></babyBella_babyBookModule_parentsStoryButton>
 	<babyBella_familyReunionPopup_offspringCopy><![CDATA[Viens participer aux &#8220;Family Game Night&#8221; dans ton magasin local.
 ]]></babyBella_familyReunionPopup_offspringCopy>
 	<babyBella_familyReunionPopup_offspringHeader><![CDATA[&#8220;Dusk&#8221; & &#8220;Dawn&#8221; - Enfants]]></babyBella_familyReunionPopup_offspringHeader>
@@ -65,7 +65,7 @@
 			<content enabled="true" startDate="20081116" assetID="WhereToBuyPromo">
 				<header><![CDATA[Où<br/>Acheter]]></header>
 				<bodyCopy><![CDATA[Les chevaux Baby Bella sont là !<br/>Trouve un magasin près de chez toi !]]></bodyCopy>
-				<link>http://www.bellasara.com/storelocator.html</link>
+				<link>https://web.archive.org/web/20081112200416/http://www.bellasara.com/storelocator.html</link>
 			</content>
 		</promo>
 		<promo id="promo2">
@@ -81,7 +81,7 @@
 			<content enabled="true" startDate="20081002" endDate="20081201" assetID="EnterToWin">
 				<header><![CDATA[Inscris toi pour<br/>Gagner]]></header>
 				<bodyCopy><![CDATA[Tu peux gagner un anniversaire Baby Bella rien que pour toi !]]></bodyCopy>
-				<link>http://www.bellasara.com/babybellacontest</link>
+				<link>https://web.archive.org/web/20081207050232/http://www.bellasara.com/babybellacontest/</link>
 			</content>
 		</promo>
 		<promo id="promo5">
@@ -326,7 +326,7 @@
 	</babybook>
 	<cardsAreHereModule assetID="CardsAreHereModule">
 		<content startDate="20081106">
-			<link>http://www.bellasara.com/products.aspx</link>
+			<link>https://web.archive.org/web/20081112151827/http://www.bellasara.com/products.aspx</link>
 		</content>
 	</cardsAreHereModule>		
 	<activateModule>

@@ -1,3 +1,7 @@
+26 Jan 2025
+    - Make video path not go depending on language
+        - tvSpotPromoPopup.videoSrc = Enum.BABYBELLA_DOCUMENT.language + selectedVideoContentNode.src.toString() becomes tvSpotPromoPopup.videoSrc = selectedVideoContentNode.src.toString() in Main.as
+
 18 Jan 2025
     - Add missing characters
         - é, É in Script MT Bold font

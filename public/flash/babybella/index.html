@@ -10,14 +10,13 @@
 
     <body class="game" onload="loadLanguagePref()">
         <script src="/header.js"></script>
-
-        <div class="alert">
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n="babybella_warning" >
-          This game / ad seems to be missing some of the original functionality</p>
-        </div> 
         
         <script>
+          // Gets the correct swf file from url
+          const searchQueryString = window.location.search;
+          const urlParameters = new URLSearchParams(searchQueryString);
+          dateOfFile = urlParameters.get('date')
+
           window.RufflePlayer = {
             config: {
               autoplay: "on",
@@ -29,6 +28,7 @@
 
         <div class="footer">
           <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+          <a href="http://127.0.0.1:5500/flash/babybella/babybella_timeline.html" data-il8n="footer_timeline_link" data-il8n="footer_timeline_link" class="global-lowernav-link">Timeline</a> |
           <a href="https://bellasara.wiki.gg/wiki/%22Baby_Bella%22" class="global-lowernav-link" data-il8n="footer_wiki_linktxt" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
           <a href="https://web.archive.org/web/20081019193023/http://www.bellasara.com/babybella/index.aspx" data-il8n="footer_webarchive_linktxt" data-il8n="footer_webarchive_linktxt" class="global-lowernav-link">Web Archive Page</a>
         </div>
@@ -44,9 +44,9 @@
           swfPlayer.height = '580';
           swfPlayer.width = '884';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'flash/babmini/babminiFullSite.swf';
+          swfPlayer.src = "./flash/babmini/babmini.swf";
           swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=20111112&showFamilyReunion=true`);
+          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>
