@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title data-il8n="game_spectacularjumpinggame">Spectacular Jumping Game</title>
+        <link rel="icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
+        <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
+        <script src="./js/loadScreen.js"></script>
+        <script src="./js/startScreen.js"></script>
+        <script src="./js/levelOne.js"></script>
+        <script src="./js/levelTwo.js"></script>
+        <script src="./js/levelThree.js"></script>
+        <script src="./js/levelFour.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body style="text-align: center;"  onload="loadLanguagePref()"></body>>
+        <script src="/header.js"></script>
+        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
+            <script type="text/javascript">
+                // Load custom font
+                function loadFont(name, url) {
+                    var newFont = new FontFace(name, `url(${url})`);
+                    newFont.load().then(function (loaded) {
+                        document.fonts.add(loaded);
+                    }).catch(function (error) {
+                        return error;
+                    });
+                }
+
+                loadFont("StempelGaramond", ".\fonts\Stempel Garamond LT Std Italic.otf");
+
+                // Gets lang file
+                loadLanguagePref(false); 
+                lang = getCurrentLanguageCode()
+                console.log(lang)
+                function urlExists(url)
+                {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status!=404;
+                }
+
+                if (!lang || !urlExists(`./lang/${lang}.json`)) {
+                    lang ='en'
+                }
+                let langData
+                const xmlHttp = new XMLHttpRequest();
+                xmlHttp.onload = function() {
+                    const myObj = JSON.parse(this.responseText);
+                    langData = myObj
+                }
+                xmlHttp.open("GET", `./lang/${lang}.json`);
+                xmlHttp.send();
+
+
+
+                let config = {
+                    parent: "gameDiv",
+                    type: Phaser.CANVAS,
+                    width: 886,
+                    height: 468,
+                    backgroundColor: '#110c27',
+                    physics: {
+                        default: 'arcade',
+                        arcade: {
+                            debug: false
+                        }
+                    },
+                    scene: [
+                        Load,
+                        StartScreen,
+                        LevelOne,
+                        LevelTwo,
+                        LevelThree,
+                        LevelFour
+                    ]
+                };
+
+                const game = new Phaser.Game(config);
+        
+            </script>
+        </div>
+        
+        <div class="footer">
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+            <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
+            <a href="https://github.com/Gridloch/bellasarajumpinggame" class="global-lowernav-link" data-il8n="footer_github_linktxt">GitHub</a>
+        </div>
+
+        <script src="/flags.js"></script>
+
+    </body>
+</html>
