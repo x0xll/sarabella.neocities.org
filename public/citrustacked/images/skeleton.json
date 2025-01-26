@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "NDPoVDY3cPw", "spine": "4.2.39", "x": -29.17, "y": -14.12, "width": 63, "height": 62 },
+"skeleton": { "hash": "HLPV9tCRBEU", "spine": "4.2.39", "x": -29.17, "y": -14.12, "width": 63, "height": 62 },
 "bones": [
 	{ "name": "root" },
 	{ "name": "spine", "parent": "root", "length": 30, "rotation": 90 }
@@ -110,7 +110,7 @@
 		"bones": {
 			"spine": {
 				"translate": [
-					{ "time": 5.8333 }
+					{ "time": 3.5 }
 				]
 			}
 		},
@@ -119,7 +119,7 @@
 				"citrustack": {
 					"citrustack": {
 						"sequence": [
-							{ "mode": "once", "delay": 0.0833 }
+							{ "mode": "once", "delay": 0.125 }
 						]
 					}
 				}
@@ -128,7 +128,7 @@
 				"citrustack": {
 					"citrustack": {
 						"sequence": [
-							{ "mode": "once", "delay": 0.0833 }
+							{ "mode": "once", "index": 2, "delay": 0.125 }
 						]
 					}
 				}

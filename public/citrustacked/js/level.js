@@ -70,7 +70,7 @@ class Level extends Phaser.Scene
                         // All colors also include a <color>_glow variant for the glowing version of the sprite
                         // Spine file also includes two animations: gradient (for the rainbow color shift) 
                         // and sway for the side to side movement
-                        tile.animationState.setAnimation(0, "gradient", true)
+                        tile.animationState.setAnimation(1, "gradient", true)
 
                     tile.row = row
                     tile.column = column
