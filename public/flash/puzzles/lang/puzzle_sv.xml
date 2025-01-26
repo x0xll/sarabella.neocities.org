@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+    <won>BRA JOBBAT!</won>
+    
+    <help>HJÄLP!!</help>
+
+    <back>Tillbaka</back>
+    
+    <diff>SVÅRIGHETSGRAD</diff>
+    <easiest>Lättast</easiest>
+    <easier>Lättare</easier>
+    <harder>Svårare</harder>
+    <hardest>Svårast</hardest>
+
+    <solve>Lös Pussel</solve>
+    <preview>Förhandstitt</preview>
+    <edges>Endast Kanterna</edges>
+    <move>Flytta Bitar</move>
+
+    <retry>Testa ett annat pussel eller gå tillbaka och spela andra Bella Sara spel.</retry>
+</root>

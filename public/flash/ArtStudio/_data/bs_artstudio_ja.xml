@@ -1,0 +1,210 @@
+<ArtStudio>
+	<BuiltInTexts>
+    <Texts debugMode="false">
+      <Text id="txtBellas">
+		    <P><FONT SIZE="40">ベラの</FONT></P>
+	    </Text>
+	    <Text id="txtArtStudio">
+		    <P><FONT SIZE="40">アートスタジオ</FONT></P>
+	    </Text>
+	    <Text id="txtChooseaHorse">
+		    <P><FONT SIZE="22">馬を選んで</FONT></P>
+	    </Text>
+	    <Text id="txtAllHorses">
+		    <P><FONT SIZE="22">全馬</FONT></P>
+	    </Text>
+	    <Text id="txtBeautyBoxGallery">
+		    <P><FONT SIZE="22">ベラのビューティーボックスのギャラリー</FONT></P>
+	    </Text>
+	    <Text id="txtDeleteButton">
+		    <P><FONT SIZE="16">削除</FONT></P>
+	    </Text>
+	    <Text id="txtEditButton">
+		    <P><FONT SIZE="16">編集</FONT></P>
+	    </Text>
+		<Text id="txtDoneButton">
+		    <P><FONT SIZE="18"><b>完了</b></FONT></P>
+	    </Text>
+	    <Text id="txtArtStudioHeader">
+		    <P><FONT SIZE="22">キャンバスを選んで</FONT></P>
+	    </Text>
+		<Text id="txtGallerySubText">
+		    <P><FONT SIZE="18">初めてのキャンバスを選んでください。空のキャンバスまたは馬の絵を選んでください。</FONT></P>
+	    </Text>
+	    <Text id="txtAnimatedCardFromTheKeeperOf">
+		    <P><FONT SIZE="18"><B>私の名画：</B></FONT></P>
+	    </Text>
+		<Text id="txtPrintAngel">
+		<P><FONT SIZE="24">アネモネ</FONT></P>
+		</Text>
+		<Text id="txtPrintBlank">
+			<P><FONT SIZE="24">私の名画：</FONT></P>
+		</Text>
+		<Text id="txtPrintPeter">
+			<P><FONT SIZE="24">ピーター</FONT></P>
+		</Text>
+		<Text id="txtPrintTiffi">
+			<P><FONT SIZE="24">ノリ</FONT></P>
+		</Text>
+		<Text id="txtFromMe">
+		    <P><FONT SIZE="16">私</FONT></P>
+	    </Text>
+	    <Text id="txtEraseAll">
+		    <P><FONT SIZE="13">すべて</FONT></P><P><FONT SIZE="13">消去</FONT></P>
+	    </Text>
+	    <Text id="txtErase">
+		    <P><FONT SIZE="13">消去</FONT></P>
+	    </Text>
+		<Text id="txtChangePaper2">
+		    <P><FONT SIZE="13">紙の色を変更する</FONT></P>
+	    </Text>
+		<Text id="txtBackButton">
+		    <P><FONT SIZE="16">戻る</FONT></P>
+	    </Text>
+      <Text id="txtNoButton">
+		<P><FONT SIZE="10">いいえ</FONT></P>
+	</Text>
+	<Text id="txtYesButton">
+		<P><FONT SIZE="10">はい</FONT></P>
+	</Text>
+	<Text id="txtOkayButton">
+		<P><FONT SIZE="10">OK</FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="15">このセレクションは大丈夫ですか？</FONT></P>
+	</Text>
+  <Text id="txtSaveButton">
+		<P><FONT SIZE="26">保存</FONT></P>
+	</Text>
+	<Text id="txtPrintButton">
+		<P><FONT SIZE="26">プリント</FONT></P>
+	</Text>
+	<Text id="txtQuitButton">
+		<P><FONT SIZE="26">終了</FONT></P>
+	</Text>
+	<Text id="txtSaveComplete">
+		<P><FONT SIZE="15">絵が保存されました。</FONT></P>
+	</Text>
+      <Text id="txtLoading">
+		<P><FONT SIZE="9">ローディング。。。</FONT></P>
+	</Text>
+	<Text id="txtNewButton">
+		<P><FONT SIZE="26">新しい</FONT></P>
+	</Text>
+	<Text id="txtAngelButton">
+		<P><FONT SIZE="18">アネモネ</FONT></P>
+	</Text>
+	<Text id="txtBlankButton">
+		<P><FONT SIZE="18">ブランク</FONT></P>
+	</Text>
+	<Text id="txtPeterButton">
+		<P><FONT SIZE="18">ピーター</FONT></P>
+	</Text>
+	<Text id="txtTiffiButton">
+		<P><FONT SIZE="18">ノリ</FONT></P>
+	</Text>
+	<Text id="txtAreYouSureDialog">
+		<P><FONT SIZE="15">ギャラリーからこの絵を削除するは大丈夫ですが？</FONT></P><P><FONT SIZE="15"/></P>
+	</Text>
+	<Text id="txtAreYouSureLeave">
+    <P> </P><P> </P><P><FONT SIZE="15">このセレクションは大丈夫ですか？</FONT></P>
+	</Text>
+	<Text id="txtSaveDialog">
+		<P><FONT SIZE="15">セーブスロットを選んで</FONT></P>
+	</Text>
+	<Text id="txtSaveConfirmDialog">
+		<P><FONT SIZE="15">保存した絵を上書きしたい場合は、「はい」をクリックしてください。</FONT></P>
+  </Text>
+	<Text id="txtCloseCard">
+     <P><FONT SIZE="14">カードを閉じる</FONT></P>
+  </Text>
+  <Text id="txtWisdomCard">
+		 <P><FONT SIZE="16">知恵のメッセージ</FONT></P>
+	</Text>
+  <Text id="txtLoadingCard">
+		 <P><FONT SIZE="20">ローディング。。。</FONT></P>
+	</Text>
+  <Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>ヘルプを閉じる。</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">音楽のオフとオン。</FONT></P>
+	</Text>
+	<Text id="txtEditSaved3">
+		<P><FONT SIZE="14">保存した絵を編集する。/FONT></P>
+	</Text>
+	<Text id="txtDeleteCreation2">
+		<P><FONT SIZE="14">保存した絵を消す。</FONT></P>
+	</Text>
+	<Text id="txtNewArt">
+		<P><FONT SIZE="14">新しい絵を作る。</FONT></P>
+	</Text>
+	<Text id="txtEmptySlot">
+		<P><FONT SIZE="9">空</FONT></P>
+	</Text>
+	<Text id="txtDecorateHorse">
+		<P><FONT SIZE="14">馬をクリックすると飾る。</FONT></P>
+	</Text>
+	<Text id="txtViewCard">
+		<P><FONT SIZE="14">ここをクリックするとカードを見る。</FONT></P>
+	</Text>
+	<Text id="txtDecorateBB">
+		<P><FONT SIZE="14">ビューティーボックスの絵をクリックすると飾る。</FONT></P>
+	</Text>
+	<Text id="txtSeeHorses">
+		<P><FONT SIZE="14">もっと馬を見る。</FONT></P>
+	</Text>
+	<Text id="txtSeeBB">
+		<P><FONT SIZE="14">もっとビューティーボックスの絵を見る。</FONT></P>
+	</Text>
+	<Text id="txtWisdomMsg">
+		<P><FONT SIZE="14">知恵のメッセージを見る。</FONT></P>
+	</Text>
+	<Text id="txtSeePaints">
+		<P><FONT SIZE="14">もっとペンキの色を見る。</FONT></P>
+	</Text>
+	<Text id="txtGoBack">
+		<P><FONT SIZE="14">メインページに戻る。</FONT></P>
+	</Text>
+	<Text id="txtPaintStrokes">
+		<P><FONT SIZE="14">小中大のストロークで描く。</FONT></P>
+	</Text>
+	<Text id="txtSaveSubmit">
+		<P><FONT SIZE="14">絵を印刷する、保存、終了。</FONT></P>
+	</Text>
+	<Text id="txtClearStrokes">
+		<P><FONT SIZE="14">すべてを消す。</FONT></P>
+	</Text>
+	<Text id="txtEraseStrokes">
+		<P><FONT SIZE="14">ストロックを消す。</FONT></P>
+	</Text>
+	<Text id="txtChangePaper">
+		<P><FONT SIZE="14">紙の色を変更する。</FONT></P>
+	</Text>
+    <Text id="txtEditArt">
+		<P><FONT SIZE="14">絵を編集する。</FONT></P>
+	</Text>
+	<Text id="txtHelpBlank">
+		<P><FONT SIZE="14">空のキャンバスで新しい絵を創造する。</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseA">
+		<P><FONT SIZE="14">ペーターのキャンバスで新しい絵を創造する。</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseB">
+		<P><FONT SIZE="14">エンジェルのキャンバスで新しい絵を創造する。</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseC">
+		<P><FONT SIZE="14">ティフィのキャンバスで新しい絵を創造する。</FONT></P>
+	</Text>
+  <Text id="txtHelpSavedCreations">
+		<P><FONT SIZE="14">保存した絵の編集と削除。</FONT></P>
+	</Text>
+  <Text id="txtSlotAButton">
+		<P><FONT SIZE="10">スロットA</FONT></P>
+	</Text>
+  <Text id="txtSlotBButton">
+		<P><FONT SIZE="10">スロットB</FONT></P>
+	</Text>
+    </Texts>
+	</BuiltInTexts>
+</ArtStudio>
