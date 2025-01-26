@@ -10,7 +10,7 @@ class Load extends Phaser.Scene
 
     preload ()
     {
-        //this.load.audio('background_music', ['./sounds/game_soundtrack.mp3']);
+        this.load.audio('background_music', ['./sounds/game_soundtrack.mp3']);
         //this.load.audio('running_sound', ['./sounds/running.mp3']);
 
     }
@@ -20,9 +20,9 @@ class Load extends Phaser.Scene
         this.playMusic = true
 
         // Music
-        //this.backgroundMusic = this.sound.add('background_music');
-        //this.backgroundMusic.loop = true; 
-        //this.backgroundMusic.play();
+        this.backgroundMusic = this.sound.add('background_music');
+        this.backgroundMusic.loop = true; 
+        this.backgroundMusic.play();
 
         //this.runningSound = this.sound.add('running_sound');
         //this.runningSound.loop = true; 

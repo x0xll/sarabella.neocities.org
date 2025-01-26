@@ -23,9 +23,14 @@
                 let config = {
                     parent: "gameDiv",
                     type: Phaser.CANVAS,
-                    width: 886,
+                    width: 811,
                     height: 468,
                     backgroundColor: '#110c27',
+                    plugins: {
+                        scene: [
+                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
+                        ]
+                    },
                     scene: [
                         Load,
                         StartScreen,
