@@ -72,10 +72,10 @@ Story]]></babyBella_babyBookModule_parentsStoryButton>
 		</promo>
 		<promo id="promo2">
 			<content enabled="true" startDate="20080904">
-				<src>/video/tvSpot1.flv</src>
+				<src>./video/tvSpot1.flv</src>
 			</content>
 			<content enabled="true" startDate="20081106">
-				<src>/video/tvSpot2.flv</src>
+				<src>./video/tvSpot2.flv</src>
 			</content>
 		</promo>
 		<promo id="promo3">
