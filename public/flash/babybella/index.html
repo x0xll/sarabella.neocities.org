@@ -23,21 +23,6 @@
           const urlParameters = new URLSearchParams(searchQueryString);
           dateOfFile = urlParameters.get('date')
 
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
-          let swfFile = `./flash/babmini/babmini_${dateOfFile}.swf`;
-
-          if (!dateOfFile || !urlExists(swfFile)) {
-            dateOfFile ='17Dec08'
-            swfFile = `./flash/babmini/babmini_${dateOfFile}.swf`;
-          }
-
           window.RufflePlayer = {
             config: {
               autoplay: "on",
@@ -64,9 +49,9 @@
           swfPlayer.height = '580';
           swfPlayer.width = '884';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = swfFile;
+          swfPlayer.src = "./flash/babmini/babmini.swf";
           swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=20111112&showFamilyReunion=true`);
+          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>
