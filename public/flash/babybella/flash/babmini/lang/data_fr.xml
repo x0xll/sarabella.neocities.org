@@ -65,7 +65,7 @@
 			<content enabled="true" startDate="20081116" assetID="WhereToBuyPromo">
 				<header><![CDATA[Où<br/>Acheter]]></header>
 				<bodyCopy><![CDATA[Les chevaux Baby Bella sont là !<br/>Trouve un magasin près de chez toi !]]></bodyCopy>
-				<link>http://www.bellasara.com/storelocator.html</link>
+				<link>https://web.archive.org/web/20081112200416/http://www.bellasara.com/storelocator.html</link>
 			</content>
 		</promo>
 		<promo id="promo2">
@@ -81,7 +81,7 @@
 			<content enabled="true" startDate="20081002" endDate="20081201" assetID="EnterToWin">
 				<header><![CDATA[Inscris toi pour<br/>Gagner]]></header>
 				<bodyCopy><![CDATA[Tu peux gagner un anniversaire Baby Bella rien que pour toi !]]></bodyCopy>
-				<link>http://www.bellasara.com/babybellacontest</link>
+				<link>https://web.archive.org/web/20081207050232/http://www.bellasara.com/babybellacontest/</link>
 			</content>
 		</promo>
 		<promo id="promo5">
@@ -326,7 +326,7 @@
 	</babybook>
 	<cardsAreHereModule assetID="CardsAreHereModule">
 		<content startDate="20081106">
-			<link>http://www.bellasara.com/products.aspx</link>
+			<link>https://web.archive.org/web/20081112151827/http://www.bellasara.com/products.aspx</link>
 		</content>
 	</cardsAreHereModule>		
 	<activateModule>
