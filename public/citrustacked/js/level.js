@@ -39,11 +39,15 @@ class Level extends Phaser.Scene
         this.load.spineJson("citrustack_json", `./images/skeleton.json`);
 
         // Audios
+        this.load.audio('meep', ['./sounds/citrustack_sound.mp3']);
     }
 
     create (data)
     { 
         const game = this
+
+        // Sounds
+        this.meepSound = this.sound.add('meep');
 
         // UI - background
         this.add.image(350, 0, 'background').setOrigin(0, 0)
@@ -94,7 +98,7 @@ class Level extends Phaser.Scene
                     // TODO : Hover animation
                     tile.hitbox.on('pointerover', () => 
                         {
-                            console.log(tile)
+                            this.meepSound.play()
                             tile.animationState.setAnimation(0, 'sway', false)
                         })
 
