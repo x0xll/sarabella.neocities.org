@@ -98,6 +98,8 @@ class Level extends Phaser.Scene
 
                             var group = checkTileGroup(tile.row, tile.column, tile.color)
 
+                            if (group.length <= 1) return;
+
                             setColor(tile, COLORS[color] + "_glow")
                             tile.animationState.setAnimation(0, 'sway', false)
 
@@ -110,6 +112,8 @@ class Level extends Phaser.Scene
                     tile.hitbox.on('pointerout', () =>
                     {
                         var group = checkTileGroup(tile.row, tile.column, tile.color)
+
+                        if (group.length <= 1) return;
 
                         setColor(tile, COLORS[color])
 
