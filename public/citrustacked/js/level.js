@@ -15,6 +15,10 @@ var levelTitleKey = "level"
 var levelIndex = 1
 var levelInitialized = false
 
+var citrustacksGoingDown = []
+var citrustacksGoingLeft = []
+var citrustacksGoingRight = []
+
 class Level extends Phaser.Scene 
 {
     constructor ()
@@ -74,9 +78,6 @@ class Level extends Phaser.Scene
                     tile.row = row
                     tile.column = column
                     tile.color = COLORS[color]
-                    tile.movingLeft = false
-                    tile.movingRight = false
-                    tile.movingDown = false
                     tile.hitbox.on('pointerdown', () => 
                     {
                         var group = checkTileGroup(tile.row, tile.column, tile.color)
@@ -88,7 +89,7 @@ class Level extends Phaser.Scene
 
                         removeTiles(group)
                         increaseScore(group.length)
-                        gravityTiles()
+                        //gravityTiles()
                     })
                     // TODO : Hover animation
                     tile.hitbox.on('pointerover', () => 
@@ -145,6 +146,7 @@ class Level extends Phaser.Scene
             // TODO : Remove animation -> go toward the input tile in order of closesness and fade into transparency
 
             tiles.forEach(({ row, column }) => {
+                grid[row][column].hitbox.destroy();
                 grid[row][column].destroy();
                 grid[row][column] = null;
               });
@@ -158,19 +160,7 @@ class Level extends Phaser.Scene
             scoreTxt.setText(score)
         }
 
-        function gravityTiles()
-        {
-            // TODO : Make the tiles without any below fall and have a slight anim curve when arriving
-            // Make them go towards the side too if they are falling
-            for (let row = 0; row < GRID_SIZE; row++)
-            {
-                for (let column = 0; column < GRID_SIZE; column++)
-                {
-
-                }
-            }
-        }
-
+    
         /**
          * Sets the skin for the sprite to display the current features
          * @param {*} skeleton the horse skeleton to set the skin of
@@ -247,12 +237,58 @@ class Level extends Phaser.Scene
 
     update ()
     {
+        function gravityTiles()
+        {
+            // TODO : Make the tiles without any below fall and have a slight anim curve when arriving
+            // Make them go towards the side too if they are falling
+            for (let x = 0; x < GRID_SIZE; x++)
+            {
+                for (let y = 0; y < GRID_SIZE; y++)
+                {
+                    if (grid[x][y] == null) continue;
+
+                    // Check if they can fall
+                    if (y != 0)
+                    {
+                        if (grid[x][y - 1] == null)
+                        {
+                            let fallingDatas = 
+                            {
+                                obj: grid[x][y],
+                                row: x,
+                                col: y
+                            }
+
+                            citrustacksGoingDown.push(fallingDatas)
+                        }
+                    }
+                }
+            }
+        }
+
         // Check if level is over
 
         // Check if citrustacks need to fall
         if (!levelInitialized)
             return;
 
+        // TODO : Improve movement to be more fluid
 
+        // Move the citrustacks going down first
+        for (let i = citrustacksGoingDown.length - 1; i >= 0; i--)
+        {
+            citrustacksGoingDown[i].obj.setPosition(citrustacksGoingDown[i].obj.x, citrustacksGoingDown[i].obj.y + CELL_SIZE)
+            grid[citrustacksGoingDown[i].row][citrustacksGoingDown[i].col - 1] = citrustacksGoingDown[i].obj
+            citrustacksGoingDown[i].obj.column = citrustacksGoingDown[i].col - 1
+            citrustacksGoingDown[i].obj.hitbox.setPosition(citrustacksGoingDown[i].obj.hitbox.x, citrustacksGoingDown[i].obj.hitbox.y + CELL_SIZE)
+            grid[citrustacksGoingDown[i].row][citrustacksGoingDown[i].col] = null
+            citrustacksGoingDown.pop(citrustacksGoingDown[i])
+        }
+
+        // TODO : Move to the left
+
+        // TODO : Move to the right
+
+        gravityTiles()
     }
 }
