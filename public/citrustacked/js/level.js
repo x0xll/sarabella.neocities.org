@@ -53,6 +53,14 @@ class Level extends Phaser.Scene
         this.add.image(350, 0, 'background').setOrigin(0, 0)
 
         // Grid - we start from bottom left
+        this.physics.world.setBounds(START_GRID_POS[0]-30, START_GRID_POS[1]-GRID_SIZE*CELL_SIZE, GRID_SIZE*CELL_SIZE+10, GRID_SIZE*CELL_SIZE+5);
+        const tileGroup = this.physics.add.group({
+            bounceX: 0,
+            bounceY: 0,
+            collideWorldBounds: true,
+            onCollide: true
+        });
+        
         for (var row = 0; row < GRID_SIZE; row++)
         {
             grid[row] = []
@@ -66,7 +74,8 @@ class Level extends Phaser.Scene
                     // TODO : Make the arrival animation
                     const tile = this.add.spine(posX, posY, 'citrustack_json', 'citrustack_atlas')
                     tile.hitbox = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(posX-20, posY-35, 40, 40), Phaser.Geom.Rectangle.Contains)
-                    // this.add.graphics().fillStyle(0x000000).fillRect(posX-20, posY-35, 40, 40).setAlpha(.5);
+                    tileGroup.add(tile)
+                    tile.body.setSize(43,43).setOffset(-21,-38)
 
                     setColor(tile, COLORS[color])
                         // Colors are set as skins and can be blue, green, orange, yellow, rainbow_row, rainbow_col and area_special
@@ -81,7 +90,6 @@ class Level extends Phaser.Scene
                     tile.hitbox.on('pointerdown', () => 
                     {
                         var group = checkTileGroup(tile.row, tile.column, tile.color)
-                        //console.log(group)
 
                         // Not enough tiles of the same color around input
                         if (group.length <= 1)
@@ -94,12 +102,12 @@ class Level extends Phaser.Scene
                     // TODO : Hover animation
                     tile.hitbox.on('pointerover', () => 
                         {
-                            this.meepSound.play()
 
                             var group = checkTileGroup(tile.row, tile.column, tile.color)
 
                             if (group.length <= 1) return;
 
+                            this.meepSound.play()
                             setColor(tile, COLORS[color] + "_glow")
                             tile.animationState.setAnimation(0, 'sway', false)
 
@@ -125,6 +133,18 @@ class Level extends Phaser.Scene
                     grid[row][column] = tile
                 }
         }
+        this.physics.add.collider(
+            tileGroup,
+            tileGroup,
+            (tile1, tile2) =>
+            {
+                tile1.body.setVelocityX(0)
+                tile1.body.setVelocityY(0)
+                tile2.body.setVelocityX(0)
+                tile2.body.setVelocityY(0)
+                tile1.setPosition(START_GRID_POS[0] + (tile1.row * CELL_SIZE), START_GRID_POS[1] - (tile1.column * CELL_SIZE))
+                tile2.setPosition(START_GRID_POS[0] + (tile2.row * CELL_SIZE), START_GRID_POS[1] - (tile2.column * CELL_SIZE))
+            });
 
         levelInitialized = true
 
@@ -294,7 +314,7 @@ class Level extends Phaser.Scene
         // Move the citrustacks going down first
         for (let i = citrustacksGoingDown.length - 1; i >= 0; i--)
         {
-            citrustacksGoingDown[i].obj.setPosition(citrustacksGoingDown[i].obj.x, citrustacksGoingDown[i].obj.y + CELL_SIZE)
+            this.physics.moveTo(citrustacksGoingDown[i].obj, citrustacksGoingDown[i].obj.x, citrustacksGoingDown[i].obj.y+CELL_SIZE, 100, 200);
             grid[citrustacksGoingDown[i].row][citrustacksGoingDown[i].col - 1] = citrustacksGoingDown[i].obj
             citrustacksGoingDown[i].obj.column = citrustacksGoingDown[i].col - 1
             citrustacksGoingDown[i].obj.hitbox.setPosition(citrustacksGoingDown[i].obj.hitbox.x, citrustacksGoingDown[i].obj.hitbox.y + CELL_SIZE)
