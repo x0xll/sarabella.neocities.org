@@ -98,12 +98,25 @@ class Level extends Phaser.Scene
 
                             var group = checkTileGroup(tile.row, tile.column, tile.color)
 
+                            setColor(tile, COLORS[color] + "_glow")
                             tile.animationState.setAnimation(0, 'sway', false)
 
                             group.forEach(({ row, column }) => {
                                 grid[row][column].animationState.setAnimation(0, 'sway', false)
+                                setColor(grid[row][column], COLORS[color] + "_glow")
                               });
                         })
+
+                    tile.hitbox.on('pointerout', () =>
+                    {
+                        var group = checkTileGroup(tile.row, tile.column, tile.color)
+
+                        setColor(tile, COLORS[color])
+
+                        group.forEach(({ row, column }) => {
+                            setColor(grid[row][column], COLORS[color])
+                          });
+                    })
 
                     grid[row][column] = tile
                 }
