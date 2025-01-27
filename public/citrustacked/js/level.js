@@ -98,7 +98,14 @@ class Level extends Phaser.Scene
                     tile.hitbox.on('pointerover', () => 
                         {
                             this.meepSound.play()
+
+                            var group = checkTileGroup(tile.row, tile.column, tile.color)
+
                             tile.animationState.setAnimation(0, 'sway', false)
+
+                            group.forEach(({ row, column }) => {
+                                grid[row][column].animationState.setAnimation(0, 'sway', false)
+                              });
                         })
 
                     grid[row][column] = tile
@@ -159,6 +166,7 @@ class Level extends Phaser.Scene
         {
             // TODO : Make the tiles without any below fall and have a slight anim curve when arriving
             // Make them go towards the side too if they are falling
+            
         }
 
         /**
@@ -172,7 +180,6 @@ class Level extends Phaser.Scene
             skeleton.skeleton.setSkin(skin);
             skeleton.skeleton.setToSetupPose();
         }
-
 
         // UI - foreground + texts
         this.add.image(0, 0, 'foreground').setOrigin(0, 0)
@@ -203,6 +210,7 @@ class Level extends Phaser.Scene
         // Check if citrustacks need to fall
         if (!levelInitialized)
             return;
+
 
     }
 }
