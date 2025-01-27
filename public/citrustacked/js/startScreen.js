@@ -1,3 +1,6 @@
+let nextSceneName = "Level"
+let nextScreen = false
+
 class StartScreen extends Phaser.Scene 
 {
     constructor ()
@@ -7,11 +10,10 @@ class StartScreen extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('start', './images/start_screen.png');
-        this.load.image('UI', './images/UI.png');
         this.load.atlas('music_button', './images/music.png', './images/music.json');
-        this.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
 
+        this.load.image('startscreen', './images/start_screen.png') 
+        this.load.image('menu_button', './images/purple_button.png')
     }
 
     create (data)
@@ -19,22 +21,72 @@ class StartScreen extends Phaser.Scene
         this.data = data // Used to get data into update()
 
         // Start screen
-        const start = this.add.image(444, 234, 'start').setScrollFactor(0)
-        const startInteractive = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(286, 274, 325, 45), Phaser.Geom.Rectangle.Contains);
-            startInteractive.on('pointerdown', function (pointer)
-            {
-                nextScreen = true
-            });
+        this.add.image(0, 0, "startscreen").setOrigin(0)
+
+        // Intro Text
+        let introTextStyle = 
+        {
+            fontFamily: "Arial",
+            align: "left",
+            wordWrap: { width: 270 },
+            fontSize: "11px",
+            color: "#OOOOOO",
+            lineSpacing: 12
+        }
+
+        this.add.text(70, 270, "Help the Citrustacks journey across Canter Hollow to bring Mother Comfort's candy to the Faire for the Winter Festival!", introTextStyle)
+        this.add.text(70, 360, "     The journey might take you a few days, but don't worry: you'll start again right where you left off!", introTextStyle)
 
 
-        // Text for start button
-        this.startText = this.add.text(443, 234, 'Static Text Object', { fontFamily: 'Arial', fontSize: 20, color: '#ffffff', align: 'center' });
-        this.startText.text = langData.start_game;
-        this.startText.setPosition(450-this.startText.width/2, 295-this.startText.height/2);
+        let buttonTextStyle = {fontFamily: 'Arial', fontSize: '18px', color: '#000000', align: 'center'}
+        // Story Button
+        const storyBtn = this.add.image(444, 310, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
+        const storyBtnTxt = this.add.text(446, 312, "Story Mode", buttonTextStyle).setOrigin(.5)
 
+        storyBtn.on('pointerover', () => { onBtnOver(storyBtnTxt); });
+        storyBtn.on('pointerout', () => { onBtnOut(storyBtnTxt); });
+        storyBtn.on('pointerdown', () => 
+        { 
+            nextSceneName = "StoryMap"
+            nextScreen = true;
+        });
 
-        // UI
-        const UI = this.add.image(443, 234, 'UI').setScrollFactor(0)
+        // Practice Button
+        const practiceBtn = this.add.image(444, 350, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
+        const practiceBtnTxt = this.add.text(446, 352, "Practice Mode", buttonTextStyle).setOrigin(.5)
+
+        practiceBtn.on('pointerover', () => { onBtnOver(practiceBtnTxt); });
+        practiceBtn.on('pointerout', () => { onBtnOut(practiceBtnTxt); });
+        practiceBtn.on('pointerdown', () => 
+        { 
+            nextSceneName = "Level"
+            nextScreen = true;
+        });
+
+        // Help Button
+        const helpBtn = this.add.image(444, 390, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
+        const helpBtnTxt = this.add.text(446, 392, "Help", buttonTextStyle).setOrigin(.5)
+
+        helpBtn.on('pointerover', () => { onBtnOver(helpBtnTxt); });
+        helpBtn.on('pointerout', () => { onBtnOut(helpBtnTxt); });
+        helpBtn.on('pointerdown', () => 
+        { 
+            // TODO : Open help UI
+        });
+
+        // Button over / out
+        function onBtnOver(btnTxt)
+        {
+            // TODO : handle particles
+            btnTxt.setColor("#ffffff")
+        }
+
+        function onBtnOut(btnTxt)
+        {
+            // TODO : handle particles
+            btnTxt.setColor("#000000")
+        }
+
         // Music button
         const musicButton = this.add.sprite(871, 453, 'music_button', 'music_on').setInteractive({ pixelPerfect: true }).setScale(0.7).setScrollFactor(0);
             musicButton.on('pointerdown', function (pointer)

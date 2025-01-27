@@ -27,6 +27,6 @@ class Load extends Phaser.Scene
         //this.runningSound = this.sound.add('running_sound');
         //this.runningSound.loop = true; 
 
-        this.scene.start('Level', {backgroundMusic: this.backgroundMusic, runningSound: this.runningSound, playMusic: this.playMusic});
+        this.scene.start('StartScreen', {backgroundMusic: this.backgroundMusic, runningSound: this.runningSound, playMusic: this.playMusic});
     }
 }
