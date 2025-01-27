@@ -1,7 +1,7 @@
 const COLORS = ['blue', 'orange', 'yellow', 'green'] // TODO : add special ones
 
 const GRID_SIZE = 10
-const CELL_SIZE = [48, 43]
+const CELL_SIZE = 43
 const START_GRID_POS = [380, 440]
 
 const SCORES = [2, 4, 9, 16, 25, 36, 49, 64, 81, // Up to 10 citrus
@@ -28,13 +28,9 @@ class Level extends Phaser.Scene
         this.load.image('foreground', './images/foreground.png') 
         this.load.image('background', './images/background.png') 
         this.load.atlas('music_button', './images/music.png', './images/music.json');
+        this.load.image('menu_button', './images/purple_button.png')
 
         // Citrustacks
-        this.load.image('blue', './images/blue.png')
-        this.load.image('orange', './images/orange.png')
-        this.load.image('yellow', './images/yellow.png')
-        this.load.image('green', './images/green.png')
-        
         this.load.spineAtlas("citrustack_atlas", `./images/skeleton.atlas`);
         this.load.spineJson("citrustack_json", `./images/skeleton.json`);
 
@@ -59,8 +55,8 @@ class Level extends Phaser.Scene
 
             for (var column = 0; column < GRID_SIZE; column++)
                 {
-                    const posX = START_GRID_POS[0] + (row * CELL_SIZE[0])
-                    const posY = START_GRID_POS[1] - (column * CELL_SIZE[1])
+                    const posX = START_GRID_POS[0] + (row * CELL_SIZE)
+                    const posY = START_GRID_POS[1] - (column * CELL_SIZE)
                     const color = Math.floor(Math.random() * COLORS.length)
 
                     // TODO : Make the arrival animation
@@ -84,7 +80,7 @@ class Level extends Phaser.Scene
                     tile.hitbox.on('pointerdown', () => 
                     {
                         var group = checkTileGroup(tile.row, tile.column, tile.color)
-                        console.log(group)
+                        //console.log(group)
 
                         // Not enough tiles of the same color around input
                         if (group.length <= 1)
@@ -166,7 +162,13 @@ class Level extends Phaser.Scene
         {
             // TODO : Make the tiles without any below fall and have a slight anim curve when arriving
             // Make them go towards the side too if they are falling
-            
+            for (let row = 0; row < GRID_SIZE; row++)
+            {
+                for (let column = 0; column < GRID_SIZE; column++)
+                {
+
+                }
+            }
         }
 
         /**
@@ -183,7 +185,34 @@ class Level extends Phaser.Scene
 
         // UI - foreground + texts
         this.add.image(0, 0, 'foreground').setOrigin(0, 0)
-        scoreTxt = this.add.text(167, 185, score, {fontSize: '32px', color: '#000000', align: 'center'})
+
+        let menuSmallTextStyle =  {fontFamily: 'Arial', fontSize: '18px', color: '#000000', align: 'center'}
+        let menuBigTextStyle =  {fontFamily: 'Arial', fontSize: '32px', color: '#000000', align: 'center'}
+
+        scoreTxt = this.add.text(177, 196, score, menuBigTextStyle).setOrigin(.5)
+        this.add.text(177, 425, "Level " + levelIndex, menuSmallTextStyle).setOrigin(.5)
+
+        // Help
+        const helpBtn = this.add.image(178, 290, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
+        const helpBtnTxt = this.add.text(180, 294, "Help", menuSmallTextStyle).setOrigin(.5)
+
+        helpBtn.on('pointerover', () => { onBtnOver(helpBtnTxt); });
+        helpBtn.on('pointerout', () => { onBtnOut(helpBtnTxt); });
+        helpBtn.on('pointerdown', () => 
+        { 
+            // TODO : Show help menu
+        });
+
+        // Quit
+        const quitBtn = this.add.image(178, 338, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
+        const quitBtnTxt = this.add.text(180, 342, "Quit", menuSmallTextStyle).setOrigin(.5)
+
+        quitBtn.on('pointerover', () => { onBtnOver(quitBtnTxt); });
+        quitBtn.on('pointerout', () => { onBtnOut(quitBtnTxt); });
+        quitBtn.on('pointerdown', () =>
+        {
+            // TODO : Go back to the main menu
+        })
 
         // Music
         const musicButton = this.add.sprite(795, 451, 'music_button', 'music_on').setInteractive({ pixelPerfect: true }).setScale(0.7);
@@ -201,6 +230,19 @@ class Level extends Phaser.Scene
         });
         musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${data.playMusic ? 'on' : 'off'}_hover`)});
         musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${data.playMusic ? 'on' : 'off'}`) });
+
+        // Button over / out
+        function onBtnOver(btnTxt)
+        {
+            // TODO : handle particles
+            btnTxt.setColor("#ffffff")
+        }
+
+        function onBtnOut(btnTxt)
+        {
+            // TODO : handle particles
+            btnTxt.setColor("#000000")
+        }
     }
 
     update ()
