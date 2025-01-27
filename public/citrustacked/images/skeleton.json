@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "HLPV9tCRBEU", "spine": "4.2.39", "x": -29.17, "y": -14.12, "width": 63, "height": 62 },
+"skeleton": { "hash": "iZjL7raZPko", "spine": "4.2.39", "x": -29.17, "y": -14.12, "width": 63, "height": 62 },
 "bones": [
 	{ "name": "root" },
 	{ "name": "spine", "parent": "root", "length": 30, "rotation": 90 }
@@ -8,6 +8,38 @@
 	{ "name": "citrustack", "bone": "spine", "attachment": "citrustack" }
 ],
 "skins": [
+	{
+		"name": "area_special",
+		"attachments": {
+			"citrustack": {
+				"citrustack": {
+					"name": "yellow",
+					"x": 16.88,
+					"y": -2.33,
+					"rotation": -90,
+					"width": 63,
+					"height": 62,
+					"sequence": { "count": 28, "start": 0, "digits": 4 }
+				}
+			}
+		}
+	},
+	{
+		"name": "area_special_glow",
+		"attachments": {
+			"citrustack": {
+				"citrustack": {
+					"name": "yellow_glow",
+					"x": 16.88,
+					"y": -2.33,
+					"rotation": -90,
+					"width": 63,
+					"height": 62,
+					"sequence": { "count": 28, "start": 0, "digits": 4 }
+				}
+			}
+		}
+	},
 	{
 		"name": "blue",
 		"attachments": {
@@ -57,11 +89,11 @@
 		}
 	},
 	{
-		"name": "rainbow",
+		"name": "rainbow_col",
 		"attachments": {
 			"citrustack": {
 				"citrustack": {
-					"name": "rainbow",
+					"name": "rainbow_col",
 					"x": 16.88,
 					"y": -2.33,
 					"rotation": -90,
@@ -73,11 +105,43 @@
 		}
 	},
 	{
-		"name": "rainbow_glow",
+		"name": "rainbow_col_glow",
 		"attachments": {
 			"citrustack": {
 				"citrustack": {
-					"name": "rainbow_glow",
+					"name": "rainbow_col_glow",
+					"x": 16.88,
+					"y": -2.33,
+					"rotation": -90,
+					"width": 63,
+					"height": 62,
+					"sequence": { "count": 28, "start": 0, "digits": 4 }
+				}
+			}
+		}
+	},
+	{
+		"name": "rainbow_row",
+		"attachments": {
+			"citrustack": {
+				"citrustack": {
+					"name": "rainbow_row",
+					"x": 16.88,
+					"y": -2.33,
+					"rotation": -90,
+					"width": 63,
+					"height": 62,
+					"sequence": { "count": 28, "start": 0, "digits": 4 }
+				}
+			}
+		}
+	},
+	{
+		"name": "rainbow_row_glow",
+		"attachments": {
+			"citrustack": {
+				"citrustack": {
+					"name": "rainbow_row_glow",
 					"x": 16.88,
 					"y": -2.33,
 					"rotation": -90,
@@ -115,7 +179,7 @@
 			}
 		},
 		"attachments": {
-			"rainbow": {
+			"area_special": {
 				"citrustack": {
 					"citrustack": {
 						"sequence": [
@@ -124,11 +188,47 @@
 					}
 				}
 			},
-			"rainbow_glow": {
+			"area_special_glow": {
+				"citrustack": {
+					"citrustack": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.125 }
+						]
+					}
+				}
+			},
+			"rainbow_col": {
+				"citrustack": {
+					"citrustack": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.125 }
+						]
+					}
+				}
+			},
+			"rainbow_col_glow": {
 				"citrustack": {
 					"citrustack": {
 						"sequence": [
 							{ "mode": "once", "index": 2, "delay": 0.125 }
+						]
+					}
+				}
+			},
+			"rainbow_row": {
+				"citrustack": {
+					"citrustack": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.125 }
+						]
+					}
+				}
+			},
+			"rainbow_row_glow": {
+				"citrustack": {
+					"citrustack": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.125 }
 						]
 					}
 				}

@@ -68,9 +68,8 @@ class Level extends Phaser.Scene
                     tile.hitbox = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(posX-20, posY-35, 40, 40), Phaser.Geom.Rectangle.Contains)
                     // this.add.graphics().fillStyle(0x000000).fillRect(posX-20, posY-35, 40, 40).setAlpha(.5);
 
-                    // , COLORS[color]
                     setColor(tile, COLORS[color])
-                        // Colors are set as skins and can be blue, green, orange, yellow and rainbow
+                        // Colors are set as skins and can be blue, green, orange, yellow, rainbow_row, rainbow_col and area_special
                         // All colors also include a <color>_glow variant for the glowing version of the sprite
                         // Spine file also includes two animations: gradient (for the rainbow color shift) 
                         // and sway for the side to side movement
