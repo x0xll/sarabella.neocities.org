@@ -60,14 +60,14 @@ class Level extends Phaser.Scene
             collideWorldBounds: true
         });
         
-        for (var row = 0; row < GRID_SIZE; row++)
+        for (var column = 0; column < GRID_SIZE; column++)
         {
-            grid[row] = []
+            grid[column] = []
 
-            for (var column = 0; column < GRID_SIZE; column++)
+            for (var row = 0; row < GRID_SIZE; row++)
                 {
-                    const posX = START_GRID_POS[0] + (row * CELL_SIZE)
-                    const posY = START_GRID_POS[1] - (column * CELL_SIZE)
+                    const posX = START_GRID_POS[0] + (column * CELL_SIZE)
+                    const posY = START_GRID_POS[1] - (row * CELL_SIZE)
                     const color = Math.floor(Math.random() * COLORS.length)
 
                     // TODO : Make the arrival animation
@@ -88,7 +88,7 @@ class Level extends Phaser.Scene
                     tile.color = COLORS[color]
                     tile.hitbox.on('pointerdown', () => 
                     {
-                        var group = checkTileGroup(tile.row, tile.column, tile.color)
+                        var group = checkTileGroup(tile.column, tile.row, tile.color)
 
                         // Not enough tiles of the same color around input
                         if (group.length <= 1)
@@ -102,7 +102,7 @@ class Level extends Phaser.Scene
                     tile.hitbox.on('pointerover', () => 
                         {
 
-                            var group = checkTileGroup(tile.row, tile.column, tile.color)
+                            var group = checkTileGroup(tile.column, tile.row, tile.color)
 
                             if (group.length <= 1) return;
 
@@ -110,58 +110,58 @@ class Level extends Phaser.Scene
                             setColor(tile, COLORS[color] + "_glow")
                             tile.animationState.setAnimation(0, 'sway', false)
 
-                            group.forEach(({ row, column }) => {
-                                grid[row][column].animationState.setAnimation(0, 'sway', false)
-                                setColor(grid[row][column], COLORS[color] + "_glow")
+                            group.forEach(({ column, row }) => {
+                                grid[column][row].animationState.setAnimation(0, 'sway', false)
+                                setColor(grid[column][row], COLORS[color] + "_glow")
                               });
                         })
 
                     tile.hitbox.on('pointerout', () =>
                     {
-                        var group = checkTileGroup(tile.row, tile.column, tile.color)
+                        var group = checkTileGroup(tile.column, tile.row, tile.color)
 
                         if (group.length <= 1) return;
 
                         setColor(tile, COLORS[color])
 
-                        group.forEach(({ row, column }) => {
-                            setColor(grid[row][column], COLORS[color])
+                        group.forEach(({ column, row }) => {
+                            setColor(grid[column][row], COLORS[color])
                           });
                     })
 
-                    grid[row][column] = tile
+                    grid[column][row] = tile
                 }
         }
 
         levelInitialized = true
 
-        function checkTileGroup(row, column, color, neighbours = [])
+        function checkTileGroup(column, row, color, neighbours = [])
         {
             // We are out of the grid
-            if (row < 0 || column < 0 || row >= GRID_SIZE || column >= GRID_SIZE)
+            if (column < 0 || row < 0 || column >= GRID_SIZE || row >= GRID_SIZE)
                 return []
 
             // No tile present (failsafe if the player somehow goes too fast)
-            if (grid[row][column] == null)
+            if (grid[column][row] == null)
                 return []
 
             // We already visited this tile
-            if (neighbours.some(t => t.row === row && t.column === column))
+            if (neighbours.some(t => t.column === column && t.row === row))
                 return []
 
             // Wrong color
-            if (grid[row][column].color != color)
+            if (grid[column][row].color != color)
                 return []
 
             // We add to the visited cells
-            neighbours.push({row, column})
+            neighbours.push({column, row})
 
             return [
-                { row, column },
-                ...checkTileGroup(row - 1, column, color, neighbours), // Up
-                ...checkTileGroup(row + 1, column, color, neighbours), // Down
-                ...checkTileGroup(row, column - 1, color, neighbours), // Left
-                ...checkTileGroup(row, column + 1, color, neighbours), // Right
+                { column, row },
+                ...checkTileGroup(column - 1, row, color, neighbours), // Up
+                ...checkTileGroup(column + 1, row, color, neighbours), // Down
+                ...checkTileGroup(column, row - 1, color, neighbours), // Left
+                ...checkTileGroup(column, row + 1, color, neighbours), // Right
               ];
         }
 
@@ -169,10 +169,10 @@ class Level extends Phaser.Scene
         {
             // TODO : Remove animation -> go toward the input tile in order of closesness and fade into transparency
 
-            tiles.forEach(({ row, column }) => {
-                grid[row][column].hitbox.destroy();
-                grid[row][column].destroy();
-                grid[row][column] = null;
+            tiles.forEach(({ column, row }) => {
+                grid[column][row].hitbox.destroy();
+                grid[column][row].destroy();
+                grid[column][row] = null;
               });
 
             checkSlide = true
@@ -281,8 +281,8 @@ class Level extends Phaser.Scene
                             let fallingDatas = 
                             {
                                 obj: grid[x][y],
-                                row: x,
-                                col: y
+                                col: x,
+                                row: y
                             }
 
                             citrustacksGoingDown.push(fallingDatas)
@@ -347,10 +347,10 @@ class Level extends Phaser.Scene
         // Move the citrustacks going down first
         for (let i = citrustacksGoingDown.length - 1; i >= 0; i--)
         {
-            grid[citrustacksGoingDown[i].row][citrustacksGoingDown[i].col - 1] = citrustacksGoingDown[i].obj
-            citrustacksGoingDown[i].obj.column = citrustacksGoingDown[i].col - 1
+            grid[citrustacksGoingDown[i].col][citrustacksGoingDown[i].row - 1] = citrustacksGoingDown[i].obj
+            citrustacksGoingDown[i].obj.row = citrustacksGoingDown[i].row - 1
             citrustacksGoingDown[i].obj.hitbox.setPosition(citrustacksGoingDown[i].obj.hitbox.x, citrustacksGoingDown[i].obj.hitbox.y + CELL_SIZE)
-            grid[citrustacksGoingDown[i].row][citrustacksGoingDown[i].col] = null
+            grid[citrustacksGoingDown[i].col][citrustacksGoingDown[i].row] = null
             citrustacksGoingDown.pop(citrustacksGoingDown[i])
         }
 
@@ -406,7 +406,7 @@ class Level extends Phaser.Scene
                     grid[index].forEach(tile => {
                         if (tile !== null) {
                             tile.hitbox.setPosition(tile.hitbox.x + (moveToRight ? +CELL_SIZE: -CELL_SIZE), tile.hitbox.y)
-                            tile.row = tile.row + (moveToRight ? +1: -1)
+                            tile.column = tile.column + (moveToRight ? +1: -1)
                         }
                     });
                 }
@@ -419,8 +419,8 @@ class Level extends Phaser.Scene
         grid.forEach(column => {
             column.forEach(tile => {
                 if (tile !== null) {
-                    const targetX = START_GRID_POS[0] + (tile.row * CELL_SIZE)
-                    const targetY = START_GRID_POS[1] - (tile.column * CELL_SIZE)
+                    const targetX = START_GRID_POS[0] + (tile.column * CELL_SIZE)
+                    const targetY = START_GRID_POS[1] - (tile.row * CELL_SIZE)
                     
                     // Check x position
                     if (tile !== null && targetX - movementAllowance <= tile.x && tile.x <= targetX + movementAllowance) {
