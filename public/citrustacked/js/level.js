@@ -57,8 +57,7 @@ class Level extends Phaser.Scene
         const tileGroup = this.physics.add.group({
             bounceX: 0,
             bounceY: 0,
-            collideWorldBounds: true,
-            onCollide: true
+            collideWorldBounds: true
         });
         
         for (var row = 0; row < GRID_SIZE; row++)
@@ -133,18 +132,6 @@ class Level extends Phaser.Scene
                     grid[row][column] = tile
                 }
         }
-        this.physics.add.collider(
-            tileGroup,
-            tileGroup,
-            (tile1, tile2) =>
-            {
-                tile1.body.setVelocityX(0)
-                tile1.body.setVelocityY(0)
-                tile2.body.setVelocityX(0)
-                tile2.body.setVelocityY(0)
-                tile1.setPosition(START_GRID_POS[0] + (tile1.row * CELL_SIZE), START_GRID_POS[1] - (tile1.column * CELL_SIZE))
-                tile2.setPosition(START_GRID_POS[0] + (tile2.row * CELL_SIZE), START_GRID_POS[1] - (tile2.column * CELL_SIZE))
-            });
 
         levelInitialized = true
 
@@ -314,7 +301,6 @@ class Level extends Phaser.Scene
         // Move the citrustacks going down first
         for (let i = citrustacksGoingDown.length - 1; i >= 0; i--)
         {
-            this.physics.moveTo(citrustacksGoingDown[i].obj, citrustacksGoingDown[i].obj.x, citrustacksGoingDown[i].obj.y+CELL_SIZE, 100, 200);
             grid[citrustacksGoingDown[i].row][citrustacksGoingDown[i].col - 1] = citrustacksGoingDown[i].obj
             citrustacksGoingDown[i].obj.column = citrustacksGoingDown[i].col - 1
             citrustacksGoingDown[i].obj.hitbox.setPosition(citrustacksGoingDown[i].obj.hitbox.x, citrustacksGoingDown[i].obj.hitbox.y + CELL_SIZE)
@@ -325,6 +311,45 @@ class Level extends Phaser.Scene
         // TODO : Move to the left
 
         // TODO : Move to the right
+
+        // Check if citrustack should be moving or not, and then move or stop it as needed
+        const movementAllowance = 0.1
+        grid.forEach(column => {
+            column.forEach(tile => {
+                if (tile !== null) {
+                    const targetX = START_GRID_POS[0] + (tile.row * CELL_SIZE)
+                    const targetY = START_GRID_POS[1] - (tile.column * CELL_SIZE)
+                    
+                    // Check x position
+                    if (tile !== null && targetX - movementAllowance <= tile.x && tile.x <= targetX + movementAllowance) {
+                        tile.body.setVelocityX(0)
+                        tile.setPosition(targetX, tile.y)
+                    } else {
+                        if (targetX >= tile.x + (0.1*CELL_SIZE)) {
+                            this.physics.moveTo(tile, tile.x+CELL_SIZE, tile.y, 100, 200);
+                        } else if (targetX <= tile.x - (0.1*CELL_SIZE)) {
+                            this.physics.moveTo(tile, tile.x-CELL_SIZE, tile.y, 100, 200);
+                        } else {
+                            this.physics.moveTo(tile, targetX, tile.y, 100, 400);
+                        }
+                    }
+
+                    // Check y position
+                    if (tile !== null && targetY - movementAllowance <= tile.y && tile.y <= targetY + movementAllowance) {
+                        tile.body.setVelocityY(0)
+                        tile.setPosition(tile.x, targetY)
+                    } else {
+                        if (targetY >= tile.y + (0.1*CELL_SIZE)) {
+                            this.physics.moveTo(tile, tile.x, tile.y+CELL_SIZE, 100, 200);
+                        } else if (targetY <= tile.y - (0.1*CELL_SIZE)) {
+                            this.physics.moveTo(tile, tile.x, tile.y-CELL_SIZE, 100, 200);
+                        } else {
+                            this.physics.moveTo(tile, tile.x, targetY, 100, 400);
+                        }
+                    }
+                }
+            });
+        });
 
         gravityTiles()
     }
