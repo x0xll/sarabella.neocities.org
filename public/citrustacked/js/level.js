@@ -16,8 +16,8 @@ var levelIndex = 1
 var levelInitialized = false
 
 var citrustacksGoingDown = []
-var citrustacksGoingLeft = []
-var citrustacksGoingRight = []
+let citrustacksSliding = []
+let checkSlide = false
 
 class Level extends Phaser.Scene 
 {
@@ -174,6 +174,8 @@ class Level extends Phaser.Scene
                 grid[row][column].destroy();
                 grid[row][column] = null;
               });
+
+            checkSlide = true
         }
 
         function increaseScore(tileAmount)
@@ -290,6 +292,50 @@ class Level extends Phaser.Scene
             }
         }
 
+        function checkSlideTiles() {
+            if (citrustacksGoingDown.length === 0) {
+                checkSlide = false
+                let firstChunkStart = -1
+                let firstChunkEnd = -1
+                let firstChunkCount = 0
+                for (let index = 0; index < grid.length; index++) {
+                    const column = grid[index];
+                    let isNull = true
+                    column.forEach(tile => {
+                        isNull = tile === null && isNull
+                        if (tile !== null) {firstChunkCount++}
+                    });
+                    if (firstChunkStart === -1 && isNull === false) {firstChunkStart = index}
+                    if (firstChunkStart !== -1 && isNull === true) {firstChunkEnd = index-1; break}
+                }
+    
+                
+                let lastChunkStart = -1
+                let lastChunkEnd = -1
+                let lastChunkCount = 0
+                for (let index = grid.length - 1; index > 0; index--) {
+                    const column = grid[index];
+                    let isNull = true
+                    column.forEach(tile => {
+                        isNull = tile === null && isNull
+                        if (tile !== null) {lastChunkCount++}
+                    });
+                    if (lastChunkEnd === -1 && isNull === false) {lastChunkEnd = index}
+                    if (lastChunkEnd !== -1 && isNull === true) {lastChunkStart = index+1; break}
+                }
+    
+                if (firstChunkStart !== lastChunkStart && firstChunkStart !== -1 && firstChunkEnd !== -1 && firstChunkEnd < GRID_SIZE && lastChunkStart !== -1 && lastChunkEnd >= 0) {
+                    if (firstChunkCount <= lastChunkCount) {
+                        slideTiles(firstChunkStart, firstChunkEnd+1, true)
+                        checkSlide = true
+                    } else if (firstChunkCount > lastChunkCount){
+                        slideTiles(lastChunkStart-1, lastChunkEnd, false)
+                        checkSlide = true
+                    }
+                }
+            }
+        }
+
         // Check if level is over
 
         // Check if citrustacks need to fall
@@ -308,9 +354,65 @@ class Level extends Phaser.Scene
             citrustacksGoingDown.pop(citrustacksGoingDown[i])
         }
 
-        // TODO : Move to the left
+        // TODO : Move to the sides
+        // citrustacksSliding should be the set of columns to be moved, plus one empty column in the direction of movement
+        // startColumn should be the grid index of the first column
+        // endColumn should be the grid index of the last column
+        // moveToRight should be true if the left-most chunk moves right and false if the right-most chunk moves left
+        function slideTiles(startColumn, endColumn, moveToRight) {
+            const citrustacksSliding = []
+            for (let index = startColumn; index <= endColumn; index++) {
+                citrustacksSliding.push(grid[index]);
+            }
 
-        // TODO : Move to the right
+            if (citrustacksSliding.length) {
+                const newGrid = []
+                for (let i = 0; i < citrustacksSliding.length; i++) {
+    
+                    // Copy the columns that aren't moving
+                    for (let index = 0; index < grid.length; index++) {
+                        if (index === startColumn) {
+                            index = endColumn
+                        } else {
+                            newGrid[index] = grid[index]
+                        }
+                    }
+    
+                    // TODO : Move to the right
+                    if (moveToRight) {
+                        for (let index = 0; index < citrustacksSliding.length; index++) {
+                            // first newGrid column moved should be null
+                            if (index === 0) {
+                                newGrid[startColumn] = citrustacksSliding[citrustacksSliding.length - 1]
+                            } else {
+                                newGrid[startColumn + index] = citrustacksSliding[index - 1]
+                            }
+                        }
+                    } 
+                    // TODO : Move to the left
+                    else {
+                        for (let index = 0; index < citrustacksSliding.length; index++) {
+                            // first newGrid column moved should be null
+                            if (index === citrustacksSliding.length-1) {
+                                newGrid[startColumn + index] = citrustacksSliding[0]
+                            } else {
+                                newGrid[startColumn + index] = citrustacksSliding[index + 1]
+                            }
+                        }
+                    }
+                }
+                grid = newGrid
+                for (let index = startColumn; index <= endColumn; index++) {
+                    grid[index].forEach(tile => {
+                        if (tile !== null) {
+                            tile.hitbox.setPosition(tile.hitbox.x + (moveToRight ? +CELL_SIZE: -CELL_SIZE), tile.hitbox.y)
+                            tile.row = tile.row + (moveToRight ? +1: -1)
+                        }
+                    });
+                }
+            }
+        }
+        
 
         // Check if citrustack should be moving or not, and then move or stop it as needed
         const movementAllowance = 0.1
@@ -325,13 +427,14 @@ class Level extends Phaser.Scene
                         tile.body.setVelocityX(0)
                         tile.setPosition(targetX, tile.y)
                     } else {
-                        if (targetX >= tile.x + (0.1*CELL_SIZE)) {
-                            this.physics.moveTo(tile, tile.x+CELL_SIZE, tile.y, 100, 200);
-                        } else if (targetX <= tile.x - (0.1*CELL_SIZE)) {
-                            this.physics.moveTo(tile, tile.x-CELL_SIZE, tile.y, 100, 200);
-                        } else {
+                        // if (targetX >= tile.x + (0.1*CELL_SIZE)) {
+                        //     this.physics.moveTo(tile, tile.x+CELL_SIZE, tile.y, 100, 200);
+                        // } else if (targetX <= tile.x - (0.1*CELL_SIZE)) {
+                        //     this.physics.moveTo(tile, tile.x-CELL_SIZE, tile.y, 100, 200);
+                        // } else {
                             this.physics.moveTo(tile, targetX, tile.y, 100, 400);
-                        }
+                            // checkSlide = true
+                        // }
                     }
 
                     // Check y position
@@ -352,5 +455,6 @@ class Level extends Phaser.Scene
         });
 
         gravityTiles()
+        if (checkSlide) {checkSlideTiles()}
     }
 }
