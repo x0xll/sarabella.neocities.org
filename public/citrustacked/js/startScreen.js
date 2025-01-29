@@ -48,6 +48,7 @@ class StartScreen extends Phaser.Scene
         storyBtn.on('pointerdown', () => 
         { 
             nextSceneName = "StoryMap"
+            data.currentLevel = 1
             nextScreen = true;
         });
 
@@ -60,6 +61,7 @@ class StartScreen extends Phaser.Scene
         practiceBtn.on('pointerdown', () => 
         { 
             nextSceneName = "Level"
+            data.currentLevel = 0
             nextScreen = true;
         });
 
@@ -109,7 +111,7 @@ class StartScreen extends Phaser.Scene
     {
         if (nextScreen) {
             nextScreen = false
-            this.scene.start('Level', {backgroundMusic: this.data.backgroundMusic, runningSound: this.data.runningSound, playMusic: this.data.playMusic});
+            this.scene.start('Level', {backgroundMusic: this.data.backgroundMusic, currentLevel: this.data.currentLevel, playMusic: this.data.playMusic});
         }
     }
 

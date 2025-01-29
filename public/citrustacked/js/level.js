@@ -1,4 +1,5 @@
-const COLORS = ['blue', 'orange', 'yellow', 'green'] // TODO : add special ones
+const COLORS = ['blue', 'orange', 'yellow', 'green']
+const SPECIAL = ['rainbow_row', 'rainbow_col', 'area_special']
 
 const GRID_SIZE = 10
 const CELL_SIZE = 43
@@ -7,6 +8,31 @@ const START_GRID_POS = [380, 440]
 const SCORES = [2, 4, 9, 16, 25, 36, 49, 64, 81, // Up to 10 citrus
                 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, // Up to 20 citrus
                 400, 441, 484, 529, 576, 625, 676, 729, 784, 841] // Up to 30 citrus
+const LEVELS = []
+LEVELS[1] = [
+    [COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[0], COLORS[0], COLORS[0], COLORS[2], COLORS[2], COLORS[2]],
+    [COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[2], COLORS[0], COLORS[0], COLORS[2], COLORS[2]],
+    [COLORS[0], COLORS[0], COLORS[0], COLORS[2], COLORS[0], COLORS[2], COLORS[1], COLORS[0], COLORS[3], COLORS[3]],
+    [COLORS[0], COLORS[2], COLORS[2], COLORS[0], COLORS[0], COLORS[0], COLORS[1], COLORS[1], COLORS[3], COLORS[3]],
+    [COLORS[0], COLORS[2], COLORS[2], COLORS[3], COLORS[0], COLORS[2], COLORS[1], COLORS[1], COLORS[1], COLORS[3]],
+    [COLORS[3], COLORS[2], COLORS[0], COLORS[3], COLORS[3], COLORS[3], COLORS[2], COLORS[2], COLORS[2], COLORS[3]],
+    [COLORS[3], COLORS[3], COLORS[0], COLORS[3], COLORS[3], COLORS[1], COLORS[2], COLORS[2], COLORS[1], COLORS[1]],
+    [COLORS[3], COLORS[3], COLORS[0], COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[0], COLORS[1], COLORS[1]],
+    [COLORS[1], COLORS[1], COLORS[0], COLORS[2], COLORS[1], COLORS[1], COLORS[0], COLORS[0], COLORS[0], COLORS[1]],
+    [COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[2], SPECIAL[2], COLORS[0], COLORS[3], COLORS[3]]
+]
+LEVELS[2] = [
+    [COLORS[2], COLORS[1], COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[2], COLORS[2], COLORS[3]],
+    [COLORS[2], COLORS[2], COLORS[2], COLORS[1], COLORS[1], COLORS[0], COLORS[2], COLORS[0], COLORS[2], COLORS[3]],
+    [COLORS[2], COLORS[3], COLORS[3], COLORS[0], COLORS[0], COLORS[0], COLORS[0], COLORS[2], COLORS[3], COLORS[3]],
+    [COLORS[1], COLORS[3], SPECIAL[1], COLORS[3], COLORS[2], COLORS[0], COLORS[2], COLORS[2], COLORS[1], COLORS[3]],
+    [COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[0], COLORS[2], COLORS[2], COLORS[1], COLORS[1], COLORS[1]],
+    [COLORS[1], COLORS[0], COLORS[2], COLORS[2], COLORS[0], COLORS[0], COLORS[2], COLORS[3], COLORS[3], COLORS[1]],
+    [COLORS[3], COLORS[0], COLORS[0], COLORS[2], COLORS[0], COLORS[0], COLORS[3], COLORS[3], COLORS[3], COLORS[0]],
+    [COLORS[0], COLORS[0], COLORS[2], COLORS[2], COLORS[0], COLORS[1], COLORS[3], COLORS[2], COLORS[0], COLORS[0]],
+    [COLORS[2], COLORS[2], COLORS[1], COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[0], COLORS[0]],
+    [COLORS[2], COLORS[2], COLORS[2], COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[3], COLORS[3]]
+]
 
 var grid = []
 var score = 0
@@ -18,6 +44,7 @@ var levelInitialized = false
 var citrustacksGoingDown = []
 let citrustacksSliding = []
 let checkSlide = false
+let gameData = null
 
 class Level extends Phaser.Scene 
 {
@@ -45,6 +72,7 @@ class Level extends Phaser.Scene
     create (data)
     { 
         const game = this
+        gameData = data
 
         // Sounds
         this.meepSound = this.sound.add('meep');
@@ -68,7 +96,10 @@ class Level extends Phaser.Scene
                 {
                     const posX = START_GRID_POS[0] + (column * CELL_SIZE)
                     const posY = START_GRID_POS[1] - (row * CELL_SIZE)
-                    const color = Math.floor(Math.random() * COLORS.length)
+                    let color = COLORS[Math.floor(Math.random() * COLORS.length)]
+                    if (data.currentLevel > 0) {
+                        color = LEVELS[data.currentLevel][GRID_SIZE-row-1][column]
+                    }
 
                     // TODO : Make the arrival animation
                     const tile = this.add.spine(posX, posY, 'citrustack_json', 'citrustack_atlas')
@@ -76,7 +107,7 @@ class Level extends Phaser.Scene
                     tileGroup.add(tile)
                     tile.body.setSize(43,43).setOffset(-21,-38)
 
-                    setColor(tile, COLORS[color])
+                    setColor(tile, color)
                         // Colors are set as skins and can be blue, green, orange, yellow, rainbow_row, rainbow_col and area_special
                         // All colors also include a <color>_glow variant for the glowing version of the sprite
                         // Spine file also includes two animations: gradient (for the rainbow color shift) 
@@ -85,7 +116,7 @@ class Level extends Phaser.Scene
 
                     tile.row = row
                     tile.column = column
-                    tile.color = COLORS[color]
+                    tile.color = color
                     tile.hitbox.on('pointerdown', () => 
                     {
                         var group = checkTileGroup(tile.column, tile.row, tile.color)
@@ -107,12 +138,12 @@ class Level extends Phaser.Scene
                             if (group.length <= 1) return;
 
                             this.meepSound.play()
-                            setColor(tile, COLORS[color] + "_glow")
+                            setColor(tile, color + "_glow")
                             tile.animationState.setAnimation(0, 'sway', false)
 
                             group.forEach(({ column, row }) => {
                                 grid[column][row].animationState.setAnimation(0, 'sway', false)
-                                setColor(grid[column][row], COLORS[color] + "_glow")
+                                setColor(grid[column][row], grid[column][row].color + "_glow")
                               });
                         })
 
@@ -122,10 +153,10 @@ class Level extends Phaser.Scene
 
                         if (group.length <= 1) return;
 
-                        setColor(tile, COLORS[color])
+                        setColor(tile, color)
 
                         group.forEach(({ column, row }) => {
-                            setColor(grid[column][row], COLORS[color])
+                            setColor(grid[column][row], grid[column][row].color)
                           });
                     })
 
@@ -137,6 +168,36 @@ class Level extends Phaser.Scene
 
         function checkTileGroup(column, row, color, neighbours = [])
         {
+            if (color === 'rainbow_col') {
+                let tiles = []
+                for (let index = 0; index < grid[column].length; index++) {
+                    if (grid[column][index] !== null) {tiles.push({column: column, row: index})}
+                }
+                return tiles
+            }
+
+            if (color === 'rainbow_row') {
+                let tiles = []
+                for (let index = 0; index < grid.length; index++) {
+                    if (grid[index][row] !== null) {tiles.push({column: index, row: row})}
+                }
+                return tiles
+            }
+
+            if (color === 'area_special'){
+                let tiles = []
+                tiles.push({column: column, row: row})
+                if (grid[column+1][row] !== null && column < GRID_SIZE) {tiles.push({column: column+1, row: row})}
+                if (grid[column+1][row+1] !== null && column < GRID_SIZE && row < GRID_SIZE) {tiles.push({column: column+1, row: row+1})}
+                if (grid[column+1][row-1] !== null && column < GRID_SIZE && row > 0) {tiles.push({column: column+1, row: row-1})}
+                if (grid[column][row+1] !== null && row < GRID_SIZE) {tiles.push({column: column, row: row+1})}
+                if (grid[column][row-1] !== null && row > 0) {tiles.push({column: column, row: row-1})}
+                if (grid[column-1][row] !== null && column > 0) {tiles.push({column: column-1, row: row})}
+                if (grid[column-1][row+1] !== null && column > 0 && row < GRID_SIZE) {tiles.push({column: column-1, row: row+1})}
+                if (grid[column-1][row-1] !== null && column > 0 && row > 0) {tiles.push({column: column-1, row: row-1})}
+                return tiles
+            }
+
             // We are out of the grid
             if (column < 0 || row < 0 || column >= GRID_SIZE || row >= GRID_SIZE)
                 return []
@@ -336,11 +397,25 @@ class Level extends Phaser.Scene
             }
         }
 
-        // Check if level is over
-
         // Check if citrustacks need to fall
         if (!levelInitialized)
             return;
+
+        
+        // Check if level is over
+        let notNullCount = 0
+        for (let column = 0; column < grid.length; column++) {
+            grid[column].forEach(tile => {
+                if (tile !== null) {notNullCount++}
+            });
+        }
+        console.log(gameData.currentLevel)
+        if (notNullCount === 0) {
+            // Level should end
+            // console.log('You win!')
+            if (gameData.currentLevel < 2) {gameData.currentLevel++}
+            this.scene.start('Level', {backgroundMusic: gameData.backgroundMusic, currentLevel: gameData.currentLevel, playMusic: gameData.playMusic});
+        }
 
         // TODO : Improve movement to be more fluid
 
