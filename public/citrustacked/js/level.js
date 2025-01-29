@@ -19,6 +19,19 @@ LEVELS[1] = [
     [COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[2], SPECIAL[2], COLORS[0], COLORS[3], COLORS[3]]
 ]
 LEVELS[2] = [
+    [COLORS[2], COLORS[2], COLORS[2], COLORS[0], COLORS[1], COLORS[1], COLORS[1], COLORS[1], COLORS[1], COLORS[0]],
+    [COLORS[2], COLORS[0], COLORS[2], COLORS[0], COLORS[0], COLORS[0], COLORS[1], COLORS[3], COLORS[3], COLORS[0]],
+    [COLORS[3], SPECIAL[1], COLORS[3], COLORS[0], COLORS[2], COLORS[2], COLORS[0], COLORS[3], COLORS[0], COLORS[0]],
+    [COLORS[3], COLORS[0], COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[3], COLORS[2], COLORS[3]],
+    [COLORS[3], COLORS[0], COLORS[2], COLORS[1], COLORS[1], COLORS[1], COLORS[3], COLORS[2], COLORS[2], COLORS[2]],
+    [COLORS[3], COLORS[2], COLORS[2], COLORS[3], COLORS[0], COLORS[1], COLORS[3], COLORS[2], COLORS[2], COLORS[0]],
+    [COLORS[0], COLORS[2], COLORS[2], COLORS[1], COLORS[3], COLORS[3], COLORS[3], COLORS[1], COLORS[1], COLORS[0]],
+    [COLORS[0], COLORS[0], COLORS[0], COLORS[1], COLORS[1], COLORS[1], COLORS[3], COLORS[1], COLORS[1], COLORS[0]],
+    [COLORS[0], COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[1], COLORS[0], COLORS[2], COLORS[0]],
+    [COLORS[1], COLORS[1], COLORS[0], COLORS[0], COLORS[0], COLORS[2], COLORS[2], COLORS[0], COLORS[0], COLORS[1]]
+]
+// this was the practice mode one from the French video
+LEVELS[3] = [
     [COLORS[2], COLORS[1], COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[2], COLORS[2], COLORS[3]],
     [COLORS[2], COLORS[2], COLORS[2], COLORS[1], COLORS[1], COLORS[0], COLORS[2], COLORS[0], COLORS[2], COLORS[3]],
     [COLORS[2], COLORS[3], COLORS[3], COLORS[0], COLORS[0], COLORS[0], COLORS[0], COLORS[2], COLORS[3], COLORS[3]],
@@ -410,11 +423,10 @@ class Level extends Phaser.Scene
                 if (tile !== null) {notNullCount++}
             });
         }
-        console.log(gameData.currentLevel)
         if (notNullCount === 0) {
             // Level should end
-            // console.log('You win!')
-            if (gameData.currentLevel < 2) {gameData.currentLevel++}
+            score = 0
+            if (gameData.currentLevel < 3) {gameData.currentLevel++}
             this.scene.start('Level', {backgroundMusic: gameData.backgroundMusic, currentLevel: gameData.currentLevel, playMusic: gameData.playMusic});
         }
 
@@ -503,14 +515,7 @@ class Level extends Phaser.Scene
                         tile.body.setVelocityX(0)
                         tile.setPosition(targetX, tile.y)
                     } else {
-                        // if (targetX >= tile.x + (0.1*CELL_SIZE)) {
-                        //     this.physics.moveTo(tile, tile.x+CELL_SIZE, tile.y, 100, 200);
-                        // } else if (targetX <= tile.x - (0.1*CELL_SIZE)) {
-                        //     this.physics.moveTo(tile, tile.x-CELL_SIZE, tile.y, 100, 200);
-                        // } else {
-                            this.physics.moveTo(tile, targetX, tile.y, 100, 400);
-                            // checkSlide = true
-                        // }
+                        this.physics.moveTo(tile, targetX, tile.y, 100, 400);
                     }
 
                     // Check y position
