@@ -38,6 +38,12 @@
     "txtLandPitchForkHilite2": "Utilise d'abord la pelle pour retirer la paille sale",
     "txtLandOatsRollOver": "Met de l'avoine dans l'auge placée devant ton cheval.",
 
+    "txtHelpInfo": "Click to set your horse's name and quote.",
+    "txtHelpMain": "Click the tabs to dress up your horse. You can use the color selector to change colors and the arrows to select different options.",
+    "txtHelpRandomise": "Click to generate a new random horse.",
+    "txtHelpPlay": "Click to take care of your horse.",
+    "txtHelpCopyLink": "Click to copy a link to your horse.",
+
     "txtLandHelpTrophyRoom": "Clique pour visiter la salle des trophées.",
     "txtLandHelpWater": "Clique pour remplir le bac d'eau pour ton cheval assoiffé.",
     "txtLandHelpStats": "Fais attentions aux statuts de ton cheval !",

@@ -133,7 +133,7 @@ class dressupStable extends Phaser.Scene
         this.load.image('inspiration', './images/landStable/inspiration.png');
 
         this.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
-        this.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
+        this.load.atlas('help_dressup_button', './images/dress_up_help.png', './images/dress_up_help.json');
         this.load.atlas('next_button', './images/selector/next.png', './images/selector/next.json');
         this.load.atlas('previous_button', './images/selector/previous.png', './images/selector/previous.json');
 
@@ -1140,6 +1140,74 @@ class dressupStable extends Phaser.Scene
         horseNameText.setOrigin(0.5)
 
         // Buttons
+        // Copy Button
+        const copyButton = game.add.text(730, 500, localeData.txtDressupCopy, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5);
+            copyButton.setInteractive({ useHandCursor: true });
+            copyButton.on('pointerover', () => {
+                copyButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            copyButton.on('pointerout', () => {
+                copyButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            copyButton.on('pointerdown', () => {
+                // Copy the text
+                copy()
+
+            })
+
+        // Random Button
+        const randomButton = game.add.text(150, 500, localeData.txtDressupRandomise, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5);
+            randomButton.setInteractive({ useHandCursor: true });
+            randomButton.on('pointerover', () => {
+                randomButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            randomButton.on('pointerout', () => {
+                randomButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            randomButton.on('pointerdown', () => {
+                randomiseHorse()
+                hairColorPicker.value = Phaser.Math.Between(0, 0x1000000)
+                bodyColorPicker.value = Phaser.Math.Between(0, 0x1000000)
+                darkColorPicker.value = randomDark()
+                whiteColorPicker.value = randomWhite()
+                resetHorseSprite()
+            })
+            
+
+        // Play Button
+        const playButton = game.add.text(730, 465, localeData.txtDressupPlay, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5);
+            playButton.setInteractive({ useHandCursor: true });
+            playButton.on('pointerover', () => {
+                playButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            playButton.on('pointerout', () => {
+                playButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            playButton.on('pointerdown', () => {
+                this.scene.start('dressupLandStable', sharedData);
+            })
+
         // music button
         const musicButton = this.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });
             musicButton.on('pointerdown', function (pointer)
@@ -1156,10 +1224,52 @@ class dressupStable extends Phaser.Scene
             });
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}`) });
+        
         // help button
-        const helpButton = this.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
-            helpButton.on('pointerover', function (pointer) { this.setFrame('help') });
-            helpButton.on('pointerout', function (pointer) { this.setFrame('idle') });
+        let helpPopups = [];
+        function showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings, scene)
+        {
+            const helpTxt = scene.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
+            helpTxt.text = localeTxtKey;
+            helpTxt.setOrigin(0.5)
+            helpPopups.push(helpTxt);
+        }
+
+        const helpButton = this.add.sprite(444, 261, 'help_dressup_button', 'idle').setInteractive(this.input.makePixelPerfect(150));
+            const hoverTextSettingsBigBox = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 200},
+                lineSpacing: -2
+            }
+            
+            const hoverTextSettingsMediumSmallBox = {
+                font: 'bold 12px Arial', 
+                align: 'center',
+                color: '#ffffff',
+                wordWrap: {width: 135},
+                lineSpacing: -2
+            }
+
+            showLocalizedHelpTexts(156, 105, localeData.txtHelpInfo, hoverTextSettingsMediumSmallBox, this);
+            showLocalizedHelpTexts(398, 177, localeData.txtHelpMain, hoverTextSettingsBigBox, this);
+            showLocalizedHelpTexts(155, 420, localeData.txtHelpRandomise, hoverTextSettingsMediumSmallBox, this);
+            showLocalizedHelpTexts(683, 350, localeData.txtHelpPlay, hoverTextSettingsMediumSmallBox, this);
+            showLocalizedHelpTexts(587, 425, localeData.txtHelpCopyLink, hoverTextSettingsMediumSmallBox, this);
+
+            helpButton.on('pointerover', function (pointer) { 
+                this.setFrame('help') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(1);
+                });
+            });
+            helpButton.on('pointerout', function (pointer) { 
+                this.setFrame('idle') 
+                helpPopups.forEach(helpTxt => {
+                    helpTxt.setAlpha(0);
+                });
+            });
 
 
         // Progress bars
@@ -1248,76 +1358,6 @@ class dressupStable extends Phaser.Scene
             
             progressBar.rightShade.setPosition(progressBar.x - 32 + progressBar.level*bar, progressBar.rightShade.y)
         }
-
-        
-
-        // Copy Button
-        const copyButton = game.add.text(730, 500, localeData.txtDressupCopy, {
-            fontFamily: 'Arial',
-            fontSize: '12px',
-            color: '#ffffff',
-            align: 'center',
-            fixedWidth: 100,
-            backgroundColor: COLOR_PRIMARY_HEX
-        }).setPadding(6).setOrigin(0.5);
-            copyButton.setInteractive({ useHandCursor: true });
-            copyButton.on('pointerover', () => {
-                copyButton.setBackgroundColor(COLOR_SECONDARY_HEX);
-            });
-            copyButton.on('pointerout', () => {
-                copyButton.setBackgroundColor(COLOR_PRIMARY_HEX);
-            });
-            copyButton.on('pointerdown', () => {
-                // Copy the text
-                copy()
-
-            })
-
-        // Random Button
-        const randomButton = game.add.text(150, 500, localeData.txtDressupRandomise, {
-            fontFamily: 'Arial',
-            fontSize: '12px',
-            color: '#ffffff',
-            align: 'center',
-            fixedWidth: 100,
-            backgroundColor: COLOR_PRIMARY_HEX
-        }).setPadding(6).setOrigin(0.5);
-            randomButton.setInteractive({ useHandCursor: true });
-            randomButton.on('pointerover', () => {
-                randomButton.setBackgroundColor(COLOR_SECONDARY_HEX);
-            });
-            randomButton.on('pointerout', () => {
-                randomButton.setBackgroundColor(COLOR_PRIMARY_HEX);
-            });
-            randomButton.on('pointerdown', () => {
-                randomiseHorse()
-                hairColorPicker.value = Phaser.Math.Between(0, 0x1000000)
-                bodyColorPicker.value = Phaser.Math.Between(0, 0x1000000)
-                darkColorPicker.value = randomDark()
-                whiteColorPicker.value = randomWhite()
-                resetHorseSprite()
-            })
-            
-
-        // Play Button
-        const playButton = game.add.text(730, 465, localeData.txtDressupPlay, {
-            fontFamily: 'Arial',
-            fontSize: '12px',
-            color: '#ffffff',
-            align: 'center',
-            fixedWidth: 100,
-            backgroundColor: COLOR_PRIMARY_HEX
-        }).setPadding(6).setOrigin(0.5);
-            playButton.setInteractive({ useHandCursor: true });
-            playButton.on('pointerover', () => {
-                playButton.setBackgroundColor(COLOR_SECONDARY_HEX);
-            });
-            playButton.on('pointerout', () => {
-                playButton.setBackgroundColor(COLOR_PRIMARY_HEX);
-            });
-            playButton.on('pointerdown', () => {
-                this.scene.start('dressupLandStable', sharedData);
-            })
     }
 
     update ()

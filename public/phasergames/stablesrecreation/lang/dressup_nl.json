@@ -38,6 +38,12 @@
     "txtLandPitchForkHilite2": "First use the shovel to remove the soiled straw.",
     "txtLandOatsRollOver": "Add oats to the trough in front of your horse.",
 
+    "txtHelpInfo": "Click to set your horse's name and quote.",
+    "txtHelpMain": "Click the tabs to dress up your horse. You can use the color selector to change colors and the arrows to select different options.",
+    "txtHelpRandomise": "Click to generate a new random horse.",
+    "txtHelpPlay": "Click to take care of your horse.",
+    "txtHelpCopyLink": "Click to copy a link to your horse.",
+
     "txtLandHelpTrophyRoom": "Click to visit the trophy room.",
     "txtLandHelpWater": "Click to fill the water trough for your thirsty horse.",
     "txtLandHelpStats": "Keep a close eye on your horse's stats!",
