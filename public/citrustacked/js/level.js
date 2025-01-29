@@ -5,9 +5,6 @@ const GRID_SIZE = 10
 const CELL_SIZE = 43
 const START_GRID_POS = [380, 440]
 
-const SCORES = [2, 4, 9, 16, 25, 36, 49, 64, 81, // Up to 10 citrus
-                100, 121, 144, 169, 196, 225, 256, 289, 324, 361, // Up to 20 citrus
-                400, 441, 484, 529, 576, 625, 676, 729, 784, 841] // Up to 30 citrus
 const LEVELS = []
 LEVELS[1] = [
     [COLORS[1], COLORS[1], COLORS[1], COLORS[2], COLORS[0], COLORS[0], COLORS[0], COLORS[2], COLORS[2], COLORS[2]],
@@ -242,7 +239,11 @@ class Level extends Phaser.Scene
         function increaseScore(tileAmount)
         {
             // TODO : have the score appear at different size + particles
-            score += SCORES[tileAmount - 2]
+            let count = 0
+            for (let index = 1; index < tileAmount; index++) {
+                count = 2*(index-1) + 1 + count
+            }
+            score += count
 
             scoreTxt.setText(score)
         }
