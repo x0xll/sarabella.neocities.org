@@ -37,7 +37,7 @@ class Load extends Phaser.Scene
             const xmlHttpEnglish = new XMLHttpRequest();
             xmlHttpEnglish.onload = function() {
                 const myObj = JSON.parse(this.responseText);
-                englishDatas = myObj
+                let englishDatas = myObj
             }
             xmlHttpEnglish.open("GET", `${langFile}_en.json`);
             xmlHttpEnglish.send();
