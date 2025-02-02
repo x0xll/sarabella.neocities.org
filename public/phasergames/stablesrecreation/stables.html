@@ -81,7 +81,7 @@
             </script>
         </div>
 
-        <div style="text-align: center;">
+        <div style="text-align: center;" id="quoteToggle">
             <input type="checkbox" id="englishQuoteToggle" name="englishQuoteToggle" >
             <label for="englishQuoteToggle" data-il8n="quote_toggle_label" style="color: white">Use English Quotes</label>
         </div>
@@ -97,6 +97,10 @@
 
           <script>
             let toggleQuote = document.getElementById("englishQuoteToggle");
+
+            if (getCurrentLanguageCode() == "en")
+                document.getElementById("quoteToggle").style.display = "none";
+
             toggleQuote.addEventListener("change", (e) =>
             {
                 localizedQuote = !event.target.checked
