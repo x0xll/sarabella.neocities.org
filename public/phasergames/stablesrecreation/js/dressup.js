@@ -534,6 +534,27 @@ class dressupStable extends Phaser.Scene
             }
             return color
         }
+
+        function save()
+        {
+            if (savedHorses == null)
+                savedHorses = []
+
+            if (savedHorses.length >= MAX_SAVED_HORSES)
+            {
+                // TODO: Popup to say there's too many and need to delete one first
+                return;
+            }
+
+            let saveText = `&v=${urlVersion}` +
+                `&name=${encodeURIComponent(horseData.name)}` +
+                `&message=${encodeURIComponent(horseData.message)}` +
+                `&data=${horseDataToString()}`
+
+            savedHorses.push(saveText);
+
+            saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
+        }
         
         function copy() {
             let copyText = `${location.origin + location.pathname}` +
@@ -1207,6 +1228,27 @@ class dressupStable extends Phaser.Scene
             playButton.on('pointerdown', () => {
                 this.scene.start('dressupLandStable', sharedData);
             })
+
+        // Save Button
+        const saveButton = game.add.text(150, 465, localeData.txtDressupSave, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5);
+            saveButton.setInteractive({ useHandCursor: true });
+            saveButton.on('pointerover', () => {
+                saveButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+                });
+                saveButton.on('pointerout', () => {
+                    saveButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+                });
+                saveButton.on('pointerdown', () => {
+                    // Save the data
+                    save()
+                })
 
         // music button
         const musicButton = this.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });

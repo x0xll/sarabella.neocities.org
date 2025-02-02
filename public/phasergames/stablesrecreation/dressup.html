@@ -7,6 +7,7 @@
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script> 
+        <script src="./js/dressupStableSelector.js"></script> 
         <script src="./js/dressup.js"></script> 
         <script src="./js/dressupLandStable.js"></script> 
         <style type="text/css">
@@ -16,6 +17,7 @@
         </style>
     </head>
 
+    <script src="/save.js"></script> 
     <script src="/language.js"></script>
     
     <body style="text-align: center;" onload="loadLanguagePref()">
@@ -43,6 +45,16 @@
 
                 let loadInto = `Stables`
 
+                const MAX_SAVED_HORSES = 10
+                let savedHorses = loadFromLocalStorage("dressuphorsesBellaSaraNeoCity")
+                if (savedHorses != null)
+                {
+                    savedHorses = JSON.parse(savedHorses);
+
+                    if (!urlParameters.get('selector') ||  urlParameters.get('selector') === true)
+                        loadInto = 'dressupStableSelector'
+                }
+
                 let config = {
                     parent: "gameDiv",
                     dom: {
@@ -59,6 +71,7 @@
                     },
                     scene: [
                         Load,
+                        dressupStableSelector,
                         dressupStable,
                         dressupLandStable
                     ]
