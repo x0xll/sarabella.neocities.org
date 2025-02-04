@@ -34,6 +34,7 @@ class Load extends Phaser.Scene
             xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
             xmlHttplocale.send();
 
+            if (horseData.type !== 'dressup'){
             const xmlHttpEnglish = new XMLHttpRequest();
             xmlHttpEnglish.onload = function() {
                 const myObj = JSON.parse(this.responseText);
@@ -41,6 +42,7 @@ class Load extends Phaser.Scene
             }
             xmlHttpEnglish.open("GET", `${langFile}_en.json`);
             xmlHttpEnglish.send();
+            }
 
             loadInto = `${horseData.type}Stable`
         }
