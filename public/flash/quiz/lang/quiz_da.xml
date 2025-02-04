@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<root>
+    <cat1>Kategori 1</cat1>
+    <cat2>Kategori 2</cat2>
+    <cat3>Kategori 3</cat3>
+
+    <start>Start</start>
+
+    <partsHorse>Hvad er hvad på hesten?</partsHorse>
+    <colorHorse>Hestens farver</colorHorse>
+    <saddleBridle>Sadel og hovedtøj</saddleBridle>
+
+    <quest1>Spørgsmål 1.</quest1>
+    <quest2>Spørgsmål 2.</quest2>
+    <quest3>Spørgsmål 3.</quest3>
+    <quest4>Spørgsmål 4.</quest4>
+    <quest5>Spørgsmål 5.</quest5>
+    <quest6>Spørgsmål 6.</quest6>
+    <quest7>Spørgsmål 7.</quest7>
+    <quest8>Spørgsmål 8.</quest8>
+    <quest9>Spørgsmål 9.</quest9>
+    <quest10>Spørgsmål 10.</quest10>
+    <quest1>Spørgsmål 11.</quest11>
+    <quest12>Spørgsmål 12.</quest12>
+
+    <next>Næeste</next>
+    <congrats>Tillykke</congrats>
+    <retry>Prøv igen</retry>
+    <selectAnswer>Husk at svare!</selectAnswer>
+
+    <completedRound1>Du har nu gennemført runde 1.</completedRound1>
+    <completedRound2>Du har nu gennemført runde 2.</completedRound2>
+    <completedRound3>Du har nu gennemført runde 3.</completedRound3>
+
+    <horsePart1>Albue</horsePart1>
+    <horsePart2>Has</horsePart2>
+    <horsePart3>Hov</horsePart3>
+    <horsePart4>Pandelok</horsePart4>
+    <horsePart5>Manke</horsePart5>
+    <horsePart6>Flanke</horsePart6>
+    <horsePart7>Knæ</horsePart7>
+    <horsePart8>Kryds</horsePart8>
+    <horsePart9>Spore</horsePart9>
+    <horsePart10>Ryg</horsePart10>
+    <horsePart11>Skulder</horsePart11>
+    <horsePart12>Mule</horsePart12>
+    <horsePart13>Kodeled</horsePart13>
+    <horsePart14>Kæbe</horsePart14>
+    <horsePart15>Halerod</horsePart15>
+    <horsePart16>Man</horsePart16>
+    <horsePart17>Pibe</horsePart17>
+    <horsePart18>Bug</horsePart18>
+    <horsePart19>Forknæ</horsePart19>
+    <horsePart20>Hale</horsePart20>
+    <horsePart21>Krone</horsePart21>
+
+    <result>Antal rigtige svar = </result>
+    <expert>Float! Du er jo nærmest ekspert</expert>
+    <nice>Godt gået, du ved jo en hel del om heste!</nice>
+    <lose>Desværre, måske skulle du prøve igen!</nice>
+
+    <horseColor1>Skimmel</horseColor1>
+    <horseColor2>Kastanje</horseColor2>
+    <horseColor3>Sort</horseColor3>
+    <horseColor4>Brun</horseColor4>
+    <horseColor5>Flueskimmel</horseColor5>
+    <horseColor6>Sandfarvet</horseColor6>
+    <horseColor7>Gråskimmel</horseColor7>
+    <horseColor8>Broget</horseColor8>
+    <horseColor9>Fuks</horseColor9>
+    <horseColor10>Palomino</horseColor10>
+    <horseColor11>Sortbroget</horseColor11>
+    <horseColor12>Rød</horseColor12>
+    
+    <saddleBridle1>Tøjle</saddleBridle1>
+    <saddleBridle2>Næseånd</saddleBridle2>
+    <saddleBridle3>Bidsel</saddleBridle3>
+    <saddleBridle4>Sædle</saddleBridle4>
+    <saddleBridle5>Saddelpude</saddleBridle5>
+    <saddleBridle6>Holder</saddleBridle6>
+    <saddleBridle7>Gjord</saddleBridle7>
+    <saddleBridle8>Kindstykker</saddleBridle8>
+    <saddleBridle9>Pandebånd</saddleBridle9>
+    <saddleBridle10>Stigrem</saddleBridle10>
+    <saddleBridle11>Forsvisel</saddleBridle11>
+    <saddleBridle12>Knæepude</saddleBridle12>
+    <saddleBridle13>Bagsvisel</saddleBridle13>
+    <saddleBridle14>Saddelklap</saddleBridle14>
+    <saddleBridle15>Nakkestykke</saddleBridle15>
+    <saddleBridle16>Stigbøjle</saddleBridle16>
+    <saddleBridle17>Kæberem</saddleBridle17>
+
+</root>

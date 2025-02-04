@@ -1,0 +1,39 @@
+{
+    "title": "Dream Rider",
+
+    "btn_tutorial": "Tutorial",
+    "btn_start": "START",
+
+    "btn_play": "Play/Resume",
+    "btn_stop": "Stop",
+    "btn_save": "Save/Load",
+
+    "pen_fire": "Fire Path",
+    "pen_grass": "Grass Path",
+    "pen_dirt": "Dirt Path",
+    "pen_water": "Water Path",
+    "pen_decor": "Draw the scenery",
+
+    "horse_fly": "Fly",
+    "horse_rearup": "Rear up",
+    "horse_walk": "Walk",
+
+    "other_message": "Message",
+    "other_fireworks": "Fireworks",
+    "other_flowers": "Flowers",
+    "other_water": "Water",
+    "other_snow": "Snow",
+    "other_rain": "Rain",
+    "other_night": "Night Sky",
+    "other_anim": "Animation",
+
+    "btn_objects": "Objects",
+    "btn_deleteAll": "Delete all",
+    "btn_delete": "Delete",
+    "btn_move": "Move the paper",
+
+    "save_name": "Name of the course",
+    "save_btn": "Save",
+    "save_load": "Load",
+    "save_delete": "Delete"
+}
