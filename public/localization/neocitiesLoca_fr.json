@@ -59,5 +59,18 @@
 
     "stables_title" : "Bienvenue dans le monde de Bella Sara",
 
-    "dressup_horselink" : "Lien du Cheval"
+    "dressup_horselink" : "Lien du Cheval",
+
+    "babybella_timeline_information": "Cette publicité était mise à jour régulièrement durant la durée de l'évènement. Cette chronologie permet de la revoir à divers moments de son existence.",
+    "babybella_4Sept": "4 Septembre 2008 - Naissance de Petal / Début de l'évènement",
+    "babybella_13Sept": "13 Septembre 2008 - Naissance de Cirra",
+    "babybella_19Sept": "19 Septembre 2008 - Naissance de Janie",
+    "babybella_26Sept": "26 Septembre 2008 - Naissance de Bellisimo",
+    "babybella_7Nov": "7 Novembre 2008 - Naissance de Bellissa",
+    "babybella_17Dec": "17 Décembre 2008 - Après la fin de l'évènement",
+    "footer_timeline_link": "Chronologie",
+
+    "about_title": "A propos",
+    "credits_title": "Crédits",
+    "about_text": "<i>En cours de rédaction...</i>"
 }

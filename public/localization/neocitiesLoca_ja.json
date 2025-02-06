@@ -59,5 +59,18 @@
 
     "stables_title" : "ベラセラの世界へようこそ",
 
-    "dressup_horselink" : "馬のリンク"
+    "dressup_horselink" : "馬のリンク",
+
+    "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
+    "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",
+    "babybella_13Sept": "13th of September, 2008 - Cirra's Birth",
+    "babybella_19Sept": "19th of September, 2008 - Janie's Birth",
+    "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
+    "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
+    "babybella_17Dec": "17th of December, 2008 - After the event's end",
+    "footer_timeline_link": "Timeline",
+
+    "about_title": "About",
+    "credits_title": "Credits",
+    "about_text": "<i>Being written...</i>"
 }

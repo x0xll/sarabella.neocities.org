@@ -81,5 +81,9 @@
     "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
     "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
     "babybella_17Dec": "17th of December, 2008 - After the event's end",
-    "footer_timeline_link": "Timeline"
+    "footer_timeline_link": "Timeline",
+
+    "about_title": "About",
+    "credits_title": "Credits",
+    "about_text": "<i>Being written...</i>"
 }
