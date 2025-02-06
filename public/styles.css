@@ -134,3 +134,24 @@ ul {
     padding: 0;
 }
 
+@media (min-width: 1020px)
+{
+    .mobile-content{
+        display: none !important;
+    }
+
+    .computer-content{
+        display: block;
+    }
+}
+
+@media (max-width: 1019px)
+{
+    .mobile-content{
+        display: block;
+    }
+
+    .computer-content{
+        display: none !important;
+    }
+}

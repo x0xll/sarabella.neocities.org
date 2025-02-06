@@ -12,8 +12,36 @@
     <body onload="loadLanguagePref()">
         <script src="/header.js"></script>
                 
-        <div class="content">
+        <!-- Computer Screen Content -->
+        <div class="content computer-content" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            <div class="content textbox-parent" style="min-width: min-content; width: 15%;">
+                <div class="textbox" style="width: 90%;">
+                    <h1 data-il8n="about_title">About</h5>
+                    <p style="text-align: justify;" data-il8n="about_text"></p>
+                </div>
+            </div>
             <img src="images/jewelgif.gif">
+            <div class="content textbox-parent" style="min-width: min-content; width: 15%;">
+                <div class="textbox credits-parent" style="width: 90%;">
+                    <h1 data-il8n="credits_title">Credits</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Screen Content -->
+        <div class="content mobile-content">
+            <img src="images/jewelgif.gif">
+            <div class="content textbox-parent" style="min-width: min-content; width: 70%; height: min-content;">
+                <div class="textbox" style="width: 90%; height: min-content;">
+                    <h1 data-il8n="about_title">About</h5>
+                    <p style="text-align: justify;" data-il8n="about_text"></p>
+                </div>
+            </div>
+            <div class="content textbox-parent" style="min-width: min-content; width: 70%; height: min-content;">
+                <div class="textbox credits-parent" style="width: 90%; height: min-content;">
+                    <h1 data-il8n="credits_title">Credits</h5>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
@@ -22,7 +50,7 @@
         </div>
 
         <script src="/flags.js"></script>
-
+        <script src="credits/credits.js"></script>
     </body>
 
 </html>
