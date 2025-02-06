@@ -96,6 +96,8 @@
           <script src="/flags.js"></script>
 
           <script>
+            const toggleStateKey = "englishQuoteToggleStablesBellaSaraNeoCity";
+
             let toggleQuote = document.getElementById("englishQuoteToggle");
 
             if (getCurrentLanguageCode() == "en")
@@ -104,7 +106,16 @@
             toggleQuote.addEventListener("change", (e) =>
             {
                 localizedQuote = !event.target.checked
+                localStorage.setItem(toggleStateKey, `${event.target.checked}`)
             })
+
+            // Load the saved toggle state
+            let savedToggleState = localStorage.getItem(toggleStateKey);
+            if (savedToggleState != null && savedToggleState == "true")
+            {
+                toggleQuote.checked = true;
+                localizedQuote = false;
+            }
           </script>
 
     </body>
