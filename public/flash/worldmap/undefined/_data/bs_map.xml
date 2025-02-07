@@ -2,139 +2,139 @@
     <locations>
         <location>
             <scroll floatUp="5">
-                <label _width="100">
-					<![CDATA[<p>World Map</p>]]>
+                <label _width="70">
+					<![CDATA[<p class="title">World Map</p>]]>
 				</label>
             </scroll>
-            <menu _x="10" _y="15" floatDown="-20" floatRight="25" itemSpacing="2">
+            <menu _x="10" _y="15" floatDown="-100" floatRight="60" itemSpacing="2">
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Art Studio</p>]]>
+					<label _width="70">
+						<![CDATA[<p class="item">Art Studio</p>]]>
 					</label>
                 </item>
 				<item link="string">
-					<label _width="150">
-						<![CDATA[<p>Bellapedia</p>]]>
+					<label _width="70">
+						<![CDATA[<p class="item">Bellapedia</p>]]>
 					</label>
                 </item>
             </menu>
         </location>
-		        <location>
+		<location>
             <scroll floatUp="5">
-                <label _width="100">
-					<![CDATA[<p>Arena</p>]]>
+                <label _width="40">
+					<![CDATA[<p class="title">Arena</p>]]>
 				</label>
             </scroll>
-            <menu _x="10" _y="15" floatDown="-20" floatRight="25" itemSpacing="2">
+            <menu _x="10" _y="15" floatDown="-100" floatRight="50" itemSpacing="2">
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Citrustacked</p>]]>
+					<label _width="180">
+						<![CDATA[<p class="item">Citrustacked</p>]]>
 					</label>
                 </item>
 				<item link="string">
-					<label _width="150">
-						<![CDATA[<p>Lance Riding Game</p>]]>
+					<label _width="180">
+						<![CDATA[<p class="item">Lance Riding Game</p>]]>
 					</label>
                 </item>
 				<item link="string">
-					<label _width="150">
-						<![CDATA[<p>Spectacular Jumping Game</p>]]>
+					<label _width="180">
+						<![CDATA[<p class="item">Spectacular Jumping Game</p>]]>
 					</label>
                 </item>
 				<item link="string">
-					<label _width="150">
-						<![CDATA[<p>Trailblazer</p>]]>
+					<label _width="180">
+						<![CDATA[<p class="item">Trailblazer</p>]]>
 					</label>
                 </item>
             </menu>
         </location>
 		        <location>
             <scroll floatUp="5">
-                <label _width="100">
-					<![CDATA[<p>Floating Islands</p>]]>
+                <label _width="95">
+					<![CDATA[<p class="title">Floating Islands</p>]]>
 				</label>
             </scroll>
-            <menu _x="10" _y="15" floatDown="-20" floatRight="25" itemSpacing="2">
+            <menu _x="10" _y="15" floatDown="-70" floatRight="-260" itemSpacing="2">
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Dream Rider</p>]]>
+					<label _width="120">
+						<![CDATA[<p class="item">Dream Rider</p>]]>
 					</label>
                 </item>
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Firelight Festival</p>]]>
+					<label _width="120">
+						<![CDATA[<p class="item">Firelight Festival</p>]]>
 					</label>
                 </item>
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Magic Bubble Wand</p>]]>
+					<label _width="120">
+						<![CDATA[<p class="item">Magic Bubble Wand</p>]]>
 					</label>
                 </item>
             </menu>
         </location>
 		        <location>
             <scroll floatUp="5">
-                <label _width="100">
-					<![CDATA[<p>Township</p>]]>
+                <label _width="70">
+					<![CDATA[<p class="title">Township</p>]]>
 				</label>
             </scroll>
-            <menu _x="10" _y="15" floatDown="-20" floatRight="25" itemSpacing="2">
+            <menu _x="10" _y="15" floatDown="-60" floatRight="50" itemSpacing="2">
                 <item link="string">
 					<label _width="150">
-						<![CDATA[<p>Marvelous Magic Match</p>]]>
+						<![CDATA[<p class="item">Marvelous Magic Match</p>]]>
 					</label>
                 </item>
                 <item link="string">
 					<label _width="150">
-						<![CDATA[<p>Treasure's Hunt</p>]]>
+						<![CDATA[<p class="item">Treasure's Hunt</p>]]>
 					</label>
                 </item>
                 <item link="string">
 					<label _width="150">
-						<![CDATA[<p>Wheel of Wonders</p>]]>
+						<![CDATA[<p class="item">Wheel of Wonders</p>]]>
 					</label>
                 </item>
             </menu>
         </location>
 		        <location>
             <scroll floatUp="5">
-                <label _width="100">
-					<![CDATA[<p>Ranch</p>]]>
+                <label _width="50">
+					<![CDATA[<p class="title">Ranch</p>]]>
 				</label>
             </scroll>
-            <menu _x="10" _y="15" floatDown="-20" floatRight="25" itemSpacing="2">
+            <menu _x="10" _y="15" floatDown="-45" floatRight="25" itemSpacing="2">
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>My Cottage</p>]]>
+					<label _width="130">
+						<![CDATA[<p class="item">My Cottage</p>]]>
 					</label>
                 </item>
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>My Horse</p>]]>
+					<label _width="130">
+						<![CDATA[<p class="item">My Horse</p>]]>
 					</label>
                 </item>
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>My Awards</p>]]>
+					<label _width="130">
+						<![CDATA[<p class="item">My Awards</p>]]>
 					</label>
                 </item>
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Bella Sara Horses</p>]]>
+					<label _width="130">
+						<![CDATA[<p class="item">Bella Sara Horses</p>]]>
 					</label>
                 </item>
             </menu>
         </location>
 		        <location>
             <scroll floatUp="5">
-                <label _width="100">
-					<![CDATA[<p>Bazaar</p>]]>
+                <label _width="40">
+					<![CDATA[<p class="title">Bazaar</p>]]>
 				</label>
             </scroll>
-            <menu _x="0" _y="0" floatDown="0" floatRight="25" itemSpacing="2">
+            <menu _x="0" _y="0" floatDown="-35" floatRight="50" itemSpacing="2">
                 <item link="string">
-					<label _width="150">
-						<![CDATA[<p>Bazaar Tent</p>]]>
+					<label _width="75">
+						<![CDATA[<p class="item">Bazaar Tent</p>]]>
 					</label>
                 </item>
             </menu>
@@ -163,10 +163,8 @@
     <help>
         <balloon _x="10" _y="10">
             <arrow _x="200" _y="200" _width="20" _height="20" _rotation="0" />
-                <label>
-					<_value>
-						<![CDATA[<p class="bubble_title">World Map</p>]]>
-					</_value>
+                <label _width="250">
+					<![CDATA[<p class="bubble_title">World Map</p>]]>
 				</label>
         </balloon>
     </help>
