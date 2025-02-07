@@ -22,7 +22,7 @@
 				<item _x="1" _y="27" link="coloring.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Coloring Book</p>]]></label>
 				</item>
-				<item _x="1" _y="44" link="puzzles.html">
+				<item _x="1" _y="44" link="/flash/puzzles/puzzles.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Jigsaw Puzzle Fun</p>]]></label>
 				</item>
 				<item _x="1" _y="61" link="memorygame.html">
@@ -38,7 +38,7 @@
 				<item _x="1" _y="10" link="asksara.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Ask Sara</p>]]></label>
 				</item>
-				<item _x="1" _y="27" link="quizgame.html">
+				<item _x="1" _y="27" link="/flash/quiz/index.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bello's Friends Quiz</p>]]></label>
 				</item>
 				<item _x="1" _y="44" link="knowledge.html">
@@ -54,13 +54,13 @@
 				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Arena</p>]]></label>
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
-        <item _x="1" _y="10" link="flash/treasureshunt/treasureshunt.aspx">
+        <item _x="1" _y="10" link="/flash/treasureshunt/treasureshunt.html">
           <label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Treasure's Hunt</p>]]></label>
         </item>
-				<item _x="1" _y="27" link="cloudjumper.html">
+				<item _x="1" _y="27" link="/flash/cloudjumper/cloudjumper.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Cloud Jumper</p>]]></label>
 				</item>
-				<item _x="1" _y="44" link="lanceriding.html">
+				<item _x="1" _y="44" link="/flash/lanceriding/lanceriding.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Lance Riding Game</p>]]></label>
 				</item>
 				<item _x="1" _y="61" link="jumpinggame.html">
@@ -73,10 +73,10 @@
 				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Your Ranch</p>]]></label>
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
-				<item _x="1" _y="10" link="stables.html">
+				<item _x="1" _y="10" link="/phasergames/stablesrecreation/index.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Choose a Horse</p>]]></label>
 				</item>
-				<item _x="1" _y="27" link="stall.html">
+				<item _x="1" _y="27" link="/flash/foal/index.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Care for your Horse</p>]]></label>
 				</item>
 			</menu_bubble>
