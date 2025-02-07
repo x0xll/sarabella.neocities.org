@@ -7,12 +7,12 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-100" floatRight="60" itemSpacing="2">
-                <item link="string">
+                <item link="/flash/ArtStudio/artstudio.html">
 					<label _width="70">
 						<![CDATA[<p class="item">Art Studio</p>]]>
 					</label>
                 </item>
-				<item link="string">
+				<item link="/bellapedia.html">
 					<label _width="70">
 						<![CDATA[<p class="item">Bellapedia</p>]]>
 					</label>
@@ -26,22 +26,22 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-100" floatRight="50" itemSpacing="2">
-                <item link="string">
+                <item link="/citrustacked.html">
 					<label _width="180">
 						<![CDATA[<p class="item">Citrustacked</p>]]>
 					</label>
                 </item>
-				<item link="string">
+				<item link="/flash/lanceriding/lanceriding.html">
 					<label _width="180">
 						<![CDATA[<p class="item">Lance Riding Game</p>]]>
 					</label>
                 </item>
-				<item link="string">
+				<item link="/phasergames/jumpinggame/index.html">
 					<label _width="180">
 						<![CDATA[<p class="item">Spectacular Jumping Game</p>]]>
 					</label>
                 </item>
-				<item link="string">
+				<item link="/trailblazer.html">
 					<label _width="180">
 						<![CDATA[<p class="item">Trailblazer</p>]]>
 					</label>
@@ -55,17 +55,17 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-70" floatRight="-260" itemSpacing="2">
-                <item link="string">
+                <item link="/dreamrider.html">
 					<label _width="120">
 						<![CDATA[<p class="item">Dream Rider</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/flash/fireworks/fireworks.html">
 					<label _width="120">
 						<![CDATA[<p class="item">Firelight Festival</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/magicbubblewand.html">
 					<label _width="120">
 						<![CDATA[<p class="item">Magic Bubble Wand</p>]]>
 					</label>
@@ -79,17 +79,17 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-60" floatRight="50" itemSpacing="2">
-                <item link="string">
+                <item link="/marvelousmagicmatch.html">
 					<label _width="150">
 						<![CDATA[<p class="item">Marvelous Magic Match</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/flash/treasureshunt/treasureshunt.html">
 					<label _width="150">
 						<![CDATA[<p class="item">Treasure's Hunt</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/wheelofwonders.html">
 					<label _width="150">
 						<![CDATA[<p class="item">Wheel of Wonders</p>]]>
 					</label>
@@ -103,22 +103,22 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-45" floatRight="25" itemSpacing="2">
-                <item link="string">
+                <item link="/cottage.html">
 					<label _width="130">
 						<![CDATA[<p class="item">My Cottage</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/flash/foal/index.html">
 					<label _width="130">
 						<![CDATA[<p class="item">My Horse</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/awards.html">
 					<label _width="130">
 						<![CDATA[<p class="item">My Awards</p>]]>
 					</label>
                 </item>
-                <item link="string">
+                <item link="/phasergames/stablesrecreation/index.html">
 					<label _width="130">
 						<![CDATA[<p class="item">Bella Sara Horses</p>]]>
 					</label>
@@ -132,7 +132,7 @@
 				</label>
             </scroll>
             <menu _x="0" _y="0" floatDown="-35" floatRight="50" itemSpacing="2">
-                <item link="string">
+                <item link="/bazaar.html">
 					<label _width="75">
 						<![CDATA[<p class="item">Bazaar Tent</p>]]>
 					</label>
