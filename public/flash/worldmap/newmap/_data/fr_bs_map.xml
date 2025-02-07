@@ -1,0 +1,172 @@
+<root>
+    <locations>
+        <location>
+            <scroll floatUp="5">
+                <label _width="110">
+					<![CDATA[<p class="title">Arbre du Monde</p>]]>
+				</label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="-100" floatRight="60" itemSpacing="2">
+                <item link="/flash/ArtStudio/artstudio.html">
+					<label _width="120">
+						<![CDATA[<p class="item">Studio des Artistes</p>]]>
+					</label>
+                </item>
+				<item link="/bellapedia.html">
+					<label _width="120">
+						<![CDATA[<p class="item">Bellapedia</p>]]>
+					</label>
+                </item>
+            </menu>
+        </location>
+		<location>
+            <scroll floatUp="5">
+                <label _width="40">
+					<![CDATA[<p class="title">Piste</p>]]>
+				</label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="-100" floatRight="50" itemSpacing="2">
+                <item link="/citrustacked.html">
+					<label _width="200">
+						<![CDATA[<p class="item">Citrustacked</p>]]>
+					</label>
+                </item>
+				<item link="/trailblazer.html">
+					<label _width="200">
+						<![CDATA[<p class="item">Trailblazer</p>]]>
+					</label>
+                </item>
+				<item link="/phasergames/jumpinggame/index.html">
+					<label _width="200">
+						<![CDATA[<p class="item">Le Jeu des Sauts Extraordinaires</p>]]>
+					</label>
+                </item>
+                <item link="/flash/lanceriding/lanceriding.html">
+					<label _width="200">
+						<![CDATA[<p class="item">Jeu de lance</p>]]>
+					</label>
+                </item>
+            </menu>
+        </location>
+		        <location>
+            <scroll floatUp="5">
+                <label _width="60">
+					<![CDATA[<p class="title">Château</p>]]>
+				</label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="-70" floatRight="-260" itemSpacing="2">
+                <item link="/dreamrider.html">
+					<label _width="170">
+						<![CDATA[<p class="item">Dream Rider</p>]]>
+					</label>
+                </item>
+                <item link="/flash/fireworks/fireworks.html">
+					<label _width="170">
+						<![CDATA[<p class="item">Festival des Feux d'Artifice</p>]]>
+					</label>
+                </item>
+                <item link="/magicbubblewand.html">
+					<label _width="170">
+						<![CDATA[<p class="item">Jeu des bulles magiques</p>]]>
+					</label>
+                </item>
+            </menu>
+        </location>
+		        <location>
+            <scroll floatUp="5">
+                <label _width="30">
+					<![CDATA[<p class="title">Ville</p>]]>
+				</label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="-60" floatRight="50" itemSpacing="2">
+                <item link="/marvelousmagicmatch.html">
+					<label _width="150">
+						<![CDATA[<p class="item">Boîtes Magiques</p>]]>
+					</label>
+                </item>
+                <item link="/flash/treasureshunt/treasureshunt.html">
+					<label _width="150">
+						<![CDATA[<p class="item">Chasse au Trésor</p>]]>
+					</label>
+                </item>
+                <item link="/wheelofwonders.html">
+					<label _width="150">
+						<![CDATA[<p class="item">La roue des merveilles</p>]]>
+					</label>
+                </item>
+            </menu>
+        </location>
+		        <location>
+            <scroll floatUp="5">
+                <label _width="50">
+					<![CDATA[<p class="title">Ranch</p>]]>
+				</label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="-45" floatRight="25" itemSpacing="2">
+                <item link="/cottage.html">
+					<label _width="130">
+						<![CDATA[<p class="item">Mon Cottage</p>]]>
+					</label>
+                </item>
+                <item link="/flash/foal/index.html">
+					<label _width="130">
+						<![CDATA[<p class="item">Mon Cheval</p>]]>
+					</label>
+                </item>
+                <item link="/phasergames/stablesrecreation/index.html">
+					<label _width="130">
+						<![CDATA[<p class="item">Écurie</p>]]>
+					</label>
+                </item>
+                <item link="/awards.html">
+					<label _width="130">
+						<![CDATA[<p class="item">Salle des Trophées</p>]]>
+					</label>
+                </item>
+            </menu>
+        </location>
+		        <location>
+            <scroll floatUp="5">
+                <label _width="40">
+					<![CDATA[<p class="title">Bazar</p>]]>
+				</label>
+            </scroll>
+            <menu _x="0" _y="0" floatDown="-35" floatRight="50" itemSpacing="2">
+                <item link="/bazaar.html">
+					<label _width="75">
+						<![CDATA[<p class="item">Bazaar Tent</p>]]>
+					</label>
+                </item>
+            </menu>
+        </location>
+    </locations>
+	<!--
+	<nav itemSpacing="5">
+        <location>
+            <nav_btn>
+				<item link="c">
+					<label _width="100">
+						<![CDATA[<p class="bubble_title">World Map</p>]]>
+					</label>
+                </item>
+            </nav_btn>
+            <nav_sub itemSpacing="5">
+				<item link="test">
+                <label _width="100">
+					<![CDATA[<p class="bubble_title">World Map</p>]]>
+				</label>
+				</item>
+            </nav_sub>
+        </location>
+    </nav>
+	-->
+    <help>
+        <balloon _x="10" _y="10">
+            <arrow _x="200" _y="200" _width="20" _height="20" _rotation="0" />
+                <label _width="250">
+					<![CDATA[<p class="bubble_title">World Map</p>]]>
+				</label>
+        </balloon>
+    </help>
+    <bg_music src="./newmap/music/bgmusic.mp3" />
+</root>
