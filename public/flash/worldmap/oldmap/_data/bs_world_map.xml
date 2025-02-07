@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bs_world_map>
+	<bubble_menus>
+		<menu id="Woods" _x="35" _y="105">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Woods</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="news.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">What's New in Bella Sara?</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>
+		<menu id="Carnival" _x="20" _y="200">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Carnival</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="beautybox_load.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Beauty Box</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="coloring.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Coloring Book</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="puzzles.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Jigsaw Puzzle Fun</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="memorygame.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Yin & Yang's Game</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>
+		<menu id="Castle" _x="300" _y="50">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Castle</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="asksara.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Ask Sara</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="quizgame.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bello's Friends Quiz</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="knowledge.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Santos' Knowledge Quiz</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="wallpapers.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Desktop Wallpapers</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>
+		<menu id="Arena" _x="550" _y="100">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Arena</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+        <item _x="1" _y="10" link="flash/treasureshunt/treasureshunt.aspx">
+          <label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Treasure's Hunt</p>]]></label>
+        </item>
+				<item _x="1" _y="27" link="cloudjumper.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Cloud Jumper</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="lanceriding.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Lance Riding Game</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="jumpinggame.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bellisimo's Jumping Contest</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>	
+		<menu id="Ranch" _x="450" _y="230">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Your Ranch</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="stables.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Choose a Horse</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="stall.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Care for your Horse</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>	
+	</bubble_menus>
+</bs_world_map>
+
+
+
+
+
+
+
+
+
+
