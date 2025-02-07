@@ -21,7 +21,7 @@
         </script>
 
         <div class="swf" dir="ltr" rbidi="on">
-          <embed width="887" height="467" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="newmap/map.swf" type="application/x-shockwave-flash">
+          
         </div>
 
         <div class="footer">
@@ -30,6 +30,21 @@
         </div>
 
         <script src="/flags.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '467';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'newmap/map.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
   </body>
 </html>
 
