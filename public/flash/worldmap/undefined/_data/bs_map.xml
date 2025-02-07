@@ -1,0 +1,72 @@
+<root>
+    <nav itemSpacing="5">
+        <location>
+            <nav_btn>
+                <label>
+                    TEXT GOES HERE 1
+                </label>
+            </nav_btn>
+            <nav_sub itemSpacing="5">
+				<item link="">
+					<label>
+						TEXT GOES HERE 4
+					</label>
+				</item>
+            </nav_sub>
+        </location>
+		<location>
+            <nav_btn>
+                <label>
+                    TEXT GOES HERE 1
+                </label>
+            </nav_btn>
+            <nav_sub itemSpacing="5">
+				<item link="">
+					<label>
+						TEXT GOES HERE 4
+					</label>
+				</item>
+            </nav_sub>
+        </location>
+		
+    </nav>
+    <locations>
+        <location>
+            <scroll floatUp="5">
+                <label>
+                    TEXT GOES HERE 2
+                </label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="5" floatRight="3" itemSpacing="2">
+                <item link="string">
+                    <label>
+                        TEXT GOES HERE 3
+                    </label>
+                </item>
+            </menu>
+        </location>
+		<location>
+            <scroll floatUp="5">
+                <label>
+                    TEXT GOES HERE 2
+                </label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="5" floatRight="3" itemSpacing="2">
+                <item link="string">
+                    <label>
+                        TEXT GOES HERE 3
+                    </label>
+                </item>
+            </menu>
+        </location>
+    </locations>
+    <help>
+        <balloon _x="10" _y="10">
+            <arrow _x="200" _y="200" _width="20" _height="20" _rotation="0" />
+			<label>
+				TEST
+			</label>
+        </balloon>
+    </help>
+    <bg_music src="" />
+</root>

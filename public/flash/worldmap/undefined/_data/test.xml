@@ -1,0 +1,41 @@
+<root>
+    <nav itemSpacing="5">
+        <location>
+            <nav_btn>
+                <label>
+                    TEXT GOES HERE 1
+                </label>
+            </nav_btn>
+            <nav_sub>
+
+            </nav_sub>
+        </location>
+    </nav>
+    <locations>
+        <location>
+            <scroll floatUp="5">
+                <label>
+                    TEXT GOES HERE 2
+                </label>
+            </scroll>
+            <menu _x="10" _y="15" floatDown="5" floatRight="3" itemSpacing="2">
+                <item link="string">
+                    <label>
+                        TEXT GOES HERE 3
+                    </label>
+                </item>
+            </menu>
+        </location>
+    </locations>
+    <help>
+        <balloon _x="20" _y="50">
+            <arrow _x="10" _y="10" _width="150" _height="200" _rotation="0" />
+            <arrow _x="30" _y="60" _width="30" _height="10" _rotation="10" />
+            <arrow _x="25" _y="50" _width="200" _height="50" _rotation="50" />
+        </balloon>
+        <balloon _x="30" _y="20">
+            <arrow _x="40" _y="190" _width="10" _height="0" _rotation="90" />
+        </balloon>
+    </help>
+    <bg_music src="" />
+</root>
