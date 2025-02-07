@@ -168,5 +168,5 @@
 				</label>
         </balloon>
     </help>
-    <bg_music src="" />
+    <bg_music src="./newmap/music/bgmusic.mp3" />
 </root>
