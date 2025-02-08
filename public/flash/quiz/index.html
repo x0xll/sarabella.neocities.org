@@ -49,7 +49,8 @@
 
           var swfLocalized = `./swf/en_spil_5.swf`
 
-          if (urlExists(`./swf/${locale}_spil_5.swf`))
+          // Temporary prevent using the jap version since the characters are broken
+          if (locale != "ja" && urlExists(`./swf/${locale}_spil_5.swf`))
           {
             swfLocalized = `./swf/${locale}_spil_5.swf`
           }
