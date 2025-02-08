@@ -160,6 +160,7 @@
         </location>
     </nav>
 	-->
+    <!--
     <help>
         <balloon _x="10" _y="10">
             <arrow _x="200" _y="200" _width="20" _height="20" _rotation="0" />
@@ -168,5 +169,6 @@
 				</label>
         </balloon>
     </help>
+    -->
     <bg_music src="./newmap/music/bgmusic.mp3" />
 </root>
