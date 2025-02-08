@@ -7,7 +7,7 @@
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
 				<item _x="1" _y="10" link="news.html">
-					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">What's New in Bella Sara?</p>]]></label>
+					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">What's New in Bella Sara?</p>]]></label>
 				</item>
 			</menu_bubble>
 		</menu>
@@ -19,14 +19,14 @@
 				<item _x="1" _y="10" link="beautybox_load.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Beauty Box</p>]]></label>
 				</item>
-				<item _x="1" _y="27" link="coloring.html">
+				<item _x="1" _y="27" link="/flash/coloring/coloring-fiona.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Coloring Book</p>]]></label>
 				</item>
 				<item _x="1" _y="44" link="/flash/puzzles/puzzles.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Jigsaw Puzzle Fun</p>]]></label>
 				</item>
 				<item _x="1" _y="61" link="memorygame.html">
-					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Yin & Yang's Game</p>]]></label>
+					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Yin & Yang's Game</p>]]></label>
 				</item>
 			</menu_bubble>
 		</menu>
@@ -35,16 +35,16 @@
 				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Castle</p>]]></label>
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
-				<item _x="1" _y="10" link="asksara.html">
+				<item _x="1" _y="10" link="https://web.archive.org/web/20081108024621/http://www.bellasara.com/asksara.aspx">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Ask Sara</p>]]></label>
 				</item>
-				<item _x="1" _y="27" link="/flash/quiz/index.html">
-					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bello's Friends Quiz</p>]]></label>
+				<item _x="1" _y="27" link="belloquiz.html">
+					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Bello's Friends Quiz</p>]]></label>
 				</item>
-				<item _x="1" _y="44" link="knowledge.html">
+				<item _x="1" _y="44" link="/flash/quiz/index.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Santos' Knowledge Quiz</p>]]></label>
 				</item>
-				<item _x="1" _y="61" link="wallpapers.html">
+				<item _x="1" _y="61" link="https://bellasara.wiki.gg/wiki/Wallpapers">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Desktop Wallpapers</p>]]></label>
 				</item>
 			</menu_bubble>
@@ -63,7 +63,7 @@
 				<item _x="1" _y="44" link="/flash/lanceriding/lanceriding.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Lance Riding Game</p>]]></label>
 				</item>
-				<item _x="1" _y="61" link="jumpinggame.html">
+				<item _x="1" _y="61" link="/phasergames/jumpinggame/index.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bellisimo's Jumping Contest</p>]]></label>
 				</item>
 			</menu_bubble>
