@@ -165,7 +165,7 @@
         <balloon _x="10" _y="10">
             <arrow _x="200" _y="200" _width="20" _height="20" _rotation="0" />
                 <label _width="250">
-					<![CDATA[<p class="bubble_bubble_title">World Map</p>]]>
+					HELP TEXT GOES HERE
 				</label>
         </balloon>
     </help>

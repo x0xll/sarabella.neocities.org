@@ -6,8 +6,11 @@
 				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Woods</p>]]></label>
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
-				<item _x="1" _y="10" link="news.html">
-					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">What's New in Bella Sara?</p>]]></label>
+				<item _x="1" _y="10" link="/phasergames/artrandomiser/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Art Randomizer</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="/phasergames/stablesrecreation/dressup.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Dressup Game</p>]]></label>
 				</item>
 			</menu_bubble>
 		</menu>
