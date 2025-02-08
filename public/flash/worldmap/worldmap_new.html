@@ -40,6 +40,11 @@
 
         <!-- Load correct localized version of the game -->
         <script>
+          function openBSA()
+          {
+            window.location = "https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures";
+          }
+
           loadLanguagePref(false); 
           const locale = getCurrentLanguageCode();
           var swfParent = document.getElementsByClassName('swf')[0];

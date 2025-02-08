@@ -20,7 +20,7 @@
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
 				<item _x="1" _y="10" link="beautybox_load.html">
-					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Beauty Box</p>]]></label>
+					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Bella's Beauty Box</p>]]></label>
 				</item>
 				<item _x="1" _y="27" link="/flash/coloring/coloring-fiona.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Coloring Book</p>]]></label>

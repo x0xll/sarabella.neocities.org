@@ -1,0 +1,2 @@
+8 Feb 2025
+    - getUrl("javascript:openBSA()", "") becomes getUrl("https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures", "")

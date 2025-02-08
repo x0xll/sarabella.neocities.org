@@ -12,7 +12,7 @@
 						<![CDATA[<p class="bubble_item">Art Studio</p>]]>
 					</label>
                 </item>
-				<item link="/bellapedia.html">
+				<item link="https://bellasara.wiki.gg/wiki/Category:Bellapedia">
 					<label _width="70">
 						<![CDATA[<p class="bubble_item">Bellapedia</p>]]>
 					</label>
@@ -26,7 +26,7 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-100" floatRight="50" itemSpacing="2">
-                <item link="/citrustacked.html">
+                <item link="https://bellasara.wiki.gg/wiki/Citrustacked">
 					<label _width="180">
 						<![CDATA[<p class="bubble_item">Citrustacked</p>]]>
 					</label>
@@ -41,7 +41,7 @@
 						<![CDATA[<p class="bubble_item">Spectacular Jumping Game</p>]]>
 					</label>
                 </item>
-				<item link="/trailblazer.html">
+				<item link="https://bellasara.wiki.gg/wiki/Trailblazer">
 					<label _width="180">
 						<![CDATA[<p class="bubble_item">Trailblazer</p>]]>
 					</label>
@@ -55,7 +55,7 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-70" floatRight="-260" itemSpacing="2">
-                <item link="/dreamrider.html">
+                <item link="https://bellasara.wiki.gg/wiki/Dream_Rider">
 					<label _width="120">
 						<![CDATA[<p class="bubble_item">Dream Rider</p>]]>
 					</label>
@@ -65,7 +65,7 @@
 						<![CDATA[<p class="bubble_item">Firelight Festival</p>]]>
 					</label>
                 </item>
-                <item link="/magicbubblewand.html">
+                <item link="https://bellasara.wiki.gg/wiki/Magic_Bubble_Wand">
 					<label _width="120">
 						<![CDATA[<p class="bubble_item">Magic Bubble Wand</p>]]>
 					</label>
@@ -79,7 +79,7 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-60" floatRight="50" itemSpacing="2">
-                <item link="/marvelousmagicmatch.html">
+                <item link="https://bellasara.wiki.gg/wiki/Marvelous_Magic_Match">
 					<label _width="150">
 						<![CDATA[<p class="bubble_item">Marvelous Magic Match</p>]]>
 					</label>
@@ -89,7 +89,7 @@
 						<![CDATA[<p class="bubble_item">Treasure's Hunt</p>]]>
 					</label>
                 </item>
-                <item link="/wheelofwonders.html">
+                <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
 					<label _width="150">
 						<![CDATA[<p class="bubble_item">Wheel of Wonders</p>]]>
 					</label>
@@ -103,7 +103,7 @@
 				</label>
             </scroll>
             <menu _x="10" _y="15" floatDown="-45" floatRight="25" itemSpacing="2">
-                <item link="/cottage.html">
+                <item link="https://bellasara.wiki.gg/wiki/My_Cottage">
 					<label _width="130">
 						<![CDATA[<p class="bubble_item">My Cottage</p>]]>
 					</label>
@@ -113,7 +113,7 @@
 						<![CDATA[<p class="bubble_item">My Horse</p>]]>
 					</label>
                 </item>
-                <item link="/awards.html">
+                <item link="https://bellasara.wiki.gg/wiki/My_Awards">
 					<label _width="130">
 						<![CDATA[<p class="bubble_item">My Awards</p>]]>
 					</label>
@@ -132,7 +132,7 @@
 				</label>
             </scroll>
             <menu _x="0" _y="0" floatDown="-35" floatRight="50" itemSpacing="2">
-                <item link="/bazaar.html">
+                <item link="https://bellasara.wiki.gg/wiki/Bazaar_Tent">
 					<label _width="75">
 						<![CDATA[<p class="bubble_item">Bazaar Tent</p>]]>
 					</label>
