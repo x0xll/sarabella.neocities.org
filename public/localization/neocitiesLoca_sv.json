@@ -60,8 +60,8 @@
 
     "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid som förväntat.",
 
-    "newmap_warning": "The map is missing its styling files. Some links are also not working.",
-    "oldmap_warning": "Some links are not working.",
+    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
+    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
