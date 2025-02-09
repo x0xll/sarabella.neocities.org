@@ -10,6 +10,7 @@ class Bellapedia extends Phaser.Scene
         this.load.image('bookSelect', './images/book_selection.jpg');
         this.load.image('bookSelectOverlay', './images/book_selection_overlay.png');
         this.load.atlas('arrow', './images/arrow.png', './images/arrow.json');
+        this.load.image('pageSelectBG', './images/page_select_bg.png');
     }
 
     create ()

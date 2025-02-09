@@ -13,6 +13,8 @@ class BellapediaOpen extends Phaser.Scene
         this.load.image('pageSelectFrame', './images/page_select_frame.png');
         this.load.image('pageSelected', './images/page_selected.png');
         this.load.image('pageRef', './images/page_ref.png');
+
+        this.pageSelectBG = this.add.image(444, 234, 'pageSelectBG')
         
         // Load all images and put all entries in a single array
         this.allEntries = []
@@ -34,9 +36,6 @@ class BellapediaOpen extends Phaser.Scene
         function selectBook(book, page = 0) {
             game.book = book
             game.currentBook = book
-            pageSelectBG.setVisible(true)
-            pageSelectFrame.setVisible(true)
-            game.bookSelected.setVisible(true)
 
             book1Mini.setInteractive(new Phaser.Geom.Rectangle(53, 80, 50, 30), Phaser.Geom.Rectangle.Contains);
             book2Mini.setInteractive(new Phaser.Geom.Rectangle(53, 130, 50, 30), Phaser.Geom.Rectangle.Contains);
@@ -186,7 +185,6 @@ class BellapediaOpen extends Phaser.Scene
 
         
         // Page select
-        let pageSelectBG = this.add.image(444, 234, 'pageSelectBG')//.setVisible(false)
         let bookImages = [
             this.add.image(165, 110, null).setVisible(false),
             this.add.image(165, 175, null).setVisible(false),
@@ -204,8 +202,8 @@ class BellapediaOpen extends Phaser.Scene
             fontSize: '16px',
             color: '#9c6826',
         }
-        let pageSelectFrame = this.add.image(444, 234, 'pageSelectFrame').setVisible(false)
-        this.bookSelected = this.add.image(0, 0, 'pageSelected').setVisible(false)
+        this.pageSelectFrame = this.add.image(444, 234, 'pageSelectFrame')
+        this.bookSelected = this.add.image(0, 0, 'pageSelected')
         this.bookSelect = this.add.image(0, 0, 'pageSelected').setVisible(false)
         
         let entryTitles = [
