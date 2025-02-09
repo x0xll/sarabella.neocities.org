@@ -73,13 +73,13 @@ class Quiz extends Phaser.Scene
 
         // TURNS LEFT
         turnsLeft = MAX_TURNS;
-        let turnsTxt = this.add.text(220, 125, `Turns Left: `, datasTextSettings);
+        let turnsTxt = this.add.text(220, 125, `Turns Left: ${turnsLeft}`, datasTextSettings);
         
         // SCORE
         score = 0;
         let savedScore = localStorage.getItem(SCORE_SAVE_PATH)
         highScore = (savedScore == null) ? 0 : savedScore;
-        let scoreTxt = this.add.text(80, 125, `Score: `, datasTextSettings);
+        let scoreTxt = this.add.text(80, 125, `Score: ${score}`, datasTextSettings);
 
         // Init quiz
         const questionDatas = data.questions;
@@ -114,9 +114,6 @@ class Quiz extends Phaser.Scene
 
         function updateGuessQuestion()
         {
-            scoreTxt.text = `${langData.score} ${score}`;
-            turnsTxt.text = `${langData.turns} ${turnsLeft}`;
-
             var randQuestion = -1;
             var failsafe = 100;
 
@@ -157,9 +154,11 @@ class Quiz extends Phaser.Scene
 
             turnsLeft--;
 
+            scoreTxt.text = `${langData.score} ${score}`;
+            turnsTxt.text = `${langData.turns} ${turnsLeft}`;
+
             if (turnsLeft <= 0)
             {
-                turnsTxt.text = `${langData.turns} ${turnsLeft}`;
                 showEndPopup();
                 return;
             }
