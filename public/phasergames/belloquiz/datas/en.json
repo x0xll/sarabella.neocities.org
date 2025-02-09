@@ -4,10 +4,10 @@
             "image": "./images/horses/abenaki.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dyni",
-                "Dewsparkle",
+                "Parlez",
+                "Tigrine",
                 "Abenaki",
-                "Cioccola"
+                "Beau"
             ],
             "goodAnswer": 3
         },
@@ -15,20 +15,20 @@
             "image": "./images/horses/absaroke.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Demeter",
-                "Apache",
-                "Absaroke",
-                "Anemone"
+                "Sokki",
+                "Hidatsa",
+                "Bryda",
+                "Absaroke"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/achilles.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Janus",
-                "Bliss",
-                "Delight",
+                "Speedy",
+                "Tai",
+                "Dreamer",
                 "Achilles"
             ],
             "goodAnswer": 4
@@ -37,10 +37,10 @@
             "image": "./images/horses/addis.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Honey",
+                "Sugar",
                 "Addis",
-                "Aurora",
-                "Danu"
+                "Melusine",
+                "Sapphirine"
             ],
             "goodAnswer": 2
         },
@@ -48,54 +48,54 @@
             "image": "./images/horses/aegis.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Trudy",
+                "Serenity",
                 "Aegis",
-                "Clio",
-                "Angel",
-                "Daisy"
+                "Arim"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/aheron.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Aheron",
-                "Alina",
-                "Fiona",
-                "Jupiter"
+                "Keetoowah",
+                "Peace",
+                "Iceprince",
+                "Aheron"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/akama.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Corcel",
-                "Kelpie-Pooka",
+                "Virstan",
                 "Akama",
-                "Knight"
+                "Tramontane",
+                "Dyni"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/aleut.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lancelot",
-                "Edana",
-                "Hidatsa",
-                "Aleut"
+                "Aleut",
+                "Peka Peka",
+                "Kio",
+                "Mushu"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/alexander.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Flower",
-                "Komenos",
+                "Jicarilla",
+                "Aegis",
                 "Alexander",
-                "Euros"
+                "Odyssey"
             ],
             "goodAnswer": 3
         },
@@ -104,9 +104,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Alibi",
-                "Jojo",
-                "Cookie",
-                "Lucky Light"
+                "Apollo",
+                "Peace",
+                "Cha Ye"
             ],
             "goodAnswer": 1
         },
@@ -114,31 +114,31 @@
             "image": "./images/horses/alina.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Alina",
-                "Djengis",
-                "Maxi",
-                "Lukan"
+                "Clio",
+                "Cantaro",
+                "Beauty",
+                "Alina"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/amia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Leonardo",
-                "Amia",
-                "Euros",
-                "Lumbee"
+                "Karna",
+                "Tikka",
+                "Jicarilla",
+                "Amia"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/amor.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kounari",
-                "Bathylas",
-                "Abenaki",
+                "Calato",
+                "Friends",
+                "Connora",
                 "Amor"
             ],
             "goodAnswer": 4
@@ -147,21 +147,21 @@
             "image": "./images/horses/anemone.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lakehorse",
                 "Anemone",
-                "Cheyenne",
-                "Bellissa"
+                "Geisha",
+                "Royce",
+                "Uranus"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/angel.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chromasia",
-                "Greenlock",
+                "Bluebell",
+                "Kelpie-Pooka",
                 "Angel",
-                "Ceranna"
+                "Pegasus"
             ],
             "goodAnswer": 3
         },
@@ -169,10 +169,10 @@
             "image": "./images/horses/anigan.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Balto",
-                "Khrysor",
+                "Atalaya",
+                "Diablo",
                 "Anigan",
-                "Keetoowah"
+                "Cate"
             ],
             "goodAnswer": 3
         },
@@ -181,9 +181,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Anisinabe",
-                "Iceking",
-                "Amia",
-                "Aegis"
+                "Rimfaxe",
+                "Sleetmane",
+                "Brioso"
             ],
             "goodAnswer": 1
         },
@@ -191,186 +191,186 @@
             "image": "./images/horses/anouk.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Mushu",
                 "Anouk",
-                "Bifrost",
-                "Akama",
-                "Lenape"
+                "Thor",
+                "Pirouette"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/anthea.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cirra",
-                "Lien",
-                "Janus",
-                "Anthea"
+                "Rhiannon",
+                "Anthea",
+                "Cybele",
+                "Venus"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/apache.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jupiter",
+                "Zephan",
+                "Wasco",
                 "Apache",
-                "Corcel",
-                "Anemone"
+                "Honey"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/aphaia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cantaro",
-                "Kora",
-                "Daybreak",
-                "Aphaia"
+                "Shoshone",
+                "Jupiter",
+                "Aphaia",
+                "Scarlett"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/aphrodite.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dixie",
-                "Dewsparkle",
                 "Aphrodite",
-                "Cordelia"
+                "Shakira",
+                "Nikita",
+                "Alina"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/apollo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cybele",
-                "Daybreak",
-                "Apollo",
-                "Bellisimo"
+                "Laguna",
+                "Chromasia",
+                "Starunna",
+                "Apollo"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/apuni.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Maxi",
-                "Apuni",
+                "Pauma",
                 "Aster",
-                "Cheyenne"
+                "Apuni",
+                "Sonet"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/ara.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lien",
-                "Epona",
                 "Ara",
-                "Conall"
+                "Tsimshian",
+                "Abenaki",
+                "Dusty"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/arapaho.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Emberic",
-                "Kounari",
-                "Cajus",
-                "Arapaho"
+                "Arapaho",
+                "Peter",
+                "Icarus",
+                "Carmina"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/arelus.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Abenaki",
-                "Ariande",
-                "Karna",
-                "Arelus"
+                "Sweety",
+                "Arelus",
+                "Pandora",
+                "Mira"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/ariande.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Helia",
-                "Joker",
                 "Ariande",
-                "Conall"
+                "Parlez",
+                "Wavebreaker",
+                "Valor"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/aires.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Wonder",
                 "Aires",
-                "Barleycorn",
-                "Artemis",
-                "Bliss"
+                "Alina",
+                "Falcha"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/arim.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Keetoowah",
-                "Arim",
-                "Cioccola",
-                "Lucky"
+                "Flame",
+                "Charlemagne",
+                "Dowager",
+                "Arim"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/artemis.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mahina",
                 "Artemis",
-                "Atalaya",
-                "Friends Forever"
+                "Bellerophon",
+                "Rhiannon",
+                "Ara"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/aster.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Friends",
-                "Birdy",
-                "Aster",
-                "Larena"
+                "Farfalla",
+                "Kona",
+                "Edana",
+                "Aster"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/asteria.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lancelot",
+                "Clio",
+                "Sunset",
                 "Asteria",
-                "Janus",
-                "Autumn"
+                "Joker"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/atalaya.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Helia",
+                "Nyx",
                 "Atalaya",
-                "Lucas",
-                "Charlemagne"
+                "Shadow",
+                "Sunny"
             ],
             "goodAnswer": 2
         },
@@ -378,164 +378,164 @@
             "image": "./images/horses/athena.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Waterpearl",
+                "Moonsprite",
                 "Athena",
-                "Iduna",
-                "Demeter",
-                "Bandi"
+                "Yellow"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/aurora.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Inuit",
-                "Asteria",
                 "Aurora",
-                "Hecate"
+                "Tsimshian",
+                "Lillova",
+                "Nieva"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/autumn.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Iceprince",
-                "Honora",
-                "Carmina",
-                "Autumn"
+                "Toffee",
+                "Santee",
+                "Autumn",
+                "Rainbow"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/aviva.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Aviva",
-                "Jicarilla",
-                "Cookie",
-                "Ceratos"
+                "Giasa",
+                "Rocky",
+                "Alina",
+                "Aviva"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/azuro.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cheyenne",
-                "Ivy",
+                "Knight",
                 "Azuro",
-                "Cantaro"
+                "Zargo",
+                "Ceres"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/balto.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anemone",
-                "Lakota",
+                "Lukan",
                 "Balto",
-                "Icehorn"
+                "Shadow",
+                "Filippa"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/bandi.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kahuna",
-                "Echo",
-                "Dino",
-                "Bandi"
+                "Speedy",
+                "Bandi",
+                "Kio",
+                "Bryda"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/barleycorn.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Echo",
-                "Graia",
-                "Dreamer",
-                "Barleycorn"
+                "Coco",
+                "Sapphirine",
+                "Barleycorn",
+                "Jonas"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/bathylas.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Daybreak",
-                "Cha Ye",
                 "Bathylas",
-                "Anisinabe"
+                "Shanti",
+                "Sun",
+                "Blackfeet"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/beau.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Beau",
-                "Apollo",
-                "Hestia",
-                "Cookie"
+                "Dawn",
+                "Obrylin",
+                "Starunna",
+                "Beau"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/beauty.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kahuna",
-                "Charlemagne",
+                "Butterfly",
                 "Beauty",
-                "Anisinabe"
+                "Arelus",
+                "Jewel"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/bella.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bella",
-                "Absaroke",
-                "Amia",
-                "Jonathan"
+                "Daisy",
+                "Brigid",
+                "Diana",
+                "Bella"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/bellerophon.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kahuna",
-                "Colour",
-                "Anemone",
-                "Bellerophon"
+                "Hummingbird",
+                "Bellerophon",
+                "Chiricahua",
+                "Starunna"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/bellisimo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anigan",
                 "Bellisimo",
-                "Hellevi",
-                "Briar"
+                "Cara",
+                "Giasa",
+                "Brumby"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/bellissa.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dewdrop",
+                "Brioso",
                 "Bellissa",
-                "Janus",
-                "Lenape"
+                "Celesta",
+                "Nisqually"
             ],
             "goodAnswer": 2
         },
@@ -543,65 +543,65 @@
             "image": "./images/horses/bello.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chryso",
-                "Flipper",
-                "Icehorn",
-                "Bello"
+                "Bello",
+                "Mireldis",
+                "Inupiat",
+                "Hercules"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/beran.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dane",
-                "Cheyenne",
                 "Beran",
-                "Honu"
+                "Obrylin",
+                "Artemis",
+                "Flipper"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/bifrost.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Apollo",
+                "Diablo",
                 "Bifrost",
-                "Dreamer",
-                "Donn",
-                "Lucky"
+                "Urania"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/birdy.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Sunset",
                 "Birdy",
-                "Lotte",
-                "Giasa",
-                "Ceratos"
+                "Fylgie",
+                "Jajali"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/blackfeet.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Achilles",
-                "Hercules",
                 "Blackfeet",
-                "Jolly"
+                "Bathylas",
+                "Donnecha",
+                "Odyssey"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/blackie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cybele",
-                "Harmony",
+                "Cindra",
+                "Anisinabe",
                 "Blackie",
-                "Atalaya"
+                "Euros"
             ],
             "goodAnswer": 3
         },
@@ -609,9 +609,9 @@
             "image": "./images/horses/bliss.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jajali",
-                "Lucky",
-                "Chitimacha",
+                "Cascadeur",
+                "Saga",
+                "Mireldis",
                 "Bliss"
             ],
             "goodAnswer": 4
@@ -620,10 +620,10 @@
             "image": "./images/horses/blossom.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Faris",
-                "Ceratos",
+                "Thora",
+                "Joker",
                 "Blossom",
-                "Dodo"
+                "Mireldis"
             ],
             "goodAnswer": 3
         },
@@ -631,65 +631,65 @@
             "image": "./images/horses/bluebell.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hidatsa",
                 "Bluebell",
-                "Beran",
-                "Apollo"
+                "Brioso",
+                "Pawnee",
+                "Epona"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/bonnie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cosima",
-                "Kora",
-                "Hercules",
-                "Bonnie"
+                "Zargo",
+                "Star",
+                "Bonnie",
+                "Keetoowah"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/boreas.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Fylgie",
-                "Boreas",
-                "Bello",
-                "Helia"
+                "Jolly",
+                "Phoenix",
+                "Shine",
+                "Boreas"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/bosi.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Raimondo",
+                "Rosebriar",
                 "Bosi",
-                "Faris",
-                "Charlie",
-                "Lugh"
+                "Nanna"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/briar.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bellisimo",
-                "Dowager",
-                "Cha Ye",
-                "Briar"
+                "Briar",
+                "Cantaro",
+                "Ming",
+                "Memory"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/brigid.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anemone",
+                "Edda",
                 "Brigid",
-                "Coral",
-                "Hellevi"
+                "Mikiko",
+                "Tumbleweed"
             ],
             "goodAnswer": 2
         },
@@ -697,20 +697,20 @@
             "image": "./images/horses/brine.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lakota",
-                "Jonas",
+                "Waterpearl",
                 "Brine",
-                "Bellerophon"
+                "Nuna",
+                "Hilario"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/brioso.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Freja",
-                "Luna",
-                "Brine",
+                "Hellevi",
+                "Bluebell",
+                "Silver",
                 "Brioso"
             ],
             "goodAnswer": 4
@@ -719,108 +719,108 @@
             "image": "./images/horses/brisi.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Eirene",
-                "Eagle",
+                "Echo",
                 "Brisi",
-                "Bluebell"
+                "Kira",
+                "Snowdreamer"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/brumby.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kelpie-Pooka",
-                "Brumby",
-                "Blackie",
-                "Faith"
+                "Kini",
+                "Pandora",
+                "Shine",
+                "Brumby"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/bryda.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bryda",
-                "Arapaho",
-                "Greenlock",
-                "Cookie"
+                "Saga",
+                "Clio",
+                "Shanti",
+                "Bryda"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/bukefalos.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ghost",
-                "Bukefalos",
-                "Danu",
-                "Aphaia"
+                "Muskogee",
+                "Comanche",
+                "Coral",
+                "Bukefalos"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/butterfly.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Aires",
                 "Butterfly",
-                "Bandi",
-                "Halloween"
+                "Serenity",
+                "Brumby",
+                "Kona"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/cajus.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mariannis",
+                "Nike",
+                "Cherub",
                 "Cajus",
-                "Dino",
-                "Halloween"
+                "Santee"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/calato.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ariande",
-                "Brioso",
-                "Calato",
-                "Embarr"
+                "Eagle",
+                "Kona",
+                "Socorro",
+                "Calato"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/calyx.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hummingbird",
-                "Addis",
+                "Sham",
                 "Calyx",
-                "Echo"
+                "Bellisimo",
+                "Petal"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/camelot.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Pima",
                 "Camelot",
-                "Conall",
-                "Icehorn",
-                "Leonard"
+                "Sweety",
+                "Starfly"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/cantaro.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jicarilla",
-                "Filippa",
-                "Mahina",
+                "Shamal",
+                "Louie",
+                "Ara",
                 "Cantaro"
             ],
             "goodAnswer": 4
@@ -829,9 +829,9 @@
             "image": "./images/horses/cara.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Brumby",
-                "Calato",
-                "Komenos",
+                "Tsimshian",
+                "Hecate",
+                "Athena",
                 "Cara"
             ],
             "goodAnswer": 4
@@ -840,9 +840,9 @@
             "image": "./images/horses/carmina.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Eirene",
-                "Briar",
-                "Flipper",
+                "Kora",
+                "Cirra",
+                "Selene",
                 "Carmina"
             ],
             "goodAnswer": 4
@@ -851,10 +851,10 @@
             "image": "./images/horses/cascadeur.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Faxon",
-                "Isleta",
+                "Sonet",
+                "Anemone",
                 "Cascadeur",
-                "Domino"
+                "Thor"
             ],
             "goodAnswer": 3
         },
@@ -862,21 +862,21 @@
             "image": "./images/horses/cate.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Diamond",
-                "Cate",
-                "Leonardo",
-                "Faxon"
+                "Nerise",
+                "Coco",
+                "Misla",
+                "Cate"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/celesta.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Farfalla",
-                "Connora",
+                "Serenity",
+                "Mikiko",
                 "Celesta",
-                "Kona"
+                "Ricky"
             ],
             "goodAnswer": 3
         },
@@ -884,65 +884,65 @@
             "image": "./images/horses/ceranna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Empress",
                 "Ceranna",
-                "Kelpie-Pooka",
-                "Absaroke"
+                "Storm",
+                "Lumbee",
+                "Anemone"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/ceratos.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anemone",
-                "Aphrodite",
-                "Cordelia",
-                "Ceratos"
+                "Sun",
+                "Venus",
+                "Ceratos",
+                "Bello"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/ceres.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cirra",
+                "Savros",
+                "Anthea",
                 "Ceres",
-                "Dowager",
-                "Halloween"
+                "Daisy"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/cha ye.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Danu",
+                "Brisi",
+                "Blackfeet",
                 "Cha Ye",
-                "Aegis",
-                "Cybele"
+                "Skinfaxe"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/charlemagne.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hidatsa",
-                "Beran",
-                "Faith",
-                "Charlemagne"
+                "Safire",
+                "Hera",
+                "Charlemagne",
+                "Clio"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/charlie.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Charlie",
-                "Bluebell",
-                "Kio",
-                "Kiowa"
+                "Daybreak",
+                "Nimiipuu",
+                "Sorel"
             ],
             "goodAnswer": 1
         },
@@ -950,21 +950,21 @@
             "image": "./images/horses/cherub.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Faxon",
-                "Artemis",
                 "Cherub",
-                "Briar"
+                "Fiona",
+                "Honora",
+                "Iceking"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/cheyenne.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mariannis",
+                "Charlie",
                 "Cheyenne",
-                "Fox",
-                "Alibi"
+                "Honu",
+                "Akama"
             ],
             "goodAnswer": 2
         },
@@ -972,43 +972,43 @@
             "image": "./images/horses/chiricahua.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Flipper",
-                "Eirene",
                 "Chiricahua",
-                "Coral"
+                "Skywalker",
+                "Toboggan",
+                "Lily"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/chitimacha.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cybele",
-                "Froya",
-                "Dreamer",
-                "Chitimacha"
+                "Chitimacha",
+                "Connora",
+                "Tikka",
+                "Nimiipuu"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/chitra.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Twilight",
+                "Safire",
                 "Chitra",
-                "Briar",
-                "Danu",
-                "Diana"
+                "Speedy"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/chromasia.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Chromasia",
-                "Calato",
-                "Flipper",
-                "Eagle"
+                "Ghost",
+                "Firebright",
+                "Brine"
             ],
             "goodAnswer": 1
         },
@@ -1016,9 +1016,9 @@
             "image": "./images/horses/chryso.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Artemis",
-                "Inupiat",
-                "Cascadeur",
+                "Lancelot",
+                "Thunder",
+                "Luna",
                 "Chryso"
             ],
             "goodAnswer": 4
@@ -1027,32 +1027,32 @@
             "image": "./images/horses/chumash.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Iceking",
+                "Oracle",
                 "Chumash",
-                "Donna",
-                "Anigan",
-                "Apuni"
+                "Faxon"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/chung.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Donna",
-                "Boreas",
-                "Bonnie",
-                "Chung"
+                "Pelagos",
+                "Chung",
+                "Roxy",
+                "Skinfaxe"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/cindra.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Cindra",
-                "Grey",
-                "Djengis",
-                "Ghost"
+                "Farah",
+                "Woodlock",
+                "Ebenos"
             ],
             "goodAnswer": 1
         },
@@ -1060,31 +1060,31 @@
             "image": "./images/horses/cioccola.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cioccola",
-                "Jonas",
-                "Demeter",
-                "Joker"
+                "Flipper",
+                "River",
+                "Jaida",
+                "Cioccola"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/cirra.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cindra",
-                "Dina",
-                "Hercules",
-                "Cirra"
+                "Eagle",
+                "Sky",
+                "Cirra",
+                "Freja"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/clio.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cochiti",
-                "Farah",
-                "Absaroke",
+                "Cordelia",
+                "Selene",
+                "Wavebreaker",
                 "Clio"
             ],
             "goodAnswer": 4
@@ -1093,21 +1093,21 @@
             "image": "./images/horses/cochiti.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cochiti",
-                "Froya",
-                "Larena",
-                "Magic"
+                "Danu",
+                "Niki",
+                "Skeleton",
+                "Cochiti"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/coco.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Coco",
-                "Larena",
-                "Cindra",
-                "Fairybell"
+                "Filippa",
+                "Mushu",
+                "Sorel"
             ],
             "goodAnswer": 1
         },
@@ -1115,9 +1115,9 @@
             "image": "./images/horses/colour.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mahalo",
-                "Anigan",
-                "Chromasia",
+                "Obrylin",
+                "Anthea",
+                "Primrose",
                 "Colour"
             ],
             "goodAnswer": 4
@@ -1126,9 +1126,9 @@
             "image": "./images/horses/comanche.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dodo",
-                "Madeja",
-                "Dane",
+                "Tsimshian",
+                "Pavonne",
+                "Arelus",
                 "Comanche"
             ],
             "goodAnswer": 4
@@ -1137,31 +1137,31 @@
             "image": "./images/horses/conall.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Hercules",
+                "Prince",
                 "Conall",
-                "Bosi",
-                "Boreas",
-                "Charlie"
+                "Chitra"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/connora.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anouk",
-                "Clio",
-                "Addis",
-                "Connora"
+                "Flower",
+                "Inupiat",
+                "Connora",
+                "Reif"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/cookie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Blossom",
-                "Knight",
-                "Mahina",
+                "Freja",
+                "Daybreak",
+                "Sleipnir",
                 "Cookie"
             ],
             "goodAnswer": 4
@@ -1170,10 +1170,10 @@
             "image": "./images/horses/coral.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Beran",
+                "Sokki",
                 "Coral",
-                "Dino",
-                "Bliss"
+                "Hilario",
+                "Filippa"
             ],
             "goodAnswer": 2
         },
@@ -1181,9 +1181,9 @@
             "image": "./images/horses/corcel.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Honu",
-                "King",
-                "Cosima",
+                "Starfrost",
+                "Giasa",
+                "Seraphia",
                 "Corcel"
             ],
             "goodAnswer": 4
@@ -1192,31 +1192,31 @@
             "image": "./images/horses/cordelia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kiowa",
-                "Demeter",
-                "Autumn",
-                "Cordelia"
+                "Nike",
+                "Jonas",
+                "Cordelia",
+                "Brisi"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/cosima.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Felise",
-                "Donna",
-                "Cosima",
-                "Jonathan"
+                "Kio",
+                "Yung",
+                "Nanna",
+                "Cosima"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/cupid.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dino",
-                "Artemis",
-                "Fox",
+                "Amor",
+                "Phoenix",
+                "Hidatsa",
                 "Cupid"
             ],
             "goodAnswer": 4
@@ -1226,9 +1226,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Cybele",
-                "Kallista",
-                "Anisinabe",
-                "Chromasia"
+                "Charlie",
+                "Akama",
+                "Anisinabe"
             ],
             "goodAnswer": 1
         },
@@ -1236,54 +1236,54 @@
             "image": "./images/horses/daisy.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lien",
-                "Balto",
-                "Daisy",
-                "Lugh"
+                "Dina",
+                "Zargo",
+                "Aphrodite",
+                "Daisy"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/dane.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Madeja",
+                "Bryda",
                 "Dane",
-                "Absaroke",
-                "Lugh",
-                "Konfu"
+                "Jolly"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/danu.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kini",
+                "Icarus",
+                "Rimfaxe",
                 "Danu",
-                "Delight",
-                "Jojo"
+                "Geisha"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/dart.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kitty",
-                "Aegis",
+                "Sunbeam",
                 "Dart",
-                "Grey"
+                "Aegis",
+                "Ceratos"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/dawn.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Huron",
+                "Starfly",
                 "Dawn",
-                "Blossom",
-                "Azuro"
+                "Dixie",
+                "Zephyros"
             ],
             "goodAnswer": 2
         },
@@ -1291,43 +1291,43 @@
             "image": "./images/horses/daybreak.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chitimacha",
-                "Ebenos",
-                "Atalaya",
-                "Daybreak"
+                "Pawnee",
+                "Daybreak",
+                "Beauty",
+                "Macon"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/delight.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jonathan",
-                "Leonardo",
                 "Delight",
-                "Aphaia"
+                "Cochiti",
+                "Tikka",
+                "Thunder"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/demeter.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Alina",
-                "Greenlock",
-                "Empress",
-                "Demeter"
+                "Demeter",
+                "Signy",
+                "Peregrine",
+                "Aegis"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/dewdrop.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Dewdrop",
-                "Honora",
-                "Jaida",
-                "Kelpie-Pooka"
+                "Shoshone",
+                "Toboggan",
+                "Aegis"
             ],
             "goodAnswer": 1
         },
@@ -1335,21 +1335,21 @@
             "image": "./images/horses/dewsparkle.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Donnecha",
                 "Dewsparkle",
-                "Kona",
-                "Dowager"
+                "Lenape",
+                "Dreamer",
+                "Excelsior"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/diablo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bonnie",
+                "Komenos",
                 "Diablo",
-                "Chitra",
-                "Lucas"
+                "Spottie",
+                "Unicorn"
             ],
             "goodAnswer": 2
         },
@@ -1358,9 +1358,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Diamond",
-                "Cordelia",
-                "Apuni",
-                "Cherub"
+                "Farah",
+                "Sunbeam",
+                "Fairybell"
             ],
             "goodAnswer": 1
         },
@@ -1368,10 +1368,10 @@
             "image": "./images/horses/diana.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Khrysor",
-                "Chumash",
+                "Epona",
+                "Rosamund",
                 "Diana",
-                "Danu"
+                "Sorel"
             ],
             "goodAnswer": 3
         },
@@ -1379,32 +1379,32 @@
             "image": "./images/horses/dina.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Leonardo",
+                "Bella",
+                "Maxi",
                 "Dina",
-                "Charlemagne",
-                "Cybele"
+                "Alina"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/dino.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Iris",
                 "Dino",
-                "Excelsior",
-                "Feng"
+                "Diablo",
+                "Mira",
+                "Fairybell"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/dixie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hestia",
-                "Lakehorse",
+                "Halloween",
+                "Angel",
                 "Dixie",
-                "Corcel"
+                "Kiki"
             ],
             "goodAnswer": 3
         },
@@ -1412,10 +1412,10 @@
             "image": "./images/horses/djengis.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Faith",
+                "Pelagos",
                 "Djengis",
-                "Conall",
-                "Cookie"
+                "Starlight",
+                "Erinn"
             ],
             "goodAnswer": 2
         },
@@ -1423,131 +1423,131 @@
             "image": "./images/horses/dodo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mandalay",
-                "Khrysor",
+                "Urania",
                 "Dodo",
-                "Dixie"
+                "Pythia",
+                "Autumn"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/domino.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Nuala",
                 "Domino",
-                "Delight",
-                "Mahalo",
-                "Carmina"
+                "Sleetmane",
+                "Pedro"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/donn.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lily",
-                "Lugh",
+                "Iceking",
                 "Donn",
-                "Calato"
+                "Edana",
+                "Zikka"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/donna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Absaroke",
-                "Blackfeet",
+                "Opis",
                 "Donna",
-                "Leonardo"
+                "Scarlett",
+                "Lakota"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/donnecha.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Joker",
-                "Kelpie-Pooka",
-                "Chromasia",
-                "Donnecha"
+                "Donnecha",
+                "Pink Lady",
+                "Arapaho",
+                "Zephyros"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/dowager.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Knight",
-                "Hecate",
-                "Bryda",
-                "Dowager"
+                "Diana",
+                "Dowager",
+                "Mireldis",
+                "Cate"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/dreamer.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mellonie",
                 "Dreamer",
-                "Flora",
-                "Cirra"
+                "Sonet",
+                "Saga",
+                "Eirene"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/dreki.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Carmina",
-                "Iris",
+                "Haku",
                 "Dreki",
-                "Diablo"
+                "Brigid",
+                "Giasa"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/dusk.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Morongo",
                 "Dusk",
-                "Atalaya",
-                "Beau",
-                "Delight"
+                "Brioso",
+                "Shamal"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/dusty.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kona",
-                "Medusa",
+                "Peace",
                 "Dusty",
-                "Cordelia"
+                "Fairybell",
+                "Shawnee"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/dynamo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Diana",
-                "Dynamo",
-                "Generosity",
-                "Aurora"
+                "Ran",
+                "Sung",
+                "Ceratos",
+                "Dynamo"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/dyni.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bryda",
+                "Tlingit",
                 "Dyni",
-                "Faith",
-                "Bathylas"
+                "Empress",
+                "Jajali"
             ],
             "goodAnswer": 2
         },
@@ -1555,10 +1555,10 @@
             "image": "./images/horses/eagle.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Farfalla",
-                "Aheron",
+                "Fairybell",
+                "Freja",
                 "Eagle",
-                "Corcel"
+                "Madeja"
             ],
             "goodAnswer": 3
         },
@@ -1566,75 +1566,75 @@
             "image": "./images/horses/ebenos.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Iceprince",
                 "Ebenos",
-                "Gracie",
-                "Camelot"
+                "Beau",
+                "Sokki",
+                "Skywalker"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/echo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cate",
-                "Amia",
+                "Thor",
                 "Echo",
-                "Atalaya"
+                "Minelle",
+                "Lucky Light"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/edana.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Edana",
-                "Brine",
-                "Bonnie",
-                "Joker"
+                "Ariande",
+                "Rubin",
+                "Tricksy",
+                "Edana"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/edda.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Honey",
-                "Anemone",
-                "Empress",
-                "Edda"
+                "Iduna",
+                "Edda",
+                "Navajo",
+                "Edana"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/eirene.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Athena",
-                "Artemis",
-                "Kira",
-                "Eirene"
+                "Alexander",
+                "Eirene",
+                "Opis",
+                "Bellerophon"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/embarr.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ebenos",
-                "Aires",
-                "Donna",
-                "Embarr"
+                "Zikka",
+                "Ruskin",
+                "Embarr",
+                "Akama"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/emberic.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Eirene",
-                "Aster",
-                "Edda",
+                "Mushu",
+                "Edana",
+                "Potawatomi",
                 "Emberic"
             ],
             "goodAnswer": 4
@@ -1643,10 +1643,10 @@
             "image": "./images/horses/empress.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Blackfeet",
+                "Tao",
                 "Empress",
-                "Anthea",
-                "Jicarilla"
+                "Tsimshian",
+                "Pegasus"
             ],
             "goodAnswer": 2
         },
@@ -1654,21 +1654,21 @@
             "image": "./images/horses/epona.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Delight",
-                "Honey",
-                "Hellevi",
-                "Epona"
+                "Epona",
+                "Unicorn",
+                "Ara",
+                "Janus"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/erinn.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Erinn",
-                "Brine",
-                "Joy",
-                "Blackie"
+                "Petri",
+                "Cybele",
+                "Hercules"
             ],
             "goodAnswer": 1
         },
@@ -1676,21 +1676,21 @@
             "image": "./images/horses/euros.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Euros",
-                "Lakota",
-                "Dynamo",
-                "Brioso"
+                "Dino",
+                "Blossom",
+                "Pythia",
+                "Euros"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/eurynome.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Daybreak",
+                "Clio",
                 "Eurynome",
-                "Faith",
-                "Daisy"
+                "Dynamo",
+                "Tao"
             ],
             "goodAnswer": 2
         },
@@ -1698,31 +1698,31 @@
             "image": "./images/horses/excelsior.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Excelsior",
-                "Luna",
-                "Inuit",
-                "Cheyenne"
+                "Ricky",
+                "Vesta",
+                "Djengis",
+                "Excelsior"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/fairybell.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Amia",
-                "Fairybell",
-                "Jolly",
-                "Bellissa"
+                "Iduna",
+                "Snowflake",
+                "Lumbee",
+                "Fairybell"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/faith.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bellerophon",
-                "Greenlock",
-                "Geisha",
+                "Tiffi",
+                "Brioso",
+                "Joker",
                 "Faith"
             ],
             "goodAnswer": 4
@@ -1731,65 +1731,65 @@
             "image": "./images/horses/falcha.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chitimacha",
-                "Falcha",
-                "Feng",
-                "Hunter"
+                "Aviva",
+                "Arelus",
+                "Shakira",
+                "Falcha"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/farah.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kendra",
+                "Artemis",
+                "Isleta",
                 "Farah",
-                "Epona",
-                "Bukefalos"
+                "Tugo"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/farfalla.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Haku",
-                "Donn",
                 "Farfalla",
-                "Artemis"
+                "Kini",
+                "Tokker",
+                "Achilles"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/faris.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Azuro",
+                "Kini",
+                "Huron",
                 "Faris",
-                "Iceking",
-                "Anigan"
+                "Aphrodite"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/faxon.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chromasia",
-                "Faxon",
-                "Lucky",
-                "Jonathan"
+                "Freja",
+                "Dina",
+                "Geisha",
+                "Faxon"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/felise.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Apollo",
+                "Aphrodite",
                 "Felise",
-                "Louie",
-                "Mandalay"
+                "Misty",
+                "Stribes"
             ],
             "goodAnswer": 2
         },
@@ -1797,20 +1797,20 @@
             "image": "./images/horses/feng.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Alibi",
-                "Feng",
-                "Beauty",
-                "Bellisimo"
+                "Unicorn",
+                "Persephone",
+                "Hecate",
+                "Feng"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/filippa.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Donnecha",
-                "Abenaki",
-                "Cate",
+                "Nimiipuu",
+                "Mahalo",
+                "Pawnee",
                 "Filippa"
             ],
             "goodAnswer": 4
@@ -1819,64 +1819,64 @@
             "image": "./images/horses/fiona.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Fiona",
-                "Coral",
-                "Ceres",
-                "Diablo"
+                "Zikka",
+                "Sternentänzer",
+                "Tiffi",
+                "Fiona"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/firebright.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Honu",
+                "Stribes",
+                "Toboggan",
                 "Firebright",
-                "Blackie",
-                "Keetoowah"
+                "Bluebell"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/firewalker.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Luna",
-                "Bifrost",
+                "Nanna",
                 "Firewalker",
-                "Dreki"
+                "Bliss",
+                "Tugo"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/flame.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Huron",
                 "Flame",
-                "Farfalla",
-                "Aster"
+                "Friends",
+                "Starunna",
+                "Micado"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/flipper.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ceratos",
-                "Diablo",
+                "Sasha",
                 "Flipper",
-                "Ceranna"
+                "Toffee",
+                "Mandalay"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/flora.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Icehorn",
-                "King",
-                "Arim",
+                "Brioso",
+                "Charlie",
+                "Lumbee",
                 "Flora"
             ],
             "goodAnswer": 4
@@ -1885,86 +1885,86 @@
             "image": "./images/horses/flower.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cha Ye",
-                "Jajali",
-                "Kelpie-Pooka",
-                "Flower"
+                "Flower",
+                "Brumby",
+                "Reif",
+                "Asteria"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/fox.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Helia",
-                "Ceres",
-                "Cosima",
-                "Fox"
+                "Hercules",
+                "Fox",
+                "Mirth",
+                "Abenaki"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/freja.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Freja",
-                "Bello",
-                "Dane",
-                "Kiowa"
+                "Haku",
+                "Hecate",
+                "Komenos",
+                "Freja"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/friends.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anisinabe",
-                "Louie",
+                "Knight",
                 "Friends",
-                "Brumby"
+                "Silas",
+                "Paiute"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/friends forever.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Firebright",
+                "Aleut",
+                "Aphrodite",
                 "Friends Forever",
-                "Ariande",
-                "Ceranna"
+                "Arapaho"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/froya.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hidatsa",
-                "Icehorn",
-                "Froya",
-                "Balto"
+                "Prince",
+                "Rain",
+                "Pima",
+                "Froya"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/fylgie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Magic",
-                "Fylgie",
-                "Angel",
-                "Louie"
+                "Snowdreamer",
+                "Tikka",
+                "Spottie",
+                "Fylgie"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/gaia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Djengis",
-                "Lugh",
-                "Hai Sheng",
+                "Wasco",
+                "Amor",
+                "Lucky Light",
                 "Gaia"
             ],
             "goodAnswer": 4
@@ -1973,20 +1973,20 @@
             "image": "./images/horses/geisha.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bello",
-                "Cara",
-                "Bukefalos",
-                "Geisha"
+                "Geisha",
+                "Montana",
+                "Sung",
+                "Viking"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/generosity.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Brine",
-                "Chumash",
-                "Icarus",
+                "Chiricahua",
+                "Amor",
+                "Cirra",
                 "Generosity"
             ],
             "goodAnswer": 4
@@ -1995,31 +1995,31 @@
             "image": "./images/horses/ghost.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Butterfly",
-                "Euros",
-                "Ghost",
-                "Ceres"
+                "Kona",
+                "Iris",
+                "Rhiannon",
+                "Ghost"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/giasa.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hercules",
                 "Giasa",
-                "Diamond",
-                "Faris"
+                "Phoenix",
+                "Demeter",
+                "Niki"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/gracie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cate",
-                "Joy",
-                "Kona",
+                "Peter",
+                "Generosity",
+                "Sabelle",
                 "Gracie"
             ],
             "goodAnswer": 4
@@ -2028,43 +2028,43 @@
             "image": "./images/horses/graia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Arim",
-                "Barleycorn",
-                "Falcha",
-                "Graia"
+                "Graia",
+                "Anthea",
+                "Pandora",
+                "Rhiannon"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/greenlock.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Toffee",
+                "Bukefalos",
                 "Greenlock",
-                "Lakota",
-                "Aster",
-                "Cajus"
+                "Beauty"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/grey.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kora",
-                "Daybreak",
-                "Grey",
-                "Giasa"
+                "Opis",
+                "Daisy",
+                "Mystery",
+                "Grey"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/hai sheng.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Janie",
+                "Venus",
                 "Hai Sheng",
-                "Bosi",
-                "Brioso"
+                "Clio",
+                "Boreas"
             ],
             "goodAnswer": 2
         },
@@ -2072,131 +2072,131 @@
             "image": "./images/horses/haku.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bluebell",
-                "Dynamo",
-                "Hai Sheng",
-                "Haku"
+                "Haku",
+                "Peka Peka",
+                "Janus",
+                "Honey"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/halloween.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Mahina",
                 "Halloween",
-                "Kounari",
-                "Greenlock"
+                "Peregrine",
+                "Tikka",
+                "Bliss"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/harmony.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Knight",
-                "Lenape",
-                "Farah",
-                "Harmony"
+                "Harmony",
+                "Joker",
+                "Nanna",
+                "Knight"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/hecate.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Anouk",
-                "Luna",
-                "Fairybell",
-                "Hecate"
+                "Memory",
+                "Yellow",
+                "Hecate",
+                "Ruskin"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/helia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jewel",
-                "Ariande",
-                "Konfu",
-                "Helia"
+                "Chromasia",
+                "Helia",
+                "Hellevi",
+                "Odyssey"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/hellevi.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Feng",
-                "Carmina",
-                "Aleut",
-                "Hellevi"
+                "Hellevi",
+                "Kallista",
+                "Echo",
+                "Tsimshian"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/hera.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Filippa",
+                "Nasim",
                 "Hera",
-                "Haku",
-                "Flora",
-                "Ceranna"
+                "Lenape"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/hercules.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kounari",
+                "Kio",
+                "Clio",
                 "Hercules",
-                "Iceprince",
-                "Firewalker"
+                "Honora"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/hestia.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Embarr",
-                "Aires",
+                "Melusine",
                 "Hestia",
-                "Chumash"
+                "Moonphantom",
+                "Moonbeam"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/hidatsa.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Laguna",
-                "Coco",
-                "Geisha",
-                "Hidatsa"
+                "Inuit",
+                "Hidatsa",
+                "Ran",
+                "Pandora"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/hilario.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Athena",
                 "Hilario",
-                "Inuit",
-                "Angel"
+                "River",
+                "Mermaid",
+                "Bella"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/honey.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Honey",
-                "Echo",
-                "Hidatsa",
-                "Colour"
+                "Anthea",
+                "Reif",
+                "Filippa"
             ],
             "goodAnswer": 1
         },
@@ -2204,10 +2204,10 @@
             "image": "./images/horses/honora.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Brioso",
+                "Wildflower",
                 "Honora",
-                "Hilario",
-                "Lumbee"
+                "Nyx",
+                "Micado"
             ],
             "goodAnswer": 2
         },
@@ -2215,54 +2215,54 @@
             "image": "./images/horses/honu.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jojo",
-                "Dowager",
                 "Honu",
-                "Bifrost"
+                "Cindra",
+                "Kitty",
+                "Asteria"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/hummingbird.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Emberic",
-                "Cosima",
+                "Generosity",
                 "Hummingbird",
-                "Cordelia"
+                "Gracie",
+                "Shawnee"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/hunter.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Falcha",
-                "Juno",
-                "Chitimacha",
-                "Hunter"
+                "Hunter",
+                "Daisy",
+                "Huron",
+                "Signy"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/huron.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Stella",
                 "Huron",
-                "Konfu",
-                "Cantaro",
-                "Chiricahua"
+                "Scotty",
+                "Petal"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/icehorn.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cioccola",
+                "Tewa",
                 "Icehorn",
-                "Brigid",
-                "Brioso"
+                "Icarus",
+                "Zombie"
             ],
             "goodAnswer": 2
         },
@@ -2270,54 +2270,54 @@
             "image": "./images/horses/iceprince.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ivy",
                 "Iceprince",
-                "Joker",
-                "Luna"
+                "Aurora",
+                "Emberic",
+                "Keetoowah"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/iduna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Firewalker",
-                "Icehorn",
                 "Iduna",
-                "Bathylas"
+                "Yin and Yang",
+                "Thor",
+                "Zargo"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/inuit.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bliss",
-                "Inuit",
-                "Cantaro",
-                "Anisinabe"
+                "Kiki",
+                "Scotty",
+                "Dewsparkle",
+                "Inuit"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/inupiat.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cate",
-                "Inuit",
-                "Inupiat",
-                "Achilles"
+                "Artemis",
+                "Rubin",
+                "Neptune",
+                "Inupiat"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/isleta.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ceratos",
+                "Zephyros",
                 "Isleta",
-                "Angel",
-                "Isak"
+                "Twins",
+                "Misty"
             ],
             "goodAnswer": 2
         },
@@ -2325,9 +2325,9 @@
             "image": "./images/horses/icarus.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Daybreak",
-                "Camelot",
-                "Juno",
+                "Phoenix",
+                "Aires",
+                "Sternentänzer",
                 "Icarus"
             ],
             "goodAnswer": 4
@@ -2337,9 +2337,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Iceking",
-                "Kini",
-                "Kio",
-                "Domino"
+                "Primrose",
+                "Athena",
+                "Nisqually"
             ],
             "goodAnswer": 1
         },
@@ -2347,43 +2347,43 @@
             "image": "./images/horses/iris.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Flower",
                 "Iris",
-                "Ebenos",
-                "Aurora",
-                "Brumby"
+                "Neptune",
+                "Amia"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/isak.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Isak",
-                "Apollo",
-                "Anigan",
-                "Leonard"
+                "Speedy",
+                "Edana",
+                "Sirocco",
+                "Isak"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/ivy.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Echo",
-                "Ivy",
-                "Empress",
-                "Keetoowah"
+                "Sandy",
+                "Mjolnir",
+                "Sunshine",
+                "Ivy"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/jaida.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kendra",
+                "Honu",
                 "Jaida",
-                "Edana",
-                "Lucas"
+                "Safire",
+                "Eurynome"
             ],
             "goodAnswer": 2
         },
@@ -2391,54 +2391,54 @@
             "image": "./images/horses/jajali.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jolly",
-                "Feng",
-                "Cosima",
-                "Jajali"
+                "Athena",
+                "Briar",
+                "Jajali",
+                "Corcel"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/janie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Huron",
-                "Kona",
-                "Maxi",
-                "Janie"
+                "Janie",
+                "Bellisimo",
+                "Neptune",
+                "Stella"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/janus.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Blackfeet",
-                "Lily",
-                "Chitra",
-                "Janus"
+                "Janus",
+                "Ronnie",
+                "Yakama",
+                "Sunbeam"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/jewel.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jewel",
-                "Hestia",
-                "Autumn",
-                "Lancelot"
+                "Tlingit",
+                "Walter",
+                "Sonet",
+                "Jewel"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/jicarilla.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Jicarilla",
-                "Blackie",
-                "Celesta",
-                "Lillova"
+                "Hera",
+                "Savros",
+                "Icarus"
             ],
             "goodAnswer": 1
         },
@@ -2446,21 +2446,21 @@
             "image": "./images/horses/jojo.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Ariande",
+                "Roxy",
                 "Jojo",
-                "Aphaia",
-                "Flame",
-                "Feng"
+                "Zuni"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/joker.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Balto",
-                "Blackie",
+                "Neptune",
+                "Miccosukee",
                 "Joker",
-                "Lakehorse"
+                "Zargo"
             ],
             "goodAnswer": 3
         },
@@ -2468,21 +2468,21 @@
             "image": "./images/horses/jolly.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Maxi",
-                "Falcha",
-                "Daisy",
-                "Jolly"
+                "Corcel",
+                "Ran",
+                "Jolly",
+                "Sunbeam"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/jonas.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Jonas",
-                "Ivy",
-                "Echo",
-                "Kallista"
+                "Aleut",
+                "Froya",
+                "Daybreak"
             ],
             "goodAnswer": 1
         },
@@ -2490,108 +2490,108 @@
             "image": "./images/horses/jonathan.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Euros",
-                "Dreamer",
-                "Jonathan",
-                "Amia"
+                "Peter",
+                "Bellerophon",
+                "Shakira",
+                "Jonathan"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/joy.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Chiricahua",
                 "Joy",
-                "Balto",
-                "Athena",
-                "Calato"
+                "Brigid",
+                "Nuala"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/juno.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dowager",
-                "Atalaya",
-                "Dart",
-                "Juno"
+                "Mermaid",
+                "Juno",
+                "Rosebriar",
+                "Barleycorn"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/jupiter.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Coral",
-                "Jupiter",
-                "Halloween",
-                "Hellevi"
+                "Daisy",
+                "Jonas",
+                "Erinn",
+                "Jupiter"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/kahuna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Embarr",
-                "Honey",
-                "Filippa",
-                "Kahuna"
+                "Kahuna",
+                "Amor",
+                "Pedro",
+                "Lakehorse"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/kallista.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Flame",
-                "Honora",
+                "Notos",
                 "Kallista",
-                "Fiona"
+                "Socorro",
+                "Camelot"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/karna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ara",
-                "Harmony",
-                "Cirra",
-                "Karna"
+                "Apuni",
+                "Celesta",
+                "Karna",
+                "Sonet"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/keetoowah.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bluebell",
-                "Inupiat",
-                "Arim",
-                "Keetoowah"
+                "Murttie",
+                "Inuit",
+                "Keetoowah",
+                "Petri"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/kelpie-pooka.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lucky",
                 "Kelpie-Pooka",
-                "Chitra",
-                "Greenlock"
+                "Rauni",
+                "Aphaia",
+                "Lillova"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/kendra.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Atalaya",
-                "Faxon",
-                "Huron",
+                "Scotty",
+                "Sunshine",
+                "King",
                 "Kendra"
             ],
             "goodAnswer": 4
@@ -2601,9 +2601,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Khrysor",
-                "Boreas",
-                "Falcha",
-                "Ceres"
+                "Keetoowah",
+                "Saga",
+                "Virstan"
             ],
             "goodAnswer": 1
         },
@@ -2612,9 +2612,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Kiki",
-                "Iceking",
-                "Dane",
-                "Lukan"
+                "Spottie",
+                "Sunset",
+                "Stribes"
             ],
             "goodAnswer": 1
         },
@@ -2622,21 +2622,21 @@
             "image": "./images/horses/king.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Cantaro",
+                "Lugh",
                 "King",
-                "Bello",
-                "Gracie",
-                "Dawn"
+                "Karna"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/kini.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cascadeur",
+                "Farfalla",
                 "Kini",
-                "Alibi",
-                "Abenaki"
+                "Thunder",
+                "Shakira"
             ],
             "goodAnswer": 2
         },
@@ -2644,163 +2644,163 @@
             "image": "./images/horses/kio.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Fox",
+                "Shadow",
                 "Kio",
-                "Lugh",
-                "Kiowa",
-                "Echo"
+                "Alibi"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/kiowa.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Icehorn",
-                "Kiowa",
-                "Atalaya",
-                "Helia"
+                "Rodin",
+                "Cupid",
+                "Ariande",
+                "Kiowa"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/kira.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Toboggan",
                 "Kira",
-                "Friends",
-                "Cindra",
-                "Keetoowah"
+                "Thora",
+                "Cochiti"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/kitty.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Farfalla",
-                "Generosity",
                 "Kitty",
-                "Greenlock"
+                "Tiffi",
+                "Charlemagne",
+                "Seraphia"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/knight.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Knight",
-                "Corcel",
-                "Alibi",
-                "Chung"
+                "Butterfly",
+                "Hai Sheng",
+                "Donnecha",
+                "Knight"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/komenos.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Komenos",
-                "Charlemagne",
-                "Harmony",
-                "Brine"
+                "Comanche",
+                "Yin and Yang",
+                "Seneca",
+                "Komenos"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/kona.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Shaman",
                 "Kona",
-                "Mandalay",
-                "Friends",
-                "Lien"
+                "Shamal",
+                "Mohawk"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/konfu.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jojo",
-                "Konfu",
-                "Faxon",
-                "Carmina"
+                "Cha Ye",
+                "Alexander",
+                "Lucky Light",
+                "Konfu"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/kora.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ghost",
-                "Aires",
                 "Kora",
-                "Calyx"
+                "Bellerophon",
+                "Mushu",
+                "Cioccola"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/kounari.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Cosima",
-                "Cherub",
                 "Kounari",
-                "Lily"
+                "Lily",
+                "Ghost",
+                "Lucas"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/laguna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Kira",
-                "Farfalla",
-                "Laguna",
-                "Apollo"
+                "Sugar",
+                "Tikka",
+                "Icarus",
+                "Laguna"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/lakehorse.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jajali",
-                "Joy",
                 "Lakehorse",
-                "Flora"
+                "Atalaya",
+                "Flame",
+                "Joker"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/lakota.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bluebell",
+                "Aurora",
+                "Kora",
                 "Lakota",
-                "Cheyenne",
-                "Lucky Light"
+                "Balto"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/lancelot.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lancelot",
-                "Iduna",
-                "Coco",
-                "Inuit"
+                "Butterfly",
+                "Peace",
+                "Fylgie",
+                "Lancelot"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/larena.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Dawn",
-                "Jicarilla",
-                "Carmina",
+                "Flame",
+                "Zephyros",
+                "Silas",
                 "Larena"
             ],
             "goodAnswer": 4
@@ -2810,9 +2810,9 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Lenape",
-                "Conall",
-                "Donna",
-                "Alexander"
+                "Amor",
+                "Jonas",
+                "Twins"
             ],
             "goodAnswer": 1
         },
@@ -2820,76 +2820,76 @@
             "image": "./images/horses/leonard.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jicarilla",
-                "Cosima",
+                "Serenity",
                 "Leonard",
-                "Lucky"
+                "Starfrost",
+                "Alibi"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/leonardo.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Dart",
                 "Leonardo",
-                "Karna",
-                "Donnecha",
-                "Lenape"
+                "Tramontane",
+                "Nimiipuu"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/lien.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Savros",
+                "King",
                 "Lien",
-                "Mahina",
-                "Comanche",
-                "Chromasia"
+                "Addis"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/lillova.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Lancelot",
-                "Beau",
+                "Walter",
                 "Lillova",
-                "Cochiti"
+                "Ebenos",
+                "Aires"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/lily.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chiricahua",
-                "Lily",
-                "Artemis",
-                "Conall"
+                "Nanna",
+                "Donn",
+                "Seraphia",
+                "Lily"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/lotte.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Bonnie",
-                "Brumby",
-                "Apollo",
-                "Lotte"
+                "Chiricahua",
+                "Mushu",
+                "Lotte",
+                "Falcha"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/louie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Abenaki",
-                "Keetoowah",
+                "Chitimacha",
+                "Aheron",
                 "Louie",
-                "Anigan"
+                "Coral"
             ],
             "goodAnswer": 3
         },
@@ -2897,42 +2897,42 @@
             "image": "./images/horses/lucas.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Luna",
+                "Prisma",
                 "Lucas",
-                "Kahuna",
-                "Lancelot",
-                "Anisinabe"
+                "Lucky Light"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/lucky.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Bifrost",
+                "Skywalker",
                 "Lucky",
-                "Huron",
-                "Cirra",
-                "Dino"
+                "Faris"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 3
         },
         {
             "image": "./images/horses/lucky light.png",
             "question": "What is the name of this horse?",
             "choices": [
+                "Phoenix",
                 "Lucky Light",
-                "Chitimacha",
-                "Colour",
-                "Achilles"
+                "Flipper",
+                "Tramontane"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/lugh.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Brioso",
-                "Celesta",
-                "Lotte",
+                "Wichita",
+                "Viking",
+                "Bathylas",
                 "Lugh"
             ],
             "goodAnswer": 4
@@ -2941,9 +2941,9 @@
             "image": "./images/horses/lukan.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Camelot",
-                "Empress",
-                "Arapaho",
+                "Magic",
+                "Fairybell",
+                "Firebright",
                 "Lukan"
             ],
             "goodAnswer": 4
@@ -2952,10 +2952,10 @@
             "image": "./images/horses/lumbee.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jonathan",
+                "Aleut",
                 "Lumbee",
-                "Aheron",
-                "Chromasia"
+                "Seneca",
+                "Apollo"
             ],
             "goodAnswer": 2
         },
@@ -2963,54 +2963,54 @@
             "image": "./images/horses/luna.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Jonas",
-                "Kini",
+                "Iceking",
                 "Luna",
-                "Hera"
+                "Valkrist",
+                "Urania"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 2
         },
         {
             "image": "./images/horses/macon.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Boreas",
-                "Chung",
-                "Hera",
-                "Macon"
+                "Macon",
+                "Luna",
+                "Echo",
+                "Pepper"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/madeja.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Aphrodite",
-                "Excelsior",
-                "Madeja",
-                "Kini"
+                "Mikiko",
+                "Celesta",
+                "Nori",
+                "Madeja"
             ],
-            "goodAnswer": 3
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/magic.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Magic",
-                "Aster",
-                "Friends Forever",
-                "Kelpie-Pooka"
+                "Tumbleweed",
+                "Sung",
+                "Diana",
+                "Magic"
             ],
-            "goodAnswer": 1
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/mahalo.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Mahalo",
-                "Aster",
-                "Kini",
-                "Falcha"
+                "Pini",
+                "Serenity",
+                "Laguna"
             ],
             "goodAnswer": 1
         },
@@ -3018,32 +3018,32 @@
             "image": "./images/horses/mahina.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Edana",
-                "Mahina",
-                "Bonnie",
-                "Dynamo"
+                "Sunny",
+                "Morewyn",
+                "Beran",
+                "Mahina"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 4
         },
         {
             "image": "./images/horses/mandalay.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Blossom",
-                "Larena",
-                "Apollo",
-                "Mandalay"
+                "Mandalay",
+                "Unicorn",
+                "Djengis",
+                "Ondine"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/mariannis.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Firebright",
+                "Daisy",
                 "Mariannis",
-                "Lotte",
-                "Aheron"
+                "Kitty",
+                "Balto"
             ],
             "goodAnswer": 2
         },
@@ -3051,34 +3051,2575 @@
             "image": "./images/horses/maxi.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Chiricahua",
-                "Anigan",
-                "Bonnie",
-                "Maxi"
+                "Maxi",
+                "Kendra",
+                "Misla",
+                "Zargo"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/medusa.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Hilario",
                 "Medusa",
-                "Eagle",
-                "Diamond"
+                "Dodo",
+                "Nimiipuu",
+                "Domino"
             ],
-            "goodAnswer": 2
+            "goodAnswer": 1
         },
         {
             "image": "./images/horses/mellonie.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ivy",
-                "Charlie",
+                "Yin and Yang",
+                "Potawatomi",
                 "Mellonie",
-                "Dusty"
+                "Stribes"
             ],
             "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/melusine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tewa",
+                "Melusine",
+                "Sarah",
+                "Pirouette"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/memory.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Royce",
+                "Thora",
+                "Selene",
+                "Memory"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/menominee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Halloween",
+                "Aires",
+                "Alina",
+                "Menominee"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/mermaid.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mermaid",
+                "Graia",
+                "Aster",
+                "Valdespar"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/merrydancer.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Merrydancer",
+                "Luna",
+                "Tsimshian",
+                "Edda"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/micado.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Janie",
+                "Micado",
+                "Comanche",
+                "Peter"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/miccosukee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Morewyn",
+                "Hidatsa",
+                "Miccosukee",
+                "Virstan"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/mikiko.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mariannis",
+                "Comanche",
+                "Chromasia",
+                "Mikiko"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/minelle.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Coral",
+                "Minelle",
+                "Farfalla",
+                "Beauty"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/ming.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ming",
+                "Micado",
+                "Oracle",
+                "Ondine"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/minty.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Minty",
+                "Dyni",
+                "Rosebriar",
+                "Anisinabe"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/mira.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Comanche",
+                "Tiffi",
+                "Wildflower",
+                "Mira"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/mireldis.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mireldis",
+                "Nikita",
+                "Rocky",
+                "Mahalo"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/mirth.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Edana",
+                "Mirth",
+                "Pink Lady",
+                "Dyni"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/misla.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Bosi",
+                "Ghost",
+                "Misla",
+                "Bello"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/mistral.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Jaida",
+                "Summit",
+                "Peregrine",
+                "Mistral"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/misty.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Starlight",
+                "Misty",
+                "Sophie",
+                "Santos"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/mjolnir.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mjolnir",
+                "Bluebell",
+                "Brisi",
+                "Skywalker"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/mohawk.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mohawk",
+                "Tewa",
+                "Halloween",
+                "Lakehorse"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/montana.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Montana",
+                "Blackie",
+                "Quinly",
+                "Beau"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/moonbeam.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Moonbeam",
+                "Brumby",
+                "Falcha",
+                "Dodo"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/moonlight.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Moonlight",
+                "Lakota",
+                "Pawnee",
+                "Bliss"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/moonphantom.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Isak",
+                "Chromasia",
+                "Flipper",
+                "Moonphantom"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/moonsprite.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Nyx",
+                "Moonsprite",
+                "Misty",
+                "Icehorn"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/morewyn.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Santee",
+                "Ebenos",
+                "Morewyn",
+                "Tlingit"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/morongo.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Cosima",
+                "Sham",
+                "Morongo",
+                "Diablo"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/murttie.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Murttie",
+                "Feng",
+                "Skeleton",
+                "Hilario"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/mushu.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mushu",
+                "Mahina",
+                "Shine",
+                "Donnecha"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/muskogee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Misla",
+                "Rose",
+                "Muskogee",
+                "Iduna"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/mystery.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mystery",
+                "Bliss",
+                "Rodin",
+                "Jewel"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/naiad.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Cascadeur",
+                "Mystery",
+                "Naiad",
+                "Faris"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/nanna.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Aurora",
+                "Donnecha",
+                "Alina",
+                "Nanna"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/nasim.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Eagle",
+                "Moonlight",
+                "Nasim",
+                "Edana"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/navajo.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Odyssey",
+                "Navajo",
+                "Thora",
+                "Bello"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/neptune.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Dina",
+                "Bliss",
+                "Lancelot",
+                "Neptune"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/nerise.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Anthea",
+                "Chitra",
+                "Nerise",
+                "Asteria"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/nieva.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Nuada",
+                "Cindra",
+                "Dowager",
+                "Nieva"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/nightingale.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Skeleton",
+                "Lukan",
+                "Nightingale",
+                "Mireldis"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/nike.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tramontane",
+                "Firewalker",
+                "Nike",
+                "Pedro"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/niki.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Charlie",
+                "Cheyenne",
+                "Walter",
+                "Niki"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/nikita.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Nikita",
+                "Stella",
+                "Kora",
+                "Diana"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/nimiipuu.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Edda",
+                "Autumn",
+                "Coco",
+                "Nimiipuu"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/ninja.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Neptune",
+                "Ninja",
+                "Autumn",
+                "Valdespar"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/nisqually.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ming",
+                "Daybreak",
+                "Nisqually",
+                "Icehorn"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/nori.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ceratos",
+                "Rubin",
+                "Cookie",
+                "Nori"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/notos.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Wasco",
+                "Notos",
+                "Cherub",
+                "Bandi"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/nuada.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sunset",
+                "Nuada",
+                "Rodin",
+                "Mira"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/nuala.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Louie",
+                "Janie",
+                "Nuala",
+                "Flame"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/nuna.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Magic",
+                "Amia",
+                "Nuna",
+                "Kona"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/nyx.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Nyx",
+                "Skeleton",
+                "Faris",
+                "Persephone"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/obrylin.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Petri",
+                "Starunna",
+                "Hidatsa",
+                "Obrylin"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/odyssey.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Faxon",
+                "Merrydancer",
+                "Corcel",
+                "Odyssey"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/ondine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kallista",
+                "Ondine",
+                "Rosebriar",
+                "Flower"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/opis.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Wasco",
+                "Autumn",
+                "Opis",
+                "Tsimshian"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/oracle.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Oracle",
+                "Zuni",
+                "Persephone",
+                "Ivy"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/osage.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tikka",
+                "Osage",
+                "Nimiipuu",
+                "Peka Peka"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/paiute.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Lenape",
+                "Nasim",
+                "Paiute",
+                "Spottie"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/pandora.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Chitimacha",
+                "Pandora",
+                "Rubin",
+                "Hestia"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/parlez.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Dynamo",
+                "Niki",
+                "Parlez",
+                "Sokki"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/pauma.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Athena",
+                "Filippa",
+                "Pauma",
+                "Sky"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/pavonne.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Camelot",
+                "Sugar",
+                "Pavonne",
+                "Parlez"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/pawnee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Seneca",
+                "Pawnee",
+                "Shaman",
+                "Storm"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/peace.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Seneca",
+                "Minty",
+                "Yellow",
+                "Peace"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/pedro.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Dyni",
+                "Pedro",
+                "Mushu",
+                "Montana"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/pegasus.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Faris",
+                "Seminole",
+                "Iceking",
+                "Pegasus"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/peka peka.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Peka Peka",
+                "Flame",
+                "Cha Ye",
+                "Nike"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/pelagos.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Dusk",
+                "Snowflake",
+                "Pelagos",
+                "Lenape"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/pepper.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sokki",
+                "Pepper",
+                "Kendra",
+                "Cascadeur"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/peregrine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Diamond",
+                "Aviva",
+                "Djengis",
+                "Peregrine"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/persephone.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Persephone",
+                "Empress",
+                "Keetoowah",
+                "Colour"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/petal.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Petal",
+                "Kira",
+                "Aegis",
+                "Amia"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/peter.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Peter",
+                "Tao",
+                "Honey",
+                "Diana"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/petri.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Dart",
+                "Petri",
+                "Bifrost",
+                "Sonet"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/phoenix.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kona",
+                "Cherub",
+                "Phoenix",
+                "Savros"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/pima.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Pima",
+                "Calyx",
+                "Jonathan",
+                "Joy"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/pini.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Yakama",
+                "Pini",
+                "Prince",
+                "Dreki"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/pink lady.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Pink Lady",
+                "Yasmin",
+                "Kendra",
+                "Addis"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/pirouette.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Pirouette",
+                "Skywalker",
+                "Mystery",
+                "Starlight"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/ponca.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ponca",
+                "Balto",
+                "Hercules",
+                "River"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/potawatomi.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Trudy",
+                "Potawatomi",
+                "Morongo",
+                "Odyssey"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/primrose.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mistral",
+                "Beau",
+                "Arim",
+                "Primrose"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/prince.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Amia",
+                "Prince",
+                "Aphaia",
+                "Moonsprite"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/prisma.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Prisma",
+                "Eagle",
+                "Pegasus",
+                "Shadow"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/pythia.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Silas",
+                "Pythia",
+                "Hera",
+                "Merrydancer"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/quinly.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Quinly",
+                "Minty",
+                "Jicarilla",
+                "Menominee"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/raimondo.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Raimondo",
+                "Yasmin",
+                "Danu",
+                "Aurora"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/rain.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Uranus",
+                "Arim",
+                "Seneca",
+                "Rain"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/rainbow.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Zephyros",
+                "Rainbow",
+                "Sleetmane",
+                "Obrylin"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/ran.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kio",
+                "Ran",
+                "Danu",
+                "Skywalker"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/rauni.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Rauni",
+                "Euros",
+                "Nightingale",
+                "Bukefalos"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/reif.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kora",
+                "Reif",
+                "Saga",
+                "Empress"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/resident.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kounari",
+                "Eagle",
+                "Resident",
+                "Carmina"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/rhiannon.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kallista",
+                "Rhiannon",
+                "Murttie",
+                "Moonsprite"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/ricky.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ricky",
+                "Pini",
+                "Blackfeet",
+                "Thor"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/rimfaxe.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Connora",
+                "Aleut",
+                "Rimfaxe",
+                "Mjolnir"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/river.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "River",
+                "Hilario",
+                "Aleut",
+                "Euros"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/rocky.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Faxon",
+                "Iris",
+                "Rocky",
+                "Nieva"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/rodin.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Rodin",
+                "Woodlock",
+                "Dowager",
+                "Balto"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/ronnie.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Janie",
+                "Ronnie",
+                "Colour",
+                "Brisi"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/rosamund.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Spottie",
+                "Leonard",
+                "Nanna",
+                "Rosamund"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/rose.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Djengis",
+                "Rose",
+                "Cate",
+                "Dewdrop"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/rosebriar.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Friends",
+                "Arelus",
+                "Rosebriar",
+                "Absaroke"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/roxy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Briar",
+                "Iduna",
+                "Roxy",
+                "Sham"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/royce.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Jonathan",
+                "Royce",
+                "Cherub",
+                "Dusk"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/rubin.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Shanti",
+                "Rubin",
+                "Yakama",
+                "Leonard"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/ruskin.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sonet",
+                "Ruskin",
+                "Huron",
+                "Nike"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sabelle.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Aviva",
+                "Tlingit",
+                "Sabelle",
+                "Nikita"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/safire.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Eagle",
+                "Safire",
+                "Falcha",
+                "Toffee"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/saga.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sasha",
+                "Saga",
+                "Petri",
+                "Beran"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sandy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Minelle",
+                "Ghost",
+                "Neptune",
+                "Sandy"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/santee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Santee",
+                "Brine",
+                "Fairybell",
+                "Shakira"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/santos.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "King",
+                "Jupiter",
+                "Santos",
+                "Pink Lady"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/sapphirine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sarah",
+                "Nightingale",
+                "Sapphirine",
+                "Nyx"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/sarah.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Hidatsa",
+                "Cirra",
+                "Sarah",
+                "Unicorn"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/sasha.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sasha",
+                "Domino",
+                "Seneca",
+                "Jaida"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/savros.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Magic",
+                "Savros",
+                "Maxi",
+                "Rubin"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/scarlett.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Skywalker",
+                "Triton",
+                "Scarlett",
+                "Shawnee"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/scotty.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Scotty",
+                "Coco",
+                "Yung",
+                "Sky"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/selene.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Selene",
+                "Nuna",
+                "Flame",
+                "Danu"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/seminole.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Wavebreaker",
+                "Chitra",
+                "Sunny",
+                "Seminole"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/seneca.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Brioso",
+                "Seneca",
+                "Sokki",
+                "Nerise"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/seraphia.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Seraphia",
+                "Janie",
+                "Mira",
+                "Firewalker"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/serenity.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Moonphantom",
+                "Serenity",
+                "Oracle",
+                "Felise"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/serilda.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sorel",
+                "Flora",
+                "Serilda",
+                "Madeja"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/shadow.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Iceking",
+                "Shadow",
+                "Ivy",
+                "Speedy"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/shakira.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Phoenix",
+                "Hercules",
+                "Bandi",
+                "Shakira"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sham.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Yung",
+                "Joker",
+                "Sirocco",
+                "Sham"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/shamal.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Shamal",
+                "Pandora",
+                "Faris",
+                "Woodlock"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/shaman.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Keetoowah",
+                "Khrysor",
+                "Luna",
+                "Shaman"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/shanti.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Lumbee",
+                "Chromasia",
+                "Stribes",
+                "Shanti"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/shawnee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Larena",
+                "Shawnee",
+                "Wavebreaker",
+                "Bryda"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sheng.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Zargo",
+                "Sheng",
+                "Neptune",
+                "Niki"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/shine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ceratos",
+                "Embarr",
+                "Inuit",
+                "Shine"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/shoshone.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Donnecha",
+                "Nyx",
+                "Shoshone",
+                "Macon"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/signy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ivy",
+                "Diablo",
+                "Signy",
+                "Filippa"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/silas.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Silas",
+                "Lugh",
+                "Sunset",
+                "Macon"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/silver.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ponca",
+                "Iris",
+                "Friends",
+                "Silver"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sirocco.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Daybreak",
+                "Emberic",
+                "Lucky Light",
+                "Sirocco"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/skeleton.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Silas",
+                "Donn",
+                "Skeleton",
+                "Opis"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/skinfaxe.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sasha",
+                "Fiona",
+                "Skinfaxe",
+                "Pedro"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/skipper.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sugar",
+                "Sonet",
+                "Iceprince",
+                "Skipper"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sky.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Hidatsa",
+                "Jolly",
+                "Sky",
+                "Signy"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/skywalker.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Freja",
+                "Skywalker",
+                "Anisinabe",
+                "Stella"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sleetmane.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Firebright",
+                "Wavebreaker",
+                "Sleetmane",
+                "Brigid"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/sleipnir.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Dowager",
+                "Sleipnir",
+                "Farah",
+                "Cochiti"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/snowdreamer.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sham",
+                "Snowdreamer",
+                "Dane",
+                "Kiowa"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/snowflake.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Aurora",
+                "Snowflake",
+                "Menominee",
+                "Toboggan"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/socorro.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Bonnie",
+                "Socorro",
+                "Sunshine",
+                "Iceprince"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sokki.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Blackie",
+                "Storm",
+                "Zargo",
+                "Sokki"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sonet.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Cherub",
+                "Sonet",
+                "Generosity",
+                "Mjolnir"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sophie.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sophie",
+                "Honey",
+                "Mermaid",
+                "Peace"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/sorel.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Madeja",
+                "Connora",
+                "Cioccola",
+                "Sorel"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/speedy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Joy",
+                "Camelot",
+                "Skipper",
+                "Speedy"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/spirit.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Valor",
+                "Chitimacha",
+                "Dusk",
+                "Spirit"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/spottie.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Starunna",
+                "Honu",
+                "Spottie",
+                "Artemis"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/star.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Jonathan",
+                "Star",
+                "Murttie",
+                "Dewdrop"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/stardust.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ponca",
+                "Stardust",
+                "Ninja",
+                "Ebenos"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/starfighter.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Apuni",
+                "Starfighter",
+                "Alexander",
+                "Rodin"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/starfly.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Nerise",
+                "Starfly",
+                "Hera",
+                "Froya"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/starfrost.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Jupiter",
+                "Honu",
+                "Starfrost",
+                "Atalaya"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/starlight.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mira",
+                "Hestia",
+                "Starlight",
+                "Wasco"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/starunna.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Starunna",
+                "Kona",
+                "Haku",
+                "Khrysor"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/stella.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kio",
+                "Stella",
+                "Nieva",
+                "Dowager"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sternentänzer.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Akama",
+                "Sternentänzer",
+                "Flora",
+                "Zephyros"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/storm.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kora",
+                "Eirene",
+                "Pauma",
+                "Storm"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/stribes.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Shine",
+                "Stribes",
+                "Amia",
+                "Peter"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sugar.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ponca",
+                "Dart",
+                "Twilight",
+                "Sugar"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/summit.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Summit",
+                "Mandalay",
+                "Urd",
+                "Faith"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/sun.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Nerise",
+                "Bosi",
+                "Storm",
+                "Sun"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sunbeam.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Lillova",
+                "Hecate",
+                "Chromasia",
+                "Sunbeam"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sung.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tai",
+                "Beran",
+                "Thora",
+                "Sung"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/sunny.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "River",
+                "Sunny",
+                "Ming",
+                "Murttie"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/sunset.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sunset",
+                "Wichita",
+                "Chung",
+                "Halloween"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/sunshine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sunshine",
+                "Madeja",
+                "Embarr",
+                "Bluebell"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/sweety.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Anemone",
+                "Honey",
+                "Sung",
+                "Sweety"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/tai.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Flame",
+                "Bella",
+                "Sleetmane",
+                "Tai"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/tao.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tao",
+                "Cindra",
+                "Notos",
+                "Shaman"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/tewa.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tewa",
+                "Obrylin",
+                "Athena",
+                "Sabelle"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/thalia.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Thalia",
+                "Firebright",
+                "Summit",
+                "Cochiti"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/thor.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Silver",
+                "King",
+                "Thor",
+                "Kelpie-Pooka"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/thora.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Thora",
+                "Mushu",
+                "Brisi",
+                "Danu"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/thunder.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Ruskin",
+                "Inupiat",
+                "Thunder",
+                "Peter"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/tiffi.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sweety",
+                "Tiffi",
+                "Cara",
+                "Blackfeet"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/tigrine.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Giasa",
+                "Sky",
+                "Ebenos",
+                "Tigrine"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/tikka.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Rimfaxe",
+                "Tikka",
+                "Rainbow",
+                "Dyni"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/tlingit.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Charlie",
+                "Tlingit",
+                "Sleipnir",
+                "Twins"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/toboggan.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Toboggan",
+                "Naiad",
+                "Bella",
+                "Lucas"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/toffee.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Jojo",
+                "Anthea",
+                "Toffee",
+                "Starfrost"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/tokker.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Kora",
+                "Nimiipuu",
+                "Shawnee",
+                "Tokker"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/tramontane.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Flower",
+                "Tramontane",
+                "Lenape",
+                "Zephan"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/treasure.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Treasure",
+                "Chitimacha",
+                "Charlie",
+                "Dewsparkle"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/tricksy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mirth",
+                "Bandi",
+                "Tricksy",
+                "Mohawk"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/triton.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Falcha",
+                "Prince",
+                "Yasmin",
+                "Triton"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/trudy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Trudy",
+                "Peace",
+                "Tumbleweed",
+                "Cindra"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/tsimshian.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Tsimshian",
+                "Aphaia",
+                "Huron",
+                "Misla"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/tugo.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Calato",
+                "Azuro",
+                "Tugo",
+                "Rainbow"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/tumbleweed.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Eirene",
+                "Coral",
+                "Chung",
+                "Tumbleweed"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/twilight.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sleipnir",
+                "Halloween",
+                "Hilario",
+                "Twilight"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/twins.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Shakira",
+                "Valor",
+                "Mariannis",
+                "Twins"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/unicorn.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Greenlock",
+                "Lien",
+                "Unicorn",
+                "Obrylin"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/urania.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Urania",
+                "Clio",
+                "Tao",
+                "Briar"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/uranus.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Uranus",
+                "Sham",
+                "Urd",
+                "Pink Lady"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/urd.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Thunder",
+                "Urd",
+                "Dusk",
+                "Kiowa"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/valdespar.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Valdespar",
+                "Mistral",
+                "Colour",
+                "Flora"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/valkrist.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Briar",
+                "Valkrist",
+                "Comanche",
+                "Charlemagne"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/valor.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Zombie",
+                "Valor",
+                "Skinfaxe",
+                "Stardust"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/venus.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Venus",
+                "Uranus",
+                "Dina",
+                "Persephone"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/vesta.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Vesta",
+                "Mistral",
+                "Pauma",
+                "Honu"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/viking.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Viking",
+                "Alexander",
+                "Iduna",
+                "Falcha"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/virstan.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mandalay",
+                "Athena",
+                "Virstan",
+                "Morongo"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/walter.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Apollo",
+                "Walter",
+                "Huron",
+                "Sun"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/wasco.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Aheron",
+                "Muskogee",
+                "Jaida",
+                "Wasco"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/waterpearl.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Shanti",
+                "Waterpearl",
+                "Summit",
+                "Honora"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/wavebreaker.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Wavebreaker",
+                "Aires",
+                "Diamond",
+                "Erinn"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/whimsy.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mellonie",
+                "Dusk",
+                "Nori",
+                "Whimsy"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/wichita.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Beauty",
+                "Moonbeam",
+                "Inuit",
+                "Wichita"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/wildflower.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Sandy",
+                "Jupiter",
+                "Nanna",
+                "Wildflower"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/wodan.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Moonphantom",
+                "Zombie",
+                "Jajali",
+                "Wodan"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/wonder.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Cha Ye",
+                "Hai Sheng",
+                "Wonder",
+                "Hestia"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/woodlock.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Mahina",
+                "Woodlock",
+                "Tiffi",
+                "Yin and Yang"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/yakama.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Thalia",
+                "Bellisimo",
+                "Dixie",
+                "Yakama"
+            ],
+            "goodAnswer": 4
+        },
+        {
+            "image": "./images/horses/yasmin.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Yasmin",
+                "Farfalla",
+                "Thor",
+                "Sunset"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/yellow.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Skinfaxe",
+                "Misla",
+                "Yellow",
+                "Thunder"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/yin and yang.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Colour",
+                "Yin and Yang",
+                "Skinfaxe",
+                "Brigid"
+            ],
+            "goodAnswer": 2
+        },
+        {
+            "image": "./images/horses/yung.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Calato",
+                "Peace",
+                "Yung",
+                "Naiad"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/zargo.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Zargo",
+                "Bandi",
+                "Feng",
+                "Corcel"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/zephan.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Froya",
+                "Balto",
+                "Zephan",
+                "Carmina"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/zephyros.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Zephyros",
+                "Kira",
+                "Bliss",
+                "Harmony"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/zikka.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Zikka",
+                "Bella",
+                "Lucky",
+                "Oracle"
+            ],
+            "goodAnswer": 1
+        },
+        {
+            "image": "./images/horses/zombie.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Apuni",
+                "Demeter",
+                "Zombie",
+                "Rimfaxe"
+            ],
+            "goodAnswer": 3
+        },
+        {
+            "image": "./images/horses/zuni.png",
+            "question": "What is the name of this horse?",
+            "choices": [
+                "Yung",
+                "Zuni",
+                "Balto",
+                "Sapphirine"
+            ],
+            "goodAnswer": 2
         }
     ]
 }
