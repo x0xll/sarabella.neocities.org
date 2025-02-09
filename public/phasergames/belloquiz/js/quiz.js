@@ -22,6 +22,7 @@ class Quiz extends Phaser.Scene
 
         // Load in images and sounds
         this.load.image('background', './images/background.png');
+        this.load.image('logo', './images/bella_logo.png');
         this.load.image('button', './images/choice_btn.png');
         this.load.image('img_container', './images/img_container.png');
         this.load.image('data_container', './images/datas_container.png');
@@ -49,6 +50,9 @@ class Quiz extends Phaser.Scene
 
         // Set UI
         this.add.image(0, 0, 'background').setOrigin(0);
+
+        this.add.image(10, 10, 'logo').setOrigin(0).setScale(.75);
+
         this.add.image(690, 313, 'img_container');
         this.add.image(220, 402, 'question_container');
         this.add.image(215, 135, 'data_container');

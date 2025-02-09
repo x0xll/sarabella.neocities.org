@@ -62,6 +62,8 @@
     "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
     "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
+
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
     "puzzle_moonfairies" : "Moonfairies",
