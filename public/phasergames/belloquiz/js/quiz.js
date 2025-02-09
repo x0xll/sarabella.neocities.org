@@ -87,7 +87,7 @@ class Quiz extends Phaser.Scene
         usedQuestions = [];
         choiceBtns = [];
 
-        let guessImg = this.add.image(690, 300, `0_img`).setOrigin(.5);
+        let guessImg = this.add.image(695, 315, `0_img`).setOrigin(.5);
         let guessQuestion = this.add.text(215, 280, `${questionDatas[0].question}`, globalTextSettings).setOrigin(.5, .5);
         let guessQuestionNum = this.add.text(215, 210, `${langData.question}${(MAX_TURNS - turnsLeft) + 1}`, globalTextSettings).setOrigin(.5, .5);
 
@@ -128,7 +128,7 @@ class Quiz extends Phaser.Scene
             while (usedQuestions.length > 0 && usedQuestions.includes(randQuestion) && failsafe > 0)
             usedQuestions.push(randQuestion);
             
-            guessImg.setTexture(`${randQuestion}_img`)
+            guessImg.setTexture(`${randQuestion}_img`).setDisplaySize(353, 500);
 
             guessQuestion.text = `${questionDatas[randQuestion].question}`;
 
