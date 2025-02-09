@@ -15,17 +15,6 @@ class Bellapedia extends Phaser.Scene
     create ()
     {
         const game = this
-        
-        // Load all images and put all entries in a single array
-        this.allEntries = []
-        this.allBooks = [langData.book1, langData.book2, langData.book3, langData.book4, langData.book5, langData.book6, langData.book7]
-        this.allBooks.forEach(book => {
-            book.pages.forEach(entry => {
-                console.log(entry)
-                this.load.image(entry.name, entry.image);
-                this.allEntries.push(entry)
-            });
-        });
 
         // Intro screen
         this.add.image(444, 234, 'bookSelect')

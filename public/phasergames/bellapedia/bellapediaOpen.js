@@ -19,7 +19,6 @@ class BellapediaOpen extends Phaser.Scene
         this.allBooks = [langData.book1, langData.book2, langData.book3, langData.book4, langData.book5, langData.book6, langData.book7]
         this.allBooks.forEach(book => {
             book.pages.forEach(entry => {
-                console.log(entry)
                 this.load.image(entry.name, entry.image);
                 this.allEntries.push(entry)
             });
