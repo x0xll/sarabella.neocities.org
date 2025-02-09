@@ -165,7 +165,8 @@ class dressupStable extends Phaser.Scene
             url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
             sceneKey: 'rexUI'
         });
-        this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
+        // Loading an older version of the text input plugin to allow the textarea input type
+        this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/aff9baa86b400cce0d2788b6b2db4bcc84bda34f/dist/rexinputtextplugin.min.js', true);
 
         
         function splitHex(color) {
