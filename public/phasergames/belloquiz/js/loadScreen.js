@@ -11,26 +11,19 @@ class Load extends Phaser.Scene
     preload ()
     {
         this.load.image('card_back', './images/card_back.png');
-    }
 
-    create ()
-    { 
         const game = this;
 
         // Loading the questions
-        let questionDatas = []
+        game.questionDatas = []
         // Get the possible questions
         const xmlHttp = new XMLHttpRequest();
         xmlHttp.onload = function() {
-            questionDatas = JSON.parse(this.responseText).questions;
+            game.questionDatas = JSON.parse(this.responseText).questions;
 
-            game.load.setBaseURL('https://bellasara.wiki.gg/images/');
-
-            questionDatas.forEach(question => {     
-                game.load.image(`${question.image}_img`, `${question.image}`);
+            game.questionDatas.forEach(question => {     
+                game.load.image(`${game.questionDatas.indexOf(question)}_img`, `${question.image}`);
             });
-
-            game.scene.start("Quiz", {questions: questionDatas});
         }
 
         let datasLang = lang;
@@ -40,5 +33,11 @@ class Load extends Phaser.Scene
 
         xmlHttp.open("GET", `./datas/${datasLang}.json`);
         xmlHttp.send();
+    }
+
+    create ()
+    { 
+        const game = this;
+        game.scene.start("Quiz", {questions: game.questionDatas});
     }
 }

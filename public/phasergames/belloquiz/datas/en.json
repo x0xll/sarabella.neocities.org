@@ -3,27 +3,27 @@
     [
         {
             "image": "https://bellasara.wiki.gg/images/0/03/Bella_original_art.jpg",
-            "question": "This is a test question",
+            "question": "What is the name of this horse?",
             "choices":
             [
-                "Choice A",
-                "Choice B",
-                "Choice C",
-                "Choice D"
+                "Jewel",
+                "Bello",
+                "Bella",
+                "Fiona"
             ],
             "goodAnswer": 3
         },
         {
-            "image": "https://bellasara.wiki.gg/images/0/03/Bella_original_art.jpg",
-            "question": "This is a test question 2",
+            "image": "https://bellasara.wiki.gg/images/c/ca/Jewel_also.jpg",
+            "question": "What is Jewel's favorite food?",
             "choices":
             [
-                "Choice A2",
-                "Choice B2",
-                "Choice C2",
-                "Choice D2"
+                "Winterberries",
+                "Apples",
+                "Comfort Treats",
+                "Coveberries"
             ],
-            "goodAnswer": 4
+            "goodAnswer": 1
         }
     ]
 }
