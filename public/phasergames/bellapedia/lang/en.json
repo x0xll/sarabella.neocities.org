@@ -1,0 +1,181 @@
+{
+    "title": "Welcome to the BELLAPEDIA",
+    "intro": "This is for all you horse lovers out there.\n\nPick a book, find a horse and have it answer your horse questions.This may only be a starting point, for you to explore the beautiful, amazing world of horses.\n\nHave fun!\n\nA special thanks to Oklahoma State University for the horse biography details.",
+    "book1": {
+        "title": "A-D",
+        "pages": [
+            {
+                "name": "Abenaki",
+                "image": "./images/horses/abenaki.jpg",
+                "info": [
+                    {
+                        "title": "Details",
+                        "info": [
+                            "Area: Northeastern U.S. in the area of present-day Maine",
+                            "Their name means \"people of the dawn\""
+                        ]
+                    },
+                    { 
+                        "title": "About the Tribe",
+                        "info": "The Abenaki tribe which this horse is based on is located in the Northeastern US in the area of present-day Maine. Their name means \"people of the dawn\". The Abenaki lived in wigwams, temporary dwellings, while they relocated seasonally, but also built permanent longhouses in centralized villages. Their seasonal migrations included hunting, fishing, and growing a variety of crops, returning to their longhouses during the winter. The Abenaki constructed birch-bark canoes for water travel. This tribal group includes the Penobscot and the Androscoggin.\n\nThe Abenaki fought against the English on the side of the French during the Seven Years' War from 1756 to 1763. After their defeat, many went north where they were welcomed by the French with gifts of land. Presently, there is a reserve in Saint Francis, Quebec."
+                    }
+                ]
+            },
+            {
+                "name": "Abrasoke",
+                "image": "./images/horses/absaroke.jpg",
+                "info": [
+                    { 
+                        "title": "About the Tribe",
+                        "info": "The tribe Absaroke, which this steed is based on, is located in the Western U.S. at the foothills of the Rocky Mountains in present-day Montana. Their name is derived from the language of their sister tribe, the Hidatsa, and means \"people of the large-beaked bird.\" The Absaroke are more commonly known as the Crow Nation.\n\nAbsaroke used horses to hunt buffalo and did not farm other than to raise tobacco. They cultivated two kinds of tobacco—medicine tobacco used in ceremonies and everyday tobacco. In the 19th Century, the Crow allied with the United States and fought on the side of the U.S. in various conflicts against the Cheyenne, Arapahos, and Sioux. Today, the Crow Nation has the largest reservation in the state of Montana, 1.5 million acres."
+                    }
+
+                ]
+            },
+            {
+                "name": "Akama",
+                "image": "./images/horses/akama.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Aleut",
+                "image": "./images/horses/aleut.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "American Quarter Horse",
+                "image": "./images/horses/americanQuarterHorse.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Anemone",
+                "image": "./images/horses/anemone.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Anigan",
+                "image": "./images/horses/anigan.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Anisinabe",
+                "image": "./images/horses/anisinabe.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Apache",
+                "image": "./images/horses/apache.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Appaloosa",
+                "image": "./images/horses/appaloosa.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Arabian",
+                "image": "./images/horses/arabian.jpg",
+                "info": [
+                ]
+            }
+        ]
+    },
+    "book2": {
+        "title": "E-G",
+        "pages": [
+            {
+                "name": "Eagle",
+                "image": "./images/horses/eagle.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Ebenos",
+                "image": "./images/horses/ebenos.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Edana",
+                "image": "./images/horses/edana.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Edda",
+                "image": "./images/horses/edda.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Embarr",
+                "image": "./images/horses/embarr.png",
+                "info": [
+                ]
+            },
+            {
+                "name": "Emberic",
+                "image": "./images/horses/emberic.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Farfalla",
+                "image": "./images/horses/farfalla.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Faxon",
+                "image": "./images/horses/faxon.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Felise",
+                "image": "./images/horses/felise.jpg",
+                "info": [
+                ]
+            },
+            {
+                "name": "Fiona",
+                "image": "./images/horses/fiona.png",
+                "info": [
+                ]
+            }
+        ]
+    },
+    "book3": {
+        "title": "H-K",
+        "pages": [
+        ]
+    },
+    "book4": {
+        "title": "L-O",
+        "pages": [
+        ]
+    },
+    "book5": {
+        "title": "P-S",
+        "pages": [
+        ]
+    },
+    "book6": {
+        "title": "T-W",
+        "pages": [
+        ]
+    },
+    "book7": {
+        "title": "X-Z",
+        "pages": [
+        ]
+    }
+}
