@@ -73,13 +73,13 @@ class Quiz extends Phaser.Scene
 
         // TURNS LEFT
         turnsLeft = MAX_TURNS;
-        let turnsTxt = this.add.text(220, 125, `Turns Left: ${turnsLeft}`, datasTextSettings);
+        let turnsTxt = this.add.text(220, 125, `${langData.ui.turns}${turnsLeft}`, datasTextSettings);
         
         // SCORE
         score = 0;
         let savedScore = localStorage.getItem(SCORE_SAVE_PATH)
         highScore = (savedScore == null) ? 0 : savedScore;
-        let scoreTxt = this.add.text(80, 125, `Score: ${score}`, datasTextSettings);
+        let scoreTxt = this.add.text(80, 125, `${langData.ui.score}${score}`, datasTextSettings);
 
         // Init quiz
         const questionDatas = data.questions;
@@ -89,7 +89,7 @@ class Quiz extends Phaser.Scene
 
         let guessImg = this.add.image(690, 315, `0_img`).setOrigin(.5);
         let guessQuestion = this.add.text(215, 280, `${questionDatas[0].question}`, globalTextSettings).setOrigin(.5, .5);
-        let guessQuestionNum = this.add.text(215, 210, `${langData.question}${(MAX_TURNS - turnsLeft) + 1}`, globalTextSettings).setOrigin(.5, .5);
+        let guessQuestionNum = this.add.text(215, 210, `${langData.ui.question}${(MAX_TURNS - turnsLeft) + 1}`, globalTextSettings).setOrigin(.5, .5);
 
         initializeGuessButtons(this);
         updateGuessQuestion();
@@ -129,7 +129,7 @@ class Quiz extends Phaser.Scene
 
             guessQuestion.text = `${questionDatas[randQuestion].question}`;
 
-            guessQuestionNum.text = `${langData.question}${(MAX_TURNS - turnsLeft) + 1}`;
+            guessQuestionNum.text = `${langData.ui.question}${(MAX_TURNS - turnsLeft) + 1}`;
 
             var alreadyPickedNums = [];
             alreadyPickedNums.push(randQuestion);
@@ -154,8 +154,8 @@ class Quiz extends Phaser.Scene
 
             turnsLeft--;
 
-            scoreTxt.text = `${langData.score} ${score}`;
-            turnsTxt.text = `${langData.turns} ${turnsLeft}`;
+            scoreTxt.text = `${langData.ui.score} ${score}`;
+            turnsTxt.text = `${langData.ui.turns} ${turnsLeft}`;
 
             if (turnsLeft <= 0)
             {
@@ -176,26 +176,26 @@ class Quiz extends Phaser.Scene
             
             if (score == MAX_TURNS)
             {
-                endTitle = langData.perfect_title;
-                endDesc = langData.perfect_desc;
+                endTitle = langData.ui.perfect_title;
+                endDesc = langData.ui.perfect_desc;
             }
             else if (score >= (MAX_TURNS / 2) && score < MAX_TURNS)
             {
-                endTitle = langData.good_title;
-                endDesc = langData.good_desc;
+                endTitle = langData.ui.good_title;
+                endDesc = langData.ui.good_desc;
             }
             else
             {
-                endTitle = langData.bad_title;
-                endDesc = langData.bad_desc;
+                endTitle = langData.ui.bad_title;
+                endDesc = langData.ui.bad_desc;
             }
 
             game.add.text(217, 210, endTitle, globalTextSettings).setOrigin(.5, .5);
             game.add.text(217, 320, endDesc, globalTextSettings).setOrigin(.5, .5);
-            game.add.text(217, 400, `${langData.end_score} ${score} / ${MAX_TURNS}`, globalTextSettings).setOrigin(.5, .5);
+            game.add.text(217, 400, `${langData.ui.end_score} ${score} / ${MAX_TURNS}`, globalTextSettings).setOrigin(.5, .5);
 
             var retryBtn = game.add.image(217, 500, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
-            game.add.text(217, 500, langData.retry, globalTextSettings).setOrigin(.5, .5);
+            game.add.text(217, 500, langData.ui.retry, globalTextSettings).setOrigin(.5, .5);
 
             retryBtn.on("pointerdown", () => game.scene.restart());
         }
