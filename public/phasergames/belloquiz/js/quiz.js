@@ -74,12 +74,16 @@ class Quiz extends Phaser.Scene
         // TURNS LEFT
         turnsLeft = MAX_TURNS;
         let turnsTxt = this.add.text(220, 125, `${langData.ui.turns}${turnsLeft}`, datasTextSettings);
-        
+        if (lang == "fr")
+            turnsTxt.x = 190;
+
         // SCORE
         score = 0;
         let savedScore = localStorage.getItem(SCORE_SAVE_PATH)
         highScore = (savedScore == null) ? 0 : savedScore;
         let scoreTxt = this.add.text(80, 125, `${langData.ui.score}${score}`, datasTextSettings);
+        if (lang == "fr")
+            scoreTxt.x = 60;
 
         // Init quiz
         const questionDatas = data.questions;
