@@ -1,4 +1,21 @@
 {
+    "ui":
+    {
+        "score": "Score: ",
+        "turns": "Turns left: ",
+        "question": "Question ",
+        "retry": "Retry",
+    
+        "end_score": "Your score: ",
+    
+        "perfect_title": "Congrats!",
+        "good_title": "Well done!",
+        "bad_title": "Oops...",
+    
+        "perfect_desc": "You must be a Bella Sara expert!",
+        "good_desc": "You know a lot about Bella Sara!",
+        "bad_desc": "Maybe you should try again?"
+    },
     "questions": [
         {
             "image": "./images/horses/abenaki.png",
