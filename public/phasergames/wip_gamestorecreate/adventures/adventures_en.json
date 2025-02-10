@@ -9,9 +9,13 @@
             "saving": "Saving... Please wait.",
 
             "btn_start": "Start",
-            "btn_save": "Save",
+            "btn_save": "Sauvegarder",
             "btn_help": "?",
             "btn_continue": "Continue",
+
+            "quest": "Quest",
+
+            "map_zoom": "Zoom",
 
             "menu_inventory": "Inventory Bag",
             "menu_map": "Map",
@@ -31,7 +35,7 @@
         },
         "inventory":
         {
-            "all": "All My Things",
+            "all": "Tous mes objects",
             "seeds": "Only Seeds"
         },
         "quest":
@@ -309,8 +313,15 @@
             ]
         },
         {
-            "title": "Foal Care",
-            "goals": [],
+            "title": "Foal Care Promotion",
+            "goals": 
+            [
+                {
+                    "lookfor": "ginger",
+                    "location": "canterfarmsstable",
+                    "goal": "Tale Care of Ginger foal."
+                }
+            ],
             "dialogues":
             [
                 {
@@ -318,6 +329,34 @@
                     "line": "Take care of me!"
                 }
             ]
+        },
+        {
+            "title": "Seashells Collect",
+            "goals":
+            [
+                {
+                    "lookfor": "shine",
+                    "location": "artisansway",
+                    "goal": "Bring 10 seashells to Shine Anders"
+                }
+            ],
+            "dialogues":{
+
+            }
+        },
+        {
+            "title": "Tomtomme missing",
+            "goals":
+            [
+                {
+                    "lookfor": "jordanna",
+                    "location": "canterdowns",
+                    "goal": "Bring the tomtomme to Jordanna"
+                }
+            ],
+            "dialogues":{
+                
+            }
         }
     ],
     "items":
@@ -334,10 +373,12 @@
             "shirts_00": "Short-sleeved Solid T-shirt",
             "shirts_01": "Long-sleeved Layered T-shirt",
             "shirts_02": "Daisy T-Shirt",
+            "shirts_03": "White Trellis",
         
             "hair_00": "Curly Ponytail (Headband)",
         
             "pants_00": "Jeans",
+            "pants_01": "Plaid shorts",
         
             "shoes_00": "Sneakers (no socks)"
         },
@@ -350,7 +391,9 @@
             "color_yellow": "Yellow",
             "color_white": "White",
             "color_royalblue": "Royal Blue",
-            "color_grey": "Grey"
+            "color_grey": "Grey",
+
+            "apple_red": "Dye - Red Apple"
         },
         "seeds":
         {
@@ -412,7 +455,8 @@
             "tomato": "Tomato Seed",
             "vanillabean": "Vanilla Bean Seed",
             "watermelon": "Watermelon Seed",
-            "wolfwhistle": "Wolf Whistle Seed"
+            "wolfwhistle": "Wolf Whistle Seed",
+            "icepetals": "Ice Petals Flower Seed"
         },
         "plant":
         {     
@@ -475,12 +519,14 @@
             "tomato": "Tomato",
             "vanillabean": "Vanilla Bean",
             "watermelon": "Watermelon",
-            "wolfwhistle": "Wolf Whistle"
+            "wolfwhistle": "Wolf Whistle",
+            "icepetals": "Ice Petal Flower"
         },
         "critters":
         {
             "butterfly": "Butterfly",
-            "ladybug": "Lady Bug"
+            "ladybug": "Lady Bug",
+            "starfish": "Starfish"
         },
         "furnitures":
         {
@@ -488,7 +534,9 @@
             "dyemachine": "Dye Machine",
             "starlightchair": "Starlight Chair",
             "starlightcouch": "Starlight Couch",
-            "starlightbed": "Starlight Bed"
+            "starlightbed": "Starlight Bed",
+            "snowmen": "Snowmen",
+            "snowfort": "Snow Fort"
         },
         "others":
         {
@@ -496,9 +544,13 @@
             "mortar": "Lump of mortar",
             "horseshoes": "Horseshoes",
             "pixiedust": "Pixie Dust",
+            "moonpiece": "Moon Piece",
+            "pinenut": "Pine nut",
 
             "jarbutterflies": "Jar of Butterflies",
-            "jarladybugs": "Jar of Ladybugs"
+            "jarladybugs": "Jar of Ladybugs",
+
+            "bellocard": "Horse Card Bello"
         }
     },
     "locations":
@@ -533,7 +585,9 @@
         "human":
         {
             "sara": "Sara",
-            "cade": "Cade Traveller"
+            "cade": "Cade Traveller",
+            "shine": "Shine Anders",
+            "jordanna": "Jordanna"
         },
         "horses":
         {
@@ -544,14 +598,18 @@
         {
             "wolf": "Wolf",
             "cagedstarstoneotter": "Caged Starstone Otter",
-            "starstoneotter": "Starstone Otter"
+            "starstoneotter": "Starstone Otter",
+            "grasspoolotter": "Grasspool Otter",
+            "tasselmouse": "Tassel Mouse"
         }
     },
     "interactions":
     {      
         "brokenbridge": "Bridge (broken)",
         "cagedotter": "Caged Starstone Otter",
-        "closedgate": "Gate - Closed"
+        "closedgate": "Gate - Closed",
+        "dirt": "Dirt",
+        "fairyring": "Fairy Ring"
     },
     "dialogues":
     {
