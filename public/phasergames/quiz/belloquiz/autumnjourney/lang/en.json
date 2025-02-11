@@ -218,6 +218,36 @@
             "name": "Wings & Emma",
             "image": "/phasergames/quiz/belloquiz/images/autumnjourney/wingsemma.png",
             "quote": "Believe in your friends and help them find their wings."
+        },
+        {
+            "name": "Memory",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/memory.png",
+            "quote": "Write down your fondest memories and keep them alive forever."
+        },
+        {
+            "name": "Valeryk",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/valeryk.png",
+            "quote": "We never outgrow our need to be loved."
+        },
+        {
+            "name": "Shahazar",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/shahazar.png",
+            "quote": "Every moment is the beginning of something new."
+        },
+        {
+            "name": "Islandar",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/islandar.png",
+            "quote": "Gentleness, honesty, and love pave the way forward for a fruitful frienship."
+        },
+        {
+            "name": "Airistos",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/airistos.png",
+            "quote": "Look to the sky for comfort. Above the clouds, it is always blue."
+        },
+        {
+            "name": "Conall",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/conall.png",
+            "quote": "Feel the courage inside you."
         }
     ]
 }
