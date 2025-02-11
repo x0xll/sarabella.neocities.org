@@ -1,0 +1,364 @@
+{
+    "ui": {
+        "score": "Score : ",
+        "turns": "Tours Restants : ",
+        "question": "Question ",
+        "retry": "Recommencer",
+        "end_score": "Ton score: ",
+        "perfect_title": "Félicitations !",
+        "good_title": "Bien joué !",
+        "bad_title": "Oops...",
+        "perfect_desc": "Tu dois être un expert de Bella Sara Aventures !",
+        "good_desc": "Tu en sais beaucoup sur Bella Sara Aventures !",
+        "bad_desc": "Tu devrais peut-être retenter ?"
+    },
+    "questions":
+    [
+        {
+            "question": "Qui est ce cheval ?",
+            "attribute": "name"
+        }
+    ],
+    "horseDatas": [
+        {
+            "name": "Amor",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/amor.webp"
+        },
+        {
+            "name": "Ani",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/ani.webp"
+        },
+        {
+            "name": "Apollo",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/apollo.webp"
+        },
+        {
+            "name": "Ash",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/ash.webp"
+        },
+        {
+            "name": "Aster",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/aster.webp"
+        },
+        {
+            "name": "Athena",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/athena.webp"
+        },
+        {
+            "name": "Autumn",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/autumn.webp"
+        },
+        {
+            "name": "Bella",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/bella.webp"
+        },
+        {
+            "name": "Bello",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/bello.webp"
+        },
+        {
+            "name": "Beran",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/beran.webp"
+        },
+        {
+            "name": "Blackie",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/blackie.webp"
+        },
+        {
+            "name": "Bluebell",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/bluebell.webp"
+        },
+        {
+            "name": "Bluefiddle",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/bluefiddle.webp"
+        },
+        {
+            "name": "Briar",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/briar.webp"
+        },
+        {
+            "name": "Bryda",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/bryda.webp"
+        },
+        {
+            "name": "Buttercup",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/buttercup.webp"
+        },
+        {
+            "name": "Cabby",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/cabby.webp"
+        },
+        {
+            "name": "Calyx",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/calyx.webp"
+        },
+        {
+            "name": "Camellia",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/camellia.webp"
+        },
+        {
+            "name": "Cattail",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/cattail.webp"
+        },
+        {
+            "name": "Cayenne",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/cayenne.webp"
+        },
+        {
+            "name": "Celinda",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/celinda.webp"
+        },
+        {
+            "name": "Ceratos",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/ceratos.webp"
+        },
+        {
+            "name": "Cinnamon",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/cinnamon.webp"
+        },
+        {
+            "name": "Connora",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/connora.webp"
+        },
+        {
+            "name": "Coral",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/coral.webp"
+        },
+        {
+            "name": "Cosima",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/cosima.webp"
+        },
+        {
+            "name": "Derik",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/derik.webp"
+        },
+        {
+            "name": "Dewsparkle",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/dewsparkle.webp"
+        },
+        {
+            "name": "Diamond",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/diamond.webp"
+        },
+        {
+            "name": "Dowager",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/dowager.webp"
+        },
+        {
+            "name": "Fairybell",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/fairybell.webp"
+        },
+        {
+            "name": "Farah",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/farah.webp"
+        },
+        {
+            "name": "Fiona",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/fiona.webp"
+        },
+        {
+            "name": "Flame",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/flame.webp"
+        },
+        {
+            "name": "Flipper",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/flipper.webp"
+        },
+        {
+            "name": "Flit",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/flit.webp"
+        },
+        {
+            "name": "Flora",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/flora.webp"
+        },
+        {
+            "name": "Foxtail",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/foxtail.webp"
+        },
+        {
+            "name": "Foxglove",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/foxglove.webp"
+        },
+        {
+            "name": "Garnet",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/garnet.webp"
+        },
+        {
+            "name": "Generosity",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/generosity.webp"
+        },
+        {
+            "name": "Hawthorn",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/hawthorn.webp"
+        },
+        {
+            "name": "Hyperion",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/hyperion.webp"
+        },
+        {
+            "name": "Iceking",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/iceking.webp"
+        },
+        {
+            "name": "Jewel",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/jewel.webp"
+        },
+        {
+            "name": "Jikin",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/jikin.png"
+        },
+        {
+            "name": "Jordanna",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/jordanna.webp"
+        },
+        {
+            "name": "Kona",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/kona.webp"
+        },
+        {
+            "name": "Lavender",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/lavender.webp"
+        },
+        {
+            "name": "Lien",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/lien.webp"
+        },
+        {
+            "name": "Lotus",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/lotus.webp"
+        },
+        {
+            "name": "Misa",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/misa.webp"
+        },
+        {
+            "name": "Moonfairy",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/moonfairy.webp"
+        },
+        {
+            "name": "Nike",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/nike.webp"
+        },
+        {
+            "name": "Nyx",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/nyx.webp"
+        },
+        {
+            "name": "Ondine",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/ondine.webp"
+        },
+        {
+            "name": "Petal",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/petal.webp"
+        },
+        {
+            "name": "Rodin",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/rodin.webp"
+        },
+        {
+            "name": "Rodrigo",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/Rodrigo.webp"
+        },
+        {
+            "name": "Rosebriar",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/rosebriar.webp"
+        },
+        {
+            "name": "Saffron",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/saffron.webp"
+        },
+        {
+            "name": "Shamal",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/shamal.webp"
+        },
+        {
+            "name": "Shasta Daisy",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/shasta daisy.png"
+        },
+        {
+            "name": "Shenandoah",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/shenandoah.webp"
+        },
+        {
+            "name": "Silvia",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/silvia.webp"
+        },
+        {
+            "name": "Simon / Ginger",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/simonginger.webp"
+        },
+        {
+            "name": "Skipper",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/skipper.webp"
+        },
+        {
+            "name": "Sleetmane",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/sleetmane.webp"
+        },
+        {
+            "name": "Snapdragon",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/snapdragon.webp"
+        },
+        {
+            "name": "Snowball",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/snowball.webp"
+        },
+        {
+            "name": "Snowdreamer",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/snowdreamer.webp"
+        },
+        {
+            "name": "Soot",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/soot.webp"
+        },
+        {
+            "name": "Starlight",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/starlight.webp"
+        },
+        {
+            "name": "Sunflower",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/sunflower.webp"
+        },
+        {
+            "name": "Tarragon",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/tarragon.webp"
+        },
+        {
+            "name": "Thunder",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/thunder.webp"
+        },
+        {
+            "name": "twig",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/twig.webp"
+        },
+        {
+            "name": "Valentino",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/valentino.webp"
+        },
+        {
+            "name": "Venus",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/venus.webp"
+        },
+        {
+            "name": "Violet",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/violet.webp"
+        },
+        {
+            "name": "Waterlily",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/waterlily.webp"
+        },
+        {
+            "name": "Wings",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/wings.webp"
+        },
+        {
+            "name": "Zabarius",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/zabarius.webp"
+        },
+        {
+            "name": "Zephyros",
+            "image": "/phasergames/quiz/belloquiz/images/adventures/zephyros.webp"
+        }
+    ]
+}

@@ -8,7 +8,7 @@
     "header_wiki_btn" : "Wiki.gg",
     "header_discord_btn" : "Discord",
 
-    "footer_maininfos" : "Pour toutes questions, commentaires ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
+    "footer_maininfos" : "Pour toutes questions, commentaries ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
     "footer_home_linktxt" : "Accueil",
     "footer_wiki_linktxt" : "Page du Wiki",
     "footer_webarchive_linktxt" : "Page du Web Archive",
@@ -39,7 +39,7 @@
     "game_memorygame" : "Jeu de Memory",
     "game_quizgame" : "Quiz",
     "gamestables" : "Ecurie",
-    "game_spectacularjumpinggame" : "Le Jeu des Sauts Extraordinaires (WIP)",
+    "game_spectacularjumpinggame" : "Le Jeu des Sauts Extraordinaries (WIP)",
     "game_artstudio" : "Studio des Artistes",
     "game_lancegame" : "Jeu de Lance",
     "game_storybook" : "Storybook",
@@ -51,6 +51,9 @@
     "game_map": "World Map",
     "game_oldmap": "Old Map",
     "game_newmap": "New Map",
+    "game_belloquiz": "Bello's Quiz",
+    "game_adventuresquiz": "Adventures Quiz",
+    "game_autumnjourney": "Autumn Journey Quiz",
 
     "artstudio_warning" : "Ce jeu a les fichiers des chevaux originaux manquantse.",
     
@@ -62,6 +65,8 @@
 
     "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
     "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
+
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
