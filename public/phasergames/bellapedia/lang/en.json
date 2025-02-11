@@ -378,7 +378,7 @@
                 },
                 {
                     "name": "Haflinger",
-                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "image": "./images/horses/halflinger.jpg",
                     "info": ""
                 },
                 {
