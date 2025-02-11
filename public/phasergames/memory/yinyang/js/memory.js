@@ -27,7 +27,7 @@ class Memory extends Phaser.Scene
         this.load.image('data_container', '/phasergames/memory/yinyang/images/datas_container.png');
         
         // DEBUG
-        this.load.image('mockup', '/phasergames/memory/yinyang/images/mockup.png');
+        this.load.image('testImg', '/images/horses/bella.png')
     }
 
     create ()
@@ -36,17 +36,80 @@ class Memory extends Phaser.Scene
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
         this.input.topOnly = true;
 
-        // General vars we need for the game
+        // General var
+        const START_POS_X = 510;
+        const START_POS_Y = 156;
+        const CELL_SIZE_X = 90;
+        const CELL_SIZE_Y = 130;
+        const OFFSET_X = 140;
+        const OFFSET_Y = 168;
 
         // Set UI
         this.add.image(0, 0, 'background').setOrigin(0);
+        this.add.image(840, 47, 'data_container').setScale(.8, .7);
 
-        this.add.image(0, 0, 'mockup').setOrigin(0).setAlpha(0.5); // DEBUG
+
+        const globalTextSettings = {
+            font: 'bold 26px Arial',
+            color: 'white',
+            align: 'center',
+            wordWrap: { width: 400 } ,
+        }
+
+        const datasTextSettings = {
+            font: 'bold 20px Arial',
+            color: 'white',
+            align: 'left'
+        }
 
         // Score
+        let score = 0;
+        let scoreTxt = this.add.text(718, 36, `${langData.score}${score}`, datasTextSettings);
 
         // Timer
+        let timer = "00:00";
+        let timerTxt = this.add.text(858, 36, `${langData.time}${timer}`, datasTextSettings);
 
         // Init Memory Game
+        initCards();
+
+        function initCards()
+        {
+            let cards = [];
+            for (let xColumn = 0; xColumn < 4; xColumn++)
+            {
+                cards[xColumn] = []
+    
+                for(let yRow = 0; yRow < 3; yRow++)
+                {
+                    let card = game.add.image(START_POS_X + xColumn * OFFSET_X,
+                                              START_POS_Y + yRow * OFFSET_Y,
+                                              'card_back')
+                                              .setOrigin(0.5)
+                                              .setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y)
+                                              .setInteractive({pixelPerfect: true});
+    
+                    let cardDatas = 
+                    {
+                        x: xColumn,
+                        y: yRow,
+                        cardObj: card,
+                        cardImgRef: "test"
+                    }
+    
+                    card.on("pointerdown", () =>
+                    {
+                        userChoseCard(cardDatas);
+                    });
+    
+                    cards[xColumn].push(cardDatas)
+                }
+            }
+        }
+
+        function userChoseCard(cardDatas)
+        {
+            console.log(cardDatas);
+        }
     }
 }
