@@ -14,11 +14,17 @@ class Quiz extends Phaser.Scene
         this.load.on('progress', function (value) {
             progressBar.clear();
             progressBar.fillStyle(0x35a3d5, 1);
-            progressBar.fillRect(389, 337, 100 * value, 6);
+            progressBar.fillRect(422, 443, 100 * value, 6);
         });    
-        this.add.image(444, 261, 'card_back');  
-        this.add.graphics().fillStyle(0x000000).fillRect(386, 334, 116, 12);
+        this.add.image(475, 315, 'card_back'); 
+        this.add.graphics().fillStyle(0x000000).fillRect(420, 440, 116, 12);
         const progressBar = this.add.graphics();
+
+        // Loading the questions
+        this.horseDatas = langData.horseDatas;
+        this.horseDatas.forEach(horse => {     
+            this.load.image(`${this.horseDatas.indexOf(horse)}_img`, `${horse.image}`);
+        });
 
         // Load in images and sounds
         this.load.image('background', '/phasergames/quiz/belloquiz/images/background.png');
@@ -29,7 +35,7 @@ class Quiz extends Phaser.Scene
         this.load.image('question_container', '/phasergames/quiz/belloquiz/images/question_container.png');
     }
 
-    create (data)
+    create ()
     {
         const game = this;
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
@@ -43,7 +49,6 @@ class Quiz extends Phaser.Scene
         let turnsLeft = MAX_TURNS;
 
         let score = 0;
-        let highScore = 0;
 
         let usedHorses = [];
         let choiceBtns = [];
@@ -87,14 +92,12 @@ class Quiz extends Phaser.Scene
 
         // SCORE
         score = 0;
-        let savedScore = localStorage.getItem(SCORE_SAVE_PATH)
-        highScore = (savedScore == null) ? 0 : savedScore;
         let scoreTxt = this.add.text(80, 125, `${langData.ui.score}${score}`, datasTextSettings);
         if (lang == "fr")
             scoreTxt.x = 60;
 
         // Init quiz
-        const horseDatas = data.questions;
+        const horseDatas = this.horseDatas;
 
         usedHorses = [];
         choiceBtns = [];
