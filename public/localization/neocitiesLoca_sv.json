@@ -49,6 +49,12 @@
     "game_dressupstables" : "Utklädning Spel",
     "game_firelightFestival" : "Firelight Festival",
     "game_bellapedia": "Bellapedia",
+    "game_map": "World Map",
+    "game_oldmap": "Old Map",
+    "game_newmap": "New Map",
+    "game_belloquiz": "Bello's Quiz",
+    "game_adventuresquiz": "Adventures Quiz",
+    "game_autumnjourney": "Autumn Journey Quiz",
 
     "artstudio_warning" : "Detta spel saknar filerna till original hästarna och kan för tillfället inte ladda texten rätt.",
     
@@ -58,7 +64,36 @@
 
     "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid som förväntat.",
 
-    "stables_title" : "Välkommen till Bella Sara Världen",
+    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
+    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
-    "dressup_horselink" : "Häst Länk"
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
+
+    "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
+    "puzzle_customTitle" : "Custom",
+    "puzzle_moonfairies" : "Moonfairies",
+    "puzzle_sunflowers" : "Sunflowers",
+    "puzzle_bellaball" : "Bella's Ball",
+    "puzzle_bellasaraadventures" : "Bella Sara Adventures",
+    "puzzle_royalty" : "Royalty",
+    "puzzle_treasures" : "Treasures",
+    "puzzle_babybella" : "Baby Bella",
+    "puzzle_magicalfriends" : "Magical Friends",
+    "puzzle_nativelights" : "Native Lights",
+    "puzzle_bellasara" : "Bella Sara",
+    "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
+    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+
+    "stables_title" : "Welcome to the World of Bella Sara",
+
+    "dressup_horselink" : "Horse Link",
+
+    "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
+    "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",
+    "babybella_13Sept": "13th of September, 2008 - Cirra's Birth",
+    "babybella_19Sept": "19th of September, 2008 - Janie's Birth",
+    "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
+    "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
+    "babybella_17Dec": "17th of December, 2008 - After the event's end",
+    "footer_timeline_link": "Timeline"
 }

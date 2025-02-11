@@ -8,7 +8,7 @@
     "header_wiki_btn" : "Wiki.gg",
     "header_discord_btn" : "Discord",
 
-    "footer_maininfos" : "Pour toutes questions, commentaires ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
+    "footer_maininfos" : "Pour toutes questions, commentaries ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
     "footer_home_linktxt" : "Accueil",
     "footer_wiki_linktxt" : "Page du Wiki",
     "footer_webarchive_linktxt" : "Page du Web Archive",
@@ -39,7 +39,7 @@
     "game_memorygame" : "Jeu de Memory",
     "game_quizgame" : "Quiz",
     "gamestables" : "Ecurie",
-    "game_spectacularjumpinggame" : "Le Jeu des Sauts Extraordinaires (WIP)",
+    "game_spectacularjumpinggame" : "Le Jeu des Sauts Extraordinaries (WIP)",
     "game_artstudio" : "Studio des Artistes",
     "game_lancegame" : "Jeu de Lance",
     "game_storybook" : "Storybook",
@@ -49,6 +49,12 @@
     "game_dressupstables" : "Jeu de Dress Up",
     "game_firelightFestival" : "Festival de Feux d'Artifice",
     "game_bellapedia": "Bellapedia",
+    "game_map": "World Map",
+    "game_oldmap": "Old Map",
+    "game_newmap": "New Map",
+    "game_belloquiz": "Bello's Quiz",
+    "game_adventuresquiz": "Adventures Quiz",
+    "game_autumnjourney": "Autumn Journey Quiz",
 
     "artstudio_warning" : "Ce jeu a les fichiers des chevaux originaux manquantse.",
     
@@ -58,7 +64,36 @@
 
     "storybook_warning": "Ce jeu ne semble pas capable de se mettre en mode silencieux lorque l'on va sur la page suivante et ne joue pas toujours les vidéos comme attendu.",
 
-    "stables_title" : "Bienvenue dans le monde de Bella Sara",
+    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
+    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
-    "dressup_horselink" : "Lien du Cheval"
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
+
+    "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
+    "puzzle_customTitle" : "Custom",
+    "puzzle_moonfairies" : "Moonfairies",
+    "puzzle_sunflowers" : "Sunflowers",
+    "puzzle_bellaball" : "Bella's Ball",
+    "puzzle_bellasaraadventures" : "Bella Sara Adventures",
+    "puzzle_royalty" : "Royalty",
+    "puzzle_treasures" : "Treasures",
+    "puzzle_babybella" : "Baby Bella",
+    "puzzle_magicalfriends" : "Magical Friends",
+    "puzzle_nativelights" : "Native Lights",
+    "puzzle_bellasara" : "Bella Sara",
+    "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
+    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+
+    "stables_title" : "Welcome to the World of Bella Sara",
+
+    "dressup_horselink" : "Horse Link",
+
+    "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
+    "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",
+    "babybella_13Sept": "13th of September, 2008 - Cirra's Birth",
+    "babybella_19Sept": "19th of September, 2008 - Janie's Birth",
+    "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
+    "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
+    "babybella_17Dec": "17th of December, 2008 - After the event's end",
+    "footer_timeline_link": "Timeline"
 }
