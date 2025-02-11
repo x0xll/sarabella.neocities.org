@@ -10,7 +10,7 @@ class Load extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('card_back', './images/card_back.png');
+        this.load.image('card_back', '/phasergames/quiz/belloquiz/images/card_back.png');
 
         const game = this;
 

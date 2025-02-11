@@ -21,12 +21,12 @@ class Quiz extends Phaser.Scene
         const progressBar = this.add.graphics();
 
         // Load in images and sounds
-        this.load.image('background', './images/background.png');
-        this.load.image('logo', './images/bella_logo.png');
-        this.load.image('button', './images/choice_btn.png');
-        this.load.image('img_container', './images/img_container.png');
-        this.load.image('data_container', './images/datas_container.png');
-        this.load.image('question_container', './images/question_container.png');
+        this.load.image('background', '/phasergames/quiz/belloquiz/images/background.png');
+        this.load.image('logo', '/phasergames/quiz/belloquiz/images/bella_logo.png');
+        this.load.image('button', '/phasergames/quiz/belloquiz/images/choice_btn.png');
+        this.load.image('img_container', '/phasergames/quiz/belloquiz/images/img_container.png');
+        this.load.image('data_container', '/phasergames/quiz/belloquiz/images/datas_container.png');
+        this.load.image('question_container', '/phasergames/quiz/belloquiz/images/question_container.png');
     }
 
     create (data)
