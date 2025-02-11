@@ -272,8 +272,14 @@ class BellapediaOpen extends Phaser.Scene
         function selectEntry() {
             game.entryOpen.setVisible(true)
             game.entryOpenTitle.text = game.allEntries[game.currentEntry].name
+            game.entryOpenTitle.setFontSize(23)
+            while (game.entryOpenTitle.width > 260) {
+                game.entryOpenTitle.setFontSize(Number(game.entryOpenTitle.style.fontSize.slice(0, -2))-1)
+            }
+            game.entryOpenInfo.y = 52
             game.entryOpenInfo.text = game.allEntries[game.currentEntry].info
             game.entryScrollBar.setVisible(game.entryOpenInfo.height > 340)
+            game.entryScroll.y = 123
             game.entryScroll.setVisible(game.entryOpenInfo.height > 340)
 
             game.entryImage.setTexture(game.allEntries[game.currentEntry].name).setDisplaySize(255, 300).setVisible(true)
@@ -303,7 +309,7 @@ class BellapediaOpen extends Phaser.Scene
 
         let entryTitleConfig = {
             fontFamily: 'Arial',
-            fontSize: '23px',
+            fontSize: 23,
             color: '#9c6826'
         }
         let entryInfoTextConfig = {
