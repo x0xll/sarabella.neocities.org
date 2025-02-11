@@ -137,6 +137,9 @@ class BellapediaOpen extends Phaser.Scene
             game.entryOpenTitle.text = null
             game.entryOpenInfo.text = null
             game.entryImage.setVisible(false)
+            scrollZone.removeInteractive()
+            scrollUp.removeInteractive()
+            scrollDown.removeInteractive()
         }
 
         function hoverBook(book) {
@@ -291,6 +294,15 @@ class BellapediaOpen extends Phaser.Scene
 
             entryArrowLeft.setVisible(game.currentEntry !== 0)
             entryArrowRight.setVisible(game.currentEntry !== game.allEntries.length - 1)
+            if (game.entryOpenInfo.height > 340) {
+                scrollZone.setInteractive()
+                scrollUp.setInteractive(new Phaser.Geom.Rectangle(810, 85, 29, 23), Phaser.Geom.Rectangle.Contains)
+                scrollDown.setInteractive(new Phaser.Geom.Rectangle(810, 332, 29, 23), Phaser.Geom.Rectangle.Contains)
+            } else {
+                scrollZone.removeInteractive()
+                scrollUp.removeInteractive()
+                scrollDown.removeInteractive()
+            }
 
             // Hide book elements
             game.pageSelectFrame.setVisible(false)
@@ -329,27 +341,61 @@ class BellapediaOpen extends Phaser.Scene
         this.entryScrollBar = this.add.image(825, 220, 'entryScrollBar').setVisible(false)
         this.entryScroll = this.add.image(825, 123, 'entryScroll').setVisible(false)
         //  The rectangle they can 'drag' within
-        let scrollZone = this.add.zone(810, 123, 29, 197).setOrigin(0).setInteractive();
+        let scrollZone = this.add.zone(810, 123, 29, 197).setOrigin(0);
+            scrollZone.on('pointermove', function (pointer) {
+                if (pointer.isDown)
+                {
+                    game.entryScroll.y = pointer.y
+                    let moveText = (pointer.y - 123) / 197 * (game.entryOpenInfo.height - 340)
 
-        scrollZone.on('pointermove', function (pointer) {
-            if (pointer.isDown)
-            {
-                game.entryScroll.y = pointer.y
-                let moveText = (pointer.y - 123) / 197 * (game.entryOpenInfo.height - 340)
+                    let percentage = (pointer.y - 123) / 197 * 100
+                    if (percentage < 7) {
+                        moveText = 0
+                        game.entryScroll.y = 123
+                    } else if (percentage > 93) {
+                        moveText = game.entryOpenInfo.height - 340
+                        game.entryScroll.y = 123 + 197
+                    }
 
-                let percentage = (pointer.y - 123) / 197 * 100
-                if (percentage < 7) {
-                    moveText = 0
-                    game.entryScroll.y = 123
-                } else if (percentage > 93) {
-                    moveText = game.entryOpenInfo.height - 340
-                    game.entryScroll.y = 123 + 197
+                    game.entryOpenInfo.y = 52 - moveText;
                 }
 
-                game.entryOpenInfo.y = 52 - moveText;
-            }
+            });
+        let scrollAmountOnClick = 30
+        let scrollUp = game.add.graphics()
+            scrollUp.on('pointerdown', function (pointer) {
+                if (pointer.isDown)
+                {
+                    let moveText = game.entryOpenInfo.y + scrollAmountOnClick
+                    game.entryScroll.y = 123-((moveText - 52) / (game.entryOpenInfo.height - 340) * 197)
 
-        });
+                    if (moveText >= 52) {
+                        moveText = 52
+                        game.entryScroll.y = 123
+                    }
+
+                    game.entryOpenInfo.y =  moveText;
+                }
+
+            });
+        let scrollDown = game.add.graphics()
+            scrollDown.on('pointerdown', function (pointer) {
+                if (pointer.isDown)
+                {
+                    let moveText = game.entryOpenInfo.y - scrollAmountOnClick
+                    game.entryScroll.y = 123-((moveText - 52) / (game.entryOpenInfo.height - 340) * 197)
+
+                    if (moveText <= 52 - game.entryOpenInfo.height + 340) {
+                        moveText = 52 - game.entryOpenInfo.height + 340
+                        game.entryScroll.y = 123 + 197
+                    }
+
+                    game.entryOpenInfo.y =  moveText;
+                }
+
+            });
+        // this.add.graphics().fillStyle(0x000000).fillRect(810, 85, 29, 23).setAlpha(.5);
+        // this.add.graphics().fillStyle(0x000000).fillRect(810, 332, 29, 23).setAlpha(.5);
 
         let entryArrowRight = this.add.sprite(775, 440, 'arrow', 'idle').setInteractive({ pixelPerfect: true, useHandCursor: true }).setVisible(false)
             entryArrowRight.on('pointerover', function (pointer) { entryArrowRight.setFrame('hover') });
