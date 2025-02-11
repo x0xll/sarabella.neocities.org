@@ -45,7 +45,7 @@ class Quiz extends Phaser.Scene
         let score = 0;
         let highScore = 0;
 
-        let usedQuestions = [];
+        let usedHorses = [];
         let choiceBtns = [];
 
         // Set UI
@@ -61,7 +61,15 @@ class Quiz extends Phaser.Scene
             font: 'bold 26px Arial',
             color: 'white',
             align: 'center',
-            wordWrap: { width: 450 } ,
+            wordWrap: { width: 400 } ,
+        }
+
+        const answerTextSettings = {
+            font: 'bold 18px Arial',
+            color: 'white',
+            align: 'center',
+            wordWrap: { width: 370 } ,
+            lineSpacing: -5
         }
 
         const datasTextSettings = {
@@ -86,13 +94,13 @@ class Quiz extends Phaser.Scene
             scoreTxt.x = 60;
 
         // Init quiz
-        const questionDatas = data.questions;
+        const horseDatas = data.questions;
 
-        usedQuestions = [];
+        usedHorses = [];
         choiceBtns = [];
 
         let guessImg = this.add.image(690, 315, `0_img`).setOrigin(.5);
-        let guessQuestion = this.add.text(215, 280, `${questionDatas[0].question}`, globalTextSettings).setOrigin(.5, .5);
+        let guessQuestion = this.add.text(215, 280, `${horseDatas[0].question}`, globalTextSettings).setOrigin(.5, .5);
         let guessQuestionNum = this.add.text(215, 210, `${langData.ui.question}${(MAX_TURNS - turnsLeft) + 1}`, globalTextSettings).setOrigin(.5, .5);
 
         initializeGuessButtons(this);
@@ -103,7 +111,7 @@ class Quiz extends Phaser.Scene
             for (let i = 0; i < MAX_CHOICE_BTN; i++)
                 {
                     let btn = game.add.image(217, 380 + (60 * i), 'button').setInteractive({pixelPerfect: true});
-                    let btnTxt = game.add.text(217, 383 + (60 * i), `Bella Sara`, globalTextSettings).setOrigin(.5, .5);
+                    let btnTxt = game.add.text(217, 383 + (60 * i), `Bella Sara`, answerTextSettings).setOrigin(.5, .5);
             
                     let btnObj = {
                         button : btn,
@@ -118,34 +126,82 @@ class Quiz extends Phaser.Scene
 
         function updateGuessQuestion()
         {
-            var randQuestion = -1;
+            var randHorse = -1;
             var failsafe = 100;
 
             do
             {
-                randQuestion = Math.floor(Math.random()*questionDatas.length);
+                randHorse = Math.floor(Math.random()*horseDatas.length);
                 failsafe--;
             }
-            while (usedQuestions.length > 0 && usedQuestions.includes(randQuestion) && failsafe > 0)
-            usedQuestions.push(randQuestion);
+            while (usedHorses.length > 0 && usedHorses.includes(randHorse) && failsafe > 0)
+            usedHorses.push(randHorse);
             
-            guessImg.setTexture(`${randQuestion}_img`).setDisplaySize(353, 500);
+            guessImg.setTexture(`${randHorse}_img`).setDisplaySize(353, 500);
 
-            guessQuestion.text = `${questionDatas[randQuestion].question}`;
+            var question = -1;
+            var attributeType = "";
+
+            do
+            {
+                question = Math.floor(Math.random() * langData.questions.length);
+                attributeType = langData.questions[question].attribute;
+            }
+            while 
+            (
+                (attributeType == "name" && horseDatas[randHorse].name == undefined) ||
+                (attributeType == "quote" && horseDatas[randHorse].quote == undefined)
+            )
+
+            guessQuestion.text = `${langData.questions[question].question}`;
 
             guessQuestionNum.text = `${langData.ui.question}${(MAX_TURNS - turnsLeft) + 1}`;
 
             var alreadyPickedNums = [];
-            alreadyPickedNums.push(randQuestion);
+            alreadyPickedNums.push(randHorse);
+            var randGoodChoice = Math.floor(Math.random() * MAX_CHOICE_BTN);
+
+            var btnDatas = choiceBtns[randGoodChoice];
+
+            switch(attributeType)
+            {
+                default:
+                case "name":
+                    btnDatas.text.text = `${horseDatas[randHorse].name}`;
+                    break;
+                case "quote":
+                    btnDatas.text.text = `${horseDatas[randHorse].quote}`;
+                    break;
+            }
+
+            btnDatas.goodChoice = true;   
 
             for (let i = 0; i < MAX_CHOICE_BTN; i++)
             {
-                choiceBtns[i].text.text = `${questionDatas[randQuestion].choices[i]}`;
+                if (randGoodChoice == i) continue; 
 
-                if (i + 1 == questionDatas[randQuestion].goodAnswer)
-                    choiceBtns[i].goodChoice = true;   
-                else
-                choiceBtns[i].goodChoice = false;
+                var otherChoice;
+                var failsafe = 100;
+
+                do{
+                    otherChoice = Math.floor(Math.random()*horseDatas.length);
+                    failsafe--;
+                }
+                while (alreadyPickedNums.includes(otherChoice) || failsafe <= 0);
+
+                alreadyPickedNums.push(otherChoice);
+                var btnDatas = choiceBtns[i];
+                switch(attributeType)
+                {
+                    default:
+                    case "name":
+                        btnDatas.text.text = `${horseDatas[otherChoice].name}`;
+                        break;
+                    case "quote":
+                        btnDatas.text.text = `${horseDatas[otherChoice].quote}`;
+                        break;
+                }
+                btnDatas.goodChoice = false;   
             }
         }
 

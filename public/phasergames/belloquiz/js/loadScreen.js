@@ -15,15 +15,15 @@ class Load extends Phaser.Scene
         const game = this;
 
         // Loading the questions
-        game.questionDatas = langData.questions;
-        game.questionDatas.forEach(question => {     
-            game.load.image(`${game.questionDatas.indexOf(question)}_img`, `${question.image}`);
+        game.horseDatas = langData.horseDatas;
+        game.horseDatas.forEach(horse => {     
+            game.load.image(`${game.horseDatas.indexOf(horse)}_img`, `${horse.image}`);
         });
     }
 
     create ()
     { 
         const game = this;
-        game.scene.start("Quiz", {questions: game.questionDatas});
+        game.scene.start("Quiz", {questions: game.horseDatas});
     }
 }
