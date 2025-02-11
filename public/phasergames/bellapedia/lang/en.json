@@ -1,181 +1,1047 @@
 {
     "title": "Welcome to the BELLAPEDIA",
-    "intro": "This is for all you horse lovers out there.\n\nPick a book, find a horse and have it answer your horse questions.This may only be a starting point, for you to explore the beautiful, amazing world of horses.\n\nHave fun!\n\nA special thanks to Oklahoma State University for the horse biography details.",
-    "book1": {
-        "title": "A-D",
-        "pages": [
-            {
-                "name": "Abenaki",
-                "image": "./images/horses/abenaki.jpg",
-                "info": [
-                    {
-                        "title": "Details",
-                        "info": [
-                            "Area: Northeastern U.S. in the area of present-day Maine",
-                            "Their name means \"people of the dawn\""
-                        ]
-                    },
-                    { 
-                        "title": "About the Tribe",
-                        "info": "The Abenaki tribe which this horse is based on is located in the Northeastern US in the area of present-day Maine. Their name means \"people of the dawn\". The Abenaki lived in wigwams, temporary dwellings, while they relocated seasonally, but also built permanent longhouses in centralized villages. Their seasonal migrations included hunting, fishing, and growing a variety of crops, returning to their longhouses during the winter. The Abenaki constructed birch-bark canoes for water travel. This tribal group includes the Penobscot and the Androscoggin.\n\nThe Abenaki fought against the English on the side of the French during the Seven Years' War from 1756 to 1763. After their defeat, many went north where they were welcomed by the French with gifts of land. Presently, there is a reserve in Saint Francis, Quebec."
-                    }
-                ]
-            },
-            {
-                "name": "Abrasoke",
-                "image": "./images/horses/absaroke.jpg",
-                "info": [
-                    { 
-                        "title": "About the Tribe",
-                        "info": "The tribe Absaroke, which this steed is based on, is located in the Western U.S. at the foothills of the Rocky Mountains in present-day Montana. Their name is derived from the language of their sister tribe, the Hidatsa, and means \"people of the large-beaked bird.\" The Absaroke are more commonly known as the Crow Nation.\n\nAbsaroke used horses to hunt buffalo and did not farm other than to raise tobacco. They cultivated two kinds of tobacco—medicine tobacco used in ceremonies and everyday tobacco. In the 19th Century, the Crow allied with the United States and fought on the side of the U.S. in various conflicts against the Cheyenne, Arapahos, and Sioux. Today, the Crow Nation has the largest reservation in the state of Montana, 1.5 million acres."
-                    }
-
-                ]
-            },
-            {
-                "name": "Akama",
-                "image": "./images/horses/akama.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Aleut",
-                "image": "./images/horses/aleut.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "American Quarter Horse",
-                "image": "./images/horses/americanQuarterHorse.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Anemone & Whiffle Bear",
-                "image": "./images/horses/anemone.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Anigan & Chucklepuck",
-                "image": "./images/horses/anigan.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Anisinabe",
-                "image": "./images/horses/anisinabe.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Apache",
-                "image": "./images/horses/apache.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Appaloosa",
-                "image": "./images/horses/appaloosa.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Arabian",
-                "image": "./images/horses/arabian.jpg",
-                "info": [
-                ]
-            }
-        ]
-    },
-    "book2": {
-        "title": "E-G",
-        "pages": [
-            {
-                "name": "Eagle",
-                "image": "./images/horses/eagle.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Ebenos",
-                "image": "./images/horses/ebenos.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Edana",
-                "image": "./images/horses/edana.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Edda",
-                "image": "./images/horses/edda.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Embarr",
-                "image": "./images/horses/embarr.png",
-                "info": [
-                ]
-            },
-            {
-                "name": "Emberic",
-                "image": "./images/horses/emberic.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Farfalla",
-                "image": "./images/horses/farfalla.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Faxon",
-                "image": "./images/horses/faxon.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Felise",
-                "image": "./images/horses/felise.jpg",
-                "info": [
-                ]
-            },
-            {
-                "name": "Fiona",
-                "image": "./images/horses/fiona.png",
-                "info": [
-                ]
-            }
-        ]
-    },
-    "book3": {
-        "title": "H-K",
-        "pages": [
-        ]
-    },
-    "book4": {
-        "title": "L-O",
-        "pages": [
-        ]
-    },
-    "book5": {
-        "title": "P-S",
-        "pages": [
-        ]
-    },
-    "book6": {
-        "title": "T-W",
-        "pages": [
-        ]
-    },
-    "book7": {
-        "title": "X-Z",
-        "pages": [
-        ]
-    }
+    "intro": "This is for all you horse lovers out there.\n\nPick a book, find a horse and have it answer your horse questions. This may only be a starting point, for you to explore the beautiful, amazing world of horses.\n\nHave fun!\n\nA special thanks to Oklahoma State University for the horse biography details.",
+    "books": [
+        {
+            "title": "A-D",
+            "pages": [
+                {
+                    "name": "Abenaki",
+                    "image": "./images/horses/abenaki.jpg",
+                    "info": "Details\n • Area: Northeastern U.S. in the area of present-day Maine.\n • Their name means \"people of the dawn.\"\n\nAbout the Tribe\nThe Abenaki lived in wigwams, temporary dwellings, while they moved about seasonally, but also built permanent longhouses in centralized villages. Their seasonal migrations included hunting, fishing, and growing a variety of crops, but they returned to their longhouses during the winter. Abenaki built birch-bark canoes for water travel.\n\nThis tribal group includes the Penobscot and the Androscoggin. Abenakis fought against the English on the side of the French during the Seven Years' War from 1756 to 1763. After their defeat, many went north where they were welcomed by the French with gifts of land, and presently, there is a reserve in Saint Francis, Quebec."
+                        
+                },
+                {
+                    "name": "Abrasoke",
+                    "image": "./images/horses/absaroke.jpg",
+                    "info": "Details\n • Area: Western U.S. at the foothills of the Rocky Mountains in present day Montana.\n • Their name is derived from the language of their sister tribe, the Hidatsa, and means \"people of the large-beaked bird.\"\n • The Absarokes are more commonly known as the Crow Nation.\n\nAbout the Tribe\nThe Crow used horses to hunt buffalo, and did not farm other than to raise tobacco. They cultivated two kinds of tobacco—medicine tobacco used in ceremonies and everyday tobacco.\n\nIn the 19th Century, the Crow allied with the United States, and fought on the side of the U.S. in various conflicts against the Cheyenne, Arapahos, and Sioux. Today, the Crow Nation has the largest reservation in the state of Montana, 1.5 million acres."
+                },
+                {
+                    "name": "Akama",
+                    "image": "./images/horses/akama.jpg",
+                    "info": "Details\n • Area: Acoma Pueblo, New Mexico, US.\n • Name means \"The People of the White Rock.\"\n • Acoma Pueblo is the oldest continuously inhabited location in the U.S.\n\nAbout the Tribe\nLike other Pueblo tribes, the Acoma built permanent dwellings out of adobe bricks. They were active traders with Pueblo tribes to the east and west and with Aztecs and Mayans to the south.\n\nAcoma Pueblo is also known as Sky City because of its location high atop a 370-foot tall mesa. A mesa is a flat-topped hill with sheer cliff sides formed by differential erosion. Mesa means \"table\" in Spanish.\n\nThe Acoma have historically been allied with the Laguna tribe. That alliance survives today. Their reservations border each other and they share many resources between them, including a high school. The Acoma have been master potters for 2000 years."
+                },
+                {
+                    "name": "Aleut",
+                    "image": "./images/horses/aleut.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "American Quarter Horse",
+                    "image": "./images/horses/americanQuarterHorse.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Anemone & Whiffle Bear",
+                    "image": "./images/horses/anemone.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Anigan & Chucklepuck",
+                    "image": "./images/horses/anigan.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Anisinabe",
+                    "image": "./images/horses/anisinabe.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Apache",
+                    "image": "./images/horses/apache.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Appaloosa",
+                    "image": "./images/horses/appaloosa.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Arabian",
+                    "image": "./images/horses/arabian.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Arapaho",
+                    "image": "./images/horses/arapaho.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Arelus & Aurelian Chub",
+                    "image": "./images/horses/arelus.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Artemis",
+                    "image": "./images/horses/artemis.png",
+                    "info": ""
+                },
+                {
+                    "name": "Atalaya & Grecklesaur",
+                    "image": "./images/horses/atalaya.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Autumn & Falltide Leafkin",
+                    "image": "./images/horses/autumn.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Azuro & Marsh Burbler",
+                    "image": "./images/horses/azuro.png",
+                    "info": ""
+                },
+                {
+                    "name": "Barleycorn",
+                    "image": "./images/horses/barleycorn.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Bathylas & Seastelly",
+                    "image": "./images/horses/bathylas.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Beau & Chromeling",
+                    "image": "./images/horses/beau.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Beauty",
+                    "image": "./images/horses/beauty.png",
+                    "info": ""
+                },
+                {
+                    "name": "Bella & Starstone Otter",
+                    "image": "./images/horses/bellaMaF.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Beran & Twinkle Imp",
+                    "image": "./images/horses/beran.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Bifrost",
+                    "image": "./images/horses/bifrost.png",
+                    "info": ""
+                },
+                {
+                    "name": "Blackfeet",
+                    "image": "./images/horses/blackfeet.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Blackie",
+                    "image": "./images/horses/blackie.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Blossom & Posybird",
+                    "image": "./images/horses/blossom.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Bonnie & Glow-Eyed Catkin",
+                    "image": "./images/horses/bonnie.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Brisi",
+                    "image": "./images/horses/brisi.png",
+                    "info": ""
+                },
+                {
+                    "name": "Brumby & Hounderoo",
+                    "image": "./images/horses/brumby.png",
+                    "info": ""
+                },
+                {
+                    "name": "Caspian Horse",
+                    "image": "./images/horses/caspianHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Ceratos & Bobolink",
+                    "image": "./images/horses/ceratos.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Cha Ye & Tea-Leaf Panda",
+                    "image": "./images/horses/chaYe.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Charlemagne",
+                    "image": "./images/horses/charlemagne.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Charlie",
+                    "image": "./images/horses/charlie.png",
+                    "info": ""
+                },
+                {
+                    "name": "Cheyenne",
+                    "image": "./images/horses/cheyenne.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Chiricahua",
+                    "image": "./images/horses/chiricahua.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Chitimacha",
+                    "image": "./images/horses/chitimacha.png",
+                    "info": ""
+                },
+                {
+                    "name": "Chryso & Fringed Newt",
+                    "image": "./images/horses/chryso.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Chumash",
+                    "image": "./images/horses/chumash.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Cindra & Flapuppy",
+                    "image": "./images/horses/cindra.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Clydesdale",
+                    "image": "./images/horses/clydesdale.png",
+                    "info": ""
+                },
+                {
+                    "name": "Cochiti",
+                    "image": "./images/horses/cochiti.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Comanche",
+                    "image": "./images/horses/comanche.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Conall",
+                    "image": "./images/horses/conall.png",
+                    "info": ""
+                },
+                {
+                    "name": "Connora & Ambassador Hound",
+                    "image": "./images/horses/connora.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Danu",
+                    "image": "./images/horses/danu.png",
+                    "info": ""
+                },
+                {
+                    "name": "Donnecha & Pufferfox",
+                    "image": "./images/horses/donnecha.png",
+                    "info": ""
+                },
+                {
+                    "name": "Dreki & Serpetiel",
+                    "image": "./images/horses/dreki.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Dynamo",
+                    "image": "./images/horses/dynamo.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Dyni & Narwhirl",
+                    "image": "./images/horses/dyni.jpg",
+                    "info": ""
+                }
+            ]
+        },
+        {
+            "title": "E-G",
+            "pages": [
+                {
+                    "name": "Eagle",
+                    "image": "./images/horses/eagle.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Ebenos",
+                    "image": "./images/horses/ebenos.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Edana & Fire Spoop",
+                    "image": "./images/horses/edana.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Edda & Golden-Scaled Hind",
+                    "image": "./images/horses/edda.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Embarr",
+                    "image": "./images/horses/embarr.png",
+                    "info": ""
+                },
+                {
+                    "name": "Emberic",
+                    "image": "./images/horses/emberic.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Farfalla",
+                    "image": "./images/horses/farfalla.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Faxon & Pipsqueak Longtail",
+                    "image": "./images/horses/faxon.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Felise & Vulpi Deer",
+                    "image": "./images/horses/felise.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Finnhorse",
+                    "image": "./images/horses/finnhorse.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Fiona & Quixie Faun",
+                    "image": "./images/horses/fiona.png",
+                    "info": ""
+                },
+                {
+                    "name": "Firewalker",
+                    "image": "./images/horses/firewalker.png",
+                    "info": ""
+                },
+                {
+                    "name": "Flame",
+                    "image": "./images/horses/flame.png",
+                    "info": ""
+                },
+                {
+                    "name": "Friesians",
+                    "image": "./images/horses/friesian.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Froya",
+                    "image": "./images/horses/froya.png",
+                    "info": ""
+                },
+                {
+                    "name": "Fylgie",
+                    "image": "./images/horses/fylgie.png",
+                    "info": ""
+                },
+                {
+                    "name": "Ghost",
+                    "image": "./images/horses/ghost.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Giasa & Snugglefriz",
+                    "image": "./images/horses/giasa.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Greenlock & Royal Starbik",
+                    "image": "./images/horses/greenlock.png",
+                    "info": ""
+                },
+                {
+                    "name": "Grey",
+                    "image": "./images/horses/grey.png",
+                    "info": ""
+                }
+            ]
+        },
+        {
+            "title": "H-K",
+            "pages": [
+                {
+                    "name": "Hacknet Horse",
+                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Haflinger",
+                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Halloween",
+                    "image": "./images/horses/halloween.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Harmony",
+                    "image": "./images/horses/harmony.png",
+                    "info": ""
+                },
+                {
+                    "name": "Helia",
+                    "image": "./images/horses/helia.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Hidatsa",
+                    "image": "./images/horses/hidatsa.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Highland Pony",
+                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Huron",
+                    "image": "./images/horses/huron.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Icehorn & Ramshaggle",
+                    "image": "./images/horses/icehorn.png",
+                    "info": ""
+                },
+                {
+                    "name": "Iceprince",
+                    "image": "./images/horses/iceprince.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Iduna",
+                    "image": "./images/horses/iduna.png",
+                    "info": ""
+                },
+                {
+                    "name": "Inuit",
+                    "image": "./images/horses/inuit.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Inupiat",
+                    "image": "./images/horses/inupiat.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Isleta",
+                    "image": "./images/horses/isleta.png",
+                    "info": ""
+                },
+                {
+                    "name": "Ivy & Ivy-Tailed Dragon",
+                    "image": "./images/horses/ivy.png",
+                    "info": ""
+                },
+                {
+                    "name": "Janie",
+                    "image": "./images/horses/janie.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Jewel & Gemdigger Dog",
+                    "image": "./images/horses/jewel.png",
+                    "info": ""
+                },
+                {
+                    "name": "Jicarilla",
+                    "image": "./images/horses/jicarilla.png",
+                    "info": ""
+                },
+                {
+                    "name": "Kallista & Prawn Sprite",
+                    "image": "./images/horses/kallista.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Keetoowah",
+                    "image": "./images/horses/keetoowah.png",
+                    "info": ""
+                },
+                {
+                    "name": "Kelpie-Pooka",
+                    "image": "./images/horses/kelpiePooka.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Kendra & Violet Pixie",
+                    "image": "./images/horses/kendra.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Khrysor",
+                    "image": "./images/horses/khrysor.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Kiowa",
+                    "image": "./images/horses/kiowa.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Kitty & Rainbow Wheebee",
+                    "image": "./images/horses/kitty.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Komenos",
+                    "image": "./images/horses/komenos.png",
+                    "info": ""
+                },
+                {
+                    "name": "Kora",
+                    "image": "./images/horses/kora.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Kounari & Pizazzupine",
+                    "image": "./images/horses/kounari.png",
+                    "info": ""
+                }
+            ]
+        },
+        {
+            "title": "L-O",
+            "pages": [
+                {
+                    "name": "Laguna",
+                    "image": "./images/horses/laguna.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Lakehorse",
+                    "image": "./images/horses/lakehorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Lakota",
+                    "image": "./images/horses/lakota.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Larena",
+                    "image": "./images/horses/larena.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Lenape",
+                    "image": "./images/horses/lenape.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Lien & Lotus Hedgehog",
+                    "image": "./images/horses/lien.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Lillova & Sweetpea Reindeer",
+                    "image": "./images/horses/lillova.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Lukan & Aurora Celestial",
+                    "image": "./images/horses/lukan.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Lumbee",
+                    "image": "./images/horses/lumbee.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Madeja & Yarn Yak",
+                    "image": "./images/horses/madeja.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Mariannis",
+                    "image": "./images/horses/mariannis.png",
+                    "info": ""
+                },
+                {
+                    "name": "Melusine",
+                    "image": "./images/horses/melusine.png",
+                    "info": ""
+                },
+                {
+                    "name": "Menominee",
+                    "image": "./images/horses/menominee.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Miccosukee",
+                    "image": "./images/horses/miccosukee.png",
+                    "info": ""
+                },
+                {
+                    "name": "Mira",
+                    "image": "./images/horses/mira.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Mireldis & Tassel Mouse",
+                    "image": "./images/horses/mireldis.jpg",
+                    "info": "\"Look for help and you will find it all around you.\"\n\nMireldis is a very magical horse in North of North. She brews potions with the help of her magical friends, the Tassel Mice, who gather all of the ingredients Mireldis needs. They add them to the cauldron to Mireldis' specifications and under her watchful eye.\n\nMireldis brews her potions under moonlight. She is a very mysterious figure and keeps to herself. Over the years she has become a figure of legend who has inspired this song:\n\nTassel Mouse, Tassel Mouse where do you roam?\n\nI search in the night on a quest far from home.\n\nTassel Mouse, Tassel Mouse who sent you so far?\n\nThe lady so white with the glowing gold star.\n\nTassel Mouse, Tassel Mouse for what do you search?\n\nI search for a twig to throw in from my perch!"
+                },
+                {
+                    "name": "Missouri Fox Trotter",
+                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Mistral",
+                    "image": "./images/horses/mistral.png",
+                    "info": ""
+                },
+                {
+                    "name": "Mjolnir",
+                    "image": "./images/horses/mjolnir.png",
+                    "info": ""
+                },
+                {
+                    "name": "Moonbeam",
+                    "image": "./images/horses/moonbeam.png",
+                    "info": ""
+                },
+                {
+                    "name": "Moonphantom",
+                    "image": "./images/horses/moonphantom.png",
+                    "info": ""
+                },
+                {
+                    "name": "Moonsprite",
+                    "image": "./images/horses/moonsprite.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Mohawk",
+                    "image": "./images/horses/mohawk.png",
+                    "info": ""
+                },
+                {
+                    "name": "Morewyn & Sprayer Whale",
+                    "image": "./images/horses/morewyn.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Morongo",
+                    "image": "./images/horses/morongo.png",
+                    "info": ""
+                },
+                {
+                    "name": "Murttie",
+                    "image": "./images/horses/murttie.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Muskogee",
+                    "image": "./images/horses/muskogee.png",
+                    "info": ""
+                },
+                {
+                    "name": "Mustang",
+                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Navajo",
+                    "image": "./images/horses/navajo.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Nerise & Sand-Dollar Crawdad",
+                    "image": "./images/horses/nerise.png",
+                    "info": ""
+                },
+                {
+                    "name": "Nieva & Shedderpup",
+                    "image": "./images/horses/nieva.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Nimiipuu",
+                    "image": "./images/horses/nimiipuu.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Nisqually",
+                    "image": "./images/horses/nisqually.png",
+                    "info": ""
+                },
+                {
+                    "name": "Norwegian Fjord",
+                    "image": "./images/horses/fjord.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Nuala & Tortoise Blondie",
+                    "image": "./images/horses/nuala.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Nyx & Nebulaphin",
+                    "image": "./images/horses/nyx.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Obrylin & Grasspool Otter",
+                    "image": "./images/horses/obrylin.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Ondine & Bubble Turtle",
+                    "image": "./images/horses/ondine.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Osage",
+                    "image": "./images/horses/osage.png",
+                    "info": ""
+                }
+            ]
+        },
+        {
+            "title": "P-S",
+            "pages": [
+                {
+                    "name": "Paiute",
+                    "image": "./images/horses/paiute.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Pauma",
+                    "image": "./images/horses/pauma.png",
+                    "info": ""
+                },
+                {
+                    "name": "Pavonne",
+                    "image": "./images/horses/pavonne.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Pawnee",
+                    "image": "./images/horses/pawnee.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Pelagos & Nacreleon",
+                    "image": "./images/horses/pelagos.png",
+                    "info": ""
+                },
+                {
+                    "name": "Petal",
+                    "image": "./images/horses/petal.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Petri & Dream Mouse",
+                    "image": "./images/horses/petri.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Phoenix & Cowlick Grouse",
+                    "image": "./images/horses/phoenix.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Pima",
+                    "image": "./images/horses/pima.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Pirouette",
+                    "image": "./images/horses/pirouette.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Ponca",
+                    "image": "./images/horses/ponca.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Potawatomi",
+                    "image": "./images/horses/potawatomi.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Primrose",
+                    "image": "./images/horses/primrose.png",
+                    "info": ""
+                },
+                {
+                    "name": "Prisma",
+                    "image": "./images/horses/prisma.png",
+                    "info": ""
+                },
+                {
+                    "name": "Pythia",
+                    "image": "./images/horses/pythia.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Ran",
+                    "image": "./images/horses/ran.png",
+                    "info": ""
+                },
+                {
+                    "name": "Rauni",
+                    "image": "./images/horses/rauni.png",
+                    "info": ""
+                },
+                {
+                    "name": "Reif",
+                    "image": "./images/horses/reif.png",
+                    "info": ""
+                },
+                {
+                    "name": "Rhiannon",
+                    "image": "./images/horses/rhiannon.png",
+                    "info": ""
+                },
+                {
+                    "name": "Rimfaxe",
+                    "image": "./images/horses/rimfaxe.png",
+                    "info": ""
+                },
+                {
+                    "name": "Rosebriar & Rose Dragon",
+                    "image": "./images/horses/rosebriar.png",
+                    "info": ""
+                },
+                {
+                    "name": "Royce & Caperberry Hob",
+                    "image": "./images/horses/royce.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Ruskin",
+                    "image": "./images/horses/ruskin.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Sabelle & Eureka Bunny",
+                    "image": "./images/horses/sabelle.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Scotty & Bearn Terrier",
+                    "image": "./images/horses/scotty.png",
+                    "info": ""
+                },
+                {
+                    "name": "Santee",
+                    "image": "./images/horses/santee.png",
+                    "info": ""
+                },
+                {
+                    "name": "Seminole",
+                    "image": "./images/horses/seminole.png",
+                    "info": ""
+                },
+                {
+                    "name": "Seneca",
+                    "image": "./images/horses/seneca.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Seraphia & Starfall Beetle",
+                    "image": "./images/horses/seraphia.png",
+                    "info": ""
+                },
+                {
+                    "name": "Shawnee",
+                    "image": "./images/horses/shawnee.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Serilda & Howling Mossy",
+                    "image": "./images/horses/serilda.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Shire Horse",
+                    "image": "./images/horses/shire.png",
+                    "info": ""
+                },
+                {
+                    "name": "Shoshone",
+                    "image": "./images/horses/shoshone.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Signy",
+                    "image": "./images/horses/signy.png",
+                    "info": ""
+                },
+                {
+                    "name": "Skinfaxe",
+                    "image": "./images/horses/skinfaxe.png",
+                    "info": ""
+                },
+                {
+                    "name": "Sleetmane & Glowball Pooch",
+                    "image": "./images/horses/sleetmane.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Sleipnir",
+                    "image": "./images/horses/sleipnir.png",
+                    "info": ""
+                },
+                {
+                    "name": "Snowflake",
+                    "image": "./images/horses/snowflake.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Standardbred",
+                    "image": "/phasergames/artrandomiser/unknownHorse.png",
+                    "info": ""
+                },
+                {
+                    "name": "Starfrost",
+                    "image": "./images/horses/starfrost.png",
+                    "info": ""
+                },
+                {
+                    "name": "Summit",
+                    "image": "./images/horses/summit.png",
+                    "info": ""
+                },
+                {
+                    "name": "Sunbeam",
+                    "image": "./images/horses/sunbeam.png",
+                    "info": ""
+                }
+            ]
+        },
+        {
+            "title": "T-W",
+            "pages": [
+                {
+                    "name": "Tewa",
+                    "image": "./images/horses/tewa.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Thor",
+                    "image": "./images/horses/thor.png",
+                    "info": ""
+                },
+                {
+                    "name": "Thunder & Blackcomb Lion",
+                    "image": "./images/horses/thunderMaF.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Tigrine & Duskpaw Cub",
+                    "image": "./images/horses/tigrine.png",
+                    "info": ""
+                },
+                {
+                    "name": "Tlingit",
+                    "image": "./images/horses/tlingit.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Toboggan",
+                    "image": "./images/horses/toboggan.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Tricksy & Cunning Flitkit",
+                    "image": "./images/horses/tricksy.jpg",
+                    "info": "\"Spend time with true friends who understand you\"\n\nCunning flitkits, which look like plump flying pandas, are loveable misfits. They fully accept who they are and embrace their differences. With the best qualities of cats, foxes, and bats, they are highly adaptable to their surroundings: climbing, running, and flying with equal mastery. In addition, flitkits love to inspire others to think beyond the possible and frequently pop up where they are least expected. They are also fascinated by anything that is creative, different, and goes against the grain. The cunning flitkit teaches us that living creatures have amazing potential and no cage that can hold intelligence and creativity.\n\n The horse Tricksy is right at home with her magical friends and shares much of their coloring. She also loves to inspire and encourage thinking outside the box and coloring outside the lines."
+                },
+                {
+                    "name": "Tsimshian",
+                    "image": "./images/horses/tsimshian.png",
+                    "info": ""
+                },
+                {
+                    "name": "Tugo & Seashell Bug",
+                    "image": "./images/horses/tugo.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Tumbleweed",
+                    "image": "./images/horses/tumbleweed.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Urd",
+                    "image": "./images/horses/urd.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Viking",
+                    "image": "./images/horses/viking.png",
+                    "info": ""
+                },
+                {
+                    "name": "Virstan & Malachite Crab",
+                    "image": "./images/horses/virstan.png",
+                    "info": ""
+                },
+                {
+                    "name": "Wasco",
+                    "image": "./images/horses/wasco.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Waterpearl & Waterpearl Tadpole",
+                    "image": "./images/horses/waterpearl.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Whimsy",
+                    "image": "./images/horses/whimsy.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Wichita",
+                    "image": "./images/horses/wichita.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Wodan",
+                    "image": "./images/horses/wodan.jpg",
+                    "info": ""
+                }
+            ]
+        },
+        {
+            "title": "X-Z",
+            "pages": [
+                {
+                    "name": "Yakama",
+                    "image": "./images/horses/yakama.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Zephan",
+                    "image": "./images/horses/zephan.jpg",
+                    "info": ""
+                },
+                {
+                    "name": "Zuni",
+                    "image": "./images/horses/zuni.jpg",
+                    "info": "Details\n • Area: Zuni Pueblo, New Mexico, U.S.\n\nAbout the Tribe\nHistorically, Zuni women made pottery according to clan tradition. Clay for the pottery was dug after giving ritual thanks to the Earth Mother. It was first ground, and then sifted and mixed with water. After the clay was shaped into a vessel, it was scraped smooth with a scraper. Then a thin layer of finer clay was applied to the surface for extra smoothness. Then the vessel was polished with a stone. After the piece was painted with home-made organic dyes using a yucca brush, the pottery was fired in kilns. During the firing, silence was observed in order to maintain the original \"voice\" of the \"being\" of the clay and its intended purpose. Selling pottery and other traditional arts and crafts is a major source of income for many of the Zuni, and an artisan may be the sole financial support for their immediate family as well as others. They make pottery, clothing, baskets, and Kachina dolls.\n\nThe cultural life of the Zuni people revolves around their religion, which is unique from the other Pueblo peoples. They venerate three deities: Earth Mother, Sun Father and Moonlight Giving Mother. They make barefoot pilgrimages and engage in ceremonies honoring birth, coming of age, marriage and death.\n\nZuni culture has always been extremely placid and tranquil. They have earned a status in the popular culture of the West as a profoundly spiritual and peaceful people."
+                }
+            ]
+        }
+    ]   
 }
