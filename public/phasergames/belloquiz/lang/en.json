@@ -315,10 +315,10 @@
             "goodAnswer": 2
         },
         {
-            "image": "./images/horses/ariande.png",
+            "image": "./images/horses/ariadne.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ariande",
+                "Ariadne",
                 "Parlez",
                 "Wavebreaker",
                 "Valor"
@@ -326,11 +326,11 @@
             "goodAnswer": 1
         },
         {
-            "image": "./images/horses/aires.png",
+            "image": "./images/horses/aries.png",
             "question": "What is the name of this horse?",
             "choices": [
                 "Wonder",
-                "Aires",
+                "Aries",
                 "Alina",
                 "Falcha"
             ],
@@ -1605,7 +1605,7 @@
             "image": "./images/horses/edana.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ariande",
+                "Ariadne",
                 "Rubin",
                 "Tricksy",
                 "Edana"
@@ -2343,7 +2343,7 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Phoenix",
-                "Aires",
+                "Aries",
                 "Sternentänzer",
                 "Icarus"
             ],
@@ -2463,7 +2463,7 @@
             "image": "./images/horses/jojo.png",
             "question": "What is the name of this horse?",
             "choices": [
-                "Ariande",
+                "Ariadne",
                 "Roxy",
                 "Jojo",
                 "Zuni"
@@ -2674,7 +2674,7 @@
             "choices": [
                 "Rodin",
                 "Cupid",
-                "Ariande",
+                "Ariadne",
                 "Kiowa"
             ],
             "goodAnswer": 4
@@ -2873,7 +2873,7 @@
                 "Walter",
                 "Lillova",
                 "Ebenos",
-                "Aires"
+                "Aries"
             ],
             "goodAnswer": 2
         },
@@ -3124,7 +3124,7 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Halloween",
-                "Aires",
+                "Aries",
                 "Alina",
                 "Menominee"
             ],
@@ -5445,7 +5445,7 @@
             "question": "What is the name of this horse?",
             "choices": [
                 "Wavebreaker",
-                "Aires",
+                "Aries",
                 "Diamond",
                 "Erinn"
             ],
