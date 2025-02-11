@@ -158,8 +158,8 @@ class Quiz extends Phaser.Scene
 
             turnsLeft--;
 
-            scoreTxt.text = `${langData.ui.score} ${score}`;
-            turnsTxt.text = `${langData.ui.turns} ${turnsLeft}`;
+            scoreTxt.text = `${langData.ui.score}${score}`;
+            turnsTxt.text = `${langData.ui.turns}${turnsLeft}`;
 
             if (turnsLeft <= 0)
             {
