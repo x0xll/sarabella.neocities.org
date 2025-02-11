@@ -190,7 +190,9 @@ class Quiz extends Phaser.Scene
                     otherChoice = Math.floor(Math.random()*horseDatas.length);
                     failsafe--;
                 }
-                while (alreadyPickedNums.includes(otherChoice) || failsafe <= 0);
+                while (alreadyPickedNums.includes(otherChoice) || failsafe <= 0 ||
+                (attributeType == "name" && horseDatas[otherChoice].name == undefined) ||
+                (attributeType == "quote" && horseDatas[otherChoice].quote == undefined));
 
                 alreadyPickedNums.push(otherChoice);
                 var btnDatas = choiceBtns[i];
