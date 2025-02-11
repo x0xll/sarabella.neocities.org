@@ -25,6 +25,8 @@ class Memory extends Phaser.Scene
         // Load in images and sounds
         this.load.image('background', '/phasergames/memory/yinyang/images/background.png');
         this.load.image('data_container', '/phasergames/memory/yinyang/images/datas_container.png');
+        this.load.image('img_container', '/phasergames/memory/yinyang/images/img_container.png');
+        this.load.image('button', '/phasergames/memory/yinyang/images/choice_btn.png');
         
         // DEBUG
         this.load.image('testImg', '/images/horses/bella.png')
@@ -94,7 +96,8 @@ class Memory extends Phaser.Scene
                         x: xColumn,
                         y: yRow,
                         cardObj: card,
-                        cardImgRef: "test"
+                        cardImgRef: "test",
+                        visibleSide: false
                     }
     
                     card.on("pointerdown", () =>
@@ -110,6 +113,70 @@ class Memory extends Phaser.Scene
         function userChoseCard(cardDatas)
         {
             console.log(cardDatas);
+            RotateCard(cardDatas);
         }
+
+        // ROTATE CARD
+        function RotateCard(cardData)
+        {
+            let startTween = game.tweens.add({
+                targets: cardData.cardObj,
+                scaleX: 0,
+                duration: 1000,
+                ease: "Linear",
+                onComplete: function() {
+                    if (cardData.visibleSide == false) {
+                        cardData.cardObj.setTexture("testImg")
+                    } else {
+                        cardData.cardObj.setTexture("card_back")
+                    }
+
+                    cardData.visibleSide = !cardData.visibleSide;                       
+                    let endTween = game.tweens.add({
+                        targets: cardData.cardObj,
+                        scaleX: 1,
+                        duration: 1000,
+                        ease: "Linear",
+                        onComplete: function()
+                        {
+                            cardData.cardObj.setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y);
+                            endTween.destroy();
+                        }
+                    });
+
+                    startTween.destroy();
+                }
+            });
+        }
+
+        // END POPUP
+        this.showEndPopup = showEndPopup;
+
+        function showEndPopup(won)
+        {
+            game.add.image(710, 325, 'img_container')
+                    .setScale(1.12, .79);
+
+            game.over = true;
+
+            let endTitleTxt = (won) ? langData.congrats : langData.oops;
+            let endDescTxt = (won) ? langData.won : langData.lost;
+
+            game.add.text(710, 200, endTitleTxt, globalTextSettings).setOrigin(.5);
+            game.add.text(710, 250, endDescTxt, globalTextSettings).setOrigin(.5);
+
+            let retryBtn = game.add.image(710, 400, 'button').setOrigin(.5).setInteractive({pixelPerfect: true});
+            game.add.text(710, 400, langData.retry, globalTextSettings).setOrigin(.5);
+            retryBtn.on("pointerdown", () => game.scene.restart());
+        }
+    }
+
+    update()
+    {
+        if (game.over) return;
+
+        // TURN CARD
+
+        // HANDLE TIMER
     }
 }
