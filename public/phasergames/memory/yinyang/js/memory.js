@@ -119,32 +119,33 @@ class Memory extends Phaser.Scene
         // ROTATE CARD
         function RotateCard(cardData)
         {
+            let newTexture = (cardData.visibleSide) ? "card_back" : "testImg";   
+
             let startTween = game.tweens.add({
                 targets: cardData.cardObj,
                 scaleX: 0,
-                duration: 1000,
+                duration: 500,
                 ease: "Linear",
                 onComplete: function() {
-                    if (cardData.visibleSide == false) {
-                        cardData.cardObj.setTexture("testImg")
-                    } else {
-                        cardData.cardObj.setTexture("card_back")
-                    }
+                    cardData.cardObj.setTexture(newTexture).setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y);   
 
-                    cardData.visibleSide = !cardData.visibleSide;                       
+                    let scaleEndTween = (cardData.visibleSide) ? 0.596 : ((CELL_SIZE_X * 100) / cardData.cardObj.width) / 100;
+
+                    cardData.cardObj.setTexture(newTexture).setScale(0, cardData.cardObj.scaleY);
+
+                    cardData.visibleSide = !cardData.visibleSide;   
+
                     let endTween = game.tweens.add({
                         targets: cardData.cardObj,
-                        scaleX: 1,
-                        duration: 1000,
+                        scaleX: scaleEndTween,
+                        duration: 500,
                         ease: "Linear",
                         onComplete: function()
                         {
-                            cardData.cardObj.setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y);
-                            endTween.destroy();
+                            cardData.cardObj.setScale(scaleEndTween);
+                            cardData.cardObj.setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y)
                         }
-                    });
-
-                    startTween.destroy();
+                    })
                 }
             });
         }
