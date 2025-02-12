@@ -21,16 +21,29 @@ class Memory extends Phaser.Scene
         const progressBar = this.add.graphics();
 
         // Loading horse sprites
+        const cardPaths = 
+        [
+            "/images/horses/bella.png",
+            "/images/horses/bellisimo.png",
+            "/images/horses/bello.png",
+            "/images/horses/fiona.png",
+            "/images/horses/rain.png",
+            "/images/horses/shaman.png",
+            "/images/horses/thunder.png",
+            "/images/horses/yinyang.png"
+        ]
+        this.possibleCards = [];
+        cardPaths.forEach(card => {     
+            this.load.image(`${card}_img`, `${card}`);
+
+            this.possibleCards.push(`${card}_img`)
+        });
 
         // Load in images and sounds
         this.load.image('background', '/phasergames/memory/yinyang/images/background.png');
         this.load.image('data_container', '/phasergames/memory/yinyang/images/datas_container.png');
         this.load.image('img_container', '/phasergames/memory/yinyang/images/img_container.png');
         this.load.image('button', '/phasergames/memory/yinyang/images/choice_btn.png');
-        
-        // DEBUG
-        this.load.image('testImg', '/images/horses/bella.png')
-        this.load.image('testImg2', '/images/horses/aleut.png')
     }
 
     create ()
@@ -101,6 +114,22 @@ class Memory extends Phaser.Scene
 
         function initCards()
         {
+            let usedCards = []
+
+            for(let i = 0; i < 6; i++)
+            {
+                // Choose the cards we will use
+                let cardIndex = -1;
+                do
+                {
+                    cardIndex = Math.floor(Math.random()*game.possibleCards.length);
+                }
+                while(usedCards.includes(cardIndex))
+
+                usedCards.push(cardIndex);
+                usedCards.push(cardIndex);
+            }
+
             let cards = [];
             for (let xColumn = 0; xColumn < 4; xColumn++)
             {
@@ -108,21 +137,23 @@ class Memory extends Phaser.Scene
     
                 for(let yRow = 0; yRow < 3; yRow++)
                 {
+                    let randCard = Math.floor(Math.random()*usedCards.length);
+                    let cardIndex = usedCards[randCard];
+                    usedCards.splice(randCard, 1);
+
                     let card = game.add.image(START_POS_X + xColumn * OFFSET_X,
                                               START_POS_Y + yRow * OFFSET_Y,
                                               'card_back')
                                               .setOrigin(0.5)
                                               .setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y)
                                               .setInteractive({pixelPerfect: true});
-    
-                    let testRef = (xColumn % 2 == 0) ? "testImg" : "testImg2";
 
                     let cardDatas = 
                     {
                         x: xColumn,
                         y: yRow,
                         cardObj: card,
-                        cardImgRef: testRef,
+                        refImg: game.possibleCards[cardIndex],
                         visibleSide: false
                     }
     
@@ -147,7 +178,7 @@ class Memory extends Phaser.Scene
         // ROTATE CARD
         function RotateCard(cardData)
         {
-            let newTexture = (cardData.visibleSide) ? "card_back" : (cardData.x % 2 == 0) ? "testImg" : "testImg2";   
+            let newTexture = (cardData.visibleSide) ? "card_back" : cardData.refImg;   
 
             let startTween = game.tweens.add({
                 targets: cardData.cardObj,
@@ -185,7 +216,7 @@ class Memory extends Phaser.Scene
         {
             if (cardsVisible.length != 2) return;
 
-            if (cardsVisible[0].cardImgRef === cardsVisible[1].cardImgRef)
+            if (cardsVisible[0].refImg === cardsVisible[1].refImg)
             {
                 score++;
                 scoreTxt.text = `${langData.score}${score}`;
