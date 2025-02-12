@@ -72,8 +72,29 @@ class Memory extends Phaser.Scene
         let scoreTxt = this.add.text(718, 36, `${langData.score}${score}`, datasTextSettings);
 
         // Timer
-        let timer = "00:00";
-        let timerTxt = this.add.text(858, 36, `${langData.time}${timer}`, datasTextSettings);
+        const TIMER_START = 60;
+        let timerEvent = this.time.addEvent({delay: 1000, callback: onEvent, callbackScope: this, loop: true })
+        let timer = TIMER_START;
+        let timerTxt = this.add.text(858, 36, `${langData.time}${formatTime(timer)}`, datasTextSettings);
+
+        function formatTime(seconds){
+            var minutes = Math.floor(seconds/60);
+            var partInSeconds = seconds%60;
+            partInSeconds = partInSeconds.toString().padStart(2,'0');
+            return `${minutes}:${partInSeconds}`;
+        }
+
+        function onEvent ()
+        {
+            timer -= 1;
+            timerTxt.text = `${langData.time}${formatTime(timer)}`
+
+            if (timer == 0)
+            {
+                showEndPopup(false);
+            }
+        }
+
 
         // Init Memory Game
         initCards();
@@ -188,6 +209,9 @@ class Memory extends Phaser.Scene
 
         function showEndPopup(won)
         {
+            timerEvent.remove();
+            timerEvent.destroy();
+
             game.add.image(710, 325, 'img_container')
                     .setScale(1.12, .79);
 
@@ -203,14 +227,5 @@ class Memory extends Phaser.Scene
             game.add.text(710, 400, langData.retry, globalTextSettings).setOrigin(.5);
             retryBtn.on("pointerdown", () => game.scene.restart());
         }
-    }
-
-    update()
-    {
-        if (game.over) return;
-
-        // TURN CARD
-
-        // HANDLE TIMER
     }
 }
