@@ -21,8 +21,7 @@
     "ressources_gridlochressdump" : "Gridlochs Resurs Hörna",
     "ressources_gridlochstablerecreation" : "Gridlochs Stall Rekreation",
     
-    "devlog_lastmodif": "<b><i>Last modified: February 10th, 2025</i></b>",
-    "devlog_summary" : "Here is the current state of the archiving of the Bella Sara website games:<br/><br/>We have successfully managed to locate and restore several of the original Flash games from the Bella Sara website. These include <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, and the old version of the <i>World Map</i>.<br/><br/>Additionally, we have partially recovered or restored the files for several other games, such as the <i>Art Studio</i>, <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, and the newer version of the <i>World Map</i>. These games are still undergoing work to fully restore their original functionalities, and many games are missing files (e.g., the <i>Lance Riding</i> game is missing the files for the later levels).<br/><br/>Unfortunately, some games remain missing or seem to be permanently broken (e.g., <i>Bella’s Beauty Box</i>). To address this, we have started recreating a few of these games using the Phaser framework. As of this update, the <i>Stables</i> and the <i>Spectacular Jumping Game</i> are both available to play, although still as a work in progress. We are also currently working on recreating <i>Citrustacked</i>, <i>Bellapedia</i>, <i>Bello's Quiz</i>, and <i>Bellisimo's Jumping Contest</i>, which should all hopefully be available soon.<br/><br/>Beyond restoring the original games, we have also started creating custom games inspired by the ones from the website. Currently, two are available: a <i>Random Art Idea Generator</i> and a <i>Dress-Up Game</i> based on the stables. Additionally, customized versions of <i>Bello's Quiz</i> are in progress too.<br/><br/>We do hope to eventually restore or recreate all the games from the site if we can, but this will obviously take time. If you would like to help us out or would like a more detailed overview of this project, we would recommend starting here: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. This project is a community effort and every little bit helps!",
+    "devlog_summary" : "Det här är en supersnabb och hafsig sammanfattning av den utveckling som gjorts för att återskapa de gamla Bella Sara spelen.<br><br><i>Flash filer som vi har för tillfället: Molnhoppning, Treasures Jakt, Sagoboken, Pussel, Färgläggning, Bellas Skönhetsbox, Lansridning, Världskartan, Startsida, Stall, Konst Studio</i><br>Av dessa är bara Molnhoppning, Sagoboken och Treasures Jakt spelbara för tillfället. Sagoboken är tillgänglig genom Flashpoint.<br>Världskartan, Startsida och Konststudio är fullt fungerande och kommer att bli tillgängliga via Flashpoint inom kort.<br>Lansridning och Stall är delvis fungerande och kommer att släppas genom Flashpoint.<br><br><b>STALL ÄR ÄNNU INTE TILLGÄNGLIGA FÖR ALLMÄNHETEN. Det är viktigt för oss att publiceringen av dessa filer görs ordentligt. De kommer att bli tillgängliga via Flashpoint Arkivens allmänna Flashspelbibliotek så snart som de klarat av Arkivens krav.</b><br><br>Bellas Skönhetsbox är troligtvis permanent sönder.",
     
     "play_recoveredflashgames_title" : "Återhämtade Flashspel",
     "play_recoveredflashgames_desc" : "Detta är spel som var arkiverade från original sidan",
@@ -49,6 +48,12 @@
     "game_randomartideagenerator" : "Slumpmässiga Konstidé Generatorn",
     "game_dressupstables" : "Utklädning Spel",
     "game_firelightFestival" : "Firelight Festival",
+    "game_map": "World Map",
+    "game_oldmap": "Old Map",
+    "game_newmap": "New Map",
+    "game_belloquiz": "Bello's Quiz",
+    "game_adventuresquiz": "Adventures Quiz",
+    "game_autumnjourney": "Autumn Journey Quiz",
 
     "artstudio_warning" : "Detta spel saknar filerna till original hästarna och kan för tillfället inte ladda texten rätt.",
     
@@ -58,9 +63,29 @@
 
     "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid som förväntat.",
 
-    "stables_title" : "Välkommen till Bella Sara Världen",
+    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
+    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
-    "dressup_horselink" : "Häst Länk",
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
+
+    "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
+    "puzzle_customTitle" : "Custom",
+    "puzzle_moonfairies" : "Moonfairies",
+    "puzzle_sunflowers" : "Sunflowers",
+    "puzzle_bellaball" : "Bella's Ball",
+    "puzzle_bellasaraadventures" : "Bella Sara Adventures",
+    "puzzle_royalty" : "Royalty",
+    "puzzle_treasures" : "Treasures",
+    "puzzle_babybella" : "Baby Bella",
+    "puzzle_magicalfriends" : "Magical Friends",
+    "puzzle_nativelights" : "Native Lights",
+    "puzzle_bellasara" : "Bella Sara",
+    "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
+    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+
+    "stables_title" : "Welcome to the World of Bella Sara",
+
+    "dressup_horselink" : "Horse Link",
 
     "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
     "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",
@@ -69,9 +94,5 @@
     "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
     "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
     "babybella_17Dec": "17th of December, 2008 - After the event's end",
-    "footer_timeline_link": "Timeline",
-
-    "about_title": "About",
-    "credits_title": "Credits",
-    "about_text": "<i>Being written...</i>"
+    "footer_timeline_link": "Timeline"
 }
