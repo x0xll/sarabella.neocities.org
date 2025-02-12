@@ -175,6 +175,8 @@ class Memory extends Phaser.Scene
 
             if (cardsVisible.length >= 2) return;
 
+            if (cardsVisible.length == 1 && cardsVisible[0].cardObj === cardDatas.cardObj) return;
+
             cardsVisible.push(cardDatas);
             RotateCard(cardDatas);
         }
