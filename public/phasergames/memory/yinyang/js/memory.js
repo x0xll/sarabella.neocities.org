@@ -52,6 +52,8 @@ class Memory extends Phaser.Scene
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
         this.input.topOnly = true;
 
+        this.over = false;
+
         // General var
         const START_POS_X = 510;
         const START_POS_Y = 156;
@@ -85,7 +87,7 @@ class Memory extends Phaser.Scene
         let scoreTxt = this.add.text(718, 36, `${langData.score}${score}`, datasTextSettings);
 
         // Timer
-        const TIMER_START = 60;
+        const TIMER_START = 25;
         let timerEvent = this.time.addEvent({delay: 1000, callback: onEvent, callbackScope: this, loop: true })
         let timer = TIMER_START;
         let timerTxt = this.add.text(858, 36, `${langData.time}${formatTime(timer)}`, datasTextSettings);
@@ -222,8 +224,8 @@ class Memory extends Phaser.Scene
             {
                 score++;
                 scoreTxt.text = `${langData.score}${score}`;
-                cardsVisible[0].cardObj.setVisible(false);
-                cardsVisible[1].cardObj.setVisible(false);
+
+                hideCards();
 
                 if (score >= 6) // WE WON
                     showEndPopup(true);
@@ -235,6 +237,32 @@ class Memory extends Phaser.Scene
             }
 
             cardsVisible = [];
+        }
+
+        function hideCards()
+        {
+            let card1 = cardsVisible[0].cardObj
+            let card2 = cardsVisible[1].cardObj
+
+            game.tweens.add({
+                targets: card1,
+                alpha: 0,
+                duration: 300,
+                ease: "Linear",
+                onComplete: function() {
+                    card1.setVisible(false);
+                }
+            });
+
+            game.tweens.add({
+                targets: card2,
+                alpha: 0,
+                duration: 300,
+                ease: "Linear",
+                onComplete: function() {
+                    card2.setVisible(false);
+                }
+            });
         }
 
         // END POPUP
