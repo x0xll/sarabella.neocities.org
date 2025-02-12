@@ -169,6 +169,8 @@ class Memory extends Phaser.Scene
 
         function userChoseCard(cardDatas)
         {
+            if (game.over) return;
+
             if (cardsVisible.length >= 2) return;
 
             cardsVisible.push(cardDatas);
