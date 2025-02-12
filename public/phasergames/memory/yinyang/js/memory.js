@@ -30,6 +30,7 @@ class Memory extends Phaser.Scene
         
         // DEBUG
         this.load.image('testImg', '/images/horses/bella.png')
+        this.load.image('testImg2', '/images/horses/aleut.png')
     }
 
     create ()
@@ -45,6 +46,8 @@ class Memory extends Phaser.Scene
         const CELL_SIZE_Y = 130;
         const OFFSET_X = 140;
         const OFFSET_Y = 168;
+
+        let cardsVisible = [];
 
         // Set UI
         this.add.image(0, 0, 'background').setOrigin(0);
@@ -91,12 +94,14 @@ class Memory extends Phaser.Scene
                                               .setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y)
                                               .setInteractive({pixelPerfect: true});
     
+                    let testRef = (xColumn % 2 == 0) ? "testImg" : "testImg2";
+
                     let cardDatas = 
                     {
                         x: xColumn,
                         y: yRow,
                         cardObj: card,
-                        cardImgRef: "test",
+                        cardImgRef: testRef,
                         visibleSide: false
                     }
     
@@ -112,19 +117,21 @@ class Memory extends Phaser.Scene
 
         function userChoseCard(cardDatas)
         {
-            console.log(cardDatas);
+            if (cardsVisible.length >= 2) return;
+
+            cardsVisible.push(cardDatas);
             RotateCard(cardDatas);
         }
 
         // ROTATE CARD
         function RotateCard(cardData)
         {
-            let newTexture = (cardData.visibleSide) ? "card_back" : "testImg";   
+            let newTexture = (cardData.visibleSide) ? "card_back" : (cardData.x % 2 == 0) ? "testImg" : "testImg2";   
 
             let startTween = game.tweens.add({
                 targets: cardData.cardObj,
                 scaleX: 0,
-                duration: 500,
+                duration: 300,
                 ease: "Linear",
                 onComplete: function() {
                     cardData.cardObj.setTexture(newTexture).setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y);   
@@ -138,16 +145,42 @@ class Memory extends Phaser.Scene
                     let endTween = game.tweens.add({
                         targets: cardData.cardObj,
                         scaleX: scaleEndTween,
-                        duration: 500,
+                        duration: 300,
                         ease: "Linear",
                         onComplete: function()
                         {
                             cardData.cardObj.setScale(scaleEndTween);
                             cardData.cardObj.setDisplaySize(CELL_SIZE_X, CELL_SIZE_Y)
+
+                            if (cardsVisible[1] === cardData)
+                                CheckCards();
                         }
                     })
                 }
             });
+        }
+
+        function CheckCards()
+        {
+            if (cardsVisible.length != 2) return;
+
+            if (cardsVisible[0].cardImgRef === cardsVisible[1].cardImgRef)
+            {
+                score++;
+                scoreTxt.text = `${langData.score}${score}`;
+                cardsVisible[0].cardObj.setVisible(false);
+                cardsVisible[1].cardObj.setVisible(false);
+
+                if (score >= 6) // WE WON
+                    showEndPopup(true);
+            }
+            else
+            {
+                RotateCard(cardsVisible[0]);
+                RotateCard(cardsVisible[1]);
+            }
+
+            cardsVisible = [];
         }
 
         // END POPUP
