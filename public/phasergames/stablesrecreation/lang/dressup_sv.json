@@ -62,5 +62,11 @@
 
     "txtStatHunger": "HUNGER",
     "txtStatClean": "RENLIGHET",
-    "txtStatHappy": "GLÄDJE"
+    "txtStatHappy": "GLÄDJE",
+
+    "txtHelpInfo": "Click to set your horse's name and quote.",
+    "txtHelpMain": "Click the tabs to dress up your horse. You can use the color selector to change colors and the arrows to select different options.",
+    "txtHelpRandomise": "Click to generate a new random horse.",
+    "txtHelpPlay": "Click to take care of your horse.",
+    "txtHelpCopyLink": "Click to copy a link to your horse."
 }
