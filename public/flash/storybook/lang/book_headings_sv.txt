@@ -20,7 +20,3 @@
 &chap1_conclusion=<html>Norrsken</html>
 &chap2_conclusion=<html>Forntidsljus</html>
 &chap3_conclusion=<html>Hemlandsljus</html>
-
-
-
-
