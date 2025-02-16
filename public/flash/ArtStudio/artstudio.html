@@ -47,6 +47,11 @@
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
           swfPlayer.src = './swf/ArtStudio.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
+
+          // Temporary prevent using the jap version since the characters are broken
+          if (locale == "ja")
+            locale = "en";
+
           swfPlayer.setAttribute("flashvars", `gameWrapperPath=flash/ArtStudio/common/gamewrapper.swf&locale=${locale}&lang=${locale}&gameWrapperHelpPath=flash/ArtStudio/common/gamewrapperHelp.swf`);
           swfParent.appendChild(swfPlayer);
         </script>

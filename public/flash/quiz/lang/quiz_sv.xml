@@ -57,7 +57,7 @@
     <result>Rätt svar = </result>
     <expert>Snyggt! Du måste vara expert</expert>
     <nice>Bra jobbat, du vet mycket om hästar!</nice>
-    <lose>Ledsen, du kanske ska testa igen!</nice>
+    <lose>Ledsen, du kanske ska testa igen!</lose>
 
     <horseColor1>Skimmel</horseColor1>
     <horseColor2>Fux</horseColor2>

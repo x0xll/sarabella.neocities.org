@@ -1,0 +1,630 @@
+{
+    "ui":
+    {
+        "common":
+        {
+            "title": "Bella Sara Adventures",
+
+            "loading": "Loading... Please wait.",
+            "saving": "Saving... Please wait.",
+
+            "btn_start": "Start",
+            "btn_save": "Sauvegarder",
+            "btn_help": "?",
+            "btn_continue": "Continue",
+
+            "quest": "Quest",
+
+            "map_zoom": "Zoom",
+
+            "menu_inventory": "Inventory Bag",
+            "menu_map": "Map",
+
+            "magic_increase": "Congratulations!<br/>Your magic increased to level ${level_num}!",
+
+            "action_brush": "Brush",
+            "action_talk": "Talk",
+            "action_pickup": "Pick up",
+            "action_water": "Water",
+            "action_collect": "Collect",
+            "action_remove": "Remove",
+            "action_give": "Give",
+            "action_move": "Move",
+            "action_change": "Change",
+            "action_rotate": "Rotate"
+        },
+        "inventory":
+        {
+            "all": "Tous mes objects",
+            "seeds": "Only Seeds"
+        },
+        "quest":
+        {
+            "lookfor": "Look for:",
+            "location": "Location:",
+            "goal": "Goal:",
+        
+            "congratulations": "Congratulations",
+            "greatjob": "Great Job!",
+            "completequest": "You completed ${quest_name}. Check your Adventure Journal for more fun adventures.",
+            "reward": "Your Reward:"
+        },
+        "tutos":
+        {
+            "avatar":
+            {
+                "createlook": "NOW you can create your own look! Start here!",
+                "selectcategory": "Select a category.",
+                "clickitem": "Click an item to see what it looks like on you.",
+                "dye": "Use the Dye Bottles to change colors of an item.",
+                "trylooks": "Try on different clothes and dye them pretty colors until you like how it looks.",
+                "done": "Click \"Done!\" when finished",
+                "modify": "You can only change your clothes and hair style once your look is created."
+            }
+        },
+        "avatar":
+        {
+            "btn_done": "Done!",
+            "btn_dye": "Dye",
+            "btn_wear": "Wear",
+            "btn_customize": "Customize Your Avatar",
+            "btn_watch": "Watch Again",
+            "btn_removeaccessory": "Remove Accessory"
+        },
+        "map":
+        {
+
+        }
+    },
+    "quests":
+    [
+        {
+            "title": "Dying Clothes",
+            "goals": 
+            [
+                {
+                    "lookfor": "",
+                    "location": "",
+                    "goal": "Place Dye Machine in the World"
+                }
+            ],
+            "dialogues":
+            [
+                {
+                    "character": "sara",
+                    "line": "What a great outfit! Wisit Hannah's Brush -n- Braid shop in Bagatella Row to buy more clothes."
+                },
+                {
+                    "character": "sara",
+                    "line": "Did you know you can also dye your clothes to change their color? All you need to do is grow plants and give them to a Dye Machine. Let's try making some dye now."
+                },
+                {
+                    "character": "sara",
+                    "line": "Here's a winterberry seed to grow. Collect a winterberry from it when it's done growing. When you're done, I'll show you how to use the Dye Machine."
+                },
+                {
+                    "character": "sara",
+                    "line": "Great! Now you have a winterberry. Hannah has a Dye machine near her shop, but here's one you can keep it in your Inventory Bag. To use it, you'll need to take it out and put it on the ground."
+                },
+                {
+                    "character": "sara",
+                    "line": "Take your Dye Machine out now and I'll show you how to turn your winterberry into dye!"
+                },
+                {
+                    "character": "wings",
+                    "line": "Welcome young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me."
+                },
+                {
+                    "character": "wings",
+                    "line": "This is the <b><i>Talk</i></b> bubble. You can talk to me or any other horse whenever you like. Try it now by clicking <b><i>Continue</b></i> to close this window."
+                }            
+            ]
+        },
+        {
+            "title": "Welcome to North of North",
+            "goals": [],
+            "dialogues":
+            [
+                {
+                    "character": "wings",
+                    "line": "Great job! I bet you will be an excellent gardener. Let me teach you how to grow plants."
+                },
+                {
+                    "character": "wings",
+                    "line": "This is the <b><i>Remove</i></b> bubble. You can use this option to get rid of objects from the world like weeds and trash. First, click on the weed from the big garden patch in front of me and click the <b><i>Remove</i></b> bubble."
+                },
+                {
+                    "character": "wings",
+                    "line": "Nice! The soil is now ready for the next step. Here's a daisy seed to plant. All of your seeds are in your <b><i>Inventory Bag</i></b>."
+                },
+                {
+                    "character": "wings",
+                    "line": "This is your <b><i>Inventory Bag</i></b>. It's at the bottom of the screen. Click on it and then choose the daisy seed. Then click on a garden spot to plant it."
+                },
+                {
+                    "character": "wings",
+                    "line": "Great job! Now that the seed is in the ground, we need to water it so it can grow. Every plant needs to be watered once before it can grow."
+                },
+                {
+                    "character": "wings",
+                    "line": "This is the <b><i>Water</i></b> bubble. Click on the plant you want to water and then choose it to water that plant."
+                },
+                {
+                    "character": "wings",
+                    "line": "Look, the daisy just grew! Did you notice the Tree of Magic in the bottom right corner? Yoru daisy just added magic to the world. Your Tree of Magic will become more beautiful as you increase the magic in North of North. Keep up the good work!."
+                },
+                {
+                    "character": "wings",
+                    "line": "This is the <b><i>Pick up</i></b> bubble. Once your plants are fully grown, you can pick them up and put them in your Inventory Bag. Try it now by clicking on your daisy and choosing the <b><i>Pick up</i></b> bubble."
+                },
+                {
+                    "character": "wings",
+                    "line": "Great job! You're a natural at gardening. I have another adventure for you. Please come to me to know more about it."
+                }  
+            ],
+            "popups":
+            {
+                "removeweed": "Click on a weed, then select the trash can to throw it away.",
+                "waterseed": "Click on the planted seed, then select the watering can to water it.",
+                "pickupplant": "Click on the plant, then select Pick up."
+            }
+
+        },
+        {
+            "title": "Growing Lessons",
+            "goals": [],
+            "dialogues":
+            [
+                {
+                    "character": "wings",
+                    "line": "Here's another daisy seed for you to plant. Remember, planting seeds helps bring magic back to North of North."
+                }
+            ]
+        },
+        {
+            "title": "Bridge Repairs",
+            "goals": 
+            [
+                {
+                    "lookfor": "Dirt",
+                    "location": "canterfarms",
+                    "goal": "Grow Tassel Corn"
+                }
+            ],
+            "dialogues":
+            [
+                {
+                    "character": "wings",
+                    "line": "I think we should repair that old bridge south of here so it's safe to cross. I need some plant fiber to mix with clay to make some mortar to hold it together."
+                },
+                {
+                    "character": "wings",
+                    "line": "Here's a tassel corn seed. Tassel corn needs more garden space and time to grow than a daisy. You might need to remove some weeds to make room for it. When the tassel corn is fully grown, please bring it back to me."
+                },
+                {
+                    "character": "wings",
+                    "line": "Great, thank you for your help. I've mixed the mortar so you can use it to patch the broken bridge. Just add the mortar to the bridge and let it dry."
+                },
+                {
+                    "character": "wings",
+                    "line": "This is the <b><i>Give</i></b> bubble. When you want to take something out of your Inventory Bag and give it to someone or use it on something, choose this option. Try it now by clicking on the broken bridge and then choose the <b><i>Give</i></b> bubble."
+                },
+                {
+                    "character": "you",
+                    "line": "I should bring this back to Wings."
+                },
+                {
+                    "character": "cade",
+                    "line": "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out."
+                }
+            ],
+            "popups":
+            {
+                "usemortar": "Click on the bridge, then select to mortar to use it on the bridge."
+            }
+
+        },
+        {
+            "title": "Otter Rescue",
+            "goals": 
+            [
+                {
+                    "lookfor": "cagedstarstoneotter",
+                    "location": "canterfarms",
+                    "goal": "Talk to Starstone Otter"
+                }
+            ],
+            "dialogues":
+            [
+                {
+                    "character": "wolf",
+                    "line": "Hungry for meat. Go away of I eat you."
+                },
+                {
+                    "character": "cagedstarstoneotter",
+                    "line": "Please help me.",
+                    "choices":
+                    [
+                        "What? Who is talking?"
+                    ]
+                },
+                {
+                    "character": "cagedstarstoneotter",
+                    "line": "I am speaking to you.",
+                    "choices":
+                    [
+                        "You? But you're an otter! I must be dreaming."
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Canter Farms Cottage",
+            "goals": [],
+            "dialogues":
+            [
+                {
+                    "character": "cade",
+                    "line": "Hi there! You now have your very own cottage in Canter Farms. Let me tell you all about it."
+                },
+                {
+                    "character": "cade",
+                    "line": "This cottage is yours to decorate as you wish. Enter in the front door behind me."
+                },
+                {
+                    "character": "cade",
+                    "line": "Any object you can <b><i>PLACE</i></b> from your inventory bag. Just open your inventory drag an item to your room."
+                },
+                {
+                    "character": "cade",
+                    "line": "Please take this gift to start your decorating. Take this item into your room and set it down."
+                },
+                {
+                    "character": "cade",
+                    "line": "Welcome! Tale a look around."
+                },
+                {
+                    "character": "cade",
+                    "line": "<b><i>PLACE</i></b> your new item anywhere in the room."
+                },
+                {
+                    "character": "cade",
+                    "line": "That's a great place! You can always <b><i>MOVE</i></b> an object once you have set it down."
+                },
+                {
+                    "character": "cade",
+                    "line": "You can <b><i>ROTATE</i></b> some objects as well. Use <b><i>PICK UP</i></b> to remove an object from the room."
+                },
+                {
+                    "character": "cade",
+                    "line": "Here are some more things and some horseshoes to buy more. Have fun!"
+                }
+            ]
+        },
+        {
+            "title": "Beanstalk",
+            "goals": [],
+            "dialogues":
+            [
+                {
+                    "character": "you",
+                    "line": "Wow, a magical bean stalk! I should climb it and see what's up there."
+                }
+            ]
+        },
+        {
+            "title": "Foal Care Promotion",
+            "goals": 
+            [
+                {
+                    "lookfor": "ginger",
+                    "location": "canterfarmsstable",
+                    "goal": "Tale Care of Ginger foal."
+                }
+            ],
+            "dialogues":
+            [
+                {
+                    "character": "ginger",
+                    "line": "Take care of me!"
+                }
+            ]
+        },
+        {
+            "title": "Seashells Collect",
+            "goals":
+            [
+                {
+                    "lookfor": "shine",
+                    "location": "artisansway",
+                    "goal": "Bring 10 seashells to Shine Anders"
+                }
+            ],
+            "dialogues":{
+
+            }
+        },
+        {
+            "title": "Tomtomme missing",
+            "goals":
+            [
+                {
+                    "lookfor": "jordanna",
+                    "location": "canterdowns",
+                    "goal": "Bring the tomtomme to Jordanna"
+                }
+            ],
+            "dialogues":{
+                
+            }
+        }
+    ],
+    "items":
+    {
+        "clothes":
+        {
+            "pants": "Pants",
+            "pantsskirts": "Pants and Skirts",
+            "shirts": "Shirts",
+            "hair": "Hair",
+            "shoes": "Shoes",
+            "accessories": "Accessories",
+        
+            "shirts_00": "Short-sleeved Solid T-shirt",
+            "shirts_01": "Long-sleeved Layered T-shirt",
+            "shirts_02": "Daisy T-Shirt",
+            "shirts_03": "White Trellis",
+        
+            "hair_00": "Curly Ponytail (Headband)",
+        
+            "pants_00": "Jeans",
+            "pants_01": "Plaid shorts",
+        
+            "shoes_00": "Sneakers (no socks)"
+        },
+        "dyes":
+        {
+            "color_brown": "Brown",
+            "color_black": "Black",
+            "color_lightbrown": "Light Brown",
+            "color_red": "Red",
+            "color_yellow": "Yellow",
+            "color_white": "White",
+            "color_royalblue": "Royal Blue",
+            "color_grey": "Grey",
+
+            "apple_red": "Dye - Red Apple"
+        },
+        "seeds":
+        {
+            "winterberry": "Winterberry Seed",
+            "daisy": "Daisy Seed",
+            "tasselcorn": "Tassel Corn Seed",
+            "auralily": "Aura Lily",
+            "lunarmaple": "Lunar Maple Cutting",
+            "magicalbean": "Magical Bean",
+            "apple": "Apple Seed",
+            "banana": "Banana Seed",
+            "baobab": "Baobab Seed",
+            "blueflagiris": "Blue Flag Iris Seed",
+            "butterflyorchid": "Butterfly Orchid Seed",
+            "crystalrose": "Crystal Rose Seed",
+            "carrot": "Carrot Seed",
+            "cinnamonbark": "Cinnamon Bark Seed",
+            "cocoa": "Cocoa Seed",
+            "dragonbeard": "Dragon's Beard Seed",
+            "fairylantern": "Fairy Lantern Seed",
+            "fairysquash": "Fairy Squash Seed",
+            "firetulip": "Fire Tulip Seed",
+            "flamingpepper": "Flaming Pepper Seed",
+            "garlic": "Garlic Seed",
+            "gum": "Gum Seed",
+            "hay": "Hay Seed",
+            "hibiscus": "Hibiscus Seed",
+            "honeysuckle": "Honeysuckle Seed",
+            "icepeas": "Ice Peas Seed",
+            "indigo": "Indigo Seed",
+            "ioniclaurel": "Ionic Laurel Seed",
+            "ladyslipperorchid": "Lady's Slipper Orchid Seed",
+            "lemonlime": "Lemon-Lime Seed",
+            "lipstickbuttercup": "Lipstick Buttercup Seed",
+            "lunarmaplesyrup": "Lunar Maple Syrup Seed",
+            "magnolia": "Magnolia Seed",
+            "nectarmelon": "Nectarmelon Seed",
+            "nightshade": "Nightshade Seed",
+            "papyrus": "Papyrus Seed",
+            "pineapple": "Pineapple Seed",
+            "pinwheeldaisy": "Pinwheel Daisy Seed",
+            "plumberry": "Plumberry Seed",
+            "pumpkin": "Pumpkin Seed",
+            "raspberry": "Raspberry Seed",
+            "redvalerian": "Red Valerian Seed",
+            "royalorchid": "Royal Orchid Seed",
+            "snapdragon": "Snapdragon Seed",
+            "snowdrop": "Snowdrop Seed",
+            "spiceberry": "Spiceberry Seed",
+            "spiderlily": "Spider Lily Seed",
+            "sprouts": "Sprouts Seed",
+            "starshine": "Starshine Seed",
+            "steakmushroom": "Steak Mushroom Seed",
+            "strawberry": "Strawberry Seed",
+            "sugarcane": "Sugarcane Seed",
+            "sunlotus": "Sun Lotus Seed",
+            "sunflower": "Sunflower Seed",
+            "tea": "Tea Seed",
+            "tomato": "Tomato Seed",
+            "vanillabean": "Vanilla Bean Seed",
+            "watermelon": "Watermelon Seed",
+            "wolfwhistle": "Wolf Whistle Seed",
+            "icepetals": "Ice Petals Flower Seed"
+        },
+        "plant":
+        {     
+            "winterberry": "Winterberry",
+            "weed": "Weed",
+            "daisy": "Daisy",
+            "tasselcorn": "Tassel Corn",
+            "auralily": "Aura Lily",
+            "lunarmaple": "Lunar Maple",
+            "magicalbean": "Magical Bean Stalk",
+            "apple": "Apple",
+            "banana": "Banana",
+            "baobab": "Baobab",
+            "blueflagiris": "Blue Flag Iris",
+            "butterflyorchid": "Butterfly Orchid",
+            "crystalrose": "Crystal Rose",
+            "carrot": "Carrot",
+            "cinnamonbark": "Cinnamon Bark",
+            "cocoa": "Cocoa",
+            "dragonbeard": "Dragon's Beard",
+            "fairylantern": "Fairy Lantern",
+            "fairysquash": "Fairy Squash",
+            "firetulip": "Fire Tulip",
+            "flamingpepper": "Flaming Pepper",
+            "garlic": "Garlic",
+            "gum": "Gum",
+            "hay": "Hay",
+            "hibiscus": "Hibiscus",
+            "honeysuckle": "Honeysuckle",
+            "icepeas": "Ice Peas",
+            "indigo": "Indigo",
+            "ioniclaurel": "Ionic Laurel",
+            "ladyslipperorchid": "Lady's Slipper Orchid",
+            "lemonlime": "Lemon-Lime",
+            "lipstickbuttercup": "Lipstick Buttercup",
+            "lunarmaplesyrup": "Lunar Maple Syrup",
+            "magnolia": "Magnolia",
+            "nectarmelon": "Nectarmelon",
+            "nightshade": "Nightshade",
+            "papyrus": "Papyrus",
+            "pineapple": "Pineapple",
+            "pinwheeldaisy": "Pinwheel Daisy",
+            "plumberry": "Plumberry",
+            "pumpkin": "Pumpkin",
+            "raspberry": "Raspberry",
+            "redvalerian": "Red Valerian",
+            "royalorchid": "Royal Orchid",
+            "snapdragon": "Snapdragon",
+            "snowdrop": "Snowdrop",
+            "spiceberry": "Spiceberry",
+            "spiderlily": "Spider Lily",
+            "sprouts": "Sprouts",
+            "starshine": "Starshine",
+            "steakmushroom": "Steak Mushroom",
+            "strawberry": "Strawberry",
+            "sugarcane": "Sugarcane",
+            "sunlotus": "Sun Lotus",
+            "sunflower": "Sunflower",
+            "tea": "Tea",
+            "tomato": "Tomato",
+            "vanillabean": "Vanilla Bean",
+            "watermelon": "Watermelon",
+            "wolfwhistle": "Wolf Whistle",
+            "icepetals": "Ice Petal Flower"
+        },
+        "critters":
+        {
+            "butterfly": "Butterfly",
+            "ladybug": "Lady Bug",
+            "starfish": "Starfish"
+        },
+        "furnitures":
+        {
+            "waterbarrel": "Water Barrel",
+            "dyemachine": "Dye Machine",
+            "starlightchair": "Starlight Chair",
+            "starlightcouch": "Starlight Couch",
+            "starlightbed": "Starlight Bed",
+            "snowmen": "Snowmen",
+            "snowfort": "Snow Fort"
+        },
+        "others":
+        {
+            "fullbucket": "Full Bucket",
+            "mortar": "Lump of mortar",
+            "horseshoes": "Horseshoes",
+            "pixiedust": "Pixie Dust",
+            "moonpiece": "Moon Piece",
+            "pinenut": "Pine nut",
+
+            "jarbutterflies": "Jar of Butterflies",
+            "jarladybugs": "Jar of Ladybugs",
+
+            "bellocard": "Horse Card Bello"
+        }
+    },
+    "locations":
+    {
+        "canterfarms": "Canter Farms",
+        "canterfarmsstable": "Canter Farms Stable",
+        "canterfarmscottage": "Canter Farms Cottage",
+        "overgaardskylands": "Overgaard Skylands",
+        "desertcave": "Desert Cave",
+        "rosevalley": "The Rose Valley",
+        "trailhead": "The Trailhead",
+        "fountainplaza": "The Fountain Plaza",
+        "canterdowns": "Canter Downs",
+        "bagatellarow": "Bagatella Row",
+        "artisansway": "Artisans Way",
+        "bodacave": "Boda's Cave",
+        "outskirts": "The Outskirts",
+        "darkcombhedge": "Darkcomb Hedge",
+        "darkcombforest": "Darkcomb Forest",
+        "petalhome": "Petalhome",
+        "wolfden": "Wolf Den",
+        "fastalonwestriverbank": "Fastalon West Riverbank",
+        "rolandsgaardboardwalk": "Rolandsgaard Boardwalk",
+        "fountainroom": "Fountain Room",
+        "ballroomentrance": "Ballroom Entrance Room",
+        "gardenroom": "Garden Room",
+        "royalroom": "Royal Room"
+    },
+    "characters":
+    {
+        "you": "You",
+        "human":
+        {
+            "sara": "Sara",
+            "cade": "Cade Traveller",
+            "shine": "Shine Anders",
+            "jordanna": "Jordanna"
+        },
+        "horses":
+        {
+            "wings": "Wings",
+            "ginger": "Ginger"
+        },
+        "animals":
+        {
+            "wolf": "Wolf",
+            "cagedstarstoneotter": "Caged Starstone Otter",
+            "starstoneotter": "Starstone Otter",
+            "grasspoolotter": "Grasspool Otter",
+            "tasselmouse": "Tassel Mouse"
+        }
+    },
+    "interactions":
+    {      
+        "brokenbridge": "Bridge (broken)",
+        "cagedotter": "Caged Starstone Otter",
+        "closedgate": "Gate - Closed",
+        "dirt": "Dirt",
+        "fairyring": "Fairy Ring"
+    },
+    "dialogues":
+    {
+        "common":
+        {
+            "talkabout": "What should be talk about?",
+            "likeeat": "What do you like to eat?",
+            "who": "Who are you?",
+            "nevermind": "Nevermind",
+            "tellmemore": "Yes, please tell me about it.",
+            "stopbylater": "No thank you. I'll stop by later."
+        },
+        "like":
+        {
+            "wings_like": "I love daisies fresh off the clouds. It makes me twirl around in the breeze"
+        }
+    }
+}
