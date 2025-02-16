@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Citrustacked</title>
-        <link rel="icon" href="./images/favicon.ico">
+        <link rel="icon" href="/images/favicons/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
@@ -16,14 +16,17 @@
             }
         </style>
     </head>
-    <body style="text-align: center;">
+
+    <script src="/language.js"></script>
+
+    <body style="text-align: center;"  onload="loadLanguagePref()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
                 // Gets lang file
-                //loadLanguagePref(false); 
-                //lang = getCurrentLanguageCode()
-                lang = 'en'
+                loadLanguagePref(false); 
+                lang = getCurrentLanguageCode()
+                console.log(lang)
                 function urlExists(url)
                 {
                     var http = new XMLHttpRequest();
@@ -32,7 +35,7 @@
                     return http.status!=404;
                 }
 
-                if (!lang || !urlExists(`./lang/citrustacked_${lang}.json`)) {
+                if (!lang || !urlExists(`./lang/${lang}.json`)) {
                     lang ='en'
                 }
                 let langData
@@ -41,8 +44,9 @@
                     const myObj = JSON.parse(this.responseText);
                     langData = myObj
                 }
-                xmlHttp.open("GET", `./lang/citrustacked_${lang}.json`);
+                xmlHttp.open("GET", `./lang/${lang}.json`);
                 xmlHttp.send();
+                
 
                 let config = {
                     parent: "gameDiv",
@@ -79,6 +83,8 @@
             <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link">Wiki Page</a> |
             <a href="https://github.com/Gridloch/bellasarajumpinggame" class="global-lowernav-link">GitHub</a>
         </div>
+
+        <script src="/flags.js"></script>
 
     </body>
 </html>

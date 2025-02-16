@@ -37,12 +37,18 @@ class StartScreen extends Phaser.Scene
         this.add.text(70, 270, `${langData.intro_top}`, introTextStyle)
         this.add.text(70, 360, `${langData.intro_bottom}`, introTextStyle)
 
+        function resizeText(textBox, maxWidth) {
+            while (textBox.width > maxWidth) {
+                textBox.setFontSize(Number(textBox.style.fontSize.slice(0, -2))-1)
+            }
+        }
+
 
         let buttonTextStyle = {fontFamily: 'Arial', fontSize: '18px', color: '#000000', align: 'center'}
         // Story Button
         const storyBtn = this.add.image(444, 310, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
         const storyBtnTxt = this.add.text(446, 312, `${langData.btn_story}`, buttonTextStyle).setOrigin(.5)
-
+        resizeText(storyBtnTxt, 120)
         storyBtn.on('pointerover', () => { onBtnOver(storyBtnTxt); });
         storyBtn.on('pointerout', () => { onBtnOut(storyBtnTxt); });
         storyBtn.on('pointerdown', () => 
@@ -55,7 +61,7 @@ class StartScreen extends Phaser.Scene
         // Practice Button
         const practiceBtn = this.add.image(444, 350, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
         const practiceBtnTxt = this.add.text(446, 352, `${langData.btn_practice}`, buttonTextStyle).setOrigin(.5)
-
+        resizeText(practiceBtnTxt, 120)
         practiceBtn.on('pointerover', () => { onBtnOver(practiceBtnTxt); });
         practiceBtn.on('pointerout', () => { onBtnOut(practiceBtnTxt); });
         practiceBtn.on('pointerdown', () => 
@@ -68,7 +74,7 @@ class StartScreen extends Phaser.Scene
         // Help Button
         const helpBtn = this.add.image(444, 390, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
         const helpBtnTxt = this.add.text(446, 392, `${langData.btn_help}`, buttonTextStyle).setOrigin(.5)
-
+        resizeText(helpBtnTxt, 120)
         helpBtn.on('pointerover', () => { onBtnOver(helpBtnTxt); });
         helpBtn.on('pointerout', () => { onBtnOut(helpBtnTxt); });
         helpBtn.on('pointerdown', () => 
