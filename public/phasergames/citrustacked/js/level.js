@@ -302,6 +302,7 @@ class Level extends Phaser.Scene
         quitBtn.on('pointerdown', () =>
         {
             // TODO : Go back to the main menu
+            this.scene.start('StartScreen', {backgroundMusic: this.backgroundMusic, runningSound: this.runningSound, playMusic: this.playMusic})
         })
 
         // Music
