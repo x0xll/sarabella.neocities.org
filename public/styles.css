@@ -142,11 +142,13 @@ ul {
         flex-wrap: wrap;
     }
     
-    .textbox-parent {
+    #about,
+    #credits {
         width: 20%;
     }
     
-    .textbox-parent .textbox {
+    #about .textbox,
+    #credits .textbox {
         width: 90%; 
     }
 }
@@ -166,7 +168,8 @@ ul {
         order: 3;
     }
 
-    .textbox-parent {
+    #about,
+    #credits {
         margin-left: 0;
         margin-right: 0;
         min-width: min-content;
@@ -174,7 +177,8 @@ ul {
         height: min-content;
     }
     
-    .textbox-parent .textbox {
+    #about .textbox,
+    #credits .textbox {
         width: 90%; 
         height: min-content;
     }
