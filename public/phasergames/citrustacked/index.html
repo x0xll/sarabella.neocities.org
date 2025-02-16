@@ -20,6 +20,30 @@
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
+                // Gets lang file
+                //loadLanguagePref(false); 
+                //lang = getCurrentLanguageCode()
+                lang = 'en'
+                function urlExists(url)
+                {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status!=404;
+                }
+
+                if (!lang || !urlExists(`./lang/citrustacked_${lang}.json`)) {
+                    lang ='en'
+                }
+                let langData
+                const xmlHttp = new XMLHttpRequest();
+                xmlHttp.onload = function() {
+                    const myObj = JSON.parse(this.responseText);
+                    langData = myObj
+                }
+                xmlHttp.open("GET", `./lang/citrustacked_${lang}.json`);
+                xmlHttp.send();
+
                 let config = {
                     parent: "gameDiv",
                     type: Phaser.CANVAS,
@@ -40,7 +64,7 @@
                     physics: {
                         default: 'arcade',
                         arcade: { 
-                            debug: true,
+                            debug: false,
                          }
                     },
                 };

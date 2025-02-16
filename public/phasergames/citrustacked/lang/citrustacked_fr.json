@@ -7,7 +7,7 @@
     "btn_continue": "Continuer",
     "btn_quit": "Quitter",
 
-    "level": "Niveau ${levelNumber}",
+    "level": "Niveau",
     "score": "Score",
 
     "intro_top": "Aide les Citrustacks à traverser Canter Hollow pour arriver à la grande fête!",

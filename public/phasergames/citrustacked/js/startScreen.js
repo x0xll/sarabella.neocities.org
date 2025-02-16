@@ -34,14 +34,14 @@ class StartScreen extends Phaser.Scene
             lineSpacing: 12
         }
 
-        this.add.text(70, 270, "Help the Citrustacks journey across Canter Hollow to bring Mother Comfort's candy to the Faire for the Winter Festival!", introTextStyle)
-        this.add.text(70, 360, "     The journey might take you a few days, but don't worry: you'll start again right where you left off!", introTextStyle)
+        this.add.text(70, 270, `${langData.intro_top}`, introTextStyle)
+        this.add.text(70, 360, `${langData.intro_bottom}`, introTextStyle)
 
 
         let buttonTextStyle = {fontFamily: 'Arial', fontSize: '18px', color: '#000000', align: 'center'}
         // Story Button
         const storyBtn = this.add.image(444, 310, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
-        const storyBtnTxt = this.add.text(446, 312, "Story Mode", buttonTextStyle).setOrigin(.5)
+        const storyBtnTxt = this.add.text(446, 312, `${langData.btn_story}`, buttonTextStyle).setOrigin(.5)
 
         storyBtn.on('pointerover', () => { onBtnOver(storyBtnTxt); });
         storyBtn.on('pointerout', () => { onBtnOut(storyBtnTxt); });
@@ -54,7 +54,7 @@ class StartScreen extends Phaser.Scene
 
         // Practice Button
         const practiceBtn = this.add.image(444, 350, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
-        const practiceBtnTxt = this.add.text(446, 352, "Practice Mode", buttonTextStyle).setOrigin(.5)
+        const practiceBtnTxt = this.add.text(446, 352, `${langData.btn_practice}`, buttonTextStyle).setOrigin(.5)
 
         practiceBtn.on('pointerover', () => { onBtnOver(practiceBtnTxt); });
         practiceBtn.on('pointerout', () => { onBtnOut(practiceBtnTxt); });
@@ -67,7 +67,7 @@ class StartScreen extends Phaser.Scene
 
         // Help Button
         const helpBtn = this.add.image(444, 390, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
-        const helpBtnTxt = this.add.text(446, 392, "Help", buttonTextStyle).setOrigin(.5)
+        const helpBtnTxt = this.add.text(446, 392, `${langData.btn_help}`, buttonTextStyle).setOrigin(.5)
 
         helpBtn.on('pointerover', () => { onBtnOver(helpBtnTxt); });
         helpBtn.on('pointerout', () => { onBtnOut(helpBtnTxt); });

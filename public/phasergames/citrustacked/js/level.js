@@ -48,7 +48,6 @@ var grid = []
 var score = 0
 var scoreTxt;
 var levelTitleKey = "level"
-var levelIndex = 1
 var levelInitialized = false
 
 var citrustacksGoingDown = []
@@ -281,11 +280,11 @@ class Level extends Phaser.Scene
         let menuBigTextStyle =  {fontFamily: 'Arial', fontSize: '32px', color: '#000000', align: 'center'}
 
         scoreTxt = this.add.text(177, 196, score, menuBigTextStyle).setOrigin(.5)
-        this.add.text(177, 425, "Level " + levelIndex, menuSmallTextStyle).setOrigin(.5)
+        this.add.text(177, 425, `${langData.level} ${data.currentLevel}`, menuSmallTextStyle).setOrigin(.5)
 
         // Help
         const helpBtn = this.add.image(178, 290, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
-        const helpBtnTxt = this.add.text(180, 294, "Help", menuSmallTextStyle).setOrigin(.5)
+        const helpBtnTxt = this.add.text(180, 294, `${langData.btn_help}`, menuSmallTextStyle).setOrigin(.5)
 
         helpBtn.on('pointerover', () => { onBtnOver(helpBtnTxt); });
         helpBtn.on('pointerout', () => { onBtnOut(helpBtnTxt); });
@@ -296,7 +295,7 @@ class Level extends Phaser.Scene
 
         // Quit
         const quitBtn = this.add.image(178, 338, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
-        const quitBtnTxt = this.add.text(180, 342, "Quit", menuSmallTextStyle).setOrigin(.5)
+        const quitBtnTxt = this.add.text(180, 342, `${langData.btn_quit}`, menuSmallTextStyle).setOrigin(.5)
 
         quitBtn.on('pointerover', () => { onBtnOver(quitBtnTxt); });
         quitBtn.on('pointerout', () => { onBtnOut(quitBtnTxt); });
