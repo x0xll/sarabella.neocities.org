@@ -44,6 +44,8 @@ LEVELS[3] = [
     [COLORS[2], COLORS[2], COLORS[2], COLORS[0], COLORS[1], COLORS[1], COLORS[2], COLORS[2], COLORS[3], COLORS[3]]
 ]
 
+const movementAllowance = 0.1
+
 var grid = []
 var score = 0
 var scoreTxt;
@@ -69,6 +71,7 @@ class Level extends Phaser.Scene
         this.load.image('background', './images/background.png') 
         this.load.atlas('music_button', './images/music.png', './images/music.json');
         this.load.image('menu_button', './images/purple_button.png')
+        this.load.image('popup_end', './images/level_end.png')
 
         // Citrustacks
         this.load.spineAtlas("citrustack_atlas", `./images/skeleton.atlas`);
@@ -248,6 +251,64 @@ class Level extends Phaser.Scene
             checkSlide = true
         }
 
+        this.checkIfLost = checkIfLost;
+
+        function checkIfLost()
+        {
+            for (let x = 0; x < GRID_SIZE; x++)
+            {
+                for(let y = 0; y < GRID_SIZE; y++)
+                {
+                    if (grid[x][y] != null)
+                    {
+                        const targetX = START_GRID_POS[0] + (grid[x][y].column * CELL_SIZE)
+                        const targetY = START_GRID_POS[1] - (grid[x][y].row * CELL_SIZE)
+                        
+                        // Check x position
+                        if (targetX - movementAllowance > grid[x][y].x && grid[x][y].x > targetX + movementAllowance)
+                            return;
+    
+                        // Check y position
+                        if (targetY - movementAllowance > grid[x][y].y && grid[x][y].y > targetY + movementAllowance)
+                            return;
+
+                        let group = checkTileGroup(x, y, grid[x][y].color)
+                        if (group.length > 1) return;
+                    }
+                }
+            }
+
+            //showEndPopup(false);
+        }
+
+        this.showEndPopup = showEndPopup;
+
+        function showEndPopup(won)
+        {
+            game.add.image(575, 234, "popup_end").setOrigin(.5);
+            game.add.text(420, 102, (won) ? `${langData.end_level}` : `${langData.end_lost}`, {fontFamily: 'Arial', fontSize: '25px', color: '#716038', align: 'left', fontStyle: 'italic'}).setOrigin(0);
+            game.add.text(420, 150, (won) ? `${langData.end_congrats}` :`${langData.end_lostmessage}`, {fontFamily: 'Arial', fontSize: '18px', color: '#716038', align: 'left'}).setOrigin(0);
+
+            game.add.text(575, 330, `${langData.score} ${score}`, {fontFamily: 'Arial', fontSize: '24px', color: '#000000', align: 'center', fontStyle: 'italic'}).setOrigin(.5);
+
+            // Restart
+            const restartBtn = game.add.image(575, 382, "menu_button").setOrigin(.5).setInteractive({ pixelPerfect: true })
+            const restartBtnTxt = game.add.text(575, 
+                386, (won) ? `${langData.btn_continue}` :`${langData.btn_restart}`, menuSmallTextStyle).setOrigin(.5)
+
+            restartBtn.on('pointerover', () => { onBtnOver(restartBtnTxt); });
+            restartBtn.on('pointerout', () => { onBtnOut(restartBtnTxt); });
+            restartBtn.on('pointerdown', () =>
+            {
+                score = 0
+
+                if (won && gameData.currentLevel < 3)
+                    gameData.currentLevel++
+
+                game.scene.start('Level', {backgroundMusic: gameData.backgroundMusic, currentLevel: gameData.currentLevel, playMusic: gameData.playMusic});
+            })
+        }
+
         function increaseScore(tileAmount)
         {
             // TODO : have the score appear at different size + particles
@@ -301,7 +362,6 @@ class Level extends Phaser.Scene
         quitBtn.on('pointerout', () => { onBtnOut(quitBtnTxt); });
         quitBtn.on('pointerdown', () =>
         {
-            // TODO : Go back to the main menu
             this.scene.start('StartScreen', {backgroundMusic: this.backgroundMusic, runningSound: this.runningSound, playMusic: this.playMusic})
         })
 
@@ -425,9 +485,7 @@ class Level extends Phaser.Scene
         }
         if (notNullCount === 0) {
             // Level should end
-            score = 0
-            if (gameData.currentLevel < 3) {gameData.currentLevel++}
-            this.scene.start('Level', {backgroundMusic: gameData.backgroundMusic, currentLevel: gameData.currentLevel, playMusic: gameData.playMusic});
+            this.showEndPopup(true);
         }
 
         // TODO : Improve movement to be more fluid
@@ -500,10 +558,8 @@ class Level extends Phaser.Scene
                 }
             }
         }
-        
 
         // Check if citrustack should be moving or not, and then move or stop it as needed
-        const movementAllowance = 0.1
         grid.forEach(column => {
             column.forEach(tile => {
                 if (tile !== null) {
@@ -537,5 +593,6 @@ class Level extends Phaser.Scene
 
         gravityTiles()
         if (checkSlide) {checkSlideTiles()}
+        this.checkIfLost();
     }
 }

@@ -6,6 +6,7 @@
     "btn_help": "Help",
     "btn_continue": "Continue",
     "btn_quit": "Quit",
+    "btn_restart": "Retry",
 
     "level": "Level",
     "score": "Score",
@@ -17,5 +18,8 @@
     "story_level2": "Great job! We've got all the candy packed up and we're off on our journey. We're making great progress. Keep up the good work!",
 
     "end_level": "Level Cleared",
-    "end_congrats": "Way to go!"
+    "end_congrats": "Way to go!",
+
+    "end_lost": "You lost...",
+    "end_lostmessage": "Want to try again?"
 }
