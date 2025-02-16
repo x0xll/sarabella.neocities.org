@@ -89,12 +89,16 @@ class Quiz extends Phaser.Scene
         let turnsTxt = this.add.text(220, 125, `${langData.ui.turns}${turnsLeft}`, datasTextSettings);
         if (lang == "fr")
             turnsTxt.x = 190;
+        else if (lang == "sv")
+            turnsTxt.x = 155;
 
         // SCORE
         score = 0;
         let scoreTxt = this.add.text(80, 125, `${langData.ui.score}${score}`, datasTextSettings);
         if (lang == "fr")
             scoreTxt.x = 60;
+        else if (lang == "sv")
+            scoreTxt.x = 50
 
         // Init quiz
         const horseDatas = this.horseDatas;
