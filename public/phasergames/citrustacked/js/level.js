@@ -255,22 +255,19 @@ class Level extends Phaser.Scene
 
         function checkIfLost()
         {
+            let emptyGrid = true;
+
             for (let x = 0; x < GRID_SIZE; x++)
             {
                 for(let y = 0; y < GRID_SIZE; y++)
                 {
                     if (grid[x][y] != null)
                     {
-                        const targetX = START_GRID_POS[0] + (grid[x][y].column * CELL_SIZE)
-                        const targetY = START_GRID_POS[1] - (grid[x][y].row * CELL_SIZE)
-                        
-                        // Check x position
-                        if (targetX - movementAllowance > grid[x][y].x && grid[x][y].x > targetX + movementAllowance)
-                            return;
-    
-                        // Check y position
-                        if (targetY - movementAllowance > grid[x][y].y && grid[x][y].y > targetY + movementAllowance)
-                            return;
+                        emptyGrid = false; 
+
+                        if (citrustacksGoingDown.length > 0) return;
+
+                        if (checkSlide) return;
 
                         let group = checkTileGroup(x, y, grid[x][y].color)
                         if (group.length > 1) return;
@@ -278,7 +275,8 @@ class Level extends Phaser.Scene
                 }
             }
 
-            //showEndPopup(false);
+            if (!emptyGrid)
+                showEndPopup(false);
         }
 
         this.showEndPopup = showEndPopup;
