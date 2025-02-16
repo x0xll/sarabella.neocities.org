@@ -281,9 +281,9 @@ class BellapediaOpen extends Phaser.Scene
             }
             game.entryOpenInfo.y = 52
             game.entryOpenInfo.text = game.allEntries[game.currentEntry].info
-            game.entryScrollBar.setVisible(game.entryOpenInfo.height > 340)
+            game.entryScrollBar.setVisible(game.entryOpenInfo.height > 341)
             game.entryScroll.y = 123
-            game.entryScroll.setVisible(game.entryOpenInfo.height > 340)
+            game.entryScroll.setVisible(game.entryOpenInfo.height > 341)
 
             game.entryImage.setTexture(game.allEntries[game.currentEntry].name).setDisplaySize(255, 300).setVisible(true)
             if (game.entryImage.scaleY < game.entryImage.scaleX) {
