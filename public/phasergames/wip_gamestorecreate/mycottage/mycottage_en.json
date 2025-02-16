@@ -1,0 +1,23 @@
+{
+    "welcome": "Welcome back,",
+
+    "to_horse": "My Horse",
+    "to_magicalhorses": "Bella Sara Horses",
+    "to_world": "To World",
+
+    "decorate_btn": "Decorate",
+    "things_btn": "My Things",
+    "save_btn": "Save",
+
+    "category_doors": "Doorways",
+    "category_animals": "Animals",
+    "category_wonders": "Wonders",
+    "category_things": "Knick Knacks",
+    "category_holiday": "Holiday",
+    "category_decorations": "Home Décor",
+    "category_walldecorations": "Wall Hangings",
+    "category_toys": "Toys",
+    "category_floor": "Flooring",
+    "category_furnitures": "Furniture",
+    "category_books": "Storybooks"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+    <print>プリント</print>
+    <reset>リセット</reset>
+    <help>ヘルプ</help>
+    <currentColor>現在の色</currentColor>
+    <moreColor>その他の色</moreColor>
+
+    <fionaTxt>Be the hero in your own story.<br>自身の物語の主人公になりなさい。</fionaTxt>
+</root>

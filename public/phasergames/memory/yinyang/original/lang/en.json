@@ -1,0 +1,12 @@
+{
+    "score": "Score: ",
+    "time": "Time: " ,
+    
+    "congrats": "Congratulations!",
+    "won": "You won the game!",
+
+    "oops": "Oops...",
+    "lost": "Seems like you lost...",
+
+    "retry": "Play again?"
+}

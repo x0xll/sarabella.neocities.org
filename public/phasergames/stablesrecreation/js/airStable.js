@@ -864,7 +864,7 @@ function pointerout(sprite) {
             align: 'center' ,
             wordWrap: { width: 800 }}).setVisible(false);
         inspirationMessage.text = localeData[horseName + "Quote"];
-        inspirationMessage.setPosition(444-inspirationMessage.width/2, 133-inspirationMessage.height/2);
+        inspirationMessage.setOrigin(0.5)
         inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
 
 
@@ -1136,6 +1136,12 @@ function pointerout(sprite) {
         if (playInspiration) {
             playInspiration = false
             canPlayInspiration = false
+
+            if (localizedQuote)
+                inspirationMessage.text = localeData[horseName + "Quote"];
+            else
+                inspirationMessage.text = englishDatas[horseName + "Quote"];
+
             inspiration.setVisible(true).setAlpha(0)
             inspirationMessage.setVisible(true).setAlpha(0)
             this.time.delayedCall(40, function () {inspiration.setAlpha(.1); inspirationMessage.setAlpha(0.1)});

@@ -1203,6 +1203,12 @@ class WaterStable extends Phaser.Scene
         if (playInspiration) {
             playInspiration = false
             canPlayInspiration = false
+
+            if (localizedQuote)
+                inspirationMessage.text = localeData[horseName + "Quote"];
+            else
+                inspirationMessage.text = englishDatas[horseName + "Quote"];
+
             inspiration.setVisible(true).setAlpha(0)
             inspirationMessage.setVisible(true).setAlpha(0)
             this.time.delayedCall(40, function () {inspiration.setAlpha(.1); inspirationMessage.setAlpha(0.1)});

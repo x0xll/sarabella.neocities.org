@@ -1,0 +1,18 @@
+&intro=<html><b>INTRODUCTION</b>
+<p><b>Ingen riktigt vet</b> hur länge hästar har levt i landet Norr om Norr--kanske ett par tusen år, kanske längre.</p>
+<p>Men vad vi vet är att Norr om Norr är hem till mer ovanliga, magiska hästraser än någon annanstans. Vissa säger att det finns en unik häst för varje levande barn på Jorden.</p></html>
+
+
+&land_story=<html><b>LANDHÄSTARNA</b>
+<p><b>Markhästarna i Norr om Norr</b> är fantastiska i deras mångfald och skönhet. Här kan du hitta hästar i alla dina favoritraser, från små falabellor till jättestora clydesdales–men du kan komma att bli förvånad över en del av deras färger. Enhörningar, som nuförtiden är ovanliga världen runt, strövar i skogarna här. Andra unika raser som de spektakulära påfågelsvanshästarna, lever endast i Norr om Norr.</p>
+<p>Av alla hästarna i Norr om Norr är markhästarna de mest vänliga mot människor. Många av dem gillar att leva i stall nära människor. De mer vilda hästarna väljer att sova under stjärnhimlen eller sova i en grotta med deras flock. De gör dock inget om du besöker dem–speciellt om du har med dig ett äpple i fickan!</p></html>
+
+&air_story=<html><b>LUFTHÄSTARNA</b>
+<p><b>De flygande hästarna</b> finns i fler än trettio olika hästraser och de flesta lever i Norr om Norr. Klimatet här är perfekt för dem: massa solljus, smekande vindar och sköna temperaturer.</p>
+<p>Vart du än reser i Norr om Norr kommer du med säkerhet se flockar av flygande hästar. Vissa vilda raser letar upp höga träd för att kunna bygga sina nästen i med grenar och löv. Andra häckar i bergsskrevor i bergväggar högt ovanför havet. Mer kräsna raser såsom flygande fullblod väljer hellre att bo i trähus. Deras hem dinglar från trädgrenar eller sitter på pelare som kan bli upp till 15 meter höga!</p></html>
+
+&water_story=<html><b>VATTENHÄSTARNA</b>
+<p><b>De rena, livfulla haven</b> I Norr om Norr provide rich habitats for many breeds of swimming horses. Pods of dolphin horses, for example, are easy to spot in the shallow seas near the coast. Others, like seahorses and seadragon-horses, prefer to live in deeper waters where they can take shelter in vast forests of kelp.</p>
+<p>Lots of freshwater horses live here too. Wait quietly by any lake and you may glimpse one of the timid, green-maned horses that swim along its edges. Rivers and brooks are home to kelpie-horses, who can also walk on land for short periods of time. And if you’re lucky enough to find a natural spring, you may even meet a rare melusine!</p></html>
+
+&conclusion=<html><p><b>Some of the horses</b> in North of North look exactly like horses in our world, so at first glance you might not be able to tell the difference.</p><p>But if you meet a horse from North of North, you will know it in your heart, for you will feel its magic.</p></html>

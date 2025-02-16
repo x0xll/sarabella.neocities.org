@@ -1287,6 +1287,7 @@ class dressupLandStable extends Phaser.Scene
             playInspiration = false
             canPlayInspiration = false
             inspiration.setVisible(true).setAlpha(0)
+
             inspirationMessage.setVisible(true).setAlpha(0)
             this.time.delayedCall(40, function () {inspiration.setAlpha(.1); inspirationMessage.setAlpha(0.1)});
             this.time.delayedCall(80, function () {inspiration.setAlpha(.2); inspirationMessage.setAlpha(0.2)});

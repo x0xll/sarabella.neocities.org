@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+        <play>Spela</play>
+        <pause>Pausa</pause>
+    <beautyeh>Du skapade en vacker fyrverkerishow.</beautyeh>
+    <greatshow>Bra Show!</greatshow>
+    <replay>Spela Om</replay>
+    <newshow>Ny Show</newshow>
+    <quit>Avsluta</quit>
+    <welcome>Välkomen till</welcome>
+    <gameTitle>Fyrverkerifestivalen</gameTitle>
+    <playPuzzle>Spela Pusselspel</playPuzzle>
+    
+    <rulesTime>När Solen gått ner börjar föreställningen!</rulesTime>
+    <rulesCounter>Räknaren visar hur många fyrverkerier är i varje rör.</rulesCounter>
+    <rulesPinwheels>Vindsnurror kommer snurra av skärmen.</rulesPinwheels>
+    <rulesUncoveredFireworks>Du kan endast ta bort Fyrverkerier som är helt synliga</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Klicka på fyrverkerierna eller använd mellanslag för att lägga in dem till din föreställning</rulesCollectFireworks>
+    <intro>Ett spännande spel som slutar med DIN fantastiska fyrverkerishow!</intro>
+    <howToPlayTitle>Hur man Spelar:</howToPlayTitle>
+    <howToPlayDesc>Klicka på vindsnurrorna för att blotta och samla så många fyrverkerier som möjligt. Ju fler du samlar, ju större blir din show! När solen gått ner är tiden slut och din föreställning börjar.</howToPlayDesc>
+    <goodLuck>Lycka Till!</goodLuck>
+    <begin>Börja</begin>
+    <score>Dina Poäng</score>
+    <continue>Fortsätt</continue>
+    <won>Du Vann</won>
+    <outroGreat>Du var fantastisk.</outroGreat>
+    <outroWatchShow>Klicka på knappen nedan för att titta på föreställningen.</outroWatchShow>
+    <outroEnjoy>Njut av showen!</outroEnjoy>
+</root>

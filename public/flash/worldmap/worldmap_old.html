@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
+        <title data-il8n="game_map">World Map</title>
+        <script src="/ruffle/ruffle.js"></script>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref()">
+        <script src="/header.js"></script>
+
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <p data-il8n="oldmap_warning">
+            Some links are not working.
+          </p>
+        </div> 
+        
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+              unmuteOverlay: "hidden",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+          
+        </div>
+
+        <div class="footer">
+          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+          <a href="https://web.archive.org/web/20071103082933/http://www.bellasara.com:80/world.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
+        </div>
+
+        <script src="/flags.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '560';
+          swfPlayer.width = '950';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'oldmap/bs_worldmap.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfPlayer.setAttribute("wmode", `transparent`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+  </body>
+</html>
+
+
