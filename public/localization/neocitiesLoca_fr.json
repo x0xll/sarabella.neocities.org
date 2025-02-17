@@ -8,7 +8,7 @@
     "header_wiki_btn" : "Wiki.gg",
     "header_discord_btn" : "Discord",
 
-    "footer_maininfos" : "Pour toutes questions, commentaries ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
+    "footer_maininfos" : "Pour toutes questions, commentaires ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
     "footer_home_linktxt" : "Accueil",
     "footer_wiki_linktxt" : "Page du Wiki",
     "footer_webarchive_linktxt" : "Page du Web Archive",
@@ -28,7 +28,7 @@
     "play_recoveredflashgames_desc" : "Des jeux archivés depuis le site d'origine",
     "play_recreatedgames_title" : "Jeux recréés",
     "play_recreatedgames_desc" : "Des jeux qui ont été recréés avec un nouveau code",
-    "play_partiallyrecoveredgames_title" : "Partially Recovered Games",
+    "play_partiallyrecoveredgames_title" : "Jeux partiellement retrouvés",
     "play_partiallyrecoveredgames_desc" : "Des jeux qui ont été archivés à partir du site d'origine, mais pour lesquels certains fichiers ou fonctionnalités de base sont manquants.",
     "play_newgames_title" : "Nouveaux jeux",
     "play_newgames_desc" : "De nouveaux jeux sur le thème ou inspirés de Bella Sara.",
@@ -57,18 +57,18 @@
     "game_autumnjourney": "Autumn Journey Quiz",
     "game_yinyangmemory": "Yin and Yang's Memory Game",
 
-    "artstudio_warning" : "Ce jeu a les fichiers des chevaux originaux manquantse.",
+    "artstudio_warning" : "Ce jeu a les fichiers des chevaux originaux manquants.",
     
     "babybella_warning" : "Ce jeu / pub semble manquer quelques unes de ses fonctionalités d'origine.",    
 
-    "lanceriding_warning" : "Ce jeu ne contient que les fichiers du premier niveau. Il a aussi des problèmes pour se charger de manière consistante and la page peut avoir besoin d'être rechargée plusieurs fois avant que le niveau ne se lance.",
+    "lanceriding_warning" : "Ce jeu ne contient que les fichiers du premier niveau. Il a aussi des problèmes pour se charger de manière consistante et la page peut avoir besoin d'être rechargée plusieurs fois avant que le niveau ne se lance.",
 
     "storybook_warning": "Ce jeu ne semble pas capable de se mettre en mode silencieux lorque l'on va sur la page suivante et ne joue pas toujours les vidéos comme attendu.",
 
     "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
-    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
+    "oldmap_warning": "Certains liens sont désactivés car ces jeux ne sont pas encore retrouvés.",
 
-    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
+    "belloquiz_warning" : "Dû au manque de références, cette recréation n'est peut-être pas 100% exacte.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
@@ -83,9 +83,9 @@
     "puzzle_nativelights" : "Native Lights",
     "puzzle_bellasara" : "Bella Sara",
     "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
-    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+    "puzzle_custom_warning2" : "Les images de taille supérieures à 700 x 450 ne seront peut-être pas entièrement visibles!",
 
-    "stables_title" : "Welcome to the World of Bella Sara",
+    "stables_title" : "Bienvenue dans le monde de Bella Sara",
 
     "dressup_horselink" : "Horse Link",
 
@@ -98,8 +98,8 @@
     "babybella_17Dec": "17th of December, 2008 - After the event's end",
     "footer_timeline_link": "Timeline",
 
-    "credits_title": "Credits",
+    "credits_title": "Crédits",
 
-    "about_title": "About",
+    "about_title": "A propos",
     "about_text": "The Neocities Bella Sara is an archival website made for saving, fixing and recreating the old Bella Sara flash games from the original website to prevent them from being fully lost to time.<br/><br/>This project is open to anyone who wish to help, and you can find out more <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">here</a>."
 }
