@@ -7,7 +7,7 @@ document.write('\
         <button class="navbutt" data-il8n="header_ressources_btn">Resources</button></a>\
     <a href="/devlog.html">\
         <button class="navbutt" data-il8n="header_updates_btn">Updates</button></a>\
-    <a href="/index.html">\
+    <a id="logo" href="/index.html">\
         <img src="/images/besalogo.png" style="padding: 20px, 0px; vertical-align: middle"></a>\
     <a href="https://bellasara.com/">\
         <button class="navbutt" data-il8n="header_besaofficial_btn">BeSa Official</button></a> \

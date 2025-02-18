@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml version="1.0" encoding="utf-8">
+	<ingame>
+		<loader>
+			<text name="LoaderHeadline" type="text">Laddar</text>
+		</loader>
+		<mainpanel>
+			<text name="txt_mainName">&lt;font size="60"&gt;LANS#&lt;/font&gt;&lt;font size="80"&gt;RIDNING&lt;/font&gt;</text>
+			<text name="txt_mainHelp">hjälp</text>
+			<text name="txt_mainBegin">spela</text>
+			<text name="txt_mainContinue">fortsätt</text>
+			<text name="txt_mainNewgame">nytt spel</text>
+			<text name="txt_mainEasy">lätt</text>
+			<text name="txt_mainHard">svår</text>
+		</mainpanel>
+		<evalpanel>
+			<text name="txt_evalGo">börja!</text>
+			<text name="txt_evalQuit">meny</text>
+			<text name="txt_evalPractice">träning</text>
+			<text name="txt_evalBonus">bonus</text>
+			<text name="txt_evalCompetition">tävling</text>
+			<text name="txt_evalRetry">försök igen</text>
+			<text name="txt_evalRestart">börja om</text>
+			<text name="txt_evalPracticeIntro">Välkommen till träningen:#För att kvalificera dig för tävlingar, ta ner ringen!#Du kan träna så mycket som du vill.</text>
+			<text name="txt_evalPracticeScoreRun">Mitt i prick!#När du känner dig redo kan du#fortsätta till tävlingen.</text>
+			<text name="txt_evalPracticeScoreRunUnLock">Du fångade ringen!!#Tävlingen är nu öppnad.</text>
+			<text name="txt_evalPracticeNoScoreRun">En miss!#Försök igen.</text>
+			<text name="txt_evalPracticeNoScoreRunUnLock">En miss, men#tävlingen är fortfarande öppen.</text>
+			<text name="txt_evalPracticeNoScore">Du missade helt och hållet.#Fortsätt öva!</text>
+			<text name="txt_evalCompIntro">Välkommen till tävlingen:#Samla svårare ringar för att få fler poäng#Du har [maxRuns] gånger på dig.</text>
+			<text name="txt_evalCompScoreRun">Snyggt! Du samlade [runScore] poäng,#totalen är [cumulScore] poäng.#[remainRuns] omgångar kvar.</text>
+			<text name="txt_evalCompScoreRunUnLock">Excellent! Du fick [runScore] poäng,#totalen är [cumulScore] poäng#Bonus banan är upplåst#[remainRuns] omgångar kvar.</text>
+			<text name="txt_evalCompScoreTotal">Grattis!#Du fick [runScore] poäng, totalen är [cumulScore] poäng#</text>
+			<text name="txt_evalCompScoreTotalUnlock">Grattis! Du fick [runScore] poäng#totalen är [cumulScore] poäng.#Få extra poäng på bonusbanan!</text>
+			<text name="txt_evalCompNoScoreRun">Du missade - totala poängen är fortfarande [cumulScore] poäng#Försök igen, du har [remainRuns] omgångar kvar.</text>
+			<text name="txt_evalCompNoScoreRunUnLock">Du missade - totala poängen är fortfarande [cumulScore] poäng#Få extra poäng på bonusbanan!#[remainRuns] omgångar kvar.</text>
+			<text name="txt_evalCompNoScore">Du har inga poäng,#och [remainRuns] omgångar kvar.#Försök igen!</text>
+			<text name="txt_evalCompNoScoreTotal">Miss!#Du samlade inga ringar.#Du kanske behöver öva lite?</text>
+			<text name="txt_evalCompScoreRunTotal">Grattis!#Du fick [runScore] poäng#totalen är [cumulScore] poäng.</text>
+			<text name="txt_evalCompScoreRunTotalUnLock">Grattis! Du fick [runScore] poäng#totalen är [cumulScore] poäng.#Få extra poäng på bonusbanan!</text>
+			<text name="txt_evalCompNoScoreRunTotalUnLock">Bra!#totalen är [cumulScore] poäng#Testa bonusbanan för mer poäng!</text>
+			<text name="txt_evalCompNoScoreRunTotal">Grattis!#Du fick [runScore] poäng#totalen är [cumulScore] poäng.</text>
+			<text name="txt_evalCompNoScoreTotal">Miss!#Du samlade inga ringar.#Du kanske behöver öva lite?</text>
+			<text name="txt_evalBonusIntro">Välkommen till bonusbanan:#Spräck ballongerna för att få extra poäng.#Du har bara en omgång!</text>
+			<text name="txt_evalBonusScoreRunTotal">Snyggt!#[runScore] bonuspoäng lades till,#slutpoängen blev [totalScore] poäng.</text>
+			<text name="txt_evalBonusScoreRunTotalUnLock">Snyggt!#[runScore] bonuspoäng lades till,#slutpoängen blev [totalScore] poäng.</text>
+			<text name="txt_evalBonusNoScoreRunTotalUnLock">Snyggt!#[runScore] bonuspoäng lades till,#slutpoängen blev [totalScore] poäng.</text>
+			<text name="txt_evalBonusNoScoreTotal">Otur, du missade alla ballonger.#Slutpoängen blev [totalScore] poäng.</text>
+		</evalpanel>
+		<help>
+			<text name="txtHelp_Headline">Hur spelar man?</text>
+			<text name="txtHelp_Intro">Är du redo? Medan du rider på din häst, försök att samla ihop ringarna med din lans. Kontrollera lansen genom att klicka och dra med din muspekare. Öva, öva. Lansen är tung så du kanske behöver släppa och dra flera gånger för att få lansen i rätt position. Om du väljer Svårt kommer ringarna vara mindre och de blir svårare att samla in.</text>
+		</help>
+	</ingame>
+</xml>

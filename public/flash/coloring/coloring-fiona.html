@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
       <title data-il8n="game_coloringgamefiona">Coloring Game (Fiona)</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
@@ -36,16 +37,31 @@
         <!-- Load correct localized version of the game -->
         <script>
           loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
+          let locale = getCurrentLanguageCode();
+          let localeDrawing = locale;
+
+          function urlExists(url)
+          {
+              var http = new XMLHttpRequest();
+              http.open('HEAD', url, false);
+              http.send();
+              return http.status!=404;
+          }
+
+          // Temporary prevent using the jap version since the characters are broken
+          if (locale == "ja" || !urlExists('./flash/' + locale + '_coloring.swf'))
+            locale = "en";
+
+          if (!urlExists('./drawings/' + localeDrawing + '_bsColoring_fiona.swf'))
+            localeDrawing = "en";
+
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
           swfPlayer.height = '521';
           swfPlayer.width = '887';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = './flash/coloring.swf?pages=bsColoring_fiona&locale=' + locale;
+          swfPlayer.src = './flash/' + locale + '_coloring.swf?pages=./drawings/' + localeDrawing + '_bsColoring_fiona';
           swfPlayer.type = 'application/x-shockwave-flash';
-          if (locale != "en")
-            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>

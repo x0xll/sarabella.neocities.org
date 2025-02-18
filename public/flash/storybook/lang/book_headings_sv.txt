@@ -1,0 +1,22 @@
+&chap1_title=<html>Bella Saras Förtrollade Världar</html>
+
+&chap1_subtitle=<html>Kapitel Ett</html>
+&chap2_subtitle=<html>Kapitel Två</html>
+&chap3_subtitle=<html>Kapitel Tre</html>
+&chap4_subtitle=<html>Kapitel Fyra</html>
+&chap5_subtitle=<html>Kapitel Fem</html>
+&chap6_subtitle=<html>Kapitel Sex</html>
+&chap7_subtitle=<html>Kapitel Sju</html>
+&chap8_subtitle=<html>Kapitel Åtta</html>
+
+&clicktext=<html>Klicka på Sagobokens titelsida</html>
+
+&story_title=<html>Bella Saras<br>Förtrollade Världar</html>
+
+&chapters_head=<html>Välj ett kapitel att läsa</html>
+
+&conclusion_nextChapter=<html>Nästa Kapitel...</html>
+
+&chap1_conclusion=<html>Norrsken</html>
+&chap2_conclusion=<html>Forntidsljus</html>
+&chap3_conclusion=<html>Hemlandsljus</html>

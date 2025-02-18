@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<root>
+    <cat1>Kategori 1</cat1>
+    <cat2>Kategori 2</cat2>
+    <cat3>Kategori 3</cat3>
+
+    <start>Starta</start>
+
+    <partsHorse>Hästens delar</partsHorse>
+    <colorHorse>Hästfärger</colorHorse>
+    <saddleBridle>Sadel och träns</saddleBridle>
+
+    <quest1>Fråga 1.</quest1>
+    <quest2>Fråga 2.</quest2>
+    <quest3>Fråga 3.</quest3>
+    <quest4>Fråga 4.</quest4>
+    <quest5>Fråga 5.</quest5>
+    <quest6>Fråga 6.</quest6>
+    <quest7>Fråga 7.</quest7>
+    <quest8>Fråga 8.</quest8>
+    <quest9>Fråga 9.</quest9>
+    <quest10>Fråga 10.</quest10>
+    <quest1>Fråga 11.</quest11>
+    <quest12>Fråga 12.</quest12>
+
+    <next>Nästa</next>
+    <congrats>Grattis</congrats>
+    <retry>Spela igen</retry>
+    <selectAnswer>Välj ett svar!</selectAnswer>
+
+    <completedRound1>Nu har du klarat runda 1.</completedRound1>
+    <completedRound2>Nu har du klarat runda 2.</completedRound2>
+    <completedRound3>Nu har du klarat runda 3.</completedRound3>
+
+    <horsePart1>Armbåge</horsePart1>
+        <horsePart2>Has</horsePart2>
+        <horsePart3>Hov</horsePart3>
+        <horsePart4>Lugg</horsePart4>
+        <horsePart5>Manke</horsePart5>
+        <horsePart6>Flank</horsePart6>
+        <horsePart7>Bakknä</horsePart7>
+        <horsePart8>Kors</horsePart8>
+        <horsePart9>Karled</horsePart9>
+        <horsePart10>Rygg</horsePart10>
+        <horsePart11>Bog</horsePart11>
+        <horsePart12>Mule</horsePart12>
+        <horsePart13>Kota</horsePart13>
+        <horsePart14>Ganasch</horsePart14>
+        <horsePart15>Svansrot</horsePart15>
+        <horsePart16>Man</horsePart16>
+        <horsePart17>Skena</horsePart17>
+        <horsePart18>Buk</horsePart18>
+        <horsePart19>Framknä</horsePart19>
+        <horsePart20>Svans</horsePart20>
+        <horsePart21>Krona</horsePart21>
+
+    <result>Rätt svar = </result>
+    <expert>Snyggt! Du måste vara expert</expert>
+    <nice>Bra jobbat, du vet mycket om hästar!</nice>
+    <lose>Ledsen, du kanske ska testa igen!</lose>
+
+    <horseColor1>Skimmel</horseColor1>
+    <horseColor2>Fux</horseColor2>
+    <horseColor3>Svart</horseColor3>
+    <horseColor4>Mörkbrun</horseColor4>
+    <horseColor5>Flugskimmel</horseColor5>
+    <horseColor6>Gulbrun</horseColor6>
+    <horseColor7>Apelkastad skimmel</horseColor7>
+    <horseColor8>Brunskäck</horseColor8>
+    <horseColor9>Brun</horseColor9>
+    <horseColor10>Palomino</horseColor10>
+    <horseColor11>Svartskäck</horseColor11>
+    <horseColor12>Rödfux</horseColor12>
+
+    <saddleBridle1>Tyglar</saddleBridle1>
+        <saddleBridle2>Nosgrimma</saddleBridle2>
+        <saddleBridle3>Bett</saddleBridle3>
+        <saddleBridle4>Sittyta</saddleBridle4>
+        <saddleBridle5>Schabrak</saddleBridle5>
+        <saddleBridle6>Stigläderhållare</saddleBridle6>
+        <saddleBridle7>Sadelgjord</saddleBridle7>
+        <saddleBridle8>Sidostycken</saddleBridle8>
+        <saddleBridle9>Pannband</saddleBridle9>
+        <saddleBridle10>Stigläder</saddleBridle10>
+        <saddleBridle11>Framvalv</saddleBridle11>
+        <saddleBridle12>Vulster</saddleBridle12>
+        <saddleBridle13>Bakvalv</saddleBridle13>
+        <saddleBridle14>Sadelkåpa</saddleBridle14>
+        <saddleBridle15>Nackrem</saddleBridle15>
+        <saddleBridle16>Stigläder</saddleBridle16>
+        <saddleBridle17>Käkrem</saddleBridle17>
+
+</root>

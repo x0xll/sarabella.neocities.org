@@ -1,3 +1,6 @@
+8 Feb 2025
+    - Remove Loca elements
+
 17 Jan 2025
     - Merge conflict between main and localization branch
     - Refixed the print btn like on 11 Jan 2025

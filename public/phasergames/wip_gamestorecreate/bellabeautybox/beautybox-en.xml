@@ -1,0 +1,89 @@
+<xml version="1.0" encoding="utf-8">
+
+<ingame>
+
+<loader>
+
+<text name="LoaderHeadline" type="text">Uploading Bella's Beauty Box</text>
+
+</loader>
+
+
+
+<!-- 
+	Send mail panel
+-->
+
+<sendmail>
+
+<text name="txtMail_subject">New Fashion Designer in Town</text>
+<text name="txtMail_Intro">Mail your horse to a friend! Fill out the form below and click "Send" when you're done. Your friend will get an email with a link to your horse.</text>
+<text name="txtMail_myName">My name:</text>
+<text name="txtMail_inputMyName" type="input">write name</text>
+<text name="txtMail_myMail">My email:</text>
+<text name="txtMail_inputMyEmail" type="input">write email</text>
+<text name="txtMail_friendEmail">My friend's email:</text>
+<text name="txtMail_inputFriendEmail" type="input">write email</text>
+<text name="txtMail_myNote">My message:</text>
+<text name="txtMail_sendButton" type="input">Send</text>
+
+<text name="txtMail_inputMyNote" type="input">write message</text>
+
+<text name="txtMail_statusMessage" id="sending" type="">Send</text>
+<text name="txtMail_statusMessageSending" id="sending" type="mailstatus">Sending mail.</text>
+<text name="txtMail_statusMessageSuccess" id="sucess" type="mailstatus">Mail is sent.</text>
+<text name="txtMail_statusMessageFail" id="fail" type="mailstatus">Sorry, we couldn't reach that address. Please try again.</text>
+</sendmail>
+
+<tooltips>
+<!-- 	main menu -->
+<text id="txtTooltip_msg" name="btn_mainIcon1" type="tooltip">Check out your horse</text>
+<text id="txtTooltip_msg" name="btn_mainIcon2" type="tooltip">Email your horse</text>
+<text id="txtTooltip_msg" name="btn_mainIcon3" type="tooltip">How to play</text>
+<text id="txtTooltip_msg" name="btn_mainIcon4" type="tooltip">Show/hide item</text>
+
+<!--  screen -->
+<text id="txtTooltip_msg" name="btn_reset" type="tooltip">Remove all items</text>
+<text id="txtTooltip_msg" name="btn_exit" type="tooltip">Back to the stall</text>
+
+<!-- 	help panel -->
+<text id="txtTooltip_msg" name="btn_exitHelp" type="tooltip">Close window</text>
+
+<!-- 	send mail panel -->
+<text id="txtTooltip_msg" name="btn_exitSendMail" type="tooltip">Close window</text>
+<text id="txtTooltip_msg" name="btn_sendMail" type="tooltip">Send mail</text>
+
+<!-- 	inventory panel -->
+<text id="txtTooltip_msg" name="btn_removeItem" type="tooltip">Remove item</text>
+<text id="txtTooltip_msg" name="btn_arrow1" type="tooltip">Previous item page</text>
+<text id="txtTooltip_msg" name="btn_arrow2" type="tooltip">Next item page</text>
+
+<!-- 	top panel -->
+<text id="txtTooltip_msg" name="btn_knob" type="tooltip">Slide to change colors</text>
+<text id="txtTooltip_msg" name="pos0" type="tooltip">Click to use item</text>
+<text id="txtTooltip_msg" name="locked" type="tooltip">This area is locked until you activate the right card.</text>
+
+</tooltips>
+
+
+<!-- 
+	Help page
+-->
+
+<help>
+<text name="txtHelp_Headline">How to Play</text>
+<text name="txtHelp_Intro">
+  Welcome to Bella's Beauty Box, where you can make weird and funny costumes for your horse. If you've always wanted to see a horse with red hair and yellow socks, here's your chance.
+  If you make something beautiful or interesting, you can mail it to your friends and see how they like it.
+  Here's what you do:
+  First, click on the hanger icon in the menu. Use the blue arrows to flip through the costume items. Click on an item to make it appear in the paintbox at the top of the screen. Click on one of the six main colors to choose that color for your item. If you don't want any of those, you can drag the slider bar to make your own color.
+  When you've got a color you like, drag the item from the paintbox to the horse. Then you can flip through the costume items again to find other things.
+  Click on the hanger icon to hide the panels. When you are done, click the printer icon to print off your fabulous creations and show them to the world!
+
+</text>
+
+</help>
+
+
+</ingame>
+</xml>

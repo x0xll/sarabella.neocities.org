@@ -21,8 +21,9 @@
     "ressources_gridlochressdump" : "Gridlochの資源",
     "ressources_gridlochstablerecreation" : "Gridlochの馬小屋再現",
     
-    "devlog_summary" : "こちらは我々のベラセラ進捗状況です。簡単にまとめるとこうなります。<br><br>今あるFlashのファイルは：Cloudjumper（クラウドジャンパー）、Treasure's Hunt（トレジャーズハント）、絵本、パズル、塗り絵のゲーム、Bella's Beauty Box（ベラのビューティーボックス）、槍のゲーム、世界地図、メインページ、馬小屋、アートスタジオ<br>このうち、クラウドジャンパーと絵本とトレジャーズハントだけプレーできます。絵本はFlashpointだけでプレーできます。世界地図とメインページとアートスタジオは完全に機能しています。Flashpointでもうすぐにご覧いただけます。<br>今、槍のゲームと馬小屋は部分復旧です。プレーできません。Flashpointでもうすぐにご覧いただけます。<br><br>！！馬小屋は公には入手できません。！！ちゃんと出版するは大切です。それが終われば、Flashpointでもうすぐにご覧いただけます。<br><br>ベラのビューティーボックスは部分復旧です。おそらく永久に壊れ続けるだろう。",
-
+    "devlog_update": "<b><i>Last modified: February 12th, 2025</i></b>",
+    "devlog_summary" : "Here is the current state of the archiving of the Bella Sara website games:<br/><br/>We have successfully managed to locate and restore several of the original Flash games from the Bella Sara website. These include <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, and the old version of the <i>World Map</i>.<br/><br/>Additionally, we have partially recovered or restored the files for several other games, such as the <i>Art Studio</i>, <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, and the newer version of the <i>World Map</i>. These games are still undergoing work to fully restore their original functionalities, and many games are missing files (e.g., the <i>Lance Riding</i> game is missing the files for the later levels).<br/><br/>Unfortunately, some games remain missing or seem to be permanently broken (e.g., <i>Bella's Beauty Box</i>). To address this, we have started recreating a few of these games using the Phaser framework. As of this update, the <i>Stables</i>, the <i>Spectacular Jumping Game</i>, <i>Yin and Yang's Memory Game</i> and <i>Belo's Quiz</i>are all available to play, although still as a work in progress. We are also currently working on recreating <i>Citrustacked</i>, <i>Bellapedia</i>, and <i>Bellisimo's Jumping Contest</i>, which should all hopefully be available soon.<br/><br/>Beyond restoring the original games, we have also started creating custom games inspired by the ones from the website. Currently, two are available: a <i>Random Art Idea Generator</i>, a <i>Dress-Up Game</i> based on the <i>Stables</i> and an <i>Adventures Quiz</i> and <i>Autumn Journey Quiz</i> based on <i>Belo's Quiz</i>.<br/><br/>We do hope to eventually restore or recreate all the games from the site if we can, but this will obviously take time. If you would like to help us out or would like a more detailed overview of this project, we would recommend starting here: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. This project is a community effort and every little bit helps!",
+    
     "play_recoveredflashgames_title" : "復元ゲーム",
     "play_recoveredflashgames_desc" : "このゲームはオリジナルサイトからアーカイブされていました。",
     "play_recreatedgames_title" : "再現ゲーム",
@@ -48,6 +49,13 @@
     "game_randomartideagenerator" : "アートアイデアジェネレーター",
     "game_dressupstables" : "ドレスアップゲーム",
     "game_firelightFestival" : "Firelight Festival",
+    "game_map": "World Map",
+    "game_oldmap": "Old Map",
+    "game_newmap": "New Map",
+    "game_belloquiz": "Bello's Quiz",
+    "game_adventuresquiz": "Adventures Quiz",
+    "game_autumnjourney": "Autumn Journey Quiz",
+    "game_yinyangmemory": "Yin and Yang's Memory Game",
 
     "artstudio_warning" : "このゲームはオリジナル馬のファイルがありませんから、テキストが正しく読み込まれません。",
     
@@ -57,7 +65,41 @@
 
     "storybook_warning": "このゲームは次のページに進んでも音が消すできません。またビデオが正しく再生されないことがあります。",
 
+    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
+    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
+
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
+
+    "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
+    "puzzle_customTitle" : "Custom",
+    "puzzle_moonfairies" : "Moonfairies",
+    "puzzle_sunflowers" : "Sunflowers",
+    "puzzle_bellaball" : "Bella's Ball",
+    "puzzle_bellasaraadventures" : "Bella Sara Adventures",
+    "puzzle_royalty" : "Royalty",
+    "puzzle_treasures" : "Treasures",
+    "puzzle_babybella" : "Baby Bella",
+    "puzzle_magicalfriends" : "Magical Friends",
+    "puzzle_nativelights" : "Native Lights",
+    "puzzle_bellasara" : "Bella Sara",
+    "puzzle_custom_warning" : "Note that images larger than 700 x 450 may be too large to see correctly.",
+    "puzzle_custom_warning2" : "Images larger than 700 x 450 may not show completely!",
+
     "stables_title" : "ベラセラの世界へようこそ",
 
-    "dressup_horselink" : "馬のリンク"
+    "dressup_horselink" : "馬のリンク",
+
+    "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
+    "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",
+    "babybella_13Sept": "13th of September, 2008 - Cirra's Birth",
+    "babybella_19Sept": "19th of September, 2008 - Janie's Birth",
+    "babybella_26Sept": "26th of September, 2008 - Bellisimo's Birth",
+    "babybella_7Nov": "7th of November, 2008 - Bellissa's Birth",
+    "babybella_17Dec": "17th of December, 2008 - After the event's end",
+    "footer_timeline_link": "Timeline",
+
+    "credits_title": "Credits",
+
+    "about_title": "About",
+    "about_text": "The Neocities Bella Sara is an archival website made for saving, fixing and recreating the old Bella Sara flash games from the original website to prevent them from being fully lost to time.<br/><br/>This project is open to anyone who wish to help, and you can find out more <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">here</a>."
 }

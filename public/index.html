@@ -3,6 +3,7 @@
 <html>
 
     <head>
+        <link rel="icon" href="/images/favicons/favicon.ico">
         <title data-il8n="title">Bella Sara Digital Archive</title>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -12,8 +13,19 @@
     <body onload="loadLanguagePref()">
         <script src="/header.js"></script>
                 
-        <div class="content">
+        <div class="content home-container">
+            <div class="content textbox-parent" id="about">
+                <div class="textbox">
+                    <h1 data-il8n="about_title">About</h5>
+                    <p style="text-align: justify;" data-il8n="about_text"></p>
+                </div>
+            </div>
             <img src="images/jewelgif.gif">
+            <div class="content textbox-parent" id="credits">
+                <div class="textbox credits-parent">
+                    <h1 data-il8n="credits_title">Credits</h5>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
@@ -22,7 +34,7 @@
         </div>
 
         <script src="/flags.js"></script>
-
+        <script src="credits/credits.js"></script>
     </body>
 
 </html>

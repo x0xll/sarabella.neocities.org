@@ -1,0 +1,10 @@
+18 Jan 2025
+    - Link to localization system
+        - loadVariables("book_headings.txt","_root") replaced by loadVariables("./lang/book_headings_" + _root.lang + ".txt","_root") in storybook.swf Frame 10 & Frame 5 DoAction, in aurora.swf Frame1 DoAction, and in chap1_intro.swf in Frame5 DoAction
+        - loadVariables("chap1_stories.txt","_root") replaced by loadVariables("./lang/chap1_stories_" + _root.lang + ".txt","_root") in air.swf Frame5 DoAction, in aurora.swf Frame1 DoAction, in chap1_intro.swf in Frame5 DoAction, in land.swf Frame5 DoAction and in water.swf Frame5 DoAction
+        - loadMovieNum("chap1_intro.swf",0,"GET") replaced by loadMovieNum("chap1_intro.swf?lang=" + _root.lang,0,"GET") in storybook.swf Frame10 DoAction
+        - loadMovieNum("air.swf",0,"GET") replaced by loadMovieNum("air.swf?lang=" + _root.lang,0,"GET") in chap1_intro.swf in Frame5 DoAction, in chap1_intro.swf DefineButton2 92, in water.swf DefineButton2 414
+        - loadMovieNum("water.swf",0,"GET") replaced by loadMovieNum("water.swf?lang=" + _root.lang,0,"GET") in air.swf DefineButton2 584, in land.swf DefineButton2 604
+        - loadMovieNum("storybook.swf",10,"GET") replaced by loadMovieNum("storybook.swf?lang=" + _root.lang,10,"GET") in air.swf DefineButton2 585, in aurora.swf DefineButton2 25, in chap1_intro.swf DefineButton2 91
+        - loadMovieNum("aurora.swf",0,"GET") replaced by loadMovieNum("aurora.swf?lang=" + _root.lang,0,"GET") in land.swf DefineButton2 603
+        - loadMovieNum("land.swf",0,"GET") replaced by loadMovieNum("land.swf?lang=" + _root.lang,0,"GET") in water.swf DefineButton2 413

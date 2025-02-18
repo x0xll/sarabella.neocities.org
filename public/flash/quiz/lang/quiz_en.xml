@@ -40,25 +40,24 @@
     <horsePart6>Flank</horsePart6>
     <horsePart7>Stifle</horsePart7>
     <horsePart8>Croup</horsePart8>
-    <horsePart9>Hoof</horsePart9>
-    <horsePart10>Ergot</horsePart10>
-    <horsePart11>Back</horsePart11>
-    <horsePart12>Shoulder</horsePart12>
-    <horsePart13>Muzzle</horsePart13>
-    <horsePart14>Fetlock</horsePart14>
-    <horsePart15>Jaw</horsePart15>
-    <horsePart16>Dock</horsePart16>
-    <horsePart17>Mane</horsePart17>
-    <horsePart18>Cannon Bone</horsePart18>
-    <horsePart19>Belly</horsePart19>
-    <horsePart20>Knee</horsePart20>
-    <horsePart21>Tail</horsePart21>
-    <horsePart22>Coronet</horsePart22>
+    <horsePart9>Ergot</horsePart9>
+    <horsePart10>Back</horsePart10>
+    <horsePart11>Shoulder</horsePart11>
+    <horsePart12>Muzzle</horsePart12>
+    <horsePart13>Fetlock</horsePart13>
+    <horsePart14>Jaw</horsePart14>
+    <horsePart15>Dock</horsePart15>
+    <horsePart16>Mane</horsePart16>
+    <horsePart17>Cannon Bone</horsePart17>
+    <horsePart18>Belly</horsePart18>
+    <horsePart19>Knee</horsePart19>
+    <horsePart20>Tail</horsePart20>
+    <horsePart21>Coronet</horsePart21>
 
     <result>Correct answers = </result>
     <expert>Great! You must be an expert</expert>
     <nice>Well done, you know a lot about horses!</nice>
-    <lose>Sorry, maybe you should try again!</nice>
+    <lose>Sorry, maybe you should try again!</lose>
 
     <horseColor1>Grey</horseColor1>
     <horseColor2>Chestnut</horseColor2>
@@ -73,23 +72,22 @@
     <horseColor11>Piebald</horseColor11>
     <horseColor12>Red Chestnut</horseColor12>
     
-    <saddleBriddle1>Reins</saddleBriddle1>
-    <saddleBriddle2>Noseband</saddleBriddle2>
-    <saddleBriddle3>Bit</saddleBriddle3>
-    <saddleBriddle4>Seat</saddleBriddle4>
-    <saddleBriddle5>Saddle pad</saddleBriddle5>
-    <saddleBriddle6>Keeper</saddleBriddle6>
-    <saddleBriddle7>Girth</saddleBriddle7>
-    <saddleBriddle8>Cheekpieces</saddleBriddle8>
-    <saddleBriddle9>Browband</saddleBriddle9>
-    <saddleBriddle10>Noseband</saddleBriddle10>
-    <saddleBriddle11>Stirrup leather</saddleBriddle11>
-    <saddleBriddle12>Pommel</saddleBriddle12>
-    <saddleBriddle13>Knee pad</saddleBriddle13>
-    <saddleBriddle14>Cantle</saddleBriddle14>
-    <saddleBriddle15>Saddle flap</saddleBriddle15>
-    <saddleBriddle16>Headpiece</saddleBriddle16>
-    <saddleBriddle17>Cheekpieces</saddleBriddle17>
-    <saddleBriddle18>Throatlatch</saddleBriddle18>
+    <saddleBridle1>Reins</saddleBridle1>
+    <saddleBridle2>Noseband</saddleBridle2>
+    <saddleBridle3>Bit</saddleBridle3>
+    <saddleBridle4>Seat</saddleBridle4>
+    <saddleBridle5>Saddle pad</saddleBridle5>
+    <saddleBridle6>Keeper</saddleBridle6>
+    <saddleBridle7>Girth</saddleBridle7>
+    <saddleBridle8>Cheekpieces</saddleBridle8>
+    <saddleBridle9>Browband</saddleBridle9>
+    <saddleBridle10>Stirrup leather</saddleBridle10>
+    <saddleBridle11>Pommel</saddleBridle11>
+    <saddleBridle12>Knee pad</saddleBridle12>
+    <saddleBridle13>Cantle</saddleBridle13>
+    <saddleBridle14>Saddle flap</saddleBridle14>
+    <saddleBridle15>Headpiece</saddleBridle15>
+    <saddleBridle16>Stirrup</saddleBridle16>
+    <saddleBridle17>Throatlatch</saddleBridle17>
 
 </root>

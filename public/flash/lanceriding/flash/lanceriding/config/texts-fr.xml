@@ -31,7 +31,7 @@
 			<text name="txt_evalCompScoreRun">Bien joué ! Tu as obtenu [runScore] points,#pour un total de [cumulScore] points.#Il te reste[remainRuns] tentatives.</text>
 			<text name="txt_evalCompScoreRunUnLock">Excellent! You got [runScore] points,#total score is [cumulScore] points#The Bonus track is unlocked#[remainRuns] runs remaining.</text>
 			<text name="txt_evalCompScoreTotal">Congratulations!#You got [runScore] points, total score is [cumulScore] points#</text>
-			<text name="txt_evalCompScoreTotalUnlock">Félicitations! Tu as obtenu [runScore] points#pour un total de [cumulScore] points.#Gagne des points supplémentaires sur la#piste bonus !</text>
+			<text name="txt_evalCompScoreTotalUnlock">Félicitations! Tu as obtenu [runScore] points#pour un total de [cumulScore] points.#Gagne des points supplémentaries sur la#piste bonus !</text>
 			<text name="txt_evalCompNoScoreRun">You missed - total score is still [cumulScore] points#Try again, you have [remainRuns] runs to go.</text>
 			<text name="txt_evalCompNoScoreRunUnLock">You missed - total score is still [cumulScore] points#Get extra points on the bonus track!#[remainRuns] runs remaining.</text>
 			<text name="txt_evalCompNoScore">You have no points,#and [remainRuns] runs to go.#Try again!</text>
