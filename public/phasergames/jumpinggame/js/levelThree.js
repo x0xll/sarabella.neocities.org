@@ -44,7 +44,7 @@ class LevelThree extends Phaser.Scene
         this.load.image('infoButton', './images/infoButton.png');
         this.load.image('mountains', './images/mountains.png');
         this.load.image('path', './images/path.png');
-        this.load.atlas('horse2', './images/horseFiona.png', './images/horse.json');
+        this.load.atlas('horse3', './images/horseJewel.png', './images/horse.json');
         this.load.atlas('jumps', './images/jumps.png', './images/jumps.json');
         this.load.atlas('gems', './images/gems.png', './images/gems.json');
         this.load.atlas('horseshoe', './images/horseshoe.png', './images/horseshoe.json');
@@ -117,11 +117,11 @@ class LevelThree extends Phaser.Scene
         
 
         // Horse
-        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse2', 'canter0000')
+        this.horse = this.physics.add.sprite(-100, this.runHeight, 'horse3', 'canter0000')
         if (!this.anims.exists('canter2')) {
             this.anims.create({
                 key: 'canter2',
-                frames: this.anims.generateFrameNumbers('horse2', { frames: [
+                frames: this.anims.generateFrameNumbers('horse3', { frames: [
                     'canter0000', 'canter0001', 'canter0002', 'canter0003', 'canter0004', 'canter0005', 'canter0006', 'canter0007', 'canter0008', 'canter0009', 'canter0010', 'canter0011'
                 ] }),
                 frameRate: 20,
@@ -129,7 +129,7 @@ class LevelThree extends Phaser.Scene
             });
             this.anims.create({
                 key: 'gallop2',
-                frames: this.anims.generateFrameNumbers('horse2', { frames: [
+                frames: this.anims.generateFrameNumbers('horse3', { frames: [
                     'gallop0000', 'gallop0001', 'gallop0002', 'gallop0003', 'gallop0004', 'gallop0005', 'gallop0006'
                 ] }),
                 frameRate: 20,
@@ -137,21 +137,21 @@ class LevelThree extends Phaser.Scene
             });
             this.anims.create({
                 key: 'jump2',
-                frames: this.anims.generateFrameNumbers('horse2', { frames: [
+                frames: this.anims.generateFrameNumbers('horse3', { frames: [
                     'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'land0000'
                 ] }),
                 frameRate: 16
             });
             this.anims.create({
                 key: 'slideStart2',
-                frames: this.anims.generateFrameNumbers('horse2', { frames: [
+                frames: this.anims.generateFrameNumbers('horse3', { frames: [
                     'slide0000', 'slide0001'
                 ] }),
                 frameRate: 20
             });
             this.anims.create({
                 key: 'slide2',
-                frames: this.anims.generateFrameNumbers('horse2', { frames: [
+                frames: this.anims.generateFrameNumbers('horse3', { frames: [
                     'slide0002', 'slide0003', 'slide0004', 'slide0005', 'slide0006'
                 ] }),
                 frameRate: 20,
@@ -159,7 +159,7 @@ class LevelThree extends Phaser.Scene
             });
             this.anims.create({
                 key: 'slideEnd2',
-                frames: this.anims.generateFrameNumbers('horse2', { frames: [
+                frames: this.anims.generateFrameNumbers('horse3', { frames: [
                     'slide0007', 'slide0008', 'slide0009'
                 ] }),
                 frameRate: 20
