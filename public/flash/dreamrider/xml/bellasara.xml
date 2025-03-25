@@ -8,7 +8,7 @@ This XML file does not appear to have any style information associated with it. 
 <Location id="bazaarLoc" url="/xml/en/bazaar.xml"/>
 <Location id="bazaarPage" url="/bazaar.aspx"/>
 <Location id="cardActivationPage" url="/activate.aspx"/>
-<Location id="cardSwf" url="/Card/card.swf"/>
+<Location id="cardSwf" url="./Card/card.swf"/>
 <Location id="cottageFrameSwf" url="/Wrapper/cottageframe.swf"/>
 <Location id="cottageFrame521Swf" url="/Wrapper/cottageframe521.swf"/>
 <Location id="cottageHelpSwf" url="/help/cottagehelp.swf"/>
