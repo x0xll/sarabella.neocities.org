@@ -48,8 +48,8 @@
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
           swfPlayer.src = 'dreamrider.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
-          if (locale != "en")
-            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfPlayer.setAttribute("flashvars", `environmentsSwf=environments.swf`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>
