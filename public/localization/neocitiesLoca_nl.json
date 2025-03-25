@@ -50,6 +50,7 @@
     "game_dressupstables" : "Dress Up Game",
     "game_firelightFestival" : "Firelight Festival",
     "game_dreamrider" : "Dream Rider",
+    "game_bubblewand" : "Magic Bubble Wand",
     "game_map": "World Map",
     "game_oldmap": "Old Map",
     "game_newmap": "New Map",
@@ -72,6 +73,8 @@
     "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
 
     "dreamrider_warning" : "Currently, stopping the audio is not possible and you will need to right click the game and hit play to get past the loading screen.",
+
+    "bubblewand_warning" : "The game's texts are not yet working.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",

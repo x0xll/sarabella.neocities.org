@@ -14,7 +14,7 @@
 
         <div class="alert">
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n=""></p>
+          <p data-il8n="bubblewand_warning">The game's texts are not yet working.</p>
         </div> 
         
         <script>
@@ -30,7 +30,7 @@
 
         <div class="footer">
           <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://bellasara.wiki.gg/wiki/Dream_Rider" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
+          <a href="https://bellasara.wiki.gg/wiki/Magic_Bubble_Wand" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
         </div>
 
         <script src="/flags.js"></script>
@@ -44,9 +44,9 @@
           swfPlayer.height = '521';
           swfPlayer.width = '887';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'bubblewand.swf';
+          swfPlayer.src = 'bubblewand_override.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `lang=${locale}`);
+          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>
