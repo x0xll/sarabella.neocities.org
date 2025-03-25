@@ -1,5 +1,17 @@
 <root>
-    <begin>TEST</begin>
+    <begin>Begin</begin>
     <continue_button>Continue</continue_button>
     <play_again>Play Again!</play_again>
+    <magic>TEST</magic>
+    <bubble>TEST</bubble>
+    <wand>TEST</wand>
+    <you_collected>You've collected</you_collected>
+    <bugs>bugs and</bugs>
+    <horse_shoes>horseshoes.</horse_shoes>
+    <your_score>Your Score: </your_score>
+    <congratulations>Congratulations</congratulations>
+    <bug_help>Bugs add to your score.</bug_help>
+    <wand_help>Move mouse to move wand. Move wand over bugs. Click the mouse to make bubbles, and catch bugs.</wand_help>
+    <special_help>Special creatures and raindrops give you more bubble solution. Special creatures also give you a bigger wand.</special_help>
+    <solution_help>Game is over when bubble solution runs out.</solution_help>
 </root>
