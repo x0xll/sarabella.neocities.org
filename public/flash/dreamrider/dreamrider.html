@@ -2,7 +2,7 @@
 <html>
     <head>
       <link rel="icon" href="/images/favicons/favicon.ico">
-        <title data-il8n="game_treasurehunt">Treasure's Hunt</title>
+        <title data-il8n="game_dreamrider">Dream Rider</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
     </head>
@@ -11,6 +11,13 @@
 
     <body class="game" onload="loadLanguagePref()">
         <script src="/header.js"></script>
+
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <p data-il8n="dreamrider_warning">
+            Currently, the text is not yet working and you will need to right click the game and hit play to get past the loading screen.
+          </p>
+        </div> 
         
         <script>
           window.RufflePlayer = {
@@ -24,9 +31,8 @@
         </div>
 
         <div class="footer">
-          <!-- <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://bellasara.wiki.gg/wiki/Treasure%27s_Hunt" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
-          <a href="https://web.archive.org/web/20170504130036/http://www.bellasara.com/flash/treasureshunt/treasureshunt.aspx" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a> -->
+          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+          <a href="https://bellasara.wiki.gg/wiki/Dream_Rider" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
         </div>
 
         <script src="/flags.js"></script>

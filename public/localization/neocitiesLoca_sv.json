@@ -49,6 +49,7 @@
     "game_randomartideagenerator" : "Slumpmässiga Konstidé Generatorn",
     "game_dressupstables" : "Utklädning Spel",
     "game_firelightFestival" : "Fyrverkerifestivalen",
+    "game_dreamrider" : "Dream Rider",
  "game_map": "Världskartan",
     "game_oldmap": "Gammal Karta",
     "game_newmap": "Ny Karta",
@@ -68,6 +69,8 @@
 
 
     "belloquiz_warning" : "På grund av brist på referenser är kanske inte denna återskapning 100% rätt.",
+
+    "dreamrider_warning" : "Currently, the text is not yet working and you will need to right click the game and hit play to get past the loading screen.",
 
 
  "puzzle_goCustom" : "Klicka&nbsp;<a href=\"puzzle custom.html\">här</a>&nbsp;för att skapa ett pussel med egen bild",
