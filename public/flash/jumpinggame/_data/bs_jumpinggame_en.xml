@@ -1,46 +1,41 @@
 <root>
-    <txtContinueToNextLevelMessage>TEST</txtContinueToNextLevelMessage>
-    <txtLevelScoreTitle>TEST</txtLevelScoreTitle>
-    <txtResults>TEST</txtResults>
-    <txtResultsFail>TEST</txtResultsFail>
-    <txtTryAgain>TEST</txtTryAgain>
-    <txtContinueToBonusMessage>TEST</txtContinueToBonusMessage>
-    <txtTimeBonusTitle>TEST</txtTimeBonusTitle>
-    <txtGemBonusTitle>TEST</txtGemBonusTitle>
-    <txtLevelScoreTitle>TEST</txtLevelScoreTitle>
-    <txtPtsTimeBonus>TEST</txtPtsTimeBonus>
-    <txtPtsGemBonus>TEST</txtPtsGemBonus>
-    <txtPtsLevelScore>TEST</txtPtsLevelScore>
-    <txtGameOverPlayAgain>TEST</txtGameOverPlayAgain>
-    <txtFinalResults>TEST</txtFinalResults>
-    <txtTimeBonusTitle>TEST</txtTimeBonusTitle>
-    <txtGemBonusTitle>TEST</txtGemBonusTitle>
-    <txtBonusLevelScoreTitle>TEST</txtBonusLevelScoreTitle>
-    <txtFinalScoreTitle>TEST</txtFinalScoreTitle>
-    <txtShoeScoreTitle>TEST</txtShoeScoreTitle>
-    <txtPtsTimeBonus>TEST</txtPtsTimeBonus>
-    <txtPtsGemBonus>TEST</txtPtsGemBonus>
-    <txtPtsBonusLevelScore>TEST</txtPtsBonusLevelScore>
-    <txtPtsTotalGameScore>TEST</txtPtsTotalGameScore>
-    <select_horse>TEST</select_horse>
-    <level_one>TEST</level_one>
-    <level_two>TEST</level_two>
-    <level_three>TEST</level_three>
-    <level_four>TEST</level_four>
-    <horse_one>TEST</horse_one>
-    <horse_two>TEST</horse_two>
-    <horse_three>TEST</horse_three>
-    <horse_four>TEST</horse_four>
-    <start_btn>TEST</start_btn>
-    <gameTitle_1>TEST</gameTitle_1>
-    <gameTitle_2>TEST</gameTitle_2>
-    <gameTitle_3>TEST</gameTitle_3>
-    <txtHelpArrow>TEST</txtHelpArrow>
-    <txtHelpSpace>TEST</txtHelpSpace>
-    <txtHelpGems>TEST</txtHelpGems>
-    <txtHelpShoes>TEST</txtHelpShoes>
-    <exit_help_btn>TEST</exit_help_btn>
-    <timerTitle>TEST</timerTitle>
-    <scoreTitle>TEST</scoreTitle>
-    <start_message>TEST</start_message>
+    <txtContinueToNextLevelMessage>Continue to the Next Level!</txtContinueToNextLevelMessage>
+    <txtLevelScoreTitle>Level Score</txtLevelScoreTitle>
+    <txtResults>Great Jumping</txtResults>
+    <txtResultsFail>Nice Try.</txtResultsFail>
+    <txtTryAgain>Not quite fast enough. Try again!</txtTryAgain>
+    <txtContinueToBonusMessage>txtContinueToBonusMessage</txtContinueToBonusMessage>
+    <txtTimeBonusTitle>Time Bonus</txtTimeBonusTitle>
+    <txtGemBonusTitle>Gem Bonus</txtGemBonusTitle>
+    <txtPtsTimeBonus>Pts</txtPtsTimeBonus>
+    <txtPtsGemBonus>Pts</txtPtsGemBonus>
+    <txtPtsLevelScore>Pts</txtPtsLevelScore>
+    <txtGameOverPlayAgain>txtGameOverPlayAgain</txtGameOverPlayAgain>
+    <txtFinalResults>txtFinalResults</txtFinalResults>
+    <txtBonusLevelScoreTitle>txtBonusLevelScoreTitle</txtBonusLevelScoreTitle>
+    <txtFinalScoreTitle>txtFinalScoreTitle</txtFinalScoreTitle>
+    <txtShoeScoreTitle>txtShoeScoreTitle</txtShoeScoreTitle>
+    <txtPtsBonusLevelScore>txtPtsBonusLevelScore</txtPtsBonusLevelScore>
+    <txtPtsTotalGameScore>txtPtsTotalGameScore</txtPtsTotalGameScore>
+    <select_horse>Complete Levels to Unlock Fiona, Jewel and Thunder!</select_horse>
+    <level_one>Level One</level_one>
+    <level_two>Level Two</level_two>
+    <level_three>Level Three</level_three>
+    <level_four>Level Four</level_four>
+    <horse_one>Bella</horse_one>
+    <horse_two>Fiona</horse_two>
+    <horse_three>Jewel</horse_three>
+    <horse_four>Thunder</horse_four>
+    <start_btn>START!</start_btn>
+    <gameTitle_1>The</gameTitle_1>
+    <gameTitle_2>Spectacular</gameTitle_2>
+    <gameTitle_3>Jumping Game</gameTitle_3>
+    <txtHelpArrow>txtHelpArrow</txtHelpArrow>
+    <txtHelpSpace>txtHelpSpace</txtHelpSpace>
+    <txtHelpGems>txtHelpGems</txtHelpGems>
+    <txtHelpShoes>txtHelpShoes</txtHelpShoes>
+    <exit_help_btn>exit_help_btn</exit_help_btn>
+    <timerTitle>TIME</timerTitle>
+    <scoreTitle>SCORE</scoreTitle>
+    <start_message>START!</start_message>
 </root>
