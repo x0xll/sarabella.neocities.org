@@ -1,261 +1,321 @@
 <Dreamrider>
-    <BuiltInTexts>
-        <Texts>
-            <Text id="txtTutorial">
-                <a>TUTORIAL</a>
-            </Text>
-            <Text id="txtStartNow">
-                <a>START NOW</a>
-            </Text>
-            <Text id="txtUsePens">
-                <a>TUTORIAL</a>
-            </Text>
-            <Text id="txtSkipIntro">
-                <a>Skip Intro</a>
-            </Text>
-            <Text id="txtClickPlay">
-                <a>Click PLAY to begin your journey</a>
-            </Text>
-            <Text id="txtDrawScenery">
-                <a>Use this PEN to draw SCENERY of your own</a>
-            </Text>
-            <Text id="txtUseHand">
-                <a>Use the HAND to move the page for longer paths</a>
-            </Text>
-            <Text id="txtNextIntro">
-                <a>NEXT</a>
-            </Text>
-            <Text id="txtPlaceSpeed">
-                <a>Place icons along the path. Use these to control your horse's SPEED and MOVEMENT</a>
-            </Text>
-            <Text id="txtAddObjects">
-                <a>Add OBJECTS to your route</a>
-            </Text>
-            <Text id="txtWeather">
-                <a>Place icons along the path to control WEATHER and ENVIRONMENT</a>
-            </Text>
-            <Text id="txtUseUndo">
-                <a>Use the UNDO/REDO button to erase your last action or click again to bring it back</a>
-            </Text>
-            <Text id="txtOutlinePath">
-                <a>OUTLINE your horse's actual path</a>
-            </Text>
-            <Text id="txtPlaceMarker">
-                <a>While the horse is running on the path, click to place the MARKER FLAG on a new starting position</a>
-            </Text>
-            <Text id="txtClickReset">
-                <a>RETURN your horse to the start of your path. Press SHIFT to bypass the MARKER</a>
-            </Text>
-            <Text id="txtUseEraser">
-                <a>Use the ERASER to clear elements</a>
-            </Text>
-            <Text id="txtClearAll">
-                <a>Click here to CLEAR ALL</a>
-            </Text>
-            <Text id="txtStartButton">
-                <a>START</a>
-            </Text>
-            <Text id="txtloadEffect">
-                <a>Loading...</a>
-            </Text>
-            <Text id="txtNLightsOverStage">
-                <a>Northern Lights</a>
-            </Text>
-            <Text id="txtWalkOverStage">
-                <a>Walk</a>
-            </Text>
-            <Text id="txtTrotOverStage">
-                <a>Trot</a>
-            </Text>
-            <Text id="txtGallopOverStage">
-                <a>Gallop</a>
-            </Text>
-            <Text id="txtUpdraftOverStage">
-                <a>Updraft</a>
-            </Text>
-            <Text id="txtFlyOverStage">
-                <a>Fly</a>
-            </Text>
-            <Text id="txtJumpOverStage">
-                <a>Jump</a>
-            </Text>
-            <Text id="txtRearOverStage">
-                <a>Rear</a>
-            </Text>
-            <Text id="txtNightSkyOverStage">
-                <a>Night Sky</a>
-            </Text>
-            <Text id="txtPondOverStage">
-                <a>Pond</a>
-            </Text>
-            <Text id="txtWisdomOverStage">
-                <a>Wisdom</a>
-            </Text>
-            <Text id="txtSoundEffectOver">
-                <a>Sound Effect</a>
-            </Text>
-            <Text id="txtRainOverStage">
-                <a>Rain</a>
-            </Text>
-            <Text id="txtSnowOverStage">
-                <a>Snow</a>
-            </Text>
-            <Text id="txtFlowersOverStage">
-                <a>Flowers</a>
-            </Text>
-            <Text id="txtFireworksOverStage">
-                <a>Fireworks</a>
-            </Text>
-            <Text id="txtCloseUpOverStage">
-                <a>Close-up</a>
-            </Text>
-            <Text id="txtDrawBG">
-                <a>Draw Backgrounds</a>
-            </Text>
-            <Text id="txtGrassPath">
-                <a>Grass Path</a>
-            </Text>
-            <Text id="txtEarthPath">
-                <a>Earth Path</a>
-            </Text>
-            <Text id="txtFirePath">
-                <a>Fire Path</a>
-            </Text>
-            <Text id="txtWaterPath">
-                <a>Water Path</a>
-            </Text>
-            <Text id="txtEraseOver">
-                <a>Erase</a>
-            </Text>
-            <Text id="txtMoveStageOver">
-                <a>Move Stage</a>
-            </Text>
-            <Text id="txtFlyRollover">
-                <a>Fly</a>
-            </Text>
-            <Text id="txtWalkRollover">
-                <a>Walk</a>
-            </Text>
-            <Text id="txtTrotRollover">
-                <a>Trot</a>
-            </Text>
-            <Text id="txtGallopRollover">
-                <a>Gallop</a>
-            </Text>
-            <Text id="txtUpdraftRollover">
-                <a>Updraft</a>
-            </Text>
-            <Text id="txtJumpRollover">
-                <a>Jump</a>
-            </Text>
-            <Text id="txtRearRollover">
-                <a>Rear</a>
-            </Text>
-            <Text id="txtNightSkyOver">
-                <a>Night Sky</a>
-            </Text>
-            <Text id="txtPondOver">
-                <a>Pond</a>
-            </Text>
-            <Text id="txtWisdomOver">
-                <a>Wisdom</a>
-            </Text>
-            <Text id="txtNorthernLightsOver">
-                <a>Northern Lights</a>
-            </Text>
-            <Text id="txtRainOver">
-                <a>Rain</a>
-            </Text>
-            <Text id="txtSnowOver">
-                <a>Snow</a>
-            </Text>
-            <Text id="txtFlowersOver">
-                <a>Flowers</a>
-            </Text>
-            <Text id="txtFireworksOver">
-                <a>Fireworks</a>
-            </Text>
-            <Text id="txtCloseUpOver">
-                <a>Close-up</a>
-            </Text>
-            <Text id="txtObjectsRollover">
-                <a>Objects</a>
-            </Text>
-            <Text id="txtPlayRollover">
-                <a>Play/Resume</a>
-            </Text>
-            <Text id="txtStopRollover">
-                <a>Stop</a>
-            </Text>
-            <Text id="txtUndoRollover">
-                <a>Undo</a>
-            </Text>
-            <Text id="txtLoadRollover">
-                <a>Save/Load</a>
-            </Text>
-            <Text id="txtMarkerFlagRollover">
-                <a>Set Marker</a>
-            </Text>
-            <Text id="txtOutlinePathRollover">
-                <a>Regular Mode</a>
-            </Text>
-            <Text id="txtOutlineRollover2">
-                <a>Outline Mode</a>
-            </Text>
-            <Text id="txtResetRollover">
-                <a>Reset Position</a>
-            </Text>
-            <Text id="txtClearAllOver">
-                <a>Clear All</a>
-            </Text>
-            <Text id="txtAreYouSure">
-                <a>Are you sure you want to clear all?</a>
-            </Text>
-            <Text id="txtYesPopUp">
-                <a>Yes</a>
-            </Text>
-            <Text id="txtNoPopUp">
-                <a>No</a>
-            </Text>
-            <Text id="txtThanksSubmit">
-                <a>Thank you! Your path has been submitted to the Dreamrider public gallery.</a>
-            </Text>
-            <Text id="txtPathName">
-                <a>Path Name</a>
-            </Text>
-            <Text id="txtSavePopUp">
-                <a>Save</a>
-            </Text>
-            <Text id="txtLoadPopUp">
-                <a>Load</a>
-            </Text>
-            <Text id="txtDeletePath">
-                <a>Delete</a>
-            </Text>
-            <Text id="txtOKPopUp">
-                <a>OK</a>
-            </Text>
-            <Text id="txtUniqueName">
-                <a>Please give your new course a unique name.</a>
-            </Text>
-            <Text id="txtRewindOver">
-                <a>Rewind</a>
-            </Text>
-            <Text id="txtReturntoGallery">
-                <a>Return to Gallery</a>
-            </Text>
-            <Text id="txtBackToGameViewer">
-                <a>Back to Game</a>
-            </Text>
-            <Text id="txtByKeeperOf">
-                <a>By the Keeper of:</a>
-            </Text>
-            <Text id="txtGalleryTitle">
-                <a>Dreamrider Gallery</a>
-            </Text>
-            <Text id="txtBacktoGameMenu">
-                <a>Back to Game</a>
-            </Text>
-        </Texts>
-    </BuiltInTexts>
+	<BuiltInTexts>
+    <Texts debugMode="false">  
+    
+	<Text id="txtDreamriderTitle">
+		<P><FONT SIZE="18"><B>Dreamrider</B></FONT></P>
+	</Text>
+   <Text id="txtTutorial">
+		<P><FONT SIZE="26">TUTORIAL</FONT></P>
+	</Text>
+	<Text id="txtStartNow">
+		<P><FONT SIZE="26">START NOW</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOver">
+		<P><FONT SIZE="16"><B>Night Sky</B></FONT></P>
+	</Text>
+	<Text id="txtClearAllOver">
+		<P><FONT SIZE="16"><B>Clear All</B></FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="16"><B>Are you sure </B></FONT></P><P><FONT SIZE="16"><B>you want to clear all?</B></FONT></P>
+	</Text>
+  <Text id="txtAreYouSureDel">
+    <P><FONT SIZE="16"><B>Are you sure</B></FONT></P><P><FONT SIZE="16"><B>you want to delete {0}?</B></FONT></P>
+  </Text>
+  <Text id="txtAreYouSureRep">
+		<P><FONT SIZE="16"><B>Override '{0}'</B></FONT></P><P><FONT SIZE="16"><B>under the new name '{1}'?</B></FONT></P>
+	</Text>
+	<Text id="txtYesPopUp">
+		<P><FONT SIZE="16"><B>Yes</B></FONT></P>
+	</Text>
+  <Text id="txtOKPopUp">
+		<P><FONT SIZE="16"><B>OK</B></FONT></P>
+	</Text>
+	<Text id="txtNoPopUp">
+		<P><FONT SIZE="16"><B>No</B></FONT></P>
+	</Text>
+  <Text id="txtUniqueName">
+		<P><FONT SIZE="16"><B>Please give your new course a unique name.</B></FONT></P>
+	</Text>
+  <Text id="txtCourseLimit">
+		<P><FONT SIZE="16"><B>You can only save {0} courses. Choose and old course to delete and replace.</B></FONT></P>
+	</Text>
+	<Text id="txtLoadRollover">
+		<P><FONT SIZE="16"><B>Save/Load</B></FONT></P>
+	</Text>
+	<Text id="txtPathName">
+		<P><FONT SIZE="16"><B>Path Name</B></FONT></P>
+	</Text>
+	<Text id="txtSavePopUp">
+		<P><FONT SIZE="14"><B>Save</B></FONT></P>
+	</Text>
+	<Text id="txtLoadPopUp">
+		<P><FONT SIZE="14"><B>Load</B></FONT></P>
+	</Text>
+	<Text id="txtDeletePath">
+		<P><FONT SIZE="14"><B>Delete</B></FONT></P>
+	</Text>
+	<Text id="txtSendRollover">
+		<P><FONT SIZE="16"><B>Send</B></FONT></P>
+	</Text>
+	<Text id="txtToGalleryRollover">
+		<P><FONT SIZE="16"><B>To the galery</B></FONT></P>
+	</Text>
+	<Text id="txtByKeeperOf">
+		<P><FONT SIZE="12">By the Keeper of:</FONT></P>
+	</Text>
+	<Text id="txtGalleryTitle">
+		<P><FONT SIZE="30"><B>Dreamrider</B></FONT></P>
+	</Text>
+	<Text id="txtBacktoGameMenu">
+		<P><FONT SIZE="14"><B>Back to Game</B></FONT></P>
+	</Text>
+	<Text id="txtThanksSubmit">
+		<P><FONT SIZE="16"><B>Thank you!</B></FONT></P><P><FONT SIZE="16"><B /></FONT></P><P><FONT SIZE="16"><B>Your path has been submitted to the Dreamrider public gallery.</B></FONT></P>
+	</Text>
+	<Text id="txtReturntoGallery">
+		<P><FONT SIZE="16"><B>Return to Gallery</B></FONT></P>
+	</Text>
+	<Text id="txtBackToGameViewer">
+		<P><FONT SIZE="16"><B>Back to Game</B></FONT></P>
+	</Text>
+	<Text id="txtOutlinePathRollover">
+		<P><FONT SIZE="16"><B>Regular Mode</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftRollover">
+		<P><FONT SIZE="16"><B>Updraft</B></FONT></P>
+	</Text>
+	<Text id="txtObjectsRollover">
+		<P><FONT SIZE="16"><B>Objects</B></FONT></P>
+	</Text>
+	<Text id="txtFlyRollover">
+		<P><FONT SIZE="16"><B>Fly</B></FONT></P>
+	</Text>
+	<Text id="txtTrotRollover">
+		<P><FONT SIZE="16"><B>Trot</B></FONT></P>
+	</Text>
+	<Text id="txtTrotOverStage">
+		<P><FONT SIZE="16"><B>Trot</B></FONT></P>
+	</Text>
+	<Text id="txtRainOver">
+		<P><FONT SIZE="16"><B>Rain</B></FONT></P>
+	</Text>
+	<Text id="txtRainOverStage">
+		<P><FONT SIZE="16"><B>Rain</B></FONT></P>
+	</Text>
+	<Text id="txtFirePath">
+		<P><FONT SIZE="16"><B>Fire Path</B></FONT></P>
+	</Text>
+	<Text id="txtEarthPath">
+		<P><FONT SIZE="16"><B>Dirt Path</B></FONT></P>
+	</Text>
+	<Text id="txtGrassPath">
+		<P><FONT SIZE="16"><B>Grass Path</B></FONT></P>
+	</Text>
+	<Text id="txtRearRollover">
+		<P><FONT SIZE="16"><B>Rear</B></FONT></P>
+	</Text>
+	<Text id="txtJumpRollover">
+		<P><FONT SIZE="16"><B>Jump</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">Music ON or OFF</FONT></P>
+	</Text>
+	<Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>Close help</B></FONT></P>
+	</Text>
+	<Text id="txtEraseOver">
+		<P><FONT SIZE="16"><B>Erase</B></FONT></P>
+	</Text>
+	<Text id="txtNorthernLightsOver">
+		<P><FONT SIZE="16"><B>Northern Lights</B></FONT></P>
+	</Text>
+	<Text id="txtMarkerFlagRollover">
+		<P><FONT SIZE="16"><B>Set a marker</B></FONT></P>
+	</Text>
+	<Text id="txtUndoRollover">
+		<P><FONT SIZE="16"><B>Undo</B></FONT></P>
+	</Text>
+	<Text id="txtResetRollover">
+		<P><FONT SIZE="16"><B>Reset position</B></FONT></P>
+	</Text>
+	<Text id="txtPlayRollover">
+		<P><FONT SIZE="16"><B>Play/Resume</B></FONT></P>
+	</Text>
+	<Text id="txtMoveStageOver">
+		<P><FONT SIZE="16"><B>Move stage</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOver">
+		<P><FONT SIZE="16"><B>Close-up</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOver">
+		<P><FONT SIZE="16"><B>Fireworks</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOver">
+		<P><FONT SIZE="16"><B>Wisdom</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOver">
+		<P><FONT SIZE="16"><B>Flowers</B></FONT></P>
+	</Text>
+	<Text id="txtPondOver">
+		<P><FONT SIZE="16"><B>Pond</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOver">
+		<P><FONT SIZE="16"><B>Snow</B></FONT></P>
+	</Text>
+	<Text id="txtWaterPath">
+		<P><FONT SIZE="16"><B>Water Path</B></FONT></P>
+	</Text>
+	<Text id="txtGallopRollover">
+		<P><FONT SIZE="16"><B>Gallop</B></FONT></P>
+	</Text>
+	<Text id="txtWalkRollover">
+		<P><FONT SIZE="16"><B>Walk</B></FONT></P>
+	</Text>
+	<Text id="txtGallopOverStage">
+		<P><FONT SIZE="16"><B>Gallop</B></FONT></P>
+	</Text>
+	<Text id="txtDRGalleryToGame">
+		<P><FONT SIZE="14">Back to GAME</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryMore">
+		<P><FONT SIZE="14">More COURSES</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryPlay">
+		<P><FONT SIZE="14">PLAY courses</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOverStage">
+		<P><FONT SIZE="16"><B>Night Sky</B></FONT></P>
+	</Text>
+	<Text id="txtDRViewerRewind">
+		<P><FONT SIZE="14">REWIND</FONT></P>
+	</Text>
+	<Text id="txtDRViewerToMenu">
+		<P><FONT SIZE="14">Go back to GALLERY</FONT></P>
+	</Text>
+	<Text id="txtRewindOver">
+		<P><FONT SIZE="16"><B>REWIND</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom0">
+		<P><FONT SIZE="25"><B>Find joy in sharing good times with your friends.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom1">
+		<P><FONT SIZE="25"><B>Bring a friend and come play with me.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom2">
+		<P><FONT SIZE="25"><B>I run faster than the wind. Follow me and we'll go in a magic place.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom3">
+		<P><FONT SIZE="25"><B>Have faith in your happy thoughts, and you'll be able to do everything you want.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom4">
+		<P><FONT SIZE="25"><B>Your beauty comes from inside.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom5">
+		<P><FONT SIZE="25"><B>You create your own reality.</B></FONT></P>
+	</Text>
+	<Text id="txtStopRollover">
+		<P><FONT SIZE="16"><B>Stop</B></FONT></P>
+	</Text>
+  <Text id="txtDrawBG">
+		<P><FONT SIZE="16"><B>Draw decor</B></FONT></P>
+	</Text>
+	<Text id="txtUsePens">
+		<P><FONT SIZE="14">Use the PENS to trace paths of GRASS, DIRT, FIRE and WATER. To trace a straight line, hold the SHIFT key. To trace a circle, hold the O key.</FONT></P>
+	</Text>
+	<Text id="txtSkipIntro">
+		<P><FONT SIZE="14">Skip intro</FONT></P>
+	</Text>
+	<Text id="txtClickPlay">
+		<P><FONT SIZE="14">Click PLAY to start your jouney</FONT></P>
+	</Text>
+	<Text id="txtDrawScenery">
+		<P><FONT SIZE="14">Use this PEN to draw SCENERY of your own</FONT></P>
+	</Text>
+	<Text id="txtUseHand">
+		<P><FONT SIZE="14">Use the HAND to move the page for longer paths</FONT></P>
+	</Text>
+	<Text id="txtNextIntro">
+		<P><FONT SIZE="20">NEXT</FONT></P>
+	</Text>
+	<Text id="txtPlaceSpeed">
+		<P><FONT SIZE="14">Place icons along the path. Use these to control your horse's SPEED and MOVEMENT</FONT></P>
+	</Text>
+	<Text id="txtAddObjects">
+		<P><FONT SIZE="14">Add OBJECTS to your route</FONT></P>
+	</Text>
+	<Text id="txtWeather">
+		<P><FONT SIZE="14">Place icons along the path to control WEATHER and ENVIRONMENT</FONT></P>
+	</Text>
+	<Text id="txtUseUndo">
+		<P><FONT SIZE="14">Use the UNDO/REDO button to erase your last action or click again to bring it back</FONT></P>
+	</Text>
+	<Text id="txtOutlinePath">
+		<P><FONT SIZE="14">OUTLINE your horse's actual path</FONT></P>
+	</Text>
+	<Text id="txtPlaceMarker">
+		<P><FONT SIZE="14">While the horse is running on the path, click to place the MARKER FLAG on a new starting position</FONT></P>
+	</Text>
+	<Text id="txtClickReset">
+		<P><FONT SIZE="14">RRETURN your horse to the start of your path. Press SHIFT to bypass the MARKER</FONT></P>
+	</Text>
+	<Text id="txtUseEraser">
+		<P><FONT SIZE="14">Use the ERASER to clear elements</FONT></P>
+	</Text>
+	<Text id="txtClearAll">
+		<P><FONT SIZE="14">Click here to CLEAR ALL</FONT></P>
+	</Text>
+	<Text id="txtStartButton">
+		<P><FONT SIZE="26">START</FONT></P>
+	</Text>
+	<Text id="txtWalkOverStage">
+		<P><FONT SIZE="16"><B>Walk</B></FONT></P>
+	</Text>
+	<Text id="txtFlyOverStage">
+		<P><FONT SIZE="16"><B>Fly</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftOverStage">
+		<P><FONT SIZE="16"><B>Updraft</B></FONT></P>
+	</Text>
+	<Text id="txtRearOverStage">
+		<P><FONT SIZE="16"><B>Rear</B></FONT></P>
+	</Text>
+	<Text id="txtJumpOverStage">
+		<P><FONT SIZE="16"><B>Jump</B></FONT></P>
+	</Text>
+	<Text id="txtPondOverStage">
+		<P><FONT SIZE="16"><B>Pond</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOverStage">
+		<P><FONT SIZE="16"><B>Widom</B></FONT></P>
+	</Text>
+	<Text id="txtNLightsOverStage">
+		<P><FONT SIZE="16"><B>Northern Lights</B></FONT></P>
+	</Text>
+	<Text id="txtSoundEffectOver">
+		<P><FONT SIZE="16"><B>Sound Effect</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOverStage">
+		<P><FONT SIZE="16"><B>Close-up</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOverStage">
+		<P><FONT SIZE="16"><B>Fireworks</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOverStage">
+		<P><FONT SIZE="16"><B>Floweres</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOverStage">
+		<P><FONT SIZE="16"><B>Snow</B></FONT></P>
+	</Text>
+	<Text id="txtOutlineRollover2">
+		<P><FONT SIZE="16"><B>Outline Mode</B></FONT></P>
+	</Text>
+	<Text id="txtloadEffect">
+		<P><FONT SIZE="24"><B>Loading...</B></FONT></P>
+	</Text>
+	
+	
+	</Texts>
+	</BuiltInTexts>
 </Dreamrider>
