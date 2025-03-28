@@ -1,0 +1,603 @@
+<Dreamrider>
+	<BuiltInTexts>
+    <Texts debugMode="false">  
+    
+	<Text id="txtDreamriderTitle">
+		<P><FONT SIZE="18"><B>Dreamrider</B></FONT></P>
+	</Text>
+   <Text id="txtTutorial">
+		<P><FONT SIZE="26">Tutoriel</FONT></P>
+	</Text>
+	<Text id="txtStartNow">
+		<P><FONT SIZE="26">DEMARRER</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOver">
+		<P><FONT SIZE="16"><B>Ciel nocturne</B></FONT></P>
+	</Text>
+	<Text id="txtClearAllOver">
+		<P><FONT SIZE="16"><B>Tout effacer</B></FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="16"><B>Es-tu sûre de </B></FONT></P><P><FONT SIZE="16"><B>vouloir tout effacer ?</B></FONT></P>
+	</Text>
+  <Text id="txtAreYouSureDel">
+    <P><FONT SIZE="16"><B>Es-tu sûre de</B></FONT></P><P><FONT SIZE="16"><B>vouloir effacer {0}?</B></FONT></P>
+  </Text>
+  <Text id="txtAreYouSureRep">
+		<P><FONT SIZE="16"><B>Sauvegarder par-dessus '{0}'</B></FONT></P><P><FONT SIZE="16"><B>sous le nouveau nom '{1}'?</B></FONT></P>
+	</Text>
+	<Text id="txtYesPopUp">
+		<P><FONT SIZE="16"><B>Oui</B></FONT></P>
+	</Text>
+  <Text id="txtOKPopUp">
+		<P><FONT SIZE="16"><B>OK</B></FONT></P>
+	</Text>
+	<Text id="txtNoPopUp">
+		<P><FONT SIZE="16"><B>Non</B></FONT></P>
+	</Text>
+  <Text id="txtUniqueName">
+		<P><FONT SIZE="16"><B>Donne un nom unique à ton parcours.</B></FONT></P>
+	</Text>
+  <Text id="txtCourseLimit">
+		<P><FONT SIZE="16"><B>Tu ne peux sauvegarder que {0} parcours. Choisis un ancien parcours à effacer et à remplacer.</B></FONT></P>
+	</Text>
+	<Text id="txtLoadRollover">
+		<P><FONT SIZE="16"><B>Sauvegarder/Charger</B></FONT></P>
+	</Text>
+	<Text id="txtPathName">
+		<P><FONT SIZE="16"><B>Nom du parcours</B></FONT></P>
+	</Text>
+	<Text id="txtSavePopUp">
+		<P><FONT SIZE="14"><B>Sauvegarder</B></FONT></P>
+	</Text>
+	<Text id="txtLoadPopUp">
+		<P><FONT SIZE="14"><B>Charger</B></FONT></P>
+	</Text>
+	<Text id="txtDeletePath">
+		<P><FONT SIZE="14"><B>Effacer</B></FONT></P>
+	</Text>
+	<Text id="txtSendRollover">
+		<P><FONT SIZE="16"><B>Envoyer</B></FONT></P>
+	</Text>
+	<Text id="txtToGalleryRollover">
+		<P><FONT SIZE="16"><B>Vers la galerie</B></FONT></P>
+	</Text>
+	<Text id="txtByKeeperOf">
+		<P><FONT SIZE="12">Par le Gardien de :</FONT></P>
+	</Text>
+	<Text id="txtGalleryTitle">
+		<P><FONT SIZE="30"><B>Galerie du cheval des songes</B></FONT></P>
+	</Text>
+	<Text id="txtBacktoGameMenu">
+		<P><FONT SIZE="14"><B>Retour au jeu</B></FONT></P>
+	</Text>
+	<Text id="txtThanksSubmit">
+		<P><FONT SIZE="16"><B>Merci !</B></FONT></P><P><FONT SIZE="16"><B /></FONT></P><P><FONT SIZE="16"><B>Ton parcours a été soumis à la galerie publique du cheval des songes !</B></FONT></P>
+	</Text>
+	<Text id="txtReturntoGallery">
+		<P><FONT SIZE="16"><B>Retour à la galerie</B></FONT></P>
+	</Text>
+	<Text id="txtBackToGameViewer">
+		<P><FONT SIZE="16"><B>Retour au jeu</B></FONT></P>
+	</Text>
+	<Text id="txtOutlinePathRollover">
+		<P><FONT SIZE="16"><B>Mode normal</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftRollover">
+		<P><FONT SIZE="16"><B>Souffle ascendant</B></FONT></P>
+	</Text>
+	<Text id="txtObjectsRollover">
+		<P><FONT SIZE="16"><B>Objets</B></FONT></P>
+	</Text>
+	<Text id="txtFlyRollover">
+		<P><FONT SIZE="16"><B>Voler</B></FONT></P>
+	</Text>
+	<Text id="txtTrotRollover">
+		<P><FONT SIZE="16"><B>Trotter</B></FONT></P>
+	</Text>
+	<Text id="txtTrotOverStage">
+		<P><FONT SIZE="16"><B>Trotter</B></FONT></P>
+	</Text>
+	<Text id="txtRainOver">
+		<P><FONT SIZE="16"><B>Pluie</B></FONT></P>
+	</Text>
+	<Text id="txtRainOverStage">
+		<P><FONT SIZE="16"><B>Pluie</B></FONT></P>
+	</Text>
+	<Text id="txtFirePath">
+		<P><FONT SIZE="16"><B>Chemin de feu</B></FONT></P>
+	</Text>
+	<Text id="txtEarthPath">
+		<P><FONT SIZE="16"><B>Chemin de terre</B></FONT></P>
+	</Text>
+	<Text id="txtGrassPath">
+		<P><FONT SIZE="16"><B>Chemin d'herbe</B></FONT></P>
+	</Text>
+	<Text id="txtRearRollover">
+		<P><FONT SIZE="16"><B>Se cabrer</B></FONT></P>
+	</Text>
+	<Text id="txtJumpRollover">
+		<P><FONT SIZE="16"><B>Sauter</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">Musique ACTIVEE ou DESACTIVEE</FONT></P>
+	</Text>
+	<Text id="txtDreamriderOutline">
+		<P><FONT SIZE="14"> Affiche la TRAJECTOIRE de ton cheval</FONT></P>
+	</Text>
+	<Text id="txtDreamriderMarker">
+		<P><FONT SIZE="14">MARQUE une nouvelle position de départ</FONT></P>
+	</Text>
+	<Text id="txtDreamriderReset">
+		<P><FONT SIZE="14">RAMENE ton cheval au début du parcours. Appuie sur la touche MAJUSCULE pour ignorer le MARQUEUR</FONT></P>
+	</Text>
+	<Text id="txtDreamriderPlay">
+		<P><FONT SIZE="14">Démarrer/Arrêter l'animation</FONT></P>
+	</Text>
+	<Text id="txtDreamriderSave">
+		<P><FONT SIZE="14">SAUVEGARDER ou CHARGER un parcours</FONT></P>
+	</Text>
+	<Text id="txtDreamriderSubmit">
+		<P><FONT SIZE="14">SOUMETTRE un parcours</FONT></P>
+	</Text>
+	<Text id="txtDreamriderToGallery">
+		<P><FONT SIZE="14">Visiter la GALERIE</FONT></P>
+	</Text>
+	<Text id="txtDreamriderUndo">
+		<P><FONT SIZE="14">ANNULER et REFAIRE</FONT></P>
+	</Text>
+	<Text id="txtDreamriderSpeed">
+		<P><FONT SIZE="14">Contrôle la VITESSE et les MOUVEMENTS de ton cheval</FONT></P>
+	</Text>
+	<Text id="txtDreamriderPens">
+		<P><FONT SIZE="14">Ajoute des OBJETS sur le parcours ou clique sur les CRAYONS DE COULEUR pour tracer ton chemin. Pour tracer des lignes droites, maintiens la touche MAJUSCULE appuyée en traçant. Pour tracer des cercles, maintiens la touche O appuyée.</FONT></P>
+	</Text>
+	<Text id="txtDreamriderWeather">
+		<P><FONT SIZE="14">Place des icônes le long du parcours pour changer de CLIMAT ou d'ENVIRONNEMENT.</FONT></P>
+	</Text>
+	<Text id="txtDreamriderClearAll">
+		<P><FONT SIZE="14">TOUT EFFACER</FONT></P>
+	</Text>
+	<Text id="txtDreamriderHand">
+		<P><FONT SIZE="14">DEPLACER LA PAGE pour tracer un parcours plus long</FONT></P>
+	</Text>
+	<Text id="txtDreamriderErase">
+		<P><FONT SIZE="14">EFFACER des éléments</FONT></P>
+	</Text>
+	<Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>Refermer l'Aide</B></FONT></P>
+	</Text>
+	<Text id="txtEraseOver">
+		<P><FONT SIZE="16"><B>Effacer</B></FONT></P>
+	</Text>
+	<Text id="txtNorthernLightsOver">
+		<P><FONT SIZE="16"><B>Lueurs boréales</B></FONT></P>
+	</Text>
+	<Text id="txtMarkerFlagRollover">
+		<P><FONT SIZE="16"><B>Poser un marqueur</B></FONT></P>
+	</Text>
+	<Text id="txtUndoRollover">
+		<P><FONT SIZE="16"><B>Annuler</B></FONT></P>
+	</Text>
+	<Text id="txtResetRollover">
+		<P><FONT SIZE="16"><B>Réinitialiser la position</B></FONT></P>
+	</Text>
+	<Text id="txtPlayRollover">
+		<P><FONT SIZE="16"><B>Jouer/Reprendre</B></FONT></P>
+	</Text>
+	<Text id="txtMoveStageOver">
+		<P><FONT SIZE="16"><B>Déplacer la feuille</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOver">
+		<P><FONT SIZE="16"><B>Animation</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOver">
+		<P><FONT SIZE="16"><B>Feux d'artifice</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOver">
+		<P><FONT SIZE="16"><B>Message</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOver">
+		<P><FONT SIZE="16"><B>Fleurs</B></FONT></P>
+	</Text>
+	<Text id="txtPondOver">
+		<P><FONT SIZE="16"><B>Eau</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOver">
+		<P><FONT SIZE="16"><B>Neige</B></FONT></P>
+	</Text>
+	<Text id="txtWaterPath">
+		<P><FONT SIZE="16"><B>Chemin d'eau</B></FONT></P>
+	</Text>
+	<Text id="txtGallopRollover">
+		<P><FONT SIZE="16"><B>Galoper</B></FONT></P>
+	</Text>
+	<Text id="txtWalkRollover">
+		<P><FONT SIZE="16"><B>Marcher</B></FONT></P>
+	</Text>
+	<Text id="txtGallopOverStage">
+		<P><FONT SIZE="16"><B>Galoper</B></FONT></P>
+	</Text>
+	<Text id="txtDRGalleryToGame">
+		<P><FONT SIZE="14">Revenir au JEU</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryMore">
+		<P><FONT SIZE="14">Plus de PARCOURS</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryPlay">
+		<P><FONT SIZE="14">JOUER des parcours</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOverStage">
+		<P><FONT SIZE="16"><B>Ciel nocturne</B></FONT></P>
+	</Text>
+	<Text id="txtDRViewerRewind">
+		<P><FONT SIZE="14">REMBOBINER</FONT></P>
+	</Text>
+	<Text id="txtDRViewerToMenu">
+		<P><FONT SIZE="14">Revenir au MENU GALERIE</FONT></P>
+	</Text>
+	<Text id="txtRewindOver">
+		<P><FONT SIZE="16"><B>REMBOBINER</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom0">
+		<P><FONT SIZE="25"><B>Trouve la joie en partageant les bons moments entre amis.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom1">
+		<P><FONT SIZE="25"><B>Amène une de tes amies et venez jouer avec moi.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom2">
+		<P><FONT SIZE="25"><B>Je cours plus vite que le vent. Suis-moi et nous irons dans un lieu magique.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom3">
+		<P><FONT SIZE="25"><B>Aie foi en tes pensées heureuses, et tu pourras faire tout ce que tu voudras.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom4">
+		<P><FONT SIZE="25"><B>Ta beauté vient de l'intérieur.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom5">
+		<P><FONT SIZE="25"><B>C'est toi qui crées ta propre réalité.</B></FONT></P>
+	</Text>
+	<Text id="txtStopRollover">
+		<P><FONT SIZE="16"><B>Stop</B></FONT></P>
+	</Text>
+	<Text id="txtTutorial">
+		<P><FONT SIZE="26">Tutoriel</FONT></P>
+	</Text>
+	<Text id="txtStartNow">
+		<P><FONT SIZE="26">DEMARRER</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOver">
+		<P><FONT SIZE="16"><B>Ciel nocturne</B></FONT></P>
+	</Text>
+	<Text id="txtClearAllOver">
+		<P><FONT SIZE="16"><B>Tout effacer</B></FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="16"><B>Es-tu sûre de</B></FONT></P><P><FONT SIZE="16"><B>vouloir tout effacer ?</B></FONT></P>
+	</Text>
+	<Text id="txtYesPopUp">
+		<P><FONT SIZE="16"><B>Oui</B></FONT></P>
+	</Text>
+	<Text id="txtNoPopUp">
+		<P><FONT SIZE="16"><B>Non</B></FONT></P>
+	</Text>
+	<Text id="txtLoadRollover">
+		<P><FONT SIZE="16"><B>Sauvegarder/Charger</B></FONT></P>
+	</Text>
+	<Text id="txtPathName">
+		<P><FONT SIZE="16"><B>Nom du parcours</B></FONT></P>
+	</Text>
+	<Text id="txtSavePopUp">
+		<P><FONT SIZE="14"><B>Sauvegarder</B></FONT></P>
+	</Text>
+	<Text id="txtLoadPopUp">
+		<P><FONT SIZE="14"><B>Charger</B></FONT></P>
+	</Text>
+	<Text id="txtDeletePath">
+		<P><FONT SIZE="14"><B>Effacer</B></FONT></P>
+	</Text>
+	<Text id="txtSendRollover">
+		<P><FONT SIZE="16"><B>Envoyer</B></FONT></P>
+	</Text>
+	<Text id="txtToGalleryRollover">
+		<P><FONT SIZE="16"><B>Vers la galerie</B></FONT></P>
+	</Text>
+	<Text id="txtByKeeperOf">
+		<P><FONT SIZE="12">Par le Gardien de :</FONT></P>
+	</Text>
+	<Text id="txtGalleryTitle">
+		<P><FONT SIZE="30"><B>Galerie du cheval des songes</B></FONT></P>
+	</Text>
+	<Text id="txtBacktoGameMenu">
+		<P><FONT SIZE="14"><B>Retour au jeu</B></FONT></P>
+	</Text>
+	<Text id="txtThanksSubmit">
+		<P><FONT SIZE="16"><B>Merci !</B></FONT></P><P><FONT SIZE="16"><B /></FONT></P><P><FONT SIZE="16"><B>Ton parcours a été soumis à la galerie publique du cheval des songes !</B></FONT></P>
+	</Text>
+	<Text id="txtReturntoGallery">
+		<P><FONT SIZE="16"><B>Retour à la galerie</B></FONT></P>
+	</Text>
+	<Text id="txtBackToGameViewer">
+		<P><FONT SIZE="16"><B>Retour au jeu</B></FONT></P>
+	</Text>
+	<Text id="txtOutlinePathRollover">
+		<P><FONT SIZE="16"><B>Mode normal</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftRollover">
+		<P><FONT SIZE="16"><B>Souffle ascendant</B></FONT></P>
+	</Text>
+	<Text id="txtObjectsRollover">
+		<P><FONT SIZE="16"><B>Objets</B></FONT></P>
+	</Text>
+	<Text id="txtFlyRollover">
+		<P><FONT SIZE="16"><B>Voler</B></FONT></P>
+	</Text>
+	<Text id="txtTrotRollover">
+		<P><FONT SIZE="16"><B>Trotter</B></FONT></P>
+	</Text>
+	<Text id="txtTrotOverStage">
+		<P><FONT SIZE="16"><B>Trot</B></FONT></P>
+	</Text>
+	<Text id="txtRainOver">
+		<P><FONT SIZE="16"><B>Pluie</B></FONT></P>
+	</Text>
+	<Text id="txtRainOverStage">
+		<P><FONT SIZE="16"><B>Pluie</B></FONT></P>
+	</Text>
+	<Text id="txtFirePath">
+		<P><FONT SIZE="16"><B>Chemin de feu</B></FONT></P>
+	</Text>
+	<Text id="txtEarthPath">
+		<P><FONT SIZE="16"><B>Chemin de terre</B></FONT></P>
+	</Text>
+	<Text id="txtGrassPath">
+		<P><FONT SIZE="16"><B>Chemin d'herbe</B></FONT></P>
+	</Text>
+  <Text id="txtDrawBG">
+		<P><FONT SIZE="16"><B>Dessiner le décor</B></FONT></P>
+	</Text>
+	<Text id="txtRearRollover">
+		<P><FONT SIZE="16"><B>Se cabrer</B></FONT></P>
+	</Text>
+	<Text id="txtJumpRollover">
+		<P><FONT SIZE="16"><B>Sauter</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">Musique ACTIVEE ou DESACTIVEE</FONT></P>
+	</Text>
+	<Text id="txtDreamriderOutline">
+		<P><FONT SIZE="14">Affiche la TRAJECTOIRE de ton cheval</FONT></P>
+	</Text>
+	<Text id="txtDreamriderMarker">
+		<P><FONT SIZE="14">MARQUE une nouvelle position de départ</FONT></P>
+	</Text>
+	<Text id="txtDreamriderReset">
+		<P><FONT SIZE="14">RAMENE ton cheval au début du parcours. Appuie sur la touche MAJUSCULE pour ignorer le MARQUEUR</FONT></P>
+	</Text>
+	<Text id="txtDreamriderPlay">
+		<P><FONT SIZE="14">Démarrer/Arrêter l'animation</FONT></P>
+	</Text>
+	<Text id="txtDreamriderSave">
+		<P><FONT SIZE="14">SAUVEGARDER ou CHARGER un parcours</FONT></P>
+	</Text>
+	<Text id="txtDreamriderSubmit">
+		<P><FONT SIZE="14">SOUMETTRE un parcours</FONT></P>
+	</Text>
+	<Text id="txtDreamriderToGallery">
+		<P><FONT SIZE="14">Visiter la GALERIE</FONT></P>
+	</Text>
+	<Text id="txtDreamriderUndo">
+		<P><FONT SIZE="14">ANNULER et REFAIRE</FONT></P>
+	</Text>
+	<Text id="txtDreamriderSpeed">
+		<P><FONT SIZE="14">Contrôle la VITESSE et les MOUVEMENTS de ton cheval</FONT></P>
+	</Text>
+	<Text id="txtDreamriderPens">
+		<P><FONT SIZE="14">Ajoute des OBJETS sur le parcours ou clique sur les CRAYONS DE COULEUR pour tracer ton chemin. Pour tracer des lignes droites, maintiens la touche MAJUSCULE appuyée en traçant. Pour tracer des cercles, maintiens la touche O appuyée.</FONT></P>
+	</Text>
+	<Text id="txtDreamriderWeather">
+		<P><FONT SIZE="14">Place des icônes le long du parcours pour changer de CLIMAT ou d'ENVIRONNEMENT.</FONT></P>
+	</Text>
+	<Text id="txtDreamriderClearAll">
+		<P><FONT SIZE="14">TOUT EFFACER</FONT></P>
+	</Text>
+	<Text id="txtDreamriderHand">
+		<P><FONT SIZE="14">DEPLACER LA PAGE pour tracer un parcours plus long</FONT></P>
+	</Text>
+	<Text id="txtDreamriderErase">
+		<P><FONT SIZE="14"> EFFACER des éléments</FONT></P>
+	</Text>
+	<Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>Refermer l'Aide</B></FONT></P>
+	</Text>
+	<Text id="txtEraseOver">
+		<P><FONT SIZE="16"><B>Effacer</B></FONT></P>
+	</Text>
+	<Text id="txtNorthernLightsOver">
+		<P><FONT SIZE="16"><B>Lueurs boréales</B></FONT></P>
+	</Text>
+	<Text id="txtMarkerFlagRollover">
+		<P><FONT SIZE="16"><B>Poser un marqueur</B></FONT></P>
+	</Text>
+	<Text id="txtUndoRollover">
+		<P><FONT SIZE="16"><B>Annuler</B></FONT></P>
+	</Text>
+	<Text id="txtResetRollover">
+		<P><FONT SIZE="16"><B>Réinitialiser la position</B></FONT></P>
+	</Text>
+	<Text id="txtPlayRollover">
+		<P><FONT SIZE="16"><B>Jouer/Reprendre</B></FONT></P>
+	</Text>
+	<Text id="txtMoveStageOver">
+		<P><FONT SIZE="16"><B>Déplacer la feuille</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOver">
+		<P><FONT SIZE="16"><B>Animation</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOver">
+		<P><FONT SIZE="16"><B>Feux d'artifice</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOver">
+		<P><FONT SIZE="16"><B>Message</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOver">
+		<P><FONT SIZE="16"><B>Fleurs</B></FONT></P>
+	</Text>
+	<Text id="txtPondOver">
+		<P><FONT SIZE="16"><B>Eau</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOver">
+		<P><FONT SIZE="16"><B>Neige</B></FONT></P>
+	</Text>
+	<Text id="txtWaterPath">
+		<P><FONT SIZE="16"><B>Chemin d'eau</B></FONT></P>
+	</Text>
+	<Text id="txtGallopRollover">
+		<P><FONT SIZE="16"><B>Galoper</B></FONT></P>
+	</Text>
+	<Text id="txtWalkRollover">
+		<P><FONT SIZE="16"><B>Marcher</B></FONT></P>
+	</Text>
+	<Text id="txtGallopOverStage">
+		<P><FONT SIZE="16"><B>Galoper</B></FONT></P>
+	</Text>
+	<Text id="txtDRGalleryToGame">
+		<P><FONT SIZE="14">Revenir au JEU</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryMore">
+		<P><FONT SIZE="14">Plus de PARCOURS</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryPlay">
+		<P><FONT SIZE="14">JOUER des parcours</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOverStage">
+		<P><FONT SIZE="16"><B>Ciel nocturne</B></FONT></P>
+	</Text>
+	<Text id="txtDRViewerRewind">
+		<P><FONT SIZE="14">REMBOBINER</FONT></P>
+	</Text>
+	<Text id="txtDRViewerToMenu">
+		<P><FONT SIZE="14">Revenir au MENU GALERIE</FONT></P>
+	</Text>
+	<Text id="txtRewindOver">
+		<P><FONT SIZE="16"><B>Rembobiner</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom6">
+		<P><FONT SIZE="25"><B>Trouve la joie en partageant les bons moments entre amis.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom1">
+		<P><FONT SIZE="25"><B>Amène une de tes amies et venez jouer avec moi.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom2">
+		<P><FONT SIZE="25"><B>Je cours plus vite que le vent. Suis-moi et nous irons dans un lieu magique.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom3">
+		<P><FONT SIZE="25"><B>Aie foi en tes pensées heureuses, et tu pourras faire tout ce que tu voudras.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom4">
+		<P><FONT SIZE="25"><B>Ta beauté vient de l'intérieur.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom5">
+		<P><FONT SIZE="25"><B>C'est toi qui crées ta propre réalité.</B></FONT></P>
+	</Text>
+	<Text id="txtStopRollover">
+		<P><FONT SIZE="16"><B>Stop</B></FONT></P>
+	</Text>
+	<Text id="txtUsePens">
+		<P><FONT SIZE="14">Utilise les CRAYONS pour tracer des chemins d'HERBE, de TERRE, de FEU et d'EAU. Pour tracer des lignes droites, maintiens la touche MAJUSCULE appuyée. Pour tracer des cercles, maintiens O appuyé.</FONT></P>
+	</Text>
+	<Text id="txtSkipIntro">
+		<P><FONT SIZE="14">Passer l'intro</FONT></P>
+	</Text>
+	<Text id="txtClickPlay">
+		<P><FONT SIZE="14">Clique JOUER pour commencer ton voyage</FONT></P>
+	</Text>
+	<Text id="txtDrawScenery">
+		<P><FONT SIZE="14">Utilise ce CRAYON pour dessiner ton propre décor</FONT></P>
+	</Text>
+	<Text id="txtUseHand">
+		<P><FONT SIZE="14">Utilise la MAIN pour déplacer la page et tracer un parcours plus long</FONT></P>
+	</Text>
+	<Text id="txtNextIntro">
+		<P><FONT SIZE="20">SUIVANT</FONT></P>
+	</Text>
+	<Text id="txtPlaceSpeed">
+		<P><FONT SIZE="14">Place des icônes le long du parcours. Utilise ces icônes pour contrôler la VITESSE et le MOUVEMENT de ton cheval</FONT></P>
+	</Text>
+	<Text id="txtAddObjects">
+		<P><FONT SIZE="14">Ajouter des OBJETS au parcours</FONT></P>
+	</Text>
+	<Text id="txtWeather">
+		<P><FONT SIZE="14">Place des icônes le long du parcours pour changer de CLIMAT ou d'ENVIRONNEMENT.</FONT></P>
+	</Text>
+	<Text id="txtUseUndo">
+		<P><FONT SIZE="14">Utilise le bouton ANNULER/REFAIRE pour annuler ta dernière action ou clique encore dessus pour la refaire</FONT></P>
+	</Text>
+	<Text id="txtOutlinePath">
+		<P><FONT SIZE="14">Affiche la TRAJECTOIRE réelle de ton cheval</FONT></P>
+	</Text>
+	<Text id="txtPlaceMarker">
+		<P><FONT SIZE="14">Quand le cheval avance sur le parcours, clique ici pour placer un MARQUEUR et définir une nouvelle position de départ</FONT></P>
+	</Text>
+	<Text id="txtClickReset">
+		<P><FONT SIZE="14">RAMENE ton cheval au début du parcours. Appuie sur la touche MAJUSCULE pour ignorer le MARQUEUR</FONT></P>
+	</Text>
+	<Text id="txtUseEraser">
+		<P><FONT SIZE="14">Utilise la GOMME pour effacer les éléments</FONT></P>
+	</Text>
+	<Text id="txtClearAll">
+		<P><FONT SIZE="14">Clique ici pour TOUT EFFACER</FONT></P>
+	</Text>
+	<Text id="txtStartButton">
+		<P><FONT SIZE="26">DEMARRER</FONT></P>
+	</Text>
+	<Text id="txtWalkOverStage">
+		<P><FONT SIZE="16"><B>Marcher</B></FONT></P>
+	</Text>
+	<Text id="txtFlyOverStage">
+		<P><FONT SIZE="16"><B>Voler</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftOverStage">
+		<P><FONT SIZE="16"><B>Souffle ascendant</B></FONT></P>
+	</Text>
+	<Text id="txtRearOverStage">
+		<P><FONT SIZE="16"><B>Se cabrer</B></FONT></P>
+	</Text>
+	<Text id="txtJumpOverStage">
+		<P><FONT SIZE="16"><B>Sauter</B></FONT></P>
+	</Text>
+	<Text id="txtPondOverStage">
+		<P><FONT SIZE="16"><B>Eau</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOverStage">
+		<P><FONT SIZE="16"><B>Message</B></FONT></P>
+	</Text>
+	<Text id="txtNLightsOverStage">
+		<P><FONT SIZE="16"><B>Lueurs boréales</B></FONT></P>
+	</Text>
+	<Text id="txtSoundEffectOver">
+		<P><FONT SIZE="16"><B>Effets sonores</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOverStage">
+		<P><FONT SIZE="16"><B>Animation</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOverStage">
+		<P><FONT SIZE="16"><B>Feux d'artifice</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOverStage">
+		<P><FONT SIZE="16"><B>Fleurs</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOverStage">
+		<P><FONT SIZE="16"><B>Neige</B></FONT></P>
+	</Text>
+	<Text id="txtOutlineRollover2">
+		<P><FONT SIZE="16"><B>Mode trajectoire</B></FONT></P>
+	</Text>
+	<Text id="txtloadEffect">
+		<P><FONT SIZE="24"><B>Chargement</B></FONT></P>
+	</Text>
+	
+	
+	</Texts>
+	</BuiltInTexts>
+</Dreamrider>
