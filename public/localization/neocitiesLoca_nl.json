@@ -108,6 +108,10 @@
     "footer_timeline_link": "Timeline",
     "credits_title": "Credits",
 
+    "cloudjumper_timeline_information": "Two slightly different versions of the game were saved from the official website. Here, you can choose which one you wish to play:",
+    "oldversion": "Old version",
+    "newversion": "New version",
+
     "about_title": "About",
     "about_text": "The Neocities Bella Sara is an archival website made for saving, fixing and recreating the old Bella Sara flash games from the original website to prevent them from being fully lost to time.<br/><br/>This project is open to anyone who wish to help, and you can find out more <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">here</a>."
 }
