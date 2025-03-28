@@ -1,0 +1,152 @@
+<adventures id="ADS-0000001163" description="Cottage Introduction">
+  <adventure id="ADV-0000001798">
+    <description>La maisonnette des Fermes de Canter</description>
+    <quest id="QUE-0000006273">
+      <description>Quête d'introduction à la maisonnette</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006239</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006239">
+      <description>Parle à Cade</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Salut ! Tu as maintenant ta maisonnette rien qu'à toi aux fermes de Canter (Canter Farms). Je peux t'en parler si tu le désires. </text>
+            <choice id="line 1">Oui, dites-moi ce qu'il faut savoir. </choice>
+            <choice id="line 2">Non, merci. Je reviendrai plus tard. </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - Line 1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line 1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Cette maisonnette est la tienne : tu peux la décorer comme bon te semble. Pour entrer, passe par la porte de devant, derrière moi. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Tu peux y &lt;b&gt;placer&lt;/b&gt; n'importe quel objet de ton sac d'inventaire. Il te suffit d'ouvrir ton inventaire et de faire glisser un objet dans ta chambre. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Prends ce cadeau pour commencer à décorer. Emporte cet objet dans ta chambre et place-le. </text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0536Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006259</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - Line 2">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line 2</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>OK. Reviens quand tu auras le temps. </text>
+            <identifier>C001</identifier>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006259" targetZone="R001">
+      <description>Entre dans ta chambre</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>R001</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Bienvenue ! Prends le temps de visiter.</text>
+            <identifier>C001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>&lt;b&gt;PLACE&lt;/b&gt; ton nouvel objet où tu veux dans la pièce.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006260</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006260" targetTemplate="T0536Template" targetZone="R001">
+      <description>Décore ta pièce</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>T0536Template</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Il y a beaucoup de place ici ! Tu peux toujours &lt;b&gt;DEPLACER&lt;/b&gt; un objet quand tu l'as posé.</text>
+            <identifier>C001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Tu peux également faire &lt;b&gt;PIVOTER&lt;/b&gt; des objets. Utilise &lt;b&gt;RAMASSER&lt;/b&gt; pour retirer un objet de la pièce.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Voici d'autres objets et des fers à cheval pour en acheter. Amuse-toi bien !</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0537Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0538Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>20</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>intro_cottage.xml</fileName>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

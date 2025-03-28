@@ -1,0 +1,3078 @@
+<things version="1">
+  <!-- ======== GENERAL TEMPLATES ============================================================================ -->
+  <template name="ObjectTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.NightMovieClipComponent" name="NightMovieClipComponent" />
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.IsometricComponent" name="Isometric" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <isBlocked>true</isBlocked>
+    </component>
+    <component type="components.NameComponent" name="Name" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+  </template>
+  <template name="AnimatedObjectTemplate" template="ObjectTemplate">
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="TradeObjectTemplate" template="ObjectTemplate">
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.TradeCommand" name="TradeCommand" />
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+  </template>
+  <template name="TakeObjectTemplate" template="ObjectTemplate">
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.TakeCommand" name="TakeCommand" />
+  </template>
+  <template name="TrashObjectTemplate" template="ObjectTemplate">
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.TrashCommand" name="TrashCommand" />
+  </template>
+  <template name="ApplyObjectTemplate" template="ObjectTemplate">
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.ApplyCommand" name="ApplyCommand" />
+  </template>
+  <template name="GiveObjectTemplate" template="ObjectTemplate">
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.GiveCommand" name="GiveCommand" />
+  </template>
+  <!-- ======== SPECIFIC TEMPLATES ============================================================================ -->
+  <template name="T0004fTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0004f</className>
+    </component>
+    <component name="Name">
+      <name>Bridge (fixed)</name>
+    </component>
+    <component name="Isometric">
+      <depthOffset>0</depthOffset>
+      <xOffset>120</xOffset>
+      <yOffset>3</yOffset>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pont (réparé)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0004dTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/canterfarms.swf</fileName>
+      <className>T0004d</className>
+    </component>
+    <component name="Name">
+      <name>Bridge (broken)</name>
+    </component>
+    <component name="Isometric">
+      <depthOffset>0</depthOffset>
+      <xOffset>120</xOffset>
+      <yOffset>3</yOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pont (cassé)</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I019Template</item>
+    </component>
+  </template>
+  <template name="T0135Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0135</className>
+    </component>
+    <component name="Name">
+      <name>Rainbow</name>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Arc-en-ciel</ToolTipText>
+    </component>
+  </template>
+  <template name="T0076Template" template="ExitToZone13a">
+    <component type="components.GroundComponent" name="Ground" />
+    <component type="components.MovieClipComponent" name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0076</className>
+    </component>
+  </template>
+  <template name="T0097bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0097b</className>
+    </component>
+    <component name="Name">
+      <name>Home Cottage (basic)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Maisonnette (de base)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0108Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0108</className>
+    </component>
+    <component name="Name">
+      <name>Humming bird</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Oiseau-mouche</ToolTipText>
+    </component>
+  </template>
+  <template name="T0112bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0112b</className>
+    </component>
+    <component name="Name">
+      <name>Cauldron</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaudron</ToolTipText>
+    </component>
+  </template>
+  <template name="T0112cTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0112c</className>
+    </component>
+    <component name="Name">
+      <name>Cauldron</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaudron</ToolTipText>
+    </component>
+  </template>
+  <template name="T0112dTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0112d</className>
+    </component>
+    <component name="Name">
+      <name>Cauldron</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaudron</ToolTipText>
+    </component>
+  </template>
+  <template name="T0115Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0115</className>
+    </component>
+    <component name="Name">
+      <name>Dreamcatcher </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Attrape-rêves</ToolTipText>
+    </component>
+  </template>
+  <template name="T0116aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0116a</className>
+    </component>
+    <component name="Name">
+      <name>Yellow Paper</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papier jaune</ToolTipText>
+    </component>
+  </template>
+  <template name="T0126aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0126a</className>
+    </component>
+    <component name="Name">
+      <name>Wax</name>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-10</depthOffset>
+    </component>
+  </template>
+  <template name="T0126bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0126b</className>
+    </component>
+    <component name="Name">
+      <name>Wax</name>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-10</depthOffset>
+    </component>
+  </template>
+  <template name="T0126cTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0126c</className>
+    </component>
+    <component name="Name">
+      <name>Wax</name>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-10</depthOffset>
+    </component>
+  </template>
+  <template name="T0129Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0129</className>
+    </component>
+    <component name="Name">
+      <name>Scarecrow</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Epouvantail</ToolTipText>
+    </component>
+  </template>
+  <template name="T0133aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0133a</className>
+    </component>
+    <component name="Name">
+      <name>Firecracker</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pétard</ToolTipText>
+    </component>
+  </template>
+  <template name="T0165Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0165d</className>
+    </component>
+    <component name="Name">
+      <name>Arborium Metal</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Métal d'Arborium</ToolTipText>
+    </component>
+  </template>
+  <template name="T0176Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0176</className>
+    </component>
+    <component name="Name">
+      <name>Concrete slab for Cottage</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Dalle de béton pour maisonnette</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-250</depthOffset>
+    </component>
+  </template>
+  <template name="T0021dTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0021d</className>
+    </component>
+    <component name="Name">
+      <name>Land Horse Topiary</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Buisson en forme de cheval</ToolTipText>
+    </component>
+  </template>
+  <template name="T0020bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0020b</className>
+    </component>
+    <component name="Name">
+      <name>Air Horse Topiary</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Buisson en forme de cheval volant</ToolTipText>
+    </component>
+  </template>
+  <template name="T0022eTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0022e</className>
+    </component>
+    <component name="Name">
+      <name>Water Horse Topiary</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Buisson en forme de cheval aquatique</ToolTipText>
+    </component>
+  </template>
+  <template name="T0054aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0054a</className>
+    </component>
+    <component name="Name">
+      <name>Fences - Picket</name>
+    </component>
+    <component name="Isometric">
+      <depthOffset>1</depthOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Piquet de clôture</ToolTipText>
+    </component>
+  </template>
+  <template name="T0179Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="Name">
+      <name>Road block</name>
+    </component>
+  </template>
+  <template name="T0181aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181a</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - North</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181b</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - Northeast</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181cTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181c</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - East</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181dTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181d</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - South</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181eTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181e</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - Southeast</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181fTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181f</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - West</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181gTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181g</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - Southwest</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0181hTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181h</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprint - Northwest</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0189aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0189a</className>
+    </component>
+    <component name="Name">
+      <name>Wolf prints</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreintes de loup</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0189bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0189b</className>
+    </component>
+    <component name="Name">
+      <name>Wolf prints</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreintes de loup</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0189cTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0189c</className>
+    </component>
+    <component name="Name">
+      <name>Wolf prints</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreintes de loup</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0190aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0190a</className>
+    </component>
+    <component name="Name">
+      <name>Campfire</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Feu de camp</ToolTipText>
+    </component>
+  </template>
+  <template name="T0171aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0171a</className>
+    </component>
+    <component name="Name">
+      <name>Puddle drops</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gouttes d'eau</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <template name="T0171bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0171b</className>
+    </component>
+    <component name="Name">
+      <name>Puddle</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Flaque</ToolTipText>
+    </component>
+  </template>
+  <template name="T0132bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0132b</className>
+    </component>
+    <component name="Name">
+      <name>Pumpkin Court - Happy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cour des citrouilles - Joyeuse</ToolTipText>
+    </component>
+  </template>
+  <template name="T0055bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0055b</className>
+    </component>
+    <component name="Name">
+      <name>Gate - Closed</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Portail fermé</ToolTipText>
+    </component>
+  </template>
+  <template name="T0055eTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0055e</className>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="Name">
+      <name>Gate - Opened</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Portail ouvert</ToolTipText>
+    </component>
+  </template>
+  <template name="T0077aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0077a</className>
+    </component>
+    <component name="Name">
+      <name>Cake - cut</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gâteau coupé</ToolTipText>
+    </component>
+  </template>
+  <template name="T0129aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0129a</className>
+    </component>
+    <component name="Name">
+      <name>Scarecrow - cow shaped</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Epouvantail en forme de vache</ToolTipText>
+    </component>
+  </template>
+  <template name="T0130Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0130</className>
+    </component>
+    <component name="Name">
+      <name>Black crow</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Corbeau noir</ToolTipText>
+    </component>
+  </template>
+  <template name="T0128Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0128</className>
+    </component>
+    <component name="Name">
+      <name>Kite</name>
+    </component>
+    <component name="Isometric">
+      <depthOffset>200</depthOffset>
+      <xOffset>0</xOffset>
+      <yOffset>-200</yOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cerf-volant</ToolTipText>
+    </component>
+  </template>
+  <template name="T0201Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0201</className>
+    </component>
+    <component name="Name">
+      <name>Dam</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Barrage</ToolTipText>
+    </component>
+  </template>
+  <template name="T0244Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0244</className>
+    </component>
+    <component name="Name">
+      <name>Fog</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Brouillard</ToolTipText>
+    </component>
+  </template>
+  <template name="T0241aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0241a</className>
+    </component>
+    <component name="Name">
+      <name>Big Boulder</name>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>6</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gros rocher</ToolTipText>
+    </component>
+  </template>
+  <template name="T0241bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0241b</className>
+    </component>
+    <component name="Name">
+      <name>Big Boulder</name>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>6</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gros rocher</ToolTipText>
+    </component>
+  </template>
+  <template name="PurpleGemTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045g</className>
+    </component>
+    <component name="Name">
+      <name>Mysterious Gemstone</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mystérieuse gemme</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- Scott CR-10I -->
+  <template name="T0513Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/petalhome.swf</fileName>
+      <className>T0513</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Petite maison de fée</ToolTipText>
+    </component>
+  </template>
+  <template name="T0509Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0509</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tas de friandises</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <!-- Aisha CR-10I -->
+  <template name="T0359Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0359</className>
+    </component>
+    <component name="Name">
+      <name>Storm Cloud</name>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Nuage d'orage</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I258Template</item>
+      <shouldMovePlayer>false</shouldMovePlayer>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Make It Snow">
+          <trigger>
+            <object type="questData.GiveItemTrigger">
+              <inventoryTemplate>I258Template</inventoryTemplate>
+              <targetTemplate>T0359Template</targetTemplate>
+            </object>
+          </trigger>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0360Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0360</className>
+    </component>
+    <component name="Name">
+      <name>Ice Sheet</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Plaque de glace</ToolTipText>
+    </component>
+  </template>
+  <template name="T0367Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0367</className>
+    </component>
+    <component name="Name">
+      <name>Frozen Sticks</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bâtons gelés</ToolTipText>
+    </component>
+  </template>
+  <template name="T0368Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0368</className>
+    </component>
+    <component name="Name">
+      <name>Frozen Pinecones</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pommes de pin gelées</ToolTipText>
+    </component>
+  </template>
+  <template name="T0369Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0369</className>
+    </component>
+    <component name="Name">
+      <name>Frozen Leaves</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Feuilles gelées</ToolTipText>
+    </component>
+  </template>
+  <template name="T0114bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0114b</className>
+    </component>
+    <component name="Name">
+      <name>Spider Web</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Toile d'araignée</ToolTipText>
+    </component>
+  </template>
+  <template name="T0370Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0370</className>
+    </component>
+    <component name="Name">
+      <name>Frozen Spider Web</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Toile d'araignée gelée</ToolTipText>
+    </component>
+  </template>
+  <!--<template name="T0505aTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0505a</className>
+    </component>
+    <component name="Name">
+      <name>Harness</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText locId="OBJ-T0505a">Harness</ToolTipText>
+    </component>
+  </template>-->
+  <template name="T0505aTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0505a</className>
+    </component>
+    <component name="Name">
+      <name>Harness</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Harnais</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I0504bTemplate</item>
+    </component>
+    <trigger>
+      <object type="questData.GiveItemTrigger">
+        <inventoryTemplate>I0504bTemplate</inventoryTemplate>
+        <targetTemplate>T0505aTemplate</targetTemplate>
+      </object>
+    </trigger>
+  </template>
+  <template name="T0505bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0505b</className>
+    </component>
+    <component name="Name">
+      <name>Harness with Sleigh Bells</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Harnais à clochettes</ToolTipText>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0505b</className>
+    </component>
+  </template>
+  <template name="T0230bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0230b</className>
+    </component>
+    <component name="Name">
+      <name>Unpainted Sleigh</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Traineau sans peinture</ToolTipText>
+    </component>
+  </template>
+  <template name="T0230cTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0230c</className>
+    </component>
+    <component name="Name">
+      <name>Broken Sleigh</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Traineau cassé</ToolTipText>
+    </component>
+  </template>
+  <template name="T0234dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/petalhome.swf</fileName>
+      <className>T0234d</className>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/petalhome.swf</fileName>
+      <className>T0234d</className>
+    </component>
+    <component name="Name">
+      <name>Purple Toadstool</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Purple Toadstool</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0514Template</template>
+    </component>
+  </template>
+  <template name="T0234dGiveTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/petalhome.swf</fileName>
+      <className>T0234d</className>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/petalhome.swf</fileName>
+      <className>T0234d</className>
+    </component>
+    <component name="Name">
+      <name>Purple Toadstool</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Purple Toadstool</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I056Template</item>
+    </component>
+  </template>
+  <template name="T0372Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0372</className>
+    </component>
+    <component name="Name">
+      <name>Snow Crystals</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cristaux de neige</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I258Template</template>
+    </component>
+  </template>
+  <!-- for Spring Carnival Teaser -->
+  <template name="T0605Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0605</className>
+    </component>
+    <component name="Name">
+      <name>Yellow Wildflower</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fleur sauvage jaune</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0605Template</template>
+    </component>
+  </template>
+  <template name="T0606Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0606</className>
+    </component>
+    <component name="Name">
+      <name>Purple Wildflower</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fleur sauvage violette</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0606Template</template>
+    </component>
+  </template>
+  <template name="T0607Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0607</className>
+    </component>
+    <component name="Name">
+      <name>Red Wildflower</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fleur sauvage rouge</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0607Template</template>
+    </component>
+  </template>
+  <!-- end Spring Carnival Teaser-->
+  <template name="T0363Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0363</className>
+    </component>
+    <component name="Name">
+      <name>Watermelon Candy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Friandise à la pastèque</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I252Template</template>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0363</className>
+    </component>
+  </template>
+  <template name="T0362Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0362</className>
+    </component>
+    <component name="Name">
+      <name>Strawberry Candy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Friandise à la fraise</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I251Template</template>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0362</className>
+    </component>
+  </template>
+  <template name="T0364Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0364</className>
+    </component>
+    <component name="Name">
+      <name>Lemon-Lime Candy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Friandise au citron bicolore</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I253Template</template>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0364</className>
+    </component>
+  </template>
+  <template name="T0365Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0365</className>
+    </component>
+    <component name="Name">
+      <name>Cinnamon Candy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Friandise à la cannelle</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I254Template</template>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0365</className>
+    </component>
+  </template>
+  <template name="T0366Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0366</className>
+    </component>
+    <component name="Name">
+      <name>Bubble Gum Candy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Friandise au chewing-gum</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I255Template</template>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0366</className>
+    </component>
+  </template>
+  <template name="T0506Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0506</className>
+    </component>
+    <component name="Name">
+      <name>Moonstone</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pierre de lune</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0506Template</template>
+    </component>
+  </template>
+  <template name="T0508Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0508</className>
+    </component>
+    <component name="Name">
+      <name>Sunstone</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pierre de soleil</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I141fTemplate</template>
+    </component>
+  </template>
+  <!-- Aisha CR-11A -->
+  <template name="T0598Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0598</className>
+    </component>
+    <component name="Name">
+      <name>Bella Carousel Horse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège Bella</ToolTipText>
+    </component>
+  </template>
+  <template name="T0599Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0599</className>
+    </component>
+    <component name="Name">
+      <name>Jewel Carousel Horse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège Jewel</ToolTipText>
+    </component>
+  </template>
+  <template name="T0600Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0600</className>
+    </component>
+    <component name="Name">
+      <name>Thunder Carousel Horse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège Thunder</ToolTipText>
+    </component>
+  </template>
+  <template name="T0601Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0601</className>
+    </component>
+    <component name="Name">
+      <name>Fiona Carousel Horse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège Fiona</ToolTipText>
+    </component>
+  </template>
+  <template name="T0602Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0602</className>
+    </component>
+    <component name="Name">
+      <name>Nike Carousel Horse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège Nike</ToolTipText>
+    </component>
+  </template>
+  <template name="T0603_05Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0603_05</className>
+    </component>
+    <component name="Name">
+      <name>Empty Carousel</name>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>5</gridFootX>
+      <gridFootY>5</gridFootY>
+    </component>
+  </template>
+  <!-- Animated -->
+  <template name="T0192aTemplate" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0192</className>
+    </component>
+    <component name="Name">
+      <name>Tutorial Tip: Weeds</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clique sur une mauvaise herbe, puis choisis la poubelle pour la jeter.</ToolTipText>
+    </component>
+  </template>
+  <template name="T0192bTemplate" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0192</className>
+    </component>
+    <component name="Name">
+      <name>Tutorial Tip: Planting</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clique sur ton sac pour l'ouvrir. Choisis la graine de marguerite dans ton sac, puis sélectionne un endroit où la planter dans le jardin. </ToolTipText>
+    </component>
+  </template>
+  <template name="T0192cTemplate" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0192</className>
+    </component>
+    <component name="Name">
+      <name>Tutorial Tip: Water</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clique sur la graine plantée, puis sélectionne l'arrosoir pour l'arroser. </ToolTipText>
+    </component>
+  </template>
+  <template name="T0192dTemplate" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0192</className>
+    </component>
+    <component name="Name">
+      <name>Tutorial Tip: Harvest</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clique sur la plante, puis choisis Prendre. </ToolTipText>
+    </component>
+  </template>
+  <template name="T0192eTemplate" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0192</className>
+    </component>
+    <component name="Name">
+      <name>Tutorial Tip: Use</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clique sur le pont, puis choisis le mortier pour l'utiliser dessus. </ToolTipText>
+    </component>
+  </template>
+  <template name="T0192fTemplate" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0192</className>
+    </component>
+    <component name="Name">
+      <name>Tutorial Tip: Take</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clique sur la clef, puis clique sur l'option ramasser pour la metter dans ton sac.</ToolTipText>
+    </component>
+  </template>
+  <template name="T0070Template" template="AnimatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0070</className>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+      <xOffset>0</xOffset>
+      <yOffset>-140</yOffset>
+    </component>
+    <component name="Name">
+      <name>Lightning rod</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Baguette de tonnerre</ToolTipText>
+    </component>
+  </template>
+  <template name="T0239bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0239b</className>
+    </component>
+    <component name="Isometric">
+      <scaleX>-1</scaleX>
+    </component>
+    <component name="Name">
+      <template>Lean-to ShelterTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>appentis</ToolTipText>
+    </component>
+  </template>
+  <!-- Magical Friends -->
+  <template name="M010Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M010</className>
+    </component>
+    <component name="Name">
+      <name>Rupert</name>
+    </component>
+    <component name="Isometric">
+      <scaleX>-1</scaleX>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rupert</ToolTipText>
+    </component>
+  </template>
+  <template name="M011Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M011</className>
+    </component>
+    <component name="Name">
+      <name>Banana Slug</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Limace-banane</ToolTipText>
+    </component>
+  </template>
+  <template name="M013Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M013</className>
+    </component>
+    <component name="Name">
+      <name>Spider</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Araignée</ToolTipText>
+    </component>
+  </template>
+  <template name="M009aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M009</className>
+    </component>
+    <component name="Name">
+      <name>Giant Carnivorous Plant</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Plante carnivore géante</ToolTipText>
+    </component>
+  </template>
+  <template name="T0131aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0131a</className>
+    </component>
+    <component name="Name">
+      <name>Birdhouse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mangeoire à oiseaux</ToolTipText>
+    </component>
+  </template>
+  <template name="T0048dTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0048d</className>
+    </component>
+    <component name="Name">
+      <name>Tree with Birdhouse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Arbre et mangeoire à oiseaux</ToolTipText>
+    </component>
+  </template>
+  <template name="T0273Template" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0273</className>
+    </component>
+    <component name="Name">
+      <name>Wolf Whistle Plant</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Plante sifflet des loups</ToolTipText>
+    </component>
+  </template>
+  <!-- OBJECTS THAT ACCEPT WATER COMMAND -->
+  <template name="T0024aTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0024a</className>
+    </component>
+    <component name="Name">
+      <name>Fire</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Feu</ToolTipText>
+    </component>
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.WaterRemoveCommand" name="WaterRemoveCommand" />
+  </template>
+  <template name="T0024cTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0024c</className>
+    </component>
+    <component name="Name">
+      <name>Fire</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Feu</ToolTipText>
+    </component>
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.WaterRemoveCommand" name="WaterRemoveCommand" />
+  </template>
+  <!-- OBJECTS THAT ACCEPT GIVE COMMAND -->
+  <template name="T0113dTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0113d</className>
+    </component>
+    <component name="Name">
+      <name>Large Cage</name>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Grande cage</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I012Template</item>
+      <item>P047ProduceTemplate</item>
+    </component>
+  </template>
+  <template name="T0267cTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0267c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mur de feu</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>7</gridFootY>
+      <gridRadius>2</gridRadius>
+    </component>
+    <component name="GiveCommand">
+      <item>I086Template</item>
+    </component>
+  </template>
+  <template name="T0243aTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0243a</className>
+    </component>
+    <component name="Name">
+      <name>Puzzle Box</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Boîte à énigmes</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>6</gridFootY>
+    </component>
+    <component name="GiveCommand">
+      <item>I033Template</item>
+    </component>
+  </template>
+  <template name="T0243bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0243b</className>
+    </component>
+    <component name="Name">
+      <name>Puzzle Box</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Boîte à énigmes</ToolTipText>
+    </component>
+  </template>
+  <template name="T0243cTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0243c</className>
+    </component>
+    <component name="Name">
+      <name>Puzzle Box</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Boîte à énigmes</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>P057ProduceTemplate</item>
+    </component>
+  </template>
+  <template name="T0243dTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0243d</className>
+    </component>
+    <component name="Name">
+      <name>Puzzle Box</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Boîte à énigmes</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I033Template</item>
+    </component>
+  </template>
+  <template name="T0232aTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0232a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sunstone Flower - Desert Rose</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I141aTemplate</item>
+    </component>
+  </template>
+  <template name="T0232bTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0232b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sunstone Flower - Ocean Hibiscus</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I141bTemplate</item>
+    </component>
+  </template>
+  <template name="T0232cTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0232c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sunstone Flower - Snow Drop</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I141cTemplate</item>
+    </component>
+  </template>
+  <template name="T0232dTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0232d</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sunstone Flower - Ionic Laurel</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I141dTemplate</item>
+    </component>
+  </template>
+  <template name="T0232eTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0232e</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sunstone Flower - Royal Orchid</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I141eTemplate</item>
+    </component>
+  </template>
+  <template name="LostBovoTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M001a</className>
+    </component>
+    <component name="Name">
+      <name>Lost Bovo</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bovo perdu</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I074Template</item>
+    </component>
+  </template>
+  <template name="T0048aTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0048a</className>
+    </component>
+    <component name="Name">
+      <name>Tree</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Arbre</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I081Template</item>
+    </component>
+  </template>
+  <template name="T0199bTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0199b</className>
+    </component>
+    <component name="Name">
+      <name>Basket (partially complete)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Panier inachevé</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>P034ProduceTemplate</item>
+    </component>
+  </template>
+  <template name="M009Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M009</className>
+    </component>
+    <component name="Name">
+      <name>Giant Rupert</name>
+    </component>
+    <component name="Isometric">
+      <scaleX>-1</scaleX>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rupert géant</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>I002aTemplate</item>
+    </component>
+  </template>
+  <!-- OBJECTS THAT ACCEPT APPLY COMMAND -->
+  <template name="T0181Template" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0181</className>
+    </component>
+    <component name="Name">
+      <name>Hoofprints</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Empreinte de sabot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>5</gridFootX>
+      <gridFootY>5</gridFootY>
+    </component>
+    <component name="ApplyCommand">
+      <item>I010Template</item>
+      <item>P018ProduceTemplate</item>
+    </component>
+  </template>
+  <template name="T0267bTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0267b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Barrière de toile</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+    <component name="ApplyCommand">
+      <item>I036Template</item>
+    </component>
+  </template>
+  <template name="T0267dTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0267d</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Barrière de bois</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+      <scaleX>-1</scaleX>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>5</gridFootX>
+      <gridFootY>2</gridFootY>
+      <gridRadius>3</gridRadius>
+    </component>
+    <component name="ApplyCommand">
+      <item>I154aTemplate</item>
+    </component>
+  </template>
+  <template name="T0033iTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0033i</className>
+    </component>
+    <component name="Name">
+      <name>Boulder</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rocher</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I144cTemplate</item>
+    </component>
+  </template>
+  <template name="T0112aTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0112a</className>
+    </component>
+    <component name="Name">
+      <name>Cauldron</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaudron</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I063Template</item>
+    </component>
+  </template>
+  <template name="T0175Template" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0175</className>
+    </component>
+    <component name="Name">
+      <name>Fences - Picket (partially painted)</name>
+    </component>
+    <component name="ApplyCommand">
+      <item>I092Template</item>
+    </component>
+  </template>
+  <template name="T0177Template" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0177</className>
+    </component>
+    <component name="Isometric">
+      <scaleX>-1</scaleX>
+    </component>
+    <component name="Name">
+      <name>Topiary shaped as Wolf</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Buisson en forme de loup</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>P027ProduceTemplate</item>
+    </component>
+  </template>
+  <template name="T0178Template" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0178</className>
+    </component>
+    <component name="Name">
+      <name>Topiary shaped as Ivenna</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Buisson en forme d'Ivenna</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>P027ProduceTemplate</item>
+    </component>
+  </template>
+  <template name="T0077bTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0077b</className>
+    </component>
+    <component name="Name">
+      <name>Cake - whole</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gâteau entier</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I057Template</item>
+    </component>
+  </template>
+  <template name="T0109aTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0109a</className>
+    </component>
+    <component name="Name">
+      <name>Large Shrub</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Grand buisson</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I004bTemplate</item>
+    </component>
+  </template>
+  <template name="T0132aTemplate" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0132a</className>
+    </component>
+    <component name="Name">
+      <name>Pumpkin Court</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cour des citrouilles</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I022Template</item>
+    </component>
+  </template>
+  <template name="T0184Template" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0184</className>
+    </component>
+    <component name="Name">
+      <name>Confetti</name>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+      <isBlocked>false</isBlocked>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Confetti</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I038Template</item>
+    </component>
+  </template>
+  <template name="T0172Template" template="ApplyObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0172</className>
+    </component>
+    <component name="Name">
+      <name>Swarm of flies</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mouches</ToolTipText>
+    </component>
+    <component name="ApplyCommand">
+      <item>I023cTemplate</item>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <!-- OBJECTS THAT ACCEPT TAKE COMMAND -->
+  <template name="T0264Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0264</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I144cTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Green Shovel</ToolTipText>
+    </component>
+  </template>
+  <template name="T0271Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0271</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I160Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Recipe Card</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269a</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Red)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269bTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269b</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159bTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Orange)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269c</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159cTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Yellow)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269d</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159dTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Green)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269eTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269e</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159eTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Blue)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269fTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269f</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159fTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Indigo)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0269gTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0269g</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I159gTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rainbow Stone (Violet)</ToolTipText>
+    </component>
+  </template>
+  <template name="T0270aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0270a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cinnamon Seedbag</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>P009SeedTemplate</template>
+    </component>
+  </template>
+  <template name="T0270bTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0270b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cocoa Seedbag</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>P010SeedTemplate</template>
+    </component>
+  </template>
+  <template name="T0270cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0270c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sugarcane Seedbag</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>P029SeedTemplate</template>
+    </component>
+  </template>
+  <template name="T0242aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0242a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Desert Rose Sunstone Flower</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I155aTemplate</template>
+    </component>
+  </template>
+  <template name="T0242bTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0242b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Ocean Hibiscus Sunstone Flower</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I155bTemplate</template>
+    </component>
+  </template>
+  <template name="T0242cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0242c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snow Drop Sunstone Flower</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I155cTemplate</template>
+    </component>
+  </template>
+  <template name="T0242dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0242d</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Ionic Laurel Sunstone Flower</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I155dTemplate</template>
+    </component>
+  </template>
+  <template name="T0242eTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0242e</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Royal Orchid Sunstone Flower</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I155eTemplate</template>
+    </component>
+  </template>
+  <template name="T0240Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0240</className>
+    </component>
+    <component name="Name">
+      <template>ClayTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Argile</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I148Template</template>
+    </component>
+  </template>
+  <template name="T0200Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0200</className>
+    </component>
+    <component name="Name">
+      <name>Pretty bow</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Joli ruban</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I009Template</template>
+    </component>
+  </template>
+  <template name="T0199cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0199c</className>
+    </component>
+    <component name="Name">
+      <name>Basket</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Panier</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I006aTemplate</template>
+    </component>
+  </template>
+  <template name="T0199dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0199d</className>
+    </component>
+    <component name="Name">
+      <name>Gift Basket</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Panier de cadeaux</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I006bTemplate</template>
+    </component>
+  </template>
+  <template name="T0117Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0117</className>
+    </component>
+    <component name="Name">
+      <name>Bella's Ball Guest Book</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Livre des invités du Bal de Bella</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I029Template</template>
+    </component>
+  </template>
+  <template name="M026Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M026</className>
+    </component>
+    <component name="Isometric">
+      <scaleX>-1</scaleX>
+    </component>
+    <component name="Name">
+      <name>Puddle Jumper Frog</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Puddle Jumper la grenouille</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I102Template</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="T0127aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0127a</className>
+    </component>
+    <component name="Name">
+      <name>Key</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Clef</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I033Template</template>
+    </component>
+  </template>
+  <template name="T0106aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106a</className>
+    </component>
+    <component name="Name">
+      <name>Butterfly </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+  </template>
+  <template name="T0106bTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106b</className>
+    </component>
+    <component name="Name">
+      <name>Butterfly </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+  </template>
+  <template name="T0106cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106c</className>
+    </component>
+    <component name="Name">
+      <name>Butterfly </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+  </template>
+  <template name="T0106dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106d</className>
+    </component>
+    <component name="Name">
+      <name>Butterfly </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+  </template>
+  <template name="T0106eTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106e</className>
+    </component>
+    <component name="Name">
+      <name>Butterfly </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+  </template>
+  <template name="T0106fTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106f</className>
+    </component>
+    <component name="Name">
+      <name>Butterfly </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+  </template>
+  <template name="T0107aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0107a</className>
+    </component>
+    <component name="Name">
+      <name>Ladybugs</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coccinelles</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023aTemplate</template>
+    </component>
+  </template>
+  <template name="M008aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M008Yellow</className>
+    </component>
+    <component name="Name">
+      <name>Citrustacks</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Citrustacks</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I066Template</template>
+    </component>
+  </template>
+  <template name="M008bTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M008Orange</className>
+    </component>
+    <component name="Name">
+      <name>Citrustacks</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Citrustacks</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I066Template</template>
+    </component>
+  </template>
+  <template name="M008cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M008Green</className>
+    </component>
+    <component name="Name">
+      <name>Citrustacks</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Citrustacks</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I066Template</template>
+    </component>
+  </template>
+  <template name="M008dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M008Blue</className>
+    </component>
+    <component name="Name">
+      <name>Citrustacks</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Citrustacks</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I066Template</template>
+    </component>
+  </template>
+  <template name="T0180Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0180</className>
+    </component>
+    <component name="Name">
+      <name>Skunk cabbage</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chou-putois</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>P048ProduceTemplate</template>
+    </component>
+  </template>
+  <template name="T0111aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0111a</className>
+    </component>
+    <component name="Name">
+      <name>Bella's Ball Invitation</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Invitation au Bal de Bella</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I026Template</template>
+    </component>
+  </template>
+  <template name="T0170aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170a</className>
+    </component>
+    <component name="Name">
+      <name>Seashells</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coquillages</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I040Template</template>
+    </component>
+  </template>
+  <template name="T0170bTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170b</className>
+    </component>
+    <component name="Name">
+      <name>Seashells</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coquillages</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I040Template</template>
+    </component>
+  </template>
+  <template name="T0170cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170c</className>
+    </component>
+    <component name="Name">
+      <name>Seashells</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coquillages</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I040Template</template>
+    </component>
+  </template>
+  <template name="M019Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M019</className>
+    </component>
+    <component name="Name">
+      <name>Lost Puppy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chiot perdu</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I048Template</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="T0060cTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0060c</className>
+    </component>
+    <component name="Name">
+      <name>
+        Lotus Flower
+      </name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fleur de lotus
+			</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I078Template</template>
+    </component>
+  </template>
+  <template name="T0034dTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0034d</className>
+    </component>
+    <component name="Name">
+      <name>Sticks</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Branches</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I079Template</template>
+    </component>
+  </template>
+  <template name="M003Template-Collectible" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M003</className>
+    </component>
+    <component name="Name">
+      <name>Tomtomme</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tyler le Tomtomme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I067Template</template>
+    </component>
+  </template>
+  <template name="M004Template-Collectible" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M004</className>
+    </component>
+    <component name="Name">
+      <name>Nix Darkling</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Nix Darkling</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I064Template</template>
+    </component>
+  </template>
+  <template name="Kiki" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M017</className>
+    </component>
+    <component name="Name">
+      <name>Kiki Tassel Mouse</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Kiki la Tassel Mouse</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I085Template</template>
+    </component>
+  </template>
+  <template name="M021aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M021</className>
+    </component>
+    <component name="Name">
+      <name>Bubble Turtle</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bubble Turtle</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I103Template</template>
+    </component>
+  </template>
+  <template name="T0036hTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0036h</className>
+    </component>
+    <component name="Name">
+      <name>Leaves - autumn variety</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Feuilles d'automne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I088Template</template>
+    </component>
+  </template>
+  <template name="T0116Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0116f</className>
+    </component>
+    <component name="Name">
+      <name>Paper</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papier</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I089aTemplate</template>
+    </component>
+  </template>
+  <template name="T0116fTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0116f</className>
+    </component>
+    <component name="Name">
+      <name>Sheet Music 2</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Partition</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I089Template</template>
+    </component>
+  </template>
+  <template name="T0116eTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0116e</className>
+    </component>
+    <component name="Name">
+      <name>Sheet Music 1</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Partition</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I089Template</template>
+    </component>
+  </template>
+  <template name="T0169Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0169</className>
+    </component>
+    <component name="Name">
+      <name>Brush</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Brosse</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I108Template</template>
+    </component>
+  </template>
+  <template name="T0169aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0169</className>
+    </component>
+    <component name="Name">
+      <name>Brush</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Brosse</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I108aTemplate</template>
+    </component>
+  </template>
+  <!-- OBJECTS THAT ACCEPT TRASH COMMAND -->
+  <template name="T0116bTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0116b</className>
+    </component>
+    <component name="Name">
+      <name>Tan Paper</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papier brun</ToolTipText>
+    </component>
+  </template>
+  <template name="T0267aTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0267a</className>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-100</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>7</gridFootY>
+      <gridRadius>2</gridRadius>
+    </component>
+    <component name="Name">
+      <name>Bramble Barricade</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Barrière de ronces</ToolTipText>
+    </component>
+  </template>
+  <template name="T0062aTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0062a</className>
+    </component>
+    <component name="Name">
+      <name>Dandelion</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pissenlit</ToolTipText>
+    </component>
+  </template>
+  <template name="T0062bTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0062b</className>
+    </component>
+    <component name="Name">
+      <name>Dandelion</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pissenlit</ToolTipText>
+    </component>
+  </template>
+  <template name="T0062gTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0062g</className>
+    </component>
+    <component name="Name">
+      <name>Dandelion Patch</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Touffe de pissenlits</ToolTipText>
+    </component>
+  </template>
+  <template name="T0062hTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0062h</className>
+    </component>
+    <component name="Name">
+      <name>Dandelion Patch</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Touffe de pissenlits</ToolTipText>
+    </component>
+  </template>
+  <template name="T0048bTemplate" template="TrashObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0195</className>
+    </component>
+    <component name="Name">
+      <name>Small Tree</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Petit arbre</ToolTipText>
+    </component>
+  </template>
+  <!-- ================ TRADER TEMPLATES ================ -->
+  <template name="T0246dTemplate" template="TradeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0246d</className>
+    </component>
+    <component name="TradeCommand">
+      <tradeDictionary>
+        <pair key="P007ProduceTemplate" value="I157aTemplate" />
+        <pair key="P037ProduceTemplate" value="I157bTemplate" />
+        <pair key="P033ProduceTemplate" value="I157cTemplate" />
+        <pair key="P004ProduceTemplate" value="I157dTemplate" />
+        <pair key="P014ProduceTemplate" value="I157eTemplate" />
+        <pair key="P030ProduceTemplate" value="I157fTemplate" />
+        <pair key="P020ProduceTemplate" value="I157gTemplate" />
+        <pair key="P023ProduceTemplate" value="I157hTemplate" />
+        <pair key="P051ProduceTemplate" value="I157iTemplate" />
+        <pair key="P009ProduceTemplate" value="I157jTemplate" />
+        <pair key="P010ProduceTemplate" value="I157kTemplate" />
+        <pair key="P038ProduceTemplate" value="I157lTemplate" />
+        <pair key="P016ProduceTemplate" value="I157mTemplate" />
+        <pair key="P035ProduceTemplate" value="I157nTemplate" />
+        <pair key="P018ProduceTemplate" value="I157oTemplate" />
+        <pair key="P043ProduceTemplate" value="I157pTemplate" />
+      </tradeDictionary>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Machine à teinture</ToolTipText>
+    </component>
+  </template>
+  <template name="BovoTemplate" template="AnimatedObjectTemplate">
+    <component name="Isometric">
+      <depthOffset>39.3</depthOffset>
+    </component>
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.commands.TradeCommand" name="TradeCommand">
+      <tradeDictionary>
+        <pair key="I046Template" value="I001aTemplate" />
+        <pair key="P051ProduceTemplate" value="I001bTemplate" />
+        <pair key="P010ProduceTemplate" value="I001cTemplate" />
+      </tradeDictionary>
+    </component>
+    <component type="components.MiniMapCharacterComponent" name="MiniMapCharacter">
+      <!--<className>CharacterMarker</className>-->
+      <scale>0.5</scale>
+    </component>
+  </template>
+  <template name="M001aTemplate" template="BovoTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M001a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bovo rose</ToolTipText>
+    </component>
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>M001a</identifier>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/npcs/magicalfriendsthumbnail.swf</fileName>
+      <className>M001a</className>
+    </component>
+  </template>
+  <template name="M001bTemplate" template="BovoTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M001b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bovo marron</ToolTipText>
+    </component>
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>M001b</identifier>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/npcs/magicalfriendsthumbnail.swf</fileName>
+      <className>M001b</className>
+    </component>
+  </template>
+  <template name="M001cTemplate" template="BovoTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M001c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bovo</ToolTipText>
+    </component>
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>M001c</identifier>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/npcs/magicalfriendsthumbnail.swf</fileName>
+      <className>M001c</className>
+    </component>
+  </template>
+  <template name="M025Template" template="TradeObjectTemplate">
+    <component type="components.IdleComponent" name="Idle" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0134</className>
+    </component>
+    <component name="TradeCommand">
+      <tradeDictionary>
+        <pair key="I001aTemplate" value="I001dTemplate" />
+        <pair key="I001bTemplate" value="I001eTemplate" />
+        <pair key="I001cTemplate" value="I001fTemplate" />
+      </tradeDictionary>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Baratte à beurre</ToolTipText>
+    </component>
+  </template>
+  <!-- summer camp totems world objects for Marta -->
+  <template name="T0611bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0611</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel du Volcan</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0612bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0612</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel du Nuage</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0613bTemplate" template="ObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0613</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel de la Colline</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0614bTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0614</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel du Fleuve</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0096Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/canterfarms.swf</fileName>
+      <className>T0096</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Puits</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="GiveCommand">
+      <item>I010aTemplate</item>
+    </component>
+    <component name="Isometric">
+      <depthOffset>0</depthOffset>
+      <xOffset>-25</xOffset>
+      <yOffset>0</yOffset>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Get Water">
+          <trigger>
+            <object type="questData.GiveItemTrigger">
+              <inventoryTemplate>I010aTemplate</inventoryTemplate>
+              <targetTemplate>T0096Template</targetTemplate>
+            </object>
+          </trigger>
+          <actions>
+            <object type="questData.AddMultipleInventoryAction">
+              <itemId>I010bTemplate</itemId>
+              <count>1</count>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0002bTemplate" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/canterfarms.swf</fileName>
+      <className>T0002b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tonneau d'eau</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="GiveCommand">
+      <item>I010aTemplate</item>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Get Water">
+          <trigger>
+            <object type="questData.GiveItemTrigger">
+              <inventoryTemplate>I010aTemplate</inventoryTemplate>
+              <targetTemplate>T0002bTemplate</targetTemplate>
+            </object>
+          </trigger>
+          <actions>
+            <object type="questData.AddMultipleInventoryAction">
+              <itemId>I010bTemplate</itemId>
+              <count>1</count>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0028aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/canterfarms.swf</fileName>
+      <className>T0028a</className>
+    </component>&gt;
+    <component name="Name"><name>Empty Water Bucket</name></component><component name="ToolTip"><ToolTipText>Seau vide</ToolTipText></component><component name="TakeCommand"><template>I010aTemplate</template></component></template>
+  <!--HNN Chibi Toys -->
+  <template name="T0662Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0662</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bryda Chibi Toy</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC001Template</item>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0663Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0663</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Shamal Chibi Toy</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC002Template</item>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0664Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0664</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rodin Chibi Toy</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC004Template</item>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0665Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0665</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lien Chibi Toy</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC006Template</item>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0666Template" template="GiveObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0666</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Blackie Chibi Toy</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC005Template</item>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+</things>

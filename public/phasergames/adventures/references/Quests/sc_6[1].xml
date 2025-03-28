@@ -1,0 +1,246 @@
+<adventures id="ADS-0000001214" description="Spring Carnival Wrap Up">
+  <adventure id="ADV-0000001869">
+    <description>Carnaval du Printemps - Quête 6 : Le manège</description>
+    <quest id="QUE-0000006382" targetZone="R010" visible="False">
+      <description unusedLocId="LOC-0000025393">Talk to Top Hat Tomtomme</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M003d</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasQuestCondition">
+            <questId>QUE-0000006383</questId>
+          </object>
+          <object type="questData.HasQuestCondition">
+            <questId>QUE-0000006385</questId>
+          </object>
+          <object type="questData.HasQuestCondition">
+            <questId>QUE-0000006386</questId>
+          </object>
+          <object type="questData.HasQuestCondition">
+            <questId>QUE-0000006387</questId>
+          </object>
+          <object type="questData.HasQuestCondition">
+            <questId>QUE-0000006388</questId>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merci de nous avoir tant aidés pour mettre en place le manège du Carnaval du Printemps ! J'ai presque fini de l'installer.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Il ne me reste qu'une petite chose à faire.</text>
+          </object>
+          <object type="questData.RemoveQuestAction">
+            <questId>QUE-0000006383</questId>
+          </object>
+          <object type="questData.RemoveQuestAction">
+            <questId>QUE-0000006385</questId>
+          </object>
+          <object type="questData.RemoveQuestAction">
+            <questId>QUE-0000006386</questId>
+          </object>
+          <object type="questData.RemoveQuestAction">
+            <questId>QUE-0000006387</questId>
+          </object>
+          <object type="questData.RemoveQuestAction">
+            <questId>QUE-0000006388</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006390</questId>
+          </object>
+        </actions>
+      </line>
+      <line description="Top Hat Tomtomme Reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M003d</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Entre d'autres codes du Carnaval du Printemps pour découvrir tous les chevaux de bois et compléter ton manège.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006383" visible="False">
+      <description unusedLocId="LOC-0000025389">SC_1 Sentinel</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.NullTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.NullAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006385" visible="False">
+      <description unusedLocId="LOC-0000025394">SC_2 Sentinel</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.NullTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.NullAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006386" visible="False">
+      <description unusedLocId="LOC-0000025395">SC_3 Sentinel</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.NullTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.NullAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006387" visible="False">
+      <description unusedLocId="LOC-0000025396">SC_4 Sentinel</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.NullTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.NullAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006388" visible="False">
+      <description unusedLocId="LOC-0000025397">SC_5 Sentinel</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.NullTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.NullAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006390" targetZone="R010">
+      <description>Manège terminé</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M003d</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.DialogueAction">
+            <text>Merveilleux, nous avons terminé !</text>
+          </object>
+          <object type="questData.PlayHeadsUpDisplayMovieClipAction">
+            <fileName>Flash/Adventures/Art/CutScenes/Carousel.swf</fileName>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>T0603_05Template</template>
+            <instanceIdentifier>startcarousel</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0603Template</template>
+            <zone>R010</zone>
+            <x>2</x>
+            <y>4</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006391</questId>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>T0598Template</template>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>T0601Template</template>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>T0602Template</template>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>T0599Template</template>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>T0600Template</template>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>1</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>2</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>3</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>4</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>5</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006391" targetZone="R010">
+      <description>Le Tomtomme au chapeau te remercie</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M003d</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.DialogueAction">
+            <text>C'était génial ! Maintenant que nous avons fini, tu peux prendre le manège et le placer n'importe où dans le monde de Bella Sara !</text>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>M003dTemplate</template>
+            <instanceIdentifier>tophat</instanceIdentifier>
+            <zone>R010</zone>
+          </object>
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>springcarnival/sc_6.xml</fileName>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

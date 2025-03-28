@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map tileWidth="80" tileHeight="40" tileDepth="60">
+  <files>
+    <file id="Lb001" fileName="flash/Adventures/Art/Tilesets/CottageRooms.swf"/>
+    <file id="Lb000" fileName="flash/Adventures/Art/Zones/R011.swf"/>
+  </files>
+  <grounds/>
+  <skins>
+    <skin id="Sk0000" file="Lb001" className="Overlay_ExitNE" scaleX="-1" scaleY="-1"/>
+  </skins>
+  <tiles>
+    <tile id="Ti001b" walkable="false" entities="WallTemplateSW">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="ExitToZone15d">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti002b" walkable="false" entities="WallTemplateSE">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="x" walkable="false">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="." walkable="true">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+  </tiles>
+  <backgrounds>
+    <background id="b00" file="Lb000" className="R011" left="0" top="0" width="1040" height="696"/>
+  </backgrounds>
+  <layout width="13" height="11">
+    <levels>
+      <level id="0">
+        <backgrounds width="1040" height="696" rows="1" columns="1" x="-80" y="-415">
+          <backgroundRow>b00</backgroundRow>
+        </backgrounds>
+        <levelRow>x,x,Ti002b,Ti002b,x,x,x,x,x,x,x,Ti002b,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>Ti000w,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>Ti000w,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+      </level>
+    </levels>
+  </layout>
+</map>

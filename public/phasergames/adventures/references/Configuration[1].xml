@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BSAConfiguration>
+  <debug>
+    <showCommand>false</showCommand>
+  </debug>
+  <timeService>
+    <dayLengthMilliseconds>180000</dayLengthMilliseconds>
+    <nightLengthMilliseconds>30000</nightLengthMilliseconds>
+  </timeService>
+  <localizedUserInterfaceService>
+    <uiTemplateFiles>
+      <fileSet path="Flash/Adventures/Templates">
+        <file>UI.pbelevel</file>
+      </fileSet>
+    </uiTemplateFiles>
+    <localizationFiles>
+      <fileSet path="Flash/Adventures/UI">
+        <file>shared.xml</file>
+      </fileSet>
+    </localizationFiles>
+  </localizedUserInterfaceService>
+  <zoneService>
+    <walker>
+      <!-- Normally this is PlayerTemplate, but let's try KittyAvatarTemplate-->
+      <avatarTemplateName>PlayerTemplate</avatarTemplateName>
+      <walkSpeedX>10</walkSpeedX>
+      <walkSpeedY>5</walkSpeedY>
+    </walker>
+    <zoneNamesFile>
+      <fileDesc path="Flash/Adventures/UI">ZoneNames.xml</fileDesc>
+    </zoneNamesFile>
+    <zoneTemplateFiles>
+      <fileSet path="Flash/Adventures/Templates">
+        <file>Detritus.pbelevel</file>
+        <file>NPCs.pbelevel</file>
+        <file>PlaceableObject.pbelevel</file>
+        <file>Plants.pbelevel</file>
+        <file>Player.pbelevel</file>
+        <file>Soil.pbelevel</file>
+        <file>WorldObject.pbelevel</file>
+        <file>Zone.pbelevel</file>
+      </fileSet>
+    </zoneTemplateFiles>
+    <mapFiles>
+      <fileSet path="Flash/Adventures/Maps">
+        <file name="R001">R001.xml</file>
+        <file name="R010">R010.xml</file>
+        <file name="R011">R011.xml</file>
+        <file name="R050">R050.xml</file>
+        <file name="Z001">Z001.xml</file>
+        <file name="Z002">Z002.xml</file>
+        <file name="Z003">Z003.xml</file>
+        <file name="Z004">Z004.xml</file>
+        <file name="Z005">Z005.xml</file>
+        <file name="Z006">Z006.xml</file>
+        <file name="Z007">Z007.xml</file>
+        <file name="Z008">Z008.xml</file>
+        <file name="Z009">Z009.xml</file>
+        <file name="Z010">Z010.xml</file>
+        <file name="Z011">Z011.xml</file>
+        <file name="Z012">Z012.xml</file>
+        <file name="Z013">Z013.xml</file>
+        <file name="Z015">Z015.xml</file>
+        <file name="Z016">Z016.xml</file>
+        <file name="Z022">Z022.xml</file>
+        <file name="Z023">Z023.xml</file>
+        <file name="Z025">Z025.xml</file>
+        <file name="Z026">Z026.xml</file>
+        <file name="Z027">Z027.xml</file>
+        <file name="Z028">Z028.xml</file>
+      </fileSet>
+    </mapFiles>
+  </zoneService>
+  <logService>
+    <!-- Actively logged events.-->
+    <logEvent id="2000" name="adventureBegin" active="true" />
+    <logEvent id="2001" name="adventureEnd" active="true" />
+    <logEvent id="2100" name="gameExit" active="true" />
+    <logEvent id="2101" name="gameLaunch" active="true" />
+    <logEvent id="2102" name="gameLoading" active="false" />
+    <logEvent id="2200" name="gameActivityGardening" active="false" />
+    <logEvent id="2201" name="zoneEntered" active="false" />
+    <logEvent id="2300" name="npcTalkedTo" active="false" />
+    <logEvent id="2400" name="questActivated" active="true" />
+    <logEvent id="2401" name="questBegin" active="false" />
+    <logEvent id="2402" name="questEnd" active="true" />
+    <logEvent id="2500" name="zoneExited" active="false" />
+    <logEvent id="2601" name="saveSanityFail" active="true" />
+    <logEvent id="2701" name="shopComplete" active="true" />
+  </logService>
+  <playerCharacterService>
+    <playerCharacterClassName>data.PlayerCharacter</playerCharacterClassName>
+    <playerTemplateFile>
+      <fileDesc path="Flash/Adventures/Templates">Player.pbelevel</fileDesc>
+    </playerTemplateFile>
+    <playerCharacterFile>
+      <fileDesc path="Flash/Adventures/FakeUser">PlayerCharacter.xml</fileDesc>
+    </playerCharacterFile>
+    <playerTemplateName>PlayerTemplate</playerTemplateName>
+    <playerInstanceName>playerAvatar</playerInstanceName>
+  </playerCharacterService>
+  <playerInventoryService>
+    <inventoryTemplateFiles>
+      <fileSet path="Flash/Adventures/Templates">
+        <file>Inventory.pbelevel</file>
+      </fileSet>
+    </inventoryTemplateFiles>
+    <playerInventoryFile>
+      <fileDesc path="Flash/Adventures/FakeUser">Inventory.pbelevel</fileDesc>
+    </playerInventoryFile>
+  </playerInventoryService>
+  <customizedAvatarService>
+    <avatarTemplateFiles>
+      <fileSet path="Flash/Adventures/Templates">
+        <file>Avatar.pbelevel</file>
+      </fileSet>
+    </avatarTemplateFiles>
+    <playerAvatarFile>
+      <fileDesc path="Flash/Adventures/FakeUser">Avatar.pbelevel</fileDesc>
+    </playerAvatarFile>
+  </customizedAvatarService>
+  <playerQuestStateService>
+    <questFileListFile>
+      <fileDesc path="Flash/Adventures/FakeUser">QuestFilesList.xml</fileDesc>
+    </questFileListFile>
+    <activatedQuestsFile>
+      <fileDesc path="Flash/Adventures/FakeUser">ActivatedQuests.xml</fileDesc>
+    </activatedQuestsFile>
+    <completedQuestsFile>
+      <fileDesc path="Flash/Adventures/FakeUser">Completed.xml</fileDesc>
+    </completedQuestsFile>
+  </playerQuestStateService>
+  <templateService>
+    <!-- The TemplateFinderService (nee CharacterFinderService) manages the locations of all templates that are loaded into various areas of this game.The templates in the global files contain the "what" and the zone pbelevel and map files indicate where the "what" is.-->
+    <globalTemplateFiles>
+      <!-- The fileSet's path attribute should end in just the directory name, without slash.-->
+      <fileSet path="Flash/Adventures/Templates">
+        <file>Detritus.pbelevel</file>
+        <file>NPCs.pbelevel</file>
+        <file>PlaceableObject.pbelevel</file>
+        <file>Plants.pbelevel</file>
+        <file>Player.pbelevel</file>
+        <file>Soil.pbelevel</file>
+        <file>WorldObject.pbelevel</file>
+        <file>Zone.pbelevel</file>
+      </fileSet>
+    </globalTemplateFiles>
+    <userTemplateFiles>
+      <fileSet path="Flash/Adventures/FakeUser">
+        <file>R001.pbelevel</file>
+        <file>R010.pbelevel</file>
+        <file>R011.pbelevel</file>
+        <file>R050.pbelevel</file>
+        <file>Z001.pbelevel</file>
+        <file>Z002.pbelevel</file>
+        <file>Z003.pbelevel</file>
+        <file>Z004.pbelevel</file>
+        <file>Z005.pbelevel</file>
+        <file>Z006.pbelevel</file>
+        <file>Z007.pbelevel</file>
+        <file>Z008.pbelevel</file>
+        <file>Z009.pbelevel</file>
+        <file>Z010.pbelevel</file>
+        <file>Z011.pbelevel</file>
+        <file>Z012.pbelevel</file>
+        <file>Z013.pbelevel</file>
+        <file>Z015.pbelevel</file>
+        <file>Z016.pbelevel</file>
+        <file>Z022.pbelevel</file>
+        <file>Z023.pbelevel</file>
+        <file>Z025.pbelevel</file>
+        <file>Z026.pbelevel</file>
+        <file>Z027.pbelevel</file>
+        <file>Z028.pbelevel</file>
+      </fileSet>
+    </userTemplateFiles>
+  </templateService>
+  <questService>
+    <questFileRootDirectory>Flash/Adventures/Quests</questFileRootDirectory>
+  </questService>
+  <tokenService>
+    <tokenFile>
+      <fileDesc path="Flash/Adventures/FakeUser">Tokens.xml</fileDesc>
+    </tokenFile>
+  </tokenService>
+  <shopkeeperService>
+    <shopFileSet path="Flash/Adventures/Shops">
+      <shopFile name="avatarCreation">avatarCreation.xml</shopFile>
+      <shopFile name="Shop1">Shop1.xml</shopFile>
+      <shopFile name="shop2">Shop2.xml</shopFile>
+      <shopFile name="FurnitureShop">FurnitureShop.xml</shopFile>
+      <shopFile name="MagicalfriendShop">MagicalfriendShop.xml</shopFile>
+      <shopFile name="BookShop">BookShop.xml</shopFile>
+    </shopFileSet>
+  </shopkeeperService>
+</BSAConfiguration>

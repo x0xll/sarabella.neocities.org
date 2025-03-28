@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map>
+  <location identifier="R001" useMiniMap="false" miniMapTileWidth="16" miniMapTileHeight="8">Maisonnette de Canter</location>
+  <location identifier="R010" useMiniMap="false" miniMapTileWidth="16" miniMapTileHeight="8">Le Théâtre</location>
+  <location identifier="R011" useMiniMap="false" miniMapTileWidth="16" miniMapTileHeight="8">Cabane de Wildscape</location>
+  <location identifier="R050" useMiniMap="false" miniMapTileWidth="16" miniMapTileHeight="8">Ecurie des Fermes de Canter</location>
+  <location identifier="Z001" useMiniMap="true" miniMapTileWidth="16" miniMapTileHeight="8">Fermes de Canter</location>
+  <location identifier="Z002" useMiniMap="true" miniMapTileWidth="15.7" miniMapTileHeight="7.8">Promenade de Rolandsgaard</location>
+  <location identifier="Z003" useMiniMap="true" miniMapTileWidth="16" miniMapTileHeight="8.25">Entrée de la salle de bal</location>
+  <location identifier="Z004" useMiniMap="true" miniMapTileWidth="13" miniMapTileHeight="6.5">Salle du jardin</location>
+  <location identifier="Z005" useMiniMap="true" miniMapTileWidth="21.6" miniMapTileHeight="10">Salle de la fontaine</location>
+  <location identifier="Z006" useMiniMap="true" miniMapTileWidth="18" miniMapTileHeight="9">Salle royale</location>
+  <location identifier="Z007" useMiniMap="true" miniMapTileWidth="14.4" miniMapTileHeight="7.2">Place de la fontaine</location>
+  <location identifier="Z008" useMiniMap="true" miniMapTileWidth="11" miniMapTileHeight="7">Allée de Bagatella</location>
+  <location identifier="Z009" useMiniMap="true" miniMapTileWidth="11" miniMapTileHeight="7">Rue des Artisans</location>
+  <location identifier="Z010" useMiniMap="true" miniMapTileWidth="12.3" miniMapTileHeight="6">La Lisière</location>
+  <location identifier="Z011" useMiniMap="true" miniMapTileWidth="10.7" miniMapTileHeight="5.2">Le Sentier</location>
+  <location identifier="Z012" useMiniMap="true" miniMapTileWidth="10" miniMapTileHeight="5">Collines de Canter</location>
+  <location identifier="Z013" useMiniMap="true" miniMapTileWidth="10.3" miniMapTileHeight="5">Overgaard Skylands</location>
+  <location identifier="Z015" useMiniMap="true" miniMapTileWidth="15.6" miniMapTileHeight="7.8">Orée de la forêt de Darkcomb</location>
+  <location identifier="Z016" useMiniMap="true" miniMapTileWidth="11.2" miniMapTileHeight="6">Forêt de Darkcomb</location>
+  <location identifier="Z022" useMiniMap="true" miniMapTileWidth="10.8" miniMapTileHeight="5.8">Rive ouest de la rivière Fastalon</location>
+  <location identifier="Z023" useMiniMap="true" miniMapTileWidth="12.1" miniMapTileHeight="6.2">La Vallée des Roses</location>
+  <location identifier="Z025" useMiniMap="true" miniMapTileWidth="11" miniMapTileHeight="5">Caverne de Boda</location>
+  <location identifier="Z026" useMiniMap="true" miniMapTileWidth="21.6" miniMapTileHeight="11">Antre des loups</location>
+  <location identifier="Z027" useMiniMap="true" miniMapTileWidth="17" miniMapTileHeight="8">Petalhome</location>
+  <location identifier="Z028" useMiniMap="true" miniMapTileWidth="20.5" miniMapTileHeight="10.1">Grotte du désert</location>
+</map>
