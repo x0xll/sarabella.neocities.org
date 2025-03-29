@@ -1,3 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <root>
-
+		<unicode>false</unicode>
+	
+		<titleTxt><FONT SIZE="20">Marvelous Magic Match</FONT></titleTxt>
+		<txtMarvelousTitle><FONT SIZE="60"><B>Marvelous,</B></FONT></txtMarvelousTitle>
+		<txtMagicTitle><FONT SIZE="60"><B>Magic</B></FONT></txtMagicTitle>
+		<txtMatchTitle><FONT SIZE="60"><B>Match</B></FONT></txtMatchTitle>
+		
+		<playBtnTxt><FONT SIZE="20"><B>Play</B></FONT></playBtnTxt>
+		<helpBtnTxt><FONT SIZE="20"><B>Help</B></FONT></helpBtnTxt>
+		
+		<howPlayTxt><FONT SIZE="60"><P>How to Play</P></FONT></howPlayTxt>
+		<howPlaySubTxtA>
+			<FONT SIZE="30"><B>Use the wand to click on one of the nine boxes</B></FONT>
+		</howPlaySubTxtA>
+		<howPlaySubTxtB>
+			<FONT SIZE="30"><B>Use your wand to click on five of the nine boxes. &#13; Find three identical prizes and you can keep one.</B></FONT>
+		</howPlaySubTxtB>
+		<howPlaySubTxtC>
+			<FONT SIZE="30"><B>Use your wand to click on five of the nine boxes. &#13; Find three identical prizes and you can keep one. &#13; Remember that you can only play once per day!</B></FONT>
+		</howPlaySubTxtC>
+		
+		<instructionsTxt>
+			<FONT SIZE="12"><P>Click on the boxes with your wand to reveal the prizes inside. &#13; If you find three that match, you get to keep one!</P></FONT>
+		</instructionsTxt>
+		
+		<boxesRemainTxt>
+			<FONT SIZE="24"><B>Number of boxes left to open:</B></FONT>
+		</boxesRemainTxt>
+		
+		<resultLossTxt>
+			<FONT SIZE="16"><P>No luck! That's okay. &#13; Come back tomorrow and play again!</P></FONT>
+		</resultLossTxt>
+		<resultCommonTxt>
+			<FONT SIZE="16"><P>You won a 0. &#13; Well done! &#13; Come back tomorrow and play again!</P></FONT>
+		</resultCommonTxt>
+		<resultUncommonTxt>
+			<FONT SIZE="16"><P>You won a 0. &#13; You don't see one of those every day! &#13; Come back tomorrow and play again!</P></FONT>
+		</resultUncommonTxt>
+		<resultRareTxt>
+			<FONT SIZE="16"><P>You won a 0. &#13; It's a very rare and special prize! &#13; Come back tomorrow and play again!</P></FONT>
+		</resultRareTxt>
+		
+		<cottageBtnTxt><FONT SIZE="20"><B>Cottage</B></FONT></cottageBtnTxt>
+		
+		<playedTodayTxt>
+			<FONT SIZE="16"><P>Sorry ! You already played today.  &#13; Come back tomorrow and play again!</P></FONT>
+		</playedTodayTxt>
 </root>
