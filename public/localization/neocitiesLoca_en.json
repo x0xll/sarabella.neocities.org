@@ -89,7 +89,7 @@
     "jumpinggame_wip_warning": "Level 3 still being recreated.",
     "jumpinggame_warning": "The game can be quite laggy at times.",
 
-    "cottage_warning": "The objects are not yet added back in the cottage or gallery.",
+    "cottage_warning": "The objects are not yet added back in the cottage or gallery. You will need to right click the game and hit play to get past the loading screen.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
