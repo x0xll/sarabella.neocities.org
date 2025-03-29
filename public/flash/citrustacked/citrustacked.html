@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title data-il8n="game_citrustacked">Citrustacked</title>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="/ruffle/ruffle.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref()">
+        <script src="/header.js"></script>
+
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <p data-il8n="citrustacked_warning"></p>
+        </div> 
+        
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+        </div>
+
+        <div class="footer">
+            <a href="/index.html" class="global-lowernav-link">Home</a> |
+            <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link">Wiki Page</a>
+        </div>
+
+        <script src="/flags.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '520';
+          swfPlayer.width = '885';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'citrustacked.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+        
+    </body>
+</html>

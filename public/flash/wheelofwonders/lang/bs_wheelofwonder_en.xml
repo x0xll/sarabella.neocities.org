@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<unicode>True</unicode>
+	
+	<titleTxt><FONT SIZE="30"><p>Wheel</p><p>of</p><p>Wonders</p></FONT></titleTxt>
+	<helpBtnTxt><FONT SIZE="28"><b>Help</b></FONT></helpBtnTxt>
+	<playBtnTxt><FONT SIZE="28"><b>Play</b></FONT></playBtnTxt>
+	
+	<helpscnA><FONT SIZE="24"><p>Spend horseshoes to spin the wheel.</p></FONT></helpscnA>
+	<helpscnB><FONT SIZE="24"><p>Spin the wheel to win prizes.</p></FONT></helpscnB>
+	<helpscnC><FONT SIZE="24"><p>View your prizes in My Things.</p></FONT></helpscnC>
+
+	<spinTxt><FONT SIZE="20"><b><p>Spin</p><p>the wheel</p></b></FONT></spinTxt>
+    <spendTxt><FONT SIZE="26"><b>Are you sure?</b></FONT></spendTxt>
+    <redeemTxt><FONT SIZE="18"><b><p>Receive </p><p>your prize</p></b></FONT></redeemTxt>
+    <addPrizeTxt><FONT SIZE="20"><b>Your prize was added to your Knick Knacks in My Things.</b></FONT></addPrizeTxt>
+
+    <freeSpinTxt><FONT SIZE="22"><p>Free spin!</p></FONT></freeSpinTxt>
+	<winPrizeTxt><FONT SIZE="18"><b>You won the prize 0!</b></FONT></winPrizeTxt>
+	<winFreeSpinTxt><FONT SIZE="26"><b>You won a free spin!</b></FONT></winFreeSpinTxt>
+	<winInspirationTxt><FONT SIZE="26"><b>You won an inspiration!</b></FONT></winInspirationTxt>
+    
+	<yesTxt><FONT SIZE="26"><b>Yes</b></FONT></yesTxt>
+    <noTxt><FONT SIZE="26"><b>No</b></FONT></noTxt>
+    <okTxt><FONT SIZE="26"><b>OK</b></FONT></okTxt>
+	<myThingsTxt><FONT SIZE="15"><b>My Things</b></FONT></myThingsTxt>
+	
+	<noHorseshoeTxt><FONT SIZE="20"><b>You don't have enough horseshoes.</b></FONT></noHorseshoeTxt>
+</root>

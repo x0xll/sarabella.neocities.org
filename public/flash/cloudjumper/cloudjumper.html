@@ -14,6 +14,11 @@
         <script src="/header.js"></script>
         
         <script>
+          // Gets the correct swf file from url
+          const searchQueryString = window.location.search;
+          const urlParameters = new URLSearchParams(searchQueryString);
+          versionFile = urlParameters.get('version')
+
           window.RufflePlayer = {
             config: {
               autoplay: "on",
@@ -40,7 +45,7 @@
           swfPlayer.height = '521';
           swfPlayer.width = '887';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'cloudjumper.swf';
+          swfPlayer.src = 'cloudjumper' + versionFile + '.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
           if (locale != "en")
             swfPlayer.setAttribute("flashvars", `locale=${locale}`);

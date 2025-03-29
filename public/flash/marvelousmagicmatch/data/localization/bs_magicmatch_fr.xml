@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+		<unicode>false</unicode>
+	
+		<titleTxt><FONT SIZE="20">Trois, c'est gagné!</FONT></titleTxt>
+		<txtMarvelousTitle><FONT SIZE="60"><B>Trois,</B></FONT></txtMarvelousTitle>
+		<txtMagicTitle><FONT SIZE="60"><B>c'est</B></FONT></txtMagicTitle>
+		<txtMatchTitle><FONT SIZE="60"><B>gagné!</B></FONT></txtMatchTitle>
+		
+		<playBtnTxt><FONT SIZE="20"><B>Jouer</B></FONT></playBtnTxt>
+		<helpBtnTxt><FONT SIZE="20"><B>Aide</B></FONT></helpBtnTxt>
+		
+		<howPlayTxt><FONT SIZE="60"><P>Comment jouer</P></FONT></howPlayTxt>
+		<howPlaySubTxtA>
+			<FONT SIZE="30"><B>Utilise ta baguette pour cliquer sur cinq des neuf boîtes.</B></FONT>
+		</howPlaySubTxtA>
+		<howPlaySubTxtB>
+			<FONT SIZE="30"><B>Utilise ta baguette pour cliquer sur cinq des neuf boîtes. &#13; Trouve trois objets identiques et tu peux garder ce prix.</B></FONT>
+		</howPlaySubTxtB>
+		<howPlaySubTxtC>
+			<FONT SIZE="30"><B>Utilise ta baguette pour cliquer sur cinq des neuf boîtes. &#13; Trouve trois objets identiques et tu peux garder ce prix. &#13; Souviens-toi que tu ne peux jouer qu'une fois par jour!</B></FONT>
+		</howPlaySubTxtC>
+		
+		<instructionsTxt>
+			<FONT SIZE="12"><P>Clique sur les boîtes avec ta baguette pour révéler les prix qui s'y cachent. &#13; Si tu en trouves trois identiques, tu as le droit d'en garder un!</P></FONT>
+		</instructionsTxt>
+		
+		<boxesRemainTxt>
+			<FONT SIZE="24"><B>Number of boxes left to open:</B></FONT>
+		</boxesRemainTxt>
+		
+		<resultLossTxt>
+			<FONT SIZE="16"><P>Pas de chance! Ce n'est pas grave. &#13; Reviens tenter ta chance demain!</P></FONT>
+		</resultLossTxt>
+		<resultCommonTxt>
+			<FONT SIZE="16"><P>Tu as gagné le prix 0. &#13; Bien joué! &#13; Reviens tenter ta chance demain!</P></FONT>
+		</resultCommonTxt>
+		<resultUncommonTxt>
+			<FONT SIZE="16"><P>Tu as gagné le prix 0. &#13; On ne voit pas ça tous les jours! &#13; Reviens tenter ta chance demain!</P></FONT>
+		</resultUncommonTxt>
+		<resultRareTxt>
+			<FONT SIZE="16"><P>Tu as gagné le prix 0. &#13; C'est un prix très rare et très spécial! &#13; Reviens tenter ta chance demain!</P></FONT>
+		</resultRareTxt>
+		
+		<cottageBtnTxt><FONT SIZE="20"><B>Sortir</B></FONT></cottageBtnTxt>
+		
+		<playedTodayTxt>
+			<FONT SIZE="16"><P>Désolé ! Tu as déjà joué aujourd'hui.  &#13; Reviens tenter ta chance demain!</P></FONT>
+		</playedTodayTxt>
+		
+		
+</root>
