@@ -6,6 +6,11 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
+
+        <!-- TODO: Do we want/need to load all the files here? 
+        --- Cause we may have A LOT of them by the end of the project
+        --- Should search if we can load them based on needs 
+        --- Directly from the other .js files-->
         <script src="./scripts/common/loaders/loaderUtils.js"></script>
         <script src="./scripts/common/parsers/parserUtils.js"></script>
         <script src="./scripts/common/loadScreen.js"></script>
@@ -35,6 +40,10 @@
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
                 // Gets lang file
+                // TODO: Link to loca
+                // We will need to figure out the best way to handle this,
+                // Considering we probably will have multiple loca files
+                // For different things (quests, items, ui, etc.)
                 /*
                 loadLanguagePref(false); 
                 lang = getCurrentLanguageCode()
@@ -57,8 +66,7 @@
                     langData = myObj
                 }
                 xmlHttp.open("GET", `./lang/${lang}.json`);
-                xmlHttp.send();*/
-                
+                xmlHttp.send();*/          
 
                 let config = {
                     parent: "gameDiv",
