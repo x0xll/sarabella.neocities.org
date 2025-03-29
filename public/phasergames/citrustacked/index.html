@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Citrustacked</title>
+        <title data_il8n="game_citrustacked_wip">Citrustacked</title>
         <link rel="icon" href="/images/favicons/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
@@ -21,6 +21,14 @@
 
     <body style="text-align: center;"  onload="loadLanguagePref()">
         <script src="/header.js"></script>
+
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p data-il8n="citrustacked_wip_warning">
+              Story mode still being recreated.
+            </p>
+          </div> 
+
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
                 // Gets lang file
@@ -79,9 +87,8 @@
         </div>
         
         <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link">Wiki Page</a> |
-            <a href="https://github.com/Gridloch/bellasarajumpinggame" class="global-lowernav-link">GitHub</a>
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+            <a href="https://bellasara.wiki.gg/wiki/Citrustacked" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
         </div>
 
         <script src="/flags.js"></script>

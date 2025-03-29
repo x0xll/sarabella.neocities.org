@@ -78,39 +78,6 @@ class LevelOne extends Phaser.Scene
         // Level Reference
         // this.add.image(0, 0, 'Level1').setOrigin(0, 0).setAlpha(.6) 
 
-        this.displayTxtStyle = 
-        {
-            font: "italic 32px StempelGaramond",
-            color: "white",
-            stroke: "rgba(110, 195, 221, 20)",
-            strokeThickness: 3,
-            align: "center"
-        }
-
-        // Display
-        this.add.image(444, 30, 'scoreBoard').setScrollFactor(0) 
-        // Horseshoe Display
-        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
-        this.horseshoeText.text = this.horseshoes + " x ";
-        this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
-        // Score Display
-        this.scoreNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
-        this.scoreNameText.text = langData.score;
-        this.scoreNameText.setPosition(445-this.scoreNameText.width/2, 18-this.scoreNameText.height/2);
-
-        this.scoreText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
-        this.scoreText.text = this.score;
-        this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
-        // Clock
-        this.clock.start();
-        // Display
-        this.clockNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
-        this.clockNameText.text = langData.time;
-        this.clockNameText.setPosition(570-this.clockNameText.width/2, 18-this.clockNameText.height/2);
-        this.timerText = this.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
-        this.timerText.text = "0:00";
-        this.timerText.setPosition(575-this.timerText.width/2, 40-this.timerText.height/2);
-
         // Background Elements
         this.add.sprite(165, 285, 'backgroundObjects', 'bush').setAngle(3)
         this.add.sprite(95, 285, 'backgroundObjects', 'startGateBack')
@@ -222,6 +189,7 @@ class LevelOne extends Phaser.Scene
         this.horse.setVelocityX(this.canterSpeed);
         this.horse.body.setSize(150, 105, false).setOffset(70, 95);
         this.horse.play('canter')
+        this.data.canterSound.play()
 
 
         // Camera
@@ -499,6 +467,39 @@ class LevelOne extends Phaser.Scene
 
 
         // UI
+        this.displayTxtStyle = 
+        {
+            font: "italic 32px StempelGaramond",
+            color: "white",
+            stroke: "rgba(110, 195, 221, 20)",
+            strokeThickness: 3,
+            align: "center"
+        }
+
+        // Display
+        this.add.image(444, 30, 'scoreBoard').setScrollFactor(0) 
+        // Horseshoe Display
+        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
+        this.horseshoeText.text = this.horseshoes + " x ";
+        this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
+        // Score Display
+        this.scoreNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.scoreNameText.text = langData.score;
+        this.scoreNameText.setPosition(445-this.scoreNameText.width/2, 18-this.scoreNameText.height/2);
+
+        this.scoreText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
+        this.scoreText.text = this.score;
+        this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
+        // Clock
+        this.clock.start();
+        // Display
+        this.clockNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.clockNameText.text = langData.time;
+        this.clockNameText.setPosition(570-this.clockNameText.width/2, 18-this.clockNameText.height/2);
+        this.timerText = this.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
+        this.timerText.text = "0:00";
+        this.timerText.setPosition(575-this.timerText.width/2, 40-this.timerText.height/2);
+
         const UI = this.add.image(443, 234, 'UI').setScrollFactor(0)
         // Music button
         const musicButton = this.add.sprite(871, 453, 'music_button', 'music_on').setInteractive({ pixelPerfect: true }).setScale(0.7).setScrollFactor(0).setFrame(`music_${data.playMusic ? 'on' : 'off'}`);
@@ -562,9 +563,11 @@ class LevelOne extends Phaser.Scene
         // Animation
         if (this.horseMovement === this.horseMovements.skidding) {
             this.data.runningSound.stop()
+            this.data.canterSound.stop()
             // Start slide animation
             if (!this.horse.frame.name.includes('slide')) {
                 this.horse.play('slideStart')
+                this.data.buttslideSound.play()
                 this.skidLoop = 0
                 this.horse.setVelocityX(this.skidSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
@@ -586,6 +589,8 @@ class LevelOne extends Phaser.Scene
         }
         else if (this.horseMovement === this.horseMovements.jumping) {
             this.data.runningSound.stop()
+            this.data.canterSound.stop()
+            this.data.buttslideSound.stop()
             // Play jump animation
             if (!this.horse.frame.name.includes('jump')) {
                 this.horse.play('jump')
@@ -649,6 +654,8 @@ class LevelOne extends Phaser.Scene
         }
         else if (this.horseMovement === this.horseMovements.galloping) {
             if (!this.horse.frame.name.includes('gallop')) {
+                this.data.canterSound.stop()
+                this.data.buttslideSound.stop()
                 this.horse.setVelocityX(this.gallopSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
                 this.horse.play('gallop')
@@ -657,6 +664,8 @@ class LevelOne extends Phaser.Scene
         }
         else if (this.horseMovement === this.horseMovements.backwards) {
             if (!this.horse.frame.name.includes('gallop')) {
+                this.data.canterSound.stop()
+                this.data.buttslideSound.stop()
                 this.horse.setVelocityX(-this.gallopSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
                 this.horse.play('gallop')
@@ -665,10 +674,12 @@ class LevelOne extends Phaser.Scene
         }
         else if (this.horseMovement === this.horseMovements.cantering) {
             this.data.runningSound.stop()
+            this.data.buttslideSound.stop()
             if (!this.horse.frame.name.includes('canter')) {
                 this.horse.setVelocityX(this.canterSpeed);
                 this.horse.body.setSize(150, 105, false).setOffset(70, 95);
                 this.horse.play('canter')
+                this.data.canterSound.play()
             }
         }
 
@@ -684,48 +695,63 @@ class LevelOne extends Phaser.Scene
                         switch (gem.frame.name) {
                             case "gemBlue5":
                                 points += 5
+                                this.data.blueGemSound.play()
                                 break;
                             case "gemPink10":
                                 points += 10
+                                this.data.pinkGemSound.play()
                                 break;
                             case "gemYellow15":
                                 points += 15
+                                this.data.yellowGemSound.play()
                                 break;
                             case "gemBlue20":
                                 points += 20
+                                this.data.blueGemSound.play()
                                 break;
                             case "gemPink25":
                                 points += 25
+                                this.data.pinkGemSound.play()
                                 break;
                             case "gemYellow30":
                                 points += 30
+                                this.data.yellowGemSound.play()
                                 break;
                             case "gemBlue35":
                                 points += 35
+                                this.data.blueGemSound.play()
                                 break;
                             case "gemPink40":
                                 points += 40
+                                this.data.pinkGemSound.play()
                                 break;
                             case "gemYellow45":
                                 points += 45
+                                this.data.yellowGemSound.play()
                                 break;
                             case "gemBlue50":
                                 points += 50
+                                this.data.blueGemSound.play()
                                 break;
                             case "gemPink55":
                                 points += 55
+                                this.data.pinkGemSound.play()
                                 break;
                             case "gemYellow60":
                                 points += 60
+                                this.data.yellowGemSound.play()
                                 break;
                             case "gemBlue65":
                                 points += 65
+                                this.data.blueGemSound.play()
                                 break;
                             case "gemPink70":
                                 points += 70
+                                this.data.pinkGemSound.play()
                                 break;
                             case "gemYellow75":
                                 points += 75
+                                this.data.yellowGemSound.play()
                                 break;
                         
                             default:
@@ -761,6 +787,7 @@ class LevelOne extends Phaser.Scene
                         this.horseshoes += 1
                         this.horseshoeText.text = this.horseshoes + " x ";
                         this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
+                        this.data.horseshoeSound.play()
                     }
             },
             null,
