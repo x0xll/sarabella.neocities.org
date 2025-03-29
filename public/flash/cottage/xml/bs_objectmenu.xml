@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-	<item itid="881" menuid="3" link="/room.aspx?roomId=16" />
-	<item itid="635" menuid="3" link="/room.aspx?roomId=8" />
-	<item itid="636" menuid="3" link="/room.aspx?roomId=9" />
-	<item itid="637" menuid="3" link="/room.aspx?roomId=10" />
-	<item itid="725" menuid="3" link="/room.aspx?roomId=11" />
-  <item itid="886" menuid="3" link="/room.aspx?roomId=12" />
-  <item itid="872" menuid="3" link="/room.aspx?roomId=13" />
-  <item itid="865" menuid="3" link="/room.aspx?roomId=14" />
-  <item itid="899" menuid="3" link="/room.aspx?roomId=15" />
-  <item itid="905" menuid="3" link="/room.aspx?roomId=17" />
-  <item itid="906" menuid="3" link="/room.aspx?roomId=18" />
-  <item itid="907" menuid="3" link="/room.aspx?roomId=19" />
-  <item itid="908" menuid="3" link="/room.aspx?roomId=20" />
+	<item itid="881" menuid="3" link="/rooms.html?roomId=16" />
+	<item itid="635" menuid="3" link="/rooms.html?roomId=8" />
+	<item itid="636" menuid="3" link="/rooms.html?roomId=9" />
+	<item itid="637" menuid="3" link="/rooms.html?roomId=10" />
+	<item itid="725" menuid="3" link="/rooms.html?roomId=11" />
+  <item itid="886" menuid="3" link="/rooms.html?roomId=12" />
+  <item itid="872" menuid="3" link="/rooms.html?roomId=13" />
+  <item itid="865" menuid="3" link="/rooms.html?roomId=14" />
+  <item itid="899" menuid="3" link="/rooms.html?roomId=15" />
+  <item itid="905" menuid="3" link="/rooms.html?roomId=17" />
+  <item itid="906" menuid="3" link="/rooms.html?roomId=18" />
+  <item itid="907" menuid="3" link="/rooms.html?roomId=19" />
+  <item itid="908" menuid="3" link="/rooms.html?roomId=20" />
   <item itid="366" menuid="1" link="/storybooks.aspx?object_id=366" />
 	<item itid="367" menuid="1" link="/storybooks.aspx?object_id=367" />
 	<item itid="368" menuid="1" link="/storybooks.aspx?object_id=368" />
