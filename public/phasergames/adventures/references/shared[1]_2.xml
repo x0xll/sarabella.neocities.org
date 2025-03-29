@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<items>
+  <!--Dialogue-->
+  <dialogueChoiceText>De quoi veux-tu parler ? &lt;br/&gt; </dialogueChoiceText>
+  <dialogueDefault>...</dialogueDefault>
+  <dialogueShop>Boutique</dialogueShop>
+  <dialogueCancel>Aucune importance.</dialogueCancel>
+  <dialogueContinue>Continuer</dialogueContinue>
+  <!--Inventory-->
+  <inventoryFilterSeeds>Graines seulement</inventoryFilterSeeds>
+  <inventoryFilterAll>Tous mes objets</inventoryFilterAll>
+  <inventoryFilterSpecial>Objets spéciaux seulement</inventoryFilterSpecial>
+  <inventoryFilterOther>Autres choses</inventoryFilterOther>
+  <inventoryFilterGive>Donner</inventoryFilterGive>
+  <inventoryFilterUse>Utiliser</inventoryFilterUse>
+  <inventoryFilterPlaceable>Uniquement les objets positionnables</inventoryFilterPlaceable>
+  <inventoryFilterCard>Seulement les cartes chevaux</inventoryFilterCard>
+  <inventoryFilterClothing>Vêtements seulement</inventoryFilterClothing>
+  <!--Hud-->
+  <hudSave>Sauvegarder</hudSave>
+  <hudLevelUp>Félicitations!&lt;br/&gt;Le niveau de ta magie a augmenté</hudLevelUp>
+  <hudLevelUpPunctuation>!</hudLevelUpPunctuation>
+  <hudChangeClothes>Changer de vêtements</hudChangeClothes>
+  <!--HUD Tooltips-->
+  <hudMapTooltip>Carte</hudMapTooltip>
+  <hudInventoryTooltip>Inventaire</hudInventoryTooltip>
+  <hudJournalTooltip>Journal</hudJournalTooltip>
+  <hudHelpTooltip>Aide</hudHelpTooltip>
+  <hudSkillTreeTooltip>Arbre de la Magie</hudSkillTreeTooltip>
+  <!--Quest Journal-->
+  <journalGiver>Cherche :</journalGiver>
+  <journalLocation>Lieu :</journalLocation>
+  <journalGoal>But :</journalGoal>
+  <journalGetPremium>Obtiens des aventures premium</journalGetPremium>
+  <journalCompleteLeftHeader>Félicitations ! Tu as terminé de remplir ton journal !</journalCompleteLeftHeader>
+  <journalCompleteLeftBody>Vérifie ta Carte du Monde pour y découvrir les aventures qui t'attendent.</journalCompleteLeftBody>
+  <journalCompleteRightHeader>Obtiens des aventures Premium</journalCompleteRightHeader>
+  <journalCompleteRightBody>Cherche les codes secrets sur les produits de la gamme Bella Sara pour débloquer des merveilles.</journalCompleteRightBody>
+  <journalCompleteButton>Page des aventures Premium</journalCompleteButton>
+  <!--Avatar Customization -->
+  <CustomizationDone>Terminé !</CustomizationDone>
+  <CustomizationBuy>Acheter</CustomizationBuy>
+  <CustomizationSell>Vendre</CustomizationSell>
+  <CustomizationDye>Teindre</CustomizationDye>
+  <CustomizationWear>Porter (vêtement)</CustomizationWear>
+  <CustomizationTakeOff>Retirer</CustomizationTakeOff>
+  <CustomizationShirts>Chemises</CustomizationShirts>
+  <CustomizationPants>Pantalons et jupes</CustomizationPants>
+  <CustomizationShoes>Chaussures</CustomizationShoes>
+  <CustomizationHair>Coiffures</CustomizationHair>
+  <CustomizationEyes>Yeux</CustomizationEyes>
+  <CustomizationSkins>Peau</CustomizationSkins>
+  <CustomizationAccessories>Accessoires</CustomizationAccessories>
+  <!--Trade-->
+  <tradeMyThings>Mes objets à vendre</tradeMyThings>
+  <!-- Loading and Saving -->
+  <loadingPleaseWait>Chargement en cours... Patientez...</loadingPleaseWait>
+  <savingPleaseWait>Sauvegarde en cours... Patientez...</savingPleaseWait>
+  <invalidGameSession>Tes données de jeu ont changé. Tu auras peut-être perdu certains progrès. Pour continuer, referme cette fenêtre et relance le jeu.</invalidGameSession>
+  <!-- Got Item Notification -->
+  <horseshoeNotification>%DELTA% fers à cheval</horseshoeNotification>
+  <!-- Context -->
+  <contextApply>Utilise</contextApply>
+  <contextAvatar>Changer de vêtements</contextAvatar>
+  <contextBrush>Brosse</contextBrush>
+  <contextChangeVariant>Change </contextChangeVariant>
+  <contextCollect>Rassemble</contextCollect>
+  <contextGive>Donne</contextGive>
+  <contextMove>Déplace</contextMove>
+  <contextInteract>Interagis</contextInteract>
+  <contextPlayMovieClip>Joue le film</contextPlayMovieClip>
+  <contextRotate>Fais tourner</contextRotate>
+  <contextShop>Achète/Vends</contextShop>
+  <contextStack>Empile</contextStack>
+  <contextSwap>Intervertis</contextSwap>
+  <contextTake>Ramasse</contextTake>
+  <contextTalk>Parle</contextTalk>
+  <contextTrade>Echange</contextTrade>
+  <contextUnstack>Ramasse premier objet</contextUnstack>
+  <contextUnstackAll>Ramasse</contextUnstackAll>
+  <contextTrash>Retire</contextTrash>
+  <contextUproot>Déracine</contextUproot>
+  <contextWater>Arrose</contextWater>
+  <!--Adventure Complete-->
+  <adventureCompleteHeader>Félicitations</adventureCompleteHeader>
+  <adventureCompleteTitle>Bien joué !</adventureCompleteTitle>
+  <adventureCompleteBody>Tu as terminé l'aventure %adventureName%. Va dans ton Journal d'Aventure pour trouver d'autres aventures passionnantes. </adventureCompleteBody>
+  <adventureCompleteReward>Ta récompense : </adventureCompleteReward>
+  <adventureCompleteContinue>Continuer</adventureCompleteContinue>
+  <adventureCompleteHorseshoes>Fers à cheval</adventureCompleteHorseshoes>
+  <!--Minimap-->
+  <miniMapPlayerCharacter>Toi</miniMapPlayerCharacter>
+  <!--Map-->
+  <mapZoomIn>Zoom +</mapZoomIn>
+  <mapZoomOut>Zoom -</mapZoomOut>
+  <mapQuest>Quête</mapQuest>
+  <mapQuests>Quêtes</mapQuests>
+</items>

@@ -1,0 +1,1925 @@
+<adventures id="ADS-0000000741" description="Constant Backstory">
+  <adventure id="ADV-0000000781">
+    <description>Qui êtes-vous ?</description>
+    <quest id="QUE-0000001639" visible="False">
+      <description unusedLocId="LOC-0000004295">Cade</description>
+      <line description="cade">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Je suis Cade Traveler. Je m'occupe des écuries de Trails End.</text>
+            <choice id="next">Les écuries, qu'est-ce que c'est ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Il y a beaucoup de chevaux différents au Nord du Septentrion, et je m'assure qu'ils aient un endroit agréable où habiter.</text>
+            <choice id="next1">Quel genre de chevaux y trouve-t-on ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Tous les chevaux du Nord du Septentrion sont magiques. Certains peuvent s'envoler dans les airs, plonger dans les profondeurs de l'océan ou galoper plus vite que le vent.</text>
+          </object>
+          <object type="questData.LogQuestEndAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001640" visible="False">
+      <description unusedLocId="LOC-0000004296">Emma</description>
+      <line description="emma">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C002</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Mon nom est Emma Roland. Je suis nouvelle au Nord du Septentrion moi aussi. Mon cheval Wings et moi sommes en mission : nous allons restaurer la magie et la beauté du Nord du Septentrion.</text>
+            <choice id="next">Pourquoi faut-il restaurer la magie du monde ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Eh bien d'après ce qu'on m'a dit, il y a bien longtemps, une force maléfique effraya les chevaux magiques et les dispersa aux quatre vents. Depuis lors, le Nord du Septentrion a perdu une partie de la magie qui le rendait si merveilleux autrefois.</text>
+            <choice id="next1">Comment puis-je aider ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Nous pouvons ramener la magie au Nord du Septentrion en plantant de belles plantes utiles dans les jardins. Les plantes sont pleines de magie au Nord du Septentrion. Toutes les plantes qui poussent dans le sol enchanté du Nord du Septentrion ramènent un peu d’émerveillement et de magie dans le pays. Leurs racines répandent la magie dans le sol et c’est une chose merveilleuse pour ceux qui vivent dans ce pays.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Les plantes sont pleines de magie au Nord du Septentrion. Toutes les plantes qui poussent sur le sol enchanté de ce pays y rapportent un peu de magie. Leurs racines répandent la magie dans le sol et tous ceux qui y posent le pied en profitent. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Rassembler tous les troupeaux perdus et éparpillés semble très difficile. Mais je suis sûre qu’avec ton aide et celle de tous nos amis, nous y parviendrons. Je suis ravie que tu m’accompagnes dans ce voyage. </text>
+          </object>
+          <object type="questData.LogQuestEndAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001641" visible="False">
+      <description unusedLocId="LOC-0000004297">Colm</description>
+      <line description="colm">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Salut. Je suis Colm Roland.</text>
+            <choice id="next">Emma est-elle de ta famille ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Heu, ouais. C'est ma cousine. Mais nous ne sommes pas très proches et elle est loin d'être aussi cool que moi.</text>
+            <choice id="next1">Est-ce que tu l'aides à restaurer la magie du Nord du Septentrion, toi aussi ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Que non ! Je suis juste ici pour m'amuser. J'aime bien traîner dans les parages avec mon cheval Soot.</text>
+          </object>
+          <object type="questData.LogQuestEndAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001642" visible="False">
+      <description unusedLocId="LOC-0000004298">Sara</description>
+      <line description="sara">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C005</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Bonjour. Mon nom est Sara. Bella et tous les troupeaux de chevaux te souhaitent la bienvenue au Nord du Septentrion.</text>
+            <choice id="next">Des troupeaux de chevaux ? Combien y en a-t-il ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Il y a beaucoup de troupeaux, et je ne te citerai donc que les principaux. Le troupeau Bellasara est dirigé par Bella en personne. Fiona commande au troupeau Shahazar. Thunder est à la tête du troupeau Valeryk. Jewel gouverne le troupeau Islandar et Nike le troupeau Airistos.</text>
+            <choice id="next1">Comment puis-je en savoir plus sur ces troupeaux ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis ravi que tu veuilles en savoir plus. Je parie que chacun des chefs des troupeaux adorerait te parler des siens. Et il se trouve que je sais qu’ils seraient ravis de te rencontrer.</text>
+          </object>
+          <object type="questData.LogQuestEndAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001643" visible="False">
+      <description unusedLocId="LOC-0000004299">Penny</description>
+      <line description="penny">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C004</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Salut. Je m'appelle Penny Inkwell. J'espère que tu apprécies le Nord du Septentrion jusqu'ici.</text>
+            <choice id="next">Est-ce vrai que tu diriges la gazette de Canter Hollow ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Bien sûr ! En fait, je la dirige avec mon père, mais il dit que je suis déjà un grand reporter !</text>
+            <choice id="next1">Se passe-t-il beaucoup de choses à Trails End ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Absolument ! Je garde toujours les yeux et les ouverts, à l’affût des nouvelles ! J’ai des amis dans toute la ville, parce que je parle beaucoup à tout le monde. Tu devrais en faire autant ! On ne sait jamais quelles aventures excitantes pourraient t’attendre.</text>
+          </object>
+          <object type="questData.LogQuestEndAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001644" visible="False">
+      <description unusedLocId="LOC-0000004300">Ivenna</description>
+      <line description="Ivenna">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C010</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Grompf ! Je suis Ivenna, qu'est-ce que tu veux ?</text>
+            <choice id="next">Qui êtes-vous ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Qui je suis ? Tu ne le sais donc pas ? Je suis la personne la plus puissante du Nord du Septentrion. Je suis le commandant en second des chevaucheuses de loups !</text>
+            <choice id="next1">Qu'est-ce qu'une chevaucheuse de loup ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="next1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>next1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Oh, petite, tu as tant à apprendre. Les chevaucheuses de loup sont les maîtresses des loups, qui sont de loin supérieurs aux chevaux et sont les rois légitimes du Nord du Septentrion. Avec mon loup Myrfor, je dirige les meutes de loups et nous allons nous emparer du Nord du Septentrion une bonne fois pour toutes !</text>
+          </object>
+          <object type="questData.LogQuestEndAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000000898">
+    <description>Qui êtes-vous ?</description>
+    <quest id="QUE-0000002098" visible="False">
+      <description unusedLocId="LOC-0000005126">Bella</description>
+      <line description="">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis Bella, reine de tous les chevaux magiques. Il y avait autrefois beaucoup de troupeaux de chevaux magiques au Nord du Septentrion, mais ils se sont éparpillés et ont disparu aujourd’hui. On dirait bien que tu as été guidée jusqu’à notre monde pour une raison bien particulière. Je sens une puissante magie en toi. Va rencontrer tous les chevaux magiques et écoute bien leurs histoires.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002099" visible="False">
+      <description unusedLocId="LOC-0000005127">Fiona</description>
+      <line description="">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis Fiona du troupeau Shahazar, troupe royale des lointains Autumn Sands. Ma troupe vie au château Shahazar. Nous honorons la créativité. Les chevaux qui font preuve d’une créativité exceptionnelle peuvent être invités à rejoindre la noblesse du troupeau Shahazar. Notre devise est « Que naisse l’étincelle intérieure ». La reine Aviva et le roi Nasim dirigent cette troupe royale avec mon aide.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002100" visible="False">
+      <description unusedLocId="LOC-0000005128">Jewel</description>
+      <line description="">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H005</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis Jewel du troupeau Islandar. Le troupeau Islandar est la troupe royale d’Equinesia. Nous vivons au château d’Islandar. Notre troupe honore la générosité. Les chevaux qui font preuve d’une gentillesse hors du commun peuvent être invités à rejoindre la noblesse du troupeau Islandar. Notre devise est « Cœur ouvert, main ouverte. » La reine Edana et le roi Treasure dirigent ce troupeau avec mon aide.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002101" visible="False">
+      <description unusedLocId="LOC-0000005129">Thunder</description>
+      <line description="">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H004</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis Thunder, du troupeau Valeryk, troupe royale des Midminter Mountains. Notre foyer est le château Valeryk. Nous respectons le courage avant tout. Les chevaux qui font preuve d’une bravoure étonnante face aux dangers peuvent être invités à rejoindre la noblesse du troupeau Valeryk. Notre devise est « Parler avec bravoure, agir avec courage ». La reine Snowdreamer et le roi Sleetmane dirigent ce troupeau avec mon aide.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002102" visible="False">
+      <description unusedLocId="LOC-0000005130">Nike</description>
+      <line description="">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H006</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis Nike du troupeau Airistos, troupe royale des Midwinter Mountains. Notre foyer est situé dans les Windhome Skylands. Notre troupeau recherche l’excellence en tout. Les chevaux qui font de gros efforts pour s’améliorer dans tout ce qu’ils font et qui accomplissent des buts particulièrement dignes peuvent recevoir l’Ordre de Nike et être invités à rejoindre la noblesse du Troupeau Airistos. Notre devise est « Voler toujours plus haut ». La reine Anemone et le roi Uranus dirigent ce troupeau avec mon aide. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001156">
+    <description>Qu'est-ce que tu aimes manger ?</description>
+    <quest id="QUE-0000003308" visible="False">
+      <description unusedLocId="LOC-0000008640">Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Mon parfum de glace préféré est la vanille.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003309" visible="False">
+      <description unusedLocId="LOC-0000008647">Fiona</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore boire du chocolat bien chaud. C'est agréable toute l'année, pas seulement pendant l'hiver. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003310" visible="False">
+      <description unusedLocId="LOC-0000008648">Flame</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H008</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore la nourriture épicée... ardente, même !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003311" visible="False">
+      <description unusedLocId="LOC-0000008649">Jewel</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H005</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Miam... ma nourriture préférée, ce sont les winterberries, les baies de l'hiver, c'est miamifique !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003312" visible="False">
+      <description unusedLocId="LOC-0000008650">Nike</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H006</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'ai du mal à choisir. J'adore les citrons, mais j'aime autant les verts que les jaunes. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003313" visible="False">
+      <description unusedLocId="LOC-0000008651">Thunder</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H004</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les spiceberries, les baies épicées, c'est ce qu'il y a de meilleur ici. Il n'y a rien de meilleur qu'une bonne spiceberry.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003314" visible="False">
+      <description unusedLocId="LOC-0000008652">Jordanna</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H039</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore manger des baies. Les airelles sont mes préférées.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003446" visible="False">
+      <description unusedLocId="LOC-0000009052">Bello</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H002</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore les tartes aux fraises. Finalement, c'est encore meilleur sans la tarte...</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004088" visible="False">
+      <description unusedLocId="LOC-0000012260">Rodin</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H007</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore les lauriers. Ils sont à la fois savoureux et décoratifs !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004089" visible="False">
+      <description unusedLocId="LOC-0000012262">Sleetmane</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H009</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>L'hiver est ma saison préférée et j'aime la nourriture qui me la rappelle.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004090" visible="False">
+      <description unusedLocId="LOC-0000012264">Snowdreamer</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H010</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La neige, c'est fabuleux. Je l'aime tant que j'en mange avec plaisir.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004091" visible="False">
+      <description unusedLocId="LOC-0000012266">Coral</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H011</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore les potirons des fées. C'est délicieux !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004092" visible="False">
+      <description unusedLocId="LOC-0000012268">Kona</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H012</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Même si je vis dans l'eau, j'apprécie un bon melon de temps en temps, en particulier ceux qui ont des pépins que je peux cracher dans l'eau.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004093" visible="False">
+      <description unusedLocId="LOC-0000012270">Shamal</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H013</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis un amateur de steaks, mais je suis végétarien : à défaut de steak, je me contente de champignons.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004094" visible="False">
+      <description unusedLocId="LOC-0000012272">Farah</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H014</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les étoiles qui brillent me font rêver toutes les nuits. Si seulement je pouvais manger quelque chose qui ressemble à des étoiles.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004095" visible="False">
+      <description unusedLocId="LOC-0000012274">Zephyros</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H015</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime manger des choses qui me ressemblent : vertes en haut et jaunes en bas.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004096" visible="False">
+      <description unusedLocId="LOC-0000012276">Cosima</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H016</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les magnolias sont très jolis... et délicieux !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004097" visible="False">
+      <description unusedLocId="LOC-0000012278">Diamond</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H017</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Mes diamants étincellent comme des étoiles, et ma nourriture favorite aussi.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004098" visible="False">
+      <description unusedLocId="LOC-0000012280">Iceking</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H018</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les petits pois, mais les ordinaires ne sont pas assez froids pour moi.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004099" visible="False">
+      <description unusedLocId="LOC-0000012282">Nyx</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H019</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les fleurs d'hibiscus sont délicieuses. Je pourrais en manger toute la journée.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004100" visible="False">
+      <description unusedLocId="LOC-0000012284">Lien</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H020</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les iris drapeau bleu sont très jolis. J'aime bien les manger aussi. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004101" visible="False">
+      <description unusedLocId="LOC-0000012286">Flora</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H021</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime la nourriture royale.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004102" visible="False">
+      <description unusedLocId="LOC-0000012288">Skipper</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H022</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime manger des choses nourrissantes mais utiles, comme l'indigo dont on peut tirer une encre.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004103" visible="False">
+      <description unusedLocId="LOC-0000012290">Athena</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H023</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je me demande si les serpents et les dragons sont aussi friands de la barbe de serpent que moi.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004104" visible="False">
+      <description unusedLocId="LOC-0000012292">Apollo</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H024</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Non seulement j'aime m'étendre à l'ombre des baobabs, mais j'aime bien manger leurs feuilles. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004105" visible="False">
+      <description unusedLocId="LOC-0000012294">Amor</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H025</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>L'indigo est ce que je préfère manger plus que tout au monde.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004106" visible="False">
+      <description unusedLocId="LOC-0000012296">Venus</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H026</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les fruits qui sont aussi rouge que les ailes de mon cher Amor. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004107" visible="False">
+      <description unusedLocId="LOC-0000012298">Flipper</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H027</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les framboises du Nord du Septentrion sont bien plus juteuses que partout ailleurs. C'est pour ça que je les adore.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004108" visible="False">
+      <description unusedLocId="LOC-0000012300">Ondine</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H028</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les fleurs violettes comme ma crinière.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004109" visible="False">
+      <description unusedLocId="LOC-0000012302">Bryda</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H029</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les choses rouges et qui ressemblent à du velours... comme les rubans dans ma crinière.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004110" visible="False">
+      <description unusedLocId="LOC-0000012304">Allegra</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H030</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Mes ailes ressemblent à celles d'un papillon et j'aime la nourriture qui a cet aspect également.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004111" visible="False">
+      <description unusedLocId="LOC-0000012306">Celinda</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H031</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les tulipes de feu.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004112" visible="False">
+      <description unusedLocId="LOC-0000012308">Derik</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H032</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les choux de Bruxelles sont très bien, mais je préfère ceux pour les enfants.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004113" visible="False">
+      <description unusedLocId="LOC-0000012310">Dewdrop</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H033</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les tournesols éclairent toujours ma journée.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004114" visible="False">
+      <description unusedLocId="LOC-0000012313">Dewsparkle</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H034</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime casser la croûte avec mon panda tea-leaf qui adore manger du bambou.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004115" visible="False">
+      <description unusedLocId="LOC-0000012315">Seraphia</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H035</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Le melon à nectar, c'est délicieux.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004116" visible="False">
+      <description unusedLocId="LOC-0000012317">Garnet</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H036</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Le soleil me réchauffe le dos mais ma nourriture favorite me réchauffe l'estomac.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004117" visible="False">
+      <description unusedLocId="LOC-0000012319">Hyperion</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H037</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'ai une vue parfaite grâce à ce que je mange.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004118" visible="False">
+      <description unusedLocId="LOC-0000012321">Jikin</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H038</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les fleurs de magnolia sont délicates et savoureuses.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004119" visible="False">
+      <description unusedLocId="LOC-0000012323">Resauro</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H040</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je ne me lasse pas de ma nourriture favorite, mais il faut que je fasse attention à ne pas glisser sur la peau...</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004120" visible="False">
+      <description unusedLocId="LOC-0000012325">Misa</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H041</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite est si délicieuse qu'on lui associe toutes sortes de choses : l'amour, le pin, la terre, l'api...</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004121" visible="False">
+      <description unusedLocId="LOC-0000012327">Rodrigo</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H042</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ce que je préfère, c'est l'ail : c'est délicieux avec le pain, les pommes de terre... ou tout seul.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004122" visible="False">
+      <description unusedLocId="LOC-0000012329">Silvia</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H043</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>On ne dirait peut-être pas, mais ça a un goût de beurre sur mes lèvres !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004123" visible="False">
+      <description unusedLocId="LOC-0000012331">Soot</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H044</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>C'est la nuit et à l'ombre que mes taches ressortent de façon splendide, alors j'essaie de manger des choses qui me donnent un poil sombre. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004124" visible="False">
+      <description unusedLocId="LOC-0000012333">Twig</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H045</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime une nourriture qui a du coeur, une nourriture terre à terre, qui rappelle la viande. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004125" visible="False">
+      <description unusedLocId="LOC-0000012335">Valentino</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H046</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La valériane rouge est la nourriture des héros et je veux devenir un héros. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004126" visible="False">
+      <description unusedLocId="LOC-0000012337">Wings </description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H047</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les marguerites fraîches. Ca me fait tourbillonner dans la brise.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004127" visible="False">
+      <description unusedLocId="LOC-0000012339">Colour</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H048</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite a autant de couleurs que ma crinière et dure longtemps. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004128" visible="False">
+      <description unusedLocId="LOC-0000012341">Donnecha</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H049</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La barbe de serpent, c'est qu'il y a de meilleur. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004129" visible="False">
+      <description unusedLocId="LOC-0000012343">Blackie</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H050</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>L'ombrenuit est délicieuse et très nourrissante !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004130" visible="False">
+      <description unusedLocId="LOC-0000012345">Obrylin</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H051</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Mon en-cas favori se trouve à la surface de l'eau et se dore au soleil. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004131" visible="False">
+      <description unusedLocId="LOC-0000012347">Ponca</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H052</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore vraiment le muflier.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004132" visible="False">
+      <description unusedLocId="LOC-0000012349">Rosebriar</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H053</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma fleur favorite est la rose, bien sûr, mais j'aime manger des fleurs croustillantes. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004133" visible="False">
+      <description unusedLocId="LOC-0000012351">Connora</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H054</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime danser sous le magnolias et manger les pétales qui tombent.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004134" visible="False">
+      <description unusedLocId="LOC-0000012353">Uranus</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H055</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Cela peut sembler étranger, mais les araignées n'aiment pas vraiment ma fleur de lis favorite...</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004135" visible="False">
+      <description unusedLocId="LOC-0000012355">Anemone</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H056</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je pourrais presque glisser mes sabots dans ma nourriture favorite mais je préfère la manger. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004136" visible="False">
+      <description unusedLocId="LOC-0000012357">Ronnie</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H057</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je ne me rends au Nord du Septentrion que pendant le Festival de l'Hiver quand les fleurs de pétales de glace sont les plus savoureuses. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004137" visible="False">
+      <description unusedLocId="LOC-0000012359">Bluebell</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H058</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime manger tout ce qui est bleu.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004138" visible="False">
+      <description unusedLocId="LOC-0000012361">Beran</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H059</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite est d'abord verte, mais elle devient jaune et sucrée. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004139" visible="False">
+      <description unusedLocId="LOC-0000012363">Generosity</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H060</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les orchidées papillon sont les meilleures orchidées !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004140" visible="False">
+      <description unusedLocId="LOC-0000012365">Ceratos</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H061</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>On dit qu'on est ce qu'on mange. C'est vrai, je ressemble exactement à ma nourriture favorite. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004141" visible="False">
+      <description unusedLocId="LOC-0000012367">Autumn</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H062</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La lune rend ma nourriture favorite encore plus délicieuse. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004142" visible="False">
+      <description unusedLocId="LOC-0000012369">Briar</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H063</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aimerais que les gens aient besoin de moins de papier, parce qu'il resterait ainsi une plus grande quantité de ma nourriture favorite. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004143" visible="False">
+      <description unusedLocId="LOC-0000012371">Calyx</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H064</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime manger du popcorn, mais ce n'est pas très bon à la santé. Le maïs barbu est délicieux  et très sain !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004144" visible="False">
+      <description unusedLocId="LOC-0000012373">Petal</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H065</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je ne voudrais pas paraître mufle, mais j'aime bien grignoter du muflier. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004145" visible="False">
+      <description unusedLocId="LOC-0000012375">Oracle</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H066</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les lauriers sont non seulement très jolis, mais également savoureux. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004146" visible="False">
+      <description unusedLocId="LOC-0000012377">Dowager</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H067</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Quand j'ai une fringale, je mange de l'hibiscus. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004147" visible="False">
+      <description unusedLocId="LOC-0000012379">Cayenne</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H068</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime ce qui est épicé, et j'adore les baies.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004148" visible="False">
+      <description unusedLocId="LOC-0000012381">Foxglove</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H069</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je n'en ai pas sur les sabots, mais je les mange volontiers au déjeuner. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004149" visible="False">
+      <description unusedLocId="LOC-0000012383">Saffron</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H070</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime tout ce qui est sucré comme le miel. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004150" visible="False">
+      <description unusedLocId="LOC-0000012385">Foxtail</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H071</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'ai un peu peur des serpents, mais j'adore la barbe de serpent. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004151" visible="False">
+      <description unusedLocId="LOC-0000012387">Lavender</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H072</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore manger des orchidées pantoufle des dames. Elles sont délicieuses et magnifiques. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004152" visible="False">
+      <description unusedLocId="LOC-0000012389">Snapdragon</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H073</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis sûr que tu ne devineras pas quelle est ma nourriture favorite... Mais mon nom est un indice. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004153" visible="False">
+      <description unusedLocId="LOC-0000012391">Violet</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H074</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les lys araignée sont délicieusifiques ! Et les araignées les évitent. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004154" visible="False">
+      <description unusedLocId="LOC-0000012393">Hawthorn</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H075</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime bien manger de la neige, mais il n'y en a pas toute l'année, au contraire des fleurs au pétales de glace. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004155" visible="False">
+      <description unusedLocId="LOC-0000012395">Camellia</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H076</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite a une forme d'étoile. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004156" visible="False">
+      <description unusedLocId="LOC-0000012397">Buttercup</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H077</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je n'ai pas de veste à attacher, mais je mangerais volontiers des boutons d'or. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004157" visible="False">
+      <description unusedLocId="LOC-0000012399">Bluefiddle</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H078</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime l'hibiscus. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004158" visible="False">
+      <description unusedLocId="LOC-0000012401">Larkspur</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H079</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>On n'arrête pas de m'en lancer quand je fais de mauvais jeux de mots, alors c'est devenu ma nourriture favorite. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004159" visible="False">
+      <description unusedLocId="LOC-0000012403">Sunflower</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H080</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'ai été baptisé en fonction de ma nourriture favorite. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004160" visible="False">
+      <description unusedLocId="LOC-0000012405">Waterlily</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H081</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les lys sont plutôt bons, mais les pastèques, quel délice !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004161" visible="False">
+      <description unusedLocId="LOC-0000012407">Lotus</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H082</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Obrylin et moi aimons manger la même chose, mais c'est moi qui en mange le plus... C'est d'ailleurs dans mon nom !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004162" visible="False">
+      <description unusedLocId="LOC-0000012409">Cattail</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H083</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Le papyrus a bien des usages… Et le mieux, c'est qu'il est savoureux !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004163" visible="False">
+      <description unusedLocId="LOC-0000012411">Reed</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H084</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime manger du papyrus.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004164" visible="False">
+      <description unusedLocId="LOC-0000012413">Shasta Daisy</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H085</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime les marguerites.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004165" visible="False">
+      <description unusedLocId="LOC-0000012415">Nutmeg</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H086</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je suis accro au chocolat !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004166" visible="False">
+      <description unusedLocId="LOC-0000012417">Tarragon</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H087</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Je ne mange ma nourriture favorite que la journée, parce que la nuit, elle me sourit !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004167" visible="False">
+      <description unusedLocId="LOC-0000012419">Cinnamon</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H088</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ce que je préfère, c'est la cannelle. Un peu de cannelle et tout va bien.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004168" visible="False">
+      <description unusedLocId="LOC-0000012421">Fairybell</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H089</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite ressemble à une cloche, c'est pour ça que je l'adore.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004169" visible="False">
+      <description unusedLocId="LOC-0000012423">Aster</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H090</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime bien mes en-cas de minuit. Encore heureux que ma nourriture favorite brille dans le noir. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004170" visible="False">
+      <description unusedLocId="LOC-0000012425">Cabby</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H091</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Une tasse de cacao me réchauffe. J'en ai bien besoin à force de voler par tous les temps !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

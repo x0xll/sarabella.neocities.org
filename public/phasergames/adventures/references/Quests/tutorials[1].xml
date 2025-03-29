@@ -1,0 +1,285 @@
+<adventures id="ADS-0000000932" description="Tutorials">
+  <adventure id="ADV-0000001159">
+    <description>Nourrir et brosser les chevaux</description>
+    <quest id="QUE-0000003329" visible="False">
+      <description unusedLocId="LOC-0000008675">Talk to Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Beaucoup de chevaux aiment manger autre chose que du foin. Si tu nous donne notre nourriture préférée, tu obtiendras une carte cheval à collectionner et quelques fers à cheval.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite, ce sont les gousses de vanille. Tiens, en voici une que tu peux me donner à manger dès à présent. </text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P043ProduceTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000003331</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003331" targetTemplate="H001Template">
+      <description>Donner la gousse de vanille à Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.GiveItemTrigger">
+            <inventoryTemplate>P043ProduceTemplate</inventoryTemplate>
+            <targetTemplate>H001Template</targetTemplate>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>J'adore la vanille, c'est si bon ! Parle à tes chevaux pour découvrir s'ils ont une nourriture favorite. Donne-la-leur pour collectionner leurs cartes !</text>
+            <identifier>H001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Nous autres les chevaux, nous adorons être brossés, pour garder un pelage brillant. Essaie de me brosser dès maintenant.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000003332</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Ma nourriture favorite, ce sont les gousses de vanille. Essaie de m'en donner pour gagner une carte à collectionner et une petite récompense en fers à cheval.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003332" targetTemplate="H001Template">
+      <description>Brosse Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ContextItemTrigger">
+            <contextItem>brush</contextItem>
+            <template>H001Template</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merci de m'avoir brossée. As-tu vu l'émoticône au-dessus de ma tête ? C'est comme ça que je te montre ce que je ressens. </text>
+            <identifier>H001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Tu peux rendre les chevaux heureux en les brossant. Fais plaisir à tes nouveaux amis en les brossant.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001639</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, brosse-moi.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001327">
+    <description>Chez Hannah - A la Brosse et la Tresse</description>
+    <quest id="QUE-0000004181" visible="False">
+      <description unusedLocId="LOC-0000012460">[Silent] Stop Near Hannah</description>
+      <line description="Enter Bagatella Row">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z008</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La boutique Chez Hannah - A la Brosse et la Tresse est ouverte ! Tu la trouveras à l'est de l'allée de Bagatella.</text>
+            <identifier>C005</identifier>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.StopNearTrigger">
+            <zoneId>Z008</zoneId>
+            <centerX>46</centerX>
+            <centerY>51</centerY>
+            <radius>8</radius>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Bienvenue ! Je suis Hannah, et je dirige la boutique A la Brosse et la Tresse. J'ai là de merveilleux vêtements que tu peux acheter et porter. </text>
+            <identifier>C018</identifier>
+          </object>
+          <object type="questData.DialogueImageAction">
+            <text>Ceci est la bulle &lt;b&gt;Boutique&lt;/b&gt;. Clique dessus pour voir les vêtements et accessoires que j'ai à vendre.</text>
+            <identifier>C018</identifier>
+            <imageFileName>Flash/Adventures/Art/Dialogue/Context_Shop.png</imageFileName>
+            <hspace>0</hspace>
+            <vspace>0</vspace>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Aujourd'hui, c'est l'ouverture et je donne à tous mes clients 50 fers à cheval pour acheter ce qu'ils veulent. Bons achats !</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>50</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001330">
+    <description>Teindre les vêtements</description>
+    <quest id="QUE-0000004185" visible="False">
+      <description unusedLocId="LOC-0000012471">[Silent] Application launch</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Quelle belle tenue ! Reviens chez Hannah - A la Brosse et la Couette, dans l'allée de Bagatella, pour acheter d'autres vêtements. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Sais-tu que tu peux teindre tes vêtements pour en changer la couleur ? Il te suffit de faire pousser des plantes et de les donner à une Machine à Teinture. Essayons de faire de la teinture ensemble. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Voici une graine de winterberry (baie d'hiver) à planter. Rapporte-moi une winterberry quand elle aura poussé et je te montrerai comment utiliser la Machine à Teinture. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P035SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004186</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004186" targetTemplate="DirtTemplate">
+      <description>Fais pousser une winterberry</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::HarvestProduceAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>P035Template</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Super ! Maintenant, tu as une winterberry. Voici une Machine à Teinture. Tu peux la garder dans ton sac d'inventaire, mais pour l'utiliser, il faut la sortir et la poser par terre.</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Sors ta Machine à Teinture et je te montrerai comment transformer ta winterberry en teinture !</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I142Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004188</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004188">
+      <description>Place la Machine à Teinture dans le Monde</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>T0246aTemplate</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>C'est l'endroit idéal pour placer une Machine à Teinture. Maintenant, clique sur la Machine à Teinture et choisis la bulle &lt;b&gt;Donner&lt;/b&gt; pour lui donner la winterberry que tu viens de cueillir et voir quelle merveilleuse teinture tu obtiendras.</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004187</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004187" targetTemplate="T0246aTemplate">
+      <description>Donne la winterberry à la Machine à Teinture</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TradeTrigger">
+            <tradedItemTemplate>P035ProduceTemplate</tradedItemTemplate>
+            <targetEntityTemplate>T0246aTemplate</targetEntityTemplate>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Wow ! Tu as une bouteille de teinture Bleu glace. Facile, non ? Essaie de faire pousser différentes plantes pour voir quelle teinture tu obtiendras. Cette Machine à Teinture ne fonctionne qu'avec 16 plantes. Essaie de les découvrir toutes ! </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

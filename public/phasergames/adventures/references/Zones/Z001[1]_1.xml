@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map tileWidth="80" tileHeight="40" tileDepth="60">
+  <files>
+    <file id="Lb001" fileName="flash/Adventures/Art/Tilesets/CanterFarms.swf"/>
+    <file id="Lb000" fileName="flash/Adventures/Art/Zones/Zone1.swf"/>
+  </files>
+  <grounds>
+    <ground id="Gr0008" file="Lb001" className="T0012d"/>
+    <ground id="Gr0004" file="Lb001" className="T0017e"/>
+    <ground id="Gr0009" file="Lb001" className="T0017a"/>
+    <ground id="Gr0001" file="Lb001" className="T0039a"/>
+    <ground id="Gr0022" file="Lb001" className="T0012f"/>
+    <ground id="Gr0025" file="Lb001" className="T0027j" x="-16"/>
+    <ground id="Gr0018" file="Lb001" className="T0009c"/>
+    <ground id="Gr0031" file="Lb001" className="T0038f"/>
+    <ground id="Gr0034" file="Lb001" className="T0016c"/>
+    <ground id="Gr0020" file="Lb001" className="T0059c"/>
+    <ground id="Gr0014" file="Lb001" className="T0012j"/>
+    <ground id="Gr0006" file="Lb001" className="T0017c" scaleX="-1"/>
+    <ground id="Gr0024" file="Lb001" className="T0039c"/>
+    <ground id="Gr0017" file="Lb001" className="T0009a"/>
+    <ground id="Gr0003" file="Lb001" className="T0017b" scaleX="-1"/>
+    <ground id="Gr0012" file="Lb001" className="T0012l"/>
+    <ground id="Gr0002" file="Lb001" className="T0016a"/>
+    <ground id="Gr0026" file="Lb001" className="T0027e" x="11" y="9"/>
+    <ground id="Gr0028" file="Lb001" className="T0012a"/>
+    <ground id="Gr0016" file="Lb001" className="T0011a"/>
+    <ground id="Gr0007" file="Lb001" className="T0017e" scaleX="-1"/>
+    <ground id="Gr0033" file="Lb001" className="T0026f" scaleX="-1"/>
+    <ground id="Gr0011" file="Lb001" className="T0017b"/>
+    <ground id="Gr0005" file="Lb001" className="T0017d"/>
+    <ground id="Gr0010" file="Lb001" className="T0017c"/>
+    <ground id="Gr0013" file="Lb001" className="T0012n"/>
+    <ground id="Gr0000" file="Lb001" className="T0008b"/>
+    <ground id="Gr0035" file="Lb001" className="T0026a"/>
+    <ground id="Gr0027" file="Lb001" className="T0012k"/>
+    <ground id="Gr0032" file="Lb001" className="T0012g"/>
+    <ground id="Gr0036" file="Lb001" className="T0026g" scaleY="-1"/>
+    <ground id="Gr0023" file="Lb001" className="T0009n"/>
+    <ground id="Gr0015" file="Lb001" className="T0012i"/>
+    <ground id="Gr0019" file="Lb001" className="T0040e"/>
+    <ground id="Gr0029" file="Lb001" className="T0009g"/>
+    <ground id="Gr0030" file="Lb001" className="T0009b"/>
+    <ground id="Gr0021" file="Lb001" className="T0004f" x="7" y="-8"/>
+  </grounds>
+  <skins>
+    <skin id="Sk0007" file="Lb001" className="Overlay_ExitNE"/>
+    <skin id="Sk0003" file="Lb001" className="T0179"/>
+    <skin id="Sk0002" file="Lb001" className="T0053f"/>
+    <skin id="Sk0008" file="Lb001" className="T0001d" depthOffset="-80" x="-10" y="-6"/>
+    <skin id="Sk0019" file="Lb001" className="T0072d"/>
+    <skin id="Sk0016" file="Lb001" className="T0072a"/>
+    <skin id="Sk0021" file="Lb001" className="T0057f"/>
+    <skin id="Sk0006" file="Lb001" className="T0053c"/>
+    <skin id="Sk0012" file="Lb001" className="T0073"/>
+    <skin id="Sk0004" file="Lb001" className="T0053i"/>
+    <skin id="Sk0020" file="Lb001" className="Overlay_ExitNE" scaleY="-1"/>
+    <skin id="Sk0011" file="Lb001" className="T0097b" depthOffset="-75"/>
+    <skin id="Sk0018" file="Lb001" className="T0053a"/>
+    <skin id="Sk0010" file="Lb001" className="T0096" x="-25"/>
+    <skin id="Sk0015" file="Lb001" className="T0053n"/>
+    <skin id="Sk0001" file="Lb001" className="T0015a"/>
+    <skin id="Sk0022" file="Lb001" className="T0053k"/>
+    <skin id="Sk0009" file="Lb001" className="T0040b"/>
+    <skin id="Sk0017" file="Lb001" className="T0053p"/>
+    <skin id="Sk0005" file="Lb001" className="T0053d"/>
+    <skin id="Sk0000" file="Lb001" className="T0053c" scaleX="-1"/>
+    <skin id="Sk0014" file="Lb001" className="T0053h"/>
+    <skin id="Sk0013" file="Lb001" className="T0053f" scaleX="-1"/>
+  </skins>
+  <tiles>
+    <tile id="Ti060w" walkable="true" isBillboard="false" skins="Sk0003" entities="ButterflySpawner">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti071b" walkable="false" isBillboard="false" skins="Sk0015">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti047b" walkable="false" isBillboard="false" grounds="Gr0008">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti016w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0003" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti024b" walkable="false" isBillboard="false" grounds="Gr0019">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti059w" walkable="true" isBillboard="false" skins="Sk0003" entities="LadyBugSpawner">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti013w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0010" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti041w" walkable="true" isBillboard="false" grounds="Gr0027">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti025b" walkable="false" isBillboard="false" grounds="Gr0024,Gr0025,Gr0026" skins="Sk0009">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti052b" walkable="false" isBillboard="false" skins="Sk0008">
+      <gridSize width="6" height="5" depth="3"/>
+    </tile>
+    <tile id="Ti079b" walkable="false" isBillboard="false" skins="Sk0014">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti086b" walkable="false" isBillboard="false" skins="Sk0018">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti039b" walkable="false" isBillboard="false" grounds="Gr0013">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti067b" walkable="false" isBillboard="false" skins="Sk0017">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti087b" walkable="false" isBillboard="false" skins="Sk0000">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti019w" walkable="true" isBillboard="false" grounds="Gr0002" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti043w" walkable="true" isBillboard="false" grounds="Gr0015">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti040w" walkable="true" isBillboard="false" grounds="Gr0012">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti035w" walkable="true" isBillboard="false" grounds="Gr0018">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti037w" walkable="true" isBillboard="false" grounds="Gr0029">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti015w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0004" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti046b" walkable="false" isBillboard="false" grounds="Gr0022">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="x" walkable="false" isBillboard="false">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti093b" walkable="false" isBillboard="false" skins="Sk0019" entities="StreetSignZone7">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti062w" walkable="true" isBillboard="false" skins="Sk0007" entities="ExitToZone7b">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti064w" walkable="true" isBillboard="false" grounds="Gr0021">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti057b" walkable="false" isBillboard="false" skins="Sk0021">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti006b" walkable="false" isBillboard="false" skins="Sk0003" entities="HayStackSpawner">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti033w" walkable="true" isBillboard="false" grounds="Gr0030">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti002w" walkable="true" isBillboard="false" skins="Sk0007" entities="ExitToZoneR050">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti058w" walkable="true" isBillboard="false" grounds="Gr0001">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti058b" walkable="false" isBillboard="false" grounds="Gr0001">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="." walkable="true" isBillboard="false">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti094b" walkable="false" isBillboard="false" skins="Sk0010">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti047w" walkable="true" isBillboard="false" grounds="Gr0008">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti042w" walkable="true" isBillboard="false" grounds="Gr0014">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti039w" walkable="true" isBillboard="false" grounds="Gr0013">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti007b" walkable="false" isBillboard="false" skins="Sk0001">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti063w" walkable="true" isBillboard="false" skins="Sk0020" entities="ExitToZone12a">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti011w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0009" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti070b" walkable="false" isBillboard="false" skins="Sk0015">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti040b" walkable="false" isBillboard="false" grounds="Gr0012">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti021b" walkable="false" isBillboard="false" grounds="Gr0020">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti084b" walkable="false" isBillboard="false" skins="Sk0006">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti081b" walkable="false" isBillboard="false" skins="Sk0002">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti074b" walkable="false" isBillboard="false" skins="Sk0022">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti014w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0005" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti018w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0007" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti028w" walkable="true" isBillboard="false" grounds="Gr0028">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti029w" walkable="true" isBillboard="false" grounds="Gr0016">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti003b" walkable="false" isBillboard="false" skins="Sk0011">
+      <gridSize width="5" height="5" depth="3"/>
+    </tile>
+    <tile id="Ti034w" walkable="true" isBillboard="false" grounds="Gr0000">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti036w" walkable="true" isBillboard="false" grounds="Gr0023">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti034b" walkable="false" isBillboard="false" grounds="Gr0000">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti083b" walkable="false" isBillboard="false" skins="Sk0005">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti000w" walkable="true" isBillboard="false" grounds="Gr0034,Gr0035" skins="Sk0007" entities="ExitToZoneR001">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti049w" walkable="true" isBillboard="false" grounds="Gr0033">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti045w" walkable="true" isBillboard="false" grounds="Gr0032,Gr0032">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti088b" walkable="false" isBillboard="false" skins="Sk0013">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti078b" walkable="false" isBillboard="false" skins="Sk0004">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti048w" walkable="true" isBillboard="false" grounds="Gr0036">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti032w" walkable="true" isBillboard="false" grounds="Gr0017">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti017w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0006" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti050w" walkable="true" isBillboard="false" grounds="Gr0031">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti022w" walkable="true" isBillboard="false" grounds="Gr0034,Gr0035">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti061w" walkable="true" isBillboard="false" skins="Sk0003" entities="PixieSpawner">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti076b" walkable="false" isBillboard="false" skins="Sk0004">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti092b" walkable="false" isBillboard="false" skins="Sk0012">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti053b" walkable="false" isBillboard="false" skins="Sk0016" entities="StreetSignZone12">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti012w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0011" entities="DirtTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti025w" walkable="true" isBillboard="false" grounds="Gr0024,Gr0025,Gr0026" skins="Sk0009">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+  </tiles>
+  <backgrounds>
+    <background id="b10" file="Lb000" className="Z001_1x0" left="1500" top="0" width="1500" height="1600"/>
+    <background id="b00" file="Lb000" className="Z001_0x0" left="0" top="0" width="1500" height="1600"/>
+  </backgrounds>
+  <layout width="43" height="48">
+    <levels>
+      <level id="0">
+        <backgrounds width="1500" height="1600" rows="1" columns="2" x="320" y="-865">
+          <backgroundRow>b00,b10</backgroundRow>
+        </backgrounds>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti087b,x,Ti087b,x,Ti007b,x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti081b,.,.,.,Ti060w,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti078b,.,Ti034w,.,.,.,.,.,.,.,.,Ti058w,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,Ti078b,.,.,.,Ti016w,Ti015w,Ti015w,Ti015w,Ti015w,Ti015w,Ti014w,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,Ti076b,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,Ti047w,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,Ti078b,.,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,Ti078b,.,.,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,Ti076b,.,.,.,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,Ti078b,.,.,.,.,.,.,.,.,Ti011w,Ti013w,Ti013w,Ti013w,Ti013w,Ti013w,Ti012w,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,Ti078b,Ti083b,x,.,.,.,.,.,.,Ti040w,.,Ti039w,.,.,.,.,.,.,.,.,Ti042w,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,Ti078b,Ti058w,.,.,.,.,.,.,.,.,.,.,Ti043w,Ti042w,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,Ti078b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti006b,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti084b,.,Ti029w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,.,Ti034w,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti002w,x,x,x,x,x,x,x,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti081b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti002w,x,x,x,x,x,x,x,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,Ti078b,Ti032w,.,.,.,Ti035w,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,.,Ti035w,.,x,x,Ti024b,.,.,x,x,x,x,x,.,.,.,.,Ti006b,x,x,x,x,x,x,x,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>Ti084b,.,Ti024b,x,x,x,x,.,.,x,x,x,x,x,Ti024b,x,.,.,Ti006b,Ti052b,Ti034b,x,x,x,x,x,x,x,x,.,.,.,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti021b,x,x,x,x,.,Ti064w,x,x,x,x,x,x,x,Ti024b,x,Ti040b,Ti039b,Ti046b,x,x,Ti047b,x,x,x,x,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>Ti084b,Ti024b,x,Ti024b,Ti035w,Ti036w,Ti025b,.,.,.,Ti024b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,.,Ti041w,Ti028w,Ti037w,.,.,.,Ti034w,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,.,Ti047w,Ti032w,Ti036w,.,.,.,.,.,.,.,.,.,Ti024b,x,x,x,x,x,x,x,Ti024b,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti021b,.,.,Ti033w,Ti035w,.,.,.,.,Ti050w,.,.,.,Ti035w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti059w,.,.,Ti058w,.,.,.,.,.,.,.,.,.,.,.,Ti084b,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,Ti024b,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti043w,Ti025w,Ti016w,Ti014w,.,.,.,.,.,.,.,.,.,.,.,x,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti016w,Ti019w,Ti018w,.,x,x,x,x,x,x,.,.,.,.,Ti084b,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,.,.,.,.,.,.,.,Ti035w,.,.,Ti058w,.,.,.,Ti045w,Ti011w,Ti013w,Ti012w,Ti049w,x,x,x,x,x,x,.,.,.,.,x,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,Ti024b,.,x,x,.,.,.,Ti040w,Ti016w,Ti015w,Ti014w,.,.,.,.,Ti022w,Ti022w,Ti022w,Ti022w,Ti000w,x,x,x,x,x,x,.,.,.,.,Ti084b,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,Ti024b,Ti047b,.,Ti058w,Ti094b,.,.,.,.,Ti016w,Ti019w,Ti019w,Ti019w,Ti014w,.,.,.,Ti043w,Ti016w,Ti015w,Ti014w,Ti048w,x,x,x,x,x,x,.,.,.,.,x,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti084b,.,Ti035w,.,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,.,Ti047w,Ti011w,Ti019w,Ti018w,Ti047w,Ti003b,x,x,x,x,x,.,.,.,.,Ti084b,.,.,.,.,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,.,.,Ti061w,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,.,.,.,Ti011w,Ti012w,Ti025w,.,.,Ti034w,Ti058w,.,.,.,.,.,.,x,.,.,.,.,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti084b,.,.,.,.,.,.,.,Ti017w,Ti019w,Ti019w,Ti019w,Ti018w,.,.,.,Ti092b,Ti042w,.,Ti035w,Ti042w,.,.,.,.,.,.,.,.,.,.,Ti084b,.,.,.,.,.,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti088b,x,.,.,.,Ti042w,Ti047w,.,Ti011w,Ti019w,Ti019w,Ti019w,Ti012w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,.,.,.,.,.,x,x,x,x</levelRow>
+        <levelRow>x,x,x,Ti079b,Ti070b,.,.,.,.,.,.,Ti011w,Ti013w,Ti012w,Ti039w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti053b,Ti084b,x,.,.,.,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,.,.,.,Ti062w,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,Ti067b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti062w,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,Ti086b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti093b,.,x,Ti087b,x,Ti087b,x,Ti087b,x,.,.,.,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,Ti086b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti050w,.,.,Ti084b,x,x,x,x,x,Ti058b,Ti063w,Ti063w,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,Ti086b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti070b,x,x,x,x,x,x,x,x,Ti057b,Ti057b,Ti057b,Ti057b,Ti057b,Ti057b,Ti057b</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,Ti083b,Ti088b,Ti071b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,Ti057b,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,Ti071b,.,.,.,.,.,.,.,.,.,.,.,x,Ti087b,x,Ti087b,x,Ti074b,x,x,x,x,x,x,x,x,Ti057b,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,Ti071b,.,.,.,.,.,.,Ti078b,Ti087b,x,Ti087b,Ti078b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti057b,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,Ti078b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti057b,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,Ti079b,x,Ti087b,x,Ti087b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+      </level>
+    </levels>
+  </layout>
+</map>

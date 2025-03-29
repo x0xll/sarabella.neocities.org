@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map tileWidth="80" tileHeight="40" tileDepth="60">
+  <files>
+    <file id="Lb000" fileName="flash/Adventures/Art/Zones/R050.swf"/>
+    <file id="Lb002" fileName="flash/Adventures/Art/Tilesets/CanterFarms.swf"/>
+  </files>
+  <grounds/>
+  <skins>
+    <skin id="Sk0002" file="Lb002" className="Overlay_ExitNE" scaleX="-1" scaleY="-1"/>
+    <skin id="Sk0003" file="Lb002" className="T0053f"/>
+    <skin id="Sk0000" file="Lb002" className="T0053f" scaleX="-1" y="2"/>
+    <skin id="Sk0001" file="Lb002" className="T0053g"/>
+  </skins>
+  <tiles>
+    <tile id="Ti040w" walkable="true" isBillboard="false" entities="StallTemplate">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti027w" walkable="true" isBillboard="false" skins="Sk0001">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti045w" walkable="true" isBillboard="false" entities="HayStackSpawner">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="x" walkable="false" isBillboard="false">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti002b" walkable="false" isBillboard="false" entities="WallTemplateSE">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti000w" walkable="true" isBillboard="false" skins="Sk0002" entities="ExitToZone1d">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti048w" walkable="true" isBillboard="false" entities="WaterBarrelSpawner">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti043w" walkable="true" isBillboard="false" skins="Sk0000">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti001b" walkable="false" isBillboard="false" entities="WallTemplateSW">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="." walkable="true" isBillboard="false">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti029w" walkable="true" isBillboard="false" skins="Sk0003">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+  </tiles>
+  <backgrounds>
+    <background id="b00" file="Lb000" className="R050" left="0" top="0" width="1040" height="693"/>
+  </backgrounds>
+  <layout width="13" height="11">
+    <levels>
+      <level id="0">
+        <backgrounds width="1040" height="693" rows="1" columns="1" x="-80" y="-415">
+          <backgroundRow>b00</backgroundRow>
+        </backgrounds>
+        <levelRow>x,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,Ti002b,x</levelRow>
+        <levelRow>.,.,.,Ti048w,.,Ti045w,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,Ti043w,Ti043w,Ti043w,Ti027w,.,.,.,.,Ti001b</levelRow>
+        <levelRow>Ti000w,.,.,.,.,Ti040w,Ti040w,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>Ti000w,.,.,.,.,.,.,Ti029w,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti001b</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+      </level>
+    </levels>
+  </layout>
+</map>

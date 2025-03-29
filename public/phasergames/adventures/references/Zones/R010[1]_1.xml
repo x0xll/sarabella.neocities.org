@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map tileWidth="80" tileHeight="40" tileDepth="60">
+  <files>
+    <file id="Lb002" fileName="flash/Adventures/Art/Zones/R010.swf"/>
+    <file id="Lb001" fileName="flash/Adventures/Art/Tilesets/CottageRooms.swf"/>
+  </files>
+  <grounds/>
+  <skins>
+    <skin id="Sk0000" file="Lb001" className="Overlay_ExitNE" scaleX="-1" scaleY="-1"/>
+  </skins>
+  <tiles>
+    <tile id="x" walkable="false">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="ExitToZone10e">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+    <tile id="." walkable="true">
+      <gridSize width="1" height="1" depth="1"/>
+    </tile>
+  </tiles>
+  <backgrounds>
+    <background id="b00" file="Lb002" className="R010" left="0" top="0" width="1040" height="690"/>
+  </backgrounds>
+  <layout width="12" height="12">
+    <levels>
+      <level id="0">
+        <backgrounds width="1040" height="690" rows="1" columns="1" x="-85" y="-490">
+          <backgroundRow>b00</backgroundRow>
+        </backgrounds>
+        <levelRow>x,x,.,.,.,.,.,x,x,x,x,x</levelRow>
+        <levelRow>x,.,.,.,.,.,.,.,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,x,x</levelRow>
+        <levelRow>Ti000w,.,.,.,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>Ti000w,.,.,.,.,.,.,.,.,.,.,.</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.</levelRow>
+        <levelRow>x,.,.,.,.,.,.,.,.,.,.,.</levelRow>
+        <levelRow>x,x,.,.,.,.,.,.,.,.,.,.</levelRow>
+        <levelRow>x,x,x,.,.,.,.,.,.,.,.,.</levelRow>
+        <levelRow>x,x,x,x,.,.,.,.,.,.,.,x</levelRow>
+        <levelRow>x,x,x,x,x,.,.,.,.,.,x,x</levelRow>
+      </level>
+    </levels>
+  </layout>
+</map>

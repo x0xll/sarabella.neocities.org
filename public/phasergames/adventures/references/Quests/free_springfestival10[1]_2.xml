@@ -1,0 +1,1247 @@
+<adventures id="ADS-0000001051" description="Spring-seasonal">
+  <adventure id="ADV-0000001468">
+    <description>La fête du printemps.</description>
+    <quest id="QUE-0000004839" visible="False">
+      <description unusedLocId="LOC-0000016377">Announcement</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Tu sais quoi ? C'est l'heure de la fête du printemps. Va parler à Bella à la Place de la Fontaine. Elle a besoin de toi. </text>
+            <identifier>BSA</identifier>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004840</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001469">
+    <description>Paniers de fleurs perdus</description>
+    <quest id="QUE-0000004840">
+      <description>Parle à Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Bonjour. Nous allons nous arranger pour que ce soit la meilleure fête du printemps de toute l'histoire du Nord du Septentrion. J'ai des paniers de fleurs pour tout le monde. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>J'ai cependant perdu 6 paniers de fleurs. Je pense qu'ils sont quelque part par là. S'il te plaît, retrouve-les pour moi. </text>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0199aTemplate</template>
+            <instanceIdentifier>object1</instanceIdentifier>
+            <zone>Z007</zone>
+            <x>31</x>
+            <y>49</y>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0199aTemplate</template>
+            <instanceIdentifier>object2</instanceIdentifier>
+            <zone>Z007</zone>
+            <x>46</x>
+            <y>34</y>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0199aTemplate</template>
+            <instanceIdentifier>object3</instanceIdentifier>
+            <zone>Z007</zone>
+            <x>60</x>
+            <y>20</y>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0199aTemplate</template>
+            <instanceIdentifier>object4</instanceIdentifier>
+            <zone>Z007</zone>
+            <x>48</x>
+            <y>3</y>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0199aTemplate</template>
+            <instanceIdentifier>object5</instanceIdentifier>
+            <zone>Z007</zone>
+            <x>18</x>
+            <y>12</y>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0199aTemplate</template>
+            <instanceIdentifier>object6</instanceIdentifier>
+            <zone>Z007</zone>
+            <x>8</x>
+            <y>38</y>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004841</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004841" targetTemplate="T0199dTemplate">
+      <description>Trouve 6 paniers de fleurs</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>T0199aTemplate</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>J'en ai trouvé un ! Plus que 5. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004842</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu trouvé les 6 paniers de fleurs ? Cherche sur la Place de la Fontaine. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004842" targetTemplate="T0199dTemplate">
+      <description>Trouve 5 paniers de fleurs</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>T0199aTemplate</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>J'en ai trouvé un ! Plus que 4. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004843</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Il reste 5 autres paniers de fleurs quelque part sur la Place de la Fontaine. S'il te plaît, trouve-les pour moi. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004843" targetTemplate="T0199dTemplate">
+      <description>Trouve 4 paniers de fleurs</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>T0199aTemplate</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>J'en ai trouvé un ! Plus que 3. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004844</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Il reste 4 autres paniers de fleurs quelque part sur la Place de la Fontaine. S'il te plaît, trouve-les pour moi. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004844" targetTemplate="T0199dTemplate">
+      <description>Trouve 3 paniers de fleurs</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>T0199aTemplate</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>J'en ai trouvé un ! Plus que 2. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004845</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Il reste 3 autres paniers de fleurs quelque part sur la Place de la Fontaine. S'il te plaît, trouve-les pour moi. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004845" targetTemplate="T0199dTemplate">
+      <description>Trouve 2 paniers de fleurs</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>T0199aTemplate</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>J'en ai trouvé un ! Plus qu'un.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004846</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Il reste 2 autres paniers de fleurs quelque part sur la Place de la Fontaine. S'il te plaît, trouve-les pour moi. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004846" targetTemplate="T0199dTemplate">
+      <description>Trouve 1 paniers de fleurs</description>
+      <line description="Complete - object1">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>T0199aTemplate</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>J'ai trouvé le dernier ! Je devrais retourner voir Bella.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004847</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Il reste 1 panier de fleurs quelque part sur la Place de la Fontaine. S'il te plaît, trouve-le pour moi. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004847">
+      <description>Apporte les 6 paniers de fleurs à Bella.</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>6</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Fiou ! Tu as trouvé tous les paniers perdus. Merci beaucoup.</text>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.DialogueAction">
+            <text>J'ai encore beaucoup de cadeaux à livrer. Peut-tu m'aider à livrer les 6 paniers de fleurs que tu as trouvés ? Le premier de la liste est Gaelic Wayland, dans la rue des Artisans. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004854</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Ronnie)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, trouve les 6 paniers de fleurs et apporte-les-moi.</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>1</count>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001471">
+    <description>Echange de panier de fleurs</description>
+    <quest id="QUE-0000004854">
+      <description>Apporte le panier de fleurs à Gaelic Wayland</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C017</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Waou... Un panier de fleurs pour moi ? </text>
+          </object>
+          <object type="questData.MonologueAction">
+            <text>Voyons un peu... Shine est la prochaine sur ma liste.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P024SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004855</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, livre un panier de fleurs à Gaelic Wayland.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004855">
+      <description>Apporte un panier de fleurs à Shine Anders. </description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Youpi ! Un panier de fleurs ! J'adore la fête du printemps. Voici une graine de tournesol pour toi. J'espère que ça te fera plaisir. </text>
+          </object>
+          <object type="questData.MonologueAction">
+            <text>Le prochain est Leoni.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P027SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004856</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, livre un panier de fleurs à Shine Anders</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004856">
+      <description>Apporte un panier de fleurs à Leoni</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M002</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Cool... Juste le panier de fleurs que je voulais ! Prends cette graine de fleur de lait de miel, ce sont des fleurs merveilleuses. </text>
+          </object>
+          <object type="questData.MonologueAction">
+            <text>Le prochain sur la liste est Jory Critterton dans l'allée de Bagatella.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P046SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004857</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, apporte un panier de fleurs à Leoni.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004857">
+      <description> Apporte un panier de fleurs à Jory Critterton</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C016</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Magnifique ! Ce ne serait pas la fête du printemps si les gens n'avaient pas envie de partager. Tiens, voici une graine de pastèque pour toi. </text>
+          </object>
+          <object type="questData.MonologueAction">
+            <text>Plus que deux cadeaux... Le prochain est pour I.P. Opus</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P031SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004858</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, apporte un panier de fleurs à Jory Critterton.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004858">
+      <description> Apporte un panier de fleurs à I.P. Opus</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C008</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Splendide ! Merci beaucoup d'avoir livré ces paniers de fleurs. Bella doit penser que tu es vraiment spéciale pour te confier cette tâche. Accepte cette graine de marguerite. </text>
+          </object>
+          <object type="questData.MonologueAction">
+            <text>Il ne me reste qu'à livrer ce dernier panier à Hannah et j'aurai terminé !</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P001SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004859</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, apporte un panier de fleurs à I.P. Opus.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004859">
+      <description> Apporte un panier de fleurs à Hannah Lovet</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C018</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Que c'est mignon ! Je suis ravie de te voir, parce que j'avais justement une graine de vanille à te donner. Ca sent tellement bon !</text>
+          </object>
+          <object type="questData.MonologueAction">
+            <text>Fiou ! Terminé. Je devrais le dire à Bella. </text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P043SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004860</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I006cTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, apporte un panier de fleurs à Hannah Lovet.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004860">
+      <description>Parle à Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Waou, déjà terminé ? Merveilleux !</text>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.DialogueAction">
+            <text>J'ai remarqué que Colm était énervé, je ne sais pas pourquoi. Peux-tu lui parler et découvrir ce qui le chagrine ?</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004848</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001470">
+    <description>Qui a besoin du printemps</description>
+    <quest id="QUE-0000004848">
+      <description>Parle à Colm</description>
+      <line description="Starting Dialog">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.DialogueChoiceAction">
+            <text>Super, encore quelqu'un qui saute de joie à cause de cette fête du printemps... Tu parles...</text>
+            <choice id="line1">Heu... On dirait bien que tu es de mauvaise humeur.</choice>
+            <choice id="line3">Ta mauvaise humeur me fait de la peine.</choice>
+            <choice id="line2">Bella ne plaisantait pas quand elle disait que tu étais triste. Je peux faire quelque chose pour toi ? </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Dialog - Line1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Toi aussi tu serais en rogne si tu détestais la fête du printemps. </text>
+            <choice id="line2">Pourquoi détestes-tu la fête du printemps ? Tous les autres ont l'air d'adorer ça. Je peux faire quelque chose ? </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Dialog - Line2">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line2</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Je ne sais pas trop... Je n'ai pas vraiment beaucoup d'amis ici. Tout le monde aime ma cousine Emma, ils ne s'occupent que d'elle.</text>
+            <choice id="line4">Je vois pourquoi tu es si grognon.</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Dialog - Line3">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line3</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Qu'est-ce que tu veux, je fais ce que je peux pour répandre la mauvaise humeur...</text>
+            <choice id="line2">Pourquoi détestes-tu la fête du printemps ?</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Dialog - Line4">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line4</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Je sais ! Je devrais parler à l'amie de Colm, Shine. Elle saura comment lui remonter le moral.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004849</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu parlé à Colm pour savoir ce qui le chagrine tant ? </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004849">
+      <description>Parle à Shine Anders. </description>
+      <line description="Starting Dialog">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Salut ! Tu as aimé la graine de tournesol que je t'ai donnée ? </text>
+            <choice id="line1">Oui, elle est parfaite. Merci. Mais je suis venue pour te parler de Colm. </choice>
+            <choice id="line1">Oh... J'étais si abattue après avoir parlé à Colm que j'ai complètement oublié de la planter. </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Dialog - Line1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Oh non. Colm a un problème ? </text>
+            <choice id="line2">Il est démoralisé parce qu'il pense qu'il n'a pas d'ami ici. </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - Line2">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line2</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>C'est idiot. Il a des tas d'amis. Je sais ! Faisons-lui une tarte au citron bicolore toutes les deux. Peut-être qu'il se rendra compte qu'il a de merveilleux amis ici au Nord du Septentrion. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Mother Comfort peut nous cuisiner une tarte au citron bicolore. Peux-tu lui demander de quoi elle a besoin ? Nous l'aiderons à trouver les ingrédients. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004850</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Colm)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Cette fête du printemps n'a rien de particulier... Peuh !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004850">
+      <description>Parle à Mother Comfort</description>
+      <line description="Starting Dialog">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C015</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueChoiceAction">
+            <text>Bonjour ma chérie, je te cherchais justement. Voici une graine de citron bicolore pour la fête. </text>
+            <choice id="line1">Parfait ! Pouvez-vous nous aider à faire une tarte au citron bicolore pour Colm ?</choice>
+            <choice id="line2">Heu... Vous n'avez rien d'autre ? Tout le monde m'a déjà donné des graines pour la fête du printemps. </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - Line 1 with lemon-limes">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line1</identifier>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh, Colm is a dear.  I would love to make a lemon-lime pie for him. It's as easy as... well, pie!I'll need 2 of your lemon-limes though.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Voila! One lemon-lime pie for our favorite guy!</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P018SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I013eTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004853</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - Line 1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Oh, Colm est un amour. Je serais ravie de lui faire une tarte au citron bicolore. Ce sera... du gâteau pour ainsi dire ! Peux-tu m'apporter 2 citrons bicolores ? </text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P018SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004851</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Dialog - Line 2">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line2</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>On n'a jamais trop de graines. Après tout, ce sont les plantes qui font de ce monde un endroit magique. </text>
+            <choice id="line3">Eh bien, je me demandais comment faire une tarte au citron bicolore pour Colm qui est très démoralisé.</choice>
+            <choice id="line1">Vous avez raison. Je serais ravie d'avoir cette graine de citron bicolore. Pouvez-vous m'aider à faire une tarte au citron bicolore pour Colm ? </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - Line 3 with lemon-limes">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line3</identifier>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh, Colm est un amour. Je serais ravie de lui faire une tarte au citron bicolore. Ce sera... du gâteau pour ainsi dire ! Peux-tu m'apporter 2 citrons bicolores ? </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Et voilà ! Une tarte pour notre petit gars préféré !</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I013eTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004853</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - Line 3 ">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line3</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh, Colm est un amour. Je serais ravie de lui faire une tarte au citron bicolore. Ce sera... du gâteau pour ainsi dire ! Peux-tu m'apporter 2 citrons bicolores ? </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004851</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Shine)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu demandé à Mother Comfort si elle pouvait faire une tarte au citron bicolore pour Colm ? </text>
+          </object>
+        </actions>
+      </line>
+      <line description="Reminder (Colm)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La fête du printemps... Peuh !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004851" targetTemplate="DirtTemplate" targetZone="Z010">
+      <description>Fais pousser un citronnier bicolore</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::HarvestProduceAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>P018Template</template>
+          </object>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Je devrais retourner parler à Mother Comfort</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004852</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Mother Comfort)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C015</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, apporte-moi  2 citrons bicolores pour que je puisse faire la tarte pour Colm.</text>
+          </object>
+        </actions>
+      </line>
+      <line description="Reminder (Colm)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>La fête du printemps... Tu parles...</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004852">
+      <description>Apporte 2 citrons bicolores à Mother Comfort</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C015</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merveilleux, tu as les 2 citrons bicolores ! Je peux faire la tarte pour Colm.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I013eTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004853</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>P018ProduceTemplate</template>
+            <count>2</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Mother Comfort)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C015</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Please bring me 2 lemon-limes so I can make that lemon-lime pie for Colm.</text>
+          </object>
+        </actions>
+      </line>
+      <line description="Reminder (Colm)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Pffff...</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004853">
+      <description>Apporte la tarte au citron bicolore à Colm.</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I013eTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Waou, une tarte au citron bicolore pour moi ? Merci de m'avoir montré que les gens se souciaient de moi. Tu peux aller dire à Bella que je me sens bien mieux. </text>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004861</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I013eTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Mother Comfort)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C015</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>N'oublie pas de donner à Colm la tarte au citron bicolore que nous lui avons faite.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001472">
+    <description>Merci de la part de Bella</description>
+    <quest id="QUE-0000004861">
+      <description>Parle à Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>J'ai entendu dire que tu avais remonté le moral à Colm. Bien joué ! Merci de l'avoir aidé à retrouver l'esprit de la fête du printemps.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>J'ai gardé le cadeau le plus spécial pour toi : un arbre en fleur rose. Tu peux le placer où tu voudras. Joyeuse fête du printemps !</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I167aTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>free_winterfestival09.xml</fileName>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>H057Template</template>
+            <instanceIdentifier>H057Template</instanceIdentifier>
+            <zone>Z001</zone>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

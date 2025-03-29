@@ -1,0 +1,429 @@
+<things version="1">
+  <!-- Generic Templates -->
+  <template name="SoilTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>false</blocksSpawn>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail" />
+    <component type="components.NameComponent" name="Name" />
+    <component type="components.SoilComponent" name="Soil" />
+    <component type="components.EntitySpawningComponent" name="EntitySpawning" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <fillAlpha>.8</fillAlpha>
+    </component>
+  </template>
+  <template name="EntitySpawningTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>false</blocksSpawn>
+    </component>
+    <component type="components.IsometricComponent" name="Isometric" />
+    <component type="components.EntitySpawningComponent" name="EntitySpawning" />
+  </template>
+  <!-- Wall Templates -->
+  <template name="WallTemplate">
+    <component type="components.AutoRotateComponent" name="AutoRotate" />
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>false</blocksSpawn>
+    </component>
+    <component type="components.SoilComponent" name="Soil">
+      <soil>wallSoil</soil>
+    </component>
+  </template>
+  <template name="WallTemplateSW" template="WallTemplate">
+    <component name="AutoRotate">
+      <facing>SW</facing>
+    </component>
+  </template>
+  <template name="WallTemplateSE" template="WallTemplate">
+    <component name="AutoRotate">
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- Stall Template -->
+  <template name="StallTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>false</blocksSpawn>
+    </component>
+    <component type="components.SoilComponent" name="Soil">
+      <soil>stallSoil</soil>
+    </component>
+  </template>
+  <!-- Dirt/Soil Templates -->
+  <template name="QuestItemSoilTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.SoilComponent" name="Soil">
+      <soil>questitemsoil</soil>
+    </component>
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>true</blocksSpawn>
+    </component>
+    <component type="components.IsometricComponent" name="Isometric" />
+  </template>
+  <template name="DirtTemplate" template="SoilTemplate">
+    <component name="Name">
+      <name>Terre</name>
+    </component>
+    <component name="Soil">
+      <soil>dirt</soil>
+    </component>
+    <component name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0016a</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>240000</entitySpawnTime>
+      <spawnType chance="0.033">Detritus0Template</spawnType>
+      <spawnType chance="0.033">Detritus1Template</spawnType>
+      <spawnType chance="0.033">Detritus2Template</spawnType>
+    </component>
+    <component name="MiniMapTile">
+      <lineColor>0x663333</lineColor>
+      <fillColor>0x996633</fillColor>
+    </component>
+  </template>
+  <template name="CloudTemplate" template="SoilTemplate">
+    <component name="Name">
+      <name>Sol nuageux</name>
+    </component>
+    <component name="Soil">
+      <soil>cloud</soil>
+    </component>
+    <component name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0016f</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>240000</entitySpawnTime>
+      <spawnType chance=".033">Detritus0Template</spawnType>
+      <spawnType chance=".033">Detritus1Template</spawnType>
+      <spawnType chance=".033">Detritus2Template</spawnType>
+    </component>
+    <component name="MiniMapTile">
+      <lineColor>0x99cccc</lineColor>
+      <fillColor>0xffffff</fillColor>
+    </component>
+  </template>
+  <template name="FreshwaterTemplate" template="SoilTemplate">
+    <component name="Name">
+      <name>Eau fraîche</name>
+    </component>
+    <component name="Soil">
+      <soil>freshwater</soil>
+    </component>
+    <component name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0016e</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>240000</entitySpawnTime>
+      <spawnType chance=".033">Detritus0Template</spawnType>
+      <spawnType chance=".033">Detritus1Template</spawnType>
+      <spawnType chance=".033">Detritus2Template</spawnType>
+    </component>
+    <component name="MiniMapTile">
+      <lineColor>0x006699</lineColor>
+      <fillColor>0x3399cc</fillColor>
+    </component>
+  </template>
+  <template name="DarksoilTemplate" template="SoilTemplate">
+    <component name="Name">
+      <name>Terre sombre</name>
+    </component>
+    <component name="Soil">
+      <soil>darksoil</soil>
+    </component>
+    <component name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0016d</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>240000</entitySpawnTime>
+      <spawnType chance=".033">Detritus0Template</spawnType>
+      <spawnType chance=".033">Detritus1Template</spawnType>
+      <spawnType chance=".033">Detritus2Template</spawnType>
+    </component>
+    <component name="MiniMapTile">
+      <lineColor>0x330000</lineColor>
+      <fillColor>0x663300</fillColor>
+    </component>
+  </template>
+  <template name="MagicBeanSoilTemplate" template="SoilTemplate">
+    <component name="Name">
+      <name>Terre étoilée</name>
+    </component>
+    <component name="Soil">
+      <soil>magicbeansoil</soil>
+    </component>
+    <component name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0016c</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>240000</entitySpawnTime>
+      <spawnType chance=".033">Detritus0Template</spawnType>
+      <spawnType chance=".033">Detritus1Template</spawnType>
+      <spawnType chance=".033">Detritus2Template</spawnType>
+    </component>
+    <component name="MiniMapTile">
+      <lineColor>0x006600</lineColor>
+      <fillColor>0x33cc33</fillColor>
+    </component>
+  </template>
+  <!-- Spawner Templates -->
+  <!-- Haystack -->
+  <template name="HayStackSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">HayTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>25000</entitySpawnTime>
+    </component>
+  </template>
+  <!-- Water Barrel -->
+  <template name="WaterBarrelSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/canterfarms.swf</fileName>
+      <className>T0002b</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance="1">WaterBarrelTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>100</entitySpawnTime>
+    </component>
+  </template>
+  <!-- Animals -->
+  <template name="ButterflySpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".18">Butterfly1Template</spawnType>
+      <spawnType chance=".18">Butterfly2Template</spawnType>
+      <spawnType chance=".19">Butterfly3Template</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="LadyBugSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">LadyBugTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <!-- Materials -->
+  <template name="ClaySpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">ClayTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="SmokeCrystalSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">SmokeCrystalTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="AuroborusSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">AuroborusMetalTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="LunarSparklerSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">LunarSparkleTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="PixieSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M023</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">PixieDustTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="LoamSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">LoamSackTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="WolfWhistleSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">WolfWhistleTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>180000</entitySpawnTime>
+    </component>
+  </template>
+  <!-- Seashells -->
+  <template name="ScallopSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">ScallopShellTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="SnailSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">SnailShellTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="ConchSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">ConchShellTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <template name="StarfishSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0179</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">StarfishTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>180000</entitySpawnTime>
+    </component>
+  </template>
+  <!-- Trees -->
+  <template name="PineNutSpawner" template="EntitySpawningTemplate">
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0047b</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">PineNutTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Pin</ToolTipText>
+    </component>
+  </template>
+  <template name="DarkResinSpawner" template="EntitySpawningTemplate">
+    <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0047a</className>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">DarkResinTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>30000</entitySpawnTime>
+    </component>
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Dark Resin Tree</ToolTipText>
+    </component>
+  </template>
+  <!-- Spider Web -->
+  <template name="SpiderSilkSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0114b</className>
+    </component>
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Spider Web</ToolTipText>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">SpiderSilkTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+  <!-- Dream Catcher -->
+  <template name="DreamBaubleSpawner" template="EntitySpawningTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0115</className>
+    </component>
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Dream Catcher</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>20</depthOffset>
+      <xOffset>-15</xOffset>
+      <yOffset>7</yOffset>
+    </component>
+    <component name="GridPosition">
+      <gridX>18</gridX>
+      <gridY>32</gridY>
+    </component>
+    <component name="EntitySpawning">
+      <spawnType chance=".55">DreamBaubleTemplate</spawnType>
+      <spawnTimeType>Day</spawnTimeType>
+      <entitySpawnTime>60000</entitySpawnTime>
+    </component>
+  </template>
+</things>

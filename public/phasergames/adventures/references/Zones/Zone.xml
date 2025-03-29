@@ -1,0 +1,702 @@
+<things version="1">
+  <template name="ExitToZone">
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.StopOnTileComponent" name="StopOnTile" />
+    <component type="components.ExitTileComponent" name="ExitTile" />
+    <component type="components.ExitToolTipComponent" name="ToolTip" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <lineColor>0xcc33cc</lineColor>
+      <fillColor>0xff66ff</fillColor>
+      <fillAlpha>.5</fillAlpha>
+    </component>
+  </template>
+  <template name="SignPost">
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <isBlocked>true</isBlocked>
+    </component>
+    <!--<component type="components.ClickMovieClipComponent" name="ClickMovieClip"/>-->
+    <!--<component type="components.IsometricComponent" name="Isometric"/>-->
+    <component type="components.ToolTipComponent" name="ToolTip" />
+  </template>
+  <!-- Minimap Markers-->
+  <template name="MarkerR010">
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/objectsthumbnail.swf</fileName>
+      <className>T0604</className>
+    </component>
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>T0604</identifier>
+    </component>
+    <component type="components.MiniMapCharacterComponent" name="MiniMapCharacter">
+      <!--<className>CharacterMarker</className>-->
+      <scale>0.5</scale>
+    </component>
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Le Théâtre</ToolTipText>
+    </component>
+  </template>
+  <template name="MarkerR011">
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/tilesets/objectsthumbnail.swf</fileName>
+      <className>T0610</className>
+    </component>
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>T0610</identifier>
+    </component>
+    <component type="components.MiniMapCharacterComponent" name="MiniMapCharacter">
+      <!--<className>CharacterMarker</className>-->
+      <scale>0.5</scale>
+    </component>
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Cabane de Wildscape</ToolTipText>
+    </component>
+  </template>
+  <!-- Street Signs-->
+  <template name="StreetSignZone1" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Fermes de Canter</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone2" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Promenade de Rolandsgaard</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone3" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Entrée de la salle de bal de Rolandsgaard</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone4" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Salle du jardin de Rolandsgaard</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone5" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Salle de la fontaine de Rolandsgaard</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone6" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Salle royale de Rolandsgaard</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone7" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Place de la fontaine</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone8" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Allée de Bagatella</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone9" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Rue des Artisans</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone10" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>La Lisière</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone11" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Le Sentier</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone12" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Canter Downs</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone13" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Overgaard Skylands</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone15" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Orée de la forêt de Darkcomb</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone16" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Forêt de Darkcomb</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone22" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Rive ouest de la rivière Fastalon</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone23" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>La Vallée des Roses</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone25" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Caverne de Boda</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone26" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Repaire des loups</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone27" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Petalhome</ToolTipText>
+    </component>
+  </template>
+  <template name="StreetSignZone28" template="SignPost">
+    <component name="ToolTip">
+      <ToolTipText>Grotte du désert</ToolTipText>
+    </component>
+  </template>
+  <!-- To: Canter Farm, From: Canter Farms Cottage -->
+  <template name="ExitToZoneR001" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>R001</zoneName>
+      <x>0</x>
+      <y>5</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <template name="ExitToZoneR010" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>R010</zoneName>
+      <x>0</x>
+      <y>5</y>
+      <facing>NE</facing>
+    </component>
+    <component type="components.MovieClipComponent" name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottagerooms.swf</fileName>
+      <className>Overlay_ExitNE</className>
+    </component>
+    <component type="components.IsometricComponent" name="Isometric" />
+  </template>
+  <template name="ExitToZoneR011" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>R011</zoneName>
+      <x>0</x>
+      <y>5</y>
+      <facing>NW</facing>
+    </component>
+    <component type="components.MovieClipComponent" name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottagerooms.swf</fileName>
+      <className>Overlay_ExitNE</className>
+    </component>
+    <component type="components.IsometricComponent" name="Isometric" />
+  </template>
+  <!-- To: Canter Farm Stable, From: Canter Farms -->
+  <template name="ExitToZone1a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z001</zoneName>
+      <x>35</x>
+      <y>36</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: Canter Farm, From: Canter Down -->
+  <template name="ExitToZone1b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z001</zoneName>
+      <x>35</x>
+      <y>36</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: Canter Farm, From: Canter Farm Cottage -->
+  <template name="ExitToZone1c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z001</zoneName>
+      <x>22</x>
+      <y>28</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: Canter Farm, From: Canter Farm Stable -->
+  <template name="ExitToZone1d" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z001</zoneName>
+      <x>17</x>
+      <y>15</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <template name="ExitToZoneR050" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>R050</zoneName>
+      <x>1</x>
+      <y>5</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <!-- To: Castle Boardwalk, From: The Trailhead -->
+  <template name="ExitToZone2a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z002</zoneName>
+      <x>20</x>
+      <y>7</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: Castle Boardwalk, From: The Ballroom Entrance -->
+  <template name="ExitToZone2b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z002</zoneName>
+      <x>25</x>
+      <y>5</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: Castle Boardwalk, From: The Outskirts -->
+  <template name="ExitToZone2c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z002</zoneName>
+      <x>38</x>
+      <y>28</y>
+      <facing>W</facing>
+    </component>
+  </template>
+  <!-- To: Ballroom Entrance, From: The Castle Boardwalk -->
+  <template name="ExitToZone3a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z003</zoneName>
+      <x>45</x>
+      <y>3</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: Ballroom Entrance, From: Garden Room -->
+  <template name="ExitToZone3b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z003</zoneName>
+      <x>22</x>
+      <y>49</y>
+      <facing>N</facing>
+    </component>
+  </template>
+  <!-- To: Ballroom Entrance, From: Fountain Room -->
+  <template name="ExitToZone3c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z003</zoneName>
+      <x>39</x>
+      <y>48</y>
+      <facing>W</facing>
+    </component>
+  </template>
+  <!-- To: Ballroom Entrance, From: Royal Room -->
+  <template name="ExitToZone3d" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z003</zoneName>
+      <x>30</x>
+      <y>53</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: Garden Room, From: Fountain Room -->
+  <template name="ExitToZone4a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z004</zoneName>
+      <x>56</x>
+      <y>31</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: Garden Room, From: Royal Room -->
+  <template name="ExitToZone4b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z004</zoneName>
+      <x>53</x>
+      <y>37</y>
+      <facing>W</facing>
+    </component>
+  </template>
+  <!-- To: Garden Room, From: Ballroom Entrance -->
+  <template name="ExitToZone4c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z004</zoneName>
+      <x>57</x>
+      <y>24</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: Fountain Room, From: Royal Room -->
+  <template name="ExitToZone5a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z005</zoneName>
+      <x>13</x>
+      <y>24</y>
+      <facing>N</facing>
+    </component>
+  </template>
+  <!-- To: Fountain Room, From: Ballroom Entrance -->
+  <template name="ExitToZone5b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z005</zoneName>
+      <x>13</x>
+      <y>9</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: Fountain Room, From: Garden Room -->
+  <template name="ExitToZone5c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z005</zoneName>
+      <x>9</x>
+      <y>17</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <!-- To: Royal Room, From: Ballroom Entrance -->
+  <template name="ExitToZone6a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z006</zoneName>
+      <x>25</x>
+      <y>9</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: Royal Room, From: Garden Room -->
+  <template name="ExitToZone6b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z006</zoneName>
+      <x>20</x>
+      <y>11</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: Royal Room, From: Fountain Room -->
+  <template name="ExitToZone6c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z006</zoneName>
+      <x>28</x>
+      <y>14</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: Fountain Plaza, From: Artisan Way -->
+  <template name="ExitToZone7a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z007</zoneName>
+      <x>37</x>
+      <y>3</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: Fountain Plaza, From: Canter Farms -->
+  <template name="ExitToZone7b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z007</zoneName>
+      <x>17</x>
+      <y>49</y>
+      <facing>N</facing>
+    </component>
+  </template>
+  <!-- To: Fountain Plaza, From: Bagatello Row -->
+  <template name="ExitToZone7c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z007</zoneName>
+      <x>61</x>
+      <y>29</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: Bagatella Row, From: Fountain Plaza -->
+  <template name="ExitToZone8a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z008</zoneName>
+      <x>7</x>
+      <y>14</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: Bagatella Row, From: The Outskirts -->
+  <template name="ExitToZone8b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z008</zoneName>
+      <x>47</x>
+      <y>55</y>
+      <facing>W</facing>
+    </component>
+  </template>
+  <!-- To: Artisan Way, From: Fountain Plaza -->
+  <template name="ExitToZone9a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z009</zoneName>
+      <x>47</x>
+      <y>60</y>
+      <facing>W</facing>
+    </component>
+  </template>
+  <!-- To: Artisan Way, From: The Trailhead -->
+  <template name="ExitToZone9b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z009</zoneName>
+      <x>21</x>
+      <y>14</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: The Outskirts, From: Bagatella Row -->
+  <template name="ExitToZone10a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z010</zoneName>
+      <x>23</x>
+      <y>31</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: The Outskirts, From: Castle Boardwalk -->
+  <template name="ExitToZone10b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z010</zoneName>
+      <x>52</x>
+      <y>5</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: The Outskirts, From: Fastalon West Riverbank -->
+  <template name="ExitToZone10c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z010</zoneName>
+      <x>59</x>
+      <y>3</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: The Outskirts, From: Darkcomb Hedge -->
+  <template name="ExitToZone10d" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z010</zoneName>
+      <x>72</x>
+      <y>45</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: The Outskirts, From: The Gazebo -->
+  <template name="ExitToZone10e" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z010</zoneName>
+      <x>60</x>
+      <y>34</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: The Darkcomb Hedge, From: Wildscape Cabin -->
+  <template name="ExitToZone15d" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z015</zoneName>
+      <x>45</x>
+      <y>28</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: The Trailhead, From Artisan Way -->
+  <template name="ExitToZone11a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z011</zoneName>
+      <x>51</x>
+      <y>83</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: The Trailhead, From Castle Boardwalk -->
+  <template name="ExitToZone11b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z011</zoneName>
+      <x>106</x>
+      <y>20</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: The Trailhead, From The Rose Valley -->
+  <template name="ExitToZone11c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z011</zoneName>
+      <x>77</x>
+      <y>6</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: The Trailhead, From: Petalhome -->
+  <template name="ExitToZone11d" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z011</zoneName>
+      <x>28</x>
+      <y>33</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: Canter Downs; From: Canter Farm -->
+  <template name="ExitToZone12a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z012</zoneName>
+      <x>66</x>
+      <y>3</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: Canter Downs; From: Overgaard Skylands -->
+  <template name="ExitToZone12b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z012</zoneName>
+      <x>85</x>
+      <y>38</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: Canter Downs; From: Petalhome -->
+  <template name="ExitToZone12c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z012</zoneName>
+      <x>49</x>
+      <y>23</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: Overgaard Skylands; From: Canter Downs -->
+  <template name="ExitToZone13a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z013</zoneName>
+      <x>10</x>
+      <y>66</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <!-- To: Darkcomb Hedge; From: Outskirts -->
+  <template name="ExitToZone15a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z015</zoneName>
+      <x>24</x>
+      <y>9</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: Darkcomb Hedge; From: Darkcomb Forest -->
+  <template name="ExitToZone15b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z015</zoneName>
+      <x>40</x>
+      <y>41</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: Darkcomb Hedge; From: Petalhome -->
+  <template name="ExitToZone15c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z015</zoneName>
+      <x>21</x>
+      <y>13</y>
+      <facing>E</facing>
+    </component>
+  </template>
+  <!-- To: Darkcomb Forest; From: Darkcomb Hedge -->
+  <template name="ExitToZone16a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z016</zoneName>
+      <x>16</x>
+      <y>23</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <!-- To: Darkcomb Forest; From: Boda's Cave -->
+  <template name="ExitToZone16b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z016</zoneName>
+      <x>35</x>
+      <y>58</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: Fastalon West Riverbank; From: Outskirts -->
+  <template name="ExitToZone22a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z022</zoneName>
+      <x>6</x>
+      <y>41</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <!-- To: Fastalon West Riverbank; From: Wolf Den -->
+  <template name="ExitToZone22b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z022</zoneName>
+      <x>91</x>
+      <y>4</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: The Rose Valley; From: The Trailhead -->
+  <template name="ExitToZone23a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z023</zoneName>
+      <x>13</x>
+      <y>59</y>
+      <facing>NW</facing>
+    </component>
+  </template>
+  <!-- To: The The Rose Valley, From Desert Cave -->
+  <template name="ExitToZone23b" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z023</zoneName>
+      <x>40</x>
+      <y>23</y>
+      <facing>SW</facing>
+    </component>
+  </template>
+  <!-- To: The The Rose Valley, From Petalhome -->
+  <template name="ExitToZone23c" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z023</zoneName>
+      <x>19</x>
+      <y>19</y>
+      <facing>W</facing>
+    </component>
+  </template>
+  <!-- To: Boda's Cave; From: Darkcomb Forest -->
+  <template name="ExitToZone25a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z025</zoneName>
+      <x>53</x>
+      <y>35</y>
+      <facing>SE</facing>
+    </component>
+  </template>
+  <!-- To: Wolf Den; From: Fastalon West Riverbank -->
+  <template name="ExitToZone26a" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z026</zoneName>
+      <x>31</x>
+      <y>6</y>
+      <facing>S</facing>
+    </component>
+  </template>
+  <!-- To: Desert Cave; From: The Rose Valley -->
+  <template name="ExitToZone28" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z028</zoneName>
+      <x>5</x>
+      <y>5</y>
+      <facing>NE</facing>
+    </component>
+  </template>
+  <!-- To: Petalhome; From: Anywhere -->
+  <template name="ExitToZone27" template="ExitToZone">
+    <component name="ExitTile">
+      <zoneName>Z027</zoneName>
+      <x>30</x>
+      <y>30</y>
+      <facing>N</facing>
+    </component>
+  </template>
+</things>
