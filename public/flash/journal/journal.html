@@ -55,6 +55,7 @@
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
           swfPlayer.src = 'journal.swf';
           swfPlayer.setAttribute("flashvars", `lang=${locale}`);
+          swfPlayer.setAttribute("wmode", `transparent`);
           swfPlayer.type = 'application/x-shockwave-flash';
           swfParent.appendChild(swfPlayer);
         </script>
