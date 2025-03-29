@@ -76,40 +76,7 @@ class LevelTwo extends Phaser.Scene
             this.add.image(444 + (index * 888), 234, 'path')
         }
         // Level Reference
-        //this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6) 
-
-        this.displayTxtStyle = 
-        {
-            font: "italic 32px StempelGaramond",
-            color: "white",
-            stroke: "rgba(110, 195, 221, 20)",
-            strokeThickness: 3,
-            align: "center"
-        }
-
-        // Display
-        this.add.image(444, 30, 'scoreBoard').setScrollFactor(0) 
-        // Horseshoe Display
-        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
-        this.horseshoeText.text = this.horseshoes + " x ";
-        this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
-        // Score Display
-        this.scoreNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
-        this.scoreNameText.text = langData.score;
-        this.scoreNameText.setPosition(445-this.scoreNameText.width/2, 18-this.scoreNameText.height/2);
-
-        this.scoreText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
-        this.scoreText.text = this.score;
-        this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
-        // Clock
-        this.clock.start();
-        // Display
-        this.clockNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
-        this.clockNameText.text = langData.time;
-        this.clockNameText.setPosition(570-this.clockNameText.width/2, 18-this.clockNameText.height/2);
-        this.timerText = this.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
-        this.timerText.text = "0:00";
-        this.timerText.setPosition(575-this.timerText.width/2, 40-this.timerText.height/2);
+        //this.add.image(0, 0, 'Level2').setOrigin(0, 0).setAlpha(.6)
 
 
         // Background Elements
@@ -549,6 +516,39 @@ class LevelTwo extends Phaser.Scene
 
 
         // UI
+        this.displayTxtStyle = 
+        {
+            font: "italic 32px StempelGaramond",
+            color: "white",
+            stroke: "rgba(110, 195, 221, 20)",
+            strokeThickness: 3,
+            align: "center"
+        }
+
+        // Display
+        this.add.image(444, 30, 'scoreBoard').setScrollFactor(0) 
+        // Horseshoe Display
+        this.horseshoeText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
+        this.horseshoeText.text = this.horseshoes + " x ";
+        this.horseshoeText.setPosition(320-this.horseshoeText.width/2, 35-this.horseshoeText.height/2);
+        // Score Display
+        this.scoreNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.scoreNameText.text = langData.score;
+        this.scoreNameText.setPosition(445-this.scoreNameText.width/2, 18-this.scoreNameText.height/2);
+
+        this.scoreText = this.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
+        this.scoreText.text = this.score;
+        this.scoreText.setPosition(445-this.scoreText.width/2, 40-this.scoreText.height/2);
+        // Clock
+        this.clock.start();
+        // Display
+        this.clockNameText = this.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
+        this.clockNameText.text = langData.time;
+        this.clockNameText.setPosition(570-this.clockNameText.width/2, 18-this.clockNameText.height/2);
+        this.timerText = this.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
+        this.timerText.text = "0:00";
+        this.timerText.setPosition(575-this.timerText.width/2, 40-this.timerText.height/2);
+
         const UI = this.add.image(443, 234, 'UI').setScrollFactor(0)
         // Music button
         const musicButton = this.add.sprite(871, 453, 'music_button', 'music_on').setInteractive({ pixelPerfect: true }).setScale(0.7).setScrollFactor(0).setFrame(`music_${data.playMusic ? 'on' : 'off'}`);
