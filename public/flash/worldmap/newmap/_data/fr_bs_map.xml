@@ -1,174 +1,151 @@
-<root>
-    <locations>
-        <location>
-            <scroll floatUp="5">
-                <label _width="110">
-					<![CDATA[<p class="bubble_title">Arbre du Monde</p>]]>
-				</label>
-            </scroll>
-            <menu _x="10" _y="15" floatDown="-100" floatRight="60" itemSpacing="2">
-                <item link="/flash/ArtStudio/artstudio.html">
-					<label _width="120">
-						<![CDATA[<p class="bubble_item">Studio des Artistes</p>]]>
-					</label>
-                </item>
-				<item link="https://bellasara.wiki.gg/wiki/Category:Bellapedia">
-					<label _width="120">
-						<![CDATA[<p class="bubble_item">Bellapedia</p>]]>
-					</label>
-                </item>
-            </menu>
-        </location>
-		<location>
-            <scroll floatUp="5">
-                <label _width="40">
-					<![CDATA[<p class="bubble_title">Piste</p>]]>
-				</label>
-            </scroll>
-            <menu _x="10" _y="15" floatDown="-100" floatRight="50" itemSpacing="2">
-                <item link="https://bellasara.wiki.gg/wiki/Citrustacked">
-					<label _width="200">
-						<![CDATA[<p class="bubble_item">Citrustacked</p>]]>
-					</label>
-                </item>
-				<item link="/flash/lanceriding/lanceriding.html">
-					<label _width="200">
-						<![CDATA[<p class="bubble_item">Jeu de Lance</p>]]>
-					</label>
-                </item>
-				<item link="/phasergames/jumpinggame/index.html">
-					<label _width="200">
-						<![CDATA[<p class="bubble_item">Le Jeu des Sauts Extraordinaries</p>]]>
-					</label>
-                </item>
-				<item link="https://bellasara.wiki.gg/wiki/Trailblazer">
-					<label _width="200">
-						<![CDATA[<p class="bubble_item">Trailblazer</p>]]>
-					</label>
-                </item>
-            </menu>
-        </location>
-		        <location>
-            <scroll floatUp="5">
-                <label _width="60">
-					<![CDATA[<p class="bubble_title">Château</p>]]>
-				</label>
-            </scroll>
-            <menu _x="10" _y="15" floatDown="-70" floatRight="-260" itemSpacing="2">
-                <item link="https://bellasara.wiki.gg/wiki/Dream_Rider">
-					<label _width="170">
-						<![CDATA[<p class="bubble_item">Dream Rider</p>]]>
-					</label>
-                </item>
-                <item link="/flash/fireworks/fireworks.html">
-					<label _width="170">
-						<![CDATA[<p class="bubble_item">Festival des Feux d'Artifice</p>]]>
-					</label>
-                </item>
-                <item link="https://bellasara.wiki.gg/wiki/Magic_Bubble_Wand">
-					<label _width="170">
-						<![CDATA[<p class="bubble_item">Jeu des bulles magiques</p>]]>
-					</label>
-                </item>
-            </menu>
-        </location>
-		        <location>
-            <scroll floatUp="5">
-                <label _width="30">
-					<![CDATA[<p class="bubble_title">Ville</p>]]>
-				</label>
-            </scroll>
-            <menu _x="10" _y="15" floatDown="-60" floatRight="50" itemSpacing="2">
-                <item link="https://bellasara.wiki.gg/wiki/Marvelous_Magic_Match">
-					<label _width="150">
-						<![CDATA[<p class="bubble_item">Boîtes Magiques</p>]]>
-					</label>
-                </item>
-                <item link="/flash/treasureshunt/treasureshunt.html">
-					<label _width="150">
-						<![CDATA[<p class="bubble_item">Chasse au Trésor</p>]]>
-					</label>
-                </item>
-                <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
-					<label _width="150">
-						<![CDATA[<p class="bubble_item">La roue des merveilles</p>]]>
-					</label>
-                </item>
-            </menu>
-        </location>
-		        <location>
-            <scroll floatUp="5">
-                <label _width="50">
-					<![CDATA[<p class="bubble_title">Ranch</p>]]>
-				</label>
-            </scroll>
-            <menu _x="10" _y="15" floatDown="-45" floatRight="25" itemSpacing="2">
-                <item link="https://bellasara.wiki.gg/wiki/My_Cottage">
-					<label _width="130">
-						<![CDATA[<p class="bubble_item">Mon Cottage</p>]]>
-					</label>
-                </item>
-                <item link="/flash/foal/index.html">
-					<label _width="130">
-						<![CDATA[<p class="bubble_item">Mon Cheval</p>]]>
-					</label>
-                </item>
-                <item link="https://bellasara.wiki.gg/wiki/My_Awards">
-					<label _width="130">
-						<![CDATA[<p class="bubble_item">Salle des Trophées</p>]]>
-					</label>
-                </item>
-                <item link="/phasergames/stablesrecreation/index.html">
-					<label _width="130">
-						<![CDATA[<p class="bubble_item">Écurie</p>]]>
-					</label>
-                </item>
-            </menu>
-        </location>
-		        <location>
-            <scroll floatUp="5">
-                <label _width="40">
-					<![CDATA[<p class="bubble_title">Bazar</p>]]>
-				</label>
-            </scroll>
-            <menu _x="0" _y="0" floatDown="-35" floatRight="50" itemSpacing="2">
-                <item link="https://bellasara.wiki.gg/wiki/Bazaar_Tent">
-					<label _width="75">
-						<![CDATA[<p class="bubble_item">Bazaar Tent</p>]]>
-					</label>
-                </item>
-            </menu>
-        </location>
-    </locations>
-	<!--
-	<nav itemSpacing="5">
-        <location>
-            <nav_btn>
-				<item link="c">
-					<label _width="100">
-						<![CDATA[<p class="bubble_bubble_title">World Map</p>]]>
-					</label>
-                </item>
-            </nav_btn>
-            <nav_sub itemSpacing="5">
-				<item link="test">
-                <label _width="100">
-					<![CDATA[<p class="bubble_bubble_title">World Map</p>]]>
-				</label>
-				</item>
-            </nav_sub>
-        </location>
-    </nav>
-	-->
-    <!--
-    <help>
-        <balloon _x="10" _y="10">
-            <arrow _x="200" _y="200" _width="20" _height="20" _rotation="0" />
-                <label _width="250">
-					HELP TEXT GOES HERE
-				</label>
-        </balloon>
-    </help>
-    -->
+<?xml version='1.0' encoding='UTF-8'?>
+<bs_map>
+	<!-- ======================================================================================================================================================= -->
     <bg_music src="./newmap/music/bgmusic.mp3" />
-</root>
+	<!-- ======================================================================================================================================================= -->
+	<help>
+		<balloon _x="520" _y="90">
+			<arrow _x="160" _y="40" _width="20" _height="100" _rotation="110" />
+			<arrow _x="6" _y="60" _width="10" _height="40" _rotation="200" />
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="help_balloon">Clique pour visiter les lieux du monde de BELLA SARA.</p>]]></label>			
+		</balloon>
+
+		<balloon _x="680" _y="370">
+			<arrow _x="150" _y="35" _width="20" _height="60" _rotation="140" />
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="help_balloon">ACTIVER/DÉSACTIVER la musique.</p>]]></label>			
+		</balloon>		
+	</help>	
+	<!-- ======================================================================================================================================================= -->
+	<locations>
+		<!-- ======= -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Arbre du Monde</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="75" _y="-120" floatDown="-10">
+        <item link="/flash/ArtStudio/artstudio.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Studio des Artistes</p>]]></label>
+        </item>
+        <item link="https://bellasara.wiki.gg/wiki/Bella%27s_Beauty_Box">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Salon de beauté Bella</p>]]></label>
+        </item>  
+        <item link="https://bellasara.wiki.gg/wiki/Category:Bellapedia">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bellapedia</p>]]></label>
+        </item>
+        <item link="/phasergames/quiz/belloquiz/original/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Quiz de Bello</p>]]></label>
+        </item>
+        <item link="/flash/quiz/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Test de connaissances de Santo</p>]]></label>
+        </item>
+        <item link="/phasergames/memory/yinyang/original/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Jeu de Yin & Yang</p>]]></label>
+        </item>
+			</menu>
+		</location>
+		<!-- ===== -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Piste</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="35" _y="-80" floatRight="10">
+        <item link="/phasergames/citrustacked/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Citrustacked</p>]]></label>
+        </item>
+        <item link="https://bellasara.wiki.gg/wiki/Trailblazer">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Trailblazer</p>]]></label>
+        </item>
+				<item link="/flash/jumpinggame/jumpinggame.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Le Jeu des Sauts Extraordinaires</p>]]></label>	
+				</item>
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Jeu de lance</p>]]></label>	
+				</item>
+			</menu>
+
+		</location>		
+		<!-- ==== -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Château</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="-215" _y="-60" floatRight="-10">
+        <item link="/flash/cloudjumper/cloudjumper.html?version=1">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Cavalier des nuages</p>]]></label>
+        </item>
+        <item link="/flash/dreamrider/dreamrider.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Dream Rider</p>]]></label>
+        </item>
+        <item link="/flash/fireworks/fireworks.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Festival de Feux d'Artifice </p>]]></label>
+        </item>
+        <item link="/flash/bubblewand/bubblewand.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Jeu des bulles magiques</p>]]></label>
+        </item>		
+			</menu>
+		</location>
+		<!-- ==== -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Ville</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="40" _y="-30" floatRight="10">
+        <item link="https://bellasara.wiki.gg/wiki/Marvelous_Magic_Match">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Boîtes Magiques</p>]]></label>
+        </item>
+        <item link="/flash/treasureshunt/treasureshunt.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Chasse au Trésor</p>]]></label>
+        </item>
+        <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">La roue des merveilles</p>]]></label>
+        </item>
+			</menu>
+		</location>
+		<!-- ==== -->		
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Ranch</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="30" _y="-40" floatDown="10">
+        <item link="https://bellasara.wiki.gg/wiki/My_Cottage">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Mon cottage</p>]]></label>	
+				</item>
+        <item link="/flash/foal/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">My Horse</p>]]></label>
+        </item>
+        <item link="/phasergames/stablesrecreation/index.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Écurie</p>]]></label>	
+				</item>
+				<item link="https://bellasara.wiki.gg/wiki/My_Awards">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Salle des Trophées</p>]]></label>	
+				</item>
+			</menu>
+		</location>
+		<!-- ==== -->	
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Bazar</p>]]></label>	
+			</scroll>
+
+      <menu itemSpacing="0" _x="40" _y="-35" floatRight="10">
+        <item link="https://bellasara.wiki.gg/wiki/Bazaar_Tent">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Entrée</p>]]></label>
+				</item>
+			</menu>
+		</location>
+    <!-- === -->
+    <location _x="0" _y="0">
+      <scroll floatUp="0">
+        <label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Bella Sara Adventures</p>]]></label>
+      </scroll>
+      <menu itemSpacing="0" _y="-40" _x="80" floatRight="10">
+        <item link="https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bella Sara Adventures</p>]]></label>
+        </item>
+      </menu>
+    </location>
+    <!-- === -->
+  </locations>
+  <!-- ======================================================================================================================================================= -->
+  <!-- ======================================================================================================================================================= -->
+</bs_map>
