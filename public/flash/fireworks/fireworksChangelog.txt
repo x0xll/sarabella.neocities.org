@@ -1,0 +1,6 @@
+3 Jan 2025
+    - Fireworks2.swf works on browser
+        - Deleted API calls to Bella Sara
+        - Set the executable defaut firework show as the default browser one
+        - Added possibility to send a custom show through flashvars
+        - Modified search url for the xml localization file

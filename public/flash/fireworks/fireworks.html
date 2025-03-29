@@ -4,6 +4,7 @@
       <link rel="icon" href="/images/favicons/favicon.ico">
         <title data-il8n="game_firelightFestival">Firelight Festival</title>
         <script src="/ruffle/ruffle.js"></script>
+        <script src="./js/fireworksExternalInterfaces.js"></script>
         <link rel="stylesheet" href="/styles.css">
     </head>
 
@@ -13,7 +14,18 @@
       
         <script src="/header.js"></script>
         
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <p data-il8n="firelight_warning">The game's text formatting is not yet correct, and the game isn't yet linked back with the viewer.</p>
+        </div> 
+
         <script>
+          // Gets the correct swf file from url
+          const searchQueryString = window.location.search;
+          const urlParameters = new URLSearchParams(searchQueryString);
+          versionFile = urlParameters.get('part')
+          customFireworks = urlParameters.get('show')
+
           window.RufflePlayer = {
             config: {
               autoplay: "on",
@@ -40,11 +52,19 @@
           swfPlayer.height = '521';
           swfPlayer.width = '887';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'fireworks.swf';
+          swfPlayer.src = 'Fireworks' + versionFile + '.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
           // root.loaderInfo.parameters.xmlPath;
-          var pathXML = "lang/game_" + locale + ".xml";
-          swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}`);
+          if (versionFile == 1)
+          {
+            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          }
+          else if (versionFile == 2)
+          {
+            var pathXML = "lang/game_" + locale + ".xml";
+            swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}&customShow=${customFireworks}`);
+          }
+
           swfParent.appendChild(swfPlayer);
         </script>
   </body>

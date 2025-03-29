@@ -48,7 +48,8 @@
     "game_myhorse" : "My Horse (white foal sprite)",
     "game_randomartideagenerator" : "Random Art Idea Generator",
     "game_dressupstables" : "Dress Up Game",
-    "game_firelightFestival" : "Firelight Festival",
+    "game_firelightFestival_game" : "Firelight Festival - Game",
+    "game_firelightFestival_viewer" : "Firelight Festival - Viewer",
     "game_dreamrider" : "Dream Rider",
     "game_bubblewand" : "Magic Bubble Wand",
     "game_bazaar" : "Bazaar",
@@ -78,6 +79,9 @@
     "bubblewand_warning" : "The game's text formatting is not yet correct",
 
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
+
+
+    "firelight_warning" : "The game's text formatting is not yet correct, and the game isn't yet linked back with the viewer. You will need to right click the game and hit play to get past the loading screen.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
