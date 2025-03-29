@@ -1,11 +1,8 @@
-nextScreen = false
-
-
-class Load extends Phaser.Scene 
+class Common_UI extends Phaser.Scene 
 {
     constructor ()
     {
-        super({ key: 'Load' });
+        super({ key: 'common_ui' });
     }
 
     preload ()
@@ -15,6 +12,6 @@ class Load extends Phaser.Scene
 
     create ()
     {
-
+        
     }
 }

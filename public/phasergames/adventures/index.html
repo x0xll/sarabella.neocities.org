@@ -6,8 +6,13 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
-        <script src="./scripts/loadScreen.js"></script>
-        <script src="./scripts/uiScreen.js"></script>
+        <script src="./scripts/common/loadScreen.js"></script>
+        <script src="./scripts/common/uiScreen.js"></script>
+        <script src="./scripts/common/managers/inventoryManager.js"></script>
+        <script src="./scripts/common/managers/questManager.js"></script>
+        <script src="./scripts/common/managers/saveManager.js"></script>
+        <script src="./scripts/common/managers/uiManager.js"></script>
+        <script src="./scripts/world/canterfarm.js"></script>
         <style type="text/css">
             body {
                 margin: 0;
@@ -59,8 +64,10 @@
                         ]
                     },
                     scene: [
-                        Load,
-                        CommonUI
+                        Common_Load,
+                        Common_UI,
+                        
+                        World_CanterFarm
                     ]
                 };
 

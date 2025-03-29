@@ -1,11 +1,8 @@
-nextScreen = false
-
-
-class UI extends Phaser.Scene 
+class World_CanterFarm extends Phaser.Scene 
 {
     constructor ()
     {
-        super({ key: 'CommonUI' });
+        super({ key: 'world_canterfarm' });
     }
 
     preload ()
