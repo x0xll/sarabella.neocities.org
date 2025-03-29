@@ -30,7 +30,7 @@ Det finns inget mer att samla.</win2>
         <!-- control panel score text goes here -->
         <current_score>Poäng</current_score>
         <!-- combos texts -->
-        <ofakind>Ensam i sitt slag: </ofakind>
+        <ofakind> i sitt slag: </ofakind>
         <variety>Variation </variety>
         <plus>Plus: </plus>
         <cross>Kors: </cross>
