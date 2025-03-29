@@ -28,7 +28,7 @@
         <script>
           const searchQueryString = window.location.search;
           const urlParameters = new URLSearchParams(searchQueryString);
-          roomID = urlParameters.get('roomID')
+          roomID = urlParameters.get('roomId')
 
           window.RufflePlayer = {
             config: {
@@ -61,8 +61,11 @@
           switch(roomID)
           {
               default:
-              case 6:
+              case "6":
                 swfPlayer.src = 'cottagebedroom.swf';
+              break;
+              case "3":
+                swfPlayer.src = 'livingroom.swf';
               break;
           }
 
