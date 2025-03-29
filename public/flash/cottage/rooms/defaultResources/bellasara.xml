@@ -8,16 +8,16 @@
         <Location id="bazaarLoc" url="/xml/fr/bazaar.xml" />
         <Location id="bazaarPage" url="/bazaar.aspx" />
         <Location id="cardActivationPage" url="/activate.aspx" />
-        <Location id="cardSwf" url="./swf/card.swf" />
-        <Location id="cottageFrameSwf" url="./swf/cottageframe.swf" />
-        <Location id="cottageFrame521Swf" url="./swf/cottageframe521.swf" />
-        <Location id="cottageHelpSwf" url="./swf/cottagehelp.swf" />
-        <Location id="cottageMusicSwf" url="./swf/cottagemusic.swf" />
-        <Location id="cottageWrapperSwf" url="./swf/cottagewrapper.swf" />
-        <Location id="cottageBedroomPage" url="./rooms/rooms.html?roomId=6" />
+        <Location id="cardSwf" url="../swf/card.swf" />
+        <Location id="cottageFrameSwf" url="../swf/cottageframe.swf" />
+        <Location id="cottageFrame521Swf" url="../swf/cottageframe521.swf" />
+        <Location id="cottageHelpSwf" url="../swf/cottagehelp.swf" />
+        <Location id="cottageMusicSwf" url="../swf/cottagemusic.swf" />
+        <Location id="cottageWrapperSwf" url="../swf/cottagewrapper.swf" />
+        <Location id="cottageBedroomPage" url="/room.aspx?roomId=6" />
         <Location id="cottageConservatoryPage" url="/cottageconservatory.aspx" />
-        <Location id="cottageEntryPage" url="/cottageentry.aspx" />
-        <Location id="cottageLoc" url="./lang/cottage_en.xml" />
+        <Location id="cottageEntryPage" url="../cottage.html" />
+        <Location id="cottageLoc" url="../lang/cottage_en.xml" />
         <Location id="cottageMediaRoom" url="/cottagemediaroom.aspx" />
         <Location id="cottageRecRoom" url="/cottagerecroom.aspx" />
         <Location id="roomPage" url="/room.aspx" />
