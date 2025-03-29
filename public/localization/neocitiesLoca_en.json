@@ -15,9 +15,10 @@
     "footer_github_linktxt" : "Github",
     "footer_svgimg_linktxt" : "SVG Image",
     "footer_magicalhorses_linktxt" : "Magical Horses",
+    "footer_recreated_linktxt" : "Recreated Version",
+    "footer_original_linktxt" : "Original Version",
 
     "ressources_flashpointcacheguide" : "Flashpoint Cache Guide",
-    "ressources_mewfantasyarchivingguide" : "Mewfantasy's Archiving Guide",
     "ressources_gridlochressdump" : "Gridloch's Resource Dump",
     "ressources_gridlochstablerecreation" : "Gridloch's Stables Recreation",
     
@@ -40,7 +41,10 @@
     "game_memorygame" : "Memory Game",
     "game_quizgame" : "Quiz Game",
     "gamestables" : "Stables",
-    "game_spectacularjumpinggame" : "Spectacular Jumping Game (WIP)",
+    "game_spectacularjumpinggame_wip" : "Spectacular Jumping Game (WIP)",
+    "game_spectacularjumpinggame" : "Spectacular Jumping Game",
+    "game_citrustacked_wip": "Citrustacked (WIP)",
+    "game_citrustacked": "Citrustacked",
     "game_artstudio" : "Art studio",
     "game_lancegame" : "Lance Riding",
     "game_storybook" : "Storybook",
@@ -79,6 +83,11 @@
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
 
     "firelight_warning" : "The game's text formatting is not yet correct, and the game isn't yet linked back with the viewer. You will need to right click the game and hit play to get past the loading screen.",
+
+    "citrustacked_wip_warning": "Story mode still being recreated.",
+
+    "jumpinggame_wip_warning": "Level 4 still being recreated.",
+    "jumpinggame_warning": "The game can be quite laggy at times.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
