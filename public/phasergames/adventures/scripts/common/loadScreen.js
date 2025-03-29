@@ -1,5 +1,5 @@
-nextScreen = false
-
+// TODO : Need to handle the loading
+// At startup and between scenes
 
 class Common_Load extends Phaser.Scene 
 {
@@ -15,6 +15,7 @@ class Common_Load extends Phaser.Scene
 
     create ()
     {
+        // TESTING
         this.scene.launch("world_canterfarm")
                   .launch("common_ui")
                   .remove();
