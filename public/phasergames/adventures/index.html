@@ -6,6 +6,8 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
+        <script src="./scripts/common/loaders/loaderUtils.js"></script>
+        <script src="./scripts/common/parsers/parserUtils.js"></script>
         <script src="./scripts/common/loadScreen.js"></script>
         <script src="./scripts/common/uiScreen.js"></script>
         <script src="./scripts/common/managers/inventoryManager.js"></script>
@@ -19,6 +21,11 @@
             }
         </style>
     </head>
+
+    <script>
+        // Handle constants here? May need to do a file for this, or handle it completely differently
+        const ZONE_XML_PATH = "./datas/zones/";
+    </script>
 
     <script src="/language.js"></script>
 
