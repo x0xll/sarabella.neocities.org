@@ -65,6 +65,7 @@
     "game_autumnjourney": "Autumn Journey Frågesport",
     "game_yinyangmemory": "Yin och Yangs Memory Spel",
     "artstudio_warning" : "Detta spel saknar filerna till de originala hästarna.",
+    "game_cottage": "My Cottage",
 
 
     "lanceriding_warning" : "Detta spel har endast filerna för första nivån. Spelet har även problem med att ladda effektivt och därför kan det krävas att man laddar om sidan ett par gånger innan det funkar.",
@@ -90,6 +91,8 @@
     "jumpinggame_wip_warning": "Level 3 still being recreated.",
     "jumpinggame_warning": "The game can be quite laggy at times.",
     
+    "cottage_warning": "The objects are not yet added back in the cottage or gallery.",
+
  "puzzle_goCustom" : "Klicka&nbsp;<a href=\"puzzle custom.html\">här</a>&nbsp;för att skapa ett pussel med egen bild",
     "puzzle_customTitle" : "Skapa Eget",
     "puzzle_moonfairies" : "Moonfairies",

@@ -63,6 +63,7 @@
     "game_adventuresquiz": "Adventures Quiz",
     "game_autumnjourney": "Autumn Journey Quiz",
     "game_yinyangmemory": "Yin and Yang's Memory Game",
+    "game_cottage": "Mon Cottage",
 
     "artstudio_warning" : "Ce jeu a les fichiers des chevaux originaux manquants.",
     
@@ -90,6 +91,8 @@
     "jumpinggame_wip_warning": "Level 3 still being recreated.",
     "jumpinggame_warning": "The game can be quite laggy at times.",
     
+    "cottage_warning": "The objects are not yet added back in the cottage or gallery.",
+
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
     "puzzle_moonfairies" : "Moonfairies",
