@@ -23,8 +23,12 @@
           // Gets the correct swf file from url
           const searchQueryString = window.location.search;
           const urlParameters = new URLSearchParams(searchQueryString);
-          versionFile = urlParameters.get('part')
           customFireworks = urlParameters.get('show')
+
+          if (customFireworks == undefined)
+            versionFile = 1
+          else
+            versionFile = 2
 
           window.RufflePlayer = {
             config: {

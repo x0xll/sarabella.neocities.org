@@ -1,3 +1,6 @@
+29 March 2025
+    - Fireworks1.swf sends show datas to JS ExternalInterface
+
 3 Jan 2025
     - Fireworks2.swf works on browser
         - Deleted API calls to Bella Sara

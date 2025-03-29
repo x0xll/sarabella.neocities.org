@@ -2,7 +2,7 @@ function RedirectToFireworksShow(showDatas)
 {
     console.log(showDatas);
 
-    window.location.href = `/flash/fireworks/fireworks.html?part=2?show=${showDatas}`;
+    window.location.href = `/flash/fireworks/fireworks.html?show=${showDatas}`;
 }
 
 function RedirectOnShowQuit()
@@ -12,5 +12,5 @@ function RedirectOnShowQuit()
 
 function RedirectToFireworksGame()
 {
-    window.location.href = `/flash/fireworks/fireworks.html?part=1`;
+    window.location.href = `/flash/fireworks/fireworks.html`;
 }
