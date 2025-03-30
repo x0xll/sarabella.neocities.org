@@ -43,6 +43,7 @@ class World_CanterFarm extends Phaser.Scene
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
         loadDialogueUI(game);
+        loadInventoryUI(game);
 
         this.load.spineAtlas("CanterTilesAtlas", `./assets/newTiles/skeleton.atlas`);
         this.load.spineJson("CanterTilesJSON", `./assets/newTiles/skeleton.json`);
@@ -70,7 +71,10 @@ class World_CanterFarm extends Phaser.Scene
             game.playerObj.move();
 
             // TEST DIALOGUE
-            showDialogue(game, {name: "Cade Traveler"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
+            //showDialogue(game, {name: "Cade Traveler"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
+
+            // TEST INVENTORY
+            showInventory(game);
         }
 
         // Instantiation the images from the parsed zone xml
