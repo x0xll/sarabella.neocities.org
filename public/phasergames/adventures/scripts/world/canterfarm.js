@@ -98,12 +98,17 @@ class World_CanterFarm extends Phaser.Scene
         this.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         this.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
+        this.load.spineAtlas("CanterTilesAtlas", `./assets/newTiles/skeleton.atlas`);
+        this.load.spineJson("CanterTilesJSON", `./assets/newTiles/skeleton.json`);
+
         loadZoneFromXMLDatas();
     }
 
     create ()
     {
         const game = this;
+        game.tileWidth = 80
+        game.tiles = []
 
         // Adding BG as reference
         game.add.image(0, 0, 'BG1').setOrigin(0, 0) 
@@ -175,11 +180,25 @@ class World_CanterFarm extends Phaser.Scene
                     // Each tile seems to have a "grid" child, and some skin/ground nodes also seems to have transform infos
                     // We probably need to read those and pass them alongside the tileDatas in the parser
                     // Then use them to correctly place each image in the world
-                    let tileWidth = 40
-                    game.add.image((y*tileWidth)+(x*tileWidth)-320, (x*tileWidth/2)-(y*tileWidth/2)+865, cellValue).setOrigin(0, 0) 
+                    let tile = game.add.spine((y*game.tileWidth/2)+(x*game.tileWidth/2)-320, (x*game.tileWidth/4)-(y*game.tileWidth/4)+865, 'CanterTilesJSON', 'CanterTilesAtlas');
+                    
+                    const skeletonData = tile.skeleton.data;
+                    const skin = new spine.Skin("custom");
+                    if (skeletonData.findSkin(cellValue) !== null){
+                        skin.addSkin(skeletonData.findSkin(cellValue));
+                    }
+                               
+                    tile.skeleton.setSkin(skin);
+                    tile.skeleton.setToSetupPose();
+
+                    game.tiles = {x: {y: tile}}
                 }
             }
         }
+        
+        // TODO : Create the isometric grid
+        instantiateZoneWorld();
+
 
         // TODO : Instantiate entities (player, npcs, plants)
         this.player = this.physics.add.image(100, 100, 'Player').setScale(0.25, 0.25)
@@ -208,7 +227,8 @@ class World_CanterFarm extends Phaser.Scene
         // If the player is moving...
         if (this.player.body.speed > 0) {
           // Calculate it's distance to the target
-          const d = Math.sqrt(Math.pow(this.player.x-this.target.x, 2) + Math.pow(this.player.y-this.target.y, 2));
+          const d = Phaser.Math.Distance.BetweenPoints({x: this.player.x, y: this.player.y}, {x: this.target.x, y: this.target.y});
+        //   const d = Math.sqrt(Math.pow(this.player.x-this.target.x, 2) + Math.pow(this.player.y-this.target.y, 2));
           
           // If it's close enough,
           if (d < 10) {
