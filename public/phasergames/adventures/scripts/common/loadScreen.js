@@ -10,7 +10,7 @@ class Common_Load extends Phaser.Scene
 
     preload ()
     {
-
+        loadLoadingUI(this);
     }
 
     create ()
