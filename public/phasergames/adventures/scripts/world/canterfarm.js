@@ -37,7 +37,7 @@ class World_CanterFarm extends Phaser.Scene
         }
 
         // TODO : Load entities (npcs, player, plants, etc.)
-        game.playerObj = new Player(game, 100, 100);
+        game.playerObj = new Player(game, 17, 3);
 
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
@@ -55,6 +55,8 @@ class World_CanterFarm extends Phaser.Scene
     {
         const game = this;
         game.tileWidth = 80
+        game.xOffset = -320
+        game.yOffset = 865
         game.tiles = []
         game.time = 'night'
 
@@ -91,16 +93,13 @@ class World_CanterFarm extends Phaser.Scene
                 {
                     var cellValue = game.zoneParsed[0][x][y];
 
-                    // Nothing to place on this tile
-                    if (cellValue === "x" || cellValue === ".") continue;
-
                     // We get the actual visual id
                     if (game.zoneParsed[1][cellValue] === undefined)
                     {
                         console.error("Tile isn't defined: " + cellValue);
                         continue;
                     }
-                    let tile = game.add.spine((y*game.tileWidth/2)+(x*game.tileWidth/2)-320, (x*game.tileWidth/4)-(y*game.tileWidth/4)+865, 'CanterTilesJSON', 'CanterTilesAtlas');
+                    let tile = game.add.spine((y*game.tileWidth/2)+(x*game.tileWidth/2)+game.xOffset, (x*game.tileWidth/4)-(y*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
                     
                     const skeletonData = tile.skeleton.data;
                     const skin = new spine.Skin("custom");
