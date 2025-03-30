@@ -11,7 +11,9 @@ class Common_UI extends Phaser.Scene
     }
 
     create ()
-    {
-        
+    {   
+        const game = this;
+
+        initializeLoadingUI(game);
     }
 }
