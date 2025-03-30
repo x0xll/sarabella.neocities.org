@@ -43,7 +43,7 @@ class World_CanterFarm extends Phaser.Scene
                 // Row
                 for (var y = 0; y < game.zoneParsed[0][x].length; y++)
                 {
-                    var cellValue = game.zoneParsed[0][x][y];
+                    var cellValue = game.zoneParsed[0][x][y].trim();
 
                     // Nothing to place on this tile
                     if (cellValue === "x" || cellValue === ".") continue;
@@ -61,7 +61,7 @@ class World_CanterFarm extends Phaser.Scene
                     for (var i = 0; i < game.zoneParsed[1][cellValue].visualIds.length; i++)
                     {
                         // We need to load the visual
-                        if (game.sceneVisuals[visualIds[i]] == undefined)
+                        if (game.sceneVisuals[visualIds[i]] === undefined)
                         {
                             // TODO : Would probably be best to setup the tiles in tilemaps/atlas instead of having each of them solo for loading
                             // Would need to check more in details which elements are actually used in each world
@@ -165,7 +165,7 @@ class World_CanterFarm extends Phaser.Scene
                     for (var i = 0; i < game.zoneParsed[1][cellValue].visualIds.length; i++)
                     {
                         // The visual was not loaded... Do we try loading it again here or do we just cancel this image?
-                        if (game.sceneVisuals[visualIds[i]] == undefined)
+                        if (game.sceneVisuals[visualIds[i]] === undefined)
                         {
                             console.error("Tilemap sprite not yet loaded.. " + cellValue);
                             return;
@@ -191,13 +191,13 @@ class World_CanterFarm extends Phaser.Scene
                         let heightOffset = (game.zoneParsed[1][cellValue].height) ? parseInt(game.zoneParsed[1][cellValue].height) : 1;
                         let depthOffset = (game.zoneParsed[1][cellValue].depth) ? parseInt(game.zoneParsed[1][cellValue].depth) : 1;
 
-                        game.add.image((y * tileWidth) + (x * tileWidth) + backgroundXOffset + xOffset, (x * tileWidth / 2) - (y * tileWidth / 2) + backgroundYOffset + yOffset, visualIds[i])
-                        .setOrigin(.5)
+                        game.add.image((y * tileWidth) + (x * tileWidth) + backgroundXOffset + xOffset + widthOffset, (x * tileWidth / 2) - (y * tileWidth / 2) + backgroundYOffset + yOffset + heightOffset, visualIds[i])
+                        .setOrigin(.5, (visuals[visualIds[i]].visualType === "grounds") ? .5 : 1)
                         .setScale(
                             (visuals[visualIds[i]].scaleX !== undefined) ? visuals[visualIds[i]].scaleX : 1,
                             (visuals[visualIds[i]].scaleY !== undefined) ? visuals[visualIds[i]].scaleY : 1)
                         .setScrollFactor(1)
-                        .setDepth(zOffset)
+                        .setDepth(zOffset + depthOffset)
                     }
                 }
             }
