@@ -55,6 +55,7 @@ class World_CanterFarm extends Phaser.Scene
         const game = this;
         game.tileWidth = 80
         game.tiles = []
+        game.time = 'night'
 
         // Adding BG as reference
         game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000)
@@ -67,7 +68,6 @@ class World_CanterFarm extends Phaser.Scene
 
             // TODO : Instantiate entities (player, npcs, plants)
             game.playerObj.instantiatePlayerSprites();
-            game.playerObj.move();
 
             // TEST DIALOGUE
             showDialogue(game, {name: "Cade Traveler"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
@@ -75,26 +75,13 @@ class World_CanterFarm extends Phaser.Scene
 
         // Instantiation the images from the parsed zone xml
         function instantiateZoneWorld()
-        {
-            // TEST ADDING IMAGE
-            // TODO : Figure out why commenting on and off the game.add.image below seems to unlock the code
-            // There are moments where no images are shown as having been loaded
-            // But no errors or warning will appear either
-            // Commenting on or off this line usually unlocks things and we get a bunch of error
-            // Concerning the other images, or we see all of them being loaded and instantiated correctly
-            // Maybe an issue with the amount of images to load? 
-            //game.add.image(200, 200, "Test");
-
-            // TODO : Clean up
-            // I'm not sure having both those for loops right after the preload ones is the best approach.
-            // Adding the images to the scene in preload doesn't seem to work (Phaser limitation?)
-            // But going twice through the full grid feels wasteful, especially for larger maps
-            // Could we think of a better way to handling this? Maybe a callback for each loaded image to an add function?
-            // Or something similar?
+        {            
+            game.tiles = {}
 
             // Column
             for (var x = 0; x < game.zoneParsed[0].length; x++)
             {
+                game.tiles[x] = {}
                 // Row
                 for (var y = 0; y < game.zoneParsed[0][x].length; y++)
                 {
@@ -116,20 +103,22 @@ class World_CanterFarm extends Phaser.Scene
                     if (skeletonData.findSkin(cellValue) !== null){
                         skin.addSkin(skeletonData.findSkin(cellValue));
                     }
-                               
+                    else if (skeletonData.findSkin(cellValue + '/' + game.time) !== null){
+                        skin.addSkin(skeletonData.findSkin(cellValue + '/' + game.time));
+                    }   
                     tile.skeleton.setSkin(skin);
                     tile.skeleton.setToSetupPose();
 
-                    game.tiles = {x: {y: tile}}
+
+                    tile.data = game.zoneParsed[1][cellValue]
+                    game.tiles[x][y] = tile
                 }
             }
         }
         
         // TODO : Create the isometric grid
-        instantiateZoneWorld();
-
-
         instantiateWorld();
+        game.playerObj.move(game.tiles);
     }
 
     update() 

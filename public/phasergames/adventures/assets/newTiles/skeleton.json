@@ -1,12 +1,12 @@
 {
 "skeleton": {
-	"hash": "dub49E8nKeI",
+	"hash": "FBiJt/kGQJU",
 	"spine": "4.2.40",
 	"x": -79.83,
 	"y": -39.35,
 	"width": 119.83,
 	"height": 164.63,
-	"images": "C:/Users/antsg/OneDrive/Margaret's/3. Game Stuff/Bella Sara/Website/1. Neocities (full site)/public/phasergames/adventures/assets/extracted/Tilemaps/CanterFarms/",
+	"images": "./CanterFarms/",
 	"audio": "./audio"
 },
 "bones": [
@@ -1179,7 +1179,7 @@
 		"name": "Ti092b/day",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0073/1", "y": 58.78, "scaleX": -1, "width": 55, "height": 132 }
+				"Main": { "name": "T0073/1", "y": 58.78, "width": 55, "height": 132 }
 			},
 			"Overlay": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
@@ -1196,7 +1196,7 @@
 		"name": "Ti092b/night",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0073_Night/1", "y": 58.78, "scaleX": -1, "width": 55, "height": 133 }
+				"Main": { "name": "T0073_Night/1", "y": 58.78, "width": 55, "height": 133 }
 			},
 			"Overlay": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }

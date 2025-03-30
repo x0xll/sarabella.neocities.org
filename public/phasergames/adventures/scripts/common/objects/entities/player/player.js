@@ -17,14 +17,14 @@ class Player
 
     instantiatePlayerSprites()
     {
-        this.phaserScene.player = this.phaserScene.physics.add.image(this.startX, this.startY, 'Player').setScale(0.25, 0.25)
+        this.phaserScene.player = this.phaserScene.physics.add.image(this.startX, this.startY, 'Player').setScale(0.25, 0.25).setOrigin(0.5, 1)
         this.phaserScene.cameras.main.startFollow(this.phaserScene.player, true).setBounds(0, 0, 3000, 1600);
     }
 
     // ------- END INITIALIZE PLAYER -------
 
     // ------- START MOVEMENT -------
-    move()
+    move(zoneTiles)
     {
         this.target = {x: 0, y: 0}
         // When the user releases the screen...
@@ -49,7 +49,7 @@ class Player
             const d = Math.sqrt(Math.pow(this.phaserScene.player.x-this.target.x, 2) + Math.pow(this.phaserScene.player.y-this.target.y, 2));
             
             // If it's close enough,
-            if (d < 10) {
+            if (d < 20) {
                 // Reset it's body so it stops
                 this.phaserScene.player.body.reset(this.target.x, this.target.y);
             }
