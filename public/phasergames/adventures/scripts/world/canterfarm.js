@@ -175,8 +175,8 @@ class World_CanterFarm extends Phaser.Scene
                     // Each tile seems to have a "grid" child, and some skin/ground nodes also seems to have transform infos
                     // We probably need to read those and pass them alongside the tileDatas in the parser
                     // Then use them to correctly place each image in the world
-                    let tileWidth = 30
-                    game.add.image(-200+y*tileWidth+x*tileWidth, 1000+x*tileWidth/2-y*tileWidth, cellValue).setOrigin(0, 0) 
+                    let tileWidth = 40
+                    game.add.image((y*tileWidth)+(x*tileWidth)-320, (x*tileWidth/2)-(y*tileWidth/2)+865, cellValue).setOrigin(0, 0) 
                 }
             }
         }
