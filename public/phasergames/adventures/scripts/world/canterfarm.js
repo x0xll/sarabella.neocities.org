@@ -56,11 +56,12 @@ class World_CanterFarm extends Phaser.Scene
                     }
 
                     var visuals = game.zoneParsed[1][cellValue].visual;
+                    var visualIds = game.zoneParsed[1][cellValue].visualIds;
 
-                    // The visual was not loaded... Do we try loading it again here or do we just cancel this image?
-                    visuals.forEach(img => {
+                    for (var i = 0; i < game.zoneParsed[1][cellValue].visualIds.length; i++)
+                    {
                         // We need to load the visual
-                        if (game.sceneVisuals[img] == undefined)
+                        if (game.sceneVisuals[visualIds[i]] == undefined)
                         {
                             // TODO : Would probably be best to setup the tiles in tilemaps/atlas instead of having each of them solo for loading
                             // Would need to check more in details which elements are actually used in each world
@@ -70,26 +71,21 @@ class World_CanterFarm extends Phaser.Scene
                             // The visual was not yet loaded -> load it now
                             // TODO : handle animations, for now only static images
                             // TODO : handle day/nigth variants
-                            switch(img)
+                            switch(visualIds[i])
                             {
                                 default:
-                                    var loadedImg = game.load.image(img, `${LEVEL_ASSETS_PATH}${game.AREA_NAME}/${img}/1.png`);
+                                    game.load.image(visualIds[i], `${LEVEL_ASSETS_PATH}${game.AREA_NAME}/${visualIds[i]}/1.png`);
                                     break;
                                 // Need to handle the tiles that are not part of the same tileset as the "default" ones. 
                                 // Could we find a cleaner way / easier to update way to handle this?
                                 case "Overlay_ExitNE":
-                                    var loadedImg = game.load.image(img, `${LEVEL_ASSETS_PATH}Common/Exits/ExitNE/1.png`);
+                                    game.load.image(visualIds[i], `${LEVEL_ASSETS_PATH}Common/Exits/ExitNE/1.png`);
                                     break;
                             }
 
-                            // TODO : When we add the img in the scene we seem to need some more informations for the transforms
-                            // Could it be smart to pass those datas from the zoneParsed[1] item to the game.sceneVisuals[cellValue]
-                            // Instead of the img object (which as of now isn't useful and is just a placeholder to not have the key go to undefined)
-                            // The sceneVisuals is already shared in the full scene, which would allow us to not on top of that share the whole of the 
-                            // zoneParsed, considering we don't need most of them after we have set everything (or at least we don't need the grid datas)
-                            game.sceneVisuals[img] = loadedImg;
+                            game.sceneVisuals[visualIds[i]] = visuals[visualIds[i]];
                         }
-                    });
+                    }
                 }
             }
 
@@ -109,8 +105,8 @@ class World_CanterFarm extends Phaser.Scene
         const game = this;
 
         // Adding BG as reference
-        game.add.image(0, 0, 'BG1').setOrigin(0, 0) 
-        game.add.image(1500, 0, 'BG2').setOrigin(0, 0) 
+        game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000)
+        game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000)
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
@@ -163,11 +159,13 @@ class World_CanterFarm extends Phaser.Scene
                         continue;
                     }
 
-                    var visuals = game.zoneParsed[1][cellValue].visual;
+                    var visuals = game.zoneParsed[1][cellValue].visual;           
+                    var visualIds = game.zoneParsed[1][cellValue].visualIds;
 
-                    // The visual was not loaded... Do we try loading it again here or do we just cancel this image?
-                    visuals.forEach(img => {
-                        if (game.sceneVisuals[img] == undefined)
+                    for (var i = 0; i < game.zoneParsed[1][cellValue].visualIds.length; i++)
+                    {
+                        // The visual was not loaded... Do we try loading it again here or do we just cancel this image?
+                        if (game.sceneVisuals[visualIds[i]] == undefined)
                         {
                             console.error("Tilemap sprite not yet loaded.. " + cellValue);
                             return;
@@ -180,8 +178,27 @@ class World_CanterFarm extends Phaser.Scene
                         // We probably need to read those and pass them alongside the tileDatas in the parser
                         // Then use them to correctly place each image in the world
                         let tileWidth = 40
-                        game.add.image((y*tileWidth)+(x*tileWidth)-320, (x*tileWidth/2)-(y*tileWidth/2)+865, img).setOrigin(0, 0) 
-                    });
+                        let tileHeight = 80
+                        let backgroundXOffset = -320;
+                        let backgroundYOffset = 865;
+
+                        let xOffset = (visuals[visualIds[i]].xOffset !== undefined) ? parseInt(visuals[visualIds[i]].xOffset) : 0;
+                        let yOffset = (visuals[visualIds[i]].yOffset !== undefined) ? parseInt(visuals[visualIds[i]].yOffset) : 0;
+                        let zOffset = (visuals[visualIds[i]].depthOffset !== undefined) ? parseInt(visuals[visualIds[i]].depthOffset) : 0;
+
+                        // Used to know which tiles are being impacted for building/walking?
+                        let widthOffset = (game.zoneParsed[1][cellValue].width) ? parseInt(game.zoneParsed[1][cellValue].width) : 1;
+                        let heightOffset = (game.zoneParsed[1][cellValue].height) ? parseInt(game.zoneParsed[1][cellValue].height) : 1;
+                        let depthOffset = (game.zoneParsed[1][cellValue].depth) ? parseInt(game.zoneParsed[1][cellValue].depth) : 1;
+
+                        game.add.image((y * tileWidth) + (x * tileWidth) + backgroundXOffset + xOffset, (x * tileWidth / 2) - (y * tileWidth / 2) + backgroundYOffset + yOffset, visualIds[i])
+                        .setOrigin(.5)
+                        .setScale(
+                            (visuals[visualIds[i]].scaleX !== undefined) ? visuals[visualIds[i]].scaleX : 1,
+                            (visuals[visualIds[i]].scaleY !== undefined) ? visuals[visualIds[i]].scaleY : 1)
+                        .setScrollFactor(1)
+                        .setDepth(zOffset)
+                    }
                 }
             }
         }

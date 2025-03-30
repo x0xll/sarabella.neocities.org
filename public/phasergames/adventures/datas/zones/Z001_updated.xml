@@ -47,7 +47,7 @@
     <skin id="Sk0007" file="Lb001" className="Overlay_ExitNE"/>
     <skin id="Sk0003" file="Lb001" className="T0179"/>
     <skin id="Sk0002" file="Lb001" className="T0053f"/>
-    <skin id="Sk0008" file="Lb001" className="T0001d" depthOffset="-80" x="-10" y="-6"/>
+    <skin id="Sk0008" file="Lb001" className="T0001d" depthOffset="-80" x="-120" y="-230"/>
     <skin id="Sk0019" file="Lb001" className="T0072d"/>
     <skin id="Sk0016" file="Lb001" className="T0072a"/>
     <skin id="Sk0021" file="Lb001" className="T0057f"/>
@@ -78,7 +78,7 @@
     <tile id="Ti047b" walkable="false" isBillboard="false" grounds="Gr0008">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti016w" walkable="true" isBillboard="false" grounds="Gr0003" entities="DirtTemplate">
+    <tile id="Ti016w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0003" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti024b" walkable="false" isBillboard="false" grounds="Gr0019">
@@ -87,13 +87,13 @@
     <tile id="Ti059w" walkable="true" isBillboard="false" skins="Sk0003" entities="LadyBugSpawner">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti013w" walkable="true" isBillboard="false" grounds="Gr0010" entities="DirtTemplate">
+    <tile id="Ti013w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0010" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti041w" walkable="true" isBillboard="false" grounds="Gr0027">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti025b" walkable="false" isBillboard="false" grounds="Gr0026" skins="Sk0009">
+    <tile id="Ti025b" walkable="false" isBillboard="false" grounds="Gr0024,Gr0025,Gr0026" skins="Sk0009">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti052b" walkable="false" isBillboard="false" skins="Sk0008">
@@ -129,7 +129,7 @@
     <tile id="Ti037w" walkable="true" isBillboard="false" grounds="Gr0029">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti015w" walkable="true" isBillboard="false" grounds="Gr0004" entities="DirtTemplate">
+    <tile id="Ti015w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0004" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti046b" walkable="false" isBillboard="false" grounds="Gr0022">
@@ -186,7 +186,7 @@
     <tile id="Ti063w" walkable="true" isBillboard="false" skins="Sk0020" entities="ExitToZone12a">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti011w" walkable="true" isBillboard="false" grounds="Gr0009" entities="DirtTemplate">
+    <tile id="Ti011w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0009" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti070b" walkable="false" isBillboard="false" skins="Sk0015">
@@ -207,10 +207,10 @@
     <tile id="Ti074b" walkable="false" isBillboard="false" skins="Sk0022">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti014w" walkable="true" isBillboard="false" grounds="Gr0005" entities="DirtTemplate">
+    <tile id="Ti014w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0005" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti018w" walkable="true" isBillboard="false" grounds="Gr0007" entities="DirtTemplate">
+    <tile id="Ti018w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0007" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti028w" walkable="true" isBillboard="false" grounds="Gr0028">
@@ -234,13 +234,13 @@
     <tile id="Ti083b" walkable="false" isBillboard="false" skins="Sk0005">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" isBillboard="false" grounds="Gr0035" skins="Sk0007" entities="ExitToZoneR001">
+    <tile id="Ti000w" walkable="true" isBillboard="false" grounds="Gr0034,Gr0035" skins="Sk0007" entities="ExitToZoneR001">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti049w" walkable="true" isBillboard="false" grounds="Gr0033">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti045w" walkable="true" isBillboard="false" grounds="Gr0032">
+    <tile id="Ti045w" walkable="true" isBillboard="false" grounds="Gr0032,Gr0032">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti088b" walkable="false" isBillboard="false" skins="Sk0013">
@@ -255,13 +255,13 @@
     <tile id="Ti032w" walkable="true" isBillboard="false" grounds="Gr0017">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti017w" walkable="true" isBillboard="false" grounds="Gr0006" entities="DirtTemplate">
+    <tile id="Ti017w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0006" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti050w" walkable="true" isBillboard="false" grounds="Gr0031">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti022w" walkable="true" isBillboard="false" grounds="Gr0035">
+    <tile id="Ti022w" walkable="true" isBillboard="false" grounds="Gr0034,Gr0035">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti061w" walkable="true" isBillboard="false" skins="Sk0003" entities="PixieSpawner">
@@ -276,10 +276,10 @@
     <tile id="Ti053b" walkable="false" isBillboard="false" skins="Sk0016" entities="StreetSignZone12">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti012w" walkable="true" isBillboard="false" grounds="Gr0011" entities="DirtTemplate">
+    <tile id="Ti012w" walkable="true" isBillboard="false" grounds="Gr0002,Gr0011" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti025w" walkable="true" isBillboard="false" grounds="Gr0026" skins="Sk0009">
+    <tile id="Ti025w" walkable="true" isBillboard="false" grounds="Gr0024,Gr0025,Gr0026" skins="Sk0009">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
   </tiles>
