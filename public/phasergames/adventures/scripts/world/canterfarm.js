@@ -31,7 +31,7 @@ class World_CanterFarm extends Phaser.Scene
             // TODO
             // Temporarily using a modified zone test file because some tiles seems to be able to have multiple grounds and/or skins..
             // We will need to understand how those are supposed to work before being able to reuse the original file
-            const ZONE_XML_NAME = ZONE_XML_PATH + "Z001_test.xml"; 
+            const ZONE_XML_NAME = ZONE_XML_PATH + "Z001.xml"; 
             var zoneObj = await loadXML(ZONE_XML_NAME);
             game.zoneParsed = parseZoneXML(zoneObj);
 
@@ -55,38 +55,41 @@ class World_CanterFarm extends Phaser.Scene
                         continue;
                     }
 
-                    cellValue = game.zoneParsed[1][cellValue].visual;
+                    var visuals = game.zoneParsed[1][cellValue].visual;
 
-                    // We need to load the visual
-                    if (game.sceneVisuals[cellValue] == undefined)
-                    {
-                        // TODO : Would probably be best to setup the tiles in tilemaps/atlas instead of having each of them solo for loading
-                        // Would need to check more in details which elements are actually used in each world
-                        // So we can optimize as much as possible the loading
-                        // We would however also need to take into account the animated sprites, and the day/nigth variations of each
-
-                        // The visual was not yet loaded -> load it now
-                        // TODO : handle animations, for now only static images
-                        // TODO : handle day/nigth variants
-                        switch(cellValue)
+                    // The visual was not loaded... Do we try loading it again here or do we just cancel this image?
+                    visuals.forEach(img => {
+                        // We need to load the visual
+                        if (game.sceneVisuals[img] == undefined)
                         {
-                            default:
-                                var img = game.load.image(cellValue, `${LEVEL_ASSETS_PATH}${game.AREA_NAME}/${cellValue}/1.png`);
-                                break;
-                            // Need to handle the tiles that are not part of the same tileset as the "default" ones. 
-                            // Could we find a cleaner way / easier to update way to handle this?
-                            case "Overlay_ExitNE":
-                                var img = game.load.image(cellValue, `${LEVEL_ASSETS_PATH}Common/Exits/ExitNE/1.png`);
-                                break;
-                        }
+                            // TODO : Would probably be best to setup the tiles in tilemaps/atlas instead of having each of them solo for loading
+                            // Would need to check more in details which elements are actually used in each world
+                            // So we can optimize as much as possible the loading
+                            // We would however also need to take into account the animated sprites, and the day/nigth variations of each
 
-                        // TODO : When we add the img in the scene we seem to need some more informations for the transforms
-                        // Could it be smart to pass those datas from the zoneParsed[1] item to the game.sceneVisuals[cellValue]
-                        // Instead of the img object (which as of now isn't useful and is just a placeholder to not have the key go to undefined)
-                        // The sceneVisuals is already shared in the full scene, which would allow us to not on top of that share the whole of the 
-                        // zoneParsed, considering we don't need most of them after we have set everything (or at least we don't need the grid datas)
-                        game.sceneVisuals[cellValue] = img;
-                    }
+                            // The visual was not yet loaded -> load it now
+                            // TODO : handle animations, for now only static images
+                            // TODO : handle day/nigth variants
+                            switch(img)
+                            {
+                                default:
+                                    var loadedImg = game.load.image(img, `${LEVEL_ASSETS_PATH}${game.AREA_NAME}/${img}/1.png`);
+                                    break;
+                                // Need to handle the tiles that are not part of the same tileset as the "default" ones. 
+                                // Could we find a cleaner way / easier to update way to handle this?
+                                case "Overlay_ExitNE":
+                                    var loadedImg = game.load.image(img, `${LEVEL_ASSETS_PATH}Common/Exits/ExitNE/1.png`);
+                                    break;
+                            }
+
+                            // TODO : When we add the img in the scene we seem to need some more informations for the transforms
+                            // Could it be smart to pass those datas from the zoneParsed[1] item to the game.sceneVisuals[cellValue]
+                            // Instead of the img object (which as of now isn't useful and is just a placeholder to not have the key go to undefined)
+                            // The sceneVisuals is already shared in the full scene, which would allow us to not on top of that share the whole of the 
+                            // zoneParsed, considering we don't need most of them after we have set everything (or at least we don't need the grid datas)
+                            game.sceneVisuals[img] = loadedImg;
+                        }
+                    });
                 }
             }
 
@@ -160,23 +163,25 @@ class World_CanterFarm extends Phaser.Scene
                         continue;
                     }
 
-                    cellValue = game.zoneParsed[1][cellValue].visual;
+                    var visuals = game.zoneParsed[1][cellValue].visual;
 
                     // The visual was not loaded... Do we try loading it again here or do we just cancel this image?
-                    if (game.sceneVisuals[cellValue] == undefined)
-                    {
-                        console.error("Tilemap sprite not yet loaded.. " + cellValue);
-                        continue;
-                    }
-
-                    // We place the visual on the scene
-                    // TODO: Figure out the actual position.
-                    // As of now the position looks off on screen, so there must be some type of offset to add somewhere
-                    // Each tile seems to have a "grid" child, and some skin/ground nodes also seems to have transform infos
-                    // We probably need to read those and pass them alongside the tileDatas in the parser
-                    // Then use them to correctly place each image in the world
-                    let tileWidth = 40
-                    game.add.image((y*tileWidth)+(x*tileWidth)-320, (x*tileWidth/2)-(y*tileWidth/2)+865, cellValue).setOrigin(0, 0) 
+                    visuals.forEach(img => {
+                        if (game.sceneVisuals[img] == undefined)
+                        {
+                            console.error("Tilemap sprite not yet loaded.. " + cellValue);
+                            return;
+                        }
+    
+                        // We place the visual on the scene
+                        // TODO: Figure out the actual position.
+                        // As of now the position looks off on screen, so there must be some type of offset to add somewhere
+                        // Each tile seems to have a "grid" child, and some skin/ground nodes also seems to have transform infos
+                        // We probably need to read those and pass them alongside the tileDatas in the parser
+                        // Then use them to correctly place each image in the world
+                        let tileWidth = 40
+                        game.add.image((y*tileWidth)+(x*tileWidth)-320, (x*tileWidth/2)-(y*tileWidth/2)+865, img).setOrigin(0, 0) 
+                    });
                 }
             }
         }

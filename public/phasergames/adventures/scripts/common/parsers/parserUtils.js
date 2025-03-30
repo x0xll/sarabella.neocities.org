@@ -21,7 +21,10 @@ function parseZoneXML(xmlObj)
             console.error("Tried setting multiple time the same tile datas: " + tile.attributes[0].value);
         else
         {
-            var data = {};
+            var data = 
+            {
+                visual: []
+            };
 
             for (var i = 0; i < tile.attributes.length; i++)
             {
@@ -38,24 +41,21 @@ function parseZoneXML(xmlObj)
                     // But how do we use it afterwards in-game? Do we choose one randomly? Do we put all of them one on top of each other?
                     // Something else?
                     case "skins":
-                        skins.forEach(skin =>{
-                            if (skin.attributes[0].value == tile.attributes[i].value)
-                            {
-                                // This is our visual, let's take the id
-                                data.visual = skin.attributes[2].value;
-                                return;
-                            }
-                        });
-                        break;
                     case "grounds":
-                        grounds.forEach(ground =>{
-                            if (ground.attributes[0].value == tile.attributes[i].value)
-                            {
-                                // This is our visual, let's take the id
-                                data.visual = ground.attributes[2].value;
-                                return;
-                            }
-                        });
+                        var splitted = tile.attributes[i].value.split(",");
+
+                        var refs = (tile.attributes[i].name === "skins") ? skins : grounds;
+
+                        splitted.forEach(value => {
+                            refs.forEach(ref =>{
+                                if (ref.attributes[0].value == value)
+                                {
+                                    // This is our visual, let's take the id
+                                    data.visual.push(ref.attributes[2].value);
+                                    return;
+                                }
+                            });
+                        })
                         break;
                     case "walkable":
                         data.walkable = tile.attributes[i].value;
