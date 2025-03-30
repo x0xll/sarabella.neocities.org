@@ -79,6 +79,12 @@
                         { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
                         ]
                     },
+                    physics: {
+                        default: 'arcade',
+                        arcade: {
+                            debug: false
+                        }
+                    },
                     scene: [
                         Common_Load,
                         Common_UI,
