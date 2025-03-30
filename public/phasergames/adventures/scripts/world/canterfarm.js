@@ -93,9 +93,10 @@ class World_CanterFarm extends Phaser.Scene
         }
 
         // TODO : Load entities (npcs, player, plants, etc.)
-        this.load.image("Player", `./assets/extracted/TestCharacter.png`)
-        this.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
-        this.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
+        game.playerObj = new Player(game, 100, 100);
+
+        game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
+        game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
         loadZoneFromXMLDatas();
     }
@@ -118,9 +119,11 @@ class World_CanterFarm extends Phaser.Scene
             }
             
             instantiateZoneWorld();
-        }
 
-        // TODO : Instantiate backgrounds
+            // TODO : Instantiate entities (player, npcs, plants)
+            game.playerObj.instantiatePlayerSprites();
+            game.playerObj.move();
+        }
 
         // Instantiation the images from the parsed zone xml
         function instantiateZoneWorld()
@@ -203,40 +206,15 @@ class World_CanterFarm extends Phaser.Scene
             }
         }
 
-        // TODO : Instantiate entities (player, npcs, plants)
-        this.player = this.physics.add.image(100, 100, 'Player').setScale(0.25, 0.25)
-        this.cameras.main.startFollow(this.player, true).setBounds(0, 0, 3000, 1600);
 
-        this.target = {x: 0, y: 0}
-        // When the user releases the screen...
-        this.input.on('pointerup', (pointer) => {
-            // Get the WORLD x and y position of the pointer
-            const {worldX, worldY} = pointer;
-            
-            // Assign the world x and y to our vector
-            this.target.x = worldX;
-            this.target.y = worldY;
-    
-            // Start moving player towards the target
-            this.physics.moveToObject(this.player, this.target, 800);
-        });
 
-        // TODO : Create the isometric grid
-        
         instantiateWorld();
     }
 
-    update() {
-        // If the player is moving...
-        if (this.player.body.speed > 0) {
-          // Calculate it's distance to the target
-          const d = Math.sqrt(Math.pow(this.player.x-this.target.x, 2) + Math.pow(this.player.y-this.target.y, 2));
-          
-          // If it's close enough,
-          if (d < 10) {
-            // Reset it's body so it stops
-            this.player.body.reset(this.target.x, this.target.y);
-          }
-        }
-      }
+    update() 
+    {
+        const game = this;
+
+        game.playerObj.checkIfReachedDestination();
+    }
 }
