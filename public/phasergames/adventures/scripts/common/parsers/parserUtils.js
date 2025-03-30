@@ -21,8 +21,13 @@ function parseZoneXML(xmlObj)
             console.error("Tried setting multiple time the same tile datas: " + tile.attributes[0].value);
         else
         {
-            var data = {};
+            var data = 
+            {
+                visual: {},
+                visualIds: []
+            };
 
+            // Tile attributes
             for (var i = 0; i < tile.attributes.length; i++)
             {
                 switch(tile.attributes[i].name)
@@ -32,30 +37,61 @@ function parseZoneXML(xmlObj)
                     case "id":
                         data.id = tile.attributes[i].value;
                         break;
-                    
-                    // TODO : Need to handle the fact some tiles can have multiples skins, multiple grounds, and sometimes both at the same time
-                    // We can probably split the values by "," for each skins/grounds and save in an array
-                    // But how do we use it afterwards in-game? Do we choose one randomly? Do we put all of them one on top of each other?
-                    // Something else?
                     case "skins":
-                        skins.forEach(skin =>{
-                            if (skin.attributes[0].value == tile.attributes[i].value)
-                            {
-                                // This is our visual, let's take the id
-                                data.visual = skin.attributes[2].value;
-                                return;
-                            }
-                        });
-                        break;
                     case "grounds":
-                        grounds.forEach(ground =>{
-                            if (ground.attributes[0].value == tile.attributes[i].value)
-                            {
-                                // This is our visual, let's take the id
-                                data.visual = ground.attributes[2].value;
-                                return;
-                            }
-                        });
+                        var splitted = tile.attributes[i].value.split(",");
+
+                        // We get the tile visual informations
+                        var refs = (tile.attributes[i].name === "skins") ? skins : grounds;
+
+                        splitted.forEach(value => {
+                            refs.forEach(ref =>{
+                                if (ref.attributes[0].value == value)
+                                {
+                                    // This is our visual, let's take the id
+                                    if (data.visual[ref.attributes[2].value !== undefined])
+                                    {
+                                        console.error("Tile " + tile.attributes[0].value + " has too many instances of " + value);
+                                        return;
+                                    }
+
+                                    data.visualIds.push(ref.attributes[2].value);
+
+                                    var imgDatas = {};
+
+                                    var isSkins = tile.attributes[i].name === "skins";
+                                    imgDatas.visualType = (isSkins) ? "skins" : "grounds";
+
+                                    for (var j = 0; j < ref.attributes.length; j++)
+                                    {
+                                        switch(ref.attributes[j].name)
+                                        {
+                                            default:
+                                                break;
+                                            case "x":
+                                                imgDatas.xOffset = ref.attributes[j].value;
+                                                break;
+                                            case "y":
+                                                imgDatas.yOffset = ref.attributes[j].value;
+                                                break;
+                                            case "depthOffset":
+                                                imgDatas.depthOffset = ref.attributes[j].value;
+                                                break;
+                                            case "scaleY":
+                                                imgDatas.scaleY = ref.attributes[j].value;
+                                                break;
+                                            case "scaleX":
+                                                imgDatas.scaleX = ref.attributes[j].value;
+                                                break;
+                                        }
+
+                                    }
+
+                                    data.visual[ref.attributes[2].value] = imgDatas;
+                                    return;
+                                }
+                            });
+                        })
                         break;
                     case "walkable":
                         data.walkable = tile.attributes[i].value;
@@ -70,9 +106,27 @@ function parseZoneXML(xmlObj)
                         break;
                 }
             }
-    
-            // TODO : get grid kid for scale
-    
+
+            // Grid kid datas
+            var grid = tile.children[0];
+            for (var i = 0; i < grid.attributes.length; i++)
+                {
+                    switch(grid.attributes[i].name)
+                    {
+                        default:
+                            break;
+                        case "width":
+                            data.width = grid.attributes[i].value;
+                            break;
+                        case "height":
+                            data.height = grid.attributes[i].value;
+                            break;
+                        case "depth":
+                            data.depth = grid.attributes[i].value;
+                            break;
+                    }
+                }
+
             if (data.visual === undefined)
                 data.visual = data.id;
 
