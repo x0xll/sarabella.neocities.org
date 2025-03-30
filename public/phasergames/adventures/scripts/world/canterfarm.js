@@ -98,6 +98,8 @@ class World_CanterFarm extends Phaser.Scene
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
+        loadDialogueUI(game);
+
         loadZoneFromXMLDatas();
     }
 
@@ -123,6 +125,9 @@ class World_CanterFarm extends Phaser.Scene
             // TODO : Instantiate entities (player, npcs, plants)
             game.playerObj.instantiatePlayerSprites();
             game.playerObj.move();
+
+            // TEST DIALOGUE
+            showDialogue(game, {name: "Cade Traveler"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
         }
 
         // Instantiation the images from the parsed zone xml
@@ -205,8 +210,6 @@ class World_CanterFarm extends Phaser.Scene
                 }
             }
         }
-
-
 
         instantiateWorld();
     }
