@@ -38,6 +38,7 @@ class World_CanterFarm extends Phaser.Scene
 
         // TODO : Load entities (npcs, player, plants, etc.)
         game.playerObj = new Player(game, 17, 3);
+        game.timeManager = new TimeManager(game);
 
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
@@ -58,11 +59,15 @@ class World_CanterFarm extends Phaser.Scene
         game.xOffset = -320
         game.yOffset = 865
         game.tiles = []
-        game.time = 'night'
+        game.timeManager.startClock()
 
         // Adding BG as reference
-        game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000)
-        game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000)
+            game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
+            game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000)
+        game.backgrounds = [
+            game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000).setAlpha(.75),
+            game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000).setAlpha(.75)
+        ]
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
@@ -100,19 +105,13 @@ class World_CanterFarm extends Phaser.Scene
                         continue;
                     }
                     let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
+                    tile.dupe = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
                     
-                    const skeletonData = tile.skeleton.data;
-                    const skin = new spine.Skin("custom");
-                    if (skeletonData.findSkin(cellValue) !== null){
-                        skin.addSkin(skeletonData.findSkin(cellValue));
-                    }
-                    else if (skeletonData.findSkin(cellValue + '/' + game.time) !== null){
-                        skin.addSkin(skeletonData.findSkin(cellValue + '/' + game.time));
-                    }   
-                    tile.skeleton.setSkin(skin);
-                    tile.skeleton.setToSetupPose();
-
+                    game.timeManager.setTile(tile, cellValue)
+                    game.timeManager.setTile(tile.dupe, cellValue)
+                    
                     tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
+                    tile.dupe.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
 
                     tile.data = game.zoneParsed[1][cellValue]
                     game.tiles[y][x] = tile
@@ -123,6 +122,7 @@ class World_CanterFarm extends Phaser.Scene
         // TODO : Create the isometric grid
         instantiateWorld();
         game.playerObj.move();
+        game.timeManager.renderDayNight()
     }
 
     update() 
@@ -130,5 +130,6 @@ class World_CanterFarm extends Phaser.Scene
         const game = this;
 
         game.playerObj.checkIfReachedDestination();
+        game.timeManager.updateTime()
     }
 }
