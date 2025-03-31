@@ -105,13 +105,10 @@ class World_CanterFarm extends Phaser.Scene
                         continue;
                     }
                     let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
-                    tile.dupe = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
                     
                     game.timeManager.setTile(tile, cellValue)
-                    game.timeManager.setTile(tile.dupe, cellValue)
                     
                     tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
-                    tile.dupe.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
 
                     tile.data = game.zoneParsed[1][cellValue]
                     game.tiles[y][x] = tile
@@ -131,5 +128,6 @@ class World_CanterFarm extends Phaser.Scene
 
         game.playerObj.checkIfReachedDestination();
         game.timeManager.updateTime()
+        console.log(game.timeManager.clock.now)
     }
 }

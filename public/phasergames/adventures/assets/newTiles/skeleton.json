@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "FBiJt/kGQJU",
+	"hash": "MZ8xNmo7xX0",
 	"spine": "4.2.40",
 	"x": -79.83,
 	"y": -39.35,
-	"width": 119.83,
-	"height": 164.63,
+	"width": 156.3,
+	"height": 107.85,
 	"images": "./CanterFarms/",
 	"audio": "./audio"
 },
@@ -14,9 +14,13 @@
 ],
 "slots": [
 	{ "name": "Underlay2", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Underlay2_night", "bone": "root", "attachment": "Overlay" },
 	{ "name": "Underlay", "bone": "root", "attachment": "Underlay" },
+	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay" },
 	{ "name": "Main", "bone": "root", "attachment": "Main" },
-	{ "name": "Overlay", "bone": "root", "attachment": "Overlay" }
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
+	{ "name": "Overlay", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay" }
 ],
 "skins": [
 	{
@@ -25,14 +29,26 @@
 			"Main": {
 				"Main": { "name": "T0026a/1", "width": 64, "height": 34 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0026a/1", "width": 64, "height": 34 }
+			},
 			"Overlay": {
 				"Overlay": { "name": "Overlay_ExitNE/1", "width": 34, "height": 24 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
 				"Underlay": { "name": "T0016c/1", "width": 81, "height": 40 }
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016c/1", "width": 81, "height": 40 }
 			}
 		}
 	},
@@ -42,14 +58,26 @@
 			"Main": {
 				"Main": { "name": "Empty", "width": 80, "height": 40 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "width": 80, "height": 40 }
+			},
 			"Overlay": {
 				"Overlay": { "name": "Overlay_ExitNE/1", "width": 34, "height": 24 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
 				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -59,7 +87,13 @@
 			"Main": {
 				"Main": { "name": "T0097b/1", "x": 9.92, "y": 261.61, "width": 396, "height": 562 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0097b/1", "x": 9.92, "y": 261.61, "width": 396, "height": 562 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -67,6 +101,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -76,7 +116,13 @@
 			"Main": {
 				"Main": { "name": "T0179/1", "y": 13.23, "width": 43, "height": 65 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "y": 13.23, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -84,6 +130,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -93,7 +145,13 @@
 			"Main": {
 				"Main": { "name": "T0015a/1", "x": 19.59, "y": 12.36, "width": 74, "height": 48 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0015a/1", "x": 19.59, "y": 12.36, "width": 74, "height": 48 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -101,6 +159,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -110,7 +174,13 @@
 			"Main": {
 				"Main": { "name": "T0017a/1", "y": -10.28, "width": 80, "height": 24 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017a/1", "y": -10.28, "width": 80, "height": 24 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": -10.28, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": -10.28, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -118,6 +188,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "y": -10.28, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "y": -10.28, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -127,7 +203,13 @@
 			"Main": {
 				"Main": { "name": "T0017b/1", "x": 18.33, "y": -2.01, "width": 43, "height": 47 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017b/1", "x": 18.33, "y": -2.01, "width": 43, "height": 47 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "x": 18.33, "y": -2.01, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "x": 18.33, "y": -2.01, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -135,6 +217,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": 18.33, "y": -2.01, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": 18.33, "y": -2.01, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -144,7 +232,13 @@
 			"Main": {
 				"Main": { "name": "T0017c/1", "x": 18.33, "y": -10.95, "width": 44, "height": 30 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017c/1", "x": 18.33, "y": -10.95, "width": 44, "height": 30 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "x": 18.33, "y": -10.95, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "x": 18.33, "y": -10.95, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -152,6 +246,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": 18.33, "y": -10.95, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": 18.33, "y": -10.95, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -161,7 +261,13 @@
 			"Main": {
 				"Main": { "name": "T0017d/1", "y": 10.28, "width": 85, "height": 23 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017d/1", "y": 10.28, "width": 85, "height": 23 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 10.28, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 10.28, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -169,6 +275,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "y": 10.28, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "y": 10.28, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -178,7 +290,13 @@
 			"Main": {
 				"Main": { "name": "T0017e/1", "x": -20.56, "y": 10.28, "width": 44, "height": 24 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017e/1", "x": -20.56, "y": 10.28, "width": 44, "height": 24 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "x": -20.56, "y": 10.28, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "x": -20.56, "y": 10.28, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -186,6 +304,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -20.56, "y": 10.28, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -20.56, "y": 10.28, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -195,7 +319,13 @@
 			"Main": {
 				"Main": { "name": "T0017b/1", "x": -18.33, "y": -2.01, "scaleX": -1, "width": 43, "height": 47 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017b/1", "x": -18.33, "y": -2.01, "scaleX": -1, "width": 43, "height": 47 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "x": -18.33, "y": -2.01, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "x": -18.33, "y": -2.01, "scaleX": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -203,6 +333,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -18.33, "y": -2.01, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -18.33, "y": -2.01, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -212,7 +348,13 @@
 			"Main": {
 				"Main": { "name": "T0017c/1", "x": -18.33, "y": -10.95, "scaleX": -1, "width": 44, "height": 30 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017c/1", "x": -18.33, "y": -10.95, "scaleX": -1, "width": 44, "height": 30 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "x": -18.33, "y": -10.95, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "x": -18.33, "y": -10.95, "scaleX": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -220,6 +362,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -18.33, "y": -10.95, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -18.33, "y": -10.95, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -229,7 +377,13 @@
 			"Main": {
 				"Main": { "name": "T0017e/1", "x": 20.56, "y": 10.28, "scaleX": -1, "width": 44, "height": 24 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0017e/1", "x": 20.56, "y": 10.28, "scaleX": -1, "width": 44, "height": 24 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "x": 20.56, "y": 10.28, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "x": 20.56, "y": 10.28, "scaleX": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -237,6 +391,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": 20.56, "y": 10.28, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": 20.56, "y": 10.28, "scaleX": -1, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -246,7 +406,13 @@
 			"Main": {
 				"Main": { "name": "Empty", "width": 80, "height": 40 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -254,6 +420,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -263,7 +435,13 @@
 			"Main": {
 				"Main": { "name": "T0059c/1", "y": -7.91, "width": 88, "height": 54 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0059c/1", "y": -7.91, "width": 88, "height": 54 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -271,6 +449,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -280,7 +464,13 @@
 			"Main": {
 				"Main": { "name": "T0026a/1", "width": 64, "height": 34 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0026a/1", "width": 64, "height": 34 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -288,6 +478,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0016c/1", "width": 81, "height": 40 }
 			}
 		}
 	},
@@ -297,7 +493,13 @@
 			"Main": {
 				"Main": { "name": "T0040e/1", "y": 20.65, "width": 52, "height": 40 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0040e/1", "y": 20.65, "width": 52, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -305,6 +507,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -314,14 +522,26 @@
 			"Main": {
 				"Main": { "name": "T0040b/1", "x": -3.86, "y": 22.77, "width": 30, "height": 52 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0040b/1", "x": -3.86, "y": 22.77, "width": 30, "height": 52 }
+			},
 			"Overlay": {
-				"Overlay": { "name": "T0027j/1", "x": -16, "width": 24, "height": 32 }
+				"Overlay": { "name": "T0027e/1", "x": 11, "y": -1.84, "width": 30, "height": 26 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "T0027e/1", "x": 11, "y": -1.84, "width": 30, "height": 26 }
 			},
 			"Underlay": {
-				"Underlay": { "name": "T0027e/1", "x": 11, "y": 9, "width": 30, "height": 26 }
+				"Underlay": { "name": "T0027j/1", "x": -16, "y": 12.94, "width": 24, "height": 32 }
 			},
 			"Underlay2": {
 				"Overlay": { "name": "T0039c/1", "y": 4.25, "width": 39, "height": 26 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "T0039c/1", "y": 4.25, "width": 39, "height": 26 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0027j/1", "x": -16, "y": 12.94, "width": 24, "height": 32 }
 			}
 		}
 	},
@@ -331,14 +551,26 @@
 			"Main": {
 				"Main": { "name": "T0040b/1", "x": -3.86, "y": 22.77, "width": 30, "height": 52 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0040b/1", "x": -3.86, "y": 22.77, "width": 30, "height": 52 }
+			},
 			"Overlay": {
-				"Overlay": { "name": "T0027j/1", "x": -16, "width": 24, "height": 32 }
+				"Overlay": { "name": "T0027e/1", "x": 11, "y": -1.84, "width": 30, "height": 26 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "T0027e/1", "x": 11, "y": -1.84, "width": 30, "height": 26 }
 			},
 			"Underlay": {
-				"Underlay": { "name": "T0027e/1", "x": 11, "y": 9, "width": 30, "height": 26 }
+				"Underlay": { "name": "T0027j/1", "x": -16, "y": 12.94, "width": 24, "height": 32 }
 			},
 			"Underlay2": {
 				"Overlay": { "name": "T0039c/1", "y": 4.25, "width": 39, "height": 26 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "T0039c/1", "y": 4.25, "width": 39, "height": 26 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0027j/1", "x": -16, "y": 12.94, "width": 24, "height": 32 }
 			}
 		}
 	},
@@ -348,7 +580,13 @@
 			"Main": {
 				"Main": { "name": "T0012a/1", "width": 65, "height": 37 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012a/1", "width": 65, "height": 37 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -356,6 +594,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -365,7 +609,13 @@
 			"Main": {
 				"Main": { "name": "T0011a/1", "width": 65, "height": 37 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0011a/1", "width": 65, "height": 37 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -373,6 +623,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -382,7 +638,13 @@
 			"Main": {
 				"Main": { "name": "T0009a/1", "width": 65, "height": 37 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0009a/1", "width": 65, "height": 37 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -390,6 +652,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -399,7 +667,13 @@
 			"Main": {
 				"Main": { "name": "T0009b/1", "width": 52, "height": 28 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0009b/1", "width": 52, "height": 28 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -407,6 +681,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -416,7 +696,13 @@
 			"Main": {
 				"Main": { "name": "T0008b/1", "width": 52, "height": 28 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0008b/1", "width": 52, "height": 28 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -424,6 +710,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -433,7 +725,13 @@
 			"Main": {
 				"Main": { "name": "T0008b/1", "width": 52, "height": 28 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0008b/1", "width": 52, "height": 28 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -441,6 +739,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -450,7 +754,13 @@
 			"Main": {
 				"Main": { "name": "T0009c/1", "width": 33, "height": 22 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0009c/1", "width": 33, "height": 22 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -458,6 +768,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -467,7 +783,13 @@
 			"Main": {
 				"Main": { "name": "T0009n/1", "width": 55, "height": 33 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0009n/1", "width": 55, "height": 33 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -475,6 +797,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -484,7 +812,13 @@
 			"Main": {
 				"Main": { "name": "T0009g/1", "width": 68, "height": 27 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0009g/1", "width": 68, "height": 27 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -492,6 +826,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -501,7 +841,13 @@
 			"Main": {
 				"Main": { "name": "T0012n/1", "width": 55, "height": 33 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012n/1", "width": 55, "height": 33 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -509,6 +855,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -518,7 +870,13 @@
 			"Main": {
 				"Main": { "name": "T0012n/1", "width": 55, "height": 33 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012n/1", "width": 55, "height": 33 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -526,6 +884,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -535,7 +899,13 @@
 			"Main": {
 				"Main": { "name": "T0012l/1", "width": 31, "height": 22 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012l/1", "width": 31, "height": 22 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -543,6 +913,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -552,7 +928,13 @@
 			"Main": {
 				"Main": { "name": "T0012l/1", "width": 31, "height": 22 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012l/1", "width": 31, "height": 22 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -560,6 +942,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -569,7 +957,13 @@
 			"Main": {
 				"Main": { "name": "T0012k/1", "width": 46, "height": 21 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012k/1", "width": 46, "height": 21 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -577,6 +971,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -586,7 +986,13 @@
 			"Main": {
 				"Main": { "name": "T0012j/1", "width": 40, "height": 20 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012j/1", "width": 40, "height": 20 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -594,6 +1000,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -603,7 +1015,13 @@
 			"Main": {
 				"Main": { "name": "T0012i/1", "width": 62, "height": 19 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012i/1", "width": 62, "height": 19 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -611,6 +1029,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -620,7 +1044,13 @@
 			"Main": {
 				"Main": { "name": "T0012g/1", "width": 68, "height": 27 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012g/1", "width": 68, "height": 27 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -628,6 +1058,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -637,7 +1073,13 @@
 			"Main": {
 				"Main": { "name": "T0012f/1", "width": 73, "height": 29 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012f/1", "width": 73, "height": 29 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -645,6 +1087,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -654,7 +1102,13 @@
 			"Main": {
 				"Main": { "name": "T0012d/1", "width": 24, "height": 20 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012d/1", "width": 24, "height": 20 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -662,6 +1116,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -671,7 +1131,13 @@
 			"Main": {
 				"Main": { "name": "T0012d/1", "width": 24, "height": 20 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0012d/1", "width": 24, "height": 20 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -679,6 +1145,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -688,7 +1160,13 @@
 			"Main": {
 				"Main": { "name": "T0026g/1", "scaleY": -1, "width": 66, "height": 34 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0026g/1", "scaleY": -1, "width": 66, "height": 34 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -696,6 +1174,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -705,7 +1189,13 @@
 			"Main": {
 				"Main": { "name": "T0026f/1", "scaleX": -1, "width": 71, "height": 35 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0026f/1", "scaleX": -1, "width": 71, "height": 35 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -713,6 +1203,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -722,7 +1218,13 @@
 			"Main": {
 				"Main": { "name": "T0038f/1", "width": 32, "height": 31 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0038f/1", "width": 32, "height": 31 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -730,6 +1232,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -739,7 +1247,13 @@
 			"Main": {
 				"Main": { "name": "T0001d/1", "x": -24.66, "y": 163.31, "width": 440, "height": 331 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0001d/1", "x": -24.66, "y": 163.31, "width": 440, "height": 331 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -747,6 +1261,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -756,7 +1276,13 @@
 			"Main": {
 				"Main": { "name": "T0072a/1", "x": 5.69, "y": 104.7, "width": 88, "height": 264 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "x": 5.69, "y": 104.7, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -764,6 +1290,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -773,7 +1305,13 @@
 			"Main": {
 				"Main": { "name": "T0057f/1", "y": 39.45, "width": 87, "height": 124 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0057f/1", "y": 39.45, "width": 87, "height": 124 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -781,6 +1319,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -790,7 +1334,13 @@
 			"Main": {
 				"Main": { "name": "T0039a/1", "width": 49, "height": 20 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0039a/1", "width": 49, "height": 20 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -798,6 +1348,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -807,7 +1363,13 @@
 			"Main": {
 				"Main": { "name": "T0039a/1", "width": 49, "height": 20 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0039a/1", "width": 49, "height": 20 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -815,6 +1377,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -824,7 +1392,13 @@
 			"Main": {
 				"Main": { "name": "T0179/1", "y": 13.23, "width": 43, "height": 65 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "y": 13.23, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -832,6 +1406,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -841,7 +1421,13 @@
 			"Main": {
 				"Main": { "name": "T0179/1", "y": 13.23, "width": 43, "height": 65 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "y": 13.23, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -849,6 +1435,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -858,7 +1450,13 @@
 			"Main": {
 				"Main": { "name": "T0179/1", "y": 13.23, "width": 43, "height": 65 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "y": 13.23, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -866,6 +1464,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -875,14 +1479,26 @@
 			"Main": {
 				"Main": { "name": "Empty", "width": 80, "height": 40 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "width": 80, "height": 40 }
+			},
 			"Overlay": {
 				"Overlay": { "name": "Overlay_ExitNE/1", "width": 34, "height": 24 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay": {
 				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -892,14 +1508,26 @@
 			"Main": {
 				"Main": { "name": "Empty", "width": 80, "height": 40 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "width": 80, "height": 40 }
+			},
 			"Overlay": {
 				"Overlay": { "name": "Overlay_ExitNE/1", "y": 1, "scaleY": -1, "width": 34, "height": 24 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
 				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -909,7 +1537,13 @@
 			"Main": {
 				"Main": { "name": "T0004f/1", "x": -68.28, "y": 2.17, "width": 236, "height": 119 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0004f/1", "x": -68.28, "y": 2.17, "width": 236, "height": 119 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -917,6 +1551,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -926,7 +1566,13 @@
 			"Main": {
 				"Main": { "name": "T0053p/1", "y": 32, "width": 115, "height": 76 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053p/1", "y": 32, "width": 115, "height": 76 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -934,6 +1580,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -943,7 +1595,13 @@
 			"Main": {
 				"Main": { "name": "T0053n/1", "x": 15.48, "y": 16.21, "width": 97, "height": 74 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053n/1", "x": 15.48, "y": 16.21, "width": 97, "height": 74 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -951,6 +1609,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -960,7 +1624,13 @@
 			"Main": {
 				"Main": { "name": "T0053n/1", "x": 15.48, "y": 16.21, "width": 97, "height": 74 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053n/1", "x": 15.48, "y": 16.21, "width": 97, "height": 74 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -968,6 +1638,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -977,7 +1653,13 @@
 			"Main": {
 				"Main": { "name": "T0053k/1", "x": -20.8, "y": 24, "width": 114, "height": 87 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053k/1", "x": -20.8, "y": 24, "width": 114, "height": 87 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -985,6 +1667,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -994,7 +1682,13 @@
 			"Main": {
 				"Main": { "name": "T0053i/1", "y": 20, "width": 11, "height": 64 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053i/1", "y": 20, "width": 11, "height": 64 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1002,6 +1696,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1011,7 +1711,13 @@
 			"Main": {
 				"Main": { "name": "T0053i/1", "y": 20, "width": 11, "height": 64 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053i/1", "y": 20, "width": 11, "height": 64 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1019,6 +1725,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1028,7 +1740,13 @@
 			"Main": {
 				"Main": { "name": "T0053h/1", "x": 3.64, "y": 30, "width": 115, "height": 76 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053h/1", "x": 3.64, "y": 30, "width": 115, "height": 76 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1036,6 +1754,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1045,7 +1769,13 @@
 			"Main": {
 				"Main": { "name": "T0053f/1", "x": -17.07, "y": 26.59, "width": 91, "height": 79 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053f/1", "x": -17.07, "y": 26.59, "width": 91, "height": 79 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1053,6 +1783,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1062,7 +1798,13 @@
 			"Main": {
 				"Main": { "name": "T0053d/1", "x": 2.66, "y": 32, "width": 102, "height": 76 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053d/1", "x": 2.66, "y": 32, "width": 102, "height": 76 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1070,6 +1812,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1079,7 +1827,13 @@
 			"Main": {
 				"Main": { "name": "T0053c/1", "x": 7.97, "y": 20, "width": 137, "height": 97 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053c/1", "x": 7.97, "y": 20, "width": 137, "height": 97 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1087,6 +1841,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1096,7 +1856,13 @@
 			"Main": {
 				"Main": { "name": "T0053a/1", "y": 20, "width": 89, "height": 54 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053a/1", "y": 20, "width": 89, "height": 54 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1104,6 +1870,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1113,7 +1885,13 @@
 			"Main": {
 				"Main": { "name": "T0053c/1", "x": -7.97, "y": 20, "scaleX": -1, "width": 137, "height": 97 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053c/1", "x": -7.97, "y": 20, "scaleX": -1, "width": 137, "height": 97 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1121,6 +1899,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1130,7 +1914,13 @@
 			"Main": {
 				"Main": { "name": "T0053f/1", "x": 17.07, "y": 26.59, "scaleX": -1, "width": 91, "height": 79 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0053f/1", "x": 17.07, "y": 26.59, "scaleX": -1, "width": 91, "height": 79 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1138,6 +1928,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1147,7 +1943,13 @@
 			"Main": {
 				"Main": { "name": "T0072d/1", "x": -5.7, "y": 104.7, "scaleX": -1, "width": 90, "height": 261 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "x": -5.7, "y": 104.7, "scaleX": -1, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1155,6 +1957,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1164,7 +1972,13 @@
 			"Main": {
 				"Main": { "name": "T0096/1", "y": 92.64, "scaleX": -1, "width": 146, "height": 206 }
 			},
+			"Main_night": {
+				"Main": { "name": "T0096/1", "y": 92.64, "scaleX": -1, "width": 146, "height": 206 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1172,6 +1986,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1181,7 +2001,13 @@
 			"Main": {
 				"Main": { "name": "T0073/1", "y": 58.78, "width": 55, "height": 132 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "y": 58.78, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1189,6 +2015,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -1198,7 +2030,13 @@
 			"Main": {
 				"Main": { "name": "T0073_Night/1", "y": 58.78, "width": 55, "height": 133 }
 			},
+			"Main_night": {
+				"Main": { "name": "Empty", "y": 58.78, "width": 80, "height": 40 }
+			},
 			"Overlay": {
+				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
+			},
+			"Overlay_night": {
 				"Overlay": { "name": "Empty", "y": 1, "scaleY": -1, "width": 80, "height": 40 }
 			},
 			"Underlay": {
@@ -1206,6 +2044,12 @@
 			},
 			"Underlay2": {
 				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay2_night": {
+				"Overlay": { "name": "Empty", "x": -39.83, "y": -19.35, "width": 80, "height": 40 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "Empty", "width": 80, "height": 40 }
 			}
 		}
 	}

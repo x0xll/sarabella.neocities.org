@@ -30,7 +30,7 @@ class TimeManager
      * @param {*} a 
      */
     changeTint(sprite, r, g, b, shade, a) {
-        let layers = ['Main', 'Overlay', 'Underlay', 'Underlay2']
+        let layers = ['Main_night', 'Overlay_night', 'Underlay_night', 'Underlay2_night']
         layers.forEach(part => {
             
             var slot = sprite.findSlot(`${part}`)
@@ -74,7 +74,6 @@ class TimeManager
                     let tile = this.phaserScene.tiles[y][x]
                     var cellValue = this.phaserScene.tiles[y][x].data.id;
                     this.setTile(tile, cellValue)
-                    this.setTile(tile.dupe, cellValue)
                 }
             }
     }
@@ -93,7 +92,7 @@ class TimeManager
                     // Row
                     for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
                     {
-                        this.changeTint(this.phaserScene.tiles[y][x].dupe.skeleton, 0, 0.2, 0.4, 0, 0)
+                        this.changeTint(this.phaserScene.tiles[y][x].skeleton, 0, 0.2, 0.4, 0, 0)
                     }
                 }
         } else {
@@ -105,7 +104,7 @@ class TimeManager
                     // Row
                     for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
                     {
-                        this.changeTint(this.phaserScene.tiles[y][x].dupe.skeleton, 0, 0.2, 0.4, 0, .75)
+                        this.changeTint(this.phaserScene.tiles[y][x].skeleton, 0, 0.2, 0.4, 0, .75)
                     }
                 }
         }
