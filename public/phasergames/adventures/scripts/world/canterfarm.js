@@ -85,13 +85,13 @@ class World_CanterFarm extends Phaser.Scene
             game.tiles = {}
 
             // Column
-            for (var x = 0; x < game.zoneParsed[0].length; x++)
+            for (var y = 0; y < game.zoneParsed[0].length; y++)
             {
-                game.tiles[x] = {}
+                game.tiles[y] = {}
                 // Row
-                for (var y = 0; y < game.zoneParsed[0][x].length; y++)
+                for (var x = 0; x < game.zoneParsed[0][y].length; x++)
                 {
-                    var cellValue = game.zoneParsed[0][x][y];
+                    var cellValue = game.zoneParsed[0][y][x];
 
                     // We get the actual visual id
                     if (game.zoneParsed[1][cellValue] === undefined)
@@ -99,7 +99,7 @@ class World_CanterFarm extends Phaser.Scene
                         console.error("Tile isn't defined: " + cellValue);
                         continue;
                     }
-                    let tile = game.add.spine((y*game.tileWidth/2)+(x*game.tileWidth/2)+game.xOffset, (x*game.tileWidth/4)-(y*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
+                    let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
                     
                     const skeletonData = tile.skeleton.data;
                     const skin = new spine.Skin("custom");
@@ -112,9 +112,10 @@ class World_CanterFarm extends Phaser.Scene
                     tile.skeleton.setSkin(skin);
                     tile.skeleton.setToSetupPose();
 
+                    tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
 
                     tile.data = game.zoneParsed[1][cellValue]
-                    game.tiles[x][y] = tile
+                    game.tiles[y][x] = tile
                 }
             }
         }

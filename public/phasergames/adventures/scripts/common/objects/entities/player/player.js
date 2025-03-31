@@ -54,6 +54,7 @@ class Player
                     isoTarget.x, isoTarget.y-20
                 ];
                 this.cursor.setTo(polygon).setAlpha(0.5)
+                this.cursor.setDepth((Object.keys(this.phaserScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
             } else {
                 this.cursor.setAlpha(0)
             }
@@ -96,6 +97,11 @@ class Player
     {
         // If the player is moving...
         if (this.phaserScene.player.body.speed > 0) {
+            // Set the current depth
+            let gridTarget = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
+            gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
+            this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
+
             // Calculate it's distance to the target
             const d = Math.sqrt(Math.pow(this.phaserScene.player.x-this.target.x, 2) + Math.pow(this.phaserScene.player.y-this.target.y, 2));
             
@@ -103,6 +109,11 @@ class Player
             if (d < 20) {
                 // Reset it's body so it stops
                 this.phaserScene.player.body.reset(this.target.x, this.target.y);
+
+                // Reset player depth
+                gridTarget = this.isoToGridMap(this.target.x, this.target.y)
+                gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
+                this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
             }
         }
     }
