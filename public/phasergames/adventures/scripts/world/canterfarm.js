@@ -122,7 +122,7 @@ class World_CanterFarm extends Phaser.Scene
         
         // TODO : Create the isometric grid
         instantiateWorld();
-        game.playerObj.move(game.tiles);
+        game.playerObj.move();
     }
 
     update() 

@@ -10,11 +10,17 @@ class Player
     }
 
     // ------- INITIALIZE PLAYER -------
+    /**
+     * Loads assets for player sprites. Should run during the preload phase of scene setup
+     */
     loadPlayerSprites()
     {
         this.phaserScene.load.image("Player", `./assets/extracted/TestCharacter.png`)
     }
 
+    /**
+     * Instantiates player sprite, camera and cursor indicator. Should run during the create phase of scene setup
+     */
     instantiatePlayerSprites()
     {
         let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1])
@@ -26,11 +32,18 @@ class Player
     // ------- END INITIALIZE PLAYER -------
 
     // ------- START MOVEMENT -------
-    move(zoneTiles)
+    /**
+     * Handles player (and cursor indicator) movement within the level
+     * Player can move by clicking a valid (tile) position on the level
+     * Should run during the create phase of scene setup
+     */
+    move()
     {
+        let zoneTiles = this.phaserScene.tiles
         this.target = {x: this.phaserScene.player.x, y: this.phaserScene.player.y}
 
         // Move cursor
+        // TODO: Hide when mouse is outside of level view (e.g. do not react when hovering over HUD buttons or dialogue menus)
         this.phaserScene.input.on('pointermove', (pointer) => {
             // Get the WORLD x and y position of the pointer
             const {worldX, worldY} = pointer;
@@ -61,23 +74,22 @@ class Player
         });
 
 
-        // When the user releases the screen...
+        // Moves the player on pointerup event
+        // TODO: Add pathfinding so the player moves completely on the grid.
+        // This might be useful here: https://www.geeksforgeeks.org/rat-in-a-maze/
+        // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
         this.phaserScene.input.on('pointerup', (pointer) => {
-            // Get the WORLD x and y position of the pointer
+            // Get the grid x and y position of the target
             const {worldX, worldY} = pointer;
-            
-            // Convert coordinates
             let gridTarget = this.isoToGridMap(worldX, worldY)
-            gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
-            let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y))
 
-            // Check if position is valid
-            let isWalkable = zoneTiles[gridTarget.y][gridTarget.x].data.walkable === 'true'
+            // If position is valid, move player towards target
+            let targetIsWalkable = zoneTiles[gridTarget.y][gridTarget.x].data.walkable === 'true'
             let isInXBounds = 0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length
             let isInYBounds = 0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length
-
-            if(isWalkable && isInXBounds && isInYBounds){
+            if(targetIsWalkable && isInXBounds && isInYBounds){
                 // Set new target position
+                let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y))
                 this.target.x = isoTarget.x;
                 this.target.y = isoTarget.y;
 
@@ -87,6 +99,7 @@ class Player
                 } else {
                     this.phaserScene.player.setScale(0.25, 0.25)
                 }
+
                 // Start moving player towards the target
                 this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
             }
@@ -95,25 +108,17 @@ class Player
 
     checkIfReachedDestination()
     {
-        // If the player is moving...
         if (this.phaserScene.player.body.speed > 0) {
-            // Set the current depth
-            let gridTarget = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
-            gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
-            this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
+            // Set the player sprite depth
+            let gridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
+            this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
 
-            // Calculate it's distance to the target
-            const d = Math.sqrt(Math.pow(this.phaserScene.player.x-this.target.x, 2) + Math.pow(this.phaserScene.player.y-this.target.y, 2));
-            
-            // If it's close enough,
-            if (d < 20) {
-                // Reset it's body so it stops
+            // If close to target, stop the player at target position and recheck sprite depth
+            const distanceFromTarget = this.distanceBetweenPoints(this.phaserScene.player.x, this.phaserScene.player.y, this.target.x, this.target.y)
+            if (distanceFromTarget < 20) {
                 this.phaserScene.player.body.reset(this.target.x, this.target.y);
-
-                // Reset player depth
-                gridTarget = this.isoToGridMap(this.target.x, this.target.y)
-                gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
-                this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
+                gridPosition = this.isoToGridMap(this.target.x, this.target.y)
+                this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
             }
         }
     }
@@ -121,15 +126,39 @@ class Player
 
     
     // ------- HELPER FUNCTIONS -------
+    /**
+     * Takes grid coordinatetes and converts them to the corresponding isometric coordinates on the level map
+     * @param {number} x The grid x coordinate
+     * @param {number} y The grid y coordinate
+     * @returns {object} An object {x, y} with the isometric-based x and y coordinates
+     */
     gridToIsoMap(x, y) {
         let isoX = (x*this.phaserScene.tileWidth/2)+(y*this.phaserScene.tileWidth/2)+this.phaserScene.xOffset
         let isoY = (y*this.phaserScene.tileWidth/4)-(x*this.phaserScene.tileWidth/4)+this.phaserScene.yOffset
          return {x: isoX, y: isoY}
     }
 
+    /**
+     * Takes isometric coordinatetes and converts them to the corresponding grid coordinates (tile position) on the level map
+     * @param {number} x The ismometric x coordinate
+     * @param {number} y The ismometric y coordinate
+     * @returns {object} An object {x, y} with the grid-based x and y coordinates
+     */
     isoToGridMap(x, y) {
         let gridX = (-2 * (y-this.phaserScene.yOffset) + (x-this.phaserScene.xOffset)) / this.phaserScene.tileWidth
         let gridY = (2 * (y-this.phaserScene.yOffset) + (x-this.phaserScene.xOffset)) / this.phaserScene.tileWidth
-        return {x: gridX, y: gridY}
+        return {x: Math.round(gridX), y: Math.round(gridY)}
+    }
+
+    /**
+     * Finds the distance between two points
+     * @param {number} x1 x coordinate of point 1
+     * @param {number} y1 y coordinate of point 1
+     * @param {number} x2 x coordinate of point 2
+     * @param {number} y2 y coordinate of point 2
+     * @returns {number} The distance between the given points
+     */
+    distanceBetweenPoints(x1, y1, x2, y2) {
+        return Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2))
     }
 }

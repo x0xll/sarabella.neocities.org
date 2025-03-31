@@ -97,7 +97,7 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti052b" walkable="false" isBillboard="false" skins="Sk0008">
-      <gridSize width="6" height="5" depth="3"/>
+      <gridSize width="6" height="5" depth="5"/>
     </tile>
     <tile id="Ti079b" walkable="false" isBillboard="false" skins="Sk0014">
       <gridSize width="1" height="1" depth="1"/>
@@ -145,7 +145,7 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti064w" walkable="true" isBillboard="false" grounds="Gr0021">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="4"/>
     </tile>
     <tile id="Ti057b" walkable="false" isBillboard="false" skins="Sk0021">
       <gridSize width="1" height="1" depth="1"/>
