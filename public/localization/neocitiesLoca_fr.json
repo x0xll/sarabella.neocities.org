@@ -56,14 +56,15 @@
     "game_dreamrider" : "Dream Rider",
     "game_bubblewand" : "Magic Bubble Wand",
     "game_bazaar" : "Bazaar",
-    "game_map": "World Map",
-    "game_oldmap": "Old Map",
-    "game_newmap": "New Map",
+    "game_map": "Carte du Monde",
+    "game_oldmap": "Ancienne Carte",
+    "game_newmap": "Nouvelle Carte",
     "game_belloquiz": "Bello's Quiz",
     "game_adventuresquiz": "Adventures Quiz",
     "game_autumnjourney": "Autumn Journey Quiz",
     "game_yinyangmemory": "Yin and Yang's Memory Game",
     "game_cottage": "Mon Cottage",
+    "game_gallery": "Mes Objets",
 
     "artstudio_warning" : "Ce jeu a les fichiers des chevaux originaux manquants.",
     
