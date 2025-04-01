@@ -74,18 +74,16 @@
 
     "storybook_warning": "Ce jeu ne semble pas capable de se mettre en mode silencieux lorque l'on va sur la page suivante et ne joue pas toujours les vidéos comme attendu.",
 
-    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
-    "oldmap_warning": "Certains liens sont désactivés car ces jeux ne sont pas encore retrouvés.",
+    "newmap_warning": "Some links go to the wiki due to the games not being restored yet.",
+    "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
-    "belloquiz_warning" : "Dû au manque de références, cette recréation n'est peut-être pas 100% exacte.",
+    "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
 
     "dreamrider_warning" : "Currently, you will need to right click the game and hit play to get past the loading screen.",
 
-    "bubblewand_warning" : "The game's text formatting is not yet correct",
-
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
 
-    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game's text formatting is not yet correct, and the game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
+    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
 
     "citrustacked_wip_warning": "Story mode still being recreated.",
 

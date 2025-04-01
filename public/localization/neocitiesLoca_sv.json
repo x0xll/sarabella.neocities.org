@@ -73,7 +73,7 @@
 
     "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid upp som förväntat.",
 
-"newmap_warning": "Kartan saknar sina styling filer. Vissa länkar går därför till vår wiki eftersom de inte blivit återskapade ännu.",
+"newmap_warning": "Vissa länkar går därför till vår wiki eftersom de inte blivit återskapade ännu.",
     "oldmap_warning": "Vissa länkar är obrukbara eftersom spelen inte blivit återskapade ännu.",
 
 
@@ -81,11 +81,9 @@
 
     "dreamrider_warning" : "Currently, you will need to right click the game and hit play to get past the loading screen.",
 
-    "bubblewand_warning" : "The game's text formatting is not yet correct",
-
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
 
-    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game's text formatting is not yet correct, and the game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
+    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
 
     "citrustacked_wip_warning": "Story mode still being recreated.",
 

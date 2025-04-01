@@ -66,24 +66,20 @@
     "game_cottage": "My Cottage",
     "game_gallery": "My Things",
 
-    "artstudio_warning" : "This game is missing the files for the original horses.",
-    
     "lanceriding_warning" : "This game only has the files for the first level. It also has issues loading consistently and the page may need to be reloaded a few times before the level will start.",
 
     "storybook_warning": "This game seems to be unable to turn off sounds when going to the next page in the book and does not always play the videos as expected.",
 
-    "newmap_warning": "The map is missing its styling files. Some links go to the wiki due to the games not being restored yet.",
+    "newmap_warning": "Some links go to the wiki due to the games not being restored yet.",
     "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
 
     "belloquiz_warning" : "Due to the lack of references, this recreation may not be a 100% accurate.",
 
     "dreamrider_warning" : "Currently, you will need to right click the game and hit play to get past the loading screen.",
 
-    "bubblewand_warning" : "The game's text formatting is not yet correct",
-
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
 
-    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game's text formatting is not yet correct, and the game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
+    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
 
     "citrustacked_wip_warning": "Story mode still being recreated.",
 
