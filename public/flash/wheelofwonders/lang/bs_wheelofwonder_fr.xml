@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<unicode>True</unicode>
+	
+	<titleTxt><FONT SIZE="30"><p>La roue</p><p>des</p><p>merveilles</p></FONT></titleTxt>
+	<helpBtnTxt><FONT SIZE="28"><b>Aide</b></FONT></helpBtnTxt>
+	<playBtnTxt><FONT SIZE="28"><b>Activer!</b></FONT></playBtnTxt>
+	
+	<helpscnA><FONT SIZE="24"><p>Dépense des fers à cheval pour faire tourner la roue.</p></FONT></helpscnA>
+	<helpscnB><FONT SIZE="24"><p>Fais tourner la roue et gagne un prix.</p></FONT></helpscnB>
+	<helpscnC><FONT SIZE="24"><p>Regarde tes prix dans Mes objets.</p></FONT></helpscnC>
+
+	<spinTxt><FONT SIZE="20"><b><p>Faire tourner</p><p>la roue</p></b></FONT></spinTxt>
+    <spendTxt><FONT SIZE="26"><b>Es-tu sûre?</b></FONT></spendTxt>
+    <redeemTxt><FONT SIZE="18"><b><p>Recevoir </p><p>ton prix</p></b></FONT></redeemTxt>
+    <addPrizeTxt><FONT SIZE="20"><b>Ton prix a été ajouté à tes Bibelots dans Mes objets.</b></FONT></addPrizeTxt>
+
+    <freeSpinTxt><FONT SIZE="22"><p>Tour de roue gratuit !</p></FONT></freeSpinTxt>
+	<winPrizeTxt><FONT SIZE="18"><b>Tu as gagné le prix 0!</b></FONT></winPrizeTxt>
+	<winFreeSpinTxt><FONT SIZE="26"><b>Tu as gagné un tour de roue gratuit !</b></FONT></winFreeSpinTxt>
+	<winInspirationTxt><FONT SIZE="26"><b>Tu as gagné une inspiration !</b></FONT></winInspirationTxt>
+    
+	<yesTxt><FONT SIZE="26"><b>Oui</b></FONT></yesTxt>
+    <noTxt><FONT SIZE="26"><b>Non</b></FONT></noTxt>
+    <okTxt><FONT SIZE="26"><b>OK</b></FONT></okTxt>
+	<myThingsTxt><FONT SIZE="15"><b>Mes objets</b></FONT></myThingsTxt>
+	
+	<noHorseshoeTxt><FONT SIZE="20"><b>Tu n'as pas assez de fers à cheval.</b></FONT></noHorseshoeTxt>
+</root>

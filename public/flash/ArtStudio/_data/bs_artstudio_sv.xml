@@ -35,7 +35,7 @@
 		    <P><FONT SIZE="18"><B>Ett konstverk av:</B></FONT></P>
 	    </Text>
 		<Text id="txtPrintAngel">
-		<P><FONT SIZE="24">Anemone</FONT></P>
+		<P><FONT SIZE="24">Angel</FONT></P>
 		</Text>
 		<Text id="txtPrintBlank">
 			<P><FONT SIZE="24">Mitt Mästerverk</FONT></P>
@@ -44,7 +44,7 @@
 			<P><FONT SIZE="24">Peter</FONT></P>
 		</Text>
 		<Text id="txtPrintTiffi">
-			<P><FONT SIZE="24">Nori</FONT></P>
+			<P><FONT SIZE="24">Tiffi</FONT></P>
 		</Text>
 		<Text id="txtFromMe">
 		    <P><FONT SIZE="16">Jag</FONT></P>
@@ -92,7 +92,7 @@
 		<P><FONT SIZE="26">NY</FONT></P>
 	</Text>
 	<Text id="txtAngelButton">
-		<P><FONT SIZE="18">Anemone</FONT></P>
+		<P><FONT SIZE="18">Angel</FONT></P>
 	</Text>
 	<Text id="txtBlankButton">
 		<P><FONT SIZE="18">Tom</FONT></P>
@@ -101,7 +101,7 @@
 		<P><FONT SIZE="18">Peter</FONT></P>
 	</Text>
 	<Text id="txtTiffiButton">
-		<P><FONT SIZE="18">Nori</FONT></P>
+		<P><FONT SIZE="18">Tiffi</FONT></P>
 	</Text>
 	<Text id="txtAreYouSureDialog">
 		<P><FONT SIZE="15">Är du säker på att du vill radera denna kreation från galleriet?</FONT></P><P><FONT SIZE="15"/></P>

@@ -46,7 +46,7 @@
 	<current_score>Score</current_score>
 
 	<!-- combos texts -->
-	<ofakind>1 de chaque: </ofakind>
+	<ofakind> de chaque: </ofakind>
 	<variety>Variété </variety>
 	<plus>Plus: </plus>
 	<cross>Croix: </cross>

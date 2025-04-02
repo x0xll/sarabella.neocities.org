@@ -1,0 +1,71 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<BellaSara>
+<World>
+<Settings>
+<WebService url="http://www.bellasara.com/BellaSara/BellaWSService?WSDL"/>
+<Locations>
+<Location id="airStablePage" url="/flashloader_allstalls.aspx"/>
+<Location id="bazaarLoc" url="/xml/en/bazaar.xml"/>
+<Location id="bazaarPage" url="/bazaar.aspx"/>
+<Location id="cardActivationPage" url="/activate.aspx"/>
+<Location id="cardSwf" url="./Card/card.swf"/>
+<Location id="cottageFrameSwf" url="/Wrapper/cottageframe.swf"/>
+<Location id="cottageFrame521Swf" url="/Wrapper/cottageframe521.swf"/>
+<Location id="cottageHelpSwf" url="/help/cottagehelp.swf"/>
+<Location id="cottageMusicSwf" url="/wrapper/cottagemusic.swf"/>
+<Location id="cottageWrapperSwf" url="/Wrapper/cottagewrapper.swf"/>
+<Location id="cottageBedroomPage" url="/cottagebedroom.aspx"/>
+<Location id="cottageConservatoryPage" url="/cottageconservatory.aspx"/>
+<Location id="cottageEntryPage" url="/cottageentry.aspx"/>
+<Location id="cottageLoc" url="/xml/en/cottage.xml"/>
+<Location id="cottageMediaRoom" url="/cottagemediaroom.aspx"/>
+<Location id="cottageRecRoom" url="/cottagerecroom.aspx"/>
+<Location id="galleryLoc" url="/xml/en/gallery.xml"/>
+<Location id="galleryPage" url="/gallery.aspx"/>
+<Location id="headerSettings" url="/xml/en/header.xml"/>
+<Location id="horsesPage" url="/flashloader_stablechooser.aspx"/>
+<Location id="landStablePage" url="/flashloader_allstalls.aspx"/>
+<Location id="livingRoomPage" url="/livingroom.aspx"/>
+<Location id="mapLoc" url="/xml/en/map.xml"/>
+<Location id="mapPage" url="/map.aspx"/>
+<Location id="myFriendsCottagesPage" url="/cottageentry.aspx"/>
+<Location id="navHelpSwf" url="/help/navhelp.swf"/>
+<Location id="navSettings" url="/xml/en/nav.xml"/>
+<Location id="ponyMailPage" url="/index.html"/>
+<Location id="stablechooser" url="/flashloader_stablechooser.aspx"/>
+<Location id="stall" url="/flashloader_allstalls.aspx"/>
+<Location id="waterStablePage" url="/flashloader_allstalls.aspx"/>
+<Location id="whatsnew" url="/whatsnext.aspx"/>
+<Location id="worldPage" url="/world.aspx"/>
+<Location id="cardcollecting" url="/collecting.aspx"/>
+<Location id="gamerules" url="/gamerules.aspx"/>
+<Location id="cards" url="/cards2.aspx"/>
+<!--  games  -->
+<Location id="bubblegame" url="/bubblegame.aspx"/>
+<Location id="fireworks" url="/fireworks.aspx"/>
+<Location id="treasureshunt" url="/treasureshunt.aspx"/>
+<Location id="firelightfestival" url="/fireworks.aspx"/>
+<Location id="cloudjumper" url="/cloudjumper.aspx"/>
+<Location id="lanceriding" url="/lanceriding.aspx"/>
+<Location id="jumpinggame" url="/flashloader.aspx?flash=main"/>
+<Location id="memorygame" url="/flashloader.aspx?flash=memorygame"/>
+<Location id="bellapedia" url="/Bellapedia.aspx"/>
+<!--  Castle links  -->
+<Location id="asksara" url="/asksara.aspx"/>
+<Location id="friendquiz" url="/flashloader.aspx?flash=quizgame"/>
+<Location id="knowledge" url="/flashloader.aspx?flash=anatomygame"/>
+<Location id="desktopwallpapers" url="/wallpapers.aspx"/>
+<Location id="beautybox" url="/beautybox_load.aspx"/>
+<Location id="coloring" url="/coloring.aspx"/>
+<Location id="puzzles" url="/puzzles.aspx"/>
+</Locations>
+<Avatars>
+<Avatar id="1" avatarpath="images/avatars/i267.jpg" cardpath="/images/cards/en-us/267.jpg"/>
+<Avatar id="2" avatarpath="images/avatars/006.png" cardpath="/images/cards/en-us/006.png"/>
+<Avatar id="3" avatarpath="images/avatars/083.png" cardpath="/images/cards/en-us/083.png"/>
+<Avatar id="4" avatarpath="images/avatars/268.png" cardpath="/images/cards/en-us/268.png"/>
+<Avatar id="5" avatarpath="images/avatars/269.png" cardpath="/images/cards/en-us/269.png"/>
+</Avatars>
+</Settings>
+</World>
+</BellaSara>

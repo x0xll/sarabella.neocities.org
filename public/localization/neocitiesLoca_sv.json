@@ -15,14 +15,16 @@
     "footer_github_linktxt" : "Github",
     "footer_svgimg_linktxt" : "SVG Bild",
     "footer_magicalhorses_linktxt" : "Magiska Hästar",
+    "footer_recreated_linktxt" : "Recreated Version",
+    "footer_original_linktxt" : "Original Version",
 
     "ressources_flashpointcacheguide" : "Flashpoint Cache Guide",
     "ressources_mewfantasyarchivingguide" : "Mewfantasys Arkiv Guide",
     "ressources_gridlochressdump" : "Gridlochs Resurs Hörna",
     "ressources_gridlochstablerecreation" : "Gridlochs Stall Rekreation",
     
-    "devlog_update": "<b><i>Senast Modifierad: 12:te februari, 2025</i></b>",
-    "devlog_summary" : "Here is the current state of the archiving of the Bella Sara website games:<br/><br/>We have successfully managed to locate and restore several of the original Flash games from the Bella Sara website. These include <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, and the old version of the <i>World Map</i>.<br/><br/>Additionally, we have partially recovered or restored the files for several other games, such as the <i>Art Studio</i>, <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, and the newer version of the <i>World Map</i>. These games are still undergoing work to fully restore their original functionalities, and many games are missing files (e.g., the <i>Lance Riding</i> game is missing the files for the later levels).<br/><br/>Unfortunately, some games remain missing or seem to be permanently broken (e.g., <i>Bella's Beauty Box</i>). To address this, we have started recreating a few of these games using the Phaser framework. As of this update, the <i>Stables</i>, the <i>Spectacular Jumping Game</i>, <i>Yin and Yang's Memory Game</i> and <i>Belo's Quiz</i>are all available to play, although still as a work in progress. We are also currently working on recreating <i>Citrustacked</i>, <i>Bellapedia</i>, and <i>Bellisimo's Jumping Contest</i>, which should all hopefully be available soon.<br/><br/>Beyond restoring the original games, we have also started creating custom games inspired by the ones from the website. Currently, two are available: a <i>Random Art Idea Generator</i>, a <i>Dress-Up Game</i> based on the <i>Stables</i> and an <i>Adventures Quiz</i> and <i>Autumn Journey Quiz</i> based on <i>Belo's Quiz</i>.<br/><br/>We do hope to eventually restore or recreate all the games from the site if we can, but this will obviously take time. If you would like to help us out or would like a more detailed overview of this project, we would recommend starting here: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. This project is a community effort and every little bit helps!",
+    "devlog_update": "<b><i>Last modified: March 29th, 2025</i></b>",
+    "devlog_summary" : "Here is the current state of the archiving of the Bella Sara website games:<br/><br/>We have successfully managed to locate and restore several of the original Flash games from the Bella Sara website thanks to archived pages and caches. These include <i>Art Studio</i>, <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, and the old version of the <i>World Map</i>.<br/><br/>Additionally, we have partially recovered or restored the files for several other games, such as <i>Spectacular Jumping Game</i>, <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, <i>Dreamrider</i>, <i>BubbleWand</i>, and the newer version of the <i>World Map</i>. These games are still undergoing work to fully restore their original functionalities, and many games are missing files (e.g., the <i>Lance Riding</i> game is missing the files for the later levels).<br/><br/>We also found files for some other games, that we are trying on repairing to have them working again, such as <i>Citrustacked</i>, <i>Wheel of Wonders</i>, the newest version of <i>CloudJumper</i>, and <i>Marvelous Magic Match</i><br/><br/>Unfortunately, some games remain missing or seem to be permanently broken (e.g., <i>Bella's Beauty Box</i>). To address this, we have started recreating a few of these games using the Phaser framework. As of this update, the <i>Stables</i>, the <i>Spectacular Jumping Game</i>, <i>Yin and Yang's Memory Game</i> and <i>Belo's Quiz</i>are all available to play, although still as a work in progress. We are also currently working on recreating <i>Bellapedia</i>, which should hopefully be available soon.<br/><br/>Beyond restoring the original games, we have also started creating custom games inspired by the ones from the website. Currently, four are available: a <i>Random Art Idea Generator</i>, a <i>Dress-Up Game</i> based on the <i>Stables</i>, an <i>Adventures Quiz</i> and <i>Autumn Journey Quiz</i> based on <i>Belo's Quiz</i>. We are also considering of soon recreating <i>Wheel of Wonders</i>, <i>Marvelous Magic Match</i>, <i>Bella's Beauty Box</i>, and even a first prototype for <i>Adventures</i>.<br/><br/>We do hope to eventually restore or recreate all the games from the site if we can, but this will obviously take time. If you would like to help us out or would like a more detailed overview of this project, we would recommend starting here: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. This project is a community effort and every little bit helps!",
     
     "play_recoveredflashgames_title" : "Återhämtade Flashspel",
     "play_recoveredflashgames_desc" : "Detta är spel som var arkiverade från original sidan",
@@ -40,7 +42,10 @@
     "game_memorygame" : "Memory Spel",
     "game_quizgame" : "Frågesport",
     "gamestables" : "Stall",
-    "game_spectacularjumpinggame" : "Spektakulär Hoppning Spel (WIP)",
+    "game_spectacularjumpinggame_wip" : "Spektakulär Hoppning Spel (WIP)",
+    "game_spectacularjumpinggame" : "Spektakulär Hoppning Spel",
+    "game_citrustacked_wip": "Citrustacked (WIP)",
+    "game_citrustacked": "Citrustacked",
     "game_artstudio" : "Konststudion",
     "game_lancegame" : "Lansridning",
     "game_storybook" : "Sagoboken",
@@ -49,7 +54,10 @@
     "game_randomartideagenerator" : "Slumpmässiga Konstidé Generatorn",
     "game_dressupstables" : "Utklädning Spel",
     "game_firelightFestival" : "Fyrverkerifestivalen",
- "game_map": "Världskartan",
+    "game_dreamrider" : "Dream Rider",
+    "game_bubblewand" : "Magic Bubble Wand",
+    "game_bazaar" : "Bazaar",
+    "game_map": "Världskartan",
     "game_oldmap": "Gammal Karta",
     "game_newmap": "Ny Karta",
     "game_belloquiz": "Bellos Frågesport",
@@ -57,18 +65,30 @@
     "game_autumnjourney": "Autumn Journey Frågesport",
     "game_yinyangmemory": "Yin och Yangs Memory Spel",
     "artstudio_warning" : "Detta spel saknar filerna till de originala hästarna.",
+    "game_cottage": "My Cottage",
+    "game_gallery": "My Things",
 
 
     "lanceriding_warning" : "Detta spel har endast filerna för första nivån. Spelet har även problem med att ladda effektivt och därför kan det krävas att man laddar om sidan ett par gånger innan det funkar.",
 
     "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid upp som förväntat.",
 
-"newmap_warning": "Kartan saknar sina styling filer. Vissa länkar går därför till vår wiki eftersom de inte blivit återskapade ännu.",
+"newmap_warning": "Vissa länkar går därför till vår wiki eftersom de inte blivit återskapade ännu.",
     "oldmap_warning": "Vissa länkar är obrukbara eftersom spelen inte blivit återskapade ännu.",
 
 
     "belloquiz_warning" : "På grund av brist på referenser är kanske inte denna återskapning 100% rätt.",
 
+    "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
+
+    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
+
+    "citrustacked_wip_warning": "Story mode still being recreated.",
+
+    "jumpinggame_wip_warning": "Level 3 still being recreated.",
+    "jumpinggame_warning": "The game can be quite laggy at times.",
+
+    "cottage_warning": "The objects are not yet added back in the cottage or gallery. You will need to right click the game and hit play to get past the loading screen.",
 
  "puzzle_goCustom" : "Klicka&nbsp;<a href=\"puzzle custom.html\">här</a>&nbsp;för att skapa ett pussel med egen bild",
     "puzzle_customTitle" : "Skapa Eget",
@@ -97,6 +117,11 @@
     "babybella_7Nov": "7:de november, 2008 - Bellissas Födelse",
     "babybella_17Dec": "17:de december, 2008 - Efter eventets slut",
     "footer_timeline_link": "Tidslinje",
+
+    "cloudjumper_timeline_information": "Two slightly different versions of the game were saved from the official website. Here, you can choose which one you wish to play:",
+    "oldversion": "Old version",
+    "newversion": "New version",
+    
     "credits_title": "Credits",
 
     "about_title": "About",

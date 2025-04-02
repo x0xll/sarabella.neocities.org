@@ -12,6 +12,12 @@
 				<item _x="1" _y="27" link="/phasergames/stablesrecreation/dressup.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Dressup Game</p>]]></label>
 				</item>
+				<item _x="1" _y="44" link="/phasergames/quiz/belloquiz/adventures/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Adventures Quiz</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="//phasergames/quiz/belloquiz/autumnjourney/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Autumn Journey Quiz</p>]]></label>
+				</item>
 			</menu_bubble>
 		</menu>
 		<menu id="Carnival" _x="20" _y="200">
@@ -19,8 +25,8 @@
 				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Le Carnaval</p>]]></label>
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
-				<item _x="1" _y="10" link="beautybox_load.html">
-					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Bella's Beauty Box</p>]]></label>
+				<item _x="1" _y="10" link="https://bellasara.wiki.gg/wiki/Bella%27s_Beauty_Box">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Beauty Box</p>]]></label>
 				</item>
 				<item _x="1" _y="27" link="/flash/coloring/coloring-fiona.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella's Coloring Book</p>]]></label>
@@ -28,8 +34,8 @@
 				<item _x="1" _y="44" link="/flash/puzzles/puzzles.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Jigsaw Puzzle Fun</p>]]></label>
 				</item>
-				<item _x="1" _y="61" link="memorygame.html">
-					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Yin & Yang's Game</p>]]></label>
+				<item _x="1" _y="61" link="/phasergames/memory/yinyang/original/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Yin & Yang's Game</p>]]></label>
 				</item>
 			</menu_bubble>
 		</menu>
@@ -41,8 +47,8 @@
 				<item _x="1" _y="10" link="https://web.archive.org/web/20081108024621/http://www.bellasara.com/asksara.aspx">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Ask Sara</p>]]></label>
 				</item>
-				<item _x="1" _y="27" link="belloquiz.html">
-					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Bello's Friends Quiz</p>]]></label>
+				<item _x="1" _y="27" link="/phasergames/quiz/belloquiz/original/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bello's Friends Quiz</p>]]></label>
 				</item>
 				<item _x="1" _y="44" link="/flash/quiz/index.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Santos' Knowledge Quiz</p>]]></label>
@@ -60,14 +66,14 @@
         <item _x="1" _y="10" link="/flash/treasureshunt/treasureshunt.html">
           <label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Treasure's Hunt</p>]]></label>
         </item>
-				<item _x="1" _y="27" link="/flash/cloudjumper/cloudjumper.html">
+				<item _x="1" _y="27" link="/flash/cloudjumper/cloudjumper.html?version=1">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Cloud Jumper</p>]]></label>
 				</item>
 				<item _x="1" _y="44" link="/flash/lanceriding/lanceriding.html">
 					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Lance Riding Game</p>]]></label>
 				</item>
 				<item _x="1" _y="61" link="/phasergames/jumpinggame/index.html">
-					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bellisimo's Jumping Contest</p>]]></label>
+					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Bellisimo's Jumping Contest</p>]]></label>
 				</item>
 			</menu_bubble>
 		</menu>	
