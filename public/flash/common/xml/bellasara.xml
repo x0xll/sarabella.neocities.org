@@ -5,39 +5,39 @@
       <Locations>
         <Location id="airStablePage" url="/flashloader_allstalls.aspx" />
         <Location id="awardsAlbum" url="/AwardsAlbum.aspx" />
-        <Location id="bazaarLoc" url="/xml/fr/bazaar.xml" />
-        <Location id="bazaarPage" url="/bazaar.aspx" />
+        <Location id="bazaarLoc" url="/flash/bazaar/data/bs_bazaar_en.xml" />
+        <Location id="bazaarPage" url="/flash/bazaar/bazaar.html" />
         <Location id="cardActivationPage" url="/activate.aspx" />
-        <Location id="cardSwf" url="./swf/card.swf" />
+        <Location id="cardSwf" url="/flash/common/swf/card.swf" />
         <Location id="cottageFrameSwf" url="/flash/cottage/swf/cottageframe.swf" />
         <Location id="cottageFrame521Swf" url="/flash/cottage/swf/cottageframe521.swf" />
         <Location id="cottageHelpSwf" url="/flash/cottage/swf/cottagehelp.swf" />
         <Location id="cottageMusicSwf" url="/flash/cottage/swf/cottagemusic.swf" />
         <Location id="cottageWrapperSwf" url="/flash/cottage/swf/cottagewrapper.swf" />
-        <Location id="cottageBedroomPage" url="/room.aspx?roomId=6" />
+        <Location id="cottageBedroomPage" url="/flash/cottage/rooms/rooms.html?roomId=6" />
         <Location id="cottageConservatoryPage" url="/cottageconservatory.aspx" />
         <Location id="cottageEntryPage" url="/flash/cottage/cottage.html" />
-        <Location id="cottageLoc" url="./lang/cottage_en.xml" />
+        <Location id="cottageLoc" url="/flash/cottage/lang/cottage_en.xml" />
         <Location id="cottageMediaRoom" url="/cottagemediaroom.aspx" />
         <Location id="cottageRecRoom" url="/cottagerecroom.aspx" />
-        <Location id="roomPage" url="/room.aspx" />
+        <Location id="roomPage" url="/flash/cottage/room.html" />
         <Location id="galleryLoc" url="/flash/gallery/lang/gallery_en.xml" />
         <Location id="galleryPage" url="/flash/gallery/gallery.html" />
         <Location id="headerSettings" url="/xml/fr/header.xml" />
         <Location id="horsesPage" url="/phasergames/stablesrecreation/index.html" />
         <Location id="myHorsePage" url="/flash/foal/index.html" />
         <Location id="landStablePage" url="/flashloader_allstalls.aspx" />
-        <Location id="livingRoomPage" url="/room.aspx?roomId=3" />
-        <Location id="mapLoc" url="/xml/fr/map.xml" />
-        <Location id="mapPage" url="/map.aspx" />
+        <Location id="livingRoomPage" url="/flash/cottage/rooms/rooms.html?roomId=3" />
+        <Location id="mapLoc" url="/flash/worldmap/newmap/xml/lang/map_en.xml" />
+        <Location id="mapPage" url="/flash/worldmap/worldmap_new.html" />
         <Location id="myFriendsCottagesPage" url="/cottageentry.aspx" />
         <Location id="navHelpSwf" url="/help/navhelp.swf" />
         <Location id="navSettings" url="/xml/fr/nav.xml" />
         <Location id="ponyMailPage" url="/index.html" />
-        <Location id="stablechooser" url="/flashloader_stablechooser.aspx" />
+        <Location id="stablechooser" url="/phasergames/stablesrecreation/index.html" />
         <Location id="stall" url="/flashloader_allstalls.aspx" />
         <Location id="waterStablePage" url="/flashloader_allstalls.aspx" />
-        <Location id="whatsnew" url="/whatsnext.aspx" />
+        <Location id="whatsnew" url="/devlog.html" />
         <Location id="worldPage" url="/flash/worldmap/worldmap_new.html" />
         <Location id="cardcollecting" url="/collecting.aspx" />
         <Location id="gamerules" url="/gamerules.aspx" />
@@ -48,20 +48,20 @@
         <Location id="wheelofwonder" url="/wheelofwonder.aspx" />
         <Location id="bubblegame" url="/flash/bubblewand/bubblewand.html" />
         <Location id="treasureshunt" url="/flash/treasureshunt/treasureshunt.html" />
-        <Location id="cloudjumper" url="/cloudjumper.aspx" />
-        <Location id="lanceriding" url="/lanceriding.aspx" />
+        <Location id="cloudjumper" url="/flash/cloudjumper/cloudjumper.html" />
+        <Location id="lanceriding" url="/flash/lanceriding/lanceriding.html" />
         <Location id="fireworks" url="/flash/fireworks/fireworks.html" />
-        <Location id="jumpinggame" url="/jumpinggame.aspx" />
-        <Location id="memorygame" url="/flashloader.aspx?flash=memorygame" />
+        <Location id="jumpinggame" url="/flash/jumpinggame/jumpinggame.html" />
+        <Location id="memorygame" url="/flash/memory/memory.html" />
         <Location id="bellapedia" url="/Bellapedia.aspx" />
         <!-- Castle links -->
         <Location id="asksara" url="/asksara.aspx" />
-        <Location id="friendquiz" url="/flashloader.aspx?flash=quizgame" />
-        <Location id="knowledge" url="/flashloader.aspx?flash=anatomygame" />
+        <Location id="friendquiz" url="/phasergames/quiz/original/index.html" />
+        <Location id="knowledge" url="/phasergames/quiz/index.html" />
         <Location id="desktopwallpapers" url="/wallpapers.aspx" />
         <Location id="beautybox" url="https://bellasara.wiki.gg/wiki/Bella%27s_Beauty_Box" />
-        <Location id="coloring" url="/coloring.aspx" />
-        <Location id="puzzles" url="/puzzles.aspx" />
+        <Location id="coloring" url="/flash/coloring/coloring.html" />
+        <Location id="puzzles" url="/flash/puzzles/puzzles.html" />
       </Locations>
       <Avatars>
         <Avatar id="1" avatarpath="images/avatars/i267.jpg" cardpath="/images/cards/en-us/267.jpg" />
