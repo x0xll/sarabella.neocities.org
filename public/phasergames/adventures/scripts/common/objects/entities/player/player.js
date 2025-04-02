@@ -1,5 +1,18 @@
 class Player
 {
+    facingDirection = {
+        North: '_n',
+        Northeast: '_ne',
+        East: '_e',
+        Southeast: '_se',
+        South: '_s',
+        Southwest: '_sw',
+        West: '_w',
+        Northwest: '_nw'
+    }
+    pathList = []
+    pathIndex = 0
+
     constructor(phaserScene, startX, startY)
     {
         this.PLAYER_SPEED = 800;
@@ -27,6 +40,7 @@ class Player
         this.phaserScene.player = this.phaserScene.physics.add.image(isoStart.x, isoStart.y, 'Player').setScale(0.25, 0.25).setOrigin(0.5, 1)
         this.phaserScene.cameras.main.startFollow(this.phaserScene.player, true).setBounds(0, 0, 3000, 1600);
         this.cursor = this.phaserScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setAlpha(0).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
+        this.aStar = new AStar(this.phaserScene.tiles);
     }
 
     // ------- END INITIALIZE PLAYER -------
@@ -53,11 +67,7 @@ class Player
             gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
 
             // Check if position is valid
-            let isWalkable = zoneTiles[gridTarget.y][gridTarget.x].data.walkable === 'true'
-            let isInXBounds = 0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length
-            let isInYBounds = 0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length
-
-            if(isWalkable && isInXBounds && isInYBounds){
+            if((0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length) && (0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length) && (zoneTiles[gridTarget.y][gridTarget.x].data.walkable === 'true')){
                 // Move cursor to target position
                 let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y+1))
                 const polygon = [
@@ -83,44 +93,89 @@ class Player
             const {worldX, worldY} = pointer;
             let gridTarget = this.isoToGridMap(worldX, worldY)
 
-            // If position is valid, move player towards target
-            let targetIsWalkable = zoneTiles[gridTarget.y][gridTarget.x].data.walkable === 'true'
-            let isInXBounds = 0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length
-            let isInYBounds = 0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length
-            if(targetIsWalkable && isInXBounds && isInYBounds){
-                // Set new target position
-                let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y))
-                this.target.x = isoTarget.x;
-                this.target.y = isoTarget.y;
-
-                // Face correct direction
-                if (this.target.x > this.phaserScene.player.x) {
-                    this.phaserScene.player.setScale(-0.25, 0.25)
-                } else {
-                    this.phaserScene.player.setScale(0.25, 0.25)
-                }
-
-                // Start moving player towards the target
-                this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
-            }
+            // Add new destination
+            this.nextX = gridTarget.x
+            this.nextY = gridTarget.y
+            this.hasNext = true;
+            this.pathList.push(this.FindPathToNextDestination())
         });
     }
 
+    /**
+     * Updates player sprite and movement throughout gameplay. Should be called during the update phase of scene setup
+     */
+    updatePlayer() {        
+        if ( this.pathList[0] === null ) {
+            this.pathList.shift()
+        } else if (this.pathList.length > 0 && this.pathList[0].length > 0) {
+            // Set new target position
+            let target = this.pathList[0][this.pathIndex]
+            let isoTarget = this.gridToIsoMap(Math.round(target.x), Math.round(target.y))
+            this.target.x = isoTarget.x;
+            this.target.y = isoTarget.y;
+
+            // Face correct direction
+            this.setPlayerFacing(this.target.x, this.target.y)
+
+            // Start moving player towards the target
+            this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
+            // TODO: Change player animation (walk, need animated sprite first)
+        }
+        this.checkIfReachedDestination()
+    }
+
+    /**
+     * If close to target, stop the player at target position and recheck sprite depth
+     */
     checkIfReachedDestination()
     {
         if (this.phaserScene.player.body.speed > 0) {
-            // Set the player sprite depth
-            let gridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
-            this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
-
-            // If close to target, stop the player at target position and recheck sprite depth
             const distanceFromTarget = this.distanceBetweenPoints(this.phaserScene.player.x, this.phaserScene.player.y, this.target.x, this.target.y)
             if (distanceFromTarget < 20) {
                 this.phaserScene.player.body.reset(this.target.x, this.target.y);
-                gridPosition = this.isoToGridMap(this.target.x, this.target.y)
-                this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
+                this.pathIndex++
+                if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
+                    this.pathList.shift()
+                    this.pathIndex = 0
+                    // TODO: Change player animation (idle, need animated sprite first)
+                }
             }
+            this.updatePlayerSpriteDepth()
         }
+    }
+
+    /**
+     * Makes the player sprite face in the direction of a target point
+     * @param {number} targetDirectionX The x coordinate of the target to look towards
+     * @param {number} targetDirectionY  The x coordinate of the target to look towards
+     */ 
+    setPlayerFacing(targetDirectionX, targetDirectionY)
+    {
+        if (targetDirectionX > this.phaserScene.player.x) {
+            this.phaserScene.player.setScale(-0.25, 0.25)
+        } else {
+            this.phaserScene.player.setScale(0.25, 0.25)
+        }
+
+        // TODO: add facing backwards or forwards once sprite is updated to include it
+    }
+        
+    FindPathToNextDestination() {
+        let path = null
+        if(this.hasNext) {
+            this.onPathIndex = 0;
+            let playerGridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
+            path = this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
+            return path
+        }
+    }
+
+    /**
+     * Place player sprite at correct depth within the scene
+     */
+    updatePlayerSpriteDepth() {
+        let gridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
+        this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
     }
     // ------- END MOVEMENT -------
 
@@ -160,5 +215,14 @@ class Player
      */
     distanceBetweenPoints(x1, y1, x2, y2) {
         return Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2))
+    }
+
+    /**
+     * 
+     * @returns true if the player is moving, false if not
+     */
+    isMoving()
+    {
+        return this.phaserScene.player.body.speed > 0;
     }
 }

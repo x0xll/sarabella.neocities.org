@@ -126,7 +126,7 @@ class World_CanterFarm extends Phaser.Scene
     {
         const game = this;
 
-        game.playerObj.checkIfReachedDestination();
+        game.playerObj.updatePlayer();
         game.timeManager.updateTime()
     }
 }
