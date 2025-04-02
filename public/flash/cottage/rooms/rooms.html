@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title data-il8n="game_cottage">My Cottage</title>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="/ruffle/ruffle.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref()">
+      
+        <script src="/header.js"></script>
+        
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <p data-il8n="cottage_warning">
+            
+          </p>
+        </div> 
+
+        <script>
+          const searchQueryString = window.location.search;
+          const urlParameters = new URLSearchParams(searchQueryString);
+          roomID = urlParameters.get('roomId')
+
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+        </div>
+
+
+        <div class="content textbox-parent" style="height: min-content;">
+          <div class="textbox" style="height: min-content;">
+            <h2>Go to other rooms:</h2>
+            <ul>
+              <li><a href="rooms.html?roomId=3">Living Room</a></li>
+              <li><a href="rooms.html?roomId=6">Bedroom</a></li>
+              <li><a href="rooms.html?roomId=11">Patio</a></li>
+              <li><a href="rooms.html?roomId=12">Rollandsgaard Castle</a></li>
+            </ul>
+          </div>
+      </div>
+        
+        <div class="footer">
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+            <a href="https://bellasara.wiki.gg/wiki/My_Cottage" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
+        </div>
+
+        <script src="/flags.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '500';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+
+          switch(roomID)
+          {
+              default:
+              case "6":
+                swfPlayer.src = 'cottagebedroom.swf';
+              break;
+              case "3":
+                swfPlayer.src = 'livingroom.swf';
+              break;
+              case "11":
+                swfPlayer.src = 'patio.swf';
+              break;
+              case "12": // TODO: Find correct id
+                swfPlayer.src = 'rollandsgaardcastle.swf';
+              break;
+          }
+
+          swfPlayer.setAttribute("flashvars", `lang=${locale}`);
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("wmode", `transparent`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+
+    </body>
+</html>
