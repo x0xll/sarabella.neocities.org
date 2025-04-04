@@ -1,0 +1,12 @@
+Ti021b.png
+size:96,53
+filter:Linear,Linear
+lilypads/lilypad1
+bounds:68,5,46,26
+rotate:90
+lilypads/lilypad2
+bounds:36,2,49,30
+rotate:90
+lilypads/lilypad3
+bounds:2,4,47,32
+rotate:90

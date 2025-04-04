@@ -30,9 +30,14 @@ class TimeManager
      * @param {*} a 
      */
     changeTint(sprite, r, g, b, shade, a) {
-        let layers = ['Main_night', 'Overlay_night', 'Underlay_night', 'Underlay2_night']
+        let layers = []
+        sprite.slots.forEach(slot => {
+            if (slot.data.name.includes("_night")) {
+                layers.push(slot.data.name)
+            }
+
+        })
         layers.forEach(part => {
-            
             var slot = sprite.findSlot(`${part}`)
             slot.color.r = r
             slot.color.g = g
@@ -59,6 +64,12 @@ class TimeManager
         }   
         tile.skeleton.setSkin(skin);
         tile.skeleton.setToSetupPose();
+
+        for (let index = 0; index < tile.skeleton.data.animations.length; index++) {
+            if (tile.skeleton.data.animations[index].name === "idle0") {
+                tile.animationState.addAnimation(1, "idle0", true)
+            }
+        }
     }
 
     /**
@@ -99,14 +110,13 @@ class TimeManager
             this.phaserScene.backgrounds.forEach(background => {
                 background.setTint('0x003366') // , '0x121287'
             });
-            for (var y = 0; y < Object.keys(this.phaserScene.tiles).length; y++)
+            for (var y = 0; y < Object.keys(this.phaserScene.tiles).length; y++){
+                // Row
+                for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
                 {
-                    // Row
-                    for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
-                    {
-                        this.changeTint(this.phaserScene.tiles[y][x].skeleton, 0, 0.2, 0.4, 0, .75)
-                    }
+                    this.changeTint(this.phaserScene.tiles[y][x].skeleton, 0, 0.2, 0.4, 0, .75)
                 }
+            }
         }
     }
 

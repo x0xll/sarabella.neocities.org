@@ -1,0 +1,81 @@
+{
+"skeleton": {
+	"hash": "LaKWAwrn4W8",
+	"spine": "4.2.40",
+	"x": -44.03,
+	"y": -33.62,
+	"width": 85.88,
+	"height": 52.69,
+	"images": "./CanterFarms/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Lilypad1", "parent": "root", "length": 20, "x": 16.57, "y": 6.17 },
+	{ "name": "Lilypad2", "parent": "root", "length": 20, "x": -18.41, "y": -14.18 },
+	{ "name": "Lilypad3", "parent": "root", "length": 10, "x": 24.3, "y": -21.26 }
+],
+"slots": [
+	{ "name": "lilypad2", "bone": "Lilypad2", "attachment": "lilypads/lilypad2" },
+	{ "name": "lilypad2_night", "bone": "Lilypad2", "attachment": "lilypads/lilypad2" },
+	{ "name": "lilypad3", "bone": "Lilypad3", "attachment": "lilypads/lilypad3" },
+	{ "name": "lilypad3_night", "bone": "Lilypad3", "attachment": "lilypads/lilypad3" },
+	{ "name": "lilypad1", "bone": "Lilypad1", "attachment": "lilypads/lilypad1" },
+	{ "name": "lilypad_night", "bone": "Lilypad1", "attachment": "lilypads/lilypad1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"lilypad1": {
+				"lilypads/lilypad1": { "x": -0.76, "y": -0.1, "width": 46, "height": 26 }
+			},
+			"lilypad2": {
+				"lilypads/lilypad2": { "x": -1.13, "y": 0.17, "width": 49, "height": 30 }
+			},
+			"lilypad2_night": {
+				"lilypads/lilypad2": { "x": -1.13, "y": 0.17, "width": 49, "height": 30 }
+			},
+			"lilypad3": {
+				"lilypads/lilypad3": { "x": 0.62, "y": -0.84, "scaleX": 0.72, "scaleY": 0.72, "width": 47, "height": 32 }
+			},
+			"lilypad3_night": {
+				"lilypads/lilypad3": { "x": 0.62, "y": -0.84, "scaleX": 0.72, "scaleY": 0.72, "width": 47, "height": 32 }
+			},
+			"lilypad_night": {
+				"lilypads/lilypad1": { "x": -0.76, "y": -0.1, "width": 46, "height": 26 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle0": {
+		"bones": {
+			"Lilypad1": {
+				"translate": [
+					{},
+					{ "time": 1.3, "x": 5.15 },
+					{ "time": 3, "x": 3.22, "y": -2.85 },
+					{ "time": 5 }
+				]
+			},
+			"Lilypad2": {
+				"translate": [
+					{},
+					{ "time": 1.5667, "x": 4.05 },
+					{ "time": 2.7667, "x": 0.02, "y": -2.85 },
+					{ "time": 5 }
+				]
+			},
+			"Lilypad3": {
+				"translate": [
+					{},
+					{ "time": 0.8667, "x": 2.03, "y": 1.56 },
+					{ "time": 3.3333, "x": -4.06, "y": -1.95 },
+					{ "time": 5 }
+				]
+			}
+		}
+	}
+}
+}

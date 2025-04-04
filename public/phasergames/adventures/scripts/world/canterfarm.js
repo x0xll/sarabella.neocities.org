@@ -46,8 +46,10 @@ class World_CanterFarm extends Phaser.Scene
         loadDialogueUI(game);
         loadInventoryUI(game);
 
-        this.load.spineAtlas("CanterTilesAtlas", `./assets/newTiles/skeleton.atlas`);
-        this.load.spineJson("CanterTilesJSON", `./assets/newTiles/skeleton.json`);
+        this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
+        this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
+        this.load.spineAtlas("Ti021bAtlas", `./assets/newTiles/Ti021b.atlas`);
+        this.load.spineJson("Ti021bJSON", `./assets/newTiles/Ti021b.json`);
 
         loadZoneFromXMLDatas();
     }
@@ -104,7 +106,7 @@ class World_CanterFarm extends Phaser.Scene
                         console.error("Tile isn't defined: " + cellValue);
                         continue;
                     }
-                    let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, 'CanterTilesJSON', 'CanterTilesAtlas');
+                    let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, `${game.zoneParsed[1][cellValue].file}JSON`, `${game.zoneParsed[1][cellValue].file}Atlas`);
                     
                     game.timeManager.setTile(tile, cellValue)
                     

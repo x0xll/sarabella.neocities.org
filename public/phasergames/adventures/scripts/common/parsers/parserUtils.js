@@ -31,6 +31,9 @@ function parseZoneXML(xmlObj)
                     case "id":
                         data.id = tile.attributes[i].value;
                         break;
+                    case "file":
+                        data.file = tile.attributes[i].value;
+                        break;
                     case "walkable":
                         data.walkable = tile.attributes[i].value;
                         break;
