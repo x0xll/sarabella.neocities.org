@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<ads>
+	<ad_content>
+		<!-- ==============storybooks================================================================================== -->
+		 <header><![CDATA[<p class="header">NOUVEAU !</p>]]></header>
+		 <text><![CDATA[<a href="bazaar.aspx?category=1"><img src="/images/Ads/bs_cottageentry_ad_maf_storybooks.png" align="left" /><p class="body_2">Contes du Patchwork consacrés à trois adorables Amis Magiques sont désormais disponibles ! Visite la tente des Contes du patchwork et achète-les dès aujourd'hui !</p></a>]]></text>
+	<!-- ================================================================================================ -->
+	</ad_content>		
+	<ad_content>
+		<!-- ===============================1================================================================= -->
+		 <header><![CDATA[<p class="header">Bienvenue !</p>]]></header>
+		 <text><![CDATA[<img src="/images/Ads/bs_cottageentry_ad_1.png" align="left" /><p class="body_2"><b>Voici ta maisonnette !</b></p><p class="body_2">Crée une maison confortable sur internet et montre-la à tes amis !</p><br /><p class="body_2">Choisis dans toute une sélection de décorations, de meubles et d'œuvres d'art à accrocher aux murs. Achète des objets au Bazar avec tes Fers à cheval !</p>]]></text>
+	<!-- ================================================================================================ -->
+	</ad_content>	
+	<ad_content>
+		<!-- ================================2================================================================ -->
+		 <header><![CDATA[<p class="header">Fers à cheval !</p>]]></header>
+		 <text><![CDATA[<img src="/images/Ads/bs_cottageentry_ad_2.png" align="left" /><p class="body_2"><b>Que sont les Fers à cheval ?</b></p><p class="body_3">C'est avec les Fers à cheval que tu peux acheter de belles choses pour ta maisonnette.</p><br /><p class="body_3">Active tes cartes sur le site internet Bella Sara. Tu recevras des Fers à cheval pour chaque carte activée. Les cartes d'énergie et les cartes brillantes t'en donnent encore plus !</p>]]></text>
+	 <!-- ================================================================================================ -->
+	</ad_content>
+	<ad_content>
+		<!-- =================================3=============================================================== -->
+		 <header><![CDATA[<p class="header">Objets à vendre !</p>]]></header>
+		 <text><![CDATA[<img src="/images/Ads/bs_cottageentry_ad_3.png" align="left" /><p class="body_2"><b>Que sont Mes possessions ?</b></p><p class="body_3">Utilise tes Fers à cheval pour acheter de beaux objets au Bazar.</p><br /><p class="body_3">Visite le Bazar à l'aide de la carte, pour voir tous les objets qui te permettront de décorer ta maisonnette. Reviens souvent : de nouveaux objets sont ajoutés régulièrement !</p>]]></text>
+	 <!-- ================================================================================================ -->
+	</ad_content>
+</ads>

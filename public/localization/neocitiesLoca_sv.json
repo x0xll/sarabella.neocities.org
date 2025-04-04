@@ -65,31 +65,31 @@
     "game_autumnjourney": "Autumn Journey Frågesport",
     "game_yinyangmemory": "Yin och Yangs Memory Spel",
     "artstudio_warning" : "Detta spel saknar filerna till de originala hästarna.",
+    "game_cottage": "My Cottage",
+    "game_gallery": "My Things",
 
 
     "lanceriding_warning" : "Detta spel har endast filerna för första nivån. Spelet har även problem med att ladda effektivt och därför kan det krävas att man laddar om sidan ett par gånger innan det funkar.",
 
     "storybook_warning": "I detta spel verkar man inte kunna stänga av ljudet när man går till nästa sida i boken. Videos spelas inte heller alltid upp som förväntat.",
 
-"newmap_warning": "Kartan saknar sina styling filer. Vissa länkar går därför till vår wiki eftersom de inte blivit återskapade ännu.",
+"newmap_warning": "Vissa länkar går därför till vår wiki eftersom de inte blivit återskapade ännu.",
     "oldmap_warning": "Vissa länkar är obrukbara eftersom spelen inte blivit återskapade ännu.",
 
 
     "belloquiz_warning" : "På grund av brist på referenser är kanske inte denna återskapning 100% rätt.",
 
-    "dreamrider_warning" : "Currently, you will need to right click the game and hit play to get past the loading screen.",
-
-    "bubblewand_warning" : "The game's text formatting is not yet correct",
-
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
 
-    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game's text formatting is not yet correct, and the game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
+    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
 
     "citrustacked_wip_warning": "Story mode still being recreated.",
 
-    "jumpinggame_wip_warning": "Level 4 still being recreated.",
+    "jumpinggame_wip_warning": "Level 3 still being recreated.",
     "jumpinggame_warning": "The game can be quite laggy at times.",
-    
+
+    "cottage_warning": "The objects are not yet added back in the cottage or gallery. You will need to right click the game and hit play to get past the loading screen.",
+
  "puzzle_goCustom" : "Klicka&nbsp;<a href=\"puzzle custom.html\">här</a>&nbsp;för att skapa ett pussel med egen bild",
     "puzzle_customTitle" : "Skapa Eget",
     "puzzle_moonfairies" : "Moonfairies",

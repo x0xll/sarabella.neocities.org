@@ -1,0 +1,30 @@
+﻿<Gallery>
+	<BuiltInTexts>
+		<Texts  >
+			<Text id="txtLoading">
+					<P><FONT SIZE="12">Chargement...</FONT></P>
+				</Text>
+				<Text id="txtAll">
+					<P><FONT SIZE="16">Tout</FONT></P>
+				</Text>
+				<Text id="txtExitMyGallery">
+					<P><FONT SIZE="13">Sortir de Ma galerie</FONT></P>
+				</Text>
+				<Text id="txtExitThisGallery">
+					<P><FONT SIZE="13">Sortir de cette galerie</FONT></P>
+				</Text>
+			<Text id="txtGalleryCategory">
+				<P><FONT SIZE="14">Choisir une CATÉGORIE.</FONT></P>
+			</Text>
+			<Text id="txtGalleryExit">
+				<P><FONT SIZE="14">Sortir de la GALERIE.</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><b>Fermer l'Aide</b></FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="14">ACTIVER/DÉSACTIVER la musique.</FONT></P>
+			</Text>
+		</Texts>
+	</BuiltInTexts>
+</Gallery>

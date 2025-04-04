@@ -1,0 +1,53 @@
+﻿section_header{
+	font-family:Arial Unicode MS;
+	font-size:20pt;
+	color:#C08701;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:left;
+}
+filter_control_label{
+	font-family:Arial Unicode MS;
+	font-size:18pt;
+	color:#C08701;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:left;
+}
+tooltip_title{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#996600;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:left;
+}
+tooltip_desc{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#996600;	
+	leading:0pt;	
+	letter-spacing:0pt;
+	text-align:left;
+}
+tooltip_horseshoes_label{
+	font-family:Arial Unicode MS;
+	font-size:11pt;
+	color:#996600;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:left;
+}
+tooltip_progress_label{
+	font-family:Arial Unicode MS;
+	font-size:11pt;
+	color:#996600;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:left;
+}
