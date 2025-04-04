@@ -9,14 +9,14 @@ class LevelHelper {
     }
 
     gemsScoreTxtStyle = {
-        font: "italic 20px StempelGaramond",
+        font: "normal 20px ArkonaRegular",
         color: "white",
-        stroke: "#5D3073",
-        strokeThickness: 1.2
+        stroke: "#5f78c5",
+        strokeThickness: 1.5
     }
 
     displayTxtStyle = {
-            font: "italic 32px StempelGaramond",
+            font: "normal 32px ArkonaRegular",
             color: "white",
             stroke: "rgba(110, 195, 221, 20)",
             strokeThickness: 3,
@@ -299,7 +299,7 @@ class LevelHelper {
             // Horseshoe Display
             this.phaserScene.horseshoeText = this.phaserScene.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
             this.phaserScene.horseshoeText.text = this.phaserScene.horseshoes + " x ";
-            this.phaserScene.horseshoeText.setPosition(320-this.phaserScene.horseshoeText.width/2, 35-this.phaserScene.horseshoeText.height/2);
+            this.phaserScene.horseshoeText.setPosition(320-this.phaserScene.horseshoeText.width/2, 31-this.phaserScene.horseshoeText.height/2);
             // Score Display
             this.phaserScene.scoreNameText = this.phaserScene.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
             this.phaserScene.scoreNameText.text = langData.score;
@@ -307,7 +307,7 @@ class LevelHelper {
 
             this.phaserScene.scoreText = this.phaserScene.add.text(0, 0, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0);
             this.phaserScene.scoreText.text = this.score;
-            this.phaserScene.scoreText.setPosition(445-this.phaserScene.scoreText.width/2, 40-this.phaserScene.scoreText.height/2);
+            this.phaserScene.scoreText.setPosition(445-this.phaserScene.scoreText.width/2, 36-this.phaserScene.scoreText.height/2);
             // Clock and Clock Display
             this.phaserScene.clock.start();
             this.phaserScene.clockNameText = this.phaserScene.add.text(0, 0, 'Static Text Object', { fontFamily: 'Arial', fontSize: 10, color: '#ffffff', align: 'center' }).setScrollFactor(0);
@@ -315,7 +315,7 @@ class LevelHelper {
             this.phaserScene.clockNameText.setPosition(570-this.phaserScene.clockNameText.width/2, 18-this.phaserScene.clockNameText.height/2);
             this.phaserScene.timerText = this.phaserScene.add.text(443, 234, 'Static Text Object', this.displayTxtStyle).setScrollFactor(0)//.setVisible(false);
             this.phaserScene.timerText.text = "0:00";
-            this.phaserScene.timerText.setPosition(575-this.phaserScene.timerText.width/2, 40-this.phaserScene.timerText.height/2);
+            this.phaserScene.timerText.setPosition(575-this.phaserScene.timerText.width/2, 36-this.phaserScene.timerText.height/2);
         }
 
         createUI() {
@@ -605,10 +605,9 @@ class LevelHelper {
                                     break;
                             }
 
-                            var gemTxt = scene.add.text(gem.x, gem.y, points, scene.gemsScoreTxtStyle).setOrigin(.5, .5)
+                            var gemTxt = scene.add.text(gem.x, gem.y, points, helper.gemsScoreTxtStyle).setOrigin(.5, .5)
                             gemTxt.alpha = 0
-                            var gemsTxtDatas = 
-                            {
+                            var gemsTxtDatas = {
                                 txt : gemTxt,
                                 currenFrameVisible : 0
                             }
@@ -616,7 +615,7 @@ class LevelHelper {
 
                             helper.score += points
                             scene.scoreText.text = helper.score
-                            scene.scoreText.setPosition(445-scene.scoreText.width/2, 40-scene.scoreText.height/2);
+                            scene.scoreText.setPosition(445-scene.scoreText.width/2, 36-scene.scoreText.height/2);
                         }
                     },
                     null,
