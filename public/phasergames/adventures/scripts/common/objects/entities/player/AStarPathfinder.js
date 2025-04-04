@@ -1,9 +1,4 @@
-// package Adventures.Path
-// {
-//    import Adventures.Map.MapData;
-//    import Adventures.Math.PointInt3;
-   
-class AStar {
+ class AStar {
     ADJACENT_CANDIDATES_4WAY_MINI = [
         {
             "x":0,
@@ -26,22 +21,11 @@ class AStar {
             "z":0,
             "cost":10
         }];
-      
-    // depth; // int;
     
-    // _isWalkableFunction; // Function;
-    
-    width; // int;
-    
-    tolerance; // Number;
-    
-    adjacentCandidates; // Array;
-    
-    spaces; // Array;
-    
-    height; // int;
-    
-    tileDepth; // Number;
+    width;
+    adjacentCandidates;
+    spaces;
+    height;
       
     /**
      * 
@@ -86,7 +70,6 @@ class AStar {
      * Resets the array of spaces
      */
     resetSpaces() {
-        this.spaces = Array.from({ length: this.width }, () => new Array(this.height).fill(null));
         for (var y = 0; y < this.height; y++) {
             for (var x = 0; x < this.width; x++) {
                 this.spaces[x][y] = {}
@@ -100,11 +83,8 @@ class AStar {
                 this.spaces[x][y].IsClosed = false
             }
         }
-        // console.log(this.spaces)
-        // console.log(this.isWalkable(17, 6))
     }
      
-    // TODO: finish translating to js
     /**
      * Calculates the best path from the start position to the target
      * @param {*} startX 
