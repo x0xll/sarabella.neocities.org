@@ -129,5 +129,20 @@ class TimeManager
             this.isDay = false
             this.renderDayNight()
         }
+
+        // HUD Time Indicator
+        if (this.clock.now <= this.dayLength/3) {
+            this.phaserScene.sharedData.timeIndicator.setFrame('day1')
+        } else if (this.clock.now <= this.dayLength*2/3) {
+            this.phaserScene.sharedData.timeIndicator.setFrame('day2')
+        } else if (this.clock.now <= this.dayLength) {
+            this.phaserScene.sharedData.timeIndicator.setFrame('day3')
+        } else if (this.clock.now <= this.dayLength + this.nightLength/3) {
+            this.phaserScene.sharedData.timeIndicator.setFrame('night1')
+        } else if (this.clock.now <= this.dayLength + this.nightLength*2/3) {
+            this.phaserScene.sharedData.timeIndicator.setFrame('night2')
+        } else {
+            this.phaserScene.sharedData.timeIndicator.setFrame('night3')
+        }
     }
 }

@@ -18,8 +18,8 @@ class World_CanterFarm extends Phaser.Scene
         // Zone vars
         game.zoneImgLoaded = false;
 
-        //TEST LOADING
-        this.load.image("Test", `${LEVEL_ASSETS_PATH}${game.AREA_NAME}/T0053c/1.png`)
+        // //TEST LOADING
+        // this.load.image("Test", `${LEVEL_ASSETS_PATH}${game.AREA_NAME}/T0053c/1.png`)
 
         // TODO : Load the background
 
@@ -54,9 +54,10 @@ class World_CanterFarm extends Phaser.Scene
         loadZoneFromXMLDatas();
     }
 
-    create ()
+    create (sharedData)
     {
         const game = this;
+        game.sharedData = sharedData
         game.tileWidth = 80
         game.xOffset = -320
         game.yOffset = 865

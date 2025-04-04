@@ -15,9 +15,11 @@ class Common_Load extends Phaser.Scene
 
     create ()
     {
+        const loader = this
+        loader.data = {}
         // TESTING
-        this.scene.launch("world_canterfarm")
-                  .launch("common_ui")
+        this.scene.launch("world_canterfarm", loader.data)
+                  .launch("common_ui", loader.data)
                   .remove();
     }
 }
