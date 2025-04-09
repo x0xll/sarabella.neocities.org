@@ -4,7 +4,7 @@ document.write('<div class="header-container">\
 \
 <div class="nav">\
 <div class="dropMenu">\
-<img src="/images/nav/Icons/castle_logo.png" title="Play!">\
+<img src="/images/nav/Icons/castle_logo.png" title="Explore">\
 <div>Explore</div>\
 </div>\
 <div class="navContent">\
