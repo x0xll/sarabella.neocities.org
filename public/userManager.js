@@ -342,7 +342,7 @@ function loadDatasFromUser(username, dataType)
         switch(dataType)
         {
             case "horseshoes":
-                return 200;
+                return 10000;
         }
     }
 
