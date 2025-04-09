@@ -4,9 +4,10 @@
 // Creating a "share" type button to pass the user saved datas to another navigator could be interesting to prevent loss of progress
 
 const USER_KEY = "neocitiesbesa_user_";
-const MAX_USERS = 5; // TODO : define based on max size allowed on local storage
+const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
 const USER_AMOUNT_KEY = "neocities_besa_userAmount"; 
 const USER_NAMES_KEY = "neocities_besa_userNames"; 
+const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
 let currentUser = undefined;
 
@@ -30,7 +31,7 @@ function setupUserDropdown()
         }
     }
 
-    forceChooseUser();
+    forceChooseUser(localStorage.getItem(CURRENT_USER_KEY));
 }
 // ------- END UI -------
 
@@ -95,6 +96,8 @@ function chooseUser()
         window.location.href = "/signup.html";
     else
     {
+        localStorage.setItem(CURRENT_USER_KEY, currentUser);
+
         horseshoes = document.getElementById("horseshoes");
         horseshoes.innerHTML = loadDatasFromUser(currentUser, "horseshoes").toString() + " <img src=\"/images/nav/Horseshoe.png\">";
     }
