@@ -21,8 +21,9 @@
     list-style-position: inside;
     justify-content: center;
     margin: auto;
-    padding: 0px 550px;
+    padding: 0px 30%;
     max-width: 1000px;
+    flex-wrap: nowrap;
 }
 
 #nav li{
@@ -232,22 +233,5 @@ ul {
         width: 90%;
         max-width: 644px;
         order: 1;
-    }
-}
-
-@media (max-width: 1294px) {
-    .header #logo {
-        order: -1;
-        display:block;
-        width: 100%;
-    }
-    .header img {
-        height: 80px
-    }
-
-    .header .navbutt {
-        margin: 5px 10px;
-        font-size: 18px;
-        height: 40px;
     }
 }
