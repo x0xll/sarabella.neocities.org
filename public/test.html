@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <title data-il8n="title">Bella Sara Digital Archive</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body onload="loadLanguagePref()">
+        <div class="header">
+            <ul id="nav">
+                <li><a href="test.html"><img src="/images/nav/Icons/CastleIcon/1.png" title="Test" class="navMainIcon"></a></li>
+                <li><a href="test.html"><img src="/images/nav/Icons/CastleIcon/1.png" title="Test" class="navMainIcon"></a></li>
+                <li><a href="test.html"><img src="/images/nav/Icons/CastleIcon/1.png" title="Test" class="navMainIcon"></a></li>
+                <li><a href="test.html"><img src="/images/nav/Icons/CastleIcon/1.png" title="Test" class="navMainIcon"></a></li>
+            </ul>
+        </div>
+        <div id="login" style="height: fit-content; width: fit-content;">
+            <select name="currentUserDropdown" id="currentUserDropdown" onchange="chooseUser()">
+                <option value="guest">Guest</option>
+                <option value="create">Create User</option>
+            </select>
+            <p id="horseshoes">10000 <img src="/images/nav/Horseshoe.png"></p>
+        </div>
+                
+        <div class="content home-container">
+            <div class="content textbox-parent" id="about">
+                <div class="textbox">
+                    <h1 data-il8n="about_title">About</h5>
+                    <p style="text-align: justify;" data-il8n="about_text"></p>
+                </div>
+            </div>
+            <img src="images/jewelgif.gif">
+            <div class="content textbox-parent" id="credits">
+                <div class="textbox credits-parent">
+                    <h1 data-il8n="credits_title">Credits</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p data-il8n="footer_maininfos">For questions, comments, or help:<br>
+            @Archiving on the Bella Sara Discord or open a discussion on <a href="https://github.com/x0xll/sarabella.neocities.org/discussions">Our Github</a></p>
+        </div>
+
+        <script src="/flags.js"></script>
+        <script src="credits/credits.js"></script>
+        <script src="userManager.js"></script>
+    </body>
+
+</html>
