@@ -9,6 +9,23 @@
     color: white;
     vertical-align: sup;
     margin: 8;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    width: calc(50vw - 40px);
+    height: calc(50vh - 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 12px;
+    margin: 10px auto;
+    background-color: #551D5C;
+    border-radius: 25px;
+}
+
+#login #username
+{
+    color: black;
+    margin: 0px 20px;
 }
 
 body {

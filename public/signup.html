@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <title data-il8n="title">Bella Sara Digital Archive</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body onload="loadLanguagePref(); setupUserDropdown()">
+        <div id="login" style="height: fit-content; width: fit-content;">
+            <select name="currentUserDropdown" id="currentUserDropdown" onchange="chooseUser()">
+                <option value="guest">Guest</option>
+                <option value="create">Create User</option>
+            </select>
+            <p id="horseshoes">10000 <img src="/images/nav/Horseshoe.png"></p>
+        </div>
+
+        
+        <div class="content textbox-parent">
+            <div class="textbox">
+                <form>
+                    <label for="signup_username">Username:</label><br>
+                    <input type="text" id="signup_username" name="signup_username" value="" style="margin-top: 10px; text-align: center;"><br>
+                </form>
+                <button onclick="createUser()" style="margin-top: 10px;">Create</button>
+                <button onclick="deleteUser()" style="margin-top: 10px;">Delete</button>
+                <button onclick="exportUser()" style="margin-top: 10px;">Export</button>
+                <input id="copy" style="display: none">
+                <label id="copyLable" for="copy" style="display: none;">Exported Datas</label>    
+                <form>
+                        <br><br>
+                    <label for="datas">Datas:</label><br>
+                    <input type="text" id="datas" name="datas" value="" style="margin-top: 10px; text-align: center;"><br>                
+                </form>
+                <button onclick="importUser()" style="margin-top: 10px;">Import</button>
+
+                <p style="text-align: left;">
+                    Enter your username, and choose the action you wish to take.
+                    <br/><br/>
+                    "Create" will create a user with the entered username, as long as you still have enough user slots open.
+                    <br/><br/>
+                    "Delete" will delete all datas for the user with this name on this navigator. It won't do anything if no user with the name entered exitsts.
+                    <br/><br/>
+                    "Export" will give you the saved datas of the username you entered, allowing you to import it on another navigator.
+                    <br/><br/>
+                    "Import" allows you to enter the saved datas exported from another navigator to be able to play on any username anywhere.
+                </p>    
+            </div>
+        </div>
+
+        <div class="footer">
+            <p data-il8n="footer_maininfos">For questions, comments, or help:<br>
+            @Archiving on the Bella Sara Discord or open a discussion on <a href="https://github.com/x0xll/sarabella.neocities.org/discussions">Our Github</a></p>
+        </div>
+
+        <script src="/flags.js"></script>
+        <script src="/userManager.js"></script>
+        
+    </body>
+
+</html>
