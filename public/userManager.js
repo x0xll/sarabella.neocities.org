@@ -328,7 +328,7 @@ function saveDatasToUser(username, dataType, datas)
     savedDatas = splittedDatas[0]; // Username
 
     for (let i = 1; i < splittedDatas.length; i++)
-        savedDatas += "²" + data;
+        savedDatas += "²" + splittedDatas[i];
 
     localStorage.setItem(USER_KEY + username, savedDatas);
     setupUserDropdown();
