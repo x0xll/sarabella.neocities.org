@@ -3,6 +3,8 @@
 // Need to check how much space this would take, to calculate how many users we authorize
 // Creating a "share" type button to pass the user saved datas to another navigator could be interesting to prevent loss of progress
 
+const DATA_TYPE_HORSESHOES = "horseshoes";
+
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
 const USER_AMOUNT_KEY = "neocities_besa_userAmount"; 
@@ -77,7 +79,7 @@ function createUser()
             userNames += "²" + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
-        saveDatasToUser(username, "horseshoes", 100)
+        saveDatasToUser(username, DATA_TYPE_HORSESHOES, 100)
         setupUserDropdown();
         forceChooseUser(username);
         return;
@@ -98,8 +100,8 @@ function chooseUser()
     {
         localStorage.setItem(CURRENT_USER_KEY, currentUser);
 
-        horseshoes = document.getElementById("horseshoes");
-        horseshoes.innerHTML = loadDatasFromUser(currentUser, "horseshoes").toString() + " <img src=\"/images/nav/Horseshoe.png\">";
+        horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
+        horseshoes.innerHTML = loadDatasFromUser(currentUser, DATA_TYPE_HORSESHOES).toString() + " <img src=\"/images/nav/Horseshoe.png\">";
     }
 }
 
@@ -295,39 +297,41 @@ function saveDatasToUser(username, dataType, datas)
 
     let existingDatas = false;
 
-    splittedDatas.forEach(data => {
+    for (let i = 0; i < splittedDatas.length; i++)
+    {
         switch(dataType)
         {
-            case "horseshoes":
-                if (data.includes("h:"))
+            case DATA_TYPE_HORSESHOES:
+                if (splittedDatas[i].includes("h:"))
                 {
-                    data = "h:" + datas.toString();
+                    splittedDatas[i] = "h:" + datas.toString();
                     existingDatas = true;
                 }
-                break;
+            break;
         }
-    });
+    }
 
     if (!existingDatas)
     {
         switch(dataType)
         {
-            case "horseshoes":
+            case DATA_TYPE_HORSESHOES:
                 savedDatas += "²h:" + datas.toString();
                 break;
         }
 
         localStorage.setItem(USER_KEY + username, savedDatas);
+        setupUserDropdown();
         return;
     }
 
     savedDatas = splittedDatas[0]; // Username
 
-    splittedDatas.forEach(data => {
+    for (let i = 1; i < splittedDatas.length; i++)
         savedDatas += "²" + data;
-    });
 
     localStorage.setItem(USER_KEY + username, savedDatas);
+    setupUserDropdown();
 }
 
 /* Load the datas of a specific user from the localstorage
@@ -341,7 +345,7 @@ function loadDatasFromUser(username, dataType)
     {
         switch(dataType)
         {
-            case "horseshoes":
+            case DATA_TYPE_HORSESHOES:
                 return 10000;
         }
     }
@@ -352,10 +356,22 @@ function loadDatasFromUser(username, dataType)
     for (let i = 0; i < splittedDatas.length; i++) {
         switch(dataType)
         {
-            case "horseshoes":
+            case DATA_TYPE_HORSESHOES:
                 if (splittedDatas[i].includes("h:"))
                     return splittedDatas[i].split(":")[1];
                 break;
         }
     }
+}
+
+function addHorseshoes(amountAdded)
+{
+    currentAmount = parseInt(loadDatasFromUser(currentUser, DATA_TYPE_HORSESHOES));
+    
+    if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
+        currentAmount = Number.MAX_SAFE_INTEGER;
+    else
+        currentAmount += amountAdded;
+
+    saveDatasToUser(currentUser, DATA_TYPE_HORSESHOES, currentAmount);
 }
