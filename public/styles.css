@@ -62,6 +62,10 @@
         display: block !important;
         float: inherit;
     }
+    
+    .nav:hover .navIcon:hover {
+        background-color: #AA90C080;
+    }
 
     #login {
         margin-left: 0px !important;
@@ -126,14 +130,24 @@
     padding: 12px 0;
     margin: 10px 0;
     margin-left: 15px;
-    background-color: #551D5C;
-    border-radius: 25px;
-    border: 2px solid #F5D267;
 }
 
 #login #username {
     color: black;
     margin: 0px 20px;
+}
+
+.NamePlaque {
+
+    transform: translate(0, 20px);
+}
+
+#currentUserDropdown {
+    background-color: #00000000;
+    position: absolute;
+    transform: translate(-130%, 26px);
+    border: none;
+    text-align: center;
 }
 
 
