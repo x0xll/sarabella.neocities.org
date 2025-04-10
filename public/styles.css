@@ -138,14 +138,13 @@
 }
 
 .NamePlaque {
-
     transform: translate(0, 20px);
 }
 
 #currentUserDropdown {
     background-color: #00000000;
     position: absolute;
-    transform: translate(-130%, 26px);
+    transform: translate(-120px, 26px);
     border: none;
     text-align: center;
 }
