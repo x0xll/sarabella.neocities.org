@@ -4,6 +4,7 @@
 // Creating a "share" type button to pass the user saved datas to another navigator could be interesting to prevent loss of progress
 
 const DATA_TYPE_HORSESHOES = "horseshoes";
+const DATA_TYPE_HIGHSCORE = "highscore";
 
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
@@ -288,7 +289,7 @@ function importUser()
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be saved, string
 * @param datas : an object with all the datas to be saved for this dataType
 */
-function saveDatasToUser(username, dataType, datas)
+function saveDatasToUser(username, dataType, datas, gameID = "")
 {
     if (username === "guest") return;
 
@@ -308,6 +309,14 @@ function saveDatasToUser(username, dataType, datas)
                     existingDatas = true;
                 }
             break;
+            case DATA_TYPE_HIGHSCORE:
+            {
+                if (splittedDatas[i].includes(gameID + ":"))
+                {
+                    splittedDatas[i] = gameID + ":" + datas.toString();
+                    existingDatas = true;
+                }
+            }
         }
     }
 
@@ -317,6 +326,9 @@ function saveDatasToUser(username, dataType, datas)
         {
             case DATA_TYPE_HORSESHOES:
                 savedDatas += "²h:" + datas.toString();
+                break;
+            case DATA_TYPE_HIGHSCORE:
+                savedDatas += "²" + gameID + ":" + datas.toString();
                 break;
         }
 
@@ -339,7 +351,7 @@ function saveDatasToUser(username, dataType, datas)
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be loaded, string
 * @returns datas : an object with all the saved datas for this dataType 
 */
-function loadDatasFromUser(username, dataType)
+function loadDatasFromUser(username, dataType, gameID = "")
 {
     if (username === "guest")
     {
@@ -347,6 +359,8 @@ function loadDatasFromUser(username, dataType)
         {
             case DATA_TYPE_HORSESHOES:
                 return 10000;
+            case DATA_TYPE_HIGHSCORE:
+                return 0;
         }
     }
 
@@ -360,7 +374,17 @@ function loadDatasFromUser(username, dataType)
                 if (splittedDatas[i].includes("h:"))
                     return splittedDatas[i].split(":")[1];
                 break;
+            case DATA_TYPE_HIGHSCORE:
+                if (splittedDatas[i].includes(gameID + ":"))
+                    return splittedDatas[i].split(":")[1];
+                break;
         }
+    }
+
+    switch(dataType)
+    {
+        case DATA_TYPE_HORSESHOES: return 0;
+        case DATA_TYPE_HIGHSCORE: return 0;
     }
 }
 
@@ -375,3 +399,40 @@ function addHorseshoes(amountAdded)
 
     saveDatasToUser(currentUser, DATA_TYPE_HORSESHOES, currentAmount);
 }
+
+function updateHighscore(data)
+{
+    splittedData = data.split("@");
+
+    // Initialize
+    if (splittedData.length == 1)
+    {
+        loadedData = loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, getGameID(data));
+        highscoreTxt = document.getElementById("highscore");
+        highscoreTxt.innerHTML = "<b>Highscore: " + loadedData + "</b>";
+        return;
+    }
+
+    // Actually update
+    gameID = getGameID(splittedData[1]);
+
+    loadedData = parseInt(loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, gameID));
+    if (parseInt(splittedData[0]) > loadedData)
+    {
+        saveDatasToUser(currentUser, DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
+
+        // TODO : Clean up
+        highscoreTxt = document.getElementById("highscore");
+        highscoreTxt.innerHTML = "<b>Highscore: " + splittedData[0].toString() + "</b>";
+    }
+}
+
+//-------- HELPERS -------
+function getGameID(game)
+{
+    switch(game)
+    {
+        case "MagicBubbleWand": return "MBW";
+    }
+}
+//------- END HELPERS -------
