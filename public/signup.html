@@ -6,42 +6,54 @@
         <link rel="icon" href="/images/favicons/favicon.ico">
         <title data-il8n="title">Bella Sara Digital Archive</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="register.css">
+        <!-- <link rel="stylesheet" href="signup.css"> -->
     </head>
 
     <script src="/language.js"></script>
 
     <body onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
-               
-        <div class="content textbox-parent">
-            <div class="textbox">
-                <form>
-                    <label for="signup_username">Username:</label><br>
-                    <input type="text" id="signup_username" name="signup_username" value="" style="margin-top: 10px; text-align: center;"><br>
-                </form>
-                <button onclick="createUser()" style="margin-top: 10px;">Create</button>
-                <button onclick="deleteUser()" style="margin-top: 10px;">Delete</button>
-                <button onclick="exportUser()" style="margin-top: 10px;">Export</button>
-                <input id="copy" style="display: none">
-                <label id="copyLable" for="copy" style="display: none;">Exported Datas</label>    
-                <form>
-                        <br><br>
-                    <label for="datas">Datas:</label><br>
-                    <input type="text" id="datas" name="datas" value="" style="margin-top: 10px; text-align: center;"><br>                
-                </form>
-                <button onclick="importUser()" style="margin-top: 10px;">Import</button>
+        
+        <div id="signup-container">  
+            <img alt="" id="headerimg" src="images/user/product-header.png" />
+            <h1 class="signup-header" id="top-header">Bella Sara Sign Up</h1>
+            <div id="signup-bg">
+                <div id="signup-body">
+                    <div class="signup-left">
+                        <div class="signup-step">
+                            <h2>Create User</h2>
+                            <form>
+                                <label for="signup_username">Username:</label>
+                                <input type="text" id="signup_username" name="signup_username" value="" style="margin-top: 10px; text-align: center;">
+                                <button onclick="createUser()" style="margin-top: 10px;">Create</button>
+                            </form>
+                            <br/>
+                            "Create" will create a user with the entered username, as long as you still have enough user slots open.
+                        </div>
+                        <div class="signup-step">
+                            <h2>Import User</h2>
+                            <form>
+                                <label for="data">Data:</label>
+                                <input type="file" id="file" style="margin-top: 10px; text-align: center;">         
+                            </form>
+                            <button onclick="importUser()" style="margin-top: 10px;">Import</button>     
+                            <br/><br/>
+                            "Import" allows you to enter the saved data exported from another navigator to be able to play on any username anywhere.
+                        </div>
+                    </div>
+                    <div class="signup-step signup-right">
+                        <h2>Current User</h2>
+                        <button onclick="deleteUser()" style="margin-top: 10px;">Delete</button>
+                        <button onclick="exportUser()" style="margin-top: 10px;">Export</button>
+                        <br/><br/>
+                        "Delete" will delete all data for the user with this name on this navigator. It won't do anything if no user with the name entered exitsts.
+                        <br/><br/>
+                        "Export" will give you the saved data of the username you entered, allowing you to import it on another navigator.
 
-                <p style="text-align: left;">
-                    Enter your username, and choose the action you wish to take.
-                    <br/><br/>
-                    "Create" will create a user with the entered username, as long as you still have enough user slots open.
-                    <br/><br/>
-                    "Delete" will delete all datas for the user with this name on this navigator. It won't do anything if no user with the name entered exitsts.
-                    <br/><br/>
-                    "Export" will give you the saved datas of the username you entered, allowing you to import it on another navigator.
-                    <br/><br/>
-                    "Import" allows you to enter the saved datas exported from another navigator to be able to play on any username anywhere.
-                </p>    
+                    </div>
+                </div>
+                <img id="footerimg" src="/images/user/product-bottom.png" />
             </div>
         </div>
 
@@ -51,8 +63,7 @@
         </div>
 
         <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
-        
+        <script src="/userManager.js"></script>
     </body>
 
 </html>

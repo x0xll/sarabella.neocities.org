@@ -10,6 +10,7 @@
     max-width: 1000px;
     height: 123px;
     margin: auto;
+    margin-top: 0;
     text-align: center;
     padding: 0 20px;
 }

@@ -607,11 +607,11 @@ class LevelHelper {
 
                             var gemTxt = scene.add.text(gem.x, gem.y, points, helper.gemsScoreTxtStyle).setOrigin(.5, .5)
                             gemTxt.alpha = 0
-                            var gemsTxtDatas = {
+                            var gemsTxtData = {
                                 txt : gemTxt,
                                 currenFrameVisible : 0
                             }
-                            scene.gemsScoreTxt.push(gemsTxtDatas)
+                            scene.gemsScoreTxt.push(gemsTxtData)
 
                             helper.score += points
                             scene.scoreText.text = helper.score

@@ -1,7 +1,7 @@
 // Handles a fake user situation with the help of local storage
-// Would store a username, horseshoes, cottage datas, adventures, etc.
+// Would store a username, horseshoes, cottage data, adventures, etc.
 // Need to check how much space this would take, to calculate how many users we authorize
-// Creating a "share" type button to pass the user saved datas to another navigator could be interesting to prevent loss of progress
+// Creating a "share" type button to pass the user saved data to another navigator could be interesting to prevent loss of progress
 
 const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
@@ -72,13 +72,13 @@ function createUser()
         }
 
         currentUser = username;
-        let userDatas = 
+        let userData = 
         {
             usr: currentUser,
-            gameDatas: []
+            gameData: []
         }
 
-        localStorage.setItem(USER_KEY + username, JSON.stringify(userDatas));
+        localStorage.setItem(USER_KEY + username, JSON.stringify(userData));
         currentUserAmount++;
         localStorage.setItem(USER_AMOUNT_KEY, currentUserAmount);
         userNames = localStorage.getItem(USER_NAMES_KEY);
@@ -139,7 +139,7 @@ function forceChooseUser(username)
 
 function deleteUser()
 {
-    username = document.getElementById("signup_username").value;
+    username = document.getElementById("currentUserDropdown").value;
     userDropdown = document.getElementById("currentUserDropdown");
 
     if (username.toLowerCase() === "guest" || username.toLowerCase() === "create")
@@ -184,10 +184,7 @@ function deleteUser()
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
         setupUserDropdown();
-
-        if (currentUser == username)
-            forceChooseUser();
-
+        forceChooseUser();
         alert("User deleted");
         return;
     }
@@ -197,130 +194,125 @@ function deleteUser()
 
 function exportUser()
 {
-    username = document.getElementById("signup_username").value;
-    let copyText = localStorage.getItem(USER_KEY + username);
+    username = document.getElementById("currentUserDropdown").value;
+    let userData = localStorage.getItem(USER_KEY + username);
 
-    if (copyText === "" || copyText === undefined || copyText === null)
+    if (userData === "" || userData === undefined || userData === null)
     {
-        alert("Please choose an existing user to export datas.")
+        alert("Please choose an existing user to export data.")
         return;
     }
 
-    let input = document.getElementById('copy');
-    input.value = copyText
-    input.style.display = 'inline'
-    document.getElementById('copyLable').style.display = 'inline'
+    download(userData, username+".json", "json")
+}
 
-    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-        // handle iOS devices
-        input.contenteditable = true;
-        input.readonly = false;
-
-        let range = document.createRange();
-        range.selectNodeContents(input);
-
-        let selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        input.setSelectionRange(0, 999999);
-        } else {
-        // other devices are easy
-        input.select()
-        }
-        document.execCommand('copy');
-        
-    // Alert the copied text
-    alert(copyText);
+function download(data, filename, type) {
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
 }
 
 function importUser()
 {
-    datas = document.getElementById("datas").value;
-    if (datas === "")
-    {
-        alert("Please enter valid datas from an exported save");
-        return;
-    }
-
-    splittedDatas = datas.split("²");
-    username = splittedDatas[0].split(":")[1];
-
-    allUsernames = localStorage.getItem(USER_NAMES_KEY);
-
-    if (allUsernames != undefined && allUsernames != "" && allUsernames != null)
-    {
-        splittedUsernames = allUsernames.split("²");
-        let existingUser = false;
-        splittedUserNames.forEach(user => {
-            if (user === username)
-            {
-                localStorage.setItem(USER_KEY + username, datas);
-                existingUser = true;
-                return;
-            }
-        });
-    
-        if (existingUser)
-        {
-            alert("Datas imported succesfully for user: " + username);
-            forceChooseUser(username);
+    let file = document.getElementById("file").files[0];
+    let reader = new FileReader();
+    reader.readAsText(file)
+    reader.onload = function(event) {
+        let userData = event.target.result;
+        if (userData === "") {
+            alert("Please enter valid data from an exported save");
             return;
         }
+        username = JSON.parse(userData).usr
+
+        allUsernames = localStorage.getItem(USER_NAMES_KEY);
+        if (allUsernames != undefined && allUsernames != "" && allUsernames != null)
+        {
+            splittedUsernames = allUsernames.split("²");
+            let existingUser = false;
+            splittedUserNames.forEach(user => {
+                if (user === username)
+                {
+                    localStorage.setItem(USER_KEY + username, userData);
+                    existingUser = true;
+                    return;
+                }
+            });
+        
+            if (existingUser)
+            {
+                alert("Data imported succesfully for user: " + username);
+                forceChooseUser(username);
+                return;
+            }
+        }
+        
+        userAmount = localStorage.getItem(USER_AMOUNT_KEY);
+        if (userAmount >= MAX_USERS)
+        {
+            alert("Too many users. Please delete an account before importing a new one.")
+            return;
+        }
+
+        userAmount++;
+        localStorage.setItem(USER_AMOUNT_KEY, userAmount);
+        localStorage.setItem(USER_KEY + username, userData);
+
+        if (allUsernames === null || allUsernames === undefined || allUsernames === "")
+            allUsernames = username;
+        else
+            allUsernames += "²" + username;
+        localStorage.setItem(USER_NAMES_KEY, allUsernames);
+
+        alert("Data imported succesfully for user: " + username);
+        setupUserDropdown();
+        forceChooseUser(username);
     }
-    
-    userAmount = localStorage.getItem(USER_AMOUNT_KEY);
-    if (userAmount >= MAX_USERS)
-    {
-        alert("Too many users. Please delete an account before importing a new one.")
-        return;
-    }
-
-    userAmount++;
-    localStorage.setItem(USER_AMOUNT_KEY, userAmount);
-    localStorage.setItem(USER_KEY + username, datas);
-
-    if (allUsernames === null || allUsernames === undefined || allUsernames === "")
-        allUsernames = username;
-    else
-        allUsernames += "²" + username;
-    localStorage.setItem(USER_NAMES_KEY, allUsernames);
-
-    alert("Datas imported succesfully for user: " + username);
-    setupUserDropdown();
-    forceChooseUser(username);
 }
 
 // ------- END USER -------
 
-/* Saved the datas to the correct user in localstorage
+/** Saved the data to the correct user in localstorage
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be saved, string
-* @param datas : an object with all the datas to be saved for this dataType
+* @param userData : an object with all the data to be saved for this dataType
 * @param gameID : the id of the game, optional
 */
-function saveData(dataType, datas, gameID = "")
+function saveData(dataType, userData, gameID = "")
 {
     if (currentUser === "guest") return;
 
-    let savedDatas = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
+    let savedData = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
-    let existingDatas = false;
+    let existingData = false;
 
     if (gameID !== "")
     {
-        for (let i = 0; i < savedDatas.gameDatas.length; i++)
+        for (let i = 0; i < savedData.gameData.length; i++)
         {
-            if (savedDatas.gameDatas[i].id !== gameID) continue;
+            if (savedData.gameData[i].id !== gameID) continue;
     
-            existingDatas = true;
+            existingData = true;
 
             switch(dataType)
             {
-                case DATA_TYPE_HIGHSCORE: savedDatas.gameDatas[i].highscore = datas; break;
-                case DATA_TYPE_LEVEL: savedDatas.gameDatas[i].level = datas; break;
+                case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
+                case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
             }
         }
 
-        if (!existingDatas)
+        if (!existingData)
         {
             let currentGameData = 
             {
@@ -329,26 +321,26 @@ function saveData(dataType, datas, gameID = "")
 
             switch(dataType)
             {
-                case DATA_TYPE_HIGHSCORE: currentGameData.highscore = datas; break;
-                case DATA_TYPE_LEVEL: currentGameData.level = datas; break;
+                case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
+                case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
             }
 
-            savedDatas.gameDatas.push(currentGameData);
+            savedData.gameData.push(currentGameData);
         }
     }
 
     switch(dataType)
     {
-        case DATA_TYPE_HORSESHOES: savedDatas.horseshoes = datas; break;
+        case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
     } 
 
-    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedDatas));
+    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedData));
     setupUserDropdown();
 }
 
-/* Load the datas of a specific user from the localstorage
+/** Load the data of a specific user from the localstorage
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be loaded, string
-* @returns datas : an object with all the saved datas for this dataType 
+* @returns userData : an object with all the saved userData for this dataType 
 * @param gameID : the id of the game, optional
 */
 function loadData(dataType, gameID = "")
@@ -365,24 +357,24 @@ function loadData(dataType, gameID = "")
         }
     }
 
-    let savedDatas = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
+    let savedData = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
     if (gameID != "")
     {
-        for (let i = 0; i < savedDatas.gameDatas.length; i++)
+        for (let i = 0; i < savedData.gameData.length; i++)
         {
-            if (savedDatas.gameDatas[i].id !== gameID) continue;
+            if (savedData.gameData[i].id !== gameID) continue;
     
             switch(dataType)
             {
                 case DATA_TYPE_HIGHSCORE:
-                    if (savedDatas.gameDatas[i].highscore === undefined)
+                    if (savedData.gameData[i].highscore === undefined)
                         return 0;
-                    return savedDatas.gameDatas[i].highscore;
+                    return savedData.gameData[i].highscore;
                 case DATA_TYPE_LEVEL: 
-                    if (savedDatas.gameDatas[i].level === undefined)
+                    if (savedData.gameData[i].level === undefined)
                         return 0;
-                    return savedDatas.gameDatas[i].level;
+                    return savedData.gameData[i].level;
             }
         }
     }
@@ -390,9 +382,9 @@ function loadData(dataType, gameID = "")
     switch(dataType)
     {
         case DATA_TYPE_HORSESHOES:
-            if (savedDatas.horseshoes === undefined)
+            if (savedData.horseshoes === undefined)
                 return 0;
-            return savedDatas.horseshoes;
+            return savedData.horseshoes;
     }
 
     return 0;
