@@ -71,7 +71,13 @@ function createUser()
             return;
         }
 
-        localStorage.setItem(USER_KEY + username, "usr:" + username);
+        let userDatas = 
+        {
+            usr: currentUser,
+            gameDatas: []
+        }
+
+        localStorage.setItem(USER_KEY + username, JSON.stringify(userDatas));
         currentUserAmount++;
         localStorage.setItem(USER_AMOUNT_KEY, currentUserAmount);
         userNames = localStorage.getItem(USER_NAMES_KEY);
@@ -81,7 +87,8 @@ function createUser()
             userNames += "²" + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
-        saveDatasToUser(username, DATA_TYPE_HORSESHOES, 100)
+        currentUser = username;
+        saveData(DATA_TYPE_HORSESHOES, 100)
         setupUserDropdown();
         forceChooseUser(username);
         return;
@@ -103,7 +110,7 @@ function chooseUser()
         localStorage.setItem(CURRENT_USER_KEY, currentUser);
 
         horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
-        horseshoes.innerHTML = loadDatasFromUser(currentUser, DATA_TYPE_HORSESHOES).toString() + " <img src=\"/images/nav/Horseshoe.png\">";
+        horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " +loadData(DATA_TYPE_HORSESHOES).toString();
     }
 }
 
@@ -286,79 +293,69 @@ function importUser()
 // ------- END USER -------
 
 /* Saved the datas to the correct user in localstorage
-* @param username : the username used in the local storage, string
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be saved, string
 * @param datas : an object with all the datas to be saved for this dataType
+* @param gameID : the id of the game, optional
 */
-function saveDatasToUser(username, dataType, datas, gameID = "")
+function saveData(dataType, datas, gameID = "")
 {
-    if (username === "guest") return;
+    if (currentUser === "guest") return;
 
-    savedDatas = localStorage.getItem(USER_KEY + username);
-    splittedDatas = savedDatas.split("²");
+    let savedDatas = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
     let existingDatas = false;
 
-    for (let i = 0; i < splittedDatas.length; i++)
+    if (gameID !== "")
     {
-        switch(dataType)
+        for (let i = 0; i < savedDatas.gameDatas.length; i++)
         {
-            case DATA_TYPE_HORSESHOES:
-                if (splittedDatas[i].includes("h:"))
-                {
-                    splittedDatas[i] = "h:" + datas.toString();
-                    existingDatas = true;
-                }
-            break;
-            case DATA_TYPE_HIGHSCORE:
-            case DATA_TYPE_LEVEL:
-            {
-                // TODO : Handle multi saved elements in one gameID
+            if (savedDatas.gameDatas[i].id !== gameID) continue;
+    
+            existingDatas = true;
 
-                if (splittedDatas[i].includes(gameID + ":"))
-                {
-                    splittedDatas[i] = gameID + ":" + datas.toString();
-                    existingDatas = true;
-                }
+            switch(dataType)
+            {
+                case DATA_TYPE_HIGHSCORE: savedDatas.gameDatas[i].highscore = datas; break;
+                case DATA_TYPE_LEVEL: savedDatas.gameDatas[i].level = datas; break;
             }
         }
-    }
 
-    if (!existingDatas)
+        if (!existingDatas)
+        {
+            let currentGameData = 
+            {
+                id: gameID,
+            }
+
+            switch(dataType)
+            {
+                case DATA_TYPE_HIGHSCORE: currentGameData.highscore = datas; break;
+                case DATA_TYPE_LEVEL: currentGameData.level = datas; break;
+            }
+
+            savedDatas.gameDatas.push(currentGameData);
+        }
+    }
+    else
     {
         switch(dataType)
         {
-            case DATA_TYPE_HORSESHOES:
-                savedDatas += "²h:" + datas.toString();
-                break;
-            case DATA_TYPE_HIGHSCORE:
-            case DATA_TYPE_LEVEL:
-                savedDatas += "²" + gameID + ":" + datas.toString();
-                break;
-        }
-
-        localStorage.setItem(USER_KEY + username, savedDatas);
-        setupUserDropdown();
-        return;
+            case DATA_TYPE_HORSESHOES: savedDatas.horseshoes = datas; break;
+        } 
     }
 
-    savedDatas = splittedDatas[0]; // Username
-
-    for (let i = 1; i < splittedDatas.length; i++)
-        savedDatas += "²" + splittedDatas[i];
-
-    localStorage.setItem(USER_KEY + username, savedDatas);
+    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedDatas));
     setupUserDropdown();
 }
 
 /* Load the datas of a specific user from the localstorage
-* @param username : the username used in the local storage, string
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be loaded, string
 * @returns datas : an object with all the saved datas for this dataType 
+* @param gameID : the id of the game, optional
 */
-function loadDatasFromUser(username, dataType, gameID = "")
+function loadData(dataType, gameID = "")
 {
-    if (username === "guest")
+    if (currentUser === "guest")
     {
         switch(dataType)
         {
@@ -370,47 +367,51 @@ function loadDatasFromUser(username, dataType, gameID = "")
         }
     }
 
-    loadedDatas = localStorage.getItem(USER_KEY + username);
-    splittedDatas = loadedDatas.split("²");
+    let savedDatas = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
-    for (let i = 0; i < splittedDatas.length; i++) {
+    if (gameID != "")
+    {
+        for (let i = 0; i < savedDatas.gameDatas.length; i++)
+        {
+            if (savedDatas.gameDatas[i].id !== gameID) continue;
+    
+            switch(dataType)
+            {
+                case DATA_TYPE_HIGHSCORE:
+                    if (savedDatas.gameDatas[i].highscore === undefined)
+                        return 0;
+                    return savedDatas.gameDatas[i].highscore;
+                case DATA_TYPE_LEVEL: 
+                    if (savedDatas.gameDatas[i].level === undefined)
+                        return 0;
+                    return savedDatas.gameDatas[i].level;
+            }
+        }
+    }
+    else
+    {
         switch(dataType)
         {
             case DATA_TYPE_HORSESHOES:
-                if (splittedDatas[i].includes("h:"))
-                    return splittedDatas[i].split(":")[1];
-                break;
-            case DATA_TYPE_HIGHSCORE:
-            case DATA_TYPE_LEVEL:
-                if (splittedDatas[i].includes(gameID + ":"))
-                    return parseInt(splittedDatas[i].split(":")[1]);
-                break;
+                if (savedDatas.horseshoes === undefined)
+                    return 0;
+                return savedDatas.horseshoes;
         }
     }
 
-    switch(dataType)
-    {
-        case DATA_TYPE_HORSESHOES: return 0;
-        case DATA_TYPE_HIGHSCORE: return 0;
-        case DATA_TYPE_LEVEL: return 0;
-    }
-}
-
-function loadDatas(dataType, gameID)
-{
-    return loadDatasFromUser(currentUser, dataType, getGameID(gameID));
+    return 0;
 }
 
 function addHorseshoes(amountAdded)
 {
-    currentAmount = parseInt(loadDatasFromUser(currentUser, DATA_TYPE_HORSESHOES));
+    currentAmount = parseInt(loadData(currentUser, DATA_TYPE_HORSESHOES));
     
     if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
         currentAmount = Number.MAX_SAFE_INTEGER;
     else
         currentAmount += amountAdded;
 
-    saveDatasToUser(currentUser, DATA_TYPE_HORSESHOES, currentAmount);
+    saveData(DATA_TYPE_HORSESHOES, currentAmount);
 }
 
 function updateHighscore(data)
@@ -420,7 +421,7 @@ function updateHighscore(data)
     // Initialize
     if (splittedData.length == 1)
     {
-        loadedData = loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, getGameID(data));
+        loadedData = loadData(DATA_TYPE_HIGHSCORE, getGameID(data));
         highscoreTxt = document.getElementById("highscore");
         highscoreTxt.innerHTML = "<b>Highscore: " + loadedData + "</b>";
         return;
@@ -429,10 +430,10 @@ function updateHighscore(data)
     // Actually update
     gameID = getGameID(splittedData[1]);
 
-    loadedData = loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, gameID);
+    loadedData = loadData(DATA_TYPE_HIGHSCORE, gameID);
     if (parseInt(splittedData[0]) > loadedData)
     {
-        saveDatasToUser(currentUser, DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
+        saveData(DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
 
         // TODO : Clean up
         highscoreTxt = document.getElementById("highscore");
@@ -446,9 +447,9 @@ function updateLevelReached(data)
 
     gameID = getGameID(splittedData[1]);
 
-    loadedData = loadDatasFromUser(currentUser, DATA_TYPE_LEVEL, gameID);
+    loadedData = loadData(DATA_TYPE_LEVEL, gameID);
     if (parseInt(splittedData[0]) > loadedData)
-        saveDatasToUser(currentUser, DATA_TYPE_LEVEL, splittedData[0], gameID);
+        saveData(DATA_TYPE_LEVEL, splittedData[0], gameID);
 }
 
 //-------- HELPERS -------
