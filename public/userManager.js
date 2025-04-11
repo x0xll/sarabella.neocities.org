@@ -50,9 +50,9 @@ function createUser()
         return;
     }
 
-    if (username.includes("²"))
+    if (username.includes("\""))
     {
-        alert("Please remove \"²\" character from your username.")
+        alert("Please remove \"\"\" character from your username.")
         return;
     }
 
@@ -71,6 +71,7 @@ function createUser()
             return;
         }
 
+        currentUser = username;
         let userDatas = 
         {
             usr: currentUser,
@@ -87,7 +88,6 @@ function createUser()
             userNames += "²" + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
-        currentUser = username;
         saveData(DATA_TYPE_HORSESHOES, 100)
         setupUserDropdown();
         forceChooseUser(username);
