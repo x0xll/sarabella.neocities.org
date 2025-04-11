@@ -213,3 +213,8 @@ ul {
         height: 40px;
     }
 }
+
+@font-face {
+    font-family: ArkonaRegular;
+    src: url('/phasergames/jumpinggame/fonts/Arkona Regular.ttf');
+}
