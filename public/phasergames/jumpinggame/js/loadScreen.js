@@ -26,7 +26,7 @@ class Load extends Phaser.Scene
     {
         this.playMusic = true
         this.levelUnlocked = [true, false, false, false]
-        let savedLoadedLevel = loadData("level", "SpectacularJumpingGame");
+        let savedLoadedLevel = loadData("level", getGameID("SpectacularJumpingGame"));
         for (let i = 0; i <= savedLoadedLevel; i++)
         {
             // TODO : Remove this when the levels are finished
