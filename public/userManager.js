@@ -5,6 +5,7 @@
 
 const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
+const DATA_TYPE_LEVEL = "level";
 
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
@@ -310,7 +311,10 @@ function saveDatasToUser(username, dataType, datas, gameID = "")
                 }
             break;
             case DATA_TYPE_HIGHSCORE:
+            case DATA_TYPE_LEVEL:
             {
+                // TODO : Handle multi saved elements in one gameID
+
                 if (splittedDatas[i].includes(gameID + ":"))
                 {
                     splittedDatas[i] = gameID + ":" + datas.toString();
@@ -328,6 +332,7 @@ function saveDatasToUser(username, dataType, datas, gameID = "")
                 savedDatas += "²h:" + datas.toString();
                 break;
             case DATA_TYPE_HIGHSCORE:
+            case DATA_TYPE_LEVEL:
                 savedDatas += "²" + gameID + ":" + datas.toString();
                 break;
         }
@@ -360,6 +365,7 @@ function loadDatasFromUser(username, dataType, gameID = "")
             case DATA_TYPE_HORSESHOES:
                 return 10000;
             case DATA_TYPE_HIGHSCORE:
+            case DATA_TYPE_LEVEL:
                 return 0;
         }
     }
@@ -375,8 +381,9 @@ function loadDatasFromUser(username, dataType, gameID = "")
                     return splittedDatas[i].split(":")[1];
                 break;
             case DATA_TYPE_HIGHSCORE:
+            case DATA_TYPE_LEVEL:
                 if (splittedDatas[i].includes(gameID + ":"))
-                    return splittedDatas[i].split(":")[1];
+                    return parseInt(splittedDatas[i].split(":")[1]);
                 break;
         }
     }
@@ -385,7 +392,13 @@ function loadDatasFromUser(username, dataType, gameID = "")
     {
         case DATA_TYPE_HORSESHOES: return 0;
         case DATA_TYPE_HIGHSCORE: return 0;
+        case DATA_TYPE_LEVEL: return 0;
     }
+}
+
+function loadDatas(dataType, gameID)
+{
+    return loadDatasFromUser(currentUser, dataType, getGameID(gameID));
 }
 
 function addHorseshoes(amountAdded)
@@ -416,7 +429,7 @@ function updateHighscore(data)
     // Actually update
     gameID = getGameID(splittedData[1]);
 
-    loadedData = parseInt(loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, gameID));
+    loadedData = loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, gameID);
     if (parseInt(splittedData[0]) > loadedData)
     {
         saveDatasToUser(currentUser, DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
@@ -425,6 +438,17 @@ function updateHighscore(data)
         highscoreTxt = document.getElementById("highscore");
         highscoreTxt.innerHTML = "<b>Highscore: " + splittedData[0].toString() + "</b>";
     }
+}
+
+function updateLevelReached(data)
+{
+    splittedData = data.split("@");
+
+    gameID = getGameID(splittedData[1]);
+
+    loadedData = loadDatasFromUser(currentUser, DATA_TYPE_LEVEL, gameID);
+    if (parseInt(splittedData[0]) > loadedData)
+        saveDatasToUser(currentUser, DATA_TYPE_LEVEL, splittedData[0], gameID);
 }
 
 //-------- HELPERS -------
