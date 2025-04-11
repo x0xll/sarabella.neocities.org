@@ -432,7 +432,7 @@ function updateHighscore(data)
 function updateHighscoreUI(value)
 {
     highscoreTxt = document.getElementById("highscore");
-    if (highscoreTxt !== undefined)
+    if (highscoreTxt !== null)
         highscoreTxt.innerHTML = "<b>Highscore: " + value + "</b>";
 }
 

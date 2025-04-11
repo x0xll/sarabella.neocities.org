@@ -1,0 +1,15 @@
+11 April 2025
+    - Link Horseshoes to save in collectPickup() in Game.as, after 
+        Push register1, "levelNum"
+        GetMember
+        GetMember
+        Increment
+        SetMember
+
+        write:
+
+        Push 1, "addHorseshoes", 2, "flash.external.ExternalInterface"
+        GetVariable
+        Push "call"
+        CallMethod
+        Pop
