@@ -14,6 +14,7 @@ const USER_NAMES_KEY = "neocities_besa_userNames";
 const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
 let currentUser = undefined;
+let currentGame = undefined;
 
 // ------- UI -------
 function setupUserDropdown()
@@ -34,9 +35,9 @@ function setupUserDropdown()
             userDropdown.options[userDropdown.options.length] = new Option(splittedUserNames[i], splittedUserNames[i]);  
         }
     }
-
     forceChooseUser(localStorage.getItem(CURRENT_USER_KEY));
 }
+
 // ------- END UI -------
 
 // ------- USER ------
@@ -110,7 +111,9 @@ function chooseUser()
         localStorage.setItem(CURRENT_USER_KEY, currentUser);
 
         horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
-        horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " +loadData(DATA_TYPE_HORSESHOES).toString();
+        horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " + loadData(DATA_TYPE_HORSESHOES).toString();
+
+        updateHighscoreUI(loadData(DATA_TYPE_HIGHSCORE, getGameID(currentGame)) + "</b>");
     }
 }
 
@@ -409,9 +412,8 @@ function updateHighscore(data)
     // Initialize
     if (splittedData.length == 1)
     {
-        loadedData = loadData(DATA_TYPE_HIGHSCORE, getGameID(data));
-        highscoreTxt = document.getElementById("highscore");
-        highscoreTxt.innerHTML = "<b>Highscore: " + loadedData + "</b>";
+        currentGame =  data;
+        updateHighscoreUI(loadData(DATA_TYPE_HIGHSCORE, getGameID(data)))
         return;
     }
 
@@ -423,10 +425,15 @@ function updateHighscore(data)
     {
         saveData(DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
 
-        // TODO : Clean up
-        highscoreTxt = document.getElementById("highscore");
-        highscoreTxt.innerHTML = "<b>Highscore: " + splittedData[0].toString() + "</b>";
+        updateHighscoreUI(splittedData[0].toString())
     }
+}
+
+function updateHighscoreUI(value)
+{
+    highscoreTxt = document.getElementById("highscore");
+    if (highscoreTxt !== undefined)
+        highscoreTxt.innerHTML = "<b>Highscore: " + value + "</b>";
 }
 
 function updateLevelReached(data)
