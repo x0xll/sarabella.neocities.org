@@ -336,13 +336,11 @@ function saveData(dataType, datas, gameID = "")
             savedDatas.gameDatas.push(currentGameData);
         }
     }
-    else
+
+    switch(dataType)
     {
-        switch(dataType)
-        {
-            case DATA_TYPE_HORSESHOES: savedDatas.horseshoes = datas; break;
-        } 
-    }
+        case DATA_TYPE_HORSESHOES: savedDatas.horseshoes = datas; break;
+    } 
 
     localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedDatas));
     setupUserDropdown();
@@ -388,15 +386,13 @@ function loadData(dataType, gameID = "")
             }
         }
     }
-    else
+
+    switch(dataType)
     {
-        switch(dataType)
-        {
-            case DATA_TYPE_HORSESHOES:
-                if (savedDatas.horseshoes === undefined)
-                    return 0;
-                return savedDatas.horseshoes;
-        }
+        case DATA_TYPE_HORSESHOES:
+            if (savedDatas.horseshoes === undefined)
+                return 0;
+            return savedDatas.horseshoes;
     }
 
     return 0;
@@ -404,7 +400,7 @@ function loadData(dataType, gameID = "")
 
 function addHorseshoes(amountAdded)
 {
-    currentAmount = parseInt(loadData(currentUser, DATA_TYPE_HORSESHOES));
+    currentAmount = loadData(DATA_TYPE_HORSESHOES);
     
     if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
         currentAmount = Number.MAX_SAFE_INTEGER;
