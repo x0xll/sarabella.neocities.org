@@ -45,10 +45,15 @@
           <div class="textbox" style="height: min-content;">
             <h2>Go to other rooms:</h2>
             <ul>
-              <li><a href="rooms.html?roomId=3">Living Room</a></li>
-              <li><a href="rooms.html?roomId=6">Bedroom</a></li>
+              <li><a href="rooms.html?roomId=3">Base Living Room</a></li>
+              <li><a href="rooms.html?roomId=6">Base Bedroom</a></li>
               <li><a href="rooms.html?roomId=11">Patio</a></li>
-              <li><a href="rooms.html?roomId=12">Rollandsgaard Castle</a></li>
+              <li><a href="rooms.html?roomId=1">Rollandsgaard Castle</a></li>
+              <li><a href="rooms.html?roomId=12">Shahazar Castle</a></li>
+              <li><a href="rooms.html?roomId=8">Theatre</a></li>
+              <li><a href="rooms.html?roomId=2">Astronomy Tower</a></li>
+              <li><a href="rooms.html?roomId=4">Bedroom</a></li>
+              <li><a href="rooms.html?roomId=5">Valeryk Castle</a></li>
             </ul>
           </div>
       </div>
@@ -82,8 +87,23 @@
               case "11":
                 swfPlayer.src = 'patio.swf';
               break;
-              case "12": // TODO: Find correct id
+              case "1": // TODO: Find correct id
                 swfPlayer.src = 'rollandsgaardcastle.swf';
+              break;
+              case "2": // TODO: Find correct id
+                swfPlayer.src = 'astronomy.swf';
+              break;
+              case "4": // TODO: Find correct id
+                swfPlayer.src = 'bedroom2.swf';
+              break;
+              case "5": // TODO: Find correct id
+                swfPlayer.src = 'valerykcastle.swf';
+              break;
+              case "12":
+                swfPlayer.src = 'shahazarcastle.swf';
+              break;
+              case "8":
+                swfPlayer.src = "theatre.swf";
               break;
           }
 
