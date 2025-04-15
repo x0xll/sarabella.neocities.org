@@ -2,6 +2,7 @@
     - Linked to user
         - Added "ExternalInterface.call("updateHighscore",param1.Score + "@MagicBubbleWand");" in gameOverHandler in ShellConnector.as
         - Added "ExternalInterface.call("addHorseshoes",param1.Amount);" in addHorseshoesHandler in ShellConnector.as
+        - Added "import flash.external.*;" in ShellConnector.as
 25 March 2025
     - "Flash/BubbleWand/Localization/BubbleWand_<Language>.xml" becomes "./data/localization/bubblewand_<Language>.xml";
     - "<Language>/_css/bs_bubblegame.css" becomes "./data/style/bs_bubblegame.css"
