@@ -17,39 +17,39 @@
         
         <div id="signup-container">  
             <img alt="" id="headerimg" src="images/user/product-header.png" />
-            <h1 class="signup-header" id="top-header">Bella Sara Sign Up</h1>
+            <h1 class="signup-header" id="top-header" data-il8n="signup_title">Bella Sara Sign Up</h1>
             <div id="signup-bg">
                 <div id="signup-body">
                     <div class="signup-left">
                         <div class="signup-step">
-                            <h2>Create User</h2>
+                            <h2 data-il8n="user_create">Create User</h2>
                             <form>
-                                <label for="signup_username">Username:</label>
+                                <label for="signup_username" data-il8n="signup_username">Username:</label>
                                 <input type="text" id="signup_username" name="signup_username" value="" style="margin-top: 10px; text-align: center;">
-                                <button onclick="createUser()" style="margin-top: 10px;">Create</button>
+                                <button onclick="createUser()" style="margin-top: 10px;"  data-il8n="signup_create">Create</button>
                             </form>
                             <br/>
-                            "Create" will create a user with the entered username, as long as you still have enough user slots open.
+                            <p data-il8n="signup_create_desc" style="margin: 0px;">"Create" will create a user with the entered username, as long as you still have enough user slots open.</p>
                         </div>
                         <div class="signup-step">
-                            <h2>Import User</h2>
+                            <h2 data-il8n="signup_import_title">Import User</h2>
                             <form>
-                                <label for="data">Data:</label>
+                                <label for="data" data-il8n="signup_data">Data:</label>
                                 <input type="file" id="file" style="margin-top: 10px; text-align: center;">         
                             </form>
-                            <button onclick="importUser()" style="margin-top: 10px;">Import</button>     
+                            <button onclick="importUser()" style="margin-top: 10px;" data-il8n="signup_import">Import</button>     
                             <br/><br/>
-                            "Import" allows you to enter the saved data exported from another navigator to be able to play on any username anywhere.
+                            <p  data-il8n="signup_import_desc" style="margin: 0px">"Import" allows you to enter the saved data exported from another navigator to be able to play on any username anywhere.</p>
                         </div>
                     </div>
                     <div class="signup-step signup-right">
-                        <h2>Current User</h2>
-                        <button onclick="deleteUser()" style="margin-top: 10px;">Delete</button>
-                        <button onclick="exportUser()" style="margin-top: 10px;">Export</button>
+                        <h2 data-il8n="signup_currentuser">Current User</h2>
+                        <button onclick="deleteUser()" style="margin-top: 10px;" data-il8n="signup_delete">Delete</button>
+                        <button onclick="exportUser()" style="margin-top: 10px;" data-il8n="signup_export">Export</button>
                         <br/><br/>
-                        "Delete" will delete all data for the user with this name on this navigator. It won't do anything if no user with the name entered exitsts.
+                        <p data-il8n="signup_delete_desc" style="margin: 0px">"Delete" will delete all data for the current user.</p>
                         <br/><br/>
-                        "Export" will give you the saved data of the username you entered, allowing you to import it on another navigator.
+                        <p data-il8n="signup_export_desc" style="margin: 0px;">"Export" will give you the saved data of the current user, allowing you to import it on another navigator.</p>
 
                     </div>
                 </div>
