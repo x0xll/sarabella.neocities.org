@@ -37,7 +37,7 @@ document.write('<div class="header-container">\
 \
 <div id="login" style="height: fit-content; width: fit-content;">\
 <img src="/images/nav/NamePlaque.png" style="width: 100%" title="username" class="NamePlaque">\
-<select name="currentUserDropdown" id="currentUserDropdown" onchange="chooseUser()">\
+<select name="currentUserDropdown" id="currentUserDropdown" onchange="chooseUser(true)">\
 <option value="guest">Guest</option>\
 <option value="create">Create User</option>\
 </select>\

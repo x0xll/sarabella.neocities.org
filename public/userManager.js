@@ -3,9 +3,13 @@
 // Need to check how much space this would take, to calculate how many users we authorize
 // Creating a "share" type button to pass the user saved data to another navigator could be interesting to prevent loss of progress
 
+const ART_STUDIO_CACHE = "sarabella.neocities.org//BellaSaraArtStudioData";
+//const ART_STUDIO_CACHE = "127.0.0.1//BellaSaraArtStudioData"; // DEBUG ONLY
+
 const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
 const DATA_TYPE_LEVEL = "level";
+const DATA_TYPE_CREATIONS = "creations";
 
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
@@ -98,7 +102,7 @@ function createUser()
     alert("Too many users created on this navigator... Please delete one before creating a new one."); // TODO: localize
 }
 
-function chooseUser()
+function chooseUser(reloadPage = false)
 {
     userDropdown = document.getElementById("currentUserDropdown");
     var username = userDropdown.options[userDropdown.selectedIndex].value;
@@ -113,7 +117,8 @@ function chooseUser()
         horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
         horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " + loadData(DATA_TYPE_HORSESHOES).toString();
 
-        updateHighscoreUI(loadData(DATA_TYPE_HIGHSCORE, getGameID(currentGame)) + "</b>");
+        if (reloadPage)
+            location.reload();
     }
 }
 
@@ -312,6 +317,7 @@ function saveData(dataType, userData, gameID = "")
             {
                 case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
                 case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
+                case DATA_TYPE_CREATIONS: savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
             }
         }
 
@@ -326,6 +332,7 @@ function saveData(dataType, userData, gameID = "")
             {
                 case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
                 case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
+                case DATA_TYPE_CREATIONS: currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
             }
 
             savedData.gameData.push(currentGameData);
@@ -357,6 +364,8 @@ function loadData(dataType, gameID = "")
             case DATA_TYPE_HIGHSCORE:
             case DATA_TYPE_LEVEL:
                 return 0;
+            case DATA_TYPE_CREATIONS:
+                return "";
         }
     }
 
@@ -378,6 +387,10 @@ function loadData(dataType, gameID = "")
                     if (savedData.gameData[i].level === undefined)
                         return 0;
                     return savedData.gameData[i].level;
+                case DATA_TYPE_CREATIONS:
+                    if (savedData.gameData[i].creations === undefined)
+                        return "";
+                    return savedData.gameData[i].creations;
             }
         }
     }
@@ -445,6 +458,28 @@ function updateLevelReached(data)
     loadedData = loadData(DATA_TYPE_LEVEL, gameID);
     if (parseInt(splittedData[0]) > loadedData)
         saveData(DATA_TYPE_LEVEL, splittedData[0], gameID);
+}
+
+function updateCreations(data)
+{
+    splittedData = data.split("@");
+
+    gameID = getGameID(splittedData[1]);
+    saveData(DATA_TYPE_CREATIONS, splittedData[0], gameID);
+}
+
+function updateSWFLocaleDatas(game)
+{
+    switch(game)
+    {
+        case "ArtStudio":
+            let loadedDatas = loadData(DATA_TYPE_CREATIONS, getGameID(game));
+            if (loadedDatas === "" || loadedDatas === undefined || loadedDatas === null)
+                localStorage.removeItem(ART_STUDIO_CACHE);
+            else
+                localStorage.setItem(ART_STUDIO_CACHE, loadedDatas);
+        break;
+    }
 }
 
 //-------- HELPERS -------
