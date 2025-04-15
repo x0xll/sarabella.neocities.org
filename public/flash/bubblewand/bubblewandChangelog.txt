@@ -6,4 +6,7 @@
 25 March 2025
     - "Flash/BubbleWand/Localization/BubbleWand_<Language>.xml" becomes "./data/localization/bubblewand_<Language>.xml";
     - "<Language>/_css/bs_bubblegame.css" becomes "./data/style/bs_bubblegame.css"
+
+11 April 2025
+    - Change line 130 of MCWindow to replace the unicode version of carriage return with \r
     
