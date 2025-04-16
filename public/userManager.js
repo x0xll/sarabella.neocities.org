@@ -17,6 +17,8 @@ const USER_AMOUNT_KEY = "neocities_besa_userAmount";
 const USER_NAMES_KEY = "neocities_besa_userNames"; 
 const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
+const MANAGER_VERSION = 1; // To track user version in case data structure gets updated
+
 let currentUser = undefined;
 let currentGame = undefined;
 
@@ -61,7 +63,7 @@ function createUser()
         return;
     }
 
-    if (username.toLowerCase() === "guest" || username.toLowerCase() === "create")
+    if (username.toLowerCase() === "guest" || username.toLowerCase() === "create" || username.toLowerCase() === "create user")
     {
         alert("Please choose another username.")
         return;
@@ -80,6 +82,7 @@ function createUser()
         let userData = 
         {
             usr: currentUser,
+            v: MANAGER_VERSION,
             gameData: []
         }
 

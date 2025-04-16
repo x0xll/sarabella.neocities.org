@@ -281,6 +281,7 @@ ul {
         display: flex; 
         flex-direction: row; 
         flex-wrap: wrap;
+        align-items: center;
     }
     
     #about,
@@ -299,6 +300,7 @@ ul {
     .home-container{
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
     }
     
