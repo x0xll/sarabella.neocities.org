@@ -45,6 +45,9 @@ class dressupStableSelector extends Phaser.Scene
         this.load.atlas('next', './images/selector/next.png', './images/selector/next.json');
         this.load.atlas('previous', './images/selector/previous.png', './images/selector/previous.json');
 
+        this.load.spineAtlas("horsePicAtlas", `./images/horses/${horseName}/picture/skeleton.atlas`);
+        this.load.spineJson("horsePicJson", `./images/horses/${horseName}/picture/skeleton.json`);
+
         this.load.audio('hover_sound', ['./sounds/selector_hover.mp3']);
         this.load.audio('click_sound', ['./sounds/selector_click.mp3']);
         this.load.audio('soundtrack', ['./sounds/selector_soundtrack.mp3']);
@@ -54,11 +57,97 @@ class dressupStableSelector extends Phaser.Scene
 
     create ()
     { 
+        const game = this;
+
         horses = savedHorses
+        game.loadedHorses = [];
 
         // Creates an array of the horses actual names to be displayed
         for (let index = 0; index < savedHorses.length; index++) {
             horseNames.push(savedHorses[index].name);
+
+            let horseURL = horses[index].slice(1); // we remove the "&" at the start
+            let urlParameters = new URLSearchParams(horseURL);
+
+            horseData = {
+                type: 'dressup',
+                name: urlParameters.get('name'),
+                message: urlParameters.get('message'),
+                bodyColor: 0,
+                hairColor: 0,
+                darkColor: -1,
+                whiteColor: 0,
+                feathering: 0,
+                forelock: 0,
+                mane: 0,
+                tail: 0,
+                flWhite: 0,
+                hlWhite: 0,
+                frWhite: 0,
+                hrWhite: 0,
+                headStripe: 0,
+                headSnip: 0,
+                headStar: 0,
+                headErase: 0,
+                whiteMatches: 0,
+                appyPattern: 0,
+                pintoPattern: 0, 
+                pintoExpression: 0, 
+                fleckedPattern: 0,
+                darkMarkings: 0
+            }
+            let dataLength = 0
+            let startData = 0
+            let URLdata = urlParameters.get('data') ? urlParameters.get('data') : "0"
+            switch (urlParameters.get('v')) {
+                case '1':
+                    dataLength = 17
+                    startData = 21
+                    horseData.bodyColor = parseInt(URLdata.slice(0, 6), 16)
+                    horseData.hairColor = parseInt(URLdata.slice(7, 13), 16)
+                    horseData.whiteColor = parseInt(URLdata.slice(14, 20), 16)
+                    
+                    let darkLevel = 1 - (3 * 0.1)
+                    let bodyColor =  splitHex(horseData.bodyColor)
+                    horseData.darkColor = parseInt(bodyColor.r*darkLevel.toString(16) + bodyColor.g*darkLevel.toString(16) + bodyColor.b*darkLevel.toString(16))
+                    break;
+                case '2':
+                    dataLength = 18
+                    startData = 28
+                    horseData.bodyColor = parseInt(URLdata.slice(0, 6), 16)
+                    horseData.hairColor = parseInt(URLdata.slice(7, 13), 16)
+                    horseData.darkColor = parseInt(URLdata.slice(14, 20), 16)
+                    horseData.whiteColor = parseInt(URLdata.slice(21, 27), 16)
+                    break;
+            }
+            let optionsData = URLdata !== "0" ? URLdata.slice(startData) : "0"
+            // Make data correct length
+            while (optionsData.length < dataLength) {
+                optionsData = "0" + optionsData;
+            }
+            while (optionsData.length < 19) {
+                optionsData = optionsData + "0";
+            }
+            horseData.feathering = parseInt(optionsData.slice(0, 1))
+            horseData.forelock = parseInt(optionsData.slice(1, 2))
+            horseData.mane = parseInt(optionsData.slice(2, 3))
+            horseData.tail = parseInt(optionsData.slice(3, 4))
+            horseData.flWhite = parseInt(optionsData.slice(4, 5))
+            horseData.frWhite = parseInt(optionsData.slice(5, 6))
+            horseData.hrWhite = parseInt(optionsData.slice(6, 7))
+            horseData.hlWhite = parseInt(optionsData.slice(7, 8))
+            horseData.headStripe = parseInt(optionsData.slice(8, 9))
+            horseData.headSnip = parseInt(optionsData.slice(9, 10))
+            horseData.headStar = parseInt(optionsData.slice(10, 11))
+            horseData.headErase = parseInt(optionsData.slice(11, 12))
+            horseData.whiteMatches = parseInt(optionsData.slice(12, 13))
+            horseData.appyPattern = parseInt(optionsData.slice(13, 14))
+            horseData.pintoPattern = parseInt(optionsData.slice(14, 15))
+            horseData.pintoExpression = parseInt(optionsData.slice(15, 16))
+            horseData.fleckedPattern = parseInt(optionsData.slice(16, 17))
+            horseData.darkMarkings = parseInt(optionsData.slice(17, 18))
+
+            game.loadedHorses.push(horseData);
         };
 
         // Add the sounds for the selector screen
@@ -75,7 +164,7 @@ class dressupStableSelector extends Phaser.Scene
         function setDisplayHorses() {
             for (let index = 0; index < displayHorses.length; index++) {
                 if (horses[(page*displayHorses.length)+index]) {
-                    displayHorses[index] = horses[(page*displayHorses.length)+index]
+                    displayHorses[index] = ""
                 } else {
                     displayHorses[index] = 'card_empty'
                 }
@@ -85,66 +174,45 @@ class dressupStableSelector extends Phaser.Scene
 
 
         // Add horse display cards and names to screen
-        this.card0 = this.add.image(122, 124, displayHorses[0]).setInteractive()
-        this.nameplate0 = this.add.image(122, 240, 'nameplate').setInteractive()
-        this.card0Text = this.add.text(122, 240, horseNames[0], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card0Text.setPosition(122-this.card0Text.width/2, 240-this.card0Text.height/2);
-        this.delete0Btn = this.add.image(50, 25, 'delete').setOrigin(0, 0).setInteractive();
+        this.stableVisibleHorses = [];
+        for (let i = 0; i < 10; i++)
+        {
+            let xPos = 122;
+            let xPosDelete = 50;
+            if (i < 5)
+            {
+                xPos += i * 158;
+                xPosDelete += i * 160;
+            }
+            else
+            {
+                xPos += (i -5) * 158
+                xPosDelete += (i -5) * 160
+            }
 
-        this.card1 = this.add.image(280, 124, displayHorses[1]).setInteractive()
-        this.nameplate1 = this.add.image(280, 240, 'nameplate').setInteractive()
-        this.card1Text = this.add.text(280, 228, horseNames[1], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card1Text.setPosition(280-this.card1Text.width/2, 240-this.card1Text.height/2);
-        this.delete1Btn = this.add.image(210, 25, 'delete').setOrigin(0, 0).setInteractive();
+            let yPosImg = 124;
+            let yPosNameplate = 240
+            let yPosDelete = 25
+            if (i > 4)
+            {
+                yPosImg += 246;
+                yPosNameplate += 248;
+                yPosDelete = 275;
+            }
 
-        this.card2 = this.add.image(440, 124, displayHorses[2]).setInteractive()
-        this.nameplate2 = this.add.image(440, 240, 'nameplate').setInteractive()
-        this.card2Text = this.add.text(440, 228, horseNames[2], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card2Text.setPosition(440-this.card2Text.width/2, 240-this.card2Text.height/2);
-        this.delete2Btn = this.add.image(370, 25, 'delete').setOrigin(0, 0).setInteractive();
+            let horseData = {};
 
-        this.card3 = this.add.image(601, 124, displayHorses[3]).setInteractive()
-        this.nameplate3 = this.add.image(601, 240, 'nameplate').setInteractive()
-        this.card3Text = this.add.text(601, 228, horseNames[3], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card3Text.setPosition(601-this.card3Text.width/2, 240-this.card3Text.height/2);
-        this.delete3Btn = this.add.image(530, 25, 'delete').setOrigin(0, 0).setInteractive();
+            if (displayHorses[i] === 'card_empty')
+                horseData.card = this.add.image(xPos, 124, displayHorses[i]).setInteractive()
+            else
+                horseData.card = this.add.spine(xPos, 124, 'horsePicJson', `horsePicAtlas`).setInteractive();
+            horseData.nameplate = this.add.image(xPos, yPosNameplate, 'nameplate').setInteractive()
+            horseData.cardText = this.add.text(xPos, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+            horseData.cardText.setPosition(xPos-horseData.cardText.width/2, yPosNameplate-horseData.cardText.height/2);
+            horseData.deleteBtn = this.add.image(xPosDelete, yPosDelete, 'delete').setOrigin(0, 0).setInteractive();
 
-        this.card4 = this.add.image(761, 124, displayHorses[4]).setInteractive()
-        this.nameplate4 = this.add.image(761, 240, 'nameplate').setInteractive()
-        this.card4Text = this.add.text(761, 228, horseNames[4], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card4Text.setPosition(761-this.card4Text.width/2, 240-this.card4Text.height/2);
-        this.delete4Btn = this.add.image(690, 25, 'delete').setOrigin(0, 0).setInteractive();
-
-        this.card5 = this.add.image(122, 370, displayHorses[5]).setInteractive()
-        this.nameplate5 = this.add.image(122, 488, 'nameplate').setInteractive()
-        this.card5Text = this.add.text(122, 488, horseNames[5], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card5Text.setPosition(122-this.card5Text.width/2, 488-this.card5Text.height/2);
-        this.delete5Btn = this.add.image(50, 275, 'delete').setOrigin(0, 0).setInteractive();
-
-        this.card6 = this.add.image(280, 370, displayHorses[6]).setInteractive()
-        this.nameplate6 = this.add.image(280, 488, 'nameplate').setInteractive()
-        this.card6Text = this.add.text(280, 488, horseNames[6], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card6Text.setPosition(280-this.card6Text.width/2, 488-this.card6Text.height/2);
-        this.delete6Btn = this.add.image(210, 275, 'delete').setOrigin(0, 0).setInteractive();
-
-        this.card7 = this.add.image(440, 370, displayHorses[7]).setInteractive()
-        this.nameplate7 = this.add.image(440, 488, 'nameplate').setInteractive()
-        this.card7Text = this.add.text(440, 488, horseNames[7], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card7Text.setPosition(440-this.card7Text.width/2, 488-this.card7Text.height/2);
-        this.delete7Btn = this.add.image(370, 275, 'delete').setOrigin(0, 0).setInteractive();
-
-        this.card8 = this.add.image(601, 370, displayHorses[8]).setInteractive()
-        this.nameplate8 = this.add.image(601, 488, 'nameplate').setInteractive()
-        this.card8Text = this.add.text(601, 488, horseNames[8], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card8Text.setPosition(601-this.card8Text.width/2, 488-this.card8Text.height/2);
-        this.delete8Btn = this.add.image(530, 275, 'delete').setOrigin(0, 0).setInteractive();
-
-        this.card9 = this.add.image(761, 370, displayHorses[9]).setInteractive()
-        this.nameplate9 = this.add.image(761, 488, 'nameplate').setInteractive()
-        this.card9Text = this.add.text(761, 488, horseNames[9], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
-        this.card9Text.setPosition(761-this.card9Text.width/2, 488-this.card9Text.height/2);
-        this.delete9Btn = this.add.image(690, 275, 'delete').setOrigin(0, 0).setInteractive();
-
+            this.stableVisibleHorses.push(horseData);
+        }
 
         // Add the glow and sparkle effect which will become visible when hovering over a card
         const hoverGlow = this.add.image(122, 124, 'hover_glow').setVisible(false);
@@ -228,11 +296,13 @@ class dressupStableSelector extends Phaser.Scene
         /**
          * Sets up the card, makes the nameplate visible if the card is not empty and makes the
          * sparkles and glow effect visible over the card if it is not empty and the card is hovered over
-         * @param {*} card The display card image at the display position
-         * @param {*} nameplate The nameplate image at the display position
          * @param {*} i The index of the display position
          */
-        function setupCard(card, nameplate, i, deleteBtn) {            
+        function setupCard(i) {            
+            let card = game.stableVisibleHorses[i].card;
+            let nameplate = game.stableVisibleHorses[i].nameplate;
+            let deleteBtn = game.stableVisibleHorses[i].deleteBtn;
+
             hoverGlow.setScale(1.05)
 
             if (displayHorses[i] !== 'card_empty') {
@@ -244,7 +314,7 @@ class dressupStableSelector extends Phaser.Scene
             card.on('pointerup', () => 
                 {
                     if (displayHorses[i] !== 'card_empty') {
-                        window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${displayHorses[i]}`, '_self');
+                        window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}`, '_self');
                     }
                 });
             card.on('pointerdown', () => {
@@ -318,20 +388,12 @@ class dressupStableSelector extends Phaser.Scene
             })
         }
 
-        setupCard(this.card0, this.nameplate0, 0, this.delete0Btn)
-        setupCard(this.card1, this.nameplate1, 1, this.delete1Btn)
-        setupCard(this.card2, this.nameplate2, 2, this.delete2Btn)
-        setupCard(this.card3, this.nameplate3, 3, this.delete3Btn)
-        setupCard(this.card4, this.nameplate4, 4, this.delete4Btn)
-        setupCard(this.card5, this.nameplate5, 5, this.delete5Btn)
-        setupCard(this.card6, this.nameplate6, 6, this.delete6Btn)
-        setupCard(this.card7, this.nameplate7, 7, this.delete7Btn)
-        setupCard(this.card8, this.nameplate8, 8, this.delete8Btn)
-        setupCard(this.card9, this.nameplate9, 9, this.delete9Btn)
-    }
+        for (let i = 0; i < 10; i++)
+        {
+            setupCard(i)
+            updateCard(i);
+        }
 
-    update ()
-    {
         /**
          * Updates the display card images and names when the page is changed
          * @param {*} card The display card image at the display position
@@ -339,8 +401,19 @@ class dressupStableSelector extends Phaser.Scene
          * @param {*} text The text at the display position
          * @param {*} cardNumber The index of the display position
          */  
-        function updateCard(card, nameplate, text, cardNumber) {
-            card.setTexture(displayHorses[cardNumber])
+        function updateCard(cardNumber) {
+            
+            let card = game.stableVisibleHorses[cardNumber].card;
+            let nameplate = game.stableVisibleHorses[cardNumber].nameplate;
+            let text = game.stableVisibleHorses[cardNumber].cardText;
+
+            if (displayHorses[cardNumber] === 'card_empty')
+                card.setTexture(displayHorses[cardNumber])
+            else
+            {
+                setSkin(card, cardNumber);
+                tintHorse(card);
+            }
 
             if (displayHorses[cardNumber] !== 'card_empty' && cardNumber < 5) {
                 card.setY(124).setScale(1)
@@ -367,17 +440,93 @@ class dressupStableSelector extends Phaser.Scene
                 text.setVisible(false)
             } 
         }
-        
-        updateCard(this.card0, this.nameplate0, this.card0Text, 0)
-        updateCard(this.card1, this.nameplate1, this.card1Text, 1)
-        updateCard(this.card2, this.nameplate2, this.card2Text, 2)
-        updateCard(this.card3, this.nameplate3, this.card3Text, 3)
-        updateCard(this.card4, this.nameplate4, this.card4Text, 4)
-        updateCard(this.card5, this.nameplate5, this.card5Text, 5)
-        updateCard(this.card6, this.nameplate6, this.card6Text, 6)
-        updateCard(this.card7, this.nameplate7, this.card7Text, 7)
-        updateCard(this.card8, this.nameplate8, this.card8Text, 8)
-        updateCard(this.card9, this.nameplate9, this.card9Text, 9)
 
+         /**
+         * Sets the skin for the sprite to display the current features
+         * @param {*} skeleton the horse skeleton to set the skin of
+         */
+        function setSkin(skeleton, indexHorse){
+            const horseData = game.loadedHorses[indexHorse];
+            const skeletonData = skeleton.skeleton.data;
+            const skin = new spine.Skin("custom");
+                if (horseData.darkMarkings !== 0) {
+                    skin.addSkin(skeletonData.findSkin(`Pattern/Dark`));
+                }
+                switch (horseData.headStripe) {
+                    case 0:
+                    case 6:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Stripe/${horseData.headStripe}`));
+                        break;
+                
+                    default:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Stripe/${horseData.headStripe}`));
+                        break;
+                }
+                switch (horseData.headSnip) {
+                    case 0:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Snip/${horseData.headSnip}`));
+                        break;
+                
+                    default:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Snip/${horseData.headSnip}`));
+                        break;
+                }
+                switch (horseData.headStar) {
+                    case 0:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr0/Star/${horseData.headStar}`));
+                        break;
+                
+                    default:
+                        skin.addSkin(skeletonData.findSkin(`Marking/Head/Irr${horseData.headErase}/Star/${horseData.headStar}`));
+                        break;
+                }
+                skin.addSkin(skeletonData.findSkin(`Pattern/Appy/${horseData.appyPattern}`));
+                skin.addSkin(skeletonData.findSkin(`Pattern/Pinto/${horseData.pintoExpression === 0 ? 0 : `Expression${horseData.pintoExpression}/${horseData.pintoPattern}`}`));
+                skin.addSkin(skeletonData.findSkin(`Pattern/Flecked/${horseData.fleckedPattern}`));
+                skin.addSkin(skeletonData.findSkin(`Mane/${horseData.mane}`));
+                skin.addSkin(skeletonData.findSkin(`Forelock/${horseData.forelock}`));
+            skeleton.skeleton.setSkin(skin);
+            skeleton.skeleton.setToSetupPose();
+        }
+
+        function tintHorse(horsePic) {
+            let shade = 1
+
+            // Hair
+            changeTint(horsePic, 'Mane', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+            changeTint(horsePic, 'Forelock', horseData.hairColor.r, horseData.hairColor.g, horseData.hairColor.b, shade)
+
+            // Body
+            changeTint(horsePic, 'Ear', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+            changeTint(horsePic, 'Base', horseData.bodyColor.r, horseData.bodyColor.g, horseData.bodyColor.b, shade)
+
+            // Dark
+            changeTint(horsePic, 'Dark', horseData.darkColor.r, horseData.darkColor.g, horseData.darkColor.b, shade)
+
+            // White
+            changeTint(horsePic, 'Appy', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+            changeTint(horsePic, 'Flecked', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+            changeTint(horsePic, 'Pinto', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+
+            if (horseData.whiteMatches) {
+                changeTint(horsePic, 'Star', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horsePic, 'Snip', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+                changeTint(horsePic, 'Stripe', horseData.whiteColor.r, horseData.whiteColor.g, horseData.whiteColor.b, shade)
+            }
+        }
+
+        function changeTint(skeleton, part, r, g, b, shade) {
+            skeleton.skeleton.findSlot(`${part}`).color.r = r
+            skeleton.skeleton.findSlot(`${part}`).color.g = g
+            skeleton.skeleton.findSlot(`${part}`).color.b = b
+            
+            if (shade !== 0) {
+                skeleton.skeleton.findSlot(`${part}`).darkColor = {r: r-shade, g: g-shade, b: b-shade, a: 1}
+            } else {
+                skeleton.skeleton.findSlot(`${part}`).darkColor = null
+            }
+        }
     }
 }
