@@ -1264,6 +1264,9 @@ class dressupStable extends Phaser.Scene
                     save()
                 })
 
+        if (getCurrentUsername() === "guest")
+            saveButton.setVisible(false);
+
         // music button
         const musicButton = this.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });
             musicButton.on('pointerdown', function (pointer)

@@ -537,4 +537,9 @@ function getGameID(game)
         case "MyThings": return "THI";
     }
 }
+
+function getCurrentUsername()
+{
+    return currentUser;
+}
 //------- END HELPERS -------
