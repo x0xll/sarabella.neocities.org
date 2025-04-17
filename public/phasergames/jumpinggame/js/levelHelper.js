@@ -607,11 +607,11 @@ class LevelHelper {
 
                             var gemTxt = scene.add.text(gem.x, gem.y, points, helper.gemsScoreTxtStyle).setOrigin(.5, .5)
                             gemTxt.alpha = 0
-                            var gemsTxtDatas = {
+                            var gemsTxtData = {
                                 txt : gemTxt,
                                 currenFrameVisible : 0
                             }
-                            scene.gemsScoreTxt.push(gemsTxtDatas)
+                            scene.gemsScoreTxt.push(gemsTxtData)
 
                             helper.score += points
                             scene.scoreText.text = helper.score
@@ -664,6 +664,7 @@ class LevelHelper {
                             scene.horseshoeText.text = scene.horseshoes + " x ";
                             scene.horseshoeText.setPosition(320-scene.horseshoeText.width/2, 35-scene.horseshoeText.height/2);
                             scene.data.horseshoeSound.play()
+                            addHorseshoes(1);
                         }
                 },
                 null,
@@ -697,6 +698,8 @@ class LevelHelper {
                             levelText.text = langData.succeed_title;
                             buttonText.text = langData.succeed_level_select;
                             scene.data.levelUnlocked[helper.levelNumber] = scene.canUnlockNext
+                            if (scene.canUnlockNext)
+                                updateLevelReached(helper.levelNumber + "@SpectacularJumpingGame");
                         }
                         else {
                             levelText.text = langData.fail_title;

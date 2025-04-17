@@ -117,7 +117,7 @@ class StartScreen extends Phaser.Scene
     {
         if (nextScreen) {
             nextScreen = false
-            this.scene.start('Level', {backgroundMusic: this.data.backgroundMusic, currentLevel: this.data.currentLevel, playMusic: this.data.playMusic});
+            this.scene.start('Level', {backgroundMusic: this.data.backgroundMusic, currentLevel: this.data.currentLevel, playMusic: this.data.playMusic, currentPracticeScore: 0});
         }
     }
 

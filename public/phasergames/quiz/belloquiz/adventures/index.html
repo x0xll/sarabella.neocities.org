@@ -16,11 +16,13 @@
 
     <script src="/language.js"></script>
 
-    <body style="text-align: center;"  onload="loadLanguagePref()"></body>>
+    <body style="text-align: center;"  onload="loadLanguagePref(); setupUserDropdown(); updateHighscore('AdventuresQuiz')"></body>>
         <script src="/header.js"></script>
 
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
+                let currentGameID = "AdventuresQuiz";
+
                 // Gets lang file
                 loadLanguagePref(false); 
                 lang = getCurrentLanguageCode()
@@ -61,13 +63,15 @@
         
             </script>
         </div>
-        
+        <p id="highscore" style="color: white; text-align: center;"><b>Highscore: </b></p>
+
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
             <a href="https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a>
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
 
     </body>
 </html>
