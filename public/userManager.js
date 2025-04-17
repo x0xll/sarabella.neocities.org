@@ -380,7 +380,7 @@ function loadData(dataType, gameID = "")
             case DATA_TYPE_LEVEL:
                 return 0;
             case DATA_TYPE_CREATIONS:
-                return "";
+                return null;
         }
     }
 
@@ -405,7 +405,7 @@ function loadData(dataType, gameID = "")
                 case DATA_TYPE_CREATIONS:
                     if (savedData.gameData[i].creations === undefined)
                         return "";
-                    return savedData.gameData[i].creations;
+                    return JSON.parse(savedData.gameData[i].creations);
             }
         }
     }
