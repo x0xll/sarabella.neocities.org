@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
-        <script src="https://unpkg.com/@esotericsoftware/spine-phaser@4.1.*/dist/iife/spine-phaser.js"></script>
+        <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script> 
         <script src="./js/dressup.js"></script> 
         <script src="./js/dressupLandStable.js"></script> 
@@ -18,7 +18,7 @@
 
     <script src="/language.js"></script>
     
-    <body style="text-align: center;" onload="loadLanguagePref()">
+    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
@@ -79,6 +79,7 @@
           </div>
         
           <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
 
     </body>
 </html>

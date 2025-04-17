@@ -10,12 +10,15 @@
             "name": "Gridloch"
         },
         {
+            "name": "LauraAntunes1"
+        },
+        {
             "name": "SinGala"
         }
         ]
     },
     {
-        "title" : "Japanese Translator",
+        "title" : "Japanese Translators",
         "people" :[
         {
             "name": "bellasaraarchivist"
@@ -23,7 +26,7 @@
         ]
     },
     {
-        "title" : "Swedish Translator",
+        "title" : "Swedish Translators",
         "people" :[
         {
             "name": "Rubenite"
@@ -31,7 +34,7 @@
         ]
     },
     {
-        "title" : "Czech Translator",
+        "title" : "Czech Translators",
         "people" :[
         {
             "name": "Shailynn"
@@ -39,8 +42,11 @@
         ]
     },
     {
-        "title" : "French Translator",
+        "title" : "French Translators",
         "people" :[
+        {
+            "name": "Low! ♥ ᴵ ˡᵒᵛᵉ ᵀʷᵉᵉ ♥"
+        },
         {
             "name": "SinGala"
         }

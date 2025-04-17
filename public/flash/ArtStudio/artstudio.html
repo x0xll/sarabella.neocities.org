@@ -9,15 +9,8 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown(); updateSWFLocaleDatas('ArtStudio');">
         <script src="/header.js"></script>
-
-        <div class="alert">
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n="artstudio_warning">
-            This game is missing the files for the original horses.
-          </p>
-        </div> 
         
         <script>
           window.RufflePlayer = {
@@ -47,10 +40,16 @@
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
           swfPlayer.src = './swf/ArtStudio.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `gameWrapperPath=flash/ArtStudio/common/gamewrapper.swf&locale=${locale}&lang=${locale}&gameWrapperHelpPath=flash/ArtStudio/common/gamewrapperHelp.swf`);
+
+          // Temporary prevent using the jap version since the characters are broken
+          if (locale == "ja")
+            locale = "en";
+
+          swfPlayer.setAttribute("flashvars", `locale=${locale}&lang=${locale}`);
           swfParent.appendChild(swfPlayer);
         </script>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
   </body>
 </html>

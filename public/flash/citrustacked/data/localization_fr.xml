@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+	<gameTitle>Citrustacked</gameTitle>
+	<story_mode_btn>Mode histoire</story_mode_btn>
+	<practice_mode_btn>Mode entraînement</practice_mode_btn>
+	<howtoplay_btn>Comment jouer</howtoplay_btn>
+	<help_btn>Aide</help_btn>
+	<quit_btn>Quitter</quit_btn>
+	<back_btn>Retour</back_btn>
+	<play_again_btn>Rejouer</play_again_btn>
+	<continue_btn>Continuer</continue_btn>
+	<try_again_btn>Réessayer</try_again_btn>
+	<return_btn>Carte du monde</return_btn>
+	<score_label>Score</score_label>
+	<level_label>Niveau</level_label>
+	
+	<how_to_play_start>Aide les Citrustacks à traverser Canter Hollow pour arriver à la grande fête!</how_to_play_start>
+	
+	<board_cleared_title>Niveau terminé</board_cleared_title>
+	<board_cleared_message>Pas mal!</board_cleared_message>
+	
+	<lose_title>Oops!</lose_title>
+	<lose>Rejouer</lose>
+	
+	<how_to_play>Capture plusieurs Citrustacks de la même couleur et envoie-les en voyage! Plus tu en captures en même temps, plus tu marques de points!</how_to_play>
+	<how_to_play2>Passe ton pointeur de souris sur les Citrustacks pour les capturer et clique pour les envoyer! Joue au mode histoire et gagne des récompenses! Aide les Citrustacks à traverser Canter Hollow pour arriver à la fête! Bonne chance!</how_to_play2>
+	<checkpoint1>Tu te débrouilles bien. Maintenant, partons de la maisonnette de Maman Douceur et allons à la fête de Canter Hollow.</checkpoint1>
+	<checkpoint2>Continue comme ça! Tu vois ces jolies tentes et ces drapeaux? Cela signifie que le bazar est juste devant.</checkpoint2>
+	<checkpoint3>Fantastique! Tu as traversé le bazar sans dépenser tous tes fers à cheval.</checkpoint3>
+	<checkpoint4>Tu es à mi-chemin! Bien joué!</checkpoint4>
+	<checkpoint5>Quel talent! Entends-tu la musique et sens-tu la bonne odeur de cuisine ? La fête n'est plus très loin.</checkpoint5>
+	<checkpoint6>Regarde tout le chemin que tu as fait! La fête est si proche ! Regarde toutes ces attractions et ces beaux poneys.</checkpoint6>
+	<checkpoint7>Tu es presque au bout de ton voyage. Entends-tu la joyeuse musique de l'orgue de barbarie? Regarde ! Il y a une place dans le manège pour toi ! Tu peux y arriver!</checkpoint7>
+	<checkpoint8>Tu as réussi! Tu as bien gagné un bon sorbet ou une barbe à papa en nuage!</checkpoint8>
+	
+	<win_title>Félicitations!</win_title>
+	<win>Tu as terminé ton voyage et atteint la fête!</win>
+	<final_score_label>Score final:</final_score_label>
+</root>

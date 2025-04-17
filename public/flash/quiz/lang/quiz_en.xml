@@ -57,7 +57,7 @@
     <result>Correct answers = </result>
     <expert>Great! You must be an expert</expert>
     <nice>Well done, you know a lot about horses!</nice>
-    <lose>Sorry, maybe you should try again!</nice>
+    <lose>Sorry, maybe you should try again!</lose>
 
     <horseColor1>Grey</horseColor1>
     <horseColor2>Chestnut</horseColor2>
