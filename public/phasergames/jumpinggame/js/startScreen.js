@@ -70,7 +70,7 @@ class StartScreen extends Phaser.Scene
         const levelFiona = game.add.image(365, 240, 'levelFiona').setScrollFactor(0).setVisible(false)
             levelFiona.on('pointerdown', function (pointer) { nextScreen = 'LevelTwo'});
         const levelJewel = game.add.image(520, 240, 'levelJewel').setScrollFactor(0).setVisible(false)
-            // levelJewel.on('pointerdown', function (pointer) { nextScreen = 'LevelThree'});
+            levelJewel.on('pointerdown', function (pointer) { nextScreen = 'LevelThree'});
         const levelThunder = game.add.image(670, 240, 'levelThunder').setScrollFactor(0).setVisible(false)
             // levelThunder.on('pointerdown', function (pointer) { nextScreen = 'LevelFour'});
         const levelHover = game.add.image(444, 240, 'levelHover').setScrollFactor(0).setVisible(false)

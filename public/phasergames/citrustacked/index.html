@@ -19,7 +19,7 @@
 
     <script src="/language.js"></script>
 
-    <body style="text-align: center;"  onload="loadLanguagePref()">
+    <body style="text-align: center;"  onload="loadLanguagePref(); setupUserDropdown(); updateHighscore('Citrustacked')">
         <script src="/header.js"></script>
 
         <div class="alert">
@@ -86,12 +86,15 @@
             </script>
         </div>
         
+        <p id="highscore" style="color: white; text-align: center;"><b>Highscore: </b></p>
+
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
             <a href="https://bellasara.wiki.gg/wiki/Citrustacked" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
 
     </body>
 </html>
