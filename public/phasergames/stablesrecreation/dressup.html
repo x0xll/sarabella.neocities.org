@@ -20,8 +20,9 @@
     <script src="/save.js"></script> 
     <script src="/language.js"></script>
     
-    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
+    <body style="text-align: center;" onload="loadLanguagePref();">
         <script src="/header.js"></script>
+        <script src="/userManager.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
                 loadLanguagePref(false);
@@ -45,8 +46,9 @@
 
                 let loadInto = `Stables`
 
+                setupUserDropdown()
                 const MAX_SAVED_HORSES = 10
-                let savedHorses = loadFromLocalStorage("dressuphorsesBellaSaraNeoCity")
+                let savedHorses = loadData(DATA_TYPE_CREATIONS, getGameID("DressUp"))
                 if (savedHorses != null)
                 {
                     savedHorses = JSON.parse(savedHorses);
@@ -92,7 +94,6 @@
           </div>
         
           <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
 
     </body>
 </html>
