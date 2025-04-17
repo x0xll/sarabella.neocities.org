@@ -333,6 +333,7 @@ class dressupStableSelector extends Phaser.Scene
             card.on('pointerup', () => 
                 {
                     if (displayHorses[i] !== 'card_empty') {
+                        // TODO : change to public adress
                         window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}&indexSaved=${i}`, '_self');
                     }
                 });
@@ -360,7 +361,8 @@ class dressupStableSelector extends Phaser.Scene
             nameplate.on('pointerup', () => 
             {
                 if (displayHorses[i] !== 'card_empty') {
-                    window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${displayHorses[i]}`, '_self');
+                    // TODO : change to public adress
+                    window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}`, '_self');
                 }
             });
             nameplate.on('pointerdown', () => {
