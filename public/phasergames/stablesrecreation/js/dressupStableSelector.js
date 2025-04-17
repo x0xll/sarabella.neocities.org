@@ -53,6 +53,7 @@ class dressupStableSelector extends Phaser.Scene
         this.load.audio('soundtrack', ['./sounds/selector_soundtrack.mp3']);
 
         this.load.image('delete', './images/deleteBtn.png');
+        this.load.image('deleted_element', './images/deletedElement.png');
     }
 
     create ()
@@ -211,6 +212,7 @@ class dressupStableSelector extends Phaser.Scene
             let yPosDelete = 25
             if (i > 4)
             {
+                yPosImg += 247
                 yPosNameplate += 247;
                 yPosDelete = 275;
             }
@@ -225,7 +227,8 @@ class dressupStableSelector extends Phaser.Scene
             horseData.nameplate = this.add.image(xPosNameplate, yPosNameplate, 'nameplate').setInteractive()
             horseData.cardText = this.add.text(xPosNameplate, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
             horseData.cardText.setPosition(xPos-horseData.cardText.width/2, yPosNameplate-horseData.cardText.height/2);
-            horseData.deleteBtn = this.add.image(xPosDelete, yPosDelete, 'delete').setOrigin(0, 0).setInteractive();
+            horseData.deletedIcon = this.add.image(xPos, yPosImg, 'deleted_element').setVisible(false);
+            horseData.deleteBtn = this.add.image(xPosDelete, yPosDelete, 'delete').setOrigin(0, 0).setScale(.35).setInteractive().setVisible(false);
 
             this.stableVisibleHorses.push(horseData);
         }
@@ -382,6 +385,7 @@ class dressupStableSelector extends Phaser.Scene
                 {
                     // Recover the horse if click on delete button anew
 
+                    game.stableVisibleHorses[i].deletedIcon.setVisible(false);
                     let firstPart = savedHorses.splice(0, i);
                     let secondPart = savedHorses.splice(i, savedHorses.length - i);
 
@@ -398,6 +402,7 @@ class dressupStableSelector extends Phaser.Scene
                 }
 
                 // Delete horse (temp until change page)
+                game.stableVisibleHorses[i].deletedIcon.setVisible(true);
                 savedHorses.splice(i, 1);
                 updateCreations(JSON.stringify(savedHorses) + "@DressUp")
                 //saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
@@ -427,6 +432,8 @@ class dressupStableSelector extends Phaser.Scene
                 card.setTexture(displayHorses[cardNumber])
             else
             {
+                game.stableVisibleHorses[cardNumber].deleteBtn.setVisible(true);
+
                 setSkin(card, cardNumber);
                 tintHorse(card, cardNumber);
             }
