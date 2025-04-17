@@ -52,7 +52,7 @@ class dressupStableSelector extends Phaser.Scene
         this.load.audio('click_sound', ['./sounds/selector_click.mp3']);
         this.load.audio('soundtrack', ['./sounds/selector_soundtrack.mp3']);
 
-        this.load.image('delete', './images/deleteBtn.png');
+        this.load.atlas('delete', './images/deleteBtn.png', './images/deleteBtn.json');
         this.load.image('deleted_element', './images/deletedElement.png');
     }
 
@@ -228,7 +228,7 @@ class dressupStableSelector extends Phaser.Scene
             horseData.cardText = this.add.text(xPosNameplate, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
             horseData.cardText.setPosition(xPos-horseData.cardText.width/2, yPosNameplate-horseData.cardText.height/2);
             horseData.deletedIcon = this.add.image(xPos, yPosImg, 'deleted_element').setVisible(false);
-            horseData.deleteBtn = this.add.image(xPosDelete, yPosDelete, 'delete').setOrigin(0, 0).setScale(.35).setInteractive().setVisible(false);
+            horseData.deleteBtn = this.add.sprite(xPosDelete, yPosDelete, 'delete', 'delete').setOrigin(0, 0).setScale(.35).setInteractive().setVisible(false);
 
             this.stableVisibleHorses.push(horseData);
         }
@@ -333,8 +333,7 @@ class dressupStableSelector extends Phaser.Scene
             card.on('pointerup', () => 
                 {
                     if (displayHorses[i] !== 'card_empty') {
-                        // TODO : change to public adress
-                        window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}&indexSaved=${i}`, '_self');
+                        window.open(`./dressup.html?selector=false${horses[i]}&indexSaved=${i}`, '_self');
                     }
                 });
             card.on('pointerdown', () => {
@@ -348,10 +347,6 @@ class dressupStableSelector extends Phaser.Scene
                     hoverGlow.setPosition(card.x, card.y).setVisible(true)
                     sparkle.setPosition(card.x, card.y).setVisible(true)
                 }
-                else if (i === 9) {
-                    hoverSound.play()
-                    sparkle.setPosition(card.x, card.y + 15).setVisible(true)
-                }
             });
             card.on('pointerout', () => {
                 hoverGlow.setVisible(false)
@@ -361,8 +356,7 @@ class dressupStableSelector extends Phaser.Scene
             nameplate.on('pointerup', () => 
             {
                 if (displayHorses[i] !== 'card_empty') {
-                    // TODO : change to public adress
-                    window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}`, '_self');
+                    window.open(`./dressup.html?selector=false${horses[i]}`, '_self');
                 }
             });
             nameplate.on('pointerdown', () => {
@@ -388,6 +382,7 @@ class dressupStableSelector extends Phaser.Scene
                     // Recover the horse if click on delete button anew
 
                     game.stableVisibleHorses[i].deletedIcon.setVisible(false);
+                    deleteBtn.setFrame('delete');
                     let firstPart = savedHorses.splice(0, i);
                     let secondPart = savedHorses.splice(0, savedHorses.length);
 
@@ -407,6 +402,7 @@ class dressupStableSelector extends Phaser.Scene
 
                 // Delete horse (temp until change page)
                 game.stableVisibleHorses[i].deletedIcon.setVisible(true);
+                deleteBtn.setFrame('save');
                 savedHorses.splice(i, 1);
                 updateCreations(JSON.stringify(savedHorses) + "@DressUp")
                 //saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
