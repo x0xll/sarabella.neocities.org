@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
       <title data-il8n="game_babybella">Baby Bella</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
@@ -8,7 +9,7 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         
         <script>
@@ -34,6 +35,7 @@
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>

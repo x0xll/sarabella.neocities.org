@@ -57,7 +57,7 @@
     <result>Antal rigtige svar = </result>
     <expert>Float! Du er jo nærmest ekspert</expert>
     <nice>Godt gået, du ved jo en hel del om heste!</nice>
-    <lose>Desværre, måske skulle du prøve igen!</nice>
+    <lose>Desværre, måske skulle du prøve igen!</lose>
 
     <horseColor1>Skimmel</horseColor1>
     <horseColor2>Kastanje</horseColor2>

@@ -35,7 +35,7 @@
 		    <P><FONT SIZE="18"><B>Une oeuvre d'art par :</B></FONT></P>
 	    </Text>
 		<Text id="txtPrintAngel">
-		<P><FONT SIZE="24">Anemone</FONT></P>
+		<P><FONT SIZE="24">Angel</FONT></P>
 		</Text>
 		<Text id="txtPrintBlank">
 			<P><FONT SIZE="24">Mon Oeuvre d'Art</FONT></P>
@@ -44,7 +44,7 @@
 			<P><FONT SIZE="24">Peter</FONT></P>
 		</Text>
 		<Text id="txtPrintTiffi">
-			<P><FONT SIZE="24">Nori</FONT></P>
+			<P><FONT SIZE="24">Tiffi</FONT></P>
 		</Text>
 		<Text id="txtFromMe">
 		    <P><FONT SIZE="16">Moi</FONT></P>
@@ -92,7 +92,7 @@
 		<P><FONT SIZE="26">NOUVEAU</FONT></P>
 	</Text>
 	<Text id="txtAngelButton">
-		<P><FONT SIZE="18">Anemone</FONT></P>
+		<P><FONT SIZE="18">Angel</FONT></P>
 	</Text>
 	<Text id="txtBlankButton">
 		<P><FONT SIZE="18">Vide</FONT></P>
@@ -101,7 +101,7 @@
 		<P><FONT SIZE="18">Peter</FONT></P>
 	</Text>
 	<Text id="txtTiffiButton">
-		<P><FONT SIZE="18">Nori</FONT></P>
+		<P><FONT SIZE="18">Tiffi</FONT></P>
 	</Text>
 	<Text id="txtAreYouSureDialog">
 		<P><FONT SIZE="15">Es-tu sur de vouloir supprimer cette création de ta gallerie ?</FONT></P><P><FONT SIZE="15"/></P>

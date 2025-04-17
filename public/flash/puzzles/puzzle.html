@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="/images/favicons/favicon.ico">
         <title data-il8n="game_puzzles">Puzzles</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
@@ -9,7 +10,7 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         
         <script>
@@ -28,19 +29,7 @@
                 <script src="./swfobject.js" type="text/javascript"></script>
                 <div id="header"></div>
                 <div id="body">
-                    <script type="text/javascript">
-                        const queryString = window.location.search;
-                        const urlParams = new URLSearchParams(queryString);
-                        const image = urlParams.get('image')
-    
-                        var fo = new FlashObject("./puzzleEngine.swf", "body", "887", "521", "8", "493D75");
-                        fo.addParam("wmode", "transparent");
-                        fo.addVariable("nbrRows", "6");
-                        fo.addVariable("nbrColumns", "8");
-                        fo.addVariable("", "");
-                        fo.addVariable("stgImage", "images/puzzles_" + image + ".jpg");
-                        fo.write("body");
-                    </script>
+
                 </div>
             </form>
         </div>
@@ -56,6 +45,37 @@
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+        <script type="text/javascript">
+          function urlExists(url)
+          {
+              var http = new XMLHttpRequest();
+              http.open('HEAD', url, false);
+              http.send();
+              return http.status!=404;
+          }
+
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfLocalized = `./swf/en_puzzleEngine.swf`
+
+          if (urlExists(`./swf/${locale}_puzzleEngine.swf`))
+            swfLocalized = `./swf/${locale}_puzzleEngine.swf`
+
+
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const image = urlParams.get('image')
+
+            var fo = new FlashObject(swfLocalized, "body", "887", "521", "8", "493D75");
+            fo.addParam("wmode", "transparent");
+            fo.addVariable("nbrRows", "6");
+            fo.addVariable("nbrColumns", "8");
+            fo.addVariable("", "");
+            fo.addVariable("stgImage", "images/puzzles_" + image + ".jpg");
+            fo.write("body");
+        </script>
   </body>
 </html>
 

@@ -1,46 +1,44 @@
 <?xml version="1.0"?>
 <root>
-
-	<!-- button text goes here -->
-	<help_btn>Hjälp</help_btn>
-	<pause_btn>Pausa</pause_btn>
-	<start_btn>Starta Spel</start_btn>
-
-	<turbobtn>Spela Turbo</turbobtn>
-
-	<pauseheading>Ditt Spel är Pausat</pauseheading>
-	<pause2>Stäng detta fönstret för att fortsätta spela.</pause2>
-
-	<how_to_play_btn>Hur Man Spelar</how_to_play_btn>
-
-	<play_again_btn>Spela Igen</play_again_btn>
-
-	<!-- intro text goes here -->
-	<intro>Intro från XML!</intro>
-
-	<!-- how to play title goes here -->
-	<how_to_play_title>Hur Man Spelar</how_to_play_title>
-
-	<!-- how to play text goes here -->
-	<how_to_play2>Ju längre ifrån musen är från Treasure desto snabbare rör du dig.
-
+        <!-- button text goes here -->
+        <help_btn>Hjälp</help_btn>
+        <pause_btn>Pausa</pause_btn>
+        <start_btn>Starta Spel</start_btn>
+        <turbobtn>Spela Turbo</turbobtn>
+        <pauseheading>Ditt Spel är Pausat</pauseheading>
+        <pause2>Stäng detta fönstret för att fortsätta spela.</pause2>
+        <how_to_play_btn>Hir Man Spelar</how_to_play_btn>
+        <play_again_btn>Spela Igen</play_again_btn>
+        <!-- intro text goes here -->
+        <intro>Intro Från XML!</intro>
+        <!-- how to play title goes here -->
+        <how_to_play_title>Hur Man Spelar</how_to_play_title>
+        <!-- how to play text goes here -->
+        <how_to_play2>Ju längre ifrån musen är från Treasure desto snabbare rör du dig.
 Elektriska ålar och maneter kommer att bränna dig, då kommer du att röra dig långsammare.
-
 Bubblor ger dig ny energi så du kan rör dig snabbare.
-
 Fiskstim hjälper dig simma snabbare.
-
 Pärlor håller dig säker från alla faror en kort stund. 
-
-Spelet är slut när bubbel timern (under poängen) spricker..</how_to_play2>
-
-	<!-- win message -->
-	<win>Bra Simmat!</win>
-	
-	<win2>Du har kommit till slutet på din resa.
+Spelet är slut när bubbel timern (under poängen) spricker.</how_to_play2>
+        <intro_howto>Använd din mus och guida Treasure genom det öppna havet för att samla speciella fiskar, snäckor och andra magiska föremål innan tiden rinner ut. Se upp för maneter och elektriska ålar! De kommer göra dig långsammare. Fiskstim och bubblor hjälper dig att bli snabbare.</intro_howto>
+        <!-- win message -->
+        <win>Bra Simmat!</win>
+        
+        <win2>Du har kommit till slutet på din resa.
 Det finns inget mer att samla.</win2>
-	
-	<!-- control panel score text goes here -->
-	<current_score>Poäng</current_score>
-
+        
+        <!-- control panel score text goes here -->
+        <current_score>Poäng</current_score>
+        <!-- combos texts -->
+        <ofakind> i sitt slag: </ofakind>
+        <variety>Variation </variety>
+        <plus>Plus: </plus>
+        <cross>Kors: </cross>
+        <corners>Hörnen: </corners>
+        <threerow>3 i vågrätt: </threerow>
+        <threecol>3 i lodrätt: </threecol>
+        <threediag>3 i diagonal: </threediag>
+        <!-- Non translated texts in original -->
+        <goodLuck>Lycka Till!</goodLuck>
+        <bonusTime>Bonus Tid</bonusTime>
 </root>
