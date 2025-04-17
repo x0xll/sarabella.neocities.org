@@ -178,16 +178,19 @@ class dressupStableSelector extends Phaser.Scene
         for (let i = 0; i < 10; i++)
         {
             let xPos = 122;
+            let xPosNameplate = 122;
             let xPosDelete = 50;
             if (i < 5)
             {
                 xPos += i * 158;
                 xPosDelete += i * 160;
+                xPosNameplate += i * 160
             }
             else
             {
                 xPos += (i -5) * 158
                 xPosDelete += (i -5) * 160
+                xPosNameplate += (i -5) * 160
             }
 
             let yPosImg = 124;
@@ -206,8 +209,8 @@ class dressupStableSelector extends Phaser.Scene
                 horseData.card = this.add.image(xPos, 124, displayHorses[i]).setInteractive()
             else
                 horseData.card = this.add.spine(xPos, 124, 'horsePicJson', `horsePicAtlas`).setInteractive();
-            horseData.nameplate = this.add.image(xPos, yPosNameplate, 'nameplate').setInteractive()
-            horseData.cardText = this.add.text(xPos, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
+            horseData.nameplate = this.add.image(xPosNameplate, yPosNameplate, 'nameplate').setInteractive()
+            horseData.cardText = this.add.text(xPosNameplate, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
             horseData.cardText.setPosition(xPos-horseData.cardText.width/2, yPosNameplate-horseData.cardText.height/2);
             horseData.deleteBtn = this.add.image(xPosDelete, yPosDelete, 'delete').setOrigin(0, 0).setInteractive();
 
@@ -420,7 +423,7 @@ class dressupStableSelector extends Phaser.Scene
                 nameplate.setVisible(true)
                 text.setVisible(true)
                 const textMove = text.width
-                text.text = horseNames[(page*displayHorses.length) + cardNumber]
+                text.text = game.loadedHorses[cardNumber].name
                 text.setPosition(text.x+(textMove/2)-(text.width / 2), text.y);
                 
             } else if (displayHorses[cardNumber] === 'card_empty' && cardNumber < 5) {
@@ -432,7 +435,7 @@ class dressupStableSelector extends Phaser.Scene
                 nameplate.setVisible(true)
                 text.setVisible(true)
                 const textMove = text.width
-                text.text = horseNames[(page*displayHorses.length) + cardNumber]
+                text.text = game.loadedHorses[cardNumber].name
                 text.setPosition(text.x+(textMove/2)-(text.width / 2), text.y);
             } else if (displayHorses[cardNumber] === 'card_empty') {
                 card.setY(385).setScale(1.05)
