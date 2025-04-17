@@ -9,7 +9,7 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
 
         <div class="alert">
@@ -34,6 +34,7 @@
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>
@@ -47,6 +48,7 @@
           swfPlayer.src = 'bazaar.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
           swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfPlayer.setAttribute("wmode", `transparent`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>

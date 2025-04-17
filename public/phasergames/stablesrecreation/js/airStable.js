@@ -122,6 +122,7 @@ class AirStable extends Phaser.Scene
         this.load.atlas('music_button', './images/airStable/music.png', './images/airStable/music.json');
         this.load.atlas('help_button', './images/airStable/help.png', './images/airStable/help.json');
         this.load.image('stat_box', './images/StatBox.png');
+        this.load.image('goworld_box', './images/airStable/ToWorldBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -849,7 +850,36 @@ function pointerout(sprite) {
             statBoxText = this.add.text(695, 120, 'Static Text Object', hoverTextSettings).setAlpha(0);
             statBoxText.setOrigin(.5, .5)
 
+        // Text box to display stat messages
+        statBox = this.add.image(625, 130, 'stat_box').setAlpha(0)
+        statBoxText = this.add.text(625, 130, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        // statBoxText.text = localeData[horseName + "Name"];
+        statBoxText.setOrigin(.5, .5)
 
+        // Go to BeSa World
+        const hoverTextSettingsSmall = { 
+            font: 'bold 12px Arial', 
+            align: 'center',
+            color: '#ffffff',
+            wordWrap: { width: 100 }
+        }
+        const gotoWorldBg = this.add.image(715, 125, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(.8);
+        const gotoWorldTxt = this.add.text(715, 130, 'Static Text Object', hoverTextSettingsSmall).setAlpha(0).setOrigin(.5, .5);
+        gotoWorldTxt.text = localeData.txtToWorld;
+        gotoWorldBg.on('pointerover', function (pointer)
+            {
+                gotoWorldBg.setAlpha(1);
+                gotoWorldTxt.setAlpha(1);
+            });
+        gotoWorldBg.on('pointerout', function (pointer) 
+            { 
+                gotoWorldBg.setAlpha(0.01);
+                gotoWorldTxt.setAlpha(0);
+            });
+        gotoWorldBg.on('pointerdown', function (pointer)
+            {
+                window.location.href = '/flash/worldmap/worldmap_new.html'
+            });
 
         // ---------- Stable foreground and UI ---------- //
         this.add.image(444, 261, 'stable_fg');

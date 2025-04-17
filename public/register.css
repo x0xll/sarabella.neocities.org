@@ -1,0 +1,47 @@
+#signup-container {
+    width: 743px;
+    /* background-color: aliceblue; */
+    margin: 20px auto;
+}
+
+#headerimg {
+    transform: translate(-2px, 0);
+}
+.signup-header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -98px);
+    font-weight: bold;
+    font-size: 23px;
+    color: #673570;
+}
+
+#signup-body {
+    height: 100%;
+    /* padding: 20px;  */
+    background: url('/images/user/product-border.png') repeat-y; 
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+#signup-bg {
+    background: #e5bbf5 url('/images/user/product-bg.jpg') repeat-x; 
+    transform: translate(0, -4px);
+}
+
+.signup-step {
+    background-color: #CC99FE;
+    border: solid #7E3DA3;
+    margin: 10px;
+    padding: 10px
+}
+
+.signup-left,
+.signup-right {
+    flex:1
+}
+
+.signup-step h2 {
+    font-size: 18px;
+    color: #000000;
+}

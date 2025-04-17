@@ -14,12 +14,14 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
 
         <div class="alert">
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n="citrustacked_warning"></p>
+          <p data-il8n="citrustacked_warning">
+            To reach the playable part of the game, you'll need to do right-click "Play" 6 times in a row. The text is not yet appearing correctly.
+          </p>
         </div> 
         
         <script>
@@ -39,6 +41,7 @@
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>
