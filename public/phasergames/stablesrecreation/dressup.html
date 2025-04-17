@@ -7,6 +7,7 @@
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script> 
+        <script src="./js/dressupStableSelector.js"></script> 
         <script src="./js/dressup.js"></script> 
         <script src="./js/dressupLandStable.js"></script> 
         <style type="text/css">
@@ -16,10 +17,12 @@
         </style>
     </head>
 
+    <script src="/save.js"></script> 
     <script src="/language.js"></script>
     
-    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
+    <body style="text-align: center;" onload="loadLanguagePref();">
         <script src="/header.js"></script>
+        <script src="/userManager.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
                 loadLanguagePref(false);
@@ -43,6 +46,17 @@
 
                 let loadInto = `Stables`
 
+                setupUserDropdown()
+                const MAX_SAVED_HORSES = 10
+                let savedHorses = loadData(DATA_TYPE_CREATIONS, getGameID("DressUp"))
+                if (savedHorses != null && savedHorses.length > 0)
+                {
+                    savedHorses = savedHorses;
+
+                    if (!urlParameters.get('selector') ||  urlParameters.get('selector') === true)
+                        loadInto = 'dressupStableSelector'
+                }
+
                 let config = {
                     parent: "gameDiv",
                     dom: {
@@ -59,6 +73,7 @@
                     },
                     scene: [
                         Load,
+                        dressupStableSelector,
                         dressupStable,
                         dressupLandStable
                     ]
@@ -79,7 +94,6 @@
           </div>
         
           <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
 
     </body>
 </html>

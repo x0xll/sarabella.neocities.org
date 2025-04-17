@@ -320,7 +320,13 @@ function saveData(dataType, userData, gameID = "")
             {
                 case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
                 case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
-                case DATA_TYPE_CREATIONS: savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                case DATA_TYPE_CREATIONS:
+                    switch(gameID)
+                    {
+                        case getGameID("ArtStudio"): savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                        default: savedData.gameData[i].creations = userData; break;
+                    }
+                    break;
             }
         }
 
@@ -335,7 +341,13 @@ function saveData(dataType, userData, gameID = "")
             {
                 case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
                 case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
-                case DATA_TYPE_CREATIONS: currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                case DATA_TYPE_CREATIONS: 
+                    switch(gameID)
+                    {
+                        case getGameID("ArtStudio"): currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                        default: currentGameData.creations = userData; break;
+                    }
+                    break;
             }
 
             savedData.gameData.push(currentGameData);
@@ -368,7 +380,7 @@ function loadData(dataType, gameID = "")
             case DATA_TYPE_LEVEL:
                 return 0;
             case DATA_TYPE_CREATIONS:
-                return "";
+                return null;
         }
     }
 
@@ -393,7 +405,7 @@ function loadData(dataType, gameID = "")
                 case DATA_TYPE_CREATIONS:
                     if (savedData.gameData[i].creations === undefined)
                         return "";
-                    return savedData.gameData[i].creations;
+                    return JSON.parse(savedData.gameData[i].creations);
             }
         }
     }
@@ -404,9 +416,9 @@ function loadData(dataType, gameID = "")
             if (savedData.horseshoes === undefined)
                 return 0;
             return savedData.horseshoes;
+        case DATA_TYPE_CREATIONS:
+            return null;
     }
-
-    return 0;
 }
 
 function addHorseshoes(amountAdded)
