@@ -61,6 +61,14 @@ class dressupStableSelector extends Phaser.Scene
 
         horses = savedHorses
         game.loadedHorses = [];
+        
+        
+        function splitHex(color) {
+            let r = ((color & 0xff0000) >> 16)/255
+            let g = ((color & 0x00ff00) >> 8)/255
+            let b = (color & 0x0000ff)/255
+            return { color: color, r:r, g:g, b:b };
+        }
 
         // Creates an array of the horses actual names to be displayed
         for (let index = 0; index < savedHorses.length; index++) {
@@ -147,6 +155,11 @@ class dressupStableSelector extends Phaser.Scene
             horseData.fleckedPattern = parseInt(optionsData.slice(16, 17))
             horseData.darkMarkings = parseInt(optionsData.slice(17, 18))
 
+            horseData.bodyColor = splitHex(horseData.bodyColor)
+            horseData.hairColor = splitHex(horseData.hairColor)
+            horseData.darkColor = splitHex(horseData.darkColor)
+            horseData.whiteColor = splitHex(horseData.whiteColor)
+
             game.loadedHorses.push(horseData);
         };
 
@@ -205,10 +218,11 @@ class dressupStableSelector extends Phaser.Scene
 
             let horseData = {};
 
-            if (displayHorses[i] === 'card_empty')
+            if (displayHorses[i] === 'card_empty') {
                 horseData.card = this.add.image(xPos, 124, displayHorses[i]).setInteractive()
-            else
+            } else {
                 horseData.card = this.add.spine(xPos, 124, 'horsePicJson', `horsePicAtlas`).setInteractive();
+            }
             horseData.nameplate = this.add.image(xPosNameplate, yPosNameplate, 'nameplate').setInteractive()
             horseData.cardText = this.add.text(xPosNameplate, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
             horseData.cardText.setPosition(xPos-horseData.cardText.width/2, yPosNameplate-horseData.cardText.height/2);
