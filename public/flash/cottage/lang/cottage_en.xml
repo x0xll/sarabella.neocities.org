@@ -1,0 +1,120 @@
+﻿<Cottage>
+	<Ads>
+		<Ad swf="./datas/bs_cottageentry_ad_fireworks.swf" />
+		<Ad swf="./datas/bs_cottageentry_ad_1.swf"></Ad>
+    <Ad swf="./datas/bs_cottageentry_ad_2.swf"></Ad>
+    <Ad swf="./datas/bs_cottageentry_ad_3.swf"></Ad>		
+	</Ads>
+	<Portals>
+		<Portal swf="./datas/portalLink_firelight.jpg" urlId="fireworks" />
+		<Portal swf="./datas/portalLink_treasuresHunt.jpg" urlId="treasureshunt" />
+    <Portal swf="./datas/portalLink_beautyBox.jpg" urlId="beautybox" />
+    <Portal swf="./datas/portalLink_bubbleGame.jpg" urlId="bubblegame" />
+	</Portals>
+	<BuiltInTexts>
+		<Texts  >
+			<Text id="txtClickToLock">
+				<P><FONT SIZE="14"><B>Click to </B></FONT></P><P><FONT SIZE="14"><B>lock.</B></FONT></P>
+			</Text>
+			<Text id="txtClickToUnlock">
+				<P><FONT SIZE="14"><B>Click to </B></FONT></P><P><FONT SIZE="14"><B>unlock.  </B></FONT></P>
+			</Text>
+			<Text id="txtEditMyThings">
+				<P><FONT SIZE="15">Edit</FONT></P>
+			</Text>
+				<Text id="txtScaleUp">
+				<P><FONT SIZE="12">Scale Up</FONT></P>
+			</Text>
+			<Text id="txtScaleDown">
+				<P><FONT SIZE="12">Scale Down</FONT></P>
+			</Text>
+			<Text id="txtPlayStop">
+				<P><FONT SIZE="12">Play&#47;Stop</FONT></P>
+			</Text>
+			<Text id="txtFlip">
+				<P><FONT SIZE="12">Flip</FONT></P>
+			</Text>
+			<Text id="txtRemove">
+				<P><FONT SIZE="12">Remove</FONT></P>
+			</Text>
+			<Text id="txtNoVisitors">
+				<P><FONT SIZE="18"><B>No Visitors, please. </B></FONT></P>
+			</Text>
+			<Text id="txtSaveMyThings">
+				<P><FONT SIZE="16">Save</FONT></P>
+			</Text>
+			<Text id="txtVisitorsWelcome">
+				<P><FONT SIZE="18"><B>Welcome Visitors.</B></FONT></P>
+			</Text>
+			<Text id="txtWelcomeBack">
+				<P><FONT SIZE="28"><B>Welcome back,</B></FONT></P>
+			</Text>
+			<Text id="txtWhatsNew">
+				<P><FONT SIZE="14">What's New</FONT></P>
+			</Text>
+			<Text id="txtToMyGallery">
+				<P><FONT SIZE="12">To my </FONT></P><P><FONT SIZE="12">galery</FONT></P>
+			</Text>
+			<Text id="txtToHorses">
+				<P><FONT SIZE="12">Bella Sara</FONT></P><P><FONT SIZE="12">Horses</FONT></P>
+			</Text>
+			<Text id="txtToMyHorse">
+				<P><FONT SIZE="12">My</FONT></P><P><FONT SIZE="12">Horse</FONT></P>
+			</Text>
+			<Text id="txtToWorld">
+				<P><FONT SIZE="12">To </FONT></P><P><FONT SIZE="12">World</FONT></P>
+			</Text>
+			<Text id="txtMyThingsOnCategoriesMenu">
+				<P><FONT SIZE="24">My </FONT></P><P><FONT SIZE="24">Things</FONT></P>
+			</Text>
+			<Text id="txtMyThingsOnItemsMenu">
+				<P><FONT SIZE="12">My Things</FONT></P>
+			</Text>
+			<Text id="txtObjectWasReturned">
+				<P><FONT SIZE="15">The object has </FONT></P><P><FONT SIZE="15">been returned to </FONT></P>
+			</Text>
+			<Text id="txtMyThingsInReturnDialog">
+				<P><FONT SIZE="22">My Things. </FONT></P>
+			</Text>
+			<Text id="txtOkInReturnDialog">
+				<P><FONT SIZE="15">OK</FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="12">Turn music ON or OFF.</FONT></P>
+			</Text>
+			<Text id="txtToGalleryHelp">
+				<P><FONT SIZE="14">Visit your collection of OBJECTS.</FONT></P>
+			</Text>
+			<Text id="txtCottageHorses">
+				<P><FONT SIZE="14">Visit your HORSES.</FONT></P>
+			</Text>
+			<Text id="txtCompass">
+				<P><FONT SIZE="14">Rollover the compass points to see WHAT'S NEW. Click the center image to visit.</FONT></P>
+			</Text>
+			<Text id="txtVisitRooms">
+				<P><FONT SIZE="14">Visit your COTTAGE ROOMS.</FONT></P>
+			</Text>
+			<Text id="txtCottageWorld">
+				<P><FONT SIZE="14">Click to visit the BELLA SARA WORLD locations.</FONT></P>
+			</Text>
+			<Text id="txtExitRoom">
+				<P><FONT SIZE="14">Exit the room.</FONT></P>
+			</Text>
+			<Text id="txtChangeFloors">
+				<P><FONT SIZE="14">Click on the WALLS or FLOORS to change their appearance.</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><B>Close help.</B></FONT></P>
+			</Text>
+			<Text id="txtEdit">
+				<P><FONT SIZE="14">Use these tools to SCALE, START and STOP, FLIP or REMOVE an object from your room. Click and drag to MOVE objects. Click the SAVE button when you're done making changes.</FONT></P>
+			</Text>
+			<Text id="txtRoomMyThings">
+				<P><FONT SIZE="14">Choose a CATEGORY and then drag and drop your objects into the room.</FONT></P>
+			</Text>
+			<Text id="txtBellapediaOverlay">
+				<P><FONT SIZE="14"><br>Temporary available<br>only in English</FONT></P>
+			</Text>
+		</Texts>
+	</BuiltInTexts>
+</Cottage>

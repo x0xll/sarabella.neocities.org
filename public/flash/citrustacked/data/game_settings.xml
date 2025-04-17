@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<root>
+	<!-- number of stack colors on the board -->
+	<colors>4</colors>
+
+	<!-- base bonus for completing board -->
+	<boardCompleteBonus>25</boardCompleteBonus>
+
+	<!-- maximum # of stacks you can have left and still complete the board -->
+	<remainingStacks>5</remainingStacks>
+
+	<!--this amount is subtracted from the cluster size before squaring to find your score -->
+	<minScoreCluster>1</minScoreCluster>
+
+	<!--your score is multiplied by this amount after it's calculated -->
+	<scoreScale>1.0</scoreScale>
+
+	<!--difficulty levels range from 1 to 37, 1-17 have 4 colors, 18-27 have 5 colors, 28-37 have 6 colors-->
+	<practice_difficulty_start>5</practice_difficulty_start>
+	
+	<!--practice difficulty gets harder by this much ever level, may be decimal number-->
+	<practice_difficulty_advance>2.0</practice_difficulty_advance>
+
+	<!-- you can adjust this to limit the difficulty of the game on practice mode -->
+	<practice_difficulty_max>37</practice_difficulty_max>
+
+	<!--number of levels for each stop on the map-->
+	<stop_1_levels>1</stop_1_levels>
+	<stop_2_levels>2</stop_2_levels>
+	<stop_3_levels>2</stop_3_levels>
+	<stop_4_levels>2</stop_4_levels>
+	<stop_5_levels>3</stop_5_levels>
+	<stop_6_levels>3</stop_6_levels>
+	<stop_7_levels>3</stop_7_levels>
+	<stop_8_levels>4</stop_8_levels>
+	<stop_1_difficulty>5</stop_1_difficulty>
+	<stop_2_difficulty>7</stop_2_difficulty>
+	<stop_3_difficulty>7</stop_3_difficulty>
+	<stop_4_difficulty>9</stop_4_difficulty>
+	<stop_5_difficulty>9</stop_5_difficulty>
+	<stop_6_difficulty>11</stop_6_difficulty>
+	<stop_7_difficulty>11</stop_7_difficulty>
+	<stop_8_difficulty>13</stop_8_difficulty>
+
+	<!-- comment -->
+	<story_difficulty_advance>1.0</story_difficulty_advance>
+
+	<!--integer weights for how often each special appears -->
+	<special_row_weight>3</special_row_weight>
+	<special_col_weight>3</special_col_weight>
+	<special_bomb_weight>3</special_bomb_weight>
+	<special_color_weight>2</special_color_weight>
+
+</root>

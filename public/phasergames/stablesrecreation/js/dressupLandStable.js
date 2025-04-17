@@ -74,6 +74,7 @@ class dressupLandStable extends Phaser.Scene
         this.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
         this.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
         this.load.image('stat_box', './images/StatBox.png');
+        this.load.image('goworld_box', './images/landStable/ToWorldBox.png');
 
         this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
@@ -908,7 +909,30 @@ class dressupLandStable extends Phaser.Scene
         // statBoxText.text = localeData[horseName + "Name"];
         statBoxText.setOrigin(.5, .5)
 
+        // Text box to display stat messages
+        statBox = this.add.image(625, 130, 'stat_box').setAlpha(0)
+        statBoxText = this.add.text(625, 130, 'Static Text Object', hoverTextSettings).setAlpha(0);
+        // statBoxText.text = localeData[horseName + "Name"];
+        statBoxText.setOrigin(.5, .5)
 
+        // Go to BeSa World
+        const gotoWorldBg = this.add.image(625, 130, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(.8, .7);
+        const gotoWorldTxt = this.add.text(625, 130, 'Static Text Object', hoverTextSettings).setAlpha(0).setOrigin(.5, .5);
+        gotoWorldTxt.text = localeData.txtToWorld;
+        gotoWorldBg.on('pointerover', function (pointer)
+            {
+                gotoWorldBg.setAlpha(1);
+                gotoWorldTxt.setAlpha(1);
+            });
+        gotoWorldBg.on('pointerout', function (pointer) 
+            { 
+                gotoWorldBg.setAlpha(0.01);
+                gotoWorldTxt.setAlpha(0);
+            });
+        gotoWorldBg.on('pointerdown', function (pointer)
+            {
+                window.location.href = '/flash/worldmap/worldmap_new.html'
+            });
 
         // ---------- Stable foreground and UI ---------- //
         this.add.image(444, 261, 'stable_fg');

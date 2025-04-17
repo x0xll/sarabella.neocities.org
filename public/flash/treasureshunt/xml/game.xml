@@ -46,7 +46,7 @@ There is no more to collect.</win2>
 	<current_score>Score</current_score>
 
 	<!-- combos texts -->
-	<ofakind>1 of a kind: </ofakind>
+	<ofakind> of a kind: </ofakind>
 	<variety>Variety </variety>
 	<plus>Plus: </plus>
 	<cross>Cross: </cross>

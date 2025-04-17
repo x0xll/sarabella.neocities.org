@@ -1,55 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xml version="1.0" encoding="utf-8">
-	<ingame>
-		<loader>
-			<text name="LoaderHeadline" type="text">Loading</text>
-		</loader>
-		<mainpanel>
-			<text name="txt_mainName">&lt;font size="60"&gt;JEU#&lt;/font&gt;&lt;font size="80"&gt;DE LANCE&lt;/font&gt;</text>
-			<text name="txt_mainHelp">Aide</text>
-			<text name="txt_mainBegin">Jouer</text>
-			<text name="txt_mainContinue">continue</text>
-			<text name="txt_mainNewgame">new game</text>
-			<text name="txt_mainEasy">Facile</text>
-			<text name="txt_mainHard">Difficile</text>
-		</mainpanel>
-		<evalpanel>
-			<text name="txt_evalGo">Go !</text>
-			<text name="txt_evalQuit">Menu</text>
-			<text name="txt_evalPractice">Entraînement</text>
-			<text name="txt_evalBonus">Bonus</text>
-			<text name="txt_evalCompetition">Compétition</text>
-			<text name="txt_evalRetry">Recommence</text>
-			<text name="txt_evalRestart">restart</text>
-			<text name="txt_evalPracticeIntro">Bienvenue à l'entraînement : pour te#qualifier pour le tournoi, attrape l'anneau !#Tu peux essayer autant de fois que tu#veux.</text>
-			<text name="txt_evalPracticeScoreRun">Bullseye!#When you feel ready, you may#continue to the competition.</text>
-			<text name="txt_evalPracticeScoreRunUnLock">Tu as attrapé l'anneau ! La compétition#est ouverte.</text>
-			<text name="txt_evalPracticeNoScoreRun">A miss!#Try again.</text>
-			<text name="txt_evalPracticeNoScoreRunUnLock">A miss, but#the competition is still open</text>
-			<text name="txt_evalPracticeNoScore">You missed completely.#Keep practicing!</text>
-			<text name="txt_evalCompIntro">Bienvenue à la compétition : attrape les#anneaux les plus difficiles pour avoir plus#de points. Tu as [maxRuns] essais.</text>
-			<text name="txt_evalCompScoreRun">Bien joué ! Tu as obtenu [runScore] points,#pour un total de [cumulScore] points.#Il te reste[remainRuns] tentatives.</text>
-			<text name="txt_evalCompScoreRunUnLock">Excellent! You got [runScore] points,#total score is [cumulScore] points#The Bonus track is unlocked#[remainRuns] runs remaining.</text>
-			<text name="txt_evalCompScoreTotal">Congratulations!#You got [runScore] points, total score is [cumulScore] points#</text>
-			<text name="txt_evalCompScoreTotalUnlock">Félicitations! Tu as obtenu [runScore] points#pour un total de [cumulScore] points.#Gagne des points supplémentaries sur la#piste bonus !</text>
-			<text name="txt_evalCompNoScoreRun">You missed - total score is still [cumulScore] points#Try again, you have [remainRuns] runs to go.</text>
-			<text name="txt_evalCompNoScoreRunUnLock">You missed - total score is still [cumulScore] points#Get extra points on the bonus track!#[remainRuns] runs remaining.</text>
-			<text name="txt_evalCompNoScore">You have no points,#and [remainRuns] runs to go.#Try again!</text>
-			<text name="txt_evalCompNoScoreTotal">Missed!#You didn't collect any rings.#Perhaps you need a little practice?</text>
-			<text name="txt_evalCompScoreRunTotal">Congratulations!#You got [runScore] points#for a total of [cumulScore] points.</text>
-			<text name="txt_evalCompScoreRunTotalUnLock">Congratulations! You got [runScore] points#for a total of [cumulScore] points.#Get extra points on the bonus track!</text>
-			<text name="txt_evalCompNoScoreRunTotalUnLock">Good!#Your total score is [cumulScore] points#Try the bonus track for extra points!</text>
-			<text name="txt_evalCompNoScoreRunTotal">Congratulations!#You got [runScore] points#for a total of [cumulScore] points.</text>
-			<text name="txt_evalCompNoScoreTotal">Missed!#You didn't collect any rings.#Perhaps you need a little practice?</text>
-			<text name="txt_evalBonusIntro">Bienvenue à la piste bonus :#touche les ballons pour#avoir des points en plus.</text>
-			<text name="txt_evalBonusScoreRunTotal">Bien#[runScore] points bonus ajoutés,#pour un score final de [totalScore] points.</text>
-			<text name="txt_evalBonusScoreRunTotalUnLock">Nice!#[runScore] bonuspoints were added,#for a final score of [totalScore] points.</text>
-			<text name="txt_evalBonusNoScoreRunTotalUnLock">Nice!#[runScore] bonuspoints were added,#for a final score of [totalScore] points.</text>
-			<text name="txt_evalBonusNoScoreTotal">Unlucky, you missed all balloons.#The final score is [totalScore] points.</text>
-		</evalpanel>
-		<help>
-			<text name="txtHelp_Headline">How to play?</text>
-			<text name="txtHelp_Intro">Are you ready? While riding your horse, try to collect rings with your lance.  To control the lance, click and drag it with your cursor. Practice, practice. The lance is heavy so you may have to release and drag several times to keep the lance in the right position.  If you choose Hard skill, the rings will be smaller and harder to collect.</text>
-		</help>
-	</ingame>
-</xml>
+<xml version="1.0" encoding="utf-8"><ingame><loader>
+<text name="LoaderHeadline" type="text">Loading</text>
+</loader><mainpanel><text name="txt_mainName">&lt;font size="60"&gt;JEU #&lt;/font&gt;&lt;font size="80"&gt;DE LANCE&lt;/font&gt;</text>
+<text name="txt_mainHelp">Aide</text>
+<text name="txt_mainBegin">Jouer</text>
+<text name="txt_mainContinue">Continuer</text>
+<text name="txt_mainNewgame">Nouvelle partie</text>
+<text name="txt_mainEasy">Facile</text>
+<text name="txt_mainHard">Difficile</text></mainpanel>
+<evalpanel>
+<text name="txt_evalGo">Go !</text>
+<text name="txt_evalQuit">&lt;font size="20"&gt;Menu&lt;/font&gt;</text>
+<text name="txt_evalPractice">&lt;font size="20"&gt;Entraînement&lt;/font&gt;</text>
+<text name="txt_evalBonus">&lt;font size="20"&gt;Bonus&lt;/font&gt;</text>
+<text name="txt_evalCompetition">&lt;font size="20"&gt;Compétition&lt;/font&gt;</text>
+<text name="txt_evalRetry">Réessaie</text>
+<text name="txt_evalRestart">&lt;font size="20"&gt;Recommence&lt;/font&gt;</text>
+<text name="txt_evalPracticeIntro">&lt;font size="20"&gt;Bienvenue à l'entraînement : pour te qualifier pour le tournoi, attrape l'anneau ! Tu peux essayer autant de fois que tu veux.&lt;/font&gt;</text>
+<text name="txt_evalPracticeScoreRun">&lt;font size="20"&gt;En plein dans le mille ! Quand tu es prêt(e), tu peux continuer la compétition.&lt;/font&gt;</text>
+<text name="txt_evalPracticeScoreRunUnLock">&lt;font size="20"&gt;Tu as attrapé l'anneau ! La compétition est ouverte.&lt;/font&gt;</text>
+<text name="txt_evalPracticeNoScoreRun">&lt;font size="20"&gt;Raté !#Essaie encore.&lt;/font&gt;</text>
+<text name="txt_evalPracticeNoScoreRunUnLock">&lt;font size="20"&gt;Raté, mais#la compétition est toujours ouverte.&lt;/font&gt;</text>
+<text name="txt_evalPracticeNoScore">&lt;font size="20"&gt;Complètement raté.#Entraîne-toi encore !&lt;/font&gt;</text>
+<text name="txt_evalCompIntro">&lt;font size="20"&gt;Bienvenue à la compétition : attrape les anneaux les plus difficiles pour avoir plus de points. Tu as [maxRuns] essais.&lt;/font&gt;</text>
+<text name="txt_evalCompScoreRun">&lt;font size="20"&gt;Bien joué ! Tu as obtenu [runScore] Bien joué !#Tu as obtenu [cumulScore] points.# Il te reste [remainRuns] tentatives.&lt;/font&gt;</text>
+<text name="txt_evalCompScoreRunUnLock">&lt;font size="20"&gt;Excellent! Tu as obtenu [runScore] points,#ton score total est de [cumulScore] points.#La piste Bonus est débloquée#il reste [remainRuns] tentatives.&lt;/font&gt;</text>
+<text name="txt_evalCompScoreTotal">&lt;font size="20"&gt;Félicitations !#Tu as [runScore] points, , ton score total est de [cumulScore] points.#&lt;/font&gt;</text>
+<text name="txt_evalCompScoreTotalUnlock">&lt;font size="20"&gt;Félicitations !#Tu as [runScore] points, , ton score total est de [cumulScore] points.#Gagne des points supplémentaires sur la piste bonus !&lt;/font&gt;</text>
+<text name="txt_evalCompNoScoreRun">&lt;font size="20"&gt;Tu as raté - ton score total est toujours de [cumulScore] points#Essaie encore, il te reste [remainRuns] tentatives. &lt;/font&gt;</text>
+<text name="txt_evalCompNoScoreRunUnLock">&lt;font size="20"&gt;Raté. Ton score total est toujours de [cumulScore] points#Gagne des points supplémentaires sur la piste bonus !#[remainRuns] essais restants.&lt;/font&gt;</text>
+<text name="txt_evalCompNoScore">&lt;font size="20"&gt;Tu n'as aucun point,#et encore[remainRuns] essais..#Essaie encore !&lt;/font&gt;</text>
+<text name="txt_evalCompNoScoreTotal">&lt;font size="20"&gt;Manqué !#Tu n'as eu aucun anneau.#Peut-être que tu manques d'entraînement !&lt;/font&gt;</text>
+<text name="txt_evalCompScoreRunTotal">&lt;font size="20"&gt;Félicitations!#Tu as obtenu [runScore] points#pour un total de [cumulScore] points.&lt;/font&gt;</text>
+<text name="txt_evalCompScoreRunTotalUnLock">&lt;font size="20"&gt;Félicitations! Tu as obtenu [runScore] points#pour un total de [cumulScore] points.#Gagne des points supplémentaires sur la piste bonus !&lt;/font&gt;</text>
+<text name="txt_evalCompNoScoreRunTotalUnLock">&lt;font size="20"&gt;Bien!#Ton score total est de [cumulScore] points#Essaie la piste bonus pour gagner des points supplémentaires !&lt;/font&gt;</text>
+<text name="txt_evalCompNoScoreRunTotal">&lt;font size="20"&gt;Félicitations!#Tu as obtenu [runScore] points#points pour un total de [cumulScore] points.&lt;/font&gt;</text>
+<text name="txt_evalCompNoScoreTotal">&lt;font size="20"&gt;Manqué !#Tu n'as eu aucun anneau.#Peut-être que tu manques d'entraînement !&lt;/font&gt;</text>
+<text name="txt_evalBonusIntro">&lt;font size="20"&gt;Bienvenue à la piste bonus :#touche les ballons pour#avoir des points en plus. &lt;/font&gt;</text>
+<text name="txt_evalBonusScoreRunTotal">&lt;font size="20"&gt;Bien#[runScore] points bonus ajoutés,#pour un score final de [totalScore] points.&lt;/font&gt;</text>
+<text name="txt_evalBonusScoreRunTotalUnLock">&lt;font size="20"&gt;Bien#[runScore] points bonus ajoutés,#pour un score final de [totalScore] points.&lt;/font&gt;</text>
+<text name="txt_evalBonusNoScoreRunTotalUnLock">&lt;font size="20"&gt;Bien#[runScore] points bonus ajoutés,#pour un score final de [totalScore] points.&lt;/font&gt;</text>
+<text name="txt_evalBonusNoScoreTotal">&lt;font size="20"&gt;Pas de chance, tu as manqué tous les ballons. Le score final est de [totalScore]points.&lt;/font&gt;</text></evalpanel><help><text name="txtHelp_Headline">Comment jouer ?</text>
+<text name="txtHelp_Intro">Prêt(e) ? Essaie de rassembler les anneaux avec ta lance tout en chevauchant. Pour contrôler la lance, maintiens cliqué et dirige-la à l'aide du curseur. Entraîne-toi encore et encore. La lance est si lourde qu'il faut la lâcher et la rediriger plusieurs fois pour la mettre dans la bonne position. Si tu choisis le mode Difficile, les anneaux seront plus petits et difficiles à attraper.</text></help></ingame></xml>

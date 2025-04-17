@@ -1,0 +1,111 @@
+﻿.intro_1{
+	font-family:Arial Unicode MS;
+	font-size:22pt;
+	color:#FFFFFF;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.intro_2{
+	font-family:Arial Unicode MS;
+	font-size:36pt;
+	color:#74247D;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.intro_btn_1{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#FFFFFF;	
+	leading:-3pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.help_instruct_1{
+	font-family:Arial Unicode MS;
+	font-size:15pt;
+	color:#6600CC;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.help_tip_1{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#000066;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.begin_btn_1{
+	font-family:Arial Unicode MS;
+	font-size:15pt;
+	color:#FFFFFF;	
+	leading:0pt;	
+	letter-spacing:0pt;
+	text-align:center;
+}
+.pause_btn{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#EED709;	
+	leading:0pt;	
+	letter-spacing:0pt;
+	text-align:center;
+}
+.pause_screen_1{
+	font-family:Arial Unicode MS;
+	font-size:30pt;
+	color:#FFFFFF;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.pause_screen_2{
+	font-family:Arial Unicode MS;
+	font-size:18pt;
+	color:#FFFFFF;	
+	leading:0pt;	
+	letter-spacing:0pt;
+	text-align:center;
+}
+.continue_btn_1{
+	font-family:Arial Unicode MS;
+	font-size:18pt;
+	color:#FFFFFF;	
+	leading:0pt;	
+	letter-spacing:0pt;
+	text-align:center;
+}
+.end_screen_1{
+	font-family:Arial Unicode MS;
+	font-size:24pt;
+	color:#6666CC;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.end_screen_2{
+	font-family:Arial Unicode MS;
+	font-size:18pt;
+	color:#FFFFFF;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.end_screen_3{
+	font-family:Arial Unicode MS;
+	font-size:18pt;
+	color:#FFFFFF;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}

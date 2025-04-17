@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<root>
+	<!-- title -->
+	
+	<magic>La baguette</magic>
+	<bubble>à bulles</bubble>
+	<wand>magiques</wand>
+	
+	<!-- buttons -->
+	
+	<begin>Commencer !</begin>
+	<play_again>Rejouer !</play_again>
+	<continue_button>Continuer</continue_button>
+	
+	<!-- score window -->
+	
+	<bugs_collected>Insectes collectés</bugs_collected>
+	<score>Score</score>
+	
+	<!-- end game / play again scroll -->
+	
+	<out_of_solution>Produit à bulles magiques épuisé!</out_of_solution>
+	<congratulations>Félicitations !</congratulations>
+	
+	<!-- the # of bugs and horseshoes gets inserted among these three fragments: -->
+	<you_collected>Tu as rassemblé</you_collected>
+	<bugs>insecte(s) et</bugs>
+	<horse_shoes>fer(s) à cheval.</horse_shoes>
+	
+	<your_score>Ton score:</your_score>
+	
+	<!-- help -->
+	
+	<wand_help>Déplace la souris pour bouger la baguette. Place la baguette sur les insectes et clique pour faire des bulles et les capturer.</wand_help>
+
+	<bug_help>Les insectes s'ajoutent à ton score.</bug_help>
+	
+	<special_help>Les créatures spéciales et les gouttes de pluie te redonnent du produit magique. Les créatures spéciales font aussi grandir la baguette.</special_help>
+
+	<solution_help>Le jeu est terminé quand tu n'as plus de produit.</solution_help>
+	
+</root>

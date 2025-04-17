@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+	<gameTitle>Citrustacked</gameTitle>
+	<story_mode_btn>Story Mode</story_mode_btn>
+	<practice_mode_btn>Practice Mode</practice_mode_btn>
+	<howtoplay_btn>How to Play</howtoplay_btn>
+	<help_btn>Help</help_btn>
+	<quit_btn>Quit</quit_btn>
+	<back_btn>Back</back_btn>
+	<play_again_btn>Play again</play_again_btn>
+	<continue_btn>Continue</continue_btn>
+	<try_again_btn>Retry</try_again_btn>
+	<return_btn>World map</return_btn>
+	<score_label>Score</score_label>
+	<level_label>Level</level_label>
+	
+	<how_to_play_start>Help the Citrustacks journey across Canter Hollow to bring Mother Comfort's candy to the Faire for the Winter Festival! The journey might take you a few days, but don't worry: you'll start again right where you left off!</how_to_play_start>
+	
+	<board_cleared_title>Level Cleared</board_cleared_title>
+	<board_cleared_message>Way to go!</board_cleared_message>
+	
+	<lose_title>You lost...</lose_title>
+	<lose>Try again?</lose>
+	
+	<how_to_play>Capture multiple Citrustacks of the same color and send them on a journey! The more you catch at the same time, the more points you'll get!</how_to_play>
+	<how_to_play2>Move your mouse cursor above the Citrustacks to capture them and click to send them. Play the story mode to get rewards! Help the Citrustacks go through Canter Hollow to arrive to the Faire! Good luck!</how_to_play2>
+	<checkpoint1>Oh no! Mother Comfort went to the Faire and forgot to bring her famous plumberry square candies to sell. Let's bring them to her!</checkpoint1>
+	<checkpoint2>Great job! We've got all the candy packed up and we're off on our journey. We're making great progress. Keep up the good work!</checkpoint2>
+	<checkpoint3>Amazing! You went through the bazaar without spending all of your horseshoes.</checkpoint3>
+	<checkpoint4>You're half-way! Well done!</checkpoint4>
+	<checkpoint5>How talentuous! Can you hear the music and smell the good food? The Faire isn't very far anymore.</checkpoint5>
+	<checkpoint6>Look how far you went! The Faire is so close! Look at all those attractions and pretty ponies.</checkpoint6>
+	<checkpoint7>You're almost at the end of your journey. Can you hear the joyful music of the barrel organ? Look! There is a spot for you on the merry-go round! You can do this!</checkpoint7>
+	<checkpoint8>You made it! You truly deserve a good icecream or a cloud-shaped cottoncandy!</checkpoint8>
+	
+	<win_title>Congratulations!</win_title>
+	<win>You finished your journey and reached the Faire!</win>
+	<final_score_label>Final Score:</final_score_label>
+</root>

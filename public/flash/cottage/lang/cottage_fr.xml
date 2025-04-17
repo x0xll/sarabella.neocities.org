@@ -1,0 +1,120 @@
+﻿<Cottage>
+	<Ads>
+		<Ad swf="./datas/bs_cottageentry_ad_fireworks.swf" />
+		<Ad swf="./datas/bs_cottageentry_ad_1.swf"></Ad>
+    <Ad swf="./datas/bs_cottageentry_ad_2.swf"></Ad>
+    <Ad swf="./datas/bs_cottageentry_ad_3.swf"></Ad>		
+	</Ads>
+	<Portals>
+		<Portal swf="./datas/portalLink_firelight.jpg" urlId="fireworks" />
+		<Portal swf="./datas/portalLink_treasuresHunt.jpg" urlId="treasureshunt" />
+    <Portal swf="./datas/portalLink_beautyBox.jpg" urlId="beautybox" />
+    <Portal swf="./datas/portalLink_bubbleGame.jpg" urlId="bubblegame" />
+	</Portals>
+	<BuiltInTexts>
+		<Texts  >
+			<Text id="txtClickToLock">
+				<P><FONT SIZE="14"><B>Cliquer pour </B></FONT></P><P><FONT SIZE="14"><B>verrouiller.</B></FONT></P>
+			</Text>
+			<Text id="txtClickToUnlock">
+				<P><FONT SIZE="14"><B>Cliquer pour </B></FONT></P><P><FONT SIZE="14"><B>déverrouiller.  </B></FONT></P>
+			</Text>
+			<Text id="txtEditMyThings">
+				<P><FONT SIZE="15">Éditer</FONT></P>
+			</Text>
+				<Text id="txtScaleUp">
+				<P><FONT SIZE="12">Agrandir</FONT></P>
+			</Text>
+			<Text id="txtScaleDown">
+				<P><FONT SIZE="12">Rétrécir</FONT></P>
+			</Text>
+			<Text id="txtPlayStop">
+				<P><FONT SIZE="12">Activer&#47;Stop</FONT></P>
+			</Text>
+			<Text id="txtFlip">
+				<P><FONT SIZE="12">Inverser</FONT></P>
+			</Text>
+			<Text id="txtRemove">
+				<P><FONT SIZE="12">Retirer</FONT></P>
+			</Text>
+			<Text id="txtNoVisitors">
+				<P><FONT SIZE="18"><B>Pas de visiteurs, SVP. </B></FONT></P>
+			</Text>
+			<Text id="txtSaveMyThings">
+				<P><FONT SIZE="16">Sauvegarder</FONT></P>
+			</Text>
+			<Text id="txtVisitorsWelcome">
+				<P><FONT SIZE="18"><B>Visiteurs bienvenus.</B></FONT></P>
+			</Text>
+			<Text id="txtWelcomeBack">
+				<P><FONT SIZE="28"><B>Bienvenue,</B></FONT></P>
+			</Text>
+			<Text id="txtWhatsNew">
+				<P><FONT SIZE="14">Quoi de neuf</FONT></P>
+			</Text>
+			<Text id="txtToMyGallery">
+				<P><FONT SIZE="12">Vers ma </FONT></P><P><FONT SIZE="12">galerie</FONT></P>
+			</Text>
+			<Text id="txtToHorses">
+				<P><FONT SIZE="12">Bella Sara</FONT></P><P><FONT SIZE="12">Horses</FONT></P>
+			</Text>
+			<Text id="txtToMyHorse">
+				<P><FONT SIZE="12">My</FONT></P><P><FONT SIZE="12">Horse</FONT></P>
+			</Text>
+			<Text id="txtToWorld">
+				<P><FONT SIZE="12">Vers </FONT></P><P><FONT SIZE="12">le monde</FONT></P>
+			</Text>
+			<Text id="txtMyThingsOnCategoriesMenu">
+				<P><FONT SIZE="24">Mes </FONT></P><P><FONT SIZE="24">Objets</FONT></P>
+			</Text>
+			<Text id="txtMyThingsOnItemsMenu">
+				<P><FONT SIZE="12">Mes Objets</FONT></P>
+			</Text>
+			<Text id="txtObjectWasReturned">
+				<P><FONT SIZE="15">L'objet a </FONT></P><P><FONT SIZE="15">été replacé dans </FONT></P>
+			</Text>
+			<Text id="txtMyThingsInReturnDialog">
+				<P><FONT SIZE="22">Mes Objets. </FONT></P>
+			</Text>
+			<Text id="txtOkInReturnDialog">
+				<P><FONT SIZE="15">OK</FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="12">ACTIVER/DÉSACTIVER la musique.</FONT></P>
+			</Text>
+			<Text id="txtToGalleryHelp">
+				<P><FONT SIZE="14">Visiter ta collection d'OBJETS.</FONT></P>
+			</Text>
+			<Text id="txtCottageHorses">
+				<P><FONT SIZE="14">Rendre visite à tes CHEVAUX.</FONT></P>
+			</Text>
+			<Text id="txtCompass">
+				<P><FONT SIZE="14">Passe la souris sur les points cardinaux pour voir les NOUVEAUTÉS. Clique l'image au centre pour les essayer. </FONT></P>
+			</Text>
+			<Text id="txtVisitRooms">
+				<P><FONT SIZE="14">Visiter les pieces de ta maisonnette.</FONT></P>
+			</Text>
+			<Text id="txtCottageWorld">
+				<P><FONT SIZE="14">Explorer le MONDE DE BELLA SARA.</FONT></P>
+			</Text>
+			<Text id="txtExitRoom">
+				<P><FONT SIZE="14">Sortir de la pièce.</FONT></P>
+			</Text>
+			<Text id="txtChangeFloors">
+				<P><FONT SIZE="14">Clique sur les MURS ou le SOL pour changer leur apparence.</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><B>Fermer l'Aide.</B></FONT></P>
+			</Text>
+			<Text id="txtEdit">
+				<P><FONT SIZE="14">Utilise ces outils pour REDIMENSIONNER, INVERSER,  ACTIVER et ARRÊTER ou RETIRER des objets de ta pièce. Clique et déplace la souris pour DÉPLACER les objets. Clique le bouton SAUVEGARDER quand tu as fini.</FONT></P>
+			</Text>
+			<Text id="txtRoomMyThings">
+				<P><FONT SIZE="14">Choisis une CATÉGORIE, puis clique sur les objets et glisse-les dans la pièce.</FONT></P>
+			</Text>
+			<Text id="txtBellapediaOverlay">
+				<P><FONT SIZE="14"><br>Temporairement disponible<br>seulement en anglais</FONT></P>
+			</Text>
+		</Texts>
+	</BuiltInTexts>
+</Cottage>

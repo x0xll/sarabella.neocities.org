@@ -1,0 +1,85 @@
+﻿<?xml version="1.0"?>
+<root>
+
+	<!--wsdl_url>http://leaderboards.gencon.com/dragonhoardleaderboard/BellaSaraLeaderboard.asmx?wsdl</wsdl_url-->
+	<wsdl_url>http://testweb01.bellasara.com/bellasara/BellaWSService?wsdl</wsdl_url>
+
+	<!-- Intro title -->
+	<gameTitle_1><FONT SIZE="20">Le</FONT></gameTitle_1>
+	<gameTitle_2><FONT SIZE="35">Jeu des Sauts</FONT></gameTitle_2>
+	<gameTitle_3><FONT SIZE="35">Extraordinaires</FONT></gameTitle_3>
+	
+	<start_btn><FONT SIZE="20">Commencer Partie</FONT></start_btn>
+	<exit_help_btn><FONT SIZE="20">Sortir de l'aide</FONT></exit_help_btn>
+	<how_to_play_btn><FONT SIZE="20">Comment jouer</FONT></how_to_play_btn>
+	<play_again_btn><FONT SIZE="20">Rejouer ?</FONT></play_again_btn>
+	
+	<!-- level start message -->
+	<start_message><FONT SIZE="20">COMMENCER!</FONT></start_message>
+	
+	<!-- score board -->
+	<scoreTitle><FONT SIZE="10">SCORE</FONT></scoreTitle>
+	<timerTitle><FONT SIZE="10">TEMPS</FONT></timerTitle>
+	
+	<!-- level select -->
+	<select_horse><FONT SIZE="16">Termine les niveaux pour débloquer Fiona, Jewel et Thunder !</FONT></select_horse>
+	<level_one><FONT SIZE="15">Niveau Un</FONT></level_one>
+	<level_two><FONT SIZE="15">Niveau Deux</FONT></level_two>
+	<level_three><FONT SIZE="15">Niveau Trois</FONT></level_three>
+	<level_four><FONT SIZE="15">Niveau Quatre</FONT></level_four>
+	<horse_one><FONT SIZE="18">Bella</FONT></horse_one>
+	<horse_two><FONT SIZE="18">Fiona</FONT></horse_two>
+	<horse_three><FONT SIZE="18">Jewel</FONT></horse_three>
+	<horse_four><FONT SIZE="18">Thunder</FONT></horse_four>
+
+	<!-- final results screen and level results screen -->
+	
+	<txtFinalResults><FONT SIZE="25">Super saut ! Score total</FONT></txtFinalResults>
+	<txtTimeBonusTitle><FONT SIZE="14">Bonus de temps</FONT></txtTimeBonusTitle>
+	<txtGemBonusTitle><FONT SIZE="14">Bonus de joyaux</FONT></txtGemBonusTitle>
+	<txtBonusLevelScoreTitle><FONT SIZE="14">Score niveau bonus</FONT></txtBonusLevelScoreTitle>
+	<txtFinalScoreTitle><FONT SIZE="14">Score total de la partie</FONT></txtFinalScoreTitle>
+	<txtShoeScoreTitle><FONT SIZE="14">Total</FONT></txtShoeScoreTitle>
+	<txtResults><FONT SIZE="25">Magnifique saut !</FONT></txtResults>
+	<txtResultsFail><FONT SIZE="25">Réessayer</FONT></txtResultsFail>
+	<txtGameOverPlayAgain><FONT SIZE="15">Pourras-tu battre ton score ? Rejoue !</FONT></txtGameOverPlayAgain>
+	<txtPtsTimeBonus><FONT SIZE="14">Pts</FONT></txtPtsTimeBonus>
+	<txtPtsBonus><FONT SIZE="14">Pts</FONT></txtPtsBonus>
+	<txtPtsGemBonus><FONT SIZE="14">Pts</FONT></txtPtsGemBonus>
+	<txtPtsLevelScore><FONT SIZE="14">Pts</FONT></txtPtsLevelScore>
+	<txtPtsBonusLevelScore><FONT SIZE="14">Pts</FONT></txtPtsBonusLevelScore>
+	<txtPtsTotalGameScore><FONT SIZE="14">Pts</FONT></txtPtsTotalGameScore>
+	<txtLevelScoreTitle><FONT SIZE="14">Score niveau</FONT></txtLevelScoreTitle>
+	
+	<!-- help screen -->
+	
+	<txtHelpGems><FONT SIZE="20">Rassemble tous les joyaux et tente de battre ton score !</FONT></txtHelpGems>
+	<txtHelpArrow><FONT SIZE="18">Utilise la touche fléchée droite pour lancer ton cheval à toute allure et gagner des bonus de temps !</FONT></txtHelpArrow>
+	<txtHelpSpace><FONT SIZE="20">Utilise la touche espace pour sauter par-dessus les obstacles !</FONT></txtHelpSpace>
+	<txtHelpShoes><FONT SIZE="18">Rassemble les fers à cheval qui s'ajouteront à ton compte personnel !</FONT></txtHelpShoes>
+	
+	
+	<txtTryAgain><FONT SIZE="15">Pas assez vite. Essaie encore !</FONT></txtTryAgain>
+	<txtContinueToBonusMessage><FONT SIZE="15">Continue - Niveau BONUS !</FONT></txtContinueToBonusMessage>
+	<txtContinueToNextLevelMessage><FONT SIZE="15">Continue - Niveau suivant !</FONT></txtContinueToNextLevelMessage>
+	
+	<BlueOvalPoint>+5</BlueOvalPoint>
+	<BlueRectanglePoint>+20</BlueRectanglePoint>
+	<BlueDiamondPoint>+35</BlueDiamondPoint>
+	<BlueTeardropPoint>+50</BlueTeardropPoint>
+	<BlueHeartPoint>+65</BlueHeartPoint>
+	
+	<PinkOvalPoint>+10</PinkOvalPoint>
+	<PinkRectanglePoint>+25</PinkRectanglePoint>
+	<PinkDiamondPoint>+40</PinkDiamondPoint>
+	<PinkTeardropPoint>+55</PinkTeardropPoint>
+	<PinkHeartPoint>+70</PinkHeartPoint>
+	
+	<YellowOvalPoint>+15</YellowOvalPoint>
+	<YellowRectanglePoint>+30</YellowRectanglePoint>
+	<YellowDiamondPoint>+45</YellowDiamondPoint>
+	<YellowTeardropPoint>+60</YellowTeardropPoint>
+	<YellowHeartPoint>+75</YellowHeartPoint>
+	
+
+</root>

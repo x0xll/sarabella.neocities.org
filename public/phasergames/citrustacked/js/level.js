@@ -283,6 +283,8 @@ class Level extends Phaser.Scene
 
         function showEndPopup(won)
         {
+            updateHighscore(score + "@Citrustacked")
+
             game.add.image(575, 234, "popup_end").setOrigin(.5);
             game.add.text(420, 102, (won) ? `${langData.end_level}` : `${langData.end_lost}`, {fontFamily: 'Arial', fontSize: '25px', color: '#716038', align: 'left', fontStyle: 'italic'}).setOrigin(0);
             game.add.text(420, 150, (won) ? `${langData.end_congrats}` :`${langData.end_lostmessage}`, {fontFamily: 'Arial', fontSize: '18px', color: '#716038', align: 'left'}).setOrigin(0);
@@ -298,12 +300,13 @@ class Level extends Phaser.Scene
             restartBtn.on('pointerout', () => { onBtnOut(restartBtnTxt); });
             restartBtn.on('pointerdown', () =>
             {
-                score = 0
-
                 if (won && gameData.currentLevel < 3)
                     gameData.currentLevel++
 
-                game.scene.start('Level', {backgroundMusic: gameData.backgroundMusic, currentLevel: gameData.currentLevel, playMusic: gameData.playMusic});
+                if (!won)
+                    score = 0;
+
+                game.scene.start('Level', {backgroundMusic: gameData.backgroundMusic, currentLevel: gameData.currentLevel, playMusic: gameData.playMusic, currentPracticeScore: score});
             })
         }
 
@@ -337,6 +340,13 @@ class Level extends Phaser.Scene
 
         let menuSmallTextStyle =  {fontFamily: 'Arial', fontSize: '18px', color: '#000000', align: 'center'}
         let menuBigTextStyle =  {fontFamily: 'Arial', fontSize: '32px', color: '#000000', align: 'center'}
+
+        if (gameData.currentPracticeScore === undefined)
+            gameData.currentPracticeScore = 0;
+        else
+        {
+            score = gameData.currentPracticeScore;
+        }
 
         scoreTxt = this.add.text(177, 196, score, menuBigTextStyle).setOrigin(.5)
         this.add.text(177, 425, `${langData.level} ${data.currentLevel}`, menuSmallTextStyle).setOrigin(.5)

@@ -44,7 +44,6 @@ class Quiz extends Phaser.Scene
         // General vars we need for the game
         const MAX_TURNS = 10;
         const MAX_CHOICE_BTN = 4;
-        const SCORE_SAVE_PATH = "belloquizHigshcoreNeoCitiesBellaSara";
 
         let turnsLeft = MAX_TURNS;
 
@@ -265,6 +264,8 @@ class Quiz extends Phaser.Scene
 
             var retryBtn = game.add.image(217, 500, 'button').setInteractive({pixelPerfect: true}).setOrigin(.5, .5);
             game.add.text(217, 500, langData.ui.retry, globalTextSettings).setOrigin(.5, .5);
+
+            updateHighscore(score + "@" + currentGameID);
 
             retryBtn.on("pointerdown", () => game.scene.restart());
         }

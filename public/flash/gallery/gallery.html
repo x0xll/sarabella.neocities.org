@@ -1,0 +1,64 @@
+<html>
+    <head>
+      <title data-il8n="game_gallery">My Things</title>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="/ruffle/ruffle.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
+      
+        <script src="/header.js"></script>
+        
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <p data-il8n="cottage_warning">
+            
+          </p>
+        </div> 
+
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+        </div>
+        
+        <div class="footer">
+          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+          <a href="https://bellasara.wiki.gg/wiki/My_Things" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
+      </div>
+
+        <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '500';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'gallery.swf';
+          swfPlayer.setAttribute("flashvars", `lang=${locale}`);
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("wmode", `transparent`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+
+    </body>
+</html>

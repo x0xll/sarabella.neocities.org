@@ -1,0 +1,3 @@
+25 March 2025
+    - Modified localization of xml
+        - "dreamriderXmlReader.load(_root.lang + "/_data/bs_dreamrider.xml")" becomes "dreamriderXmlReader.load("./_data/bs_dreamrider_" + _global.locale + ".xml")"

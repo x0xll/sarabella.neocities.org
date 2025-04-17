@@ -1,0 +1,34 @@
+﻿.header{
+	font-family:Arial Unicode MS;
+	font-size:20pt;
+	color:#330000;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.body_1{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#0000FF;	
+	leading:-3pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.body_2{
+	font-family:Arial Unicode MS;
+	font-size:11pt;
+	color:#0000FF;	
+	leading:-3pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.body_3{
+	font-family:Arial Unicode MS;
+	font-size:10pt;
+	color:#0000FF;	
+	leading:-3pt;
+	letter-spacing:0pt;
+	text-align:left;
+}

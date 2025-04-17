@@ -6,6 +6,7 @@ const horses = [
     'peter',
     'amor',
     'anemone',
+    'angel',
     'aphaia',
     'bella',
     'beran',

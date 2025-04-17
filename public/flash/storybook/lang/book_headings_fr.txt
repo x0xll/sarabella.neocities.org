@@ -1,0 +1,22 @@
+&chap1_title=<html>Le Monde Enchanté de Bella Sara</html>
+
+&chap1_subtitle=<html>Chapitre Un</html>
+&chap2_subtitle=<html>Chapitre Deux</html>
+&chap3_subtitle=<html>Chapitre Trois</html>
+&chap4_subtitle=<html>Chapitre Quatre</html>
+&chap5_subtitle=<html>Chapitre Cinq</html>
+&chap6_subtitle=<html>Chapitre Six</html>
+&chap7_subtitle=<html>Chapitre Sept</html>
+&chap8_subtitle=<html>Chapitre Huit</html>
+
+&clicktext=<html>Clique sur la couverture du livre d'histoires</html>
+
+&story_title=<html>Le Monde Enchanté<br>de Bella Sara</html>
+
+&chapters_head=<html>Choisis un chapitre à lire</html>
+
+&conclusion_nextChapter=<html>Prochain Chapitre...</html>
+
+&chap1_conclusion=<html>Northern Lights</html>
+&chap2_conclusion=<html>Ancient Lights</html>
+&chap3_conclusion=<html>Native Lights</html>
