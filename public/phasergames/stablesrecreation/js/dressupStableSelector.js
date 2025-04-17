@@ -195,13 +195,13 @@ class dressupStableSelector extends Phaser.Scene
             let xPosDelete = 50;
             if (i < 5)
             {
-                xPos += i * 158;
+                xPos += i * 160;
                 xPosDelete += i * 160;
                 xPosNameplate += i * 160
             }
             else
             {
-                xPos += (i -5) * 158
+                xPos += (i -5) * 160
                 xPosDelete += (i -5) * 160
                 xPosNameplate += (i -5) * 160
             }
@@ -211,17 +211,16 @@ class dressupStableSelector extends Phaser.Scene
             let yPosDelete = 25
             if (i > 4)
             {
-                yPosImg += 246;
-                yPosNameplate += 248;
+                yPosNameplate += 247;
                 yPosDelete = 275;
             }
 
             let horseData = {};
 
             if (displayHorses[i] === 'card_empty') {
-                horseData.card = this.add.image(xPos, 124, displayHorses[i]).setInteractive()
+                horseData.card = this.add.image(xPos, yPosImg, displayHorses[i]).setInteractive()
             } else {
-                horseData.card = this.add.spine(xPos, 124, 'horsePicJson', `horsePicAtlas`).setInteractive();
+                horseData.card = this.add.spine(xPos, yPosImg, 'horsePicJson', `horsePicAtlas`).setInteractive();
             }
             horseData.nameplate = this.add.image(xPosNameplate, yPosNameplate, 'nameplate').setInteractive()
             horseData.cardText = this.add.text(xPosNameplate, yPosNameplate, horseNames[i], { fontFamily: font_name, fontSize: 18, color: '#ffffff', align: 'center' })
