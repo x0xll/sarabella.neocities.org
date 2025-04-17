@@ -9,7 +9,7 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown(); updateSWFLocaleDatas('ArtStudio');">
         <script src="/header.js"></script>
         
         <script>
@@ -45,7 +45,7 @@
           if (locale == "ja")
             locale = "en";
 
-          swfPlayer.setAttribute("flashvars", `gameWrapperPath=flash/ArtStudio/common/gamewrapper.swf&locale=${locale}&lang=${locale}&gameWrapperHelpPath=flash/ArtStudio/common/gamewrapperHelp.swf`);
+          swfPlayer.setAttribute("flashvars", `locale=${locale}&lang=${locale}`);
           swfParent.appendChild(swfPlayer);
         </script>
 

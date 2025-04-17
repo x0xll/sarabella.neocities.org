@@ -48,6 +48,7 @@
           swfPlayer.src = 'bazaar.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
           swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfPlayer.setAttribute("wmode", `transparent`);
           swfParent.appendChild(swfPlayer);
         </script>
   </body>

@@ -7,6 +7,26 @@
     "header_besaofficial_btn" : "BeSa Officiel",
     "header_wiki_btn" : "Wiki.gg",
     "header_discord_btn" : "Discord",
+    "header_explore_btn": "Explorer",
+
+    "user_guest": "Invité",
+    "user_create": "Créer Pseudo",
+    "signup_title": "Bella Sara Inscription",
+    "signup_create_title": "Créer un utilisateur",
+    "signup_username": "Pseudo:",
+    "signup_create": "Créer",
+    "signup_create_desc": "\"Créer\" créera un utilisateur avec le pseudo entré, tant qu'il reste des slots de save ouverts.",
+    "signup_import_title": "Importer un utilisateur",
+    "signup_data": "Données:",
+    "signup_import": "Importer",
+    "signup_import_desc": "\"Importer\" permet d'importer les données de sauvegarde d'un autre utilisateur, vous permettant de jouer sur plusieurs navigateurs avec le même compte.",
+    "signup_currentuser": "Utilisateur Actuel",
+    "signup_delete": "Supprimer",
+    "signup_export": "Exporter",
+    "signup_delete_desc": "\"Supprimer\" supprimera les données de sauvegarde de votre utilisateur actuel.",
+    "signup_export_desc": "\"Exporter\" permet d'exporter les données de sauvegarde de l'utilisateur actuel, vous permettant de les importer sur un autre navigateur.",
+
+    "highscore": "Meilleur Score",
 
     "footer_maininfos" : "Pour toutes questions, commentaires ou aide:<br> @Archiving sur le Discord Bella Sara ou ouvrez une discussions sur <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Notre Github</a>",
     "footer_home_linktxt" : "Accueil",
@@ -84,6 +104,7 @@
     "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
 
     "citrustacked_wip_warning": "Story mode still being recreated.",
+    "citrustacked_warning": "Some texts are not yet appearing correctly. The 'Continue' button doesn't always work correctly yet either.",
 
     "jumpinggame_wip_warning": "Level 3 still being recreated.",
     "jumpinggame_warning": "The game can be quite laggy at times.",

@@ -1,10 +1,15 @@
 // Handles a fake user situation with the help of local storage
-// Would store a username, horseshoes, cottage datas, adventures, etc.
+// Would store a username, horseshoes, cottage data, adventures, etc.
 // Need to check how much space this would take, to calculate how many users we authorize
-// Creating a "share" type button to pass the user saved datas to another navigator could be interesting to prevent loss of progress
+// Creating a "share" type button to pass the user saved data to another navigator could be interesting to prevent loss of progress
+
+const ART_STUDIO_CACHE = "sarabella.neocities.org//BellaSaraArtStudioData";
+//const ART_STUDIO_CACHE = "127.0.0.1//BellaSaraArtStudioData"; // DEBUG ONLY
 
 const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
+const DATA_TYPE_LEVEL = "level";
+const DATA_TYPE_CREATIONS = "creations";
 
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
@@ -12,7 +17,10 @@ const USER_AMOUNT_KEY = "neocities_besa_userAmount";
 const USER_NAMES_KEY = "neocities_besa_userNames"; 
 const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
+const MANAGER_VERSION = 1; // To track user version in case data structure gets updated
+
 let currentUser = undefined;
+let currentGame = undefined;
 
 // ------- UI -------
 function setupUserDropdown()
@@ -33,9 +41,9 @@ function setupUserDropdown()
             userDropdown.options[userDropdown.options.length] = new Option(splittedUserNames[i], splittedUserNames[i]);  
         }
     }
-
     forceChooseUser(localStorage.getItem(CURRENT_USER_KEY));
 }
+
 // ------- END UI -------
 
 // ------- USER ------
@@ -49,13 +57,13 @@ function createUser()
         return;
     }
 
-    if (username.includes("²"))
+    if (username.includes("\""))
     {
-        alert("Please remove \"²\" character from your username.")
+        alert("Please remove \"\"\" character from your username.")
         return;
     }
 
-    if (username.toLowerCase() === "guest" || username.toLowerCase() === "create")
+    if (username.toLowerCase() === "guest" || username.toLowerCase() === "create" || username.toLowerCase() === "create user")
     {
         alert("Please choose another username.")
         return;
@@ -70,7 +78,15 @@ function createUser()
             return;
         }
 
-        localStorage.setItem(USER_KEY + username, "usr:" + username);
+        currentUser = username;
+        let userData = 
+        {
+            usr: currentUser,
+            v: MANAGER_VERSION,
+            gameData: []
+        }
+
+        localStorage.setItem(USER_KEY + username, JSON.stringify(userData));
         currentUserAmount++;
         localStorage.setItem(USER_AMOUNT_KEY, currentUserAmount);
         userNames = localStorage.getItem(USER_NAMES_KEY);
@@ -80,7 +96,7 @@ function createUser()
             userNames += "²" + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
-        saveDatasToUser(username, DATA_TYPE_HORSESHOES, 100)
+        saveData(DATA_TYPE_HORSESHOES, 100)
         setupUserDropdown();
         forceChooseUser(username);
         return;
@@ -89,7 +105,7 @@ function createUser()
     alert("Too many users created on this navigator... Please delete one before creating a new one."); // TODO: localize
 }
 
-function chooseUser()
+function chooseUser(reloadPage = false)
 {
     userDropdown = document.getElementById("currentUserDropdown");
     var username = userDropdown.options[userDropdown.selectedIndex].value;
@@ -102,7 +118,10 @@ function chooseUser()
         localStorage.setItem(CURRENT_USER_KEY, currentUser);
 
         horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
-        horseshoes.innerHTML = loadDatasFromUser(currentUser, DATA_TYPE_HORSESHOES).toString() + " <img src=\"/images/nav/Horseshoe.png\">";
+        horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " + loadData(DATA_TYPE_HORSESHOES).toString();
+
+        if (reloadPage)
+            location.reload();
     }
 }
 
@@ -131,7 +150,7 @@ function forceChooseUser(username)
 
 function deleteUser()
 {
-    username = document.getElementById("signup_username").value;
+    username = document.getElementById("currentUserDropdown").value;
     userDropdown = document.getElementById("currentUserDropdown");
 
     if (username.toLowerCase() === "guest" || username.toLowerCase() === "create")
@@ -176,10 +195,7 @@ function deleteUser()
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
         setupUserDropdown();
-
-        if (currentUser == username)
-            forceChooseUser();
-
+        forceChooseUser();
         alert("User deleted");
         return;
     }
@@ -189,215 +205,220 @@ function deleteUser()
 
 function exportUser()
 {
-    username = document.getElementById("signup_username").value;
-    let copyText = localStorage.getItem(USER_KEY + username);
+    username = document.getElementById("currentUserDropdown").value;
+    let userData = localStorage.getItem(USER_KEY + username);
 
-    if (copyText === "" || copyText === undefined || copyText === null)
+    if (userData === "" || userData === undefined || userData === null)
     {
-        alert("Please choose an existing user to export datas.")
+        alert("Please choose an existing user to export data.")
         return;
     }
 
-    let input = document.getElementById('copy');
-    input.value = copyText
-    input.style.display = 'inline'
-    document.getElementById('copyLable').style.display = 'inline'
+    download(userData, username+".json", "json")
+}
 
-    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-        // handle iOS devices
-        input.contenteditable = true;
-        input.readonly = false;
-
-        let range = document.createRange();
-        range.selectNodeContents(input);
-
-        let selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        input.setSelectionRange(0, 999999);
-        } else {
-        // other devices are easy
-        input.select()
-        }
-        document.execCommand('copy');
-        
-    // Alert the copied text
-    alert(copyText);
+function download(data, filename, type) {
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
 }
 
 function importUser()
 {
-    datas = document.getElementById("datas").value;
-    if (datas === "")
-    {
-        alert("Please enter valid datas from an exported save");
-        return;
-    }
-
-    splittedDatas = datas.split("²");
-    username = splittedDatas[0].split(":")[1];
-
-    allUsernames = localStorage.getItem(USER_NAMES_KEY);
-
-    if (allUsernames != undefined && allUsernames != "" && allUsernames != null)
-    {
-        splittedUsernames = allUsernames.split("²");
-        let existingUser = false;
-        splittedUserNames.forEach(user => {
-            if (user === username)
-            {
-                localStorage.setItem(USER_KEY + username, datas);
-                existingUser = true;
-                return;
-            }
-        });
-    
-        if (existingUser)
-        {
-            alert("Datas imported succesfully for user: " + username);
-            forceChooseUser(username);
+    let file = document.getElementById("file").files[0];
+    let reader = new FileReader();
+    reader.readAsText(file)
+    reader.onload = function(event) {
+        let userData = event.target.result;
+        if (userData === "") {
+            alert("Please enter valid data from an exported save");
             return;
         }
+        username = JSON.parse(userData).usr
+
+        allUsernames = localStorage.getItem(USER_NAMES_KEY);
+        if (allUsernames != undefined && allUsernames != "" && allUsernames != null)
+        {
+            splittedUsernames = allUsernames.split("²");
+            let existingUser = false;
+            splittedUserNames.forEach(user => {
+                if (user === username)
+                {
+                    localStorage.setItem(USER_KEY + username, userData);
+                    existingUser = true;
+                    return;
+                }
+            });
+        
+            if (existingUser)
+            {
+                alert("Data imported succesfully for user: " + username);
+                forceChooseUser(username);
+                return;
+            }
+        }
+        
+        userAmount = localStorage.getItem(USER_AMOUNT_KEY);
+        if (userAmount >= MAX_USERS)
+        {
+            alert("Too many users. Please delete an account before importing a new one.")
+            return;
+        }
+
+        userAmount++;
+        localStorage.setItem(USER_AMOUNT_KEY, userAmount);
+        localStorage.setItem(USER_KEY + username, userData);
+
+        if (allUsernames === null || allUsernames === undefined || allUsernames === "")
+            allUsernames = username;
+        else
+            allUsernames += "²" + username;
+        localStorage.setItem(USER_NAMES_KEY, allUsernames);
+
+        alert("Data imported succesfully for user: " + username);
+        setupUserDropdown();
+        forceChooseUser(username);
     }
-    
-    userAmount = localStorage.getItem(USER_AMOUNT_KEY);
-    if (userAmount >= MAX_USERS)
-    {
-        alert("Too many users. Please delete an account before importing a new one.")
-        return;
-    }
-
-    userAmount++;
-    localStorage.setItem(USER_AMOUNT_KEY, userAmount);
-    localStorage.setItem(USER_KEY + username, datas);
-
-    if (allUsernames === null || allUsernames === undefined || allUsernames === "")
-        allUsernames = username;
-    else
-        allUsernames += "²" + username;
-    localStorage.setItem(USER_NAMES_KEY, allUsernames);
-
-    alert("Datas imported succesfully for user: " + username);
-    setupUserDropdown();
-    forceChooseUser(username);
 }
 
 // ------- END USER -------
 
-/* Saved the datas to the correct user in localstorage
-* @param username : the username used in the local storage, string
+/** Saved the data to the correct user in localstorage
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be saved, string
-* @param datas : an object with all the datas to be saved for this dataType
+* @param userData : an object with all the data to be saved for this dataType
+* @param gameID : the id of the game, optional
 */
-function saveDatasToUser(username, dataType, datas, gameID = "")
+function saveData(dataType, userData, gameID = "")
 {
-    if (username === "guest") return;
+    if (currentUser === "guest") return;
 
-    savedDatas = localStorage.getItem(USER_KEY + username);
-    splittedDatas = savedDatas.split("²");
+    let savedData = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
-    let existingDatas = false;
+    let existingData = false;
 
-    for (let i = 0; i < splittedDatas.length; i++)
+    if (gameID !== "")
     {
-        switch(dataType)
+        for (let i = 0; i < savedData.gameData.length; i++)
         {
-            case DATA_TYPE_HORSESHOES:
-                if (splittedDatas[i].includes("h:"))
-                {
-                    splittedDatas[i] = "h:" + datas.toString();
-                    existingDatas = true;
-                }
-            break;
-            case DATA_TYPE_HIGHSCORE:
+            if (savedData.gameData[i].id !== gameID) continue;
+    
+            existingData = true;
+
+            switch(dataType)
             {
-                if (splittedDatas[i].includes(gameID + ":"))
-                {
-                    splittedDatas[i] = gameID + ":" + datas.toString();
-                    existingDatas = true;
-                }
+                case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
+                case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
+                case DATA_TYPE_CREATIONS: savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
             }
         }
-    }
 
-    if (!existingDatas)
-    {
-        switch(dataType)
+        if (!existingData)
         {
-            case DATA_TYPE_HORSESHOES:
-                savedDatas += "²h:" + datas.toString();
-                break;
-            case DATA_TYPE_HIGHSCORE:
-                savedDatas += "²" + gameID + ":" + datas.toString();
-                break;
-        }
+            let currentGameData = 
+            {
+                id: gameID,
+            }
 
-        localStorage.setItem(USER_KEY + username, savedDatas);
-        setupUserDropdown();
-        return;
+            switch(dataType)
+            {
+                case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
+                case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
+                case DATA_TYPE_CREATIONS: currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+            }
+
+            savedData.gameData.push(currentGameData);
+        }
     }
 
-    savedDatas = splittedDatas[0]; // Username
+    switch(dataType)
+    {
+        case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
+    } 
 
-    for (let i = 1; i < splittedDatas.length; i++)
-        savedDatas += "²" + splittedDatas[i];
-
-    localStorage.setItem(USER_KEY + username, savedDatas);
+    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedData));
     setupUserDropdown();
 }
 
-/* Load the datas of a specific user from the localstorage
-* @param username : the username used in the local storage, string
+/** Load the data of a specific user from the localstorage
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be loaded, string
-* @returns datas : an object with all the saved datas for this dataType 
+* @returns userData : an object with all the saved userData for this dataType 
+* @param gameID : the id of the game, optional
 */
-function loadDatasFromUser(username, dataType, gameID = "")
+function loadData(dataType, gameID = "")
 {
-    if (username === "guest")
+    if (currentUser === "guest")
     {
         switch(dataType)
         {
             case DATA_TYPE_HORSESHOES:
                 return 10000;
             case DATA_TYPE_HIGHSCORE:
+            case DATA_TYPE_LEVEL:
                 return 0;
+            case DATA_TYPE_CREATIONS:
+                return "";
         }
     }
 
-    loadedDatas = localStorage.getItem(USER_KEY + username);
-    splittedDatas = loadedDatas.split("²");
+    let savedData = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
-    for (let i = 0; i < splittedDatas.length; i++) {
-        switch(dataType)
+    if (gameID != "")
+    {
+        for (let i = 0; i < savedData.gameData.length; i++)
         {
-            case DATA_TYPE_HORSESHOES:
-                if (splittedDatas[i].includes("h:"))
-                    return splittedDatas[i].split(":")[1];
-                break;
-            case DATA_TYPE_HIGHSCORE:
-                if (splittedDatas[i].includes(gameID + ":"))
-                    return splittedDatas[i].split(":")[1];
-                break;
+            if (savedData.gameData[i].id !== gameID) continue;
+    
+            switch(dataType)
+            {
+                case DATA_TYPE_HIGHSCORE:
+                    if (savedData.gameData[i].highscore === undefined)
+                        return 0;
+                    return savedData.gameData[i].highscore;
+                case DATA_TYPE_LEVEL: 
+                    if (savedData.gameData[i].level === undefined)
+                        return 0;
+                    return savedData.gameData[i].level;
+                case DATA_TYPE_CREATIONS:
+                    if (savedData.gameData[i].creations === undefined)
+                        return "";
+                    return savedData.gameData[i].creations;
+            }
         }
     }
 
     switch(dataType)
     {
-        case DATA_TYPE_HORSESHOES: return 0;
-        case DATA_TYPE_HIGHSCORE: return 0;
+        case DATA_TYPE_HORSESHOES:
+            if (savedData.horseshoes === undefined)
+                return 0;
+            return savedData.horseshoes;
     }
+
+    return 0;
 }
 
 function addHorseshoes(amountAdded)
 {
-    currentAmount = parseInt(loadDatasFromUser(currentUser, DATA_TYPE_HORSESHOES));
+    currentAmount = loadData(DATA_TYPE_HORSESHOES);
     
     if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
         currentAmount = Number.MAX_SAFE_INTEGER;
     else
         currentAmount += amountAdded;
 
-    saveDatasToUser(currentUser, DATA_TYPE_HORSESHOES, currentAmount);
+    saveData(DATA_TYPE_HORSESHOES, currentAmount);
 }
 
 function updateHighscore(data)
@@ -407,23 +428,60 @@ function updateHighscore(data)
     // Initialize
     if (splittedData.length == 1)
     {
-        loadedData = loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, getGameID(data));
-        highscoreTxt = document.getElementById("highscore");
-        highscoreTxt.innerHTML = "<b>Highscore: " + loadedData + "</b>";
+        currentGame =  data;
+        updateHighscoreUI(loadData(DATA_TYPE_HIGHSCORE, getGameID(data)))
         return;
     }
 
     // Actually update
     gameID = getGameID(splittedData[1]);
 
-    loadedData = parseInt(loadDatasFromUser(currentUser, DATA_TYPE_HIGHSCORE, gameID));
+    loadedData = loadData(DATA_TYPE_HIGHSCORE, gameID);
     if (parseInt(splittedData[0]) > loadedData)
     {
-        saveDatasToUser(currentUser, DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
+        saveData(DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
 
-        // TODO : Clean up
-        highscoreTxt = document.getElementById("highscore");
-        highscoreTxt.innerHTML = "<b>Highscore: " + splittedData[0].toString() + "</b>";
+        updateHighscoreUI(splittedData[0].toString())
+    }
+}
+
+function updateHighscoreUI(value)
+{
+    highscoreTxt = document.getElementById("highscore");
+    if (highscoreTxt !== null)
+        highscoreTxt.innerHTML = "<b>Highscore: " + value + "</b>";
+}
+
+function updateLevelReached(data)
+{
+    splittedData = data.split("@");
+
+    gameID = getGameID(splittedData[1]);
+
+    loadedData = loadData(DATA_TYPE_LEVEL, gameID);
+    if (parseInt(splittedData[0]) > loadedData)
+        saveData(DATA_TYPE_LEVEL, splittedData[0], gameID);
+}
+
+function updateCreations(data)
+{
+    splittedData = data.split("@");
+
+    gameID = getGameID(splittedData[1]);
+    saveData(DATA_TYPE_CREATIONS, splittedData[0], gameID);
+}
+
+function updateSWFLocaleDatas(game)
+{
+    switch(game)
+    {
+        case "ArtStudio":
+            let loadedDatas = loadData(DATA_TYPE_CREATIONS, getGameID(game));
+            if (loadedDatas === "" || loadedDatas === undefined || loadedDatas === null)
+                localStorage.removeItem(ART_STUDIO_CACHE);
+            else
+                localStorage.setItem(ART_STUDIO_CACHE, loadedDatas);
+        break;
     }
 }
 
@@ -433,6 +491,38 @@ function getGameID(game)
     switch(game)
     {
         case "MagicBubbleWand": return "MBW";
+        case "SpectacularJumpingGame": return "SJG";
+        case "Citrustacked": return "CIT";
+        case "ArtStudio": return "AS";
+        case "MyCottage": return "COT";
+        case "DreamRider": return "DR";
+        case "CloudJumper": return "CJ";
+        case "TreasuresHunt": return "TH";
+        case "SantoQuiz": return "SQZ";
+        case "BelloQuiz": return "BQZ";
+        case "YinYangMemory": return "YYM";
+        case "FirelightFestival": return "FF";
+        case "LanceRiding": return "LR";
+        case "MyHorse": return "FOA";
+        case "DressUp": return "DUG";
+        case "AdventuresQuiz": return "AQZ";
+        case "AutumnJourneyQuiz": return "JQZ";
+        case "Adventures": return "ADV";
+        case "Coloring": return "COL";
+        case "Puzzle": return "PUZ";
+        case "Stables": return "STA";
+        case "ArtIdeaGenerator": return "AIG";
+        case "Storybook": return "STB";
+        case "MarvelousMagicMatch": return "MMM";
+        case "Wheel of Wonders": return "WOW";
+        case "BellisimosJumpingContest": return "BJC";
+        case "Bellapedia": return "BPD";
+        case "DynamosDressageArena": return "DDA";
+        case "Trailblazer": return "TBZ";
+        case "BellaBeautyBox": return "BBB";
+        case "Journal": return "JOU";
+        case "Bazaar": return "BAZ";
+        case "MyThings": return "THI";
     }
 }
 //------- END HELPERS -------
