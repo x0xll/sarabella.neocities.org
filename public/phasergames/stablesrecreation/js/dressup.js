@@ -543,7 +543,7 @@ class dressupStable extends Phaser.Scene
 
             if (savedHorses.length >= MAX_SAVED_HORSES)
             {
-                // TODO: Popup to say there's too many and need to delete one first
+                alert("You have reached the maximum amount of horses saved... Delete one before saving this one.")
                 return;
             }
 
@@ -554,7 +554,8 @@ class dressupStable extends Phaser.Scene
 
             savedHorses.push(saveText);
 
-            saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
+            updateCreations(JSON.stringify(savedHorses) + "@DressUp")
+            //saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
         }
         
         function copy() {

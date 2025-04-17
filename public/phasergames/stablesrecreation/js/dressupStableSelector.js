@@ -306,13 +306,15 @@ class dressupStableSelector extends Phaser.Scene
 
                     savedHorses = firstPart;
                     
-                    saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
+                    updateCreations(JSON.stringify(savedHorses) + "@DressUp")
+                    //saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
                     return;
                 }
 
                 // Delete horse (temp until change page)
                 savedHorses.splice(i, 1);
-                saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
+                updateCreations(JSON.stringify(savedHorses) + "@DressUp")
+                //saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
             })
         }
 
