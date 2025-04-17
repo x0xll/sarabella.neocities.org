@@ -49,9 +49,9 @@
                 setupUserDropdown()
                 const MAX_SAVED_HORSES = 10
                 let savedHorses = loadData(DATA_TYPE_CREATIONS, getGameID("DressUp"))
-                if (savedHorses != null)
+                if (savedHorses != null && savedHorses.length > 0)
                 {
-                    savedHorses = JSON.parse(savedHorses);
+                    savedHorses = savedHorses;
 
                     if (!urlParameters.get('selector') ||  urlParameters.get('selector') === true)
                         loadInto = 'dressupStableSelector'

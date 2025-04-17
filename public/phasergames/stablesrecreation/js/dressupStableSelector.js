@@ -164,7 +164,7 @@ class dressupStableSelector extends Phaser.Scene
         function setDisplayHorses() {
             for (let index = 0; index < displayHorses.length; index++) {
                 if (horses[(page*displayHorses.length)+index]) {
-                    displayHorses[index] = ""
+                    displayHorses[index] = horses[(page*displayHorses.length)+index]
                 } else {
                     displayHorses[index] = 'card_empty'
                 }
@@ -317,7 +317,7 @@ class dressupStableSelector extends Phaser.Scene
             card.on('pointerup', () => 
                 {
                     if (displayHorses[i] !== 'card_empty') {
-                        window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}`, '_self');
+                        window.open(`http://127.0.0.1:5500/phasergames/stablesrecreation/dressup.html?selector=false${horses[i]}&indexSaved=${i}`, '_self');
                     }
                 });
             card.on('pointerdown', () => {
