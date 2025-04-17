@@ -275,6 +275,11 @@ ul {
     padding: 0;
 }
 
+.dressupBtn a{
+    color: black;
+    font-weight: bold;
+}
+
 @media (min-width: 1190px)
 {
     .home-container{

@@ -23,6 +23,12 @@
     <body style="text-align: center;" onload="loadLanguagePref();">
         <script src="/header.js"></script>
         <script src="/userManager.js"></script>
+
+        <br/>
+
+        <div id="dressup_selectablefalse" class="dressupBtn"><a href="dressup.html?selector=false" data-il8n="dressup_createhorse">Create a new horse</a></div>
+        <div id="dressup_selectabletrue" class="dressupBtn"><a href="dressup.html?selector=true" data-il8n="dressup_gostable">Go to the Stables</a></div>
+
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
                 loadLanguagePref(false);
@@ -46,6 +52,9 @@
 
                 let loadInto = `Stables`
 
+                let dressup_selectabletrue = document.getElementById('dressup_selectabletrue');
+                let dressup_selectablefalse = document.getElementById('dressup_selectablefalse')
+
                 setupUserDropdown()
                 const MAX_SAVED_HORSES = 10
                 let savedHorses = loadData(DATA_TYPE_CREATIONS, getGameID("DressUp"))
@@ -53,8 +62,22 @@
                 {
                     savedHorses = savedHorses;
 
-                    if (!urlParameters.get('selector') ||  urlParameters.get('selector') === true)
+                    if (!urlParameters.get('selector') ||  urlParameters.get('selector') === "true")
+                    {
+                        dressup_selectabletrue.style.display = "none";
+                        dressup_selectablefalse.style.display = "block";
                         loadInto = 'dressupStableSelector'
+                    }
+                    else
+                    {
+                        dressup_selectabletrue.style.display = "block";
+                        dressup_selectablefalse.style.display = "none";
+                    }
+                }
+                else
+                {
+                    dressup_selectabletrue.style.display = "none";
+                    dressup_selectablefalse.style.display = "none";
                 }
 
                 let config = {
