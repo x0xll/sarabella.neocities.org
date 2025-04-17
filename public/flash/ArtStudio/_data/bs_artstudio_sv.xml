@@ -1,0 +1,210 @@
+<ArtStudio>
+	<BuiltInTexts>
+    <Texts debugMode="false">  
+      <Text id="txtBellas">
+		    <P><FONT SIZE="40">Bellas </FONT></P>
+	    </Text>
+	    <Text id="txtArtStudio">
+		    <P><FONT SIZE="40">Konststudio</FONT></P>
+	    </Text>
+	    <Text id="txtChooseaHorse">
+		    <P><FONT SIZE="22">Välj en Häst</FONT></P>
+	    </Text>
+	    <Text id="txtAllHorses">
+		    <P><FONT SIZE="22">Alla Hästar</FONT></P>
+	    </Text>
+	    <Text id="txtBeautyBoxGallery">
+		    <P><FONT SIZE="22">Skönhetsbox Galleri</FONT></P>
+	    </Text>
+	    <Text id="txtDeleteButton">
+		    <P><FONT SIZE="16">Radera</FONT></P>
+	    </Text>
+	    <Text id="txtEditButton">
+		    <P><FONT SIZE="16">Redigera</FONT></P>
+	    </Text>
+		<Text id="txtDoneButton">
+		    <P><FONT SIZE="18"><b>KLAR</b></FONT></P>
+	    </Text>
+	    <Text id="txtArtStudioHeader">
+		    <P><FONT SIZE="22">Välj ny Canvas</FONT></P>
+	    </Text>
+		<Text id="txtGallerySubText">
+		    <P><FONT SIZE="18">Choose which canvas you’d like to start with. Select Blank for an empty canvas or one of the horses if you wish to have that horse in your picture.</FONT></P>
+	    </Text>
+	    <Text id="txtAnimatedCardFromTheKeeperOf">
+		    <P><FONT SIZE="18"><B>Ett konstverk av:</B></FONT></P>
+	    </Text>
+		<Text id="txtPrintAngel">
+		<P><FONT SIZE="24">Angel</FONT></P>
+		</Text>
+		<Text id="txtPrintBlank">
+			<P><FONT SIZE="24">Mitt Mästerverk</FONT></P>
+		</Text>
+		<Text id="txtPrintPeter">
+			<P><FONT SIZE="24">Peter</FONT></P>
+		</Text>
+		<Text id="txtPrintTiffi">
+			<P><FONT SIZE="24">Tiffi</FONT></P>
+		</Text>
+		<Text id="txtFromMe">
+		    <P><FONT SIZE="16">Jag</FONT></P>
+	    </Text>
+	    <Text id="txtEraseAll">
+		    <P><FONT SIZE="13">Radera</FONT></P><P><FONT SIZE="13">Allt</FONT></P>
+	    </Text>
+	    <Text id="txtErase">
+		    <P><FONT SIZE="13">Radera</FONT></P>
+	    </Text>
+		<Text id="txtChangePaper2">
+		    <P><FONT SIZE="13">Byt Pappersfärg</FONT></P>
+	    </Text>
+		<Text id="txtBackButton">
+		    <P><FONT SIZE="16">Tillbaka</FONT></P>
+	    </Text>
+      <Text id="txtNoButton">
+		<P><FONT SIZE="10">Nej</FONT></P>
+	</Text>
+	<Text id="txtYesButton">
+		<P><FONT SIZE="10">Ja</FONT></P>
+	</Text>
+	<Text id="txtOkayButton">
+		<P><FONT SIZE="10">OK</FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="15">Är du säker?</FONT></P>
+	</Text>
+  <Text id="txtSaveButton">
+		<P><FONT SIZE="26">SPARA</FONT></P>
+	</Text>
+	<Text id="txtPrintButton">
+		<P><FONT SIZE="26">SKRIV UT</FONT></P>
+	</Text>
+	<Text id="txtQuitButton">
+		<P><FONT SIZE="26">AVSLUTA</FONT></P>
+	</Text>
+	<Text id="txtSaveComplete">
+		<P><FONT SIZE="15">Din kreation har blivit sparad.</FONT></P>
+	</Text>
+      <Text id="txtLoading">
+		<P><FONT SIZE="9">Laddar...</FONT></P>
+	</Text>
+	<Text id="txtNewButton">
+		<P><FONT SIZE="26">NY</FONT></P>
+	</Text>
+	<Text id="txtAngelButton">
+		<P><FONT SIZE="18">Angel</FONT></P>
+	</Text>
+	<Text id="txtBlankButton">
+		<P><FONT SIZE="18">Tom</FONT></P>
+	</Text>
+	<Text id="txtPeterButton">
+		<P><FONT SIZE="18">Peter</FONT></P>
+	</Text>
+	<Text id="txtTiffiButton">
+		<P><FONT SIZE="18">Tiffi</FONT></P>
+	</Text>
+	<Text id="txtAreYouSureDialog">
+		<P><FONT SIZE="15">Är du säker på att du vill radera denna kreation från galleriet?</FONT></P><P><FONT SIZE="15"/></P>
+	</Text>
+	<Text id="txtAreYouSureLeave">
+    <P> </P><P> </P><P><FONT SIZE="15">Är du säker?</FONT></P>
+	</Text>
+	<Text id="txtSaveDialog">
+		<P><FONT SIZE="15">Välj en Sparfil till din Kreation</FONT></P>
+	</Text>
+	<Text id="txtSaveConfirmDialog">
+		<P><FONT SIZE="15">Klicka JA om du vill överskrida det du redan sparat med din nya konst.</FONT></P>
+  </Text>
+	<Text id="txtCloseCard">
+     <P><FONT SIZE="14">STÄNG kortet.</FONT></P>
+  </Text>
+  <Text id="txtWisdomCard">
+		 <P><FONT SIZE="16">Visdom</FONT></P>
+	</Text>
+  <Text id="txtLoadingCard">
+		 <P><FONT SIZE="20">Laddar...</FONT></P>
+	</Text>
+  <Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>Stäng Hjälp</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">Sätt PÅ och AV musik.</FONT></P>
+	</Text>
+	<Text id="txtEditSaved3">
+		<P><FONT SIZE="14">REDIGERA sparade konstverk.</FONT></P>
+	</Text>
+	<Text id="txtDeleteCreation2">
+		<P><FONT SIZE="14">RADERA konstverk.</FONT></P>
+	</Text>
+	<Text id="txtNewArt">
+		<P><FONT SIZE="14">SKAPA ny konst.</FONT></P>
+	</Text>
+	<Text id="txtEmptySlot">
+		<P><FONT SIZE="9">Tom</FONT></P>
+	</Text>
+	<Text id="txtDecorateHorse">
+		<P><FONT SIZE="14">Klicka på en HÄST att dekorera.</FONT></P>
+	</Text>
+	<Text id="txtViewCard">
+		<P><FONT SIZE="14">Klicka här för att TITTA PÅ kort.</FONT></P>
+	</Text>
+	<Text id="txtDecorateBB">
+		<P><FONT SIZE="14">Klicka på en SKÖNHETSBOX för att dekorera.</FONT></P>
+	</Text>
+	<Text id="txtSeeHorses">
+		<P><FONT SIZE="14">SE FLER hästar.</FONT></P>
+	</Text>
+	<Text id="txtSeeBB">
+		<P><FONT SIZE="14">SE FLER Skönhetsbox kreationer.</FONT></P>
+	</Text>
+	<Text id="txtWisdomMsg">
+		<P><FONT SIZE="14">Se VISDOM MEDDELANDE.</FONT></P>
+	</Text>
+	<Text id="txtSeePaints">
+		<P><FONT SIZE="14">SE FLER färger.</FONT></P>
+	</Text>
+	<Text id="txtGoBack">
+		<P><FONT SIZE="14">GÅ TILLBAKA till huvudsidan.</FONT></P>
+	</Text>
+	<Text id="txtPaintStrokes">
+		<P><FONT SIZE="14">MÅLA med LITEN, MELLAN eller STORA penseldrag.</FONT></P>
+	</Text>
+	<Text id="txtSaveSubmit">
+		<P><FONT SIZE="14">SKRIV UT din kreation, SPARA, eller AVSLUTA</FONT></P>
+	</Text>
+	<Text id="txtClearStrokes">
+		<P><FONT SIZE="14">RENSA ALLA penseldrag.</FONT></P>
+	</Text>
+	<Text id="txtEraseStrokes">
+		<P><FONT SIZE="14">RADERA penseldrag.</FONT></P>
+	</Text>
+	<Text id="txtChangePaper">
+		<P><FONT SIZE="14">Byt PAPPERSFÄRG.</FONT></P>
+	</Text>
+    <Text id="txtEditArt">
+		<P><FONT SIZE="14">REDIGERA konstverk.</FONT></P>
+	</Text>
+	<Text id="txtHelpBlank">
+		<P><FONT SIZE="14">SKAPA ny konst med tomt canvas.</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseA">
+		<P><FONT SIZE="14">SKAPA ny konst med Peter på canvaset.</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseB">
+		<P><FONT SIZE="14">SKAPA ny konst med Angel på canvaset.</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseC">
+		<P><FONT SIZE="14">SKAPA ny konst med Tiffi på canvaset.</FONT></P>
+	</Text>
+  <Text id="txtHelpSavedCreations">
+		<P><FONT SIZE="14">REDIGERA eller RADERA dina tidigare sparade kreationer.</FONT></P>
+	</Text>
+  <Text id="txtSlotAButton">
+		<P><FONT SIZE="10">Sparfil A</FONT></P>
+	</Text>
+  <Text id="txtSlotBButton">
+		<P><FONT SIZE="10">Sparfil B</FONT></P>
+	</Text>
+    </Texts>
+	</BuiltInTexts>
+</ArtStudio>

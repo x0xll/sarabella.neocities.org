@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Memory spel</gameTitle>
+
+    <rules1>Bakom rutorna till höger finns 8 olika hästar. Varje bild finns på två olika platser.</rules1>
+    <rules2>Finn alla par för att klara spelet.</rule2>
+    <rules3>Om du klarar det innan tiden rinner ut vinner du spelet...</rules3>
+
+    <easy>Lätt</easy>
+    <medium>Medium</easy>
+    <hard>Svår</hard>
+    
+    <start>Starta</start>
+    <seconds>sek.</seconds>
+
+    <congrats>Grattis - du vann spelet</congrats>
+    <retry>--&gt; Spela igen &lt;--</retry>
+    <lost>Synd - du var inte snabb nog</lost>
+</root>

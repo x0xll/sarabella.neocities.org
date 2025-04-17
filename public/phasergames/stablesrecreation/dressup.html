@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title data-il8n="stables_title">Welcome to the World of Bella Sara</title>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
+        <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
+        <script src="./js/loadScreen.js"></script> 
+        <script src="./js/dressup.js"></script> 
+        <script src="./js/dressupLandStable.js"></script> 
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/language.js"></script>
+    
+    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
+        <script src="/header.js"></script>
+        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
+            <script type="text/javascript">
+                loadLanguagePref(false);
+                
+                // Gets info about the horse from data.json file
+                const searchQueryString = window.location.search;
+                const urlParameters = new URLSearchParams(searchQueryString);
+                horseName = urlParameters.get('name')
+                locale = getCurrentLanguageCode()
+                let localeData
+
+                function urlExists(url)
+                {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status!=404;
+                }
+                horseName ='.dressup'
+                let horseData = {type: 'dressup'}
+
+                let loadInto = `Stables`
+
+                let config = {
+                    parent: "gameDiv",
+                    dom: {
+                        createContainer: true
+                    },
+                    type: Phaser.WEBGL,
+                    width: 888,
+                    height: 521,
+                    backgroundColor: '#110c27',
+                    plugins: {
+                        scene: [
+                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
+                        ]
+                    },
+                    scene: [
+                        Load,
+                        dressupStable,
+                        dressupLandStable
+                    ]
+                };
+
+                const game = new Phaser.Game(config);
+        
+            </script>
+        </div>
+        <input id="copy" style="display: none">
+        <label id="copyLable" for="copy" style="display: none; color: white;" data-il8n="dressup_horselink">Horse Link</label>
+
+        <div class="footer">
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+            <a href="./index.html" class="global-lowernav-link" data-il8n="footer_magicalhorses_linktxt">Magical Horses</a> |
+            <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a> |
+            <a href="https://github.com/x0xll/sarabella.neocities.org" data-il8n="footer_github_linktxt" class="global-lowernav-link">GitHub</a>
+          </div>
+        
+          <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+{
+    "title": "Certificate of Birth",
+    "name": "Name:",
+    "birtDate": "Date of Birth:",
+    "birthPlace": "Place of Birth:",
+    "mother": "Mother:",
+    "father": "Father",
+    
+    "bellisimo_name": "Bellisimo",
+    "bellisimo_birtDate": "Sept. 25",
+    "bellisimo_birthPlace": "North of North",
+    "bellisimo_mother": "Bella",
+    "bellisimo_fater": "Bello",
+    "bellisimo_quote": "Trust yourself and you will know how to live.",
+
+    "cirra_name": "Cirra",
+    "cirra_birtDate": "Sept. 12",
+    "cirra_birthPlace": "North of North",
+    "cirra_mother": "Anemone",
+    "cirra_fater": "Uranus",
+    "cirra_quote": "See the beauty inside your friends.",
+
+    "petal_name": "Petal",
+    "petal_birtDate": "Sept. 4",
+    "petal_birthPlace": "North of North",
+    "petal_mother": "Rosebriar",
+    "petal_fater": "Beran",
+    "petal_quote": "Plan a sweet surprise for someone.",
+
+    "belissa_name": "Belissa",
+    "belissa_birtDate": "Nov. 6",
+    "belissa_birthPlace": "North of North",
+    "belissa_mother": "Bella",
+    "belissa_fater": "Bello",
+    "belissa_quote": "Become the person you want to be. You will find joy along the way.",
+
+    "janie_name": "Janie",
+    "janie_birtDate": "Sept. 18",
+    "janie_birthPlace": "North of North",
+    "janie_mother": "Ondine",
+    "janie_fater": "Flipper",
+    "janie_quote": "Learn from yesterday, enjoy today, and imagine tomorrow."
+}

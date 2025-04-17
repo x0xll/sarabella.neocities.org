@@ -1,0 +1,45 @@
+﻿<Bazaar>
+	<BuiltInTexts>
+		<Texts  >
+			<Text id="txtBuyIt">
+				<P><FONT SIZE="20"><B>Acheter</B></FONT></P>
+			</Text>
+			<Text id="txtExitTent">
+				<P><FONT SIZE="15"><B>Sortir</B></FONT></P>
+			</Text>
+			<Text id="txtPurchasing">
+				<P><FONT SIZE="15"><B>Achat en cours...</B></FONT></P>
+			</Text>
+			<Text id="txtOk">
+				<P><FONT SIZE="15"><B>OK</B></FONT></P>
+			</Text>
+			<Text id="txtTheObjectHasBeenAddedTo">
+				<P><FONT SIZE="16"><B>L'objet a </B></FONT></P><P><FONT SIZE="16"><B>été ajouté à </B></FONT></P>
+			</Text>
+			<Text id="txtMyThings">
+				<P><FONT SIZE="22"><B>Mes Objets. </B></FONT></P>
+			</Text>
+			<Text id="txtCouldNotPurchase">
+				<P><FONT SIZE="15"><B>L'objet ne </B></FONT></P><P><FONT SIZE="15"><B>pouvait pas être acheté.</B></FONT></P>
+			</Text>
+			<Text id="txtBazaarCategory">
+				<P><FONT SIZE="14">Choisir une CATÉGORIE où chercher des objets.</FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="14">ACTIVER/DÉSACTIVER la musique.</FONT></P>
+			</Text>
+			<Text id="txtBazaarItem">
+				<P><FONT SIZE="12">Passe la souris sur un objet pour voir son prix en FERS À CHEVAL. Clique sur ACHETER pour l'ajouter à MES OBJETS.</FONT></P>
+			</Text>
+			<Text id="txtBazaarExitTent">
+				<P><FONT SIZE="14">Choisir une autre CATÉGORIE.</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><b>Fermer l'Aide</b></FONT></P>
+			</Text>
+			<Text id="txtMoreObjects">
+				<P><FONT SIZE="14">Voir plus d'objets.</FONT></P>
+			</Text>
+		</Texts>
+	</BuiltInTexts>
+</Bazaar>

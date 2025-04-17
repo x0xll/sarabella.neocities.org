@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+        <!-- button text goes here -->
+        <help_btn>Hjälp</help_btn>
+        <pause_btn>Pausa</pause_btn>
+        <start_btn>Starta Spel</start_btn>
+        <turbobtn>Spela Turbo</turbobtn>
+        <pauseheading>Ditt Spel är Pausat</pauseheading>
+        <pause2>Stäng fönstret för att fortsätta spela.</pause2>
+        <how_to_play_btn>Hur Man Spelar</how_to_play_btn>
+        <play_again_btn>Spela Igen</play_again_btn>
+        <!-- intro text goes here -->
+        <intro>Intro från XML!</intro>
+        <!-- how to play title goes here -->
+        <how_to_play_title>Hur Man Spelar</how_to_play_title>
+        <!-- how to play text goes here -->
+        <how_to_play2>Hjälp Pegasus samla speciella blommor medan du flyger över kungarikets himmel. 
+Klicka på mellanslag eller med musen för att flaxa hennes vingar.
+Samla så många blommor som du kan innan solen gått ner och du tar dig till slottet.
+Lycka Till!</how_to_play2>
+        <!-- win message -->
+        <win>Grattis</win>
+        
+        <win2>Du va duktig! Vill du spela igen och samla ännu fler blommor?</win2>
+        
+        <!-- Non translated texts in original -->
+        <score>Nuvarande Poäng</score>
+        <intro_howto>Hjälp Pegasus samla speciella blommor medan du flyger över kungarikets himmel. 
+Klicka på mellanslag eller med musen för att flaxa hennes vingar.
+Samla så många blommor som du kan innan solen gått ner och du tar dig till slottet.</intro_howto>
+        <enterName>Var snäll och skriv ditt namn här</enterName>
+        <greatFlying>Snygg Flygning!</greatFlying>
+        <end>Du har kommit till slutet på din resa.</end>
+        <end2>Det finns inga fler blommor att samla.</end2>
+</root>

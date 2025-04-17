@@ -1,0 +1,15 @@
+11 April 2025
+    - Linked score with user highscore in PrintScore() in ScorecardMatrix
+        "Push register1, "displayedScore"
+        GetMember
+        Push "@TreasuresHunt"
+        Add2
+        Push "updateHighscore", 2, "flash.external.ExternalInterface"
+        GetVariable
+        Push "call"
+        CallMethod
+        Pop"
+    
+18 Jan 2025
+    - Added missing characters for French and Swedish in the Cochin regular font datas
+        - à, ä, å, é, è, ö

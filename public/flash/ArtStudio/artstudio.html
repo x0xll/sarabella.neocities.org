@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
       <title data-il8n="game_artstudio">Art studio</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
@@ -8,15 +9,8 @@
 
     <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown(); updateSWFLocaleDatas('ArtStudio');">
         <script src="/header.js"></script>
-
-        <div class="alert">
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n="artstudio_warning">
-            This game is missing the files for the original horses.
-          </p>
-        </div> 
         
         <script>
           window.RufflePlayer = {
@@ -27,7 +21,6 @@
         </script>
 
         <div class="swf" dir="ltr" rbidi="on">
-          <embed height="467" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="./swf/ArtStudio.swf" type="application/x-shockwave-flash" width="887" flashvars="gameWrapperPath=flash/ArtStudio/common/gamewrapper.swf&locale=en&lang=en&gameWrapperHelpPath=flash/ArtStudio/common/gamewrapperHelp.swf">
         </div>
 
         <div class="footer">
@@ -36,6 +29,27 @@
           <a href="https://web.archive.org/web/20090605221246/http://www.bellasara.com/artstudio.aspx" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
         </div>
 
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '467';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = './swf/ArtStudio.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+
+          // Temporary prevent using the jap version since the characters are broken
+          if (locale == "ja")
+            locale = "en";
+
+          swfPlayer.setAttribute("flashvars", `locale=${locale}&lang=${locale}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
   </body>
 </html>

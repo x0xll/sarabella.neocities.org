@@ -1,0 +1,5 @@
+18 Jan 2025
+    - Change default language
+        - _root.lang = "da" replaced by _root.lang = "en" in BellaInterface.swf Bridge.as initLanguage()
+    - Fix localization loading
+        - loadMovie("flash/lanceriding/lanceriding.swf",_level0) replaced by loadMovie("flash/lanceriding/lanceriding.swf?lang=" + _root.lang,_level0) in fakeloader.swf Frame 1 DoAction

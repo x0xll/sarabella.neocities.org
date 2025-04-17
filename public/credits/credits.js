@@ -1,6 +1,6 @@
 var creditsDatas = [];
 
-var creditsParent = document.getElementById("credits-parent");
+var creditsParent = document.getElementsByClassName("credits-parent");
 
 async function setCreditsDatas()
 {
@@ -13,21 +13,24 @@ async function setCreditsDatas()
     
     //console.log(creditsDatas);
 
-    for(var i = 0; i < creditsDatas.section.length; i++)
+    for(var k = 0; k < creditsParent.length; k++)
     {
-        var sectionElement = document.createElement("p");
-        sectionElement.innerHTML = "<b>" + creditsDatas.section[i].title + "</b>";
-        creditsParent.appendChild(sectionElement);
-
-        for (j = 0; j < creditsDatas.section[i].people.length; j++)
+        for(var i = 0; i < creditsDatas.section.length; i++)
         {
-            var peopleElement = document.createElement("p");
-            peopleElement.innerHTML = creditsDatas.section[i].people[j].name;
-            creditsParent.appendChild(peopleElement);
+            var sectionElement = document.createElement("p");
+            sectionElement.innerHTML = "<b>" + creditsDatas.section[i].title + "</b>";
+            creditsParent[k].appendChild(sectionElement);
+    
+            for (j = 0; j < creditsDatas.section[i].people.length; j++)
+            {
+                var peopleElement = document.createElement("p");
+                peopleElement.innerHTML = creditsDatas.section[i].people[j].name;
+                creditsParent[k].appendChild(peopleElement);
+            }
+    
+            var separator = document.createElement("br");
+            creditsParent[k].appendChild(separator);
         }
-
-        var separator = document.createElement("br");
-        creditsParent.appendChild(separator);
     }
 }
 

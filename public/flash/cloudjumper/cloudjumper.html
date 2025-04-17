@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
       <title data-il8n="game_cloudjumper">Cloudjumper</title>
         <script src="/ruffle/ruffle.js"></script>
         <link rel="stylesheet" href="/styles.css">
@@ -9,10 +10,15 @@
 
     <script src="/language.js"></script>
 
-    <body class="game"  onload="loadLanguagePref()">
+    <body class="game"  onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         
         <script>
+          // Gets the correct swf file from url
+          const searchQueryString = window.location.search;
+          const urlParameters = new URLSearchParams(searchQueryString);
+          versionFile = urlParameters.get('version')
+
           window.RufflePlayer = {
             config: {
               autoplay: "on",
@@ -20,9 +26,7 @@
           };
         </script>
 
-        <div class="swf" dir="ltr" rbidi="on">
-          <embed height="521" width="887" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="cloudjumper.swf" type="application/x-shockwave-flash">
-        </div>
+        <div class="swf" dir="ltr" rbidi="on"></div>
         
         <div class="footer">
           <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
@@ -31,6 +35,23 @@
         </div>
 
         <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          loadLanguagePref(false); 
+          const locale = getCurrentLanguageCode();
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '521';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'cloudjumper' + versionFile + '.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          if (locale != "en")
+            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfParent.appendChild(swfPlayer);
+        </script>
   </body>
 </html>
 

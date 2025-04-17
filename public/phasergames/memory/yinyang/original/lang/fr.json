@@ -1,0 +1,12 @@
+{
+    "score": "Score : ",
+    "time": "Temps : " ,
+    
+    "congrats": "Félicitations !",
+    "won": "Tu as gagné !",
+
+    "oops": "Oops...",
+    "lost": "Il semblerait que tu ais perdu...",
+
+    "retry": "Recommencer ?"
+}

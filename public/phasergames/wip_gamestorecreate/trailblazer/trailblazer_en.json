@@ -1,0 +1,28 @@
+{
+    "title": "Trailblazer",
+
+    "btn_play": "Play",
+    "btn_menu": "Menu",
+    "btn_playagain": "Play Again",
+
+    "score": "SCORE",
+    "scoreEnd": "Score",
+    "balls": "BALLS REMAINING",
+
+    "help1": "As the blocks burst, try to bounce the ball up through the top of the screen.",
+    "help2": "Magical tiles can help you.",
+    "help3": "Move your mouse in this area to position your bumper.",
+    "help4": "Bounce the ball upward with your bumper to break the blocks. The more blocks you break, the more points you'll earn!",
+    "help5": "Don't let the ball fall! 3 drops and the game is over.",
+
+    "thunder_name": "Thunder",
+    "thunder_quote": "I give you courage, now you can release your fears.",
+    "jewel_name": "Jewel",
+    "jewel_quote": "I will help you stay in a steady flow of abundance.",
+    "nike_name": "Nike",
+    "nike_quote": "Have the courage to trust yourself.",
+    "fiona_name": "Fiona",
+    "fiona_quote": "Be the hero in your own story.",
+    "bella_name": "Bella",
+    "bella_quoete": "Think positive every day! Feel the bliss of joy and energy that comes with it."
+}

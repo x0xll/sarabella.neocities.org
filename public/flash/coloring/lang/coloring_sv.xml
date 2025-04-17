@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+    <print>Skriv ut</print>
+    <reset>Återställ</reset>
+    <help>Hjälp</help>
+    <currentColor>Nuvarande Färg</currentColor>
+    <moreColor>Fler Färger</moreColor>
+    
+    <fionaTxt>Be the hero in your own story.</fionaTxt>
+</root>

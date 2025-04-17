@@ -1,0 +1,4 @@
+7 Feb 2025
+    - Modify path for css / xml
+        - "_css/" -> "oldmap/_css/"
+        - "_data/" -> "oldmap/_data/"

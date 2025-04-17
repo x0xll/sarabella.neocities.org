@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>かるた</gameTitle>
+
+    <rules1>右の正方形の下に8頭馬です。それぞれの馬は2箇所にあります。</rules1>
+    <rules2>すべてのペアを見つけ、ゲームを終了します。</rule2>
+    <rules3>時間がなくなる前にできるなら、勝ちます。</rules3>
+
+    <easy>簡単</easy>
+    <medium>中難度</easy>
+    <hard>高難度</hard>
+
+    <start>スタート</start>
+    <seconds>秒</seconds>
+
+    <congrats>よくできました！勝った！</congrats>
+    <retry>--&gt; もういちどやりますか？ &lt;--</retry>
+    <lost>残念です！遅すぎた。</lost>
+</root>

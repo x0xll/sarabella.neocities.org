@@ -1,0 +1,99 @@
+{
+    "title": "Bellapedia",
+
+    "welcome": "Welcome to BELLAPEDIA",
+    "description1": "This is for all you horse lovers out there.",
+    "description2": "Pick a book, find a horse and have it answer your horse questions. This may only be a starting point, for you to explore the beautiful, amazing world of horses.",
+    "description3": "Have fun!",
+    "description4": "A very special thanks to Oklahoma State University for the horse biography details.",
+
+    "about_details": "Details",
+    "about_tribe": "About the Tribe",
+    "about_funfact": "Fun Facts",
+    "about_distinctfeatures": "Distinguishing Features",
+
+    "page_abenaki": "Abenaki",
+    "page_absaroke": "Absaroke",
+    "page_akama": "Akama",
+    "page_aleut": "Aleut",
+    "page_americanquarterhorse": "American Quarter Horse",
+    "page_anemonewhifflebear": "Anemone & Whiffle Bear",
+    "page_aniganchucklepuck": "Anigan & Chucklepuck",
+    "page_anisinabe": "Anisinabe",
+    "page_apache": "Apache",
+    "page_appaloosa": "Appaloosa",
+
+    "page_laguna": "Laguna",
+    "page_lakehorse": "Lakehorse",
+    "page_lakota": "Lakota",
+    "page_larena": "Larena",
+    "page_lenape": "Lenape",
+    "page_lienlotushedgehog": "Lien & Lotus Hedgehog",
+    "page_lillovasweetpeareindeer": "Lillova & Sweetpea Reindeer",
+    "page_lukanauroracelestial": "Lukan & Aurora Celestial",
+    "page_lumbee": "Lumbee",
+    "page_madejayarnyak": "Madeja & Yarn Yak",
+    
+    "page_tewa": "Tewa",
+    "page_thor": "Thor",
+    "page_thunderblackcomblion": "Thnuder & Blackcomb Lion",
+    "page_tigrineduskpawcub": "Tigrine & Duskpaw Cub",
+    "page_tlingit": "Tlingit",
+    "page_toboggan": "Toboggan",
+    "page_tricksycunningflitkit": "Tricksy & Cunning Flitkit",
+    "page_tsimshian": "Tsimshian",
+    "page_tugoseashellbug": "Tugo & Seashell Bug",
+    "page_tumbleweed": "Tumbleweed",
+
+    "page_yakima": "Yakima",
+    "page_zephanmiragepossum": "Zephan & Mirage Possum",
+    "page_zuni": "Zuni",
+
+    "abenaki_detail1": "Area: Northeastern U.S. in the area of present-day Maine.",
+    "abenaki_detail2": "Their name means \"people of the dawn\"",
+    "abenaki_tribe": "The Abenaki lived in wigwams, temporary dwellings, while they moved about seasonally, but also built permanent longhouses in centralized villages. Their seasonal migrations included hunting, fishing and growing a variety of crops, but they returned to their longhouses during the winter. Abenaki built birch-bark canoes for water travel.<br/><br/>This tribal group includes the Penobscot and the Androscoggin. Abenakis fought agaisnt the English on the side of the French during the Seven Years' War from 1756 to 1763. After their defeat, many went north where they were welcomed by the French with gits of land, and presently, there is a reserve at Saint Francis, Quebec.",
+
+    "absaroke_detail1": "Area: Western U.S. at the foothills of the Rocky Mountains in present day Montana.",
+    "absaroke_detail2": "Their name is derived from the language of their sister tribe, the Hidasta, and means \"people of the large-beaked bird\".",
+    "absaroke_detail3": "The Absarokes are more commonly known as the Crow Nation.",
+    "absaroke_tribe": "The Crow used horses to hunt buffalo, and did not farm other than to raise tobacco. They cultivated two kinds of tobacco - medicine tobacco used in ceremonies and every day tobacco.<br/><br/>In the 19th Century, the Crow allied with the United States, and fought on the side of the U.S. in various conflicts against the Cheyenne, Arapahos and Sioux. Today, the Crow Nation has the largest reservation in the state of Montana, 1.5 million acres.",
+
+    "akama_detail1": "Area: Acoma Pueblo, New Mexico, U.S.",
+    "akama_detail2": "Name means \"The People of the White Rock\".",
+    "akama_detail3": "Acoma Pueblo is the oldest continuously inhabited location in the U.S.",
+    "akama_tribe": "Like other Pueblo tribes, the Acoma built permanent dwellings out of adobe bricks. They were active traders with Pueblo tribes to the east and wests and with the Aztecs and Mayans to the south.<br/><br/>Acoma Pueblo is also known as Sky City because of its location high atop a 370 foot tall mesa. A mesa is a flat-topped hill with sheer cliff sides formed by differential erosion. Mesa means \"table\" in Spanish.<br/><br/>The Acoma have historically been allied with the Laguna tribe. That alliance survives today. Their reservations border each other and they share many resources between them, including a high school. The Acoma have been master potter for 2000 years.",
+
+    "aleut_detail1": "Area: The seventy Aleutian Islands that extend 1,000 miles southwest from Alaska.",
+    "aleut_detail2": "Russians named this tribe Aleuts. They call themselves Unangan, which means \"The People\".",
+    "aleut_detail3": "During World War II some Aleuts were captured by the Japanese and held as prisoners of war.",
+    "aleut_tribe": "Traditional Aleuts were exceptional maritime hunters, using harpoons to catch prey, which consisted of whales, otters, sea lions and seals. They built light, flexible boats called kayaks. Aleuts built and lived in underground houses called barabaras. Barabaras were camouflaged to blend in with the surrounding ground, making them almost undetectable.<br/><br/>Aleuts made jewelry out of ivory, bone and feathers. Aleuts developed techniques for surviving harsh artic winters. During the summer the Aleuts would travel inland to fish for salmon and live in temporary dwellings.<br/><br/>Today Aleuts still live in Alaska, where 44 million acres of federal land was set aside for Alaska's Inuit and Aleut populations.",
+
+    "americanquarterhorse_fact1": "14.1-16 hands",
+    "americanquarterhorse_fact2": "Solidly colored with chestnut* being the most common",
+    "americanquarterhorse_fact3": "Very strong and flexible",
+    "americanquarterhorse_fact4": "Docile, smart, and have a good sense of humor",
+    "americanquarterhorse_fact5": "Good for a variety of activities including competition, endurance, jumping, racing and working",
+    "americanquarterhorse_features1": "They are bred in 3 types: Racing Quarter Horse, Show/Halter Quarter Horse, and Stock-type Quarter Horse.",
+    "americanquarterhorse_features2": "Some historians believe it is the oldest horse breed in the United States.",
+    "americanquarterhorse_features3": "The Quarter horse earned its name for its ability to sprint at great speed** for one quarter mile.",
+    "americanquarterhorse_features4": "It is the largest breed registry with 3.2 million registered around the world.",
+    "americanquarterhorse_features5": "The Quarter Horse is one of the fastest horse breeds in the world.",
+
+    "tugoseashellbug_quote": "\"Cheerful thoughts give you energy and faith.\"",
+    "tugoseashellbug_desc": "Tugo and his friends the seashell bugs live on the verge of a black sand beach, dotted with hundred of holes. As the rainy season fades and the sunshine warms the black sands of bita'galo, thousands of fist-sized creatures, with six legs and what appears to be a green/black/brown tortoise shell on their back, make their way from the dense rain forest to the sun-baked beaches. These are seashells bugs and their favorite food, kelpis root, is now in season. Digging deep holes in the sand, the seashell bugs search for kelpis root. Within just a few hours, the once pristine black sands take on a pock-marked appearance that will soon disappear with the incoming tide. For weeks the seashell bugs will make their home on this stretch of beach, gathering kelpis root and storing bunches of it in one hole or another.<br/><br/>Tugo, an orange-grey water pony, loves to splash and play in the surf to entertain his magical friends, the seashell bugs.",
+
+    "yakima_details1": "Area: Washington State, near the Yakima River.",
+    "yakima_details2": "Encoutered by the Lewis and Clark Expedition.",
+    "yakima_desc": "Historically, the Yakama Nation comprised 14 different tribes and bands living along the Yakima River, a tributary of the Columbia River. They fished for salmon, steelhead and sturgeon. They also gathered huckleberries, roots and choke cherries. They were members of a wide spread trading network, and traded for horses, dogs, baskets, textiles and other tools and necessaries.<br/><br/>Today the Yakama Nation has a reservation along the Yakima River in Washington State. They operate several successful business enterprises. A notable Yakama tribal member is Elyse Umemoto, Miss Washington 2007-2008 and who won 2nd place in the Miss America 2008 pageant.",
+
+    "zephanmiragepossum_quote": "\"Look at yourself with kindness and love.\"",
+    "zephanmiragepossum_desc": "Mirage possums get their name from their unique ability to change color; they are albino naturally, (white furred with pink eyes), but they are born with chameleon like powers that allow them to change color based upon their surroundings. Possums live in giant cabora palm trees that surround pools of pristine water in desolate desert settings.<br/><br/>Cabora palms are unique in the plant kingdom in that they grow fruits of all shapes and sizes. Like snowflakes, no two fruit are the same. Possums thrive among the cabora, never bored - they have endless choices. Possums climb trees to harvest fruit, and then hang upside to devour their meal. When they come near fruit clumps their fur changes color to resemble whatever fruit they are closest to.<br/><br/>Zephan is the friend of many mirage possums. They are kindred spirits: Zephan has the ability to change color, just like they do.",
+
+    "lumbee_details1": "Area: Robeson Country, North Carolina.",
+    "lumbee_details2": "Also known as the Croatan Indians, it is speculated that they absorded the white settlers of the Roanoke Colony, who all mysteriously vanished.",
+    "lumbee_details3": "One of the most populous tribes in the U.S.",
+    "lumbee_desc": "Lumbees share cultural traits with the Cherokee. Because they inhabited lands that were not highly desired by European settlers, avoided forced relocation in the 1830s.<br/><br/>Today the Lumbee have a vibrant, active and close-knit community, with headquarters in Robeson Country, North Carolina, though they also have concentrations of tribal members in five states.",
+
+    "lienlotushedgehog_quotes": "\"The most important time in your life is right now.\"",
+    "lienlotushedgehog_desc": "Lien is a very unique horse, at home in water. Lien is gentle. She likes still waters: pond, pools and marshes, preferring them to rivers and streams. Lien travels on land in the shape of a horse made of water. Sometimes little minnows and tadpoles get caught inside Lien and then they go on unexpected journeys over land. Then they get to see more of the world than they ever bargained for.<br/><br/>Lien is very close to Sara's magic, because Sara's magic was sprinkled across the land in raindrops, which fed the rivers, streams and ponds.<br/><br/>Lien's magical friends are the lotus hedgehogs. Some believe that her friendship with lotus hedgehogs has kept her from dissolving into a dream. When spending time with her hedgehog friends, Lien appears as a giant lotus floating on the glassy surface of a perfectly still pond."
+}

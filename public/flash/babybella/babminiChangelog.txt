@@ -1,0 +1,12 @@
+26 Jan 2025
+    - Make video path not go depending on language
+        - tvSpotPromoPopup.videoSrc = Enum.BABYBELLA_DOCUMENT.language + selectedVideoContentNode.src.toString() becomes tvSpotPromoPopup.videoSrc = selectedVideoContentNode.src.toString() in Main.as
+
+18 Jan 2025
+    - Add missing characters
+        - é, É in Script MT Bold font
+    - Change path for certificates files to have the files more organized
+        - url = Enum.SWF_DIRECTORY_URL + "/" + Enum.BABYBELLA_DOCUMENT.language + certificateSrc becomes url = Enum.SWF_DIRECTORY_URL + "/lang/" + Enum.BABYBELLA_DOCUMENT.language + certificateSrc in DetailClipGroup.as getPrintCertificate()
+        - request = new URLRequest(Enum.SWF_DIRECTORY_URL + "/" + Enum.BABYBELLA_DOCUMENT.language + __baby.certificatePreview) becomes request = new URLRequest(Enum.SWF_DIRECTORY_URL + "/lang/" + Enum.BABYBELLA_DOCUMENT.language + __baby.certificatePreview) in BellisimoBabyStoryContent.as, BabyStoryContent.as, and NewBabyStoryContent.as
+    - Change path to localized xml to allow us to have all the files in the same folder
+        - contentDataURL = __swfDirectoryURL + "/" + __language + "/data.xml" becomes contentDataURL = __swfDirectoryURL + "./lang/data_" + __language + ".xml" in BabyBellaDocument.as
