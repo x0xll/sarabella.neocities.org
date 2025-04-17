@@ -387,7 +387,9 @@ class dressupStableSelector extends Phaser.Scene
 
                     game.stableVisibleHorses[i].deletedIcon.setVisible(false);
                     let firstPart = savedHorses.splice(0, i);
-                    let secondPart = savedHorses.splice(i, savedHorses.length - i);
+                    let secondPart = savedHorses.splice(0, savedHorses.length);
+
+                    if (displayHorses[i] === "card_empty") return;
 
                     firstPart.push(displayHorses[i]);
                     secondPart.forEach(element => {

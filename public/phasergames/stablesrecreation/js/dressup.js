@@ -562,6 +562,7 @@ class dressupStable extends Phaser.Scene
                     return;
                 }
                 savedHorses.push(saveText);
+                game.saveIndex = savedHorses.length - 1;
             }
 
             updateCreations(JSON.stringify(savedHorses) + "@DressUp")
