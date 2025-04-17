@@ -429,7 +429,7 @@ class dressupStableSelector extends Phaser.Scene
             else
             {
                 setSkin(card, cardNumber);
-                tintHorse(card);
+                tintHorse(card, cardNumber);
             }
 
             if (displayHorses[cardNumber] !== 'card_empty' && cardNumber < 5) {
@@ -506,7 +506,8 @@ class dressupStableSelector extends Phaser.Scene
             skeleton.skeleton.setToSetupPose();
         }
 
-        function tintHorse(horsePic) {
+        function tintHorse(horsePic, indexHorse) {
+            const horseData = game.loadedHorses[indexHorse];
             let shade = 1
 
             // Hair
