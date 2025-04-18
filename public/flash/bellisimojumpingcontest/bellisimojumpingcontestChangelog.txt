@@ -1,0 +1,2 @@
+22 Jan 2025:
+    - Set default language to english instead of danish in Frame1 DoAction3
