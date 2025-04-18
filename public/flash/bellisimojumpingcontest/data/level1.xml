@@ -1,37 +1,57 @@
 <?xml version="1.0"?>
-<root length="2000">
+<root length="1800">
     <grid random="false">
         <track id="1" x="0" y="0"/>
-        <track id="2" x="50" y="0"/>
     </grid>
 
     <sections>
         <section id="1" x="0">
-            <prop name="Bund_Bakke1" x="-7" y="0">
+        <!-- FLOOR -->
+            <prop name="Bund_Bakke1" x="-10" y="0">
                 <layer value="background" />
             </prop>
-            <prop name="Bund_Bakke1" x="-2" y="0">
+            <prop name="Bund_Bakke1" x="-5" y="0">
                 <layer value="background" />
             </prop>
+            <prop name="Bund_Bakke1" x="0" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke2" x="5" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="10" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="15" y="0">
+                <layer value="background" />
+            </prop>
+
+        <!-- BACKGROUND -->
             <prop name="BG_Krat" x ="-3" y="-85">
                 <layer value="background" />
             </prop>
-            <prop name="Pickup_Aeble" x="-9" y="-70">
+            <prop name="BG_KratLille" x ="7" y="-85">
+                <layer value="background" />
+            </prop>
+
+        <!-- COLLECTABLES -->
+            <prop name="Pickup_Aeble" x="0" y="-70">
                 <layer value="center" />
                 <pickup value="true" />
             </prop>
-            <prop name="Pickup_Aeble" x="-5" y="-70">
+            <prop name="Pickup_Aeble" x="-5" y="-180">
                 <layer value="center" />
                 <pickup value="true" />
             </prop>
-            <prop name="Pickup_KeySlange" x="0" y="-70">
+            <prop name="Pickup_Gulerod" x="5" y="-70">
                 <layer value="center" />
                 <pickup value="true" />
-            </prop> 
-            <prop name="MG_Statue" x="5" y="-50">
-                <layer value="foreground" />
-            </prop> 
-            <prop name="Col_MurSmall" x="7" y="0">
+            </prop>
+
+        <!-- FOREGROUND -->
+
+        <!-- OBSTACLES -->  
+            <prop name="Col_Stakit" x="7" y="-5">
                 <layer value="center" />
                 <collidable value="true" />
             </prop>
