@@ -381,6 +381,7 @@ class dressupStableSelector extends Phaser.Scene
                 {
                     // Recover the horse if click on delete button anew
 
+                    game.stableVisibleHorses[i].card.setInteractive();
                     game.stableVisibleHorses[i].deletedIcon.setVisible(false);
                     deleteBtn.setFrame('delete');
                     let firstPart = savedHorses.splice(0, i);
@@ -401,6 +402,7 @@ class dressupStableSelector extends Phaser.Scene
                 }
 
                 // Delete horse (temp until change page)
+                game.stableVisibleHorses[i].card.disableInteractive();
                 game.stableVisibleHorses[i].deletedIcon.setVisible(true);
                 deleteBtn.setFrame('save');
                 savedHorses.splice(i, 1);
