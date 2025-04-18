@@ -415,14 +415,21 @@ function loadData(dataType, gameID = "")
         case DATA_TYPE_HORSESHOES:
             if (savedData.horseshoes === undefined)
                 return 0;
-            return savedData.horseshoes;
+            return parseInt(savedData.horseshoes);
         case DATA_TYPE_CREATIONS:
             return null;
+        default:
+            return 0;
     }
 }
 
 function addHorseshoes(amountAdded)
 {
+    if (typeof(amountAdded) !== "number")
+    {
+        amountAdded = parseInt(amountAdded);
+    }
+
     currentAmount = loadData(DATA_TYPE_HORSESHOES);
     
     if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
