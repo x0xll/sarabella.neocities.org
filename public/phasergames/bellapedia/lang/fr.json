@@ -1,8 +1,6 @@
 {
     "title": "Bienvenue dans la BELLAPEDIA",
     "intro": "Enfin une page pour tous les amoureux des chevaux.\n\nChoisis un livre, trouve un cheval et il répondra à tes questions sur les chevaux. Ce ne sera peut-être que le début de ton fabuleux voyage d'exploration dans le monde des chevaux.\n\nAmuse-toi bien!\n\nUn grand merci à l'Oklahoma State University pour les détails concernant les chevaux.",
-                    "info": "\"La vie est pleine de surprises. Profites-en !\"\n\nDans les mythes celtiques, Danu était une grande déesse, mère des dieux irlandais. Ces dieux se faisaient appeler les \"Tuatha dé Danann\", ce qui signifie \"le peuple de Danu\".\""
-                    "info": "\"La conviction te donne le courage d'avancer et de tenter ta chance.\"\n\nFirewalker (\"celui qui marche sur le feu\") est un nom anglais attribué à un cheval scandinave mythique qui pouvait marcher sur le feu et dans les airs. Il appartenait à Frey, dieu de la paix et de l'abondance et frère de Froya."
 	"books": [
     	{
         	"title": "A-D",
@@ -241,6 +239,7 @@
             	{
                 	"name": "Danu",
                 	"image": "/images/horses/danu.png",
+                    "info": "\"La vie est pleine de surprises. Profites-en !\"\n\nDans les mythes celtiques, Danu était une grande déesse, mère des dieux irlandais. Ces dieux se faisaient appeler les \"Tuatha dé Danann\", ce qui signifie \"le peuple de Danu\".\""
             	},
             	{
                 	"name": "Donnecha & Pufferfox",
@@ -325,6 +324,7 @@
             	{
                 	"name": "Firewalker",
                 	"image": "/images/horses/firewalker.png",
+                    "info": "\"La conviction te donne le courage d'avancer et de tenter ta chance.\"\n\nFirewalker (\"celui qui marche sur le feu\") est un nom anglais attribué à un cheval scandinave mythique qui pouvait marcher sur le feu et dans les airs. Il appartenait à Frey, dieu de la paix et de l'abondance et frère de Froya."
             	}, 
             	{
                 	"name": "Flame",
