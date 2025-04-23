@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+    <title>Bella riding</title>
+    <welcome>Welcome to Show jumping</welcome>
+
+    <hurry>HURRY!</hurry>
+    <welldone>WELL DONE!</welldone>
+
+    <congrats>Congratulation</congrats>
+    <congrats2>Congratulations!</congrats>
+
+    <totalscore>Total Score</totalscore>
+    
+    <win_canimprove>Well done. But maybe you can improve your score? Do you want to give it another try?</win_canimprove>
+
+    <restart>Try again</restart>
+    <start>Start</start>
+
+    <help1>Nice weather for a ride in the park</help1>
+    <help2>Will you be able to navigate the obstacle course.</help2>
+    <help3>You can control the horse using these keys</help3>
+    
+    <points>pt</points>
+
+    <color>Choose the colors for your horse</color>
+</root>
