@@ -1,12 +1,5 @@
 {
     "txtDressupInfo": "Info",
-    "txtDressupMain": "Main",
-    "txtDressupDarkPatterns": "Dark Patterns",
-    "txtDressupHair": "Hair",
-    "txtDressupWhiteMarkings": "White Markings",
-    "txtDressupWhitePatterns": "White Patterns",
-    
-    "txtDressupInfo": "Info",
     "txtDressupMain": "Principal",
     "txtDressupDarkPatterns": "Motifs Sombres",
     "txtDressupHair": "Crins",
@@ -38,6 +31,7 @@
     "txtDressupLinkInfo": "Le lien vers ce cheval est: ",
     "txtDressupRandomise": "Randomiser",
     "txtDressupBack": "Dress Up",
+    "txtDressupSave": "Sauvegarder",
 
     "txtLandRollOverPitchFork": "Il faut de la paille frâiche ! Utilise la fouche pour la prendre et la répandre au sol.",
     "txtLandRollOverShovel": "Débarrasse-toi de la paille usée ! Utilise la pelle.",

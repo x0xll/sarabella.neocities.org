@@ -77,6 +77,7 @@ class dressupStable extends Phaser.Scene
 
     preload (data)
     {  
+        const game = this;
 
         // Display Loading Bar
         this.load.on('progress', function (value) {
@@ -203,6 +204,8 @@ class dressupStable extends Phaser.Scene
             fleckedPattern: 0,
             darkMarkings: 0
         }
+        game.saveIndex = urlParameters.get('indexSaved') ? urlParameters.get('indexSaved') : -1;
+
         let dataLength = 0
         let startData = 0
         let URLdata = urlParameters.get('data') ? urlParameters.get('data') : "0"
@@ -234,32 +237,32 @@ class dressupStable extends Phaser.Scene
                 dataLength = 0
                 break;
         }
-            let optionsData = URLdata !== "0" ? URLdata.slice(startData) : "0"
-            // Make data correct length
-            while (optionsData.length < dataLength) {
-                optionsData = "0" + optionsData;
-            }
-            while (optionsData.length < 19) {
-                optionsData = optionsData + "0";
-            }
-            horseData.feathering = parseInt(optionsData.slice(0, 1))
-            horseData.forelock = parseInt(optionsData.slice(1, 2))
-            horseData.mane = parseInt(optionsData.slice(2, 3))
-            horseData.tail = parseInt(optionsData.slice(3, 4))
-            horseData.flWhite = parseInt(optionsData.slice(4, 5))
-            horseData.frWhite = parseInt(optionsData.slice(5, 6))
-            horseData.hrWhite = parseInt(optionsData.slice(6, 7))
-            horseData.hlWhite = parseInt(optionsData.slice(7, 8))
-            horseData.headStripe = parseInt(optionsData.slice(8, 9))
-            horseData.headSnip = parseInt(optionsData.slice(9, 10))
-            horseData.headStar = parseInt(optionsData.slice(10, 11))
-            horseData.headErase = parseInt(optionsData.slice(11, 12))
-            horseData.whiteMatches = parseInt(optionsData.slice(12, 13))
-            horseData.appyPattern = parseInt(optionsData.slice(13, 14))
-            horseData.pintoPattern = parseInt(optionsData.slice(14, 15))
-            horseData.pintoExpression = parseInt(optionsData.slice(15, 16))
-            horseData.fleckedPattern = parseInt(optionsData.slice(16, 17))
-            horseData.darkMarkings = parseInt(optionsData.slice(17, 18))
+        let optionsData = URLdata !== "0" ? URLdata.slice(startData) : "0"
+        // Make data correct length
+        while (optionsData.length < dataLength) {
+            optionsData = "0" + optionsData;
+        }
+        while (optionsData.length < 19) {
+            optionsData = optionsData + "0";
+        }
+        horseData.feathering = parseInt(optionsData.slice(0, 1))
+        horseData.forelock = parseInt(optionsData.slice(1, 2))
+        horseData.mane = parseInt(optionsData.slice(2, 3))
+        horseData.tail = parseInt(optionsData.slice(3, 4))
+        horseData.flWhite = parseInt(optionsData.slice(4, 5))
+        horseData.frWhite = parseInt(optionsData.slice(5, 6))
+        horseData.hrWhite = parseInt(optionsData.slice(6, 7))
+        horseData.hlWhite = parseInt(optionsData.slice(7, 8))
+        horseData.headStripe = parseInt(optionsData.slice(8, 9))
+        horseData.headSnip = parseInt(optionsData.slice(9, 10))
+        horseData.headStar = parseInt(optionsData.slice(10, 11))
+        horseData.headErase = parseInt(optionsData.slice(11, 12))
+        horseData.whiteMatches = parseInt(optionsData.slice(12, 13))
+        horseData.appyPattern = parseInt(optionsData.slice(13, 14))
+        horseData.pintoPattern = parseInt(optionsData.slice(14, 15))
+        horseData.pintoExpression = parseInt(optionsData.slice(15, 16))
+        horseData.fleckedPattern = parseInt(optionsData.slice(16, 17))
+        horseData.darkMarkings = parseInt(optionsData.slice(17, 18))
     }
 
     create (data)
@@ -535,6 +538,36 @@ class dressupStable extends Phaser.Scene
             }
             return color
         }
+
+        function save()
+        {
+            if (savedHorses == null)
+                savedHorses = []
+
+
+
+            let saveText = `&v=${urlVersion}` +
+                `&name=${encodeURIComponent(horseData.name)}` +
+                `&message=${encodeURIComponent(horseData.message)}` +
+                `&data=${horseDataToString()}` +
+                `&indexSaved=${game.saveIndex > -1 ? game.saveIndex : savedHorses.length}`
+
+            if (game.saveIndex > -1)
+                savedHorses[game.saveIndex] = saveText;
+            else
+            {
+                if (savedHorses.length >= MAX_SAVED_HORSES)
+                {
+                    alert("You have reached the maximum amount of horses saved... Delete one before saving this one.")
+                    return;
+                }
+                savedHorses.push(saveText);
+                game.saveIndex = savedHorses.length - 1;
+            }
+
+            updateCreations(JSON.stringify(savedHorses) + "@DressUp")
+            //saveToLocalStorage("dressuphorsesBellaSaraNeoCity", JSON.stringify(savedHorses));
+        }
         
         function copy() {
             let copyText = `${location.origin + location.pathname}` +
@@ -679,6 +712,8 @@ class dressupStable extends Phaser.Scene
             })
 
         function randomiseHorse() {
+            game.saveIndex = -1;
+
             horseData.feathering = randomIntFromInterval(0,5)
             horseData.forelock = randomIntFromInterval(0,2)
             horseData.mane = randomIntFromInterval(0,2)
@@ -1208,6 +1243,30 @@ class dressupStable extends Phaser.Scene
             playButton.on('pointerdown', () => {
                 this.scene.start('dressupLandStable', sharedData);
             })
+
+        // Save Button
+        const saveButton = game.add.text(150, 465, localeData.txtDressupSave, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5);
+            saveButton.setInteractive({ useHandCursor: true });
+            saveButton.on('pointerover', () => {
+                saveButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+                });
+                saveButton.on('pointerout', () => {
+                    saveButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+                });
+                saveButton.on('pointerdown', () => {
+                    // Save the data
+                    save()
+                })
+
+        if (getCurrentUsername() === "guest")
+            saveButton.setVisible(false);
 
         // music button
         const musicButton = this.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });

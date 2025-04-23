@@ -1,0 +1,5 @@
+18 April 2025:
+    - Link to fake user highscore
+        - flash.external.ExternalInterface.call("updateHighscore", stScore + "@BellisimosJumpingContest"); in endGame() in DefineSprite(870) Frame 1 DoAction, after stScore is set
+22 Jan 2025:
+    - Set default language to english instead of danish in Frame1 DoAction3
