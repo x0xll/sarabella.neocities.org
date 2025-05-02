@@ -27,19 +27,19 @@
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Umělecké studio</p>]]></label>
         </item>
         <item link="https://bellasara.wiki.gg/wiki/Bella%27s_Beauty_Box">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bella's Beauty Box</p>]]></label>
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Truhla krásy Bella Sara</p>]]></label>
         </item>  
         <item link="https://bellasara.wiki.gg/wiki/Category:Bellapedia">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bellapedia</p>]]></label>
         </item>
         <item link="/phasergames/quiz/belloquiz/original/index.html">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bello's Quiz</p>]]></label>
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kvíz Bello</p>]]></label>
         </item>
         <item link="/flash/quiz/index.html">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Santo's Quiz</p>]]></label>
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kvíz znalosti Santo</p>]]></label>
         </item>
         <item link="/phasergames/memory/yinyang/original/index.html">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Yin and Yang's Game</p>]]></label>
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hra Yin and Yang</p>]]></label>
         </item>
 			</menu>
 		</location>
@@ -59,7 +59,7 @@
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Úžasný parkur</p>]]></label>	
 				</item>
 				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hra jizdy s kopím</p>]]></label>	
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hra jízdy s kopím</p>]]></label>	
 				</item>
 			</menu>
 
@@ -71,7 +71,7 @@
 			</scroll>
       <menu itemSpacing="0" _x="-215" _y="-60" floatRight="-10">
         <item link="/flash/cloudjumper/cloudjumper.html?version=1">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">CloudJumper</p>]]></label>
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Jíza v mracích</p>]]></label>
         </item>
         <item link="/flash/dreamrider/dreamrider.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kouzelná jizda</p>]]></label>
@@ -94,7 +94,7 @@
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Úžasné kouzelné hledáni</p>]]></label>
         </item>
         <item link="/flash/treasureshunt/treasureshunt.html">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hledáni pokladu</p>]]></label>
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hledání Pokladu</p>]]></label>
         </item>
         <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kolo zázrakú</p>]]></label>
