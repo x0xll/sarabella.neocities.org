@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+    <title>Bella springspil</title>
+    <welcome>Velkommen til Springspillet</welcome>
+
+    <hurry>SKYND DIG!</hurry>
+    <welldone>FLOT!</welldone>
+
+    <congrats>Tillykke</congrats>
+    <congrats2>TILLYKKE!</congrats>
+
+    <totalscore>Score i alt</totalscore>
+    
+    <win_canimprove>Flot gjort. Prøv om du kan gøre det endnu bedre og få en bedre score.</win_canimprove>
+
+    <restart>Prøv igen</restart>
+    <start>Start</start>
+
+    <help1>Der er dejligt vejr til en ridetur i parken.</help1>
+    <help2>Se om du kan komme over forhindringerne.</help2>
+    <help3>Du kan bruge disse taster for at komme rundt på banen i spillet</help3>
+    
+    <points>pt</points>
+
+    <color>Vælg farver til din hest</color>
+</root>

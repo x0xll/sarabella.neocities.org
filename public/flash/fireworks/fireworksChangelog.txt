@@ -1,3 +1,7 @@
+18 April 2025
+    - Fireworks1.swf link to fake user, added following lines in SendDataViaWebservices() in Game.as
+        flash.external.ExternalInterface.call("updateHighscore",this.myScore + "@FirelightFestival");
+        flash.external.ExternalInterface.call("addHorseshoes",this.horseShoeCount);
 29 March 2025
     - Fireworks1.swf sends show datas to JS ExternalInterface
 

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<root length="1800">
+    <grid random="false">
+        <track id="1" x="0" y="0"/>
+    </grid>
+
+    <sections>
+        <section id="1" x="0">
+        <!-- FLOOR -->
+            <prop name="Bund_Bakke1" x="-10" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="-5" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="0" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke2" x="5" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="10" y="0">
+                <layer value="background" />
+            </prop>
+            <prop name="Bund_Bakke1" x="15" y="0">
+                <layer value="background" />
+            </prop>
+
+        <!-- BACKGROUND -->
+            <prop name="BG_Krat" x ="-3" y="-85">
+                <layer value="background" />
+            </prop>
+            <prop name="BG_KratLille" x ="7" y="-85">
+                <layer value="background" />
+            </prop>
+
+        <!-- COLLECTABLES -->
+            <prop name="Pickup_Aeble" x="0" y="-70">
+                <layer value="center" />
+                <pickup value="true" />
+            </prop>
+            <prop name="Pickup_Aeble" x="-5" y="-180">
+                <layer value="center" />
+                <pickup value="true" />
+            </prop>
+            <prop name="Pickup_Gulerod" x="5" y="-70">
+                <layer value="center" />
+                <pickup value="true" />
+            </prop>
+
+        <!-- FOREGROUND -->
+
+        <!-- OBSTACLES -->  
+            <prop name="Col_Stakit" x="7" y="-5">
+                <layer value="center" />
+                <collidable value="true" />
+            </prop>
+        </section>
+    </sections>
+</root>
