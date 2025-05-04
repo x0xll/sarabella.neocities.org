@@ -57,6 +57,8 @@ class Stable extends Phaser.Scene
         this.load.atlas('cubby', './images/stable/cubby.png', './images/stable/cubby.json')
         this.load.atlas('hayLoft', './images/stable/hayLoft.png', './images/stable/hayLoft.json')
         this.load.atlas('hayFloor00', './images/stable/hayFloor_00.png', './images/stable/hayFloor_00.json')
+        this.load.atlas('hayFloor01', './images/stable/hayFloor_01.png', './images/stable/hayFloor_01.json')
+        this.load.atlas('hayFloor02', './images/stable/hayFloor_02.png', './images/stable/hayFloor_02.json')
         this.load.atlas('barrel', './images/stable/barrel.png', './images/stable/barrel.json')
         this.load.atlas('bin', './images/stable/bin.png', './images/stable/bin.json')
         this.load.atlas('oatBag', './images/stable/oatbag.png', './images/stable/oatbag.json')
@@ -86,7 +88,7 @@ class Stable extends Phaser.Scene
         this.load.spineJson("horse-json", `./images/horse/skeleton.json`);
 
         // Hide the computer cursor
-        //this.input.setDefaultCursor('none');
+        this.input.setDefaultCursor('none');
     }
 
     create ()
@@ -108,11 +110,11 @@ class Stable extends Phaser.Scene
         this.input.topOnly = true;
 
         // Ref image
-        this.add.image(0, 0, 'stable_ref').setOrigin(0);
+        //this.add.image(0, 0, 'stable_ref').setOrigin(0);
     
         // Background image
         // TODO: Re-export with the yellow border
-        this.add.image(0, 0, 'stable_bg').setOrigin(0).setAlpha(.5);
+        this.add.image(0, 0, 'stable_bg').setOrigin(0);
 
         // Horse name
         const horseNameTextSettings = { 
@@ -176,6 +178,72 @@ class Stable extends Phaser.Scene
                 // TODO: replace the fork
                 hayFloor00.play('hayFloor00_add');
                 game.horseStatus.hayFloor[0] = true;
+            }
+
+            handCurrent = HAND.empty;
+        });
+
+        const hayFloor01 = this.add.sprite(450, 480, 'hayFloor01', 'idle').setScale(.7, .5);
+        const hayFloor01Interactive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(390, 400, 200, 200), Phaser.Geom.Rectangle.Contains);
+        this.anims.create({
+            key: 'hayFloor01_remove',
+            frames: this.anims.generateFrameNumbers('hayFloor01', { frames: [
+                '0001_remove', '0002_remove', '0003_remove', '0004_remove', '0005_remove', '0006_remove', '0007_remove', '0008_remove', '0009_remove', 'empty'
+            ] }),
+            frameRate: 24
+        });
+        this.anims.create({
+            key: 'hayFloor01_add',
+            frames: this.anims.generateFrameNumbers('hayFloor01', { frames: [
+                '0001_add', '0002_add', '0003_add', '0004_add', '0005_add', '0006_add', '0007_add', '0008_add', '0009_add', 'idle'
+            ] }),
+            frameRate: 24
+        });
+        hayFloor01Interactive.on('pointerdown', function (pointer)
+        {
+            if (handCurrent == HAND.shovel)
+            {
+                // TODO: replace the shovel
+                hayFloor01.play('hayFloor01_remove');
+            }
+            else if (handCurrent == HAND.forkFilled)
+            {
+                // TODO: replace the fork
+                hayFloor01.play('hayFloor01_add');
+                game.horseStatus.hayFloor[1] = true;
+            }
+
+            handCurrent = HAND.empty;
+        });
+
+        const hayFloor02 = this.add.sprite(600, 480, 'hayFloor02', 'idle').setScale(.7, .5);
+        const hayFloor02Interactive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(590, 400, 200, 200), Phaser.Geom.Rectangle.Contains);
+        this.anims.create({
+            key: 'hayFloor02_remove',
+            frames: this.anims.generateFrameNumbers('hayFloor02', { frames: [
+                '0001_remove', '0002_remove', '0003_remove', '0004_remove', '0005_remove', '0006_remove', '0007_remove', '0008_remove', '0009_remove', 'empty'
+            ] }),
+            frameRate: 24
+        });
+        this.anims.create({
+            key: 'hayFloor02_add',
+            frames: this.anims.generateFrameNumbers('hayFloor02', { frames: [
+                '0001_add', '0002_add', '0003_add', '0004_add', '0005_add', '0006_add', '0007_add', '0008_add', '0009_add', '0010_add','0011_add','0012_add','0013_add','idle'
+            ] }),
+            frameRate: 24
+        });
+        hayFloor00Interactive.on('pointerdown', function (pointer)
+        {
+            if (handCurrent == HAND.shovel)
+            {
+                // TODO: replace the shovel
+                hayFloor02.play('hayFloor02_remove');
+            }
+            else if (handCurrent == HAND.forkFilled)
+            {
+                // TODO: replace the fork
+                hayFloor02.play('hayFloor02_add');
+                game.horseStatus.hayFloor[2] = true;
             }
 
             handCurrent = HAND.empty;
