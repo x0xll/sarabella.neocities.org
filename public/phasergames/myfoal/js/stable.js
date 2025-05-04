@@ -29,8 +29,6 @@ carrotHeldSprite = null
 pearHeldSprite = null
 bottleHeldSprite = null
 
-// TODO: figure out why inputs seems offset
-
 class Stable extends Phaser.Scene
 {
     constructor ()
@@ -103,11 +101,11 @@ class Stable extends Phaser.Scene
         this.input.topOnly = true;
 
         // Ref image
-        this.add.image(0, 0, 'stable_ref').setOrigin(0);
+        //this.add.image(0, 0, 'stable_ref').setOrigin(0);
     
         // Background image
         // TODO: Re-export with the yellow border
-        this.add.image(0, 0, 'stable_bg').setOrigin(0).setAlpha(.5);
+        this.add.image(0, 0, 'stable_bg').setOrigin(0).setAlpha(1);
 
         // Horse name
         const horseNameTextSettings = { 
@@ -121,46 +119,20 @@ class Stable extends Phaser.Scene
 
         // Cubby
         // TODO: Put as close or open depending on if horse is sleeping or not
-        const cubby = this.add.sprite(565, 210, 'cubby', 'open').setInteractive();
-        this.anims.create({
-            key: 'cubby_open',
-            frames: this.anims.generateFrameNumbers('cubby', { frames: [
-                'open'
-            ] }),
-            frameRate: 24
-        });
-        this.anims.create({
-            key: 'cubby_close',
-            frames: this.anims.generateFrameNumbers('cubby', { frames: [
-                'close'
-            ] }),
-            frameRate: 24
-        });
+        const cubby = this.add.sprite(565, 210, 'cubby', 'open');
+        const cubbyInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(465, 170, 205, 168), Phaser.Geom.Rectangle.Contains);
 
         // HayLoft (wall)
-        const hayLoft = this.add.sprite(447, 57, 'hayLoft', 'idle').setInteractive();
-        this.anims.create({
-            key: 'hayLoft_idle',
-            frames: this.anims.generateFrameNumbers('hayLoft', { frames: [
-                'idle'
-            ] }),
-            frameRate: 24
-        });
-        this.anims.create({
-            key: 'hayLoft_hover',
-            frames: this.anims.generateFrameNumbers('hayLoft', { frames: [
-                'hover'
-            ] }),
-            frameRate: 24
-        });
-        hayLoft.on('pointerover', function (pointer)
+        const hayLoft = this.add.sprite(447, 57, 'hayLoft', 'idle');
+        const hayLoftInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(355, 15, 180, 95), Phaser.Geom.Rectangle.Contains);
+        hayLoftInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.fork) return;
 
-            hayLoft.play('hayLoft_hover');
+            hayLoft.setTexture('hayLoft', 'hover');
         });
-        hayLoft.on('pointerout', () => hayLoft.play('hayLoft_idle'));
-        hayLoft.on('pointerdown', function (pointer)
+        hayLoftInteractive.on('pointerout', () => hayLoft.setTexture('hayLoft', 'idle'));
+        hayLoftInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.fork) return;
 
@@ -170,14 +142,15 @@ class Stable extends Phaser.Scene
         // Hay (floor)
 
         // Shovel
-        const shovel = this.add.sprite(28, 267, 'shovel', 'idle').setInteractive().setScale(-1, 1);
-        shovel.on('pointerover', function (pointer)
+        const shovel = this.add.sprite(28, 267, 'shovel', 'idle').setScale(-1, 1);
+        const shovelInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(17, 280, 40, 212), Phaser.Geom.Rectangle.Contains);
+        shovelInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
             shovel.setTexture('shovel', 'hover');
         });
-        shovel.on('pointerout', () => shovel.setTexture('shovel', 'idle'));
-        shovel.on('pointerdown', function (pointer)
+        shovelInteractive.on('pointerout', () => shovel.setTexture('shovel', 'idle'));
+        shovelInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -186,14 +159,15 @@ class Stable extends Phaser.Scene
         });
 
         // Pitchfork
-        const pitchfork = this.add.sprite(67, 280, 'pitchfork', 'idle').setInteractive().setScale(-1, 1).setAngle(8);
-        pitchfork.on('pointerover', function (pointer)
+        const pitchfork = this.add.sprite(67, 280, 'pitchfork', 'idle').setScale(-1, 1).setAngle(8);
+        const pitchforkInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(60, 270, 30, 192), Phaser.Geom.Rectangle.Contains);
+        pitchforkInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
-            pitchfork.setTexture('pitchfork', 'hover');
+            //pitchfork.setTexture('pitchfork', 'hover');
         });
-        pitchfork.on('pointerout', () => pitchfork.setTexture('pitchfork', 'idle'));
-        pitchfork.on('pointerdown', function (pointer)
+        pitchforkInteractive.on('pointerout', () => pitchfork.setTexture('pitchfork', 'idle'));
+        pitchforkInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -203,7 +177,8 @@ class Stable extends Phaser.Scene
 
         // Bottle
         // TODO: find hover sprite
-        const bottle = this.add.sprite(720, 450, 'bottle', 'idle').setInteractive({pixelperfect: true});
+        const bottle = this.add.sprite(720, 450, 'bottle', 'idle');
+        const bottleInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(600, 370, 60, 80), Phaser.Geom.Rectangle.Contains);
         this.anims.create({
             key: 'bottle_kicked',
             frames: this.anims.generateFrameNumbers('bottle', { frames: [
@@ -211,28 +186,29 @@ class Stable extends Phaser.Scene
             ] }),
             frameRate: 24
         });
-        bottle.on('pointerdown', function (pointer)
+        bottleInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.bottle;
         });
-        bottle.on('pointerover', function (pointer)
+        bottleInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             //bottle.setTexture('bottle', 'hover');
         });
-        bottle.on('pointerout', () => bottle.setTexture('bottle', 'idle'));        
+        bottleInteractive.on('pointerout', () => bottle.setTexture('bottle', 'idle'));        
 
         // Water
-        const water = this.add.sprite(160, 418, 'water', 'idle_full').setInteractive();
-        water.on('pointerover', function (pointer)
+        const water = this.add.sprite(160, 418, 'water', 'idle_full');
+        const waterInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(130, 410, 80, 140), Phaser.Geom.Rectangle.Contains);
+        waterInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
         });
-        water.on('pointerout', () => water.setTexture('water', 'idle_full'));
-        water.on('pointerdown', function (pointer)
+        waterInteractive.on('pointerout', () => water.setTexture('water', 'idle_full'));
+        waterInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -241,20 +217,21 @@ class Stable extends Phaser.Scene
 
         // HorseFrame
         // TODO: Add horse image inside
-        const picFrame = this.add.sprite(279, 210, 'frame', 'idle').setInteractive({pixelperfect: true}).setScale(.6);
-        picFrame.on('pointerdown', function (pointer)
+        const picFrame = this.add.sprite(279, 210, 'frame', 'idle').setScale(.6);
+        const picFrameInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(250, 180, 60, 70), Phaser.Geom.Rectangle.Contains);
+        picFrameInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             // TODO: Show inspiration
         });
-        picFrame.on('pointerover', function (pointer)
+        picFrameInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             picFrame.setTexture('frame', 'hover');
         });
-        picFrame.on('pointerout', () => picFrame.setTexture('frame', 'idle'));     
+        picFrameInteractive.on('pointerout', () => picFrame.setTexture('frame', 'idle'));     
 
         // Barrel
         // TODO: Find hover sprite
@@ -275,8 +252,9 @@ class Stable extends Phaser.Scene
 
         var barrelType = updateBarrelType();
 
-        const barrel = this.add.sprite(608, 265, 'barrel', barrelType).setInteractive({pixelperfect: true});
-        barrel.on('pointerdown', function (pointer)
+        const barrel = this.add.sprite(608, 265, 'barrel', barrelType);
+        const barrelInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(660, 250, 70, 110), Phaser.Geom.Rectangle.Contains);
+        barrelInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -320,14 +298,8 @@ class Stable extends Phaser.Scene
 
 
         // Bin
-        const bin = this.add.sprite(730, 298, 'bin', 'idle').setInteractive({pixelperfect: true});
-        this.anims.create({
-            key: 'bin_idle',
-            frames: this.anims.generateFrameNumbers('bin', { frames: [
-                'idle'
-            ] }),
-            frameRate: 24
-        });
+        const bin = this.add.sprite(730, 298, 'bin', 'idle');
+        const binInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(690, 300, 60, 80), Phaser.Geom.Rectangle.Contains);
         this.anims.create({
             key: 'bin_open',
             frames: this.anims.generateFrameNumbers('bin', { frames: [
@@ -335,7 +307,7 @@ class Stable extends Phaser.Scene
             ] }),
             frameRate: 24
         });
-        bin.on('pointerdown', function (pointer)
+        binInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.redApple &&
                 handCurrent != HAND.greenApple &&
@@ -348,53 +320,42 @@ class Stable extends Phaser.Scene
 
             handCurrent = HAND.empty;
         });
-        bin.on('pointerover', function (pointer)
+        binInteractive.on('pointerover', function (pointer)
         {
             // TODO: Find hover sprite
+            //bin.setTexture('bin', 'hover')
         });
-        bin.on('pointerout', () => bin.play('bin_idle'));        
+        binInteractive.on('pointerout', () => bin.setTexture('bin', 'idle'));        
 
         // Oat Bag
-        const oatBag = this.add.sprite(770, 340, 'oatBag', 'idle').setInteractive({pixelperfect: true});
-        this.anims.create({
-            key: 'oatBag_idle',
-            frames: this.anims.generateFrameNumbers('oatBag', { frames: [
-                'idle'
-            ] }),
-            frameRate: 24
-        });
-        this.anims.create({
-            key: 'oatBag_hover',
-            frames: this.anims.generateFrameNumbers('oatBag', { frames: [
-                'hover'
-            ] }),
-            frameRate: 24
-        });
-        oatBag.on('pointerdown', function (pointer)
+        const oatBag = this.add.sprite(770, 340, 'oatBag', 'idle');
+        const oatBagInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(720, 305, 100, 120), Phaser.Geom.Rectangle.Contains);
+        oatBagInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.grainScoop;
         });
-        oatBag.on('pointerover', function (pointer)
+        oatBagInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
-            oatBag.play('oatBag_hover');
+            oatBag.setTexture('oatBag', 'hover');
         });
-        oatBag.on('pointerout', () => oatBag.play('oatBag_idle'));        
+        oatBagInteractive.on('pointerout', () => oatBag.setTexture('oatBag', 'idle'));        
 
         // Oat Through
 
         // Brush
-        const brush = this.add.sprite(745, 160, 'brush', 'idle').setInteractive().setScale(.6);
-        brush.on('pointerover', function (pointer)
+        const brush = this.add.sprite(745, 160, 'brush', 'idle').setScale(.6);
+        const brushInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(748, 185, 32, 65), Phaser.Geom.Rectangle.Contains);
+        brushInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
             brush.setTexture('brush', 'hover');
         });
-        brush.on('pointerout', () => brush.setTexture('brush', 'idle'));
-        brush.on('pointerdown', function (pointer)
+        brushInteractive.on('pointerout', () => brush.setTexture('brush', 'idle'));
+        brushInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -403,14 +364,15 @@ class Stable extends Phaser.Scene
         });
 
         // Comb
-        const comb = this.add.sprite(705, 288, 'comb', 'idle').setInteractive().setScale(.6);
-        brush.on('pointerover', function (pointer)
+        const comb = this.add.sprite(705, 288, 'comb', 'idle').setScale(.6);
+        const combInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(725, 185, 20, 60), Phaser.Geom.Rectangle.Contains);
+        combInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
-            brush.setTexture('comb', 'hover');
+            //comb.setTexture('comb', 'hover');
         });
-        comb.on('pointerout', () => comb.setTexture('comb', 'idle'));
-        comb.on('pointerdown', function (pointer)
+        combInteractive.on('pointerout', () => comb.setTexture('comb', 'idle'));
+        combInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -419,14 +381,15 @@ class Stable extends Phaser.Scene
         });
 
         // Hoof pick
-        const hoofpick = this.add.sprite(793, 219, 'hoofpick', 'idle').setInteractive().setScale(.6, .8);
-        hoofpick.on('pointerover', function (pointer)
+        const hoofpick = this.add.sprite(793, 219, 'hoofpick', 'idle').setScale(.6, .8);
+        const hoofpickInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(785, 185, 15, 70), Phaser.Geom.Rectangle.Contains);
+        hoofpickInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
             hoofpick.setTexture('hoofpick', 'hover');
         });
-        hoofpick.on('pointerout', () => hoofpick.setTexture('hoofpick', 'idle'));
-        hoofpick.on('pointerdown', function (pointer)
+        hoofpickInteractive.on('pointerout', () => hoofpick.setTexture('hoofpick', 'idle'));
+        hoofpickInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
@@ -446,9 +409,10 @@ class Stable extends Phaser.Scene
         const horse = this.add.spine(455, 485, 'horse-json', 'horse-atlas').setScale(.425);
         horse.animationState.setAnimation(0, "Idle", false)
         const horseInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(340, 240, 230, 260), Phaser.Geom.Rectangle.Contains);
-        //horseInteractive.fillRect(340, 240, 230, 260)
         horseInteractive.on('pointerdown', function (pointer)
         {
+            console.log("Hi")
+
             switch(handCurrent)
             {
                 case HAND.redApple:
@@ -514,7 +478,9 @@ class Stable extends Phaser.Scene
         // Horseshoe
         // TODO: fix missing frame 0016
         // TODO: optimize, temporarily disabled
-        const horseshoe = this.add.sprite(-103, 137, 'horseshoe', 'idle').setInteractive({pixelperfect: true}).setOrigin(0).setScale(.48);        /*
+        const horseshoe = this.add.sprite(-103, 137, 'horseshoe', 'idle').setOrigin(0).setScale(.48);
+        const horseshoeInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(16, 140, 30, 40), Phaser.Geom.Rectangle.Contains);
+        /*
         this.anims.create({
             key: 'horseshoe_play',
             frames: this.anims.generateFrameNumbers('horseshoe', { frames: [
@@ -522,26 +488,26 @@ class Stable extends Phaser.Scene
             ] }),
             frameRate: 24
         });
-        horseshoe.on('pointerdown', function (pointer)
+        horseshoeInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             horseshoe.play('horseshoe_play');
         });
-        horseshoe.on('pointerover', function (pointer)
+        horseshoeInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
             horseshoe.setTexture('horseshoe', 'hover');
         });
-        horseshoe.on('pointerout', () => horseshoe.setTexture('horseshoe', 'idle'));     */
+        horseshoeInteractive.on('pointerout', () => horseshoe.setTexture('horseshoe', 'idle'));     */
 
         // Certificate
         // TODO: Re-export the small certificate with dummy text
         // TODO: Find the sprite for small certificate hover
         // TODO: Write big certificate's texts
-        const certificate_small = this.add.sprite(280, 153, 'certificate_small').setInteractive({pixelperfect: true}).setScale(.1);
-        const certificate_big = this.add.sprite(510, 310, 'certificate_big').setInteractive({pixelperfect: true}).setVisible(false).setScale(.1);
+        const certificate_small = this.add.sprite(280, 153, 'certificate_small').setInteractive({pixelperfect: true, alphaTolerance: 255}).setScale(.1);
+        const certificate_big = this.add.sprite(510, 310, 'certificate_big').setInteractive({pixelperfect: true, alphaTolerance: 255}).setVisible(false).setScale(.1);
 
         certificate_small.on('pointerdown', function (pointer)
         {
@@ -555,12 +521,12 @@ class Stable extends Phaser.Scene
         });
 
         // ---------- Held items ---------- //
-        emptyPointerSprite = this.add.image(759, 272, 'cursor').setVisible(true).setOrigin(.1, .2);
-        redAppleHeldSprite = this.add.image(759, 272, 'apples', 'redapple_normal').setVisible(false).setOrigin(.8);
-        greenAppleHeldSprite = this.add.image(759, 272, 'apples', 'greenapple_normal').setVisible(false).setOrigin(.8);
-        carrotHeldSprite = this.add.image(759, 272, 'apples', 'carrot_normal').setVisible(false).setOrigin(.8);
-        pearHeldSprite = this.add.image(759, 272, 'apples', 'pear_normal').setVisible(false).setOrigin(.8);
-        bottleHeldSprite = this.add.image(759, 272, 'bottle_hand', 'idle').setVisible(false).setOrigin(.3);
+        emptyPointerSprite = this.add.image(900, 600, 'cursor').setVisible(true).setOrigin(.1, .2);
+        redAppleHeldSprite = this.add.image(900, 600, 'apples', 'redapple_normal').setVisible(false).setOrigin(.8);
+        greenAppleHeldSprite = this.add.image(900, 600, 'apples', 'greenapple_normal').setVisible(false).setOrigin(.8);
+        carrotHeldSprite = this.add.image(900, 600, 'apples', 'carrot_normal').setVisible(false).setOrigin(.8);
+        pearHeldSprite = this.add.image(900, 600, 'apples', 'pear_normal').setVisible(false).setOrigin(.8);
+        bottleHeldSprite = this.add.image(900, 600, 'bottle_hand', 'idle').setVisible(false).setOrigin(.3);
     }
 
     update ()
