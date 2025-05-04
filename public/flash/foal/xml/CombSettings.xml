@@ -2,13 +2,13 @@
 <Category name="CombSettings" likelihood="100">
   <CombStateCategory state="GetCombIdle" likelihood="100">
     <StateCategory state="Brush" position="0" likelihood="100">
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb2Idle" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb2Idle" />
     </StateCategory>
     <StateCategory state="Brush" position="1" likelihood="100">
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Idle" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Idle" />
     </StateCategory>
     <StateCategory state="Brush" position="2" likelihood="100">
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Idle" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Idle" />
     </StateCategory>
   </CombStateCategory>
   <CombStateCategory state="GetCombStrokeThreshold" likelihood="100">
@@ -20,50 +20,50 @@
   <CombStateCategory state="TriggerParticleEffect" likelihood="100">
     <StateCategory state="Brush" position="0" likelihood="100">
       <!--Very Dusty-->
-      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Cleaning.swf" label="CleaningCoat" xOffset="-50" yOffset="-20" />
+      <ParticleEffect fileName="./swf/MY_HORSE_Cleaning.swf" label="CleaningCoat" xOffset="-50" yOffset="-20" />
     </StateCategory>
     <StateCategory state="Brush" position="1" likelihood="100">
       <!--Dusty-->
-      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Cleaning.swf" label="CleaningCoat" xOffset="-50" yOffset="-20" />
+      <ParticleEffect fileName="./swf/MY_HORSE_Cleaning.swf" label="CleaningCoat" xOffset="-50" yOffset="-20" />
     </StateCategory>
     <StateCategory state="Brush" position="2" likelihood="100">
       <!--Clean-->
-      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Cleaning.swf" label="CleanCoat" xOffset="-50" yOffset="-20" />
+      <ParticleEffect fileName="./swf/MY_HORSE_Cleaning.swf" label="CleanCoat" xOffset="-50" yOffset="-20" />
     </StateCategory>
   </CombStateCategory>
   <CombStateCategory state="TriggerCombStartAnimation" likelihood="100">
     <StateCategory state="Brush" position="0" likelihood="100">
       <!--Very Dusty-->
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb2Start" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb2Start" />
     </StateCategory>
     <StateCategory state="Brush" position="1" likelihood="100">
       <!--Dusty-->
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Start" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Start" />
     </StateCategory>
     <StateCategory state="Brush" position="2" likelihood="100">
       <!--Clean-->
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Start" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Start" />
     </StateCategory>
   </CombStateCategory>
   <CombStateCategory state="TriggerCombEndAnimation" likelihood="100">
     <StateCategory state="Brush" position="0" likelihood="100">
       <!--Very Dusty-->
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb2End" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb2End" />
     </StateCategory>
     <StateCategory state="Brush" position="1" likelihood="100">
       <!--Dusty-->
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1End" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1End" />
     </StateCategory>
     <StateCategory state="Brush" position="2" likelihood="100">
       <!--Clean-->
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1End" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1End" />
     </StateCategory>
   </CombStateCategory>
   <CombStateCategory state="TriggerCombCompleteAnimation" likelihood="100">
     <AnimationSet>
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1End" />
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="CompleteBrushComb" />
-      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Start" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1End" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="CompleteBrushComb" />
+      <Animation fileName="./swf/anims/MY_Anim_BrushComb_Comp_v2.swf" label="Comb1Start" />
     </AnimationSet>
   </CombStateCategory>
 </Category>
