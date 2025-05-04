@@ -1,0 +1,220 @@
+﻿.Door{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.WaterTrough{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.GoodLuckHorseshoe{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.DirtyStraw{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Shovel{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.StrawBales{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Pitchfork{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Posters{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Comb{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Brush{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.HoofPick{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Snack{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.MilkBottle{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.StatBar{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.CompostBin{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.MusicBox{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Lamp{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.Blanket{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.LinkIntoCubby{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.LinkOutOfCubby{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#FFFFFF;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.WallCertificateTitle{
+	font-family:Poppl-Residenz;
+	font-size:45pt;
+	font-weight:bold;
+	color:#000000;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.WallCertificateBegin{
+	font-family:StempelGaramond;
+	font-size:18pt;
+	color:#000000;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.WallCertificateName{
+	font-family:StempelGaramond;
+	font-size:25pt;
+	font-weight:bold;
+	color:#000000;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.WallCertificateDateOfBirth{
+	font-family:StempelGaramond;
+	font-size:14pt;
+	color:#000000;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.WallCertificateEnd{
+	font-family:StempelGaramond;
+	font-size:17pt;
+	color:#000000;	
+	leading:-2pt;
+	letter-spacing:0pt;
+	text-align:left;
+}
+.IconicHorses{
+	font-family:Pristina;
+	font-size:40pt;
+	color:#FFFFFF;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.NamePlate
+{
+	font-family:Arial;
+	font-size:14pt;
+	font-weight: bold;
+	color:#9933CC;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:center;
+}

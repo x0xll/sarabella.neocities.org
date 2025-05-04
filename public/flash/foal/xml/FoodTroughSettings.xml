@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="FoodTroughSettings" likelihood="100">
+  <StateCategory state="Food" likelihood="100" position="0">
+    <!--Very Hungry-->
+    <Category name="Eat Food" likelihood="20">
+      <Category name="Eat Food and Move Positive" likelihood="80">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" command="MovePositive" />
+        </AnimationSet>
+      </Category>
+      <Category name="Eat Food" likelihood="20">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" />
+        </AnimationSet>
+      </Category>
+    </Category>
+    <Category name="Eat Food Ravenously" likelihood="80">
+      <Category name="Eat Food Ravenously and Move Positive" likelihood="80">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" command="MovePositive" />
+        </AnimationSet>
+      </Category>
+      <Category name="Eat Food Ravenously" likelihood="20">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" />
+        </AnimationSet>
+      </Category>
+    </Category>
+  </StateCategory>
+  <StateCategory state="Food" likelihood="100" position="1">
+    <!--Hungry-->
+    <Category name="Eat Food" likelihood="90">
+      <Category name="Eat Food and Move Positive" likelihood="80">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" command="MovePositive" />
+        </AnimationSet>
+      </Category>
+      <Category name="Eat Food" likelihood="20">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" />
+        </AnimationSet>
+      </Category>
+    </Category>
+    <Category name="Eat Food Ravenously" likelihood="10">
+      <Category name="Eat Food Ravenously and Move Positive" likelihood="80">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" command="MovePositive" />
+        </AnimationSet>
+      </Category>
+      <Category name="Eat Food Ravenously" likelihood="20">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealStart" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealLoop" command="ClearOats" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="Chew" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="EatMealEnd" />
+        </AnimationSet>
+      </Category>
+    </Category>
+  </StateCategory>
+  <StateCategory state="Food" likelihood="100" position="2">
+    <!--Satisfied-->
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="RefuseMeal" />
+    </AnimationSet>
+  </StateCategory>
+</Category>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="IdleAnimations" likelihood="100">
+  <Category name="Standard" likelihood="100">
+    <Category name="Idle" likelihood="66">
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Idles_Comp_v2.swf" label="Greet"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Idles_Comp_v2.swf" label="Idle"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Idles_Comp_v2.swf" label="IdleAlt"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Idles_Comp_v2.swf" label="IdleExtension"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="Curious"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="Surprised"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="Thoughtful"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="Excited" isUnstoppable="true"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="Satisfied"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="Bored"/>
+    </Category>
+    <Category name="Need" likelihood="33">
+      <StateCategory state="Food" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="WantMeal2" isUnstoppable="true"/>
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="WantBottle" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Food" likelihood="100" position="1">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="WantMeal1" isUnstoppable="true"/>
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="WantBottle" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Snack" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="WantSnack" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Snack" likelihood="100" position="1">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="WantSnack" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Water" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="WantWater2" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Water" likelihood="100" position="1">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="WantWater1" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Front_Hoof_1" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="WantCleanHoof" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Front_Hoof_2" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="WantCleanHoof" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Rear_Hoof_1" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="WantCleanHoof" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Rear_Hoof_2" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="WantCleanHoof" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Happiness_1" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="UnhappyDroop" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Happiness_2" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Emotions_Comp_v4.swf" label="UnhappyStomp" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Stall_Floor" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/My_Anim_CleanFloor_Comp_v1.swf" label="WantCleanFloor" isUnstoppable="true"/>
+      </StateCategory>
+      <StateCategory state="Petting" likelihood="100" position="0">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="WantPet" isUnstoppable="true"/>
+      </StateCategory>      
+    </Category>
+    <Category name="Rare" likelihood="1">
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Idles_Comp_v2.swf" label="IdleRareScratch" isUnstoppable="true"/>
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Idles_Comp_v2.swf" label="IdleRareFrolic" isUnstoppable="true"/>
+    </Category>
+  </Category>
+</Category>

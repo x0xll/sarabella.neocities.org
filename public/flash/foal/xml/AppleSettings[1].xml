@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="AppleSettings" likelihood="100">
+  <AppleStateCategory state="GetRandomAppleType" likelihood="100">
+    <Category name="Normal Apple" likelihood="70">
+      <AppleType type="Normal" />
+    </Category>
+    <Category name="Brown Apple" likelihood="20">
+      <AppleType type="Brown" />
+    </Category>
+    <Category name="Golden Apple" likelihood="10">
+      <AppleType type="Golden" />
+    </Category>
+  </AppleStateCategory>
+  <FeedingCategory state="Idle" likelihood="1" isFeeding="false">
+    <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Idle_Snack.swf" label="Idle"/>
+  </FeedingCategory>
+  <FeedingCategory state="Feeding" likelihood="1" isFeeding="true">    
+    <AppleStateCategory state="NormalApple" likelihood="100">
+      <StateCategory state="Snack" likelihood="100" position="0">
+        <!--Want Snack-->
+        <Category name="Eat Snack and Move Positive" likelihood="70">
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="EatSnack" command="MovePositive" />
+        </Category>
+        <Category name="Eat Snack" likelihood="30">
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="EatSnack" />
+        </Category>
+      </StateCategory>
+      <StateCategory state="Snack" likelihood="100" position="1">
+        <!--Satisfied-->
+        <Category name="Hesitate and Eat Snack and Move Positive" likelihood="70">
+          <AnimationSet>
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="EatSnack" command="MovePositive" />
+          </AnimationSet>
+        </Category>
+        <Category name="Hesitate and Eat Snack" likelihood="30">
+          <AnimationSet>
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="EatSnack" />
+          </AnimationSet>
+        </Category>
+      </StateCategory>
+    </AppleStateCategory>
+    <AppleStateCategory state="BrownApple" likelihood="100">
+      <StateCategory state="Snack" likelihood="100" position="0">
+        <!--Want Snack-->
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="RefuseSnack" />
+      </StateCategory>
+      <StateCategory state="Snack" likelihood="100" position="1">
+        <!--Satisfied-->
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="RefuseSnack" />
+      </StateCategory>
+    </AppleStateCategory>
+    <AppleStateCategory state="GoldenApple" likelihood="100">
+      <Category name="Eat Golden Apple and Move Positive" likelihood="100">
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Snack_Comp_v2.swf" label="EatSnack" command="MovePositive" />
+      </Category>
+    </AppleStateCategory>
+  </FeedingCategory>
+</Category>

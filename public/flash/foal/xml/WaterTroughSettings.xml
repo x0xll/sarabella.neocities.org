@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="WaterTroughSettings" likelihood="100">
+  <WaterTroughStateCategory state="GetOverflowType" likelihood="100">
+    <StateCategory state="Water" likelihood="10" position="0">
+      <OverflowType type="Overflow"/>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="90" position="0">
+      <OverflowType type="DoNotOverflow"/>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="10" position="1">
+      <OverflowType type="Overflow"/>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="90" position="1">
+      <OverflowType type="DoNotOverflow"/>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="10" position="2">
+      <OverflowType type="Overflow"/>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="90" position="2">
+      <OverflowType type="DoNotOverflow"/>
+    </StateCategory>
+  </WaterTroughStateCategory>
+  <WaterTroughStateCategory state="TriggerDrinkAnimation" likelihood="100">
+    <StateCategory state="Water" likelihood="100" position="0" >
+      <!--Very Thirsty-->
+      <Category name="Drink Water" likelihood="50">
+        <Category name="Drink Water and Move Positive" likelihood="80">
+          <AnimationSet>
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DrinkWater2" command="DropWater" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterStart2" command="MovePositive" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterEnd2" command="Reset" />
+          </AnimationSet>
+        </Category>
+        <Category name="Drink Water" likelihood="20">
+          <AnimationSet>
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DrinkWater2" command="DropWater" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterStart2" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterEnd2" command="Reset" />
+          </AnimationSet>
+        </Category>
+      </Category>
+      <Category name="Drink Water, Burp and Smile" likelihood="50">
+        <Category name="Drink Water, Burp and Smile and Move Positive" likelihood="80">
+          <AnimationSet>
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DrinkWater2" command="DropWater" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterStart2" command="MovePositive" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterEnd2" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="CompleteMealWater" command="Reset"/>
+          </AnimationSet>
+        </Category>
+        <Category name="Drink Water, Burp and Smile" likelihood="20">
+          <AnimationSet>
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DrinkWater2" command="DropWater" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterStart2" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterEnd2" />
+            <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="CompleteMealWater" command="Reset"/>
+          </AnimationSet>
+        </Category>
+      </Category>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="100" position="1" >
+      <!--Thirsty-->
+      <Category name="Drink Water" likelihood="90">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DrinkWater1" command="DropWater" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterStart1" command="MovePositive" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterEnd1" command="Reset" />
+        </AnimationSet>
+      </Category>
+      <Category name="Drink Water, Burp and Smile" likelihood="10">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DrinkWater1" command="DropWater" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterStart1" command="MovePositive" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="DropWaterEnd1" />
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="CompleteMealWater" command="Reset"/>
+        </AnimationSet>
+      </Category>
+    </StateCategory>
+    <StateCategory state="Water" likelihood="100" position="2">
+      <!--Satisfied-->
+      <Category name="Refuse Water" likelihood="80">
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="RefuseWater" command="Reset"/>
+      </Category>
+      <Category name="Refuse Water Rare" likelihood="20">
+        <AnimationSet>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="RefuseWaterRare" command="OverflowThenDropWater"/>
+          <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_MealWater_Comp_v5.swf" label="OverflowAndDropWater" command="Reset"/>
+        </AnimationSet>
+      </Category>
+    </StateCategory>
+  </WaterTroughStateCategory>
+</Category>

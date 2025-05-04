@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<root>
+	<Door>Le monde de Bella Sara t'attend derrière cette porte.</Door>
+	<WaterTrough>Si ton cheval a soif, pompe de l'eau dans son abreuvoir.</WaterTrough>
+	<GoodLuckHorseshoe>Touche pour avoir de la chance!</GoodLuckHorseshoe>
+  <DirtyStraw>Si ton cheval veut de la paille propre, utilise la pelle pour retirer la paille sale.</DirtyStraw>
+  <Shovel>Dehors, la paille sale!</Shovel>
+  <StrawBales>Utilise la fourche pour répandre de la paille fraîche sur le sol de l'écurie.</StrawBales>
+  <Pitchfork>Voilà la paille fraîche!</Pitchfork>
+  <Dirtypitchfork>Utilise d'abord la pelle pour retirer la paille sale.</Dirtypitchfork>
+  <Posters>L'art nous inspire!</Posters>
+  <Comb>Peigne la crinière de ton cheval pour en défaire les nœuds. </Comb>
+  <Brush>Brosse le pelage de ton cheval pour retirer la poussière.</Brush>
+  <HoofPick>Utilise le grattoir pour retirer la terre des sabots de ton cheval.</HoofPick>
+  <Snack>Donne un bon casse-croûte à ton cheval.</Snack>
+  <Oats>Mets de l'avoine dans l'auge placée devant ton cheval.</Oats>
+  <MilkBottle>Porte la bouteille au museau de ton cheval pour qu'il s'allaite.</MilkBottle>
+  <StatBar>Une bonne petite maman = un poulain en bonne santé!</StatBar>
+  <CompostBin>Beurk! Si ton cheval n'aime pas ce casse-croûte, place-le dans le réservoir à compost.</CompostBin>
+  <MusicBox>La musique douce rend ton cheval heureux.</MusicBox>
+  <LampOn>Si ton cheval est fatigué, éteins la lampe pour qu'il s'endorme.</LampOn>
+  <LampOff>S'il est l'heure de se lever, allume la lampe pour le réveiller doucement.</LampOff>
+  <Blanket>Borde ton cheval pour la nuit à l'aide de cette couverture.</Blanket>
+  <LinkIntoCubby>La chambre de ton cheval est très confortable. Emmène-le là quand il est temps de se reposer.</LinkIntoCubby>
+  <LinkOutOfCubby>Tire le gland pour retourner à l'écurie de ton cheval.</LinkOutOfCubby>
+  <CertificateTitle>Contrat de soins</CertificateTitle>
+  <CertificateBegin>Ce contrat certifie que {0} est le soigneur officiel du poulain appelé:</CertificateBegin>
+  <CertificateName>{0} {1}</CertificateName>
+  <CertificateDateOfBirth>(date de naissance: {0})</CertificateDateOfBirth>
+  <CertificateEnd>{0} promet de nourrir  {1} {2}, de s'en occuper et de lui tenir fidèlement compagnie. Que votre amitié s'épanouisse comme une fleur!</CertificateEnd>
+  <NamePlateName>{0} {1}</NamePlateName>
+  <IconicHorses>
+    <Bella>Pense positivement chaque jour ! Ressens la sérénité que t’apporte la joie et l’énergie qu’elle suscite.</Bella>
+    <Bello>La vie est un cadeau. Sache le recevoir et l’apprécier à sa juste valeur.</Bello>
+    <Bellisimo>Crois en toi et la vie n’aura pas de secret pour toi.</Bellisimo>
+    <Fiona>Sois le héros de ta propre histoire.</Fiona>
+    <Jewel>Grâce à moi, tu ne manqueras jamais de rien.</Jewel>
+    <Thunder>Je te donne le courage. Libère-toi de tes peurs.</Thunder>
+  	<Nike>Aie le courage de croire en toi.</Nike>
+  </IconicHorses>
+  <ExitIcons>
+    <ToWorld>Bella Sara World</ToWorld>
+    <ToHorses>Bella Sara Horses</ToHorses>
+    <ToCottage>Mon Cottage</ToCottage>
+  </ExitIcons>
+</root>

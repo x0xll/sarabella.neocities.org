@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="HandSettings" likelihood="100">
+  <HandStateCategory state="GetPettingIdle" likelihood="100">
+    <StateCategory state="Petting" position="0" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="Pet2Idle" />
+    </StateCategory>
+    <StateCategory state="Petting" position="1" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="Pet1Idle" />
+    </StateCategory>
+  </HandStateCategory>
+  <HandStateCategory state="GetDonePettingTimerDelay" likelihood="100">
+    <DonePettingTimerDelay milliseconds="3000" />
+  </HandStateCategory>
+  <HandStateCategory state="GetHandStrokeThreshold" likelihood="100">
+    <HandStrokeThreshold value="3" />
+  </HandStateCategory>
+  <HandStateCategory state="GetFlurryHeartsThreshold" likelihood="100">
+    <FlurryHeartsThreshold value="3" />
+  </HandStateCategory>
+  <HandStateCategory state="TriggerHeartsBeforeHandStrokeThreshold" likelihood="100">
+    <Category name="NormalHearts Level 1" likelihood="25">
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="NormalHearts1" xOffset="80" yOffset="0" />
+    </Category>
+    <Category name="NormalHearts Level 2" likelihood="25">
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="NormalHearts2" xOffset="80" yOffset="0" />
+    </Category>
+    <Category name="NormalHearts Level 3" likelihood="25">
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="NormalHearts3" xOffset="80" yOffset="0" />
+    </Category>
+  </HandStateCategory>
+  <HandStateCategory state="TriggerHeartsAfterHandStrokeThreshold" likelihood="100">
+    <Category name="NormalHearts" likelihood="80">
+      <Category name="NormalHearts Level 1" likelihood="25">
+			  <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="NormalHearts1" xOffset="80" yOffset="0" />
+      </Category>
+			<Category name="NormalHearts Level 2" likelihood="25">
+				<ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="NormalHearts2" xOffset="80" yOffset="0" />
+			</Category>
+			<Category name="NormalHearts Level 3" likelihood="25">
+				<ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="NormalHearts3" xOffset="80" yOffset="0" />
+			</Category>
+		</Category>
+    <Category name="FlurryHearts" likelihood="20">
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Petting.swf" label="FlurryHearts" xOffset="80" yOffset="0" command="IncrementFlurryHeartsCount"/>
+    </Category>
+  </HandStateCategory>
+  <HandStateCategory state="TriggerPettingStartAnimation" likelihood="100">
+    <StateCategory state="Petting" position="0" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="Pet2Start" />
+    </StateCategory>
+    <StateCategory state="Petting" position="1" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="Pet1Start" />
+    </StateCategory>
+  </HandStateCategory>
+  <HandStateCategory state="TriggerPettingEndAnimation" likelihood="100">
+    <StateCategory state="Petting" position="0" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="Pet2End" />
+    </StateCategory>
+    <StateCategory state="Petting" position="1" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Pet_Comp_v4.swf" label="Pet1End" />
+    </StateCategory>
+  </HandStateCategory>
+</Category>

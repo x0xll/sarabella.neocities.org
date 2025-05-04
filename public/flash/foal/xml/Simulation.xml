@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Simulation serverSaveDelay="60000"
+            localSaveDelay="10000"
+            sleepTime="300000"
+            firstTimePass="86400000">
+  <Status name="Hunger">
+    <State name="Food" positions="3" negativeThreshold="1" /> <!--Very Hungry, Hungry, Satisified-->
+    <State name="Water" positions="3" negativeThreshold="1" /> <!--Very Thirsty, Thirsty, Satisified-->
+    <State name="Snack" positions="2" negativeThreshold="0" /> <!--Want Snack, Satisified-->
+  </Status>
+  <Status name="Cleanliness">
+    <State name="Brush" positions="3" negativeThreshold="1" /> <!--Very Dusty, Dusty, Clean-->
+    <State name="Front_Hoof_1" positions="2" negativeThreshold="0" /> <!--Dirty, Clean-->
+    <State name="Rear_Hoof_1" positions="2" negativeThreshold="0" /> <!--Dirty, Clean-->
+    <State name="Front_Hoof_2" positions="2" negativeThreshold="0" /> <!--Dirty, Clean-->
+    <State name="Rear_Hoof_2" positions="2" negativeThreshold="0" /><!--Dirty, Clean-->
+    <State name="Stall_Floor" positions="2" negativeThreshold="0" /><!--Dirty, Clean-->      
+  </Status>
+  <Status name="Happiness">
+    <State name="Petting" positions="2" negativeThreshold="0" /> <!--Wants Petting, Satisfied-->
+    <State name="Happiness_1" positions="2" negativeThreshold="0"> <!--Unhappy, Satisifed-->
+      <LinkedStatus>Hunger</LinkedStatus>
+    </State>
+    <State name="Happiness_2" positions="2" negativeThreshold="0"> <!--Unhappy, Satisifed-->
+      <LinkedStatus>Cleanliness</LinkedStatus>
+    </State>
+  </Status>  
+</Simulation>

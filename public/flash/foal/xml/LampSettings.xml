@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="LampSettings" likelihood="100">
+  <LampStateCategory state="GetSoothedIdleAnimation" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SootheIdle" />
+    </AnimationSet>
+  </LampStateCategory>
+  <LampStateCategory state="LampOffWhileSoothed" likelihood="100">  
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SleepStart" />
+    </AnimationSet>
+	</LampStateCategory>
+  <LampStateCategory state="LampOffWhileNotSoothed" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SootheStart" />
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SleepStart" />
+    </AnimationSet>
+  </LampStateCategory>
+  <LampStateCategory state="LampOnWhileSoothed" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SleepEndSoothed" />
+    </AnimationSet>
+  </LampStateCategory>
+  <LampStateCategory state="LampOnWhileNotSoothed" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SleepEndAlert" />
+    </AnimationSet>
+  </LampStateCategory>
+</Category>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="LampSettings" likelihood="100">
+  <MusicBoxStateCategory state="GetSoothedIdleAnimation" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SootheIdle" />
+    </AnimationSet>
+  </MusicBoxStateCategory>
+  <MusicBoxStateCategory state="MusicBoxOn" likelihood="100">  
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SootheStart" />
+    </AnimationSet>
+	</MusicBoxStateCategory>
+  <MusicBoxStateCategory state="MusicBoxOff" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SootheEnd" />
+    </AnimationSet>
+  </MusicBoxStateCategory>
+</Category>

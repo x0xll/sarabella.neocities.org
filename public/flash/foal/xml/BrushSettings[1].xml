@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="BrushSettings" likelihood="100">
+  <BrushStateCategory state="GetBrushIdle" likelihood="100">
+    <StateCategory state="Brush" position="0" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush2Idle" />
+    </StateCategory>
+    <StateCategory state="Brush" position="1" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1Idle" />
+    </StateCategory>
+    <StateCategory state="Brush" position="2" likelihood="100">
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1Idle" />
+    </StateCategory>
+  </BrushStateCategory>  
+  <BrushStateCategory state="GetBrushStrokeThreshold" likelihood="100">
+    <BrushStrokeThreshold value="3" />
+  </BrushStateCategory>
+  <BrushStateCategory state="GetBurrThreshold" likelihood="100">
+    <BurrThreshold value="3" />
+  </BrushStateCategory>
+  <BrushStateCategory state="GetRandomBurrStateGenerator" likelihood="100">
+    <RandomBurrStateGenerator percent=".5"/>
+  </BrushStateCategory>
+  <BrushStateCategory state="GetVeryDirtyBrightness" likelihood="100">
+    <Brightness value="-0.2"/>
+  </BrushStateCategory>
+  <BrushStateCategory state="GetDirtyBrightness" likelihood="100">
+    <Brightness value="-0.1"/>
+  </BrushStateCategory>
+  <BrushStateCategory state="GetCleanBrightness" likelihood="100">
+    <Brightness value="0"/>
+  </BrushStateCategory>
+  <BrushStateCategory state="TriggerParticleEffect" likelihood="100">
+    <StateCategory state="Brush" position="0" likelihood="100">
+      <!--Very Dusty-->
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Cleaning.swf" label="CleaningCoat" xOffset="-50" yOffset="-20" />
+    </StateCategory>
+    <StateCategory state="Brush" position="1" likelihood="100">
+      <!--Dusty-->
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Cleaning.swf" label="CleaningCoat" xOffset="-50" yOffset="-20" />
+    </StateCategory>
+    <StateCategory state="Brush" position="2" likelihood="100">
+      <!--Clean-->
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_Cleaning.swf" label="CleanCoat" xOffset="-50" yOffset="-20" />
+    </StateCategory>
+  </BrushStateCategory>
+  <BrushStateCategory state="TriggerBurrParticleEffect" likelihood="100">
+    <Category name="Burr Flying" likelihood="100">
+      <ParticleEffect fileName="/Flash/MyHorses/Animations/MY_HORSE_BrushParticleAnimation.swf" label="BurrFlying" xOffset="0" yOffset="0" />
+    </Category>
+  </BrushStateCategory>
+  <BrushStateCategory state="TriggerBrushStartAnimation" likelihood="100">
+    <StateCategory state="Brush" position="0" likelihood="100">
+      <!--Very Dusty-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush2Start" />
+    </StateCategory>
+    <StateCategory state="Brush" position="1" likelihood="100">
+      <!--Dusty-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1Start" />
+    </StateCategory>
+    <StateCategory state="Brush" position="2" likelihood="100">
+      <!--Clean-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1Start" />
+    </StateCategory>
+  </BrushStateCategory>
+  <BrushStateCategory state="TriggerBrushEndAnimation" likelihood="100">
+    <StateCategory state="Brush" position="0" likelihood="100">
+      <!--Very Dusty-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush2End" />
+    </StateCategory>
+    <StateCategory state="Brush" position="1" likelihood="100">
+      <!--Dusty-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1End" />
+    </StateCategory>
+    <StateCategory state="Brush" position="2" likelihood="100">
+      <!--Clean-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1End" />
+    </StateCategory>
+  </BrushStateCategory>
+  <BrushStateCategory state="TriggerBrushCompleteAnimation" likelihood="100">
+    <AnimationSet>
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1End" />
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="CompleteBrushComb" />
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_BrushComb_Comp_v2.swf" label="Brush1Start" />
+    </AnimationSet>
+  </BrushStateCategory>
+</Category>

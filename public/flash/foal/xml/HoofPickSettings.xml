@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="HoofPickSettings" likelihood="100">
+  <HoofPickStateCategory state="Neutral" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="Idle"/>
+  </HoofPickStateCategory>
+  
+  <HoofPickStateCategory state="MouseOverFrontLeft" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="CleanHoofFrontNear"/>   
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="MouseOverFrontRight" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="CleanHoofFrontFar" />
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="MouseOverRearLeft" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="CleanHoofBackNear" />
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="MouseOverRearRight" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="CleanHoofBackFar" />
+  </HoofPickStateCategory>
+
+  <HoofPickStateCategory state="ClickFrontLeft" likelihood="100">
+    <StateCategory state="Front_Hoof_1" likelihood="50" position="0">
+      <NullAnimation />
+    </StateCategory>
+    <StateCategory state="Front_Hoof_1" likelihood="50" position="0">
+      <Category name="RockVanish" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontNearRockVanish"/>
+      </Category>
+      <Category name="RockDrop" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontNearRockDrop"/>
+      </Category>
+    </StateCategory>
+    <StateCategory state="Front_Hoof_1" likelihood="100" position="1">
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontNearLegDrop"/>
+    </StateCategory>
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="ClickFrontRight" likelihood="100">
+    <StateCategory state="Front_Hoof_2" likelihood="50" position="0">
+      <NullAnimation />
+    </StateCategory>
+    <StateCategory state="Front_Hoof_2" likelihood="50" position="0">
+      <Category name="RockVanish" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontFarRockVanish"/>
+      </Category>
+      <Category name="RockDrop" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontFarRockDrop"/>
+      </Category>
+    </StateCategory>
+    <StateCategory state="Front_Hoof_1" likelihood="100" position="1">
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontFarLegDrop"/>
+    </StateCategory>
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="ClickRearLeft" likelihood="100">
+    <StateCategory state="Rear_Hoof_1" likelihood="50" position="0">
+      <NullAnimation />
+    </StateCategory>
+    <StateCategory state="Rear_Hoof_1" likelihood="50" position="0">
+      <Category name="RockVanish" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackNearRockVanish"/>
+      </Category>
+      <Category name="RockDrop" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackNearRockDrop"/>
+      </Category>
+    </StateCategory>
+    <StateCategory state="Rear_Hoof_1" likelihood="100" position="1">
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackNearLegDrop"/>
+    </StateCategory>
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="ClickRearRight" likelihood="100">
+    <StateCategory state="Rear_Hoof_2" likelihood="50" position="0">
+      <NullAnimation />
+    </StateCategory>
+    <StateCategory state="Rear_Hoof_2" likelihood="50" position="0">
+      <Category name="RockVanish" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackFarRockVanish"/>
+      </Category>
+      <Category name="RockDrop" likelihood="50">
+        <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackFarRockDrop"/>
+      </Category>
+    </StateCategory>
+    <StateCategory state="Rear_Hoof_2" likelihood="100" position="1">
+      <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackFarLegDrop"/>
+    </StateCategory>
+  </HoofPickStateCategory>
+
+  <HoofPickStateCategory state="MouseOutFrontLeft" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontNearLegDrop"/>
+   </HoofPickStateCategory>
+  <HoofPickStateCategory state="MouseOutFrontRight" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="FrontFarLegDrop"/>
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="MouseOutRearLeft" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackNearLegDrop"/>
+  </HoofPickStateCategory>
+  <HoofPickStateCategory state="MouseOutRearRight" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="BackFarLegDrop"/>
+  </HoofPickStateCategory>
+
+  <HoofPickStateCategory state="AllHoovesClean" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_CleanHoof_Comp_v6.swf" label="CompleteCleanHoof" />
+  </HoofPickStateCategory>                     
+</Category>

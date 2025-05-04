@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="IdleAnimations" likelihood="100">
+  <AwakeCategory state="Awake" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="IdleCubby"/>
+  </AwakeCategory>
+  <AsleepCategory state="Asleep" likelihood="100">
+    <Animation fileName="Flash/MyHorses/Animations/MY_Anim_Cubby_Comp_v9.swf" label="SleepIdle"/>
+  </AsleepCategory>
+</Category>

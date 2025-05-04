@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="BottleSettings" likelihood="100">
+  <BottleStateCategory state="Idle" likelihood="1" isFeeding="false">
+    <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Idle_Bottle.swf" label="Idle"/>
+  </BottleStateCategory>
+  <BottleStateCategory state="Feeding" likelihood="1" isFeeding="true">
+    <StateCategory state="Food" likelihood="100" position="0">
+      <!--Very Hungry-->
+      <Category name="Drink Bottle and Move Positive" likelihood="80">
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="DrinkBottle2" command="MovePositive" />
+      </Category>
+      <Category name="Drink Bottle" likelihood="20">
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="DrinkBottle2" />
+      </Category>
+    </StateCategory>
+    <StateCategory state="Food" likelihood="100" position="1">
+      <!--Hungry-->
+      <Category name="Drink Bottle and Move Positive" likelihood="80">
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="DrinkBottle1" command="MovePositive" />
+      </Category>
+      <Category name="Drink Bottle" likelihood="20">
+        <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="DrinkBottle1" />
+      </Category>
+    </StateCategory>
+    <StateCategory state="Food" likelihood="100" position="2">
+      <!--Satisfied-->
+      <Animation fileName="/Flash/MyHorses/Animations/MY_Anim_Bottle_Comp_v2.swf" label="RefuseBottle" />
+    </StateCategory>
+  </BottleStateCategory>
+</Category>
