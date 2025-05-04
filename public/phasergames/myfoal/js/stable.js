@@ -74,6 +74,11 @@ class Stable extends Phaser.Scene
         this.load.image('certificate_small', './images/stable/certificate_small.png')
         this.load.image('certificate_big', './images/stable/certificate_big.png')
 
+        this.load.atlas('ui_indicator', './images/stable/indicator.png', './images/stable/indicator.json')
+        this.load.atlas('ui_indicator_food', './images/stable/indicator_food.png', './images/stable/indicator_foods.json')
+        this.load.atlas('ui_indicator_love', './images/stable/indicator_love.png', './images/stable/indicator_love.json')
+        this.load.atlas('ui_indicator_clean', './images/stable/indicator_clean.png', './images/stable/indicator_clean.json')
+
         this.load.image('cursor', './images/cursor.png');
 
         this.load.spineAtlas("horse-atlas", `./images/horse/skeleton.atlas`);
@@ -518,6 +523,77 @@ class Stable extends Phaser.Scene
         certificate_big.on('pointerdown', function (pointer)
         {
             certificate_big.setVisible(false);
+        });
+
+        // ---------- UI -------------------//
+
+        // Indicator bg
+        // TODO: close the indicator when the status are full
+        const indicatorUI = this.add.sprite(100, 35, 'ui_indicator', '0001').setOrigin(.5)
+        this.anims.create({
+            key: 'ui_indicator_open',
+            frames: this.anims.generateFrameNumbers('ui_indicator', { frames: [
+                '0001', '0002', '0003', '0004', '0005', '0006', '0007', '0008', '0009', '0010', '0011', '0012', '0013', '0014', '0015', '0016', '0017', '0018', '0019', '0020', '0021', '0022', '0023', '0024', '0025', '0026', '0027', '0028', '0029', '0030', '0031', '0032'
+            ] }),
+            frameRate: 24
+        });
+        indicatorUI.play('ui_indicator_open');
+
+        // Food indicator
+        // TODO: Make it change colors depending on the horse status
+        // TODO: Check what was the entry animation
+        const indicatorFood = this.add.sprite(200, 100, 'ui_indicator_food', 'idle_red').setOrigin(.5)
+        this.anims.create({
+            key: 'ui_indicator_food_using',
+            frames: this.anims.generateFrameNumbers('ui_indicator_food', { frames: [
+                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red'
+            ] }),
+            frameRate: 24
+        });
+        this.anims.create({
+            key: 'ui_indicator_food_filled',
+            frames: this.anims.generateFrameNumbers('ui_indicator_food', { frames: [
+                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green'
+            ] }),
+            frameRate: 24
+        });
+
+        // Clean indicator
+        // TODO: Make it change colors depending on the horse status
+        // TODO: Check what was the entry animation
+        const indicatorClean = this.add.sprite(150, 108, 'ui_indicator_clean', 'idle_red').setOrigin(.5)
+        this.anims.create({
+            key: 'ui_indicator_clean_using',
+            frames: this.anims.generateFrameNumbers('ui_indicator_clean', { frames: [
+                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red'
+            ] }),
+            frameRate: 24
+        });
+        this.anims.create({
+            key: 'ui_indicator_clean_filled',
+            frames: this.anims.generateFrameNumbers('ui_indicator_clean', { frames: [
+                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green'
+            ] }),
+            frameRate: 24
+        });
+
+        // Love indicator
+        // TODO: Make it change colors depending on the horse status
+        // TODO: Check what was the entry animation
+        const indicatorLove = this.add.sprite(232, 65, 'ui_indicator_love', 'idle_red').setOrigin(.5)
+        this.anims.create({
+            key: 'ui_indicator_love_using',
+            frames: this.anims.generateFrameNumbers('ui_indicator_love', { frames: [
+                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red'
+            ] }),
+            frameRate: 24
+        });
+        this.anims.create({
+            key: 'ui_indicator_love_filled',
+            frames: this.anims.generateFrameNumbers('ui_indicator_love', { frames: [
+                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green'
+            ] }),
+            frameRate: 24
         });
 
         // ---------- Held items ---------- //
