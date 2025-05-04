@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title data-il8n="stables_title">Welcome to the World of Bella Sara</title>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
+        <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
+        <script src="./js/loadScreen.js"></script> 
+        <script src="./js/stable.js"></script> 
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
+        <script src="/header.js"></script>
+        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
+            <script type="text/javascript">
+                loadLanguagePref(false);
+                
+                // TODO: Get saved horse datas
+                locale = getCurrentLanguageCode()
+                let localeData
+
+                function urlExists(url)
+                {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status!=404;
+                }
+
+                let config = {
+                    parent: "gameDiv",
+                    type: Phaser.CANVAS,
+                    width: 888,
+                    height: 521,
+                    backgroundColor: '#110c27',
+                    plugins: {
+                        scene: [
+                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
+                        ]
+                    },
+                    scene: [
+                        Load,
+                        Stable
+                    ]
+                };
+
+                const game = new Phaser.Game(config);
+        
+            </script>
+        </div>
+
+        <div style="text-align: center;" id="quoteToggle">
+            <input type="checkbox" id="englishQuoteToggle" name="englishQuoteToggle" >
+            <label for="englishQuoteToggle" data-il8n="quote_toggle_label" style="color: white">Use English Quotes</label>
+        </div>
+        
+        <div class="footer">
+            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
+            <a href="./index.html" class="global-lowernav-link" data-il8n="footer_magicalhorses_linktxt">Magical Horses</a> |
+            <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a> |
+            <a href="https://github.com/Gridloch/bellasararecreation" data-il8n="footer_github_linktxt" class="global-lowernav-link">GitHub</a>
+          </div>
+
+          <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+          <script>
+            const toggleStateKey = "englishQuoteToggleStablesBellaSaraNeoCity";
+
+            let toggleQuote = document.getElementById("englishQuoteToggle");
+
+            if (getCurrentLanguageCode() == "en")
+                document.getElementById("quoteToggle").style.display = "none";
+
+            toggleQuote.addEventListener("change", (e) =>
+            {
+                localizedQuote = !event.target.checked
+                localStorage.setItem(toggleStateKey, `${event.target.checked}`)
+            })
+
+            // Load the saved toggle state
+            let savedToggleState = localStorage.getItem(toggleStateKey);
+            if (savedToggleState != null && savedToggleState == "true")
+            {
+                toggleQuote.checked = true;
+                localizedQuote = false;
+            }
+          </script>
+
+    </body>
+</html>

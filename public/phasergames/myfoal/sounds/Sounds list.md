@@ -1,0 +1,63 @@
+- 3
+- 4 -> rear
+- 5
+- 7 -> oats_eat
+  - oats eat
+- 8 -> apple_munch
+  - apple munch
+- 9 -> water_drink
+  - water drink
+- 10
+- 11
+- 12
+- 13
+- 14
+- 15
+- 48 -> hover1
+  - water rollover
+  - brush(es) rollover
+  - hoofpick rollover
+  - apples rollover
+  - good luck rollover
+  - awards rollover
+- 64 -> grain_sound
+  - grain scoop pickup (frame 4)
+  - grain place (frame 3)
+- 131 -> water_sound
+  - water fill up 
+- 170 -> inspiration_hover
+  - inspiration frame rollover
+- 177 -> inspiration
+  - inspiration message
+- 178
+- 197 -> luck_sound
+  - good luck message
+- 251 -> pickup
+  - brush(es) pickup
+  - hoofpick pickup
+  - pitchfork pickup
+  - shovel pickup
+  - grain scoop pickup
+  - apples pickup
+- 256 -> brush_sound
+  - big brush brushing
+- 264 -> brush_sound_small
+  - small brush brushing
+- 266 -> hoofpick1
+  - hoofpick use (frame 2)
+- 267 -> hoofpick2
+  - hoofpick use (frame 9)
+- 273 -> hover2
+  - pitchfork rollover (both)
+  - shovel rollover (both)
+  - grain rollover hover
+- 279 -> fork_fill
+  - pitchfork scoop hay (frame 5)
+- 280 -> fork_place
+  - pitchfork place hay
+- 291 -> shovel_sound
+  - shovel scoop hay (frame 5)
+- 385
+- 500
+- 505 stable_soundtrack
+  - stable soundtrack
