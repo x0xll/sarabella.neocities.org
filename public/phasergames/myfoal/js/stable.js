@@ -29,6 +29,8 @@ carrotHeldSprite = null
 pearHeldSprite = null
 bottleHeldSprite = null
 
+// TODO: figure out why inputs seems offset
+
 class Stable extends Phaser.Scene
 {
     constructor ()
@@ -60,20 +62,42 @@ class Stable extends Phaser.Scene
         this.load.atlas('bin', './images/stable/bin.png', './images/stable/bin.json')
         this.load.atlas('oatBag', './images/stable/oatbag.png', './images/stable/oatbag.json')
         this.load.atlas('apples', './images/stable/apples.png', './images/stable/apples.json')
+        this.load.atlas('bottle', './images/stable/bottles.png', './images/stable/bottles.json')
+        this.load.atlas('bottle_hand', './images/stable/bottle.png', './images/stable/bottle.json')
         this.load.atlas('frame', './images/stable/frame.png', './images/stable/frame.json')
+        this.load.atlas('comb', './images/stable/comb.png', './images/stable/comb.json')
+        this.load.atlas('brush', './images/stable/brush.png', './images/stable/brush.json')
+        this.load.atlas('pitchfork', './images/stable/pitchfork.png', './images/stable/pitchfork.json')
+        this.load.atlas('shovel', './images/stable/shovel.png', './images/stable/shovel.json')
+        this.load.atlas('hoofpick', './images/stable/hoofpick.png', './images/stable/hoofpick.json')
+        this.load.atlas('water', './images/stable/waterfeed.png', './images/stable/waterfeed.json')
+        this.load.atlas('horseshoe', './images/stable/horseshoe.png', './images/stable/horseshoe.json')
 
         this.load.image('certificate_small', './images/stable/certificate_small.png')
         this.load.image('certificate_big', './images/stable/certificate_big.png')
 
         this.load.image('cursor', './images/cursor.png');
 
+        this.load.spineAtlas("horse-atlas", `./images/horse/skeleton.atlas`);
+        this.load.spineJson("horse-json", `./images/horse/skeleton.json`);
+
         // Hide the computer cursor
-        this.input.setDefaultCursor('none');
+        //this.input.setDefaultCursor('none');
     }
 
     create ()
     {
         const game = this;
+
+        game.horseStatus = 
+        {
+            snackSatisfied: false,
+            bottleHungry: 0
+        };
+        game.barrel = 
+        {
+            foodQuality: 'normal'
+        }
 
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
         this.input.topOnly = true;
@@ -146,14 +170,74 @@ class Stable extends Phaser.Scene
         // Hay (floor)
 
         // Shovel
+        const shovel = this.add.sprite(28, 267, 'shovel', 'idle').setInteractive().setScale(-1, 1);
+        shovel.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+            shovel.setTexture('shovel', 'hover');
+        });
+        shovel.on('pointerout', () => shovel.setTexture('shovel', 'idle'));
+        shovel.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
 
-        // Fork
+            handCurrent = HAND.shovel;
+            // TODO: Hide this one until the shovel is put back
+        });
+
+        // Pitchfork
+        const pitchfork = this.add.sprite(67, 280, 'pitchfork', 'idle').setInteractive().setScale(-1, 1).setAngle(8);
+        pitchfork.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+            pitchfork.setTexture('pitchfork', 'hover');
+        });
+        pitchfork.on('pointerout', () => pitchfork.setTexture('pitchfork', 'idle'));
+        pitchfork.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            handCurrent = HAND.fork;
+            // TODO: Hide this one until the pitchfork is put back
+        });
 
         // Bottle
+        // TODO: find hover sprite
+        const bottle = this.add.sprite(720, 450, 'bottle', 'idle').setInteractive({pixelperfect: true});
+        this.anims.create({
+            key: 'bottle_kicked',
+            frames: this.anims.generateFrameNumbers('bottle', { frames: [
+                '0001', '0001', '0001', '0001', '0001', '0002',  '0002',  '0002',  'idle'
+            ] }),
+            frameRate: 24
+        });
+        bottle.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            handCurrent = HAND.bottle;
+        });
+        bottle.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            //bottle.setTexture('bottle', 'hover');
+        });
+        bottle.on('pointerout', () => bottle.setTexture('bottle', 'idle'));        
 
         // Water
+        const water = this.add.sprite(160, 418, 'water', 'idle_full').setInteractive();
+        water.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+        });
+        water.on('pointerout', () => water.setTexture('water', 'idle_full'));
+        water.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
 
-        // Horseshoe
+            handCurrent = HAND.water;
+        });
 
         // HorseFrame
         // TODO: Add horse image inside
@@ -227,6 +311,8 @@ class Stable extends Phaser.Scene
                     break;
             }
 
+            game.barrel.foodQuality = foodType;
+            
             // Reset the barrel
             barrelType = updateBarrelType();
             barrel.setTexture('barrel', barrelType);
@@ -301,16 +387,154 @@ class Stable extends Phaser.Scene
         // Oat Through
 
         // Brush
+        const brush = this.add.sprite(745, 160, 'brush', 'idle').setInteractive().setScale(.6);
+        brush.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+            brush.setTexture('brush', 'hover');
+        });
+        brush.on('pointerout', () => brush.setTexture('brush', 'idle'));
+        brush.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            handCurrent = HAND.brush;
+            // TODO: Hide this one until the brush is put back
+        });
 
         // Comb
+        const comb = this.add.sprite(705, 288, 'comb', 'idle').setInteractive().setScale(.6);
+        brush.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+            brush.setTexture('comb', 'hover');
+        });
+        comb.on('pointerout', () => comb.setTexture('comb', 'idle'));
+        comb.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            handCurrent = HAND.comb;
+            // TODO: Hide this one until the comb is put back
+        });
 
         // Hoof pick
+        const hoofpick = this.add.sprite(793, 219, 'hoofpick', 'idle').setInteractive().setScale(.6, .8);
+        hoofpick.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+            hoofpick.setTexture('hoofpick', 'hover');
+        });
+        hoofpick.on('pointerout', () => hoofpick.setTexture('hoofpick', 'idle'));
+        hoofpick.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            handCurrent = HAND.hoofpick;
+            // TODO: Hide this one until the hoofpick is put back
+        });
 
         // To Stables
 
         // To Cottage
 
         // To World
+
+        // Horse
+        // TODO: update the visuals with the actual skin of the horse
+        // TODO: Update interaction area depending on objects
+        const horse = this.add.spine(455, 485, 'horse-json', 'horse-atlas').setScale(.425);
+        horse.animationState.setAnimation(0, "Idle", false)
+        const horseInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(340, 240, 230, 260), Phaser.Geom.Rectangle.Contains);
+        //horseInteractive.fillRect(340, 240, 230, 260)
+        horseInteractive.on('pointerdown', function (pointer)
+        {
+            switch(handCurrent)
+            {
+                case HAND.redApple:
+                case HAND.greenApple:
+                case HAND.pear:
+                case HAND.carrot:
+                    switch(game.barrel.foodQuality)
+                    {
+                        default:
+                        case 'normal':
+                            horse.animationState.setAnimation(0, 'EatSnack', false);
+                            game.horseStatus.snackSatisfied = true;
+
+                            var randResult = Math.random();
+                            // TODO: Handle 'MovePositive' depending on randResult
+
+                            handCurrent = HAND.empty;
+                            break;
+                        case 'brown':
+                            horse.animationState.setAnimation(0, 'RefuseSnack', false);
+                            break;
+                        case 'gold':
+                            horse.animationState.setAnimation(0, 'EatSnack', false);
+                            // TODO: update 'MovePositive
+                            handCurrent = HAND.empty;
+                            break;
+                    }
+                    break;
+                case HAND.bottle:
+                    switch(game.horseStatus.bottleHungry)
+                    {
+                        // Very Hungry
+                        case 0:
+                            horse.animationState.setAnimation(0, 'DrinkBottle2', false);
+
+                            game.horseStatus.bottleHungry = 1;
+
+                            var randResult = Math.random();
+                            // TODO: Handle 'MovePositive' depending on randResult
+                            handCurrent = HAND.empty;
+                            break;
+                        // Hungry
+                        case 1:
+                            var randResult = Math.random();
+                            horse.animationState.setAnimation(0, 'DrinkBottle1', false);
+
+                            game.horseStatus.bottleHungry = 2;
+
+                            var randResult = Math.random();
+                            // TODO: Handle 'MovePositive' depending on randResult
+                            handCurrent = HAND.empty;
+                            break;
+                        // Satisfied
+                        case 2:
+                            // TODO: Check what happens to the bottle when it is refused
+                            handCurrent = HAND.empty;
+                            break;
+                    }
+                    break;
+            }
+        });
+
+        // Horseshoe
+        // TODO: fix missing frame 0016
+        // TODO: optimize, temporarily disabled
+        const horseshoe = this.add.sprite(-103, 137, 'horseshoe', 'idle').setInteractive({pixelperfect: true}).setOrigin(0).setScale(.48);        /*
+        this.anims.create({
+            key: 'horseshoe_play',
+            frames: this.anims.generateFrameNumbers('horseshoe', { frames: [
+                'idle', '0001', '0002', '0003', '0004', '0005', '0006', '0007', '0008', '0009', '0010', '0011', '0012', '0013', '0014', '0015', '0016', '0017', '0018', '0019', '0020', '0021', '0022', '0023', '0024', '0025', '0026', '0027', '0028', '0029', '0030', '0031', '0032', '0033', '0034', '0035', '0036', '0037', '0038', '0039', '0040', '0041', '0042', '0043', '0044', '0045', '0046', '0047', '0048', '0049', '0050', '0051', '0052', '0053', '0054', '0055', '0056', '0057', '0058', '0059', '0060', '0061', '0062', '0063', '0064', '0065', '0066', '0067', '0068', '0069', '0070', '0071', '0072', '0073', '0074', '0075', '0076', '0077', '0078', '0079', '0080', '0081', '0082', '0083', '0084', '0085', '0086', '0087', '0088', '0089', '0090', '0091', '0092', '0093', '0094', '0095', '0096', '0097', '0098', '0099', '0100', '0101', '0102', '0103', '0104', '0105', '0106', '0107', '0108', '0109', '0110', '0111', '0112', '0113', '0114', '0115', '0116', '0117', '0118', '0119', '0120', '0121', '0122', '0123', '0124', '0125', '0126', '0127', '0128', '0129'
+            ] }),
+            frameRate: 24
+        });
+        horseshoe.on('pointerdown', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            horseshoe.play('horseshoe_play');
+        });
+        horseshoe.on('pointerover', function (pointer)
+        {
+            if (handCurrent != HAND.empty) return;
+
+            horseshoe.setTexture('horseshoe', 'hover');
+        });
+        horseshoe.on('pointerout', () => horseshoe.setTexture('horseshoe', 'idle'));     */
 
         // Certificate
         // TODO: Re-export the small certificate with dummy text
@@ -331,12 +555,12 @@ class Stable extends Phaser.Scene
         });
 
         // ---------- Held items ---------- //
-        emptyPointerSprite = this.add.image(759, 272, 'cursor').setVisible(true).setOrigin(.5);
-        // TODO: Set the origin correctly to be coherent with the actual mouse coordinates
-        redAppleHeldSprite = this.add.image(759, 272, 'apples', 'redapple_normal').setVisible(false).setOrigin(1);
-        greenAppleHeldSprite = this.add.image(759, 272, 'apples', 'greenapple_normal').setVisible(false).setOrigin(1);
-        carrotHeldSprite = this.add.image(759, 272, 'apples', 'carrot_normal').setVisible(false).setOrigin(1);
-        pearHeldSprite = this.add.image(759, 272, 'apples', 'pear_normal').setVisible(false).setOrigin(1);
+        emptyPointerSprite = this.add.image(759, 272, 'cursor').setVisible(true).setOrigin(.1, .2);
+        redAppleHeldSprite = this.add.image(759, 272, 'apples', 'redapple_normal').setVisible(false).setOrigin(.8);
+        greenAppleHeldSprite = this.add.image(759, 272, 'apples', 'greenapple_normal').setVisible(false).setOrigin(.8);
+        carrotHeldSprite = this.add.image(759, 272, 'apples', 'carrot_normal').setVisible(false).setOrigin(.8);
+        pearHeldSprite = this.add.image(759, 272, 'apples', 'pear_normal').setVisible(false).setOrigin(.8);
+        bottleHeldSprite = this.add.image(759, 272, 'bottle_hand', 'idle').setVisible(false).setOrigin(.3);
     }
 
     update ()
@@ -349,6 +573,7 @@ class Stable extends Phaser.Scene
             greenAppleHeldSprite.setVisible(false);
             carrotHeldSprite.setVisible(false);
             pearHeldSprite.setVisible(false);
+            bottleHeldSprite.setVisible(false);
             emptyPointerSprite.setVisible(false);
         }
 
@@ -367,6 +592,8 @@ class Stable extends Phaser.Scene
                 pearHeldSprite.setVisible(true).setPosition(pointer.worldX, pointer.worldY); break;
             case HAND.carrot:
                 carrotHeldSprite.setVisible(true).setPosition(pointer.worldX, pointer.worldY); break;
+            case HAND.bottle:
+                bottleHeldSprite.setVisible(true).setPosition(pointer.worldX, pointer.worldY); break;
         }
     }
 }
