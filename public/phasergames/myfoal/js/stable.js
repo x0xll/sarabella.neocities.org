@@ -56,6 +56,7 @@ class Stable extends Phaser.Scene
 
         this.load.atlas('cubby', './images/stable/cubby.png', './images/stable/cubby.json')
         this.load.atlas('hayLoft', './images/stable/hayLoft.png', './images/stable/hayLoft.json')
+        this.load.atlas('hayFloor00', './images/stable/hayFloor_00.png', './images/stable/hayFloor_00.json')
         this.load.atlas('barrel', './images/stable/barrel.png', './images/stable/barrel.json')
         this.load.atlas('bin', './images/stable/bin.png', './images/stable/bin.json')
         this.load.atlas('oatBag', './images/stable/oatbag.png', './images/stable/oatbag.json')
@@ -95,7 +96,8 @@ class Stable extends Phaser.Scene
         game.horseStatus = 
         {
             snackSatisfied: false,
-            bottleHungry: 0
+            bottleHungry: 0,
+            hayFloor: [false, false, false]
         };
         game.barrel = 
         {
@@ -106,11 +108,11 @@ class Stable extends Phaser.Scene
         this.input.topOnly = true;
 
         // Ref image
-        //this.add.image(0, 0, 'stable_ref').setOrigin(0);
+        this.add.image(0, 0, 'stable_ref').setOrigin(0);
     
         // Background image
         // TODO: Re-export with the yellow border
-        this.add.image(0, 0, 'stable_bg').setOrigin(0).setAlpha(1);
+        this.add.image(0, 0, 'stable_bg').setOrigin(0).setAlpha(.5);
 
         // Horse name
         const horseNameTextSettings = { 
@@ -142,9 +144,42 @@ class Stable extends Phaser.Scene
             if (handCurrent != HAND.fork) return;
 
             handCurrent = HAND.forkFilled;
+            useIndicator(indicatorClean, 'clean');
         });
 
         // Hay (floor)
+        const hayFloor00 = this.add.sprite(330, 480, 'hayFloor00', 'idle').setScale(.7, .5);
+        const hayFloor00Interactive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(190, 400, 200, 200), Phaser.Geom.Rectangle.Contains);
+        this.anims.create({
+            key: 'hayFloor00_remove',
+            frames: this.anims.generateFrameNumbers('hayFloor00', { frames: [
+                '0001_remove', '0002_remove', '0003_remove', '0004_remove', '0005_remove', '0006_remove', '0007_remove', '0008_remove', '0009_remove', 'empty'
+            ] }),
+            frameRate: 24
+        });
+        this.anims.create({
+            key: 'hayFloor00_add',
+            frames: this.anims.generateFrameNumbers('hayFloor00', { frames: [
+                '0001_add', '0002_add', '0003_add', '0004_add', '0005_add', '0006_add', '0007_add', '0008_add', '0009_add', 'idle'
+            ] }),
+            frameRate: 24
+        });
+        hayFloor00Interactive.on('pointerdown', function (pointer)
+        {
+            if (handCurrent == HAND.shovel)
+            {
+                // TODO: replace the shovel
+                hayFloor00.play('hayFloor00_remove');
+            }
+            else if (handCurrent == HAND.forkFilled)
+            {
+                // TODO: replace the fork
+                hayFloor00.play('hayFloor00_add');
+                game.horseStatus.hayFloor[0] = true;
+            }
+
+            handCurrent = HAND.empty;
+        });
 
         // Shovel
         const shovel = this.add.sprite(28, 267, 'shovel', 'idle').setScale(-1, 1);
@@ -161,6 +196,7 @@ class Stable extends Phaser.Scene
 
             handCurrent = HAND.shovel;
             // TODO: Hide this one until the shovel is put back
+            useIndicator(indicatorClean, 'clean');
         });
 
         // Pitchfork
@@ -178,6 +214,7 @@ class Stable extends Phaser.Scene
 
             handCurrent = HAND.fork;
             // TODO: Hide this one until the pitchfork is put back
+            useIndicator(indicatorClean, 'clean');
         });
 
         // Bottle
@@ -196,6 +233,7 @@ class Stable extends Phaser.Scene
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.bottle;
+            useIndicator(indicatorFood, 'food');
         });
         bottleInteractive.on('pointerover', function (pointer)
         {
@@ -218,6 +256,7 @@ class Stable extends Phaser.Scene
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.water;
+            useIndicator(indicatorFood, 'food');
         });
 
         // HorseFrame
@@ -262,6 +301,7 @@ class Stable extends Phaser.Scene
         barrelInteractive.on('pointerdown', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
+            useIndicator(indicatorFood, 'food');
 
             // Update the sprite depending on the luck
             var foodRand = Math.random();
@@ -340,6 +380,7 @@ class Stable extends Phaser.Scene
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.grainScoop;
+            useIndicator(indicatorFood, 'food');
         });
         oatBagInteractive.on('pointerover', function (pointer)
         {
@@ -366,6 +407,7 @@ class Stable extends Phaser.Scene
 
             handCurrent = HAND.brush;
             // TODO: Hide this one until the brush is put back
+            useIndicator(indicatorClean, 'indicatorClean');
         });
 
         // Comb
@@ -383,6 +425,7 @@ class Stable extends Phaser.Scene
 
             handCurrent = HAND.comb;
             // TODO: Hide this one until the comb is put back
+            useIndicator(indicatorClean, 'indicatorClean');
         });
 
         // Hoof pick
@@ -400,6 +443,7 @@ class Stable extends Phaser.Scene
 
             handCurrent = HAND.hoofpick;
             // TODO: Hide this one until the hoofpick is put back
+            useIndicator(indicatorClean, 'indicatorClean');
         });
 
         // To Stables
@@ -546,14 +590,14 @@ class Stable extends Phaser.Scene
         this.anims.create({
             key: 'ui_indicator_food_using',
             frames: this.anims.generateFrameNumbers('ui_indicator_food', { frames: [
-                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red'
+                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red', 'idle_red'
             ] }),
             frameRate: 24
         });
         this.anims.create({
             key: 'ui_indicator_food_filled',
             frames: this.anims.generateFrameNumbers('ui_indicator_food', { frames: [
-                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green'
+                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green', 'idle_green'
             ] }),
             frameRate: 24
         });
@@ -565,14 +609,14 @@ class Stable extends Phaser.Scene
         this.anims.create({
             key: 'ui_indicator_clean_using',
             frames: this.anims.generateFrameNumbers('ui_indicator_clean', { frames: [
-                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red'
+                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red', 'idle_red'
             ] }),
             frameRate: 24
         });
         this.anims.create({
             key: 'ui_indicator_clean_filled',
             frames: this.anims.generateFrameNumbers('ui_indicator_clean', { frames: [
-                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green'
+                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green', 'idle_green'
             ] }),
             frameRate: 24
         });
@@ -584,17 +628,30 @@ class Stable extends Phaser.Scene
         this.anims.create({
             key: 'ui_indicator_love_using',
             frames: this.anims.generateFrameNumbers('ui_indicator_love', { frames: [
-                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red'
+                '0001_red', '0002_red', '0003_red', '0004_red', '0005_red', '0006_red', '0007_red', '0008_red', '0009_red', '0010_red', 'idle_red'
             ] }),
             frameRate: 24
         });
         this.anims.create({
             key: 'ui_indicator_love_filled',
             frames: this.anims.generateFrameNumbers('ui_indicator_love', { frames: [
-                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green'
+                '0001_green', '0002_green', '0003_green', '0004_green', '0005_green', '0006_green', '0007_green', '0008_green', '0009_green', 'idle_green'
             ] }),
             frameRate: 24
         });
+
+        function useIndicator(indicator, indicatorType)
+        {
+            return;
+            // TODO: Make it loop, allow cancel when change type of action
+
+            indicator.play('ui_indicator_' + indicatorType + '_using')
+        }
+
+        function fillIndicator(indicator, indicatorType)
+        {
+            indicator.play('ui_indicator_' + indicatorType + '_filled')
+        }
 
         // ---------- Held items ---------- //
         emptyPointerSprite = this.add.image(900, 600, 'cursor').setVisible(true).setOrigin(.1, .2);
