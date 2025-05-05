@@ -72,7 +72,8 @@ class Stable extends Phaser.Scene
         this.load.atlas('shovel', './images/stable/shovel.png', './images/stable/shovel.json')
         this.load.atlas('hoofpick', './images/stable/hoofpick.png', './images/stable/hoofpick.json')
         this.load.atlas('water', './images/stable/waterfeed.png', './images/stable/waterfeed.json')
-        this.load.atlas('horseshoe', './images/stable/horseshoe.png', './images/stable/horseshoe.json')
+        this.load.spineAtlas('horseshoe-atlas', './images/stable/horseshoe.atlas')
+        this.load.spineJson('horseshoe-json', './images/stable/horseshoe.json')
 
         this.load.image('certificate_small', './images/stable/certificate_small.png')
         this.load.image('certificate_big', './images/stable/certificate_big.png')
@@ -110,7 +111,7 @@ class Stable extends Phaser.Scene
         this.input.topOnly = true;
 
         // Ref image
-        //this.add.image(0, 0, 'stable_ref').setOrigin(0);
+        // this.add.image(0, 0, 'stable_ref').setOrigin(0);
     
         // Background image
         // TODO: Re-export with the yellow border
@@ -593,11 +594,9 @@ class Stable extends Phaser.Scene
         });
 
         // Horseshoe
-        // TODO: fix missing frame 0016
-        // TODO: optimize, temporarily disabled
-        const horseshoe = this.add.sprite(-103, 137, 'horseshoe', 'idle').setOrigin(0).setScale(.48);
+        const horseshoe = this.add.spine(191, 361, 'horseshoe-json', 'horseshoe-atlas').setOrigin(0).setScale(.48);
+            horseshoe.animationState.setAnimation(0, "idle", true);
         const horseshoeInteractive = this.add.graphics({fillStyle: { color: 0x0000aa }}).setInteractive(new Phaser.Geom.Rectangle(16, 140, 30, 40), Phaser.Geom.Rectangle.Contains);
-        /*
         this.anims.create({
             key: 'horseshoe_play',
             frames: this.anims.generateFrameNumbers('horseshoe', { frames: [
@@ -609,15 +608,15 @@ class Stable extends Phaser.Scene
         {
             if (handCurrent != HAND.empty) return;
 
-            horseshoe.play('horseshoe_play');
+            horseshoe.animationState.setAnimation(1, "goodluck", false);
         });
         horseshoeInteractive.on('pointerover', function (pointer)
         {
             if (handCurrent != HAND.empty) return;
 
-            horseshoe.setTexture('horseshoe', 'hover');
+            horseshoe.animationState.setAnimation(0, "hlite", true);
         });
-        horseshoeInteractive.on('pointerout', () => horseshoe.setTexture('horseshoe', 'idle'));     */
+        horseshoeInteractive.on('pointerout', () => horseshoe.animationState.setAnimation(0, "idle", true));
 
         // Certificate
         // TODO: Re-export the small certificate with dummy text
