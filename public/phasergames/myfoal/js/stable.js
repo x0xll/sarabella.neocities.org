@@ -100,7 +100,7 @@ class Stable extends Phaser.Scene
         {
             snackSatisfied: false,
             bottleHungry: 0,
-            hayFloor: [false, false, false]
+            hayFloor: [true, true, true]
         };
         game.barrel = 
         {
@@ -169,12 +169,13 @@ class Stable extends Phaser.Scene
         });
         hayFloor00Interactive.on('pointerdown', function (pointer)
         {
-            if (handCurrent == HAND.shovel)
+            if (handCurrent == HAND.shovel && game.horseStatus.hayFloor[0] === true)
             {
                 // TODO: replace the shovel
                 hayFloor00.play('hayFloor00_remove');
+                game.horseStatus.hayFloor[0] = false;
             }
-            else if (handCurrent == HAND.forkFilled)
+            else if (handCurrent == HAND.forkFilled && game.horseStatus.hayFloor[0] === false)
             {
                 // TODO: replace the fork
                 hayFloor00.play('hayFloor00_add');
@@ -202,12 +203,13 @@ class Stable extends Phaser.Scene
         });
         hayFloor01Interactive.on('pointerdown', function (pointer)
         {
-            if (handCurrent == HAND.shovel)
+            if (handCurrent == HAND.shovel && game.horseStatus.hayFloor[1] === true)
             {
                 // TODO: replace the shovel
                 hayFloor01.play('hayFloor01_remove');
+                game.horse.hayFloor[1] = false;
             }
-            else if (handCurrent == HAND.forkFilled)
+            else if (handCurrent == HAND.forkFilled && game.horseStatus.hayFloor[1] === false)
             {
                 // TODO: replace the fork
                 hayFloor01.play('hayFloor01_add');
@@ -235,12 +237,13 @@ class Stable extends Phaser.Scene
         });
         hayFloor02Interactive.on('pointerdown', function (pointer)
         {
-            if (handCurrent == HAND.shovel)
+            if (handCurrent == HAND.shovel && game.horseStatus.hayFloor[2] === true)
             {
                 // TODO: replace the shovel
                 hayFloor02.play('hayFloor02_remove');
+                game.horseStatus.hayFloor[2] = false;
             }
-            else if (handCurrent == HAND.forkFilled)
+            else if (handCurrent == HAND.forkFilled && game.horseStatus.hayFloor[2] === false)
             {
                 // TODO: replace the fork
                 hayFloor02.play('hayFloor02_add');
