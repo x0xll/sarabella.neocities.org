@@ -233,7 +233,7 @@ class Stable extends Phaser.Scene
             ] }),
             frameRate: 24
         });
-        hayFloor00Interactive.on('pointerdown', function (pointer)
+        hayFloor02Interactive.on('pointerdown', function (pointer)
         {
             if (handCurrent == HAND.shovel)
             {
