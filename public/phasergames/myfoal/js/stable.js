@@ -51,6 +51,8 @@ class Stable extends Phaser.Scene
         const progressBar = this.add.graphics();
 
         // Load in images and sounds
+        this.load.image('border', './images/border.png');
+
         this.load.image('stable_ref', './images/stable/stableRef.png');
         this.load.image('stable_bg', './images/stable/stable_bg.png');
 
@@ -114,7 +116,6 @@ class Stable extends Phaser.Scene
         // this.add.image(0, 0, 'stable_ref').setOrigin(0);
     
         // Background image
-        // TODO: Re-export with the yellow border
         this.add.image(0, 0, 'stable_bg').setOrigin(0);
 
         // Horse name
@@ -734,6 +735,9 @@ class Stable extends Phaser.Scene
         {
             indicator.play('ui_indicator_' + indicatorType + '_filled')
         }
+
+
+        this.add.image(0, 0, 'border').setOrigin(0).setScale(1.015, 0.99);
 
         // ---------- Held items ---------- //
         emptyPointerSprite = this.add.image(900, 600, 'cursor').setVisible(true).setOrigin(.1, .2);
