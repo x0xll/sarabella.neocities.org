@@ -181,8 +181,6 @@ class Stable extends Phaser.Scene
                 hayFloor00.play('hayFloor00_add');
                 game.horseStatus.hayFloor[0] = true;
             }
-
-            handCurrent = HAND.empty;
         });
 
         const hayFloor01 = this.add.sprite(450, 480, 'hayFloor01', 'idle').setScale(.7, .5);
@@ -214,9 +212,8 @@ class Stable extends Phaser.Scene
                 // TODO: replace the fork
                 hayFloor01.play('hayFloor01_add');
                 game.horseStatus.hayFloor[1] = true;
+                handCurrent = HAND.fork;
             }
-
-            handCurrent = HAND.empty;
         });
 
         const hayFloor02 = this.add.sprite(600, 480, 'hayFloor02', 'idle').setScale(.7, .5);
@@ -248,9 +245,8 @@ class Stable extends Phaser.Scene
                 // TODO: replace the fork
                 hayFloor02.play('hayFloor02_add');
                 game.horseStatus.hayFloor[2] = true;
+                handCurrent = HAND.fork;
             }
-
-            handCurrent = HAND.empty;
         });
 
         // Shovel
@@ -264,10 +260,18 @@ class Stable extends Phaser.Scene
         shovelInteractive.on('pointerout', () => shovel.setTexture('shovel', 'idle'));
         shovelInteractive.on('pointerdown', function (pointer)
         {
+            if (handCurrent == HAND.shovel)
+            {
+                // Place the shovel back into place
+                handCurrent = HAND.empty;
+                shovel.setVisible(true);
+                return;
+            }
+
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.shovel;
-            // TODO: Hide this one until the shovel is put back
+            shovel.setVisible(false);
             useIndicator(indicatorClean, 'clean');
         });
 
@@ -282,10 +286,18 @@ class Stable extends Phaser.Scene
         pitchforkInteractive.on('pointerout', () => pitchfork.setTexture('pitchfork', 'idle'));
         pitchforkInteractive.on('pointerdown', function (pointer)
         {
+            if (handCurrent === HAND.fork || handCurrent === HAND.forkFilled)
+            {
+                // Place the shovel back into place
+                handCurrent = HAND.empty;
+                pitchfork.setVisible(true);
+                return;
+            }
+
             if (handCurrent != HAND.empty) return;
 
             handCurrent = HAND.fork;
-            // TODO: Hide this one until the pitchfork is put back
+            pitchfork.setVisible(false);
             useIndicator(indicatorClean, 'clean');
         });
 
