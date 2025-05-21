@@ -1,0 +1,155 @@
+{
+    "title" : "Archivo Digital de Bella Sara",
+
+    "header_play_btn" : "Juega!",
+    "header_ressources_btn" : "Recursos",
+    "header_updates_btn" : "Actualizaciones",
+    "header_besaofficial_btn" : "BeSa Oficial",
+    "header_wiki_btn" : "BeSa Wiki",
+    "header_discord_btn" : "BeSa Discord",
+    "header_explore_btn": "Explora",
+
+    "user_guest": "Invitado",
+    "user_create": "Crear Usuario",
+    "signup_title": "Registro Bella Sara",
+    "signup_create_title": "Crear Usuario",
+    "signup_username": "Nombre de Usuario:",
+    "signup_create": "Crear",
+    "signup_create_desc": "\"Crear\" creará un usuario con el nombre ingresado, siempre que todavía haya espacios disponibles para usuarios.",
+    "signup_import_title": "Importar Usuario",
+    "signup_data": "Datos:",
+    "signup_import": "Importar",
+    "signup_import_desc": "\"Importar\" permite ingresar los datos guardados exportados desde otro navegador para poder jugar con cualquier nombre de usuario en cualquier lugar.",
+    "signup_currentuser": "Usuario Actual",
+    "signup_delete": "Eliminar",
+    "signup_export": "Exportar",
+    "signup_delete_desc": "\"Eliminar\" eliminará todos los datos del usuario actual.",
+    "signup_export_desc": "\"Exportar\" proporcionará los datos guardados del usuario actual, lo que permite importarlos en otro navegador.",
+
+    "highscore": "Puntuación máxima",
+
+    "footer_maininfos" : "Por preguntas, comentarios o ayuda:<br> @Archiving en el Discord de Bella Sara o abre una discusión en <a href=\"https://github.com/x0xll/sarabella.neocities.org/discussions\">Our Github</a>",
+    "footer_home_linktxt" : "Inicio",
+    "footer_wiki_linktxt" : "Página Wiki",
+    "footer_webarchive_linktxt" : "Página Archivo Web",
+    "footer_github_linktxt" : "Github",
+    "footer_svgimg_linktxt" : "Imagen SVG",
+    "footer_magicalhorses_linktxt" : "Caballos Mágicos",
+    "footer_recreated_linktxt" : "Versión Recreada",
+    "footer_original_linktxt" : "Versión Original",
+
+    "ressources_flashpointcacheguide" : "Guía de la Caché de Flashpoint",
+    "ressources_gridlochressdump" : "Vertedero de Recursos de Gridloch",
+    "ressources_gridlochstablerecreation" : "Recreación de Establos de Gridloch",
+    "ressources_github" : "Github",
+    "ressources_archivalnotes": "Notas de Archivo",
+    "ressources_horsespritenotes": "Notas del Sprite del Caballo",
+    "ressources_besawiki": "Bella Sara Wiki",
+    "ressources_besadiscord": "Bella Sara Discord",
+    "ressources_besareddit": "Bella Sara Reddit",
+    "ressources_pricingdatabase": "Base de Datos de Precios",
+
+    
+    "devlog_update": "<b><i>Last modified: March 29th, 2025</i></b>",
+    "devlog_summary" : "Este es el estado actual del archivado de los juegos del sitio web de Bella Sara:<br/><br/>Hemos logrado localizar y restaurar con éxito varios de los juegos Flash originales del sitio web de Bella Sara gracias a páginas archivadas y archivos en caché. Esto incluye <i>Art Studio</i>, <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, y la vieja versión del <i>Mapa del Mundo</i>.<br/><br/>Además, hemos recuperado o restaurado parcialmente los archivos de varios otros juegos, como <i>Spectacular Jumping Game</i>, <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, <i>Dreamrider</i>, <i>BubbleWand</i>, y la versión más nueva del <i>Mapa del Mundo</i>. Estos juegos aún están en proceso de trabajo para restaurar completamente sus funcionalidades originales, y muchos aún tienen archivos faltantes (por ejemplo, al juego <i>Lance Riding</i> le faltan los archivos de los niveles avanzados).<br/><br/>También encontramos archivos de otros juegos que estamos intentando reparar para que vuelvan a funcionar, como <i>Citrustacked</i>, <i>Wheel of Wonders</i>, la versión más nueva de <i>CloudJumper</i>, y<i>Marvelous Magic Match</i><br/><br/>Desafortunadamente, algunos juegos siguen desaparecidos o parecen estar permanentemente dañados (por ejemplo, <i>Bella's Beauty Box</i>). Para abordar esto, hemos comenzado a recrear algunos de estos juegos utilizando el framework Phaser. Hasta esta actualización, <i>Stables</i>, el juego <i>Spectacular Jumping Game</i>, el juego <i>Yin and Yang's Memory Game</i> y <i>Belo's Quiz</i>están disponibles para jugar, aunque aún en proceso de desarrollo. Actualmente también estamos trabajando en la recreación de <i>Bellapedia</i>, que esperamos esté disponible pronto.<br/><br/>Más allá de restaurar los juegos originales, también hemos empezado a crear juegos personalizados inspirados en los del sitio web. Actualmente hay cuatro disponibles: un <i>Generador de Ideas de Arte al Azar</i>, un <i>Juego de Vestir</i> basado en los <i>Establos</i>, un <i>Adventures Quiz</i> y <i>Autumn Journey Quiz</i> basado en <i>Bello's Quiz</i>. También estamos considerando recrear pronto <i>Wheel of Wonders</i>, <i>Marvelous Magic Match</i>, <i>Bella's Beauty Box</i>, e incluso un primer prototipo de <i>Adventures</i>.<br/><br/>Esperamos eventualmente restaurar o recrear todos los juegos del sitio si nos es posible, pero obviamente esto llevará tiempo. Si quisieras ayudarnos o quieres una vista más detallada de este proyecto, te recomendamos comenzar aquí: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. ¡Este proyecto es un esfuerzo comunitario y cada pequeña ayuda suma!
+    
+    "play_recoveredflashgames_title" : "Juegos Flash Recuperados",
+    "play_recoveredflashgames_desc" : "Estos son juegos que fueron archivados desde el sitio web original",
+    "play_recreatedgames_title" : "Juegos Recreados",
+    "play_recreatedgames_desc" : "Estos son juegos que fueron recreados con un nuevo código",
+    "play_partiallyrecoveredgames_title" : "Juegos Parcialmente Recuperados",
+    "play_partiallyrecoveredgames_desc" : "Estos son juegos que fueron archivados del sitio original, pero a los que les faltan algunos archivos o funcionalidades básicas.",
+    "play_newgames_title" : "Juegos Nuevos",
+    "play_newgames_desc" : "Estos son nuevos juegos inspirados en Bella Sara.",
+    
+    "game_cloudjumper" : "Cloudjumper",
+    "game_treasurehunt" : "Treasure's Hunt",
+    "game_puzzles" : "Rompecabezas",
+    "game_coloringgamefiona" : "Juegos de Colorear (Fiona)",
+    "game_memorygame" : "Juegos de Memoria",
+    "game_quizgame" : "Juegos de Quizes",
+    "gamestables" : "Establos",
+    "game_spectacularjumpinggame_wip" : "Spectacular Jumping Game (WIP)",
+    "game_spectacularjumpinggame" : "Spectacular Jumping Game",
+    "game_citrustacked_wip": "Citrustacked (WIP)",
+    "game_citrustacked": "Citrustacked",
+    "game_artstudio" : "Art studio",
+    "game_lancegame" : "Lance Riding",
+    "game_storybook" : "Storybook",
+    "game_babybella" : "Baby Bella",
+    "game_myhorse" : "Mi Caballo (Sprite de Potro Blanco)",
+    "game_randomartideagenerator" : "Generador de Ideas de Arte al Azar",
+    "game_dressupstables" : "Juego de Vestir",
+    "game_firelightFestival" : "Firelight Festival",
+    "game_dreamrider" : "Dream Rider",
+    "game_bubblewand" : "Magic Bubble Wand",
+    "game_bazaar" : "Bazaar",
+    "game_map": "Mapa del Mundo",
+    "game_oldmap": "Antiguo Mapa",
+    "game_newmap": "Nuevo Mapa",
+    "game_belloquiz": "Bello's Quiz",
+    "game_adventuresquiz": "Adventures Quiz",
+    "game_autumnjourney": "Autumn Journey Quiz",
+    "game_yinyangmemory": "Yin and Yang's Memory Game",
+    "game_cottage": "Mi Cabaña",
+    "game_gallery": "Mis Cosas",
+
+    "lanceriding_warning" : "Este juego solo tiene los archivos para el primer nivel. Además, presenta problemas al cargar de forma consistente y puede ser necesario recargar la página varias veces antes de que el nivel comience.",
+
+    "storybook_warning": "Este juego parece no poder silenciar los sonidos al pasar a la siguiente página del libro y no siempre reproduce los videos como se espera.",
+
+    "newmap_warning": "Algunos enlaces llevan a la wiki debido a que los juegos aún no han sido restaurados.",
+    "oldmap_warning": "Algunos enlaces están deshabilitados debido a que los juegos aún no han sido restaurados.",
+
+    "belloquiz_warning" : "Debido a la falta de referencias, es probable que esta recreación no sea 100% fiel a la original.",
+
+    "bazaar_warning": "Actualmente, el texto aún no funciona en todas partes y necesitarás hacer clic derecho sobre el juego y seleccionar 'reproducir' para pasar la pantalla de carga. Además, los objetos no están apareciendo.",
+
+    "firelight_warning" : "ADVERTENCIA DE EPILEPSIA/CONVULSIÓN: La parte del show de este juego incluye luces intermitentes. El juego tiene bastante retraso en ciertos navegadores. Necesitarás hacer clic derecho sobre el juego y seleccionar 'reproducir' para pasar la pantalla de carga.",
+
+    "citrustacked_wip_warning": "El modo historia aún está siendo recreado.",
+    "citrustacked_warning": "Algunos textos aún no aparecen correctamente. El botón 'Continuar' no siempre funciona correctamente.",
+
+    "jumpinggame_wip_warning": "El nivel 3 aún está siendo recreado.",
+    "jumpinggame_warning": "El juego puede ser bastante lento a veces.",
+
+    "cottage_warning": "Los objetos aún no han sido añadidos de nuevo en la cabaña ni en la galería. Necesitarás hacer clic derecho sobre el juego y seleccionar 'reproducir' para pasar la pantalla de carga.",
+
+    "puzzle_goCustom" : "Haz clic&nbsp;<a href=\"puzzle custom.html\">aquí</a>&nbsp;para hacer un rompecabezas personalizado con tu propia imagen",
+    "puzzle_customTitle" : "Personalizado",
+    "puzzle_moonfairies" : "Moonfairies",
+    "puzzle_sunflowers" : "Sunflowers",
+    "puzzle_bellaball" : "Bella's Ball",
+    "puzzle_bellasaraadventures" : "Bella Sara Adventures",
+    "puzzle_royalty" : "Royalty",
+    "puzzle_treasures" : "Treasures",
+    "puzzle_babybella" : "Baby Bella",
+    "puzzle_magicalfriends" : "Magical Friends",
+    "puzzle_nativelights" : "Native Lights",
+    "puzzle_bellasara" : "Bella Sara",
+    "puzzle_custom_warning" : "Nota: las imágenes más grandes que 700 x 450 pueden ser demasiado grandes para verlas correctamente.",
+    "puzzle_custom_warning2" : "Las imágenes más grandes que 700 x 450 pueden no verse completamente!",
+
+    "stables_title" : "Bienvenida al Mundo de Bella Sara",
+
+    "dressup_horselink" : "Link del Caballo",
+
+    "babybella_timeline_information": "Este anuncio fue actualizado múltiples veces durante su existencia. Con esta línea de tiempo, puedes consultar cómo lucía en distintas fechas.",
+    "babybella_4Sept": "4 de septiembre de 2008 – Nacimiento de Petal / Inicio del evento",
+    "babybella_13Sept": "13 de septiembre de 2008 – Nacimiento de Cirra",
+    "babybella_19Sept": "19 de septiembre de 2008 – Nacimiento de Janie",
+    "babybella_26Sept": "26 de septiembre de 2008 – Nacimiento de Bellisimo",
+    "babybella_7Nov": "7 de noviembre de 2008 – Nacimiento de Bellissa",
+    "babybella_17Dec": "17 de diciembre de 2008 – Luego del final del evento",
+    "footer_timeline_link": "Línea de Tiempo",
+
+
+
+    "cloudjumper_timeline_information": "Dos versiones del juego ligeramente diferentes fueron guardadas desde el sitio web original. Aquí puedes elegir cuál jugar:",
+    "oldversion": "Versión Anterior",
+    "newversion": "Versión Nueva",
+
+    "credits_title": "Créditos",
+
+    "about_title":  "Neocities Bella Sara es un sitio web de archivo hecho para guardar, reparar y recrear los viejos juegos de flash de Bella Sara desde el sitio web original para prevenir su pérdida permanente en el tiempo.<br/><br/>Este proyecto está abierto a cualquiera que desee ayudar, y puedes informarte más <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">aquí</a>."
+}
