@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Memory game</gameTitle>
+
+    <rules1>Detrás de los cuadros a la derecha hay 8 caballos diferentes. Cada imagen aparecerá en dos lugares.</rules1>
+    <rules2>Encuentra todos los pares para terminar el juego.</rule2>
+    <rules3>¡Si lo logras antes de que termine el tiempo, habrás ganado el juego!</rules3>
+
+    <easy>Fácil</easy>
+    <medium>Intermedio</easy>
+    <hard>Difícil</hard>
+    
+    <start>Empezar</start>
+    <seconds>seg.</seconds>
+
+    <congrats>Felicidades - ¡has ganado el juego!</congrats>
+    <retry>--&gt; Jugar otra vez &lt;--</retry>
+    <lost>Qué mal - no fuiste lo suficientemente rápido</lost>
+</root>

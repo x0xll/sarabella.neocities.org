@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+    <won>¡GRAN TRABAJO!</won>
+    
+    <help>¡AYUDA!</help>
+
+    <back>Atrás</back>
+    
+    <diff>DIFICULTAD</diff>
+    <easiest>Muy fácil</easiest>
+    <easier>Fácil</easier>
+    <harder>Difícil</harder>
+    <hardest>Muy difícil</hardest>
+
+    <solve>Resolver Rompecabezas</solve>
+    <preview>Vista previa</preview>
+    <edges>Sólo bordes</edges>
+    <move>Mover piezas</move>
+
+    <retry>Prueba otro rompecabezas o vuelve atrás para jugar otros juegos de Bella Sara.</retry>
+</root>

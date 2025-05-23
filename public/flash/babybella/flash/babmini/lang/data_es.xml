@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+<localization>
+	<babyBella_digitalObjectPopup_activateCode><![CDATA[Activar<br/>código]]></babyBella_digitalObjectPopup_activateCode>
+	<babyBella_babyBookModule_secondBabyButton><![CDATA[Página de<br/>Bellissa]]></babyBella_babyBookModule_secondBabyButton>
+	<babyBella_babyBookModule_newBaby_watchTheMovie><![CDATA[Mirar the<br/>Película]]></babyBella_babyBookModule_newBaby_watchTheMovie>
+	<babyBella_babyBookModule_newBaby_digitalCode><![CDATA[Código Digital:<br/>BAB#BAB34OAL]]></babyBella_babyBookModule_newBaby_digitalCode>
+	<babyBella_babyBookModule_newBaby_activateThisCode><![CDATA[Ella está aquí! Ingresa el código digital de arriba para agregarla a tu<br/>establo. Compártelo con tus amigas. ¡Pero apresúrate! El código<br/>expira en diciembre. 1st.]]></babyBella_babyBookModule_newBaby_activateThisCode>
+	<babyBella_digitalGiftPopup_footer><![CDATA[¡Puedes compartir este código<br/> con una amiga!]]></babyBella_digitalGiftPopup_footer>
+	<babyBella_digitalGiftPromo_headerTopLine><![CDATA[Regalo del]]></babyBella_digitalGiftPromo_headerTopLine>
+	<babyBella_digitalGiftPromo_headerBottomLine><![CDATA[Día]]></babyBella_digitalGiftPromo_headerBottomLine>
+	<babyBella_countdown_cardsAreHere><![CDATA[¡Las cartas están aquí!]]></babyBella_countdown_cardsAreHere>
+	<babyBella_sweepsPromo_enterButton><![CDATA[Ingresar]]></babyBella_sweepsPromo_enterButton>
+	<babyBella_whereToBuy_buyButton><![CDATA[Comprar]]></babyBella_whereToBuy_buyButton>
+	<babyBella_babyBookModule_submitButton><![CDATA[Enviar]]></babyBella_babyBookModule_submitButton>
+	<babyBella_babyBookModule_BellissimosStoryButton><![CDATA[Historia de<br/>Bellissimo]]></babyBella_babyBookModule_BellissimosStoryButton>
+	<babyBella_tvSpotPromo_loading><![CDATA[Cargando]]></babyBella_tvSpotPromo_loading>
+	<babyBella_babyBookModule_babyStoryButton><![CDATA[Historia de<br>Baby]]></babyBella_babyBookModule_babyStoryButton>
+	<babyBella_babyBookModule_printButton><![CDATA[Imprimir]]></babyBella_babyBookModule_printButton>
+	<babyBella_babyBookModule_parentsStoryButton><![CDATA[Historia de<br>los Padres]]></babyBella_babyBookModule_parentsStoryButton>
+	<babyBella_familyReunionPopup_offspringCopy><![CDATA[Asiste y participa en &#8220;la Noche de Juegos Familiares&#8221; en tu tienda local.
+]]></babyBella_familyReunionPopup_offspringCopy>
+	<babyBella_familyReunionPopup_offspringHeader><![CDATA[&#8220;Dusk&#8221; & &#8220;Dawn&#8221; - Ceías]]></babyBella_familyReunionPopup_offspringHeader>
+	<babyBella_familyReunionPopup_teacherCopy><![CDATA[Disponible en la edición de noviembre-diciembre de la revista Discovery Girls.]]></babyBella_familyReunionPopup_teacherCopy>
+	<babyBella_familyReunionPopup_teacherHeader><![CDATA[&#8220;Wildflower&#8221; - Maestra]]></babyBella_familyReunionPopup_teacherHeader>
+	<babyBella_familyReunionPopup_parentsCopy><![CDATA[ ¡Disponible en tiendas locales con la compra de paquetes de cartas de Baby Bella!
+]]></babyBella_familyReunionPopup_parentsCopy>
+	<babyBella_familyReunionPopup_parentsHeader><![CDATA[&#8220;Rimfaxe & Aurora&#8221; - Padres]]></babyBella_familyReunionPopup_parentsHeader>
+	<babyBella_familyReunionPopup_mainBody><![CDATA[<tab>Encuentra y colecciona cada una de las cartas promocionales exclusivas en los distintos eventos y lugares indicados. Reúne a tu familia y participa de una Noche de Juegos en tu tienda local. ¡Juega a juegos inspirados en Baby Bella, comparte mensajes positivos y recibe las cartas finales que reunirán a esta familia especial de caballos!<br/><br/><tab>Dusk y Dawn, los dos hermosos potrillos de Aurora y Rimfaxe, siempre encuentran su camino a casa siguiendo la dirección del sol. Un inusual día en Norte del Norte, un eclipse solar causó que Dusk y Dawn se confundieran porque no era ni día ni noche. Preocupados, sus padres enviaron a la maestra de sus hijos, Wildflower, a buscarlos. Aurora y Rimfaxe esperan el retorno de sus potrillos y noticias de Wildflower. <br/><br/><tab>¡Trae un final feliz a esta triste historia!  ]]></babyBella_familyReunionPopup_mainBody>
+	<babyBella_familyReunionPopup_tm><![CDATA[TM]]></babyBella_familyReunionPopup_tm>
+	<babyBella_familyReunionPopup_header><![CDATA[Reunión Familiar Bella Sara]]></babyBella_familyReunionPopup_header>
+	<babyBella_babyBookLauncher_open><![CDATA[Abrir]]></babyBella_babyBookLauncher_open>
+	<babyBella_tvSpotPromoPopup_close><![CDATA[Cerrar]]></babyBella_tvSpotPromoPopup_close>
+	<babyBella_activateModule_loginButton><![CDATA[Clic<br/>aquí]]></babyBella_activateModule_loginButton>
+	<babyBella_tvSpotPromo_watch><![CDATA[Mirar]]></babyBella_tvSpotPromo_watch>
+	<babyBella_familyReunionPromo_learnMore><![CDATA[Lee<br/>más]]></babyBella_familyReunionPromo_learnMore>
+	<babyBella_activateModule_activateHeader><![CDATA[Activa            ]]></babyBella_activateModule_activateHeader>
+	<babyBella_activateModule_yourCode><![CDATA[Tu Código]]></babyBella_activateModule_yourCode>
+	<babyBella_babyBookLauncher_titleBottomLine><![CDATA[Álbum de Bebé]]></babyBella_babyBookLauncher_titleBottomLine>
+	<babyBella_babyBookLauncher_titleTopLine><![CDATA[Norte del Norte]]></babyBella_babyBookLauncher_titleTopLine>
+	<babyBella_babyBookModule_close><![CDATA[Cerrar]]></babyBella_babyBookModule_close>
+</localization>
+
+	
+	<config>
+		<!--
+			the swf will prepend this to the ID of the button that is clicked
+			example of resulting javascript call - urchinTracker('/babybella-mini/buttonPromo2')
+		-->
+		<analyticsPrepend>/babybella-mini/</analyticsPrepend>
+	</config>
+	<promos>
+		<!-- NOTE: For localization or other reasons, each content element within a promo node can be disabled independently.    
+		An enabled="false" setting will prevent the content from appearing on screen, even if it's scheduled to roll out.
+		This enabled setting occurs PER <CONTENT> NODE, not per promo node.  For instance, you can set enabled="false"
+		for the Coming Soon content, but keep the Where To Buy content enabled, even though they are both grouped 
+		and documented as variations of promo 1. 
+		-->
+		<promo id="promo1">
+			<content enabled="true" assetID="YoureInvitedPromo">
+				<header><![CDATA[Estás<br/>Invitada]]></header>
+				<bodyCopy><![CDATA[Estás invitada a nuestro evento digital. ¡Regresa cada día por un nuevo regalo digital!]]></bodyCopy>
+			</content>
+			<content enabled="true" startDate="20081116" assetID="WhereToBuyPromo">
+				<header><![CDATA[Dónde<br/>Comprar]]></header>
+				<bodyCopy><![CDATA[¡Los caballos de Baby Bella están aquí!<br/>¡Encuentra una tienda cercana!]]></bodyCopy>
+				<link>https://web.archive.org/web/20081112200416/http://www.bellasara.com/storelocator.html</link>
+			</content>
+		</promo>
+		<promo id="promo2">
+			<content enabled="true" startDate="20080904">
+				<src>./video/tvSpot1.flv</src>
+			</content>
+			<content enabled="true" startDate="20081106">
+				<src>./video/tvSpot2.flv</src>
+			</content>
+		</promo>
+		<promo id="promo3">
+			<!-- end date is the final date that this promo appears.  After that date, it is hidden. -->
+			<content enabled="true" startDate="20081002" endDate="20081201" assetID="EnterToWin">
+				<header><![CDATA[Ingresa para<br/>Ganar]]></header>
+				<bodyCopy><![CDATA[¡Podrías ganar un cumpleaños Bella Sara<br/>sólo para ti!]]></bodyCopy>
+				<link>https://web.archive.org/web/20081207050232/http://www.bellasara.com/babybellacontest/</link>
+			</content>
+		</promo>
+		<promo id="promo5">
+			<content enabled="true" startDate="20081106" assetID="DigitalGift">
+				<link><![CDATA[http://www.bellasara.com/activate.aspx?cardCode=BAB%23BAB3-4OAL]]></link><!-- card code will be appended to query string on this url -->
+				<gifts>
+					<gift startDate="20081106" id="rockingHorse">
+						<code><![CDATA[BAB#AGIFT4U2]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener un caballo mecedor digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081107" id="babyBlanket">
+						<code><![CDATA[BAB#SNUGGLEY]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener una manta de bebé digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081108" id="ball">
+						<code><![CDATA[BAB#COOLBNCE]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener un balón digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081109" id="dressShoes">
+						<code><![CDATA[BAB#LADYSLPR]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener un par de zapatos de vestir digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081110" id="flowerPot">
+						<code><![CDATA[BAB#FUN4FLWR]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener una maceta digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081111" id="balletShoes">
+						<code><![CDATA[BAB#U2CNDNCE]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener un par de zapatos de ballet digital para tu cabaña.]]></bodyCopy>
+					</gift>	
+					<gift startDate="20081112" id="backpack">
+						<code><![CDATA[BAB#LIFTALNG]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener una mochila digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081113" id="birthdayCake">
+						<code><![CDATA[BAB#GOOD2EAT]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener un pastel digital para tu cabaña.]]></bodyCopy>
+					</gift>
+					<gift startDate="20081114" id="cookies">
+						<code><![CDATA[BAB#YUMMYTRT]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener unas galletas digitales para tu cabaña.]]></bodyCopy>
+					</gift>	
+					<gift startDate="20081115" id="saddle">
+						<code><![CDATA[BAB#STIRRUPS]]></code>
+						<bodyCopy><![CDATA[Ingresa este código compartible para obtener una silla de montar digital para tu cabaña.]]></bodyCopy>
+					</gift>						
+				</gifts>
+			</content>
+			<content enabled="true" startDate="20081116" assetID="FamilyReunion">
+				<header><![CDATA[Reunión<br/>Familiar]]></header>
+				<bodyCopy><![CDATA[¡Colecciona y reúne esta familia exclusiva!]]></bodyCopy>
+			</content>
+
+		</promo>
+	</promos>
+	
+	
+	<babybook>
+		<bambiMoment>
+			<activateLink endDate="20081201">http://www.bellasara.com/activate.aspx?ref=HPBUTN2-CR24</activateLink>
+		</bambiMoment>
+
+		<coupleTabs>
+			<coupleTab id="beranRosenbriar">
+				<closedLabel><![CDATA[B &amp; R]]></closedLabel>
+				<openLabel><![CDATA[Beran &amp; Rosebriar]]></openLabel>
+			</coupleTab>
+			<coupleTab id="uranusAnemone">
+				<closedLabel><![CDATA[U &amp; A]]></closedLabel>
+				<openLabel><![CDATA[Uranus &amp; Anemone]]></openLabel>
+			</coupleTab>			
+			<coupleTab id="flipperOndine">
+				<closedLabel><![CDATA[F &amp; O]]></closedLabel> 
+				<openLabel><![CDATA[Flipper &amp; Ondine]]></openLabel>
+			</coupleTab>	
+			<coupleTab id="belloBella">
+				<closedLabel><![CDATA[B &amp; B]]></closedLabel>
+				<openLabel><![CDATA[Bello &amp; Bella]]></openLabel>
+			</coupleTab>
+		</coupleTabs>
+		
+		<couples>
+			<couple id="beranRosenbriar" autoOpenDate="20080904">
+				<parents>
+					<positiveMessage><![CDATA[Elige este<br/>momento para ser<br/>más libre<br/> y amorosa.]]></positiveMessage>
+					<dad id="beran">
+						<photoName><![CDATA[Beran]]></photoName>
+					</dad>
+					<mom id="rosenbriar">
+						<photoName><![CDATA[Rosebriar]]></photoName>
+					</mom>
+					<story>
+						<header><![CDATA[<br/>La Historia de Beran y Rosebriar]]></header>
+						<bodyCopy><![CDATA[<tab>El invierno había congelado el rosedal donde Rosebriar la unicornio vivía. Una repentina tormenta de hielo congeló a las rosas en sus tallos. Las rosas eran hermosas, cubiertas en cristal helado. El jardín entero era una escena gélida de esplendor. Senderos cubiertos de nieve serpenteaban entre arbustos y setos.<br/><tab>Pero a pesar de toda su belleza, seguía haciendo mucho frío allí. El sedoso pelaje de Rosebriar no ayudaba mucho contra el clima. Pero los caballos del Norte del Norte tenían magia, y ella usó la suya para mantener la temperatura. Sus amigos, los dragones de rosas, no tuvieron tanta suerte. El invierno había sido muy duro y se acurrucaban bajo la sedosa crin de Rosebriar tratando de resguardarse. Ella nunca los abandonaría en el jardín donde habían encontrado su hogar con ella, pero estaba preocupada porque el invierno era demasiado frío para ellos. Si duraba mucho más, podrían morir. La primavera tenía que llegar pronto.<br/><tab>Como si sus pensamientos los hubiesen llamado, dos duendecillos brillantes se asomaron por el seto que rodeaba el jardín. Rosebriar relinchó un saludo. Sabía que donde correteaban los duendecillos brillantes, pronto aparecería el caballo conocido como Beran. Su magia señalaba el deshielo de la nieve y el cambio de estación del invierno a la primavera.<br/><tab>Fiel a su estilo, Beran pronto asomó la cabeza por encima del seto hacia el jardín. Al hacerlo, la nieve y el hielo se derritieron en el lugar, y su corazón también se derritió. Allí estaba el caballo más hermoso que jamás había visto, y se enamoró al instante. Rosebriar también quedó prendada al ver a Beran y se acercó a él de inmediato. A medida que la nieve se derretía, el jardín volvió a cobrar vida con duendecillos brillantes y dragones de rosa danzando, y el amor floreciendo en todo su esplendor.<br/><br/>]]></bodyCopy>
+					</story>
+				</parents>
+				<babies>
+					<baby dueDate="20080904" id="BRBaby1">
+						<photoName><![CDATA[Petal]]></photoName>
+						<positiveMessage><![CDATA[Planea <br/>una dulce<br/>sorpresa<br/>para alguien.]]></positiveMessage>
+						<dateFields>
+							<field><![CDATA[Fecha de<br/>parto]]></field>
+							<field><![CDATA[Sept. 4]]></field>
+						</dateFields>
+						<story>
+							<header><![CDATA[<br/>La Historia de Petal]]></header>
+							<bodyCopy><![CDATA[<tab>Petal nació en el medio del mismo rosedal donde su padre y madre, Beran y Rosebriar, se conocieron. Cientos de dragones de rosas se reunieron entusiasmados a la espera de su nacimiento. Cuando Petal se paró y caminó por primera vez, ellos inmediatamente se apresuraron a colocar capullos de rosas rojas en sus crines y cola. Petal y los dragones de rosas aman jugar en el jardín. Han sido amigos desde el día de su nacimiento.<br/><br/>]]></bodyCopy>
+						</story>
+						<certificate>
+							<preview>/certificates/BRBaby1_smallCert.png</preview>
+							<src>/certificates/BRBaby1.pdf</src>
+						</certificate>
+					</baby>
+				</babies>
+			</couple>
+			
+			<!-- *************************************************** -->			
+			
+			<couple id="uranusAnemone" autoOpenDate="20080911">
+				<parents>
+					<positiveMessage><![CDATA[Aprende del<br/>ayer,<br/>disfruta el hoy, e<br/>imagina el mañana.]]></positiveMessage>
+					<dad id="uranus">
+						<photoName><![CDATA[Uranus]]></photoName>
+					</dad>
+					<mom id="anemone">
+						<photoName><![CDATA[Anemone]]></photoName>
+					</mom>
+					<story>
+						<header><![CDATA[<br/>La Historia de Uranus y Anemone]]></header>
+						<bodyCopy><![CDATA[<tab>Anemone vivía en el cielo; había hecho su hogar entre las nubes que flotaban en lo alto del Norte del Norte. Era muy feliz viviendo allí con sus amigos, los ositos voladores. Comían “capullos de nube”, flores que crecían en las nubes ondeantes. Sus amigos, los ositos voladores, las trenzaban en sus crines y cola. Anemone nunca había visto otras flores, porque nunca había dejado sus nubes.<br/><tab>Un día, un orgulloso y fuerte caballo pasó volando cerca de su nube. Su nombre era Uranus. Él había visto a Anemone muchas veces en su casa nube, pero ella lo había ignorado cada vez que volaba por allí. No quería tener nada que ver con un caballo tan orgulloso y misterioso como él. Uranus se había enamorado de la hermosa yegua blanca con asombrosas alas rojas. Él intentó todo para llamar su atención. Voló alrededor muy velozmente, pero ella lo ignoró. Hizo increíbles acrobacias en el aire, vueltas y picadas, pero ella ni siquiera volteó a verlo.<br/><tab>Entonces, un día, se le ocurrió una idea. Notó que Anemone amaba los capullos de nube, que estaban por todas partes: en sus nubes, en sus crines y en su cola. Pero esas eran las únicas flores que nacían en su hogar. Él bajó a tierra y fue a ver a su amiga Rosebriar. Ella le dió una sola rosa roja. Él voló de nuevo hacia las nubes y dió la rosa a Anemone. Ella instantáneamente se enamoró, y estuvieron juntos desde entonces.<br/><br/> 
+		]]></bodyCopy>
+					</story>
+				</parents>
+				<babies>
+					<baby dueDate="20080912" id="UABaby1">
+						<photoName><![CDATA[Cirra]]></photoName>
+						<positiveMessage><![CDATA[Ve la<br/>belleza<br/>interior de tus<br/>amigos.]]></positiveMessage>
+						<dateFields>
+							<field><![CDATA[Fecha de<br/>parto]]></field>
+							<field><![CDATA[Sept. 12]]></field>
+						</dateFields>
+						<story>
+							<header><![CDATA[<br/>La Historia de Cirra]]></header>
+							<bodyCopy><![CDATA[<tab>Cirra nació en una nube, muy alto sobre el suelo. Tiene el pelaje marfil de su madre, Anemone. Sus alas son como las de su padre, Uranus, pero en lugar de negras, son color marfil. Le encanta jugar entre las nubes con sus amigos, los ositos voladores. Cirra vuela mientras los ositos le lanzan algodón de nube. Ella trata de atraparlo con la boca.<br/><br/>]]></bodyCopy>
+						</story>
+						<certificate>
+							<preview>/certificates/UABaby1_smallCert.png</preview>
+							<src>/certificates/UABaby1.pdf</src>
+						</certificate>
+					</baby>
+				</babies>				
+			</couple>
+
+			<!-- *************************************************** -->				
+			
+			<couple id="flipperOndine" autoOpenDate="20080918">				
+				<parents>
+					<positiveMessage><![CDATA[¡Haz de cada día<br/> una aventura!<br/>Te abrazará<br/> con nuevas energías.]]></positiveMessage>
+					<dad id="flipper">
+						<photoName><![CDATA[Flipper]]></photoName>
+					</dad>
+					<mom id="ondine">
+						<photoName><![CDATA[Ondine]]></photoName>
+					</mom>
+					<story>
+						<header><![CDATA[<br/>La Historia de Flipper y Ondine]]></header>
+						<bodyCopy><![CDATA[<tab>Ondine a menudo jugaba con sus amigas las tortugas burbuja en las costas del lago donde vivía. Chapoteaban y soplaban burbujas todo el día. Ondine amaba jugar con sus amigas, pero a veces se sentía solitaria y deseaba que hubiera otro caballo en su lago con quien jugar.<br/><tab>Una mañana, a Ondine se le ocurrió una idea. Sopló una burbuja especial. Hacia arriba voló la burbuja con la brisa matutina. Dejó el lago de Ondine y siguió el río hacia el mar. La burbuja flotó hasta las olas donde Flipper, el caballo de agua, saltaba en la espuma.<br/><tab>Mientras Flipper brincaba y jugaba, algo llamó su atención. Vio una burbuja que se acercaba hacia él. Pero no era una burbuja cualquiera, ¡era una burbuja con forma de corazón! Flipper quedó maravillado; nunca había visto una burbuja así. La tocó con su nariz y en ese instante supo que Ondine le había enviado esa burbuja mágica. Ésta se volvió rosa. Él sopló la burbuja, que subió y volvió hacia el lago.<br/><tab>Ondine esperó con ilusión mientras la burbuja se acercaba a ella. Cuando aterrizó a sus pies, la burbuja rosa con forma de corazón explotó, y en su mente apareció una imagen. Ondine supo que Flipper la esperaba en el mar. Corrió tan rápido como pudo, bajando por el río hasta la playa. Allí, en la espuma, la esperaba Flipper, quien saltó del agua para saludarla. Ondine nunca más estaría sola.<br/><br/>]]></bodyCopy>
+					</story>
+				</parents>
+				<babies>
+					<baby dueDate="20080918" id="FOBaby1">
+						<photoName><![CDATA[Janie]]></photoName>
+						<positiveMessage><![CDATA[Aprende del<br/>ayer, <br/>disfruta el hoy, e <br/>imagina el mañana.]]></positiveMessage>
+						<dateFields>
+							<field><![CDATA[Fecha de<br/>parto]]></field>
+							<field><![CDATA[Sept. 18]]></field>
+						</dateFields>
+						<story>
+							<header><![CDATA[<br/>La Historia de Janie]]></header>
+							<bodyCopy><![CDATA[<tab>Janie tiene el aspecto y los colores de su madre, Ondine, pero tiene la forma de su padre, Flipper. Su mamá se sumergió en el mar para darla a luz. Janie nació dentro de una hermosa burbuja, como las que hace su madre, solo que mucho más grande. Le encanta explorar las cuevas secretas del mar, donde a veces van sus padres. Allí encuentra caracoles marinos y flores que coloca en su crin.<br/><br/>]]></bodyCopy>
+						</story>
+						<certificate>
+							<preview>/certificates/FOBaby1_smallCert.png</preview>
+							<src>/certificates/FOBaby1.pdf</src>
+						</certificate>
+					</baby>
+				</babies>					
+			</couple>
+			
+			<!-- *************************************************** -->				
+			
+			<couple id="belloBella" autoOpenDate="20080925">
+				<parents>
+					<positiveMessage><![CDATA[La vida es un regalo.<br/>Siente la felicidad<br/>y la energía que<br/>esto te aporta.]]></positiveMessage>
+					<dad id="bello">
+						<photoName><![CDATA[Bello]]></photoName>
+					</dad>
+					<mom id="bella">
+						<photoName><![CDATA[Bella]]></photoName>
+					</mom>
+					<story>
+						<header><![CDATA[<br/>Historia de los Padres]]></header>
+						<bodyCopy><![CDATA[<tab>Hace mucho tiempo, dos grandes manadas de caballos galopaban por todo Norte del Norte. Este lugar era tan vasto que las dos manadas nunca se habían encontrado. Una de ellas estaba guiada por una hermosa yegua blanca, llena de alegría y energía. La otra seguía a un semental negro que vivía cada día como si fuera el primero.<br/><tab>Ambos caballos eran muy distintos al resto de los de sus manadas. Eran poderosos, cuidaban a los demás y sabían mucho más de lo que cualquier caballo común podría saber. Sabían cuándo llovería o saldría el sol, conocían los lugares más seguros, y también sabían que, en algún rincón de Norte del Norte, vivía otro caballo igual a ellos.<br/><tab>Durante años, estos dos caballos guiaron a sus manadas por montañas, praderas y alrededor de mares, siempre con la sensación de que, con cada paso, se acercaban más el uno al otro. Una mañana fresca y despejada, ambos llegaron a orillas opuestas de un gran lago. El agua del lago ondeaba suavemente, aunque no soplaba viento alguno. Todos los demás caballos de las manadas se quedaron inmóviles, como estatuas en un jardín, atrapados por el encantamiento que los mantenía en su lugar.<br/><tab>Los dos líderes rodearon el lago. A medida que se acercaban el uno al otro, el mundo entero parecía quedarse quieto por un instante. Sus narices se tocaron y un gran viento sopló desde el norte, rozándolo todo y poniendo en marcha el destino.<br/><tab>Bella y Bello sabían que estarían juntos por siempre.<br/><br/>]]></bodyCopy>			
+					</story>
+				</parents>
+				<babies>
+					<baby dueDate="20080925" id="BBBaby1">
+						<photoName><![CDATA[Bellisimo]]></photoName>
+						<positiveMessage><![CDATA[Confía en ti mismo<br/>y<br/>sabrás cómo<br/>vivir.]]></positiveMessage>
+						<dateFields>
+							<field><![CDATA[Fecha de<br/>nacimiento]]></field>
+							<field>Sept. 25</field>
+						</dateFields>
+						<story>
+							<header><![CDATA[<br/>La Historia de Bellisimo]]></header>
+							<bodyCopy><![CDATA[<tab>Bellisimo nació a orillas del mismo lago donde sus padres, Bella y Bello, se encontraron por primera vez. Su pelaje es una mezcla del negro de su padre y el blanco de su madre: un gris jaspeado. El día que Bellisimo vino al mundo, un arcoíris apareció sobre el lago, aunque no había llovido. Le encanta jugar allí, persiguiendo mariposas. La hierba es muy dulce, y a menudo se detiene a mordisquearla mientras corretea feliz por la orilla.<br/><br/>]]></bodyCopy>
+						</story>
+						<certificate>
+							<preview>/certificates/BBBaby1_smallCert.png</preview>
+							<src>/certificates/BBBaby1.pdf</src>
+						</certificate>
+					</baby>
+					<baby dueDate="20081106" id="BBBaby2">
+						<photoName><![CDATA[Bellissa]]></photoName>
+						<positiveMessage><![CDATA[Conviértete en la persona<br/>que quieres ser.<br/>Encontrarás<br/>alegría en el camino.]]></positiveMessage>
+						<dateFields>
+							<field><![CDATA[Fecha de<br/>parto]]></field>
+							<field>Nov. 6</field>
+						</dateFields>
+						<story>
+							<header><![CDATA[<br/>La Historia de Bellissa]]></header>
+							<bodyCopy><![CDATA[<tab>FPO<br/><br/>]]></bodyCopy>
+						</story>
+						<certificate>
+							<preview>/certificates/BBBaby2_smallCert.png</preview>
+							<src>/certificates/BBBaby2.pdf</src>
+						</certificate>
+					</baby>
+				</babies>					
+			</couple>
+		</couples>
+	</babybook>
+	<cardsAreHereModule assetID="CardsAreHereModule">
+		<content startDate="20081106">
+			<link>https://web.archive.org/web/20081112151827/http://www.bellasara.com/products.aspx</link>
+		</content>
+	</cardsAreHereModule>		
+	<activateModule>
+		<content startDate="20080809">
+			<link>http://www.bellasara.com/activate.aspx?ref=HPBUTN2-CR24</link>
+		</content>
+	</activateModule>	
+</data>
