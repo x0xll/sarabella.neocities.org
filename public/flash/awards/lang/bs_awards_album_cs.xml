@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bs_awards_album>
+	<!-- ================================================================================================================================================================== -->
+	<filter_controls>
+		<my_awards>
+			<filter_control_label selectable="0" x="25" y="-5" wordWrap="0">Moje Ocenění</filter_control_label>
+		</my_awards>		
+	</filter_controls>
+	<!-- ================================================================================================================================================================== -->		
+	<tool_tip>
+		<tooltip_horseshoes_label selectable="0" x="0" y="0" wordWrap="0">Podkovy:</tooltip_horseshoes_label>
+		<tooltip_progress_label selectable="0" x="0" y="0" wordWrap="0">Vlastníš kartu:</tooltip_progress_label>
+	</tool_tip>
+	<!-- ================================================================================================================================================================== -->				
+</bs_awards_album>
+
