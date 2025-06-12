@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+    <print>Tisk</print>
+    <reset>Restartovat</reset>
+    <help>Pomoc</help>
+    <currentColor>Aktuální Barva</currentColor>
+    <moreColor>Více Barev</moreColor>
+    
+    <fionaTxt>Buď hrdinou svého vlastním příběhu.</fionaTxt>
+    <thunderTxt>Dávám Ti odvahu. Nyní se můžeš zbavit svého strachu.</thunderTxt>
+    <bellaTxt>Každý den mysli pozitivně! Ucítíš radost a energii, kterou ti toto myšlení přinese.</bellaTxt>
+    <jewelTxt>Pomohu ti zůstat ve stálém přílivu hojnosti.</jewelTxt>
+</root>
