@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+    <won>VÝBORNÁ PRÁCE!</won>
+    
+    <help>POMOC!!</help>
+
+    <back>Zpátky</back>
+    
+    <diff>OBTÍŽNOST</diff>
+    <easiest>Nejlehčí</easiest>
+    <easier>Lehké</easier>
+    <harder>Těžší</harder>
+    <hardest>Těžké</hardest>
+
+    <solve>Vyřešit Puzzle</solve>
+    <preview>Náhled</preview>
+    <edges>Pouze Okraje</edges>
+    <move>přesunout kousky</move>
+
+    <retry>Zkus jiné puzzle nebo se vrať k hraní jiných her s Bella Sarou</retry>
+</root>
