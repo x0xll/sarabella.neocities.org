@@ -1,0 +1,2584 @@
+{
+    "ui": {
+        "score": "Skóre: ",
+        "turns": "Otočit do leva: ",
+        "question": "Otázka ",
+        "retry": "Znova",
+        "end_score": "Tvé Skóre: ",
+        "perfect_title": "Gratuluji!",
+        "good_title": "Dobrá práce!",
+        "bad_title": "Ups...",
+        "perfect_desc": "Musíš být Bella Sara expert!",
+        "good_desc": "Víš toho hodně o Bella Sara!",
+        "bad_desc": "Možná to chceš zkusit znovu?"
+
+    },
+    "questions":
+    [
+        {
+            "question": "Kdo je to?",
+            "attribute": "name"
+        },
+        {
+            "question": "Jaký je jeho/její citát?",
+            "attribute": "quote"
+        }
+    ],
+    "horseDatas": [
+        {
+            "name": "Abenaki",
+            "image": "/images/horses/abenaki.png",
+            "quote": "Respect yourself first. Then others will honor your strength."
+        },
+        {
+            "name": "Absaroke",
+            "image": "/images/horses/absaroke.png",
+            "quote": "Dancing keeps you in touch with your body and its energy."
+        },
+        {
+            "name": "Achilles",
+            "image": "/images/horses/achilles.png",
+            "quote": "Have the courage to learn from your weaknesses and grow stronger."
+        },
+        {
+            "name": "Addis",
+            "image": "/images/horses/addis.png",
+            "quote": "Když se ti někdo omluví, odpusť mu."
+        },
+        {
+            "name": "Aegis",
+            "image": "/images/horses/aegis.png",
+            "quote": "Do something that makes you feel proud. Others will be proud of you too."
+        },
+        {
+            "name": "Aheron",
+            "image": "/images/horses/aheron.png",
+            "quote": "Listen to those who encourage you, and encourage those who listen."
+        },
+        {
+            "name": "Akama",
+            "image": "/images/horses/akama.png",
+            "quote": "What you do today creates your future."
+        },
+        {
+            "name": "Aleut",
+            "image": "/images/horses/aleut.png",
+            "quote": "Give your imagination time, and it will find a way."
+        },
+        {
+            "name": "Alexander",
+            "image": "/images/horses/alexander.png",
+            "quote": "Make your own choices, and let others make theirs."
+        },
+        {
+            "name": "Alibi",
+            "image": "/images/horses/alibi.png",
+            "quote": "Find new ways to be with others."
+        },
+        {
+            "name": "Alina",
+            "image": "/images/horses/alina.png",
+            "quote": "Your good character is the most precious thing you own."
+        },
+        {
+            "name": "Amia",
+            "image": "/images/horses/amia.png",
+            "quote": "Your heart is my heart. Our friendship is forever."
+        },
+        {
+            "name": "Amor",
+            "image": "/images/horses/amor.png",
+            "quote": "Svou láskou přines do světa mír."
+        },
+        {
+            "name": "Anemone",
+            "image": "/images/horses/anemone.png",
+            "quote": "Měj své srdce otevřené. Věř v dávání a přijímání lásky."
+        },
+        {
+            "name": "Angel",
+            "image": "/images/horses/angel.png",
+            "quote": "Angel přichází. Udělej jí místo a nech nebesa, ať ti pomohou."
+        },
+        {
+            "name": "Anigan",
+            "image": "/images/horses/anigan.png",
+            "quote": "Na tomto okamžiku najdi něco, co tě rozesměje."
+        },
+        {
+            "name": "Anisinabe",
+            "image": "/images/horses/anisinabe.png",
+            "quote": "Let your dreams inspire you and lead you to an answer."
+        },
+        {
+            "name": "Anouk",
+            "image": "/images/horses/anouk.png",
+            "quote": "Share your feelings. That's how you become free and happy."
+        },
+        {
+            "name": "Anthea",
+            "image": "/images/horses/anthea.png",
+            "quote": "Svého cíle nemusíš dosáhnout dnes. Stačí se posunout o krok dál."
+        },
+        {
+            "name": "Apache",
+            "image": "/images/horses/apache.png",
+            "quote": "Find joy in being with others. Use it to spin your own web of delight."
+        },
+        {
+            "name": "Aphaia",
+            "image": "/images/horses/aphaia.png",
+            "quote": "Dare to loosen your grip for a while. You will see things differently."
+        },
+        {
+            "name": "Aphrodite",
+            "image": "/images/horses/aphrodite.png",
+            "quote": "Hledej krásu tam, kde bys ji nejméně očekávala."
+        },
+        {
+            "name": "Apollo",
+            "image": "/images/horses/apollo.png",
+            "quote": "Spousta malých kroků ti splní velké sny."
+        },
+        {
+            "name": "Apuni",
+            "image": "/images/horses/apuni.png",
+            "quote": "Dream soaring dreams and wake ready to fly."
+        },
+        {
+            "name": "Ara",
+            "image": "/images/horses/ara.png",
+            "quote": "You have the power to forget anger and get along again."
+        },
+        {
+            "name": "Arapaho",
+            "image": "/images/horses/arapaho.png",
+            "quote": "Show you are responsible by always telling the truth."
+        },
+        {
+            "name": "Arelus",
+            "image": "/images/horses/arelus.png",
+            "quote": "A happy memory can bring you joy right now."
+        },
+        {
+            "name": "Ariadne",
+            "image": "/images/horses/ariadne.png",
+            "quote": "You are surrounded by loving, caring people."
+        },
+        {
+            "name": "Aries",
+            "image": "/images/horses/aries.png",
+            "quote": "Show your strength and pace with dignity."
+        },
+        {
+            "name": "Arim",
+            "image": "/images/horses/arim.png",
+            "quote": "Your friendships are strong and loving."
+        },
+        {
+            "name": "Artemis",
+            "image": "/images/horses/artemis.png",
+            "quote": "I will help you have courage and pride."
+        },
+        {
+            "name": "Aster",
+            "image": "/images/horses/aster.png",
+            "quote": "Show your passion. It will shine through everything you do."
+        },
+        {
+            "name": "Asteria",
+            "image": "/images/horses/asteria.png",
+            "quote": "Share your thoughts and feelings in writing."
+        },
+        {
+            "name": "Atalaya",
+            "image": "/images/horses/atalaya.png",
+            "quote": "Use kind words when you talk about yourself."
+        },
+        {
+            "name": "Athena",
+            "image": "/images/horses/athena.png",
+            "quote": "Buď svá, buď volná a dej stejnou svobodu i ostatním."
+        },
+        {
+            "name": "Aurora",
+            "image": "/images/horses/aurora.png",
+            "quote": "Energie přírody je vždy a všude kolem tebe."
+        },
+        {
+            "name": "Autumn",
+            "image": "/images/horses/autumn.png",
+            "quote": "Finishing what you started gives you energy."
+        },
+        {
+            "name": "Aviva",
+            "image": "/images/horses/aviva.png",
+            "quote": "Read a good book. Let it inspire you to write a story of your own."
+        },
+        {
+            "name": "Azuro",
+            "image": "/images/horses/azuro.png",
+            "quote": "Know that you are loved for who you really are."
+        },
+        {
+            "name": "Balto",
+            "image": "/images/horses/balto.png",
+            "quote": "appiness is a decision. Decide to be happy."
+        },
+        {
+            "name": "Bandi",
+            "image": "/images/horses/bandi.png",
+            "quote": "Express yourself freely. If you need help, ask for it."
+        },
+        {
+            "name": "Barleycorn",
+            "image": "/images/horses/barleycorn.png",
+            "quote": "Your way can be different without being better or worse than others."
+        },
+        {
+            "name": "Bathylas",
+            "image": "/images/horses/bathylas.png",
+            "quote": "When you try something new, you learn and grow."
+        },
+        {
+            "name": "Beau",
+            "image": "/images/horses/beau.png",
+            "quote": "Choose to do what you feel is right."
+        },
+        {
+            "name": "Beauty",
+            "image": "/images/horses/beauty.png",
+            "quote": "Bring one of your friends and come play with me."
+        },
+        {
+            "name": "Bella",
+            "image": "/images/horses/bella.png",
+            "quote": "Každý den mysli pozitivně! Ucítíš radost a energii, kterou Ti toto myšlení přinese."
+        },
+        {
+            "name": "Bellerophon",
+            "image": "/images/horses/bellerophon.png",
+            "quote": "A real hero needs a loving heart."
+        },
+        {
+            "name": "Bellisimo",
+            "image": "/images/horses/bellisimo.png",
+            "quote": "Důvěřuj si a budeš vědět, jak žít."
+        },
+        {
+            "name": "Bellissa",
+            "image": "/images/horses/bellissa.png",
+            "quote": "Staň se tím, kým chceš být. Cestou hledej a rozdávej radost."
+        },
+        {
+            "name": "Bello",
+            "image": "/images/horses/bello.png",
+            "quote": "Život je dar. Přijmi ho a měj ho ráda."
+        },
+        {
+            "name": "Beran",
+            "image": "/images/horses/beran.png",
+            "quote": "Můžeš se rozhodnout, že tě tento okamžik změní."
+        },
+        {
+            "name": "Bifrost",
+            "image": "/images/horses/bifrost.png",
+            "quote": "Where love is there are always miracles."
+        },
+        {
+            "name": "Birdy",
+            "image": "/images/horses/birdy.png",
+            "quote": "Make peace with yourself and your friends."
+        },
+        {
+            "name": "Blackfeet",
+            "image": "/images/horses/blackfeet.png",
+            "quote": "Take courage and leap! Your timing is perfect."
+        },
+        {
+            "name": "Blackie",
+            "image": "/images/horses/blackie.png",
+            "quote": "Follow your dreams. Feel the happiness it brings."
+        },
+        {
+            "name": "Bliss",
+            "image": "/images/horses/bliss.png",
+            "quote": "I am out looking for adventure. Come and join me."
+        },
+        {
+            "name": "Blossom",
+            "image": "/images/horses/blossom.png",
+            "quote": "Close your eyes and imagine your wildest dream."
+        },
+        {
+            "name": "Bluebell",
+            "image": "/images/horses/bluebell.png",
+            "quote": "Naše přátelství nás činí volnými a silnějšími."
+        },
+        {
+            "name": "Bonnie",
+            "image": "/images/horses/bonnie.png",
+            "quote": "When you do something wrong, learn from it and forgive yourself."
+        },
+        {
+            "name": "Boreas",
+            "image": "/images/horses/boreas.png",
+            "quote": "Přijmi výzvu. Staneš se silnější a odvážnější, než jsi byla doposud."
+        },
+        {
+            "name": "Bosi",
+            "image": "/images/horses/bosi.png",
+            "quote": "Use all your abilities to make this a beautiful place."
+        },
+        {
+            "name": "Briar",
+            "image": "/images/horses/briar.png",
+            "quote": "Believing in yourself makes things go better for you."
+        },
+        {
+            "name": "Brigid",
+            "image": "/images/horses/brigid.png",
+            "quote": "Be the kind of person the world needs."
+        },
+        {
+            "name": "Brine",
+            "image": "/images/horses/brine.png",
+            "quote": "Choose friends who are positive and loving."
+        },
+        {
+            "name": "Brioso",
+            "image": "/images/horses/brioso.png",
+            "quote": "You are full of life and energy. Use it to do something great!"
+        },
+        {
+            "name": "Brisi",
+            "image": "/images/horses/brisi.png",
+            "quote": "Let's celebrate — come dance with me!"
+        },
+        {
+            "name": "Brumby",
+            "image": "/images/horses/brumby.png",
+            "quote": "Let go and enjoy the ride!"
+        },
+        {
+            "name": "Bryda",
+            "image": "/images/horses/bryda.png",
+            "quote": "True love means caring for someone else like you care for yourself."
+        },
+        {
+            "name": "Bukefalos",
+            "image": "/images/horses/bukefalos.png",
+            "quote": "Life is not about anger. It is about peace."
+        },
+        {
+            "name": "Butterfly",
+            "image": "/images/horses/butterfly.png",
+            "quote": "Make time to relax, be silent and enjoy the peace and quiet."
+        },
+        {
+            "name": "Cajus",
+            "image": "/images/horses/cajus.png",
+            "quote": "The world's happiness comes from having happy thoughts."
+        },
+        {
+            "name": "Calato",
+            "image": "/images/horses/calato.png",
+            "quote": "Believe in what you do and be successful."
+        },
+        {
+            "name": "Calyx",
+            "image": "/images/horses/calyx.png",
+            "quote": "We can climb mountains together."
+        },
+        {
+            "name": "Camelot",
+            "image": "/images/horses/camelot.png",
+            "quote": "Don't run for desires that are impossible to complete."
+        },
+        {
+            "name": "Cantaro",
+            "image": "/images/horses/cantaro.png",
+            "quote": "Develop your ability to lead. Ask a wise person for advice."
+        },
+        {
+            "name": "Cara",
+            "image": "/images/horses/cara.png",
+            "quote": "All friendships begin with a smile and a kind word."
+        },
+        {
+            "name": "Carmina",
+            "image": "/images/horses/carmina.png",
+            "quote": "Real friends can always tell each other the truth."
+        },
+        {
+            "name": "Cascadeur",
+            "image": "/images/horses/cascadeur.png",
+            "quote": "The things you have lost will come back by themselves."
+        },
+        {
+            "name": "Cate",
+            "image": "/images/horses/cate.png",
+            "quote": "The power of love can help you do what you need to do."
+        },
+        {
+            "name": "Celesta",
+            "image": "/images/horses/celesta.png",
+            "quote": "Look at the sky. See the art that nature creates."
+        },
+        {
+            "name": "Ceranna",
+            "image": "/images/horses/ceranna.png",
+            "quote": "Be the first to smile at someone new."
+        },
+        {
+            "name": "Ceratos",
+            "image": "/images/horses/ceratos.png",
+            "quote": "You live in a world of amazing abundance. Believe it!"
+        },
+        {
+            "name": "Ceres",
+            "image": "/images/horses/ceres.png",
+            "quote": "When you feed your spirit, things around you will grow."
+        },
+        {
+            "name": "Cha Ye",
+            "image": "/images/horses/cha ye.png",
+            "quote": "Smart people got that way by asking questions."
+        },
+        {
+            "name": "Charlemagne",
+            "image": "/images/horses/charlemagne.png",
+            "quote": "Pay attention to the lessons life teaches you."
+        },
+        {
+            "name": "Charlie",
+            "image": "/images/horses/charlie.png",
+            "quote": "Make time to listen to your friends."
+        },
+        {
+            "name": "Cherub",
+            "image": "/images/horses/cherub.png",
+            "quote": "Hope is the magic that turns wishes into goals."
+        },
+        {
+            "name": "Cheyenne",
+            "image": "/images/horses/cheyenne.png",
+            "quote": "See the beauty in both the shadow and the light."
+        },
+        {
+            "name": "Chiricahua",
+            "image": "/images/horses/chiricahua.png",
+            "quote": "Open your arms to someone who is trying to be your loyal friend."
+        },
+        {
+            "name": "Chitimacha",
+            "image": "/images/horses/chitimacha.png",
+            "quote": "Fly far and explore, but remember the way home."
+        },
+        {
+            "name": "Chitra",
+            "image": "/images/horses/chitra.png",
+            "quote": "Always choose the path that allows you to do your best for yourself and others."
+        },
+        {
+            "name": "Chromasia",
+            "image": "/images/horses/chromasia.png",
+            "quote": "The sweet sound of your voice makes me smile."
+        },
+        {
+            "name": "Chryso",
+            "image": "/images/horses/chryso.png",
+            "quote": "Daring to try is a success in itself."
+        },
+        {
+            "name": "Chumash",
+            "image": "/images/horses/chumash.png",
+            "quote": "Uvolni se a směj se. Budeš světem šířit radost."
+        },
+        {
+            "name": "Chung",
+            "image": "/images/horses/chung.png",
+            "quote": "Let go of pain and sorrow. The road will open and everything will go right."
+        },
+        {
+            "name": "Cindra",
+            "image": "/images/horses/cindra.png",
+            "quote": "Nech naději pozvednout Tvé myšlenky."
+        },
+        {
+            "name": "Cioccola",
+            "image": "/images/horses/cioccola.png",
+            "quote": "You can do it! Make your dreams come true!"
+        },
+        {
+            "name": "Cirra",
+            "image": "/images/horses/cirra.png",
+            "quote": "See the beauty inside your friends."
+        },
+        {
+            "name": "Clio",
+            "image": "/images/horses/clio.png",
+            "quote": "Let your ideas flow. They are meant to be used."
+        },
+        {
+            "name": "Cochiti",
+            "image": "/images/horses/cochiti.png",
+            "quote": "Look at the positive side of what you are doing and have fun."
+        },
+        {
+            "name": "Coco",
+            "image": "/images/horses/coco.png",
+            "quote": "Come let us play and have some fun and joy."
+        },
+        {
+            "name": "Colour",
+            "image": "/images/horses/colour.png",
+            "quote": "Vnímej radost v tom, co vidíš, slyšíš a cítíš."
+        },
+        {
+            "name": "Comanche",
+            "image": "/images/horses/comanche.png",
+            "quote": "Harmony comes from a peaceful mind, an open heart, and a forgiving nature."
+        },
+        {
+            "name": "Conall",
+            "image": "/images/horses/conall.png",
+            "quote": "Feel the courage inside you."
+        },
+        {
+            "name": "Connora",
+            "image": "/images/horses/connora.png",
+            "quote": "Spend time with a friend. Do something you both enjoy."
+        },
+        {
+            "name": "Cookie",
+            "image": "/images/horses/cookie.png",
+            "quote": "I make it easy for you to find yourself."
+        },
+        {
+            "name": "Coral",
+            "image": "/images/horses/coral.png",
+            "quote": "Někdy přijde pomoc z nejméně očekávaného místa."
+        },
+        {
+            "name": "Corcel",
+            "image": "/images/horses/corcel.png",
+            "quote": "Choose a worthy goal and go after it with all your heart."
+        },
+        {
+            "name": "Cordelia",
+            "image": "/images/horses/cordelia.png",
+            "quote": "Create happy events by seeking joy in every moment."
+        },
+        {
+            "name": "Cosima",
+            "image": "/images/horses/cosima.png",
+            "quote": "Learning is the key that opens up the whole world to you."
+        },
+        {
+            "name": "Cupid",
+            "image": "/images/horses/cupid.png",
+            "quote": "Your heart is free. Have the courage to follow it."
+        },
+        {
+            "name": "Cybele",
+            "image": "/images/horses/cybele.png",
+            "quote": "Believe in the abundance of love that surrounds you."
+        },
+        {
+            "name": "Daisy",
+            "image": "/images/horses/daisy.png",
+            "quote": "Remember to express what you feel and need."
+        },
+        {
+            "name": "Dane",
+            "image": "/images/horses/dane.png",
+            "quote": "Life is beautiful in so many ways. Open your eyes to them all."
+        },
+        {
+            "name": "Danu",
+            "image": "/images/horses/danu.png",
+            "quote": "Life is full of surprises. Enjoy it!"
+        },
+        {
+            "name": "Dart",
+            "image": "/images/horses/dart.png",
+            "quote": "You have the power to change things for the better."
+        },
+        {
+            "name": "Dawn",
+            "image": "/images/horses/dawn.png",
+            "quote": "Your natural charm is delightful."
+        },
+        {
+            "name": "Daybreak",
+            "image": "/images/horses/daybreak.png",
+            "quote": "Ask your family about themselves. You will learn where you come from."
+        },
+        {
+            "name": "Delight",
+            "image": "/images/horses/delight.png",
+            "quote": "Being kind to someone makes both of you feel good."
+        },
+        {
+            "name": "Demeter",
+            "image": "/images/horses/demeter.png",
+            "quote": "Take care of yourself and others. Feel the joy it brings you."
+        },
+        {
+            "name": "Dewdrop",
+            "image": "/images/horses/dewdrop.png",
+            "quote": "Give yourself time to rest. You can do more later."
+        },
+        {
+            "name": "Dewsparkle",
+            "image": "/images/horses/dewsparkle.png",
+            "quote": "Give yourself time to rest. You can do more later."
+        },
+        {
+            "name": "Diablo",
+            "image": "/images/horses/diablo.png",
+            "quote": "Where anger is there is love. Where sorrow is there is joy."
+        },
+        {
+            "name": "Diamond",
+            "image": "/images/horses/diamond.png",
+            "quote": "Důvěřuj mi. Jsem tady, abych ti pomohl stát se milující a dobrou kamarádkou."
+        },
+        {
+            "name": "Diana",
+            "image": "/images/horses/diana.png",
+            "quote": "Take care of nature. Let the world stay a beautiful place to live."
+        },
+        {
+            "name": "Dina",
+            "image": "/images/horses/dina.png",
+            "quote": "Do something you like and enjoy it."
+        },
+        {
+            "name": "Dino",
+            "image": "/images/horses/dino.png",
+            "quote": "Look for the peace behind power and energy."
+        },
+        {
+            "name": "Dixie",
+            "image": "/images/horses/dixie.png",
+            "quote": "With joint effort we can make changes."
+        },
+        {
+            "name": "Djengis",
+            "image": "/images/horses/djengis.png",
+            "quote": "Let your inner strength break free."
+        },
+        {
+            "name": "Dodo",
+            "image": "/images/horses/dodo.png",
+            "quote": "Every day is a gift appreciate it."
+        },
+        {
+            "name": "Domino",
+            "image": "/images/horses/domino.png",
+            "quote": "Do something with joy and you will feel contented."
+        },
+        {
+            "name": "Donn",
+            "image": "/images/horses/donn.png",
+            "quote": "Share your good feelings and they will come back to you."
+        },
+        {
+            "name": "Donna",
+            "image": "/images/horses/donna.png",
+            "quote": "Allow others to give you loving care."
+        },
+        {
+            "name": "Donnecha",
+            "image": "/images/horses/donnecha.png",
+            "quote": "This moment is full of chances for you to grow and learn."
+        },
+        {
+            "name": "Dowager",
+            "image": "/images/horses/dowager.png",
+            "quote": "Your kindness is as beautiful as a garden full of flowers."
+        },
+        {
+            "name": "Dreamer",
+            "image": "/images/horses/dreamer.png",
+            "quote": "Let your dream show you the way."
+        },
+        {
+            "name": "Dreki",
+            "image": "/images/horses/dreki.png",
+            "quote": "More listening and less talking can make things better."
+        },
+        {
+            "name": "Dusk",
+            "image": "/images/horses/dusk.png",
+            "quote": "Learning helps you choose wisely and trust your choices."
+        },
+        {
+            "name": "Dusty",
+            "image": "/images/horses/dusty.png",
+            "quote": "Find the fun in what people find funny in you."
+        },
+        {
+            "name": "Dynamo",
+            "image": "/images/horses/dynamo.png",
+            "quote": "Believe in yourself. Have confidence in what you do."
+        },
+        {
+            "name": "Dyni",
+            "image": "/images/horses/dyni.png",
+            "quote": "Find something to do that makes you happy."
+        },
+        {
+            "name": "Eagle",
+            "image": "/images/horses/eagle.png",
+            "quote": "Dívej se na svět shora jako orel."
+        },
+        {
+            "name": "Ebenos",
+            "image": "/images/horses/ebenos.png",
+            "quote": "Today is another chance to do something wonderful."
+        },
+        {
+            "name": "Echo",
+            "image": "/images/horses/echo.png",
+            "quote": "Tell others what is important to you."
+        },
+        {
+            "name": "Edana",
+            "image": "/images/horses/edana.png",
+            "quote": "Začni svůj den šťastnou myšlenkou."
+        },
+        {
+            "name": "Edda",
+            "image": "/images/horses/edda.png",
+            "quote": "You don't have to be perfect. Do your best and you will be just right."
+        },
+        {
+            "name": "Eirene",
+            "image": "/images/horses/eirene.png",
+            "quote": "Every moment is a new chance for you to make things better."
+        },
+        {
+            "name": "Embarr",
+            "image": "/images/horses/embarr.png",
+            "quote": "Listen to the music of my heart."
+        },
+        {
+            "name": "Emberic",
+            "image": "/images/horses/emberic.png",
+            "quote": "Ve svém životě můžeš vytvářet zázraky. Věř tomu!"
+        },
+        {
+            "name": "Empress",
+            "image": "/images/horses/empress.png",
+            "quote": "Tvůj duch je silný a ušlechtilý. Nos jej jako korunu slávy."
+        },
+        {
+            "name": "Epona",
+            "image": "/images/horses/epona.png",
+            "quote": "Thank you for being honest with me and with yourself."
+        },
+        {
+            "name": "Erinn",
+            "image": "/images/horses/erinn.png",
+            "quote": "Know yourself and you will know others."
+        },
+        {
+            "name": "Euros",
+            "image": "/images/horses/euros.png",
+            "quote": "Look for the truth in unexpected places."
+        },
+        {
+            "name": "Eurynome",
+            "image": "/images/horses/eurynome.png",
+            "quote": "Everything is easier when you focus on what you're doing."
+        },
+        {
+            "name": "Excelsior",
+            "image": "/images/horses/excelsior.png",
+            "quote": "Every new journey begins with the first step."
+        },
+        {
+            "name": "Fairybell",
+            "image": "/images/horses/fairybell.png",
+            "quote": "Look for friends who make you feel good."
+        },
+        {
+            "name": "Faith",
+            "image": "/images/horses/faith.png",
+            "quote": "Have faith that the world is full of love to give you."
+        },
+        {
+            "name": "Falcha",
+            "image": "/images/horses/falcha.png",
+            "quote": "It's okay for things to change. Say yes to the future."
+        },
+        {
+            "name": "Farah",
+            "image": "/images/horses/farah.png",
+            "quote": "Begin your story with a dream that inspires you."
+        },
+        {
+            "name": "Farfalla",
+            "image": "/images/horses/farfalla.png",
+            "quote": "You can fly! Just close your eyes and use your imagination."
+        },
+        {
+            "name": "Faris",
+            "image": "/images/horses/faris.png",
+            "quote": "Let your imagination take you to amazing places."
+        },
+        {
+            "name": "Faxon",
+            "image": "/images/horses/faxon.png",
+            "quote": "Learn more about your family. You will feel closer to them."
+        },
+        {
+            "name": "Felise",
+            "image": "/images/horses/felise.png",
+            "quote": "When you feel pain, listen to what it is trying to tell you."
+        },
+        {
+            "name": "Feng",
+            "image": "/images/horses/feng.png",
+            "quote": "This moment is full of opportunities."
+        },
+        {
+            "name": "Filippa",
+            "image": "/images/horses/filippa.png",
+            "quote": "Enjoy what you have got. You don't need what you have not."
+        },
+        {
+            "name": "Fiona",
+            "image": "/images/horses/fiona.png",
+            "quote": "Buď hrdinkou svého vlastního příběhu."
+        },
+        {
+            "name": "Firebright",
+            "image": "/images/horses/firebright.png",
+            "quote": "Let others see the fire that burns so brightly in your heart."
+        },
+        {
+            "name": "Firewalker",
+            "image": "/images/horses/firewalker.png",
+            "quote": "Belief gives you the courage to move forward and take chances."
+        },
+        {
+            "name": "Flame",
+            "image": "/images/horses/flame.png",
+            "quote": "Běžím rychleji než vítr. Pojď se mnou a najdeme kouzelné místo."
+        },
+        {
+            "name": "Flipper",
+            "image": "/images/horses/flipper.png",
+            "quote": "Moje objetí ti přinese energii a kouzla. Poté se už nemusíš bát."
+        },
+        {
+            "name": "Flora",
+            "image": "/images/horses/flora.png",
+            "quote": "Otevři se jako květina a ukaž svou vnitřní krásu."
+        },
+        {
+            "name": "Flower",
+            "image": "/images/horses/flower.png",
+            "quote": "Be good to someone. Make it a way of being."
+        },
+        {
+            "name": "Fox",
+            "image": "/images/horses/fox.png",
+            "quote": "Feel the freedom and the silence around you."
+        },
+        {
+            "name": "Freja",
+            "image": "/images/horses/freja.png",
+            "quote": "Close your eyes and hear the sound around you."
+        },
+        {
+            "name": "Friends",
+            "image": "/images/horses/friends.png",
+            "quote": "Think of all the good that exists in your friendships."
+        },
+        {
+            "name": "Friends Forever",
+            "image": "/images/horses/friends forever.png",
+            "quote": "Believe in the goodness between you and other people."
+        },
+        {
+            "name": "Froya",
+            "image": "/images/horses/froya.png",
+            "quote": "Život je kouzelný. Obejmi ho."
+        },
+        {
+            "name": "Fylgie",
+            "image": "/images/horses/fylgie.png",
+            "quote": "Open your arms to all that is good."
+        },
+        {
+            "name": "Gaia",
+            "image": "/images/horses/gaia.png",
+            "quote": "The world is a magical place. Enjoy it!"
+        },
+        {
+            "name": "Geisha",
+            "image": "/images/horses/geisha.png",
+            "quote": "Be generous and give away with love."
+        },
+        {
+            "name": "Generosity",
+            "image": "/images/horses/generosity.png",
+            "quote": "Find love by making someone else's day brighter."
+        },
+        {
+            "name": "Ghost",
+            "image": "/images/horses/ghost.png",
+            "quote": "Your beauty comes from within."
+        },
+        {
+            "name": "Giasa",
+            "image": "/images/horses/giasa.png",
+            "quote": "Trust your feelings. They will tell you what to do."
+        },
+        {
+            "name": "Gracie",
+            "image": "/images/horses/gracie.png",
+            "quote": "Opravdový přítel je jedním z nejcennějších pokladů."
+        },
+        {
+            "name": "Graia",
+            "image": "/images/horses/graia.png",
+            "quote": "Spread your wings and be free."
+        },
+        {
+            "name": "Greenlock",
+            "image": "/images/horses/greenlock.png",
+            "quote": "Only you know what is right for you."
+        },
+        {
+            "name": "Grey",
+            "image": "/images/horses/grey.png",
+            "quote": "If you really want it, it will come to you."
+        },
+        {
+            "name": "Hai Sheng",
+            "image": "/images/horses/hai sheng.png",
+            "quote": "Tell the truth, but do it with love."
+        },
+        {
+            "name": "Haku",
+            "image": "/images/horses/haku.png",
+            "quote": "Listen for the hidden harmony beneath the roar."
+        },
+        {
+            "name": "Halloween",
+            "image": "/images/horses/halloween.png",
+            "quote": "I will keep you safe."
+        },
+        {
+            "name": "Harmony",
+            "image": "/images/horses/harmony.png",
+            "quote": "Making music creates harmony in the world."
+        },
+        {
+            "name": "Hecate",
+            "image": "/images/horses/hecate.png",
+            "quote": "You are perfect just as you are!"
+        },
+        {
+            "name": "Helia",
+            "image": "/images/horses/helia.png",
+            "quote": "Když budeme dělat věci společně, naše přátelství poroste."
+        },
+        {
+            "name": "Hellevi",
+            "image": "/images/horses/hellevi.png",
+            "quote": "Learn about the past. It will help you see the future."
+        },
+        {
+            "name": "Hera",
+            "image": "/images/horses/hera.png",
+            "quote": "Be the leader in your own life."
+        },
+        {
+            "name": "Hercules",
+            "image": "/images/horses/hercules.png",
+            "quote": "Don't be afraid to ask for help."
+        },
+        {
+            "name": "Hestia",
+            "image": "/images/horses/hestia.png",
+            "quote": "When you share, everyone feels happy."
+        },
+        {
+            "name": "Hidatsa",
+            "image": "/images/horses/hidatsa.png",
+            "quote": "You will always have more chances!"
+        },
+        {
+            "name": "Hilario",
+            "image": "/images/horses/hilario.png",
+            "quote": "Playing around with something new is a fun way to learn."
+        },
+        {
+            "name": "Honey",
+            "image": "/images/horses/honey.png",
+            "quote": "Create something beautiful. It will make you feel peaceful."
+        },
+        {
+            "name": "Honora",
+            "image": "/images/horses/honora.png",
+            "quote": "Važ si svých silných stránek a užívej je ke konání dobra."
+        },
+        {
+            "name": "Honu",
+            "image": "/images/horses/honu.png",
+            "quote": "Protect the beauty of nature."
+        },
+        {
+            "name": "Hummingbird",
+            "image": "/images/horses/hummingbird.png",
+            "quote": "Jdi za smyslem života."
+        },
+        {
+            "name": "Hunter",
+            "image": "/images/horses/hunter.png",
+            "quote": "Do something you didn't know you could. Take the chances that come."
+        },
+        {
+            "name": "Huron",
+            "image": "/images/horses/huron.png",
+            "quote": "You can encourage others to learn and grow."
+        },
+        {
+            "name": "Icehorn",
+            "image": "/images/horses/icehorn.png",
+            "quote": "Open your heart to all sorts of wonderful dreams!"
+        },
+        {
+            "name": "Iceprince",
+            "image": "/images/horses/iceprince.png",
+            "quote": "Let others see who you really are."
+        },
+        {
+            "name": "Iduna",
+            "image": "/images/horses/iduna.png",
+            "quote": "Feel the beauty inside you and let it blossom"
+        },
+        {
+            "name": "Inuit",
+            "image": "/images/horses/inuit.png",
+            "quote": "Find your own unique voice and let your feelings sing out."
+        },
+        {
+            "name": "Inupiat",
+            "image": "/images/horses/inupiat.png",
+            "quote": "Máš sílu a odhodlání čelit jakékoli výzvě."
+        },
+        {
+            "name": "Isleta",
+            "image": "/images/horses/isleta.png",
+            "quote": "Every day brings new chances. Watch for the right moment."
+        },
+        {
+            "name": "Icarus",
+            "image": "/images/horses/icarus.png",
+            "quote": "Choose to be with people who care about you."
+        },
+        {
+            "name": "Iceking",
+            "image": "/images/horses/iceking.png",
+            "quote": "Naděje je jako kouzlo. Díky ní jsi plná energie."
+        },
+        {
+            "name": "Iris",
+            "image": "/images/horses/iris.png",
+            "quote": "Follow the rainbow. Believe in happiness."
+        },
+        {
+            "name": "Isak",
+            "image": "/images/horses/isak.png",
+            "quote": "Be open, flexible, and quick."
+        },
+        {
+            "name": "Ivy",
+            "image": "/images/horses/ivy.png",
+            "quote": "Wish only for what you really want."
+        },
+        {
+            "name": "Jaida",
+            "image": "/images/horses/jaida.png",
+            "quote": "Take good care of yourself. Be healthy and happy."
+        },
+        {
+            "name": "Jajali",
+            "image": "/images/horses/jajali.png",
+            "quote": "When you laugh your troubles get smaller."
+        },
+        {
+            "name": "Janie",
+            "image": "/images/horses/janie.png",
+            "quote": "Uč se ze včerejška, raduj se z dnešního dne a mysli na zítřek."
+        },
+        {
+            "name": "Janus",
+            "image": "/images/horses/janus.png",
+            "quote": "Do the best you can!"
+        },
+        {
+            "name": "Jewel",
+            "image": "/images/horses/jewel.png",
+            "quote": "Pomohu Ti zůstat ve stálém přílivu hojnosti."
+        },
+        {
+            "name": "Jicarilla",
+            "image": "/images/horses/jicarilla.png",
+            "quote": "You can climb huge mountains if you choose your path wisely."
+        },
+        {
+            "name": "Jojo",
+            "image": "/images/horses/jojo.png",
+            "quote": "You create your own reality."
+        },
+        {
+            "name": "Joker",
+            "image": "/images/horses/joker.png",
+            "quote": "Be aware of all the beauty around you."
+        },
+        {
+            "name": "Jolly",
+            "image": "/images/horses/jolly.png",
+            "quote": "Slunce svítí na Tebe a na mě. Pojďme si hrát s hudbou!"
+        },
+        {
+            "name": "Jonas",
+            "image": "/images/horses/jonas.png",
+            "quote": "Live out your dreams every day. This day will never come again."
+        },
+        {
+            "name": "Jonathan",
+            "image": "/images/horses/jonathan.png",
+            "quote": "It is time for joyful playing. Joy creates miracles."
+        },
+        {
+            "name": "Joy",
+            "image": "/images/horses/joy.png",
+            "quote": "Let us try different adventures together as a way to grow and learn."
+        },
+        {
+            "name": "Juno",
+            "image": "/images/horses/juno.png",
+            "quote": "You can choose to be joyful and celebrate!"
+        },
+        {
+            "name": "Jupiter",
+            "image": "/images/horses/jupiter.png",
+            "quote": "Be willing to forgive."
+        },
+        {
+            "name": "Kahuna",
+            "image": "/images/horses/kahuna.png",
+            "quote": "A generous spirit finds friends everywhere."
+        },
+        {
+            "name": "Kallista",
+            "image": "/images/horses/kallista.png",
+            "quote": "You are in this world to make it better."
+        },
+        {
+            "name": "Karna",
+            "image": "/images/horses/karna.png",
+            "quote": "I am your friend, both when your in your joy and your sadness."
+        },
+        {
+            "name": "Keetoowah",
+            "image": "/images/horses/keetoowah.png",
+            "quote": "Everyone does better when we take care of each other."
+        },
+        {
+            "name": "Kelpie-Pooka",
+            "image": "/images/horses/kelpie-pooka.png",
+            "quote": "Believe in the goodness of life."
+        },
+        {
+            "name": "Kendra",
+            "image": "/images/horses/kendra.png",
+            "quote": "Change is a part of life. Learn to enjoy it."
+        },
+        {
+            "name": "Khrysor",
+            "image": "/images/horses/khrysor.png",
+            "quote": "Life is full of chances. Anything could happen."
+        },
+        {
+            "name": "Kiki",
+            "image": "/images/horses/kiki.png",
+            "quote": "Let me tell you a fairy tale. Listen and use your imagination."
+        },
+        {
+            "name": "King",
+            "image": "/images/horses/king.png",
+            "quote": "I will help you spread peace and unity throughout the world."
+        },
+        {
+            "name": "Kini",
+            "image": "/images/horses/kini.png",
+            "quote": "Don't be afraid to show your feelings."
+        },
+        {
+            "name": "Kio",
+            "image": "/images/horses/kio.png",
+            "quote": "Your strength comes from within."
+        },
+        {
+            "name": "Kiowa",
+            "image": "/images/horses/kiowa.png",
+            "quote": "Be patient! You will get what you need when you need it most."
+        },
+        {
+            "name": "Kira",
+            "image": "/images/horses/kira.png",
+            "quote": "You can only appreciate happiness if you have felt sadness."
+        },
+        {
+            "name": "Kitty",
+            "image": "/images/horses/kitty.png",
+            "quote": "Když budeš šťastná, budou šťastní i tvoji přátelé."
+        },
+        {
+            "name": "Knight",
+            "image": "/images/horses/knight.png",
+            "quote": "The best path from here to there is not always a straight line."
+        },
+        {
+            "name": "Komenos",
+            "image": "/images/horses/komenos.png",
+            "quote": "Enjoy every minute playing with your friends."
+        },
+        {
+            "name": "Kona",
+            "image": "/images/horses/kona.png",
+            "quote": "Podívej se do svého nitra a najdi svoji vnitřní sílu."
+        },
+        {
+            "name": "Konfu",
+            "image": "/images/horses/konfu.png",
+            "quote": "Move towards your goals. The road is open."
+        },
+        {
+            "name": "Kora",
+            "image": "/images/horses/kora.png",
+            "quote": "Jsem hrdá na to, že mohu být Tvou kamarádkou."
+        },
+        {
+            "name": "Kounari",
+            "image": "/images/horses/kounari.png",
+            "quote": "When someone does something nice for you, enjoy it!"
+        },
+        {
+            "name": "Laguna",
+            "image": "/images/horses/laguna.png",
+            "quote": "With an open, loving heart, you can taste the joy in life."
+        },
+        {
+            "name": "Lakehorse",
+            "image": "/images/horses/lakehorse.png",
+            "quote": "Share what you know with others. It will make you stronger."
+        },
+        {
+            "name": "Lakota",
+            "image": "/images/horses/lakota.png",
+            "quote": "Sdílej bohatství života se všemi lidmi a zvířaty na planetě."
+        },
+        {
+            "name": "Lancelot",
+            "image": "/images/horses/lancelot.png",
+            "quote": "Be patient. Wait for the right moment before you take action."
+        },
+        {
+            "name": "Larena",
+            "image": "/images/horses/larena.png",
+            "quote": "You are ready to spread your wings and fly!"
+        },
+        {
+            "name": "Lenape",
+            "image": "/images/horses/lenape.png",
+            "quote": "Don't push others to change. Love them as they are."
+        },
+        {
+            "name": "Leonard",
+            "image": "/images/horses/leonard.png",
+            "quote": "Your life is a sundance."
+        },
+        {
+            "name": "Leonardo",
+            "image": "/images/horses/leonardo.png",
+            "quote": "When you hear me neigh you will feel the joy we have."
+        },
+        {
+            "name": "Lien",
+            "image": "/images/horses/lien.png",
+            "quote": "Nejdůležitější období Tvého života nastává právě teď."
+        },
+        {
+            "name": "Lillova",
+            "image": "/images/horses/lillova.png",
+            "quote": "Láska nezná podmínek."
+        },
+        {
+            "name": "Lily",
+            "image": "/images/horses/lily.png",
+            "quote": "Love turns a simple gift into a lasting treasure."
+        },
+        {
+            "name": "Lotte",
+            "image": "/images/horses/lotte.png",
+            "quote": "You can feel the truth in your heart."
+        },
+        {
+            "name": "Louie",
+            "image": "/images/horses/louie.png",
+            "quote": "Give others opportunities to help you."
+        },
+        {
+            "name": "Lucas",
+            "image": "/images/horses/lucas.png",
+            "quote": "Run with me and you will feel strength and power inside you."
+        },
+        {
+            "name": "Lucky",
+            "image": "/images/horses/lucky.png",
+            "quote": "Know that you deserve to receive goodness in all ways."
+        },
+        {
+            "name": "Lucky Light",
+            "image": "/images/horses/lucky light.png",
+            "quote": "Always be clear and brave."
+        },
+        {
+            "name": "Lugh",
+            "image": "/images/horses/lugh.png",
+            "quote": "Use your quick mind to solve your problems."
+        },
+        {
+            "name": "Lukan",
+            "image": "/images/horses/lukan.png",
+            "quote": "Z každé chvíle můžeš udělat okamžik, který si navždy zapamatuješ."
+        },
+        {
+            "name": "Lumbee",
+            "image": "/images/horses/lumbee.png",
+            "quote": "Imagining something is the first step toward doing it."
+        },
+        {
+            "name": "Luna",
+            "image": "/images/horses/luna.png",
+            "quote": "Čeká na tebe úžasný a vzrušující svět."
+        },
+        {
+            "name": "Macon",
+            "image": "/images/horses/macon.png",
+            "quote": "It is wise to accept that there are things you can't do."
+        },
+        {
+            "name": "Madeja",
+            "image": "/images/horses/madeja.png",
+            "quote": "Let others make their own choices in life."
+        },
+        {
+            "name": "Magic",
+            "image": "/images/horses/magic.png",
+            "quote": "Look to the heavens for the shooting stars. Now make a wish."
+        },
+        {
+            "name": "Mahalo",
+            "image": "/images/horses/mahalo.png",
+            "quote": "A little help can be a big gift to someone who needs it."
+        },
+        {
+            "name": "Mahina",
+            "image": "/images/horses/mahina.png",
+            "quote": "Let wisdom light your way."
+        },
+        {
+            "name": "Mandalay",
+            "image": "/images/horses/mandalay.png",
+            "quote": "This is a magical moment. You can make a wish."
+        },
+        {
+            "name": "Mariannis",
+            "image": "/images/horses/mariannis.png",
+            "quote": "Learning to swim is a fun way to exercise."
+        },
+        {
+            "name": "Maxi",
+            "image": "/images/horses/maxi.png",
+            "quote": "To find the way just follow me."
+        },
+        {
+            "name": "Medusa",
+            "image": "/images/horses/medusa.png",
+            "quote": "Take advice from the people you trust."
+        },
+        {
+            "name": "Mellonie",
+            "image": "/images/horses/mellonie.png",
+            "quote": "Joy and laughter make their own good luck."
+        },
+        {
+            "name": "Melusine",
+            "image": "/images/horses/melusine.png",
+            "quote": "Be yourself as you want others to see you."
+        },
+        {
+            "name": "Memory",
+            "image": "/images/horses/memory.png",
+            "quote": "Write down your fondest memories and keep them alive forever."
+        },
+        {
+            "name": "Menominee",
+            "image": "/images/horses/menominee.png",
+            "quote": "Being quiet leaves room for hearing and learning."
+        },
+        {
+            "name": "Mermaid",
+            "image": "/images/horses/mermaid.png",
+            "quote": "Laugh from your heart and feel the joy."
+        },
+        {
+            "name": "Merrydancer",
+            "image": "/images/horses/merrydancer.png",
+            "quote": "Focus your thoughts on things that make you happy."
+        },
+        {
+            "name": "Micado",
+            "image": "/images/horses/micado.png",
+            "quote": "Follow your intuition, it is always true."
+        },
+        {
+            "name": "Miccosukee",
+            "image": "/images/horses/miccosukee.png",
+            "quote": "Strength has more power when you use it in gentle ways."
+        },
+        {
+            "name": "Mikiko",
+            "image": "/images/horses/mikiko.png",
+            "quote": "Be patient like a tree. You will grow beautifully at your own pace."
+        },
+        {
+            "name": "Minelle",
+            "image": "/images/horses/minelle.png",
+            "quote": "Be yourself, be free, allow others the same freedom."
+        },
+        {
+            "name": "Ming",
+            "image": "/images/horses/ming.png",
+            "quote": "Be open and take care of what is necessary."
+        },
+        {
+            "name": "Minty",
+            "image": "/images/horses/minty.png",
+            "quote": "Leť se mnou ke hvězdám a budeme obklopeni světlem."
+        },
+        {
+            "name": "Mira",
+            "image": "/images/horses/mira.png",
+            "quote": "You are smart to ask for what you need."
+        },
+        {
+            "name": "Mireldis",
+            "image": "/images/horses/mireldis.png",
+            "quote": "Hledej pomoc a nalezneš ji všude kolem sebe."
+        },
+        {
+            "name": "Mirth",
+            "image": "/images/horses/mirth.png",
+            "quote": "Find joy by sharing fun times with good friends."
+        },
+        {
+            "name": "Misla",
+            "image": "/images/horses/misla.png",
+            "quote": "With me you will be safe and protected by heaven."
+        },
+        {
+            "name": "Mistral",
+            "image": "/images/horses/mistral.png",
+            "quote": "Do what you mean to do."
+        },
+        {
+            "name": "Misty",
+            "image": "/images/horses/misty.png",
+            "quote": "You have Misty's touch right now and everything you start turns to gold."
+        },
+        {
+            "name": "Mjolnir",
+            "image": "/images/horses/mjolnir.png",
+            "quote": "A generous heart is good at loving and being loved."
+        },
+        {
+            "name": "Mohawk",
+            "image": "/images/horses/mohawk.png",
+            "quote": "Don't give up! Keep working to reach your goal."
+        },
+        {
+            "name": "Montana",
+            "image": "/images/horses/montana.png",
+            "quote": "Follow me and I will show you the way."
+        },
+        {
+            "name": "Moonbeam",
+            "image": "/images/horses/moonbeam.png",
+            "quote": "You were born with a creative spirit. Let your ideas flow freely."
+        },
+        {
+            "name": "Moonlight",
+            "image": "/images/horses/moonlight.png",
+            "quote": "Důvěřuj měsíci a hvězdám. Pomáhají naplnit tvé sny."
+        },
+        {
+            "name": "Moonphantom",
+            "image": "/images/horses/moonphantom.png",
+            "quote": "Donuť se učinit první krok. Buď statečná!"
+        },
+        {
+            "name": "Moonsprite",
+            "image": "/images/horses/moonsprite.png",
+            "quote": "Pokud tě někdo zraní, řekni mu, jak se cítíš."
+        },
+        {
+            "name": "Morewyn",
+            "image": "/images/horses/morewyn.png",
+            "quote": "Letting go of anger and blame gives you more power and energy."
+        },
+        {
+            "name": "Morongo",
+            "image": "/images/horses/morongo.png",
+            "quote": "Prepare yourself so you can react quickly when the time comes."
+        },
+        {
+            "name": "Murttie",
+            "image": "/images/horses/murttie.png",
+            "quote": "Představ si, jak do tvého srdce proudí láska a radost."
+        },
+        {
+            "name": "Mushu",
+            "image": "/images/horses/mushu.png",
+            "quote": "Find a peaceful place where you can gather new energy."
+        },
+        {
+            "name": "Muskogee",
+            "image": "/images/horses/muskogee.png",
+            "quote": "Everything is more fun when we do it together!"
+        },
+        {
+            "name": "Mystery",
+            "image": "/images/horses/mystery.png",
+            "quote": "Allow yourself to wish for what you want."
+        },
+        {
+            "name": "Naiad",
+            "image": "/images/horses/naiad.png",
+            "quote": "Something good is about to happen!"
+        },
+        {
+            "name": "Nanna",
+            "image": "/images/horses/nanna.png",
+            "quote": "Think positively. Your happy thoughts will grow."
+        },
+        {
+            "name": "Nasim",
+            "image": "/images/horses/nasim.png",
+            "quote": "Pozdrav ranní slunce. Probudí Tvoji mysl a smysly."
+        },
+        {
+            "name": "Navajo",
+            "image": "/images/horses/navajo.png",
+            "quote": "You can choose to change what you think, do, or want."
+        },
+        {
+            "name": "Neptune",
+            "image": "/images/horses/neptune.png",
+            "quote": "Take what is good from the past and wrap it in the future."
+        },
+        {
+            "name": "Nerise",
+            "image": "/images/horses/nerise.png",
+            "quote": "This moment is unique. Make it count!"
+        },
+        {
+            "name": "Nieva",
+            "image": "/images/horses/nieva.png",
+            "quote": "YVždy získáš pomoc, kterou potřebuješ. Stačí o ni požádat."
+        },
+        {
+            "name": "Nightingale",
+            "image": "/images/horses/nightingale.png",
+            "quote": "Listen to the wind's music and hear what nature tells you."
+        },
+        {
+            "name": "Nike",
+            "image": "/images/horses/nike.png",
+            "quote": "Měj odvahu si věřit."
+        },
+        {
+            "name": "Niki",
+            "image": "/images/horses/niki.png",
+            "quote": "Notice the pleasure when you make a friend happy."
+        },
+        {
+            "name": "Nikita",
+            "image": "/images/horses/nikita.png",
+            "quote": "You may join us if you like."
+        },
+        {
+            "name": "Nimiipuu",
+            "image": "/images/horses/nimiipuu.png",
+            "quote": "Power comes from sharing your wisdom with others."
+        },
+        {
+            "name": "Ninja",
+            "image": "/images/horses/ninja.png",
+            "quote": "Be careful every minute."
+        },
+        {
+            "name": "Nisqually",
+            "image": "/images/horses/nisqually.png",
+            "quote": "The farther you go to reach your goal, the sweeter it is to get there."
+        },
+        {
+            "name": "Nori",
+            "image": "/images/horses/nori.png",
+            "quote": "Accept the past and move on to wonderful new things."
+        },
+        {
+            "name": "Notos",
+            "image": "/images/horses/notos.png",
+            "quote": "Your heart is big enough to chase your wildest dreams."
+        },
+        {
+            "name": "Nuada",
+            "image": "/images/horses/nuada.png",
+            "quote": "There is no magic stronger than trying again."
+        },
+        {
+            "name": "Nuala",
+            "image": "/images/horses/nuala.png",
+            "quote": "Feel the magic in your heart. Use it to give you energy."
+        },
+        {
+            "name": "Nuna",
+            "image": "/images/horses/nuna.png",
+            "quote": "By focusing on your inner strength you can spread light and warmth."
+        },
+        {
+            "name": "Nyx",
+            "image": "/images/horses/nyx.png",
+            "quote": "Let your life take you to exciting places."
+        },
+        {
+            "name": "Obrylin",
+            "image": "/images/horses/obrylin.png",
+            "quote": "A cheerful mind keeps you feeling healthy and strong."
+        },
+        {
+            "name": "Odyssey",
+            "image": "/images/horses/odyssey.png",
+            "quote": "Your spirit of adventure will take you to great heights."
+        },
+        {
+            "name": "Ondine",
+            "image": "/images/horses/ondine.png",
+            "quote": "Udělej z každého dne dobrodružství!"
+        },
+        {
+            "name": "Opis",
+            "image": "/images/horses/opis.png",
+            "quote": "Being kind and generous creates love in the world around you."
+        },
+        {
+            "name": "Oracle",
+            "image": "/images/horses/oracle.png",
+            "quote": "Look again. The most important things are often the hardest to see."
+        },
+        {
+            "name": "Osage",
+            "image": "/images/horses/osage.png",
+            "quote": "Klidně změň svůj názor."
+        },
+        {
+            "name": "Paiute",
+            "image": "/images/horses/paiute.png",
+            "quote": "You are free to feel your own feelings and make your own choices."
+        },
+        {
+            "name": "Pandora",
+            "image": "/images/horses/pandora.png",
+            "quote": "Open your heart. Let its beauty shine."
+        },
+        {
+            "name": "Parlez",
+            "image": "/images/horses/parlez.png",
+            "quote": "Make a plan and commit completely to it."
+        },
+        {
+            "name": "Pauma",
+            "image": "/images/horses/pauma.png",
+            "quote": "Turn yourself loose and enjoy the freedom to move!"
+        },
+        {
+            "name": "Pavonne",
+            "image": "/images/horses/pavonne.png",
+            "quote": "A noble spirit comes from a kind and honest heart."
+        },
+        {
+            "name": "Pawnee",
+            "image": "/images/horses/pawnee.png",
+            "quote": "Let your guard down and be open to the wonder of life."
+        },
+        {
+            "name": "Peace",
+            "image": "/images/horses/peace.png",
+            "quote": "Those who don't think of winning or losing have peace in mind."
+        },
+        {
+            "name": "Pedro",
+            "image": "/images/horses/pedro.png",
+            "quote": "Do everything with joy. I love to see you happy."
+        },
+        {
+            "name": "Pegasus",
+            "image": "/images/horses/pegasus.png",
+            "quote": "Your dreams are coming through. I am here to help you trust yourself."
+        },
+        {
+            "name": "Peka Peka",
+            "image": "/images/horses/peka peka.png",
+            "quote": "Give someone a good laugh. You may make a new friend."
+        },
+        {
+            "name": "Pelagos",
+            "image": "/images/horses/pelagos.png",
+            "quote": "Be gentle with yourself and others."
+        },
+        {
+            "name": "Pepper",
+            "image": "/images/horses/pepper.png",
+            "quote": "Cherish the gifts your family has given you."
+        },
+        {
+            "name": "Peregrine",
+            "image": "/images/horses/peregrine.png",
+            "quote": "Come with me and explore the wide, wonderful world."
+        },
+        {
+            "name": "Persephone",
+            "image": "/images/horses/persephone.png",
+            "quote": "Focus your energy on a special purpose and it will be more powerful."
+        },
+        {
+            "name": "Petal",
+            "image": "/images/horses/petal.png",
+            "quote": "Plan a sweet surprise for someone."
+        },
+        {
+            "name": "Peter",
+            "image": "/images/horses/peter.png",
+            "quote": "Believe in happy thoughts. Then you can do anything."
+        },
+        {
+            "name": "Petri",
+            "image": "/images/horses/petri.png",
+            "quote": "Talk about your feelings. Be open and honest."
+        },
+        {
+            "name": "Phoenix",
+            "image": "/images/horses/phoenix.png",
+            "quote": "Learning feeds your sense of wonder."
+        },
+        {
+            "name": "Pima",
+            "image": "/images/horses/pima.png",
+            "quote": "Pay attention to the details in everything you do."
+        },
+        {
+            "name": "Pini",
+            "image": "/images/horses/pini.png",
+            "quote": "Express yourself clearly and cheerfully."
+        },
+        {
+            "name": "Pink Lady",
+            "image": "/images/horses/pink lady.png",
+            "quote": "Jsem duch tvého vnitřního dítěte. Raduj se a dívej se na svět jako na kouzelné místo."
+        },
+        {
+            "name": "Pirouette",
+            "image": "/images/horses/pirouette.png",
+            "quote": "You have unique gifts. Make the most of the chances they give you."
+        },
+        {
+            "name": "Ponca",
+            "image": "/images/horses/ponca.png",
+            "quote": "A truly playful spirit lets everyone win."
+        },
+        {
+            "name": "Potawatomi",
+            "image": "/images/horses/potawatomi.png",
+            "quote": "Your cheerful heart brightens the day for everyone around you."
+        },
+        {
+            "name": "Primrose",
+            "image": "/images/horses/primrose.png",
+            "quote": "The more you learn, the more you grow."
+        },
+        {
+            "name": "Prince",
+            "image": "/images/horses/prince.png",
+            "quote": "If your talk and thoughts are positive you will become happy."
+        },
+        {
+            "name": "Prisma",
+            "image": "/images/horses/prisma.png",
+            "quote": "You have the power to control the way you react."
+        },
+        {
+            "name": "Pythia",
+            "image": "/images/horses/pythia.png",
+            "quote": "Strength is Beautiful."
+        },
+        {
+            "name": "Quinly",
+            "image": "/images/horses/quinly.png",
+            "quote": "Go looking for joy! You will find it all around you."
+        },
+        {
+            "name": "Raimondo",
+            "image": "/images/horses/raimondo.png",
+            "quote": "Share what you have with others. It will give you happiness and harmony."
+        },
+        {
+            "name": "Rain",
+            "image": "/images/horses/rain.png",
+            "quote": "Poběž se mnou a ucítíš sílu."
+        },
+        {
+            "name": "Rainbow",
+            "image": "/images/horses/rainbow.png",
+            "quote": "Sit down, feel the peace. We will enjoy a wonderful time together."
+        },
+        {
+            "name": "Ran",
+            "image": "/images/horses/ran.png",
+            "quote": "Enjoy a life of beauty and ease."
+        },
+        {
+            "name": "Rauni",
+            "image": "/images/horses/rauni.png",
+            "quote": "Be honest and do things with love."
+        },
+        {
+            "name": "Reif",
+            "image": "/images/horses/reif.png",
+            "quote": "Find a goal that keeps you focused."
+        },
+        {
+            "name": "Resident",
+            "image": "/images/horses/resident.png",
+            "quote": "Share your wisdom with others. It will give you strength."
+        },
+        {
+            "name": "Rhiannon",
+            "image": "/images/horses/rhiannon.png",
+            "quote": "See and hear the magic all around you."
+        },
+        {
+            "name": "Ricky",
+            "image": "/images/horses/ricky.png",
+            "quote": "Help me make peace on earth."
+        },
+        {
+            "name": "Rimfaxe",
+            "image": "/images/horses/rimfaxe.png",
+            "quote": "Přenášej lásku na všechny kolem sebe."
+        },
+        {
+            "name": "River",
+            "image": "/images/horses/river.png",
+            "quote": "Keep moving forward. You will get where you are going."
+        },
+        {
+            "name": "Rocky",
+            "image": "/images/horses/rocky.png",
+            "quote": "Vnímej přírodu kolem sebe a já ti dám její sílu."
+        },
+        {
+            "name": "Rodin",
+            "image": "/images/horses/rodin.png",
+            "quote": "Don't be afraid to cry. Tears have the magic to heal a broken heart."
+        },
+        {
+            "name": "Ronnie",
+            "image": "/images/horses/ronnie.png",
+            "quote": "Best Wishes for a Joyful Holiday Season and Peace on Earth from The World of Bella Sara."
+        },
+        {
+            "name": "Rosamund",
+            "image": "/images/horses/rosamund.png",
+            "quote": "I guard the past to protect the future."
+        },
+        {
+            "name": "Rose",
+            "image": "/images/horses/rose.png",
+            "quote": "Naslouchej svým snům. To, co ti říkají, je důležité."
+        },
+        {
+            "name": "Rosebriar",
+            "image": "/images/horses/rosebriar.png",
+            "quote": "Svět čeká, plný svobody a lásky, až ho objevíš."
+        },
+        {
+            "name": "Roxy",
+            "image": "/images/horses/roxy.png",
+            "quote": "Magical opportunities surround you."
+        },
+        {
+            "name": "Royce",
+            "image": "/images/horses/royce.png",
+            "quote": "Důvěřuj si a vybereš si cestu, která je pro tebe pravá."
+        },
+        {
+            "name": "Rubin",
+            "image": "/images/horses/rubin.png",
+            "quote": "A small seed can become a big tree."
+        },
+        {
+            "name": "Ruskin",
+            "image": "/images/horses/ruskin.png",
+            "quote": "Následuj své srdce a dosáhneš svého vlastního úspěchu."
+        },
+        {
+            "name": "Sabelle",
+            "image": "/images/horses/sabelle.png",
+            "quote": "You are a treasure. Unlock the beauty inside you."
+        },
+        {
+            "name": "Safire",
+            "image": "/images/horses/safire.png",
+            "quote": "Everything in life has a purpose."
+        },
+        {
+            "name": "Saga",
+            "image": "/images/horses/saga.png",
+            "quote": "Join me and we will be happy together."
+        },
+        {
+            "name": "Sandy",
+            "image": "/images/horses/sandy.png",
+            "quote": "Close your eyes and follow me in the universe."
+        },
+        {
+            "name": "Santee",
+            "image": "/images/horses/santee.png",
+            "quote": "Gather and save your energy for when you need it."
+        },
+        {
+            "name": "Santos",
+            "image": "/images/horses/santos.png",
+            "quote": "Be mindful of your senses and intuition."
+        },
+        {
+            "name": "Sapphirine",
+            "image": "/images/horses/sapphirine.png",
+            "quote": "I will be your lucky star. Take a chance and try something new."
+        },
+        {
+            "name": "Sarah",
+            "image": "/images/horses/sarah.png",
+            "quote": "Take a chance and follow your heart."
+        },
+        {
+            "name": "Sasha",
+            "image": "/images/horses/sasha.png",
+            "quote": "Make your goals magnificent."
+        },
+        {
+            "name": "Savros",
+            "image": "/images/horses/savros.png",
+            "quote": "Always keep the lessons you have learned safe inside your heart."
+        },
+        {
+            "name": "Scarlett",
+            "image": "/images/horses/scarlett.png",
+            "quote": "Are you curious? Let us discover the world together."
+        },
+        {
+            "name": "Scotty",
+            "image": "/images/horses/scotty.png",
+            "quote": "Make every step you take magical!"
+        },
+        {
+            "name": "Selene",
+            "image": "/images/horses/selene.png",
+            "quote": "You cannot lose your real treasure. Faith opens big doors."
+        },
+        {
+            "name": "Seminole",
+            "image": "/images/horses/seminole.png",
+            "quote": "Smell the lilies, soak up the sun, dance in the rain — enjoy!"
+        },
+        {
+            "name": "Seneca",
+            "image": "/images/horses/seneca.png",
+            "quote": "It takes teamwork to build a dream."
+        },
+        {
+            "name": "Seraphia",
+            "image": "/images/horses/seraphia.png",
+            "quote": "Už víš, co máš dělat. Jdi a udělej to!"
+        },
+        {
+            "name": "Serenity",
+            "image": "/images/horses/serenity.png",
+            "quote": "Find peace by remembering all the good things you have done."
+        },
+        {
+            "name": "Serilda",
+            "image": "/images/horses/serilda.png",
+            "quote": "Value your strengths and they will grow."
+        },
+        {
+            "name": "Shadow",
+            "image": "/images/horses/shadow.png",
+            "quote": "Look within yourself and love what you find there."
+        },
+        {
+            "name": "Shakira",
+            "image": "/images/horses/shakira.png",
+            "quote": "Goodness and generosity create loving energy."
+        },
+        {
+            "name": "Sham",
+            "image": "/images/horses/sham.png",
+            "quote": "I appreciate your honesty with me and yourself."
+        },
+        {
+            "name": "Shamal",
+            "image": "/images/horses/shamal.png",
+            "quote": "Věř, že to, co děláš, je správné. Ať už se to zdá jakkoli těžké."
+        },
+        {
+            "name": "Shaman",
+            "image": "/images/horses/shaman.png",
+            "quote": "Jsi silnější, než si uvědomuješ. Je bezpečné a dobré, když jsi silná."
+        },
+        {
+            "name": "Shanti",
+            "image": "/images/horses/shanti.png",
+            "quote": "Najdi si tiché místo, kde můžeš v klidu přemýšlet a snít."
+        },
+        {
+            "name": "Shawnee",
+            "image": "/images/horses/shawnee.png",
+            "quote": "The truth always brings more wisdom."
+        },
+        {
+            "name": "Sheng",
+            "image": "/images/horses/sheng.png",
+            "quote": "Understand the past. Hold on to the great things and move forward alone."
+        },
+        {
+            "name": "Shine",
+            "image": "/images/horses/shine.png",
+            "quote": "The world is beautiful. Love is that beauty!"
+        },
+        {
+            "name": "Shoshone",
+            "image": "/images/horses/shoshone.png",
+            "quote": "If you see someone needs you, quietly offer to help."
+        },
+        {
+            "name": "Signy",
+            "image": "/images/horses/signy.png",
+            "quote": "Beauty and mystery go hand in hand."
+        },
+        {
+            "name": "Silas",
+            "image": "/images/horses/silas.png",
+            "quote": "Let your wisdom and knowledge grow."
+        },
+        {
+            "name": "Silver",
+            "image": "/images/horses/silver.png",
+            "quote": "Nebuď smutná. Budu o tebe pečovat."
+        },
+        {
+            "name": "Sirocco",
+            "image": "/images/horses/sirocco.png",
+            "quote": "Jedna kreativní myšlenka může přinést spoustu dobrých nápadů."
+        },
+        {
+            "name": "Skeleton",
+            "image": "/images/horses/skeleton.png",
+            "quote": "Come out and live in the great world."
+        },
+        {
+            "name": "Skinfaxe",
+            "image": "/images/horses/skinfaxe.png",
+            "quote": "Let the sun shine through the darkness and light your path."
+        },
+        {
+            "name": "Skipper",
+            "image": "/images/horses/skipper.png",
+            "quote": "Věř ve svou cenu. Jsi vzácná."
+        },
+        {
+            "name": "Sky",
+            "image": "/images/horses/sky.png",
+            "quote": "Až budeš mít možnost vyzkoušet si nové a vzrušující věci, udělej to!"
+        },
+        {
+            "name": "Skywalker",
+            "image": "/images/horses/skywalker.png",
+            "quote": "Expect something good to happen."
+        },
+        {
+            "name": "Sleetmane",
+            "image": "/images/horses/sleetmane.png",
+            "quote": "Představ si své přání. Věř, že se Ti splní."
+        },
+        {
+            "name": "Sleipnir",
+            "image": "/images/horses/sleipnir.png",
+            "quote": "You are unique. Let others see what makes you special."
+        },
+        {
+            "name": "Snowdreamer",
+            "image": "/images/horses/snowdreamer.png",
+            "quote": "Měj odvahu jít tam, kam tě vedou tvé sny."
+        },
+        {
+            "name": "Snowflake",
+            "image": "/images/horses/snowflake.png",
+            "quote": "Change whatever you need to change to make things better."
+        },
+        {
+            "name": "Socorro",
+            "image": "/images/horses/socorro.png",
+            "quote": "True happiness comes from inside."
+        },
+        {
+            "name": "Sokki",
+            "image": "/images/horses/sokki.png",
+            "quote": "Seize the day."
+        },
+        {
+            "name": "Sonet",
+            "image": "/images/horses/sonet.png",
+            "quote": "Retreat from conflicts and go where you feel welcome."
+        },
+        {
+            "name": "Sophie",
+            "image": "/images/horses/sophie.png",
+            "quote": "Seeing yourself clearly is the first step towards wisdom."
+        },
+        {
+            "name": "Sorel",
+            "image": "/images/horses/sorel.png",
+            "quote": "Be focused on what's really important."
+        },
+        {
+            "name": "Speedy",
+            "image": "/images/horses/speedy.png",
+            "quote": "Heaven is working above us. So have some fun even if you don't see results now."
+        },
+        {
+            "name": "Spirit",
+            "image": "/images/horses/spirit.png",
+            "quote": "I can help you be aware of your friends."
+        },
+        {
+            "name": "Spottie",
+            "image": "/images/horses/spottie.png",
+            "quote": "Play with me and your life will become an adventure."
+        },
+        {
+            "name": "Star",
+            "image": "/images/horses/star.png",
+            "quote": "Není důležité, co děláš, ale kdo jsi."
+        },
+        {
+            "name": "Stardust",
+            "image": "/images/horses/stardust.png",
+            "quote": "Můžeš si půjčit mého anděla strážného."
+        },
+        {
+            "name": "Starfighter",
+            "image": "/images/horses/starfighter.png",
+            "quote": "Believe in your vision and make it come true."
+        },
+        {
+            "name": "Starfly",
+            "image": "/images/horses/starfly.png",
+            "quote": "Listen to the music of nature."
+        },
+        {
+            "name": "Starfrost",
+            "image": "/images/horses/starfrost.png",
+            "quote": "It's easier to let go of your fear if you know where it came from."
+        },
+        {
+            "name": "Starlight",
+            "image": "/images/horses/starlight.png",
+            "quote": "Věř tomu a Tvé přání se vyplní."
+        },
+        {
+            "name": "Starunna",
+            "image": "/images/horses/starunna.png",
+            "quote": "Milovat celým srdcem chce odvahu."
+        },
+        {
+            "name": "Stella",
+            "image": "/images/horses/stella.png",
+            "quote": "Concentrate on what you want and leave what you don't."
+        },
+        {
+            "name": "Sternentänzer",
+            "image": "/images/horses/sternentänzer.png",
+            "quote": "Let's go into the future together and have wonderful adventures."
+        },
+        {
+            "name": "Storm",
+            "image": "/images/horses/storm.png",
+            "quote": "You have inner strength. Find it and use it."
+        },
+        {
+            "name": "Stribes",
+            "image": "/images/horses/stribes.png",
+            "quote": "Gather energy and courage to go your own way."
+        },
+        {
+            "name": "Sugar",
+            "image": "/images/horses/sugar.png",
+            "quote": "Let us join and start your adventure."
+        },
+        {
+            "name": "Summit",
+            "image": "/images/horses/summit.png",
+            "quote": "Being with others and being alone can both be beautiful."
+        },
+        {
+            "name": "Sun",
+            "image": "/images/horses/sun.png",
+            "quote": "Go back and find out what is most important for you."
+        },
+        {
+            "name": "Sunbeam",
+            "image": "/images/horses/sunbeam.png",
+            "quote": "Forgiving others helps you let go of hurt feelings."
+        },
+        {
+            "name": "Sung",
+            "image": "/images/horses/sung.png",
+            "quote": "Retreat from conflicts and go to where you feel safe."
+        },
+        {
+            "name": "Sunny",
+            "image": "/images/horses/sunny.png",
+            "quote": "The wind blows. The sun is shining. Surround yourself with positive friends."
+        },
+        {
+            "name": "Sunset",
+            "image": "/images/horses/sunset.png",
+            "quote": "Learn to be in contact with the peace inside yourself."
+        },
+        {
+            "name": "Sunshine",
+            "image": "/images/horses/sunshine.png",
+            "quote": "I am so happy being your friend."
+        },
+        {
+            "name": "Sweety",
+            "image": "/images/horses/sweety.png",
+            "quote": "You are a perfect child. Believe it!"
+        },
+        {
+            "name": "Tai",
+            "image": "/images/horses/tai.png",
+            "quote": "Be resolute and energetic in what you do."
+        },
+        {
+            "name": "Tao",
+            "image": "/images/horses/tao.png",
+            "quote": "The whole world is at your feet."
+        },
+        {
+            "name": "Tewa",
+            "image": "/images/horses/tewa.png",
+            "quote": "Give gladly and without regrets."
+        },
+        {
+            "name": "Thalia",
+            "image": "/images/horses/thalia.png",
+            "quote": "Music and dancing give us energy."
+        },
+        {
+            "name": "Thor",
+            "image": "/images/horses/thor.png",
+            "quote": "Learn to trust in the people who care about you."
+        },
+        {
+            "name": "Thora",
+            "image": "/images/horses/thora.png",
+            "quote": "Be a person you respect."
+        },
+        {
+            "name": "Thunder",
+            "image": "/images/horses/thunder.png",
+            "quote": "Dávám ti odvahu. Nyní se můžeš zbavit svého strachu."
+        },
+        {
+            "name": "Tiffi",
+            "image": "/images/horses/tiffi.png",
+            "quote": "Paradise is a state of mind."
+        },
+        {
+            "name": "Tigrine",
+            "image": "/images/horses/tigrine.png",
+            "quote": "No matter what happens, you can choose the peaceful way."
+        },
+        {
+            "name": "Tikka",
+            "image": "/images/horses/tikka.png",
+            "quote": "Let's go for a ride and we will experience unforgettable things together."
+        },
+        {
+            "name": "Tlingit",
+            "image": "/images/horses/tlingit.png",
+            "quote": "Chceš-li dosáhnout svého cíle, nepospíchej."
+        },
+        {
+            "name": "Toboggan",
+            "image": "/images/horses/toboggan.png",
+            "quote": "Do funny things that make you giggle."
+        },
+        {
+            "name": "Toffee",
+            "image": "/images/horses/toffee.png",
+            "quote": "Let us share our thoughts and we will heal them together."
+        },
+        {
+            "name": "Tokker",
+            "image": "/images/horses/tokker.png",
+            "quote": "You are a wise child. Give yourself time to work and study."
+        },
+        {
+            "name": "Tramontane",
+            "image": "/images/horses/tramontane.png",
+            "quote": "Seek new horizons."
+        },
+        {
+            "name": "Treasure",
+            "image": "/images/horses/treasure.png",
+            "quote": "Následuj mě pod vlny. Uvidíš krásu a prostor."
+        },
+        {
+            "name": "Tricksy",
+            "image": "/images/horses/tricksy.png",
+            "quote": "Svůj čas bys měla trávit s opravdovými přáteli, kteří ti rozumí."
+        },
+        {
+            "name": "Triton",
+            "image": "/images/horses/triton.png",
+            "quote": "Always expect the best."
+        },
+        {
+            "name": "Trudy",
+            "image": "/images/horses/trudy.png",
+            "quote": "Now is the perfect moment to embrace your hearts desire."
+        },
+        {
+            "name": "Tsimshian",
+            "image": "/images/horses/tsimshian.png",
+            "quote": "Have fun and play! Let your life unfold like a flower."
+        },
+        {
+            "name": "Tugo",
+            "image": "/images/horses/tugo.png",
+            "quote": "Cheerful thoughts give you energy and faith."
+        },
+        {
+            "name": "Tumbleweed",
+            "image": "/images/horses/tumbleweed.png",
+            "quote": "Changing your thoughts can change your life."
+        },
+        {
+            "name": "Twilight",
+            "image": "/images/horses/twilight.png",
+            "quote": "Surround yourself with exciting friends, who make you feel happy and creative."
+        },
+        {
+            "name": "Twins",
+            "image": "/images/horses/twins.png",
+            "quote": "Friendship is important, it helps us be joyful together."
+        },
+        {
+            "name": "Unicorn",
+            "image": "/images/horses/unicorn.png",
+            "quote": "Your inner light shines when you are true to yourself."
+        },
+        {
+            "name": "Urania",
+            "image": "/images/horses/urania.png",
+            "quote": "Jsi skvělý člověk. Měj ze sebe radost!"
+        },
+        {
+            "name": "Uranus",
+            "image": "/images/horses/uranus.png",
+            "quote": "Síly vesmíru proudí v Tobě a kolem Tebe. Nech se jimi vést."
+        },
+        {
+            "name": "Urd",
+            "image": "/images/horses/urd.png",
+            "quote": "Believe in life and everything it has to offer you."
+        },
+        {
+            "name": "Valdespar",
+            "image": "/images/horses/valdespar.png",
+            "quote": "Dare to make yourself the best person you can be."
+        },
+        {
+            "name": "Valkrist",
+            "image": "/images/horses/valkrist.png",
+            "quote": "Věř a najdeš odpovědi, které hledáš."
+        },
+        {
+            "name": "Valor",
+            "image": "/images/horses/valor.png",
+            "quote": "A warm heart can give you courage when you need it most."
+        },
+        {
+            "name": "Venus",
+            "image": "/images/horses/venus.png",
+            "quote": "Šiř kolem sebe svou radost a poděl se o ni s ostatními."
+        },
+        {
+            "name": "Vesta",
+            "image": "/images/horses/vesta.png",
+            "quote": "We all have unique gifts we can share by working together."
+        },
+        {
+            "name": "Viking",
+            "image": "/images/horses/viking.png",
+            "quote": "Bring all that is good in life to your friendships."
+        },
+        {
+            "name": "Virstan",
+            "image": "/images/horses/virstan.png",
+            "quote": "Be curious. It will lead you to learn new things."
+        },
+        {
+            "name": "Walter",
+            "image": "/images/horses/walter.png",
+            "quote": "I love your company. Let's have a good time together."
+        },
+        {
+            "name": "Wasco",
+            "image": "/images/horses/wasco.png",
+            "quote": "Look for new things to learn no matter where you are."
+        },
+        {
+            "name": "Waterpearl",
+            "image": "/images/horses/waterpearl.png",
+            "quote": "You can change what you do and still be yourself."
+        },
+        {
+            "name": "Wavebreaker",
+            "image": "/images/horses/wavebreaker.png",
+            "quote": "I am your gift from the sea. Learn my tricks from me."
+        },
+        {
+            "name": "Whimsy",
+            "image": "/images/horses/whimsy.png",
+            "quote": "Be thankful for the happy times you share with your friends. "
+        },
+        {
+            "name": "Wichita",
+            "image": "/images/horses/wichita.png",
+            "quote": "Take a deep breath and feel your fears running away."
+        },
+        {
+            "name": "Wildflower",
+            "image": "/images/horses/wildflower.png",
+            "quote": "S ničím nepospíchej. Dej si načas, jak potřebuješ."
+        },
+        {
+            "name": "Wodan",
+            "image": "/images/horses/wodan.png",
+            "quote": "Be the first to say you are sorry."
+        },
+        {
+            "name": "Wonder",
+            "image": "/images/horses/wonder.png",
+            "quote": "Let me follow you to the land of dreams."
+        },
+        {
+            "name": "Woodlock",
+            "image": "/images/horses/woodlock.png",
+            "quote": "Choose a silent moment to open your mind."
+        },
+        {
+            "name": "Yakama",
+            "image": "/images/horses/yakama.png",
+            "quote": "Set a pace that lets you make the most of your endurance and energy."
+        },
+        {
+            "name": "Yasmin",
+            "image": "/images/horses/yasmin.png",
+            "quote": "Retreat and gather new energy for taking steps on the road."
+        },
+        {
+            "name": "Yellow",
+            "image": "/images/horses/yellow.png",
+            "quote": "Spend time with me and you will get your heart's desire."
+        },
+        {
+            "name": "Yin and Yang",
+            "image": "/images/horses/yinyang.png",
+            "quote": "You always have a choice. "
+        },
+        {
+            "name": "Yung",
+            "image": "/images/horses/yung.png",
+            "quote": "Don't be afraid. Show who you are."
+        },
+        {
+            "name": "Zargo",
+            "image": "/images/horses/zargo.png",
+            "quote": "Every moment is precious use it."
+        },
+        {
+            "name": "Zephan",
+            "image": "/images/horses/zephan.png",
+            "quote": "Look at yourself with kindness and love."
+        },
+        {
+            "name": "Zephyros",
+            "image": "/images/horses/zephyros.png",
+            "quote": "Every day, you choose who you will become."
+        },
+        {
+            "name": "Zikka",
+            "image": "/images/horses/zikka.png",
+            "quote": "Open your mind. What you give you receive."
+        },
+        {
+            "name": "Zombie",
+            "image": "/images/horses/zombie.png",
+            "quote": "Some people don't understand you. The ones who do are wise."
+        },
+        {
+            "name": "Zuni",
+            "image": "/images/horses/zuni.png",
+            "quote": "Find your strength inside you, where magic is alive."
+        }
+    ]
+}
