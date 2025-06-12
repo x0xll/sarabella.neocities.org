@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<unicode>True</unicode>
+	
+	<titleTxt><FONT SIZE="30"><p>Kolo</p><p>Zázraků</p></FONT></titleTxt>
+	<helpBtnTxt><FONT SIZE="28"><b>Pomoc</b></FONT></helpBtnTxt>
+	<playBtnTxt><FONT SIZE="28"><b>Hrát</b></FONT></playBtnTxt>
+	
+	<helpscnA><FONT SIZE="24"><p>Utraťit podkovy, pro roztočení kola.</p></FONT></helpscnA>
+	<helpscnB><FONT SIZE="24"><p>Roztočte kolo a vyhrajte ceny.</p></FONT></helpscnB>
+	<helpscnC><FONT SIZE="24"><p>Prohlédnout si výhry v sekci Moje věci.</p></FONT></helpscnC>
+
+	<spinTxt><FONT SIZE="20"><b><p>Roztočit</p><p>Kolo Zázraků</p></b></FONT></spinTxt>
+    <spendTxt><FONT SIZE="26"><b>Jste si jistí?</b></FONT></spendTxt>
+    <redeemTxt><FONT SIZE="18"><b><p>Přijmout</p><p>your prize</p></b></FONT></redeemTxt>
+    <addPrizeTxt><FONT SIZE="20"><b>Vaše výhra byla přidána do vašich věciček v sekci Moje věci.</b></FONT></addPrizeTxt>
+
+    <freeSpinTxt><FONT SIZE="22"><p>Free spin!</p></FONT></freeSpinTxt>
+	<winPrizeTxt><FONT SIZE="18"><b>Vyhráli jste cenu 0!</b></FONT></winPrizeTxt>
+	<winFreeSpinTxt><FONT SIZE="26"><b>Vyhráli jste roztočení zdarma!</b></FONT></winFreeSpinTxt>
+	<winInspirationTxt><FONT SIZE="26"><b>Vyhráli jste inspiraci!</b></FONT></winInspirationTxt>
+    
+	<yesTxt><FONT SIZE="26"><b>Ano</b></FONT></yesTxt>
+    <noTxt><FONT SIZE="26"><b>Ne</b></FONT></noTxt>
+    <okTxt><FONT SIZE="26"><b>OK</b></FONT></okTxt>
+	<myThingsTxt><FONT SIZE="15"><b>Moje věci</b></FONT></myThingsTxt>
+	
+	<noHorseshoeTxt><FONT SIZE="20"><b>Nemáš dostatek podkov.</b></FONT></noHorseshoeTxt>
+</root>
