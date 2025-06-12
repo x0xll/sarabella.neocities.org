@@ -1,0 +1,321 @@
+<Dreamrider>
+	<BuiltInTexts>
+    <Texts debugMode="false">  
+    
+	<Text id="txtDreamriderTitle">
+		<P><FONT SIZE="18"><B>Kouzelná Jízda</B></FONT></P>
+	</Text>
+   <Text id="txtTutorial">
+		<P><FONT SIZE="26">TUTORIÁL</FONT></P>
+	</Text>
+	<Text id="txtStartNow">
+		<P><FONT SIZE="26">HRÁT</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOver">
+		<P><FONT SIZE="16"><B>Noční Obloha</B></FONT></P>
+	</Text>
+	<Text id="txtClearAllOver">
+		<P><FONT SIZE="16"><B>Vymazat Vše</B></FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="16"><B>Jste si jisti </B></FONT></P><P><FONT SIZE="16"><B>že to chcete celé smazat?</B></FONT></P>
+	</Text>
+  <Text id="txtAreYouSureDel">
+    <P><FONT SIZE="16"><B>Jste si jisti</B></FONT></P><P><FONT SIZE="16"><B>6e to chcete smazat {0}?</B></FONT></P>
+  </Text>
+  <Text id="txtAreYouSureRep">
+		<P><FONT SIZE="16"><B>Přepsat '{0}'</B></FONT></P><P><FONT SIZE="16"><B>na nový název '{1}'?</B></FONT></P>
+	</Text>
+	<Text id="txtYesPopUp">
+		<P><FONT SIZE="16"><B>Ano</B></FONT></P>
+	</Text>
+  <Text id="txtOKPopUp">
+		<P><FONT SIZE="16"><B>OK</B></FONT></P>
+	</Text>
+	<Text id="txtNoPopUp">
+		<P><FONT SIZE="16"><B>Ne</B></FONT></P>
+	</Text>
+  <Text id="txtUniqueName">
+		<P><FONT SIZE="16"><B>Prosím pojmenuj svoji novou dráhu unikátním názvem.</B></FONT></P>
+	</Text>
+  <Text id="txtCourseLimit">
+		<P><FONT SIZE="16"><B>Můžete si uložit {0} dráh. Zvolte starou dráhu kterou smažete a přepíšete.</B></FONT></P>
+	</Text>
+	<Text id="txtLoadRollover">
+		<P><FONT SIZE="16"><B>Uložit/Načíst</B></FONT></P>
+	</Text>
+	<Text id="txtPathName">
+		<P><FONT SIZE="16"><B>Název Cesty</B></FONT></P>
+	</Text>
+	<Text id="txtSavePopUp">
+		<P><FONT SIZE="14"><B>Uložit</B></FONT></P>
+	</Text>
+	<Text id="txtLoadPopUp">
+		<P><FONT SIZE="14"><B>Načíst</B></FONT></P>
+	</Text>
+	<Text id="txtDeletePath">
+		<P><FONT SIZE="14"><B>Smazat</B></FONT></P>
+	</Text>
+	<Text id="txtSendRollover">
+		<P><FONT SIZE="16"><B>Poslat</B></FONT></P>
+	</Text>
+	<Text id="txtToGalleryRollover">
+		<P><FONT SIZE="16"><B>Do galerie</B></FONT></P>
+	</Text>
+	<Text id="txtByKeeperOf">
+		<P><FONT SIZE="12">Vytvořeno strážcem:</FONT></P>
+	</Text>
+	<Text id="txtGalleryTitle">
+		<P><FONT SIZE="30"><B>Kouzelná Jízda</B></FONT></P>
+	</Text>
+	<Text id="txtBacktoGameMenu">
+		<P><FONT SIZE="14"><B>Zpátky do Hry</B></FONT></P>
+	</Text>
+	<Text id="txtThanksSubmit">
+		<P><FONT SIZE="16"><B>Děkujeme!</B></FONT></P><P><FONT SIZE="16"><B /></FONT></P><P><FONT SIZE="16"><B>Vaše dráha byla odeslána do veřejné galerie Kouzelné Jízdy.</B></FONT></P>
+	</Text>
+	<Text id="txtReturntoGallery">
+		<P><FONT SIZE="16"><B>Vrátit se do Galerie</B></FONT></P>
+	</Text>
+	<Text id="txtBackToGameViewer">
+		<P><FONT SIZE="16"><B>Zpátky do hry</B></FONT></P>
+	</Text>
+	<Text id="txtOutlinePathRollover">
+		<P><FONT SIZE="16"><B>Normální mód</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftRollover">
+		<P><FONT SIZE="16"><B>Povznešení</B></FONT></P>
+	</Text>
+	<Text id="txtObjectsRollover">
+		<P><FONT SIZE="16"><B>Objekty</B></FONT></P>
+	</Text>
+	<Text id="txtFlyRollover">
+		<P><FONT SIZE="16"><B>Let</B></FONT></P>
+	</Text>
+	<Text id="txtTrotRollover">
+		<P><FONT SIZE="16"><B>Klus</B></FONT></P>
+	</Text>
+	<Text id="txtTrotOverStage">
+		<P><FONT SIZE="16"><B>Klus</B></FONT></P>
+	</Text>
+	<Text id="txtRainOver">
+		<P><FONT SIZE="16"><B>Déšť</B></FONT></P>
+	</Text>
+	<Text id="txtRainOverStage">
+		<P><FONT SIZE="16"><B>Déšť</B></FONT></P>
+	</Text>
+	<Text id="txtFirePath">
+		<P><FONT SIZE="16"><B>Ohnivá Cesta</B></FONT></P>
+	</Text>
+	<Text id="txtEarthPath">
+		<P><FONT SIZE="16"><B>Prašná Cesta</B></FONT></P>
+	</Text>
+	<Text id="txtGrassPath">
+		<P><FONT SIZE="16"><B>Travnatá Cesta</B></FONT></P>
+	</Text>
+	<Text id="txtRearRollover">
+		<P><FONT SIZE="16"><B>Postavit na Zadní</B></FONT></P>
+	</Text>
+	<Text id="txtJumpRollover">
+		<P><FONT SIZE="16"><B>Skok</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">Hudba ON/OFF</FONT></P>
+	</Text>
+	<Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>Zavřít pomoc</B></FONT></P>
+	</Text>
+	<Text id="txtEraseOver">
+		<P><FONT SIZE="16"><B>Vymazat</B></FONT></P>
+	</Text>
+	<Text id="txtNorthernLightsOver">
+		<P><FONT SIZE="16"><B>Polární Zář</B></FONT></P>
+	</Text>
+	<Text id="txtMarkerFlagRollover">
+		<P><FONT SIZE="16"><B>Položit Bod</B></FONT></P>
+	</Text>
+	<Text id="txtUndoRollover">
+		<P><FONT SIZE="16"><B>Oddělat</B></FONT></P>
+	</Text>
+	<Text id="txtResetRollover">
+		<P><FONT SIZE="16"><B>Restartovat pozici</B></FONT></P>
+	</Text>
+	<Text id="txtPlayRollover">
+		<P><FONT SIZE="16"><B>Přehrát/Pokračovat</B></FONT></P>
+	</Text>
+	<Text id="txtMoveStageOver">
+		<P><FONT SIZE="16"><B>Hýbat s plátnem</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOver">
+		<P><FONT SIZE="16"><B>Přiblížit</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOver">
+		<P><FONT SIZE="16"><B>Ohňostroje</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOver">
+		<P><FONT SIZE="16"><B>Moudro</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOver">
+		<P><FONT SIZE="16"><B>Květiny</B></FONT></P>
+	</Text>
+	<Text id="txtPondOver">
+		<P><FONT SIZE="16"><B>Rybník</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOver">
+		<P><FONT SIZE="16"><B>Sníh</B></FONT></P>
+	</Text>
+	<Text id="txtWaterPath">
+		<P><FONT SIZE="16"><B>Vodní cesta</B></FONT></P>
+	</Text>
+	<Text id="txtGallopRollover">
+		<P><FONT SIZE="16"><B>Trysk</B></FONT></P>
+	</Text>
+	<Text id="txtWalkRollover">
+		<P><FONT SIZE="16"><B>Krok</B></FONT></P>
+	</Text>
+	<Text id="txtGallopOverStage">
+		<P><FONT SIZE="16"><B>Trysk</B></FONT></P>
+	</Text>
+	<Text id="txtDRGalleryToGame">
+		<P><FONT SIZE="14">Zpátky do HRY</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryMore">
+		<P><FONT SIZE="14">Více DRÁH</FONT></P>
+	</Text>
+	<Text id="txtDRGalleryPlay">
+		<P><FONT SIZE="14">Přehrát dráhu</FONT></P>
+	</Text>
+	<Text id="txtNightSkyOverStage">
+		<P><FONT SIZE="16"><B>Noční Obloha</B></FONT></P>
+	</Text>
+	<Text id="txtDRViewerRewind">
+		<P><FONT SIZE="14">Přetočit zpět</FONT></P>
+	</Text>
+	<Text id="txtDRViewerToMenu">
+		<P><FONT SIZE="14">Vrátit se do GALERIE</FONT></P>
+	</Text>
+	<Text id="txtRewindOver">
+		<P><FONT SIZE="16"><B>PŘETOČIT ZPĚT</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom0">
+		<P><FONT SIZE="25"><B>Najděte radost ve sdílení dobrých chvil s přáteli.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom1">
+		<P><FONT SIZE="25"><B>Vezmi kamaráda a pojď si se mnou hrát.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom2">
+		<P><FONT SIZE="25"><B>Běžím rychleji než vítr. Následuj mě a půjdeme na kouzelné místo.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom3">
+		<P><FONT SIZE="25"><B>Věř ve své šťastné myšlenky a budeš schopna všeho, co chceš.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom4">
+		<P><FONT SIZE="25"><B>Tvá krása vychází zevnitř.</B></FONT></P>
+	</Text>
+	<Text id="txtWisdom5">
+		<P><FONT SIZE="25"><B>Vytváříš si svou vlastní realitu.</B></FONT></P>
+	</Text>
+	<Text id="txtStopRollover">
+		<P><FONT SIZE="16"><B>Stop</B></FONT></P>
+	</Text>
+  <Text id="txtDrawBG">
+		<P><FONT SIZE="16"><B>Nakreslit dekoraci</B></FONT></P>
+	</Text>
+	<Text id="txtUsePens">
+		<P><FONT SIZE="14">Použijte PERA k nakreslení cest TRÁVY, HLÍNY, OHNĚ a VODY. Pro nakreslení rovné čáry podržte klávesu SHIFT. Pro nakreslení kruhu podržte klávesu O.</FONT></P>
+	</Text>
+	<Text id="txtSkipIntro">
+		<P><FONT SIZE="14">Přeskočit úvod</FONT></P>
+	</Text>
+	<Text id="txtClickPlay">
+		<P><FONT SIZE="14">Klikni na HRÁT pro zahájení vaší cesty</FONT></P>
+	</Text>
+	<Text id="txtDrawScenery">
+		<P><FONT SIZE="14">Použijte toto pero k nakreslení vlastní KRAJINKY</FONT></P>
+	</Text>
+	<Text id="txtUseHand">
+		<P><FONT SIZE="14">Použijte RUKU k posunutí stránky při vyrábění delších dráh</FONT></P>
+	</Text>
+	<Text id="txtNextIntro">
+		<P><FONT SIZE="20">DALŠÍ</FONT></P>
+	</Text>
+	<Text id="txtPlaceSpeed">
+		<P><FONT SIZE="14">Umístěte ikony podél cesty. Použijte je k ovládání RYCHLOSTI a POHYBU vašeho koně</FONT></P>
+	</Text>
+	<Text id="txtAddObjects">
+		<P><FONT SIZE="14">Přidejte OBJEKTY na svoji dráhu</FONT></P>
+	</Text>
+	<Text id="txtWeather">
+		<P><FONT SIZE="14">Umístěte ikony podél dráhy pro ovládání POČASÍ a KRAJINKY</FONT></P>
+	</Text>
+	<Text id="txtUseUndo">
+		<P><FONT SIZE="14">Pomocí tlačítka ZPĚT/OPAKOVAT smažete poslední akci nebo ji znovu obnovíte kliknutím</FONT></P>
+	</Text>
+	<Text id="txtOutlinePath">
+		<P><FONT SIZE="14">NAČRTNĚTE skutečnou trasu vašeho koně</FONT></P>
+	</Text>
+	<Text id="txtPlaceMarker">
+		<P><FONT SIZE="14">Zatímco kůň běží po cestě, kliknutím umístěte VLAJEČKU na novou výchozí pozici</FONT></P>
+	</Text>
+	<Text id="txtClickReset">
+		<P><FONT SIZE="14">VRAŤTE koně na začátek cesty. Stisknutím klávesy SHIFT obejdete značku</FONT></P>
+	</Text>
+	<Text id="txtUseEraser">
+		<P><FONT SIZE="14">Použijte GUMU k vymazání prvků</FONT></P>
+	</Text>
+	<Text id="txtClearAll">
+		<P><FONT SIZE="14">Klikněte zde pro VYMAZÁNÍ VŠEHO</FONT></P>
+	</Text>
+	<Text id="txtStartButton">
+		<P><FONT SIZE="26">START</FONT></P>
+	</Text>
+	<Text id="txtWalkOverStage">
+		<P><FONT SIZE="16"><B>Krok</B></FONT></P>
+	</Text>
+	<Text id="txtFlyOverStage">
+		<P><FONT SIZE="16"><B>Let</B></FONT></P>
+	</Text>
+	<Text id="txtUpdraftOverStage">
+		<P><FONT SIZE="16"><B>Povznešení</B></FONT></P>
+	</Text>
+	<Text id="txtRearOverStage">
+		<P><FONT SIZE="16"><B>Zvednout na Zadní</B></FONT></P>
+	</Text>
+	<Text id="txtJumpOverStage">
+		<P><FONT SIZE="16"><B>Skok</B></FONT></P>
+	</Text>
+	<Text id="txtPondOverStage">
+		<P><FONT SIZE="16"><B>Rybník</B></FONT></P>
+	</Text>
+	<Text id="txtWisdomOverStage">
+		<P><FONT SIZE="16"><B>Moudro</B></FONT></P>
+	</Text>
+	<Text id="txtNLightsOverStage">
+		<P><FONT SIZE="16"><B>Polární Zář</B></FONT></P>
+	</Text>
+	<Text id="txtSoundEffectOver">
+		<P><FONT SIZE="16"><B>Zvukový Efekt</B></FONT></P>
+	</Text>
+	<Text id="txtCloseUpOverStage">
+		<P><FONT SIZE="16"><B>Přiblížení</B></FONT></P>
+	</Text>
+	<Text id="txtFireworksOverStage">
+		<P><FONT SIZE="16"><B>Ohňostroje</B></FONT></P>
+	</Text>
+	<Text id="txtFlowersOverStage">
+		<P><FONT SIZE="16"><B>Květiny</B></FONT></P>
+	</Text>
+	<Text id="txtSnowOverStage">
+		<P><FONT SIZE="16"><B>Sníh</B></FONT></P>
+	</Text>
+	<Text id="txtOutlineRollover2">
+		<P><FONT SIZE="16"><B>Předkreslování</B></FONT></P>
+	</Text>
+	<Text id="txtloadEffect">
+		<P><FONT SIZE="24"><B>Načítání...</B></FONT></P>
+	</Text>
+	
+	
+	</Texts>
+	</BuiltInTexts>
+</Dreamrider>
