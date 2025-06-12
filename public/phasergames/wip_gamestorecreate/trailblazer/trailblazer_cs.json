@@ -1,0 +1,29 @@
+{
+    "title": "Trailblazer",
+
+    "btn_play": "Hrát",
+    "btn_menu": "Menu",
+    "btn_playagain": "Hrát Znova",
+
+    "score": "SKÓRE",
+    "scoreEnd": "Skóre",
+    "balls": "ZBÝVAJÍCÍ KULIČKY",
+
+    "help1": "Když se bloky rozpadají, snažte se odrazit kuličku nahoru přes horní část obrazovky.",
+    "help2": "Kouzelné dlaždičky vám pomůžou.",
+    "help3": "Přejeďte myší do této oblasti pro umístěná nárazníku.",
+    "help4": "Odrážejte kuličku nárazníkem nahoru, abyster rozbili bloky. Čím více bloků rozbijete, tím více bodů získáte!",
+    "help5": "Nenechte kuličku spadnout! Pokud vám 3x spadne hra je u konce.",
+
+    "thunder_name": "Thunder",
+    "thunder_quote": "Dávám ti odvahu. Nyní se můžeš zbavit svého strachu.",
+    "jewel_name": "Jewel",
+    "jewel_quote": "Pomohu ti zůstat ve stálém přílivu hojnosti.",
+    "nike_name": "Nike",
+    "nike_quote": "Měj odvahu si věřit.",
+    "fiona_name": "Fiona",
+    "fiona_quote": "Buď hrdinou svého vlastního příběhu.",
+    "bella_name": "Bella",
+    "bella_quoete": "Každý den mysli pozitivně! Ucítíš radost a energii, kterou Ti toto myšlení přinese."
+}
+
