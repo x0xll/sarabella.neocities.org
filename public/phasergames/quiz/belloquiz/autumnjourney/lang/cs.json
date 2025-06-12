@@ -1,0 +1,254 @@
+{
+    "ui": {
+  "score": "Skóre: ",
+        "turns": "Otočit do leva: ",
+        "question": "Otázka ",
+        "retry": "Znova",
+        "end_score": "Tvé Skóre: ",
+        "perfect_title": "Gratuluji!",
+        "good_title": "Dobrá práce!",
+        "bad_title": "Ups...",
+        "perfect_desc": "Musíš být exper na Podzimní Cesty!",
+        "good_desc": "Víš hodně o Podzimních Cestách!",
+        "bad_desc": "Možná to chceš zkusit znovu?"
+
+    },
+    "questions":
+    [
+        {
+            "question": "Kdo je to?",
+            "attribute": "name"
+        },
+        {
+            "question": "Jaký je jeho/její citát?",
+            "attribute": "quote"
+        }
+    ],
+    "horseDatas": [
+        {
+            "name": "Autumn",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/autumn.png",
+            "quote": "Finishing what you've started gives you energy."
+        },
+        {
+            "name": "Befana",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/befana.png",
+            "quote": "Your kindness is as sweet as a candy."
+        },
+        {
+            "name": "Carmina",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/carmina.png",
+            "quote": "Real friends can always tell each other the truth."
+        },
+        {
+            "name": "Channa",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/channa.png",
+            "quote": "Follow your heart's desire."
+        },
+        {
+            "name": "Donn",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/donn.png",
+            "quote": "Share your good feelings and they will come back to you."
+        },
+        {
+            "name": "Elora",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/elora.png",
+            "quote": "Don't be afraid of your darkness. It protects the light inside you."
+        },
+        {
+            "name": "Euros",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/euros.png",
+            "quote": "Look for the truth in unexpected places."
+        },
+        {
+            "name": "Farah",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/farah.png",
+            "quote": "Začni svůj příběh snem, který tě inspiruje."
+        },
+        {
+            "name": "Faxon",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/faxon.png",
+            "quote": "Learn more about your family. You will feel closer to them."
+        },
+        {
+            "name": "Fiona",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/fiona.png",
+            "quote": "Buď hrdinkou svého vlastního příběhu."
+        },
+        {
+            "name": "Gooty",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/gooty.png",
+            "quote": "Life is kind to those who dare to dream."
+        },
+        {
+            "name": "Hades & Persephone",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/hadespersephone.png",
+            "quote": "Focus your energy and love with all your heart."
+        },
+        {
+            "name": "Halloween",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/halloween.png",
+            "quote": "I will keep you safe"
+        },
+        {
+            "name": "Hyphae",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/hyphae.png",
+            "quote": "Don't be afraid to make mistakes. They help you grow."
+        },
+        {
+            "name": "Jewel",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/jewel.png",
+            "quote": "Pomohu Ti zůstat ve stálém přílivu hojnosti."
+        },
+        {
+            "name": "Malin",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/malin.png",
+            "quote": "The fall of every dusk recalls another day that you added magic to the world."
+        },
+        {
+            "name": "Marigold",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/marigold.png",
+            "quote": "Embrace your inner strength. Be a light in the lives of your friends."
+        },
+        {
+            "name": "Mirage",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/mirage.png",
+            "quote": "Things aren't always as they appear."
+        },
+        {
+            "name": "Moonbeam & Sunbeam",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/moonbeamsunbeam.png",
+            "quote": "Forgive yourself and allow your imagination to heal."
+        },
+        {
+            "name": "Nasim & Aviva",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/nasimaviva.png",
+            "quote": "Pozdrav ranní slunce. Probudí Tvoji mysl a smysly."
+        },
+        {
+            "name": "Nike",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/nike.png",
+            "quote": "Měj odvahu si věřit."
+        },
+        {
+            "name": "Oasis",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/oasis.png",
+            "quote": "You've come a long way. Take some time to rest."
+        },
+        {
+            "name": "Rosamund",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/rosamund.png",
+            "quote": "I guard the past to protect the future"
+        },
+        {
+            "name": "Rose & Shakira",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/roseshakira.png",
+            "quote": "Your dreams create loving energy."
+        },
+        {
+            "name": "Sabrina",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/sabrina.png",
+            "quote": "The path is forged by those before you. Continue it onwards for those after."
+        },
+        {
+            "name": "Salem",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/salem.png",
+            "quote": "The stars will remember your story."
+        },
+        {
+            "name": "Satrin",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/satrin.png",
+            "quote": "A new opportunity to love and be loved comes with every dawn."
+        },
+        {
+            "name": "Shamal",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/shamal.png",
+            "quote": "Věř, že to, co děláš, je správné. Ať už se to zdá jakkoli těžké."
+        },
+        {
+            "name": "Shanti",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/shanti.png",
+            "quote": "Najdi si tiché místo, kde můžeš v klidu přemýšlet a snít."
+        },
+        {
+            "name": "Shift",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/shift.png",
+            "quote": "Discovering your roots allows you to find where you belong."
+        },
+        {
+            "name": "Sirocco",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/sirocco.png",
+            "quote": "Jedna kreativní myšlenka může přinést spoustu dobrých nápadů."
+        },
+        {
+            "name": "Thunder",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/thunder.png",
+            "quote": "Dávám ti odvahu. Nyní se můžeš zbavit svého strachu."
+        },
+        {
+            "name": "Umber",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/umber.png",
+            "quote": "Memories are a unique treasure. Cherish and preserve them."
+        },
+        {
+            "name": "Yaqut",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/yaqut.png",
+            "quote": "Try not to find fear in the night, but peace."
+        },
+        {
+            "name": "Zombie & Ghost",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/zombieghost.png",
+            "quote": "Some people don't understand that your beauty comes from within."
+        },
+        {
+            "name": "Bella & Sara",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/bellasara.png",
+            "quote": "Každý den mysli pozitivně! Ucítíš radost a energii, kterou Ti toto myšlení přinese."
+        },
+        {
+            "name": "Soot & Colm",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/sootcolm.png",
+            "quote": "Měj sama sebe ráda takovou, jaká jsi. Věř v tu, kterou můžeš být."
+        },
+        {
+            "name": "Twig & Deru",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/twigderu.png",
+            "quote": "Věnuj svůj čas důležitým věcem. Zbytek se vyřeší sám."
+        },
+        {
+            "name": "Wings & Emma",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/wingsemma.png",
+            "quote": "Důvěřuj svým přátelům a pomoz jim nalézt jejich křídla."
+        },
+        {
+            "name": "Memory",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/memory.png",
+            "quote": "Write down your fondest memories and keep them alive forever."
+        },
+        {
+            "name": "Valeryk",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/valeryk.png",
+            "quote": "Nikdy nebudeme dost silní, abychom nepotřebovali lásku."
+        },
+        {
+            "name": "Shahazar",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/shahazar.png",
+            "quote": "Každý okamžik je začátkem něčeho nového."
+        },
+        {
+            "name": "Islandar",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/islandar.png",
+            "quote": "Ohleduplnost, upřímnost a láska jsou cestou k opravdovému přátelství."
+        },
+        {
+            "name": "Airistos",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/airistos.png",
+            "quote": "Vzhlédni k nebi a hledej tam útěchu. Nad mraky je vždy modrá obloha."
+        },
+        {
+            "name": "Conall",
+            "image": "/phasergames/quiz/belloquiz/images/autumnjourney/conall.png",
+            "quote": "Feel the courage inside you."
+        }
+    ]
+}
