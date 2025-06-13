@@ -1,0 +1,27 @@
+<Dreamrider>
+    <BuiltInTexts>
+        <Texts>
+            <Text id="txtBuyIt">
+                <a>Buy it</a>
+            </Text>
+            <Text id="txtExitTent">
+                <a>Exit Tent</a>
+            </Text>
+            <Text id="txtPurchasing">
+                <a>Purchasing...</a>
+            </Text>
+            <Text id="txtOk">
+                <a>OK</a>
+            </Text>
+            <Text id="txtTheObjectHasBeenAddedTo">
+                <a>The object has been added to </a>
+            </Text>
+            <Text id="txtMyThings">
+                <a>My Things.</a>
+            </Text>
+            <Text id="txtCouldNotPurchase">
+                <a>The item could not be purchased.</a>
+            </Text>
+        </Texts>
+    </BuiltInTexts>
+</Dreamrider>

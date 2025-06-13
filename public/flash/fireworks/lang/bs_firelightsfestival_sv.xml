@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bs_firelightsfestival timerJump="false">
+	<!-- ======================================================================================================================================================= -->
+	<intro>
+		<text _x="-160" _y="-130" _width="335" selectable="0"><![CDATA[<p class="intro_1">Welcome to</p>]]></text>
+		<text _x="-190" _y="-18" _width="397" selectable="0"><![CDATA[<p class="intro_2">Firelight Festival</p>]]></text>
+		<play_btn>
+			<label _x="30" _y="8" _width="135" selectable="0"><![CDATA[<p class="intro_btn_1">Play Puzzle Game</p>]]></label>
+		</play_btn>
+	</intro>
+	<!-- ======================================================================================================================================================= -->
+	<help>
+		<instruct>
+			<text _x="0" _y="20" _width="450" selectable="0"><![CDATA[<p class="help_instruct_1">An exciting game that end in &#13;YOUR spectacular firework show!</p>]]></text>
+			<text _x="25" _y="75" _width="400" selectable="0"><![CDATA[<p class="help_instruct_1">How to Play:&#13;Click on pinwheels to uncover and collect as many fireworks as possible. The more you collect, the bigger your show! Once the sun has set, time is up and your show will being.&#13;Good Luck!</p>]]></text>
+		</instruct>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Counter shows how many Fireworks are in each tube</p>]]></text>
+		</tip>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Click on fireworks of use the spacebar to add them to your show</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">LPinwheels will spin off the screen</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">You can only remove Fireworks taht are completely uncovered</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">When the Sun sets the show will begin!</p>]]></text>
+		</tip>
+		<begin_btn>
+			<label _x="-60" _y="-15" _width="125" selectable="0"><![CDATA[<p class="begin_btn_1">Begin</p>]]></label>
+		</begin_btn>		
+	</help>
+	<!-- ======================================================================================================================================================= -->
+	<ui>
+		<pause_btn>
+			<label _x="-45" _y="-12" _width="90" selectable="0"><![CDATA[<p class="pause_btn">Pause</p>]]></label>			
+		</pause_btn>
+	</ui>
+	<!-- ======================================================================================================================================================= -->
+	<pause_screen>
+		<text _x="0" _y="0" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Firelight Festival</p>]]></text>
+		<text _x="0" _y="0" _width="350" selectable="0"><![CDATA[<p class="pause_screen_2">The game is paused</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Continue</p>]]></label>
+		</continue_btn>
+	</pause_screen>
+	<!-- ======================================================================================================================================================= -->
+	<end_screen>
+		<text _x="0" _y="10" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Firelight Festival</p>]]></text>
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_1">You Won</p>]]></text>		
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_2">Your Score</p>]]></text>
+		<text _x="20" _y="0" _width="400" selectable="0"><![CDATA[<p class="end_screen_3">You did great.&#13;Click the button below when you're ready to watch your show.&#13;Enjoy!</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Continue</p>]]></label>
+		</continue_btn>		
+	</end_screen>
+	<!-- ======================================================================================================================================================= -->
+</bs_firelightsfestival>

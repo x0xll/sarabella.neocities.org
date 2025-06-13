@@ -15,12 +15,12 @@ document.write('\
         <img src="/images/Flags/flag_es.gif" onclick="changeLanguage(\'es\', true)" title="España" alt="España">\
         <!--<img src="/images/Flags/flag_hr.gif" onclick="changeLanguage(\'hr\', true)" title="Hrvatska" alt="Hrvatska">-->\
         <!--<img src="/images/Flags/flag_si.gif" onclick="changeLanguage(\'sl\', true)" title="Slovenija" alt="Slovenija">-->\
-        <img src="/images/Flags/flag_uk.gif" onclick="changeLanguage(\'en\', true)" title="United Kingdom" alt="United Kingdom">\
-        <img src="/images/Flags/flag_ca.gif" onclick="changeLanguage(\'en\', true)" title="Canada" alt="Canada">\
-        <img src="/images/Flags/flag_au.gif" onclick="changeLanguage(\'en\', true)" title="Australia" alt="Australia">\
+        <!--<img src="/images/Flags/flag_uk.gif" onclick="changeLanguage(\'en\', true)" title="United Kingdom" alt="United Kingdom">-->\
+        <!--<img src="/images/Flags/flag_ca.gif" onclick="changeLanguage(\'en\', true)" title="Canada" alt="Canada">-->\
+        <!--<img src="/images/Flags/flag_au.gif" onclick="changeLanguage(\'en\', true)" title="Australia" alt="Australia">-->\
         <!--<img src="/images/Flags/flag_za.gif" onclick="changeLanguage(\'af\', true)" title="South Africa" alt="South Africa">-->\
         <img src="/images/Flags/flag_nl.gif" onclick="changeLanguage(\'nl\', true)" title="Nederland" alt="Nederland">\
-        <img src="/images/Flags/flag_be.gif" onclick="changeLanguage(\'fr\', true)" title="Belgique" alt="Belgique">\
+        <!--<img src="/images/Flags/flag_be.gif" onclick="changeLanguage(\'fr\', true)" title="Belgique" alt="Belgique">-->\
         <!--<img src="/images/Flags/flag_ch.gif" onclick="changeLanguage(\'de\', true)" title="Schweiz" alt="Schweiz">-->\
         <!--<img src="/images/Flags/flag_pl.gif" onclick="changeLanguage(\'pl\', true)" title="Polska" alt="Polska">-->\
         <img src="/images/Flags/flag_cz.gif" onclick="changeLanguage(\'cs\', true)" title="Česká republika" alt="Česká republika">\
