@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+    <title>Bella vyjížďka</title>
+    <welcome>Vítej na Parkuru</welcome>
+
+    <hurry>RYCHLEJI!</hurry>
+    <welldone>VÝBORNĚ!</welldone>
+
+    <congrats>Gratulace.</congrats>
+    <congrats2>Gratuluji!</congrats>
+
+    <totalscore>Celkové Skóre</totalscore>
+    
+    <win_canimprove>Výborně. Ale možná si můžeš vylepšit skóre?Chceš to zkusit znovu?</win_canimprove>
+
+    <restart>Zkusit znovu</restart>
+    <start>Start</start>
+
+    <help1>Pěkné počasí na projížďku v parku</help1>
+    <help2>zvládneš navigovat překážkovou dráhu.</help2>
+    <help3>Koně ovládáš za pomocí těchto kláves</help3>
+    
+    <points>pt</points>
+
+    <color>Vyber si barvu koně</color>
+</root>
+

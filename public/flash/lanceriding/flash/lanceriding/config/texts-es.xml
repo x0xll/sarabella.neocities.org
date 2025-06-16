@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml version="1.0" encoding="utf-8">
+	<ingame>
+		<loader>
+			<text name="LoaderHeadline" type="text">Cargando</text>
+		</loader>
+		<mainpanel>
+			<text name="txt_mainName">&lt;font size="60"&gt;LANCE#&lt;/font&gt;&lt;font size="80"&gt;RIDING&lt;/font&gt;</text>
+			<text name="txt_mainHelp">Ayuda</text>
+			<text name="txt_mainBegin">Jugar</text>
+			<text name="txt_mainContinue">Continuar</text>
+			<text name="txt_mainNewgame">Nuevo juego</text>
+			<text name="txt_mainEasy">Fácil</text>
+			<text name="txt_mainHard">Dificil</text>
+		</mainpanel>
+		<evalpanel>
+			<text name="txt_evalGo">¡Ve!</text>
+			<text name="txt_evalQuit">Menú</text>
+			<text name="txt_evalPractice">Entrenamiento</text>
+			<text name="txt_evalBonus">Bonus</text>
+			<text name="txt_evalCompetition">Competición</text>
+			<text name="txt_evalRetry">Reintentar</text>
+			<text name="txt_evalRestart">Reiniciar</text>
+			<text name="txt_evalPracticeIntro">Bienvenida a tu entrenamiento:#Para calificar para competir, acierta en el aro!#Tienes tantos intentos como quieras.</text>
+			<text name="txt_evalPracticeScoreRun">¡En el blanco!#Cuando te sientas lista, puedes#continuar a la competición.</text>
+			<text name="txt_evalPracticeScoreRunUnLock">¡Has agarrado el aro!#La competición ahora está abierta.</text>
+			<text name="txt_evalPracticeNoScoreRun">¡Casi!#Intenta de nuevo.</text>
+			<text name="txt_evalPracticeNoScoreRunUnLock">Casi, pero#la competición todavía está abierta</text>
+			<text name="txt_evalPracticeNoScore">Erraste.#¡Sigue practicando!</text>
+			<text name="txt_evalCompIntro">Bienvenida a la competición:#Recolecta aros más difíciles para obtener más puntos#Tienes [maxRuns] intentos.</text>
+			<text name="txt_evalCompScoreRun">¡Bien! Obtuviste [runScore] puntos,#con un total de [cumulScore] puntos.#Te quedan [remainRuns] intentos.</text>
+			<text name="txt_evalCompScoreRunUnLock">¡Excelente! Obtuviste [runScore] puntos,#con un total de [cumulScore] puntos#Se ha desbloqueado la pista Extra#Te quedan [remainRuns] intentos.</text>
+			<text name="txt_evalCompScoreTotal">¡Felicidades!#Obtuviste [runScore] puntos, con un total de [cumulScore] puntos#</text>
+			<text name="txt_evalCompScoreTotalUnlock">¡Felicidades! Obtuviste [runScore] puntos#con un total de [cumulScore] puntos.#¡Obtén más puntos en la pista extra!</text>
+			<text name="txt_evalCompNoScoreRun">Erraste - tu puntaje total todavía es de [cumulScore] puntos#Intenta otra vez, te quedan [remainRuns] intentos.</text>
+			<text name="txt_evalCompNoScoreRunUnLock">Erraste - tu puntaje total todavía es de [cumulScore] puntos#¡Obtén más puntos en la pista extra!#Te quedan [remainRuns] intentos.</text>
+			<text name="txt_evalCompNoScore">No te quedan puntos,#y tienes [remainRuns] intentos.#¡Intenta otra vez!</text>
+			<text name="txt_evalCompNoScoreTotal">¡Erraste!#No has recolectado ningún aro.#¿Quizás necesitas un poco de práctica?</text>
+			<text name="txt_evalCompScoreRunTotal">¡Felicidades!#Obtuviste [runScore] puntos#con un total de [cumulScore] puntos.</text>
+			<text name="txt_evalCompScoreRunTotalUnLock">¡Felicidades! Obtuviste [runScore] puntos#con un total de [cumulScore] puntos.#¡Obtén más puntos en la pista extra!</text>
+			<text name="txt_evalCompNoScoreRunTotalUnLock">¡Bien!#Tu puntaje total es de [cumulScore] puntos#¡Obtén más puntos en la pista extra!</text>
+			<text name="txt_evalCompNoScoreRunTotal">¡Felicidades!#Obtuviste [runScore] puntos#con un total de [cumulScore] puntos.</text>
+			<text name="txt_evalCompNoScoreTotal">¡Erraste!#No has recolectado ningún aro.#¿Quizás necesitas un poco de práctica?</text>
+			<text name="txt_evalBonusIntro">Bienvenida a la pista extra:#Acierta a los globos por puntos extra.#¡Tienes un solo intento!</text>
+			<text name="txt_evalBonusScoreRunTotal">¡Bien!#[runScore] puntos bonus fueron agregados,#con un puntaje final de [totalScore] puntos.</text>
+			<text name="txt_evalBonusScoreRunTotalUnLock">¡Bien!#[runScore] puntos bonus fueron agregados,#con un puntaje final de [totalScore] puntos.</text>
+			<text name="txt_evalBonusNoScoreRunTotalUnLock">¡Bien!#[runScore] puntos bonus fueron agregados,#con un puntaje final de [totalScore] puntos.</text>
+			<text name="txt_evalBonusNoScoreTotal">Desafortunadamente, no acertaste a ningún globo.#El puntaje final es de [totalScore] puntos.</text>
+		</evalpanel>
+		<help>
+			<text name="txtHelp_Headline">¿Cómo jugar?</text>
+			<text name="txtHelp_Intro">¿Estás lista? Mientras montas tu caballo, trata de recoger aros con tu lanza. Para controlar la lanza, haz clic y arrástrala con el cursor. Practica, practica. La lanza es pesada, así que puede que tengas que soltarla y arrastrarla varias veces para mantenerla en la posición correcta. Si eliges la dificultad difícil, los aros serán más pequeños y más difíciles de atrapar.</text>
+		</help>
+	</ingame>
+</xml>

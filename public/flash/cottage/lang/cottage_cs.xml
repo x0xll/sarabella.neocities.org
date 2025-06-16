@@ -1,0 +1,121 @@
+﻿<Cottage>
+	<Ads>
+		<Ad swf="./datas/bs_cottageentry_ad_fireworks.swf" />
+		<Ad swf="./datas/bs_cottageentry_ad_1.swf"></Ad>
+    <Ad swf="./datas/bs_cottageentry_ad_2.swf"></Ad>
+    <Ad swf="./datas/bs_cottageentry_ad_3.swf"></Ad>		
+	</Ads>
+	<Portals>
+		<Portal swf="./datas/portalLink_firelight.jpg" urlId="fireworks" />
+		<Portal swf="./datas/portalLink_treasuresHunt.jpg" urlId="treasureshunt" />
+    <Portal swf="./datas/portalLink_beautyBox.jpg" urlId="beautybox" />
+    <Portal swf="./datas/portalLink_bubbleGame.jpg" urlId="bubblegame" />
+	</Portals>
+	<BuiltInTexts>
+		<Texts  >
+			<Text id="txtClickToLock">
+				<P><FONT SIZE="14"><B>Klikni pro </B></FONT></P><P><FONT SIZE="14"><B>uzavření.</B></FONT></P>
+			</Text>
+			<Text id="txtClickToUnlock">
+				<P><FONT SIZE="14"><B>Klikni pro </B></FONT></P><P><FONT SIZE="14"><B>Otevření.  </B></FONT></P>
+			</Text>
+			<Text id="txtEditMyThings">
+				<P><FONT SIZE="15">Upravit</FONT></P>
+			</Text>
+				<Text id="txtScaleUp">
+				<P><FONT SIZE="12">Zvětšit</FONT></P>
+			</Text>
+			<Text id="txtScaleDown">
+				<P><FONT SIZE="12">Zmenšit</FONT></P>
+			</Text>
+			<Text id="txtPlayStop">
+				<P><FONT SIZE="12">Spustit&#47;Zastavit</FONT></P>
+			</Text>
+			<Text id="txtFlip">
+				<P><FONT SIZE="12">Otočit</FONT></P>
+			</Text>
+			<Text id="txtRemove">
+				<P><FONT SIZE="12">Odstranit</FONT></P>
+			</Text>
+			<Text id="txtNoVisitors">
+				<P><FONT SIZE="18"><B>Žádné návštěvy, prosím. </B></FONT></P>
+			</Text>
+			<Text id="txtSaveMyThings">
+				<P><FONT SIZE="16">Uložit</FONT></P>
+			</Text>
+			<Text id="txtVisitorsWelcome">
+				<P><FONT SIZE="18"><B>Vítejte návštěvníci.</B></FONT></P>
+			</Text>
+			<Text id="txtWelcomeBack">
+				<P><FONT SIZE="28"><B>Vítejte zpátky,</B></FONT></P>
+			</Text>
+			<Text id="txtWhatsNew">
+				<P><FONT SIZE="14">Co je nového</FONT></P>
+			</Text>
+			<Text id="txtToMyGallery">
+				<P><FONT SIZE="12">Do mé </FONT></P><P><FONT SIZE="12">galerie</FONT></P>
+			</Text>
+			<Text id="txtToHorses">
+				<P><FONT SIZE="12">Koně</FONT></P><P><FONT SIZE="12">Bella Sara</FONT></P>
+			</Text>
+			<Text id="txtToMyHorse">
+				<P><FONT SIZE="12">Můj</FONT></P><P><FONT SIZE="12">Kůň</FONT></P>
+			</Text>
+			<Text id="txtToWorld">
+				<P><FONT SIZE="12">Do </FONT></P><P><FONT SIZE="12">Světa</FONT></P>
+			</Text>
+			<Text id="txtMyThingsOnCategoriesMenu">
+				<P><FONT SIZE="24">Mé </FONT></P><P><FONT SIZE="24">Věci</FONT></P>
+			</Text>
+			<Text id="txtMyThingsOnItemsMenu">
+				<P><FONT SIZE="12">Mé věci</FONT></P>
+			</Text>
+			<Text id="txtObjectWasReturned">
+				<P><FONT SIZE="15">Předmět </FONT></P><P><FONT SIZE="15">vrácen do </FONT></P>
+			</Text>
+			<Text id="txtMyThingsInReturnDialog">
+				<P><FONT SIZE="22">Mé věci. </FONT></P>
+			</Text>
+			<Text id="txtOkInReturnDialog">
+				<P><FONT SIZE="15">OK</FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="12">Vypnout/Zapnout hudbu.</FONT></P>
+			</Text>
+			<Text id="txtToGalleryHelp">
+				<P><FONT SIZE="14">Navštivte svou sbírku PŘEDMĚTŮ.</FONT></P>
+			</Text>
+			<Text id="txtCottageHorses">
+				<P><FONT SIZE="14">Navštiv své KONĚ.</FONT></P>
+			</Text>
+			<Text id="txtCompass">
+				<P><FONT SIZE="14">Najeďte myší na kompas a zobrazí se vám CO JE NOVÉHO. Kliknutí na obrázek uprostřed vás přenese.</FONT></P>
+			</Text>
+			<Text id="txtVisitRooms">
+				<P><FONT SIZE="14">Navštivte SVŮJ DOMEČEK.</FONT></P>
+			</Text>
+			<Text id="txtCottageWorld">
+				<P><FONT SIZE="14">Klikněte pro návštěvu lokací SVĚTA BELLA SARA.</FONT></P>
+			</Text>
+			<Text id="txtExitRoom">
+				<P><FONT SIZE="14">Odejít z místnosti.</FONT></P>
+			</Text>
+			<Text id="txtChangeFloors">
+				<P><FONT SIZE="14">Klini na stěnu nebo podlahu pro změnu jejich vzhledu.</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><B>Zavřít pomoc.</B></FONT></P>
+			</Text>
+			<Text id="txtEdit">
+				<P><FONT SIZE="14">Pomocí těchto nástrojů můžete změnit VELIKOST, SPUSTIT nebo ZASTAVIT, OTOČIT nebo ODSTRANIT předmět z místnosti. Kliknutím a tažením předměty PŘESUNETE. Po dokončení úprav klidkněte na tlačítko ULOŽIT.</FONT></P>
+			</Text>
+			<Text id="txtRoomMyThings">
+				<P><FONT SIZE="14">Vyberte KATEOGRII a poté přetáhněte objekty do místnosti.</FONT></P>
+			</Text>
+			<Text id="txtBellapediaOverlay">
+				<P><FONT SIZE="14"><br>Dočasně k dispozici<br>pouze v Angličtině</FONT></P>
+			</Text>
+		</Texts>
+	</BuiltInTexts>
+</Cottage>
+

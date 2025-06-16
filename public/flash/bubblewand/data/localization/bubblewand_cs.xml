@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<root>
+	<!-- title -->
+	
+	<magic>Kouzelná</magic>
+	<bubble>Bublinková</bubble>
+	<wand>Hůlka</wand>
+	
+	<!-- buttons -->
+	
+	<begin>Začít</begin>
+	<play_again>Hrát Znova!</play_again>
+	<continue_button>Pokračovat</continue_button>
+	
+	<!-- score window -->
+	
+	<bugs_collected>Posbíraný Brouci</bugs_collected>
+	<score>Skóre</score>
+	
+	<!-- end game / play again scroll -->
+	
+	<out_of_solution>Došel bublinková voda!</out_of_solution>
+	<congratulations>Gratulujeme!</congratulations>
+	
+	<!-- the # of bugs and horseshoes gets inserted among these three fragments: -->
+	<you_collected>Posbírali jste</you_collected>
+	<bugs>brouků a</bugs>
+	<horse_shoes>podkov</horse_shoes>
+	
+	<your_score>Tvé skóre:</your_score>
+	
+	<!-- help -->
+	
+	<wand_help>Hýbejte s myší pro pohyb hůlky. Pohybujte s hůlkou přes hmyz. Klikněte myší pro vytvoření bublin a chytejte brouky.</wand_help>
+
+	<bug_help>Brouci se přidávají k vašemu skóre.</bug_help>
+	
+	<special_help>Speciální tvorové a dešťové kapky vám dají více bublinkové vody. Speciální tvorové vám také zvětší hůlku.</special_help>
+
+	<solution_help>Hra končí když vám dojde bublinková voda.</solution_help>
+	
+</root>
