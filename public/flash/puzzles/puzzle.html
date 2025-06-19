@@ -48,19 +48,11 @@
 <script src="/userManager.js"></script>
 
         <script type="text/javascript">
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
           loadLanguagePref(false); 
           const locale = getCurrentLanguageCode();
           var swfLocalized = `./swf/en_puzzleEngine.swf`
 
-          if (urlExists(`./swf/${locale}_puzzleEngine.swf`))
+          if (isLocalizedFileExisting(`./swf/${locale}_puzzleEngine.swf`))
             swfLocalized = `./swf/${locale}_puzzleEngine.swf`
 
 

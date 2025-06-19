@@ -39,7 +39,7 @@
         <!-- Load correct localized version of the game -->
         <script>
           loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
+          var locale = getCurrentLanguageCode();
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
           swfPlayer.height = '538';
@@ -47,6 +47,10 @@
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
           swfPlayer.src = 'AwardsAlbum.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
+
+          if (!isLocalizedFileExisting(`./lang/bs_awards_album_${locale}.xml`))
+            locale = "en";
+
           swfPlayer.setAttribute("flashvars", `lang=${locale}`);
           swfPlayer.setAttribute("wmode", `transparent`);
           swfParent.appendChild(swfPlayer);
