@@ -124,7 +124,7 @@
 		<!-- ==== -->	
 		<location _x="0" _y="0">
 			<scroll floatUp="0">
-				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Bazar</p>]]></label>	
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Bazaar</p>]]></label>	
 			</scroll>
 
       <menu itemSpacing="0" _x="40" _y="-35" floatRight="10">

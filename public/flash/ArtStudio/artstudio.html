@@ -41,6 +41,9 @@
           swfPlayer.src = './swf/ArtStudio.swf';
           swfPlayer.type = 'application/x-shockwave-flash';
 
+          if (!isLocalizedFileExisting(`./_data/bs_artstudio_${locale}.xml`))
+            locale = "en";
+
           // Temporary prevent using the jap version since the characters are broken
           if (locale == "ja")
             locale = "en";

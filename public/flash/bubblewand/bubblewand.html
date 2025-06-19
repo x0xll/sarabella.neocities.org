@@ -36,7 +36,10 @@
         <!-- Load correct localized version of the game -->
         <script>
           loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
+          var locale = getCurrentLanguageCode();
+          if (!isLocalizedFileExisting(`./data/localization/bubblewand_${locale}.xml`) ||
+              !isLocalizedFileExisting(`./data/style/bs_bubblegame_${locale}.css`))
+            locale = "en";
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
           swfPlayer.height = '521';
