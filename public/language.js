@@ -4,7 +4,7 @@ const NEOCITIES_PATH = '/localization/neocitiesLoca_';
 const NEOCITIES_DEFAULT_PATH = '/localization/neocitiesLoca_en.json';
 const NEOCITIES_KEY = "neocities";
 
-const AUTHORIZED_LANGUAGES = ["en", "fr", "es", "da", "nl", "ja", "sv", "cs"]
+const AUTHORIZED_LANGUAGES = ["en", "fr", "es", "da", "nl", "ja", "sv", "cs", "it"]
 
 const savedVar = "selectedLanguageBellaSaraNeoCity";
 
