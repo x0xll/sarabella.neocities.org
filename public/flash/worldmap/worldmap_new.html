@@ -48,7 +48,9 @@
           }
 
           loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
+          var locale = getCurrentLanguageCode();
+          if (!isLocalizedFileExisting(`./newmap/_data/${locale}_bs_map.xml`))
+            locale = "en";
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
           swfPlayer.height = '467';

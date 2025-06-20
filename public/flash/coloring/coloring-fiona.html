@@ -42,19 +42,11 @@
           let locale = getCurrentLanguageCode();
           let localeDrawing = locale;
 
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
           // Temporary prevent using the jap version since the characters are broken
-          if (locale == "ja" || !urlExists('./flash/' + locale + '_coloring.swf'))
+          if (locale == "ja" || !isLocalizedFileExisting('./flash/' + locale + '_coloring.swf'))
             locale = "en";
 
-          if (!urlExists('./drawings/' + localeDrawing + '_bsColoring_fiona.swf'))
+          if (!isLocalizedFileExisting('./drawings/' + localeDrawing + '_bsColoring_fiona.swf'))
             localeDrawing = "en";
 
           var swfParent = document.getElementsByClassName('swf')[0];
