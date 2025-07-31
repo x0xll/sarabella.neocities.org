@@ -1,5 +1,6 @@
 {
     "txtHorseName": "HORSENAME",
+
     "txtOilHilite2" : "L’olio per le ali dovrebbe essere applicato solo dopo che un cavallo è stato spazzolato per bene.",
 
     "txtHelpTrophyRoom" : "Clicca qui per visitare la stanza dei trofei.",
@@ -22,11 +23,11 @@
     "txtMusic" : "Il tuo cavallo è sereno.",
     "txtReadyToBeOiled" : "Perfetto! Le ali del tuo cavallo sono pronte per l’olio adesso.",
 
-    "txtToWorld": "To Bella Sara World" ,
+    "txtToWorld": "Verso il Mondo di Bella Sara" ,
 
-    "txtStatHunger": "HUNGER",
-    "txtStatClean": "CLEANLINESS",
-    "txtStatHappy": "HAPPINESS",
+    "txtStatHunger": "FAME",
+    "txtStatClean": "PULIZIA",
+    "txtStatHappy": "FELICITÀ",
 
     "amorName": "Amor",
     "anemoneName": "Anemone",
@@ -127,11 +128,11 @@
     "amorQuote": "Usa il tuo amore per portare la pace nel mondo.",
     "anemoneQuote": "Lascia aperto il tuo cuore, per donare e ricevere amore.",
     "angelQuote": "Un angelo sta arrivando. Accoglilo, e tienilo vicino.",
-    "aniganQuote": "Trova qualcosa che in questo momento ti fa ridere.",
-    "antheaQuote": "Non c'è bisogno che tu raggiunga il tuo obiettivo oggi. Fa' un passo alla volta.",
-    "araQuote": "Hai la forza di scordare la rabbia e di riprendere il tuo cammino.",
-    "auroraQuote": "L'energia della natura è intorno a te in ogni momento.",
-    "azuroQuote": "Gli alrti ti amano per quello che sei veramente.",
+    "aniganQuote": "Cerca il lato divertente di ogni situazione.",
+    "antheaQuote": "Non devi raggiungere oggi i tuoi obiettivi. Prenditi il tuo tempo.",
+    "araQuote": "Hai la forza di scordare la rabbia e riprendere il tuo cammino.",
+    "auroraQuote": "L’energia della natura è intorno a te in ogni momento.",
+    "azuroQuote": "Gli altri ti amano per quello che sei veramente.",
     "bellerophonQuote": "Un vero eroe sa come amare.",
     "bifrostQuote": "Dove c’è l’amore, accadono cose sorprendenti.",
     "birdyQuote": "Fai pace con te stesso e con i tuoi amici.",
