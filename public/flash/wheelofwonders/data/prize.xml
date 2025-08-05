@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InitWheelReturnValues xmlns="BellaSara">
+  <DigitalObjects>
+    <DigitalObjectStruct>
+      <swf>WOW_Charm_Bella_Gold.swf</swf>
+      <color>0</color>
+      <objectID>0</objectID>
+      <name>Bella Gold</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_FlyingHorse_Purple.swf</swf>
+      <color>0</color>
+      <objectID>1</objectID>
+      <name>Flying Purple Horse</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_Icon_Flower_Orange.swf</swf>
+      <color>0</color>
+      <objectID>2</objectID>
+      <name>Orange Flower</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_Icon_Heart_Gold.swf</swf>
+      <color>0</color>
+      <objectID>3</objectID>
+      <name>Gold Heart</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_Icon_Horseshoe_Silver.swf</swf>
+      <color>0</color>
+      <objectID>4</objectID>
+      <name>Silver Horseshoe</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_Icon_Moon_Blue.swf</swf>
+      <color>0</color>
+      <objectID>5</objectID>
+      <name>Blue Moon</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_Logo_Silver.swf</swf>
+      <color>0</color>
+      <objectID>6</objectID>
+      <name>Silver Logo</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_RunningHorse_pink.swf</swf>
+      <color>0</color>
+      <objectID>7</objectID>
+      <name>Pink Running Horse</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_StandingHorse_Greenswf.swf</swf>
+      <color>0</color>
+      <objectID>8</objectID>
+      <name>Green Standing Horse</name>
+    </DigitalObjectStruct>
+        <DigitalObjectStruct>
+      <swf>WOW_Charm_WaterHorse_Teal.swf</swf>
+      <color>0</color>
+      <objectID>9</objectID>
+      <name>Teal Water Horse</name>
+    </DigitalObjectStruct>
+            <DigitalObjectStruct>
+      <swf>WOW_Charm_WaterHorse_Teal.swf</swf>
+      <color>1</color>
+      <objectID>9</objectID>
+      <name>Teal Water Horse</name>
+    </DigitalObjectStruct>
+            <DigitalObjectStruct>
+      <swf>WOW_Charm_WaterHorse_Teal.swf</swf>
+      <color>2</color>
+      <objectID>9</objectID>
+      <name>Teal Water Horse</name>
+    </DigitalObjectStruct>
+  </DigitalObjects>
+  <FreeSpins>1</FreeSpins>
+  <Seed>130</Seed>
+</InitWheelReturnValues>
