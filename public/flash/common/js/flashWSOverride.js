@@ -29,77 +29,40 @@ function getInspiration()
  */
 function initWheel()
 {
-    let InitWheelReturnValues = 
-    {
-        // TODO: get the names from locas
+    let InitWheelReturnValues = { result : {DigitalObjects : [], FreeSpins: 1, Seed: 1}};
 
-        result : {
-            DigitalObjects : [
-                {
-                    swf: "WOW_Charm_Bella_Gold.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 0,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_FlyingHorse_Purple.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 1,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_Icon_Flower_Orange.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 2,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_Icon_Heart_Gold.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 3,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_Icon_Horseshoe_Silver.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 4,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_Icon_Moon_Blue.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 5,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_Logo_Silver.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 6,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_RunningHorse_pink.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 7,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_StandingHorse_Green.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 8,
-                    name: "Bella Gold"
-                },
-                {
-                    swf: "WOW_Charm_WaterHorse_Teal.swf",
-                    color: getRandomColorNumber(),
-                    objectID: 9,
-                    name: "Bella Gold"
-                }
-            ],
-            FreeSpins: 1,
-            Seed: 1
-        }
+    // TODO: Get correct color values
+    let possibleElements = [
+        {swf: "WOW_Charm_Bella_Gold", name: "bellagold", color: 15329238},
+        {swf: "WOW_Charm_FlyingHorse_Purple", name: "flyingpurple", color: 15329238},
+        {swf: "WOW_Charm_Icon_Flower_Orange", name: "flowerorange", color: 15329238},
+        {swf: "WOW_Charm_Icon_Heart_Gold", name: "heartgold", color: 15329238},
+        {swf: "WOW_Charm_Icon_Horseshoe_Silver", name: "horseshoesilver", color: 15329238},
+        {swf: "WOW_Charm_Icon_Moon_Blue", name: "moonblue", color: 15329238},
+        {swf: "WOW_Charm_Logo_Silver", name: "logosilver", color: 15329238},
+        {swf: "WOW_Charm_RunningHorse_pink", name: "runningpink", color: 15329238},
+        {swf: "WOW_Charm_StandingHorse_Green", name: "standinggreen", color: 15329238},
+        {swf: "WOW_Charm_WaterHorse_Teal", name: "waterteal", color: 15329238}
+    ]
+
+    for (let i = 0; i < 10; i++)
+    {
+        let randPrize = Math.floor(Math.random() * possibleElements.length);
+        let prizeData = possibleElements[randPrize];
+        possibleElements.splice(randPrize, 1);
+        let objID = i;
+
+        InitWheelReturnValues.result.DigitalObjects.push(
+            {
+                swf: prizeData.swf + ".swf",
+                color: prizeData.color,
+                objectID: objID,
+                name: getLocalizedText(prizeData.name, "wowprize")
+            }
+        )
     }
+
+    console.log(InitWheelReturnValues);
 
     return InitWheelReturnValues;
 }
