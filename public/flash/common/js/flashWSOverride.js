@@ -29,7 +29,7 @@ function getInspiration()
  */
 function initMagicMatch()
 {
-    let InitMagicMatchReturnValues = { result : {played: 0, MMDigitalObjects: []}};
+    let InitMagicMatchReturnValues = { result : {played: "No", MMDigitalObjects: []}};
 
     // TODO: Get correct color values
     let possibleElements = [
@@ -56,14 +56,14 @@ function initMagicMatch()
         {swf: "MM_PLSH-04", name: "violetpixie", rarity: "0"},
     ]
 
-    for (let i = 0; i < 9; i++)
+    for (let i = 0; i < 3; i++)
     {
         let randPrize = Math.floor(Math.random() * possibleElements.length);
         let prizeData = possibleElements[randPrize];
         possibleElements.splice(randPrize, 1);
-        let objID = i;
+        let objID = i + 1;
 
-        InitMagicMatchReturnValues.result.DigitalObjects.push(
+        InitMagicMatchReturnValues.result.MMDigitalObjects.push(
             {
                 swf: prizeData.swf + ".swf",
                 rarity: prizeData.rarity,

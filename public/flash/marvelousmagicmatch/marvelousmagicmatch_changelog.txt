@@ -6,4 +6,7 @@
             initMMResultHandler(result);
         - Add "import flash.external.*;" in MagicMatchService.as
         - Remove "super()" and error checks in MagicMatchService constructor
-        - 
+        - Add following lines to ShellConnector constructor, and remove them from SetServiceProvider() in ShellConnector.as
+            m_magicMatchService = new MagicMatchService(Globals.getInst().magicMatchInst,m_lang);
+            m_magicMatchService.InitMagicMatch();
+        - Remove param1 and 2 of MagicMatchService constructor, rename param3 and 4 to be param1 and 2. Clean up the function accordingly
