@@ -10,3 +10,6 @@
             m_magicMatchService = new MagicMatchService(Globals.getInst().magicMatchInst,m_lang);
             m_magicMatchService.InitMagicMatch();
         - Remove param1 and 2 of MagicMatchService constructor, rename param3 and 4 to be param1 and 2. Clean up the function accordingly
+    - Fix paths
+        - Change the .swf path in smokeSwitchCB_Prize() in InitState.as to point to "./swf/" instead
+        - Change to "_digiObjPath = "./swf/" + param3 + ".swf";" in setObjectData() in Box.as
