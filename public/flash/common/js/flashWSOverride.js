@@ -85,15 +85,3 @@ function spinWheel()
 
     return SpinValue;
 }
-
-
-/* HELPER FUNCTIONS */
-function getRandomColorNumber() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-
-  const colorNumber = (r << 16) + (g << 8) + b;
-
-  return colorNumber;
-}
