@@ -18,6 +18,8 @@
         </div> 
         
         <script>
+          loadNewLocalizationFile('./lang/mmprize_' + getCurrentLanguageCode() + ".json",'./lang/mmprize_en.json', "mmprize")
+
           window.RufflePlayer = {
             config: {
               autoplay: "on",
@@ -35,6 +37,7 @@
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
+<script src="/flash/common/js/flashWSOverride.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>

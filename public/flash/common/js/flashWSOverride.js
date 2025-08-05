@@ -22,6 +22,62 @@ function getInspiration()
     return InspirationValue;
 }
 
+/* Marvelous Magic Mathc - WS Calls */
+/**
+ * Replace InitMagicMatch(string tokenHigh, string tokenLow, string locale) call
+ * @returns an object with the prizes informations (string swfName, int objectId, string rarity [0 = common, 1 = uncommon, 2 = rare], string name)
+ */
+function initMagicMatch()
+{
+    let InitMagicMatchReturnValues = { result : {played: 0, MMDigitalObjects: []}};
+
+    // TODO: Get correct color values
+    let possibleElements = [
+        {swf: "MM_PLSH-01", name: "blazonedleonis", rarity: "0"},
+        {swf: "MM_PLSH-07", name: "bubbleturtle", rarity: "0"},
+        {swf: "MM_PLSH-19", name: "cunningflitkit", rarity: "1"},
+        {swf: "MM_PLSH-21", name: "fairyphant", rarity: "1"},
+        //{swf: "MM_PLSH-", name: "flapuppy", rarity: "0"},
+        {swf: "MM_PLSH-10", name: "fringednewt", rarity: "2"},
+        {swf: "MM_PLSH-15", name: "gemdiggerdog", rarity: "1"},
+        //{swf: "MM_PLSH-", name: "grasspoolotter", rarity: "0"},
+        {swf: "MM_PLSH-17", name: "nebulaphim", rarity: "1"},
+        {swf: "MM_PLSH-20", name: "neonfrog", rarity: "1"},
+        {swf: "MM_PLSH-12", name: "pipsqueaklongtail", rarity: "2"},
+        {swf: "MM_PLSH-13", name: "quixiefaun", rarity: "2"},
+        //{swf: "MM_PLSH-", name: "sealky", rarity: "0"},
+        //{swf: "MM_PLSH-", name: "sparkturtle", rarity: "0"},
+        {swf: "MM_PLSH-08", name: "starstoneotter", rarity: "2"},
+        {swf: "MM_PLSH-03", name: "suncat", rarity: "0"},
+        {swf: "MM_PLSH-16", name: "sweetpeareindeer", rarity: "1"},
+        //{swf: "MM_PLSH-", name: "tasselmouse", rarity: "0"},
+        {swf: "MM_PLSH-02", name: "tealeafpanda", rarity: "0"},
+        {swf: "MM_PLSH-09", name: "twinkleimp", rarity: "2"},
+        {swf: "MM_PLSH-04", name: "violetpixie", rarity: "0"},
+    ]
+
+    for (let i = 0; i < 9; i++)
+    {
+        let randPrize = Math.floor(Math.random() * possibleElements.length);
+        let prizeData = possibleElements[randPrize];
+        possibleElements.splice(randPrize, 1);
+        let objID = i;
+
+        InitMagicMatchReturnValues.result.DigitalObjects.push(
+            {
+                swf: prizeData.swf + ".swf",
+                rarity: prizeData.rarity,
+                objectID: objID,
+                name: getLocalizedText(prizeData.name, "mmprize")
+            }
+        )
+    }
+
+    console.log(InitMagicMatchReturnValues);
+
+    return InitMagicMatchReturnValues;
+}
+
 /* Wheel of Wonders - WS Calls */
 /**
  * Replace InitWheel(string tokenHigh, string tokenLow, string locale) call

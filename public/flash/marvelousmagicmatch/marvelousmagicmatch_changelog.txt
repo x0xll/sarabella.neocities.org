@@ -1,0 +1,9 @@
+05/08/2025:
+    - Trying to override the WS calls with the JS functions
+        - Remove the "this.webService" calls in MagicMatchService constructor
+        - Replace the "this.webService" call in InitMagicMatch() in MagicMatchService.as with:
+            var result:Object = ExternalInterface.call("initMagicMatch");
+            initMMResultHandler(result);
+        - Add "import flash.external.*;" in MagicMatchService.as
+        - Remove "super()" and error checks in MagicMatchService constructor
+        - 
