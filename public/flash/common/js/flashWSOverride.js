@@ -1,8 +1,13 @@
+/* General - WS Calls */
 const INSPIRATIONS = [
     "Test inspiration",
     "Another test"
 ]
 
+/**
+ * Replace getInspiration(string locale) call
+ * @returns an object with the inspiration informations (string localizedInspiration)
+ */
 function getInspiration()
 {
     // TODO: Handle depending on loca
@@ -17,6 +22,11 @@ function getInspiration()
     return InspirationValue;
 }
 
+/* Wheel of Wonders - WS Calls */
+/**
+ * Replace InitWheel(string tokenHigh, string tokenLow, string locale) call
+ * @returns an object with the prizes informations (string swfName, int bgColor, int objectID, string localizedName)
+ */
 function initWheel()
 {
     let InitWheelReturnValues = 
@@ -87,13 +97,17 @@ function initWheel()
                 }
             ],
             FreeSpins: 1,
-            Seed: 179
+            Seed: 1
         }
     }
 
     return InitWheelReturnValues;
 }
 
+/**
+ * Replace SpinWheel(string tokenHigh, string tokenLow, string seed, string local) call
+ * @returns an object with the spin information (int: prize index -> -1 = free spin, -2 = inspiration, 0-9 = charms)
+ */
 function spinWheel()
 {
     let specialPrize = Math.floor(Math.random() * 2);
