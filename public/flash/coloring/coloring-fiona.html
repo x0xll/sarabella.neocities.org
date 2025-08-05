@@ -28,6 +28,7 @@
 
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> | 
+            <a href="https://bellasara.wiki.gg/wiki/Coloring_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
             <a href="https://web.archive.org/web/20071021025330/http://www.bellasara.com/coloring-fiona.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a> | 
             <a href="./images/Fiona.svg" class="global-lowernav-link" data-il8n="footer_svgimg_linktxt">SVG Image</a>
         </div>
@@ -41,19 +42,11 @@
           let locale = getCurrentLanguageCode();
           let localeDrawing = locale;
 
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
           // Temporary prevent using the jap version since the characters are broken
-          if (locale == "ja" || !urlExists('./flash/' + locale + '_coloring.swf'))
+          if (locale == "ja" || !isLocalizedFileExisting('./flash/' + locale + '_coloring.swf'))
             locale = "en";
 
-          if (!urlExists('./drawings/' + localeDrawing + '_bsColoring_fiona.swf'))
+          if (!isLocalizedFileExisting('./drawings/' + localeDrawing + '_bsColoring_fiona.swf'))
             localeDrawing = "en";
 
           var swfParent = document.getElementsByClassName('swf')[0];

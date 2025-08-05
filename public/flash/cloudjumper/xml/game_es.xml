@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>Ayuda</help_btn>
+	<pause_btn>Pausa</pause_btn>
+	<start_btn>Empezar Juego</start_btn>
+
+	<turbobtn>Jugar Turbo</turbobtn>
+
+	<pauseheading>Tu Juego está Pausado</pauseheading>
+	<pause2>Cierra esta ventana para continuar jugando.</pause2>
+
+	<how_to_play_btn>Cómo Jugar</how_to_play_btn>
+
+	<play_again_btn>Jugar Otra Vez</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro From XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>Cómo Jugar</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>Ayuda a Pegasus a recoger flores especiales mientras vuela por el cielo del reino.
+Presiona la barra espaciadora o haz clic con el mouse para batir sus alas.
+Recolecta tantas flores como puedas antes del atardecer y de llegar a tu castillo.
+¡Buena suerte!</how_to_play2>
+
+	<!-- win message -->
+	<win>Felicidades</win>
+	
+	<win2>¡Lo hiciste genial! ¿Quieres jugar otra vez y recolectar aún más flores?</win2>
+	
+	<!-- Non translated texts in original -->
+	<score>Puntaje Actual</score>
+	<intro_howto>Ayuda a Pegasus a recoger flores especiales mientras vuela por el cielo del reino. Presiona la barra espaciadora o haz clic con el mouse para batir sus alas. Recolecta tantas flores como puedas antes del atardecer y de llegar a tu castillo.</intro_howto>
+	<enterName>Por favor escribe tu nombre</enterName>
+	<greatFlying>¡Gran Vuelo!</greatFlying>
+	<end>Has llegado al final de tu viaje.</end>
+	<end2>No quedan más flores para recolectar.</end2>
+
+</root>

@@ -4,6 +4,8 @@ const NEOCITIES_PATH = '/localization/neocitiesLoca_';
 const NEOCITIES_DEFAULT_PATH = '/localization/neocitiesLoca_en.json';
 const NEOCITIES_KEY = "neocities";
 
+const AUTHORIZED_LANGUAGES = ["en", "fr", "es", "da", "nl", "ja", "sv", "cs", "it"]
+
 const savedVar = "selectedLanguageBellaSaraNeoCity";
 
 var localizedElements;
@@ -32,18 +34,37 @@ function loadLanguagePref(updatePage = true) {
     if (localStorage.getItem(savedVar)) {
         var langSaved = localStorage.getItem(savedVar);
 
-        currentLang = langSaved;
+        currentLang = isAuthorizedLanguage(langSaved);
 
         if (updatePage)
-            changeLanguage(langSaved);
+            changeLanguage(currentLang);
     }
     else if (updatePage){
         checkBrowserLanguage();
     }
 }
 
+function isAuthorizedLanguage(lang)
+{
+    // Verify this is a language we currently authorize
+    var availbleLanguage = false;
+
+    AUTHORIZED_LANGUAGES.forEach(id => {
+        if (lang == id)
+        {
+            availbleLanguage = true;
+            return;
+        }
+    });
+
+    if (!availbleLanguage)
+        lang = "en";
+
+    return lang;
+}
+
 async function changeLanguage(langSelected, reload = false) {
-    var lang = langSelected;
+    var lang = isAuthorizedLanguage(langSelected);
 
     currentLang = lang;
 
@@ -100,4 +121,12 @@ async function loadNewLocalizationFile(pathjson = NEOCITIES_PATH + currentLang +
                 element.innerHTML = locaTxt;
         }
     )
+}
+
+function isLocalizedFileExisting(path)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', path, false);
+    http.send();
+    return http.status != 404;
 }

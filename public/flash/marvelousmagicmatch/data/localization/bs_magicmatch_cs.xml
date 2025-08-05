@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+		<unicode>false</unicode>
+	
+		<titleTxt><FONT SIZE="20">Úžasné Kouzelné Hledání</FONT></titleTxt>
+		<txtMarvelousTitle><FONT SIZE="60"><B>Úžasné,</B></FONT></txtMarvelousTitle>
+		<txtMagicTitle><FONT SIZE="60"><B>Kouzelné</B></FONT></txtMagicTitle>
+		<txtMatchTitle><FONT SIZE="60"><B>Hledání</B></FONT></txtMatchTitle>
+		
+		<playBtnTxt><FONT SIZE="20"><B>Hrát</B></FONT></playBtnTxt>
+		<helpBtnTxt><FONT SIZE="20"><B>Pomoc</B></FONT></helpBtnTxt>
+		
+		<howPlayTxt><FONT SIZE="60"><P>Jak Hrát</P></FONT></howPlayTxt>
+		<howPlaySubTxtA>
+			<FONT SIZE="30"><B>Pomocí hůlky klikni na jednu z devíti boxů</B></FONT>
+		</howPlaySubTxtA>
+		<howPlaySubTxtB>
+			<FONT SIZE="30"><B>Pomocí hůlky klikni na pět z devíti políček. &#13; Najděte tři stejné ceny a jednu si můžete nechat.</B></FONT>
+		</howPlaySubTxtB>
+		<howPlaySubTxtC>
+			<FONT SIZE="30"><B>Pomocí hůlky klikni na pět z devíti políček. &#13; Najděte tři stejné ceny a jednu si můžete nechat. &#13; Nezapomeňte, že můžete hrát pouze jednou denně!</B></FONT>
+		</howPlaySubTxtC>
+		
+		<instructionsTxt>
+			<FONT SIZE="12"><P>Klikněte hůlkou na box a odhalte ceny uvnitř. &#13; Pokud najdete tři stejné položky, jednu si můžete nechat!</P></FONT>
+		</instructionsTxt>
+		
+		<boxesRemainTxt>
+			<FONT SIZE="24"><B>Počet zbývajících boxů k otevření:</B></FONT>
+		</boxesRemainTxt>
+		
+		<resultLossTxt>
+			<FONT SIZE="16"><P>Žádné štěstí! To je v pohodě. &#13; Přijď zpátky zítra a zkus to znovu!</P></FONT>
+		</resultLossTxt>
+		<resultCommonTxt>
+			<FONT SIZE="16"><P>Vyhráli jste a 0. &#13; Dobrá práce! &#13; Přijď zpátky zítra a zahraj si znovu!</P></FONT>
+		</resultCommonTxt>
+		<resultUncommonTxt>
+			<FONT SIZE="16"><P>Vyhráli jste a 0. &#13; Tyhle jen tak neuvidíte! &#13;Přijď zpátky zítra a zahraj si znovu!</P></FONT>
+		</resultUncommonTxt>
+		<resultRareTxt>
+			<FONT SIZE="16"><P>Vyhráli jste a 0. &#13; Je to velmi vzácná a cenná výhra! &#13; Přijď zpátky zítra a zahraj si znovu!</P></FONT>
+		</resultRareTxt>
+		
+		<cottageBtnTxt><FONT SIZE="20"><B>Chaloupka</B></FONT></cottageBtnTxt>
+		
+		<playedTodayTxt>
+			<FONT SIZE="16"><P>Promiň! Dneska už jsi hrála.  &#13; Přijď zpátky zítra a zahraj si znovu!</P></FONT>
+		</playedTodayTxt>
+</root>

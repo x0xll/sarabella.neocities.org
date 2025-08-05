@@ -33,14 +33,6 @@
 
         <!-- Load correct localized version of the game -->
         <script>
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
           loadLanguagePref(false); 
           const locale = getCurrentLanguageCode();
           var swfParent = document.getElementsByClassName('swf')[0];
@@ -52,7 +44,7 @@
           var swfLocalized = `./swf/en_spil_5.swf`
 
           // Temporary prevent using the jap version since the characters are broken
-          if (locale != "ja" && urlExists(`./swf/${locale}_spil_5.swf`))
+          if (locale != "ja" && isLocalizedFileExisting(`./swf/${locale}_spil_5.swf`))
           {
             swfLocalized = `./swf/${locale}_spil_5.swf`
           }

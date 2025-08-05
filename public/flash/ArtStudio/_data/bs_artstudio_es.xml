@@ -1,0 +1,210 @@
+<ArtStudio>
+	<BuiltInTexts>
+    <Texts debugMode="false">  
+      <Text id="txtBellas">
+		    <P><FONT SIZE="40">Bella's </FONT></P>
+	    </Text>
+	    <Text id="txtArtStudio">
+		    <P><FONT SIZE="40">Art Studio</FONT></P>
+	    </Text>
+	    <Text id="txtChooseaHorse">
+		    <P><FONT SIZE="22">Elige un Caballo</FONT></P>
+	    </Text>
+	    <Text id="txtAllHorses">
+		    <P><FONT SIZE="22">Todos los Caballos</FONT></P>
+	    </Text>
+	    <Text id="txtBeautyBoxGallery">
+		    <P><FONT SIZE="22">Galería de Caja de Belleza</FONT></P>
+	    </Text>
+	    <Text id="txtDeleteButton">
+		    <P><FONT SIZE="16">Eliminar</FONT></P>
+	    </Text>
+	    <Text id="txtEditButton">
+		    <P><FONT SIZE="16">Editar</FONT></P>
+	    </Text>
+		<Text id="txtDoneButton">
+		    <P><FONT SIZE="18"><b>LISTO</b></FONT></P>
+	    </Text>
+	    <Text id="txtArtStudioHeader">
+		    <P><FONT SIZE="22">Selecciona un lienzo</FONT></P>
+	    </Text>
+		<Text id="txtGallerySubText">
+		    <P><FONT SIZE="18">Selecciona con qué lienzo te gustaría comenzar. Selecciona 'En blanco' para un lienzo vacío o uno de los caballos si quieres que ese caballo aparezca en tu imagen.</FONT></P>
+	    </Text>
+	    <Text id="txtAnimatedCardFromTheKeeperOf">
+		    <P><FONT SIZE="18"><B>Una obra de arte de:</B></FONT></P>
+	    </Text>
+		<Text id="txtPrintAngel">
+		<P><FONT SIZE="24">Angel</FONT></P>
+		</Text>
+		<Text id="txtPrintBlank">
+			<P><FONT SIZE="24">Mi Obra Maestra</FONT></P>
+		</Text>
+		<Text id="txtPrintPeter">
+			<P><FONT SIZE="24">Peter</FONT></P>
+		</Text>
+		<Text id="txtPrintTiffi">
+			<P><FONT SIZE="24">Tiffi</FONT></P>
+		</Text>
+		<Text id="txtFromMe">
+		    <P><FONT SIZE="16">Yo</FONT></P>
+	    </Text>
+	    <Text id="txtEraseAll">
+		    <P><FONT SIZE="13">Borra</FONT></P><P><FONT SIZE="13">Todo</FONT></P>
+	    </Text>
+	    <Text id="txtErase">
+		    <P><FONT SIZE="13">Borra</FONT></P>
+	    </Text>
+		<Text id="txtChangePaper2">
+		    <P><FONT SIZE="13">Cambiar Color del Papel</FONT></P>
+	    </Text>
+		<Text id="txtBackButton">
+		    <P><FONT SIZE="16">Atrás</FONT></P>
+	    </Text>
+      <Text id="txtNoButton">
+		<P><FONT SIZE="10">No</FONT></P>
+	</Text>
+	<Text id="txtYesButton">
+		<P><FONT SIZE="10">Sí</FONT></P>
+	</Text>
+	<Text id="txtOkayButton">
+		<P><FONT SIZE="10">OK</FONT></P>
+	</Text>
+	<Text id="txtAreYouSure">
+		<P><FONT SIZE="15">¿Estás segura?</FONT></P>
+	</Text>
+  <Text id="txtSaveButton">
+		<P><FONT SIZE="26">GUARDAR</FONT></P>
+	</Text>
+	<Text id="txtPrintButton">
+		<P><FONT SIZE="26">IMPRIMIR</FONT></P>
+	</Text>
+	<Text id="txtQuitButton">
+		<P><FONT SIZE="26">SALIR</FONT></P>
+	</Text>
+	<Text id="txtSaveComplete">
+		<P><FONT SIZE="15">Tu creación ha sido guardada.</FONT></P>
+	</Text>
+      <Text id="txtLoading">
+		<P><FONT SIZE="9">Cargando...</FONT></P>
+	</Text>
+	<Text id="txtNewButton">
+		<P><FONT SIZE="26">NUEVO</FONT></P>
+	</Text>
+	<Text id="txtAngelButton">
+		<P><FONT SIZE="18">Angel</FONT></P>
+	</Text>
+	<Text id="txtBlankButton">
+		<P><FONT SIZE="18">En Blanco</FONT></P>
+	</Text>
+	<Text id="txtPeterButton">
+		<P><FONT SIZE="18">Peter</FONT></P>
+	</Text>
+	<Text id="txtTiffiButton">
+		<P><FONT SIZE="18">Tiffi</FONT></P>
+	</Text>
+	<Text id="txtAreYouSureDialog">
+		<P><FONT SIZE="15">¿Estás segura que quieres eliminar esta creación de tu galería?</FONT></P><P><FONT SIZE="15"/></P>
+	</Text>
+	<Text id="txtAreYouSureLeave">
+    <P> </P><P> </P><P><FONT SIZE="15">¿Estás segura?</FONT></P>
+	</Text>
+	<Text id="txtSaveDialog">
+		<P><FONT SIZE="15">Selecciona un espacio de guardado para tu creación</FONT></P>
+	</Text>
+	<Text id="txtSaveConfirmDialog">
+		<P><FONT SIZE="15">Haz clic en SÍ si quieres reemplazar lo que ya guardaste con tu nueva creación.</FONT></P>
+  </Text>
+	<Text id="txtCloseCard">
+     <P><FONT SIZE="14">CERRAR la tarjeta.</FONT></P>
+  </Text>
+  <Text id="txtWisdomCard">
+		 <P><FONT SIZE="16">Wisdom</FONT></P>
+	</Text>
+  <Text id="txtLoadingCard">
+		 <P><FONT SIZE="20">Cargando...</FONT></P>
+	</Text>
+  <Text id="txtCloseHelp">
+		<P><FONT SIZE="13"><B>Cerrar Ayuda</B></FONT></P>
+	</Text>
+	<Text id="txtMusic">
+		<P><FONT SIZE="14">ENCENDER y APAGAR la música.</FONT></P>
+	</Text>
+	<Text id="txtEditSaved3">
+		<P><FONT SIZE="14">EDITAR dibujo guardado.</FONT></P>
+	</Text>
+	<Text id="txtDeleteCreation2">
+		<P><FONT SIZE="14">ELIMINAR dibujo.</FONT></P>
+	</Text>
+	<Text id="txtNewArt">
+		<P><FONT SIZE="14">CREAR nuevo arte.</FONT></P>
+	</Text>
+	<Text id="txtEmptySlot">
+		<P><FONT SIZE="9">Vacío</FONT></P>
+	</Text>
+	<Text id="txtDecorateHorse">
+		<P><FONT SIZE="14">Haz click en un CABALLO .</FONT></P>
+	</Text>
+	<Text id="txtViewCard">
+		<P><FONT SIZE="14">Haz clic aquí para VER la tarjeta.</FONT></P>
+	</Text>
+	<Text id="txtDecorateBB">
+		<P><FONT SIZE="14">Haz clic en una CREACIÓN DE CAJA DE BELLEZA para decorar.</FONT></P>
+	</Text>
+	<Text id="txtSeeHorses">
+		<P><FONT SIZE="14">VE MÁS caballos.</FONT></P>
+	</Text>
+	<Text id="txtSeeBB">
+		<P><FONT SIZE="14">VE MÁS creaciones de Cajas de Belleza.</FONT></P>
+	</Text>
+	<Text id="txtWisdomMsg">
+		<P><FONT SIZE="14">Ve MENSAJE DE WISDOM.</FONT></P>
+	</Text>
+	<Text id="txtSeePaints">
+		<P><FONT SIZE="14">VE MÁS pinturas.</FONT></P>
+	</Text>
+	<Text id="txtGoBack">
+		<P><FONT SIZE="14">VOLVER a la página principal.</FONT></P>
+	</Text>
+	<Text id="txtPaintStrokes">
+		<P><FONT SIZE="14">PINTAR con trazos PEQUEÑOS, MEDIANOS o GRANDES.</FONT></P>
+	</Text>
+	<Text id="txtSaveSubmit">
+		<P><FONT SIZE="14">IMPRIMIR tu creación, GUARDAR, or SALIR</FONT></P>
+	</Text>
+	<Text id="txtClearStrokes">
+		<P><FONT SIZE="14">LIMPIA TODOS los trazos.</FONT></P>
+	</Text>
+	<Text id="txtEraseStrokes">
+		<P><FONT SIZE="14">BORRAR trazos.</FONT></P>
+	</Text>
+	<Text id="txtChangePaper">
+		<P><FONT SIZE="14">Cambiar COLOR DEL PAPEL.</FONT></P>
+	</Text>
+    <Text id="txtEditArt">
+		<P><FONT SIZE="14">EDITAR dibujo.</FONT></P>
+	</Text>
+	<Text id="txtHelpBlank">
+		<P><FONT SIZE="14">CREAR nuevo arte con un lienzo en blanco.</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseA">
+		<P><FONT SIZE="14">CREAR nuevo arte con Peter en el lienzo.</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseB">
+		<P><FONT SIZE="14">CREAR nuevo arte con Angel en el lienzo.</FONT></P>
+	</Text>
+	<Text id="txtHelpHorseC">
+		<P><FONT SIZE="14">CREAR nuevo arte con Tiffi en el lienzo.</FONT></P>
+	</Text>
+  <Text id="txtHelpSavedCreations">
+		<P><FONT SIZE="14">EDITAR o ELIMINAR tus creaciones guardadas.</FONT></P>
+	</Text>
+  <Text id="txtSlotAButton">
+		<P><FONT SIZE="10">Espacio A</FONT></P>
+	</Text>
+  <Text id="txtSlotBButton">
+		<P><FONT SIZE="10">Espacio B</FONT></P>
+	</Text>
+    </Texts>
+	</BuiltInTexts>
+</ArtStudio>

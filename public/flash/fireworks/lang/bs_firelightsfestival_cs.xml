@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bs_firelightsfestival timerJump="false">
+	<!-- ======================================================================================================================================================= -->
+	<intro>
+		<text _x="-160" _y="-130" _width="335" selectable="0"><![CDATA[<p class="intro_1">Vítejte na</p>]]></text>
+		<text _x="-190" _y="-18" _width="397" selectable="0"><![CDATA[<p class="intro_2">Ohňostrojovém Festivalu</p>]]></text>
+		<play_btn>
+			<label _x="30" _y="8" _width="135" selectable="0"><![CDATA[<p class="intro_btn_1">Hrát Puzzle Hru</p>]]></label>
+		</play_btn>
+	</intro>
+	<!-- ======================================================================================================================================================= -->
+	<help>
+		<instruct>
+			<text _x="0" _y="20" _width="450" selectable="0"><![CDATA[<p class="help_instruct_1">Vyzrušující hra, která končí &#13;VAŠÍ velkolepou ohňostrojovou show!</p>]]></text>
+			<text _x="25" _y="75" _width="400" selectable="0"><![CDATA[<p class="help_instruct_1">Jak Hrát:&#13;Klikejte na ohňostroje, abyste odhalili a nasbírali co nejvíce ohňostrojů. Čím více jich nasbíráte, tím větší bude vaše show! Jakmile slunce zapadne, čas vyprší a vaše show začne.&#13;Hodně štěstí!</p>]]></text>
+		</instruct>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Počítadlo ukazuje, kolik ohňostrojů je v každé trubici</p>]]></text>
+		</tip>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Klikněte na ohňostroj nebo použijte mezerník pro jeho přidání do vaší show</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Ohňostroje se roztočí mimo obrazovku</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Můžete odstranit pouze zcela odkryté ohňostroje</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Jakmile zapadne slunce, začne show!</p>]]></text>
+		</tip>
+		<begin_btn>
+			<label _x="-60" _y="-15" _width="125" selectable="0"><![CDATA[<p class="begin_btn_1">Začít</p>]]></label>
+		</begin_btn>		
+	</help>
+	<!-- ======================================================================================================================================================= -->
+	<ui>
+		<pause_btn>
+			<label _x="-45" _y="-12" _width="90" selectable="0"><![CDATA[<p class="pause_btn">Pauza</p>]]></label>			
+		</pause_btn>
+	</ui>
+	<!-- ======================================================================================================================================================= -->
+	<pause_screen>
+		<text _x="0" _y="0" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Ohňostrojový festival</p>]]></text>
+		<text _x="0" _y="0" _width="350" selectable="0"><![CDATA[<p class="pause_screen_2">Hra je pozastavena</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Pokračovat</p>]]></label>
+		</continue_btn>
+	</pause_screen>
+	<!-- ======================================================================================================================================================= -->
+	<end_screen>
+		<text _x="0" _y="10" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Ohňostrojový festival</p>]]></text>
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_1">Vyhráli jste!</p>]]></text>		
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_2">Tvé Skóre</p>]]></text>
+		<text _x="20" _y="0" _width="400" selectable="0"><![CDATA[<p class="end_screen_3">Dobrá práce.&#13;Až budete připraveni sledovat svoji show, klikněte na tlačítko.&#13;Užijte si to!</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Pokračovat</p>]]></label>
+		</continue_btn>		
+	</end_screen>
+	<!-- ======================================================================================================================================================= -->
+</bs_firelightsfestival>

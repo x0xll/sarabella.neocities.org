@@ -1,0 +1,28 @@
+<Dreamrider>
+    <BuiltInTexts>
+        <Texts>
+            <Text id="txtBuyIt">
+                <a>Koupit</a>
+            </Text>
+            <Text id="txtExitTent">
+                <a>Odejít ze stanu</a>
+            </Text>
+            <Text id="txtPurchasing">
+                <a>Kupování...</a>
+            </Text>
+            <Text id="txtOk">
+                <a>OK</a>
+            </Text>
+            <Text id="txtTheObjectHasBeenAddedTo">
+                <a>Položka byla přidána do </a>
+            </Text>
+            <Text id="txtMyThings">
+                <a>Mé věci.</a>
+            </Text>
+            <Text id="txtCouldNotPurchase">
+                <a>Položku nelze koupit.</a>
+            </Text>
+        </Texts>
+    </BuiltInTexts>
+</Dreamrider>
+

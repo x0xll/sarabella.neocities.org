@@ -7,13 +7,13 @@
             "name": "x0xll"
         },
         {
-            "name": "Gridloch"
+            "name": "gridloch01"
         },
         {
             "name": "LauraAntunes1"
         },
         {
-            "name": "SinGala"
+            "name": "singala"
         }
         ]
     },
@@ -29,7 +29,7 @@
         "title" : "Swedish Translators",
         "people" :[
         {
-            "name": "Rubenite"
+            "name": "rubenites"
         }
         ]
     },
@@ -37,7 +37,16 @@
         "title" : "Czech Translators",
         "people" :[
         {
-            "name": "Shailynn"
+            "name": "shailynn"
+        },
+        {
+            "name": "kristyfairfox"
+        },
+        {
+            "name": "nicolgpp9"
+        },
+        {
+            "name": "nelak7"
         }
         ]
     },
@@ -45,10 +54,29 @@
         "title" : "French Translators",
         "people" :[
         {
-            "name": "Low! ♥ ᴵ ˡᵒᵛᵉ ᵀʷᵉᵉ ♥"
+            "name": "lowpaw7"
         },
         {
-            "name": "SinGala"
+            "name": "edencupid"
+        },
+        {
+            "name": "singala"
+        }
+        ]
+    },
+    {
+        "title": "Spanish Translators",
+        "people":[
+        {
+            "name": "martu4694"
+        }
+        ]
+    },
+    {
+        "title": "Italian Translators",
+        "people":[
+        {
+            "name": "elizabethglitch"
         }
         ]
     }

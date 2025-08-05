@@ -43,7 +43,9 @@
         <!-- Load correct localized version of the game -->
         <script>
           loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
+          var locale = getCurrentLanguageCode();
+          if (!isLocalizedFileExisting(`./oldmap/_data/${locale}_bs_world_map.xml`))
+            locale = "en";
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
           swfPlayer.height = '560';

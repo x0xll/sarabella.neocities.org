@@ -1,0 +1,31 @@
+﻿<Gallery>
+	<BuiltInTexts>
+		<Texts  >
+			<Text id="txtLoading">
+					<P><FONT SIZE="12">Načítání...</FONT></P>
+				</Text>
+				<Text id="txtAll">
+					<P><FONT SIZE="16">Všechno</FONT></P>
+				</Text>
+				<Text id="txtExitMyGallery">
+					<P><FONT SIZE="13">Odejít z Mojí Galerie</FONT></P>
+				</Text>
+				<Text id="txtExitThisGallery">
+					<P><FONT SIZE="13">Odejít z Téhle Galerie</FONT></P>
+				</Text>
+			<Text id="txtGalleryCategory">
+				<P><FONT SIZE="14">Vyber KATEGORII.</FONT></P>
+			</Text>
+			<Text id="txtGalleryExit">
+				<P><FONT SIZE="14">Odejít z Galerie</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><b>Zavřít Pomoc</b></FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="14">Zapnout / Vypnout hudbu</FONT></P>
+			</Text>
+		</Texts>
+	</BuiltInTexts>
+</Gallery>
+

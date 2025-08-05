@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+	<play>Hrát</play>
+	<pause>Pozastavit</pause>
+    <beautyeh>Vytvořili jste nádherný ohňostroj.</beautyeh>
+    <greatshow>Ůžasná Show!</greatshow>
+    <replay>Přehrát Znova</replay>
+    <newshow>Nová Show</newshow>
+    <quit>Ukončit</quit>
+
+    <welcome>Vítejte na</welcome>
+    <gameTitle>Ohňostrojovém Festivalu</gameTitle>
+    <playPuzzle>Hrát Puzzle Hru</playPuzzle>
+    
+    <rulesTime>Jakmile zapadne slunce, začne show!</rulesTime>
+    <rulesCounter>Počítadlo ukazuje, kolik ohňostrojů je v každé trubici.</rulesCounter>
+    <rulesPinwheels>Ohňostroje se roztočí mimo obrazovku.</rulesPinwheels>
+    <rulesUncoveredFireworks>Můžete odstranit pouze zcela odkryté ohňostroje</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Klikněte na ohňostroj nebo použijte mezerník pro jeho přidání do vaší show</rulesCollectFireworks>
+
+    <intro>Vyzrušující hra, která končí VAŠÍ velkolepou ohňostrojovou show!</intro>
+    <howToPlayTitle>Jak hrát:</howToPlayTitle>
+    <howToPlayDesc>Klikejte na ohňostroje, abyste odhalili a nasbírali co nejvíce ohňostrojů. Čím více jich nasbíráte, tím větší bude vaše show! Jakmile slunce zapadne, čas vyprší a vaše show začne.</howToPlayDesc>
+    <goodLuck>Hodně štěstí!</goodLuck>
+
+    <begin>Začít</begin>
+
+    <score>Tvé Skóre</score>
+    <continue>Pokračovat</continue>
+    <won>Vyhráli jste!</won>
+
+    <outroGreat>Dobrá práce!</outroGreat>
+    <outroWatchShow>Až budete připraveni sledovat svoji show, klikněte na tlačítko.</outroWatchShow>
+    <outroEnjoy>Užij si to!</outroEnjoy>
+</root>
