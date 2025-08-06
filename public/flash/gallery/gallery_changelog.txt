@@ -1,0 +1,8 @@
+06/08/2025:
+    - Override call to get categories
+        - Replace "WebServiceGetCategories.instance.invoke(gotCategories);" by "flash.external.gotCategories(ExternalInterface.call("getCategories"));" in getCategories(callback) in BellaSaraWorldDataCache.as
+        - 
+    - Override call to WS server
+        - Remove all the code inside the functions on WebServiceProxy.as, WebService.as and WebServiceConnector.as
+        - Added "gotoAndStop(7);" at the end of onEnter in DoAction frame 6
+        - Added "gotoAndStop(6);" at the end of DoAction frame 5

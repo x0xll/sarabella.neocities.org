@@ -26,6 +26,8 @@
         </div> 
 
         <script>
+          loadNewLocalizationFile('./lang/categories_' + getCurrentLanguageCode() + ".json",'./lang/categories_en.json', "categoriesItems")
+
           window.RufflePlayer = {
             config: {
               autoplay: "on",
