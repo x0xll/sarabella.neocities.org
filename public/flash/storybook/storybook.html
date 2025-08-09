@@ -42,8 +42,8 @@
         <script>
           loadLanguagePref(false); 
           var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./lang/book_headings_${locale}.xml`) ||
-              !isLocalizedFileExisting(`./lang/chap1_stories_${locale}.xml`))
+          if (!isLocalizedFileExisting(`./lang/book_headings_${locale}.txt`) ||
+              !isLocalizedFileExisting(`./lang/chap1_stories_${locale}.txt`))
             locale = "en";
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
