@@ -65,6 +65,9 @@ class World_CanterFarm extends Phaser.Scene
         game.yOffset = 865
         game.tiles = []
         game.timeManager.startClock()
+        
+        instantiateDialogueUI(game);
+        initializeQuestJournalUI(game);
 
         // Adding BG as reference
             game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
@@ -86,7 +89,10 @@ class World_CanterFarm extends Phaser.Scene
             //showDialogue(game, {name: "Cade Traveler", id: "C001"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
 
             // TEST INVENTORY
-            showInventory(game);
+            //showInventory(game);
+
+            // TEST QUEST JOURNAL
+            //showQuestJournal(game);
         }
 
         // Instantiation the images from the parsed zone xml
@@ -123,7 +129,6 @@ class World_CanterFarm extends Phaser.Scene
         
         // TODO : Create the isometric grid
         instantiateWorld();
-        instantiateDialogueUI(game);
         game.playerObj.move();
         game.timeManager.renderDayNight()
 

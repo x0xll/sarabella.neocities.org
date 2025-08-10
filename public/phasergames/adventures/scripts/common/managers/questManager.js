@@ -2,6 +2,8 @@
 *  Save/Load quests, Unlock/Finish, etc.
 */
 
+const QUEST_PANEL_IMG = "quest_bgpanel"
+
 const QUEST_STATES = 
 {
     UNAVAILABLE: -1,
@@ -150,25 +152,55 @@ function finishQuest(phaserScene, fileID, adventureID, questID)
 //------- QUEST JOURNAL UI -------
 function loadQuestJournalUI(phaserScene)
 {
+    // Background panel
+    phaserScene.load.image(QUEST_PANEL_IMG, "./assets/extracted/UI/Quest/Journal_Panel.png");
 
+    // Close btn
+    phaserScene.load.image("closebtn", "./assets/extracted/UI/Quest/closebtn.png")
 }
 
 function initializeQuestJournalUI(phaserScene)
 {
-    phaserScene.questJournal =
+    var panel = phaserScene.add.image(35, -20, QUEST_PANEL_IMG)
+                    .setOrigin(0)
+                    .setScrollFactor(0)
+                    .setDepth(100);
+
+    var closeBtn = phaserScene.add.image(687, 112, "closebtn")
+                    .setOrigin(0)
+                    .setScrollFactor(0)
+                    .setDepth(100)
+                    .setInteractive();
+
+    closeBtn.on('pointerup', function (pointer) 
+    { 
+        hideQuestJournal(phaserScene);
+    });
+
+    phaserScene.questManager.journal =
     {
-        open: false
+        open: false,
+        panelImg: panel,
+        closeBtn: closeBtn
     }
+
+    hideQuestJournal(phaserScene);
 }
 
 function showQuestJournal(phaserScene)
 {
-    if (phaserScene.questJournal === undefined)
+    if (phaserScene.questManager.questJournal === undefined)
         initializeQuestJournalUI(phaserScene);
+    
+    phaserScene.questManager.journal.open = true;
+    phaserScene.questManager.journal.panelImg.setAlpha(1);
+    phaserScene.questManager.journal.closeBtn.setAlpha(1);
 }
 
 function hideQuestJournal(phaserScene)
 {
-
+    phaserScene.questManager.journal.open = false;
+    phaserScene.questManager.journal.panelImg.setAlpha(0);
+    phaserScene.questManager.journal.closeBtn.setAlpha(0);
 }
 //------- END QUEST JOURNAL UI -------
