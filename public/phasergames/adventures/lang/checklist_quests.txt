@@ -3,8 +3,9 @@ List of the quests we have, and the ones we need to get/translate, per language:
 
 FRENCH:
 - Créer son personnage : ❌
+- Bienvenue au Nord du Septentrion : ✅
 - Leçon de jardinage : ✅ (https://web.archive.org/web/20160410182451/http://bellasara-fan.fr/wiki/lecon-de-jardinage)
-- Réparation du pont des Fermes de Canter : ✅ (https://web.archive.org/web/20111116034322/http://bellasara-fan.fr/wiki/reparation-du-pont-des-fermes-de-canter)
+- Réparation du pont : ✅ (https://web.archive.org/web/20111116034322/http://bellasara-fan.fr/wiki/reparation-du-pont-des-fermes-de-canter)
 - Sauvetage de la loutre (Starstone Otter)  : ✅ (https://web.archive.org/web/20111116034629/http://bellasara-fan.fr/wiki/sauvetage-de-la-loutre-starstone-otter)
 - La Maisonnette des Fermes de canter : ✅
 - Mescreation-de-son-personnagesages de Bella  : ❔ (https://web.archive.org/web/20111116034848/http://bellasara-fan.fr/wiki/messages-de-bella)
@@ -16,13 +17,20 @@ FRENCH:
 - Tartes aux pommes  : ✅ (https://web.archive.org/web/20111116034334/http://bellasara-fan.fr/wiki/tartes-aux-pommes)
 - Le sucre, c'est délicieux !  : ✅ (https://web.archive.org/web/20111116034301/http://bellasara-fan.fr/wiki/le-sucre-c-est-delicieux)
 - Teindre les vêtements  : ✅ (https://web.archive.org/web/20111116034433/http://bellasara-fan.fr/wiki/teindre-les-vetements)
-- Trouver les Overgaard Skylands : ✅ (https://web.archive.org/web/20111116034635/http://bellasara-fan.fr/wiki/trouver-les-overgaard-skylands)
+- Trouve les Overgaard Skylands : ✅ (https://web.archive.org/web/20111116034635/http://bellasara-fan.fr/wiki/trouver-les-overgaard-skylands)
 - Un hobpixie pour ami : ✅
+- Tomtomme disparu : ✅
+- Cercle des fées : ✅
+- Message de Bella : ✅
+- Le Bovo errant : ✅
+- Chez Hannah - A la Brosse et la Tresse :✅
+- L'attaque des limages géantes : ✅
 - Foal Care promotion / La quête des soins des poulains : ✅ (https://web.archive.org/web/20160410124717/http://bellasara-fan.fr/wiki/introduction-aux-soins-des-poulains)
 - La quête de Starlight : ❌
 - Aster a besoin d'aide : ❌
 - Popcorn : ❌ (https://web.archive.org/web/20160410121710/http://bellasara-fan.fr/wiki/popcorn)
 - Introduction aux soins des poulains   : ✅
+- La fête du printemps : ✅
 - La quête du Carnaval du Printemps 1 : Le carnaval de Bella : ✅
 - La quête du Carnaval du Printemps 2 : Doux tonnerre : ❌ (https://web.archive.org/web/20141104081834/http://bellasara-fan.fr/wiki/la-quete-du-carnaval-du-printemps-2-doux-tonnerre)
 - La quête du Carnaval du Printemps 3 : Un joyau étincelant : ❌
@@ -80,10 +88,10 @@ FRENCH:
 - La deuxième énigme : ❌
 - La troisième énigme  : ❌
 - Au bout de l'arc-en-ciel : ❌
-- Paniers de fleurs perdus
-- Echange de paniers de fleurs : ❌
-- Qui a besoin du printemps ?
-- Merci de la part de Bella
+- Paniers de fleurs perdus : ✅
+- Echange de paniers de fleurs : ✅
+- Qui a besoin du printemps ? : ✅
+- Merci de la part de Bella : ✅
 - Brumes : ❌
 - Le pouvoir des fleurs : ❌
 - Après le brouillard vient le beau temps : ❌
