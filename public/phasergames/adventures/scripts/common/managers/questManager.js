@@ -11,6 +11,27 @@ const QUEST_STATES =
     CANCELLED: 3
 }
 
+const QUEST_ACTIONS = 
+{
+    STARTQUEST: -4,
+    ENDQUEST: -3,
+    REMOVEQUEST: -2,
+    NEXTQUEST: -1,
+    DIALOGUE: 0,
+    ADDINVENTORY: 1,
+    REMOVEINVENTORY: 2,
+    GIVEITEMTRIGGER: 3,
+    TALKQUESTTRIGGER: 4,
+    CONTEXTITEMTRIGGER: 5,
+    ENTERZONETRIGGER: 6,
+    STOPNEARTRIGGER: 7,
+    DIALOGUEIMAGEACTION: 8,
+    ADDHORSESHOES: 9,
+    STARTTRIGGER: 10,
+    ONTEMPLATECONDITION: 11,
+    TRADETRIGGER: 12
+}
+
 //------- QUEST HELPER -------
 function getAllQuestsByStatus(phaserScene, status)
 {
@@ -18,8 +39,13 @@ function getAllQuestsByStatus(phaserScene, status)
 
     phaserScene.questManager.quests.forEach(quest => 
     {
-        if (quest.status === status)
-            quests.push(id);
+        quest.adventureData.forEach(adventure => 
+        {
+            adventure.questData.forEach(data => {
+                if (data.status === status)
+                    quests.push(data);
+            });
+        });
     });
 
     return quests;
@@ -32,7 +58,7 @@ async function initializeQuestDatas(phaserScene)
 {
     phaserScene.questManager = 
     {
-        quests: {}
+        quests: []
     }
 
     // TODO : get the quests infos from somewhere
@@ -54,8 +80,10 @@ async function initializeQuestDatas(phaserScene)
     for (let i = 0; i < QUEST_FILES_NAMES.length; i++)
     {
         var questObj = await loadXML(QUEST_DATAS_FOLDER + QUEST_FILES_NAMES[i] + ".xml");
-        phaserScene.questManager.quests = parseQuestXML(questObj);
+        phaserScene.questManager.quests.push(parseQuestXML(questObj));
     }
+
+    //console.log(phaserScene.questManager.quests);
 }
 
 function startQuest(phaserScene, questID)

@@ -79,5 +79,68 @@ function parseZoneXML(xmlObj)
 
 function parseQuestXML(xmlObj)
 {
-    console.log(xmlObj);
+    //console.log(xmlObj);
+
+    var result = [];
+
+    // Get global file datas
+    xmlObj.querySelectorAll("adventures").forEach(adventures => {
+        var globalQuestObj = 
+        {
+            adventuresID : adventures.attributes[0].value,
+            description : adventures.attributes[1].value,
+            adventureData : []
+        }
+
+        adventures.querySelectorAll("adventure").forEach(adventure => {
+            var adventureObj = {
+                adventureID : adventure.attributes[0].value,
+                description : adventure.childNodes[0].nextElementSibling.innerHTML,
+                questData : []
+            }
+            globalQuestObj.adventureData.push(adventureObj);
+
+            adventure.querySelectorAll("quest").forEach(quest => {
+                var questObj = {
+                    questID : quest.attributes[0].value,
+                    description : quest.childNodes[0].nextElementSibling.innerHTML,
+                    status : QUEST_STATES.UNAVAILABLE,
+                    actions : []
+                }
+
+                adventureObj.questData.push(questObj);
+
+                quest.querySelectorAll("object").forEach(action => {
+                        switch(action.attributes[0].value)
+                        {
+                            case "questData.DialogueAction":
+                                questObj.actions.push(
+                                    {
+                                        type: QUEST_ACTIONS.DIALOGUE,
+                                        text: action.childNodes[0].nextElementSibling.innerHTML
+                                    });
+                                break;
+                            case "questData.AddMultipleInventoryAction":
+                                questObj.actions.push(
+                                    {
+                                        type: QUEST_ACTIONS.ADDINVENTORY,
+                                        itemID: action.childNodes[0].nextElementSibling.innerHTML,
+                                        count: parseInt(action.childNodes[1].nextElementSibling.innerHTML)
+                                    });
+                                break;
+                            case "questData.AddQuestAction":
+                                questObj.actions.push({
+                                    type: QUEST_ACTIONS.NEXTQUEST,
+                                    questID: action.childNodes[0].nextElementSibling.innerHTML
+                                });
+                                break;
+                        }
+                })
+            });
+        });
+
+        result = globalQuestObj;
+    });
+
+    return result;
 }
