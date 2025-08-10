@@ -133,10 +133,10 @@ class World_CanterFarm extends Phaser.Scene
         game.timeManager.renderDayNight()
 
         // TODO: Clean up, this is a temporary quest test
-        /*let spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        let spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         spaceBar.on('down', () => 
         {
-            var status = getQuestStatus(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105");
+            /*var status = getQuestStatus(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105");
 
             if (status === QUEST_STATES.WAITING)
                 startQuest(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105")
@@ -144,8 +144,10 @@ class World_CanterFarm extends Phaser.Scene
             {
                 finishQuest(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105");
                 startQuest(game, "ADS-0000000825", "ADV-0000000902", "QUE-0000002117");
-            }
-        })*/
+            }*/
+
+            showQuestJournal(game);
+        })
     }
 
     update() 
