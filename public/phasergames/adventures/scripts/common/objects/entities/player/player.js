@@ -89,6 +89,9 @@ class Player
         // This might be useful here: https://www.geeksforgeeks.org/rat-in-a-maze/
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
         this.phaserScene.input.on('pointerup', (pointer) => {
+            // Prevent moving when dialogue box is open
+            if (this.phaserScene.dialogueBox.open) return;
+
             // Get the grid x and y position of the target
             const {worldX, worldY} = pointer;
             let gridTarget = this.isoToGridMap(worldX, worldY)
