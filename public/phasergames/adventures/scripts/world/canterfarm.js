@@ -77,6 +77,12 @@ class World_CanterFarm extends Phaser.Scene
             game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000).setAlpha(.75)
         ]
 
+        // Link HUB UI to the logic
+        sharedData.journalButton.on('pointerup', function (pointer) 
+        {
+            showQuestJournal(game);
+        });
+
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
         {            
@@ -145,8 +151,6 @@ class World_CanterFarm extends Phaser.Scene
                 finishQuest(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105");
                 startQuest(game, "ADS-0000000825", "ADV-0000000902", "QUE-0000002117");
             }*/
-
-            showQuestJournal(game);
         })
     }
 
