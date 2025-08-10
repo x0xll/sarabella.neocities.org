@@ -16,9 +16,9 @@ function getAllQuestsByStatus(phaserScene, status)
 {
     var quests = [];
 
-    phaserScene.allQuestsIDs.forEach(id => 
+    phaserScene.questManager.quests.forEach(quest => 
     {
-        if (phaserScene.questID[id].status === status)
+        if (quest.status === status)
             quests.push(id);
     });
 
@@ -28,12 +28,34 @@ function getAllQuestsByStatus(phaserScene, status)
 //------- END QUEST HELPER -------
 
 //------- QUEST MECHANIC -------
-function initializeQuestDatas(phaserScene)
+async function initializeQuestDatas(phaserScene)
 {
-    phaserScene.allQuestsIDs = [];
-    phaserScene.quests = {};
+    phaserScene.questManager = 
+    {
+        quests: {}
+    }
 
     // TODO : get the quests infos from somewhere
+    const QUEST_DATAS_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
+    const QUEST_FILES_NAMES = [
+        "tutorials",
+        /*"collectibles",
+        "freeplay",
+        "free_springfestival",
+        "intro_cottage",
+        "repeatable",
+        "sc_1",
+        "sc_6",
+        "spc1activation",
+        "gp",
+        "furniturestore"*/
+    ]
+
+    for (let i = 0; i < QUEST_FILES_NAMES.length; i++)
+    {
+        var questObj = await loadXML(QUEST_DATAS_FOLDER + QUEST_FILES_NAMES[i] + ".xml");
+        phaserScene.questManager.quests = parseQuestXML(questObj);
+    }
 }
 
 function startQuest(phaserScene, questID)

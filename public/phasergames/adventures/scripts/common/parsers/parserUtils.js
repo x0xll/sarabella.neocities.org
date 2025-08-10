@@ -76,3 +76,8 @@ function parseZoneXML(xmlObj)
 
     return result;
 }
+
+function parseQuestXML(xmlObj)
+{
+    console.log(xmlObj);
+}

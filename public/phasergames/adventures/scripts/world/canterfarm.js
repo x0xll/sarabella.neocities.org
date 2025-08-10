@@ -45,6 +45,7 @@ class World_CanterFarm extends Phaser.Scene
 
         loadDialogueUI(game);
         loadInventoryUI(game);
+        loadQuestJournalUI(game);
 
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
         this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
@@ -52,6 +53,7 @@ class World_CanterFarm extends Phaser.Scene
         this.load.spineJson("Ti021bJSON", `./assets/newTiles/Ti021b.json`);
 
         loadZoneFromXMLDatas();
+        initializeQuestDatas(game);
     }
 
     create (sharedData)
