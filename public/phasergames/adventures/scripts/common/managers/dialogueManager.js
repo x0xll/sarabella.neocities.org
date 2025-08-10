@@ -108,6 +108,8 @@ function instantiateDialogueUI(phaserScene)
         continueBtn : continueBtn,
         continueTxt : continueTxt
     };
+
+    hideDialogue(phaserScene);
 }
 
 function showDialogue(phaserScene, character, text, choices)

@@ -110,6 +110,7 @@ function parseQuestXML(xmlObj)
 
                 adventureObj.questData.push(questObj);
 
+                // TODO: Need to handle the trigger situations
                 quest.querySelectorAll("object").forEach(action => {
                         switch(action.attributes[0].value)
                         {
@@ -141,6 +142,8 @@ function parseQuestXML(xmlObj)
 
         result = globalQuestObj;
     });
+
+    console.log(result);
 
     return result;
 }

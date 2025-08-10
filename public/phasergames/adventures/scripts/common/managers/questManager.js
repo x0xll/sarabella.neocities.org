@@ -51,6 +51,32 @@ function getAllQuestsByStatus(phaserScene, status)
     return quests;
 }
 
+function getQuestPerID(phaserScene, globalID, adventureID, questID)
+{
+    for (let i = 0; i < phaserScene.questManager.quests.length; i++)
+    {
+        if (phaserScene.questManager.quests[i].adventuresID !== globalID) continue;
+
+        for (let j = 0; j < phaserScene.questManager.quests[i].adventureData.length; j++)
+        {
+            if (phaserScene.questManager.quests[i].adventureData[j].adventureID !== adventureID) continue;
+
+            for (let k = 0; k < phaserScene.questManager.quests[i].adventureData[j].questData.length; k++)
+            {
+                if (phaserScene.questManager.quests[i].adventureData[j].questData[k].questID === questID)
+                    return phaserScene.questManager.quests[i].adventureData[j].questData[k];
+            }
+        }
+    }
+
+    console.error("No Quest found! " + globalID + " - " + adventureID + " - " + questID);
+}
+
+function getQuestStatus(phaserScene, globalID, adventureID, questID, status)
+{
+    return getQuestPerID(phaserScene, globalID, adventureID, questID).status;
+}
+
 //------- END QUEST HELPER -------
 
 //------- QUEST MECHANIC -------
@@ -64,9 +90,9 @@ async function initializeQuestDatas(phaserScene)
     // TODO : get the quests infos from somewhere
     const QUEST_DATAS_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
     const QUEST_FILES_NAMES = [
-        "tutorials",
-        /*"collectibles",
-        "freeplay",
+        "freeplay_v2",
+        /*"tutorials",
+        "collectibles",
         "free_springfestival",
         "intro_cottage",
         "repeatable",
@@ -75,6 +101,7 @@ async function initializeQuestDatas(phaserScene)
         "spc1activation",
         "gp",
         "furniturestore"*/
+        //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
     ]
 
     for (let i = 0; i < QUEST_FILES_NAMES.length; i++)
@@ -83,22 +110,37 @@ async function initializeQuestDatas(phaserScene)
         phaserScene.questManager.quests.push(parseQuestXML(questObj));
     }
 
-    //console.log(phaserScene.questManager.quests);
+    // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
+
+    // If first time on the game -> we show the first tutorial quests   
+    showQuest(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105"); // freeplay_v2.xml
+    //showQuest(phaserScene, "ADS-0000001163", "ADV-0000001798", "QUE-0000006273"); // intro_cottage.xml
 }
 
-function startQuest(phaserScene, questID)
+function showQuest(phaserScene, fileID, adventureID, questID)
 {
-    phaserScene.quests[questID].status = QUEST_STATES.STARTED
+    var questData = getQuestPerID(phaserScene, fileID, adventureID, questID);
+    if (questData === undefined) return;
+    questData.status = QUEST_STATES.WAITING;
+    console.log("Showing quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
+
+    // TODO: Handle showing icons on map and handling correct triggers
 }
 
-function updateQuest(phaserScene, questID, newStatus)
+function startQuest(phaserScene, fileID, adventureID, questID)
 {
-
+    var questData = getQuestPerID(phaserScene, fileID, adventureID, questID);
+    if (questData === undefined) return;
+    questData.status = QUEST_STATES.STARTED;
+    console.log("Start quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 }
 
-function finishQuest(phaserScene, questID)
+function finishQuest(phaserScene, fileID, adventureID, questID)
 {
-    phaserScene.quests[questID].status = QUEST_STATES.FINISHED
+    var questData = getQuestPerID(phaserScene, fileID, adventureID, questID);
+    if (questData === undefined) return;
+    questData.status = QUEST_STATES.FINISHED;
+    console.log("End quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 }
 
 //------- END QUEST MECHANIC -------

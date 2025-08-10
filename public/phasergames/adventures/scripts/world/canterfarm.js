@@ -83,7 +83,7 @@ class World_CanterFarm extends Phaser.Scene
             game.playerObj.instantiatePlayerSprites();
 
             // TEST DIALOGUE
-            showDialogue(game, {name: "Cade Traveler", id: "C001"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
+            //showDialogue(game, {name: "Cade Traveler", id: "C001"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
 
             // TEST INVENTORY
             showInventory(game);
@@ -123,8 +123,24 @@ class World_CanterFarm extends Phaser.Scene
         
         // TODO : Create the isometric grid
         instantiateWorld();
+        instantiateDialogueUI(game);
         game.playerObj.move();
         game.timeManager.renderDayNight()
+
+        // TODO: Clean up, this is a temporary quest test
+        /*let spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        spaceBar.on('down', () => 
+        {
+            var status = getQuestStatus(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105");
+
+            if (status === QUEST_STATES.WAITING)
+                startQuest(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105")
+            else if (status === QUEST_STATES.STARTED)
+            {
+                finishQuest(game, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105");
+                startQuest(game, "ADS-0000000825", "ADV-0000000902", "QUE-0000002117");
+            }
+        })*/
     }
 
     update() 
