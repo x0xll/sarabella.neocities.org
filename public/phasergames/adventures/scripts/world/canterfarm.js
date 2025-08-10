@@ -81,7 +81,7 @@ class World_CanterFarm extends Phaser.Scene
             game.playerObj.instantiatePlayerSprites();
 
             // TEST DIALOGUE
-            //showDialogue(game, {name: "Cade Traveler"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
+            showDialogue(game, {name: "Cade Traveler", id: "C001"}, "Happy day! The bridge is safe and sound thanks to you. Here are some horseshoes for your help. Oh my! It looks like that wolf over there has captured the Starstone otter. Go see if you can help her out.", undefined);
 
             // TEST INVENTORY
             showInventory(game);

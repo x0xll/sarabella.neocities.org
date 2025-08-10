@@ -1,6 +1,7 @@
 const DIALOGUE_PANEL_IMG = "Dialogue_Panel";
 const DIALOGUE_AVATAR_MASK = "Dialogue_Avatar_Mask";
 const DIALOGUE_CONTINUE_BTN = "Dialogue_Continue_Btn";
+const DIALOGUE_HUMANS_THUMBNAILS = "humansthumbnails";
 
 const CHARA_NAME_TEXT_SETTINGS = 
 {
@@ -32,8 +33,8 @@ function loadDialogueUI(phaserScene)
     // Avatar mask
     //phaserScene.load.image(DIALOGUE_AVATAR_MASK, "./assets/extracted/UI/Dialogue/PortraitMask.png");
 
-    // TEST AVATAR
-    phaserScene.load.image("Test_Cade", "./assets/extracted/Characters/C001/1.png")
+    // Avatars
+    phaserScene.load.atlas(DIALOGUE_HUMANS_THUMBNAILS, './assets/extracted/Characters/humansthumbnail.png', './assets/extracted/Characters/humansthumbnail.json');
 
     // Continue button
     // TODO : Find / Recreate the correct button
@@ -57,7 +58,7 @@ function instantiateDialogueUI(phaserScene)
                         .setDepth(100);
 
     // Character Avatar
-    var charaPortrait = phaserScene.add.image(-111, 215, "Test_Cade")
+    var charaPortrait = phaserScene.add.image(22.5, 255, DIALOGUE_HUMANS_THUMBNAILS, "C001")
                             .setOrigin(0)
                             .setScrollFactor(0)
                             .setDepth(100);
@@ -121,7 +122,7 @@ function showDialogue(phaserScene, character, text, choices)
     phaserScene.dialogueBox.charaName.setAlpha(1);
     phaserScene.dialogueBox.charaName.text = character.name;
     phaserScene.dialogueBox.charaPortrait.setAlpha(1);
-    //phaserScene.dialogueBox.charaPortrait.texture = "";
+    phaserScene.dialogueBox.charaPortrait.setFrame(character.id);
 
     phaserScene.dialogueBox.normalText.setAlpha(1);
     phaserScene.dialogueBox.normalText.text = text; // TODO : Handle with localization 
