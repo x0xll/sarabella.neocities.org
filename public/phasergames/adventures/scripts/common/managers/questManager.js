@@ -91,7 +91,7 @@ async function initializeQuestDatas(phaserScene)
     const QUEST_DATAS_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
     const QUEST_FILES_NAMES = [
         "freeplay_v2",
-        /*"tutorials",
+        "tutorials",
         "collectibles",
         "free_springfestival",
         "intro_cottage",
@@ -100,7 +100,7 @@ async function initializeQuestDatas(phaserScene)
         "sc_6",
         "spc1activation",
         "gp",
-        "furniturestore"*/
+        "furniturestore"
         //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
     ]
 
@@ -109,6 +109,8 @@ async function initializeQuestDatas(phaserScene)
         var questObj = await loadXML(QUEST_DATAS_FOLDER + QUEST_FILES_NAMES[i] + ".xml");
         phaserScene.questManager.quests.push(parseQuestXML(questObj));
     }
+
+    console.log(phaserScene.questManager.quests);
 
     // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
 

@@ -143,7 +143,5 @@ function parseQuestXML(xmlObj)
         result = globalQuestObj;
     });
 
-    console.log(result);
-
     return result;
 }
