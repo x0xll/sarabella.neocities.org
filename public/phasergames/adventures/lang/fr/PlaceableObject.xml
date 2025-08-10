@@ -1,0 +1,5126 @@
+<things version="1">
+  <!-- ======== GENERAL TEMPLATES ============================================================================ -->
+  <template name="PlaceableObjectTemplate">GiveRotatedObjectTemplate
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" /><component type="components.NightMovieClipComponent" name="NightMovieClipComponent" /><component type="components.MovieClipComponent" name="MovieClip" /><component type="components.IsometricComponent" name="Isometric" /><component type="components.GridPositionComponent" name="GridPosition"><isBlocked>true</isBlocked></component><component type="components.NameComponent" name="Name" /><component type="components.ToolTipComponent" name="ToolTip" /><component type="components.ClickMovieClipComponent" name="ClickMovieClip" /><component type="components.ClickComponent" name="Click" /><component type="components.ContextComponent" name="Context" /><component type="components.commands.TakeCommand" name="TakeCommand" /><component type="components.commands.MoveCommand" name="MoveCommand" /><component type="components.SpawnedEntityComponent" name="SpawnedEntity" /><component type="components.MiniMapTileComponent" name="MiniMapTile"><lineThickness>1</lineThickness><lineAlpha>.5</lineAlpha><fillAlpha>.8</fillAlpha><lineColor>0x008080</lineColor><fillColor>0x00CED1</fillColor></component></template>
+  <template name="StackableObjectTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.IsometricComponent" name="Isometric" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <isBlocked>true</isBlocked>
+    </component>
+    <component type="components.NameComponent" name="Name" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.StackComponent" name="Stack" />
+    <component type="components.commands.StackCommand" name="StackCommand" />
+    <component type="components.commands.UnstackAllCommand" name="UnstackAllCommand" />
+    <component type="components.commands.UnstackCommand" name="UnstackCommand" />
+    <component type="components.SpawnedEntityComponent" name="SpawnedEntity" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <fillAlpha>.8</fillAlpha>
+      <lineColor>0x008080</lineColor>
+      <fillColor>0x00CED1</fillColor>
+    </component>
+  </template>
+  <!-- An object that is rotated to align itself with the ground. -->
+  <template name="AlignedObjectTemplate">
+    <component type="components.RotateComponent" name="Rotate">
+      <facing>SW</facing>
+    </component>
+    <!-- everything from PlaceableObjectTemplate except commands.MoveCommand.
+        commands.MoveCommand doesn't work correctly with "plants," only "entities."-->
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.NightMovieClipComponent" name="NightMovieClipComponent" />
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.IsometricComponent" name="Isometric" />
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <isBlocked>true</isBlocked>
+    </component>
+    <component type="components.NameComponent" name="Name" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.TakeCommand" name="TakeCommand">
+      <playAnimation>false</playAnimation>
+    </component>
+    <component type="components.SpawnedEntityComponent" name="SpawnedEntity" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <fillAlpha>.8</fillAlpha>
+      <lineColor>0x008080</lineColor>
+      <fillColor>0x00CED1</fillColor>
+    </component>
+  </template>
+  <!-- An object that can be rotated by the player. -->
+  <template name="RotatedObjectTemplate" template="PlaceableObjectTemplate">
+    <component type="components.RotateComponent" name="Rotate">
+      <facing>SW</facing>
+    </component>
+    <component type="components.commands.RotateCommand" name="RotateCommand" />
+  </template>
+  <template name="RotatedFlooringObjectTemplate" template="RotatedObjectTemplate">
+    <component name="Isometric">
+      <depthOffset>-1000</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <isFloor>true</isFloor>
+      <isBlocked>false</isBlocked>
+    </component>
+  </template>
+  <!-- Adds Give component to Rotatable, Placeable Object -->
+  <template name="GiveRotatedObjectTemplate" template="RotatedObjectTemplate">
+    <component type="components.commands.GiveCommand" name="GiveCommand" />
+  </template>
+  <!-- A placed item, that when stepped on warps the player to another location.-->
+  <template name="WarpItemTemplate">
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.StopOnTileComponent" name="StopOnTile" />
+    <component type="components.WarpItemComponent" name="ExitTile" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <lineColor>0xcc33cc</lineColor>
+      <fillColor>0xff66ff</fillColor>
+      <fillAlpha>.5</fillAlpha>
+    </component>
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.IsometricComponent" name="Isometric" />
+  </template>
+  <!-- ======== SPECIFIC TEMPLATES ============================================================================ -->
+  <template name="T0045aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045a</className>
+    </component>
+    <component name="Name">
+      <name>Round Gemstone (Red)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme ronde (Rouge)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158aTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045b</className>
+    </component>
+    <component name="Name">
+      <name>Square Gemstone (Red)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme carrée (Rouge)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158bTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045c</className>
+    </component>
+    <component name="Name">
+      <name>Round Gemstone (Blue)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme ronde (Bleue)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158cTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045dTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045d</className>
+    </component>
+    <component name="Name">
+      <name>Square Gemstone (Blue)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme carrée  (Bleue)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158dTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045eTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045e</className>
+    </component>
+    <component name="Name">
+      <name>Round Gemstone (Green)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme ronde(Verte)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158eTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045fTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045f</className>
+    </component>
+    <component name="Name">
+      <name>Square Gemstone (Green)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme carrée  (Verte)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158fTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045gTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045g</className>
+    </component>
+    <component name="Name">
+      <name>Round Gemstone (Purple)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme ronde (Violette)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158gTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045hTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045h</className>
+    </component>
+    <component name="Name">
+      <name>Square Gemstone (Purple)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme carrée  (Violette)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158hTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045iTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045i</className>
+    </component>
+    <component name="Name">
+      <name>Round Gemstone (Pink)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme ronde (Rose)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158iTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0045jTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0045j</className>
+    </component>
+    <component name="Name">
+      <name>Square Gemstone (Pink)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemme carrée  (Rose)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I158jTemplate</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0065eTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0065e</className>
+    </component>
+    <component name="Name">
+      <name>Land Horse Ice Sculpture (Green)</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sculpture de cheval terrestre (verte)</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I110Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0078Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0078</className>
+    </component>
+    <component name="Name">
+      <name>Birdbath</name>
+    </component>
+    <component name="Isometric">
+      <yOffset>-30</yOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Vasque pour oiseaux</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I101Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0103dTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0103d</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Trellis - Tan</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Treillis brun</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I099bTemplate</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0103aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0103a</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Trellis - White with flowers</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Treillis blanc avec fleurs</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I099cTemplate</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0103bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0103b</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Trellis - White</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Treillis blanc</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I099aTemplate</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0103cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0103c</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Trellis - Tan with flowers</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Treillis brun avec fleurs</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I099dTemplate</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0104cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0104c</className>
+    </component>
+    <component name="Name">
+      <name>Mini Pumpkin Light</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mini lanterne citrouille</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I096Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0105Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0105</className>
+    </component>
+    <component name="Name">
+      <name>Living sculpture</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sculpture vivante</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I107Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0121Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0121</className>
+    </component>
+    <component name="Name">
+      <name>Sundial</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cadran solaire</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I098Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0142aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0142a</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Sigga Statue</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Statue de Sigga</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I113Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0142bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0142b</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Sara Statue</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Statue de Sara</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I109Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0143bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0143b</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Nike statue</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Statue de Nike</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I106Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0148Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0148</className>
+    </component>
+    <component name="Name">
+      <name>Weathervane</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Girouette</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I105Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0166Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0166</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Name">
+      <name>Welcome Mat</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tapis de bienvenue</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I075Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0193Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0193</className>
+    </component>
+    <component name="Name">
+      <name>Garden Gnome</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Nain de jardin</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I095Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0194Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0194</className>
+    </component>
+    <component name="Name">
+      <name>Beehive</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Ruche</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I100Template</template>
+    </component>
+    <component type="components.commands.TradeCommand" name="TradeCommand">
+      <tradeDictionary>
+        <pair key="P046ProduceTemplate" value="I163Template" />
+      </tradeDictionary>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0196Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0196</className>
+    </component>
+    <component name="Name">
+      <name>Birdhouse on Pole</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mangeoire à oiseaux sur mât</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I097Template</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0199aTemplate" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0199a</className>
+    </component>
+    <component name="Name">
+      <name>Flower Basket</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Panier de fleurs</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I006cTemplate</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0204Template" template="TakeObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0204</className>
+    </component>
+    <component name="Name">
+      <name>Jar of flies</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bocal de mouches</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023dTemplate</template>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0205Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0205</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I114Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Blazoned Leonis Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0206Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0206</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I115Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tea-Leaf Panda Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0207Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0207</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I116Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sun Cat Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0208Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0208</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I117Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Violet Pixie Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0209Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0209</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I118Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Grass Pool Otter Plush Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0210Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0210</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I119Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sealky Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0211Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0211</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I120Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Spark Turtle Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0212Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0212</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I121Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Starstone Otter Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0213Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0213</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I122Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Twinkle Imp Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0214Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0214</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I123Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fringed Newt Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0215Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0215</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I124Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Flapuppy Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0216Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0216</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I125Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pipsqueak Longtail Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0217Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0217</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I126Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Quixie Faun Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0218Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0218</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I127Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tassel Mouse Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0219Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0219</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I128Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gemdigger Dog Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0220Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0220</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I129Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Swetpea Reindeer Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0221Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0221</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I130Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Nebulaphin Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0222Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0222</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I131Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bubble Turtle Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0223Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0223</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I132Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Neon Frog Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0224Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0224</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I133Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText> Fairyphant Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0225Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0225</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I134Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cunning Flitkit Toy</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0226aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0226a</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I135aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gertrude Doll</ToolTipText>
+    </component>
+  </template>
+  <template name="T0226bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0226b</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I135bTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gertrude Doll</ToolTipText>
+    </component>
+  </template>
+  <template name="T0226cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0226c</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I135cTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gertrude Doll</ToolTipText>
+    </component>
+  </template>
+  <template name="T0226dTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0226d</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I135dTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gertrude Doll</ToolTipText>
+    </component>
+  </template>
+  <template name="T0226eTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0226e</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I135eTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gertrude Doll</ToolTipText>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0227Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0227</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I136Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Igloo</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Igloo">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0227Template</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0228Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0228</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I137Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snow Fort</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snow Fort">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0228Template</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0229aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0229a</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I138aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snowman</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snowman">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0229aTemplate</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0229bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0229b</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I138bTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snowman</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snowman">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0229bTemplate</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0229cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0229c</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I138cTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snowman</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snowman">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0229cTemplate</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0229dTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0229d</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I138dTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snowman</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snowman">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0229dTemplate</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <template name="T0229eTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0229e</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I138eTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snowman</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snowman">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0229eTemplate</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0230Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0230</className>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I139Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sleigh</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Sleigh">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0230Template</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0231Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0231</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I140Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Snow-topped Tree</ToolTipText>
+    </component>
+    <component type="components.LogicComponent" name="Logic">
+      <quest visible="False">
+        <line description="Place - Snow Tree">
+          <trigger>
+            <object type="questData.ActionTrigger">
+              <className>actions::PlaceEntityAction</className>
+            </object>
+          </trigger>
+          <conditions>
+            <object type="questData.ActionOnTemplateCondition">
+              <template>T0231Template</template>
+            </object>
+          </conditions>
+          <actions>
+            <object type="questData.PlayMovieClipAction">
+              <fileName>flash/adventures/art/cutscenes/snow.swf</fileName>
+              <childInstanceName>mcSnow</childInstanceName>
+            </object>
+          </actions>
+        </line>
+      </quest>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0233Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0233</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I151Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Hand-cranked Fan</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <!-- Placeable Dye Machine -->
+  <template name="T0246aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0246a</className>
+    </component>
+    <component type="components.commands.TradeCommand" name="TradeCommand">
+      <tradeDictionary>
+        <pair key="P007ProduceTemplate" value="I157aTemplate" />
+        <pair key="P037ProduceTemplate" value="I157bTemplate" />
+        <pair key="P033ProduceTemplate" value="I157cTemplate" />
+        <pair key="P004ProduceTemplate" value="I157dTemplate" />
+        <pair key="P014ProduceTemplate" value="I157eTemplate" />
+        <pair key="P030ProduceTemplate" value="I157fTemplate" />
+        <pair key="P020ProduceTemplate" value="I157gTemplate" />
+        <pair key="P023ProduceTemplate" value="I157hTemplate" />
+        <pair key="P051ProduceTemplate" value="I157iTemplate" />
+        <pair key="P009ProduceTemplate" value="I157jTemplate" />
+        <pair key="P010ProduceTemplate" value="I157kTemplate" />
+        <pair key="P038ProduceTemplate" value="I157lTemplate" />
+        <pair key="P016ProduceTemplate" value="I157mTemplate" />
+        <pair key="P035ProduceTemplate" value="I157nTemplate" />
+        <pair key="P018ProduceTemplate" value="I157oTemplate" />
+        <pair key="P043ProduceTemplate" value="I157pTemplate" />
+      </tradeDictionary>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Machine à teinture</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I142Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0260Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0260</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I147Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pin éternel</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0263Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0263</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I146Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Reniflomètre</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0272aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0272a</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I156aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Service à thé</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0272bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0272b</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I156bTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Service à thé</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0272cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0272c</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I156cTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Service à thé</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- ************************************************************************************ -->
+  <template name="T0274aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0274a</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I166aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lapin en peluche</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0274bTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0274b</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I166bTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lapin en peluche</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0274cTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0274c</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I166cTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lapin en peluche</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0274dTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0274d</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I166dTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lapin en peluche</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0274eTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0274e</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I166eTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lapin en peluche (Marron)</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0236aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0236a</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I167aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Arbre en fleur rose</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0275Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0275</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I169Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Treillis de jardin rose</ToolTipText>
+    </component>
+  </template>
+  <template name="T0276Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0276</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I170Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Vasque à oiseaux</ToolTipText>
+    </component>
+  </template>
+  <template name="T0277Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0277</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I171Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table et chaises de patio</ToolTipText>
+    </component>
+  </template>
+  <template name="T0278Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0278</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I172Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pot de fleur souriant</ToolTipText>
+    </component>
+  </template>
+  <template name="T0279Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0279</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I173Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Arbre fruitier en pot</ToolTipText>
+    </component>
+  </template>
+  <template name="T0280Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0280</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I174Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Réverbère</ToolTipText>
+    </component>
+  </template>
+  <template name="T0281Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0281</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I175Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fontaine</ToolTipText>
+    </component>
+  </template>
+  <template name="T0283Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0283</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I176Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Décor château des fées</ToolTipText>
+    </component>
+  </template>
+  <template name="T0284Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0284</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I177Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Banc de jardin céleste</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+  </template>
+  <template name="T0285Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0285</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I178Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Réverbère fées</ToolTipText>
+    </component>
+  </template>
+  <template name="T0286Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0286</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I179Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mât floral croissant de lune</ToolTipText>
+    </component>
+  </template>
+  <template name="T0287Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0287</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I180Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canapé napperon</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+  </template>
+  <template name="T0288Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0288</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I181Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise napperon</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0289Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0289</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I182Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table napperon</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0290Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0290</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I183Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampe napperon</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0291Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0291</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I184Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit napperon</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0292Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0292</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I185Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Commode napperon</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0295Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0295</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I186Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche renard</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0296Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0296</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I187Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche ours</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0297Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0297</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I188Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche chaton</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0298Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0298</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I189Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche chiot</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0299Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0299</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I190Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Poupée souple</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0302Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0302</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I191Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pot à terreau</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>
+      </depthOffset>
+    </component>
+  </template>
+  <template name="T0306Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0306</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I198Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche Bella</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <!-- ************Aisha CR-I ************* -->
+  <template name="T0361Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0361</className>
+    </component>
+    <component type="components.commands.TradeCommand" name="TradeCommand">
+      <tradeDictionary>
+        <!-- The player gives it the "Key" inventory item and the player gets the "Value" inventory item-->
+        <pair key="P051ProduceTemplate" value="I251Template" />
+        <pair key="P018ProduceTemplate" value="I253Template" />
+        <pair key="P016ProduceTemplate" value="I255Template" />
+        <pair key="P031ProduceTemplate" value="I252Template" />
+        <pair key="P009ProduceTemplate" value="I254Template" />
+      </tradeDictionary>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Marmite à friandises</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I250Template</template>
+    </component>
+  </template>
+  <template name="T0510aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0510a</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0510aTemplate</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gâteau d'anniversaire Geoffrey</ToolTipText>
+    </component>
+  </template>
+  <template name="T0511Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0511</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0511Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Trophée Odyssée</ToolTipText>
+    </component>
+  </template>
+  <template name="T0512Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0512</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0512Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Trophée Aube</ToolTipText>
+    </component>
+  </template>
+  <template name="T0652Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0652</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0652Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cordelia Trophy</ToolTipText>
+    </component>
+  </template>
+  <template name="T0653Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0653</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0653Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Faxon Trophy</ToolTipText>
+    </component>
+  </template>
+  <template name="T0500Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0500</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0500Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Joue en peluche Purrwing</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0501Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0501</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I0501Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche Frostbite</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <!-- ************************************************************************************ -->
+  <!-- ************************************************************************************ -->
+  <!--Content Release J Cottage Rooms-->
+  <template name="T0357Template" template="RotatedFlooringObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0357</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carpette ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0357Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+  </template>
+  <template name="T0515Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0515</className>
+      <variants childType="components.MovieClipVariant">
+        <T0515_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0515_01</className>
+        </T0515_01>
+        <T0515_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0515_02</className>
+        </T0515_02>
+        <T0515_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0515_03</className>
+        </T0515_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Commode ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0515Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0516Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0516</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fenêtre ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0516Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0517Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0517</className>
+      <variants childType="components.MovieClipVariant">
+        <T0517_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0517_01</className>
+        </T0517_01>
+        <T0517_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0517_03</className>
+        </T0517_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0517Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0518Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0518</className>
+      <variants childType="components.MovieClipVariant">
+        <T0518_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0518_01</className>
+        </T0518_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0518Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0519Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0519</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0519Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0520Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0520</className>
+      <variants childType="components.MovieClipVariant">
+        <T0520_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0520_03</className>
+        </T0520_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canapé ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0520Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0521Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0521</className>
+      <variants childType="components.MovieClipVariant">
+        <T0521_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0521_01</className>
+        </T0521_01>
+        <T0521_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0521_02</className>
+        </T0521_02>
+        <T0521_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0521_03</className>
+        </T0521_03>
+        <T0521_04>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0521_04</className>
+        </T0521_04>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0521Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0522Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0522</className>
+      <variants childType="components.MovieClipVariant">
+        <T0522_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0522_01</className>
+        </T0522_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table de salon ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0522Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0523Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0523</className>
+      <variants childType="components.MovieClipVariant">
+        <T0523_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0523_01</className>
+        </T0523_01>
+        <T0523_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0523_02</className>
+        </T0523_02>
+        <T0523_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0523_03</className>
+        </T0523_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table de salon Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0523Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0524Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0524</className>
+      <variants childType="components.MovieClipVariant">
+        <T0524_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0524_01</className>
+        </T0524_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table basse ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0524Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0525Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0525</className>
+      <variants childType="components.MovieClipVariant">
+        <T0525_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0525_01</className>
+        </T0525_01>
+        <T0525_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0525_02</className>
+        </T0525_02>
+        <T0525_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0525_03</className>
+        </T0525_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table basse Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0525Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0526Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0526</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Paravent ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0526Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+  </template>
+  <template name="T0527Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0527</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampadaire ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0527Template</template>
+    </component>
+  </template>
+  <template name="T0528Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0528</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Porte-serviette ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0528Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0529Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0529</className>
+      <variants childType="components.MovieClipVariant">
+        <T0529_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0529_01</className>
+        </T0529_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pot de fleurs ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0529Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0530Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0530</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carpette ronde Starlight</ToolTipText>
+    </component>
+  </template>
+  <template name="T0531Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0531</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carpette carrée Starlight</ToolTipText>
+    </component>
+  </template>
+  <template name="T0532Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0532</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tapisserie Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0532Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0533Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0533</className>
+      <variants childType="components.MovieClipVariant">
+        <T0533_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0533_01</className>
+        </T0533_01>
+        <T0533_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0533_02</className>
+        </T0533_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Commode Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0533Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-19</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0534Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0534</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fenêtre Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0534Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0535Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0535</className>
+      <variants childType="components.MovieClipVariant">
+        <T0535_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0535_01</className>
+        </T0535_01>
+        <!--<T0535_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0535_02</className>
+        </T0535_02>-->
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table Starlight</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-19</depthOffset>
+    </component>
+    <component name="TakeCommand">
+      <template>I0535Template</template>
+    </component>
+  </template>
+  <template name="T0536Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0536</className>
+      <variants childType="components.MovieClipVariant">
+        <T0536_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0536_01</className>
+        </T0536_01>
+      </variants>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I0536Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise Starlight</ToolTipText>
+    </component>
+  </template>
+  <template name="T0537Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0537</className>
+      <variants childType="components.MovieClipVariant">
+        <T0537_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0537_01</className>
+        </T0537_01>
+        <T0537_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0537_02</className>
+        </T0537_02>
+      </variants>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I0537Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canapé Starlight</ToolTipText>
+    </component>
+  </template>
+  <template name="T0538Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0538</className>
+      <variants childType="components.MovieClipVariant">
+        <T0538_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0538_01</className>
+        </T0538_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0538Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0539Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0539</className>
+      <variants childType="components.MovieClipVariant">
+        <T0539_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0539_01</className>
+        </T0539_01>
+        <T0539_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0539_02</className>
+        </T0539_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table de salon Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0539Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0540Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0540</className>
+      <variants childType="components.MovieClipVariant">
+        <T0540_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0540_01</className>
+        </T0540_01>
+        <T0540_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0540_02</className>
+        </T0540_02>
+      </variants>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I0540Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table basse Starlight</ToolTipText>
+    </component>
+  </template>
+  <template name="T0541Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0541</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Paravent Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0541Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+  </template>
+  <template name="T0542Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0542</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampadaire 1 Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0542Template</template>
+    </component>
+  </template>
+  <template name="T0543Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0543</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampadaire 3 Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0543Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0544Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0544</className>
+      <variants childType="components.MovieClipVariant">
+        <T0544_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0544_01</className>
+        </T0544_01>
+      </variants>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I0544Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Télescope Starlight</ToolTipText>
+    </component>
+  </template>
+  <template name="T0545Template" template="PlaceableObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0545</className>
+      <variants childType="components.MovieClipVariant">
+        <T0545_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0545_01</className>
+        </T0545_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Etoile Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0545Template</template>
+    </component>
+    <component name="GridPosition">
+      <isBlocked>false</isBlocked>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0546Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0546</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carpette thème cheval</ToolTipText>
+    </component>
+  </template>
+  <template name="T0547Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0547</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Décoration murale thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0547Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+  </template>
+  <template name="T0548Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0548</className>
+      <variants childType="components.MovieClipVariant">
+        <T0548_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0548_01</className>
+        </T0548_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Commode thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0548Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0549Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0549</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fenêtre thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0549Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0550Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0550</className>
+      <variants childType="components.MovieClipVariant">
+        <T0550_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0550_01</className>
+        </T0550_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0550Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0551Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0551</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0551Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0552Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0552</className>
+      <variants childType="components.MovieClipVariant">
+        <T0552_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0552_01</className>
+        </T0552_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canapé thème cheval</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="TakeCommand">
+      <template>I0552Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0553Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0553</className>
+      <variants childType="components.MovieClipVariant">
+        <T0553_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0553_01</className>
+        </T0553_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0553Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0554Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0554</className>
+      <variants childType="components.MovieClipVariant">
+        <T0554_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0554_01</className>
+        </T0554_01>
+        <T0554_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0554_02</className>
+        </T0554_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table de salon thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0554Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0555Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0555</className>
+      <variants childType="components.MovieClipVariant">
+        <T0555_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0555_01</className>
+        </T0555_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table basse thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0555Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0556Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0556</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Paravent thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0556Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+  </template>
+  <template name="T0557Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0557</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampadaire thème cheval</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0557Template</template>
+    </component>
+  </template>
+  <template name="T0558Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0558</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peinture murale - Bella et Bello</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0558Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0559Template" template="AlignedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0559</className>
+      <variants childType="components.MovieClipVariant">
+        <T0559_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0559_01</className>
+        </T0559_01>
+        <T0559_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0559_02</className>
+        </T0559_02>
+        <T0559_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0559_03</className>
+        </T0559_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fenêtre Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0559Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+  </template>
+  <template name="T0560Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0560</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fenêtre ferme - store floral</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0560Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+  </template>
+  <template name="T0561Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0561</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Paravent Maison de campagne</ToolTipText>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+    <component name="TakeCommand">
+      <template>I0561Template</template>
+    </component>
+  </template>
+  <template name="T0562Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0562</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Porte-serviette - Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0562Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0563Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0563</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tableau Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0563Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0564Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0564</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fenêtre vitrail Starlight</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0564Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0565Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0565</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Paravent Starlight Lunaire</ToolTipText>
+    </component>
+  </template>
+  <template name="T0566Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0566</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Couronne Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0566Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0567Template" template="AlignedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0567</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tableau ferme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0567Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0568Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0568</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carpette Maison de campagne</ToolTipText>
+    </component>
+  </template>
+  <template name="T0569Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0569</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table goûter d'anniversaire</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0569Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0570Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0570</className>
+      <variants childType="components.MovieClipVariant">
+        <T0570_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0570_01</className>
+        </T0570_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0570Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0571Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0571</className>
+      <variants childType="components.MovieClipVariant">
+        <T0571_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0571_01</className>
+        </T0571_01>
+        <T0571_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0571_02</className>
+        </T0571_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canapé Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0571Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0572Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0572</className>
+      <variants childType="components.MovieClipVariant">
+        <T0572_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0572_01</className>
+        </T0572_01>
+        <T0572_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0572_02</className>
+        </T0572_02>
+        <T0572_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0572_03</className>
+        </T0572_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0572Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0573Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0573</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampe Maison de campagne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0573Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!--***************Content Release J Cottage Rooms********************-->
+  <!--CR-M, Plush horse toys - Aisha-->
+  <template name="T0574Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0574</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Allegra </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0574Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0575Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0575</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Chortlebones </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0575Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0576Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0576</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Chromasia </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0576Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0577Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0577</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Kitty </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0577Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0578Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0578</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Kora</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0578Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0579Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0579</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Lavender</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0579Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0580Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0580</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Lilova </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0580Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0581Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0581</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Seraphia </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0581Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0582Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0582</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Sleetmane </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0582Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0583Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0583</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Slyphie </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0583Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0584Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0584</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Venus</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0584Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0585Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0585</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Foxglove </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0585Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0586Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0586</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Bella Salle de Bal</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0586Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0587Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0587</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Violet </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0587Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0588Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0588</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Sunflower </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0588Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0589Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0589</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Bella </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0589Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0590Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0590</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Nike </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0590Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0591Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0591</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Thunder </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0591Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0592Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0592</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Jewel</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0592Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0593Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0593</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Fiona </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0593Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0594Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0594</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Flame </ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0594Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <!--***************CR-M, Plush horse toys - Aisha*********************-->
+  <template name="T0595Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0595</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Peluche Lapins qui s'embrassent</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0595Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0596Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0596</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Trophée Carte promo Kona</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0596Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0597Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0597</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Trophée Carte promo Honora</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0597Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!--***************CR-11A*********************-->
+  <template name="T0603Template" template="PlaceableObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0603</className>
+      <variants childType="components.MovieClipVariant">
+        <T0603_01>
+          <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+          <className>T0603_01</className>
+        </T0603_01>
+        <T0603_04>
+          <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+          <className>T0603_04</className>
+        </T0603_04>
+        <T0603_03>
+          <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+          <className>T0603_03</className>
+        </T0603_03>
+        <T0603_02>
+          <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+          <className>T0603_02</className>
+        </T0603_02>
+      </variants>
+    </component>
+    <component name="TakeCommand">
+      <template>I0603Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Manège</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>5</gridFootX>
+      <gridFootY>5</gridFootY>
+    </component>
+  </template>
+  <!--***************CR-11B*********************-->
+  <template name="T0338Template" template="PlaceableObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0338</className>
+      <variants childType="components.MovieClipVariant">
+        <T0338_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0338_01</className>
+        </T0338_01>
+        <T0338_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0338_02</className>
+        </T0338_02>
+        <T0338_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0338_03</className>
+        </T0338_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table basse moderne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0338Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0340Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0340</className>
+      <variants childType="components.MovieClipVariant">
+        <T0340_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0340_01</className>
+        </T0340_01>
+        <T0340_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0340_02</className>
+        </T0340_02>
+        <T0340_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0340_03</className>
+        </T0340_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise moderne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0340Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0341Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0341</className>
+      <variants childType="components.MovieClipVariant">
+        <T0341_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0341_01</className>
+        </T0341_01>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Paravent moderne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0341Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+  </template>
+  <template name="T0342Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0342</className>
+      <variants childType="components.MovieClipVariant">
+        <T0342_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0342_01</className>
+        </T0342_01>
+        <T0342_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0342_02</className>
+        </T0342_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit moderne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0342Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0343Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0343</className>
+      <variants childType="components.MovieClipVariant">
+        <T0343_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0343_01</className>
+        </T0343_01>
+        <T0343_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0343_02</className>
+        </T0343_02>
+        <T0343_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0343_03</className>
+        </T0343_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Commode moderne</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0343Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0623Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0623</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège dansant Bella</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0623Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0624Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects2.swf</fileName>
+      <className>T0624</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cheval de manège dansant Thunder</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0624Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <!--***************CR-11C*********************-->
+  <template name="T0608Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0608</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Trophée Westro carte promo</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0608Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0609Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0609</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Trophée Eastrin carte promo</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0609Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0673Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0673</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carmina Promo Card Trophy</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0673Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0674Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0674</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>River Promo Card Trophy</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0674Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0611Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0611</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel du Volcan</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0611Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0612Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0612</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel des Nuages</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0612Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0613Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0613</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel de la Colline</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0613Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0614Template" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0614</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Totem Spirituel du Fleuve</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0614Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0615Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0615</className>
+      <variants childType="components.MovieClipVariant">
+        <T0615_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0615_01</className>
+        </T0615_01>
+        <T0615_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0615_02</className>
+        </T0615_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lit à baldaquin rustique</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0615Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0616Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0616</className>
+      <variants childType="components.MovieClipVariant">
+        <T0616_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0616_01</className>
+        </T0616_01>
+        <T0616_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0616_02</className>
+        </T0616_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sofa rustique</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0616Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0617Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0617</className>
+      <variants childType="components.MovieClipVariant">
+        <T0617_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0617_01</className>
+        </T0617_01>
+        <T0617_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0617_02</className>
+        </T0617_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Table de salon rustique</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0617Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0618Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0618</className>
+      <variants childType="components.MovieClipVariant">
+        <T0618_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0618_01</className>
+        </T0618_01>
+        <T0618_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0618_02</className>
+        </T0618_02>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chaise rustique</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0618Template</template>
+    </component>
+    <component name="Isometric">
+      <depthOffset>-40</depthOffset>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0619Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand" />
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+      <className>T0619</className>
+      <variants childType="components.MovieClipVariant">
+        <T0619_01>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0619_01</className>
+        </T0619_01>
+        <T0619_02>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0619_02</className>
+        </T0619_02>
+        <T0619_03>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0619_03</className>
+        </T0619_03>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lampe rustique</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0619Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0620Template" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Porte Magique vers Darkcomb Hedge</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620Template</template>
+      <zoneName>Z015</zoneName>
+      <x>35</x>
+      <y>24</y>
+      <facing>SE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0620bTemplate" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Artisan Way Magic Door</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620b</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620bTemplate</template>
+      <zoneName>Z009</zoneName>
+      <x>21</x>
+      <y>26</y>
+      <facing>SE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0620cTemplate" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Rolandsgaard Castle Magic Door</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620c</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620cTemplate</template>
+      <zoneName>Z002</zoneName>
+      <x>24</x>
+      <y>6</y>
+      <facing>NE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0620dTemplate" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Rose Valley Magic Door</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620d</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620dTemplate</template>
+      <zoneName>Z023</zoneName>
+      <x>13</x>
+      <y>55</y>
+      <facing>NE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0620eTemplate" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Canter Downs Magic Door</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620e</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620eTemplate</template>
+      <zoneName>Z012</zoneName>
+      <x>56</x>
+      <y>41</y>
+      <facing>SE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0620fTemplate" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Overgaard Skylands Magic Door</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620f</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620fTemplate</template>
+      <zoneName>Z013</zoneName>
+      <x>22</x>
+      <y>72</y>
+      <facing>SE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0620gTemplate" template="WarpItemTemplate">
+    <component name="ToolTip">
+      <ToolTipText>Fastalon Riverbank Magic Door</ToolTipText>
+    </component>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0620</className>
+    </component>
+    <component name="ExitTile">
+      <template>I0620gTemplate</template>
+      <zoneName>Z022</zoneName>
+      <x>41</x>
+      <y>29</y>
+      <facing>SE</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <template name="T0621Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0621</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Château Volant Wildscape</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0621Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+  </template>
+  <template name="T0654Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0654</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rolandsgaard Castle Playset</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0654Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+  </template>
+  <template name="T0622Template" template="WarpItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0622</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canter Farms Magic Door</ToolTipText>
+    </component>
+    <component name="ExitTile">
+      <template>I0622Template</template>
+      <zoneName>Z001</zoneName>
+      <x>15</x>
+      <y>14</y>
+      <facing>SW</facing>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+  </template>
+  <!-- 11B ROSSMAN PLUSHES -->
+  <template name="T0300Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0300</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I192Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche Tomtomme</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0301Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0301</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I193Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche  Whiffle Bear</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0308Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0308</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I194Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche  Steam Poppo</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0303Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0303</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I195Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche Lotus Hedgehog</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0304Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0304</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I196Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche  Tassel Mouse</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="T0305Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0305</className>
+    </component>
+    <component name="TakeCommand">
+      <template>I197Template</template>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet en peluche  Starstone Otter</ToolTipText>
+    </component>
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+  <template name="StackingHaystackATemplate" template="StackableObjectTemplate">
+    <component name="MovieClip">
+      <className>flash.display.MovieClip</className>
+    </component>
+    <component name="Name">
+      <name>Stacking Haystack A</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Meule de foin à empiler A</ToolTipText>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component name="Stack">
+      <stackedItems childType="components.StackedItem">
+        <_>
+          <unstackTemplate>IStackingHaystackATemplate</unstackTemplate>
+          <className>StackingHaystackA</className>
+          <fileName>flash/adventures/art/tilesets/vtworldobjects.swf</fileName>
+        </_>
+      </stackedItems>
+    </component>
+  </template>
+  <!-- Chibi Toy Giveaways - Chibi with variant object 
+    <template name="T0625Template" template="RotatedObjectTemplate">
+    <component name="VariantCommand" type="components.commands.VariantCommand"/>
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0625</className>
+      <variants childType="components.MovieClipVariant">
+        <T0625_cube>
+          <fileName>flash/adventures/art/tilesets/cottageobjects1.swf</fileName>
+          <className>T0625_cube</className>
+        </T0625_cube>
+      </variants>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText locId="LOC-TT-T0625">Citrustack Chibi Toy</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0625Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  
+  -->
+  <template name="T0625Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0625</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Citrustack</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0625Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0626Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0626</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Tassel Mouse</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0626Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0627Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0627</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Bunnyfly</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0627Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0628Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0628</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Purrwing Kitty</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0628Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0629Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0629</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Lotus Hedgehog</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0629Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0630Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0630</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Steampoppo</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0630Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0631Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0631</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Ursa Minor</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0631Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0632Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0632</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Valeryk Husky</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0632Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0633Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0633</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Whiffle Bear</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0633Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0634Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0634</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Starstone Otter</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0634Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0635Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0635</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Leolynx</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0635Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0636Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0636</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Tomtomme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0636Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0637Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0637</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Bella</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0637Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0638Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0638</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Thunder</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0638Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0639Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0639</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Mote</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0639Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0640Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0640</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Nike</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0640Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0641Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0641</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Bluebell</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0641Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0642Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0642</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Coral</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0642Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0643Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0643</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Pantheon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0643Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0644Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0644</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Pink Lady</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0644Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0645Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0645</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Fiona</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0645Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0646Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0646</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Jewel</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0646Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0647Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0647</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Sunflower</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0647Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0648Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0648</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Tiara</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0648Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0649Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0649</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Costume sorcière</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0649Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0650Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0650</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Costume fantôme</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0650Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0651Template" template="RotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0651</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Costume citrouille</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0651Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <!-- MAC Chibis-->
+  <template name="T0657Template" template="GiveRotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0657</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Simon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I0657Template</template>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC006Template</item>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0658Template" template="GiveRotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0658</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Ash</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC001Template</item>
+    </component>
+    <component name="TakeCommand">
+      <template>I0658Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+    <component type="components.LogicComponent" name="Logic" />
+  </template>
+  <template name="T0659Template" template="GiveRotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0659</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Snowball</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC005Template</item>
+    </component>
+    <component name="TakeCommand">
+      <template>I0659Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0660Template" template="GiveRotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0660</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Ani</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC002Template</item>
+    </component>
+    <component name="TakeCommand">
+      <template>I0660Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="T0661Template" template="GiveRotatedObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects3.swf</fileName>
+      <className>T0661</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jouet Chibi Flit</ToolTipText>
+    </component>
+    <component name="GiveCommand">
+      <item>IEC003Template</item>
+    </component>
+    <component name="TakeCommand">
+      <template>I0661Template</template>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>1</gridFootX>
+      <gridFootY>1</gridFootY>
+    </component>
+  </template>
+  <template name="M019aTemplate" template="PlaceableObjectTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/npcs/magicalfriends.swf</fileName>
+      <className>M019</className>
+    </component>
+    <component name="Name">
+      <name>Puppy</name>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tan Puppy</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I048aTemplate</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+  </template>
+</things>
