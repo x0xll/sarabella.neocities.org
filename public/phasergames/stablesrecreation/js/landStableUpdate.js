@@ -39,7 +39,7 @@ class LandStable extends Phaser.Scene
         
         game.load.atlas('brush', './images/landStable/brush.png', './images/landStable/brush.json');
         game.load.atlas('brush_small', './images/landStable/brush_small.png', './images/landStable/brush_small.json');
-        game.load.atlas('hoofpick', './images/landStable/hoofpick.png', './images/landStable/hoofpick.json');
+        game.load.atlas('hoofpick', './images/landStable/hoofpick.png', './images/landStable/hoofpick_updated.json');
         
         game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
         game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);

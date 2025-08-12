@@ -49,7 +49,7 @@ class AirStable extends Phaser.Scene
         
         game.load.atlas('brush', './images/airStable/brush.png', './images/airStable/brush.json');
         game.load.atlas('brush_small', './images/airStable/brush_small.png', './images/airStable/brush_small.json');
-        game.load.atlas('hoofpick', './images/airStable/feather_oil.png', './images/airStable/feather_oil.json');
+        game.load.atlas('hoofpick', './images/airStable/feather_oil.png', './images/airStable/feather_oil_updated.json');
         
         game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
         game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);

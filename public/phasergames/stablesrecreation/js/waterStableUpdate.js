@@ -37,8 +37,8 @@ class WaterStable extends Phaser.Scene
         game.load.atlas('water_spinner', './images/waterStable/water_spinner.png', './images/waterStable/water_spinner.json');
         game.load.atlas('water_spinner_holder', './images/waterStable/water_spinner_holder.png', './images/waterStable/water_spinner_holder.json');
         
-        game.load.atlas('brush', './images/waterStable/brush.png', './images/waterStable/brush.json');
-        game.load.atlas('brush_small', './images/waterStable/brush_small.png', './images/waterStable/brush_small.json');
+        game.load.atlas('brush', './images/waterStable/brush.png', './images/waterStable/brush_updated.json');
+        game.load.atlas('brush_small', './images/waterStable/brush_small.png', './images/waterStable/brush_small_updated.json');
         game.load.atlas('hoofpick', './images/waterStable/polisher.png', './images/waterStable/polisher.json');
         game.load.atlas('bubbles1', './images/waterStable/bubbles1.png', './images/waterStable/bubbles1.json');
         game.load.atlas('bubbles2', './images/waterStable/bubbles2.png', './images/waterStable/bubbles2.json');
