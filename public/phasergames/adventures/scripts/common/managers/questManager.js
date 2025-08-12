@@ -31,7 +31,8 @@ const QUEST_ACTIONS =
     ADDHORSESHOES: 9,
     STARTTRIGGER: 10,
     ONTEMPLATECONDITION: 11,
-    TRADETRIGGER: 12
+    TRADETRIGGER: 12,
+    ADDZONEITEMANYWHEREACTION: 13,
 }
 
 const THIN_TEXT_BLACK_SETTINGS = 
@@ -149,6 +150,7 @@ async function initializeQuestDatas(phaserScene)
     // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
 
     // If first time on the game -> we show the first tutorial quests   
+    showQuest(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002110"); // freeplay_v2.xml
     showQuest(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105"); // freeplay_v2.xml
     //showQuest(phaserScene, "ADS-0000001163", "ADV-0000001798", "QUE-0000006273"); // intro_cottage.xml
 }
