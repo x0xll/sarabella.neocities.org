@@ -310,7 +310,7 @@ class WaterStable extends Phaser.Scene
                     'idle'
                 ])
             game.foodTrough.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
+                if (!game.foodTrough.frame.name.includes('feed') && game.handCurrent === game.HAND.empty) {
                     game.foodTrough.play('food_dispense')
                     game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingFood)
                 }
