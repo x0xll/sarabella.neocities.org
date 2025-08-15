@@ -317,19 +317,20 @@ function showQuestJournal(phaserScene)
     phaserScene.questManager.journal.open = true;
     phaserScene.questManager.journal.panelImg.setAlpha(1);
     phaserScene.questManager.journal.closeBtn.setAlpha(1);
-    phaserScene.questManager.journal.questTitle.setAlpha(1);
-    phaserScene.questManager.journal.lookforTxt.setAlpha(1);
-    phaserScene.questManager.journal.lookforDescTxt.setAlpha(1);
-    phaserScene.questManager.journal.locationTxt.setAlpha(1);
-    phaserScene.questManager.journal.locationDescTxt.setAlpha(1);
-    phaserScene.questManager.journal.goalTxt.setAlpha(1);
-    phaserScene.questManager.journal.goalDescTxt.setAlpha(1);
-    phaserScene.questManager.journal.questIcon.setAlpha(1);
 
     if (phaserScene.questManager.activeQuests !== undefined && phaserScene.questManager.activeQuests.length > 0)
     {
+        // We default on the first quest, if it isn't possible to show it (ie: waiting state + no trigger)
+        // Then we try the next one until we either have one or nothing
         let firstQuest = phaserScene.questManager.activeQuests[0];
-        selectCurrentQuestForDetails(phaserScene, firstQuest.fileID, firstQuest.adventureID, firstQuest.questID);
+        let isShowable = false;
+        for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+        {
+            firstQuest = phaserScene.questManager.activeQuests[i];
+            let isShowable = selectCurrentQuestForDetails(phaserScene, firstQuest.fileID, firstQuest.adventureID, firstQuest.questID);
+            if (isShowable)
+                break;
+        }
     }
 }
 
@@ -352,12 +353,24 @@ function selectCurrentQuestForDetails(phaserScene, globalID, adventureID, questI
 {
     let quest = getQuestPerID(phaserScene, globalID, adventureID, questID);
 
-    if (quest === undefined) return;
+    if (quest.target.id === undefined && quest.status == QUEST_STATES.WAITING) return false;
+
+    if (quest === undefined) return false;
+
+    phaserScene.questManager.journal.questTitle.setAlpha(1);
+    phaserScene.questManager.journal.lookforTxt.setAlpha(1);
+    phaserScene.questManager.journal.lookforDescTxt.setAlpha(1);
+    phaserScene.questManager.journal.locationTxt.setAlpha(1);
+    phaserScene.questManager.journal.locationDescTxt.setAlpha(1);
+    phaserScene.questManager.journal.goalTxt.setAlpha(1);
+    phaserScene.questManager.journal.goalDescTxt.setAlpha(1);
+    phaserScene.questManager.journal.questIcon.setAlpha(1);
 
     phaserScene.questManager.journal.questTitle.setText(getAdventurePerID(phaserScene, globalID, adventureID).description);
     phaserScene.questManager.journal.lookforDescTxt.setText(""); // TODO: find where we get
     phaserScene.questManager.journal.locationDescTxt.setText(""); // TODO: find where we get
     phaserScene.questManager.journal.goalDescTxt.setText(quest.description);
     //phaserScene.questManager.journal.questIcon.setTexture(); // TODO: find where we get
+    return true;
 }
 //------- END QUEST JOURNAL UI -------

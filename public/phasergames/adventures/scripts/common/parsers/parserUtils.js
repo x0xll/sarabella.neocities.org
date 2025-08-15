@@ -106,8 +106,8 @@ function parseQuestXML(xmlObj)
                     description : quest.childNodes[0].nextElementSibling.innerHTML,
                     status : QUEST_STATES.UNAVAILABLE,
                     target: {
-                        id: "",
-                        zone: "",
+                        id: undefined,
+                        zone: undefined,
                         showIcon: true // Whether we show the exclamation point or not, don't know if necessary yet
                     },
                     lines : []
