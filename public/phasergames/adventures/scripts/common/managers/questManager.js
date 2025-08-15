@@ -113,6 +113,35 @@ function getQuestStatus(phaserScene, globalID, adventureID, questID, status)
 
 //------- END QUEST HELPER -------
 
+//------- QUEST TRIGGERS -------
+function tryTriggerQuest(phaserScene, xPos, yPos)
+{
+    for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+    {
+        let questGlobalData = phaserScene.questManager.activeQuests[i];
+        let triggerData = questGlobalData.questData.lines[0].trigger;
+
+        if (triggerData.zone != undefined && 
+            triggerData.zone == phaserScene.ZONE_ID)
+        {
+            // TODO: need to modify to be a circle check based on radius
+            if (parseInt(triggerData.centerX) - parseInt(triggerData.radius) <= xPos && 
+                parseInt(triggerData.centerX) + parseInt(triggerData.radius) >= xPos &&
+                parseInt(triggerData.centerY) - parseInt(triggerData.radius) <= yPos && 
+                parseInt(triggerData.centerY) + parseInt(triggerData.radius) >= yPos)
+                {
+                    startQuest(phaserScene, questGlobalData.fileID, questGlobalData.adventureID, questGlobalData.questID);
+                    return true;
+                }
+
+            console.log("Hello");
+        }  
+    }
+
+    return false;
+}
+//------- END QUEST TRIGGERS -------
+
 //------- QUEST MECHANIC -------
 async function initializeQuestDatas(phaserScene)
 {

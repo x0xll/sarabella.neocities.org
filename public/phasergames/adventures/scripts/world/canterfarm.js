@@ -11,6 +11,7 @@ class World_CanterFarm extends Phaser.Scene
 
         // Global datas of the scene
         game.AREA_NAME = "CanterFarms";
+        game.ZONE_ID = "Z001";
 
         // Dictionary of the loaded sprites so we only ask it to load each once, depending on the needs
         game.sceneVisuals = {};
@@ -31,7 +32,7 @@ class World_CanterFarm extends Phaser.Scene
             // TODO
             // Temporarily using a modified zone test file because some tiles seems to be able to have multiple grounds and/or skins..
             // We will need to understand how those are supposed to work before being able to reuse the original file
-            const ZONE_XML_NAME = ZONE_XML_PATH + "Z001.xml"; 
+            const ZONE_XML_NAME = ZONE_XML_PATH + game.ZONE_ID + ".xml"; 
             var zoneObj = await loadXML(ZONE_XML_NAME);
             game.zoneParsed = parseZoneXML(zoneObj);
         }

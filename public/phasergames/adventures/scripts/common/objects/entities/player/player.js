@@ -125,6 +125,13 @@ class Player
             // Start moving player towards the target
             this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
             // TODO: Change player animation (walk, need animated sprite first)
+
+            // Check if we are in a quest trigger -> if so, we stop the movement and start the quest
+            if (tryTriggerQuest(this.phaserScene, this.target.x, this.target.y))
+            {
+                this.pathList.length = 0;
+                this.pathIndex = 0;
+            }
         }
         this.checkIfReachedDestination()
     }
