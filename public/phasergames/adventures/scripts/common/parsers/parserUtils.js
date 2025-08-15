@@ -83,6 +83,81 @@ function parseQuestXML(xmlObj)
 
     var result = [];
 
+    function parseActions(obj, currentData)
+    {
+        switch(obj.attributes[0].value)
+        {
+            case "questData.DialogueAction":
+                var data = {
+                    type: QUEST_ACTIONS.DIALOGUE,
+                    text: obj.childNodes[0].nextElementSibling.innerHTML
+                }
+
+                currentData.actions.push(data);
+                break;
+            case "questData.AddMultipleInventoryAction":
+                var data = {
+                    type: QUEST_ACTIONS.ADDINVENTORY,
+                    itemID: obj.childNodes[0].nextElementSibling.innerHTML,
+                    count: parseInt(obj.childNodes[1].nextElementSibling.innerHTML)
+                }
+
+                currentData.actions.push(data);
+                break;
+            case "questData.AddQuestAction":
+                var data = {
+                    type: QUEST_ACTIONS.NEXTQUEST,
+                    questID: obj.childNodes[0].nextElementSibling.innerHTML             
+                }
+                currentData.actions.push(data);
+                break;
+            case "questData.RemoveQuestAction":
+                var data = {
+                    type: QUEST_ACTIONS.REMOVEQUEST
+                }
+                currentData.actions.push(data);
+            case "questData.TalkQuestTrigger":
+
+                var id = obj.querySelectorAll("identifier");
+                var primary = obj.querySelectorAll("isPrimary");
+
+                var trigger = 
+                {
+                    id: undefined,
+                    isPrimary: undefined
+                }
+
+                if (id.length > 0)
+                    trigger.id = id[0].innerHTML;
+                if (primary.length > 0)
+                    trigger.isPrimary = primary[0].innerHTML;
+
+                currentData.trigger = trigger
+                break;
+            case "questData.AddZoneItemAnywhereAction":
+                var data = {
+                    type: QUEST_ACTIONS.ADDZONEITEMANYWHEREACTION,
+                    template: obj.childNodes[0].nextElementSibling.innerHTML,
+                    instanceID: obj.childNodes[1].nextElementSibling.innerHTML,
+                    zone: obj.childNodes[2].nextElementSibling.innerHTML,
+                    xPos: obj.childNodes[3].nextElementSibling.innerHTML,
+                    yPos: obj.childNodes[4].nextElementSibling.innerHTML
+                }
+                currentData.actions.push(data);
+                break;
+            case "questData.StopNearTrigger":
+                currentData.trigger = {
+                    type: QUEST_ACTIONS.STOPNEARTRIGGER,
+                    zone: obj.childNodes[0].nextElementSibling.innerHTML,
+                    centerX: obj.childNodes[1].nextElementSibling.innerHTML,
+                    centerY: obj.childNodes[2].nextElementSibling.innerHTML,
+                    radius: obj.childNodes[3].nextElementSibling.innerHTML
+                }
+
+                break;
+        }
+    }
+
     // Get global file datas
     xmlObj.querySelectorAll("adventures").forEach(adventures => {
         var globalQuestObj = 
@@ -137,81 +212,14 @@ function parseQuestXML(xmlObj)
                     }
 
                     questObj.lines.push(lineObj);
-
                     quest.querySelectorAll("object").forEach(action => {
-                        switch(action.attributes[0].value)
-                        {
-                            case "questData.DialogueAction":
-                                var data = {
-                                    type: QUEST_ACTIONS.DIALOGUE,
-                                    text: action.childNodes[0].nextElementSibling.innerHTML
-                                }
-
-                                lineObj.actions.push(data);
-                                break;
-                            case "questData.AddMultipleInventoryAction":
-                                var data = {
-                                    type: QUEST_ACTIONS.ADDINVENTORY,
-                                    itemID: action.childNodes[0].nextElementSibling.innerHTML,
-                                    count: parseInt(action.childNodes[1].nextElementSibling.innerHTML)
-                                }
-
-                                lineObj.actions.push(data);
-                                break;
-                            case "questData.AddQuestAction":
-                                var data = {
-                                    type: QUEST_ACTIONS.NEXTQUEST,
-                                    questID: action.childNodes[0].nextElementSibling.innerHTML             
-                                }
-                                lineObj.actions.push(data);
-                                break;
-                            case "questData.RemoveQuestAction":
-                                var data = {
-                                    type: QUEST_ACTIONS.REMOVEQUEST
-                                }
-                                lineObj.actions.push(data);
-                            case "questData.TalkQuestTrigger":
-
-                                var id = action.querySelectorAll("identifier");
-                                var primary = action.querySelectorAll("isPrimary");
-
-                                var trigger = 
-                                {
-                                    id: undefined,
-                                    isPrimary: undefined
-                                }
-
-                                if (id.length > 0)
-                                    trigger.id = id[0].innerHTML;
-                                if (primary.length > 0)
-                                    trigger.isPrimary = primary[0].innerHTML;
-
-                                lineObj.trigger = trigger
-                                break;
-                            case "questData.AddZoneItemAnywhereAction":
-                                var data = {
-                                    type: QUEST_ACTIONS.ADDZONEITEMANYWHEREACTION,
-                                    template: action.childNodes[0].nextElementSibling.innerHTML,
-                                    instanceID: action.childNodes[1].nextElementSibling.innerHTML,
-                                    zone: action.childNodes[2].nextElementSibling.innerHTML,
-                                    xPos: action.childNodes[3].nextElementSibling.innerHTML,
-                                    yPos: action.childNodes[4].nextElementSibling.innerHTML
-                                }
-                                lineObj.actions.push(data);
-                                break;
-                                // TODO: separate into a trigger then object check instead
-                            case "questData.StopNearTrigger":
-                                lineObj.trigger = {
-                                    type: QUEST_ACTIONS.STOPNEARTRIGGER,
-                                    zone: action.childNodes[0].nextElementSibling.innerHTML,
-                                    centerX: action.childNodes[1].nextElementSibling.innerHTML,
-                                    centerY: action.childNodes[2].nextElementSibling.innerHTML,
-                                    radius: action.childNodes[3].nextElementSibling.innerHTML
-                                }
-
-                                break;
-                        }
-                    })
+                        parseActions(action, lineObj)
+                    });
+                    quest.querySelectorAll("trigger").forEach(trigger => {
+                        trigger.querySelectorAll("object").forEach(action => {
+                            parseActions(action, lineObj)
+                        });
+                    });
                 })
             });
         });
