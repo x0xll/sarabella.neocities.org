@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bs_firelightsfestival timerJump="false">
+	<!-- ======================================================================================================================================================= -->
+	<intro>
+		<text _x="-160" _y="-130" _width="335" selectable="0"><![CDATA[<p class="intro_1">Benvenuto al</p>]]></text>
+		<text _x="-190" _y="-18" _width="397" selectable="0"><![CDATA[<p class="intro_2">Festival dei Fuochi d’Artificio</p>]]></text>
+		<play_btn>
+			<label _x="30" _y="8" _width="135" selectable="0"><![CDATA[<p class="intro_btn_1">Gioca</p>]]></label>
+		</play_btn>
+	</intro>
+	<!-- ======================================================================================================================================================= -->
+	<help>
+		<instruct>
+			<text _x="0" _y="20" _width="450" selectable="0"><![CDATA[<p class="help_instruct_1">Un gioco emozionante che finisce con il &#13;TUO personale spettacolo di fuochi d’artificio!</p>]]></text>
+			<text _x="25" _y="75" _width="400" selectable="0"><![CDATA[<p class="help_instruct_1">Come giocare:&#13;Clicca sulle girandole per scoprire e raccogliere più fuochi d’artificio possibili. Più ne raccogli, più sarà grandioso il tuo spettacolo! Una volta che il sole tramonta, il tempo sarà finito e il tuo spettacolo comincerà.&#13;Buona fortuna!</p>]]></text>
+		</instruct>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Il contatore mostra quanti fuochi d’artificio ci sono in ogni tubo</p>]]></text>
+		</tip>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Clicca sui fuochi d’artificio o usa la barra spaziatrice per includerli nel tuo spettacolo</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Le girandole gireranno sullo schermo</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Puoi rimuovere solo i fuochi d’artificio che sono del tutto scoperti</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Quando il sole tramonta lo spettacolo comincerà!</p>]]></text>
+		</tip>
+		<begin_btn>
+			<label _x="-60" _y="-15" _width="125" selectable="0"><![CDATA[<p class="begin_btn_1">Inizia</p>]]></label>
+		</begin_btn>		
+	</help>
+	<!-- ======================================================================================================================================================= -->
+	<ui>
+		<pause_btn>
+			<label _x="-45" _y="-12" _width="90" selectable="0"><![CDATA[<p class="pause_btn">Pausa</p>]]></label>			
+		</pause_btn>
+	</ui>
+	<!-- ======================================================================================================================================================= -->
+	<pause_screen>
+		<text _x="0" _y="0" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Festival dei Fuochi d’Artificio</p>]]></text>
+		<text _x="0" _y="0" _width="350" selectable="0"><![CDATA[<p class="pause_screen_2">Il gioco è in pausa</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Continua</p>]]></label>
+		</continue_btn>
+	</pause_screen>
+	<!-- ======================================================================================================================================================= -->
+	<end_screen>
+		<text _x="0" _y="10" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Festival dei Fuochi d’Artificio</p>]]></text>
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_1">Hai Vinto</p>]]></text>		
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_2">Il tuo Punteggio</p>]]></text>
+		<text _x="20" _y="0" _width="400" selectable="0"><![CDATA[<p class="end_screen_3">Ottimo lavoro!&#13;Clicca il tasto qui sotto quando sei pronto per guardare il tuo spettacolo.&#13;Divertiti!</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Continua</p>]]></label>
+		</continue_btn>		
+	</end_screen>
+	<!-- ======================================================================================================================================================= -->
+</bs_firelightsfestival>

@@ -1,0 +1,19 @@
+{
+    "start_game": "Gioca",
+    "start": "INIZIA!",
+    "score": "PUNTEGGIO",
+    "time": "TEMPO",
+    "time_bonus": "Bonus Tempo",
+    "gem_bonus": "Bonus Gemme",
+    "level_score": "Punteggio Livello",
+    "points": "P.ti",
+    "succeed_title": "Ottimo lavoro",
+    "succeed_level_select": "Continua con il Prossimo Livello!",
+    "fail_title": "Buon tentativo.",
+    "fail_level_select": "Non sei stato abbastanza veloce. Prova ancora!",
+    "levels":"Completa i Livelli per Sbloccare Fiona, Jewel e Thunder!",
+    "level_one": "Livello Uno",
+    "level_two": "Livello Due",
+    "level_three": "Livello Tre",
+    "level_four": "Livello Quattro"
+}

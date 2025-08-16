@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+    <won>OTTIMO LAVORO!</won>
+    
+    <help>AIUTO!!</help>
+
+    <back>Indietro</back>
+    
+    <diff>DIFFICOLTÀ</diff>
+    <easiest>Più facile</easiest>
+    <easier>Facile</easier>
+    <harder>Difficile</harder>
+    <hardest>Più difficile</hardest>
+
+    <solve>Risolvi Puzzle</solve>
+    <preview>Anteprima</preview>
+    <edges>Solo Bordi</edges>
+    <move>Muovi Pezzi</move>
+
+    <retry>Prova un altro puzzle o torna indietro per giocare ad altri giochi su Bella Sara.</retry>
+</root>

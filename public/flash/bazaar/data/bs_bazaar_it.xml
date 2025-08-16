@@ -1,0 +1,27 @@
+<Bazaar>
+    <BuiltInTexts>
+        <Texts>
+            <Text id="txtBuyIt">
+                <a>Compralo</a>
+            </Text>
+            <Text id="txtExitTent">
+                <a>Esci dalla tenda</a>
+            </Text>
+            <Text id="txtPurchasing">
+                <a>Acquisto in corso...</a>
+            </Text>
+            <Text id="txtOk">
+                <a>OK</a>
+            </Text>
+            <Text id="txtTheObjectHasBeenAddedTo">
+                <a>L’oggetto è stato aggiunto a </a>
+            </Text>
+            <Text id="txtMyThings">
+                <a>I Miei Oggetti.</a>
+            </Text>
+            <Text id="txtCouldNotPurchase">
+                <a>Non è possibile acquistare questo oggetto.</a>
+            </Text>
+        </Texts>
+    </BuiltInTexts>
+</Bazaar>

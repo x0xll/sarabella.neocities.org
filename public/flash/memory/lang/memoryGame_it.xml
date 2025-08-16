@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Gioco di Memoria</gameTitle>
+
+    <rules1>Dietro i quadrati qui a destra ci sono 8 cavalli differenti. Lo stesso cavallo si troverà dietro due quadrati diversi.</rules1>
+    <rules2>Trova tutte le coppie per finire il gioco.</rule2>
+    <rules3>Se ci riesci prima che il tempo scada, hai vinto...</rules3>
+
+    <easy>Facile</easy>
+    <medium>Normale</easy>
+    <hard>Difficile</hard>
+    
+    <start>Inizia</start>
+    <seconds>sec.</seconds>
+
+    <congrats>Congratulazioni - hai vinto il gioco</congrats>
+    <retry>--&gt; Gioca di nuovo &lt;--</retry>
+    <lost>Peccato - non sei stato abbastanza veloce</lost>
+</root>

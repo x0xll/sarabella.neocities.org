@@ -1,0 +1,18 @@
+&intro=<html><b>INTRODUZIONE</b>
+<p><b>Nessuno sa</b> per quanto tempo i cavalli hanno vissuto nella terra del Nord di Nord--forse per qualche migliaio di anni, forse di più.</p>
+<p>Quello che sappiamo è che il Nord di Nord ospita le razze di cavalli più inusuali e magiche che ci siano. Alcuni dicono che ci sia un cavallo differente per ogni bambino al mondo, e ognuno di essi è unico.</p></html>
+
+
+&land_story=<html><b>I CAVALLI TERRESTRI</b>
+<p><b>I cavalli terrestri del Nord di Nord</b> sono stupefacenti nella loro varietà e bellezza. Troverai tutte le tue razze preferite, dai piccoli Falabella agli enormi Clydesdale—sebbene alcuni dei loro colori potrebbero sorprenderti. Gli unicorni, ora rari da qualsiasi altra parte, vagano per le foreste qui. Altre razze peculiari, come gli spettacolari cavalli dalle code di pavone, vivono solo nel Nord di Nord.</p>
+<p>Di tutti i cavalli del Nord di Nord, i cavalli terrestri sono i più amichevoli con gli umani. A molti di loro piace vivere nelle scuderie a contatto con le persone. Alcuni di quelli più selvaggi preferiscono dormire sotto le stelle o dividere una grotta con il proprio branco. Ma non gli dispiacerà se gli fai visita—soprattutto se hai in tasca una mela!</p></html>
+
+&air_story=<html><b>I CAVALLI ALATI</b>
+<p><b>Di cavalli alati</b> esistono più di 30 razze, e la maggior parte di loro vivono nel Nord di Nord. Il clima qui è perfetto per loro: tanto sole, venti miti, e temperature piacevoli.</p>
+<p>Ovunque tu vada nel Nord di Nord, vedrai di certo stormi di cavalli alati. Alcune razze selvagge cercano degli alberi alti dove fare il loro nido di rami e foglie. Altri si appollaiano nei crepacci lungo le alte, rocciose scogliere sopra l’oceano. Alcune razze più raffinate, come i purosangue alati, preferiscono fare i loro nidi in case di legno. Le loro case penzolano dai rami o siedono su delle colonne intagliate che superano i 15 metri di altezza!</p></html>
+
+&water_story=<html><b>I CAVALLI MARINI</b>
+<p><b>Gli oceani puliti e prosperosi</b> del Nord di Nord offrono ricchi habitat per tante razze di cavalli acquatici. Baccelli di cavalli delfini, per esempio, sono facili da avvistare nei mari poco profondi vicino la costa. Altri, come i cavallucci marini e i cavalli-drago marini, preferiscono vivere in acque più profonde dove possono rifugiarsi in fitte foreste di alghe.</p>
+<p>Anche tanti cavalli d’acqua dolce vivono qui. Aspetta silenziosamente nei pressi di qualsiasi lago e potresti avvistare uno dei timidi cavalli dalla criniera verde che nuotano vicino la riva. Fiumi e ruscelli sono le case dei kelpie, che possono anche camminare sulla terraferma per brevi periodi di tempo. E se sei abbastanza fortunato da trovare una sorgente naturale, potresti persino incontrare una rara melusina!</p></html>
+
+&conclusion=<html><p><b>Alcuni dei cavalli</b> nel Nord di Nord sembrerebbero esattamente uguali a quelli del nostro mondo, dunque a prima vista potresti non notare alcuna differenza.</p><p>Ma se incontrerai un cavallo del Nord di Nord, lo saprai nel tuo cuore, perché avvertirai la sua magia.</p></html>
