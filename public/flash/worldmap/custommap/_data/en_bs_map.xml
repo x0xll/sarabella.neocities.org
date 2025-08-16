@@ -42,7 +42,7 @@
 			<scroll floatUp="0">
 				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Recovered Games</p>]]></label>	
 			</scroll>
-      <menu itemSpacing="0" _x="65" _y="-90" floatRight="10">
+      <menu itemSpacing="0" _x="65" _y="-130" floatRight="10">
         <item link="/phasergames/citrustacked/index.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Art Studio</p>]]></label>
         </item>
@@ -53,13 +53,7 @@
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">CloudJumper</p>]]></label>	
 				</item>
 				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Coloring Game (Fiona)</p>]]></label>	
-				</item>
-				<item link="/flash/lanceriding/lanceriding.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Dream Rider</p>]]></label>	
-				</item>
-				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Puzzles</p>]]></label>	
 				</item>
 				<item link="/flash/lanceriding/lanceriding.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Spectacular Jumping Game</p>]]></label>	
@@ -67,17 +61,6 @@
 				<item link="/flash/lanceriding/lanceriding.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Treasure's Hunt</p>]]></label>	
 				</item>
-				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Memory Game</p>]]></label>	
-				</item>
-				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Quiz Game</p>]]></label>	
-				</item>
-				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Baby Bella</p>]]></label>	
-				</item>
-				<item link="/flash/lanceriding/lanceriding.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Old Map</p>]]></label>	
 				</item>
 				<item link="/flash/lanceriding/lanceriding.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">New Map</p>]]></label>	
@@ -120,57 +103,29 @@
         <item link="https://bellasara.wiki.gg/wiki/Marvelous_Magic_Match">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Marvelous Magic Match</p>]]></label>
         </item>
-        <item link="/flash/treasureshunt/treasureshunt.html">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Treasure's Hunt</p>]]></label>
-        </item>
-        <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Wheel of Wonders</p>]]></label>
-        </item>
-			</menu>
-		</location>
-		<!-- ==== -->		
-		<location _x="0" _y="0">
-			<scroll floatUp="0">
-				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Ranch</p>]]></label>	
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Old Recovered Games</p>]]></label>	
 			</scroll>
-      <menu itemSpacing="0" _x="30" _y="-40" floatDown="10">
-        <item link="/flash/cottage/cottage.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">My Cottage</p>]]></label>	
+      <menu itemSpacing="0" _x="80" _y="-100" floatRight="10">
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Coloring Game (Fiona)</p>]]></label>	
 				</item>
-        <item link="/flash/foal/index.html">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">My Horse</p>]]></label>
-        </item>
-        <item link="/phasergames/stablesrecreation/index.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bella Sara Horses</p>]]></label>	
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Puzzles</p>]]></label>	
 				</item>
-				<item link="https://bellasara.wiki.gg/wiki/My_Awards">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">My Awards</p>]]></label>	
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Memory Game</p>]]></label>	
 				</item>
-			</menu>
-		</location>
-		<!-- ==== -->	
-		<location _x="0" _y="0">
-			<scroll floatUp="0">
-				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Bazaar</p>]]></label>	
-			</scroll>
-
-      <menu itemSpacing="0" _x="40" _y="-35" floatRight="10">
-        <item link="https://bellasara.wiki.gg/wiki/Bazaar_Tent">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bazaar Tent</p>]]></label>
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Quiz Game</p>]]></label>	
+				</item>
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Baby Bella</p>]]></label>	
+				</item>
+				<item link="/flash/lanceriding/lanceriding.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Old Map</p>]]></label>	
 				</item>
 			</menu>
 		</location>
-    <!-- === -->
-    <location _x="0" _y="0">
-      <scroll floatUp="0">
-        <label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Bella Sara Adventures</p>]]></label>
-      </scroll>
-      <menu itemSpacing="0" _y="-40" _x="80" floatRight="10">
-        <item link="https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures">
-          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bella Sara Adventures</p>]]></label>
-        </item>
-      </menu>
-    </location>
     <!-- === -->
   </locations>
   <!-- ======================================================================================================================================================= -->
