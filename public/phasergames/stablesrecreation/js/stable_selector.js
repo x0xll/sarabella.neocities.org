@@ -54,6 +54,7 @@ const horses = [
     'vesta',
     'virstan',
     'wavebreaker',
+    'zephan',
     'zombie'
 ]
 // Array of length 10 to keep track of which horses are displayed on the current page
