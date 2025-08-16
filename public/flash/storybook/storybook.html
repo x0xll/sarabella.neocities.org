@@ -11,13 +11,7 @@
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
-
-        <div class="alert">
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n="storybook_warning">This game seems to be unable to turn off sounds when going to the next page in the book and
-           does not always play the videos as expected.</p>
-        </div> 
-        
+                
         <script>
           window.RufflePlayer = {
             config: {
@@ -42,8 +36,8 @@
         <script>
           loadLanguagePref(false); 
           var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./lang/book_headings_${locale}.xml`) ||
-              !isLocalizedFileExisting(`./lang/chap1_stories_${locale}.xml`))
+          if (!isLocalizedFileExisting(`./lang/book_headings_${locale}.txt`) ||
+              !isLocalizedFileExisting(`./lang/chap1_stories_${locale}.txt`))
             locale = "en";
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
