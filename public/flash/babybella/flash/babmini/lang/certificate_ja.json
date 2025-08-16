@@ -1,0 +1,43 @@
+{
+    "title": "出生証明書",
+    "name": "名前:",
+    "birtDate": "生年月日:",
+    "birthPlace": "出生地:",
+    "mother": "母:",
+    "father": "父",
+
+    "bellisimo_name": "ベリッシモ",
+    "bellisimo_birtDate": "九月二十五日",
+    "bellisimo_birthPlace": "ノースオブノース",
+    "bellisimo_mother": "ベラ",
+    "bellisimo_fater": "ベロ",
+    "bellisimo_quote": "自分を信じれば、どう生きるべきかがわかります。",
+
+    "cirra_name": "シーラ",
+    "cirra_birtDate": "九月十二日2",
+    "cirra_birthPlace": "ノースオブノース",
+    "cirra_mother": "アネモネ",
+    "cirra_fater": "ウラノス",
+    "cirra_quote": "友達の中にある美しさを見ます。",
+
+    "petal_name": "ペタル",
+    "petal_birtDate": "九月四日",
+    "petal_birthPlace": "ノースオブノース",
+    "petal_mother": "ローズブライアー",
+    "petal_fater": "ベラん",
+    "petal_quote": "誰かのために優しいサプライズをを計画します。",
+
+    "belissa_name": "ベリッサ",
+    "belissa_birtDate": "十一月六日",
+    "belissa_birthPlace": "ノースオブノース",
+    "belissa_mother": "ベラ",
+    "belissa_fater": "ベロ",
+    "belissa_quote": "なりたい人をなります。その道で喜びを見つけるだろう。",
+
+    "janie_name": "ジャニー",
+    "janie_birtDate": "九月十八日",
+    "janie_birthPlace": "ノースオブノース",
+    "janie_mother": "オンディーヌ",
+    "janie_fater": "フリッパー",
+    "janie_quote": "昨日から学び、今日を楽しみ、明日を想像する。"
+}
