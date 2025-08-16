@@ -6,10 +6,11 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
-        <script src="./js/loadScreen.js"></script> 
-        <script src="./js/landStable.js"></script> 
-        <script src="./js/airStable.js"></script> 
-        <script src="./js/waterStable.js"></script> 
+        <script src="./js/stablesCommon.js"></script> 
+        <script src="./js/loadScreenUpdate.js"></script> 
+        <script src="./js/landStableUpdate.js"></script> 
+        <script src="./js/airStableUpdate.js"></script> 
+        <script src="./js/waterStableUpdate.js"></script> 
         <style type="text/css">
             body {
                 margin: 0;
@@ -31,7 +32,7 @@
                 horseName = urlParameters.get('name')
                 locale = getCurrentLanguageCode()
                 let localeData
-                let englishDatas
+                let englishData
 
                 function urlExists(url)
                 {
