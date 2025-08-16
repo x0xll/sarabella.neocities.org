@@ -13,6 +13,7 @@ const DATA_TYPE_CREATIONS = "creations";
 const DATA_TYPE_SETTINGS_TRANSLATEDQUOTES = "settings_tdqt";
 const DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS = "settings_tdog";
 const DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR = "settings_hsmul";
+const DATA_TYPE_SETTINGS_MAPPLAYPAGE = "settings_mpp";
 
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
@@ -370,6 +371,7 @@ function saveData(dataType, userData, gameID = "")
         case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
         case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
         case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
+        case DATA_TYPE_SETTINGS_MAPPLAYPAGE: savedData.playpage = userData.checked; break;
     } 
 
     localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedData));
@@ -395,6 +397,8 @@ function loadData(dataType, gameID = "")
                 return false;
             case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
                 return true;
+            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
+                return false;
             case DATA_TYPE_HORSESHOES:
                 return 10000;
             case DATA_TYPE_HIGHSCORE:
@@ -445,6 +449,10 @@ function loadData(dataType, gameID = "")
             if (savedData.horseshoesmul === undefined)
                 return 1;
             return (savedData.horseshoesmul) ? 100 : 1;
+        case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
+            if (savedData.playpage === undefined)
+                return false;
+            return savedData.playpage;
         case DATA_TYPE_HORSESHOES:
             if (savedData.horseshoes === undefined)
                 return 0;
@@ -462,6 +470,8 @@ function loadSettings()
     horseshoemultiplicator.checked = (loadData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR) == 1 ? false : true);
     translatedquotes = document.getElementById("translatedquotes");
     translatedquotes.checked = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
+    mapplaypage = document.getElementById("mapplaypage");
+    mapplaypage.checked = loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE);
 }
 
 function addHorseshoes(amountAdded)
@@ -598,5 +608,10 @@ function setCurrentUsername()
     {
         currentUser = localStorage.getItem(CURRENT_USER_KEY)
     }
+}
+
+function isGuest()
+{
+    return getCurrentUsername() === "guest";
 }
 //------- END HELPERS -------
