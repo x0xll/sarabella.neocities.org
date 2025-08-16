@@ -214,8 +214,7 @@ class LandStable extends Phaser.Scene
 
         // Food Trough
         if (horseData.height === 'short') {
-            // TODO: still need to position this
-            game.foodTrough = game.add.sprite(104, 303, 'food_trough_small', 0).setInteractive({ pixelPerfect: true });
+            game.foodTrough = game.add.sprite(142, 258, 'food_trough_small', 0).setInteractive({ pixelPerfect: true });
         } else {
             game.foodTrough = game.add.sprite(104, 303, 'food_trough', 0).setInteractive({ pixelPerfect: true });
         }
@@ -245,7 +244,7 @@ class LandStable extends Phaser.Scene
         // Horse hit box
         if (horseData.height === 'short') {
             //TODO: still need to size this
-            game.stablesManager.createHorseHitbox(230, 100, 356, 256)
+            game.stablesManager.createHorseHitbox(230, 180, 267, 192, () => {}, -30, 0)
         } else {
             game.stablesManager.createHorseHitbox(230, 100, 356, 256)
         }
@@ -271,7 +270,11 @@ class LandStable extends Phaser.Scene
 
 
         // Horse
-        game.stablesManager.createHorse(418, 295, 90)
+        if (horseData.height === 'short') {
+            game.stablesManager.createHorse(398, 330, 90, .75)
+        } else {
+            game.stablesManager.createHorse(418, 295, 90)
+        }
 
 
         // Pitchfork
@@ -428,9 +431,8 @@ class LandStable extends Phaser.Scene
         let hooves1
         let hooves2
         if (horseData.height === 'short') {
-            // TODO: Still need to postition these
-            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+            hooves1 = game.add.sprite(323, 442, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+            hooves2 = game.add.sprite(485, 438, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
         } else {
             hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
             hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);

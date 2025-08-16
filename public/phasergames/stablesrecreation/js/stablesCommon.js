@@ -194,13 +194,13 @@ class StablesManager {
         })
     }
 
-    createHorse(x, y, angle) {
+    createHorse(x, y, angle, scale = 1) {
             const game = this.#game
-            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle);
+            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale);
             game.horse.animationState.setAnimation(0, "idle", false)
-            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle);
+            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle).setScale(scale);
             game.horseDirty.animationState.setAnimation(0, "idle", false)
-            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle);
+            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale);
             game.horseOverlay.animationState.setAnimation(0, "idle", false)
             
             this.#addConstantAnimation()
