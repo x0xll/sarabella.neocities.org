@@ -159,6 +159,7 @@ class StablesManager {
         this.#game.horseAnimationQueue = []
         this.#game.statBoxBusy = false
         this.#game.statBoxQueue = []
+        this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
     }
 
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
@@ -311,18 +312,15 @@ class StablesManager {
         const gotoWorldBg = this.#game.add.image(x, y, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(scaleX, scaleY);
         const gotoWorldTxt = this.#game.add.text(x, y, 'Static Text Object', settings).setAlpha(0).setOrigin(.5, .5);
         gotoWorldTxt.text = localeData.txtToWorld;
-        gotoWorldBg.on('pointerover', function (pointer)
-            {
+        gotoWorldBg.on('pointerover', function (pointer) {
                 gotoWorldBg.setAlpha(1);
                 gotoWorldTxt.setAlpha(1);
             });
-        gotoWorldBg.on('pointerout', function (pointer) 
-            { 
+        gotoWorldBg.on('pointerout', function (pointer)  { 
                 gotoWorldBg.setAlpha(0.01);
                 gotoWorldTxt.setAlpha(0);
             });
-        gotoWorldBg.on('pointerdown', function (pointer)
-            {
+        gotoWorldBg.on('pointerdown', function (pointer) {
                 window.location.href = '/flash/worldmap/worldmap_new.html'
             });
     }

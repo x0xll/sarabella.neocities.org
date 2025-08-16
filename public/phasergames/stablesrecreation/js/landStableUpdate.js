@@ -28,6 +28,7 @@ class LandStable extends Phaser.Scene
         game.load.atlas('straw2', './images/landStable/straw2.png', './images/landStable/straw2.json');
         game.load.atlas('straw3', './images/landStable/straw3.png', './images/landStable/straw3.json');
         game.load.atlas('hay_loft', './images/landStable/hay_loft.png', './images/landStable/hay_loft.json');
+        game.load.atlas('awards', './images/landStable/awards.png', './images/landStable/awards.json');
 
         game.load.atlas('trough', './images/landStable/water.png', './images/landStable/water.json');
         game.load.atlas('trough_mask', './images/landStable/water_mask.png', './images/landStable/water_mask.json');
@@ -168,6 +169,14 @@ class LandStable extends Phaser.Scene
                     hayLoft.play('get_hay')
                 }
             });
+
+
+        // Awards
+        game.awards = game.add.sprite(93, 165, 'awards', 'idle').setInteractive({ pixelPerfect: true });
+            // TODO: Enable this once the awards page has been added
+            // game.awards.on('pointerover', function (pointer){ game.stablesManager.pointerover(game.awards, game.hover1) } )
+            // game.awards.on('pointerout', function (pointer){ game.stablesManager.pointerout(game.awards) } )
+            // game.awards.on('pointerdown', function (pointer){ window.location.href = game.awardsLink } )
 
 
         // Water Trough
