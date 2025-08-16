@@ -4,14 +4,14 @@
 	<!-- button text goes here -->
 	<help_btn>Aiuto</help_btn>
 	<pause_btn>Pausa</pause_btn>
-	<start_btn>Gioca</start_btn>
+	<start_btn>Inizia il gioco</start_btn>
 
 	<turbobtn>Gioca Turbo</turbobtn>
 
 	<pauseheading>Il gioco è in pausa</pauseheading>
 	<pause2>Chiudi questa finestra per riprendere a giocare.</pause2>
 
-	<how_to_play_btn>Come giocare</how_to_play_btn>
+	<how_to_play_btn>Come si gioca</how_to_play_btn>
 
 	<play_again_btn>Gioca di nuovo</play_again_btn>
 
@@ -19,26 +19,26 @@
 	<intro>Intro From XML!</intro>
 
 	<!-- how to play title goes here -->
-	<how_to_play_title>Come giocare</how_to_play_title>
+	<how_to_play_title>Come si gioca</how_to_play_title>
 
 	<!-- how to play text goes here -->
-	<how_to_play2>Aiuta Pegasus a raccogliere dei fiori mentre volate nel cielo del regno. 
+	<how_to_play2>Aiuta Pegasus a raccogliere dei fiori speciali mentre sorvolate il cielo del regno. 
 
-Premi la barra spaziatrice o clicca col mouse per sbattere le ali.
+Premi la barra spaziatrice o clicka col mouse per sbattere le ali.
 
-Raccogli più fiori che puoi prima che il sole tramonti e di arrivare al castello.
+Raccogli più fiori che puoi prima del tramonto e di arrivare al castello.
 
 Buona fortuna!</how_to_play2>
 
 	<!-- win message -->
 	<win>Congratulazioni</win>
 	
-	<win2>Ottimo lavoro! Ti va di giocare ancora e raccogliere ancora più fiori?</win2>
+	<win2>Ottimo lavoro! Vorresti giocare ancora e raccogliere ancora più fiori?</win2>
 	
 	<!-- Non translated texts in original -->
 	<score>Punteggio Attuale</score>
-	<intro_howto>Aiuta Pegasus a raccogliere dei fiori mentre volate nel cielo del regno. Premi la barra spaziatrice o clicca col mouse per sbattere le ali.Raccogli più fiori che puoi prima che il sole tramonti e di arrivare al castello.</intro_howto>
-	<enterName>Inserisci il tuo nome, per favore</enterName>
+	<intro_howto>Aiuta Pegasus a raccogliere dei fiori speciali mentre sorvolate il cielo del regno. Premi la barra spaziatrice o clicka col mouse per sbattere le ali.Raccogli più fiori che puoi prima del tramonto e di arrivare al castello.</intro_howto>
+	<enterName>Inserisci il tuo nome per favore</enterName>
 	<greatFlying>Ottimo Volo!</greatFlying>
 	<end>Sei giunto alla fine del tuo viaggio.</end>
 	<end2>Non ci sono più fiori da raccogliere.</end2>

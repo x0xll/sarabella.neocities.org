@@ -48,8 +48,8 @@
 			<text name="txt_evalBonusNoScoreTotal">Peccato, hai mancato tutti i palloncini.#Il punteggio finale è di [totalScore] punti.</text>
 		</evalpanel>
 		<help>
-			<text name="txtHelp_Headline">Come giocare</text>
-			<text name="txtHelp_Intro">Sei pronto? Mentre cavalchi il tuo cavallo, cerca di agganciare gli anelli con la tua lancia.  Per controllare la lancia, clicca e trascina con il mouse. Fai tanta pratica. La lancia è pesante, quindi potresti dover lasciarla e ritrascinarla più volte per mantenerla nella posizione giusta.  Se selezioni la modalità Difficile, gli anelli saranno più piccoli e più difficili da centrare.</text>
+			<text name="txtHelp_Headline">Come giocare?</text>
+			<text name="txtHelp_Intro">Sei pronto? Mentre cavalchi il tuo cavallo, cerca di centrare gli anelli con la tua lancia.  Per controllare la lancia, clicka e trascina con il mouse. Fai tanta pratica. La lancia è pesante, quindi potresti dover lasciarla e ritrascinarla più volte per mantenerla nella posizione giusta.  Se selezioni la modalità Difficile, gli anelli saranno più piccoli e più difficili da prendere.</text>
 		</help>
 	</ingame>
 </xml>
