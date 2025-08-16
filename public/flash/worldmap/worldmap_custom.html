@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
+        <title data-il8n="game_map">World Map</title>
+        <script src="/ruffle/ruffle.js"></script>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown(); checkPlayPageDefault()">
+        <script src="/header.js"></script>
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on",
+              unmuteOverlay: "hidden",
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+
+        </div>
+
+        <div class="content textbox-parent" style="height: min-content; padding: 5px;" id="gotomap">
+          <div class="textbox" style="height: min-content; padding: 0px;">
+            <p style="padding: 0px;" data-il8n="gototextplaypage">Go to the Text-based Play page <a href="/play.html">here</a></p>
+          </div>
+        </div>
+
+        <div class="footer">
+          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a>
+        </div>
+
+        <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          function openBSA()
+          {
+            window.location = "https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures";
+          }
+
+          loadLanguagePref(false); 
+          var locale = getCurrentLanguageCode();
+          if (!isLocalizedFileExisting(`./custommap/_data/${locale}_bs_map.xml`))
+            locale = "en";
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '467';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'custommap/map.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+          swfPlayer.setAttribute("wmode", `transparent`);
+          swfParent.appendChild(swfPlayer);
+        </script>
+  </body>
+
+  <script>
+    function checkPlayPageDefault()
+    {
+        if (!isGuest() && !loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+            window.location.href = "/play.html"
+        else if (!isGuest())
+            document.getElementById("gotomap").style.display = "none";
+    }
+</script>
+</html>
+
+

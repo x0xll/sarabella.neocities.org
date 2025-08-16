@@ -10,11 +10,15 @@
 
     <script src="/language.js"></script>
 
-    <body onload="loadLanguagePref(); setupUserDropdown()">
+    <body onload="loadLanguagePref(); setupUserDropdown(); checkPlayPageDefault();">
         <script src="/header.js"></script>
 
         <div class="content textbox-parent">
             <div class="textbox">
+                <div id="gotomap">
+                <p data-il8n="gotomapplaypage">Go to the Map-based Play page <a href="/flash/worldmap/worldmap_custom.html">here</a></p>
+                <br/></div>
+
                 <h2 data-il8n="play_recoveredflashgames_title">Recovered Flash Games</h2>
                 <em data-il8n="play_recoveredflashgames_desc">These are games that were archived from the original site</em><br>
                 <ul>
@@ -73,8 +77,18 @@
         </div>
 
         <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
 
     </body>
+
+    <script src="/userManager.js"></script>
+    <script>
+        function checkPlayPageDefault()
+        {
+            if (!isGuest() && loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+                window.location.href = "/flash/worldmap/worldmap_custom.html"
+            else if (!isGuest())
+                document.getElementById("gotomap").style.display = "none";
+        }
+    </script>
 
 </html>
