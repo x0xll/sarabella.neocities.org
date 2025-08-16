@@ -1,7 +1,9 @@
-09 August 2025
-    - Fix audio issue
-        - in all the files, make sure the number in loadMovieNum("name.swf", number, "GET"), is 0 and not 10
-        - in chap1_intro.swf, before all the loadMovieNum add: movie.stop(); movie.close();
+04 August 2025
+    - Add return to map page. Added following code in DoAction of frame5 of storybook.swf
+        fleur_load.onRelease = function()
+        {
+        getURL("/flash/worldmap/worldmap_new.html","_self");
+        };
 
 18 Jan 2025
     - Link to localization system
