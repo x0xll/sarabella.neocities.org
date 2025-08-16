@@ -32,6 +32,7 @@ document.write('<div class="header-container">\
 <select name="currentUserDropdown" id="currentUserDropdown" onchange="chooseUser(true)">\
 <option value="guest" data-il8n="user_guest">Guest</option>\
 <option value="create" data-il8n="user_create">Create User</option>\
+<option value="settings" data-il8n="user_settings">Settings</option>\
 </select>\
 <p id="horseshoes">10000 <img src="/images/nav/Horseshoe.png"></p>\
 </div>\

@@ -20,6 +20,7 @@
 
     <script src="/language.js"></script>
 
+        <script src="/userManager.js"></script>
     <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
@@ -54,7 +55,7 @@
                 xmlHttp.open("GET", `./images/horses/${horseName}/data.json`);
                 xmlHttp.send();
 
-                let localizedQuote = true;
+                let localizedQuote = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
 
                 let loadInto = `Stables`
 
@@ -81,11 +82,6 @@
         
             </script>
         </div>
-
-        <div style="text-align: center;" id="quoteToggle">
-            <input type="checkbox" id="englishQuoteToggle" name="englishQuoteToggle" >
-            <label for="englishQuoteToggle" data-il8n="quote_toggle_label" style="color: white">Use English Quotes</label>
-        </div>
         
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
@@ -95,30 +91,6 @@
           </div>
 
           <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
-
-          <script>
-            const toggleStateKey = "englishQuoteToggleStablesBellaSaraNeoCity";
-
-            let toggleQuote = document.getElementById("englishQuoteToggle");
-
-            if (getCurrentLanguageCode() == "en")
-                document.getElementById("quoteToggle").style.display = "none";
-
-            toggleQuote.addEventListener("change", (e) =>
-            {
-                localizedQuote = !event.target.checked
-                localStorage.setItem(toggleStateKey, `${event.target.checked}`)
-            })
-
-            // Load the saved toggle state
-            let savedToggleState = localStorage.getItem(toggleStateKey);
-            if (savedToggleState != null && savedToggleState == "true")
-            {
-                toggleQuote.checked = true;
-                localizedQuote = false;
-            }
-          </script>
 
     </body>
 </html>
