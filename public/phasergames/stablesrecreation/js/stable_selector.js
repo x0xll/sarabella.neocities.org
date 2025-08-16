@@ -22,6 +22,7 @@ const horses = [
     'donn',
     'echo',
     'epona',
+    'faith',
     'falcha',
     'faxon',
     'fiona',
