@@ -16,8 +16,8 @@ class FoalLandStable extends Phaser.Scene
         this.stablesManager.preloadDisplayLoadBar()
             
         // Load in images and sounds
-        game.load.image('stable_bg', './images/landStable/stable-bg.png');
-        game.load.image('stable_fg', './images/landStable/stable-fg.png');
+        game.load.image('stable_bg', './images/landFoalStable/stable-bg.png');
+        game.load.image('stable_fg', './images/landFoalStable/stable-fg.png');
         game.load.image('hunger_scale', './images/landStable/hunger.png');
         game.load.image('cleanliness_scale', './images/landStable/cleanliness.png');
         game.load.image('happiness_scale', './images/landStable/happiness.png');
