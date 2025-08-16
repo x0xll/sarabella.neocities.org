@@ -138,7 +138,8 @@ class StablesManager {
             brushSmall: 'brush_small',
             hoofpick: 'hoofpick',
             apple: 'apple',
-            grainScoop: 'grain_scoop'
+            grainScoop: 'grain_scoop',
+            bottle: 'bottle'
         }
         this.#game.handCurrent = this.#game.HAND.empty;
         this.#game.waterFilled = false;
@@ -154,7 +155,8 @@ class StablesManager {
             drink: 'drink',
             rear: 'rear',
             eatingFood: 'eat_food',
-            eatingApple: 'eat_apple'
+            eatingApple: 'eat_apple',
+            drinkbottle: 'drink_bottle'
         }
         this.#game.horseAnimationQueue = []
         this.#game.statBoxBusy = false
@@ -190,6 +192,11 @@ class StablesManager {
                 // TODO: make smaller head hitbox for this bit
                 game.handCurrent = game.HAND.empty;
                 game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingApple)
+            }
+            else if (game.handCurrent === game.HAND.bottle) {
+                // TODO: make smaller head hitbox for this bit
+                game.handCurrent = game.HAND.empty;
+                game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.drinkbottle)
             }
         })
     }
@@ -506,6 +513,10 @@ class StablesManager {
         }
         else if (game.handCurrent === game.HAND.apple) {
             game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('apple');
+            game.headInteractive.setInteractive()
+        }
+        else if (game.handCurrent === game.HAND.bottle) {
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle');
             game.headInteractive.setInteractive()
         }
         else {

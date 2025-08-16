@@ -37,6 +37,8 @@ class FoalLandStable extends Phaser.Scene
         game.load.image('grain_scoop', './images/landStable/grain_scoop.png');
         game.load.atlas('appleBin', './images/landStable/apples.png','./images/landStable/apples.json');
         game.load.image('apple', './images/landStable/apple.png');
+        game.load.atlas('bottleBin', './images/landFoalStable/bottleBin.png','./images/landFoalStable/bottleBin.json');
+        game.load.image('bottle', './images/landFoalStable/bottle.png');
         
         game.load.atlas('brush', './images/landStable/brush.png', './images/landStable/brush.json');
         game.load.atlas('brush_small', './images/landStable/brush_small.png', './images/landStable/brush_small.json');
@@ -468,8 +470,14 @@ class FoalLandStable extends Phaser.Scene
             game.stablesManager.addSpriteAnims(appleBin, 'takeApple', ['idle'])
             appleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (appleBin, game.hover1) });
             appleBin.on('pointerout', function (pointer) { appleBin.setFrame('idle') });
-            appleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(appleBin, game.HAND.apple, 'takeApple', 'takeApple') });
+            appleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(appleBin, game.HAND.apple, 'takeApple', 'takeApple') }); 
         
+        // Bottle Bin
+        const bottleBin = game.add.sprite(820, 440, 'bottleBin', 'idle').setInteractive();
+            game.stablesManager.addSpriteAnims(bottleBin, 'takeBottle', ['empty'])
+            bottleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (bottleBin, game.hover1) });
+            bottleBin.on('pointerout', function (pointer) { bottleBin.setFrame('idle') });
+            bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
 
         // Grain Bin
         const grainBin = game.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
@@ -613,6 +621,10 @@ class FoalLandStable extends Phaser.Scene
             else if (animation === game.HORSE_STATES.eatingApple) {
                 game.appleMunch.play();
                 game.stablesManager.horsePlayAnimation('eat_apple')
+            }
+            else if (animation === game.HORSE_STATES.drinkBottle) {
+                // TODO: add sfx
+                game.stablesManager.horsePlayAnimation('drink_bottle')
             }
         }
 
