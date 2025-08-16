@@ -14,6 +14,7 @@ const horses = [
     'bosi',
     'cantaro',
     'ceratos',
+    'ceres',
     'chitra',
     'clio',
     'colour',
