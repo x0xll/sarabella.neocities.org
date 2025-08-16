@@ -27,21 +27,21 @@ class FoalAirStable extends Phaser.Scene
         game.stablesManager.preloadDisplayLoadBar()
             
         // Load in images and sounds
-        game.load.image('stable_bg', './images/airStable/stable-bg.png');
+        game.load.image('stable_bg', './images/airFoalStable/stable-bg.png');
         game.load.image('stable_fg', './images/airStable/stable-fg.png');
         game.load.image('hunger_scale', './images/airStable/hunger.png');
         game.load.image('cleanliness_scale', './images/airStable/cleanliness.png');
         game.load.image('happiness_scale', './images/airStable/happiness.png');
 
-        game.load.atlas('leaf_tree_shake', './images/airStable/leaf_tree_shake.png', './images/airStable/leaf_tree_shake.json');
-        game.load.atlas('leaf_chimes', './images/airStable/leaf_chimes.png', './images/airStable/leaf_chimes.json');
+        game.load.atlas('leaf_tree_shake', './images/airFoalStable/leaf_tree_shake.png', './images/airFoalStable/leaf_tree_shake.json');
+        game.load.atlas('leaf_chimes', './images/airFoalStable/leaf_chimes.png', './images/airFoalStable/leaf_chimes.json');
         game.load.atlas('leaves_fall', './images/airStable/leaves_fall.png', './images/airStable/leaves_fall.json');
         game.load.atlas('leaves_wind', './images/airStable/leaves_wind.png', './images/airStable/leaves_wind.json');
 
         game.load.image('left_tree', './images/airStable/leftTree.png');
-        game.load.atlas('fountain', './images/airStable/fountain.png', './images/airStable/fountain.json');
+        game.load.atlas('fountain', './images/airFoalStable/fountain.png', './images/airFoalStable/fountain.json');
         game.load.atlas('food_interactive', './images/airStable/food_interactive.png', './images/airStable/food_interactive.json');
-        game.load.atlas('berries', './images/airStable/berries.png','./images/airStable/berries.json');
+        game.load.atlas('berries', './images/airFoalStable/berries.png','./images/airFoalStable/berries.json');
         game.load.image('apple', './images/airStable/berriesHeld.png');
         game.load.atlas('horn', './images/airStable/horn.png','./images/airStable/horn.json');
         game.load.spineAtlas("branch-atlas", `./images/airStable/branches.atlas`);
@@ -89,7 +89,7 @@ class FoalAirStable extends Phaser.Scene
         game.stablesManager.createScene()
 
         // Brush
-        const brush = game.add.sprite(659, 231, 'brush', 'idle').setScale(0.76).setInteractive({ pixelPerfect: true });
+        const brush = game.add.sprite(730, 223, 'brush', 'idle').setScale(0.76).setInteractive({ pixelPerfect: true });
         // const brushInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(753, 88, 40, 50), Phaser.Geom.Rectangle.Contains);
             game.stablesManager.addSpriteAnims(brush, 'brush_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005',
@@ -108,7 +108,7 @@ class FoalAirStable extends Phaser.Scene
             brush.on('pointerout', function (pointer) { game.stablesManager.pointerout (brush)});
 
         // Small Brush
-        const brushSmall = game.add.sprite(684, 247, 'brush_small', 'idle').setInteractive({ pixelPerfect: true });
+        const brushSmall = game.add.sprite(752, 239, 'brush_small', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(brushSmall, 'brush_pickup_small', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006',
                     'in_use'
@@ -127,7 +127,7 @@ class FoalAirStable extends Phaser.Scene
             brushSmall.on('pointerout', function (pointer) { game.stablesManager.pointerout (brushSmall) });
 
         // Hoofpick
-        const hoofpick = game.add.sprite(683, 187, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
+        const hoofpick = game.add.sprite(750, 182, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
             game.stablesManager.addSpriteAnims(hoofpick, 'hoofpick_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009',
                     'in_use'
@@ -200,7 +200,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Water Fountain
-        game.trough = game.add.sprite(188, 348, 'fountain', 'idle').setInteractive({ pixelPerfect: true });
+        game.trough = game.add.sprite(196, 348, 'fountain', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(game.trough, 'fill_water', [
                 '10',
                 '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
@@ -340,7 +340,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Berries
-        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setInteractive();
+        const berries = game.add.sprite(762, 30, 'berries', 'idle').setScale(.43).setInteractive();
             game.stablesManager.addSpriteAnims(berries, 'berries_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009'
                 ])
