@@ -16,6 +16,7 @@
     "txtHelpBrush" : "Click to select a brush. Click again to gently preen the feathers of your horse.",
     "txtHelpLuck" : "Click for good luck!",
     "txtHelpBranch" : "Click to shake loose a bed of fresh leaves.",
+    "txtHelpBottle": "Click to grab bottle. Click again near horses's mouth to begin feeding bottle.",
 
     "txtFullHorse" : "Your horse is no longer hungry or thirsty.",
     "txtCleanHorse" : "Your horse is gleaming. Well done!",
