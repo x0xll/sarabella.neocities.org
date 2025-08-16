@@ -22,27 +22,23 @@ class FoalLandStable extends Phaser.Scene
         game.load.image('cleanliness_scale', './images/landStable/cleanliness.png');
         game.load.image('happiness_scale', './images/landStable/happiness.png');
 
-        game.load.atlas('shovel', './images/landStable/shovel.png', './images/landStable/shovel.json');
-        game.load.atlas('fork', './images/landStable/fork.png', './images/landStable/fork.json');
-        game.load.atlas('straw1', './images/landStable/straw1.png', './images/landStable/straw1.json');
-        game.load.atlas('straw2', './images/landStable/straw2.png', './images/landStable/straw2.json');
-        game.load.atlas('straw3', './images/landStable/straw3.png', './images/landStable/straw3.json');
+        game.load.atlas('shovel', './images/landFoalStable/shovel.png', './images/landFoalStable/shovel.json');
+        game.load.atlas('fork', './images/landFoalStable/fork.png', './images/landFoalStable/fork.json');
+        game.load.atlas('straw1', './images/landFoalStable/straw1.png', './images/landFoalStable/straw1.json');
+        game.load.atlas('straw2', './images/landFoalStable/straw2.png', './images/landFoalStable/straw2.json');
+        game.load.atlas('straw3', './images/landFoalStable/straw3.png', './images/landFoalStable/straw3.json');
         game.load.atlas('hay_loft', './images/landStable/hay_loft.png', './images/landStable/hay_loft.json');
 
         game.load.atlas('trough', './images/landStable/water.png', './images/landStable/water.json');
         game.load.atlas('trough_mask', './images/landStable/water_mask.png', './images/landStable/water_mask.json');
-        game.load.atlas('food_trough', './images/landStable/food.png', './images/landStable/food.json');
-        game.load.atlas('food_trough_small', './images/landStable/food_small.png', './images/landStable/food_small.json');
-        game.load.atlas('grain_bin', './images/landStable/grain_bin.png', './images/landStable/grain_bin.json');
-        game.load.image('grain_scoop', './images/landStable/grain_scoop.png');
         game.load.atlas('appleBin', './images/landStable/apples.png','./images/landStable/apples.json');
         game.load.image('apple', './images/landStable/apple.png');
         game.load.atlas('bottleBin', './images/landFoalStable/bottleBin.png','./images/landFoalStable/bottleBin.json');
         game.load.image('bottle', './images/landFoalStable/bottle.png');
         
-        game.load.atlas('brush', './images/landStable/brush.png', './images/landStable/brush.json');
-        game.load.atlas('brush_small', './images/landStable/brush_small.png', './images/landStable/brush_small.json');
-        game.load.atlas('hoofpick', './images/landStable/hoofpick.png', './images/landStable/hoofpick_updated.json');
+        game.load.atlas('brush', './images/landFoalStable/brush.png', './images/landFoalStable/brush.json');
+        game.load.atlas('brush_small', './images/landFoalStable/brush_small.png', './images/landFoalStable/brush_small.json');
+        game.load.atlas('hoofpick', './images/landFoalStable/hoofpick.png', './images/landFoalStable/hoofpick.json');
         
         game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
         game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
@@ -59,7 +55,7 @@ class FoalLandStable extends Phaser.Scene
         game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
         game.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
-        game.load.atlas('luck', './images/landStable/luck.png', './images/landStable/luck.json');
+        game.load.atlas('luck', './images/landFoalStable/luck.png', './images/landFoalStable/luck.json');
         game.load.atlas('frame', './images/landStable/frame.png', './images/landStable/frame.json');
         game.load.image('inspiration', './images/landStable/inspiration.png');
 
@@ -213,36 +209,6 @@ class FoalLandStable extends Phaser.Scene
                     game.trough.setFrame('idle');
                 }
             });
-
-        // Food Trough
-        if (horseData.height === 'short') {
-            // TODO: still need to position this
-            game.foodTrough = game.add.sprite(104, 303, 'food_trough_small', 0).setInteractive({ pixelPerfect: true });
-        } else {
-            game.foodTrough = game.add.sprite(104, 303, 'food_trough', 0).setInteractive({ pixelPerfect: true });
-        }
-        
-            game.stablesManager.addSpriteAnims(game.foodTrough, 'fill', [
-                    'empty',
-                    'fill0000', 'fill0001', 'fill0002', 'fill0003', 'fill0004', 'fill0005', 'fill0006', 'fill0007', 'fill0008', 'fill0009', 'fill0010',
-                    'full'
-                ])
-            game.stablesManager.addSpriteAnims(game.foodTrough, 'fill_again', [
-                    'full',
-                    'fill_again0000', 'fill_again0001', 'fill_again0002', 'fill_again0003', 'fill_again0004', 'fill_again0004', 'fill_again0004', 'fill_again0004', 'fill_again0004', 'fill_again0009', 'fill_again0010',
-                    'full'
-                ])
-            game.foodTrough.on('pointerdown', function (pointer)
-            {
-                if (game.handCurrent === game.HAND.grainScoop) {
-                    game.handCurrent = game.HAND.empty;
-                    grainBin.play('grain_place');
-                    game.foodTrough.play(game.foodTrough.frame.name !== 'empty' ? 'fill_again' : 'fill')
-                    game.grainSound.play()
-                    game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingFood)
-                }
-            });
-
 
         // Horse hit box
         if (horseData.height === 'short') {
@@ -479,44 +445,6 @@ class FoalLandStable extends Phaser.Scene
             bottleBin.on('pointerout', function (pointer) { bottleBin.setFrame('idle') });
             bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
 
-        // Grain Bin
-        const grainBin = game.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
-        const grainText = game.add.text(610, 325, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0);
-            grainText.text = localeData.txtOatsRollOver;
-            game.stablesManager.addSpriteAnims(grainBin, 'gain_pickup', [
-                    'idle',
-                    'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009', 'pickup0010',
-                    'pickup0011', 'pickup0012', 'pickup0013', 'pickup0013', 'pickup0015', 'pickup0016', 'pickup0017',
-                    'empty'
-                ])
-            game.stablesManager.addSpriteAnims(grainBin, 'grain_place', [
-                    'empty',
-                    'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'place0006', 'place0007',
-                    'idle'
-                ])
-            grainBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (grainBin, game.hover2, grainText) });
-            grainBin.on('pointerout', function (pointer) {
-                if (game.handCurrent === game.HAND.grainScoop) {
-                    grainBin.setFrame('empty')
-                    grainText.setAlpha(0)
-                } else {
-                    grainBin.setFrame('idle')
-                    grainText.setAlpha(0)
-                }
-            });
-            grainBin.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
-                    game.handCurrent = game.HAND.grainScoop
-                    grainText.setAlpha(0)
-                    grainBin.play('gain_pickup')
-                    game.pickup.play();
-                    game.grainSound.play()
-                } else if (game.handCurrent === game.HAND.grainScoop) {
-                    game.handCurrent = game.HAND.empty;
-                }
-            });
-
-        
         game.troughMask = game.add.sprite(153, 455, 'trough_mask', 'water0000').setVisible(false);
             game.stablesManager.addSpriteAnims(game.troughMask, 'mask_fill_water', [
                     'water0011', 'water0011', 'water0011',
