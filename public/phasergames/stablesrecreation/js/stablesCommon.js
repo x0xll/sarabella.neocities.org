@@ -596,7 +596,6 @@ class StablesManager {
      * Updates the horse stats, increments the count of how many times the horse has been brushed
      * and makes the horse rear when clean
      */
-    // TODO: use localeData.txtReadyToBeOiled for air stables
     horseBrushed() {
         if (this.#game.brushLevel < 2) {
             this.#game.brushLevel += 1;

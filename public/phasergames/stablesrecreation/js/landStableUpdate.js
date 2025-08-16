@@ -32,6 +32,7 @@ class LandStable extends Phaser.Scene
         game.load.atlas('trough', './images/landStable/water.png', './images/landStable/water.json');
         game.load.atlas('trough_mask', './images/landStable/water_mask.png', './images/landStable/water_mask.json');
         game.load.atlas('food_trough', './images/landStable/food.png', './images/landStable/food.json');
+        game.load.atlas('food_trough_small', './images/landStable/food_small.png', './images/landStable/food_small.json');
         game.load.atlas('grain_bin', './images/landStable/grain_bin.png', './images/landStable/grain_bin.json');
         game.load.image('grain_scoop', './images/landStable/grain_scoop.png');
         game.load.atlas('appleBin', './images/landStable/apples.png','./images/landStable/apples.json');
@@ -212,7 +213,13 @@ class LandStable extends Phaser.Scene
             });
 
         // Food Trough
-        game.foodTrough = game.add.sprite(104, 303, 'food_trough', 0).setInteractive({ pixelPerfect: true });
+        if (horseData.height === 'short') {
+            // TODO: still need to position this
+            game.foodTrough = game.add.sprite(104, 303, 'food_trough_small', 0).setInteractive({ pixelPerfect: true });
+        } else {
+            game.foodTrough = game.add.sprite(104, 303, 'food_trough', 0).setInteractive({ pixelPerfect: true });
+        }
+        
             game.stablesManager.addSpriteAnims(game.foodTrough, 'fill', [
                     'empty',
                     'fill0000', 'fill0001', 'fill0002', 'fill0003', 'fill0004', 'fill0005', 'fill0006', 'fill0007', 'fill0008', 'fill0009', 'fill0010',
@@ -236,7 +243,12 @@ class LandStable extends Phaser.Scene
 
 
         // Horse hit box
-        game.stablesManager.createHorseHitbox(230, 100, 356, 256)
+        if (horseData.height === 'short') {
+            //TODO: still need to size this
+            game.stablesManager.createHorseHitbox(230, 100, 356, 256)
+        } else {
+            game.stablesManager.createHorseHitbox(230, 100, 356, 256)
+        }
 
 
         // Inspirational message frame
@@ -413,8 +425,16 @@ class LandStable extends Phaser.Scene
             hoofpickInteractive.on('pointerover', function (pointer) { game.stablesManager.pointerover (hoofpick, game.hover1) });
             hoofpickInteractive.on('pointerout', function (pointer) { game.stablesManager.pointerout (hoofpick)});
         // Hoof highlight circles
-        const hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-        const hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+        let hooves1
+        let hooves2
+        if (horseData.height === 'short') {
+            // TODO: Still need to postition these
+            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+        } else {
+            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+        }
         game.additionalCleanCondition = () => {return hooves1.frame.name === 2 && hooves2.frame.name === 2}
             /**
              * Updates the hoofpick highlight circle to show the next stage, plays the hoofpick use animation
@@ -428,7 +448,7 @@ class LandStable extends Phaser.Scene
                         if (sprite === hooves1) {
                             game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFrontHooves)
                         } else {
-                            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFrontHooves)
+                            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtRearHooves)
                         }
                     }
                     game.stablesManager.checkClean()
