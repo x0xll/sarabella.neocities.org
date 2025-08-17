@@ -126,7 +126,7 @@ class StablesManager {
         this.#game.backgroundMusic.loop = true; 
         this.#game.backgroundMusic.play();
 
-        this.#game.add.image(444, 261, 'stable_bg');
+        this.#game.add.image(444, 260, 'stable_bg');
 
         // Variables
         this.#game.HAND = {
@@ -328,7 +328,7 @@ class StablesManager {
     /** Creates the UI elements  */
     createUI(helpTexts) {
         const game = this.#game
-        this.#game.add.image(444, 261, 'stable_fg');
+        this.#game.add.image(444, 260, 'stable_fg');
         this.#createInspirationalMessage()
 
         // Horse name
