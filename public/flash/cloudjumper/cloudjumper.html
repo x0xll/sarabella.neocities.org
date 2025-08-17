@@ -42,7 +42,7 @@
         <script>
           loadLanguagePref(false); 
           var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./xml/game_${locale}.xml`))
+          if (locale != 'en' && !isLocalizedFileExisting(`./xml/game_${locale}.xml`))
             locale = "en";
           var swfParent = document.getElementsByClassName('swf')[0];
           var swfPlayer = document.createElement('embed');
