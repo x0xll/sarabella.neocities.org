@@ -24,10 +24,11 @@
         </div>
         <p id="highscore" style="color: white; text-align: center;"><b>Highscore: </b></p>
 
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://bellasara.wiki.gg/wiki/Treasure%27s_Hunt" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
-          <a href="https://web.archive.org/web/20170504130036/http://www.bellasara.com/flash/treasureshunt/treasureshunt.aspx" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Treasure%27s_Hunt', webarchiveLink: 'https://web.archive.org/web/20170504130036/http://www.bellasara.com/flash/treasureshunt/treasureshunt.aspx', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/treasureshunt'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
