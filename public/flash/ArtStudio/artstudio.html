@@ -26,17 +26,12 @@
         <div id="footer" class="footer">
           <script src="/footer.js"></script>
           <script>
-            generateFooter([
-              HOME_LINK,
+            generateFooterCustomized([
               {
-                href: "https://bellasara.wiki.gg/wiki/Art_Studio",
-                il8n: WIKI_IL8N
-              },
-              {
-                href: "https://web.archive.org/web/20090605221246/http://www.bellasara.com/artstudio.aspx",
-                il8n: WEBARCHIVE_IL8N
+                href: '/',
+                il8n: 'test'
               }
-            ]);
+            ], {wikiLink: 'https://bellasara.wiki.gg/wiki/Art_Studio', webarchiveLink: 'https://web.archive.org/web/20090605221246/http://www.bellasara.com/artstudio.aspx', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/ArtStudio'});
           </script>
         </div>
 
