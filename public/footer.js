@@ -10,61 +10,34 @@ const GITHUB_IL8N = "footer_github_linktxt";
 const SEPARATOR = " | ";
 
 /**
- * Generate a footer with only the wiki, webarchive and github links possible
- * @param wikiLink the link to the BeSa wiki.gg page for this game
- * @param webarchiveLink the link to the webArchive page for this game
- * @param githubLink the link to the github folder for this game in the BeSa neocities repo, main branch
+ * Generates the footer links
+ * @param {*} customLinks1 An array of {href, il8n} objects for custom links. These links will appear right after the home link
+ * @param {*} wikiLink The href for the wiki link
+ * @param {*} webarchiveLink The href for the web archive link
+ * @param {*} githubLink The href for the github link
+ * @param {*} customLinks2 An array of {href, il8n} objects for custom links. These links will appear at the end of the list
  */
-function generateFooterSimplified({wikiLink, webarchiveLink, githubLink} = {})
-{
-    generateFooterCustomized(undefined, {wikiLink: wikiLink, webarchiveLink:webarchiveLink, githubLink:githubLink});
-}
+/** */
+function generateFooter({customLinks1=[], wikiLink, webarchiveLink, githubLink, customLinks2=[]}) {
 
-/**
- * Generate a footer with custom links as well as the wiki, webarchive and github links
- * @param customLinks a list of objects {href, il8n} with the data for each custom links to add
- * @param wikiLink the link to the BeSa wiki.gg page for this game
- * @param webarchiveLink the link to the webArchive page for this game
- * @param githubLink the link to the github folder for this game in the BeSa neocities repo, main branch
- */
-function generateFooterCustomized(customLinks, {wikiLink, webarchiveLink, githubLink} = {})
-{
     let footer = document.getElementById('footer');
-    let hasCommonLinks = wikiLink !== undefined && webarchiveLink !== undefined && githubLink !== undefined;
-
+    
     footer.appendChild(instantiateLink(HOME_LINK.href, HOME_LINK.il8n));
-    if ((customLinks !== undefined && customLinks.length > 0) || hasCommonLinks)
-        footer.innerHTML += SEPARATOR;
 
-    if (customLinks !== undefined)
-    {
-        for(let i = 0; i < customLinks.length; i++)
-        {
-            footer.appendChild(instantiateLink(customLinks[i].href, customLinks[i].il8n));
-
-            if (i + 1 != customLinks.length || hasCommonLinks)
-                footer.innerHTML += SEPARATOR;
+    links = customLinks1.concat([
+        {href: wikiLink, il8n: WIKI_IL8N}, 
+        {href: webarchiveLink, il8n: WEBARCHIVE_IL8N}, 
+        {href: githubLink, il8n:GITHUB_IL8N}
+        ],
+        customLinks2)
+        
+    for(let i = 0; i < links.length; i++){
+        if (links[i].href !== undefined) {
+            footer.innerHTML += SEPARATOR;
+            footer.appendChild(instantiateLink(links[i].href, links[i].il8n));
         }
     }
-
-    if (hasCommonLinks)
-    {
-        if (wikiLink !== undefined)
-        {
-            footer.appendChild(instantiateLink(wikiLink, WIKI_IL8N));
-            if (webarchiveLink !== undefined || githubLink !== undefined)
-                footer.innerHTML += SEPARATOR;
-        }
-        if (webarchiveLink !== undefined)
-        {
-            footer.appendChild(instantiateLink(webarchiveLink, WEBARCHIVE_IL8N));
-            if (githubLink !== undefined)
-                footer.innerHTML += SEPARATOR;
-        }
-        if (githubLink !== undefined)
-            footer.appendChild(instantiateLink(githubLink, GITHUB_IL8N));
-    }
-
+    
     /**
      * Creates a 'a' tag element for the footer and returns it
      * @param href the link to add
