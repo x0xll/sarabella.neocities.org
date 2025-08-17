@@ -30,9 +30,8 @@ class WaterStable extends Phaser.Scene
         game.load.atlas('brush', './images/waterStable/brush.png', './images/waterStable/brush_updated.json');
         game.load.atlas('brush_small', './images/waterStable/brush_small.png', './images/waterStable/brush_small_updated.json');
         game.load.atlas('hoofpick', './images/waterStable/polisher.png', './images/waterStable/polisher.json');
-        game.load.atlas('bubbles1', './images/waterStable/bubbles1.png', './images/waterStable/bubbles1.json');
-        game.load.atlas('bubbles2', './images/waterStable/bubbles2.png', './images/waterStable/bubbles2.json');
-        game.load.atlas('bubbles3', './images/waterStable/bubbles3.png', './images/waterStable/bubbles3.json');
+        game.load.spineAtlas("bubbles-atlas", `./images/waterStable/bubbles.atlas`);
+        game.load.spineJson("bubbles-json", `./images/waterStable/bubbles.json`);
 
         game.load.atlas('speaker', './images/waterStable/speaker.png', './images/waterStable/speaker.json');
         game.load.atlas('treat_dispenser', './images/waterStable/treat_dispenser.png', './images/waterStable/treat_dispenser.json');
@@ -267,10 +266,6 @@ class WaterStable extends Phaser.Scene
             });
 
 
-        // Background Bubbles
-        game.bubbles3 = game.add.sprite(538, 171, 'bubbles3', 'bubbles0000')
-
-
         // Horse Interactive
         game.stablesManager.createHorseHitbox(230, 110, 376, 345, polish, 15, -30)   
 
@@ -403,74 +398,52 @@ class WaterStable extends Phaser.Scene
 
 
         // Bubbles
-        game.bubbles1 = game.add.sprite(750, 261, 'bubbles1', 'idle').setInteractive({ pixelPerfect: true });
-            game.stablesManager.addSpriteAnims(game.bubbles1, 'bubbles1', [
-                    'bubbles0000', 'bubbles0001', 'bubbles0002', 'bubbles0003', 'bubbles0003', 'bubbles0005', 'bubbles0006', 'bubbles0007', 'bubbles0008', 'bubbles0009',
-                    'bubbles0010', 'bubbles0011', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
-                    'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                    'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                    'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                    'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                    'bubbles0060', 
-
-                    'bubbles0003', 'bubbles0005', 'bubbles0006', 'bubbles0007', 'bubbles0008', 'bubbles0009', 'bubbles0010', 'bubbles0011', 'bubbles0012', 
-                    'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 
-                    'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 
-                    'bubbles0033',
-
-                    'bubbles0091', 'bubbles0092', 'bubbles0093', 'bubbles0094', 'bubbles0095', 'bubbles0096', 'bubbles0097', 'bubbles0098', 'bubbles0099',
-                    'bubbles0100', 'bubbles0101', 'bubbles0102', 'bubbles0103', 'bubbles0104',
-                    'idle'
-                ])
-        game.bubbles2 = game.add.sprite(176, 220, 'bubbles2', 'bubbles0000')
-            game.stablesManager.addSpriteAnims(game.bubbles2, 'bubbles2', [
-                    'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
-                    'bubbles0000', 'bubbles0000', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
-                    'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                    'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                    'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                    'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                    'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 
-
-                    'bubbles0000', 'bubbles0012', 
-                    'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 
-                    'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 
-                    'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039', 'bubbles0040', 'bubbles0041', 'bubbles0042', 
-                    'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 
-
-                    'bubbles0000'
-                ])
-            game.stablesManager.addSpriteAnims(game.bubbles3, 'bubbles3', [
-                    'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
-                    'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0018', 'bubbles0019',
-                    'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                    'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                    'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                    'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                    'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 'bubbles0068', 'bubbles0069',
-                    'bubbles0070', 'bubbles0071', 'bubbles0072', 'bubbles0073',
-
-                    'bubbles0000', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 
-                    'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 
-                    'bubbles0037', 'bubbles0038', 'bubbles0039', 'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 
-                    'bubbles0047', 'bubbles0048', 'bubbles0049', 'bubbles0050', 'bubbles0051',
-
-                    'bubbles0000'
-                ])
-            game.bubbles1.on('pointerover', function (pointer) { game.stablesManager.pointerover(game.bubbles1, game.hover1) });
-            game.bubbles1.on('pointerout', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
-                    game.bubbles1.setFrame('idle')
-                }
-            });
-            game.bubbles1.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
-                    game.bubbles1.play('bubbles1')
-                    game.bubbles2.play('bubbles2')
-                    game.bubbles3.play('bubbles3')
-                    game.bubbleClick.play()
-                }
-            });
+        game.bubbles = game.add.spine(525, 75, 'bubbles-json', 'bubbles-atlas')
+            game.bubbles.animationState.setAnimation(0, "idle", false)
+            game.bubblesBusy = false
+            game.bubblesInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(647, 400, 200, 150), Phaser.Geom.Rectangle.Contains);
+                game.bubblesInteractive.on('pointerover', function (pointer) {
+                    if (game.handCurrent === game.HAND.empty && !game.bubblesBusy) {
+                        game.bubbles.animationState.setAnimation(0, "hover", false)
+                        game.hover1.play();
+                    }
+                })
+                game.bubblesInteractive.on('pointerout', function (pointer) {
+                    if (game.handCurrent === game.HAND.empty && !game.bubblesBusy) {
+                        game.bubbles.animationState.setAnimation(0, "idle", false)
+                    }
+                })
+                game.bubblesInteractive.on('pointerdown', function (pointer) {
+                    if (game.handCurrent === game.HAND.empty && !game.bubblesBusy) {
+                        game.bubblesBusy = true
+                        game.bubbles.animationState.setAnimation(0, "main1", false)
+                        game.bubbleClick.play()
+                    }
+                });
+                game.bubbles.animationState.addListener({
+                    complete: function endAnimation(entry) {                
+                        if (entry.animation.name === 'main1') {
+                            game.bubbleSound.play();
+                            game.bubbles.animationState.setAnimation(0, "main2", false)
+                        }           
+                        else if (entry.animation.name === 'main2') {
+                            game.bubbleReplaceSound.play();
+                            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtCleanWater)
+                            if (!game.waterFilled) {
+                                game.waterFilled = true
+                                game.stablesManager.updateBar(game.happinessBar, 1/4)
+                            }
+                            game.bubbles.animationState.setAnimation(0, "main3", false)
+                        }              
+                        if (entry.animation.name === 'main3') {
+                            game.bubblesBusy = false
+                            game.bubbles.animationState.setAnimation(0, "idle", false)
+                        }    
+                    } ,
+                    start: function startAnimation(entry){ 
+                        
+                    }       
+                })
 
 
         // Dirty Water
@@ -558,17 +531,6 @@ class WaterStable extends Phaser.Scene
         })
 
         // play sounds at correct frame
-        if (game.bubbles1.frame.name === 'bubbles0006') {
-            game.bubbleSound.play();
-        }
-        else if (game.bubbles1.frame.name === 'bubbles0091') {
-            game.bubbleReplaceSound.play();
-            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtCleanWater)
-            if (!game.waterFilled) {
-                game.waterFilled = true
-                game.stablesManager.updateBar(game.happinessBar, 1/4)
-            }
-        }
         if (game.foodTrough.frame.name === 'feed0006') {
             game.foodDispenseSound.play();
         }
