@@ -11,11 +11,11 @@ const SEPARATOR = " | ";
 
 /**
  * Generates the footer links
- * @param {*} customLinks1 An array of {href, il8n} objects for custom links. These links will appear right after the home link
+ * @param {*} customLinks1 An array of {href, il8n} objects with the data for custom links. These links will appear right after the home link
  * @param {*} wikiLink The href for the wiki link
  * @param {*} webarchiveLink The href for the web archive link
  * @param {*} githubLink The href for the github link
- * @param {*} customLinks2 An array of {href, il8n} objects for custom links. These links will appear at the end of the list
+ * @param {*} customLinks2 An array of {href, il8n} objects with the data for custom links. These links will appear at the end of the list
  */
 /** */
 function generateFooter({customLinks1=[], wikiLink, webarchiveLink, githubLink, customLinks2=[]}) {
