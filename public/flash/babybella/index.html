@@ -27,11 +27,11 @@
 
         <div class="swf" dir="ltr" rbidi="on"></div>
 
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="http://127.0.0.1:5500/flash/babybella/babybella_timeline.html" data-il8n="footer_timeline_link" data-il8n="footer_timeline_link" class="global-lowernav-link">Timeline</a> |
-          <a href="https://bellasara.wiki.gg/wiki/%22Baby_Bella%22" class="global-lowernav-link" data-il8n="footer_wiki_linktxt" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
-          <a href="https://web.archive.org/web/20081019193023/http://www.bellasara.com/babybella/index.aspx" data-il8n="footer_webarchive_linktxt" data-il8n="footer_webarchive_linktxt" class="global-lowernav-link">Web Archive Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({customLinks1: [{href: '/flash/babybella/babybella_timeline.html', il8n: 'footer_timeline_link'}], wikiLink: 'https://bellasara.wiki.gg/wiki/%22Baby_Bella%22', webarchiveLink: 'https://web.archive.org/web/20081019193023/http://www.bellasara.com/babybella/index.aspx', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/babybella'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>

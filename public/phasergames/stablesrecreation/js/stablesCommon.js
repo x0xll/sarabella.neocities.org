@@ -126,7 +126,7 @@ class StablesManager {
         this.#game.backgroundMusic.loop = true; 
         this.#game.backgroundMusic.play();
 
-        this.#game.add.image(444, 261, 'stable_bg');
+        this.#game.add.image(444, 260, 'stable_bg');
 
         // Variables
         this.#game.HAND = {
@@ -161,6 +161,7 @@ class StablesManager {
         this.#game.horseAnimationQueue = []
         this.#game.statBoxBusy = false
         this.#game.statBoxQueue = []
+        this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
     }
 
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
@@ -201,13 +202,13 @@ class StablesManager {
         })
     }
 
-    createHorse(x, y, angle) {
+    createHorse(x, y, angle, scale = 1) {
             const game = this.#game
-            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle);
+            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale);
             game.horse.animationState.setAnimation(0, "idle", false)
-            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle);
+            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle).setScale(scale);
             game.horseDirty.animationState.setAnimation(0, "idle", false)
-            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle);
+            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale);
             game.horseOverlay.animationState.setAnimation(0, "idle", false)
             
             this.#addConstantAnimation()
@@ -318,18 +319,15 @@ class StablesManager {
         const gotoWorldBg = this.#game.add.image(x, y, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(scaleX, scaleY);
         const gotoWorldTxt = this.#game.add.text(x, y, 'Static Text Object', settings).setAlpha(0).setOrigin(.5, .5);
         gotoWorldTxt.text = localeData.txtToWorld;
-        gotoWorldBg.on('pointerover', function (pointer)
-            {
+        gotoWorldBg.on('pointerover', function (pointer) {
                 gotoWorldBg.setAlpha(1);
                 gotoWorldTxt.setAlpha(1);
             });
-        gotoWorldBg.on('pointerout', function (pointer) 
-            { 
+        gotoWorldBg.on('pointerout', function (pointer)  { 
                 gotoWorldBg.setAlpha(0.01);
                 gotoWorldTxt.setAlpha(0);
             });
-        gotoWorldBg.on('pointerdown', function (pointer)
-            {
+        gotoWorldBg.on('pointerdown', function (pointer) {
                 window.location.href = '/flash/worldmap/worldmap_new.html'
             });
     }
@@ -337,7 +335,7 @@ class StablesManager {
     /** Creates the UI elements  */
     createUI(helpTexts) {
         const game = this.#game
-        this.#game.add.image(444, 261, 'stable_fg');
+        this.#game.add.image(444, 260, 'stable_fg');
         this.#createInspirationalMessage()
 
         // Horse name

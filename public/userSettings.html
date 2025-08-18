@@ -14,7 +14,7 @@
 
     <body onload="loadLanguagePref(); setupUserDropdown(); loadSettings();">
         <script src="/header.js"></script>
-        
+
         <div id="signup-container">  
             <img alt="" id="headerimg" src="images/user/product-header.png" />
             <h1 class="signup-header" id="top-header" data-il8n="settings_title">Bella Sara Settings</h1>
@@ -24,8 +24,11 @@
                         <div class="signup-step">
                             <h2 data-il8n="settings_general_title">General Settings</h2>
                             <form>
-                                <label for="data" data-il8n="settings_horseshoemultiplicator">Horseshoe multiplicator:</label>
-                                <input type="checkbox" id="horseshoemultiplicator" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR, this)">           
+                                <label for="data" data-il8n="settings_horseshoemultiplicator">Horseshoe Multiplicator:</label>
+                                <input type="checkbox" id="horseshoemultiplicator" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR, this)">   
+                                <br/>
+                                <label for="data" data-il8n="settings_mapplaypage">Map Play Page:</label>
+                                <input type="checkbox" id="mapplaypage" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPE_SETTINGS_MAPPLAYPAGE, this)">           
                             </form>
                         </div>
                         <div class="signup-step">
@@ -39,7 +42,11 @@
                     <div class="signup-step signup-right">
                         <h2 data-il8n="settings_actions">Settings Descriptions</h2>
                         <p data-il8n="settings_desc" style="margin: 0px;">
-                            "Horseshoe multiplicator": Choose whether you wish to win horseshoes with the original amounts, or if you wish to multiply all horseshoe you win by 100.
+                            "Horseshoe Multiplicator": Choose whether you wish to win horseshoes with the original amounts, or if you wish to multiply all horseshoe you win by 100.
+                            <br/>
+                            <br/>
+                            "Map Play Page": Choose whether to default the game list to the text-based Play page (recommended for tactile devices), or to the custom flash-based map one (recommended for a slightly more original feel).
+                            <br/>
                             <br/>
                             "Translated Quotes": Choose whether you want by default to have the Stables quotes in English or translated (may not be accurate to the original game).
                         </p>

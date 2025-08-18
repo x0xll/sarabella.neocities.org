@@ -1,14 +1,3 @@
-// Variables to be used throughout scene
-// horse = null
-// horseDirty = null
-// horseOverlay= null
-
-// inspiration = null
-// inspirationMessage = null
-
-
-
-// Actual game start
 class WaterStable extends Phaser.Scene
 {
     constructor ()
@@ -33,14 +22,17 @@ class WaterStable extends Phaser.Scene
         game.load.image('cleanliness_scale', './images/waterStable/cleanliness.png');
         game.load.image('happiness_scale', './images/waterStable/happiness.png');
 
-        game.load.atlas('water', './images/waterStable/water.png', './images/waterStable/water.json');
+        game.load.spineAtlas("water-atlas", `./images/waterStable/dirty_water.atlas`);
+        game.load.spineJson("water-json", `./images/waterStable/dirty_water.json`);
         game.load.atlas('water_spinner', './images/waterStable/water_spinner.png', './images/waterStable/water_spinner.json');
         game.load.atlas('water_spinner_holder', './images/waterStable/water_spinner_holder.png', './images/waterStable/water_spinner_holder.json');
         
         game.load.atlas('brush', './images/waterStable/brush.png', './images/waterStable/brush_updated.json');
         game.load.atlas('brush_small', './images/waterStable/brush_small.png', './images/waterStable/brush_small_updated.json');
         game.load.atlas('hoofpick', './images/waterStable/polisher.png', './images/waterStable/polisher.json');
-        game.load.atlas('bubbles1', './images/waterStable/bubbles1.png', './images/waterStable/bubbles1.json');
+
+        game.load.spineAtlas("bubbles-atlas", `./images/waterStable/bubbles1.atlas`);
+        game.load.spineJson("bubbles-json", `./images/waterStable/bubbles1.json`);
         game.load.atlas('bubbles2', './images/waterStable/bubbles2.png', './images/waterStable/bubbles2.json');
         game.load.atlas('bubbles3', './images/waterStable/bubbles3.png', './images/waterStable/bubbles3.json');
 
@@ -97,15 +89,6 @@ class WaterStable extends Phaser.Scene
     {
         const game = this
         game.stablesManager.createScene()
-
-        // // Text boxes
-        // const hoverTextSettings = { 
-        //     font: 'bold 16px Arial', 
-        //     align: 'center',
-        //     color: '#ffffff',
-        //     wordWrap: { width: 125 } ,
-        //     lineSpacing: -3
-        // }
      
         // Temp Change BG
         const temperatureBG = game.add.sprite(560, 110, 'temperature_bg', 'idle').setScale(1.02)
@@ -133,7 +116,6 @@ class WaterStable extends Phaser.Scene
 
         // Brush
         const brush = game.add.sprite(690, 138, 'brush', 'idle').setScale(0.76).setAngle(90).setInteractive({ pixelPerfect: true });
-        // const brushInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(753, 88, 40, 50), Phaser.Geom.Rectangle.Contains);
             game.stablesManager.addSpriteAnims(brush, 'brush_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006',
                     'in_use'
@@ -423,129 +405,145 @@ class WaterStable extends Phaser.Scene
 
 
         // Bubbles
-        game.bubbles1 = game.add.sprite(750, 261, 'bubbles1', 'idle').setInteractive({ pixelPerfect: true });
-            game.stablesManager.addSpriteAnims(game.bubbles1, 'bubbles1', [
-                        'bubbles0000', 'bubbles0001', 'bubbles0002', 'bubbles0003', 'bubbles0003', 'bubbles0005', 'bubbles0006', 'bubbles0007', 'bubbles0008', 'bubbles0009',
-                        'bubbles0010', 'bubbles0011', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
-                        'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                        'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                        'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                        'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                        'bubbles0060', 
-
-                        'bubbles0003', 'bubbles0005', 'bubbles0006', 'bubbles0007', 'bubbles0008', 'bubbles0009', 'bubbles0010', 'bubbles0011', 'bubbles0012', 
-                        'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 
-                        'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 
-                        'bubbles0033',
-
-                        'bubbles0091', 'bubbles0092', 'bubbles0093', 'bubbles0094', 'bubbles0095', 'bubbles0096', 'bubbles0097', 'bubbles0098', 'bubbles0099',
-                        'bubbles0100', 'bubbles0101', 'bubbles0102', 'bubbles0103', 'bubbles0104',
-                        'idle'
-                    ])
         game.bubbles2 = game.add.sprite(176, 220, 'bubbles2', 'bubbles0000')
             game.stablesManager.addSpriteAnims(game.bubbles2, 'bubbles2', [
-                        'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
-                        'bubbles0000', 'bubbles0000', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
-                        'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                        'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                        'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                        'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                        'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 
+                    'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
+                    'bubbles0000', 'bubbles0000', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
+                    'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
+                    'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
+                    'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
+                    'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
+                    'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 
 
-                        'bubbles0000', 'bubbles0012', 
-                        'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 
-                        'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 
-                        'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039', 'bubbles0040', 'bubbles0041', 'bubbles0042', 
-                        'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 
+                    'bubbles0000', 'bubbles0012', 
+                    'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 
+                    'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 
+                    'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039', 'bubbles0040', 'bubbles0041', 'bubbles0042', 
+                    'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 
 
-                        'bubbles0000'
-                    ])
-            game.stablesManager.addSpriteAnims(game.bubbles3, 'bubbles3', [
-                        'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
-                        'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0018', 'bubbles0019',
-                        'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
-                        'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
-                        'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
-                        'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
-                        'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 'bubbles0068', 'bubbles0069',
-                        'bubbles0070', 'bubbles0071', 'bubbles0072', 'bubbles0073',
+                    'bubbles0000'
+                ])
+       game.stablesManager.addSpriteAnims(game.bubbles3, 'bubbles3', [
+                    'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
+                    'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0018', 'bubbles0019',
+                    'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 'bubbles0027', 'bubbles0028', 'bubbles0029',
+                    'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 'bubbles0037', 'bubbles0038', 'bubbles0039',
+                    'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 'bubbles0047', 'bubbles0048', 'bubbles0049',
+                    'bubbles0050', 'bubbles0051', 'bubbles0052', 'bubbles0053', 'bubbles0054', 'bubbles0055', 'bubbles0056', 'bubbles0057', 'bubbles0058', 'bubbles0059',
+                    'bubbles0060', 'bubbles0061', 'bubbles0062', 'bubbles0063', 'bubbles0064', 'bubbles0065', 'bubbles0066', 'bubbles0067', 'bubbles0068', 'bubbles0069',
+                    'bubbles0070', 'bubbles0071', 'bubbles0072', 'bubbles0073',
 
-                        'bubbles0000', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 
-                        'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 
-                        'bubbles0037', 'bubbles0038', 'bubbles0039', 'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 
-                        'bubbles0047', 'bubbles0048', 'bubbles0049', 'bubbles0050', 'bubbles0051',
+                    'bubbles0000', 'bubbles0018', 'bubbles0019', 'bubbles0020', 'bubbles0021', 'bubbles0022', 'bubbles0023', 'bubbles0024', 'bubbles0025', 'bubbles0026', 
+                    'bubbles0027', 'bubbles0028', 'bubbles0029', 'bubbles0030', 'bubbles0031', 'bubbles0032', 'bubbles0033', 'bubbles0034', 'bubbles0035', 'bubbles0036', 
+                    'bubbles0037', 'bubbles0038', 'bubbles0039', 'bubbles0040', 'bubbles0041', 'bubbles0042', 'bubbles0043', 'bubbles0044', 'bubbles0045', 'bubbles0046', 
+                    'bubbles0047', 'bubbles0048', 'bubbles0049', 'bubbles0050', 'bubbles0051',
 
-                        'bubbles0000'
-                    ])
-            game.bubbles1.on('pointerover', function (pointer) { game.stablesManager.pointerover(game.bubbles1, game.hover1) });
-            game.bubbles1.on('pointerout', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
-                    game.bubbles1.setFrame('idle')
-                }
-            });
-            game.bubbles1.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
-                    game.bubbles1.play('bubbles1')
-                    game.bubbles2.play('bubbles2')
-                    game.bubbles3.play('bubbles3')
-                    game.bubbleClick.play()
-                }
-            });
+                    'bubbles0000'
+                ])
+        game.bubbles = game.add.spine(525, 75, 'bubbles-json', 'bubbles-atlas')
+            game.bubbles.animationState.setAnimation(0, "idle", false)
+            game.bubblesBusy = false
+            game.bubblesInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(647, 400, 200, 150), Phaser.Geom.Rectangle.Contains);
+                game.bubblesInteractive.on('pointerover', function (pointer) {
+                    if (game.handCurrent === game.HAND.empty && !game.bubblesBusy) {
+                        game.bubbles.animationState.setAnimation(0, "hover", false)
+                        game.hover1.play();
+                    }
+                })
+                game.bubblesInteractive.on('pointerout', function (pointer) {
+                    if (game.handCurrent === game.HAND.empty && !game.bubblesBusy) {
+                        game.bubbles.animationState.setAnimation(0, "idle", false)
+                    }
+                })
+                game.bubblesInteractive.on('pointerdown', function (pointer) {
+                    if (game.handCurrent === game.HAND.empty && !game.bubblesBusy) {
+                        game.bubblesBusy = true
+                        game.bubbles.animationState.setAnimation(0, "main1", false)
+                        game.bubbles2.play('bubbles2')
+                        game.bubbles3.play('bubbles3')
+                        game.bubbleClick.play()
+                    }
+                });
+                game.bubbles.animationState.addListener({
+                    complete: function endAnimation(entry) {                
+                        if (entry.animation.name === 'main1') {
+                            game.bubbleSound.play();
+                            game.bubbles.animationState.setAnimation(0, "main2", false)
+                        }           
+                        else if (entry.animation.name === 'main2') {
+                            game.bubbleReplaceSound.play();
+                            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtCleanWater)
+                            if (!game.waterFilled) {
+                                game.waterFilled = true
+                                game.stablesManager.updateBar(game.happinessBar, 1/4)
+                            }
+                            game.bubbles.animationState.setAnimation(0, "main3", false)
+                        }              
+                        if (entry.animation.name === 'main3') {
+                            game.bubblesBusy = false
+                            game.bubbles.animationState.setAnimation(0, "idle", false)
+                        }    
+                    } ,
+                    start: function startAnimation(entry){ 
+                        
+                    }       
+                })
 
 
         // Dirty Water
         const waterSpinnerHolder = game.add.sprite(865, 54, 'water_spinner_holder', 'idle').setInteractive({ pixelPerfect: true });
         const waterSpinner = game.add.sprite(800, 57, 'water_spinner', '1').setInteractive({ pixelPerfect: true });
-        game.anims.create({
-                key: 'water_spinner',
-                frames: game.anims.generateFrameNumbers('water_spinner', { frames: [
-                    '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                    '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
-                    '20', '21', '22', '23', '24', '25', '26', '27', '28'
-                ] }),
-                frameRate: 24,
-                repeat: -1
-            });
+            game.anims.create({
+                    key: 'water_spinner',
+                    frames: game.anims.generateFrameNumbers('water_spinner', { frames: [
+                        '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                        '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+                        '20', '21', '22', '23', '24', '25', '26', '27', '28'
+                    ] }),
+                    frameRate: 24,
+                    repeat: -1
+                });
             waterSpinner.play('water_spinner')
-        game.water = this.add.sprite(436, 258, 'water', 'dirtywater0000').setScale(1.01);
+        game.water = game.add.spine(436, 259, 'water-json', 'water-atlas').setScale(1.01);
+            game.water.animationState.setAnimation(0, "water_dirty", false)
             game.waterClean = false
-            game.stablesManager.addSpriteAnims(game.water, 'clean_water', [
-                    'dirtywater0000', 'dirtywater0001', 'dirtywater0002', 'dirtywater0003', 'dirtywater0004', 'dirtywater0005', 'dirtywater0006', 'dirtywater0007', 'dirtywater0008', 'dirtywater0009',
-                    'dirtywater0010', 'dirtywater0011', 'dirtywater0012', 'dirtywater0013', 'dirtywater0014', 'dirtywater0015', 'dirtywater0016', 'dirtywater0017', 'dirtywater0018', 'dirtywater0019',
-                    'dirtywater0020', 'dirtywater0021', 'dirtywater0022', 'dirtywater0023', 'dirtywater0024', 'dirtywater0025', 'dirtywater0026', 'dirtywater0027', 'dirtywater0028', 'dirtywater0029',
-                    'dirtywater0030', 'dirtywater0031', 'dirtywater0032', 'dirtywater0033', 'dirtywater0034', 'dirtywater0035', 'dirtywater0036', 'dirtywater0037', 'dirtywater0038', 'dirtywater0039',
-                    'dirtywater0040', 'dirtywater0041', 'dirtywater0042', 'dirtywater0043', 'dirtywater0044', 'dirtywater0045', 'dirtywater0046', 'dirtywater0047', 'dirtywater0048', 'dirtywater0049',
-                    'dirtywater0050', 'dirtywater0051', 'dirtywater0052', 'dirtywater0053', 'dirtywater0054', 'dirtywater0055', 'dirtywater0056', 'dirtywater0057', 'dirtywater0058', 'dirtywater0059',
-                    'dirtywater0060', 'dirtywater0061', 'dirtywater0062', 'dirtywater0063', 'dirtywater0064', 'dirtywater0065', 
-                    'cleanwater'
-                ])
-
-            function cleanWaterHover () {
-                if (game.handCurrent === game.HAND.empty && game.water.frame.name === 'dirtywater0000') {
-                    waterSpinnerHolder.setFrame('hover');
-                    game.hover2.play();
-                }
+            game.water.animationState.addListener({
+                complete: function endAnimation(entry) {                
+                    if (entry.animation.name === 'clean_water') {
+                        game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtCleanTank)
+                    }
+                } ,
+                start: function startAnimation(entry){ 
+                    game.time.delayedCall(75, function () {game.drainWater.play(); }); // Should play on frame 0015
+                       
+                }       
+            })
+        function cleanWaterHover () {
+            if (game.handCurrent === game.HAND.empty && !game.waterClean) {
+                waterSpinnerHolder.setFrame('hover');
+                game.hover2.play();
             }
-            function cleanWaterPointerOut () {
-                if (waterSpinnerHolder.frame.name === 'hover') {
-                    waterSpinnerHolder.setFrame('idle');
-                }
+        }
+        function cleanWaterPointerOut () {
+            if (waterSpinnerHolder.frame.name === 'hover') {
+                waterSpinnerHolder.setFrame('idle');
             }
-            function cleanWater () {
-                if (game.handCurrent === game.HAND.empty && !game.waterClean && game.water.frame.name === 'dirtywater0000') {
-                    game.waterClean = true
-                    game.water.play('clean_water')
-                    waterSpinner.stop().setFrame('1')
-                    game.stablesManager.updateBar(game.cleanlinessBar, 2)
-                    game.stablesManager.updateBar(game.happinessBar, 1/2 + 0.05)
-                }
+        }
+        function cleanWater () {
+            if (game.handCurrent === game.HAND.empty && !game.waterClean) {
+                game.waterClean = true
+                game.water.animationState.addAnimation(0, "clean_water", false);
+                waterSpinner.stop().setFrame('1')
+                game.stablesManager.updateBar(game.cleanlinessBar, 2)
+                game.stablesManager.updateBar(game.happinessBar, 1/2 + 0.05)
             }
-            waterSpinner.on('pointerover', cleanWaterHover)
-            waterSpinner.on('pointerout', cleanWaterPointerOut)
-            waterSpinner.on('pointerdown', cleanWater)
-            waterSpinnerHolder.on('pointerover', cleanWaterHover)
-            waterSpinnerHolder.on('pointerout', cleanWaterPointerOut)
-            waterSpinnerHolder.on('pointerdown', cleanWater)
+        }
+        waterSpinner.on('pointerover', cleanWaterHover)
+        waterSpinner.on('pointerout', cleanWaterPointerOut)
+        waterSpinner.on('pointerdown', cleanWater)
+        waterSpinnerHolder.on('pointerover', cleanWaterHover)
+        waterSpinnerHolder.on('pointerout', cleanWaterPointerOut)
+        waterSpinnerHolder.on('pointerdown', cleanWater)
 
 
         // ---------- Stable foreground and UI ---------- //
@@ -577,22 +575,6 @@ class WaterStable extends Phaser.Scene
         })
 
         // play sounds at correct frame
-        if (game.water.frame.name === 'dirtywater0015') {
-            game.drainWater.play();
-        } else if (game.water.frame.name === 'dirtywater0065') {
-            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtCleanTank)
-        }
-        if (game.bubbles1.frame.name === 'bubbles0006') {
-            game.bubbleSound.play();
-        }
-        else if (game.bubbles1.frame.name === 'bubbles0091') {
-            game.bubbleReplaceSound.play();
-            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtCleanWater)
-            if (!game.waterFilled) {
-                game.waterFilled = true
-                game.stablesManager.updateBar(game.happinessBar, 1/4)
-            }
-        }
         if (game.foodTrough.frame.name === 'feed0006') {
             game.foodDispenseSound.play();
         }

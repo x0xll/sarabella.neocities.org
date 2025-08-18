@@ -1,14 +1,3 @@
-// Variables to be used throughout scene
-// horse = null
-// horseDirty = null
-// horseOverlay= null
-
-// inspiration = null
-// inspirationMessage = null
-
-
-
-// Actual game start
 class AirStable extends Phaser.Scene
 {
     constructor ()

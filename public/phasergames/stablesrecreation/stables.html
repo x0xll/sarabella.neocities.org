@@ -89,12 +89,12 @@
             </script>
         </div>
         
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-            <a href="./index.html" class="global-lowernav-link" data-il8n="footer_magicalhorses_linktxt">Magical Horses</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a> |
-            <a href="https://github.com/Gridloch/bellasararecreation" data-il8n="footer_github_linktxt" class="global-lowernav-link">GitHub</a>
-          </div>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({customLinks1:[{href: './index.html', il8n:'footer_magicalhorses_linktxt'}], wikiLink: 'https://bellasara.wiki.gg/wiki/Magical_Horses', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/phasergames/stablesrecreation'});
+          </script>
+        </div>     
 
           <script src="/flags.js"></script>
 

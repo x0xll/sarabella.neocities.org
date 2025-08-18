@@ -3,7 +3,7 @@
 	<bubble_menus>
 		<menu id="Woods" _x="35" _y="105">
 			<title_bubble _x="0" _y="0">
-				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Les</p>]]></label>
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Woods</p>]]></label>
 			</title_bubble>
 			<menu_bubble _x="20" _y="34">
 				<item _x="1" _y="10" link="/phasergames/artrandomiser/index.html">
