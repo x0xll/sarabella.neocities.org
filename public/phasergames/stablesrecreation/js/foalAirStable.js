@@ -1,14 +1,3 @@
-// Variables to be used throughout scene
-// horse = null
-// horseDirty = null
-// horseOverlay= null
-
-// inspiration = null
-// inspirationMessage = null
-
-
-
-// Actual game start
 class FoalAirStable extends Phaser.Scene
 {
     constructor ()
@@ -33,13 +22,18 @@ class FoalAirStable extends Phaser.Scene
         game.load.image('cleanliness_scale', './images/airStable/cleanliness.png');
         game.load.image('happiness_scale', './images/airStable/happiness.png');
 
-        game.load.atlas('leaf_tree_shake', './images/airFoalStable/leaf_tree_shake.png', './images/airFoalStable/leaf_tree_shake.json');
+        game.load.atlas('leaf_tree_shake1', './images/airFoalStable/leaf_tree_shake1.png', './images/airFoalStable/leaf_tree_shake1.json');
+        game.load.atlas('leaf_tree_shake2', './images/airFoalStable/leaf_tree_shake2.png', './images/airFoalStable/leaf_tree_shake2.json');
+        game.load.atlas('leaf_tree_shake3', './images/airFoalStable/leaf_tree_shake3.png', './images/airFoalStable/leaf_tree_shake3.json');
         game.load.atlas('leaf_chimes', './images/airFoalStable/leaf_chimes.png', './images/airFoalStable/leaf_chimes.json');
         game.load.atlas('leaves_fall', './images/airStable/leaves_fall.png', './images/airStable/leaves_fall.json');
         game.load.atlas('leaves_wind', './images/airStable/leaves_wind.png', './images/airStable/leaves_wind.json');
 
+        game.load.atlas('fountain1', './images/airFoalStable/fountain1.png', './images/airFoalStable/fountain1.json');
+        game.load.atlas('fountain2', './images/airFoalStable/fountain2.png', './images/airFoalStable/fountain2.json');
+        game.load.atlas('fountain3', './images/airFoalStable/fountain3.png', './images/airFoalStable/fountain3.json');
+
         game.load.image('left_tree', './images/airStable/leftTree.png');
-        game.load.atlas('fountain', './images/airFoalStable/fountain.png', './images/airFoalStable/fountain.json');
         game.load.atlas('food_interactive', './images/airStable/food_interactive.png', './images/airStable/food_interactive.json');
         game.load.atlas('berries', './images/airFoalStable/berries.png','./images/airFoalStable/berries.json');
         game.load.image('apple', './images/airStable/berriesHeld.png');
@@ -53,10 +47,10 @@ class FoalAirStable extends Phaser.Scene
         
         game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
         game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        game.load.spineAtlas("horse_dirty-atlas", `./images/airStable/horse_dirty/dirt_skeleton.atlas`);
+        game.load.spineAtlas("horse_dirty-atlas", `./images/airFoalStable/horse_dirty/dirt_skeleton.atlas`);
         game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
         game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        game.load.spineJson("horse_dirty-json", `./images/airStable/horse_dirty/dirt_skeleton.json`);
+        game.load.spineJson("horse_dirty-json", `./images/airFoalStable/horse_dirty/dirt_skeleton.json`);
 
         game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
 
@@ -89,8 +83,8 @@ class FoalAirStable extends Phaser.Scene
         game.stablesManager.createScene()
 
         // Brush
+        // TODO: Add and position
         const brush = game.add.sprite(730, 223, 'brush', 'idle').setScale(0.76).setInteractive({ pixelPerfect: true });
-        // const brushInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(753, 88, 40, 50), Phaser.Geom.Rectangle.Contains);
             game.stablesManager.addSpriteAnims(brush, 'brush_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005',
                     'in_use'
@@ -108,6 +102,7 @@ class FoalAirStable extends Phaser.Scene
             brush.on('pointerout', function (pointer) { game.stablesManager.pointerout (brush)});
 
         // Small Brush
+        // TODO: Add and position
         const brushSmall = game.add.sprite(752, 239, 'brush_small', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(brushSmall, 'brush_pickup_small', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006',
@@ -127,6 +122,7 @@ class FoalAirStable extends Phaser.Scene
             brushSmall.on('pointerout', function (pointer) { game.stablesManager.pointerout (brushSmall) });
 
         // Hoofpick
+        // TODO: Add and position
         const hoofpick = game.add.sprite(750, 182, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
             game.stablesManager.addSpriteAnims(hoofpick, 'hoofpick_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009',
@@ -160,6 +156,7 @@ class FoalAirStable extends Phaser.Scene
 
             
         // Leaves (on floor)
+        // TODO: Add and position
         const leaves = game.add.sprite(520, 261, 'leaves_wind', 'wind0000');
              game.stablesManager.addSpriteAnims(leaves, 'leaves_wind', [
                     'wind0000', 'wind0001', 'wind0002', 'wind0003', 'wind0004', 'wind0005', 'wind0006', 'wind0007', 'wind0008', 'wind0009',
@@ -182,6 +179,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Inspirational message frame
+        // TODO: Add and position
         game.add.image(164, 77, 'horse_image').setScale(.35);
         const frame = game.add.sprite(165, 73, 'frame', 'idle').setInteractive();
             frame.on('pointerover', function (pointer){
@@ -200,35 +198,38 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Water Fountain
-        game.trough = game.add.sprite(196, 348, 'fountain', 'idle').setInteractive({ pixelPerfect: true });
-            game.stablesManager.addSpriteAnims(game.trough, 'fill_water', [
-                '10',
-                '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-                '21', '22', '23', '24', '25', '26', '27', '28', '29', '30',
-                '31', '32', '33', '34', '35', '36', '37', '38', '39', '40',
-                '41', '42', '43', '44', '45', '46', '47', '48', '49', '50',
-                '51', '52', '53', '54', '55', '56', '57', '58', '59', '60',
-                '61', '62', '63', '64', '65', '66', '67', '68', '69', '70',
-                '71', '72', '73', '74', '75', '76', '77', '78', '79', '80',
-                '81', '82', '83', '84', '85', '86', '87', '88', '89', '90',
-                '91', '92', '93', '94', '95', '96', '96', '96', '96', 
+        // TODO: Correct position
+        game.trough = game.add.sprite(196, 348, 'fountain1', 'idle').setInteractive({ pixelPerfect: true });
+            game.stablesManager.addImageAnims('fountain2', 'fill_water1', [
+                '0011', '0012', '0013', '0014', '0015', '0016', '0017', '0018', '0019', '0020',
+                '0021', '0022', '0023', '0024', '0025', '0026', '0027', '0028', '0029', '0030',
+                '0031', '0032', '0033', '0034', '0035', '0036', '0037', '0038', '0039', '0040',
+                '0041', '0042', '0043', '0044', '0045', '0046', '0047', '0048', '0049', '0050',
+                '0051', '0052', '0053', '0054', '0055', '0056', '0057', '0058', '0059', '0060',
+                '0061', '0062', '0063', '0064', '0065', '0066', '0067', '0068', '0069', '0070',
+                '0071', '0072', '0073', '0074', '0075', '0076', 
             ])
-            game.stablesManager.addSpriteAnims(game.trough, 'water_fountain_drink', [
-                '100', '100', '100', '100', '100', '100', '100', '100', '100', '100',
-                '100', '100', '100', '100', '100', '100', '100', '100', '100', '100',
-                '100', '100', '100', '100', '100', '100',
-                '125', '126', '127', '128', '129', '130',
-                '131', '132', '133', '134', '135', '136', '137', '138', '139', '140',
-                '141', '142', '143', '144', '145', '146', '147', '148', '149', '150',
-                '151', '152', '153', '154', '155', '156', '157', '158', '159', '160',
-                '161', '162', '163', '164', '165', '166', '167', '168', '169', '170',
-                '171', '172', '173', '174', '175', '176'
+            game.stablesManager.addImageAnims('fountain3', 'fill_water2', [
+                '0077', '0078', '0079', '0080',
+                '0081', '0082', '0083', '0084', '0085', '0086', '0087', '0088', '0089', '0090',
+                '0091', '0092', '0093', '0094', '0095', '0096', '0096', '0096', '0096', 
+            ])
+            game.stablesManager.addImageAnims('fountain3', 'water_fountain_drink', [
+                '0096', '0096', '0096', '0096', '0096', '0096', '0096', '0096', '0096', '0096',
+                '0096', '0096', '0096', '0096', '0096', '0096', '0096', '0096', '0096', '0096',
+                '0096', '0096', '0096', '0096', '0096', '0096',
+                '0125', '0126', '0127', '0128', '0129', '0130',
+                '0131', '0132', '0133', '0134', '0135', '0136', '0137', '0138', '0139', '0140',
+                '0141', '0142', '0143', '0144', '0145', '0146', '0147', '0148', '0149', '0150',
+                '0151', '0152', '0153', '0154', '0155', '0156', '0157', '0158', '0159', '0160',
+                '0161', '0162', '0163', '0164', '0165', '0166', '0167', '0168', '0169', '0096',
+                '0096', '0096', '0096', '0096', '0175', '0096'
             ])
             game.trough.on('pointerdown', function (pointer)
             {
                 if (!game.waterFilled && game.handCurrent === game.HAND.empty) {
                     game.waterFilled = true;
-                    game.trough.play('fill_water');
+                    game.trough.play('fill_water1');
                     game.waterSound.play()
                     game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.drink)
                 }
@@ -246,10 +247,12 @@ class FoalAirStable extends Phaser.Scene
             });
 
         // Food Trough
+        // TODO: Add and position
         game.branch = game.add.spine(-35, 230, 'branch-json', 'branch-atlas').setScale(.35)//.setAngle(90);
 
 
         // Horse hit box
+        // TODO: Add and position
         const wingInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(330, 0, 250, 350), Phaser.Geom.Rectangle.Contains);
         game.stablesManager.createHorseHitbox(200, 120, 376, 245, cleanWings, -20, -15)
             wingInteractive.on('pointerdown', function (pointer) {
@@ -258,6 +261,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Windchime
+        // TODO: Correct position
         const windchimes = game.add.sprite(340, 18, 'leaf_chimes', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(windchimes, 'windchimes_blow', [
                     'wind0000', 'wind0001', 'wind0002', 'wind0003', 'wind0004', 'wind0005', 'wind0006', 'wind0007', 'wind0008', 'wind0009',
@@ -286,7 +290,8 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Horse
-        game.stablesManager.createHorse(430, 295, 90)
+        // TODO: Scale and position
+        game.stablesManager.createHorse(430, 295, 90, .8)
             /**
              * Updates the feather oil count, plays the feather oil use animation
              * and updates the horse stat bars if the wings need to be cleaned.
@@ -310,7 +315,9 @@ class FoalAirStable extends Phaser.Scene
             }
             game.additionalCleanCondition = () => {return game.extraCleanLevel === 2}
 
-             
+        
+        // Food Branch
+        // TODO: Add and position
         game.add.image(92, 285, 'left_tree');
         game.foodTrough = game.add.sprite(-164, 299, 'food_interactive', 'idle').setInteractive({ pixelPerfect: true });
             game.anims.create({
@@ -338,11 +345,11 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
 
-
         // Berries
+        // TODO: Correct position
         const berries = game.add.sprite(762, 30, 'berries', 'idle').setScale(.43).setInteractive();
             game.stablesManager.addSpriteAnims(berries, 'berries_pickup', [
-                    'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009'
+                    'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'idle'
                 ])
             game.stablesManager.addSpriteAnims(berries, 'berries_place', [ 'idle' ])
             berries.on('pointerover', function (pointer) { game.stablesManager.pointerover (berries, game.hover1) });
@@ -350,43 +357,9 @@ class FoalAirStable extends Phaser.Scene
             berries.on('pointerdown', function (pointer) {
                 game.stablesManager.pointerdown(berries, game.HAND.apple, 'berries_pickup', 'berries_place')
             });
-
-        // Tree (for leaves)
-        const treeInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(740, 330, 200, 150), Phaser.Geom.Rectangle.Contains);
-        const leafTree = game.add.sprite(443, 260, 'leaf_tree_shake', 'idle');
-            game.stablesManager.addSpriteAnims(leafTree, 'tree_shake', [
-                    'shake0000', 'shake0001', 'shake0002', 'shake0003', 'shake0004', 'shake0005', 'shake0006', 'shake0007', 'shake0008', 'shake0009',
-                    'shake0010', 'shake0011', 'shake0012', 'shake0013', 'shake0014', 'shake0015', 'shake0016', 'shake0017', 'shake0018', 'shake0019',
-                    'shake0020', 'shake0021', 'shake0022', 'shake0023', 'shake0024', 'shake0025', 'shake0026', 'shake0027', 'shake0028', 'shake0029',
-                    'shake0030', 'shake0031', 'shake0032', 'shake0033', 'shake0034', 'shake0035', 'shake0036', 'shake0037', 'shake0038', 'shake0039',
-                    'shake0040', 'shake0041', 'shake0042', 'shake0043', 'shake0044', 'shake0045', 'shake0046', 'shake0047', 'shake0048', 'shake0049',
-                    'shake0050', 'shake0051', 'shake0052', 'shake0053', 'shake0054', 'shake0055', 'shake0056', 'shake0057', 'shake0058', 'shake0059',
-                    'shake0060', 'shake0061', 'shake0062', 'shake0063', 'shake0064', 'shake0065', 'shake0066', 'shake0067',
-                     'idle'
-                ])
-            treeInteractive.on('pointerover', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
-                    leafTree.setFrame('hover');
-                    game.hover2.play();
-                }
-            });
-            treeInteractive.on('pointerout', function (pointer) { 
-                if (leafTree.frame.name === 'hover') {
-                    leafTree.setFrame('idle');
-                }
-            });
-            treeInteractive.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
-                    leaves.play('leaves_fall')
-                    leafTree.play('tree_shake')
-                    game.shakeLeaves.play()
-                    game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtNoMoreLeaves)
-                    game.stablesManager.updateBar(game.cleanlinessBar, 2)
-                    game.stablesManager.updateBar(game.happinessBar, 1/2 + 0.05)
-                }
-            });
         
         // Horn
+        // TODO: Add and position
         const horn = game.add.sprite(10, 120, 'horn', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(horn, 'soothe', [
                     'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
@@ -453,6 +426,7 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
 
+
         // ---------- Stable foreground and UI ---------- //
         game.stablesManager.createStatBox(625, 130)
         game.stablesManager.createBeSaWorldLink(715, 125, .8, .8, "Small")
@@ -471,6 +445,48 @@ class FoalAirStable extends Phaser.Scene
             //[605, 365, localeData.txtHelpLuck, "Small"],
             [650, 407, localeData.txtHelpBranch, "Small"]
         ])
+
+        
+        // Tree (for leaves)
+        const treeInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(740, 330, 200, 150), Phaser.Geom.Rectangle.Contains);
+        game.leafTree = game.add.sprite(443, 260, 'leaf_tree_shake1', 'idle');
+            game.stablesManager.addImageAnims('leaf_tree_shake2', 'tree_shake1', [
+                    '0010', '0011', '0012', '0013', '0014', '0015', '0016', '0017', '0018', '0019',
+                    '0020', '0021', '0022', '0023', '0024', '0025', '0026', '0027', '0028', '0029',
+                    '0030', '0031', '0032', '0033'
+                ])
+            game.stablesManager.addImageAnims('leaf_tree_shake3', 'tree_shake2', [
+                    '0034', '0035', '0036', '0037', '0038', '0039',
+                    '0040', '0041', '0042', '0043', '0044', '0045', '0046', '0047', '0048', '0049',
+                    '0050', '0051', '0052', '0053', '0054', '0055', '0056', '0057'
+                ])
+            game.stablesManager.addImageAnims('leaf_tree_shake1', 'tree_shake3', [
+                    '0058', '0059',
+                    '0060', '0061', '0062', '0063', '0064', '0065', '0066', '0067', '0068', '0069',
+                    '0070', '0071', '0072', '0073', '0074', '0075', '0076', '0077',
+                    'done'
+                ])
+            treeInteractive.on('pointerover', function (pointer) {
+                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
+                    game.leafTree.setFrame('hover');
+                    game.hover2.play();
+                }
+            });
+            treeInteractive.on('pointerout', function (pointer) { 
+                if (game.leafTree.frame.name === 'hover') {
+                    game.leafTree.setFrame('idle');
+                }
+            });
+            treeInteractive.on('pointerdown', function (pointer) {
+                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
+                    leaves.play('leaves_fall')
+                    game.leafTree.play('tree_shake1')
+                    game.shakeLeaves.play()
+                    game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtNoMoreLeaves)
+                    game.stablesManager.updateBar(game.cleanlinessBar, 2)
+                    game.stablesManager.updateBar(game.happinessBar, 1/2 + 0.05)
+                }
+            });
     }
 
     update ()
@@ -479,8 +495,15 @@ class FoalAirStable extends Phaser.Scene
         game.stablesManager.updateCursor({hoofpickYOffset:80})
 
         // play water flow sound when fountain is at correct frame
-        if (game.trough.frame.name === '29') {
+        if (game.trough.frame.name === '0029') {
             game.waterFlow.play();
+        } else if (game.trough.frame.name === '0076') {
+            game.trough.play('fill_water2');
+        }
+        if (game.leafTree.frame.name === '0033') {
+            game.leafTree.play('tree_shake2')
+        } else if (game.leafTree.frame.name === '0057') {
+            game.leafTree.play('tree_shake3')
         }
 
 

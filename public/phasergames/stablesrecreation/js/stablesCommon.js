@@ -723,6 +723,21 @@ class StablesManager {
     }
 
     /**
+     * Adds an animation for the given sprite.
+     * @param {*} image The sprite to add the animation to
+     * @param {string} animationName The name of the animation
+     * @param {array} frames An array of animation frames
+     * @param {number} frameRate The framerate to use. Default is 24 fps
+     */
+    addImageAnims(image, animationName, frames, frameRate = 24) {
+        this.#game.anims.create({
+            key: animationName,
+            frames: game.anims.generateFrameNumbers(image, { frames: frames }),
+            frameRate: frameRate
+        });
+    }
+
+    /**
      * Displays the 'hover' frame of a sprite and plays the hover sound if the hand is empty
      * @param {sprite} sprite The sprite to change
      * @param {audio} hoverSound The sound to play on hover
