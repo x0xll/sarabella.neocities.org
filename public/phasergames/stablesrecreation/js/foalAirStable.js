@@ -33,7 +33,7 @@ class FoalAirStable extends Phaser.Scene
         game.load.atlas('fountain2', './images/airFoalStable/fountain2.png', './images/airFoalStable/fountain2.json');
         game.load.atlas('fountain3', './images/airFoalStable/fountain3.png', './images/airFoalStable/fountain3.json');
 
-        game.load.image('left_tree', './images/airStable/leftTree.png');
+        game.load.image('left_tree', './images/airFoalStable/leftTree.png');
         game.load.atlas('food_interactive', './images/airStable/food_interactive.png', './images/airStable/food_interactive.json');
         game.load.atlas('berries', './images/airFoalStable/berries.png','./images/airFoalStable/berries.json');
         game.load.image('apple', './images/airStable/berriesHeld.png');
@@ -83,8 +83,7 @@ class FoalAirStable extends Phaser.Scene
         game.stablesManager.createScene()
 
         // Brush
-        // TODO: Add and position
-        const brush = game.add.sprite(730, 223, 'brush', 'idle').setScale(0.76).setInteractive({ pixelPerfect: true });
+        const brush = game.add.sprite(658, 228, 'brush', 'idle').setScale(0.76).setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(brush, 'brush_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005',
                     'in_use'
@@ -102,8 +101,7 @@ class FoalAirStable extends Phaser.Scene
             brush.on('pointerout', function (pointer) { game.stablesManager.pointerout (brush)});
 
         // Small Brush
-        // TODO: Add and position
-        const brushSmall = game.add.sprite(752, 239, 'brush_small', 'idle').setInteractive({ pixelPerfect: true });
+        const brushSmall = game.add.sprite(682, 244, 'brush_small', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(brushSmall, 'brush_pickup_small', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006',
                     'in_use'
@@ -122,8 +120,7 @@ class FoalAirStable extends Phaser.Scene
             brushSmall.on('pointerout', function (pointer) { game.stablesManager.pointerout (brushSmall) });
 
         // Hoofpick
-        // TODO: Add and position
-        const hoofpick = game.add.sprite(750, 182, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
+        const hoofpick = game.add.sprite(684, 187, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
             game.stablesManager.addSpriteAnims(hoofpick, 'hoofpick_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009',
                     'in_use'
@@ -198,8 +195,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Water Fountain
-        // TODO: Correct position
-        game.trough = game.add.sprite(196, 348, 'fountain1', 'idle').setInteractive({ pixelPerfect: true });
+        game.trough = game.add.sprite(209, 307, 'fountain1', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addImageAnims('fountain2', 'fill_water1', [
                 '0011', '0012', '0013', '0014', '0015', '0016', '0017', '0018', '0019', '0020',
                 '0021', '0022', '0023', '0024', '0025', '0026', '0027', '0028', '0029', '0030',
@@ -246,7 +242,7 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
 
-        // Food Trough
+        // Food Trough (Bottle)
         // TODO: Add and position
         game.branch = game.add.spine(-35, 230, 'branch-json', 'branch-atlas').setScale(.35)//.setAngle(90);
 
@@ -261,8 +257,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Windchime
-        // TODO: Correct position
-        const windchimes = game.add.sprite(340, 18, 'leaf_chimes', 'idle').setInteractive({ pixelPerfect: true });
+        const windchimes = game.add.sprite(336, 30, 'leaf_chimes', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(windchimes, 'windchimes_blow', [
                     'wind0000', 'wind0001', 'wind0002', 'wind0003', 'wind0004', 'wind0005', 'wind0006', 'wind0007', 'wind0008', 'wind0009',
                     'wind0010', 'wind0011', 'wind0012', 'wind0013', 'wind0014', 'wind0015', 'wind0016', 'wind0017', 'wind0018', 'wind0019',
@@ -290,8 +285,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Horse
-        // TODO: Scale and position
-        game.stablesManager.createHorse(430, 295, 90, .8)
+        game.stablesManager.createHorse(400, 335, 90, .8)
             /**
              * Updates the feather oil count, plays the feather oil use animation
              * and updates the horse stat bars if the wings need to be cleaned.
@@ -316,9 +310,9 @@ class FoalAirStable extends Phaser.Scene
             game.additionalCleanCondition = () => {return game.extraCleanLevel === 2}
 
         
-        // Food Branch
+        // Bottle
         // TODO: Add and position
-        game.add.image(92, 285, 'left_tree');
+        game.add.image(0, 0, 'left_tree').setOrigin(0,0);
         game.foodTrough = game.add.sprite(-164, 299, 'food_interactive', 'idle').setInteractive({ pixelPerfect: true });
             game.anims.create({
                 key: 'pull_back',
@@ -346,8 +340,7 @@ class FoalAirStable extends Phaser.Scene
             });
 
         // Berries
-        // TODO: Correct position
-        const berries = game.add.sprite(762, 30, 'berries', 'idle').setScale(.43).setInteractive();
+        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setInteractive();
             game.stablesManager.addSpriteAnims(berries, 'berries_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'idle'
                 ])
@@ -359,8 +352,7 @@ class FoalAirStable extends Phaser.Scene
             });
         
         // Horn
-        // TODO: Add and position
-        const horn = game.add.sprite(10, 120, 'horn', 'idle').setInteractive({ pixelPerfect: true });
+        const horn = game.add.sprite(8, 145, 'horn', 'idle').setScale(.63).setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(horn, 'soothe', [
                     '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
                     '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
