@@ -37,7 +37,7 @@ class FoalAirStable extends Phaser.Scene
         game.load.atlas('food_interactive', './images/airStable/food_interactive.png', './images/airStable/food_interactive.json');
         game.load.atlas('berries', './images/airFoalStable/berries.png','./images/airFoalStable/berries.json');
         game.load.image('apple', './images/airStable/berriesHeld.png');
-        game.load.atlas('horn', './images/airStable/horn.png','./images/airStable/horn.json');
+        game.load.atlas('horn', './images/airFoalStable/horn.png','./images/airFoalStable/horn.json');
         game.load.spineAtlas("branch-atlas", `./images/airStable/branches.atlas`);
         game.load.spineJson("branch-json", `./images/airStable/branches.json`);
         
@@ -362,40 +362,40 @@ class FoalAirStable extends Phaser.Scene
         // TODO: Add and position
         const horn = game.add.sprite(10, 120, 'horn', 'idle').setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(horn, 'soothe', [
-                    'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
-                    'play0010', 'play0011', 'play0012', 'play0013', 'play0013', 'play0015', 'play0016', 'play0017', 'play0018', 'play0019',
-                    'play0020', 'play0021', 'play0022',
-                    'play0022', 'play0021', 'play0020',
-                    'play0019', 'play0018', 'play0017', 'play0016', 'play0015', 'play0014', 'play0013', 'play0012', 'play0011', 'play0010',
-                    'play0010', 'play0010', 'play0010', 'play0006', 'play0005', 'play0004', 'play0003', 'play0002', 'play0001', 'play0000',
+                    '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
+                    '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
+                    '30', '31', '32',
+                    '32', '31', '30',
+                    '29', '28', '27', '26', '25', '24', '23', '22', '21', '20',
+                    '19', '18', '17', '16', '15', '14', '13', '12', '11', '10',
                     
-                    'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
-                    'play0010', 'play0011', 'play0012', 'play0013', 'play0013', 'play0015', 'play0016', 'play0017', 'play0018', 'play0019',
-                    'play0020', 'play0021', 'play0022',
-                    'play0022', 'play0021', 'play0020',
-                    'play0019', 'play0018', 'play0017', 'play0016', 'play0015', 'play0014', 'play0013', 'play0012', 'play0011', 'play0010',
-                    'play0010', 'play0010', 'play0010', 'play0006', 'play0005', 'play0004', 'play0003', 'play0002', 'play0001', 'play0000',
+                    '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
+                    '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
+                    '30', '31', '32',
+                    '32', '31', '30',
+                    '29', '28', '27', '26', '25', '24', '23', '22', '21', '20',
+                    '19', '18', '17', '16', '15', '14', '13', '12', '11', '10',
 
-                    'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
-                    'play0010', 'play0011', 'play0012', 'play0013', 'play0013', 'play0015', 'play0016', 'play0017', 'play0018', 'play0019',
-                    'play0020', 'play0021', 'play0022',
-                    'play0022', 'play0021', 'play0020',
-                    'play0019', 'play0018', 'play0017', 'play0016', 'play0015', 'play0014', 'play0013', 'play0012', 'play0011', 'play0010',
-                    'play0010', 'play0010', 'play0010', 'play0006', 'play0005', 'play0004', 'play0003', 'play0002', 'play0001', 'play0000',
+                    '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
+                    '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
+                    '30', '31', '32',
+                    '32', '31', '30',
+                    '29', '28', '27', '26', '25', '24', '23', '22', '21', '20',
+                    '19', '18', '17', '16', '15', '14', '13', '12', '11', '10',
                     
-                    'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
-                    'play0010', 'play0011', 'play0012', 'play0013', 'play0013', 'play0015', 'play0016', 'play0017', 'play0018', 'play0019',
-                    'play0020', 'play0021', 'play0022',
-                    'play0022', 'play0021', 'play0020',
-                    'play0019', 'play0018', 'play0017', 'play0016', 'play0015', 'play0014', 'play0013', 'play0012', 'play0011', 'play0010',
-                    'play0010', 'play0010', 'play0010', 'play0006', 'play0005', 'play0004', 'play0003', 'play0002', 'play0001', 'play0000',
+                    '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
+                    '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
+                    '30', '31', '32',
+                    '32', '31', '30',
+                    '29', '28', '27', '26', '25', '24', '23', '22', '21', '20',
+                    '19', '18', '17', '16', '15', '14', '13', '12', '11', '10',
                     
-                    'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
-                    'play0010', 'play0011', 'play0012', 'play0013', 'play0013', 'play0015', 'play0016', 'play0017', 'play0018', 'play0019',
-                    'play0020', 'play0021', 'play0022',
-                    'play0022', 'play0021', 'play0020',
-                    'play0019', 'play0018', 'play0017', 'play0016', 'play0015', 'play0014', 'play0013', 'play0012', 'play0011', 'play0010',
-                    'play0010', 'play0010', 'play0010', 'play0006', 'play0005', 'play0004', 'play0003', 'play0002', 'play0001', 'play0000',
+                    '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
+                    '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
+                    '30', '31', '32',
+                    '32', '31', '30',
+                    '29', '28', '27', '26', '25', '24', '23', '22', '21', '20',
+                    '19', '18', '17', '16', '15', '14', '13', '12', '11', '10',
 
                     'idle'
                 ], 18)
