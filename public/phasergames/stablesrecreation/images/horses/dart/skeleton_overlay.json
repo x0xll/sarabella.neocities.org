@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "RK9KkGjUna0",
+	"hash": "txp31CUKdsk",
 	"spine": "4.2.43",
-	"x": -281.97,
-	"y": 40.1,
-	"width": 378.15,
-	"height": 324.91,
+	"x": -333.98,
+	"y": -170.83,
+	"width": 629.04,
+	"height": 535.85,
 	"images": "./Parts/",
 	"audio": "C:/Users/antsg/OneDrive/Documents/Bella Sara Shennanigans/stables game/images/horse/peter"
 },
@@ -32,7 +32,8 @@
 	{ "name": "Mane", "bone": "Mane", "attachment": "Mane" },
 	{ "name": "Forelock", "bone": "Head", "attachment": "Forelock" },
 	{ "name": "Ear", "bone": "Ear", "attachment": "Ear" },
-	{ "name": "WingL", "bone": "WingL", "attachment": "WingL" }
+	{ "name": "WingL", "bone": "WingL", "attachment": "WingL" },
+	{ "name": "Sparkle", "bone": "Head", "attachment": "Sparkle/" }
 ],
 "skins": [
 	{
@@ -60,6 +61,16 @@
 			"Mane": {
 				"Mane": { "x": 84.72, "y": -15.97, "rotation": -144.05, "width": 134, "height": 104 }
 			},
+			"Sparkle": {
+				"Sparkle/": {
+					"x": 17.17,
+					"y": -91.82,
+					"rotation": 45.68,
+					"width": 70,
+					"height": 68,
+					"sequence": { "count": 43, "digits": 1 }
+				}
+			},
 			"WingL": {
 				"WingL": { "x": 157.67, "y": 17.17, "rotation": -70.75, "width": 227, "height": 336 }
 			}
@@ -67,6 +78,26 @@
 	}
 ],
 "animations": {
+	"constant": {
+		"bones": {
+			"Head": {
+				"translate": [
+					{ "time": 1.8 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Sparkle": {
+					"Sparkle/": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0417 }
+						]
+					}
+				}
+			}
+		}
+	},
 	"drink": {
 		"bones": {
 			"Mane": {

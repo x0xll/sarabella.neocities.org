@@ -44,13 +44,8 @@ class FoalLandStable extends Phaser.Scene
         game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
         game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
         game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        if (horseName === "skeleton") {
-            game.load.spineAtlas("horse_dirty-atlas", `./images/landStable/skeleton_dirty/dirt_skeleton.atlas`);
-            game.load.spineJson("horse_dirty-json", `./images/landStable/skeleton_dirty/dirt_skeleton.json`);
-        } else {
-            game.load.spineAtlas("horse_dirty-atlas", `./images/landStable/horse_dirty/dirt_skeleton.atlas`);
-            game.load.spineJson("horse_dirty-json", `./images/landStable/horse_dirty/dirt_skeleton.json`);
-        }
+        game.load.spineAtlas("horse_dirty-atlas", `./images/landFoalStable/horse_dirty/dirt_skeleton.atlas`);
+        game.load.spineJson("horse_dirty-json", `./images/landFoalStable/horse_dirty/dirt_skeleton.json`);
 
         game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
         game.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
@@ -239,7 +234,7 @@ class FoalLandStable extends Phaser.Scene
 
 
         // Horse
-        game.stablesManager.createHorse(418, 295, 90)
+        game.stablesManager.createHorse(418, 295, 90, .8)
 
 
         // Pitchfork
@@ -254,17 +249,17 @@ class FoalLandStable extends Phaser.Scene
                     'hold0000', 'hold0001', 'hold0002', 'hold0003', 'hold0004', 'hold0005', 'hold0006', 'hold0007', 'held_empty'
                 ])
             game.stablesManager.addSpriteAnims(fork, 'fork_place', [
-                    'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'held_empty'
+                    'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'place0006', 'held_empty'
                 ])
             fork.on('pointerover', function (pointer)
             {
                 if (game.handCurrent === game.HAND.empty) {
                     if (straw1.frame.name !== 'frame0000' && straw2.frame.name !== 'frame0000' && straw3.frame.name !== 'frame0000') {
-                        fork.setFrame('hover_use');
+                        fork.setFrame('hover');
                         forkText.text = localeData.txtRollOverPitchFork;
                     }
                     else {
-                        fork.setFrame('hover_wait');
+                        fork.setFrame('hover');
                         forkText.text = localeData.txtPitchForkHilite2;
                     }
                     forkText.setAlpha(1)
@@ -276,13 +271,13 @@ class FoalLandStable extends Phaser.Scene
             {
                 if (game.handCurrent === game.HAND.empty) {
                     game.handCurrent = game.HAND.fork;
-                    fork.setFrame('in_use')
+                    fork.setFrame('idle').setAlpha(.5)
                     forkText.setAlpha(0)
                     game.pickup.play();
                 }
                 else if (game.handCurrent === game.HAND.fork || game.handCurrent === game.HAND.forkFilled) {
                     game.handCurrent = game.HAND.empty;
-                    fork.setFrame('idle')
+                    fork.setFrame('idle').setAlpha(1)
                     forkText.setAlpha(0)
                 }
             });
@@ -306,12 +301,12 @@ class FoalLandStable extends Phaser.Scene
             {
                 if (game.handCurrent === game.HAND.empty) {
                     if (straw1.frame.name !== 'frame0000' && straw2.frame.name !== 'frame0000' && straw3.frame.name !== 'frame0000') {
-                        shovel.setFrame('hover_done');
+                        shovel.setFrame('hover');
                         shovelText.text = localeData.txtShovelHilite2;
                         shovelText.setAlpha(1)
                     }
                     else {
-                        shovel.setFrame('hover_use');
+                        shovel.setFrame('hover');
                         shovelText.text = localeData.txtRollOverShovel;
                         shovelText.setAlpha(1)
                     }
@@ -322,13 +317,13 @@ class FoalLandStable extends Phaser.Scene
             shovel.on('pointerdown', function (pointer) {
                 if (game.handCurrent === game.HAND.empty) {
                     game.handCurrent = game.HAND.shovel;
-                    shovel.setFrame('in_use')
+                    shovel.setFrame('idle').setAlpha(.5)
                     shovelText.setAlpha(0)
                     game.pickup.play();
                 }
                 else if (game.handCurrent === game.HAND.shovel) {
                     game.handCurrent = game.HAND.empty;
-                    shovel.setFrame('idle')
+                    shovel.setFrame('idle').setAlpha(1)
                     shovelText.setAlpha(0)
                 }
             });
@@ -347,7 +342,7 @@ class FoalLandStable extends Phaser.Scene
                     'hold'
                 ])
             game.stablesManager.addSpriteAnims(brush, 'brush_place', [
-                    'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'place0006'
+                    'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005', 'idle'
                 ])
             brushInteractive.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(brush, game.HAND.brush, 'brush_pickup', 'brush_place') });
             brushInteractive.on('pointerover', function (pointer) { game.stablesManager.pointerover (brush, game.hover1) });

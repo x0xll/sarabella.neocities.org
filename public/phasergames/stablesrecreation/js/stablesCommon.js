@@ -680,11 +680,13 @@ class StablesManager {
      */
     #addConstantAnimation() {
         for (let index = 0; index < this.#game.horseOverlay.skeleton.data.animations.length; index++) {
-            if (this.#game.horse.skeleton.data.animations[index].name === "constant") {
-                this.#game.horse.animationState.addAnimation(1, "constant", true)
-            }
             if (this.#game.horseOverlay.skeleton.data.animations[index].name === "constant") {
                 this.#game.horseOverlay.animationState.addAnimation(1, "constant", true)
+            }
+        }
+        for (let index = 0; index < this.#game.horse.skeleton.data.animations.length; index++) {
+            if (this.#game.horse.skeleton.data.animations[index].name === "constant") {
+                this.#game.horse.animationState.addAnimation(1, "constant", true)
             }
         }
     }

@@ -421,7 +421,7 @@ class FoalAirStable extends Phaser.Scene
 
         // ---------- Stable foreground and UI ---------- //
         game.stablesManager.createStatBox(625, 130)
-        game.stablesManager.createBeSaWorldLink(715, 125, .8, .8, "Small")
+        game.stablesManager.createBeSaWorldLink(715, 110, .8, .8, "Small")
         game.stablesManager.createUI([
             [585, 40, localeData.txtHelpTrophyRoom, "Small"],
             [180, 290, localeData.txtHelpFountain, "Small"],
