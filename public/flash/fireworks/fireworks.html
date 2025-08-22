@@ -61,8 +61,6 @@
           swfPlayer.height = '521';
           swfPlayer.width = '887';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'Fireworks' + versionFile + '.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
           // root.loaderInfo.parameters.xmlPath;
           if (versionFile == 1)
           {
@@ -78,6 +76,12 @@
             swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}&customShow=${customFireworks}`);
           }
 
+          let swf = './swf/games/Fireworks' + versionFile + '.swf';
+          if (locale == 'ja')
+            swf = './swf/games/Fireworks' + versionFile + '_ja.swf';
+
+          swfPlayer.src = swf;
+          swfPlayer.type = 'application/x-shockwave-flash';
           swfParent.appendChild(swfPlayer);
         </script>
   </body>
