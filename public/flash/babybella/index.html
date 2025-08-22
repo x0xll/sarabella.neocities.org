@@ -46,12 +46,16 @@
           swfPlayer.height = '580';
           swfPlayer.width = '884';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = "./flash/babmini/babmini.swf";
-          swfPlayer.type = 'application/x-shockwave-flash';
 
           if (!isLocalizedFileExisting(`./flash/babmini/lang/data_${locale}.xml`))
             locale = "en";
 
+          let swf = './flash/babmini/babmini.swf';
+          if (locale == 'ja')
+            swf = './flash/babmini/babmini_ja.swf';
+
+          swfPlayer.src = swf;
+          swfPlayer.type = 'application/x-shockwave-flash';
           swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`);
           swfParent.appendChild(swfPlayer);
         </script>
