@@ -167,14 +167,6 @@ class StablesManager {
         this.#game.statBoxBusy = false
         this.#game.statBoxQueue = []
         this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
-
-        
-        // if (locale === 'ja') {
-            // Object.keys(localeData).forEach(keyName => {
-                // localeData.keyName = Mikan(localeData.keyName)
-            // });
-
-        // }
     }
 
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
