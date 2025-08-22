@@ -11,56 +11,63 @@ class StablesManager {
     /* ---------- VARIABLES ---------- */
     #bar = 13
 
+    #font = 'Arial'
     hoverTextSettingsMain = { 
-        font: 'bold 16px Arial', 
+        font: `bold 16px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: { width: 150 } 
+        wordWrap: { width: 150,
+        useAdvancedWrap: true } 
     }
 
     hoverTextSettingsMainSmall = { 
-        font: 'bold 15px Arial', 
+        font: `bold 15px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: { width: 125 } ,
+        wordWrap: { width: 125,
+        useAdvancedWrap: true } ,
         lineSpacing: -2
     }
 
     hoverTextSettingsMainLarge = { 
-        font: 'bold 16px Arial', 
+        font: `bold 16px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: { width: 170 } ,
+        wordWrap: { width: 170,
+        useAdvancedWrap: true } ,
         lineSpacing: -2
     }
 
     #hoverTextSettingsOneLine = {
-        font: 'bold 11px Arial', 
+        font: `bold 11px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
     }
 
     #hoverTextSettingsSmall = {
-        font: 'bold 12px Arial', 
+        font: `bold 12px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: {width: 100},
+        wordWrap: {width: 100,
+        useAdvancedWrap: true},
         lineSpacing: -2
     }
 
     #hoverTextSettingsBig = {
-        font: 'bold 12px Arial', 
+        font: `bold 12px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: {width: 200},
+        wordWrap: {width: 200,
+        useAdvancedWrap: true},
         lineSpacing: -2
     }
 
     #hoverTextSettingsMedium = {
-        font: 'bold 12px Arial', 
+        font: `bold 12px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: {width: 150},
+        wordWrap: {width: 150,
+        useAdvancedWrap: true},
         lineSpacing: -2
     }
 
@@ -79,7 +86,7 @@ class StablesManager {
             loadingBar.fillStyle(0x35a3d5, 1).fillRect(389, 337, 100 * value, 6);
         });  
         // Display file names whilst loading
-        const progressText = this.#game.add.text(344, 133, '', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
+        const progressText = this.#game.add.text(344, 133, '', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' });
         this.#game.load.on('fileprogress', function (file) {
             if (urlParameters.get('debug')) {
                 progressText.text = file.src;
@@ -160,6 +167,14 @@ class StablesManager {
         this.#game.statBoxBusy = false
         this.#game.statBoxQueue = []
         this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
+
+        
+        // if (locale === 'ja') {
+            // Object.keys(localeData).forEach(keyName => {
+                // localeData.keyName = Mikan(localeData.keyName)
+            // });
+
+        // }
     }
 
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
@@ -332,7 +347,7 @@ class StablesManager {
         this.#createInspirationalMessage()
 
         // Horse name
-        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
+        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' });
         game.horseNameText.text = localeData[horseName + "Name"];
         game.horseNameText.setOrigin(.5, .5)
 
@@ -356,7 +371,7 @@ class StablesManager {
 
         this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
         this.#game.inspirationMessage = this.#game.add.text(444, 133, 'Static Text Object', { 
-            fontFamily: 'Arial', 
+            fontFamily: this.#font, 
             fontSize: 55, 
             color: '#ffffff', 
             align: 'center' ,
@@ -385,7 +400,7 @@ class StablesManager {
 
         game.add.image(x-2, 509, image);
         const text = game.add.text(x-2, 498, 'Static Text Object', { 
-            fontFamily: 'Arial', 
+            fontFamily: this.#font, 
             fontSize: 11.5, 
             align: 'center'
         });
