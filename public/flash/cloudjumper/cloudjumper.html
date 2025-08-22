@@ -49,7 +49,12 @@
           swfPlayer.height = '521';
           swfPlayer.width = '887';
           swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'cloudjumper' + versionFile + '.swf';
+          
+          let swf = './swf/cloudjumper' + versionFile + '.swf';
+          if (locale == 'ja')
+            swf = './swf/cloudjumper' + versionFile + '_ja.swf';
+
+          swfPlayer.src = swf;
           swfPlayer.type = 'application/x-shockwave-flash';
           if (locale != "en")
             swfPlayer.setAttribute("flashvars", `locale=${locale}`);
