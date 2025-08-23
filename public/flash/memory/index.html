@@ -45,7 +45,8 @@
 
           var swfLocalized = `./swf/en_memory.swf`
 
-          if (isLocalizedFileExisting(`./swf/${locale}_memory.swf`))
+          // TODO: Temporary prevent opening the ja file since the texts are not working
+          if (locale != 'ja' && isLocalizedFileExisting(`./swf/${locale}_memory.swf`))
           {
             swfLocalized = `./swf/${locale}_memory.swf`
           }
