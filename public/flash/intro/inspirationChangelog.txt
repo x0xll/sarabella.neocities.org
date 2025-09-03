@@ -1,0 +1,6 @@
+03 Sept 2025:
+    - Replace the content of the getInspiration() in ServiceManager.as by:
+        var inspiration = ExternalInterface.call("getInspiration");
+        onGetInspiration(inspiration);
+    - Add "import flash.external.*;" at the top of ServiceManager.as
+    - Set "DEBUG_OVERRIDE_SERVER" to "true" in Content.as
