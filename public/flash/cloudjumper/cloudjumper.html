@@ -41,6 +41,8 @@
           let swf = './swf/cloudjumper' + versionFile + '.swf';
           if (locale == 'ja')
             swf = './swf/cloudjumper' + versionFile + '_ja.swf';
+          else if (locale == 'en')
+            locale = '';
           loadSWF(swf, '521', '887', locale)
         </script>
   </body>
