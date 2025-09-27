@@ -19,15 +19,6 @@
           </p>
         </div> 
 
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-              unmuteOverlay: "hidden",
-            }
-          };
-        </script>
-
         <div class="swf" dir="ltr" rbidi="on">
 
         </div>
@@ -43,27 +34,18 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./newmap/_data/${UTILS_LOCA_PATH_LANG_VALUE}_bs_map.xml`);
+          loadSWF(`newmap/map.swf`, '467', '887', locale)
+
           function openBSA()
           {
             window.location = "https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures";
           }
-
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./newmap/_data/${locale}_bs_map.xml`))
-            locale = "en";
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '467';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'newmap/map.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
-          swfPlayer.setAttribute("wmode", `transparent`);
-          swfParent.appendChild(swfPlayer);
         </script>
   </body>
 </html>
