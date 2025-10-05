@@ -92,9 +92,11 @@
             <embed height="600px" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="./flash/coloring.swf?pages=bsColoring_fiona" type="application/x-shockwave-flash" width="1000">
         </div> -->
 
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-            <a href="https://web.archive.org/web/20191201043040/http://www.bellasara.com/puzzles.html" data-il8n="footer_webarchive_linktxt" class="global-lowernav-link">Web Archive Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({webarchiveLink: 'https://web.archive.org/web/20191201043040/http://www.bellasara.com/puzzles.html', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/puzzles'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>

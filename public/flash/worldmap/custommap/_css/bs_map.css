@@ -1,0 +1,42 @@
+﻿.location_label{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#46371C;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.location_item_label{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#ffffff;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.nav_label{
+	font-family:Arial Unicode MS;
+	font-size:14pt;
+	color:#ffffff;	
+	leading:0pt;
+	font-weight:bold;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.nav_item_label{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#ffffff;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:center;
+}
+.help_balloon{
+	font-family:Arial Unicode MS;
+	font-size:12pt;
+	color:#ffffff;	
+	leading:0pt;
+	letter-spacing:0pt;
+	text-align:center;
+}

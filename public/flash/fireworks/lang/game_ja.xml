@@ -1,35 +1,35 @@
 <?xml version="1.0"?>
 <root>
-	<play>Play</play>
-	<pause>Pause</pause>
-    <beautyeh>You created a beautiful firework display.</beautyeh>
-    <greatshow>Great Show!</greatshow>
-    <replay>Replay</replay>
-    <newshow>New Show</newshow>
-    <quit>Quit</quit>
+	<play>プレイ</play>
+	<pause>一時停止</pause>
+    <beautyeh>あなたは美しい花火を作りました。</beautyeh>
+    <greatshow>素晴らしいショーでした！</greatshow>
+    <replay>リプレイ</replay>
+    <newshow>新しいショー</newshow>
+    <quit>辞める</quit>
 
-    <welcome>Welcome to</welcome>
-    <gameTitle>Firelight Festival</gameTitle>
-    <playPuzzle>Play Puzzle Game</playPuzzle>
-    
-    <rulesTime>When the Sun sets the show will begin!</rulesTime>
-    <rulesCounter>Counter shows how many Fireworks are in each tube.</rulesCounter>
-    <rulesPinwheels>Pinwheels will spin off the screen.</rulesPinwheels>
-    <rulesUncoveredFireworks>You can only remove Fireworks that are completely uncovered</rulesUncoveredFireworks>
-    <rulesCollectFireworks>Click on fireworks or use the spacebar to add them to your show</rulesCollectFireworks>
+    <welcome>ようこそへ！</welcome>
+    <gameTitle>ファイアライトフェスティバル</gameTitle>
+    <playPuzzle>パズルゲームをプレイする</playPuzzle>
 
-    <intro>An exciting game that ends in YOUR spectacular firework show!</intro>
-    <howToPlayTitle>How to Play:</howToPlayTitle>
-    <howToPlayDesc>Click on pinwheels to uncover and collect as many fireworks as possible. The more you collect, the bigger your show! Once the sun has set, time is up and your show will begin.</howToPlayDesc>
-    <goodLuck>Good luck!</goodLuck>
+    <rulesTime>日没と共に、ショーが始まります！</rulesTime>
+    <rulesCounter>「カウンター」は、各チューブ内に含まれる花火の数を表示します。</rulesCounter>
+    <rulesPinwheels>「風車」が画面から飛び出します。</rulesPinwheels>
+    <rulesUncoveredFireworks>完全に露出している花火のみが取り除かれます。</rulesUncoveredFireworks>
+    <rulesCollectFireworks>マウスをクリックするか、スペースバーを押して、花火をショーに追加してください。</rulesCollectFireworks>
 
-    <begin>Begin</begin>
+    <intro>自分で花火を作れる、ワクワクするゲーム！</intro>
+    <howToPlayTitle>チュートリアル：</howToPlayTitle>
+    <howToPlayDesc>風車をクリックして、できるだけ多くの花火を収集しましょう。花火が多ければ多いほど、ショーはより盛大になります！日没時に、ショーが始まります！</howToPlayDesc>
+    <goodLuck>がんばれ！</goodLuck>
 
-    <score>Your Score</score>
-    <continue>Continue</continue>
-    <won>You Won</won>
+    <begin>スタート</begin>
 
-    <outroGreat>You did great.</outroGreat>
-    <outroWatchShow>Click the button below when you're ready to watch your show.</outroWatchShow>
-    <outroEnjoy>Enjoy!</outroEnjoy>
+    <score>スコア</score>
+    <continue>続行</continue>
+    <won>勝ちました！</won>
+
+    <outroGreat>素晴らしいでした。</outroGreat>
+    <outroWatchShow>ボタンをクリックして番組をご覧ください。</outroWatchShow>
+    <outroEnjoy>楽しんでください！</outroEnjoy>
 </root>

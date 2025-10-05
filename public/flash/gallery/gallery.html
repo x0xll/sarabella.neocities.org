@@ -25,41 +25,26 @@
           </p>
         </div> 
 
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
-        </script>
-
         <div class="swf" dir="ltr" rbidi="on">
         </div>
-        
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://bellasara.wiki.gg/wiki/My_Things" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
-      </div>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/My_Things', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/gallery'});
+          </script>
+        </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./lang/gallery_${locale}.xml`))
-            locale = "en";
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '500';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'gallery.swf';
-          swfPlayer.setAttribute("flashvars", `lang=${locale}`);
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("wmode", `transparent`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./data/gallery_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          loadSWF(`gallery.swf`, '500', '887', locale)
         </script>
 
     </body>
