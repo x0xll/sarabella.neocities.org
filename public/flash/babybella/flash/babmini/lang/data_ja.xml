@@ -2,47 +2,45 @@
 <data>
 
 <localization>
-	<babyBella_digitalObjectPopup_activateCode><![CDATA[Activate<br/>code]]></babyBella_digitalObjectPopup_activateCode>
-	<babyBella_babyBookModule_secondBabyButton><![CDATA[Bellissa's<br/>Page]]></babyBella_babyBookModule_secondBabyButton>
-	<babyBella_babyBookModule_newBaby_watchTheMovie><![CDATA[Watch the<br/>Movie]]></babyBella_babyBookModule_newBaby_watchTheMovie>
-	<babyBella_babyBookModule_newBaby_digitalCode><![CDATA[Digital Code:<br/>BAB#BAB34OAL]]></babyBella_babyBookModule_newBaby_digitalCode>
-	<babyBella_babyBookModule_newBaby_activateThisCode><![CDATA[She's here! Enter the digital code above to add her to your<br/>stable. Share it with your friends, too. But hurry! The code<br/>expires on December 1st.]]></babyBella_babyBookModule_newBaby_activateThisCode>
-	<babyBella_digitalGiftPopup_footer><![CDATA[You can share this code<br/> with a friend!]]></babyBella_digitalGiftPopup_footer>
-	<babyBella_digitalGiftPromo_headerTopLine><![CDATA[Gift of the]]></babyBella_digitalGiftPromo_headerTopLine>
-	<babyBella_digitalGiftPromo_headerBottomLine><![CDATA[Day]]></babyBella_digitalGiftPromo_headerBottomLine>
-	<babyBella_countdown_cardsAreHere><![CDATA[The cards are here!]]></babyBella_countdown_cardsAreHere>
-	<babyBella_sweepsPromo_enterButton><![CDATA[Enter]]></babyBella_sweepsPromo_enterButton>
-	<babyBella_whereToBuy_buyButton><![CDATA[Buy]]></babyBella_whereToBuy_buyButton>
-	<babyBella_babyBookModule_submitButton><![CDATA[Submit]]></babyBella_babyBookModule_submitButton>
-	<babyBella_babyBookModule_BellissimosStoryButton><![CDATA[Bellisimo's<br/>Story]]></babyBella_babyBookModule_BellissimosStoryButton>
-	<babyBella_tvSpotPromo_loading><![CDATA[Loading]]></babyBella_tvSpotPromo_loading>
-	<babyBella_babyBookModule_babyStoryButton><![CDATA[Baby's<br>Story]]></babyBella_babyBookModule_babyStoryButton>
-	<babyBella_babyBookModule_printButton><![CDATA[Print]]></babyBella_babyBookModule_printButton>
-	<babyBella_babyBookModule_parentsStoryButton><![CDATA[Parents'<br>Story]]></babyBella_babyBookModule_parentsStoryButton>
-	<babyBella_familyReunionPopup_offspringCopy><![CDATA[Attend and participate in &#8220;Family Game Night&#8221; at your local store.
-]]></babyBella_familyReunionPopup_offspringCopy>
-	<babyBella_familyReunionPopup_offspringHeader><![CDATA[&#8220;Dusk&#8221; & &#8220;Dawn&#8221; - Offspring]]></babyBella_familyReunionPopup_offspringHeader>
-	<babyBella_familyReunionPopup_teacherCopy><![CDATA[Available in the November-December issue of Discovery Girls Magazine.]]></babyBella_familyReunionPopup_teacherCopy>
-	<babyBella_familyReunionPopup_teacherHeader><![CDATA[&#8220;Wildflower&#8221; - Teacher]]></babyBella_familyReunionPopup_teacherHeader>
-	<babyBella_familyReunionPopup_parentsCopy><![CDATA[ Available at local stores with the purchase of Baby Bella card packs!
-]]></babyBella_familyReunionPopup_parentsCopy>
-	<babyBella_familyReunionPopup_parentsHeader><![CDATA[&#8220;Rimfaxe & Aurora&#8221; - Parents]]></babyBella_familyReunionPopup_parentsHeader>
-	<babyBella_familyReunionPopup_mainBody><![CDATA[<tab>Find and collect each of the exclusive promo cards at each of the locations/events listed. Bring your family together and attend a Family Game Night at your local shop. Play Baby Bella-themed games, share positive messages and receive the final cards that will reunite this special horse family!<br/><br/><tab>Dusk and Dawn, the two beautiful foals of Aurora and Rimfaxe, always find their way home by following the direction of the sun. One unusual day in North of North an eclipse of the sun caused Dusk and Dawn to be confused because it was neither night nor day. Concerned, the parents sent out the children’s teacher, Wildflower, to find them. Aurora and Rimfaxe are awaiting the return of their foals and news from Wildflower. <br/><br/><tab>Bring a happy ending to this sad tale!  ]]></babyBella_familyReunionPopup_mainBody>
+	<babyBella_digitalObjectPopup_activateCode><![CDATA[コードを<br/>有効化する]]></babyBella_digitalObjectPopup_activateCode>
+	<babyBella_babyBookModule_secondBabyButton><![CDATA[ベリッサの<br/>ページ]]></babyBella_babyBookModule_secondBabyButton>
+	<babyBella_babyBookModule_newBaby_watchTheMovie><![CDATA[映画を<br/>見る]]></babyBella_babyBookModule_newBaby_watchTheMovie>
+	<babyBella_babyBookModule_newBaby_digitalCode><![CDATA[デジタルコード<br/>BAB#BAB34OAL]]></babyBella_babyBookModule_newBaby_digitalCode>
+	<babyBella_babyBookModule_newBaby_activateThisCode><![CDATA[ベリッサが来た！ 上記のデジタルコードを入力して、厩舎に追加してください。<br/>友達と共有できます。でも急いで！<br/>このコードは1日12月失効します。]]></babyBella_babyBookModule_newBaby_activateThisCode>
+	<babyBella_digitalGiftPopup_footer><![CDATA[友達と共有できます！]]></babyBella_digitalGiftPopup_footer>
+	<babyBella_digitalGiftPromo_headerTopLine><![CDATA[本日の]]></babyBella_digitalGiftPromo_headerTopLine>
+	<babyBella_digitalGiftPromo_headerBottomLine><![CDATA[プレゼント]]></babyBella_digitalGiftPromo_headerBottomLine>
+	<babyBella_countdown_cardsAreHere><![CDATA[カードが到着した！]]></babyBella_countdown_cardsAreHere>
+	<babyBella_sweepsPromo_enterButton><![CDATA[入力する]]></babyBella_sweepsPromo_enterButton>
+	<babyBella_whereToBuy_buyButton><![CDATA[買う]]></babyBella_whereToBuy_buyButton>
+	<babyBella_babyBookModule_submitButton><![CDATA[送信する]]></babyBella_babyBookModule_submitButton>
+	<babyBella_babyBookModule_BellissimosStoryButton><![CDATA[ベリッシモの<br/>物語]]></babyBella_babyBookModule_BellissimosStoryButton>
+	<babyBella_tvSpotPromo_loading><![CDATA[ローディング]]></babyBella_tvSpotPromo_loading>
+	<babyBella_babyBookModule_babyStoryButton><![CDATA[赤ちゃんの<br>物語]]></babyBella_babyBookModule_babyStoryButton>
+	<babyBella_babyBookModule_printButton><![CDATA[プリント]]></babyBella_babyBookModule_printButton>
+	<babyBella_babyBookModule_parentsStoryButton><![CDATA[両親の<br>物語]]></babyBella_babyBookModule_parentsStoryButton>
+	<babyBella_familyReunionPopup_offspringCopy><![CDATA[お近くの店舗で開催される&#8220;「ファミリーゲームナイト」&#8221;に参加しましょう]]></babyBella_familyReunionPopup_offspringCopy>
+	<babyBella_familyReunionPopup_offspringHeader><![CDATA[&#8220;夕暮れ&#8221;と&#8220;夜明け&#8221;　ー　子孫]]></babyBella_familyReunionPopup_offspringHeader>
+	<babyBella_familyReunionPopup_teacherCopy><![CDATA[11月・12月号の「Discovery Girls Magazine」に掲載されます。]]></babyBella_familyReunionPopup_teacherCopy>
+	<babyBella_familyReunionPopup_teacherHeader><![CDATA[&#8220;ワイルドフラワー&#8221; - 先生]]></babyBella_familyReunionPopup_teacherHeader>
+	<babyBella_familyReunionPopup_parentsCopy><![CDATA[ベビーベラカードパックの購入時に、お近くの店舗で入手可能です！]]></babyBella_familyReunionPopup_parentsCopy>
+	<babyBella_familyReunionPopup_parentsHeader><![CDATA[&#8220;リムファクセとオーロラ&#8221; - 両親]]></babyBella_familyReunionPopup_parentsHeader>
+	<babyBella_familyReunionPopup_mainBody><![CDATA[<tab>各イベントでプロモーションカードを探して集めることができます。ご家族と一緒に、地元の店舗で開催されるファミリーナイトに参加できます。ベイビーベラゲームをプレイし、ポジティブなメッセージを共有すると、馬の家族を再会させる特別なカードがもらえます！<br/><br/><tab>夕暮れと夜明けは、リムファクスとオーロラの美しい子馬です。常に太陽を追いかけることで、必ず故郷に戻ってきます。ノースオブノースの不思議なある日、日食が起こった。夕暮れと夜明けは混乱していました。両親は心配だったので、ワイルドフラワー先生を彼らを探しに行かせた。オーロラとリムファクスは、子馬たちが戻ってくるのを焦燥感に駆られながら待っています。<br/><br/><tab>彼らに幸せな結末を見つけてあげましょう！]]></babyBella_familyReunionPopup_mainBody>
 	<babyBella_familyReunionPopup_tm><![CDATA[TM]]></babyBella_familyReunionPopup_tm>
-	<babyBella_familyReunionPopup_header><![CDATA[Bella Sara Family Reunion]]></babyBella_familyReunionPopup_header>
-	<babyBella_babyBookLauncher_open><![CDATA[Open]]></babyBella_babyBookLauncher_open>
-	<babyBella_tvSpotPromoPopup_close><![CDATA[close]]></babyBella_tvSpotPromoPopup_close>
-	<babyBella_activateModule_loginButton><![CDATA[Click<br/>here]]></babyBella_activateModule_loginButton>
-	<babyBella_tvSpotPromo_watch><![CDATA[Watch]]></babyBella_tvSpotPromo_watch>
-	<babyBella_familyReunionPromo_learnMore><![CDATA[Learn<br/>more]]></babyBella_familyReunionPromo_learnMore>
-	<babyBella_activateModule_activateHeader><![CDATA[Activate            ]]></babyBella_activateModule_activateHeader>
-	<babyBella_activateModule_yourCode><![CDATA[Your Code]]></babyBella_activateModule_yourCode>
-	<babyBella_babyBookLauncher_titleBottomLine><![CDATA[Baby Book]]></babyBella_babyBookLauncher_titleBottomLine>
-	<babyBella_babyBookLauncher_titleTopLine><![CDATA[North of North]]></babyBella_babyBookLauncher_titleTopLine>
-	<babyBella_babyBookModule_close><![CDATA[close]]></babyBella_babyBookModule_close>
+	<babyBella_familyReunionPopup_header><![CDATA[ベラセラの家族の再会]]></babyBella_familyReunionPopup_header>
+	<babyBella_babyBookLauncher_open><![CDATA[開く]]></babyBella_babyBookLauncher_open>
+	<babyBella_tvSpotPromoPopup_close><![CDATA[閉じる]]></babyBella_tvSpotPromoPopup_close>
+	<babyBella_activateModule_loginButton><![CDATA[ここで<br/>クリックして]]></babyBella_activateModule_loginButton>
+	<babyBella_tvSpotPromo_watch><![CDATA[見る]]></babyBella_tvSpotPromo_watch>
+	<babyBella_familyReunionPromo_learnMore><![CDATA[詳細は<br/>こちら]]></babyBella_familyReunionPromo_learnMore>
+	<babyBella_activateModule_activateHeader><![CDATA[有効化]]></babyBella_activateModule_activateHeader>
+	<babyBella_activateModule_yourCode><![CDATA[ユーザーのコード]]></babyBella_activateModule_yourCode>
+	<babyBella_babyBookLauncher_titleBottomLine><![CDATA[ベビーブック]]></babyBella_babyBookLauncher_titleBottomLine>
+	<babyBella_babyBookLauncher_titleTopLine><![CDATA[ノースオブノース]]></babyBella_babyBookLauncher_titleTopLine>
+	<babyBella_babyBookModule_close><![CDATA[閉じる]]></babyBella_babyBookModule_close>
 </localization>
 
-	
+
 	<config>
 		<!--
 			the swf will prepend this to the ID of the button that is clicked
@@ -51,20 +49,20 @@
 		<analyticsPrepend>/babybella-mini/</analyticsPrepend>
 	</config>
 	<promos>
-		<!-- NOTE: For localization or other reasons, each content element within a promo node can be disabled independently.    
+		<!-- NOTE: For localization or other reasons, each content element within a promo node can be disabled independently.
 		An enabled="false" setting will prevent the content from appearing on screen, even if it's scheduled to roll out.
 		This enabled setting occurs PER <CONTENT> NODE, not per promo node.  For instance, you can set enabled="false"
-		for the Coming Soon content, but keep the Where To Buy content enabled, even though they are both grouped 
-		and documented as variations of promo 1. 
+		for the Coming Soon content, but keep the Where To Buy content enabled, even though they are both grouped
+		and documented as variations of promo 1.
 		-->
 		<promo id="promo1">
 			<content enabled="true" assetID="YoureInvitedPromo">
-				<header><![CDATA[You're<br/>Invited]]></header>
-				<bodyCopy><![CDATA[You're invited to our online digital event. Come back every day for a new digital gift!]]></bodyCopy>
+				<header><![CDATA[ご招待します！]]></header>
+				<bodyCopy><![CDATA[デジタルイベントにご招待します！毎日新しいデジタルギフトを手に入れよう。]]></bodyCopy>
 			</content>
 			<content enabled="true" startDate="20081116" assetID="WhereToBuyPromo">
-				<header><![CDATA[Where to<br/>Buy]]></header>
-				<bodyCopy><![CDATA[Baby Bella horses are here!<br/>Find a store near you!]]></bodyCopy>
+				<header><![CDATA[ショッピング<br/>スポット]]></header>
+				<bodyCopy><![CDATA[ベビーベラのカードが到着しました！<br/>お近くの店舗を探す。]]></bodyCopy>
 				<link>https://web.archive.org/web/20081112200416/http://www.bellasara.com/storelocator.html</link>
 			</content>
 		</promo>
@@ -79,8 +77,8 @@
 		<promo id="promo3">
 			<!-- end date is the final date that this promo appears.  After that date, it is hidden. -->
 			<content enabled="true" startDate="20081002" endDate="20081201" assetID="EnterToWin">
-				<header><![CDATA[Enter to<br/>Win]]></header>
-				<bodyCopy><![CDATA[You could win a Baby Bella<br/>Birthday of your very own!]]></bodyCopy>
+				<header><![CDATA[応募して当選の<br/>チャンスをゲット！]]></header>
+				<bodyCopy><![CDATA[あなたも自分だけのベビーベラのパーティーを<br/>勝ち取ることができるかもしれません！]]></bodyCopy>
 				<link>https://web.archive.org/web/20081207050232/http://www.bellasara.com/babybellacontest/</link>
 			</content>
 		</promo>
@@ -90,55 +88,55 @@
 				<gifts>
 					<gift startDate="20081106" id="rockingHorse">
 						<code><![CDATA[BAB#AGIFT4U2]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital rocking horse for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルロッキングホースを手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081107" id="babyBlanket">
 						<code><![CDATA[BAB#SNUGGLEY]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital baby blanket for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルベビーブランケットを手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081108" id="ball">
 						<code><![CDATA[BAB#COOLBNCE]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital ball for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルボールを手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081109" id="dressShoes">
 						<code><![CDATA[BAB#LADYSLPR]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital pair of dress shoes for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルおしゃれな靴を手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081110" id="flowerPot">
 						<code><![CDATA[BAB#FUN4FLWR]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital flower pot for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタル花瓶を手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081111" id="balletShoes">
 						<code><![CDATA[BAB#U2CNDNCE]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get digital ballet shoes for your cottage.]]></bodyCopy>
-					</gift>	
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルトウシューズを手に入れましょう。]]></bodyCopy>
+					</gift>
 					<gift startDate="20081112" id="backpack">
 						<code><![CDATA[BAB#LIFTALNG]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital backpack for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルリュックサックを手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081113" id="birthdayCake">
 						<code><![CDATA[BAB#GOOD2EAT]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital cake for your cottage.]]></bodyCopy>
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタル誕生日のケーキを手に入れましょう。]]></bodyCopy>
 					</gift>
 					<gift startDate="20081114" id="cookies">
 						<code><![CDATA[BAB#YUMMYTRT]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get digital cookies for your cottage.]]></bodyCopy>
-					</gift>	
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタルクッキーを手に入れましょう。]]></bodyCopy>
+					</gift>
 					<gift startDate="20081115" id="saddle">
 						<code><![CDATA[BAB#STIRRUPS]]></code>
-						<bodyCopy><![CDATA[Enter this pass-along code to get a digital dressage saddle for your cottage.]]></bodyCopy>
-					</gift>						
+						<bodyCopy><![CDATA[このコードを入力して、お宅用のデジタル鞍を手に入れましょう。]]></bodyCopy>
+					</gift>
 				</gifts>
 			</content>
 			<content enabled="true" startDate="20081116" assetID="FamilyReunion">
-				<header><![CDATA[Family<br/>Reunion]]></header>
-				<bodyCopy><![CDATA[Collect and reunite this exclusive family!]]></bodyCopy>
+				<header><![CDATA[家族の<br/>再会]]></header>
+				<bodyCopy><![CDATA[カードを集めて、家族を再会させよう。]]></bodyCopy>
 			</content>
 
 		</promo>
 	</promos>
-	
-	
+
+
 	<babybook>
 		<bambiMoment>
 			<activateLink endDate="20081201">http://www.bellasara.com/activate.aspx?ref=HPBUTN2-CR24</activateLink>
@@ -147,48 +145,48 @@
 		<coupleTabs>
 			<coupleTab id="beranRosenbriar">
 				<closedLabel><![CDATA[B &amp; R]]></closedLabel>
-				<openLabel><![CDATA[Beran &amp; Rosebriar]]></openLabel>
+				<openLabel><![CDATA[ベラン&amp;ローズブライア]]></openLabel>
 			</coupleTab>
 			<coupleTab id="uranusAnemone">
 				<closedLabel><![CDATA[U &amp; A]]></closedLabel>
-				<openLabel><![CDATA[Uranus &amp; Anemone]]></openLabel>
-			</coupleTab>			
+				<openLabel><![CDATA[ウラヌス&amp;アネモネ]]></openLabel>
+			</coupleTab>
 			<coupleTab id="flipperOndine">
-				<closedLabel><![CDATA[F &amp; O]]></closedLabel> 
-				<openLabel><![CDATA[Flipper &amp; Ondine]]></openLabel>
-			</coupleTab>	
+				<closedLabel><![CDATA[F &amp; O]]></closedLabel>
+				<openLabel><![CDATA[フリッパー&amp;オンディン]]></openLabel>
+			</coupleTab>
 			<coupleTab id="belloBella">
 				<closedLabel><![CDATA[B &amp; B]]></closedLabel>
-				<openLabel><![CDATA[Bello &amp; Bella]]></openLabel>
+				<openLabel><![CDATA[Bello&amp;ベラ]]></openLabel>
 			</coupleTab>
 		</coupleTabs>
-		
+
 		<couples>
 			<couple id="beranRosenbriar" autoOpenDate="20080904">
 				<parents>
 					<positiveMessage><![CDATA[Choose this<br/>moment to be <br/>more free<br/> and loving.]]></positiveMessage>
 					<dad id="beran">
-						<photoName><![CDATA[Beran]]></photoName>
+						<photoName><![CDATA[ベラン]]></photoName>
 					</dad>
 					<mom id="rosenbriar">
-						<photoName><![CDATA[Rosebriar]]></photoName>
+						<photoName><![CDATA[ローズブライア]]></photoName>
 					</mom>
 					<story>
-						<header><![CDATA[<br/>The Story of Beran and Rosebriar]]></header>
-						<bodyCopy><![CDATA[<tab>Winter frosted the rose garden where Rosebriar the unicorn lived. A sudden ice storm had frozen the roses right on their stalks. The roses were beautiful, covered in icy glass. The whole garden was a frosty picture of splendor. Snow covered pathways wound through the bushes and hedges.<br/><tab>But for all the beauty it was still very cold there. Rosebriar’s silky coat was not much of a help against the chill. But the horses North of North had magic and she used hers to keep warm. Her friends the rose dragons were not so lucky. The winter had been very hard and they huddled beneath Rosebriar’s silky mane trying to keep warm. She would never abandon them in the garden where they made their home with her, but she was concerned that the winter was too cold for them.  If it lasted much longer, they might perish. Spring had better come soon.<br/><tab>As if her thoughts had summoned them, two twinkle imps peeked out from the hedge surrounding the garden. Rosebriar whinnied a greeting. She knew that where twinkle imps scampered, the horse known as Beran would soon follow. His magic signaled the melting of the snow and the change of the season from winter to spring.<br/><tab>True to form, Beran soon peered over the hedge into the garden. As he did the snow and ice melted from the garden, and his heart melted also. There stood the most beautiful horse he had ever seen and he instantly fell in love. Rosebriar was also smitten by the sight of Beran and she immediately went to him. As the snow melted the garden came alive again with twinkle imps and rose dragons dancing around and love in full bloom.<br/><br/>]]></bodyCopy>
+						<header><![CDATA[<br/>ベランとローズブライアの物語]]></header>
+						<bodyCopy><![CDATA[<tab>冬がローズブライアのバラ園に訪れた。突然の氷の嵐が、バラの茎に付いたまま凍り付かせてしまいました。氷に覆われたバラは、美しく輝いていた。庭全体が素晴らしい霜の景色だった。生け垣と小道は雪に覆われていた。<br/><tab>美しい景色でしたが、とても寒かったです。ローズブライアのシルクのような毛皮は、彼女を暖かく保つのに役立たなかった。しかし、ノースオブノースのすべての馬には魔法があったので、彼女は魔法を使って暖をとった。ローズブライアの友人であるローズドラゴンたちは、暖かくなることができなかった。厳しい冬の間、彼らはローズブライアのシルクのような毛皮の下に寄り添い、暖をとっていた。彼女は決して彼らや彼らの庭を見捨てたりはしないが、彼らが寒すぎると心配していた。もし冬が終わらなければ、彼らは滅びてしまうかもしれない。春は早く来てほしいものだ！<br/><tab>突然、2匹のトゥインクルインプが柵の隙間から顔をのぞかせた。ローズブライアは挨拶のいななきを上げた。ローズブライアは知っている。トゥインクルインプスが現れるところには、ベランが必ず現れる。ベランの魔法は雪を溶かし、季節を冬から春へと変えた。<br/><tab>いつものように、ベランが現れ、庭を覗き込んだ。彼が現れた瞬間、雪と氷が溶けてしまった！ベランの心も温かくなった。彼はこれまでに見た中で最も美しい馬を見た！彼は一瞬で恋に落ちた。ローズブライアもすぐに恋に落ちた。彼女は彼のもとへ行った。庭園が活気づき、トゥインクルインプとローズドラゴンが踊る中、愛は満開だった！<br/><br/>]]></bodyCopy>
 					</story>
 				</parents>
 				<babies>
 					<baby dueDate="20080904" id="BRBaby1">
-						<photoName><![CDATA[Petal]]></photoName>
+						<photoName><![CDATA[ペタル]]></photoName>
 						<positiveMessage><![CDATA[Plan <br/>a sweet<br/>surprise<br/>for someone.]]></positiveMessage>
 						<dateFields>
-							<field><![CDATA[Due<br/>date]]></field>
-							<field><![CDATA[Sept. 4]]></field>
+							<field><![CDATA[生まれる<br/>予定]]></field>
+							<field><![CDATA[4日9月]]></field>
 						</dateFields>
 						<story>
-							<header><![CDATA[<br/>The Story of Petal]]></header>
-							<bodyCopy><![CDATA[<tab>Petal was born in the middle of the same rose garden where her father and mother, Beran and Rosebriar, met. Hundreds of rose dragons gathered eagerly to await her birth. When Petal stood up and walked for the first time they immediately rushed forward and attached red rose blossoms to her mane and tail. Petal and the rose dragons love to play in the garden. They have been friends from the day of her birth.<br/><br/>]]></bodyCopy>
+							<header><![CDATA[<br/>ペタルの物語]]></header>
+							<bodyCopy><![CDATA[<tab>ペタルは、両親が出会ったバラ園の真ん中で生まれました。数百のローズドラゴンが、彼女の誕生を熱烈に歓迎した。ペタルが初めて歩いた時、彼らは彼女のたてがみと尾に赤いバラを飾った。ペタルとバラのドラゴンたちは、一緒に遊ぶのが大好きです。彼らは良い友人です。<br/><br/>]]></bodyCopy>
 						</story>
 						<certificate>
 							<preview>/certificates/BRBaby1_smallCert.png</preview>
@@ -197,107 +195,106 @@
 					</baby>
 				</babies>
 			</couple>
-			
-			<!-- *************************************************** -->			
-			
+
+			<!-- *************************************************** -->
+
 			<couple id="uranusAnemone" autoOpenDate="20080911">
 				<parents>
 					<positiveMessage><![CDATA[Learn from<br/>yesterday,<br/>enjoy today, and<br/>imagine tomorrow.]]></positiveMessage>
 					<dad id="uranus">
-						<photoName><![CDATA[Uranus]]></photoName>
+						<photoName><![CDATA[ウラヌス]]></photoName>
 					</dad>
 					<mom id="anemone">
-						<photoName><![CDATA[Anemone]]></photoName>
+						<photoName><![CDATA[アネモネ]]></photoName>
 					</mom>
 					<story>
-						<header><![CDATA[<br/>The Story of Uranus and Anemone]]></header>
-						<bodyCopy><![CDATA[<tab>Anemone lived in the sky; she made her home among the clouds that drifted high above North of North. She was very happy living there with her whiffle bear friends. They ate “cloud blossoms” which were flowers that grew in the billowing clouds. Her whiffle bear friends braided them into her mane and tail. Anemone had never seen any other flowers except cloud blossoms because she never left her clouds.<br/><tab>One day a strong proud horse flew past her cloud. His name was Uranus. He had seen Anemone many times in her cloud home, but she had ignored him every time he flew by. She wanted nothing to do with a horse as proud and mysterious as he was. Uranus had fallen in love with the beautiful white horse with the amazing red wings. He tried everything to get her attention. He flew by very fast, but she ignored him. He did amazing acrobatic feats in the air, loops and dives, but she didn’t even turn her head.<br/><tab>Then one day he got an idea; he noticed that she loved the cloud blossoms. They were everywhere, on her clouds, in her mane and tail. But they were the only flower that grew in her home. He swept down to the ground and went to his friend Rosebriar. She gave him a single red rose. He flew back up and gave the rose to Anemone. She instantly fell in love and they have been together ever since.<br/><br/> 
-		]]></bodyCopy>
+						<header><![CDATA[<br/>ウラヌスとアネモネの物語]]></header>
+						<bodyCopy><![CDATA[<tab>アネモネは空に住んでいました。彼女の家はノースオブノースの遥か上空の雲の中にありました。彼女は友達のウィッフルベアたちとそこで幸せに暮らしていました。彼らは雲の中に咲く雲の花を食べ、ウィッフルベアたちはその花を彼女のたてがみと尾に編み込んでいました。アネモネは満足していました。彼女は雲を離れることはなく、新しい花を見ることもありませんでした<br/><tab>ある日、力強く誇り高い馬が彼女の雲のそばを駆け抜けていった。その馬の名前はウラヌスだった。彼はアネモネを何度も見たが、彼女は彼を無視していた。彼女は謎めいた見知らぬ者とは会いたくなかった。しかしウラヌスはアネモネの美しさに恋をしていた。彼は彼女の注意を引きたいと試みた。彼は非常に速く飛び、驚くべきアクロバットの技を披露したが、彼女は彼を無視し続けた。<br/><tab>突然、彼にアイデアが浮かんだ！アネモネは雲の花を愛していたが、他の花を見たことがなかった。ウラヌスは地上に降りていき、友人のローズブライアからバラを頼んだ。ローズブライアは彼に赤いバラを一つ渡した。彼はアネモネの元に戻り、そのバラを彼女に手渡した。彼らは瞬く間に恋に落ちた！<br/><br/>]]></bodyCopy>
 					</story>
 				</parents>
 				<babies>
 					<baby dueDate="20080912" id="UABaby1">
-						<photoName><![CDATA[Cirra]]></photoName>
+						<photoName><![CDATA[シラ]]></photoName>
 						<positiveMessage><![CDATA[See the<br/>beauty<br/>inside your<br/>friends.]]></positiveMessage>
 						<dateFields>
-							<field><![CDATA[Due<br/>date]]></field>
-							<field><![CDATA[Sept. 12]]></field>
+							<field><![CDATA[生まれる<br/>予定]]></field>
+							<field><![CDATA[12日9月]]></field>
 						</dateFields>
 						<story>
-							<header><![CDATA[<br/>The Story of Cirra]]></header>
-							<bodyCopy><![CDATA[<tab>Cirra was born on a cloud high above the ground. She has her mother Anemone’s ivory coat. Her wings look like her father Uranus’ except they are ivory colored rather than black. She loves to romp among the clouds playing with her whiffle bear friends. Cirra flies about as the bears toss cloud cotton to her. She tries to catch the cloud cotton in her mouth.<br/><br/>]]></bodyCopy>
+							<header><![CDATA[<br/>シラの物語]]></header>
+							<bodyCopy><![CDATA[<tab>シラは雲の上で生まれました。彼女は母親の象牙色の毛皮と、父親の翼の形を受け継いでいます。シラはウィッフルベアたちと雲の中で遊ぶのが大好きです。彼らは雲の綿を投げると、シラはそれを口でキャッチするのが好きです。<br/><br/>]]></bodyCopy>
 						</story>
 						<certificate>
 							<preview>/certificates/UABaby1_smallCert.png</preview>
 							<src>/certificates/UABaby1.pdf</src>
 						</certificate>
 					</baby>
-				</babies>				
+				</babies>
 			</couple>
 
-			<!-- *************************************************** -->				
-			
-			<couple id="flipperOndine" autoOpenDate="20080918">				
+			<!-- *************************************************** -->
+
+			<couple id="flipperOndine" autoOpenDate="20080918">
 				<parents>
 					<positiveMessage><![CDATA[Make every day<br/> an adventure!<br/>It will embrace<br/> you with extra energy.]]></positiveMessage>
 					<dad id="flipper">
-						<photoName><![CDATA[Flipper]]></photoName>
+						<photoName><![CDATA[フリッパー]]></photoName>
 					</dad>
 					<mom id="ondine">
-						<photoName><![CDATA[Ondine]]></photoName>
+						<photoName><![CDATA[オンディン]]></photoName>
 					</mom>
 					<story>
-						<header><![CDATA[<br/>The Story of Flipper and Ondine]]></header>
-						<bodyCopy><![CDATA[<tab>Ondine often played with her friends the bubble turtles on the shores of the lake where she lived. They splashed and blew bubbles all day long. Ondine loved playing with her friends, but sometimes she was lonely and wished there was another horse on her lake to play with.<br/><tab>One morning Ondine got an idea. She blew a special bubble. Up the bubble went on the morning breeze. It left Ondine’s lake and followed the river down toward the sea. The bubble drifted over the waves where Flipper the water horse was jumping in the surf.<br/><tab>As Flipper jumped and played something caught his attention. He saw a bubble drifting toward him. But this was no ordinary bubble. This bubble was heart shaped. Flipper was amazed; he had never seen such a bubble. He reached up and touched it with his nose. In that instant he knew Ondine had sent that magical bubble out to find him. The bubble turned pink. He blew on the bubble and it drifted up and back to the lake.<br/><tab>Ondine waited expectantly as the bubble came toward her. As it landed at her feet, the pink heart-shaped bubble popped and a thought-image formed in her mind.  Ondine knew that Flipper waited for her down by the sea. She ran as fast as she could over the river down to the beach. There, waiting for her in the surf, swam Flipper. He leaped from the water in greeting. Ondine would never be lonely again.<br/><br/>]]></bodyCopy>
+						<header><![CDATA[<br/>フリッパーとオンディンの物語]]></header>
+						<bodyCopy><![CDATA[<tab>オンディーンは湖の岸辺に住んでいました。彼女はよく友達のバブルタートルズと遊びました。一緒に水しぶきを上げて泡を吹くのを一日中楽しんでいました。オンディーンは遊ぶことが大好きでしたが、時々寂しく感じました。彼女はもう一頭の馬の友達が欲しかったのです。<br/><tab>ある朝、オンディーンはアイデアを思いつきました。彼女は特別な泡を吹き、その泡は朝の風にのって飛んでいきました。泡は湖を離れ、川を下って海の方へ進んでいきました。次に、波の上を漂っていきました。水馬のフリッパーは、波の上を跳ね上がる際にその泡を見ました。<br/><tab>フリッパーが泡に気づいた時、それは特別なものだと直感した。その泡はハート形をしていた。フリッパーは鼻先で触れてみた。瞬時に、それはオンディンが送ったものだと悟った！泡はピンク色に輝き、彼は息を吹きかけた。泡は湖へと戻っていった。<br/><tab>オンディーンは泡が戻ってくるのを見ていた。泡は彼女の足元近くに着地し、破裂した。破裂した瞬間、彼女の頭に映像が浮かんだ。オンディーンはフリッパーが海辺で待っていることを知っていた。彼女はできる限りの速さで駆け出した。彼女は海で待っていたフリッパーを見つけた。彼は挨拶代わりに水から跳び上がった。オンディーンは決して孤独になることはなかった。<br/><br/>]]></bodyCopy>
 					</story>
 				</parents>
 				<babies>
 					<baby dueDate="20080918" id="FOBaby1">
-						<photoName><![CDATA[Janie]]></photoName>
+						<photoName><![CDATA[ジャニー]]></photoName>
 						<positiveMessage><![CDATA[Learn from<br/>yesterday, <br/>enjoy today, and <br/>imagine tomorrow.]]></positiveMessage>
 						<dateFields>
-							<field><![CDATA[Due<br/>date]]></field>
-							<field><![CDATA[Sept. 18]]></field>
+							<field><![CDATA[生まれる<br/>予定]]></field>
+							<field><![CDATA[18日9月]]></field>
 						</dateFields>
 						<story>
-							<header><![CDATA[<br/>The Story of Janie]]></header>
-							<bodyCopy><![CDATA[<tab>Janie has the look and coloring of Ondine, her mother, but she has her father Flipper’s shape. Her mother went undersea for her birth. Janie was born into a beautiful bubble like the ones her mother makes, only much larger. She loves to explore the hidden sea caves where her parents sometimes go. There she finds shells and flowers to put in her mane.<br/><br/>]]></bodyCopy>
+							<header><![CDATA[<br/>ジャニーの物語]]></header>
+							<bodyCopy><![CDATA[<tab>ジェニーは母親の色を継いでいますが、父親の体型をしています。ジェニーは海の下の美しい泡の中で生まれました。彼女は隠れた海の洞窟を探索するのが大好きです。彼女は貝殻や花を見つけて、自分のたてがみに飾ります。<br/><br/>]]></bodyCopy>
 						</story>
 						<certificate>
 							<preview>/certificates/FOBaby1_smallCert.png</preview>
 							<src>/certificates/FOBaby1.pdf</src>
 						</certificate>
 					</baby>
-				</babies>					
+				</babies>
 			</couple>
-			
-			<!-- *************************************************** -->				
-			
+
+			<!-- *************************************************** -->
+
 			<couple id="belloBella" autoOpenDate="20080925">
 				<parents>
 					<positiveMessage><![CDATA[Life is a gift.<br/>Feel the bliss of joy<br/>and energy that<br/>comes with it.]]></positiveMessage>
 					<dad id="bello">
-						<photoName><![CDATA[Bello]]></photoName>
+						<photoName><![CDATA[ベロ]]></photoName>
 					</dad>
 					<mom id="bella">
-						<photoName><![CDATA[Bella]]></photoName>
+						<photoName><![CDATA[ベラ]]></photoName>
 					</mom>
 					<story>
-						<header><![CDATA[<br/>Parents' Story]]></header>
-						<bodyCopy><![CDATA[<tab>Long ago two great herds of horses galloped throughout North of North. North of North was so vast that the two herds had never met each other. One herd was led by a beautiful white mare; she was full of joy and energy. The other herd was led by a black stallion that lived life every day like it was his first.<br/><tab>Both horses were very different from the rest of the horses in their herds. Both were powerful horses who protected the others, and both knew more than any ordinary horse could possibly know. They knew when it would rain or shine, they knew where the safest places were, and they knew that somewhere in North of North lived another horse just like them.<br/><tab>These two horses spent many years leading their herds over mountains, meadows and around seas, always sensing that they were coming closer to one another with each step. One cool clear morning they both came to the opposite side of a great lake. The water of the lake rippled, but there was no wind. All of the rest of the horses in the herds froze like statues in a garden, as enchantment held them in place.<br/><tab>The two leaders moved around the lake. As they approached each other the whole world stood still for a moment. Their noses touched and a great wind blew out of the north touching everything and setting destiny in motion.<br/><tab>Bella and Bello knew they would be together forever.<br/><br/>]]></bodyCopy>			
+						<header><![CDATA[<br/>ベロとベラの物語]]></header>
+						<bodyCopy><![CDATA[<tab>遥か昔、ノーズオブノースの広大な土地を、二つの馬の群れが駆け巡っていました。世界は広大すぎて、二つの群れは決して出会うことはありませんでした。一方の群れは、美しい白い牝馬が率いていました。彼女は喜びと活力に満ちていました。もう一方の群れは、黒い牡馬が率いていました。彼は毎日を、まるで初めての日のように生きていました。<br/><tab>両方の馬は、それぞれの群れの中の他の馬とは異なっていました。両方の馬は力強く、他の馬を守り、他のどの馬よりも賢かったのです。彼らは天候を予測し、最も安全な場所を知っていました。彼らは群れを率い、自分たちと同じような他の馬を探していま<br/><tab>二頭の馬は、何年にもわたって群れを率いて山々、草原、海を越えて旅を続けた。彼らは互いの存在を感知し合っていた。ある朝、二頭は大きな湖の反対側に同時に到着した。湖の水面は波打っていたが、風はなかった。すべての馬は像のように動きを止め、魔法が彼らをその場に固定し<br/><tab>二頭の群れのリーダーが湖の周りを移動していた。彼らが互いに遭遇した瞬間、世界が一時停止した。彼らは鼻を触れ合わせ、激しい風が吹き荒れた。すべてが変わり、運命が動き始めた。<br/><tab>ベラとベロは、永遠に一緒にいることを知っていた。<br/><br/>]]></bodyCopy>
 					</story>
 				</parents>
 				<babies>
 					<baby dueDate="20080925" id="BBBaby1">
-						<photoName><![CDATA[Bellisimo]]></photoName>
+						<photoName><![CDATA[ベリッシモ]]></photoName>
 						<positiveMessage><![CDATA[Trust yourself<br/>and you<br/>will know how<br/>to live.]]></positiveMessage>
 						<dateFields>
-							<field><![CDATA[Birth<br/>date]]></field>
-							<field>Sept. 25</field>
+							<field><![CDATA[生まれる<br/>予定]]></field>
+							<field>25日9月</field>
 						</dateFields>
 						<story>
-							<header><![CDATA[<br/>The Story of Bellisimo]]></header>
-							<bodyCopy><![CDATA[<tab>Bellisimo was born by the shores of the same lake where his mother and father, Bella and Bello, first met. His coloring is a mix of his father’s black coat and mother’s white one: a dapple gray. On the day Bellisimo was born, a rainbow formed over the lake, even though there hadn’t been any rain. He likes to play by the lake chasing butterflies. The grass there is very sweet, and he stops to munch it from time to time.<br/><br/>]]></bodyCopy>
+							<header><![CDATA[<br/>べリッシモの物語]]></header>
+							<bodyCopy><![CDATA[<tab>ベリッシモは、両親が出会った湖の岸辺で生まれました。彼の灰色の毛並みは、母親と父親の毛並みが混ざったものです。彼が生まれた日、晴れた日にもかかわらず、湖の上に虹が架かりました。彼は蝶を追いかけること、遊ぶこと、そして湖の近くの甘い草を食べることが好きです。<br/><br/>]]></bodyCopy>
 						</story>
 						<certificate>
 							<preview>/certificates/BBBaby1_smallCert.png</preview>
@@ -305,14 +302,14 @@
 						</certificate>
 					</baby>
 					<baby dueDate="20081106" id="BBBaby2">
-						<photoName><![CDATA[Bellissa]]></photoName>
+						<photoName><![CDATA[ベリッサ]]></photoName>
 						<positiveMessage><![CDATA[Become the person<br/>you want to be.<br/>You will find<br/>joy along the way.]]></positiveMessage>
 						<dateFields>
-							<field><![CDATA[Due<br/>date]]></field>
-							<field>Nov. 6</field>
+							<field><![CDATA[生まれる<br/>予定]]></field>
+							<field>6日10月</field>
 						</dateFields>
 						<story>
-							<header><![CDATA[<br/>The Story of Bellissa]]></header>
+							<header><![CDATA[<br/>ベリッサの物語]]></header>
 							<bodyCopy><![CDATA[<tab>FPO<br/><br/>]]></bodyCopy>
 						</story>
 						<certificate>
@@ -320,7 +317,7 @@
 							<src>/certificates/BBBaby2.pdf</src>
 						</certificate>
 					</baby>
-				</babies>					
+				</babies>
 			</couple>
 		</couples>
 	</babybook>
@@ -328,10 +325,10 @@
 		<content startDate="20081106">
 			<link>https://web.archive.org/web/20081112151827/http://www.bellasara.com/products.aspx</link>
 		</content>
-	</cardsAreHereModule>		
+	</cardsAreHereModule>
 	<activateModule>
 		<content startDate="20080809">
 			<link>http://www.bellasara.com/activate.aspx?ref=HPBUTN2-CR24</link>
 		</content>
-	</activateModule>	
+	</activateModule>
 </data>

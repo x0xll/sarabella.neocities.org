@@ -1,0 +1,18 @@
+<root>
+    <begin>Inizia</begin>
+    <continue_button>Continua</continue_button>
+    <play_again>Gioca Ancora!</play_again>
+    <magic>Magic</magic>
+    <bubble>Bubble</bubble>
+    <wand>Wand</wand>
+    <you_collected>Hai raccolto</you_collected>
+    <bugs>insetti e</bugs>
+    <horse_shoes>ferri di cavallo.</horse_shoes>
+    <your_score>Il tuo Punteggio: </your_score>
+    <congratulations>Congratulazioni</congratulations>
+    <bug_help>Gli insetti sono stati aggiunti al tuo punteggio.</bug_help>
+    <wand_help>Muovi il mouse per muovere la bacchetta. Muovi la bacchetta sopra gli insetti. Clicca il mouse per fare delle bolle, e catturare gli insetti.</wand_help>
+    <special_help>Le creature speciali e le gocce di pioggia ti danno più sapone per le bolle. Le creature speciali rendono anche la bacchetta più grande.</special_help>
+    <solution_help>Il gioco termina quando non hai più sapone per le bolle.</solution_help>
+</root>
+

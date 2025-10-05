@@ -1,0 +1,22 @@
+&chap1_title=<html>I Mondi Incantati di Bella Sara</html>
+
+&chap1_subtitle=<html>Capitolo Uno</html>
+&chap2_subtitle=<html>Capitolo Due</html>
+&chap3_subtitle=<html>Capitolo Tre</html>
+&chap4_subtitle=<html>Capitolo Quattro</html>
+&chap5_subtitle=<html>Capitolo Cinque</html>
+&chap6_subtitle=<html>Capitolo Sei</html>
+&chap7_subtitle=<html>Capitolo Sette</html>
+&chap8_subtitle=<html>Capitolo Otto</html>
+
+&clicktext=<html>Clicca sulla copertina del Libro</html>
+
+&story_title=<html>I Mondi Incantati<br>di Bella Sara</html>
+
+&chapters_head=<html>Seleziona un Capitolo da leggere</html>
+
+&conclusion_nextChapter=<html>Prossimo Capitolo...</html>
+
+&chap1_conclusion=<html>Northern Lights</html>
+&chap2_conclusion=<html>Ancient Lights</html>
+&chap3_conclusion=<html>Native Lights</html>

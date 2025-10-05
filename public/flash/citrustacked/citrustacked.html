@@ -23,14 +23,6 @@
             To reach the playable part of the game, you'll need to do right-click "Play" 6 times in a row. The text is not yet appearing correctly.
           </p>
         </div> 
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on">
         </div>
@@ -38,29 +30,23 @@
         <p id="highscore" style="color: white; text-align: center;"><b>Highscore: </b></p>
 
 
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Spectacular_Jumping_Game" class="global-lowernav-link">Wiki Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Citrustacked', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/citrustacked', customLinks2:[{href: '/phasergames/citrustacked/index.html', il8n: 'footer_recreated_linktxt'}]});
+          </script>
         </div>
-
+        
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./data/localization_${locale}.xml`))
-            locale = "en";
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '520';
-          swfPlayer.width = '885';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'citrustacked.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./data/localization_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          loadSWF(`citrustacked.swf`, '520', '885', locale)
         </script>
         
     </body>

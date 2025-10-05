@@ -29,12 +29,6 @@
             versionFile = 1
           else
             versionFile = 2
-
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
         </script>
 
         <div class="swf" dir="ltr" rbidi="on">
@@ -42,42 +36,41 @@
 
         <p id="highscore" style="color: white; text-align: center;"><b>Highscore: </b></p>
 
-
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://bellasara.wiki.gg/wiki/Firelight_Festival" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Firelight_Festival', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/fireworks'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '521';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'Fireworks' + versionFile + '.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          // root.loaderInfo.parameters.xmlPath;
+          setupRuffle();
+
+          var locale = 'en';
           if (versionFile == 1)
           {
-            if (!isLocalizedFileExisting(`./lang/bs_firelightsfestival_${locale}.xml`))
-              locale = "en";
-            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
+            locale = checkLocalizedFiles(`./lang/bs_firelightsfestival_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           }
           else if (versionFile == 2)
           {
-            if (!isLocalizedFileExisting(`./lang/game_${locale}.xml`))
-              locale = "en";
-            var pathXML = "lang/game_" + locale + ".xml";
-            swfPlayer.setAttribute("flashvars", `xmlPath=${pathXML}&customShow=${customFireworks}`);
+            locale = checkLocalizedFiles(`./lang/game_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           }
+          
+          var pathXML = "lang/game_" + locale + ".xml";
+          let swf = './swf/games/Fireworks' + versionFile + '.swf';
+          if (locale == 'ja')
+            swf = './swf/games/Fireworks' + versionFile + '_ja.swf';
 
-          swfParent.appendChild(swfPlayer);
+          if (versionFile == 1)
+            loadSWF(swf, '521', '887', locale)
+          else if (versionFile == 2)
+            loadSWF(swf, '521', '887', locale, `&xmlPath=${pathXML}&customShow=${customFireworks}`)
         </script>
   </body>
 </html>
