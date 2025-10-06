@@ -17,12 +17,6 @@
           const searchQueryString = window.location.search;
           const urlParameters = new URLSearchParams(searchQueryString);
           dateOfFile = urlParameters.get('date')
-
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
         </script>
 
         <div class="swf" dir="ltr" rbidi="on"></div>
@@ -37,27 +31,16 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '580';
-          swfPlayer.width = '884';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-
-          if (!isLocalizedFileExisting(`./flash/babmini/lang/data_${locale}.xml`))
-            locale = "en";
-
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./flash/babmini/lang/data_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           let swf = './flash/babmini/babmini.swf';
           if (locale == 'ja')
             swf = './flash/babmini/babmini_ja.swf';
-
-          swfPlayer.src = swf;
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`);
-          swfParent.appendChild(swfPlayer);
+          loadSWF(`${swf}`, '580', '884', locale, `&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`)
         </script>
   </body>
 </html>

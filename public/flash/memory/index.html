@@ -11,15 +11,6 @@
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-              unmuteOverlay: "hidden",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on"> </div>
 
@@ -33,27 +24,18 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '630';
-          swfPlayer.width = '950';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-
-          var swfLocalized = `./swf/en_memory.swf`
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./swf/${UTILS_LOCA_PATH_LANG_VALUE}_memory.swf`);
+          var swf = `./swf/en_memory.swf`
 
           // TODO: Temporary prevent opening the ja file since the texts are not working
-          if (locale != 'ja' && isLocalizedFileExisting(`./swf/${locale}_memory.swf`))
-          {
-            swfLocalized = `./swf/${locale}_memory.swf`
-          }
-
-          swfPlayer.src = swfLocalized;
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfParent.appendChild(swfPlayer);
+          if (locale != 'ja')
+            swf = `./swf/${locale}_memory.swf`
+          loadSWF(swf, '630', '950', locale, '', false)
         </script>
   </body>
 </html>

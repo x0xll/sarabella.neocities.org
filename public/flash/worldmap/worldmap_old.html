@@ -17,16 +17,7 @@
           <p data-il8n="oldmap_warning">
             Some links are not working.
           </p>
-        </div> 
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-              unmuteOverlay: "hidden",
-            }
-          };
-        </script>
+        </div>
 
         <div class="swf" dir="ltr" rbidi="on">
           
@@ -43,22 +34,13 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./oldmap/_data/${locale}_bs_world_map.xml`))
-            locale = "en";
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '560';
-          swfPlayer.width = '950';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'oldmap/bs_worldmap.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
-          swfPlayer.setAttribute("wmode", `transparent`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./oldmap/_data/${UTILS_LOCA_PATH_LANG_VALUE}_bs_world_map.xml`);
+          loadSWF(`oldmap/bs_worldmap.swf`, '560', '950', locale)
         </script>
   </body>
 </html>

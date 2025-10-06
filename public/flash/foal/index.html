@@ -12,18 +12,8 @@
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-              unmuteOverlay: "hidden", 
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on">
-          <embed height="521" width="887" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="MY_Skin_FoalGirlBella.swf" type="application/x-shockwave-flash" flashvars="language=en&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=20111112">
         </div>
 
         <div id="footer" class="footer">
@@ -32,6 +22,14 @@
             generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/My_Horse', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/foal'});
           </script>
         </div>
+
+                <script src="/flash/common/js/flashutils.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          setupRuffle();
+          loadSWF(`MY_Skin_FoalGirlBella.swf`, '521', '887', 'en', '', false)
+        </script>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
