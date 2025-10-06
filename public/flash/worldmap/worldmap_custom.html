@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
+        <title data-il8n="game_map">World Map</title>
+        <script src="/ruffle/ruffle.js"></script>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown(); checkPlayPageDefault()">
+        <script src="/header.js"></script>
+        <div class="swf" dir="ltr" rbidi="on">
+
+        </div>
+
+        <div class="content textbox-parent" style="height: min-content; padding: 5px;" id="gotomap">
+          <div class="textbox" style="height: min-content; padding: 0px;">
+            <p style="padding: 0px;" data-il8n="gototextplaypage">Go to the Text-based Play page <a href="/play.html">here</a></p>
+          </div>
+        </div>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/World_Map', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/worldmap'});
+          </script>
+        </div>
+
+        <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+
+        <script src="/flash/common/js/flashutils.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./custommap/_data/${UTILS_LOCA_PATH_LANG_VALUE}_bs_map.xml`);
+          loadSWF(`custommap/map.swf`, '467', '887', locale)
+
+          function openBSA()
+          {
+            window.location = "https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures";
+          }
+        </script>
+  </body>
+
+  <script>
+    function checkPlayPageDefault()
+    {
+        if (!isGuest() && !loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+            window.location.href = "/play.html"
+        else if (!isGuest())
+            document.getElementById("gotomap").style.display = "none";
+    }
+</script>
+</html>
+
+

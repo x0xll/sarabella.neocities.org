@@ -13,50 +13,31 @@
     <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
 
-        <script>
-            window.RufflePlayer = {
-              config: {
-                autoplay: "on",
-                unmuteOverlay: "hidden",
-              }
-            };
-        </script>
-
         <div class="swf" dir="ltr" rbidi="on">
 
         </div>
 
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> | 
-            <a href="https://bellasara.wiki.gg/wiki/Coloring_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
-            <a href="https://web.archive.org/web/20071021025330/http://www.bellasara.com/coloring-fiona.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a> | 
-            <a href="./images/Fiona.svg" class="global-lowernav-link" data-il8n="footer_svgimg_linktxt">SVG Image</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Coloring_Game', webarchiveLink: 'https://web.archive.org/web/20071021025330/http://www.bellasara.com/coloring-fiona.html', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/coloring', customLinks2: [{href: './images/bsColoring_fiona.svg', il8n: 'footer_svgimg_linktxt'}]});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          let locale = getCurrentLanguageCode();
-          let localeDrawing = locale;
-
-          // Temporary prevent using the jap version since the characters are broken
-          if (locale == "ja" || !isLocalizedFileExisting('./flash/' + locale + '_coloring.swf'))
-            locale = "en";
-
-          if (!isLocalizedFileExisting('./drawings/' + localeDrawing + '_bsColoring_fiona.swf'))
-            localeDrawing = "en";
-
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '521';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = './flash/' + locale + '_coloring.swf?pages=./drawings/' + localeDrawing + '_bsColoring_fiona';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./flash/${UTILS_LOCA_PATH_LANG_VALUE}_coloring.swf`);
+          let localeDrawing = checkLocalizedFiles(`./drawings/${UTILS_LOCA_PATH_LANG_VALUE}_bsColoring_fiona.swf`);
+          if (locale == 'ja')
+            // Temporary prevent using the jap version since the characters are broken
+            locale = 'en';
+          loadSWF(`./flash/${locale}_coloring.swf?pages=./drawings/${localeDrawing}_bsColoring_fiona`, '521', '887', locale)
         </script>
   </body>
 </html>

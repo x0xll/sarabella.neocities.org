@@ -17,43 +17,30 @@
           const searchQueryString = window.location.search;
           const urlParameters = new URLSearchParams(searchQueryString);
           dateOfFile = urlParameters.get('date')
-
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
         </script>
 
         <div class="swf" dir="ltr" rbidi="on"></div>
 
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="http://127.0.0.1:5500/flash/babybella/babybella_timeline.html" data-il8n="footer_timeline_link" data-il8n="footer_timeline_link" class="global-lowernav-link">Timeline</a> |
-          <a href="https://bellasara.wiki.gg/wiki/%22Baby_Bella%22" class="global-lowernav-link" data-il8n="footer_wiki_linktxt" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
-          <a href="https://web.archive.org/web/20081019193023/http://www.bellasara.com/babybella/index.aspx" data-il8n="footer_webarchive_linktxt" data-il8n="footer_webarchive_linktxt" class="global-lowernav-link">Web Archive Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({customLinks1: [{href: '/flash/babybella/babybella_timeline.html', il8n: 'footer_timeline_link'}], wikiLink: 'https://bellasara.wiki.gg/wiki/%22Baby_Bella%22', webarchiveLink: 'https://web.archive.org/web/20081019193023/http://www.bellasara.com/babybella/index.aspx', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/babybella'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '580';
-          swfPlayer.width = '884';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = "./flash/babmini/babmini.swf";
-          swfPlayer.type = 'application/x-shockwave-flash';
-
-          if (!isLocalizedFileExisting(`./flash/babmini/lang/data_${locale}.xml`))
-            locale = "en";
-
-          swfPlayer.setAttribute("flashvars", `language=${locale}&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./flash/babmini/lang/data_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          let swf = './flash/babmini/babmini.swf';
+          if (locale == 'ja')
+            swf = './flash/babmini/babmini_ja.swf';
+          loadSWF(`${swf}`, '580', '884', locale, `&showVideo=true&wsdl=http://www.bellasara.com/BellaSara/poll.asmx?WSDL&babycode=9876-ABCD&date=${dateOfFile}&showFamilyReunion=true`)
         </script>
   </body>
 </html>
