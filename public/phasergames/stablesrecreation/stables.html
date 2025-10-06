@@ -47,16 +47,7 @@
                     horseName ='peter'
                 }
                 let horseData
-                const xmlHttp = new XMLHttpRequest();
-                xmlHttp.onload = function() {
-                const myObj = JSON.parse(this.responseText);
-                horseData = myObj
-                }
-                xmlHttp.open("GET", `./images/horses/${horseName}/data.json`);
-                xmlHttp.send();
-
                 let localizedQuote = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
-
                 let loadInto = `Stables`
 
                 let config = {

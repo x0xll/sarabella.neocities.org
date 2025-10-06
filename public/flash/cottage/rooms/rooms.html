@@ -29,12 +29,6 @@
           const searchQueryString = window.location.search;
           const urlParameters = new URLSearchParams(searchQueryString);
           roomID = urlParameters.get('roomId')
-
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
         </script>
 
         <div class="swf" dir="ltr" rbidi="on">
@@ -66,53 +60,46 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '500';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./lang/cottage_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          var swf = 'cottageentry.swf';
+          
           switch(roomID)
           {
               default:
               case "6":
-                swfPlayer.src = 'cottagebedroom.swf';
+                swf = 'cottagebedroom.swf';
               break;
               case "3":
-                swfPlayer.src = 'livingroom.swf';
+                swf = 'livingroom.swf';
               break;
               case "11":
-                swfPlayer.src = 'patio.swf';
+                swf = 'patio.swf';
               break;
               case "1": // TODO: Find correct id
-                swfPlayer.src = 'rollandsgaardcastle.swf';
+                swf = 'rollandsgaardcastle.swf';
               break;
               case "2": // TODO: Find correct id
-                swfPlayer.src = 'astronomy.swf';
+                swf = 'astronomy.swf';
               break;
               case "4": // TODO: Find correct id
-                swfPlayer.src = 'bedroom2.swf';
+                swf = 'bedroom2.swf';
               break;
               case "5": // TODO: Find correct id
-                swfPlayer.src = 'valerykcastle.swf';
+                swf = 'valerykcastle.swf';
               break;
               case "12":
-                swfPlayer.src = 'shahazarcastle.swf';
+                swf = 'shahazarcastle.swf';
               break;
               case "8":
-                swfPlayer.src = "theatre.swf";
+                swf = "theatre.swf";
               break;
           }
-
-          swfPlayer.setAttribute("flashvars", `lang=${locale}`);
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("wmode", `transparent`);
-          swfParent.appendChild(swfPlayer);
+          loadSWF(swf, '500', '887', locale)
         </script>
-
     </body>
 </html>
