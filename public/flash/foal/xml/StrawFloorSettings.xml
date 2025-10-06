@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Category name="StrawFloorSettings" likelihood="100">
+  <RevealHorseshoePercent value=".2" />
+</Category>

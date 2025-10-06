@@ -1,0 +1,27 @@
+04 May 2025
+    - MyHorseSimulation
+        - Update default swf horse path: HORSE_SKIN_SWF_PATH:String = "./swf/skins/MY_Skin_FoalGirlBella.swf";
+        - Update xml paths: 
+            - "./xml/Simulation.xml" in MyHorseSimulation() ctr, removed the Redirector
+            - "./xml/TimePasser.xml" in simulationSettingsCompleteHandler() in MyHorseSimulation.as, removed the Redirector
+    - MyHorseStable
+        - Update default paths in MyHorseStable.as
+                private static const STABLE_SWF_PATH:String = "./swf/Stable.swf";
+                private static const CUBBY_SWF_PATH:String = "./swf/Cubby.swf";
+                private static const WIPE_ANIMATION_PATH:String = "./swf/anims/WipeAnimation.swf";
+                private static const INDICATOR_PATH:String = "./swf/StableIndicator.swf";  
+                private static const LOCALIZATION_XML_PATH_TEMPLATE:String = "./xml/lang/MyHorse_en.xml";
+                private static const LOCALIZATION_CSS_PATH_TEMPLATE:String = "./css/MyHorse_en.css";
+    - Stable
+        - Update default paths in Stable.as
+                private static const STABLE_IDLE_ANIMATIONS_PATH:String = "./swf/anims/StableIdleAnimations.xml";
+                private static const STABLE_SETTINGS:String = "./xml/StableSettings.xml";
+    - Cubby 
+        - Update default paths in Hand.as
+                private static const TOOL_SETTINGS_FILE_NAME:String = "./xml/HandSettings.xml";
+        - Update default paths in Lamp.as
+                private static const TOOL_SETTINGS_FILE_NAME:String = "./xml/LampSettings.xml";
+        - Update default paths in MusicBox.as
+                private static const TOOL_SETTINGS_FILE_NAME:String = "./xml/MusicBoxSettings.xml";
+        - Update default paths in Cubby.as
+                private static const CUBBY_IDLE_ANIMATIONS_PATH:String = "./xml/CubbyIdleAnimations.xml";

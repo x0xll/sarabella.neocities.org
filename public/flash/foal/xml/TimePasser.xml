@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>  
+  <SwitchPosition minutes="10" switchesAffectedMinimum="0" switchesAffectedMaximum="0" positionsMinimum="0" positionsMaximum="0"></SwitchPosition>
+  <SwitchPosition minutes="60" switchesAffectedMinimum="1" switchesAffectedMaximum="1" positionsMinimum="1" positionsMaximum="1"></SwitchPosition>
+  <SwitchPosition minutes="480" switchesAffectedMinimum="2" switchesAffectedMaximum="3" positionsMinimum="1" positionsMaximum="1"></SwitchPosition>
+  <SwitchPosition minutes="1440" switchesAffectedMinimum="3" switchesAffectedMaximum="5" positionsMinimum="1" positionsMaximum="2"></SwitchPosition>
+  <SwitchFullNegative minutes="4320" switchesAffectedMinimum="5" switchesAffectedMaximum="8"></SwitchFullNegative>
+  <SwitchAllRandom></SwitchAllRandom>
+</Settings>
