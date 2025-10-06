@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<root>
+<!--wsdl_url>http://leaderboards.gencon.com/dragonhoardleaderboard/BellaSaraLeaderboard.asmx?wsdl</wsdl_url-->
+	<wsdl_url>http://testweb01.bellasara.com/bellasara/BellaWSService?wsdl</wsdl_url>
+
+	<!-- Intro title -->
+	<gameTitle_1><FONT SIZE="20">Lo</FONT></gameTitle_1>
+	<gameTitle_2><FONT SIZE="35">Spettacolare</FONT></gameTitle_2>
+	<gameTitle_3><FONT SIZE="35">Gioco di Salto</FONT></gameTitle_3>
+	
+	<start_btn><FONT SIZE="20">INIZIA!</FONT></start_btn>
+	<exit_help_btn><FONT SIZE="20">Esci</FONT></exit_help_btn>
+	<how_to_play_btn><FONT SIZE="20">Come giocare</FONT></how_to_play_btn>
+	<play_again_btn><FONT SIZE="20">Giocare ancora?</FONT></play_again_btn>
+	
+	<!-- level start message -->
+	<start_message><FONT SIZE="20">INIZIA!</FONT></start_message>
+	
+	<!-- score board -->
+	<scoreTitle><FONT SIZE="10">PUNTEGGIO</FONT></scoreTitle>
+	<timerTitle><FONT SIZE="10">TEMPO</FONT></timerTitle>
+	
+	<!-- level select -->
+	<select_horse><FONT SIZE="16">Completa i Livelli per Sbloccare Fiona, Jewel e Thunder!</FONT></select_horse>
+	<level_one><FONT SIZE="15">Livello Uno</FONT></level_one>
+	<level_two><FONT SIZE="15">Livello Due</FONT></level_two>
+	<level_three><FONT SIZE="15">Livello Tre</FONT></level_three>
+	<level_four><FONT SIZE="15">Livello Quattro</FONT></level_four>
+	<horse_one><FONT SIZE="18">Bella</FONT></horse_one>
+	<horse_two><FONT SIZE="18">Fiona</FONT></horse_two>
+	<horse_three><FONT SIZE="18">Jewel</FONT></horse_three>
+	<horse_four><FONT SIZE="18">Thunder</FONT></horse_four>
+
+	<!-- final results screen and level results screen -->
+	
+	<txtFinalResults><FONT SIZE="25">Ottimo lavoro! Punteggio totale</FONT></txtFinalResults>
+	<txtTimeBonusTitle><FONT SIZE="14">Bonus Tempo</FONT></txtTimeBonusTitle>
+	<txtGemBonusTitle><FONT SIZE="14">Bonus Gemme</FONT></txtGemBonusTitle>
+	<txtBonusLevelScoreTitle><FONT SIZE="14">Punteggio Livello Bonus</FONT></txtBonusLevelScoreTitle>
+	<txtFinalScoreTitle><FONT SIZE="14">Punteggio Finale</FONT></txtFinalScoreTitle>
+	<txtShoeScoreTitle><FONT SIZE="14">Totale</FONT></txtShoeScoreTitle>
+	<txtResults><FONT SIZE="25">Ottimo lavoro!</FONT></txtResults>
+	<txtResultsFail><FONT SIZE="25">Buon tentativo.</FONT></txtResultsFail>
+	<txtGameOverPlayAgain><FONT SIZE="15">Puoi battere il tuo record? Gioca ancora!</FONT></txtGameOverPlayAgain>
+	<txtPtsTimeBonus><FONT SIZE="14">P.ti</FONT></txtPtsTimeBonus>
+	<txtPtsBonus><FONT SIZE="14">P.ti</FONT></txtPtsBonus>
+	<txtPtsGemBonus><FONT SIZE="14">P.ti</FONT></txtPtsGemBonus>
+	<txtPtsLevelScore><FONT SIZE="14">P.ti</FONT></txtPtsLevelScore>
+	<txtPtsBonusLevelScore><FONT SIZE="14">P.ti</FONT></txtPtsBonusLevelScore>
+	<txtPtsTotalGameScore><FONT SIZE="14">P.ti</FONT></txtPtsTotalGameScore>
+	<txtLevelScoreTitle><FONT SIZE="14">Punteggio Livello</FONT></txtLevelScoreTitle>
+	
+	<!-- help screen -->
+	
+	<txtHelpGems><FONT SIZE="20">Raccogli le gemme e cerca di battere il tuo record!</FONT></txtHelpGems>
+	<txtHelpArrow><FONT SIZE="18">Usa il tasto freccia destra per galoppare e ottieni del bonus tempo!</FONT></txtHelpArrow>
+	<txtHelpSpace><FONT SIZE="20">Usa la barra spaziatrice per saltare sopra gli ostacoli!</FONT></txtHelpSpace>
+	<txtHelpShoes><FONT SIZE="18">Raccoglii ferri di cavallo, verranno aggiunti al tuo account!</FONT></txtHelpShoes>
+	
+	
+	<txtTryAgain><FONT SIZE="15">Non sei stato abbastanza veloce. Prova ancora!</FONT></txtTryAgain>
+	<txtContinueToBonusMessage><FONT SIZE="15">Continua - Livello BONUS!</FONT></txtContinueToBonusMessage>
+	<txtContinueToNextLevelMessage><FONT SIZE="15">Continua - Prossimo Livello!</FONT></txtContinueToNextLevelMessage>
+	
+	<BlueOvalPoint>+5</BlueOvalPoint>
+	<BlueRectanglePoint>+20</BlueRectanglePoint>
+	<BlueDiamondPoint>+35</BlueDiamondPoint>
+	<BlueTeardropPoint>+50</BlueTeardropPoint>
+	<BlueHeartPoint>+65</BlueHeartPoint>
+	
+	<PinkOvalPoint>+10</PinkOvalPoint>
+	<PinkRectanglePoint>+25</PinkRectanglePoint>
+	<PinkDiamondPoint>+40</PinkDiamondPoint>
+	<PinkTeardropPoint>+55</PinkTeardropPoint>
+	<PinkHeartPoint>+70</PinkHeartPoint>
+	
+	<YellowOvalPoint>+15</YellowOvalPoint>
+	<YellowRectanglePoint>+30</YellowRectanglePoint>
+	<YellowDiamondPoint>+45</YellowDiamondPoint>
+	<YellowTeardropPoint>+60</YellowTeardropPoint>
+	<YellowHeartPoint>+75</YellowHeartPoint>
+</root>

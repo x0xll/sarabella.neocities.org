@@ -2,45 +2,45 @@
 <root>
 
 	<!-- button text goes here -->
-	<help_btn>Help</help_btn>
-	<pause_btn>Pause</pause_btn>
-	<start_btn>Start Game</start_btn>
+	<help_btn>ヘルプ</help_btn>
+	<pause_btn>一時停止</pause_btn>
+	<start_btn>ゲームを始める</start_btn>
 
-	<turbobtn>Play Turbo</turbobtn>
+	<turbobtn>ターボをプレイ</turbobtn>
 
-	<pauseheading>Your Game is Paused</pauseheading>
-	<pause2>Close this window to resume play.</pause2>
+	<pauseheading>ゲームは一時停止されています。</pauseheading>
+	<pause2>このウィンドウを閉じて、再生を再開してください。</pause2>
 
-	<how_to_play_btn>How To Play</how_to_play_btn>
+	<how_to_play_btn>チュートリアル</how_to_play_btn>
 
-	<play_again_btn>Play Again</play_again_btn>
+	<play_again_btn>う一度プレイ</play_again_btn>
 
 	<!-- intro text goes here -->
-	<intro>Intro From XML!</intro>
+	<intro>XMLからの導入</intro>
 
 	<!-- how to play title goes here -->
-	<how_to_play_title>How To Play</how_to_play_title>
+	<how_to_play_title>チュートリアル</how_to_play_title>
 
 	<!-- how to play text goes here -->
-	<how_to_play2>Help Pegasus collect special flowers as you fly across the kingdom sky. 
+	<how_to_play2>ペガサスと一緒に、王国の空を飛ぶ途中で特別な花を集めましょう。
 
-Press the space bar or mouse click to flap her wings.
+スペースバーを押すか、マウスをクリックして、彼女の羽を羽ばたかせます。
 
-Collect as many flowers as you can before sundown and arriving at your castle.
+日没までにできるだけ多くの花を集めてください。
 
-Good luck!</how_to_play2>
+がんばれ！</how_to_play2>
 
 	<!-- win message -->
-	<win>Congratulations</win>
-	
-	<win2>You did great! Would you like to play again and collect even more flowers?</win2>
-	
+	<win>おめでとう！</win>
+
+	<win2>よくできました！もう一度プレイしたいですか？</win2>
+
 	<!-- Non translated texts in original -->
-	<score>Current Score</score>
-	<intro_howto>Help Pegasus collect special flowers as you fly across the kingdom sky. Press the space bar or mouse click to flap her wings.Collect as many flowers as you can before sundown and arriving at the castle.</intro_howto>
-	<enterName>Please Enter your Name</enterName>
-	<greatFlying>Great Flying!</greatFlying>
-	<end>You have come to the end of your journey.</end>
-	<end2>There are no more flowers to collect.</end2>
+	<score>現在のスコア</score>
+	<intro_howto>ペガサスと一緒に、王国の空を飛ぶ途中で特別な花を集めましょう。スペースバーを押すか、マウスをクリックして、彼女の羽を羽ばたかせます。日没までにできるだけ多くの花を集めてください。</intro_howto>
+	<enterName>お名前を入力してください</enterName>
+	<greatFlying>素晴らしい飛行！</greatFlying>
+	<end>旅は終わった。</end>
+	<end2>もう集める花はありません。</end2>
 
 </root>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>Aiuto</help_btn>
+	<pause_btn>Pausa</pause_btn>
+	<start_btn>Gioca</start_btn>
+
+	<turbobtn>Gioca Turbo</turbobtn>
+
+	<pauseheading>Il gioco è in pausa</pauseheading>
+	<pause2>Chiudi questa finestra per riprendere a giocare.</pause2>
+
+	<how_to_play_btn>Come si gioca</how_to_play_btn>
+
+	<play_again_btn>Gioca di nuovo</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro From XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>Come si gioca</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>Più è lontano il cursore da Treasure, più veloce ti muoverai.
+
+Le anguille elettriche e le meduse ti daranno la scossa e ti faranno muovere più lentamente.
+
+Le bolle ricaricano la tua energia per muoverti più velocemente.
+
+I banchi di pesci ti permettono di muoverti più rapidamente.
+
+Le perle ti tengono al sicuro da qualsiasi pericolo per un po’.
+
+Il gioco termina quando la bolla che si trova sotto il tuo punteggio scoppia.</how_to_play2>
+
+	<intro_howto>Usa il tuo mouse per guidare Treasure nel mare aperto per collezionare pesci speciali, conchiglie, ed altri oggetti magici prima che il tempo finisca. Fai attenzione alle meduse e alle anguille elettriche! Ti rallenteranno. I banchi di pesci e le bolle ti aiuteranno a muoverti più velocemente.</intro_howto>
+
+	<!-- win message -->
+	<win>Ottima Nuotata!</win>
+	
+	<win2>Sei giunto alla fine del tuo viaggio.
+Non è rimasto nulla da raccogliere.</win2>
+	
+	<!-- control panel score text goes here -->
+	<current_score>Punteggio Attuale</current_score>
+
+	<!-- combos texts -->
+	<ofakind> dello stesso tipo: </ofakind>
+	<variety>Varietà </variety>
+	<plus>Più: </plus>
+	<cross>Croce: </cross>
+	<corners>Bordi: </corners>
+	<threerow>3 di fila: </threerow>
+	<threecol>3 in colonna: </threecol>
+	<threediag>3 in diagonale: </threediag>
+
+	<!-- Non translated texts in original -->
+	<goodLuck>Buona Fortuna!</goodLuck>
+	<bonusTime>Tempo Bonus</bonusTime>
+</root>

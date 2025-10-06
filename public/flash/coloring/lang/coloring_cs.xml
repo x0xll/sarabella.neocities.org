@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root>
     <print>Tisk</print>
-    <reset>Restartovat</reset>
+    <reset>Vymazat</reset>
     <help>Pomoc</help>
     <currentColor>Aktuální Barva</currentColor>
     <moreColor>Více Barev</moreColor>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bs_map>
+	<!-- ======================================================================================================================================================= -->
+    <bg_music src="./newmap/music/bgmusic.mp3" />
+	<!-- ======================================================================================================================================================= -->
+	<help>
+		<balloon _x="520" _y="90">
+			<arrow _x="160" _y="40" _width="20" _height="100" _rotation="110" />
+			<arrow _x="6" _y="60" _width="10" _height="40" _rotation="200" />
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="help_balloon">Click to visit the BELLA SARA world</p>]]></label>			
+		</balloon>
+
+		<balloon _x="680" _y="370">
+			<arrow _x="150" _y="35" _width="20" _height="60" _rotation="140" />
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="help_balloon">Music ON/OFF</p>]]></label>			
+		</balloon>		
+	</help>	
+	<!-- ======================================================================================================================================================= -->
+	<locations>
+		<!-- ======= -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Nuovi Giochi</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="75" _y="-120" floatDown="-10">
+        <item link="/phasergames/artrandomiser/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Random Art Idea Generator</p>]]></label>
+        </item>
+        <item link="/phasergames/stablesrecreation/dressup.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Dress Up Game</p>]]></label>
+        </item>  
+        <item link="/phasergames/quiz/belloquiz/adventures/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Quiz su Adventures</p>]]></label>
+        </item>
+        <item link="/phasergames/quiz/belloquiz/autumnjourney/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Quiz su Autumn Journey</p>]]></label>
+        </item>
+			</menu>
+		</location>
+		<!-- ===== -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Flash Games Recuperati</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="65" _y="-130" floatRight="10">
+        <item link="/flash/ArtStudio/artstudio.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Art Studio</p>]]></label>
+        </item>
+        <item link="/flash/bubblewand/bubblewand.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Gioco delle Bolle Magiche</p>]]></label>
+        </item>
+				<item link="/flash/cloudjumper/cloudjumper.html?version=1">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Saltanuvole</p>]]></label>	
+				</item>
+				<item link="/flash/dreamrider/dreamrider.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Cavalcasogni</p>]]></label>	
+				</item>
+				<item link="/flash/jumpinggame/jumpinggame.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Spettacolare Gioco di Salto</p>]]></label>	
+				</item>
+				<item link="/flash/treasureshunt/treasureshunt.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Caccia al Treasure</p>]]></label>	
+				</item>
+				<item link="/flash/worldmap/worldmap_new.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Nuova Mappa</p>]]></label>	
+				</item>
+			</menu>
+
+		</location>		
+		<!-- ==== -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Giochi ricostruiti</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="-315" _y="-50" floatRight="-10">
+        <item link="/phasergames/stablesrecreation/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Scuderie</p>]]></label>
+        </item>
+        <item link="/phasergames/citrustacked/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Lemorissimi (WIP)</p>]]></label>
+        </item>
+        <item link="/phasergames/jumpinggame/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Spettacolare Gioco di Salto (WIP)</p>]]></label>
+        </item>
+        <item link="/phasergames/quiz/belloquiz/original/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Il Quiz di Bello</p>]]></label>
+        </item>
+        <item link="/phasergames/memory/yinyang/original/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Il Gioco di Memoria di Yin e Yang</p>]]></label>
+        </item>		
+        <item link="/phasergames/bellapedia/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bellapedia</p>]]></label>
+        </item>				
+			</menu>
+		</location>
+		<!-- ==== -->
+		<location _x="0" _y="0">
+			<scroll floatUp="0">
+				<label selectable='0' wordWrap="false"><![CDATA[<p class="location_label">Old Recovered Games</p>]]></label>	
+			</scroll>
+      <menu itemSpacing="0" _x="80" _y="-100" floatRight="10">
+				<item link="/flash/coloring/coloring-fiona.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Immagini da colorare (Fiona)</p>]]></label>	
+				</item>
+				<item link="/flash/puzzles/puzzles.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Puzzle</p>]]></label>	
+				</item>
+				<item link="/flash/memory/index.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Gioco di Memoria</p>]]></label>	
+				</item>
+				<item link="/flash/quiz/index.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Quiz di Conoscenza</p>]]></label>	
+				</item>
+				<item link="/flash/babybella/babybella_timeline.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Baby Bella</p>]]></label>	
+				</item>
+				<item link="/flash/worldmap/worldmap_old.html">
+					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Vecchia Mappa</p>]]></label>	
+				</item>
+			</menu>
+		</location>
+    <!-- === -->
+  </locations>
+  <!-- ======================================================================================================================================================= -->
+  <!-- ======================================================================================================================================================= -->
+</bs_map>

@@ -6,10 +6,11 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
-        <script src="./js/loadScreen.js"></script> 
-        <script src="./js/landStable.js"></script> 
-        <script src="./js/airStable.js"></script> 
-        <script src="./js/waterStable.js"></script> 
+        <script src="./js/stablesCommon.js"></script> 
+        <script src="./js/loadScreenUpdate.js"></script> 
+        <script src="./js/landStableUpdate.js"></script> 
+        <script src="./js/airStableUpdate.js"></script> 
+        <script src="./js/waterStableUpdate.js"></script> 
         <style type="text/css">
             body {
                 margin: 0;
@@ -19,6 +20,7 @@
 
     <script src="/language.js"></script>
 
+        <script src="/userManager.js"></script>
     <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
@@ -31,7 +33,7 @@
                 horseName = urlParameters.get('name')
                 locale = getCurrentLanguageCode()
                 let localeData
-                let englishDatas
+                let englishData
 
                 function urlExists(url)
                 {
@@ -45,16 +47,7 @@
                     horseName ='peter'
                 }
                 let horseData
-                const xmlHttp = new XMLHttpRequest();
-                xmlHttp.onload = function() {
-                const myObj = JSON.parse(this.responseText);
-                horseData = myObj
-                }
-                xmlHttp.open("GET", `./images/horses/${horseName}/data.json`);
-                xmlHttp.send();
-
-                let localizedQuote = true;
-
+                let localizedQuote = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
                 let loadInto = `Stables`
 
                 let config = {
@@ -80,44 +73,15 @@
         
             </script>
         </div>
-
-        <div style="text-align: center;" id="quoteToggle">
-            <input type="checkbox" id="englishQuoteToggle" name="englishQuoteToggle" >
-            <label for="englishQuoteToggle" data-il8n="quote_toggle_label" style="color: white">Use English Quotes</label>
-        </div>
         
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-            <a href="./index.html" class="global-lowernav-link" data-il8n="footer_magicalhorses_linktxt">Magical Horses</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a> |
-            <a href="https://github.com/Gridloch/bellasararecreation" data-il8n="footer_github_linktxt" class="global-lowernav-link">GitHub</a>
-          </div>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({customLinks1:[{href: './index.html', il8n:'footer_magicalhorses_linktxt'}], wikiLink: 'https://bellasara.wiki.gg/wiki/Magical_Horses', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/phasergames/stablesrecreation'});
+          </script>
+        </div>     
 
           <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
-
-          <script>
-            const toggleStateKey = "englishQuoteToggleStablesBellaSaraNeoCity";
-
-            let toggleQuote = document.getElementById("englishQuoteToggle");
-
-            if (getCurrentLanguageCode() == "en")
-                document.getElementById("quoteToggle").style.display = "none";
-
-            toggleQuote.addEventListener("change", (e) =>
-            {
-                localizedQuote = !event.target.checked
-                localStorage.setItem(toggleStateKey, `${event.target.checked}`)
-            })
-
-            // Load the saved toggle state
-            let savedToggleState = localStorage.getItem(toggleStateKey);
-            if (savedToggleState != null && savedToggleState == "true")
-            {
-                toggleQuote.checked = true;
-                localizedQuote = false;
-            }
-          </script>
 
     </body>
 </html>
