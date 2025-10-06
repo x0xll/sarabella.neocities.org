@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bs_world_map>
+	<bubble_menus>
+		<menu id="Woods" _x="35" _y="105">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">The Woods</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="/phasergames/artrandomiser/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Art Randomizer</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="/phasergames/stablesrecreation/dressup.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Vytvoř si koně</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="/phasergames/quiz/belloquiz/adventures/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Kvíz na Dobrodružství</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="//phasergames/quiz/belloquiz/autumnjourney/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Kvíz Podzimních Cest</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>
+		<menu id="Carnival" _x="20" _y="200">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Karneval</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="https://bellasara.wiki.gg/wiki/Bella%27s_Beauty_Box">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Truhla krásy Bella Sara</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="/flash/coloring/coloring-fiona.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Bella Omalovánky</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="/flash/puzzles/puzzles.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Zábavné Puzzle</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="/phasergames/memory/yinyang/original/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Hra Yin and Yang</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>
+		<menu id="Castle" _x="300" _y="50">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Zámek</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="https://web.archive.org/web/20081108024621/http://www.bellasara.com/asksara.aspx">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Zeptej se Sary</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="/phasergames/quiz/belloquiz/original/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Kvíz Bello</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="/flash/quiz/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Kvíz znalosti Santos </p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="https://bellasara.wiki.gg/wiki/Wallpapers">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Tapety</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>
+		<menu id="Arena" _x="550" _y="100">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Aréna</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+        <item _x="1" _y="10" link="/flash/treasureshunt/treasureshunt.html">
+          <label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Hledání Pokladu</p>]]></label>
+        </item>
+				<item _x="1" _y="27" link="/flash/cloudjumper/cloudjumper.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Jízda v Mracích</p>]]></label>
+				</item>
+				<item _x="1" _y="44" link="/flash/lanceriding/lanceriding.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Hra Jízdy s Kopím</p>]]></label>
+				</item>
+				<item _x="1" _y="61" link="/phasergames/jumpinggame/index.html">
+					<label _x="8" _y="1" align="center" selectable="1"><![CDATA[<p class="bubble_menu_item">Úžasný parkur</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>	
+		<menu id="Ranch" _x="450" _y="230">
+			<title_bubble _x="0" _y="0">
+				<label _x="8" _y="5" align="center" selectable="0"><![CDATA[<p class="bubble_title">Ranč</p>]]></label>
+			</title_bubble>
+			<menu_bubble _x="20" _y="34">
+				<item _x="1" _y="10" link="/phasergames/stablesrecreation/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Vyber si Koně</p>]]></label>
+				</item>
+				<item _x="1" _y="27" link="/flash/foal/index.html">
+					<label _x="8" _y="1" align="center" selectable="0"><![CDATA[<p class="bubble_menu_item">Péče o koně</p>]]></label>
+				</item>
+			</menu_bubble>
+		</menu>	
+	</bubble_menus>
+</bs_world_map>
+

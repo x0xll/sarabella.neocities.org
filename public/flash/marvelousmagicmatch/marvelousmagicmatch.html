@@ -16,17 +16,17 @@
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
           <p data-il8n="marvelousmagimatch_warning"></p>
         </div> 
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on">
         </div>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Marvelous_Magic_Match', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/marvelousmagicmatch'});
+          </script>
+        </div>
+
 
         <div class="footer">
           <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
@@ -36,19 +36,13 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '576';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'magicmatch2.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./data/localization/bs_magicmatch_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          loadSWF(`magicmatch2.swf`, '576', '887', locale)
         </script>
   </body>
 </html>

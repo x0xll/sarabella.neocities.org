@@ -4,6 +4,8 @@ const NEOCITIES_PATH = '/localization/neocitiesLoca_';
 const NEOCITIES_DEFAULT_PATH = '/localization/neocitiesLoca_en.json';
 const NEOCITIES_KEY = "neocities";
 
+const AUTHORIZED_LANGUAGES = ["en", "fr", "es", "da", "nl", "ja", "sv", "cs", "it"]
+
 const savedVar = "selectedLanguageBellaSaraNeoCity";
 
 var localizedElements;
@@ -32,18 +34,37 @@ function loadLanguagePref(updatePage = true) {
     if (localStorage.getItem(savedVar)) {
         var langSaved = localStorage.getItem(savedVar);
 
-        currentLang = langSaved;
+        currentLang = isAuthorizedLanguage(langSaved);
 
         if (updatePage)
-            changeLanguage(langSaved);
+            changeLanguage(currentLang);
     }
     else if (updatePage){
         checkBrowserLanguage();
     }
 }
 
+function isAuthorizedLanguage(lang)
+{
+    // Verify this is a language we currently authorize
+    var availbleLanguage = false;
+
+    AUTHORIZED_LANGUAGES.forEach(id => {
+        if (lang == id)
+        {
+            availbleLanguage = true;
+            return;
+        }
+    });
+
+    if (!availbleLanguage)
+        lang = "en";
+
+    return lang;
+}
+
 async function changeLanguage(langSelected, reload = false) {
-    var lang = langSelected;
+    var lang = isAuthorizedLanguage(langSelected);
 
     currentLang = lang;
 
@@ -68,6 +89,8 @@ function getCurrentLanguageCode()
 function getLocalizedText(key, name = NEOCITIES_KEY)
 {
     // Note that the key should be a string!
+    if (localizedDatas[name] === undefined)
+        return defaultLocas[name][key];
     var txt = localizedDatas[name][key];
     if (txt == undefined) // Go back to english if the translation is not done yet
          return defaultLocas[name][key];
@@ -78,11 +101,14 @@ function getLocalizedText(key, name = NEOCITIES_KEY)
 
 async function loadNewLocalizationFile(pathjson = NEOCITIES_PATH + currentLang + '.json', pathjsonDefault = NEOCITIES_DEFAULT_PATH, name = NEOCITIES_KEY)
 {
-    const jsonFile = await fetch(pathjson)
-                        .then(function(file) {return file.json();})
-                        .then(function(json) {
-                            localizedDatas[name] = json;
-                        })
+    if (isLocalizedFileExisting(pathjson))
+    {
+        const jsonFile = await fetch(pathjson)
+                    .then(function(file) {return file.json();})
+                    .then(function(json) {
+                        localizedDatas[name] = json;
+                    })
+    }
 
     const jsonFileDefault = await fetch(pathjsonDefault)
     .then(function(file) {return file.json();})
@@ -100,4 +126,12 @@ async function loadNewLocalizationFile(pathjson = NEOCITIES_PATH + currentLang +
                 element.innerHTML = locaTxt;
         }
     )
+}
+
+function isLocalizedFileExisting(path)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', path, false);
+    http.send();
+    return http.status != 404;
 }

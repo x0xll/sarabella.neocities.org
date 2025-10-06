@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>Pomoc</help_btn>
+	<pause_btn>Pauza</pause_btn>
+	<start_btn>Začít hru</start_btn>
+
+	<turbobtn>Hrát Turbo</turbobtn>
+
+	<pauseheading>Tvoje hra je pozastavena</pauseheading>
+	<pause2>zavři toto okno pro spuštění hry.</pause2>
+
+	<how_to_play_btn>Jak hrát?</how_to_play_btn>
+
+	<play_again_btn>Hrát znovu</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro From XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>Jak Hrát?</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>Čím dál je myš od Treasure, tím rychleji se bude pohybovat
+
+Úhoři a medůzy vám dají elektrický šok a zpomalí váš pohyb
+
+Bublinky vám doplní energii, abyste se mohli pohybovat rychleji
+
+Hejna ryb vám umožňují plavat rychleji
+
+Perly vás na krátkou dobu ochrání před veškerým nebezpečím
+
+Hra končí, když vyprší čas v bublinkovém časovači. Časovač se nachází pod vaším skóre a na konci hry praskne</how_to_play2>
+
+	<intro_howto>Pomocí myši veď Treasure po otevřeném moři a sbírej speciální ryby, mušle a další magické předměty, než vyprší čas. Dej si pozor na medúzy a úhoře, kteří tě zpomalí! Hejna ryb a bubliny ti pomohou se pohybovat rychleji.</intro_howto>
+
+	<!-- win message -->
+	<win>Skvělé plavání!</win>
+	
+	<win2>Dostali jste se na konec dobrodružství.
+Už tu není co posbírat.</win2>
+	
+	<!-- control panel score text goes here -->
+	<current_score>Skóre</current_score>
+
+	<!-- combos texts -->
+	<ofakind> svého druhu: </ofakind>
+	<variety>Varianty </variety>
+	<plus>Plus: </plus>
+	<cross>Kříž: </cross>
+	<corners>Kraje: </corners>
+	<threerow>3 v řadě: </threerow>
+	<threecol>3 v sloupku: </threecol>
+	<threediag>3 v diagonále: </threediag>
+
+	<!-- Non translated texts in original -->
+	<goodLuck>Hodně Štěstí!</goodLuck>
+	<bonusTime>Bonusový čas</bonusTime>
+</root>

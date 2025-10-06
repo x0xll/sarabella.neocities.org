@@ -5,5 +5,5 @@
 	<!-- THIS SHOULD BE "1" ON US SERVER -->
 	<add key="useWebService" value="1"/>
 	<add key="exitSWF" value="map.swf"/>
-	<add key="exitURL" value="/index.html"/>
+	<add key="exitURL" value="/flash/worldmap/worldmap_new.html"/>
 </appsettings>

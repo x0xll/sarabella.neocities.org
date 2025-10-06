@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml version="1.0" encoding="utf-8">
+	<ingame>
+		<loader>
+			<text name="LoaderHeadline" type="text">Loading</text>
+		</loader>
+		<mainpanel>
+			<text name="txt_mainName">&lt;font size="60"&gt;JÍZDA S#&lt;/font&gt;&lt;font size="80"&gt;KOPÍM&lt;/font&gt;</text>
+			<text name="txt_mainHelp">Pomoc</text>
+			<text name="txt_mainBegin">Hrát</text>
+			<text name="txt_mainContinue">Pokračovat</text>
+			<text name="txt_mainNewgame">Nová Hra</text>
+			<text name="txt_mainEasy">lehký</text>
+			<text name="txt_mainHard">těžký</text>
+		</mainpanel>
+		<evalpanel>
+			<text name="txt_evalGo">Jeď!</text>
+			<text name="txt_evalQuit">menu</text>
+			<text name="txt_evalPractice">trénování</text>
+			<text name="txt_evalBonus">bonus</text>
+			<text name="txt_evalCompetition">soutěž</text>
+			<text name="txt_evalRetry">zkusit znova</text>
+			<text name="txt_evalRestart">restartovat</text>
+			<text name="txt_evalPracticeIntro">Vítej na tvém tréninku:#Aby ses kvalifikova/la do souteže, musíš trefit prsten!#Máš tolik pokusů, kolik chceš.</text>
+			<text name="txt_evalPracticeScoreRun">Trefa!#Až se budeš cítit připraveně, můžeš #pokračovat do souteže.</text>
+			<text name="txt_evalPracticeScoreRunUnLock">Trefa do prstenu! Chytil/a jsi prsten!#Soutěž je nyní otevřená.</text>
+			<text name="txt_evalPracticeNoScoreRun">Vedle!#Zkus to znova.</text>
+			<text name="txt_evalPracticeNoScoreRunUnLock">Vedle, ale#soutěž je stále otevřená</text>
+			<text name="txt_evalPracticeNoScore">Vedle jak ta jedle.#Pokračuj v trénování!</text>
+			<text name="txt_evalCompIntro">Vítej v soutěži:#Chyť těžší prsteny pro více bodů#Máš maximálně [maxRuns] pokusů.</text>
+			<text name="txt_evalCompScoreRun">Super! Posbíral/a jsi [runScore] bodů,#z celkem [cumulScore] bodů.#[remainRuns] pokusů zbývá.</text>
+			<text name="txt_evalCompScoreRunUnLock">Výborně! Posbíral/a jsi [runScore] bodů,#z celkem [cumulScore] bodů#Bonusová úroveň odemčena#[remainRuns] pokusů zbývá.</text>
+			<text name="txt_evalCompScoreTotal">Gratuluji!#Získal/a jsi [runScore] bodů, celkové skóre je [cumulScore] bodů#</text>
+			<text name="txt_evalCompScoreTotalUnlock">Gratuluji! Získal/a jsi [runScore] bodů#z celkem [cumulScore] bodů.#Získej více bodů na bonusové úrovni!</text>
+			<text name="txt_evalCompNoScoreRun">Minul/a jsi - celkové skóre je stále [cumulScore] bodů#Zkus to znova, zbývá ti [remainRuns] pokusů.</text>
+			<text name="txt_evalCompNoScoreRunUnLock">YMinul/a jsi - celkové skóre je stále [cumulScore] bodů#Získej více bodů na bonusové úrovni!#[remainRuns] pokusů zbývá.</text>
+			<text name="txt_evalCompNoScore">Nemáš žádné body,#zbývá ti [remainRuns] pokusů.#Zkus to znova!</text>
+			<text name="txt_evalCompNoScoreTotal">Vedle!#Neposbíral/a jsi žádné prsteny.#Možná potřebuješ trochu víc potrénovat?</text>
+			<text name="txt_evalCompScoreRunTotal">Gratuluji!#Získal/a jsi [runScore] bodů#dohromady [cumulScore] bodů.</text>
+			<text name="txt_evalCompScoreRunTotalUnLock">Gratuluji! Získal/a jsi [runScore] bodů#dohromady [cumulScore] bodů.#Získej více bodů na bonusové úrovni!</text>
+			<text name="txt_evalCompNoScoreRunTotalUnLock">Dobře!#tvoje finální skóre je [cumulScore] bodů#Vyzkoušej bonusovou úroveň pro extra body!</text>
+			<text name="txt_evalCompNoScoreRunTotal">Gratuluji!#Získal/a jsi [runScore] bodů#dohromady [cumulScore] bodů.</text>
+			<text name="txt_evalCompNoScoreTotal">Vedle jak ta jedle!#Neposbíral/a jsi žádné prsteny.#Možná potřebuješ trochu víc potrénovat?</text>
+			<text name="txt_evalBonusIntro">Vítej na bonusové úrovni:#Stref se do balónků pro extra body.#Máš pouze jeden pokus!</text>
+			<text name="txt_evalBonusScoreRunTotal">Dobře!#[runScore] bonusové body byli přidány,#finální skóre je [totalScore] bodů.</text>
+			<text name="txt_evalBonusScoreRunTotalUnLock">Dobře!#[runScore] bonusové body byli přidány,#finální skóre je [totalScore] bodů</text>
+			<text name="txt_evalBonusNoScoreRunTotalUnLock">Dobře!#[runScore] bonusových bodů bylo přidáno,#finální skóre je [totalScore] bodů.</text>
+			<text name="txt_evalBonusNoScoreTotal">Smůla, minul/a jsi všechny balónky.#finální skóre je [totalScore] bodů.</text>
+		</evalpanel>
+		<help>
+			<text name="txtHelp_Headline">Jak hrát?</text>
+			<text name="txtHelp_Intro">Jseš připraven/a? Při jízdě na koni, zkus posbírat prsteny se svým kopím. Kopí ovládáte kliknutím a táhnutím kurzorem. Trénujte a trénujte. Kopí je těžké, takže ho budete muset několikrát pustit a táhnout, abyste ho udrželi ve správné poloze. Pokud zvolíte těžkou úroveň, prsteny budou menší a hůře se do nich bude strefovat.</text>
+		</help>
+	</ingame>
+</xml>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+    <gameTitle>Pexeso</gameTitle>
+
+    <rules1>Pod čtverečky vpravo je 8 různých koní. Každý obrazek bude na dvou místech.</rules1>
+    <rules2>Najdi všechny dvojice a dokonči hru.</rule2>
+    <rules3>Pokud najdeš všechny dříve, než vyprší čas, vyhráváš hru...</rules3>
+
+    <easy>Lehké</easy>
+    <medium>Střední</easy>
+    <hard>Těžké</hard>
+    
+    <start>Hrát</start>
+    <seconds>sec.</seconds>
+
+    <congrats>Gratuluji - vyhráváš hru</congrats>
+    <retry>--&gt; Hrát znova &lt;--</retry>
+    <lost>Škoda - nebyl/a jsi dostatečně rychlý/á</lost>
+</root>

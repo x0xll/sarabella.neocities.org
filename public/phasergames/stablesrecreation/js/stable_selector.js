@@ -13,6 +13,8 @@ const horses = [
     'blossom',
     'bosi',
     'cantaro',
+    'ceratos',
+    'ceres',
     'chitra',
     'clio',
     'colour',
@@ -20,6 +22,7 @@ const horses = [
     'donn',
     'echo',
     'epona',
+    'faith',
     'falcha',
     'faxon',
     'fiona',
@@ -53,6 +56,7 @@ const horses = [
     'vesta',
     'virstan',
     'wavebreaker',
+    'zephan',
     'zombie'
 ]
 // Array of length 10 to keep track of which horses are displayed on the current page

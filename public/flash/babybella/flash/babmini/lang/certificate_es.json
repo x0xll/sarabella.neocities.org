@@ -1,0 +1,43 @@
+{
+    "title": "Certificado de Nacimiento",
+    "name": "Nombre:",
+    "birthDate": "Fecha de Nacimiento:",
+    "birthPlace": "Lugar de Nacimiento:",
+    "mother": "Madre:",
+    "father": "Padre",
+    
+    "bellisimo_name": "Bellisimo",
+    "bellisimo_birthDate": "25 de sept.",
+    "bellisimo_birthPlace": "Norte del Norte",
+    "bellisimo_mother": "Bella",
+    "bellisimo_fater": "Bello",
+    "bellisimo_quote": "Confía en ti mismo y sabrás cómo vivir.",
+
+    "cirra_name": "Cirra",
+    "cirra_birthDate": "12 de sept.",
+    "cirra_birthPlace": "Norte del Norte",
+    "cirra_mother": "Anemone",
+    "cirra_fater": "Uranus",
+    "cirra_quote": "Ve la belleza interior de tus amigos.",
+
+    "petal_name": "Petal",
+    "petal_birthDate": "4 de sept.",
+    "petal_birthPlace": "Norte del Norte",
+    "petal_mother": "Rosebriar",
+    "petal_fater": "Beran",
+    "petal_quote": "Planea una dulce sorpresa para alguien.",
+
+    "belissa_name": "Belissa",
+    "belissa_birthDate": "6 de nov.",
+    "belissa_birthPlace": "Norte del Norte",
+    "belissa_mother": "Bella",
+    "belissa_fater": "Bello",
+    "belissa_quote": "Conviértete en la persona que quieres ser. Encontrarás alegría en el camino.",
+
+    "janie_name": "Janie",
+    "janie_birthDate": "19 de sept.",
+    "janie_birthPlace": "Norte del Norte",
+    "janie_mother": "Ondine",
+    "janie_fater": "Flipper",
+    "janie_quote": "Aprende del ayer, disfruta el hoy, e imagina el mañana."
+}

@@ -5,14 +5,14 @@
 	<wsdl_url>http://testweb01.bellasara.com/bellasara/BellaWSService?wsdl</wsdl_url>
 
 	<!-- Intro title -->
-	<gameTitle_1><FONT SIZE="20">The</FONT></gameTitle_1>
-	<gameTitle_2><FONT SIZE="35">Spectacular</FONT></gameTitle_2>
-	<gameTitle_3><FONT SIZE="35">Jumping Game</FONT></gameTitle_3>
+	<gameTitle_1><FONT SIZE="20"> </FONT></gameTitle_1>
+	<gameTitle_2><FONT SIZE="35">Velkolepá</FONT></gameTitle_2>
+	<gameTitle_3><FONT SIZE="35">Skákací Hra</FONT></gameTitle_3>
 	
 	<start_btn><FONT SIZE="20">Začít hru</FONT></start_btn>
-	<exit_help_btn><FONT SIZE="20">Exit help</FONT></exit_help_btn>
-	<how_to_play_btn><FONT SIZE="20">How to play</FONT></how_to_play_btn>
-	<play_again_btn><FONT SIZE="20">Play Again ?</FONT></play_again_btn>
+	<exit_help_btn><FONT SIZE="20">odejít z pomoci</FONT></exit_help_btn>
+	<how_to_play_btn><FONT SIZE="20">Jak Hrát</FONT></how_to_play_btn>
+	<play_again_btn><FONT SIZE="20">Hrát Znova ?</FONT></play_again_btn>
 	
 	<!-- level start message -->
 	<start_message><FONT SIZE="20">START!</FONT></start_message>
@@ -37,12 +37,12 @@
 	<txtFinalResults><FONT SIZE="25">Skvělé skákání! Skóre úrovně</FONT></txtFinalResults>
 	<txtTimeBonusTitle><FONT SIZE="14">Drahokamový bonus</FONT></txtTimeBonusTitle>
 	<txtGemBonusTitle><FONT SIZE="14">Drahokamový bonus</FONT></txtGemBonusTitle>
-	<txtBonusLevelScoreTitle><FONT SIZE="14">Bonus Level Score</FONT></txtBonusLevelScoreTitle>
-	<txtFinalScoreTitle><FONT SIZE="14">Final Score</FONT></txtFinalScoreTitle>
-	<txtShoeScoreTitle><FONT SIZE="14">Total</FONT></txtShoeScoreTitle>
+	<txtBonusLevelScoreTitle><FONT SIZE="14">Bonusová úroveň Skóre</FONT></txtBonusLevelScoreTitle>
+	<txtFinalScoreTitle><FONT SIZE="14">Finální Skóre</FONT></txtFinalScoreTitle>
+	<txtShoeScoreTitle><FONT SIZE="14">Celkem</FONT></txtShoeScoreTitle>
 	<txtResults><FONT SIZE="25">Skvělé skákání</FONT></txtResults>
 	<txtResultsFail><FONT SIZE="25">Dobrý pokus.</FONT></txtResultsFail>
-	<txtGameOverPlayAgain><FONT SIZE="15">Can you beat your score? Play again!</FONT></txtGameOverPlayAgain>
+	<txtGameOverPlayAgain><FONT SIZE="15">Můžeš překonat své skóre? Hraj znovu!</FONT></txtGameOverPlayAgain>
 	<txtPtsTimeBonus><FONT SIZE="14">Bodů</FONT></txtPtsTimeBonus>
 	<txtPtsBonus><FONT SIZE="14">Bodů</FONT></txtPtsBonus>
 	<txtPtsGemBonus><FONT SIZE="14">Bodů</FONT></txtPtsGemBonus>
@@ -53,14 +53,14 @@
 	
 	<!-- help screen -->
 	
-	<txtHelpGems><FONT SIZE="20">Collect all the gems and try to beat your score!</FONT></txtHelpGems>
-	<txtHelpArrow><FONT SIZE="18">Use the right arrow key to gallop and win time bonus!</FONT></txtHelpArrow>
-	<txtHelpSpace><FONT SIZE="20">Use the space key to jump above the obstacles!</FONT></txtHelpSpace>
-	<txtHelpShoes><FONT SIZE="18">Collect all the horseshoes, they'll be added to your account!</FONT></txtHelpShoes>
+	<txtHelpGems><FONT SIZE="20">Posbírej všechny drahokamy a zkus překonat svoje skóre!</FONT></txtHelpGems>
+	<txtHelpArrow><FONT SIZE="18">Použij pravou šipku k cvalu a vyhraj bonusový čas!</FONT></txtHelpArrow>
+	<txtHelpSpace><FONT SIZE="20">Použij mezerník k přeskočení překážek!</FONT></txtHelpSpace>
+	<txtHelpShoes><FONT SIZE="18">Posbírej všechny podky, které se připíšouk k tvému účtu!</FONT></txtHelpShoes>
 	
 	
-	<txtTryAgain><FONT SIZE="15">Ne dost rychle. Zkus to znovu!</FONT></txtTryAgain>
-	<txtContinueToBonusMessage><FONT SIZE="15">Continue - BONUS Level!</FONT></txtContinueToBonusMessage>
+	<txtTryAgain><FONT SIZE="15">Nedostatečně rychle. Zkus to znovu!</FONT></txtTryAgain>
+	<txtContinueToBonusMessage><FONT SIZE="15">Pokračovat - BONUSOVÁ Úroveň!</FONT></txtContinueToBonusMessage>
 	<txtContinueToNextLevelMessage><FONT SIZE="15">Pokračovat na další úroveň!</FONT></txtContinueToNextLevelMessage>
 	
 	<BlueOvalPoint>+5</BlueOvalPoint>

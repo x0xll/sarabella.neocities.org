@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml version="1.0" encoding="utf-8">
+	<ingame>
+		<loader>
+			<text name="LoaderHeadline" type="text">Loading</text>
+		</loader>
+		<mainpanel>
+			<text name="txt_mainName">&lt;font size="60"&gt;LANCE#&lt;/font&gt;&lt;font size="80"&gt;RIDING&lt;/font&gt;</text>
+			<text name="txt_mainHelp">aiuto</text>
+			<text name="txt_mainBegin">gioca</text>
+			<text name="txt_mainContinue">continua</text>
+			<text name="txt_mainNewgame">nuovo gioco</text>
+			<text name="txt_mainEasy">facile</text>
+			<text name="txt_mainHard">difficile</text>
+		</mainpanel>
+		<evalpanel>
+			<text name="txt_evalGo">vai!</text>
+			<text name="txt_evalQuit">menù</text>
+			<text name="txt_evalPractice">allenamento</text>
+			<text name="txt_evalBonus">bonus</text>
+			<text name="txt_evalCompetition">gara</text>
+			<text name="txt_evalRetry">riprova</text>
+			<text name="txt_evalRestart">ricomincia</text>
+			<text name="txt_evalPracticeIntro">Benvenuto all’allenamento:#Per qualificarti alla gara, centra il bersaglio!#Puoi riprovare quante volte vuoi.</text>
+			<text name="txt_evalPracticeScoreRun">Centro!#Quando ti senti pronto, puoi#partecipare alla gara.</text>
+			<text name="txt_evalPracticeScoreRunUnLock">Hai centrato l’anello!#La gara adesso è disponibile.</text>
+			<text name="txt_evalPracticeNoScoreRun">Mancato!#Riprova.</text>
+			<text name="txt_evalPracticeNoScoreRunUnLock">Mancato, ma#la gara è ancora disponibile</text>
+			<text name="txt_evalPracticeNoScore">L’hai mancato del tutto.#Continua a esercitarti!</text>
+			<text name="txt_evalCompIntro">Benvenuto alla gara:#Prendi i bersagli più difficli per guadagnare più punti#Hai [maxRuns] tentativi.</text>
+			<text name="txt_evalCompScoreRun">Niente male! Hai guadagnato [runScore] punti,#per un totale di [cumulScore] punti.#[remainRuns] corse rimanenti.</text>
+			<text name="txt_evalCompScoreRunUnLock">Eccellente! Hai accumulato [runScore] punti,#il tuo punteggio totale è di [cumulScore] punti#Il percorso Bonus è stato sbloccato#[remainRuns] corse rimanenti.</text>
+			<text name="txt_evalCompScoreTotal">Congratulazioni!#Hai guadagnato [runScore] punti, il tuo punteggio totale è di [cumulScore] punti#</text>
+			<text name="txt_evalCompScoreTotalUnlock">Congratulazioni! Hai guadagnato [runScore] punti#per un totale di [cumulScore] punti.#Ottieni dei punti extra con il livello bonus!</text>
+			<text name="txt_evalCompNoScoreRun">L’hai mancato - il punteggio totale è ancora di [cumulScore] punti#Riprovaci, hai [remainRuns] corse rimaste.</text>
+			<text name="txt_evalCompNoScoreRunUnLock">L’hai mancato - il punteggio totale è ancora di [cumulScore] punti#Ottieni dei punti extra con il livello bonus!#[remainRuns] corse rimanenti.</text>
+			<text name="txt_evalCompNoScore">Non hai punti,#e [remainRuns] corse rimanenti.#Riprova!</text>
+			<text name="txt_evalCompNoScoreTotal">Mancato!#Non hai preso nessun bersaglio.#Forse ti serve un altro po’ di pratica?</text>
+			<text name="txt_evalCompScoreRunTotal">Congratulazioni!#Hai ottenuto [runScore] punti#per un totale di [cumulScore] punti.</text>
+			<text name="txt_evalCompScoreRunTotalUnLock">Congratulazioni! Hai guadagnato [runScore] punti#per un totale di [cumulScore] punti.#Ottieni dei punti extra con il livello bonus!</text>
+			<text name="txt_evalCompNoScoreRunTotalUnLock">Bene!#Il tuo punteggio totale è di [cumulScore] punti#Prova il livello bonus per ottenere punti extra!</text>
+			<text name="txt_evalCompNoScoreRunTotal">Congratulazioni!#Hai ottenuto [runScore] punti#per un totale di [cumulScore] punti.</text>
+			<text name="txt_evalCompNoScoreTotal">Mancato!#Non hai preso nessun bersaglio.#Forse ti serve un altro po’ di pratica?</text>
+			<text name="txt_evalBonusIntro">Benvenuto al livello bonus:#Colpisci i palloncini per dei punti extra.#Hai solo un tentativo!</text>
+			<text name="txt_evalBonusScoreRunTotal">Niente male!#[runScore] punti bonus sono stati aggiunti,#per un punteggio finale di [totalScore] punti.</text>
+			<text name="txt_evalBonusScoreRunTotalUnLock">Niente male!#[runScore] punti bonus sono stati aggiunti,#per un punteggio finale di [totalScore] punti.</text>
+			<text name="txt_evalBonusNoScoreRunTotalUnLock">Niente male!#[runScore] punti bonus sono stati aggiunti,#per un punteggio finale di [totalScore] punti.</text>
+			<text name="txt_evalBonusNoScoreTotal">Peccato, hai mancato tutti i palloncini.#Il punteggio finale è di [totalScore] punti.</text>
+		</evalpanel>
+		<help>
+			<text name="txtHelp_Headline">Come giocare</text>
+			<text name="txtHelp_Intro">Sei pronto? Mentre cavalchi il tuo cavallo, cerca di agganciare gli anelli con la tua lancia.  Per controllare la lancia, clicca e trascina con il mouse. Fai tanta pratica. La lancia è pesante, quindi potresti dover lasciarla e ritrascinarla più volte per mantenerla nella posizione giusta.  Se selezioni la modalità Difficile, gli anelli saranno più piccoli e più difficili da centrare.</text>
+		</help>
+	</ingame>
+</xml>

@@ -16,39 +16,27 @@
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
           <p data-il8n="wheelofwonder_warning"></p>
         </div> 
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on">
         </div>
 
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Wheel_of_Wonder', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/wheelofwonders'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '466';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'WoW.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfPlayer.setAttribute("flashvars", `lang=${locale}`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./lang/bs_wheelofwonder_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          loadSWF(`WoW.swf`, '466', '887', locale)
         </script>
   </body>
 </html>
