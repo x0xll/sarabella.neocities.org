@@ -15,8 +15,11 @@
         <how_to_play_title>Hur Man Spelar</how_to_play_title>
         <!-- how to play text goes here -->
         <how_to_play2>Hjälp Pegasus samla speciella blommor medan du flyger över kungarikets himmel. 
+
 Klicka på mellanslag eller med musen för att flaxa hennes vingar.
+
 Samla så många blommor som du kan innan solen gått ner och du tar dig till slottet.
+
 Lycka Till!</how_to_play2>
         <!-- win message -->
         <win>Grattis</win>
@@ -25,9 +28,11 @@ Lycka Till!</how_to_play2>
         
         <!-- Non translated texts in original -->
         <score>Nuvarande Poäng</score>
-        <intro_howto>Hjälp Pegasus samla speciella blommor medan du flyger över kungarikets himmel. 
-Klicka på mellanslag eller med musen för att flaxa hennes vingar.
-Samla så många blommor som du kan innan solen gått ner och du tar dig till slottet.</intro_howto>
+        <intro_howto>Hjälp Pegasus samla speciella blommor medan du flyger över kungarikets himmel.
+        
+        Klicka på mellanslag eller med musen för att flaxa hennes vingar. 
+        
+        Samla så många blommor som du kan innan solen gått ner och du tar dig till slottet.</intro_howto>
         <enterName>Var snäll och skriv ditt namn här</enterName>
         <greatFlying>Snygg Flygning!</greatFlying>
         <end>Du har kommit till slutet på din resa.</end>
