@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+	<play>Jugar</play>
+	<pause>Pausar</pause>
+    <beautyeh>Haz creado un hermoso show de fuegos artificiales.</beautyeh>
+    <greatshow>¡Gran Show!</greatshow>
+    <replay>Repetir</replay>
+    <newshow>Nuevo Show</newshow>
+    <quit>Salir</quit>
+
+    <welcome>Bienvenida al</welcome>
+    <gameTitle>Festival Firelight</gameTitle>
+    <playPuzzle>Juega al Rompecabezas</playPuzzle>
+    
+    <rulesTime>¡Cuando se ponga el sol, el tiempo se acaba y tu show comenzará!</rulesTime>
+    <rulesCounter>El contador muestra cuántos fuegos artificiales hay en cada tubo.</rulesCounter>
+    <rulesPinwheels>Los molinillos girarán y saldrán de la pantalla.</rulesPinwheels>
+    <rulesUncoveredFireworks>Sólo puedes quitar fuegos artificiales que estén completamente descubiertos.</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Haz clic en los fuegos artificiales o usa la barra espaciadora para añadirlos a tu espectáculo.</rulesCollectFireworks>
+
+    <intro>¡Un emocionante juego que termina en TÚ espectacular show de fuegos artificiales!</intro>
+    <howToPlayTitle>Cómo Jugar:</howToPlayTitle>
+    <howToPlayDesc>Haz clic en los molinillos para descubrir y coleccionar la mayor cantidad posible de fuegos artificiales. ¡Cuantos más recolectes, más grande será tu espectáculo! Cuando se ponga el sol, el tiempo se acaba y tu show comenzará.</howToPlayDesc>
+    <goodLuck>¡Buena Suerte!</goodLuck>
+
+    <begin>Comenzar</begin>
+
+    <score>Tu Puntaje</score>
+    <continue>Continuar</continue>
+    <won>¡Ganaste!</won>
+
+    <outroGreat>Lo hiciste genial.</outroGreat>
+    <outroWatchShow>Haz clic en el botón de abajo cuando estés lista para ver tu show.</outroWatchShow>
+    <outroEnjoy>¡Disfruta!</outroEnjoy>
+</root>
+

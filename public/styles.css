@@ -110,6 +110,7 @@
     transform: translate(-50%, 28px);
     color: white;
     text-decoration: none;
+    min-width: 100px;
 }
 .dropMenu div {
     position: absolute;
@@ -273,6 +274,11 @@ ul {
 .languages img {
     margin: 0;
     padding: 0;
+}
+
+.dressupBtn a{
+    color: black;
+    font-weight: bold;
 }
 
 @media (min-width: 1190px)

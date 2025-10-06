@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<root>
+    <cat1>Kategorie 1</cat1>
+    <cat2>Kategorie 2</cat2>
+    <cat3>Kategorie 3</cat3>
+
+    <start>Začít</start>
+
+    <partsHorse>Části koně</partsHorse>
+    <colorHorse>Zbravení koní</colorHorse>
+    <saddleBridle>Sedlo a uzda</saddleBridle>
+
+    <quest1>1. Otázka</quest1>
+    <quest2>2. Otázka</quest2>
+    <quest3>3. Otázka</quest3>
+    <quest4>4. Otázka</quest4>
+    <quest5>5. Otázka</quest5>
+    <quest6>6. Otázka</quest6>
+    <quest7>7. Otázka</quest7>
+    <quest8>8. Otázka</quest8>
+    <quest9>9. Otázka</quest9>
+    <quest10>10. Otázka</quest10>
+    <quest11>11. Otázka</quest11>
+    <quest12>12. Otázka</quest12>
+
+    <next>Další</next>
+    <congrats>Gratuluji</congrats>
+    <retry>Hrát Znova</retry>
+    <selectAnswer>Vyber odpověd!</selectAnswer>
+
+    <completedRound1>Právě jste dokončili 1. kolo</completedRound1>
+    <completedRound2>Právě jste dokončili 2. kolo</completedRound2>
+    <completedRound3>Právě jste dokončili 3. kolo.</completedRound3>
+
+    <horsePart1>Loket</horsePart1>
+    <horsePart2>Hlezno</horsePart2>
+    <horsePart3>Kopyto</horsePart3>
+    <horsePart4>Kštice</horsePart4>
+    <horsePart5>Kohoutek</horsePart5>
+    <horsePart6>Bok</horsePart6>
+    <horsePart7>Koleno</horsePart7>
+    <horsePart8>Záď</horsePart8>
+    <horsePart9>Spěnka</horsePart9>
+    <horsePart10>Záda</horsePart10>
+    <horsePart11>Rameno</horsePart11>
+    <horsePart12>Čumák</horsePart12>
+    <horsePart13>Rousy</horsePart13>
+    <horsePart14>Čelist</horsePart14>
+    <horsePart15>Kořen ocasu</horsePart15>
+    <horsePart16>Hříva</horsePart16>
+    <horsePart17>Holeň</horsePart17>
+    <horsePart18>Břicho</horsePart18>
+    <horsePart19>Koleno</horsePart19>
+    <horsePart20>Ocas</horsePart20>
+    <horsePart21>Korunka</horsePart21>
+
+    <result>Správná odpověď = </result>
+    <expert>Výborně! Musíš být expert</expert>
+    <nice>Dobrý, víš toho hodně o koních!</nice>
+    <lose>Promiň, zkus to znova!</lose>
+
+    <horseColor1>Šedák</horseColor1>
+    <horseColor2>Ryzák</horseColor2>
+    <horseColor3>Vraník</horseColor3>
+    <horseColor4>Hnědák</horseColor4>
+    <horseColor5>Flea Bitten Grey</horseColor5>
+    <horseColor6>Plavák</horseColor6>
+    <horseColor7>Grošák</horseColor7>
+    <horseColor8>Strakoš</horseColor8>
+    <horseColor9>Hnědák</horseColor9>
+    <horseColor10>Palomino</horseColor10>
+    <horseColor11>Bělouš</horseColor11>
+    <horseColor12>Ryzák</horseColor12>
+    
+    <saddleBridle1>Otěže</saddleBridle1>
+    <saddleBridle2>Nánosník</saddleBridle2>
+    <saddleBridle3>Udidlo</saddleBridle3>
+    <saddleBridle4>Posedlí</saddleBridle4>
+    <saddleBridle5>Podsedlová dečka</saddleBridle5>
+    <saddleBridle6>Třmenový zámek</saddleBridle6>
+    <saddleBridle7>Podbřišník</saddleBridle7>
+    <saddleBridle8>Lícnice</saddleBridle8>
+    <saddleBridle9>Čelenka</saddleBridle9>
+    <saddleBridle10>Třmenový řemen</saddleBridle10>
+    <saddleBridle11>Komora</saddleBridle11>
+    <saddleBridle12>Kolenní opěrka</saddleBridle12>
+    <saddleBridle13>Zadní rozsocha</saddleBridle13>
+    <saddleBridle14>Bočnice</saddleBridle14>
+    <saddleBridle15>Nátylník</saddleBridle15>
+    <saddleBridle16>Třmen</saddleBridle16>
+    <saddleBridle17>Podhrdelník</saddleBridle17>
+
+</root>

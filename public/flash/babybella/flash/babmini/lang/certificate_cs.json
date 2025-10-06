@@ -1,0 +1,44 @@
+{
+    "title": "Rodný list",
+    "name": "Jméno:",
+    "birtDate": "Datum narození:",
+    "birthPlace": "Místo narození:",
+    "mother": "Matka:",
+    "father": "Otec",
+    
+    "bellisimo_name": "Bellisimo",
+    "bellisimo_birtDate": "25. Září",
+    "bellisimo_birthPlace": "Sever Severu",
+    "bellisimo_mother": "Bella",
+    "bellisimo_fater": "Bello",
+    "bellisimo_quote": "Důvěřuj si a budeš vědět, jak žít.",
+
+    "cirra_name": "Cirra",
+    "cirra_birtDate": "12. Září",
+    "cirra_birthPlace": "Sever Severu",
+    "cirra_mother": "Anemone",
+    "cirra_fater": "Uranus",
+    "cirra_quote": "Vnímej vnitřní krásu svých přátel .",
+
+    "petal_name": "Petal",
+    "petal_birtDate": "4. Září",
+    "petal_birthPlace": "Sever Severu",
+    "petal_mother": "Rosebriar",
+    "petal_fater": "Beran",
+    "petal_quote": "Naplánuj pro někoho sladké překvapení.",
+
+    "belissa_name": "Belissa",
+    "belissa_birtDate": "6. Listopadu",
+    "belissa_birthPlace": "Sever Severu",
+    "belissa_mother": "Bella",
+    "belissa_fater": "Bello",
+    "belissa_quote": "Staň se tím, kým chceš být. Cestou hledej a rozdávej radost.",
+
+    "janie_name": "Janie",
+    "janie_birtDate": "18. Září",
+    "janie_birthPlace": "Sever Severu",
+    "janie_mother": "Ondine",
+    "janie_fater": "Flipper",
+    "janie_quote": "Uč se ze včerejška, raduj se z dnešního dne a mysli na zítřek."
+}
+

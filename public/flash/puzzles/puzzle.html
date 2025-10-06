@@ -39,28 +39,22 @@
             <embed height="600px" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="./flash/coloring.swf?pages=bsColoring_fiona" type="application/x-shockwave-flash" width="1000">
         </div> -->
 
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" game_storybook>Home</a> |
-            <a href="https://web.archive.org/web/20191201043040/http://www.bellasara.com/puzzles.html" data-il8n="footer_webarchive_linktxt" class="global-lowernav-link">Web Archive Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({webarchiveLink: 'https://web.archive.org/web/20191201043040/http://www.bellasara.com/puzzles.html', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/puzzles'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
         <script type="text/javascript">
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
           loadLanguagePref(false); 
           const locale = getCurrentLanguageCode();
           var swfLocalized = `./swf/en_puzzleEngine.swf`
 
-          if (urlExists(`./swf/${locale}_puzzleEngine.swf`))
+          if (isLocalizedFileExisting(`./swf/${locale}_puzzleEngine.swf`))
             swfLocalized = `./swf/${locale}_puzzleEngine.swf`
 
 

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>Pomoc</help_btn>
+	<pause_btn>Pauza</pause_btn>
+	<start_btn>Začít Hru</start_btn>
+
+	<turbobtn>Turbo Hra</turbobtn>
+
+	<pauseheading>Tvoje hra je pozastavená</pauseheading>
+	<pause2>Zavři okno pro pokračování ve hře.</pause2>
+
+	<how_to_play_btn>Jak Hrát</how_to_play_btn>
+
+	<play_again_btn>Hrát Znovu</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro From XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>Jak Hrát</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>Pomož Pegasusovi nasbírat speciální květiny při letu po nebesích království.
+
+Zmáčkni mezerník nebo klikni myší pro mávnutí křídel.
+
+Posbírej co nejvíce kytek můžeš než dorazíš na zámek se západem slunka.
+
+Hodně štěstí!</how_to_play2>
+
+	<!-- win message -->
+	<win>Blahopřeji</win>
+	
+	<win2>Vedl/a sis skvěle! Chceš si zahrát znova a posbírat ještě více kytek?</win2>
+	
+	<!-- Non translated texts in original -->
+	<score>Aktuální Skóre</score>
+	<intro_howto>Pomož Pegasusovi nasbírat speciální květiny při letu po nebesích království. Zmáčkni mezerník nebo klikni myší pro mávnutí křídel. Collect as many flowers as you can before sundown and arriving at your castle. Posbírej co nejvíce kytek můžeš než dorazíš na zámek se západem slunka.</intro_howto>
+	<enterName>Zadej své jméno</enterName>
+	<greatFlying>Úžasný let!</greatFlying>
+	<end>Došli jste na konec své cesty.</end>
+	<end2>Už nejsou žádné květiny ke sbírání.</end2>
+
+</root>
+

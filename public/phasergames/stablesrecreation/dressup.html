@@ -7,6 +7,7 @@
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
         <script src="./js/loadScreen.js"></script> 
+        <script src="./js/dressupStableSelector.js"></script> 
         <script src="./js/dressup.js"></script> 
         <script src="./js/dressupLandStable.js"></script> 
         <style type="text/css">
@@ -16,10 +17,18 @@
         </style>
     </head>
 
+    <script src="/save.js"></script> 
     <script src="/language.js"></script>
     
-    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
+    <body style="text-align: center;" onload="loadLanguagePref();">
         <script src="/header.js"></script>
+        <script src="/userManager.js"></script>
+
+        <br/>
+
+        <div id="dressup_selectablefalse" class="dressupBtn"><a href="dressup.html?selector=false" data-il8n="dressup_createhorse">Create a new horse</a></div>
+        <div id="dressup_selectabletrue" class="dressupBtn"><a href="dressup.html?selector=true" data-il8n="dressup_gostable">Go back to the Horse Selection menu</a></div>
+
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px; margin: auto; width: 888px;">
             <script type="text/javascript">
                 loadLanguagePref(false);
@@ -43,6 +52,34 @@
 
                 let loadInto = `Stables`
 
+                let dressup_selectabletrue = document.getElementById('dressup_selectabletrue');
+                let dressup_selectablefalse = document.getElementById('dressup_selectablefalse')
+
+                setupUserDropdown()
+                const MAX_SAVED_HORSES = 10
+                let savedHorses = loadData(DATA_TYPE_CREATIONS, getGameID("DressUp"))
+                if (savedHorses != null && savedHorses.length > 0)
+                {
+                    savedHorses = savedHorses;
+
+                    if (!urlParameters.get('selector') ||  urlParameters.get('selector') === "true")
+                    {
+                        dressup_selectabletrue.style.display = "none";
+                        dressup_selectablefalse.style.display = "block";
+                        loadInto = 'dressupStableSelector'
+                    }
+                    else
+                    {
+                        dressup_selectabletrue.style.display = "block";
+                        dressup_selectablefalse.style.display = "none";
+                    }
+                }
+                else
+                {
+                    dressup_selectabletrue.style.display = "none";
+                    dressup_selectablefalse.style.display = "none";
+                }
+
                 let config = {
                     parent: "gameDiv",
                     dom: {
@@ -59,6 +96,7 @@
                     },
                     scene: [
                         Load,
+                        dressupStableSelector,
                         dressupStable,
                         dressupLandStable
                     ]
@@ -71,15 +109,15 @@
         <input id="copy" style="display: none">
         <label id="copyLable" for="copy" style="display: none; color: white;" data-il8n="dressup_horselink">Horse Link</label>
 
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-            <a href="./index.html" class="global-lowernav-link" data-il8n="footer_magicalhorses_linktxt">Magical Horses</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Magical_Horses" data-il8n="footer_wiki_linktxt" class="global-lowernav-link">Wiki Page</a> |
-            <a href="https://github.com/x0xll/sarabella.neocities.org" data-il8n="footer_github_linktxt" class="global-lowernav-link">GitHub</a>
-          </div>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({customLinks1:[{href: './index.html', il8n:'footer_magicalhorses_linktxt'}], wikiLink: 'https://bellasara.wiki.gg/wiki/Magical_Horses', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/phasergames/stablesrecreation'});
+          </script>
+        </div>        
         
           <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
 
     </body>
 </html>

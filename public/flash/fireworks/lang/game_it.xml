@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+	<play>Riproduci</play>
+	<pause>Metti in pausa</pause>
+    <beautyeh>Hai realizzato uno spettacolo di fuochi d’artificio meraviglioso.</beautyeh>
+    <greatshow>Bello Spettacolo!</greatshow>
+    <replay>Guarda di nuovo</replay>
+    <newshow>Nuovo Spettacolo</newshow>
+    <quit>Esci</quit>
+
+    <welcome>Benvenuto al</welcome>
+    <gameTitle>Festival dei Fuochi d’Artificio</gameTitle>
+    <playPuzzle>Gioca</playPuzzle>
+    
+    <rulesTime>Quando il sole tramonta lo spettacolo comincerà!</rulesTime>
+    <rulesCounter>Il contatore mostra quanti fuochi d’artificio ci sono in ogni tubo.</rulesCounter>
+    <rulesPinwheels>Le girandole gireranno sullo schermo.</rulesPinwheels>
+    <rulesUncoveredFireworks>Puoi rimuovere solo i fuochi d’artificio che sono del tutto scoperti.</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Clicca sui fuochi d’artificio o usa la barra spaziatrice per includerli nel tuo spettacolo</rulesCollectFireworks>
+
+    <intro>Un gioco emozionante che finisce con il TUO personale spettacolo di fuochi d’artificio!</intro>
+    <howToPlayTitle>Come giocare:</howToPlayTitle>
+    <howToPlayDesc>Clicca sulle girandole per scoprire e raccogliere più fuochi d’artificio possibili. Più ne raccogli, più sarà grandioso il tuo spettacolo! Una volta che il sole tramonta, il tempo sarà finito e il tuo spettacolo comincerà.</howToPlayDesc>
+    <goodLuck>Buona fortuna!</goodLuck>
+
+    <begin>Inizia</begin>
+
+    <score>Il tuo Punteggio</score>
+    <continue>Continua</continue>
+    <won>Hai Vinto</won>
+
+    <outroGreat>Ottimo lavoro.</outroGreat>
+    <outroWatchShow>Clicca il tasto qui sotto quando sei pronto per guardare il tuo spettacolo.</outroWatchShow>
+    <outroEnjoy>Divertiti!</outroEnjoy>
+</root>
+

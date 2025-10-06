@@ -24,14 +24,6 @@ document.write('<div class="header-container">\
 <a class="navMainIcon" href="https://bellasara.com/"><img src="/images/nav/Icons/besa_icon.png" title="Bella Sara Official Site!" class="navMainIcon"><br></a>\
 <a class="navIconText" href="https://bellasara.com/" data-il8n="header_besaofficial_btn">BeSa Official</a>\
 </div>\
-<div class="navIcon">\
-<a class="navMainIcon" href="https://bellasara.wiki.gg/wiki/Bella_Sara_Wiki"><img src="/images/nav/Icons/wiki_logo.png" title="Bella Sara Wiki" class="navMainIcon"><br></a>\
-<a class="navIconText" href="https://bellasara.wiki.gg/wiki/Bella_Sara_Wiki"  data-il8n="header_wiki_btn">BeSa Wiki</a>\
-</div>\
-<div class="navIcon">\
-<a class="navMainIcon" href="https://discord.com/invite/8SJzaBcAhD"><img src="/images/nav/Icons/discord_icon.png" title="Bella Sara Discord" class="navMainIcon"><br></a>\
-<a class="navIconText" href="https://discord.com/invite/8SJzaBcAhD" data-il8n="header_discord_btn">BeSa Discord</a>\
-</div>\
 </div>\
 </div>\
 \
@@ -40,6 +32,7 @@ document.write('<div class="header-container">\
 <select name="currentUserDropdown" id="currentUserDropdown" onchange="chooseUser(true)">\
 <option value="guest" data-il8n="user_guest">Guest</option>\
 <option value="create" data-il8n="user_create">Create User</option>\
+<option value="settings" data-il8n="user_settings">Settings</option>\
 </select>\
 <p id="horseshoes">10000 <img src="/images/nav/Horseshoe.png"></p>\
 </div>\

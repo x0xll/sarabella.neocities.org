@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<unicode>True</unicode>
+	
+	<titleTxt><FONT SIZE="30"><p>Ruota</p><p>delle</p><p>Meraviglie</p></FONT></titleTxt>
+	<helpBtnTxt><FONT SIZE="28"><b>Aiuto</b></FONT></helpBtnTxt>
+	<playBtnTxt><FONT SIZE="28"><b>Gioca!</b></FONT></playBtnTxt>
+	
+	<helpscnA><FONT SIZE="24"><p>Usa i ferri di cavallo per far girare la ruota.</p></FONT></helpscnA>
+	<helpscnB><FONT SIZE="24"><p>Gira la ruota per vincere dei premi.</p></FONT></helpscnB>
+	<helpscnC><FONT SIZE="24"><p>Vedi i tuoi premi in I Miei Oggetti.</p></FONT></helpscnC>
+
+	<spinTxt><FONT SIZE="20"><b><p>Gira</p><p>the wheel</p></b></FONT></spinTxt>
+    <spendTxt><FONT SIZE="26"><b>Sei sicuro?</b></FONT></spendTxt>
+    <redeemTxt><FONT SIZE="18"><b><p>Ricevi </p><p>il tuo premio</p></b></FONT></redeemTxt>
+    <addPrizeTxt><FONT SIZE="20"><b>Il tuo premio è stato aggiunto ai tuoi Ninnoli in I Miei Oggetti.</b></FONT></addPrizeTxt>
+
+    <freeSpinTxt><FONT SIZE="22"><p>Giro gratis!</p></FONT></freeSpinTxt>
+	<winPrizeTxt><FONT SIZE="18"><b>Hai vinto il premio 0!</b></FONT></winPrizeTxt>
+	<winFreeSpinTxt><FONT SIZE="26"><b>Hai vinto un giro gratis!</b></FONT></winFreeSpinTxt>
+	<winInspirationTxt><FONT SIZE="26"><b>Hai vinto dell’ispirazione!</b></FONT></winInspirationTxt>
+    
+	<yesTxt><FONT SIZE="26"><b>Sì</b></FONT></yesTxt>
+    <noTxt><FONT SIZE="26"><b>No</b></FONT></noTxt>
+    <okTxt><FONT SIZE="26"><b>OK</b></FONT></okTxt>
+	<myThingsTxt><FONT SIZE="15"><b>I Miei Oggetti</b></FONT></myThingsTxt>
+	
+	<noHorseshoeTxt><FONT SIZE="20"><b>Non hai abbastanza ferri di cavallo.</b></FONT></noHorseshoeTxt>
+</root>

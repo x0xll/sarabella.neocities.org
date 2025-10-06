@@ -1,0 +1,13 @@
+18 April 2025
+    - Fix "Continue" button
+        - Removed content of function setStoryLocation() in AwardTracker.as
+            var _loc2_:IAwardService = null;
+            _loc2_ = Application.getInstance().getAwardService();
+            _loc2_.SetAward(GAME_ID,TOP_SCORE_AWARD,param1);
+        - Removed following lines from Application.as
+            _loc1_ = timeline.getBlobService();
+            _loc1_.SetBlob(14,1,storyLocation.toString());
+    - Linked to fake user in Sidebar.as
+        - ExternalInterface.call("updateHighscore",param1 + "@Citrustacked"); in updateScore()
+        - ExternalInterface.call("updateLevelReached",param1 + "@Citrustacked"); in updateLevel()
+        - import flash.external.*;

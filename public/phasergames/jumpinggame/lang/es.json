@@ -1,0 +1,20 @@
+{
+    "start_game": "Iniciar Juego",
+    "start": "¡EMPEZAR!",
+    "score": "PUNTAJE",
+    "time": "TIEMPO",
+    "time_bonus": "Bonus de Tiempo",
+    "gem_bonus": "Bonus de Gemas",
+    "level_score": "Puntaje de Nivel",
+    "points": "Pts",
+    "succeed_title": "¡Grandes Saltos!",
+    "succeed_level_select": "¡Continúa al siguiente nivel!",
+    "fail_title": "Buen intento.",
+    "fail_level_select": "No es lo suficientemente rápido. ¡Intenta otra vez!",
+    "levels":"¡Completa niveles para desbloquear a Fiona, Jewel y Thunder!",
+    "level_one": "Nivel Uno",
+    "level_two": "Nivel Dos",
+    "level_three": "Nivel Tres",
+    "level_four": "Nivel Cuatro"
+}
+

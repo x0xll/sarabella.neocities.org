@@ -1,3 +1,14 @@
+09 August 2025
+    - Fix needing to right click on loading
+        - Remove all the code inside the functions on WebServiceProxy.as, WebService.as and WebServiceConnector.as
+        - Moved all elements from frame 1 and 7 to -200 to be outside of the viewport
+        - Removed the frame between 3 and 13 in the script
+        - Removed the "stop();" in frame 3
+
+18 April 2025
+    - Fireworks1.swf link to fake user, added following lines in SendDataViaWebservices() in Game.as
+        flash.external.ExternalInterface.call("updateHighscore",this.myScore + "@FirelightFestival");
+        flash.external.ExternalInterface.call("addHorseshoes",this.horseShoeCount);
 29 March 2025
     - Fireworks1.swf sends show datas to JS ExternalInterface
 

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+    <print>Stampa</print>
+    <reset>Ricomincia</reset>
+    <help>Aiuto</help>
+    <currentColor>Colore Attuale</currentColor>
+    <moreColor>Altri Colori</moreColor>
+    
+    <fionaTxt>Diventa l’eroe della tua personale avventura.</fionaTxt>
+    <thunderTxt>Ti darò coraggio. Scaccia tutte le tue paure.</thunderTxt>
+    <bellaTxt>Pensa positivo ogni giorno! Senti le vibrazioni che la gioia e l’energia ti donano.</bellaTxt>
+    <jewelTxt>Ti aiuterò a creare un flusso continuo di positività.</jewelTxt>
+</root>

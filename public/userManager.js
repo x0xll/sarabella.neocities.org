@@ -10,6 +10,10 @@ const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
 const DATA_TYPE_LEVEL = "level";
 const DATA_TYPE_CREATIONS = "creations";
+const DATA_TYPE_SETTINGS_TRANSLATEDQUOTES = "settings_tdqt";
+const DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS = "settings_tdog";
+const DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR = "settings_hsmul";
+const DATA_TYPE_SETTINGS_MAPPLAYPAGE = "settings_mpp";
 
 const USER_KEY = "neocitiesbesa_user_";
 const MAX_USERS = 2; // TODO : define based on max size allowed on local storage
@@ -29,7 +33,7 @@ function setupUserDropdown()
     userAmount = localStorage.getItem(USER_AMOUNT_KEY);
     userNames = localStorage.getItem(USER_NAMES_KEY);
 
-    for (let i = userDropdown.options.length - 1; i >= 2; i--)
+    for (let i = userDropdown.options.length - 1; i >= 3; i--)
     {
         userDropdown.options.remove(i);
     }
@@ -63,7 +67,7 @@ function createUser()
         return;
     }
 
-    if (username.toLowerCase() === "guest" || username.toLowerCase() === "create" || username.toLowerCase() === "create user")
+    if (username.toLowerCase() === "guest" || username.toLowerCase() === "create" || username.toLowerCase() === "create user" || username.toLowerCase() === "settings")
     {
         alert("Please choose another username.")
         return;
@@ -113,8 +117,13 @@ function chooseUser(reloadPage = false)
 
     if (currentUser == "create")
         window.location.href = "/signup.html";
+    else if (currentUser == "settings")
+        window.location.href = "/userSettings.html";
     else
     {
+        if (window.location.href.includes("/userSettings.html") && currentUser == "guest")
+            window.location.href = "/index.html";
+
         localStorage.setItem(CURRENT_USER_KEY, currentUser);
 
         horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
@@ -142,8 +151,10 @@ function forceChooseUser(username)
                 break;
             }
         }
-        
     }
+
+    if (username === "guest")
+        userDropdown.options.remove(2);
 
     chooseUser();
 }
@@ -320,7 +331,13 @@ function saveData(dataType, userData, gameID = "")
             {
                 case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
                 case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
-                case DATA_TYPE_CREATIONS: savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                case DATA_TYPE_CREATIONS:
+                    switch(gameID)
+                    {
+                        case getGameID("ArtStudio"): savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                        default: savedData.gameData[i].creations = userData; break;
+                    }
+                    break;
             }
         }
 
@@ -335,7 +352,13 @@ function saveData(dataType, userData, gameID = "")
             {
                 case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
                 case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
-                case DATA_TYPE_CREATIONS: currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                case DATA_TYPE_CREATIONS: 
+                    switch(gameID)
+                    {
+                        case getGameID("ArtStudio"): currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
+                        default: currentGameData.creations = userData; break;
+                    }
+                    break;
             }
 
             savedData.gameData.push(currentGameData);
@@ -345,6 +368,10 @@ function saveData(dataType, userData, gameID = "")
     switch(dataType)
     {
         case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
+        case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
+        case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
+        case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
+        case DATA_TYPE_SETTINGS_MAPPLAYPAGE: savedData.playpage = userData.checked; break;
     } 
 
     localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedData));
@@ -358,17 +385,27 @@ function saveData(dataType, userData, gameID = "")
 */
 function loadData(dataType, gameID = "")
 {
+    setCurrentUsername();
+
     if (currentUser === "guest")
     {
         switch(dataType)
         {
+            case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
+                return 1;
+            case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
+                return false;
+            case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
+                return true;
+            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
+                return false;
             case DATA_TYPE_HORSESHOES:
                 return 10000;
             case DATA_TYPE_HIGHSCORE:
             case DATA_TYPE_LEVEL:
                 return 0;
             case DATA_TYPE_CREATIONS:
-                return "";
+                return null;
         }
     }
 
@@ -393,25 +430,59 @@ function loadData(dataType, gameID = "")
                 case DATA_TYPE_CREATIONS:
                     if (savedData.gameData[i].creations === undefined)
                         return "";
-                    return savedData.gameData[i].creations;
+                    return JSON.parse(savedData.gameData[i].creations);
             }
         }
     }
 
     switch(dataType)
     {
+        case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
+            if (savedData.translatedquotes === undefined)
+                return true;
+            return savedData.translatedquotes;
+        case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
+            if (savedData.oglocas === undefined)
+                return false;
+            return savedData.oglocas;
+        case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
+            if (savedData.horseshoesmul === undefined)
+                return 1;
+            return (savedData.horseshoesmul) ? 100 : 1;
+        case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
+            if (savedData.playpage === undefined)
+                return false;
+            return savedData.playpage;
         case DATA_TYPE_HORSESHOES:
             if (savedData.horseshoes === undefined)
                 return 0;
-            return savedData.horseshoes;
+            return parseInt(savedData.horseshoes);
+        case DATA_TYPE_CREATIONS:
+            return null;
+        default:
+            return 0;
     }
+}
 
-    return 0;
+function loadSettings()
+{
+    horseshoemultiplicator = document.getElementById("horseshoemultiplicator");
+    horseshoemultiplicator.checked = (loadData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR) == 1 ? false : true);
+    translatedquotes = document.getElementById("translatedquotes");
+    translatedquotes.checked = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
+    mapplaypage = document.getElementById("mapplaypage");
+    mapplaypage.checked = loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE);
 }
 
 function addHorseshoes(amountAdded)
 {
+    if (typeof(amountAdded) !== "number")
+    {
+        amountAdded = parseInt(amountAdded);
+    }
+
     currentAmount = loadData(DATA_TYPE_HORSESHOES);
+    amountAdded *= loadData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR);
     
     if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
         currentAmount = Number.MAX_SAFE_INTEGER;
@@ -524,5 +595,23 @@ function getGameID(game)
         case "Bazaar": return "BAZ";
         case "MyThings": return "THI";
     }
+}
+
+function getCurrentUsername()
+{
+    return currentUser;
+}
+
+function setCurrentUsername()
+{
+    if (currentUser == null)
+    {
+        currentUser = localStorage.getItem(CURRENT_USER_KEY)
+    }
+}
+
+function isGuest()
+{
+    return getCurrentUsername() === "guest";
 }
 //------- END HELPERS -------

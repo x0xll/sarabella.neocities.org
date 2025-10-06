@@ -1,3 +1,10 @@
+04 August 2025
+    - Add return to map page. Added following code in DoAction of frame5 of storybook.swf
+        fleur_load.onRelease = function()
+        {
+        getURL("/flash/worldmap/worldmap_new.html","_self");
+        };
+
 18 Jan 2025
     - Link to localization system
         - loadVariables("book_headings.txt","_root") replaced by loadVariables("./lang/book_headings_" + _root.lang + ".txt","_root") in storybook.swf Frame 10 & Frame 5 DoAction, in aurora.swf Frame1 DoAction, and in chap1_intro.swf in Frame5 DoAction

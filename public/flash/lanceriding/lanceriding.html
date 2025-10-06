@@ -50,6 +50,8 @@
                     <script type="text/javascript">
                         loadLanguagePref(false); 
                         lang = getCurrentLanguageCode()
+                        if (!isLocalizedFileExisting(`./flash/lanceriding/config/texts-${lang}.xml`))
+                          lang = "en";
                         var fo = new FlashObject("fakeloader.swf", "body", "912", "520", "8", "493D75");
                         fo.addParam("wmode", "transparent");
                         fo.addVariable(`language=${lang}&lang=${lang}&id=Lanceriding`);
@@ -59,10 +61,12 @@
                 </div>  
             </form>
         </div> 
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Lance_Riding_Game" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a> |
-            <a href="https://web.archive.org/web/20071030090442/http://www.bellasara.com/lanceriding.html" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Lance_Riding_Game', webarchiveLink: 'https://web.archive.org/web/20071030090442/http://www.bellasara.com/lanceriding.html', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/lanceriding'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>

@@ -11,55 +11,30 @@
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-              unmuteOverlay: "hidden",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on"> </div>
 
-        <div class="footer">
-          <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
-          <a href="https://web.archive.org/web/20070219214009/http://bellacard.com/bella-quiz_dk.htm" class="global-lowernav-link" data-il8n="footer_webarchive_linktxt">Web Archive Page</a>
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Santo%27s_Knowledge_Quiz', webarchiveLink: 'https://web.archive.org/web/20070219214009/http://bellacard.com/bella-quiz_dk.htm', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/quiz'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          function urlExists(url)
-          {
-              var http = new XMLHttpRequest();
-              http.open('HEAD', url, false);
-              http.send();
-              return http.status!=404;
-          }
-
-          loadLanguagePref(false); 
-          const locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '630';
-          swfPlayer.width = '950';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-
-          var swfLocalized = `./swf/en_spil_5.swf`
-
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./swf/${UTILS_LOCA_PATH_LANG_VALUE}_spil_5.swf`);
+          var swf = `./swf/en_spil_5.swf`;
           // Temporary prevent using the jap version since the characters are broken
-          if (locale != "ja" && urlExists(`./swf/${locale}_spil_5.swf`))
-          {
-            swfLocalized = `./swf/${locale}_spil_5.swf`
-          }
-
-          swfPlayer.src = swfLocalized;
-          swfPlayer.type = 'application/x-shockwave-flash';
-          swfParent.appendChild(swfPlayer);
+          if (locale != "ja")
+            swf = `./swf/${locale}_spil_5.swf`
+          loadSWF(swf, '630', '950', locale, '', false)
         </script>
   </body>
 </html>

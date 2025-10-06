@@ -1,0 +1,119 @@
+The game reads a .xml file to know which level to load. From what could be found in the game's code, there was apparently only 1 level available.
+
+To create the level files, there are quite a few possible parameters, as well as a specific structure to respect, like shown below.
+
+The structure needed for a level file is the following:
+
+<?xml version="1.0"?>
+<root length="int">
+    <grid random="bool">
+        <!-- Add as many as needed -->
+        <track id="int/string" x="int" y="int" />
+    </grid>
+
+    <sections>
+        <!-- Add as many as needed -->
+        <section id="int/string" x="int" y="int">
+            <!-- Add as many as needed -->
+            <prop name="string" x="int" y="int">
+                <!-- Change the tags depending on the ones needed -->
+                <pos x="int" y="int" />
+                <scale x="int" y="int" />
+                <vel x="int" y="int" />
+                <path name="string" /> <!-- Possibles values: straigth -->
+                <layer value="string /> <!-- Possibles values: background, center, foreground -->
+                <solid value="bool" />
+                <collidable value="bool" />
+                <destructable value="bool" />
+                <pickup value="bool" />
+            </prop>
+        </section>
+    </sections>
+</root>
+
+A few things to note:
+    - Each track id should correspond to a section id
+    - The bottom of the game view (between the black bars) is located at y = 0, going up means using negative numbers
+    - To set an item from the starting point of the horse, the min x value to still have a pickup item show seems to be -9. 0 will be a lot closer to the right edge of the screen
+    - The random argument of the grid element seems to use all the sections, and randomize them in the level (to verify through more tests)
+    - The length argument on the root is the length of the level. Once the player reaches that position, it goes to the end/win screen
+    - In the swf, the level file is loaded, and the level is created in the first DoAction of the frame 1 of the DefineSprite 836
+    - The arguments for each tag seems to be more or less optional
+    - When multiples hierarchy elements have values for x and y positions, those will be additioned
+
+Possible items:
+    All the possibles items are named in the Sprites section of the swf file. Here is a list of them per category:
+        - MG (Middleground?)
+            - MG_Soe
+            - MG_KaktusbomA
+            - MG_KaktusbomB
+            - MG_NaturbomA
+            - MG_NaturbomB
+            - MG_Graes
+            - MG_Blomst
+            - MG_Blomst2
+            - MG_Abe
+            - MG_AbeBur
+            - MG_BomA
+            - MG_BomB
+            - MG_TaarnbomA
+            - MG_TaarnbomB
+            - MG_Flagstang
+            - MG_Baenk
+            - MG_Statue
+            - MG_Busk
+            - MG_Dyrepasser
+            - MG_Flodhest
+            - MG_Iskiosk
+            - MG_MurElement
+            - MG_Papegoeje
+            - MG_Pingvin
+            - MG_Skitt
+            - MG_Slange
+            - MG_StakitElement
+            - MG_Tiger
+            - MG_Trae1
+            - MG_Trae2
+            - MG_Trae3
+            - MG_TraeLille1
+            - MG_TraeLille2
+            - MG_Borg
+        - Coin
+            - mCoin0
+            - mCoin1
+            - mCoin-1
+            - mCoin2
+            - mCoin-2
+        - BG (Background)
+            - BG_By
+            - BG_Krat
+            - BG_KratLille
+            - BG_Ydermur
+        - Bund (Paths? Floors?)
+            - Bund_Bakke1
+            - Bund_Bakke2
+            - Bund_Bakke3
+        - Col (Collisions?)
+            - Col_Halmballe1
+            - Col_Halmballe2
+            - Col_Bom
+            - Col_Naturbom
+            - Col_Kaktusbom
+            - Col_Minitrae1
+            - Col_Minitrae2
+            - Col_Mur
+            - Col_MurSmall
+            - Col_Stakit
+            - Col_Sten1
+            - Col_Sten2
+            - Col_Sten3
+        - Pickup
+            - Pickup_KeyDefault
+            - Pickup_Aeble
+            - Pickup_KeyTiger
+            - Pickup_KeySlange
+            - Pickup_KeyPinghvin
+            - Pickup_KeyPapegoeje
+            - Pickup_KeyFlodhest
+            - Pickup_KeyAbe
+            - Pickup_Gulerod

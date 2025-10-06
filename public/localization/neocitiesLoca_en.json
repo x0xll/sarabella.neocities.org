@@ -42,8 +42,8 @@
     "ressources_gridlochressdump" : "Gridloch's Resource Dump",
     "ressources_gridlochstablerecreation" : "Gridloch's Stables Recreation",
     
-    "devlog_update": "<b><i>Last modified: March 29th, 2025</i></b>",
-    "devlog_summary" : "Here is the current state of the archiving of the Bella Sara website games:<br/><br/>We have successfully managed to locate and restore several of the original Flash games from the Bella Sara website thanks to archived pages and caches. These include <i>Art Studio</i>, <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, and the old version of the <i>World Map</i>.<br/><br/>Additionally, we have partially recovered or restored the files for several other games, such as <i>Spectacular Jumping Game</i>, <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, <i>Dreamrider</i>, <i>BubbleWand</i>, and the newer version of the <i>World Map</i>. These games are still undergoing work to fully restore their original functionalities, and many games are missing files (e.g., the <i>Lance Riding</i> game is missing the files for the later levels).<br/><br/>We also found files for some other games, that we are trying on repairing to have them working again, such as <i>Citrustacked</i>, <i>Wheel of Wonders</i>, the newest version of <i>CloudJumper</i>, and <i>Marvelous Magic Match</i><br/><br/>Unfortunately, some games remain missing or seem to be permanently broken (e.g., <i>Bella's Beauty Box</i>). To address this, we have started recreating a few of these games using the Phaser framework. As of this update, the <i>Stables</i>, the <i>Spectacular Jumping Game</i>, <i>Yin and Yang's Memory Game</i> and <i>Belo's Quiz</i>are all available to play, although still as a work in progress. We are also currently working on recreating <i>Bellapedia</i>, which should hopefully be available soon.<br/><br/>Beyond restoring the original games, we have also started creating custom games inspired by the ones from the website. Currently, four are available: a <i>Random Art Idea Generator</i>, a <i>Dress-Up Game</i> based on the <i>Stables</i>, an <i>Adventures Quiz</i> and <i>Autumn Journey Quiz</i> based on <i>Belo's Quiz</i>. We are also considering of soon recreating <i>Wheel of Wonders</i>, <i>Marvelous Magic Match</i>, <i>Bella's Beauty Box</i>, and even a first prototype for <i>Adventures</i>.<br/><br/>We do hope to eventually restore or recreate all the games from the site if we can, but this will obviously take time. If you would like to help us out or would like a more detailed overview of this project, we would recommend starting here: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. This project is a community effort and every little bit helps!",
+    "devlog_update": "<b><i>Last modified: April, 23rd, 2025</i></b>",
+    "devlog_summary" : "Here is the current state of the archiving of the Bella Sara website games:<br/><br/>We have successfully managed to locate and restore several of the original Flash games from the Bella Sara website thanks to archived pages and caches. These include <i>Art Studio</i>, <i>Spectacular Jumping Game</i>, <i>Dreamrider</i>, <i>Magic Bubble Wand</i>, <i>Cloud Jumper</i>, <i>Treasure's Hunt</i>, <i>Jigsaw Puzzle</i>, <i>Coloring Game (Fiona only)</i>, <i>Memory Game</i>, <i>Santo's Quiz</i>, the <i>Baby Bella ad</i>, the old and new versions of the <i>World Map</i>.<br/><br/>Additionally, we have partially recovered or restored the files for several other games, such as <i>Lance Riding</i>, <i>Storybook</i>, <i>My Horse (sprite only)</i>, <i>Firelight Festival</i>, <i>My Cottage</i>, <i>Citrustacked</i> and <i>Bellisimo's Jumping Contest</i>. These games are still undergoing work to fully restore their original functionalities, and many games are missing files (e.g., the <i>Lance Riding</i> game is missing the files for the later levels).<br/><br/>We also found files for some other games, that we are trying on repairing to have them working again, such as the <i>Bazaar</i>, <i>Wheel of Wonders</i>, the newest version of <i>CloudJumper</i>, and <i>Marvelous Magic Match</i><br/><br/>Unfortunately, some games remain missing or seem to be permanently broken (e.g., <i>Bella's Beauty Box</i>). To address this, we have started recreating a few of these games using the Phaser framework. As of this update, the <i>Stables</i>, the <i>Spectacular Jumping Game</i>, <i>Citrustacked</i>, <i>Bellapedia</i>, <i>Yin and Yang's Memory Game</i> and <i>Belo's Quiz</i>are all available to play, although still as a work in progress.<br/><br/>Beyond restoring the original games, we have also started creating custom games inspired by the ones from the website. Currently, four are available: a <i>Random Art Idea Generator</i>, a <i>Dress-Up Game</i> based on the <i>Stables</i>, an <i>Adventures Quiz</i> and <i>Autumn Journey Quiz</i> based on <i>Belo's Quiz</i>. We are also considering of soon recreating <i>Trailblazer</i>, <i>Wheel of Wonders</i>, <i>Marvelous Magic Match</i>, <i>Bella's Beauty Box</i>, and even a first prototype for <i>Adventures</i>.<br/><br/>We do hope to eventually restore or recreate all the games from the site if we can, but this will obviously take time. If you would like to help us out or would like a more detailed overview of this project, we would recommend starting here: <a href=\"https://docs.google.com/document/d/1DBfcP9EkCo5xfitKNe5eN3yD4qw-AlGIIEu3l_4htho/edit?tab=t.0.\" target=\"_blank\">Bella Sara Archival Notes</a>. This project is a community effort and every little bit helps!<br/><br/>In the latest updates, we added a simple user system, which should hopefully allow us to soon recreate the <i>Foal</i> care system, as well as the <i>Cottage</i>'s decorations. As of now, the games linked to each user are: <i>Art Studio</i> for the paintings, <i>Magic Bubble Wand</i> for the highscore and horseshoes, <i>Spectacular Jumping Game</i> for the horseshoes on both the original and the recreated version, and the level reached on the recreated version only for now, <i>Treasure's Hunt</i> for the highscore, <i>Citrustacked</i> for the highscore on both original and recreated versions, <i>Bello's Quiz</i>, <i>Adventures Quiz</i>, and <i>Autumn Journey Quiz</i> for the highscore, <i>Firelight Festival</i> for the highscore and horseshoes, <i>Bellisimo's Jumping Contest</i> for the highscore, and the <i>Dress Up Game</i> for saving up to 10 custom horses. The rest of the games will slowly be linked too in the next updates.",
     
     "play_recoveredflashgames_title" : "Recovered Flash Games",
     "play_recoveredflashgames_desc" : "These are games that were archived from the original site",
@@ -85,10 +85,9 @@
     "game_yinyangmemory": "Yin and Yang's Memory Game",
     "game_cottage": "My Cottage",
     "game_gallery": "My Things",
+    "game_bellapedia": "Bellapedia",
 
     "lanceriding_warning" : "This game only has the files for the first level. It also has issues loading consistently and the page may need to be reloaded a few times before the level will start.",
-
-    "storybook_warning": "This game seems to be unable to turn off sounds when going to the next page in the book and does not always play the videos as expected.",
 
     "newmap_warning": "Some links go to the wiki due to the games not being restored yet.",
     "oldmap_warning": "Some links are disabled due to the games not being restored yet.",
@@ -97,7 +96,7 @@
 
     "bazaar_warning": "Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.",
 
-    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers. You will need to right click the game and hit play to get past the loading screen.",
+    "firelight_warning" : "SEIZURE WARNING: The show portion of this game includes flashing lights! The game is quite laggy on certain browsers.",
 
     "citrustacked_wip_warning": "Story mode still being recreated.",
     "citrustacked_warning": "Some texts are not yet appearing correctly. The 'Continue' button doesn't always work correctly yet either.",
@@ -106,6 +105,8 @@
     "jumpinggame_warning": "The game can be quite laggy at times.",
 
     "cottage_warning": "The objects are not yet added back in the cottage or gallery. You will need to right click the game and hit play to get past the loading screen.",
+
+    "bellisimojumpingcontest_warning": "The game is missing the level data file. A very short level has been created as a test and may not be 100% accurate. The game also seems to have trouble loading elements when running too fast.",
 
     "puzzle_goCustom" : "Click&nbsp;<a href=\"puzzle custom.html\">here</a>&nbsp;to make a custom puzzle with your own image",
     "puzzle_customTitle" : "Custom",
@@ -125,6 +126,8 @@
     "stables_title" : "Welcome to the World of Bella Sara",
 
     "dressup_horselink" : "Horse Link",
+    "dressup_createhorse": "Create a new horse",
+    "dressup_gostable": "Go back to the Horse Selection menu",
 
     "babybella_timeline_information": "This ad was updated multiple times over the course of its life. With this timeline you can now check how it looked at different dates.",
     "babybella_4Sept": "4rd of September, 2008 - Petal's Birth / Start of the event",

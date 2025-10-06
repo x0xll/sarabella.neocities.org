@@ -1,0 +1,25 @@
+{
+    "gameTitle": "Lemorissimi",
+
+    "btn_story": "Modalità Storia",
+    "btn_practice": "Modalità Pratica",
+    "btn_help": "Aiuto",
+    "btn_continue": "Continua",
+    "btn_quit": "Esci",
+    "btn_restart": "Riprova",
+
+    "level": "Livello",
+    "score": "Punteggio",
+
+    "intro_top": "Help the Citrustacks journey across Canter Hollow to bring Mother Comfort's candy to the Faire for the Winter Festival!",
+    "intro_bottom": "     The journey might take you a few days, but don't worry: you'll start again right where you left off!",
+
+    "story_level1": "Oh no! Mother Comfort went to the Faire and forgot to bring her famous plumberry square candies to sell. Let's bring them to her!",
+    "story_level2": "Great job! We've got all the candy packed up and we're off on our journey. We're making great progress. Keep up the good work!",
+
+    "end_level": "Livello Completato",
+    "end_congrats": "Way to go!",
+
+    "end_lost": "Hai perso...",
+    "end_lostmessage": "Vuoi riprovare?"
+}

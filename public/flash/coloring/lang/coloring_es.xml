@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+    <print>Imprimir</print>
+    <reset>Resetear</reset>
+    <help>Ayuda</help>
+    <currentColor>Color Actual</currentColor>
+    <moreColor>Más Colores</moreColor>
+    
+    <fionaTxt>Sé el héroe de tu propia historia.</fionaTxt>
+    <thunderTxt>Te daré coraje. Ahora podrás liberarte de tus miedos.</thunderTxt>
+    <bellaTxt>¡Piensa cada día de forma positiva! ¡Siente la felicidad y la energía que esto te aporta!</bellaTxt>
+    <jewelTxt>Te ayudaré a permanecer en un flujo continuo de abundancia.</jewelTxt>
+</root>
