@@ -11,56 +11,63 @@ class StablesManager {
     /* ---------- VARIABLES ---------- */
     #bar = 13
 
+    #font = 'Arial'
     hoverTextSettingsMain = { 
-        font: 'bold 16px Arial', 
+        font: `bold 16px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: { width: 150 } 
+        wordWrap: { width: 150,
+        useAdvancedWrap: true } 
     }
 
     hoverTextSettingsMainSmall = { 
-        font: 'bold 15px Arial', 
+        font: `bold 15px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: { width: 125 } ,
+        wordWrap: { width: 125,
+        useAdvancedWrap: true } ,
         lineSpacing: -2
     }
 
     hoverTextSettingsMainLarge = { 
-        font: 'bold 16px Arial', 
+        font: `bold 16px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: { width: 170 } ,
+        wordWrap: { width: 170,
+        useAdvancedWrap: true } ,
         lineSpacing: -2
     }
 
     #hoverTextSettingsOneLine = {
-        font: 'bold 11px Arial', 
+        font: `bold 11px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
     }
 
     #hoverTextSettingsSmall = {
-        font: 'bold 12px Arial', 
+        font: `bold 12px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: {width: 100},
+        wordWrap: {width: 100,
+        useAdvancedWrap: true},
         lineSpacing: -2
     }
 
     #hoverTextSettingsBig = {
-        font: 'bold 12px Arial', 
+        font: `bold 12px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: {width: 200},
+        wordWrap: {width: 200,
+        useAdvancedWrap: true},
         lineSpacing: -2
     }
 
     #hoverTextSettingsMedium = {
-        font: 'bold 12px Arial', 
+        font: `bold 12px ${this.#font}`, 
         align: 'center',
         color: '#ffffff',
-        wordWrap: {width: 150},
+        wordWrap: {width: 150,
+        useAdvancedWrap: true},
         lineSpacing: -2
     }
 
@@ -79,7 +86,7 @@ class StablesManager {
             loadingBar.fillStyle(0x35a3d5, 1).fillRect(389, 337, 100 * value, 6);
         });  
         // Display file names whilst loading
-        const progressText = this.#game.add.text(344, 133, '', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
+        const progressText = this.#game.add.text(344, 133, '', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' });
         this.#game.load.on('fileprogress', function (file) {
             if (urlParameters.get('debug')) {
                 progressText.text = file.src;
@@ -218,62 +225,64 @@ class StablesManager {
                 // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
                 // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
                 complete: function endAnimation(entry) { 
-                    if (horseData.type === 'water') {
-                        switch (entry.animation.name) {
-                            case 'eat_food':
-                                game.horseFullLevel[0] += 1
-                                if (game.horseFullLevel[0] === 1) {
-                                    game.stablesManager.updateBar(game.hungerBar, 3.5)
-                                    game.stablesManager.updateBar(game.happinessBar, 1.05)
-                                    game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFullHorse)
-                                }
-                                break;
-                        
-                            default:
-                                break;
-                        }
-                    } else {
-                        switch (entry.animation.name) {
-                            case 'eat_food':
-                                game.horseFullLevel[0] += 1
-                                if (game.horseFullLevel[0] === 1) {
-                                    game.stablesManager.updateBar(game.hungerBar, 2)
-                                    game.stablesManager.updateBar(game.happinessBar, 1.05)
-                                    if (game.horseFullLevel[1] >= 1) {
-                                        game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFullHorse)
-                                    }
-                                }
-                                break;
-                            case 'drink':
-                                game.horseFullLevel[1] += 1
-                                if (game.horseFullLevel[1] === 1) {
-                                    game.stablesManager.updateBar(game.hungerBar, 1.5)
-                                    if (game.horseFullLevel[0] >= 1) {
-                                        game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFullHorse)
-                                    }
-                                }
-                                break;
-                        
-                            default:
-                                break;
-                        }
-                    }
-                    if (game.horseAnimationQueue.length === 0) {
-                        let horseIdleAnimations = []
+                    if(entry.animation.name !== 'constant') {
                         if (horseData.type === 'water') {
-                            horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'paw_ground', 'shift_weight', 'tail_swish']
+                            switch (entry.animation.name) {
+                                case 'eat_food':
+                                    game.horseFullLevel[0] += 1
+                                    if (game.horseFullLevel[0] === 1) {
+                                        game.stablesManager.updateBar(game.hungerBar, 3.5)
+                                        game.stablesManager.updateBar(game.happinessBar, 1.05)
+                                        game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFullHorse)
+                                    }
+                                    break;
+                            
+                                default:
+                                    break;
+                            }
                         } else {
-                            horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
+                            switch (entry.animation.name) {
+                                case 'eat_food':
+                                    game.horseFullLevel[0] += 1
+                                    if (game.horseFullLevel[0] === 1) {
+                                        game.stablesManager.updateBar(game.hungerBar, 2)
+                                        game.stablesManager.updateBar(game.happinessBar, 1.05)
+                                        if (game.horseFullLevel[1] >= 1) {
+                                            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFullHorse)
+                                        }
+                                    }
+                                    break;
+                                case 'drink':
+                                    game.horseFullLevel[1] += 1
+                                    if (game.horseFullLevel[1] === 1) {
+                                        game.stablesManager.updateBar(game.hungerBar, 1.5)
+                                        if (game.horseFullLevel[0] >= 1) {
+                                            game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtFullHorse)
+                                        }
+                                    }
+                                    break;
+                            
+                                default:
+                                    break;
+                            }
                         }
-                        let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
-                        
-                        const delay = game.stablesManager.randomIntFromInterval(3, 5)
-                        game.horse.animationState.addAnimation(0, animation, false, delay);
-                        game.horseDirty.animationState.addAnimation(0, animation, false, delay);
-                        game.horseOverlay.animationState.addAnimation(0, animation, false, delay);
+                        if (game.horseAnimationQueue.length === 0) {
+                            let horseIdleAnimations = []
+                            if (horseData.type === 'water') {
+                                horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'paw_ground', 'shift_weight', 'tail_swish']
+                            } else {
+                                horseIdleAnimations = ['ear_twitch', 'flank_twitch', 'head_shake', 'head_turn', 'nod', 'paw_ground', 'shift_weight', 'tail_swish']
+                            }
+                            let animation = horseIdleAnimations[Math.floor(Math.random()*horseIdleAnimations.length)]
+                            
+                            const delay = game.stablesManager.randomIntFromInterval(3, 5)
+                            game.horse.animationState.addAnimation(0, animation, false, delay);
+                            game.horseDirty.animationState.addAnimation(0, animation, false, delay);
+                            game.horseOverlay.animationState.addAnimation(0, animation, false, delay);
+                        }
+                        // allow next animation to play
+                        game.horseBusy = false
                     }
-                    // allow next animation to play
-                    game.horseBusy = false
                 }
                 // event: (entry, event) => console.log(`Custom event for ${entry.animation.name}: ${event.data.name}`)          
              })
@@ -339,7 +348,7 @@ class StablesManager {
         this.#createInspirationalMessage()
 
         // Horse name
-        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: 'Arial', fontSize: 12, color: '#ffffff', align: 'center' });
+        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' });
         game.horseNameText.text = localeData[horseName + "Name"];
         game.horseNameText.setOrigin(.5, .5)
 
@@ -363,7 +372,7 @@ class StablesManager {
 
         this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
         this.#game.inspirationMessage = this.#game.add.text(444, 133, 'Static Text Object', { 
-            fontFamily: 'Arial', 
+            fontFamily: this.#font, 
             fontSize: 55, 
             color: '#ffffff', 
             align: 'center' ,
@@ -392,7 +401,7 @@ class StablesManager {
 
         game.add.image(x-2, 509, image);
         const text = game.add.text(x-2, 498, 'Static Text Object', { 
-            fontFamily: 'Arial', 
+            fontFamily: this.#font, 
             fontSize: 11.5, 
             align: 'center'
         });

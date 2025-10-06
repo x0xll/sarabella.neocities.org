@@ -11,14 +11,6 @@
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown(); updateSWFLocaleDatas('ArtStudio');">
         <script src="/header.js"></script>
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on">
         </div>
@@ -29,31 +21,20 @@
             generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Art_Studio', webarchiveLink: 'https://web.archive.org/web/20090605221246/http://www.bellasara.com/artstudio.aspx', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/ArtStudio'});
           </script>
         </div>
-
+        
+        <script src="/flash/common/js/flashutils.js"></script>
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '467';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = './swf/ArtStudio.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-
-          if (!isLocalizedFileExisting(`./_data/bs_artstudio_${locale}.xml`))
-            locale = "en";
-
-          // Temporary prevent using the jap version since the characters are broken
-          if (locale == "ja")
-            locale = "en";
-
-          swfPlayer.setAttribute("flashvars", `locale=${locale}&lang=${locale}`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./_data/bs_artstudio_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          let swf = './swf/ArtStudio.swf';
+          if (locale == 'ja')
+            swf = './swf/ArtStudio_ja.swf'
+          loadSWF(swf, '467', '887', locale)
         </script>
 
         <script src="/flags.js"></script>
+        
 <script src="/userManager.js"></script>
   </body>
 </html>

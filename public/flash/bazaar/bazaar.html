@@ -16,14 +16,6 @@
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
           <p data-il8n="bazaar_warning">Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.</p>
         </div> 
-        
-        <script>
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
-        </script>
 
         <div class="swf" dir="ltr" rbidi="on">
         </div>
@@ -39,24 +31,14 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '467';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'bazaar.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-
-          if (!isLocalizedFileExisting(`./data/bs_bazaar_${locale}.xml`))
-            locale = "en";
-
-          swfPlayer.setAttribute("flashvars", `locale=${locale}`);
-          swfPlayer.setAttribute("wmode", `transparent`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./data/bs_bazaar_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          loadSWF(`bazaar.swf`, '467', '887', locale)
         </script>
   </body>
 </html>

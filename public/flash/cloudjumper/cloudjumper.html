@@ -18,12 +18,6 @@
           const searchQueryString = window.location.search;
           const urlParameters = new URLSearchParams(searchQueryString);
           versionFile = urlParameters.get('version')
-
-          window.RufflePlayer = {
-            config: {
-              autoplay: "on",
-            }
-          };
         </script>
 
         <div class="swf" dir="ltr" rbidi="on"></div>
@@ -38,22 +32,18 @@
         <script src="/flags.js"></script>
 <script src="/userManager.js"></script>
 
+        <script src="/flash/common/js/flashutils.js"></script>
+
         <!-- Load correct localized version of the game -->
         <script>
-          loadLanguagePref(false); 
-          var locale = getCurrentLanguageCode();
-          if (!isLocalizedFileExisting(`./xml/game_${locale}.xml`))
-            locale = "en";
-          var swfParent = document.getElementsByClassName('swf')[0];
-          var swfPlayer = document.createElement('embed');
-          swfPlayer.height = '521';
-          swfPlayer.width = '887';
-          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
-          swfPlayer.src = 'cloudjumper' + versionFile + '.swf';
-          swfPlayer.type = 'application/x-shockwave-flash';
-          if (locale != "en")
-            swfPlayer.setAttribute("flashvars", `locale=${locale}`);
-          swfParent.appendChild(swfPlayer);
+          setupRuffle();
+          var locale = checkLocalizedFiles(`./xml/game_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
+          let swf = './swf/cloudjumper' + versionFile + '.swf';
+          if (locale == 'ja')
+            swf = './swf/cloudjumper' + versionFile + '_ja.swf';
+          else if (locale == 'en')
+            locale = '';
+          loadSWF(swf, '521', '887', locale, '', false)
         </script>
   </body>
 </html>
