@@ -1,0 +1,4 @@
+Fix timeout bug (cloudjumper1 and cloudjumper1_ja only  so far)
+- Add var gameStarted = false; in frame 2
+- Set gameStarted = true; in _root.trackFirstPlayButton() function in frame 2
+- Check gameStarted in ets.game/Hack/Tick() (first if statement)
