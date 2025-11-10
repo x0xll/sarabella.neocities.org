@@ -105,16 +105,16 @@ function initWheel()
 
     // TODO: Get correct color values
     let possibleElements = [
-        {swf: "WOW_Charm_Bella_Gold", name: "bellagold", color: 15329238},
-        {swf: "WOW_Charm_FlyingHorse_Purple", name: "flyingpurple", color: 15329238},
-        {swf: "WOW_Charm_Icon_Flower_Orange", name: "flowerorange", color: 15329238},
-        {swf: "WOW_Charm_Icon_Heart_Gold", name: "heartgold", color: 15329238},
-        {swf: "WOW_Charm_Icon_Horseshoe_Silver", name: "horseshoesilver", color: 15329238},
-        {swf: "WOW_Charm_Icon_Moon_Blue", name: "moonblue", color: 15329238},
-        {swf: "WOW_Charm_Logo_Silver", name: "logosilver", color: 15329238},
-        {swf: "WOW_Charm_RunningHorse_pink", name: "runningpink", color: 15329238},
-        {swf: "WOW_Charm_StandingHorse_Green", name: "standinggreen", color: 15329238},
-        {swf: "WOW_Charm_WaterHorse_Teal", name: "waterteal", color: 15329238}
+        {swf: "WOW_Charm_Bella_Gold", name: "bellagold", color: 10031000},
+        {swf: "WOW_Charm_FlyingHorse_Purple", name: "flyingpurple", color: 16764470},
+        {swf: "WOW_Charm_Icon_Flower_Orange", name: "flowerorange", color: 39220},
+        {swf: "WOW_Charm_Icon_Heart_Gold", name: "heartgold", color: 16725044},
+        {swf: "WOW_Charm_Icon_Horseshoe_Silver", name: "horseshoesilver", color: 101},
+        {swf: "WOW_Charm_Icon_Moon_Blue", name: "moonblue", color: 101},
+        {swf: "WOW_Charm_Logo_Silver", name: "logosilver", color: 10224127},
+        {swf: "WOW_Charm_RunningHorse_pink", name: "runningpink", color: 39220},
+        {swf: "WOW_Charm_StandingHorse_Green", name: "standinggreen", color: 10031000},
+        {swf: "WOW_Charm_WaterHorse_Teal", name: "waterteal", color: 10077803}
     ]
 
     for (let i = 0; i < 10; i++)
