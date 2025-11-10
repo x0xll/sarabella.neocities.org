@@ -71,3 +71,6 @@
             loader.x = 0;
             loader.y = 0;
             _loc3_.prizeHolder.addChild(loader);
+        -> In update, after getting the prize in update function of WheelWonder.as add:
+            var objName:* = _loc10_.objectName;
+            ExternalInterface.call("addGalleryItem",objName);

@@ -12,6 +12,7 @@ const DATA_TYPE_LASTPLAYED = "lastplayed";
 const DATA_TYPE_LEVEL = "level";
 const DATA_TYPE_CREATIONS = "creations";
 const DATA_TYPE_FREESPIN = "freespin"
+const DATA_TYPE_GALLERY = "gallery";
 const DATA_TYPE_SETTINGS_TRANSLATEDQUOTES = "settings_tdqt";
 const DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS = "settings_tdog";
 const DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR = "settings_hsmul";
@@ -374,6 +375,7 @@ function saveData(dataType, userData, gameID = "")
     switch(dataType)
     {
         case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
+        case DATA_TYPE_GALLERY: savedData.gallery = userData; break;
         case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
         case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
         case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
@@ -410,6 +412,7 @@ function loadData(dataType, gameID = "")
             case DATA_TYPE_HIGHSCORE:
             case DATA_TYPE_LEVEL:
                 return 0;
+            case DATA_TYPE_GALLERY:
             case DATA_TYPE_CREATIONS:
                 return null;
             case DATA_TYPE_LASTPLAYED:
@@ -477,6 +480,10 @@ function loadData(dataType, gameID = "")
             return parseInt(savedData.horseshoes);
         case DATA_TYPE_CREATIONS:
             return null;
+        case DATA_TYPE_GALLERY:
+            if (savedData.gallery === undefined)
+                return null;
+            return savedData.gallery;
         default:
             return 0;
     }
@@ -617,6 +624,36 @@ function updateSWFLocaleDatas(game)
                 localStorage.setItem(ART_STUDIO_CACHE, loadedDatas);
         break;
     }
+}
+
+function addGalleryItem(itemName)
+{
+    gallery = loadData(DATA_TYPE_GALLERY);
+    if (gallery == null)
+        gallery = []
+
+    let existed = false;
+
+    gallery.forEach(item => {
+        if (item.name == itemName)
+        {
+            existed = true;
+            item.quantity++;
+            saveData(DATA_TYPE_GALLERY, gallery);
+            return;
+        }
+    });
+
+    if (existed) return;
+
+    gallery.push(
+        {
+            name: itemName,
+            quantity: 1
+        }
+    )
+    
+    saveData(DATA_TYPE_GALLERY, gallery);
 }
 
 //-------- HELPERS -------
