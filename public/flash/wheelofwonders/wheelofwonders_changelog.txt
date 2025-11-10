@@ -56,3 +56,4 @@
                 _winningOID = Math.floor(Math.random() * 9);
             else
                 _winningOID = specialPrize * -1;
+        -> Change gallery url in cottagePrizeDialogClick function in WheelWonder.as by "/flash/gallery/gallery.html"
