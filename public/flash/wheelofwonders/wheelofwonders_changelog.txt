@@ -1,0 +1,40 @@
+10 Nov 2025:
+    - Override WS calls with custom JS ones
+        -> Add "import flash.external.*;" in WheelOfWonderService.as
+        -> Replace the content of the SpinWheel function in WheelOfWonderService.as by:
+            var result:Object = ExternalInterface.call("spinWheel");
+            spinWheelResultHandler(result);
+        -> Replace the content of the GetInspiration function in WheelOfWonderService.as by:
+            var result:Object = ExternalInterface.call("getInspiration");
+            getInspirationResultHandler(result);
+        -> Replace the content of InitWheel function in WheelOfWonderService.as by:
+            var result:Object = ExternalInterface.call("initWheel");
+            initWheelResultHandler(result);
+        -> Replace WheelOfWonderService.as constructor by:
+            public function WheelOfWonderService(param1:WheelWonder, param2:String)
+            {
+                super();
+                this.locale = param2;
+                wheelWonderInst = param1;
+            }
+        -> In SetServiceProvider function in ShellConnector.as replace the m_wheelService initialization by:
+            m_wheelService = new WheelOfWonderService(WheelWonder(this),m_lang);
+        -> At the end of the ShellConnector constructor add:
+            m_wheelService = new WheelOfWonderService(WheelWonder(this),m_lang);
+            m_wheelService.InitWheel();
+        -> Replace onLoadComplete function in Orb.as by:
+            var loader:Loader = param1.currentTarget.loader;
+            loader.scaleX = this.width * 0.65 / loader.width;
+            loader.scaleY = this.height * 0.65 / loader.height;
+            loader.x = 0;
+            loader.y = 0;
+            addChild(new mcOrb_OL());
+        -> Replace loadObject function in Orb.as by:
+            if(_item != "")
+            {
+                var request:URLRequest = new URLRequest(_item);
+                _loader = new Loader();
+                _loader.contentLoaderInfo.addEventListener(Event.COMPLETE,param1);
+                _loader.load(request);
+                addChild(_loader);
+            }
