@@ -56,4 +56,10 @@
                 _winningOID = Math.floor(Math.random() * 9);
             else
                 _winningOID = specialPrize * -1;
+            var horseshoes:int = ExternalInterface.call("getHorseshoes");
+            if(horseshoes < 10)
+                _winningOID = OUT_OF_HORSESHOES;
         -> Change gallery url in cottagePrizeDialogClick function in WheelWonder.as by "/flash/gallery/gallery.html"
+        -> Add "ExternalInterface.call("removeHorseshoes",10);" in confirmDialogYes function in WheelWonder.as
+        -> In update function in WheelWonder.as, after "++_numFreeSpins", add "ExternalInterface.call("addFreeSpin");"
+        -> In freeSpinButtonClick function in WheelWonder.as, after "--_numFreeSpins", add "ExternalInterface.call("removeFreeSpin");"

@@ -86,6 +86,23 @@ function initWheel()
 {
     let InitWheelReturnValues = { result : {DigitalObjects : [], FreeSpins: 1, Seed: 1}};
 
+    let freespinSaved = loadData(DATA_TYPE_FREESPIN, "WOW");
+    let lastTimePlayed = loadData(DATA_TYPE_LASTPLAYED, "WOW");
+
+    if (freespinSaved <= 0)
+    {
+        let date = new Date();
+        let today = date.getDate().toString() + "/" + (date.getMonth() + 1).toString() + "/" + date.getFullYear().toString();
+        if (today !== lastTimePlayed)
+        {
+            freespinSaved = 1;
+            saveData(DATA_TYPE_FREESPIN, freespinSaved, "WOW");
+            updateLastDatePlayed("WOW");
+        }
+    }
+
+    InitWheelReturnValues.result.FreeSpins = freespinSaved;
+
     // TODO: Get correct color values
     let possibleElements = [
         {swf: "WOW_Charm_Bella_Gold", name: "bellagold", color: 15329238},
