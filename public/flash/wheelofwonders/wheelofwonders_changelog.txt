@@ -38,3 +38,14 @@
                 _loader.load(request);
                 addChild(_loader);
             }
+        -> Remove the while(true) nested infinite loop in Update function in WheelWonder.as, in the Decel switch case and replace it with "UpdateLoc2();"
+        -> Create a "UpdateLoc2();" function in WheelWonder.as with the following content:
+            private function UpdateLoc2() : *
+            {
+                var i:* = 0;
+                while(i < 12)
+                {
+                    _orbPosVectors[i].rotate(_angVel);
+                    i++;
+                }
+            }
