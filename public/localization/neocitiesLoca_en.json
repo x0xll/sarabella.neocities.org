@@ -86,6 +86,9 @@
     "game_cottage": "My Cottage",
     "game_gallery": "My Things",
     "game_bellapedia": "Bellapedia",
+    "game_wow": "Wheel of Wonders",
+
+    "wheelofwonder_warning": "The inspiration reward is not working, and the size of the charms is not correct.",
 
     "lanceriding_warning" : "This game only has the files for the first level. It also has issues loading consistently and the page may need to be reloaded a few times before the level will start.",
 
