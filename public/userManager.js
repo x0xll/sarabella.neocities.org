@@ -8,8 +8,11 @@ const ART_STUDIO_CACHE = "sarabella.neocities.org//BellaSaraArtStudioData";
 
 const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
+const DATA_TYPE_LASTPLAYED = "lastplayed";
 const DATA_TYPE_LEVEL = "level";
 const DATA_TYPE_CREATIONS = "creations";
+const DATA_TYPE_FREESPIN = "freespin"
+const DATA_TYPE_GALLERY = "gallery";
 const DATA_TYPE_SETTINGS_TRANSLATEDQUOTES = "settings_tdqt";
 const DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS = "settings_tdog";
 const DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR = "settings_hsmul";
@@ -329,8 +332,10 @@ function saveData(dataType, userData, gameID = "")
 
             switch(dataType)
             {
+                case DATA_TYPE_FREESPIN: savedData.gameData[i].freespin = userData; break;
                 case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
                 case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
+                case DATA_TYPE_LASTPLAYED: savedData.gameData[i].lastPlayed = userData; break;
                 case DATA_TYPE_CREATIONS:
                     switch(gameID)
                     {
@@ -350,6 +355,8 @@ function saveData(dataType, userData, gameID = "")
 
             switch(dataType)
             {
+                case DATA_TYPE_FREESPIN: currentGameData.freespin = userData; break;
+                case DATA_TYPE_LASTPLAYED: currentGameData.lastPlayed = userData; break;
                 case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
                 case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
                 case DATA_TYPE_CREATIONS: 
@@ -368,6 +375,7 @@ function saveData(dataType, userData, gameID = "")
     switch(dataType)
     {
         case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
+        case DATA_TYPE_GALLERY: savedData.gallery = userData; break;
         case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
         case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
         case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
@@ -404,8 +412,13 @@ function loadData(dataType, gameID = "")
             case DATA_TYPE_HIGHSCORE:
             case DATA_TYPE_LEVEL:
                 return 0;
+            case DATA_TYPE_GALLERY:
             case DATA_TYPE_CREATIONS:
                 return null;
+            case DATA_TYPE_LASTPLAYED:
+                return -1;
+            case DATA_TYPE_FREESPIN:
+                return 1;
         }
     }
 
@@ -419,6 +432,10 @@ function loadData(dataType, gameID = "")
     
             switch(dataType)
             {
+                case DATA_TYPE_FREESPIN:
+                    if (savedData.gameData[i].freespin === undefined)
+                        return 1;
+                    return savedData.gameData[i].freespin;
                 case DATA_TYPE_HIGHSCORE:
                     if (savedData.gameData[i].highscore === undefined)
                         return 0;
@@ -431,6 +448,10 @@ function loadData(dataType, gameID = "")
                     if (savedData.gameData[i].creations === undefined)
                         return "";
                     return JSON.parse(savedData.gameData[i].creations);
+                case DATA_TYPE_LASTPLAYED:
+                    if (savedData.gameData[i].lastPlayed === undefined)
+                        return "";
+                    return savedData.gameData[i].lastPlayed;
             }
         }
     }
@@ -459,6 +480,10 @@ function loadData(dataType, gameID = "")
             return parseInt(savedData.horseshoes);
         case DATA_TYPE_CREATIONS:
             return null;
+        case DATA_TYPE_GALLERY:
+            if (savedData.gallery === undefined)
+                return null;
+            return savedData.gallery;
         default:
             return 0;
     }
@@ -490,6 +515,51 @@ function addHorseshoes(amountAdded)
         currentAmount += amountAdded;
 
     saveData(DATA_TYPE_HORSESHOES, currentAmount);
+}
+
+function removeHorseshoes(amountToRemove)
+{
+    if (typeof(amountToRemove) !== "number")
+    {
+        amountToRemove = parseInt(amountToRemove);
+    }
+
+    currentAmount = loadData(DATA_TYPE_HORSESHOES);
+    
+    if (currentAmount - amountToRemove < 0)
+        currentAmount = 0;
+    else
+        currentAmount -= amountToRemove;
+
+    saveData(DATA_TYPE_HORSESHOES, currentAmount);
+}
+
+function getHorseshoes()
+{
+    currentAmount = loadData(DATA_TYPE_HORSESHOES);
+    return currentAmount;
+}
+
+function updateLastDatePlayed(gameID)
+{
+    date = new Date();
+    playedDate = loadData(DATA_TYPE_LASTPLAYED, gameID);
+    playedDate = date.getDate().toString() + "/" + (date.getMonth() + 1).toString() + "/" + date.getFullYear().toString();
+    saveData(DATA_TYPE_LASTPLAYED, playedDate , gameID);
+}
+
+function removeFreeSpin()
+{
+    freespin = loadData(DATA_TYPE_FREESPIN, "WOW");
+    freespin -= 1;
+    saveData(DATA_TYPE_FREESPIN, freespin, "WOW");
+}
+
+function addFreeSpin()
+{
+    freespin = loadData(DATA_TYPE_FREESPIN, "WOW");
+    freespin += 1;
+    saveData(DATA_TYPE_FREESPIN, freespin, "WOW");
 }
 
 function updateHighscore(data)
@@ -554,6 +624,36 @@ function updateSWFLocaleDatas(game)
                 localStorage.setItem(ART_STUDIO_CACHE, loadedDatas);
         break;
     }
+}
+
+function addGalleryItem(itemName)
+{
+    gallery = loadData(DATA_TYPE_GALLERY);
+    if (gallery == null)
+        gallery = []
+
+    let existed = false;
+
+    gallery.forEach(item => {
+        if (item.name == itemName)
+        {
+            existed = true;
+            item.quantity++;
+            saveData(DATA_TYPE_GALLERY, gallery);
+            return;
+        }
+    });
+
+    if (existed) return;
+
+    gallery.push(
+        {
+            name: itemName,
+            quantity: 1
+        }
+    )
+    
+    saveData(DATA_TYPE_GALLERY, gallery);
 }
 
 //-------- HELPERS -------

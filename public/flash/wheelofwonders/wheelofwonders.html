@@ -23,6 +23,7 @@
         <div id="footer" class="footer">
           <script src="/footer.js"></script>
           <script>
+            loadNewLocalizationFile('./lang/wow_prize_' + getCurrentLanguageCode() + ".json",'./lang/wow_prize_en.json', "wowprize")
             generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Wheel_of_Wonder', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/wheelofwonders'});
           </script>
         </div>
@@ -31,6 +32,7 @@
 <script src="/userManager.js"></script>
 
         <script src="/flash/common/js/flashutils.js"></script>
+        <script src="/flash/common/js/flashWSOverride.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>
