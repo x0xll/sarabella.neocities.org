@@ -2,8 +2,9 @@
     - Override WS calls with custom JS ones
         -> Add "import flash.external.*;" in WheelOfWonderService.as
         -> Replace the content of the SpinWheel function in WheelOfWonderService.as by:
-            var result:Object = ExternalInterface.call("spinWheel");
-            spinWheelResultHandler(result);
+            spinWheelResultHandler();
+        -> Remove args of spinWheelResultHandler function in WheelOfWonderService.as and of the onSpinWheelWebServiceResponse function call inside
+        -> Remove mentions or param1 in onSpinWheelWebServiceResponse function in WheelWonder.as
         -> Replace the content of the GetInspiration function in WheelOfWonderService.as by:
             var result:Object = ExternalInterface.call("getInspiration");
             getInspirationResultHandler(result);
@@ -49,3 +50,9 @@
                     i++;
                 }
             }
+        -> Replace "_winningOID = param1" in onSpinWheelWebServiceResponse function in WheelWonder.as
+            var specialPrize = Math.floor(Math.random() * 2);
+            if (specialPrize == 0)        
+                _winningOID = Math.floor(Math.random() * 9);
+            else
+                _winningOID = specialPrize * -1;
