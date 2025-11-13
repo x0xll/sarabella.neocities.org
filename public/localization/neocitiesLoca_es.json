@@ -93,6 +93,10 @@
     "game_yinyangmemory": "Yin and Yang's Memory Game",
     "game_cottage": "Mi Cabaña",
     "game_gallery": "Mis Cosas",
+    "game_wow": "Wheel of Wonders",
+
+    "wheelofwonder_warning": "The inspiration reward is not working, and the size of the charms is not correct.",
+
 
     "lanceriding_warning" : "Este juego solo tiene los archivos para el primer nivel. Además, presenta problemas al cargar de forma consistente y puede ser necesario recargar la página varias veces antes de que el nivel comience.",
 
