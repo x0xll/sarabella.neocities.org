@@ -26,8 +26,9 @@ class FoalAirStable extends Phaser.Scene
         game.load.atlas('leaf_tree_shake2', './images/airFoalStable/leaf_tree_shake2.png', './images/airFoalStable/leaf_tree_shake2.json');
         game.load.atlas('leaf_tree_shake3', './images/airFoalStable/leaf_tree_shake3.png', './images/airFoalStable/leaf_tree_shake3.json');
         game.load.atlas('leaf_chimes', './images/airFoalStable/leaf_chimes.png', './images/airFoalStable/leaf_chimes.json');
-        game.load.atlas('leaves_fall', './images/airStable/leaves_fall.png', './images/airStable/leaves_fall.json');
-        game.load.atlas('leaves_wind', './images/airStable/leaves_wind.png', './images/airStable/leaves_wind.json');
+        game.load.spineAtlas("leaves-atlas", `./images/airFoalStable/leavesskeleton.atlas`);
+        game.load.spineJson("leaves-json", `./images/airFoalStable/leavesskeleton.json`);
+        game.load.atlas('bottle_interactive', './images/airFoalStable/bottle.png', './images/airFoalStable/bottle.json');
 
         game.load.atlas('fountain1', './images/airFoalStable/fountain1.png', './images/airFoalStable/fountain1.json');
         game.load.atlas('fountain2', './images/airFoalStable/fountain2.png', './images/airFoalStable/fountain2.json');
@@ -37,9 +38,9 @@ class FoalAirStable extends Phaser.Scene
         game.load.atlas('food_interactive', './images/airStable/food_interactive.png', './images/airStable/food_interactive.json');
         game.load.atlas('berries', './images/airFoalStable/berries.png','./images/airFoalStable/berries.json');
         game.load.image('apple', './images/airStable/berriesHeld.png');
+        game.load.image('bottle', './images/airFoalStable/bottleHeld.png');
+        
         game.load.atlas('horn', './images/airFoalStable/horn.png','./images/airFoalStable/horn.json');
-        game.load.spineAtlas("branch-atlas", `./images/airStable/branches.atlas`);
-        game.load.spineJson("branch-json", `./images/airStable/branches.json`);
         
         game.load.atlas('brush', './images/airStable/brush.png', './images/airStable/brush.json');
         game.load.atlas('brush_small', './images/airStable/brush_small.png', './images/airStable/brush_small.json');
@@ -55,6 +56,8 @@ class FoalAirStable extends Phaser.Scene
         game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
 
         game.load.atlas('frame', './images/airStable/frame.png', './images/airStable/frame.json');
+        game.load.image('family_tree', './images/airFoalStable/family_tree_full.png');
+        game.load.image('magnifier', './images/airFoalStable/magnifier.png');
         game.load.image('inspiration', './images/airStable/inspiration.png');
 
         game.load.atlas('music_button', './images/airStable/music.png', './images/airStable/music.json');
@@ -153,43 +156,28 @@ class FoalAirStable extends Phaser.Scene
 
             
         // Leaves (on floor)
-        // TODO: Add and position
-        const leaves = game.add.sprite(520, 261, 'leaves_wind', 'wind0000');
-             game.stablesManager.addSpriteAnims(leaves, 'leaves_wind', [
-                    'wind0000', 'wind0001', 'wind0002', 'wind0003', 'wind0004', 'wind0005', 'wind0006', 'wind0007', 'wind0008', 'wind0009',
-                    'wind0010', 'wind0011', 'wind0012', 'wind0013', 'wind0014', 'wind0015', 'wind0016', 'wind0017', 'wind0018', 'wind0019',
-                    'wind0020', 'wind0021', 'wind0022', 'wind0023', 'wind0024', 'wind0025', 'wind0026', 'wind0027', 'wind0028', 'wind0029',
-                ])
-            this.anims.create({
-                key: 'leaves_fall',
-                frames: this.anims.generateFrameNumbers('leaves_fall', { frames: [
-                    'fall0000', 'fall0001', 'fall0002', 'fall0003', 'fall0004', 'fall0005', 'fall0006', 'fall0007', 'fall0008', 'fall0009',
-                    'fall0010', 'fall0011', 'fall0012', 'fall0013', 'fall0014', 'fall0015', 'fall0016', 'fall0017', 'fall0018', 'fall0019',
-                    'fall0020', 'fall0021', 'fall0022', 'fall0023', 'fall0024', 'fall0025', 'fall0026', 'fall0027', 'fall0028', 'fall0029',
-                    'fall0030', 'fall0031', 'fall0032', 'fall0033', 'fall0034', 'fall0035', 'fall0036', 'fall0037', 'fall0038', 'fall0039',
-                    'fall0040', 'fall0041', 'fall0042', 'fall0043', 'fall0044', 'fall0045', 'fall0046', 'fall0047', 'fall0048', 'fall0049',
-                    'fall0050', 'fall0051', 'fall0052', 'fall0053', 'fall0054', 'fall0055', 'fall0056', 'fall0057', 'fall0058', 'fall0059',
-                    'fall0060', 'fall0061', 'fall0062'
-                ] }),
-                frameRate: 24
-            });
+            game.leaves = game.add.spine(770, 280, 'leaves-json', 'leaves-atlas').setAngle(0).setScale(1);
+            game.beddingState = 0;
+            let rand = game.stablesManager.randomIntFromInterval(2,4)
+            setLeaves(game.leaves, rand)
+            game.leaves.animationState.setAnimation(0, "idle", false)
 
+            function setLeaves(leavesSkeleton, number) {
+                const skeletonData = leavesSkeleton.skeleton.data;
+                const skin = new spine.Skin("custom");
+                    skin.addSkin(skeletonData.findSkin(`Leaf${number}`));
+                leavesSkeleton.skeleton.setSkin(skin);
+            }
 
-        // Inspirational message frame
-        // TODO: Add and position
-        game.add.image(164, 77, 'horse_image').setScale(.35);
-        const frame = game.add.sprite(165, 73, 'frame', 'idle').setInteractive();
-            frame.on('pointerover', function (pointer){
-                if (game.canPlayInspiration) {
-                    frame.setFrame('hover');
-                    game.inspirationHover.play()
-                }
-            });
-            frame.on('pointerout', function (pointer) { frame.setFrame('idle') });
-            frame.on('pointerdown', function (pointer) { 
-                if (game.canPlayInspiration) {
-                    game.playInspiration = true 
-                    game.inspirationSound.play()
+            game.leaves.animationState.addListener({
+                complete: function endAnimation(entry) { 
+                    if(entry.animation.name === 'wind') {
+                        setLeaves(game.leaves, 1)
+                        game.beddingState = 1;
+                    }
+                    if(entry.animation.name === 'fall') {
+                        game.beddingState = 2;
+                    }
                 }
             })
 
@@ -242,15 +230,11 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
 
-        // Food Trough (Bottle)
-        // TODO: Add and position
-        game.branch = game.add.spine(-35, 230, 'branch-json', 'branch-atlas').setScale(.35)//.setAngle(90);
-
 
         // Horse hit box
         // TODO: Add and position
         const wingInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(330, 0, 250, 350), Phaser.Geom.Rectangle.Contains);
-        game.stablesManager.createHorseHitbox(200, 120, 376, 245, cleanWings, -20, -15)
+        game.stablesManager.createHorseHitbox(200, 120, 376, 245, cleanWings, -20, 30)
             wingInteractive.on('pointerdown', function (pointer) {
                 if (game.handCurrent === game.HAND.hoofpick) { cleanWings() }
             });
@@ -265,7 +249,7 @@ class FoalAirStable extends Phaser.Scene
                     'idle'
                 ])
             windchimes.on('pointerover', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0000') {
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 0) {
                     windchimes.setFrame('hover');
                     game.hover2.play();
                 }
@@ -276,8 +260,8 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
             windchimes.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0000') {
-                    leaves.play('leaves_wind');
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 0) {
+                    game.leaves.animationState.setAnimation(0, "wind", false);
                     windchimes.play('windchimes_blow');
                     game.cleanLeaves.play();
                 }
@@ -311,33 +295,31 @@ class FoalAirStable extends Phaser.Scene
 
         
         // Bottle
-        // TODO: Add and position
+        game.bottle = game.add.sprite(87, 300, 'bottle_interactive', 'idle').setInteractive({ pixelPerfect: true })
         game.add.image(0, 0, 'left_tree').setOrigin(0,0);
-        game.foodTrough = game.add.sprite(-164, 299, 'food_interactive', 'idle').setInteractive({ pixelPerfect: true });
-            game.anims.create({
-                key: 'pull_back',
-                frames: game.anims.generateFrameNumbers('food_interactive', { frames: [
-                    'bounce0000', 'bounce0001', 'bounce0002', 'bounce0003', 'bounce0004', 'bounce0005', 'bounce0006', 'bounce0007', 'bounce0008',
-                    'idle'
-                ] }),
-                frameRate: 24
-            });
-            game.foodTrough.on('pointerdown', function (pointer) {
+            game.bottle.on('pointerdown', function (pointer) {
                 if (game.handCurrent === game.HAND.empty) {
-                    game.foodTrough.play('pull_back')
-                    game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingFood)
+                    game.handCurrent = game.HAND.bottle
+                    game.bottle.setAlpha(0)
+                } else if (game.handCurrent === game.HAND.bottle) {
+                    game.handCurrent = game.HAND.empty
+                    game.bottle.setAlpha(1)
                 }
             });
-            game.foodTrough.on('pointerover', function (pointer) { 
-                if (game.foodTrough.frame.name === 'idle' && game.handCurrent === game.HAND.empty) {
-                    game.foodTrough.setFrame('hover')
+            game.bottle.on('pointerover', function (pointer) { 
+                if (game.bottle.frame.name === 'idle' && game.handCurrent === game.HAND.empty) {
+                    game.bottle.setFrame('hover')
                 }
             });
-            game.foodTrough.on('pointerout', function (pointer) {
-                if (game.foodTrough.frame.name === 'hover') {
-                    game.foodTrough.setFrame('idle')
+            game.bottle.on('pointerout', function (pointer) {
+                if (game.bottle.frame.name === 'hover') {
+                    game.bottle.setFrame('idle')
                 }
             });
+
+        // Food Trough (Bottle)
+        game.floatingBottle = game.add.image(158, 240, 'bottle').setScale(.75).setAngle(90).setAlpha(0);
+
 
         // Berries
         const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setInteractive();
@@ -418,6 +400,9 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
 
+        // Inspirational message frame
+        game.stablesManager.createFoalInspiration(140, 35, .25)
+
 
         // ---------- Stable foreground and UI ---------- //
         game.stablesManager.createStatBox(625, 130)
@@ -459,7 +444,7 @@ class FoalAirStable extends Phaser.Scene
                     'done'
                 ])
             treeInteractive.on('pointerover', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 1) {
                     game.leafTree.setFrame('hover');
                     game.hover2.play();
                 }
@@ -470,8 +455,8 @@ class FoalAirStable extends Phaser.Scene
                 }
             });
             treeInteractive.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
-                    leaves.play('leaves_fall')
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 1) {
+                    game.leaves.animationState.setAnimation(0, "fall", false);
                     game.leafTree.play('tree_shake1')
                     game.shakeLeaves.play()
                     game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtNoMoreLeaves)
@@ -484,6 +469,8 @@ class FoalAirStable extends Phaser.Scene
     update ()
     {
         const game = this
+
+        // TODO: check the offset positions here
         game.stablesManager.updateCursor({hoofpickYOffset:80})
 
         // play water flow sound when fountain is at correct frame
@@ -518,9 +505,16 @@ class FoalAirStable extends Phaser.Scene
                 });
             }
             else if (animation === game.HORSE_STATES.eatingFood) {
-                game.branch.animationState.setAnimation(0, 'animation', false);
+                game.floatingBottle.setAlpha(1)
                 game.time.delayedCall(800, function () { game.stablesManager.horsePlayAnimation('eat_food') });
                 game.time.delayedCall(1000, function () { game.oatsEat.play() });
+                game.time.delayedCall(3000, function () { game.floatingBottle.setAlpha(.75) });
+                game.time.delayedCall(3100, function () { game.floatingBottle.setAlpha(.5) });
+                game.time.delayedCall(3200, function () { game.floatingBottle.setAlpha(.25) });
+                game.time.delayedCall(3300, function () { 
+                    game.floatingBottle.setAlpha(0) 
+                    game.bottle.setAlpha(1)
+                });
             }
             else if (animation === game.HORSE_STATES.eatingApple) {
                 game.appleMunch.play();

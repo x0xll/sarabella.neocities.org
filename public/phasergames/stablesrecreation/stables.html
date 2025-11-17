@@ -6,8 +6,9 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
-        <script src="./js/stablesCommon.js"></script> 
-        <script src="./js/loadScreenUpdate.js"></script> 
+        <script src="./js/stablesCommonUpdateV2.js"></script> 
+        <script src="./js/loadScreenUpdateV2.js"></script> 
+        <script src="./js/loadFoalFamily.js"></script> 
         <script src="./js/landStableUpdate.js"></script> 
         <script src="./js/foalLandStable.js"></script> 
         <script src="./js/airStableUpdate.js"></script> 
@@ -22,8 +23,7 @@
     </head>
 
     <script src="/language.js"></script>
-
-        <script src="/userManager.js"></script>
+    <script src="/userManager.js"></script>
     <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
@@ -50,6 +50,8 @@
                     horseName ='peter'
                 }
                 let horseData
+                let family = {}
+                let quoteData
                 let localizedQuote = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
                 let loadInto = `Stables`
 
@@ -66,6 +68,7 @@
                     },
                     scene: [
                         Load,
+                        LoadFamily,
                         LandStable,
                         FoalLandStable,
                         AirStable,

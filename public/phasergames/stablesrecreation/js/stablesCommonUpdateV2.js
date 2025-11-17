@@ -134,6 +134,8 @@ class StablesManager {
         this.#game.backgroundMusic.play();
 
         this.#game.add.image(444, 260, 'stable_bg');
+        this.#game.switchQuote = null;
+        this.#game.familyTreeOpen = true;
 
         // Variables
         this.#game.HAND = {
@@ -171,14 +173,98 @@ class StablesManager {
         this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
     }
 
+    createFoalInspiration(posX, posY, scale) {
+        const game = this.#game
+        game.familyTreeOpen = false
+        for (let index = 0; index < family.ids.length; index++) {
+            let type = family.data[index].type
+            family.data[index].quote = quoteData[family.data[index].type][family.ids[index] + "Quote"]
+        }
+        this.#placeFamilyTreeUI(posX, posY, scale)
+
+        this.#game.parentImage = this.#game.add.image(0, 0, family.ids[0])
+        this.#addQuotesInteraction(this.#game.parentImage, family.data[0].quote)
+
+        this.#game.childImages = []
+        this.#game.childImages.push(this.#game.add.image(0, 0, 'horse_image'))
+        this.#addQuotesInteraction(this.#game.childImages[0], null)
+
+        for (let index = 1; index < family.ids.length; index++) {
+            this.#game.childImages.push(this.#game.add.image(0, 0, family.ids[index]))
+            this.#addQuotesInteraction(this.#game.childImages[index], family.data[index].quote)
+        }
+
+        this.placeFoalImages(posX, posY, scale)
+        
+    }
+
+    #placeFamilyTreeUI(posX, posY, scale) {
+        const game = this.#game
+        const helper = this
+        game.familyTree = game.add.image(444, 261, 'family_tree').setScale(1.5).setAlpha(0);
+        const familyXButton = this.addHitbox(536, 105, 50, 50)
+            familyXButton.on('pointerover', function (pointer){
+                game.inspirationHover.play()
+            });
+            familyXButton.on('pointerdown', function (pointer) { 
+                game.familyTree.setAlpha(0)
+                helper.placeFoalImages(posX, posY, scale)
+                game.canPlayInspiration = false
+                game.familyTreeOpen = false
+            })
+
+        game.magnifier = game.add.image(52, 96, 'magnifier').setScale(.15).setInteractive();
+            game.magnifier.on('pointerdown', function (pointer) { 
+                game.familyTree.setAlpha(1)
+                helper.placeFoalImages(460, 200, .45)
+                game.canPlayInspiration = true
+                game.familyTreeOpen = true
+            })
+
+    }
+    placeFoalImages(posX, posY, scale) {
+        const game = this.#game
+
+        this.#game.parentImage.setPosition(posX, posY).setScale(scale)
+        this.#placeSiblingImages(this.#game.childImages[0], 1, scale)
+        if (family.ids.length > 1)
+            this.#placeSiblingImages(this.#game.childImages[1], 0, scale)
+        if (family.ids.length > 2)
+            this.#placeSiblingImages(this.#game.childImages[2], 2, scale)
+
+    }
+    #placeSiblingImages(image, locationIndex, scale) {
+        const game = this.#game
+        const separation = 30 * scale
+        image.setPosition(
+            game.parentImage.x - ((game.parentImage.displayWidth) + separation) + ((game.parentImage.displayWidth + separation) * locationIndex), 
+            game.parentImage.y + (game.parentImage.displayHeight) + separation
+        ).setScale(scale)
+    }
+    #addQuotesInteraction(image, quote) {
+        image.setInteractive();
+        const game = this.#game
+        // TODO: add hover highlight
+        image.on('pointerover', function (pointer){
+            if (game.canPlayInspiration) {
+                // game.frame.setFrame('hover');
+                game.inspirationHover.play()
+            }
+        });
+        // image.on('pointerout', function (pointer) { game.frame.setFrame('idle') });
+        image.on('pointerdown', function (pointer) { 
+            if (game.canPlayInspiration) {
+                game.playInspiration = true 
+                game.switchQuote = quote
+                game.inspirationSound.play()
+            }
+        })
+    }
+
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
         const game = this.#game
-        if (urlParameters.get('debug')) {
-            game.add.graphics().fillStyle(0x000000).fillRect(x, y, width, height).setAlpha(.5);
-            game.add.graphics().fillStyle(0x000000).fillRect(x+headOffsetX, y+headOffsetY, 150, 150).setAlpha(.5);
-        }
-        const horseInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x, y, width, height), Phaser.Geom.Rectangle.Contains);
-        game.headInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x+headOffsetX, y+headOffsetY, 150, 150), Phaser.Geom.Rectangle.Contains);
+        const horseInteractive = this.addHitbox(x, y, width, height)// game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x, y, width, height), Phaser.Geom.Rectangle.Contains);
+        game.headInteractive = this.addHitbox(x+headOffsetX, y+headOffsetY, 150, 150)//game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x+headOffsetX, y+headOffsetY, 150, 150), Phaser.Geom.Rectangle.Contains);
         // interact with horse
         horseInteractive.on('pointerdown', function (pointer) {
             if (game.handCurrent === game.HAND.brush) {
@@ -197,14 +283,12 @@ class StablesManager {
         });
         game.headInteractive.on('pointerdown', function (pointer) {
             if (game.handCurrent === game.HAND.apple) {
-                // TODO: make smaller head hitbox for this bit
                 game.handCurrent = game.HAND.empty;
                 game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingApple)
             }
             else if (game.handCurrent === game.HAND.bottle) {
-                // TODO: make smaller head hitbox for this bit
                 game.handCurrent = game.HAND.empty;
-                game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.drinkbottle)
+                game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingFood)
             }
         })
     }
@@ -523,7 +607,7 @@ class StablesManager {
             game.headInteractive.setInteractive()
         }
         else if (game.handCurrent === game.HAND.bottle) {
-            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle');
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle').setAngle(90).setScale(.75);
             game.headInteractive.setInteractive()
         }
         else {
@@ -555,10 +639,12 @@ class StablesManager {
             game.playInspiration = false
             game.canPlayInspiration = false
 
-            if (localizedQuote)
+            if (localizedQuote && game.switchQuote === null)
                 game.inspirationMessage.text = localeData[horseName + "Quote"];
-            else
+            else if (game.switchQuote === null)
                 game.inspirationMessage.text = englishData[horseName + "Quote"];
+            else
+                game.inspirationMessage.text = game.switchQuote;
 
             game.inspiration.setVisible(true).setAlpha(0)
             game.inspirationMessage.setVisible(true).setAlpha(0)
@@ -584,7 +670,7 @@ class StablesManager {
             game.time.delayedCall(3320, function () {
                 game.inspiration.setAlpha(0); 
                 game.inspirationMessage.setAlpha(0); 
-                game.canPlayInspiration = true;
+                game.canPlayInspiration = game.familyTreeOpen;
             });
         }
     }
@@ -794,5 +880,12 @@ class StablesManager {
             this.#game.handCurrent = this.#game.HAND.empty;
             sprite.play(place)
         }
+    }
+
+    addHitbox (x, y, width, height) {
+        if (urlParameters.get('debug')) {
+            this.#game.add.graphics().fillStyle(0x000000).fillRect(x, y, width, height).setAlpha(.5);
+        }
+        return this.#game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x, y, width, height), Phaser.Geom.Rectangle.Contains);
     }
 }
