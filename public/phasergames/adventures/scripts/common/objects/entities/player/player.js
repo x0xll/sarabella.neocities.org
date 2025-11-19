@@ -127,7 +127,8 @@ class Player
             // TODO: Change player animation (walk, need animated sprite first)
 
             // Check if we are in a quest trigger -> if so, we stop the movement and start the quest
-            if (tryTriggerQuest(this.phaserScene, this.target.x, this.target.y))
+            let gridPos = this.isoToGridMap(this.target.x, this.target.y);
+            if (tryTriggerQuest(this.phaserScene, gridPos.x, gridPos.y))
             {
                 this.pathList.length = 0;
                 this.pathIndex = 0;
