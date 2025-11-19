@@ -149,6 +149,7 @@ function parseQuestXML(xmlObj)
                 currentData.trigger = {
                     type: QUEST_ACTIONS.STOPNEARTRIGGER,
                     zone: obj.childNodes[0].nextElementSibling.innerHTML,
+                    // TODO: check centerX and centerY, they seem to not init correctly
                     centerX: obj.childNodes[1].nextElementSibling.innerHTML,
                     centerY: obj.childNodes[2].nextElementSibling.innerHTML,
                     radius: obj.childNodes[3].nextElementSibling.innerHTML
