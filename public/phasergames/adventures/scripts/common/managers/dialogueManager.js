@@ -114,6 +114,8 @@ function instantiateDialogueUI(phaserScene)
 
 function showDialogue(phaserScene, character, text, choices)
 {
+    // TODO: handle text formatting
+
     if (phaserScene.dialogueBox === undefined)
         instantiateDialogueUI(phaserScene);
 
