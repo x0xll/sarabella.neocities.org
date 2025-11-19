@@ -119,7 +119,10 @@ function tryTriggerQuest(phaserScene, xPos, yPos)
     for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
     {
         let questGlobalData = phaserScene.questManager.activeQuests[i];
-        let triggerData = questGlobalData.questData.lines[0].trigger;
+        let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine++;
+        if (nextLine >= questGlobalData.questData.lines.length) continue;
+
+        let triggerData = questGlobalData.questData.lines[nextLine].trigger;
 
         if (triggerData.zone != undefined && 
             triggerData.zone == phaserScene.ZONE_ID)
@@ -130,11 +133,16 @@ function tryTriggerQuest(phaserScene, xPos, yPos)
                 parseInt(triggerData.centerY) - parseInt(triggerData.radius) <= yPos && 
                 parseInt(triggerData.centerY) + parseInt(triggerData.radius) >= yPos)
                 {
-                    startQuest(phaserScene, questGlobalData.fileID, questGlobalData.adventureID, questGlobalData.questID);
+                    if (nextLine == 0)
+                    {
+                        startQuest(phaserScene, questGlobalData.fileID, questGlobalData.adventureID, questGlobalData.questID);
+                    }
+                    else
+                    {
+                        doQuestAction(phaserScene, questGlobalData);
+                    }
                     return true;
                 }
-
-            console.log("Hello");
         }  
     }
 
@@ -207,14 +215,18 @@ function startQuest(phaserScene, fileID, adventureID, questID)
     if (questData === undefined) return;
     questData.status = QUEST_STATES.STARTED;
 
-    phaserScene.questManager.activeQuests.push({
+    let globalData = {
         questData: questData,
         fileID: fileID,
         adventureID: adventureID,
-        questID: questID
-    })
+        questID: questID,
+        currentLine: 0
+    };
+
+    phaserScene.questManager.activeQuests.push(globalData);
 
     console.log("Start quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
+    doQuestAction(phaserScene, globalData);
 }
 
 function finishQuest(phaserScene, fileID, adventureID, questID)
@@ -236,6 +248,34 @@ function finishQuest(phaserScene, fileID, adventureID, questID)
     phaserScene.questManager.activeQuests.splice(questIndex, 1);
 
     console.log("End quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
+}
+
+function doQuestAction(phaserScene, globalData)
+{
+    if (globalData.questData.status == QUEST_STATES.UNAVAILABLE ||
+        globalData.questData.status == QUEST_STATES.CANCELLED ||
+        globalData.questData.status == QUEST_STATES.FINISHED)
+        return;
+
+    let actionData = globalData.questData.lines[globalData.currentLine];
+    // TODO: need to check if can have multiple different actions in one actionData
+    switch(actionData.actions[0].type)
+    {
+        default:
+            return;
+        case QUEST_ACTIONS.DIALOGUE:
+            // TODO: Get infos from actionData and localize it
+            showDialogue(phaserScene, {name: "Cade Traveler", id: "C001"}, actionData.actions[0].text, undefined);
+            break;
+    }
+
+    if (globalData.currentLine + 1 > globalData.questData.lines.length)
+    {
+        finishQuest(phaserScene, globalData.fileID, globalData.adventureID, globalData.questID);
+        return;
+    }
+
+    globalData.currentLine++;
 }
 
 //------- END QUEST MECHANIC -------
@@ -356,7 +396,7 @@ function showQuestJournal(phaserScene)
         for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
         {
             firstQuest = phaserScene.questManager.activeQuests[i];
-            let isShowable = selectCurrentQuestForDetails(phaserScene, firstQuest.fileID, firstQuest.adventureID, firstQuest.questID);
+            isShowable = selectCurrentQuestForDetails(phaserScene, firstQuest.fileID, firstQuest.adventureID, firstQuest.questID);
             if (isShowable)
                 break;
         }
