@@ -2,6 +2,7 @@ const DIALOGUE_PANEL_IMG = "Dialogue_Panel";
 const DIALOGUE_AVATAR_MASK = "Dialogue_Avatar_Mask";
 const DIALOGUE_CONTINUE_BTN = "Dialogue_Continue_Btn";
 const DIALOGUE_HUMANS_THUMBNAILS = "humansthumbnails";
+const DIALOGUE_HORSES_THUMBNAILS = "horsesthumbnails";
 
 const CHARA_NAME_TEXT_SETTINGS = 
 {
@@ -35,6 +36,7 @@ function loadDialogueUI(phaserScene)
 
     // Avatars
     phaserScene.load.atlas(DIALOGUE_HUMANS_THUMBNAILS, './assets/extracted/Characters/humansthumbnail.png', './assets/extracted/Characters/humansthumbnail.json');
+    phaserScene.load.atlas(DIALOGUE_HORSES_THUMBNAILS, './assets/extracted/Characters/horsesthumbnail.png', './assets/extracted/Characters/horsesthumbnail.json');
 
     // Continue button
     // TODO : Find / Recreate the correct button
@@ -126,6 +128,7 @@ function showDialogue(phaserScene, character, text, choices)
     phaserScene.dialogueBox.charaName.setAlpha(1);
     phaserScene.dialogueBox.charaName.text = character.name;
     phaserScene.dialogueBox.charaPortrait.setAlpha(1);
+    phaserScene.dialogueBox.charaPortrait.setTexture((character.id.indexOf('C') > -1 ? DIALOGUE_HUMANS_THUMBNAILS : DIALOGUE_HORSES_THUMBNAILS));
     phaserScene.dialogueBox.charaPortrait.setFrame(character.id);
 
     phaserScene.dialogueBox.normalText.setAlpha(1);

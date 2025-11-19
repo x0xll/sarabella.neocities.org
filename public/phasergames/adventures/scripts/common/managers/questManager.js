@@ -298,8 +298,8 @@ function doQuestAction(phaserScene, globalData)
         default:
             return;
         case QUEST_ACTIONS.DIALOGUE:
-            // TODO: Get infos from actionData and localize it
-            showDialogue(phaserScene, {name: "Cade Traveler", id: "C001"}, actionData.actions[0].text, undefined);
+            // TODO: Figure out how to get the name from the iconID
+            showDialogue(phaserScene, {name: actionData.actions[0].iconID, id: actionData.actions[0].iconID}, actionData.actions[0].text, undefined);
             break;
     }
 
