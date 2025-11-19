@@ -97,9 +97,6 @@ class World_CanterFarm extends Phaser.Scene
 
             // TEST INVENTORY
             //showInventory(game);
-
-            // TEST QUEST JOURNAL
-            //showQuestJournal(game);
         }
 
         // Instantiation the images from the parsed zone xml
