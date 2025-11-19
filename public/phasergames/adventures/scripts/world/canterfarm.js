@@ -160,6 +160,8 @@ class World_CanterFarm extends Phaser.Scene
         const game = this;
 
         game.playerObj.updatePlayer();
-        game.timeManager.updateTime()
+        game.timeManager.updateTime();
+
+        debug_DrawTriggerQuest(game);
     }
 }
