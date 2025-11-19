@@ -284,6 +284,16 @@ function finishQuest(phaserScene, fileID, adventureID, questID)
     console.log("End quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 }
 
+function checkIfCanDoQuestAction(phaserScene)
+{
+    for(let i = 0; i = phaserScene.questMananger.activeQuests.length; i++)
+    {
+        let globalData = phaserScene.questManager.activeQuests[i];
+        if (globalData.questData.lines[globalData.currentLine].currentAction > 0)
+            doQuestAction(phaserScene, globalData);
+    }
+}
+
 function doQuestAction(phaserScene, globalData)
 {
     if (globalData.questData.status == QUEST_STATES.UNAVAILABLE ||
@@ -292,16 +302,36 @@ function doQuestAction(phaserScene, globalData)
         return;
 
     let actionData = globalData.questData.lines[globalData.currentLine];
+
+    if (actionData.currentAction === undefined)
+        actionData.currentAction = 0;
+
+    let actionIndex = actionData.currentAction;
+
     // TODO: need to check if can have multiple different actions in one actionData
-    switch(actionData.actions[0].type)
+    switch(actionData.actions[actionIndex].type)
     {
         default:
             return;
         case QUEST_ACTIONS.DIALOGUE:
             // TODO: Figure out how to get the name from the iconID
-            showDialogue(phaserScene, {name: actionData.actions[0].iconID, id: actionData.actions[0].iconID}, actionData.actions[0].text, undefined);
+            showDialogue(phaserScene, {name: actionData.actions[actionIndex].iconID, id: actionData.actions[actionIndex].iconID}, actionData.actions[actionIndex].text, undefined);
             break;
+        case QUEST_ACTIONS.REMOVEQUEST:
+            finishQuest(phaserScene, globalData.fileID, globalData.adventureID, globalData.questID);
+            return;
     }
+
+    if (actionData.actions.length > actionIndex)
+    {
+        actionData.currentAction++;
+        // TODO: Figure out when we need to keep going or when we need to wait for user input (eg: when a dialogue needs to have "continue" clicked)
+        if (actionData.actions[actionData.currentAction].type == QUEST_ACTIONS.REMOVEQUEST)
+            doQuestAction(phaserScene, globalData);
+        return;
+    }
+
+    actionData.currentAction = 0;
 
     if (globalData.currentLine + 1 > globalData.questData.lines.length)
     {
