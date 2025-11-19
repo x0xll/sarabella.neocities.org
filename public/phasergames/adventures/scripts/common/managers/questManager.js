@@ -148,6 +148,40 @@ function tryTriggerQuest(phaserScene, xPos, yPos)
 
     return false;
 }
+
+function debug_DrawTriggerQuest(phaserScene)
+{
+    if (phaserScene.questTriggerDebug === undefined)
+        phaserScene.questTriggerDebug = [];
+    else
+    {
+        for (let i = phaserScene.questTriggerDebug.length - 1; i >= 0; i--)
+        {
+            phaserScene.questTriggerDebug[i].destroy();
+            phaserScene.questTriggerDebug.pop(i);
+        }
+    }
+
+    for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+    {
+        let questGlobalData = phaserScene.questManager.activeQuests[i];
+        let triggerData = questGlobalData.questData.lines[0].trigger;
+
+        if (triggerData.zone != undefined && 
+            triggerData.zone == phaserScene.ZONE_ID)
+        {
+            let pos = phaserScene.playerObj.gridToIsoMap(parseInt(triggerData.centerX), parseInt(triggerData.centerY));
+            // TODO: figure out correct values
+            let width = (parseInt(triggerData.radius) * 2) * 50;
+            let height = (parseInt(triggerData.radius) * 2) * 50;
+
+            // TODO: figure out why alpha isn't working
+            // TODO: update to circle shape when we change the trigger check to be more accurate in tryTriggerQuest();
+            var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, width, height, 0xff0000, 1);
+            phaserScene.add.existing(rect);
+        }  
+    }
+}
 //------- END QUEST TRIGGERS -------
 
 //------- QUEST MECHANIC -------
