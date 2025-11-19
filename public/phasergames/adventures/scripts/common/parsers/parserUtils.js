@@ -90,16 +90,19 @@ function parseQuestXML(xmlObj)
             case "questData.DialogueAction":
                 var data = {
                     type: QUEST_ACTIONS.DIALOGUE,
-                    text: obj.childNodes[0].nextElementSibling.innerHTML
+                    text: obj.childNodes[1].innerHTML,
                 }
+
+                if (obj.childNodes.length > 3 && obj.childNodes[3] != null)
+                    data.iconID = obj.childNodes[3].innerHTML
 
                 currentData.actions.push(data);
                 break;
             case "questData.AddMultipleInventoryAction":
                 var data = {
                     type: QUEST_ACTIONS.ADDINVENTORY,
-                    itemID: obj.childNodes[0].nextElementSibling.innerHTML,
-                    count: parseInt(obj.childNodes[1].nextElementSibling.innerHTML)
+                    itemID: obj.childNodes[1].innerHTML,
+                    count: parseInt(obj.childNodes[2].innerHTML)
                 }
 
                 currentData.actions.push(data);
@@ -107,7 +110,7 @@ function parseQuestXML(xmlObj)
             case "questData.AddQuestAction":
                 var data = {
                     type: QUEST_ACTIONS.NEXTQUEST,
-                    questID: obj.childNodes[0].nextElementSibling.innerHTML             
+                    questID: obj.childNodes[1].innerHTML             
                 }
                 currentData.actions.push(data);
                 break;
@@ -137,22 +140,22 @@ function parseQuestXML(xmlObj)
             case "questData.AddZoneItemAnywhereAction":
                 var data = {
                     type: QUEST_ACTIONS.ADDZONEITEMANYWHEREACTION,
-                    template: obj.childNodes[0].nextElementSibling.innerHTML,
-                    instanceID: obj.childNodes[1].nextElementSibling.innerHTML,
-                    zone: obj.childNodes[2].nextElementSibling.innerHTML,
-                    xPos: obj.childNodes[3].nextElementSibling.innerHTML,
-                    yPos: obj.childNodes[4].nextElementSibling.innerHTML
+                    template: obj.childNodes[1].innerHTML,
+                    instanceID: obj.childNodes[2].innerHTML,
+                    zone: obj.childNodes[3].innerHTML,
+                    xPos: parseInt(obj.childNodes[4].innerHTML),
+                    yPos: parseInt(obj.childNodes[5].innerHTML)
                 }
                 currentData.actions.push(data);
                 break;
             case "questData.StopNearTrigger":
                 currentData.trigger = {
                     type: QUEST_ACTIONS.STOPNEARTRIGGER,
-                    zone: obj.childNodes[0].nextElementSibling.innerHTML,
+                    zone: obj.childNodes[1].innerHTML,
                     // TODO: check centerX and centerY, they seem to not init correctly
-                    centerX: obj.childNodes[1].nextElementSibling.innerHTML,
-                    centerY: obj.childNodes[2].nextElementSibling.innerHTML,
-                    radius: obj.childNodes[3].nextElementSibling.innerHTML
+                    centerX: parseInt(obj.childNodes[3].innerHTML),
+                    centerY: parseInt(obj.childNodes[5].innerHTML),
+                    radius: parseInt(obj.childNodes[7].innerHTML)
                 }
 
                 break;
@@ -206,7 +209,7 @@ function parseQuestXML(xmlObj)
 
                 quest.querySelectorAll("line").forEach(line => {
                     var lineObj = {
-                        description: line.attributes[0].innerHTML,
+                        description: line.attributes[0].value,
                         trigger: {},
                         conditions: [],
                         actions: []
