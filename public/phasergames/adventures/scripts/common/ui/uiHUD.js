@@ -23,8 +23,6 @@ class uiHUD extends uiManagerBase
 
     initialize()
     {
-        // TODO: Handle depth to make sure it's on top of the other UI
-        
         this.phaserScene.add.image(-7, 0, 'HUD_Main').setOrigin(0, 0).setScrollFactor(0).setDepth(100);
         // UI.add.image(-7, 0, 'HUD_Ref').setOrigin(0, 0).setScrollFactor(0).setAlpha(.5)
         this.phaserScene.sharedData.hud.ui.timeIndicator = this.phaserScene.add.sprite(748, 52, 'timeIndicator', 'day1').setScale(.3333).setDepth(100);
