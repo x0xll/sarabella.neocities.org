@@ -22,7 +22,7 @@ class Common_Load extends Phaser.Scene
         this.scene.launch("world_canterfarm", loader.data);
 
         // Add a delay to make sure the ui is setup after the world loads to prevent null refs
-        this.time.delayedCall(1, () => {
+        this.time.delayedCall(5, () => {
             this.scene.launch("common_ui", loader.data)
                       .remove();
         }, [], this); 
