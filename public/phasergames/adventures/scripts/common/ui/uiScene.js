@@ -21,6 +21,8 @@ class Common_UI extends Phaser.Scene
         UI.minimapUI = new uiMinimap(this);
         UI.minimapUI.load();
 
+        UI.dialogueUI = new uiDialogue(this);
+        UI.dialogueUI.load();
     }
 
     create (sharedData)
@@ -29,6 +31,14 @@ class Common_UI extends Phaser.Scene
         UI.sharedData = sharedData // Used to share data across multiple scenes, managers, &c.
 
         // initializeLoadingUI(UI);
+
+        function handleDialogue()
+        {
+            UI.sharedData.dialogue = {};
+            UI.sharedData.dialogue.ui = {};
+            UI.sharedData.dialogue.ui.manager = UI.dialogueUI;
+            UI.dialogueUI = undefined;
+        }
 
         function handleInventory()
         {
@@ -78,5 +88,6 @@ class Common_UI extends Phaser.Scene
         handleInventory();
         handleMagicTree();
         handleMiniMap();
+        handleDialogue();
     }
 }

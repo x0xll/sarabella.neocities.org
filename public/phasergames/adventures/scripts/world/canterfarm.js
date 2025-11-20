@@ -39,7 +39,6 @@ class World_CanterFarm extends Phaser.Scene
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
-        loadDialogueUI(game);
         loadQuestJournalUI(game);
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
         this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
@@ -59,8 +58,6 @@ class World_CanterFarm extends Phaser.Scene
         game.yOffset = 865
         game.tiles = []
         game.timeManager.startClock()
-        
-        instantiateDialogueUI(game);
         initializeQuestJournalUI(game);
         game.sharedData.global = 
         {
