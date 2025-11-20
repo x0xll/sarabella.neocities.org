@@ -79,6 +79,11 @@ class World_CanterFarm extends Phaser.Scene
             showQuestJournal(game);
         });
 
+        sharedData.inventoryButton.on('pointerup', function (pointer)
+        {
+            showInventory(game);
+        });
+
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
         {            
@@ -86,9 +91,6 @@ class World_CanterFarm extends Phaser.Scene
 
             // TODO : Instantiate entities (player, npcs, plants)
             game.playerObj.instantiatePlayerSprites();
-
-            // TEST INVENTORY
-            //showInventory(game);
         }
 
         // Instantiation the images from the parsed zone xml

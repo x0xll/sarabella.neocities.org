@@ -14,7 +14,8 @@ function loadInventoryUI(phaserScene)
     phaserScene.load.image(INVENTORY_BORDER_PANEL, "./assets/extracted/UI/Inventory/InventoryBorder.png");
 
     // Background panel
-    //phaserScene.load.image(DIALOGUE_PANEL_IMG, "./assets/extracted/UI/Dialogue/Panel.png");
+    // TODO: Get all elements separately
+    phaserScene.load.image(INVENTORY_BACKGROUND_PANEL, "./assets/extracted/UI/Inventory/InventoryPanel.png");
 
     // Bag Icon
     phaserScene.load.image(INVENTORY_ICON_BAG, "./assets/extracted/UI/Inventory/Bag.png");
@@ -30,9 +31,32 @@ function loadInventoryUI(phaserScene)
 
 function initializeInventoryUI(phaserScene)
 {
+    var background = phaserScene.add.image(130, 60, INVENTORY_BACKGROUND_PANEL)
+                .setOrigin(0)
+                .setScrollFactor(0)
+                .setDepth(100);
+
+    var border = phaserScene.add.image(260, 100, INVENTORY_BORDER_PANEL)
+                .setOrigin(0)
+                .setScrollFactor(0)
+                .setDepth(100);
+
+    var bagIcon = phaserScene.add.image(260, 100, INVENTORY_ICON_BAG)
+                .setOrigin(0)
+                .setScrollFactor(0)
+                .setDepth(100);
+
+    var bagBorder = phaserScene.add.image(245, 85, INVENTORY_ICON_BAG_BORDER)
+                    .setOrigin(0)
+                    .setScrollFactor(0)
+                    .setDepth(100);
+
     phaserScene.inventory = 
     {
-
+        background: background,
+        border: border,
+        bagIcon: bagIcon,
+        bagBorder: bagBorder
     };
 }
 
@@ -40,9 +64,17 @@ function showInventory(phaserScene)
 {
     if (phaserScene.inventory === undefined)
         initializeInventoryUI(phaserScene);
+
+    phaserScene.inventory.background.setAlpha(1);
+    phaserScene.inventory.border.setAlpha(1);
+    phaserScene.inventory.bagIcon.setAlpha(1);
+    phaserScene.inventory.bagBorder.setAlpha(1);
 }
 
 function hideInventory(phaserScene)
 {
-
+    phaserScene.inventory.background.setAlpha(0);
+    phaserScene.inventory.border.setAlpha(0);
+    phaserScene.inventory.bagIcon.setAlpha(0);
+    phaserScene.inventory.bagBorder.setAlpha(0);
 }
