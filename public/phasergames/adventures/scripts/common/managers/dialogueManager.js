@@ -158,8 +158,8 @@ function pickChoice(phaserScene, choiceID)
 
 function nextDialogue(phaserScene)
 {
-    // TEMP
     hideDialogue(phaserScene);
+    checkIfCanDoQuestAction(phaserScene);
 }
 
 //------- DIALOGUE UTILS -------
