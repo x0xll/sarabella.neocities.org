@@ -39,14 +39,12 @@ class World_CanterFarm extends Phaser.Scene
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
-        loadQuestJournalUI(game);
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
         this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
         this.load.spineAtlas("Ti021bAtlas", `./assets/newTiles/Ti021b.atlas`);
         this.load.spineJson("Ti021bJSON", `./assets/newTiles/Ti021b.json`);
 
         loadZoneFromXMLDatas();
-        initializeQuestDatas(game);
     }
 
     create (sharedData)
@@ -58,7 +56,6 @@ class World_CanterFarm extends Phaser.Scene
         game.yOffset = 865
         game.tiles = []
         game.timeManager.startClock()
-        initializeQuestJournalUI(game);
         game.sharedData.global = 
         {
             AREA_NAME: game.AREA_NAME,
@@ -71,6 +68,9 @@ class World_CanterFarm extends Phaser.Scene
         {
             level: 0
         };
+
+        initializeQuestDatas(game);
+
         // Adding BG as reference
             game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
             game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000)
@@ -78,12 +78,6 @@ class World_CanterFarm extends Phaser.Scene
             game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000).setAlpha(.75),
             game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000).setAlpha(.75)
         ]
-
-        // Link HUB UI to the logic
-        sharedData.journalButton.on('pointerup', function (pointer) 
-        {
-            showQuestJournal(game);
-        });
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()

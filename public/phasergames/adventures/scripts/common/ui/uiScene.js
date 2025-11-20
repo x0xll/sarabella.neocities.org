@@ -18,6 +18,9 @@ class Common_UI extends Phaser.Scene
         UI.magicTreeUI = new uiMagicTree(this);
         UI.magicTreeUI.load();
 
+        UI.questUI = new uiQuest(this);
+        UI.questUI.load();
+
         UI.minimapUI = new uiMinimap(this);
         UI.minimapUI.load();
 
@@ -63,6 +66,17 @@ class Common_UI extends Phaser.Scene
             });
         }
 
+        function handleQuest()
+        {
+            UI.sharedData.quest.ui = {};
+            UI.sharedData.quest.ui.manager = UI.questUI;
+            UI.questUI = undefined;
+
+            UI.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
+                UI.sharedData.quest.ui.manager.show();
+            });
+        }
+
         function handleMiniMap()
         {
             UI.sharedData.minimap = {};
@@ -87,6 +101,7 @@ class Common_UI extends Phaser.Scene
         handleHUD();
         handleInventory();
         handleMagicTree();
+        handleQuest();
         handleMiniMap();
         handleDialogue();
     }

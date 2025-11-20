@@ -2,8 +2,6 @@
 *  Save/Load quests, Unlock/Finish, etc.
 */
 
-const QUEST_PANEL_IMG = "quest_bgpanel"
-
 const QUEST_STATES = 
 {
     UNAVAILABLE: -1,
@@ -35,26 +33,13 @@ const QUEST_ACTIONS =
     ADDZONEITEMANYWHEREACTION: 13,
 }
 
-const THIN_TEXT_BLACK_SETTINGS = 
-{
-    font: "12px Arial",
-    color: "black",
-    wordWrap: { width: 650 }
-}
-
-const BOLD_TEXT_BLACK_SETTINGS = 
-{
-    font: "24px Arial bold",
-    color: "black",
-    wordWrap: { width: 250 }
-}
 
 //------- QUEST HELPER -------
 function getAllQuestsByStatus(phaserScene, status)
 {
     var quests = [];
 
-    phaserScene.questManager.quests.forEach(quest => 
+    phaserScene.sharedData.quest.logic.quests.forEach(quest => 
     {
         quest.adventureData.forEach(adventure => 
         {
@@ -70,18 +55,18 @@ function getAllQuestsByStatus(phaserScene, status)
 
 function getQuestPerID(phaserScene, globalID, adventureID, questID)
 {
-    for (let i = 0; i < phaserScene.questManager.quests.length; i++)
+    for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
     {
-        if (phaserScene.questManager.quests[i].adventuresID !== globalID) continue;
+        if (phaserScene.sharedData.quest.logic.quests[i].adventuresID !== globalID) continue;
 
-        for (let j = 0; j < phaserScene.questManager.quests[i].adventureData.length; j++)
+        for (let j = 0; j < phaserScene.sharedData.quest.logic.quests[i].adventureData.length; j++)
         {
-            if (phaserScene.questManager.quests[i].adventureData[j].adventureID !== adventureID) continue;
+            if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].adventureID !== adventureID) continue;
 
-            for (let k = 0; k < phaserScene.questManager.quests[i].adventureData[j].questData.length; k++)
+            for (let k = 0; k < phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData.length; k++)
             {
-                if (phaserScene.questManager.quests[i].adventureData[j].questData[k].questID === questID)
-                    return phaserScene.questManager.quests[i].adventureData[j].questData[k];
+                if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData[k].questID === questID)
+                    return phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData[k];
             }
         }
     }
@@ -91,15 +76,15 @@ function getQuestPerID(phaserScene, globalID, adventureID, questID)
 
 function getAdventurePerID(phaserScene, globalID, adventureID)
 {
-    for (let i = 0; i < phaserScene.questManager.quests.length; i++)
+    for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
     {
-        if (phaserScene.questManager.quests[i].adventuresID !== globalID) continue;
+        if (phaserScene.sharedData.quest.logic.quests[i].adventuresID !== globalID) continue;
 
-        for (let j = 0; j < phaserScene.questManager.quests[i].adventureData.length; j++)
+        for (let j = 0; j < phaserScene.sharedData.quest.logic.quests[i].adventureData.length; j++)
         {
-            if (phaserScene.questManager.quests[i].adventureData[j].adventureID !== adventureID) continue;
+            if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].adventureID !== adventureID) continue;
 
-            return phaserScene.questManager.quests[i].adventureData[j];
+            return phaserScene.sharedData.quest.logic.quests[i].adventureData[j];
         }
     }
 
@@ -116,9 +101,9 @@ function getQuestStatus(phaserScene, globalID, adventureID, questID, status)
 //------- QUEST TRIGGERS -------
 function tryTriggerQuest(phaserScene, xPos, yPos)
 {
-    for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+    for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
     {
-        let questGlobalData = phaserScene.questManager.activeQuests[i];
+        let questGlobalData = phaserScene.sharedData.quest.logic.activeQuests[i];
         let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine++;
         if (nextLine >= questGlobalData.questData.lines.length) continue;
 
@@ -162,9 +147,9 @@ function debug_DrawTriggerQuest(phaserScene)
         }
     }
 
-    for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+    for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
     {
-        let questGlobalData = phaserScene.questManager.activeQuests[i];
+        let questGlobalData = phaserScene.sharedData.quest.logic.activeQuests[i];
         let triggerData = questGlobalData.questData.lines[0].trigger;
 
         if (triggerData.zone != undefined && 
@@ -187,7 +172,8 @@ function debug_DrawTriggerQuest(phaserScene)
 //------- QUEST MECHANIC -------
 async function initializeQuestDatas(phaserScene)
 {
-    phaserScene.questManager = 
+    phaserScene.sharedData.quest = {};
+    phaserScene.sharedData.quest.logic = 
     {
         quests: [],
         activeQuests: []
@@ -213,10 +199,10 @@ async function initializeQuestDatas(phaserScene)
     for (let i = 0; i < QUEST_FILES_NAMES.length; i++)
     {
         var questObj = await loadXML(QUEST_DATAS_FOLDER + QUEST_FILES_NAMES[i] + ".xml");
-        phaserScene.questManager.quests.push(parseQuestXML(questObj));
+        phaserScene.sharedData.quest.logic.quests.push(parseQuestXML(questObj));
     }
 
-    console.log(phaserScene.questManager.quests);
+    console.log(phaserScene.sharedData.quest.logic.quests);
 
     // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
 
@@ -233,7 +219,7 @@ function showQuest(phaserScene, fileID, adventureID, questID)
     questData.status = QUEST_STATES.WAITING;
     console.log("Showing quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 
-    phaserScene.questManager.activeQuests.push({
+    phaserScene.sharedData.quest.logic.activeQuests.push({
         questData: questData,
         fileID: fileID,
         adventureID: adventureID,
@@ -257,7 +243,7 @@ function startQuest(phaserScene, fileID, adventureID, questID)
         currentLine: 0
     };
 
-    phaserScene.questManager.activeQuests.push(globalData);
+    phaserScene.sharedData.quest.logic.activeQuests.push(globalData);
 
     console.log("Start quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
     doQuestAction(phaserScene, globalData);
@@ -271,27 +257,27 @@ function finishQuest(phaserScene, fileID, adventureID, questID)
 
     let questIndex = -1;
 
-    for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+    for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
     {
-        if (phaserScene.questManager.activeQuests[i].questData !== questData) continue;
+        if (phaserScene.sharedData.quest.logic.activeQuests[i].questData !== questData) continue;
 
         questIndex = i;
         break;
     }
 
-    phaserScene.questManager.activeQuests.splice(questIndex, 1);
+    phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
 
     console.log("End quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 }
 
 function checkIfCanDoQuestAction(phaserScene)
 {
-    for(let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
+    for(let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
     {
-        if (phaserScene.questManager.activeQuests[i].questData.status != QUEST_STATES.STARTED)
+        if (phaserScene.sharedData.quest.logic.activeQuests[i].questData.status != QUEST_STATES.STARTED)
             continue;
 
-        let globalData = phaserScene.questManager.activeQuests[i];
+        let globalData = phaserScene.sharedData.quest.logic.activeQuests[i];
         if (globalData.questData.lines[globalData.currentLine].currentAction > 0)
             doQuestAction(phaserScene, globalData);
     }
@@ -318,7 +304,7 @@ function doQuestAction(phaserScene, globalData)
             return;
         case QUEST_ACTIONS.DIALOGUE:
             // TODO: Figure out how to get the name from the iconID
-            showDialogue(phaserScene, {name: actionData.actions[actionIndex].iconID, id: actionData.actions[actionIndex].iconID}, actionData.actions[actionIndex].text, undefined);
+            phaserScene.sharedData.dialogue.ui.manager.show(phaserScene, {name: actionData.actions[actionIndex].iconID, id: actionData.actions[actionIndex].iconID}, actionData.actions[actionIndex].text, undefined);
             break;
         case QUEST_ACTIONS.REMOVEQUEST:
             finishQuest(phaserScene, globalData.fileID, globalData.adventureID, globalData.questID);
@@ -346,176 +332,3 @@ function doQuestAction(phaserScene, globalData)
 }
 
 //------- END QUEST MECHANIC -------
-
-//------- QUEST JOURNAL UI -------
-function loadQuestJournalUI(phaserScene)
-{
-    // Background panel
-    phaserScene.load.image(QUEST_PANEL_IMG, "./assets/extracted/UI/Quest/Journal_Panel.png");
-
-    // Close btn
-    phaserScene.load.image("closebtn", "./assets/extracted/UI/Quest/closebtn.png")
-}
-
-function initializeQuestJournalUI(phaserScene)
-{
-    var panel = phaserScene.add.image(35, -20, QUEST_PANEL_IMG)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    // Left page
-    // TODO: scrollview with quests
-
-    // Right page
-    var currentQuestTitle = phaserScene.add.text(430, 140, 'Quest Title', BOLD_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    // TODO: Link to loca
-    var lookforTxt = phaserScene.add.text(520, 200, 'Look for:', THIN_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    var lookforDescTxt = phaserScene.add.text(540, 220, 'Thing to look for', THIN_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    // TODO: Link to loca
-    var locationTxt = phaserScene.add.text(520, 250, 'Location:', THIN_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    var locationDescTxt = phaserScene.add.text(540, 270, 'Place to go to', THIN_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-        
-    // TODO: Link to loca
-    var goalTxt = phaserScene.add.text(435, 310, 'Goal:', THIN_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    var goalDescTxt = phaserScene.add.text(455, 330, 'Goal to do', THIN_TEXT_BLACK_SETTINGS)
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100);
-
-    var questIcon = phaserScene.add.image(455, 222.5, "closebtn")
-                        .setOrigin(0)
-                        .setScrollFactor(0)
-                        .setDepth(100);
-
-    var closeBtn = phaserScene.add.image(687, 112, "closebtn")
-                    .setOrigin(0)
-                    .setScrollFactor(0)
-                    .setDepth(100)
-                    .setInteractive();
-
-    closeBtn.on('pointerup', function (pointer) 
-    { 
-        hideQuestJournal(phaserScene);
-    });
-
-    phaserScene.questManager.ui =
-    {
-        open: false,
-        panelImg: panel,
-        closeBtn: closeBtn,
-        // Right page
-        questTitle: currentQuestTitle,
-        lookforTxt: lookforTxt,
-        lookforDescTxt: lookforDescTxt,
-        locationTxt: locationTxt,
-        locationDescTxt: locationDescTxt,
-        goalTxt: goalTxt,
-        goalDescTxt: goalDescTxt,
-        questIcon: questIcon
-        // Left page
-    }
-
-    hideQuestJournal(phaserScene);
-}
-
-function showQuestJournal(phaserScene)
-{
-
-    if (phaserScene.questManager.ui === undefined)
-        initializeQuestJournalUI(phaserScene);
-
-    if (phaserScene.questManager.ui.open)
-    {
-        hideQuestJournal(phaserScene);
-        return;
-    }
-
-    if (phaserScene.uiOpen)
-        return;
-    
-    phaserScene.uiOpen = true;
-    phaserScene.questManager.ui.open = true;
-    phaserScene.questManager.ui.panelImg.setAlpha(1);
-    phaserScene.questManager.ui.closeBtn.setAlpha(1);
-
-    if (phaserScene.questManager.activeQuests !== undefined && phaserScene.questManager.activeQuests.length > 0)
-    {
-        // We default on the first quest, if it isn't possible to show it (ie: waiting state + no trigger)
-        // Then we try the next one until we either have one or nothing
-        let firstQuest = phaserScene.questManager.activeQuests[0];
-        let isShowable = false;
-        for (let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
-        {
-            firstQuest = phaserScene.questManager.activeQuests[i];
-            isShowable = selectCurrentQuestForDetails(phaserScene, firstQuest.fileID, firstQuest.adventureID, firstQuest.questID);
-            if (isShowable)
-                break;
-        }
-    }
-}
-
-function hideQuestJournal(phaserScene)
-{
-    phaserScene.uiOpen = false;
-    phaserScene.questManager.ui.open = false;
-    phaserScene.questManager.ui.panelImg.setAlpha(0);
-    phaserScene.questManager.ui.closeBtn.setAlpha(0);
-    phaserScene.questManager.ui.questTitle.setAlpha(0);
-    phaserScene.questManager.ui.lookforTxt.setAlpha(0);
-    phaserScene.questManager.ui.lookforDescTxt.setAlpha(0);
-    phaserScene.questManager.ui.locationTxt.setAlpha(0);
-    phaserScene.questManager.ui.locationDescTxt.setAlpha(0);
-    phaserScene.questManager.ui.goalTxt.setAlpha(0);
-    phaserScene.questManager.ui.goalDescTxt.setAlpha(0);
-    phaserScene.questManager.ui.questIcon.setAlpha(0);
-}
-
-function selectCurrentQuestForDetails(phaserScene, globalID, adventureID, questID)
-{
-    let quest = getQuestPerID(phaserScene, globalID, adventureID, questID);
-
-    if (quest.target.id === undefined && quest.status == QUEST_STATES.WAITING) return false;
-
-    if (quest === undefined) return false;
-
-    phaserScene.questManager.ui.questTitle.setAlpha(1);
-    phaserScene.questManager.ui.lookforTxt.setAlpha(1);
-    phaserScene.questManager.ui.lookforDescTxt.setAlpha(1);
-    phaserScene.questManager.ui.locationTxt.setAlpha(1);
-    phaserScene.questManager.ui.locationDescTxt.setAlpha(1);
-    phaserScene.questManager.ui.goalTxt.setAlpha(1);
-    phaserScene.questManager.ui.goalDescTxt.setAlpha(1);
-    phaserScene.questManager.ui.questIcon.setAlpha(1);
-
-    phaserScene.questManager.ui.questTitle.setText(getAdventurePerID(phaserScene, globalID, adventureID).description);
-    phaserScene.questManager.ui.lookforDescTxt.setText(""); // TODO: find where we get
-    phaserScene.questManager.ui.locationDescTxt.setText(""); // TODO: find where we get
-    phaserScene.questManager.ui.goalDescTxt.setText(quest.description);
-    //phaserScene.questManager.ui.questIcon.setTexture(); // TODO: find where we get
-    return true;
-}
-//------- END QUEST JOURNAL UI -------
