@@ -9,6 +9,9 @@ class Common_UI extends Phaser.Scene
     {
         const UI = this
 
+        UI.minimapUI = new uiMinimap(this);
+        UI.minimapUI.load();
+
     }
 
     create (sharedData)
@@ -18,5 +21,18 @@ class Common_UI extends Phaser.Scene
 
         // initializeLoadingUI(UI);
 
+        function handleMiniMap()
+        {
+            UI.sharedData.minimap = {};
+            UI.sharedData.minimap.ui = {};
+            UI.sharedData.minimap.ui.manager = UI.minimapUI;
+            UI.minimapUI = undefined;
+
+            UI.sharedData.hud.ui.mapButton.on('pointerup', function (pointer){
+                UI.sharedData.minimap.ui.manager.show();
+            });
+        }
+
+        handleMiniMap();
     }
 }

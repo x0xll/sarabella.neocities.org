@@ -48,7 +48,6 @@ class World_CanterFarm extends Phaser.Scene
         loadDialogueUI(game);
         loadInventoryUI(game);
         loadQuestJournalUI(game);
-        loadMinimapUI(game);
         loadMagicTreeUI(game);
 
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
@@ -72,8 +71,12 @@ class World_CanterFarm extends Phaser.Scene
         
         instantiateDialogueUI(game);
         initializeQuestJournalUI(game);
-        initializeMinimapUI(game);
         initializeMagicTreeUI(game);
+        game.sharedData.global = 
+        {
+            AREA_NAME: game.AREA_NAME,
+            ZONE_ID: game.ZONE_ID
+        }
 
         // Adding BG as reference
             game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
@@ -92,11 +95,6 @@ class World_CanterFarm extends Phaser.Scene
         sharedData.inventoryButton.on('pointerup', function (pointer)
         {
             showInventory(game);
-        });
-
-        sharedData.mapButton.on('pointerup', function (pointer)
-        {
-           showMinimap(game); 
         });
 
         sharedData.skillProgressButton.on('pointerup', function(pointer)
