@@ -286,8 +286,11 @@ function finishQuest(phaserScene, fileID, adventureID, questID)
 
 function checkIfCanDoQuestAction(phaserScene)
 {
-    for(let i = 0; i = phaserScene.questMananger.activeQuests.length; i++)
+    for(let i = 0; i < phaserScene.questManager.activeQuests.length; i++)
     {
+        if (phaserScene.questManager.activeQuests[i].questData.status != QUEST_STATES.STARTED)
+            continue;
+
         let globalData = phaserScene.questManager.activeQuests[i];
         if (globalData.questData.lines[globalData.currentLine].currentAction > 0)
             doQuestAction(phaserScene, globalData);
