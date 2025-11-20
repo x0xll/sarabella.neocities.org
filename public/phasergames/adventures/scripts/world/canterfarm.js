@@ -102,10 +102,6 @@ class World_CanterFarm extends Phaser.Scene
             showMagicTree(game);
         });
 
-        // Setting up map name
-        // TODO: Handle name from loca file based on area or zone name
-        sharedData.areaName.setText(game.AREA_NAME);
-
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
         {            

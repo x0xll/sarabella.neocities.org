@@ -9,6 +9,8 @@ class Common_UI extends Phaser.Scene
     {
         const UI = this
 
+        UI.hudUI = new uiHUD(this);
+        UI.hudUI.load();
         UI.minimapUI = new uiMinimap(this);
         UI.minimapUI.load();
 
@@ -33,6 +35,16 @@ class Common_UI extends Phaser.Scene
             });
         }
 
+        function handleHUD()
+        {
+            UI.sharedData.hud = {};
+            UI.sharedData.hud.ui = {};
+            UI.sharedData.hud.ui.manager = UI.hudUI;
+            UI.hudUI = undefined;
+            UI.sharedData.hud.ui.manager.initialize();
+        }
+
+        handleHUD();
         handleMiniMap();
     }
 }
