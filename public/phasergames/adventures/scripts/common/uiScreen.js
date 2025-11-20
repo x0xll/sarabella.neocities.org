@@ -41,6 +41,8 @@ class Common_UI extends Phaser.Scene
         UI.sharedData.saveButton = UI.add.sprite(681, 565, 'saveButton', 'up').setScale(.9)
         UI.sharedData.helpButton = UI.add.sprite(751, 564, 'helpButton', 'up').setScale(.66)
 
+        UI.sharedData.areaName = UI.add.text(350, 10, "", {font: "18px Arial", color: "#000000ff"});
+
         // initializeLoadingUI(UI);
     }
 }
