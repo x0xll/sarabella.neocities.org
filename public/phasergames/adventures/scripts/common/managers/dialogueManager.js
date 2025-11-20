@@ -116,15 +116,13 @@ function instantiateDialogueUI(phaserScene)
 
 function showDialogue(phaserScene, character, text, choices)
 {
-    // TODO: handle text formatting
-
     if (phaserScene.dialogueBox === undefined)
         instantiateDialogueUI(phaserScene);
 
     phaserScene.dialogueBox.open = true;
     phaserScene.dialogueBox.panelImg.setAlpha(1);
 
-    // TODO :Need to get the localized name, character is also supposed to help with finding the chara avatar
+    // TODO :Need to get the localized name
     phaserScene.dialogueBox.charaName.setAlpha(1);
     phaserScene.dialogueBox.charaName.text = character.name;
     phaserScene.dialogueBox.charaPortrait.setAlpha(1);
