@@ -444,15 +444,20 @@ function initializeQuestJournalUI(phaserScene)
 
 function showQuestJournal(phaserScene)
 {
+
+    if (phaserScene.questManager.ui === undefined)
+        initializeQuestJournalUI(phaserScene);
+
     if (phaserScene.questManager.ui.open)
     {
         hideQuestJournal(phaserScene);
         return;
     }
 
-    if (phaserScene.questManager.questJournal === undefined)
-        initializeQuestJournalUI(phaserScene);
+    if (phaserScene.uiOpen)
+        return;
     
+    phaserScene.uiOpen = true;
     phaserScene.questManager.ui.open = true;
     phaserScene.questManager.ui.panelImg.setAlpha(1);
     phaserScene.questManager.ui.closeBtn.setAlpha(1);
@@ -475,6 +480,7 @@ function showQuestJournal(phaserScene)
 
 function hideQuestJournal(phaserScene)
 {
+    phaserScene.uiOpen = false;
     phaserScene.questManager.ui.open = false;
     phaserScene.questManager.ui.panelImg.setAlpha(0);
     phaserScene.questManager.ui.closeBtn.setAlpha(0);

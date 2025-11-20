@@ -74,6 +74,10 @@ function showInventory(phaserScene)
         return;
     }
 
+    if (phaserScene.uiOpen)
+        return;
+
+    phaserScene.uiOpen = true;
     phaserScene.inventory.ui.open =  true;
     phaserScene.inventory.ui.background.setAlpha(1);
     phaserScene.inventory.ui.border.setAlpha(1);
@@ -83,6 +87,7 @@ function showInventory(phaserScene)
 
 function hideInventory(phaserScene)
 {
+    phaserScene.uiOpen = false;
     phaserScene.inventory.ui.open = false;
     phaserScene.inventory.ui.background.setAlpha(0);
     phaserScene.inventory.ui.border.setAlpha(0);

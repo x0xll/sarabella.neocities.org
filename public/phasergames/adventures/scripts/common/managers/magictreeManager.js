@@ -56,6 +56,10 @@ function showMagicTree(phaserScene)
         return;
     }
 
+    if (phaserScene.uiOpen)
+        return;
+
+    phaserScene.uiOpen = true;
     phaserScene.magicTree.ui.open = true;
     phaserScene.magicTree.ui.tree.setAlpha(1);
     phaserScene.magicTree.ui.border.setAlpha(1);
@@ -64,6 +68,7 @@ function showMagicTree(phaserScene)
 
 function hideMagicTree(phaserScene)
 {
+    phaserScene.uiOpen = false;
     phaserScene.magicTree.ui.open = false;
     phaserScene.magicTree.ui.tree.setAlpha(0);
     phaserScene.magicTree.ui.border.setAlpha(0);

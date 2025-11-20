@@ -36,12 +36,17 @@ function showMinimap(phaserScene)
         return;
     }
 
+    if (phaserScene.uiOpen)
+        return;
+
+    phaserScene.uiOpen = true;
     phaserScene.minimap.ui.open = true;
     phaserScene.minimap.ui.map.setAlpha(1);
 }
 
 function hideMinimap(phaserScene)
 {
+    phaserScene.uiOpen = false;
     phaserScene.minimap.ui.open = false;
     phaserScene.minimap.ui.map.setAlpha(0);
 }

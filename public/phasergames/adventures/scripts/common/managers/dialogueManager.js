@@ -119,6 +119,10 @@ function showDialogue(phaserScene, character, text, choices)
     if (phaserScene.ui === undefined)
         instantiateDialogueUI(phaserScene);
 
+    if (phaserScene.uiOpen)
+        return;
+
+    phaserScene.uiOpen = true;
     phaserScene.ui.open = true;
     phaserScene.ui.panelImg.setAlpha(1);
 
@@ -140,6 +144,7 @@ function showDialogue(phaserScene, character, text, choices)
 
 function hideDialogue(phaserScene)
 {
+    phaserScene.uiOpen = false;
     phaserScene.ui.open = false;
     phaserScene.ui.panelImg.setAlpha(0);
     phaserScene.ui.charaName.setAlpha(0);
