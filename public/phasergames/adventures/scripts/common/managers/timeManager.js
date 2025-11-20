@@ -131,18 +131,19 @@ class TimeManager
         }
 
         // HUD Time Indicator
+        if (this.phaserScene.sharedData.hud === undefined || this.phaserScene.sharedData.hud.ui === undefined) return;
         if (this.clock.now <= this.dayLength/3) {
-            this.phaserScene.sharedData.timeIndicator.setFrame('day1')
+            this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('day1')
         } else if (this.clock.now <= this.dayLength*2/3) {
-            this.phaserScene.sharedData.timeIndicator.setFrame('day2')
+            this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('day2')
         } else if (this.clock.now <= this.dayLength) {
-            this.phaserScene.sharedData.timeIndicator.setFrame('day3')
+            this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('day3')
         } else if (this.clock.now <= this.dayLength + this.nightLength/3) {
-            this.phaserScene.sharedData.timeIndicator.setFrame('night1')
+            this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('night1')
         } else if (this.clock.now <= this.dayLength + this.nightLength*2/3) {
-            this.phaserScene.sharedData.timeIndicator.setFrame('night2')
+            this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('night2')
         } else {
-            this.phaserScene.sharedData.timeIndicator.setFrame('night3')
+            this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('night3')
         }
     }
 }
