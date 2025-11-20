@@ -121,10 +121,10 @@ class uiDialogue extends uiManagerBase
         if (phaserScene.sharedData.dialogue.ui.elements === undefined)
             this.initialize();
 
-        if (phaserScene.uiOpen)
+        if (phaserScene.sharedData.global.uiOpen)
             return;
 
-        this.phaserScene.uiOpen = true;
+        this.phaserScene.sharedData.global.uiOpen = true;
         this.phaserScene.sharedData.dialogue.ui.open = true;
         this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(1);
 

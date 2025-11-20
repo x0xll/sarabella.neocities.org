@@ -90,7 +90,7 @@ class Player
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
         this.phaserScene.input.on('pointerup', (pointer) => {
             // Prevent moving when a UI is open
-            if (this.phaserScene.uiOpen) 
+            if (this.phaserScene.sharedData.global.uiOpen) 
                 return;
 
             // Get the grid x and y position of the target

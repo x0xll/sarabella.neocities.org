@@ -116,7 +116,7 @@ class uiQuest extends uiManagerBase
             return;
         }
 
-        if (this.phaserScene.uiOpen)
+        if (this.phaserScene.sharedData.global.uiOpen)
             return;
 
         this.phaserScene.sharedData.quest.ui.open = true;

@@ -19,11 +19,11 @@ class uiManagerBase
 
     show()
     {
-        this.phaserScene.uiOpen = true;
+        this.phaserScene.sharedData.global.uiOpen = true;
     }
 
     hide()
     {
-        this.phaserScene.uiOpen = false;
+        this.phaserScene.sharedData.global.uiOpen = false;
     }
 }
