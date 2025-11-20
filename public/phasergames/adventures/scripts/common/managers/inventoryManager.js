@@ -58,6 +58,8 @@ function initializeInventoryUI(phaserScene)
         bagIcon: bagIcon,
         bagBorder: bagBorder
     };
+
+    hideInventory(phaserScene);
 }
 
 function showInventory(phaserScene)
