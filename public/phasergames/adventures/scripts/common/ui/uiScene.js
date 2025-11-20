@@ -15,6 +15,9 @@ class Common_UI extends Phaser.Scene
         UI.inventoryUI = new uiInventory(this);
         UI.inventoryUI.load();
 
+        UI.magicTreeUI = new uiMagicTree(this);
+        UI.magicTreeUI.load();
+
         UI.minimapUI = new uiMinimap(this);
         UI.minimapUI.load();
 
@@ -36,6 +39,17 @@ class Common_UI extends Phaser.Scene
 
             UI.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
                 UI.sharedData.inventory.ui.manager.show();
+            });
+        }
+
+        function handleMagicTree()
+        {
+            UI.sharedData.magicTree.ui = {};
+            UI.sharedData.magicTree.ui.manager = UI.magicTreeUI;
+            UI.magicTreeUI = undefined;
+
+            UI.sharedData.hud.ui.skillProgressButton.on('pointerup', function (pointer) {
+                UI.sharedData.magicTree.ui.manager.show();
             });
         }
 
@@ -62,6 +76,7 @@ class Common_UI extends Phaser.Scene
 
         handleHUD();
         handleInventory();
+        handleMagicTree();
         handleMiniMap();
     }
 }

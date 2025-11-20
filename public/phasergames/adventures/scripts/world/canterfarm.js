@@ -36,19 +36,11 @@ class World_CanterFarm extends Phaser.Scene
         game.playerObj = new Player(game, 17, 3);
         game.timeManager = new TimeManager(game);
 
-        // TODO: handle through save data
-        game.magicTree = 
-        {
-            level: 0
-        };
-
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
         loadDialogueUI(game);
         loadQuestJournalUI(game);
-        loadMagicTreeUI(game);
-
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
         this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
         this.load.spineAtlas("Ti021bAtlas", `./assets/newTiles/Ti021b.atlas`);
@@ -70,13 +62,18 @@ class World_CanterFarm extends Phaser.Scene
         
         instantiateDialogueUI(game);
         initializeQuestJournalUI(game);
-        initializeMagicTreeUI(game);
         game.sharedData.global = 
         {
             AREA_NAME: game.AREA_NAME,
             ZONE_ID: game.ZONE_ID
         }
 
+        // TODO: handle through save data
+        game.sharedData.magicTree = {};
+        game.sharedData.magicTree.logic = 
+        {
+            level: 0
+        };
         // Adding BG as reference
             game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
             game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000)
@@ -89,11 +86,6 @@ class World_CanterFarm extends Phaser.Scene
         sharedData.journalButton.on('pointerup', function (pointer) 
         {
             showQuestJournal(game);
-        });
-
-        sharedData.skillProgressButton.on('pointerup', function(pointer)
-        {
-            showMagicTree(game);
         });
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
