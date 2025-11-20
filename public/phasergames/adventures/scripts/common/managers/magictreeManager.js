@@ -5,6 +5,7 @@
 const MAGICTREE_IMAGE = "magicTree";
 const MAGICTREE_BORDER = "magicTreeBorder"
 const MAGICTREE_ICON = "magicTreeIcon";
+const MAGICTREE_CLOSE_BTN = "magicTreeCloseBtn";
 
 function loadMagicTreeUI(phaserScene)
 {
@@ -17,30 +18,48 @@ function loadMagicTreeUI(phaserScene)
 
     // Icon
     phaserScene.load.image(MAGICTREE_ICON, "./assets/extracted/UI/Magic Tree/MT_Icon.png");
+
+    // Close btn
+    phaserScene.load.image(MAGICTREE_CLOSE_BTN, "./assets/extracted/UI/Quest/closebtn.png")
 }
 
 function initializeMagicTreeUI(phaserScene)
 {
-    var tree = phaserScene.add.image(130, 60, MAGICTREE_IMAGE)
+    var tree = phaserScene.add.image(110, 30, MAGICTREE_IMAGE)
                 .setOrigin(0)
                 .setScrollFactor(0)
                 .setDepth(100);
 
-    var border = phaserScene.add.image(130, 60, MAGICTREE_BORDER)
+    var border = phaserScene.add.image(107, 42, MAGICTREE_BORDER)
+                .setOrigin(0)
+                .setScrollFactor(0)
+                .setDepth(100)
+                .setScale(.9);
+
+    var icon = phaserScene.add.image(75, 30, MAGICTREE_ICON)
                 .setOrigin(0)
                 .setScrollFactor(0)
                 .setDepth(100);
 
-    var icon = phaserScene.add.image(130, 60, MAGICTREE_ICON)
-                .setOrigin(0)
-                .setScrollFactor(0)
-                .setDepth(100);
+    var closeBtn = phaserScene.add.image(675, 45, MAGICTREE_CLOSE_BTN)
+                    .setOrigin(0)
+                    .setScrollFactor(0)
+                    .setDepth(100)
+                    .setInteractive();
+
+    closeBtn.on('pointerup', function (pointer) 
+    { 
+        hideMagicTree(phaserScene);
+    });
+
+    // TODO: Handle masking of the tree image based on the border
 
     phaserScene.magicTree.ui = 
     {
         tree: tree,
         border: border,
-        icon: icon
+        icon: icon,
+        closeBtn: closeBtn
     };
     hideMagicTree(phaserScene);
 }
@@ -64,6 +83,7 @@ function showMagicTree(phaserScene)
     phaserScene.magicTree.ui.tree.setAlpha(1);
     phaserScene.magicTree.ui.border.setAlpha(1);
     phaserScene.magicTree.ui.icon.setAlpha(1);
+    phaserScene.magicTree.ui.closeBtn.setAlpha(1);
 }
 
 function hideMagicTree(phaserScene)
@@ -73,4 +93,5 @@ function hideMagicTree(phaserScene)
     phaserScene.magicTree.ui.tree.setAlpha(0);
     phaserScene.magicTree.ui.border.setAlpha(0);
     phaserScene.magicTree.ui.icon.setAlpha(0);
+    phaserScene.magicTree.ui.closeBtn.setAlpha(0);
 }
