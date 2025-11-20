@@ -101,7 +101,7 @@ function instantiateDialogueUI(phaserScene)
     // Choice text
     // TODO
 
-    phaserScene.dialogueBox = 
+    phaserScene.ui = 
     {
         panelImg: panel,
         charaName: charaName,
@@ -116,37 +116,37 @@ function instantiateDialogueUI(phaserScene)
 
 function showDialogue(phaserScene, character, text, choices)
 {
-    if (phaserScene.dialogueBox === undefined)
+    if (phaserScene.ui === undefined)
         instantiateDialogueUI(phaserScene);
 
-    phaserScene.dialogueBox.open = true;
-    phaserScene.dialogueBox.panelImg.setAlpha(1);
+    phaserScene.ui.open = true;
+    phaserScene.ui.panelImg.setAlpha(1);
 
     // TODO :Need to get the localized name
-    phaserScene.dialogueBox.charaName.setAlpha(1);
-    phaserScene.dialogueBox.charaName.text = character.name;
-    phaserScene.dialogueBox.charaPortrait.setAlpha(1);
-    phaserScene.dialogueBox.charaPortrait.setTexture((character.id.indexOf('C') > -1 ? DIALOGUE_HUMANS_THUMBNAILS : DIALOGUE_HORSES_THUMBNAILS));
-    phaserScene.dialogueBox.charaPortrait.setFrame(character.id);
+    phaserScene.ui.charaName.setAlpha(1);
+    phaserScene.ui.charaName.text = character.name;
+    phaserScene.ui.charaPortrait.setAlpha(1);
+    phaserScene.ui.charaPortrait.setTexture((character.id.indexOf('C') > -1 ? DIALOGUE_HUMANS_THUMBNAILS : DIALOGUE_HORSES_THUMBNAILS));
+    phaserScene.ui.charaPortrait.setFrame(character.id);
 
-    phaserScene.dialogueBox.normalText.setAlpha(1);
-    phaserScene.dialogueBox.normalText.setText(formatQuestText(text)); // TODO : Handle with localization 
+    phaserScene.ui.normalText.setAlpha(1);
+    phaserScene.ui.normalText.setText(formatQuestText(text)); // TODO : Handle with localization 
 
-    phaserScene.dialogueBox.continueBtn.setAlpha(1);
-    phaserScene.dialogueBox.continueTxt.setAlpha(1);
+    phaserScene.ui.continueBtn.setAlpha(1);
+    phaserScene.ui.continueTxt.setAlpha(1);
 
     // TODO : get the dialogue choices
 }
 
 function hideDialogue(phaserScene)
 {
-    phaserScene.dialogueBox.open = false;
-    phaserScene.dialogueBox.panelImg.setAlpha(0);
-    phaserScene.dialogueBox.charaName.setAlpha(0);
-    phaserScene.dialogueBox.charaPortrait.setAlpha(0);
-    phaserScene.dialogueBox.normalText.setAlpha(0);
-    phaserScene.dialogueBox.continueBtn.setAlpha(0);
-    phaserScene.dialogueBox.continueTxt.setAlpha(0);
+    phaserScene.ui.open = false;
+    phaserScene.ui.panelImg.setAlpha(0);
+    phaserScene.ui.charaName.setAlpha(0);
+    phaserScene.ui.charaPortrait.setAlpha(0);
+    phaserScene.ui.normalText.setAlpha(0);
+    phaserScene.ui.continueBtn.setAlpha(0);
+    phaserScene.ui.continueTxt.setAlpha(0);
 }
 
 function pickChoice(phaserScene, choiceID)
