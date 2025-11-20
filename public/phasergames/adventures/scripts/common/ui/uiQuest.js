@@ -80,7 +80,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0)
                         .setInteractive();
 
-        closeBtn.on('pointerup', function (pointer) 
+        closeBtn.on('pointerup', (pointer) => 
         { 
             this.hide();
         });

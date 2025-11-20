@@ -80,16 +80,16 @@ class uiDialogue extends uiManagerBase
                             .setScrollFactor(0)
                             .setInteractive();
 
-        continueBtn.on('pointerover', function (pointer) 
+        continueBtn.on('pointerover', (pointer) => 
         { 
 
         });
-        continueBtn.on('pointerout', function (pointer) 
+        continueBtn.on('pointerout', (pointer) => 
         { 
 
         });
 
-        continueBtn.on('pointerup', function (pointer) 
+        continueBtn.on('pointerup', (pointer) => 
         { 
             this.hide();
             checkIfCanDoQuestAction(this.phaserScene);
