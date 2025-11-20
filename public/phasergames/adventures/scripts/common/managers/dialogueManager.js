@@ -132,13 +132,11 @@ function showDialogue(phaserScene, character, text, choices)
     phaserScene.dialogueBox.charaPortrait.setFrame(character.id);
 
     phaserScene.dialogueBox.normalText.setAlpha(1);
-    phaserScene.dialogueBox.normalText.text = text; // TODO : Handle with localization 
+    phaserScene.dialogueBox.normalText.setText(formatQuestText(text)); // TODO : Handle with localization 
 
     phaserScene.dialogueBox.continueBtn.setAlpha(1);
     phaserScene.dialogueBox.continueTxt.setAlpha(1);
 
-    // TODO : get the chara img
-    // TODO : get the dialogue text
     // TODO : get the dialogue choices
 }
 
@@ -163,3 +161,39 @@ function nextDialogue(phaserScene)
     // TEMP
     hideDialogue(phaserScene);
 }
+
+//------- DIALOGUE UTILS -------
+function formatQuestText(text)
+{
+    // TODO: Handle formatting correctly for the bold/italic/font size/color change in the middle of the text
+    // Potential solution: https://www.html5gamedevs.com/topic/37309-rexbbcodetext-rextagtext/
+    if (text.indexOf("b&gt;") > 0)
+    {
+        // Bold
+        text = text.replaceAll("/b&gt;", "");
+        text = text.replaceAll("b&gt;", "");
+    }
+
+    if (text.indexOf("i&gt;") > 0)
+    {
+        // Italic
+        text = text.replaceAll("/i&gt;", "");
+        text = text.replaceAll("i&gt;", "");
+    }
+
+    if (text.indexOf("&lt;") > 0)
+    {
+        text = text.replaceAll("&lt;", "");
+    }
+
+    if (text.indexOf("font size='12' color='grey'") > 0)
+    {
+        // TODO: Temporary to have clean text while testing other elements
+        text = text.replaceAll("font size='12' color='grey'&gt;", "");
+        text = text.replaceAll("/font&gt;", "");
+    }
+
+    return text;
+}
+
+//------- END DIALOGUE UTILS -------
