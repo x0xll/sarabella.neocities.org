@@ -36,6 +36,12 @@ class World_CanterFarm extends Phaser.Scene
         game.playerObj = new Player(game, 17, 3);
         game.timeManager = new TimeManager(game);
 
+        // TODO: handle through save data
+        game.magicTree = 
+        {
+            level: 0
+        };
+
         game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
@@ -43,6 +49,7 @@ class World_CanterFarm extends Phaser.Scene
         loadInventoryUI(game);
         loadQuestJournalUI(game);
         loadMinimapUI(game);
+        loadMagicTreeUI(game);
 
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
         this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
@@ -66,6 +73,7 @@ class World_CanterFarm extends Phaser.Scene
         instantiateDialogueUI(game);
         initializeQuestJournalUI(game);
         initializeMinimapUI(game);
+        initializeMagicTreeUI(game);
 
         // Adding BG as reference
             game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
@@ -89,6 +97,11 @@ class World_CanterFarm extends Phaser.Scene
         sharedData.mapButton.on('pointerup', function (pointer)
         {
            showMinimap(game); 
+        });
+
+        sharedData.skillProgressButton.on('pointerup', function(pointer)
+        {
+            showMagicTree(game);
         });
 
         // Setting up map name
