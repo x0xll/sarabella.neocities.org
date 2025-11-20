@@ -35,7 +35,7 @@ class Common_UI extends Phaser.Scene
         UI.sharedData.mapButton = UI.add.sprite(337, 549, 'mapButton', 'up').setScale(.75).setInteractive();
         UI.sharedData.inventoryButton = UI.add.sprite(400, 549, 'inventoryButton', 'up').setScale(.75).setInteractive();
         UI.sharedData.journalButton = UI.add.sprite(463, 549, 'journalButton', 'up').setScale(.75).setInteractive()
-        UI.sharedData.skillProgressButton = UI.add.sprite(526, 550, 'skillProgressButton').setScale(.6)
+        UI.sharedData.skillProgressButton = UI.add.sprite(526, 550, 'skillProgressButton').setScale(.6).setInteractive();
         UI.sharedData.levelIndicator = UI.add.sprite(519, 552, 'levelIndicator', '0').setScale(.75)
 
         UI.sharedData.saveButton = UI.add.sprite(681, 565, 'saveButton', 'up').setScale(.9)
