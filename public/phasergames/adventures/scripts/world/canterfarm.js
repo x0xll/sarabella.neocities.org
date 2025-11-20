@@ -13,12 +13,6 @@ class World_CanterFarm extends Phaser.Scene
         game.AREA_NAME = "CanterFarms";
         game.ZONE_ID = "Z001";
 
-        // Dictionary of the loaded sprites so we only ask it to load each once, depending on the needs
-        game.sceneVisuals = {};
-
-        // Zone vars
-        game.zoneImgLoaded = false;
-
         // Parse the zone file
         // TODO : See if possible to have this function be in an external file to the scene
         // This would be used on all world scenes, while only changing the zone file url
