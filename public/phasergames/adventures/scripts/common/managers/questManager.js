@@ -422,7 +422,7 @@ function initializeQuestJournalUI(phaserScene)
         hideQuestJournal(phaserScene);
     });
 
-    phaserScene.questManager.journal =
+    phaserScene.questManager.ui =
     {
         open: false,
         panelImg: panel,
@@ -444,7 +444,7 @@ function initializeQuestJournalUI(phaserScene)
 
 function showQuestJournal(phaserScene)
 {
-    if (phaserScene.questManager.journal.open)
+    if (phaserScene.questManager.ui.open)
     {
         hideQuestJournal(phaserScene);
         return;
@@ -453,9 +453,9 @@ function showQuestJournal(phaserScene)
     if (phaserScene.questManager.questJournal === undefined)
         initializeQuestJournalUI(phaserScene);
     
-    phaserScene.questManager.journal.open = true;
-    phaserScene.questManager.journal.panelImg.setAlpha(1);
-    phaserScene.questManager.journal.closeBtn.setAlpha(1);
+    phaserScene.questManager.ui.open = true;
+    phaserScene.questManager.ui.panelImg.setAlpha(1);
+    phaserScene.questManager.ui.closeBtn.setAlpha(1);
 
     if (phaserScene.questManager.activeQuests !== undefined && phaserScene.questManager.activeQuests.length > 0)
     {
@@ -475,17 +475,17 @@ function showQuestJournal(phaserScene)
 
 function hideQuestJournal(phaserScene)
 {
-    phaserScene.questManager.journal.open = false;
-    phaserScene.questManager.journal.panelImg.setAlpha(0);
-    phaserScene.questManager.journal.closeBtn.setAlpha(0);
-    phaserScene.questManager.journal.questTitle.setAlpha(0);
-    phaserScene.questManager.journal.lookforTxt.setAlpha(0);
-    phaserScene.questManager.journal.lookforDescTxt.setAlpha(0);
-    phaserScene.questManager.journal.locationTxt.setAlpha(0);
-    phaserScene.questManager.journal.locationDescTxt.setAlpha(0);
-    phaserScene.questManager.journal.goalTxt.setAlpha(0);
-    phaserScene.questManager.journal.goalDescTxt.setAlpha(0);
-    phaserScene.questManager.journal.questIcon.setAlpha(0);
+    phaserScene.questManager.ui.open = false;
+    phaserScene.questManager.ui.panelImg.setAlpha(0);
+    phaserScene.questManager.ui.closeBtn.setAlpha(0);
+    phaserScene.questManager.ui.questTitle.setAlpha(0);
+    phaserScene.questManager.ui.lookforTxt.setAlpha(0);
+    phaserScene.questManager.ui.lookforDescTxt.setAlpha(0);
+    phaserScene.questManager.ui.locationTxt.setAlpha(0);
+    phaserScene.questManager.ui.locationDescTxt.setAlpha(0);
+    phaserScene.questManager.ui.goalTxt.setAlpha(0);
+    phaserScene.questManager.ui.goalDescTxt.setAlpha(0);
+    phaserScene.questManager.ui.questIcon.setAlpha(0);
 }
 
 function selectCurrentQuestForDetails(phaserScene, globalID, adventureID, questID)
@@ -496,20 +496,20 @@ function selectCurrentQuestForDetails(phaserScene, globalID, adventureID, questI
 
     if (quest === undefined) return false;
 
-    phaserScene.questManager.journal.questTitle.setAlpha(1);
-    phaserScene.questManager.journal.lookforTxt.setAlpha(1);
-    phaserScene.questManager.journal.lookforDescTxt.setAlpha(1);
-    phaserScene.questManager.journal.locationTxt.setAlpha(1);
-    phaserScene.questManager.journal.locationDescTxt.setAlpha(1);
-    phaserScene.questManager.journal.goalTxt.setAlpha(1);
-    phaserScene.questManager.journal.goalDescTxt.setAlpha(1);
-    phaserScene.questManager.journal.questIcon.setAlpha(1);
+    phaserScene.questManager.ui.questTitle.setAlpha(1);
+    phaserScene.questManager.ui.lookforTxt.setAlpha(1);
+    phaserScene.questManager.ui.lookforDescTxt.setAlpha(1);
+    phaserScene.questManager.ui.locationTxt.setAlpha(1);
+    phaserScene.questManager.ui.locationDescTxt.setAlpha(1);
+    phaserScene.questManager.ui.goalTxt.setAlpha(1);
+    phaserScene.questManager.ui.goalDescTxt.setAlpha(1);
+    phaserScene.questManager.ui.questIcon.setAlpha(1);
 
-    phaserScene.questManager.journal.questTitle.setText(getAdventurePerID(phaserScene, globalID, adventureID).description);
-    phaserScene.questManager.journal.lookforDescTxt.setText(""); // TODO: find where we get
-    phaserScene.questManager.journal.locationDescTxt.setText(""); // TODO: find where we get
-    phaserScene.questManager.journal.goalDescTxt.setText(quest.description);
-    //phaserScene.questManager.journal.questIcon.setTexture(); // TODO: find where we get
+    phaserScene.questManager.ui.questTitle.setText(getAdventurePerID(phaserScene, globalID, adventureID).description);
+    phaserScene.questManager.ui.lookforDescTxt.setText(""); // TODO: find where we get
+    phaserScene.questManager.ui.locationDescTxt.setText(""); // TODO: find where we get
+    phaserScene.questManager.ui.goalDescTxt.setText(quest.description);
+    //phaserScene.questManager.ui.questIcon.setTexture(); // TODO: find where we get
     return true;
 }
 //------- END QUEST JOURNAL UI -------
