@@ -11,6 +11,10 @@ class Common_UI extends Phaser.Scene
 
         UI.hudUI = new uiHUD(this);
         UI.hudUI.load();
+
+        UI.inventoryUI = new uiInventory(this);
+        UI.inventoryUI.load();
+
         UI.minimapUI = new uiMinimap(this);
         UI.minimapUI.load();
 
@@ -22,6 +26,18 @@ class Common_UI extends Phaser.Scene
         UI.sharedData = sharedData // Used to share data across multiple scenes, managers, &c.
 
         // initializeLoadingUI(UI);
+
+        function handleInventory()
+        {
+            UI.sharedData.inventory = {};
+            UI.sharedData.inventory.ui = {};
+            UI.sharedData.inventory.ui.manager = UI.inventoryUI;
+            UI.inventoryUI = undefined;
+
+            UI.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
+                UI.sharedData.inventory.ui.manager.show();
+            });
+        }
 
         function handleMiniMap()
         {
@@ -45,6 +61,7 @@ class Common_UI extends Phaser.Scene
         }
 
         handleHUD();
+        handleInventory();
         handleMiniMap();
     }
 }

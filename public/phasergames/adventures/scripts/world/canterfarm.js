@@ -46,7 +46,6 @@ class World_CanterFarm extends Phaser.Scene
         game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
 
         loadDialogueUI(game);
-        loadInventoryUI(game);
         loadQuestJournalUI(game);
         loadMagicTreeUI(game);
 
@@ -90,11 +89,6 @@ class World_CanterFarm extends Phaser.Scene
         sharedData.journalButton.on('pointerup', function (pointer) 
         {
             showQuestJournal(game);
-        });
-
-        sharedData.inventoryButton.on('pointerup', function (pointer)
-        {
-            showInventory(game);
         });
 
         sharedData.skillProgressButton.on('pointerup', function(pointer)
