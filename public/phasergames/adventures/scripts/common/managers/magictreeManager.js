@@ -4,6 +4,7 @@
 
 const MAGICTREE_IMAGE = "magicTree";
 const MAGICTREE_BORDER = "magicTreeBorder"
+const MAGICTREE_ICON = "magicTreeIcon";
 
 function loadMagicTreeUI(phaserScene)
 {
@@ -13,6 +14,9 @@ function loadMagicTreeUI(phaserScene)
     // Magic Tree
     let level = phaserScene.magicTree.level;
     phaserScene.load.image(MAGICTREE_IMAGE, "./assets/extracted/UI/Magic Tree/Planting Levels/MT_TreeLevel_0" + level + ".png")
+
+    // Icon
+    phaserScene.load.image(MAGICTREE_ICON, "./assets/extracted/UI/Magic Tree/MT_Icon.png");
 }
 
 function initializeMagicTreeUI(phaserScene)
@@ -27,10 +31,16 @@ function initializeMagicTreeUI(phaserScene)
                 .setScrollFactor(0)
                 .setDepth(100);
 
+    var icon = phaserScene.add.image(130, 60, MAGICTREE_ICON)
+                .setOrigin(0)
+                .setScrollFactor(0)
+                .setDepth(100);
+
     phaserScene.magicTree.ui = 
     {
         tree: tree,
-        border: border
+        border: border,
+        icon: icon
     };
     hideMagicTree(phaserScene);
 }
@@ -49,6 +59,7 @@ function showMagicTree(phaserScene)
     phaserScene.magicTree.ui.open = true;
     phaserScene.magicTree.ui.tree.setAlpha(1);
     phaserScene.magicTree.ui.border.setAlpha(1);
+    phaserScene.magicTree.ui.icon.setAlpha(1);
 }
 
 function hideMagicTree(phaserScene)
@@ -56,4 +67,5 @@ function hideMagicTree(phaserScene)
     phaserScene.magicTree.ui.open = false;
     phaserScene.magicTree.ui.tree.setAlpha(0);
     phaserScene.magicTree.ui.border.setAlpha(0);
+    phaserScene.magicTree.ui.icon.setAlpha(0);
 }
