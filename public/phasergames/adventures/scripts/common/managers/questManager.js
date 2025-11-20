@@ -445,7 +445,10 @@ function initializeQuestJournalUI(phaserScene)
 function showQuestJournal(phaserScene)
 {
     if (phaserScene.questManager.journal.open)
+    {
         hideQuestJournal(phaserScene);
+        return;
+    }
 
     if (phaserScene.questManager.questJournal === undefined)
         initializeQuestJournalUI(phaserScene);

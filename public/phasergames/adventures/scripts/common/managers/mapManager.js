@@ -17,19 +17,31 @@ function initializeMinimapUI(phaserScene)
                 .setScrollFactor(0)
                 .setDepth(100);
 
-    phaserScene.minimap = map;
+    phaserScene.minimap = {} // TODO: remove when we setup the map initialization
+    phaserScene.minimap.ui = 
+    {
+        map: map
+    };
     hideMinimap(phaserScene);
 }
 
 function showMinimap(phaserScene)
 {
-    if (phaserScene.minimap === undefined)
+    if (phaserScene.minimap.ui === undefined)
         initializeMinimapUI(phaserScene);
 
-    phaserScene.minimap.setAlpha(1);
+    if (phaserScene.minimap.ui.open)
+    {
+        hideMinimap(phaserScene);
+        return;
+    }
+
+    phaserScene.minimap.ui.open = true;
+    phaserScene.minimap.ui.map.setAlpha(1);
 }
 
 function hideMinimap(phaserScene)
 {
-    phaserScene.minimap.setAlpha(0);
+    phaserScene.minimap.ui.open = false;
+    phaserScene.minimap.ui.map.setAlpha(0);
 }

@@ -51,7 +51,8 @@ function initializeInventoryUI(phaserScene)
                     .setScrollFactor(0)
                     .setDepth(100);
 
-    phaserScene.inventory = 
+    phaserScene.inventory = {}; // TODO : Remoev when we actually setup the inventory initialization
+    phaserScene.inventory.ui = 
     {
         background: background,
         border: border,
@@ -67,16 +68,24 @@ function showInventory(phaserScene)
     if (phaserScene.inventory === undefined)
         initializeInventoryUI(phaserScene);
 
-    phaserScene.inventory.background.setAlpha(1);
-    phaserScene.inventory.border.setAlpha(1);
-    phaserScene.inventory.bagIcon.setAlpha(1);
-    phaserScene.inventory.bagBorder.setAlpha(1);
+    if (phaserScene.inventory.ui.open)
+    {
+        hideInventory(phaserScene);
+        return;
+    }
+
+    phaserScene.inventory.ui.open =  true;
+    phaserScene.inventory.ui.background.setAlpha(1);
+    phaserScene.inventory.ui.border.setAlpha(1);
+    phaserScene.inventory.ui.bagIcon.setAlpha(1);
+    phaserScene.inventory.ui.bagBorder.setAlpha(1);
 }
 
 function hideInventory(phaserScene)
 {
-    phaserScene.inventory.background.setAlpha(0);
-    phaserScene.inventory.border.setAlpha(0);
-    phaserScene.inventory.bagIcon.setAlpha(0);
-    phaserScene.inventory.bagBorder.setAlpha(0);
+    phaserScene.inventory.ui.open = false;
+    phaserScene.inventory.ui.background.setAlpha(0);
+    phaserScene.inventory.ui.border.setAlpha(0);
+    phaserScene.inventory.ui.bagIcon.setAlpha(0);
+    phaserScene.inventory.ui.bagBorder.setAlpha(0);
 }
