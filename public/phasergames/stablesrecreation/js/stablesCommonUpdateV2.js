@@ -709,7 +709,7 @@ class StablesManager {
         }
         else if (this.#game.brushLevel === 2) {
             this.#game.brushLevel += 1;
-            if (horseData.type === 'air') {
+            if (horseData.type === 'air' || horseData.type === 'foalAir') {
                 this.addToQueue(this.#game.statBoxQueue, localeData.txtReadyToBeOiled)
             } else {
                 this.addToQueue(this.#game.statBoxQueue, localeData.txtBrushClean)

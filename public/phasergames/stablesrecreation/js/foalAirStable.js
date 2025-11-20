@@ -232,7 +232,6 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Horse hit box
-        // TODO: Add and position
         const wingInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(330, 0, 250, 350), Phaser.Geom.Rectangle.Contains);
         game.stablesManager.createHorseHitbox(200, 120, 376, 245, cleanWings, -20, 30)
             wingInteractive.on('pointerdown', function (pointer) {
@@ -403,26 +402,6 @@ class FoalAirStable extends Phaser.Scene
         // Inspirational message frame
         game.stablesManager.createFoalInspiration(140, 35, .25)
 
-
-        // ---------- Stable foreground and UI ---------- //
-        game.stablesManager.createStatBox(625, 130)
-        game.stablesManager.createBeSaWorldLink(715, 110, .8, .8, "Small")
-        game.stablesManager.createUI([
-            [585, 40, localeData.txtHelpTrophyRoom, "Small"],
-            [180, 290, localeData.txtHelpFountain, "Small"],
-            [365, 409, localeData.txtHelpStats, "OneLine"],
-            [245, 142, localeData.txtHelpSpeaker, "Small"],
-            [250, 75, localeData.txtHelpInspiration, "Small"],
-            [426, 120, localeData.txtHelpWindChime, "Small"],
-            [782, 93, localeData.txtHelpBerries, "Med"],
-            [125, 390, localeData.txtHelpAcorn, "Small"],
-            [750, 175, localeData.txtHelpWorld, "OneLine"],
-            [827, 290, localeData.txtHelpOil, "Small"],
-            [540, 240, localeData.txtHelpBrush, "Small"],
-            //[605, 365, localeData.txtHelpLuck, "Small"],
-            [650, 407, localeData.txtHelpBranch, "Small"]
-        ])
-
         
         // Tree (for leaves)
         const treeInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(740, 330, 200, 150), Phaser.Geom.Rectangle.Contains);
@@ -464,6 +443,26 @@ class FoalAirStable extends Phaser.Scene
                     game.stablesManager.updateBar(game.happinessBar, 1/2 + 0.05)
                 }
             });
+
+
+        // ---------- Stable foreground and UI ---------- //
+        game.stablesManager.createStatBox(625, 130)
+        game.stablesManager.createBeSaWorldLink(715, 110, .8, .8, "Small")
+        game.stablesManager.createUI([
+            [585, 40, localeData.txtHelpTrophyRoom, "Small"],
+            [180, 290, localeData.txtHelpFountain, "Small"],
+            [365, 409, localeData.txtHelpStats, "OneLine"],
+            [245, 142, localeData.txtHelpSpeaker, "Small"],
+            [250, 75, localeData.txtHelpInspiration, "Small"],
+            [426, 120, localeData.txtHelpWindChime, "Small"],
+            [782, 93, localeData.txtHelpBerries, "Med"],
+            [125, 390, localeData.txtHelpBottle, "Small"],
+            [750, 175, localeData.txtHelpWorld, "OneLine"],
+            [827, 290, localeData.txtHelpOil, "Small"],
+            [540, 240, localeData.txtHelpBrush, "Small"],
+            //[605, 365, localeData.txtHelpLuck, "Small"],
+            [650, 407, localeData.txtHelpBranch, "Small"]
+        ])
     }
 
     update ()
