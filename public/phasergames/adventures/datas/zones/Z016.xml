@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map tileWidth="80" tileHeight="40" tileDepth="60">
+  <files>
+    <file id="Lb000" fileName="Flash/Adventures/Art/Tilesets/ForestCave.swf"/>
+    <file id="Lb001" fileName="Flash/Adventures/Art/Zones/Zone16.swf"/>
+  </files>
+  <grounds>
+    <ground id="Gr0007" file="Lb000" className="T0040a" x="16"/>
+    <ground id="Gr0004" file="Lb000" className="T0035c" x="-33"/>
+    <ground id="Gr0023" file="Lb000" className="T0025c" x="-20" y="12"/>
+    <ground id="Gr0066" file="Lb000" className="T0186e"/>
+    <ground id="Gr0061" file="Lb000" className="T0197e"/>
+    <ground id="Gr0054" file="Lb000" className="T0197c" x="-5" y="-5"/>
+    <ground id="Gr0065" file="Lb000" className="T0186b" scaleX="-1"/>
+    <ground id="Gr0038" file="Lb000" className="T0017d"/>
+    <ground id="Gr0051" file="Lb000" className="T0027j"/>
+    <ground id="Gr0069" file="Lb000" className="T0186c"/>
+    <ground id="Gr0075" file="Lb000" className="T0025a"/>
+    <ground id="Gr0063" file="Lb000" className="T0034b" x="-20"/>
+    <ground id="Gr0019" file="Lb000" className="T0197a"/>
+    <ground id="Gr0024" file="Lb000" className="T0035a" x="8" y="-20"/>
+    <ground id="Gr0068" file="Lb000" className="T0186a"/>
+    <ground id="Gr0072" file="Lb000" className="T0037b"/>
+    <ground id="Gr0020" file="Lb000" className="T0197b"/>
+    <ground id="Gr0078" file="Lb000" className="T0025b"/>
+    <ground id="Gr0042" file="Lb000" className="T0034b" x="-8" y="12"/>
+    <ground id="Gr0030" file="Lb000" className="T0025c" y="12"/>
+    <ground id="Gr0028" file="Lb000" className="T0040c" x="11"/>
+    <ground id="Gr0018" file="Lb000" className="T0039c"/>
+    <ground id="Gr0044" file="Lb000" className="T0197e" x="10" y="5"/>
+    <ground id="Gr0002" file="Lb000" className="T0034b"/>
+    <ground id="Gr0034" file="Lb000" className="T0027e"/>
+    <ground id="Gr0067" file="Lb000" className="T0186d"/>
+    <ground id="Gr0039" file="Lb000" className="T0017c" scaleX="-1"/>
+    <ground id="Gr0005" file="Lb000" className="T0039e"/>
+    <ground id="Gr0076" file="Lb000" className="T0040c"/>
+    <ground id="Gr0050" file="Lb000" className="T0197e" x="-5" y="10"/>
+    <ground id="Gr0049" file="Lb000" className="T0197e" scaleX="-1" x="15"/>
+    <ground id="Gr0045" file="Lb000" className="T0017a"/>
+    <ground id="Gr0026" file="Lb000" className="T0034b" x="12" y="9"/>
+    <ground id="Gr0046" file="Lb000" className="T0017c"/>
+    <ground id="Gr0006" file="Lb000" className="T0197c" x="10" y="-5"/>
+    <ground id="Gr0013" file="Lb000" className="T0197d" scaleX="-1" scaleY="-1" x="-15" y="-15"/>
+    <ground id="Gr0015" file="Lb000" className="T0197d" scaleX="-1" x="15" y="9"/>
+    <ground id="Gr0074" file="Lb000" className="T0027b"/>
+    <ground id="Gr0032" file="Lb000" className="T0027f" y="-5"/>
+    <ground id="Gr0058" file="Lb000" className="T0040b" x="9"/>
+    <ground id="Gr0033" file="Lb000" className="T0027a" x="-6" y="10"/>
+    <ground id="Gr0052" file="Lb000" className="T0025c"/>
+    <ground id="Gr0056" file="Lb000" className="T0034c" x="-7" y="14"/>
+    <ground id="Gr0001" file="Lb000" className="T0039a"/>
+    <ground id="Gr0043" file="Lb000" className="T0151b"/>
+    <ground id="Gr0012" file="Lb000" className="T0179"/>
+    <ground id="Gr0047" file="Lb000" className="T0017b"/>
+    <ground id="Gr0062" file="Lb000" className="T0034d" y="-15"/>
+    <ground id="Gr0059" file="Lb000" className="T0040a" x="-4" y="5"/>
+    <ground id="Gr0037" file="Lb000" className="T0017e"/>
+    <ground id="Gr0010" file="Lb000" className="T0035c" y="-13"/>
+    <ground id="Gr0041" file="Lb000" className="T0197e" x="-5"/>
+    <ground id="Gr0022" file="Lb000" className="T0197d" x="-5"/>
+    <ground id="Gr0031" file="Lb000" className="T0027k" x="15"/>
+    <ground id="Gr0064" file="Lb000" className="T0016d"/>
+    <ground id="Gr0071" file="Lb000" className="T0025g" x="-10"/>
+    <ground id="Gr0055" file="Lb000" className="T0034a" scaleX="-1" x="19"/>
+    <ground id="Gr0036" file="Lb000" className="T0017b" scaleX="-1"/>
+    <ground id="Gr0000" file="Lb000" className="T0035d" y="-10"/>
+    <ground id="Gr0060" file="Lb000" className="T0027h" x="4" y="10"/>
+    <ground id="Gr0070" file="Lb000" className="T0186b"/>
+    <ground id="Gr0021" file="Lb000" className="T0197d" x="5" y="5"/>
+    <ground id="Gr0073" file="Lb000" className="T0039d"/>
+    <ground id="Gr0035" file="Lb000" className="T0016a"/>
+    <ground id="Gr0048" file="Lb000" className="T0197e" x="-10" y="-10"/>
+    <ground id="Gr0077" file="Lb000" className="T0027f"/>
+    <ground id="Gr0017" file="Lb000" className="T0197c"/>
+    <ground id="Gr0057" file="Lb000" className="T0035c" x="-18" y="2"/>
+    <ground id="Gr0011" file="Lb000" className="T0035d"/>
+    <ground id="Gr0008" file="Lb000" className="T0025n"/>
+    <ground id="Gr0003" file="Lb000" className="T0035e" y="-14"/>
+    <ground id="Gr0016" file="Lb000" className="T0197d" x="8" y="-10"/>
+    <ground id="Gr0029" file="Lb000" className="T0040a" x="-18"/>
+    <ground id="Gr0027" file="Lb000" className="T0151f"/>
+    <ground id="Gr0040" file="Lb000" className="T0017e" scaleX="-1"/>
+    <ground id="Gr0014" file="Lb000" className="T0197d" x="-15"/>
+    <ground id="Gr0009" file="Lb000" className="T0035b" x="-26"/>
+    <ground id="Gr0025" file="Lb000" className="T0034a" scaleX="-1" x="-21" y="-9"/>
+    <ground id="Gr0053" file="Lb000" className="T0197b" x="5" y="5"/>
+  </grounds>
+  <skins>
+    <skin id="Sk0000" file="Lb000" className="T0047n"/>
+    <skin id="Sk0023" file="Lb000" className="Overlay_ExitNE" scaleY="-1"/>
+    <skin id="Sk0017" file="Lb000" className="T0049b"/>
+    <skin id="Sk0005" file="Lb000" className="T0053m" scaleX="-1" x="14"/>
+    <skin id="Sk0002" file="Lb000" className="Overlay_ExitEW" scaleX="-1"/>
+    <skin id="Sk0009" file="Lb000" className="T0047l"/>
+    <skin id="Sk0007" file="Lb000" className="T0053m" x="-12"/>
+    <skin id="Sk0012" file="Lb000" className="T0047o"/>
+    <skin id="Sk0018" file="Lb000" className="T0015e" scaleX="-1"/>
+    <skin id="Sk0006" file="Lb000" className="T0053a"/>
+    <skin id="Sk0011" file="Lb000" className="T0047j"/>
+    <skin id="Sk0020" file="Lb000" className="T0153b"/>
+    <skin id="Sk0013" file="Lb000" className="T0049c"/>
+    <skin id="Sk0001" file="Lb000" className="T0047c"/>
+    <skin id="Sk0010" file="Lb000" className="T0047f"/>
+    <skin id="Sk0014" file="Lb000" className="T0153e"/>
+    <skin id="Sk0021" file="Lb000" className="T0033d"/>
+    <skin id="Sk0019" file="Lb000" className="T0015d"/>
+    <skin id="Sk0008" file="Lb000" className="T0047e"/>
+    <skin id="Sk0015" file="Lb000" className="T0153a"/>
+    <skin id="Sk0022" file="Lb000" className="T0015c"/>
+    <skin id="Sk0004" file="Lb000" className="T0047d"/>
+    <skin id="Sk0003" file="Lb000" className="T0047k"/>
+    <skin id="Sk0016" file="Lb000" className="T0153c"/>
+  </skins>
+  <tiles>
+    <tile id="Ti031w" walkable="true" grounds="Gr0035,Gr0046" entities="DirtTemplate"/>
+    <tile id="Ti094b" walkable="false" grounds="Gr0071,Gr0072" skins="Sk0018"/>
+    <tile id="Ti010w" walkable="true" entities="SpiderSilkSpawner"/>
+    <tile id="Ti028w" walkable="true" grounds="Gr0035,Gr0037" entities="DirtTemplate"/>
+    <tile id="Ti030w" walkable="true" grounds="Gr0035,Gr0039" entities="DirtTemplate"/>
+    <tile id="Ti143b" walkable="false" grounds="Gr0013,Gr0014,Gr0015,Gr0016"/>
+    <tile id="Ti006b" walkable="false" skins="Sk0007"/>
+    <tile id="Ti141w" walkable="true" grounds="Gr0020"/>
+    <tile id="Ti071b" walkable="false" grounds="Gr0002"/>
+    <tile id="Ti000w" walkable="true" grounds="Gr0064" entities="DarksoilTemplate"/>
+    <tile id="Ti064w" walkable="true" grounds="Gr0000,Gr0001"/>
+    <tile id="Ti022w" walkable="true" grounds="Gr0064,Gr0069" entities="DarksoilTemplate"/>
+    <tile id="Ti144b" walkable="false" grounds="Gr0048,Gr0049,Gr0050"/>
+    <tile id="Ti005b" walkable="false" skins="Sk0005"/>
+    <tile id="Ti132w" walkable="true" grounds="Gr0075"/>
+    <tile id="Ti035w" walkable="true" skins="Sk0012"/>
+    <tile id="Ti067w" walkable="true" grounds="Gr0073"/>
+    <tile id="Ti004b" walkable="false" skins="Sk0006"/>
+    <tile id="Ti056w" walkable="true" grounds="Gr0074"/>
+    <tile id="Ti041w" walkable="true" skins="Sk0004"/>
+    <tile id="Ti088w" walkable="true" grounds="Gr0061,Gr0052,Gr0018,Gr0062,Gr0063"/>
+    <tile id="Ti132b" walkable="false" grounds="Gr0075"/>
+    <tile id="Ti084w" walkable="true" grounds="Gr0044,Gr0017" skins="Sk0016"/>
+    <tile id="Ti100w" walkable="true" grounds="Gr0006,Gr0007,Gr0008,Gr0009,Gr0010,Gr0011"/>
+    <tile id="Ti064b" walkable="false" grounds="Gr0000,Gr0001"/>
+    <tile id="Ti015w" walkable="true" grounds="Gr0064,Gr0067" entities="DarksoilTemplate"/>
+    <tile id="Ti017w" walkable="true" grounds="Gr0064,Gr0070" entities="DarksoilTemplate"/>
+    <tile id="Ti037w" walkable="true" skins="Sk0003"/>
+    <tile id="Ti086b" walkable="false" grounds="Gr0042,Gr0043" skins="Sk0015"/>
+    <tile id="Ti141b" walkable="false" grounds="Gr0020"/>
+    <tile id="Ti081w" walkable="true" grounds="Gr0028,Gr0029,Gr0030,Gr0031,Gr0032,Gr0033"/>
+    <tile id="Ti086w" walkable="true" grounds="Gr0042,Gr0043" skins="Sk0015"/>
+    <tile id="Ti088b" walkable="false" grounds="Gr0061,Gr0052,Gr0018,Gr0062,Gr0063"/>
+    <tile id="Ti011w" walkable="true" grounds="Gr0012" entities="PineNutSpawner"/>
+    <tile id="Ti130w" walkable="true" grounds="Gr0052"/>
+    <tile id="Ti053w" walkable="true" grounds="Gr0034"/>
+    <tile id="Ti023w" walkable="true" grounds="Gr0035" entities="DirtTemplate"/>
+    <tile id="Ti087b" walkable="false" grounds="Gr0053,Gr0054,Gr0055,Gr0056,Gr0057,Gr0058,Gr0059,Gr0060"/>
+    <tile id="Ti137b" walkable="false" grounds="Gr0076"/>
+    <tile id="Ti033w" walkable="true" skins="Sk0009"/>
+    <tile id="Ti071w" walkable="true" grounds="Gr0002"/>
+    <tile id="Ti142w" walkable="true" grounds="Gr0017"/>
+    <tile id="Ti038w" walkable="true" skins="Sk0011"/>
+    <tile id="Ti131b" walkable="false" grounds="Gr0078"/>
+    <tile id="." walkable="true"/>
+    <tile id="Ti048w" walkable="true" grounds="Gr0051"/>
+    <tile id="Ti044b" walkable="false" skins="Sk0017"/>
+    <tile id="Ti115b" walkable="false" skins="Sk0021"/>
+    <tile id="Ti039w" walkable="true" skins="Sk0010"/>
+    <tile id="Ti029w" walkable="true" grounds="Gr0035,Gr0040" entities="DirtTemplate"/>
+    <tile id="Ti042b" walkable="false" skins="Sk0001"/>
+    <tile id="Ti042w" walkable="true" skins="Sk0001"/>
+    <tile id="Ti142b" walkable="false" grounds="Gr0017"/>
+    <tile id="Ti140w" walkable="true" grounds="Gr0019"/>
+    <tile id="Ti082w" walkable="true" grounds="Gr0041" skins="Sk0014"/>
+    <tile id="Ti067b" walkable="false" grounds="Gr0073"/>
+    <tile id="Ti052b" walkable="false" grounds="Gr0077"/>
+    <tile id="Ti144w" walkable="true" grounds="Gr0048,Gr0049,Gr0050"/>
+    <tile id="Ti099w" walkable="true" grounds="Gr0021,Gr0022,Gr0023,Gr0024,Gr0025,Gr0026,Gr0027"/>
+    <tile id="Ti099b" walkable="false" grounds="Gr0021,Gr0022,Gr0023,Gr0024,Gr0025,Gr0026,Gr0027"/>
+    <tile id="Ti066w" walkable="true" grounds="Gr0018"/>
+    <tile id="Ti009w" walkable="true" entities="SpiderSilkSpawner"/>
+    <tile id="Ti038b" walkable="false" skins="Sk0011"/>
+    <tile id="Ti037b" walkable="false" skins="Sk0003"/>
+    <tile id="Ti003w" walkable="true" skins="Sk0002" entities="ExitToZone15b"/>
+    <tile id="Ti027w" walkable="true" grounds="Gr0035,Gr0045" entities="DirtTemplate"/>
+    <tile id="Ti035b" walkable="false" skins="Sk0012"/>
+    <tile id="Ti068w" walkable="true" grounds="Gr0002,Gr0003,Gr0004,Gr0005"/>
+    <tile id="Ti020w" walkable="true" grounds="Gr0064,Gr0066" entities="DarksoilTemplate"/>
+    <tile id="Ti040w" walkable="true" skins="Sk0008"/>
+    <tile id="Ti143w" walkable="true" grounds="Gr0013,Gr0014,Gr0015,Gr0016"/>
+    <tile id="Ti043w" walkable="true" skins="Sk0013"/>
+    <tile id="Ti119w" walkable="true" grounds="Gr0008"/>
+    <tile id="Ti026w" walkable="true" grounds="Gr0035,Gr0047" entities="DirtTemplate"/>
+    <tile id="Ti036w" walkable="true" skins="Sk0000"/>
+    <tile id="Ti018w" walkable="true" grounds="Gr0064,Gr0068" entities="DarksoilTemplate"/>
+    <tile id="Ti100b" walkable="false" grounds="Gr0006,Gr0007,Gr0008,Gr0009,Gr0010,Gr0011"/>
+    <tile id="x" walkable="false"/>
+    <tile id="Ti033b" walkable="false" skins="Sk0009"/>
+    <tile id="Ti056b" walkable="false" grounds="Gr0074"/>
+    <tile id="Ti087w" walkable="true" grounds="Gr0053,Gr0054,Gr0055,Gr0056,Gr0057,Gr0058,Gr0059,Gr0060"/>
+    <tile id="Ti024w" walkable="true" grounds="Gr0035,Gr0038" entities="DirtTemplate"/>
+    <tile id="Ti095b" walkable="false" skins="Sk0019"/>
+    <tile id="Ti068b" walkable="false" grounds="Gr0002,Gr0003,Gr0004,Gr0005"/>
+    <tile id="Ti096w" walkable="true" skins="Sk0022"/>
+    <tile id="Ti025w" walkable="true" grounds="Gr0035,Gr0036" entities="DirtTemplate"/>
+    <tile id="Ti032w" walkable="true" grounds="Gr0012" entities="WolfWhistleSpawner"/>
+    <tile id="Ti044w" walkable="true" skins="Sk0017"/>
+    <tile id="Ti082b" walkable="false" grounds="Gr0041" skins="Sk0014"/>
+    <tile id="Ti016w" walkable="true" grounds="Gr0064,Gr0065" entities="DarksoilTemplate"/>
+    <tile id="Ti002w" walkable="true" skins="Sk0023" entities="ExitToZone25a"/>
+    <tile id="Ti012w" walkable="true" grounds="Gr0012" entities="DarkResinSpawner"/>
+    <tile id="Ti085w" walkable="true" grounds="Gr0061" skins="Sk0020"/>
+    <tile id="Ti036b" walkable="false" skins="Sk0000"/>
+  </tiles>
+  <backgrounds>
+    <background id="b11" file="Lb001" className="Z016_1x1" left="2500" top="1510" width="2500" height="1510"/>
+    <background id="b01" file="Lb001" className="Z016_0x1" left="0" top="1510" width="2500" height="1510"/>
+    <background id="b00" file="Lb001" className="Z016_0x0" left="0" top="0" width="2500" height="1510"/>
+    <background id="b10" file="Lb001" className="Z016_1x0" left="2500" top="0" width="2500" height="1510"/>
+  </backgrounds>
+  <layout width="89" height="89">
+    <levels>
+      <level id="0">
+        <backgrounds width="2500" height="1510" rows="2" columns="2" x="860" y="-1735">
+          <backgroundRow>b00,b10</backgroundRow>
+          <backgroundRow>b01,b11</backgroundRow>
+        </backgrounds>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,Ti064w,.,Ti009w,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,Ti068w,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti068w,.,.,.,.,.,.,x,x,x,x,x,x,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti100w,.,.,.,.,.,x,x,x,x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,Ti011w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti042w,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti003w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti037w,Ti042w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti003w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti041w,.,.,.,.,.,.,.,Ti143w,Ti142w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,Ti003w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,Ti011w,Ti143w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,Ti005b,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,Ti066w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti143w,Ti143w,Ti143w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti004b,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti140w,Ti141w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti006b,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti040w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti042b,Ti140w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti041w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti099w,Ti141w,.,Ti033w,.,.,.,.,Ti039w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,Ti032w,.,.,.,Ti012w,.,.,.,.,.,.,.,.,Ti037w,.,Ti009w,.,Ti040w,.,.,.,.,.,.,.,.,.,.,.,.,Ti143w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti038w,.,.,.,.,.,.,.,.,.,Ti141w,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,.,.,.,.,Ti081w,Ti053w,.,.,.,.,.,.,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,Ti025w,Ti028w,Ti028w,Ti024w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti143w,Ti140w,Ti143w,Ti035w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,Ti043w,.,.,.,.,.,.,.,.,Ti037w,.,.,.,.,Ti030w,Ti023w,Ti023w,Ti029w,.,.,.,.,.,x,.,.,.,.,.,.,.,.,.,Ti143w,Ti140w,Ti143w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti082w,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,Ti086w,Ti084w,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti027w,Ti031w,Ti031w,Ti026w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti144w,Ti143w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,Ti068w,Ti044w,Ti084w,.,.,.,.,.,Ti039w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti012w,Ti143w,.,.,.,.,.,.,Ti033w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,Ti048w,.,Ti081w,Ti082w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti143w,Ti041w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti130w,Ti086w,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti037w,.,.,Ti039w,.,Ti038w,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,Ti041w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti033w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036b,Ti082w,Ti087w,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti033w,.,.,.,.,.,.,.,Ti088w,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti011w,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,Ti037w,.,.,.,Ti042w,.,.,.,.,.,.,.,.,.,Ti033w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti041w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti033b,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti042w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti041w,.,.,.,.,.,Ti039w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti016w,Ti020w,Ti020w,Ti015w,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,Ti082b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti037w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti018w,Ti022w,Ti022w,Ti017w,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,Ti094b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,Ti067b,Ti088b,Ti095b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti035b,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036w,.,Ti042w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti036b,.,.,.,.,.,.,Ti037w,.,.,.,.,.,.,Ti038w,.,.,.,Ti037w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,Ti082b,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti033w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti033w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,.,.,Ti068w,.,Ti064w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti099w,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,Ti038b,Ti088b,x,x,.,.,Ti130w,Ti071w,Ti067w,Ti085w,.,.,.,.,.,.,.,Ti012w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,Ti042b,x,x,x,x,x,x,x,x,.,.,.,Ti082b,.,.,.,.,.,.,.,.,.,.,.,Ti010w,.,.,Ti033b,.,.,.,.,Ti037b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,Ti088w,Ti115b,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Ti035b,.,.,.,Ti038b,.,.,Ti033b,.,.,.,.,.,.,Ti056w,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,Ti036b,x,x,x,x,x,x,.,Ti086b,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti016w,Ti015w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti018w,Ti000w,Ti015w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti018w,Ti000w,Ti015w,.,.,.,.,.,.,.,.,.,.,.,.,Ti130w,Ti132w,Ti119w,Ti088w,Ti086w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti018w,Ti017w,.,.,.,.,.,.,.,.,.,.,.,.,Ti086w,Ti064w,Ti082w,Ti087w,Ti096w,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,Ti002w,Ti002w,Ti002w,Ti002w,Ti002w,Ti100b,Ti094b,Ti064b,Ti132b,Ti137b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti052b,Ti087b,Ti082b,Ti082b,Ti037b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti131b,Ti099b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti036b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti037b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti033b,x,x,Ti035b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti033b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti037b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti142b,Ti068b,Ti144b,x,x,x,Ti056b,Ti044b,Ti071b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti141b,Ti143b,Ti144b,x,x,x,x,x,Ti099b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti144b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+      </level>
+    </levels>
+  </layout>
+</map>
