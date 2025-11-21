@@ -55,19 +55,27 @@ function getAllQuestsByStatus(phaserScene, status)
 
 function getQuestPerID(phaserScene, globalID, adventureID, questID)
 {
+    // for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
+    // {
+    //     if (phaserScene.sharedData.quest.logic.quests[i].adventuresID !== globalID) continue;
+
+    //     for (let j = 0; j < phaserScene.sharedData.quest.logic.quests[i].adventureData.length; j++)
+    //     {
+    //         if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].adventureID !== adventureID) continue;
+
+    //         for (let k = 0; k < phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData.length; k++)
+    //         {
+    //             if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData[k].questID === questID)
+    //                 return phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData[k];
+    //         }
+    //     }
+    // }
+
     for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
     {
-        if (phaserScene.sharedData.quest.logic.quests[i].adventuresID !== globalID) continue;
-
-        for (let j = 0; j < phaserScene.sharedData.quest.logic.quests[i].adventureData.length; j++)
-        {
-            if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].adventureID !== adventureID) continue;
-
-            for (let k = 0; k < phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData.length; k++)
-            {
-                if (phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData[k].questID === questID)
-                    return phaserScene.sharedData.quest.logic.quests[i].adventureData[j].questData[k];
-            }
+        console.log(phaserScene.sharedData.quest.logic.quests)
+        if (phaserScene.sharedData.quest.logic.quests[i].globalID) {
+            return phaserScene.sharedData.quest.logic.quests[i][globalID][adventureID][questID];
         }
     }
 
@@ -170,36 +178,43 @@ function debug_DrawTriggerQuest(phaserScene)
 //------- END QUEST TRIGGERS -------
 
 //------- QUEST MECHANIC -------
+// TODO : get the quests infos from somewhere
+const QUEST_DATA_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
+const QUEST_FILE_NAMES = [
+    "freeplay_v2",
+    "tutorials",
+    "collectibles",
+    "free_springfestival",
+    "intro_cottage",
+    "repeatable",
+    "sc_1",
+    "sc_6",
+    "spc1activation",
+    "gp",
+    "furniturestore"
+    //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
+]
+function preloadQuestData(phaserScene) {
+
+    QUEST_FILE_NAMES.forEach(file => {
+        phaserScene.load.xml(file, `${QUEST_DATA_FOLDER}/${file}.xml`);
+    });
+}
+
+function loadQuestData(phaserScene) {
+    phaserScene.sharedData.questData = []
+    for (let index = 0; index < QUEST_FILE_NAMES.length; index++) {
+        phaserScene.sharedData.questData.push(altParseQuestXML(phaserScene.cache.xml.get(QUEST_FILE_NAMES[index])))
+    }
+}
+
 async function initializeQuestDatas(phaserScene)
 {
     phaserScene.sharedData.quest = {};
     phaserScene.sharedData.quest.logic = 
     {
-        quests: [],
+        quests: phaserScene.sharedData.questData,
         activeQuests: []
-    }
-
-    // TODO : get the quests infos from somewhere
-    const QUEST_DATAS_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
-    const QUEST_FILES_NAMES = [
-        "freeplay_v2",
-        "tutorials",
-        "collectibles",
-        "free_springfestival",
-        "intro_cottage",
-        "repeatable",
-        "sc_1",
-        "sc_6",
-        "spc1activation",
-        "gp",
-        "furniturestore"
-        //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
-    ]
-
-    for (let i = 0; i < QUEST_FILES_NAMES.length; i++)
-    {
-        var questObj = await loadXML(QUEST_DATAS_FOLDER + QUEST_FILES_NAMES[i] + ".xml");
-        phaserScene.sharedData.quest.logic.quests.push(parseQuestXML(questObj));
     }
 
     console.log(phaserScene.sharedData.quest.logic.quests);

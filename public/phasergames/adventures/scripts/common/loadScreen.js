@@ -11,20 +11,18 @@ class Common_Load extends Phaser.Scene
     preload ()
     {
         loadLoadingUI(this);
+        preloadQuestData(this)
     }
 
     create ()
     {
         const loader = this
-        loader.data = {}
-        
-        // TESTING
-        this.scene.launch("world_canterfarm", loader.data);
+        loader.sharedData = {}
 
-        // Add a delay to make sure the ui is setup after the world loads to prevent null refs
-        this.time.delayedCall(5, () => {
-            this.scene.launch("common_ui", loader.data)
-                      .remove();
-        }, [], this); 
+        loadQuestData(this)
+        // TESTING
+        this.scene.launch("world_canterfarm", loader.sharedData)
+                  .launch("common_ui", loader.sharedData)
+                  .remove();
     }
 }

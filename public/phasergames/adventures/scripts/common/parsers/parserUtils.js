@@ -77,6 +77,99 @@ function parseZoneXML(xmlObj)
     return result;
 }
 
+
+function parseXMLNode(node, parentNodeObject, customName = "") {
+    // Ignore blank lines
+    if (node.nodeName === "#text" && !node.textContent.replace(/\s/g, "")) 
+        return
+    else if (node.nodeName === "#text") {
+        parentNodeObject.text = node.wholeText
+        return
+    }
+
+    let nodeObject = {}
+
+    // Add node attributes
+    if (node.attributes){
+        for (let index = 0; index < node.attributes.length; index++) {
+            const attribute = node.attributes[index];
+            if (attribute.name !== "id" && (node.nodeName !== "object" && attribute.name !== "type")){
+                nodeObject[attribute.name] = attribute.value
+            }
+        }
+    }
+
+    // Check child nodes
+    if (node.childNodes && node.childNodes.length > 0) {
+        node.childNodes.forEach(childNode => {
+            const textOnlyNodes = [
+                "text",
+                "zoneId",
+                "zoneName",
+                "centerX",
+                "centerY",
+                "radius",
+                "identifier",
+                "imageFileName",
+                "fileName",
+                "hspace",
+                "vspace",
+                "count"
+            ]
+            if (textOnlyNodes.includes(childNode.nodeName)) {
+                nodeObject[childNode.nodeName] = childNode.childNodes[0].wholeText
+            } else {
+                parseXMLNode(childNode, nodeObject)
+            }
+        });
+    } else {
+        if (node.nodeValue) {nodeObject = node.nodeValue}
+    }
+
+    // Determine node name
+    let nodeName
+    if (customName !== ""){
+        nodeName = customName
+    } else if (node.attributes && node.attributes["id"]) {
+        nodeName = node.attributes["id"].value
+    } else if (node.nodeName === "object" && node.attributes && node.attributes["type"]) {
+        nodeName = node.attributes.type.nodeValue
+    } else {
+        nodeName = node.nodeName
+    }
+
+    // Determine if node object should be in an array or not
+    const nonArrayNodes = [
+        "description",
+        "trigger",
+        "conditions",
+        "actions",
+        "text"
+    ]
+    const inArray = !nonArrayNodes.includes(node.nodeName) || (node.attributes && node.attributes["id"])
+    
+    // Add to parent object
+    if (inArray) {
+        if (!parentNodeObject[nodeName]) {
+            parentNodeObject[nodeName] = []
+        }
+        parentNodeObject[nodeName].push(nodeObject)
+    } else {
+        parentNodeObject[nodeName] = nodeObject
+    }
+}
+
+function altParseQuestXML(xmlObj) {
+    let result = {}
+
+
+    xmlObj.querySelectorAll("adventures").forEach(adventures => {
+        parseXMLNode(adventures, result)
+    })
+
+   return result
+}
+
 function parseQuestXML(xmlObj)
 {
     //console.log(xmlObj);
@@ -164,7 +257,7 @@ function parseQuestXML(xmlObj)
 
     // Get global file datas
     xmlObj.querySelectorAll("adventures").forEach(adventures => {
-        var globalQuestObj = 
+        var globalQuestObj =  
         {
             adventuresID : adventures.attributes[0].value,
             description : adventures.attributes[1].value,
