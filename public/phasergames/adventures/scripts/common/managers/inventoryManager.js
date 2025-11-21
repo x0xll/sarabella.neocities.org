@@ -9,6 +9,12 @@ class InventoryManager
     {
         let logicContainer = this.phaserScene.sharedData.inventory.logic;
 
+        if (logicContainer.allItems.get(itemData.id) === undefined)
+        {
+            console.log("No item created with this id!");
+            return;
+        }
+
         if (logicContainer.currentItems === undefined)
             logicContainer.currentItems = new Map();
 
@@ -21,6 +27,12 @@ class InventoryManager
     removeItem(itemData, amount)
     {
         let logicContainer = this.phaserScene.sharedData.inventory.logic;
+
+        if (logicContainer.allItems.get(itemData.id) === undefined)
+        {
+            console.log("No item created with this id!");
+            return;
+        }
 
         if (logicContainer.currentItems === undefined)
             logicContainer.currentItems = new Map();
@@ -38,6 +50,12 @@ class InventoryManager
     hasItem(itemData, amount)
     {
         let logicContainer = this.phaserScene.sharedData.inventory.logic;
+
+        if (logicContainer.allItems.get(itemData.id) === undefined)
+        {
+            console.log("No item created with this id!");
+            return;
+        }
 
         if (logicContainer.currentItems === undefined)
             logicContainer.currentItems = new Map();

@@ -43,6 +43,8 @@ class ZoneBase extends Phaser.Scene
             }
         }
 
+        game.itemDatabase.setupDatabase();
+
         initializeQuestDatas(game);
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
@@ -119,6 +121,7 @@ class ZoneBase extends Phaser.Scene
     {
         this.playerObj = new Player(this, this.playerData.xPosStart, this.playerData.yPosStart);
         this.timeManager = new TimeManager(this);    
+        this.itemDatabase = new ItemDatabase(this);
         this.inventory = new InventoryManager(this);
     }
 

@@ -43,7 +43,7 @@ class World_CanterFarm extends ZoneBase
         spaceBar.on('down', () => {
             /*
             this.sharedData.inventory.logic.manager.addItem({id: "test"}, 2);
-            this.sharedData.inventory.logic.manager.removeItem({id: "test"}, 1);
+            this.sharedData.inventory.logic.manager.removeItem({id: "test2"}, 1);
             console.log(this.sharedData.inventory.logic.manager.hasItem({id: "test"}, 5));*/
             
             //this.goToNextZone("world_canterdowns");
