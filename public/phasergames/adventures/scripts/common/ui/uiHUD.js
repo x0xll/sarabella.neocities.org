@@ -37,6 +37,8 @@ class uiHUD extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.saveButton = this.phaserScene.add.sprite(681, 565, 'saveButton', 'up').setScale(.9).setDepth(100);
         this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100);
 
+        // TODO: get from localization file
         this.phaserScene.sharedData.hud.ui.areaName = this.phaserScene.add.text(350, 10, this.phaserScene.sharedData.global.AREA_NAME, {font: "18px Arial", color: "#000000ff"}).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.saveText = this.phaserScene.add.text(665, 555, "Save", {font: "15px Arial", color: "#ffffffff"}).setDepth(100);
     }
 }
