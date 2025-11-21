@@ -44,7 +44,7 @@ class uiDialogue extends uiManagerBase
 
         // Avatars
         this.phaserScene.load.atlas(this.DIALOGUE_HUMANS_THUMBNAILS, './assets/extracted/Characters/humansthumbnail.png', './assets/extracted/Characters/humansthumbnail.json');
-        this.phaserScene.load.atlas(this.DIALOGUE_HORSES_THUMBNAILS, './assets/extracted/Characters/horsesthumbnail.png', './assets/extracted/Characters/horsesthumbnail.json');
+        this.phaserScene.load.atlas(this.DIALOGUE_HORSES_THUMBNAILS, './assets/extracted/Characters/horsesthumbnails.png', './assets/extracted/Characters/horsesthumbnails.json');
         this.phaserScene.load.atlas(this.DIALOGUE_MAGICFRIENDS_THUMBNAILS, './assets/extracted/Characters/magicfriendsthumbnails.png', './assets/extracted/Characters/magicfriendsthumbnails.json');
 
         // Continue button
