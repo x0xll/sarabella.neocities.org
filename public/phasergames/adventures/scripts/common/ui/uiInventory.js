@@ -4,6 +4,7 @@ class uiInventory extends uiManagerBase
     INVENTORY_BORDER_PANEL = "Inventory_Panel_Border";
     INVENTORY_ICON_BAG = "Inventory_Icon_Bag";
     INVENTORY_ICON_BAG_BORDER = "Inventory_Icon_Bag_Border";
+    INVENTORY_CLOSE_BUTTON = "Inventory_CloseBtn";
 
     constructor(phaserScene)
     {
@@ -24,6 +25,9 @@ class uiInventory extends uiManagerBase
 
         // Bag Border
         this.phaserScene.load.image(this.INVENTORY_ICON_BAG_BORDER, "./assets/extracted/UI/Inventory/BagBorder.png");
+
+        // Close btn
+        this.phaserScene.load.image(this.INVENTORY_CLOSE_BUTTON, "./assets/extracted/UI/Quest/closebtn.png")
 
         // TODO : Get scroll bar
         // TODO : Get tabs
@@ -49,11 +53,22 @@ class uiInventory extends uiManagerBase
                         .setOrigin(0)
                         .setScrollFactor(0);
 
+        var closeBtn = this.phaserScene.add.image(510, 105, this.INVENTORY_CLOSE_BUTTON)
+                        .setOrigin(0)
+                        .setScrollFactor(0)
+                        .setInteractive();
+
+        closeBtn.on('pointerup', (pointer) =>  
+        { 
+            this.hide();
+        });
+
         this.phaserScene.sharedData.inventory.ui.elements = {
             background: background,
             border: border,
             bagIcon: bagIcon,
-            bagBorder: bagBorder
+            bagBorder: bagBorder,
+            closeBtn: closeBtn
         };
 
         super.initialize();
@@ -77,6 +92,7 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.border.setAlpha(1);
         this.phaserScene.sharedData.inventory.ui.elements.bagIcon.setAlpha(1);
         this.phaserScene.sharedData.inventory.ui.elements.bagBorder.setAlpha(1);
+        this.phaserScene.sharedData.inventory.ui.elements.closeBtn.setAlpha(1);
 
         super.show();
     }
@@ -90,5 +106,6 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.border.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.bagIcon.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.bagBorder.setAlpha(0);
+        this.phaserScene.sharedData.inventory.ui.elements.closeBtn.setAlpha(0);
     }
 }
