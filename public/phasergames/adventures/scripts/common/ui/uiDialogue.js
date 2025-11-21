@@ -5,6 +5,7 @@ class uiDialogue extends uiManagerBase
     DIALOGUE_CONTINUE_BTN = "Dialogue_Continue_Btn";
     DIALOGUE_HUMANS_THUMBNAILS = "humansthumbnails";
     DIALOGUE_HORSES_THUMBNAILS = "horsesthumbnails";
+    DIALOGUE_MAGICFRIENDS_THUMBNAILS = "magicfriendsthumbnails";
 
     CHARA_NAME_TEXT_SETTINGS = 
     {
@@ -44,6 +45,7 @@ class uiDialogue extends uiManagerBase
         // Avatars
         this.phaserScene.load.atlas(this.DIALOGUE_HUMANS_THUMBNAILS, './assets/extracted/Characters/humansthumbnail.png', './assets/extracted/Characters/humansthumbnail.json');
         this.phaserScene.load.atlas(this.DIALOGUE_HORSES_THUMBNAILS, './assets/extracted/Characters/horsesthumbnail.png', './assets/extracted/Characters/horsesthumbnail.json');
+        this.phaserScene.load.atlas(this.DIALOGUE_MAGICFRIENDS_THUMBNAILS, './assets/extracted/Characters/magicfriendsthumbnails.png', './assets/extracted/Characters/magicfriendsthumbnails.json');
 
         // Continue button
         // TODO : Find / Recreate the correct button
@@ -132,7 +134,11 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture((character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS : this.DIALOGUE_HORSES_THUMBNAILS));
+        
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
+            (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
+             : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
+             : this.DIALOGUE_HORSES_THUMBNAILS));
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
 
         this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);

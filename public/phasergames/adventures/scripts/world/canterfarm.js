@@ -1,132 +1,41 @@
-class World_CanterFarm extends Phaser.Scene 
+class World_CanterFarm extends ZoneBase
 {
     constructor ()
     {
-        super({ key: 'world_canterfarm' });
+        super('world_canterfarm');
     }
 
     preload ()
     {
-        const game = this;
-
         // Global datas of the scene
-        game.AREA_NAME = "CanterFarms";
-        game.ZONE_ID = "Z001";
+        this.AREA_NAME = "CanterFarms";
+        this.ZONE_ID = "Z001";
 
-        // Parse the zone file
-        // TODO : See if possible to have this function be in an external file to the scene
-        // This would be used on all world scenes, while only changing the zone file url
-        async function loadZoneFromXMLDatas()
+        // TODO: may need to set pos in create based on sharedData to know which entry of the scene we are on
+        this.playerData = 
         {
-            // TODO
-            // Temporarily using a modified zone test file because some tiles seems to be able to have multiple grounds and/or skins..
-            // We will need to understand how those are supposed to work before being able to reuse the original file
-            const ZONE_XML_NAME = ZONE_XML_PATH + game.ZONE_ID + ".xml"; 
-            var zoneObj = await loadXML(ZONE_XML_NAME);
-            game.zoneParsed = parseZoneXML(zoneObj);
-        }
+            xPosStart: 17,
+            yPosStart: 3
+        };
 
-        // TODO : Load entities (npcs, player, plants, etc.)
-        game.playerObj = new Player(game, 17, 3);
-        game.timeManager = new TimeManager(game);
-
-        game.load.image("BG1", `./assets/extracted/Backgrounds/Z001_0x0.jpg`)
-        game.load.image("BG2", `./assets/extracted/Backgrounds/Z001_1x0.jpg`)
+        this.loadBackgrounds(2, 1);
 
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
         this.load.spineJson("canterfarmsmainJSON", `./assets/newTiles/canterfarmsmain.json`);
         this.load.spineAtlas("Ti021bAtlas", `./assets/newTiles/Ti021b.atlas`);
         this.load.spineJson("Ti021bJSON", `./assets/newTiles/Ti021b.json`);
 
-        loadZoneFromXMLDatas();
+        super.preload();
     }
 
     create (sharedData)
     {
-        const game = this;
-        game.sharedData = sharedData
-        game.tileWidth = 80
-        game.xOffset = -320
-        game.yOffset = 865
-        game.tiles = []
-        game.timeManager.startClock()
-        game.sharedData.global = 
-        {
-            AREA_NAME: game.AREA_NAME,
-            ZONE_ID: game.ZONE_ID
-        }
-
-        // TODO: handle through save data
-        game.sharedData.magicTree = {};
-        game.sharedData.magicTree.logic = 
-        {
-            level: 0
-        };
-
-        initializeQuestDatas(game);
-
-        // Adding BG as reference
-            game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000),
-            game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000)
-        game.backgrounds = [
-            game.add.image(0, 0, 'BG1').setOrigin(0, 0).setDepth(-1000).setAlpha(.75),
-            game.add.image(1500, 0, 'BG2').setOrigin(0, 0).setDepth(-1000).setAlpha(.75)
-        ]
-
-        // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
-        function instantiateWorld()
-        {            
-            instantiateZoneWorld();
-
-            // TODO : Instantiate entities (player, npcs, plants)
-            game.playerObj.instantiatePlayerSprites();
-        }
-
-        // Instantiation the images from the parsed zone xml
-        function instantiateZoneWorld()
-        {            
-            game.tiles = {}
-
-            // Column
-            for (var y = 0; y < game.zoneParsed[0].length; y++)
-            {
-                game.tiles[y] = {}
-                // Row
-                for (var x = 0; x < game.zoneParsed[0][y].length; x++)
-                {
-                    var cellValue = game.zoneParsed[0][y][x];
-
-                    // We get the actual visual id
-                    if (game.zoneParsed[1][cellValue] === undefined)
-                    {
-                        console.error("Tile isn't defined: " + cellValue);
-                        continue;
-                    }
-                    let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, `${game.zoneParsed[1][cellValue].file}JSON`, `${game.zoneParsed[1][cellValue].file}Atlas`);
-                    
-                    game.timeManager.setTile(tile, cellValue)
-                    
-                    tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
-
-                    tile.data = game.zoneParsed[1][cellValue]
-                    game.tiles[y][x] = tile
-                }
-            }
-        }
-        
-        // TODO : Create the isometric grid
-        instantiateWorld();
-        game.playerObj.move();
-        game.timeManager.renderDayNight()
+        this.instantiateBackgrounds(2, 1, 1500, 0);
+        super.create(sharedData);
     }
 
     update() 
     {
-        const game = this;
-
-        game.playerObj.updatePlayer();
-        game.timeManager.updateTime();
-
-        //debug_DrawTriggerQuest(game);
+        super.update();
     }
 }
