@@ -27,11 +27,14 @@ class ZoneBase extends Phaser.Scene
         }
 
         // TODO: handle through save data
-        game.sharedData.magicTree = {};
-        game.sharedData.magicTree.logic = 
+        game.sharedData.magicTree = 
         {
-            level: 0
-        };
+            logic: 
+            {
+                level: 0
+            }
+        }
+
         game.sharedData.inventory = 
         {
             logic:
