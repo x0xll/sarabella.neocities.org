@@ -1,5 +1,8 @@
 class ItemDatabase
 {
+    // TODO: do we go throguh a xml parsing or not for the items? Setup as if no for current testing purposes
+    // If we go the parsing route, the file seems to be inventory.xml
+
     constructor (phaserScene)
     {
         this.phaserScene = phaserScene;
