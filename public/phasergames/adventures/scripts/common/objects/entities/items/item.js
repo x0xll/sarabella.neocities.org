@@ -9,6 +9,16 @@ const ITEM_TYPES =
     PRODUCE: 5
 }
 
+const CLOTHE_TYPES = 
+{
+    DYE: -1,
+    HAIR: 0,
+    TSHIRT: 1,
+    PANTS: 2,
+    SHOES: 3,
+    ACCESORY: 4
+}
+
 class Item
 {
     constructor(id, type)

@@ -43,8 +43,9 @@ class ItemDatabase
         for (let i = 1; i <= maxClothes; i++)
         {
             // TODO: Get id data from swf
-            let id = "P0" + ((i < 10) ? "0" + i : i);
+            let id = "IS" + ((i < 10) ? "0" + i : i); // need to handle variants (a, b, etc.)
             let item = new Item(id, ITEM_TYPES.CLOTHES);
+            // TODO : set the clothes type
             this.phaserScene.sharedData.inventory.logic.allItems.set(item.id, item);
         } 
     }
@@ -55,7 +56,7 @@ class ItemDatabase
 
         for (let i = 1; i <= maxPlants; i++)
         {
-            let id = "S0" + ((i < 10) ? "0" + i : i);
+            let id = "S0" + ((i < 10) ? "0" + i : i) + "_Seed";
             let item = new Item(id, ITEM_TYPES.PLANT);
             this.phaserScene.sharedData.inventory.logic.allItems.set(item.id, item);
         } 
@@ -67,8 +68,7 @@ class ItemDatabase
 
         for (let i = 1; i <= maxPlaceable; i++)
         {
-            // TODO: Get id data from swf
-            let id = "P0" + ((i < 10) ? "0" + i : i);
+            let id = "IHH0" + ((i < 10) ? "0" + i : i); // TODO: handle promo stuffs ("PROMO")
             let item = new Item(id, ITEM_TYPES.PLACEABLE);
             this.phaserScene.sharedData.inventory.logic.allItems.set(item.id, item);
         } 
@@ -80,8 +80,7 @@ class ItemDatabase
 
         for (let i = 1; i <= maxCards; i++)
         {
-            // TODO: Get id data from swf
-            let id = "P0" + ((i < 10) ? "0" + i : i);
+            let id = "IEC0" + ((i < 10) ? "0" + i : i);
             let item = new Item(id, ITEM_TYPES.CARDS);
             this.phaserScene.sharedData.inventory.logic.allItems.set(item.id, item);
         } 
