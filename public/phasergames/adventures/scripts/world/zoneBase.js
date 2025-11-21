@@ -130,8 +130,8 @@ class ZoneBase extends Phaser.Scene
         {
             for (let y = 0; y < ySize; y++)
             {
-                this.add.image(0, 0, `BG${x}${y}`).setOrigin(xOffset * x, yOffset * y).setDepth(-1000);
-                let bg = this.add.image(0, 0, `BG${x}${y}`).setOrigin(xOffset * x, yOffset * y).setDepth(-1000).setAlpha(.75);
+                this.add.image(xOffset * x, yOffset * y, `BG${x}${y}`).setOrigin(0, 0).setDepth(-1000);
+                let bg = this.add.image(xOffset * x, yOffset * y, `BG${x}${y}`).setOrigin(0, 0).setDepth(-1000).setAlpha(.75);
                 this.backgrounds.push(bg);
             }
         }
