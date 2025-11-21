@@ -32,6 +32,13 @@ class ZoneBase extends Phaser.Scene
         {
             level: 0
         };
+        game.sharedData.inventory = 
+        {
+            logic:
+            {
+                manager: game.inventory
+            }
+        }
 
         initializeQuestDatas(game);
 
@@ -109,6 +116,7 @@ class ZoneBase extends Phaser.Scene
     {
         this.playerObj = new Player(this, this.playerData.xPosStart, this.playerData.yPosStart);
         this.timeManager = new TimeManager(this);    
+        this.inventory = new InventoryManager(this);
     }
 
     loadBackgrounds(xSize, ySize)

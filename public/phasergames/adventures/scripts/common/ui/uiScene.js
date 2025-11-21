@@ -45,7 +45,6 @@ class Common_UI extends Phaser.Scene
 
         function handleInventory()
         {
-            UI.sharedData.inventory = {};
             UI.sharedData.inventory.ui = {};
             UI.sharedData.inventory.ui.manager = UI.inventoryUI;
             UI.inventoryUI = undefined;
