@@ -32,7 +32,7 @@ class uiHUD extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.inventoryButton = this.phaserScene.add.sprite(400, 549, 'inventoryButton', 'up').setScale(.75).setInteractive().setDepth(100);
         this.phaserScene.sharedData.hud.ui.journalButton = this.phaserScene.add.sprite(463, 549, 'journalButton', 'up').setScale(.75).setInteractive().setDepth(100);
         this.phaserScene.sharedData.hud.ui.skillProgressButton = this.phaserScene.add.sprite(526, 550, 'skillProgressButton').setScale(.6).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.levelIndicator = this.phaserScene.add.sprite(519, 552, 'levelIndicator', '0').setScale(.75).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.levelIndicator = this.phaserScene.add.sprite(519, 552, 'levelIndicator', this.phaserScene.sharedData.magicTree.logic.level.toString()).setScale(.75).setDepth(100);
 
         this.phaserScene.sharedData.hud.ui.saveButton = this.phaserScene.add.sprite(681, 565, 'saveButton', 'up').setScale(.9).setDepth(100);
         this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100);
