@@ -127,22 +127,28 @@ class ZoneBase extends Phaser.Scene
 
     loadBackgrounds(xSize, ySize)
     {
-        for (let x = 0; x < xSize; x++)
+        this.backgroundSize = 
         {
-            for (let y = 0; y < ySize; y++)
+            width: xSize,
+            height: ySize
+        }
+
+        for (let x = 0; x < this.backgroundSize.width; x++)
+        {
+            for (let y = 0; y < this.backgroundSize.height; y++)
             {
                 this.load.image(`BG${x}${y}`, `./assets/extracted/Backgrounds/${this.ZONE_ID}_${x}x${y}.jpg`)
             }
         }
     }
 
-    instantiateBackgrounds(xSize, ySize, xOffset, yOffset)
+    instantiateBackgrounds(xOffset, yOffset)
     {
         this.backgrounds = [];
 
-        for (let x = 0; x < xSize; x++)
+        for (let x = 0; x < this.backgroundSize.width; x++)
         {
-            for (let y = 0; y < ySize; y++)
+            for (let y = 0; y < this.backgroundSize.height; y++)
             {
                 this.add.image(xOffset * x, yOffset * y, `BG${x}${y}`).setOrigin(0, 0).setDepth(-1000);
                 let bg = this.add.image(xOffset * x, yOffset * y, `BG${x}${y}`).setOrigin(0, 0).setDepth(-1000).setAlpha(.75);

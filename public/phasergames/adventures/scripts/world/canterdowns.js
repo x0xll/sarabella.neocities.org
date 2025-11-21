@@ -25,7 +25,7 @@ class World_CanterDowns extends ZoneBase
 
     create (sharedData)
     {
-        this.instantiateBackgrounds(2, 2, 1500, 1500);
+        this.instantiateBackgrounds(1500, 1500);
         super.create(sharedData);
     }
 

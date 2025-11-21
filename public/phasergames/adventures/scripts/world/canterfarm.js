@@ -30,7 +30,7 @@ class World_CanterFarm extends ZoneBase
 
     create (sharedData)
     {
-        this.instantiateBackgrounds(2, 1, 1500, 0);
+        this.instantiateBackgrounds(1500, 0);
         super.create(sharedData);
     }
 
@@ -46,7 +46,7 @@ class World_CanterFarm extends ZoneBase
             this.sharedData.inventory.logic.manager.removeItem({id: "test2"}, 1);
             console.log(this.sharedData.inventory.logic.manager.hasItem({id: "test"}, 5));*/
             
-            //this.goToNextZone("world_canterdowns");
+            this.goToNextZone("world_canterdowns");
         });
     }
 }
