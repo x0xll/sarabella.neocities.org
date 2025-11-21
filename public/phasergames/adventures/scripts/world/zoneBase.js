@@ -64,13 +64,14 @@ class ZoneBase extends Phaser.Scene
                         console.error("Tile isn't defined: " + cellValue);
                         continue;
                     }
+                    
                     let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, `${game.zoneParsed[1][cellValue].file}JSON`, `${game.zoneParsed[1][cellValue].file}Atlas`);
                     
                     game.timeManager.setTile(tile, cellValue)
                     
                     tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
 
-                    tile.data = game.zoneParsed[1][cellValue]
+                    tile.parsedData = game.zoneParsed[1][cellValue]
                     game.tiles[y][x] = tile
                 }
             }
@@ -91,7 +92,6 @@ class ZoneBase extends Phaser.Scene
 
         //debug_DrawTriggerQuest(game);
     }
-
     
     // Parse the zone file
     async loadZoneFromXMLData(zoneID)
@@ -135,5 +135,11 @@ class ZoneBase extends Phaser.Scene
                 this.backgrounds.push(bg);
             }
         }
+    }
+
+    goToNextZone(sceneKey)
+    {
+        this.sharedData.worldToLoad = sceneKey;
+        this.scene.start("common_load", this.sharedData);
     }
 }

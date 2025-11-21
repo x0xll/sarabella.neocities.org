@@ -37,5 +37,11 @@ class World_CanterFarm extends ZoneBase
     update() 
     {
         super.update();
+
+        // TEST
+        var spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        spaceBar.on('down', () => {
+            this.goToNextZone("world_canterdowns");
+        });
     }
 }

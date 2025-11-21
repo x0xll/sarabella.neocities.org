@@ -73,8 +73,8 @@
         for (var y = 0; y < this.height; y++) {
             for (var x = 0; x < this.width; x++) {
                 this.spaces[x][y] = {}
-                this.spaces[x][y].name = this.mapData[y][x].data.id
-                this.spaces[x][y].walkable = this.mapData[y][x].data.walkable
+                this.spaces[x][y].name = this.mapData[y][x].parsedData.id
+                this.spaces[x][y].walkable = this.mapData[y][x].parsedData.walkable
                 this.spaces[x][y].F = 0
                 this.spaces[x][y].G = 0
                 this.spaces[x][y].ParentX = null

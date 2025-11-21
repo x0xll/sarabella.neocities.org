@@ -83,7 +83,7 @@ class TimeManager
                 for (var x = 0; x < Object.keys(this.phaserScene.tiles[y][x]).length; x++)
                 {
                     let tile = this.phaserScene.tiles[y][x]
-                    var cellValue = this.phaserScene.tiles[y][x].data.id;
+                    var cellValue = this.phaserScene.tiles[y][x].parsedData.id;
                     this.setTile(tile, cellValue)
                 }
             }

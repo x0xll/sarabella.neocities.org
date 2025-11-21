@@ -67,7 +67,7 @@ class Player
             gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
 
             // Check if position is valid
-            if((0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length) && (0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length) && (zoneTiles[gridTarget.y][gridTarget.x].data.walkable === 'true')){
+            if((0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length) && (0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length) && (zoneTiles[gridTarget.y][gridTarget.x].parsedData.walkable === 'true')){
                 // Move cursor to target position
                 let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y+1))
                 const polygon = [
