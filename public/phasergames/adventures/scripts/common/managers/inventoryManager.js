@@ -66,4 +66,32 @@ class InventoryManager
 
         return currentAmount >= amount;
     }
+
+    getItemPerType(type)
+    {
+        let logicContainer = this.phaserScene.sharedData.inventory.logic.currentItems;
+        let items = [];
+
+        if (logicContainer === undefined)
+            return items;
+
+        for (let i = 0; i < logicContainer.size; i++)
+        {
+            let allItems = this.phaserScene.sharedData.inventory.logic.allItems;
+            let data = this.phaserScene.sharedData.inventory.logic.allItems.get(allItems.keySet()[i]);
+            if (data !== undefined && data.type == type)
+            {
+                let slotData = 
+                {
+                    id: data.id,
+                    type: data.type,
+                    amount: logicContainer[i]
+                }
+
+                items.push(slotData);
+            }
+        }
+
+        return items;
+    }
 }

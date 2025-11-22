@@ -55,11 +55,11 @@ class ItemDatabase
 
     #setupPlants()
     {
-        let maxPlants = 60;
+        let maxPlants = 1;
 
         for (let i = 1; i <= maxPlants; i++)
         {
-            let id = "S0" + ((i < 10) ? "0" + i : i) + "_Seed";
+            let id = "P0" + ((i < 10) ? "0" + i : i) + "_Seed";
             let item = new Item(id, ITEM_TYPES.PLANT);
             this.phaserScene.sharedData.inventory.logic.allItems.set(item.id, item);
         } 
@@ -91,11 +91,11 @@ class ItemDatabase
 
     #setupProduce()
     {
-        let maxProduce = 60;
+        let maxProduce = 1;
 
         for (let i = 1; i <= maxProduce; i++)
         {
-            let id = "P0" + ((i < 10) ? "0" + i : i);
+            let id = "P0" + ((i < 10) ? "0" + i : i) + "_Produce";
             let item = new Item(id, ITEM_TYPES.PRODUCE);
             this.phaserScene.sharedData.inventory.logic.allItems.set(item.id, item);
         }

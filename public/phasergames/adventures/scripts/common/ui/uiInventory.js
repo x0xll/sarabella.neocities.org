@@ -4,12 +4,25 @@ class uiInventory extends uiManagerBase
     INVENTORY_BORDER_PANEL = "Inventory_Panel_Border";
     INVENTORY_CLOSE_BUTTON = "Inventory_CloseBtn";
     INVENTORY_TAB_BACKGROUND = "Inventory_Tabs";
-    INVENTORY_BTN_SPECIAL = "Inventory_SpecialBtn"
-    INVENTORY_BTN_CLOTHES = "Inventory_ClothesBtn"
-    INVENTORY_BTN_PLANT = "Inventory_PlantBtn"
-    INVENTORY_BTN_PLACEABLE = "Inventory_PlaceableBtn"
-    INVENTORY_BTN_CARDS = "Inventory_CardsBtn"
-    INVENTORY_BTN_PRODUCE = "Inventory_ProduceBtn"
+    INVENTORY_BTN_SPECIAL = "Inventory_SpecialBtn";
+    INVENTORY_BTN_CLOTHES = "Inventory_ClothesBtn";
+    INVENTORY_BTN_PLANT = "Inventory_PlantBtn";
+    INVENTORY_BTN_PLACEABLE = "Inventory_PlaceableBtn";
+    INVENTORY_BTN_CARDS = "Inventory_CardsBtn";
+    INVENTORY_BTN_PRODUCE = "Inventory_ProduceBtn";
+    INVENTORY_SLOT = "Inventory_Slot";
+
+    INVENTORY_SLOT_SIZE = 
+    {
+        xStart: 0,
+        yStart: 0,
+        xOffset: 52,
+        yOffset: 52,
+        width: 4,
+        height: 3
+    }
+
+    #currentTab = ITEM_TYPES.SPECIAL;
 
     constructor(phaserScene)
     {
@@ -40,9 +53,16 @@ class uiInventory extends uiManagerBase
         this.phaserScene.load.image(this.INVENTORY_BTN_CARDS, "./assets/extracted/UI/Inventory/CardsButton/1.png");
         this.phaserScene.load.image(this.INVENTORY_BTN_PRODUCE, "./assets/extracted/UI/Inventory/ProduceButton/1.png");
 
+        // Slot
+        this.phaserScene.load.image(this.INVENTORY_SLOT, "./assets/extracted/UI/Inventory/ItemSlot/ItemSlot.png");
+
         // TODO : Get scroll bar
         // TODO : Get horseshoes bottom section
-        // TODO : Get item slot background
+
+
+        // TEST ITEM
+        this.phaserScene.load.image("TEST_P001_Produce", "./assets/extracted/Items/Produce/P001_Produce.png");
+        this.phaserScene.load.image("TEST_P001_Seed", "./assets/extracted/Items/Seeds/P001_Seed.png");
     }
 
     initialize()
@@ -65,32 +85,92 @@ class uiInventory extends uiManagerBase
         var specialBtn = this.phaserScene.add.image(220, 155, this.INVENTORY_BTN_SPECIAL)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setScale(0.95);
+                        .setScale(0.95)
+                        .setInteractive();
+
+        specialBtn.on('pointerup', (pointer) =>  
+        { 
+            this.changeTab(ITEM_TYPES.SPECIAL);
+        });
 
         var clothesBtn = this.phaserScene.add.image(228, 195, this.INVENTORY_BTN_CLOTHES)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setScale(0.95);
+                        .setScale(0.95)
+                        .setInteractive();
+
+        clothesBtn.on('pointerup', (pointer) =>  
+        { 
+            this.changeTab(ITEM_TYPES.CLOTHES);
+        });
 
         var plantBtn = this.phaserScene.add.image(225, 235, this.INVENTORY_BTN_PLANT)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setScale(0.95);
+                        .setScale(0.95)
+                        .setInteractive();
+
+        plantBtn.on('pointerup', (pointer) =>  
+        { 
+            this.changeTab(ITEM_TYPES.PLANT);
+        });
 
         var placeableBtn = this.phaserScene.add.image(220, 275, this.INVENTORY_BTN_PLACEABLE)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setScale(0.95);
+                        .setScale(0.95)
+                        .setInteractive();
+
+        placeableBtn.on('pointerup', (pointer) =>  
+        { 
+            this.changeTab(ITEM_TYPES.PLACEABLE);
+        });       
 
         var cardsBtn = this.phaserScene.add.image(220, 315, this.INVENTORY_BTN_CARDS)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setScale(0.95);
+                        .setScale(0.95)
+                        .setInteractive();
+
+        cardsBtn.on('pointerup', (pointer) =>  
+        { 
+            this.changeTab(ITEM_TYPES.CARDS);
+        });
 
         var produceBtn = this.phaserScene.add.image(220, 355, this.INVENTORY_BTN_PRODUCE)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setScale(0.95);
+                        .setScale(0.95)
+                        .setInteractive();
+
+        produceBtn.on('pointerup', (pointer) =>  
+        { 
+            this.changeTab(ITEM_TYPES.PRODUCE);
+        });
+
+        // TODO: Handle scrolling
+        var slotList = [];
+        for (let x = this.INVENTORY_SLOT_SIZE.xStart; x < this.INVENTORY_SLOT_SIZE.width; x++)
+        {
+            for (let y = this.INVENTORY_SLOT_SIZE.yStart; y < this.INVENTORY_SLOT_SIZE.height; y++)
+            {
+                var slot = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_BTN_PRODUCE)
+                            .setOrigin(0)
+                            .setScrollFactor(0);
+
+                var slotIcon = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_BTN_PRODUCE)
+                                .setOrigin(0)
+                                .setScrollFactor(0);
+
+                let slotData = 
+                {
+                    bg: slot,
+                    icon: slotIcon
+                }
+
+                slotList.push(slotData);
+            }
+        }
 
         var closeBtn = this.phaserScene.add.image(510, 105, this.INVENTORY_CLOSE_BUTTON)
                         .setOrigin(0)
@@ -112,7 +192,8 @@ class uiInventory extends uiManagerBase
             plantBtn: plantBtn,
             placeableBtn: placeableBtn,
             cardsBtn: cardsBtn,
-            produceBtn: produceBtn
+            produceBtn: produceBtn,
+            slots: slotList
         };
 
         super.initialize();
@@ -143,6 +224,8 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.cardsBtn.setAlpha(1);
         this.phaserScene.sharedData.inventory.ui.elements.produceBtn.setAlpha(1);
 
+        this.updateSlots();
+
         super.show();
     }
 
@@ -161,5 +244,36 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.placeableBtn.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.cardsBtn.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.produceBtn.setAlpha(0);
+
+        for (let i = 0; i < this.phaserScene.sharedData.inventory.ui.elements.slots.length; i++)
+        {
+            this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(0);
+            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(0);
+        }
+    }
+
+    changeTab(newType)
+    {
+        this.#currentTab = newType;
+        this.updateSlots();
+    }
+
+    updateSlots()
+    {
+        let allItems = this.phaserScene.sharedData.inventory.logic.manager.getItemPerType(this.#currentTab);
+
+        for (let i = 0; i < this.phaserScene.sharedData.inventory.ui.elements.slots.length; i++)
+        {
+            if (i >= allItems.length)
+            {
+                this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(0);
+                this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(0);
+                return;
+            }
+
+            this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(1);
+            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(1);
+            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setTexture("TEST_" + this.phaserScene.sharedData.inventory.logic.currentItems[i].id);
+        }
     }
 }
