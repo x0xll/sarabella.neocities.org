@@ -103,21 +103,12 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
     if (node.childNodes && node.childNodes.length > 0) {
         node.childNodes.forEach(childNode => {
             const textOnlyNodes = [
-                "text",
-                "zoneId",
-                "zoneName",
-                "centerX",
-                "centerY",
-                "radius",
-                "identifier",
-                "imageFileName",
-                "fileName",
-                "hspace",
-                "vspace",
-                "count"
+                "text"
             ]
-            if (textOnlyNodes.includes(childNode.nodeName)) {
-                nodeObject[childNode.nodeName] = childNode.childNodes[0].wholeText
+            if (textOnlyNodes.includes(childNode.nodeName) || node.nodeName === "object") {
+                if (childNode.childNodes && childNode.childNodes.length > 0) {
+                    nodeObject[childNode.nodeName] = childNode.childNodes[0].wholeText
+                }
             } else {
                 parseXMLNode(childNode, nodeObject)
             }
@@ -133,7 +124,7 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
     } else if (node.attributes && node.attributes["id"]) {
         nodeName = node.attributes["id"].value
     } else if (node.nodeName === "object" && node.attributes && node.attributes["type"]) {
-        nodeName = node.attributes.type.nodeValue
+        nodeName = node.attributes.type.nodeValue.replace("questData.", "")
     } else {
         nodeName = node.nodeName
     }
@@ -146,7 +137,7 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
         "actions",
         "text"
     ]
-    const inArray = !nonArrayNodes.includes(node.nodeName) || (node.attributes && node.attributes["id"])
+    const inArray = !(nonArrayNodes.includes(node.nodeName) || (node.attributes && node.attributes["id"]))
     
     // Add to parent object
     if (inArray) {
