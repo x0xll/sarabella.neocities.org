@@ -1,0 +1,184 @@
+{
+"skeleton": {
+	"hash": "vUPB9Xmiou0",
+	"spine": "4.2.43",
+	"x": -35.5,
+	"y": -15.5,
+	"width": 71,
+	"height": 31,
+	"images": "../GitHub/SinGala/BeSa/sarabella.neocities.org/public/phasergames/adventures/assets/extracted/Tilemaps/CastleTown/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Underlay2", "bone": "root", "attachment": "Overlay", "visible": false },
+	{ "name": "Underlay2_night", "bone": "root", "attachment": "Overlay", "visible": false },
+	{ "name": "Underlay", "bone": "root", "attachment": "Underlay", "visible": false },
+	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay", "visible": false },
+	{ "name": "Main", "bone": "root", "attachment": "Main" },
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
+	{ "name": "Overlay", "bone": "root", "attachment": "Overlay", "visible": false },
+	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay", "visible": false }
+],
+"skins": [
+	{
+		"name": "T007a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007a/1", "width": 72, "height": 37 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007a/1", "width": 72, "height": 37 }
+			}
+		}
+	},
+	{
+		"name": "T0007b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007b/1", "width": 49, "height": 30 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007b/1", "width": 49, "height": 30 }
+			}
+		}
+	},
+	{
+		"name": "T0007c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007c/1", "width": 37, "height": 25 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007c/1", "width": 37, "height": 25 }
+			}
+		}
+	},
+	{
+		"name": "T0007d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007d/1", "width": 19, "height": 14 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007d/1", "width": 19, "height": 14 }
+			}
+		}
+	},
+	{
+		"name": "T0007e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007e/1", "width": 43, "height": 18 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007e/1", "width": 43, "height": 18 }
+			}
+		}
+	},
+	{
+		"name": "T0007f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007f/1", "width": 76, "height": 28 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007f/1", "width": 76, "height": 28 }
+			}
+		}
+	},
+	{
+		"name": "T0007g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007g/1", "width": 71, "height": 31 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007g/1", "width": 71, "height": 31 }
+			}
+		}
+	},
+	{
+		"name": "T0007h",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007h/1", "width": 66, "height": 34 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007h/1", "width": 66, "height": 34 }
+			}
+		}
+	},
+	{
+		"name": "T0007i",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007i/1", "width": 64, "height": 21 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007i/1", "width": 64, "height": 21 }
+			}
+		}
+	},
+	{
+		"name": "T0007j",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007j/1", "width": 29, "height": 16 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007j/1", "width": 29, "height": 16 }
+			}
+		}
+	},
+	{
+		"name": "T0007k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007k/1", "width": 42, "height": 21 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007k/1", "width": 42, "height": 21 }
+			}
+		}
+	},
+	{
+		"name": "T0007l",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007l/1", "width": 38, "height": 16 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007l/1", "width": 38, "height": 16 }
+			}
+		}
+	},
+	{
+		"name": "T0007m",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007m/1", "width": 33, "height": 36 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007m/1", "width": 33, "height": 36 }
+			}
+		}
+	},
+	{
+		"name": "T0007n",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0007n/1", "width": 52, "height": 29 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0007n/1", "width": 52, "height": 29 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
