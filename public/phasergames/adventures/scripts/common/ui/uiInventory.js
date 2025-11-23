@@ -14,8 +14,8 @@ class uiInventory extends uiManagerBase
 
     INVENTORY_SLOT_SIZE = 
     {
-        xStart: 10,
-        yStart: 10,
+        xStart: 300 ,
+        yStart: 170,
         xOffset: 52,
         yOffset: 52,
         width: 4,
@@ -150,17 +150,18 @@ class uiInventory extends uiManagerBase
 
         // TODO: Handle scrolling
         var slotList = [];
-        for (let x = this.INVENTORY_SLOT_SIZE.xStart; x < this.INVENTORY_SLOT_SIZE.width; x++)
+        for (let x = 0; x < this.INVENTORY_SLOT_SIZE.width; x++)
         {
-            for (let y = this.INVENTORY_SLOT_SIZE.yStart; y < this.INVENTORY_SLOT_SIZE.height; y++)
+            for (let y = 0; y < this.INVENTORY_SLOT_SIZE.height; y++)
             {
-                var slot = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_SLOT)
+                var slot = this.phaserScene.add.image(this.INVENTORY_SLOT_SIZE.xStart + x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yStart + y * this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_SLOT)
                             .setOrigin(0)
                             .setScrollFactor(0);
 
-                var slotIcon = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_SLOT)
+                var slotIcon = this.phaserScene.add.image(this.INVENTORY_SLOT_SIZE.xStart + x * this.INVENTORY_SLOT_SIZE.xOffset + 8, this.INVENTORY_SLOT_SIZE.yStart + y * this.INVENTORY_SLOT_SIZE.yOffset + 8, this.INVENTORY_SLOT)
                                 .setOrigin(0)
-                                .setScrollFactor(0);
+                                .setScrollFactor(0)
+                                .setScale(.5);
 
                 let slotData = 
                 {
@@ -273,7 +274,7 @@ class uiInventory extends uiManagerBase
 
             this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(1);
             this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(1);
-            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setTexture("TEST_" + this.phaserScene.sharedData.inventory.logic.currentItems[i].id);
+            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setTexture("TEST_" + allItems[i].id);
         }
     }
 }
