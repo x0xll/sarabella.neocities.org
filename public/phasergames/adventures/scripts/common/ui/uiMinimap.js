@@ -3,6 +3,7 @@ class uiMinimap extends uiManagerBase
     MINIMAP_BORDER = "minimapborder";
     MINIMAP_ICON = "minimapicon";
     MINIMAP_CLOSE_BTN = "minimapclose";
+    MINIMAP_ZOOM_ICON = "minimapZoom";
     MINIMAP_IMG = "minimap_";
     ZONE_NAMES = [
         "Z001",
@@ -17,6 +18,8 @@ class uiMinimap extends uiManagerBase
         "Z026"
     ]
 
+    #isFullMap = false;
+
     constructor(phaserScene)
     {
         super(phaserScene);
@@ -24,18 +27,23 @@ class uiMinimap extends uiManagerBase
 
     load()
     {
-        // Main border
+        // Zone map
         for (let i = 0; i < this.ZONE_NAMES.length; i++)
         {
             this.phaserScene.load.image(this.MINIMAP_IMG + this.ZONE_NAMES[i], "./assets/extracted/MiniMap/" + this.ZONE_NAMES[i] + ".png");
         }
 
+        // Full map
+        this.phaserScene.load.image(this.MINIMAP_IMG + "_Full", "./assets/extracted/UI/Map/MapPanel.png");
+
         // Main border
         this.phaserScene.load.image(this.MINIMAP_BORDER, "./assets/extracted/UI/Magic Tree/MT_Border.png");
+
+        // Zoom
+        this.phaserScene.load.image(this.MINIMAP_ZOOM_ICON, "./assets/extracted/UI/Map/Map_ZoomIcon/1.png");
         
-        // TODO: Change for correct map one
         // Icon
-        this.phaserScene.load.image(this.MINIMAP_ICON, "./assets/extracted/UI/Magic Tree/MT_Icon.png");
+        this.phaserScene.load.image(this.MINIMAP_ICON, "./assets/extracted/UI/Map/MapIcon.png");
 
         // Close btn
         this.phaserScene.load.image(this.MINIMAP_CLOSE_BTN, "./assets/extracted/UI/Quest/closebtn.png")
@@ -44,6 +52,10 @@ class uiMinimap extends uiManagerBase
     initialize()
     {
         var map = this.phaserScene.add.image(100, 70, this.MINIMAP_IMG + 0)
+                    .setOrigin(0)
+                    .setScrollFactor(0);
+
+        var mapFull = this.phaserScene.add.image(70, 40, this.MINIMAP_IMG + "_Full")
                     .setOrigin(0)
                     .setScrollFactor(0);
 
@@ -61,14 +73,36 @@ class uiMinimap extends uiManagerBase
                         .setScrollFactor(0)
                         .setInteractive();
 
+        var icon = this.phaserScene.add.image(110, 430, this.MINIMAP_ZOOM_ICON)
+                    .setOrigin(0)
+                    .setScrollFactor(0)
+                    .setInteractive();
+
         closeBtn.on('pointerup', (pointer) =>  
         { 
             this.hide();
         });
 
+        icon.on('pointerup', (pointer) => 
+        {
+            this.#isFullMap = !this.#isFullMap;
+            if (!this.#isFullMap)
+            {
+                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
+            }
+            else
+            {
+                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(1);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(0);
+            }
+        });
+
         this.phaserScene.sharedData.minimap.ui.elements = 
         {
             map: map,
+            mapFull: mapFull,
             border: border,
             icon: icon,
             closeBtn: closeBtn
@@ -94,6 +128,7 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.minimap.ui.open = true;
         this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
+        this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
@@ -110,5 +145,6 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(0);
+        this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
     }
 }
