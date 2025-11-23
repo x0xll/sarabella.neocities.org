@@ -13,11 +13,12 @@ class Player
     pathList = []
     pathIndex = 0
 
-    constructor(phaserScene, startX, startY)
+    constructor(phaserScene, startX, startY, camBoundX, camBoundY)
     {
         this.PLAYER_SPEED = 800;
         this.phaserScene = phaserScene;
         this.startPos = [startX, startY];
+        this.camBounds = [camBoundX, camBoundY];
 
         this.loadPlayerSprites();
     }
@@ -38,7 +39,7 @@ class Player
     {
         let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1])
         this.phaserScene.player = this.phaserScene.physics.add.image(isoStart.x, isoStart.y, 'Player').setScale(0.25, 0.25).setOrigin(0.5, 1)
-        this.phaserScene.cameras.main.startFollow(this.phaserScene.player, true).setBounds(0, 0, 3000, 1600);
+        this.phaserScene.cameras.main.startFollow(this.phaserScene.player, true).setBounds(0, 0, this.camBounds.x, this.camBounds.y);
         this.cursor = this.phaserScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setAlpha(0).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
         this.aStar = new AStar(this.phaserScene.tiles);
     }

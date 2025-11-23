@@ -119,7 +119,7 @@ class ZoneBase extends Phaser.Scene
     // Load entities
     loadEntitiesData()
     {
-        this.playerObj = new Player(this, this.playerData.xPosStart, this.playerData.yPosStart);
+        this.playerObj = new Player(this, this.playerData.xPosStart, this.playerData.yPosStart, this.camBound.xBounds, this.camBound.yBounds);
         this.timeManager = new TimeManager(this);    
         this.itemDatabase = new ItemDatabase(this);
         this.inventory = new InventoryManager(this);
@@ -137,7 +137,7 @@ class ZoneBase extends Phaser.Scene
         {
             for (let y = 0; y < this.backgroundSize.height; y++)
             {
-                this.load.image(`BG${x}${y}`, `./assets/extracted/Backgrounds/${this.ZONE_ID}_${x}x${y}.jpg`)
+                this.load.image(`BG_${this.ZONE_ID}_${x}${y}`, `./assets/extracted/Backgrounds/${this.ZONE_ID}_${x}x${y}.jpg`)
             }
         }
     }
@@ -150,8 +150,8 @@ class ZoneBase extends Phaser.Scene
         {
             for (let y = 0; y < this.backgroundSize.height; y++)
             {
-                this.add.image(xOffset * x, yOffset * y, `BG${x}${y}`).setOrigin(0, 0).setDepth(-1000);
-                let bg = this.add.image(xOffset * x, yOffset * y, `BG${x}${y}`).setOrigin(0, 0).setDepth(-1000).setAlpha(.75);
+                this.add.image(xOffset * x, yOffset * y, `BG_${this.ZONE_ID}_${x}${y}`).setOrigin(0, 0).setDepth(-1000);
+                let bg = this.add.image(xOffset * x, yOffset * y, `BG_${this.ZONE_ID}_${x}${y}`).setOrigin(0, 0).setDepth(-1000).setAlpha(.75);
                 this.backgrounds.push(bg);
             }
         }

@@ -35,8 +35,8 @@
     constructor(mapData) {
         // this.isWalkableFunction = isWalkable;
         this.mapData = mapData
-        this.width = Object.keys(mapData[0][0]).length;
-        this.height = Object.keys(mapData[0]).length;
+        this.width = Object.keys(mapData[0]).length;
+        this.height = Object.keys(mapData).length;
         this.spaces = Array.from({ length: this.width }, () => new Array(this.height).fill(null));
         this.resetSpaces()
         this.adjacentCandidates = this.ADJACENT_CANDIDATES_4WAY_MINI;

@@ -77,10 +77,10 @@ class TimeManager
      */
     updateSprites() {
         // Column
-        for (var y = 0; y < Object.keys(this.phaserScene.tiles[y]).length; y++)
+        for (var y = 0; y < Object.keys(this.phaserScene.tiles).length; y++)
             {
                 // Row
-                for (var x = 0; x < Object.keys(this.phaserScene.tiles[y][x]).length; x++)
+                for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
                 {
                     let tile = this.phaserScene.tiles[y][x]
                     var cellValue = this.phaserScene.tiles[y][x].parsedData.id;

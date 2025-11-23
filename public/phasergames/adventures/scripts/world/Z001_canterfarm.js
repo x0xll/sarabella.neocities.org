@@ -18,6 +18,12 @@ class World_CanterFarm extends ZoneBase
             yPosStart: 3
         };
 
+        this.camBound = 
+        {
+            xBounds: 3000,
+            yBounds: 1600
+        };
+
         this.loadBackgrounds(2, 1);
 
         this.load.spineAtlas("canterfarmsmainAtlas", `./assets/newTiles/canterfarmsmain.atlas`);
@@ -45,7 +51,7 @@ class World_CanterFarm extends ZoneBase
             this.sharedData.inventory.logic.manager.addItem({id: "test"}, 2);
             this.sharedData.inventory.logic.manager.removeItem({id: "test2"}, 1);
             console.log(this.sharedData.inventory.logic.manager.hasItem({id: "test"}, 5));*/
-
+            /*
             if (!this.sharedData.inventory.logic.manager.hasItem({id: "P001_Seed"}, 3))
             {
                 this.sharedData.inventory.logic.manager.addItem({id: "P001_Seed"}, 3);
@@ -54,8 +60,8 @@ class World_CanterFarm extends ZoneBase
             {
                 this.sharedData.inventory.logic.manager.addItem({id: "P001_Produce"}, 1);
             }
-            
-            //this.goToNextZone("world_canterdowns");
+            */
+            this.goToNextZone("world_canterdowns");
         });
     }
 }

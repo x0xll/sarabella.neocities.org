@@ -14,8 +14,14 @@ class World_CanterDowns extends ZoneBase
         // TODO: may need to set pos in create based on sharedData to know which entry of the scene we are on
         this.playerData = 
         {
-            xPosStart: 100,
-            yPosStart: 0
+            xPosStart: 66,
+            yPosStart: 3
+        };
+
+        this.camBound = 
+        {
+            xBounds: 5736,
+            yBounds: 4150
         };
 
         this.loadBackgrounds(2, 2);
@@ -28,7 +34,7 @@ class World_CanterDowns extends ZoneBase
 
     create (sharedData)
     {
-        this.instantiateBackgrounds(1500, 1500);
+        this.instantiateBackgrounds(2868, 2075);
         super.create(sharedData);
     }
 
