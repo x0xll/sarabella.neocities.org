@@ -75,10 +75,16 @@ class InventoryManager
         if (logicContainer === undefined)
             return items;
 
+        let allItems = this.phaserScene.sharedData.inventory.logic.allItems;
+        let itemList = [];
+        for (let [key, value] of allItems.entries()) {
+            itemList.push(value);
+        }
+
         for (let i = 0; i < logicContainer.size; i++)
         {
-            let allItems = this.phaserScene.sharedData.inventory.logic.allItems;
-            let data = this.phaserScene.sharedData.inventory.logic.allItems.get(Object.keys(allItems)[i]);
+            let data = itemList[i];
+
             if (data !== undefined && data.type == type)
             {
                 let slotData = 

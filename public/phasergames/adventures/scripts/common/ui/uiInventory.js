@@ -14,8 +14,8 @@ class uiInventory extends uiManagerBase
 
     INVENTORY_SLOT_SIZE = 
     {
-        xStart: 0,
-        yStart: 0,
+        xStart: 10,
+        yStart: 10,
         xOffset: 52,
         yOffset: 52,
         width: 4,
@@ -154,11 +154,11 @@ class uiInventory extends uiManagerBase
         {
             for (let y = this.INVENTORY_SLOT_SIZE.yStart; y < this.INVENTORY_SLOT_SIZE.height; y++)
             {
-                var slot = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_BTN_PRODUCE)
+                var slot = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_SLOT)
                             .setOrigin(0)
                             .setScrollFactor(0);
 
-                var slotIcon = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_BTN_PRODUCE)
+                var slotIcon = this.phaserScene.add.image(x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_SLOT)
                                 .setOrigin(0)
                                 .setScrollFactor(0);
 
