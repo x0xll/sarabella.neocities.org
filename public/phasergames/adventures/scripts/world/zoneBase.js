@@ -103,6 +103,17 @@ class ZoneBase extends Phaser.Scene
         game.timeManager.updateTime();
 
         //debug_DrawTriggerQuest(game);
+
+        // TEST tp
+        let pos = game.playerObj.isoToGridMap(game.player.x, game.player.y);
+        var cellValue = game.zoneParsed[0][pos.y][pos.x];
+        if (game.zoneParsed[1][cellValue].entity !== undefined)
+        {
+            if (game.zoneParsed[1][cellValue].entity === "Z012a")
+            {
+                this.goToNextZone("world_canterdowns");
+            }
+        }
     }
     
     // Parse the zone file
@@ -162,4 +173,5 @@ class ZoneBase extends Phaser.Scene
         this.sharedData.worldToLoad = sceneKey;
         this.scene.start("common_load", this.sharedData);
     }
+    
 }

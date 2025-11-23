@@ -115,7 +115,7 @@
     <tile id="Ti007b" file="canterfarmsmain" walkable="false" isBillboard="false" skins="Sk0001">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti063w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0020" entities="ExitToZone12a">
+    <tile id="Ti063w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0020" entities="Z012a">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti011w" file="canterfarmsmain" walkable="true" isBillboard="false" grounds="Gr0002,Gr0009" entities="DirtTemplate">

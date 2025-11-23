@@ -61,7 +61,6 @@ class World_CanterFarm extends ZoneBase
                 this.sharedData.inventory.logic.manager.addItem({id: "P001_Produce"}, 1);
             }
             */
-            this.goToNextZone("world_canterdowns");
         });
     }
 }
