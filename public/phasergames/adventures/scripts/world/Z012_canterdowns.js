@@ -19,6 +19,9 @@ class World_CanterDowns extends ZoneBase
         };
 
         this.loadBackgrounds(2, 2);
+        
+        this.load.spineAtlas("ruralskymainAtlas", `./assets/newTiles/ruralsky.atlas`);
+        this.load.spineJson("ruralskymainJSON", `./assets/newTiles/ruralsky.json`);
 
         super.preload();
     }
@@ -32,11 +35,5 @@ class World_CanterDowns extends ZoneBase
     update() 
     {
         super.update();
-
-        // TEST
-        var spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-        spaceBar.on('down', () => {
-            this.goToNextZone("world_canterfarm");
-        });
     }
 }

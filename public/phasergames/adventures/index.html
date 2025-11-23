@@ -11,9 +11,12 @@
         --- Cause we may have A LOT of them by the end of the project
         --- Should search if we can load them based on needs 
         --- Directly from the other .js files-->
+        <!-- Utils -->
         <script src="./scripts/common/loaders/loaderUtils.js"></script>
         <script src="./scripts/common/parsers/parserUtils.js"></script>
         <script src="./scripts/common/loadScreen.js"></script>
+
+        <!-- UI -->
         <script src="./scripts/common/ui/uiScene.js"></script>
         <script src="./scripts/common/ui/uiManagerBase.js"></script>
         <script src="./scripts/common/ui/uiInventory.js"></script>
@@ -22,14 +25,39 @@
         <script src="./scripts/common/ui/uiQuest.js"></script>
         <script src="./scripts/common/ui/uiMinimap.js"></script>
         <script src="./scripts/common/ui/uiDialogue.js"></script>
+
+        <!-- Manager -->
         <script src="./scripts/common/managers/questManager.js"></script>
         <script src="./scripts/common/managers/saveManager.js"></script>
         <script src="./scripts/common/managers/loadingManager.js"></script>
         <script src="./scripts/common/managers/timeManager.js"></script>
         <script src="./scripts/common/managers/inventoryManager.js"></script>
+
+        <!-- World -->
         <script src="./scripts/world/zoneBase.js"></script>
-        <script src="./scripts/world/canterfarm.js"></script>
-        <script src="./scripts/world/canterdowns.js"></script>
+        <script src="./scripts/world/Z001_canterfarm.js"></script>
+        <script src="./scripts/world/Z002_rolandsgaardcastleboardwalk.js"></script>
+        <script src="./scripts/world/Z003_ballroomentrance.js"></script>
+        <script src="./scripts/world/Z004_gardenroom.js"></script>
+        <script src="./scripts/world/Z005_fountainroom.js"></script>
+        <script src="./scripts/world/Z006_royalroom.js"></script>
+        <script src="./scripts/world/Z007_fountainplaza.js"></script>
+        <script src="./scripts/world/Z008_bagatellarow.js"></script>
+        <script src="./scripts/world/Z009_artisansway.js"></script>
+        <script src="./scripts/world/Z010_outskirts.js"></script>
+        <script src="./scripts/world/Z011_trailhead.js"></script>
+        <script src="./scripts/world/Z012_canterdowns.js"></script>
+        <script src="./scripts/world/Z013_overgaardskylands.js"></script>
+        <script src="./scripts/world/Z015_darkcombhedge.js"></script>
+        <script src="./scripts/world/Z016_darkcombforest.js"></script>
+        <script src="./scripts/world/Z022_fastalonwestriverbank.js"></script>
+        <script src="./scripts/world/Z023_rosevalley.js"></script>
+        <script src="./scripts/world/Z025_bodascave.js"></script>
+        <script src="./scripts/world/Z026_wolfsden.js"></script>
+        <script src="./scripts/world/Z027_petalhome.js"></script>
+        <script src="./scripts/world/Z028_desertcave.js"></script>
+
+        <!-- Entities -->
         <script src="./scripts/common/objects/entities/player/player.js"></script>
         <script src="./scripts/common/objects/entities/player/AStarPathfinder.js"></script>
         <script src="./scripts/common/objects/entities/items/item.js"></script>
@@ -103,7 +131,26 @@
                         Common_Load,
                         ZoneBase,
                         World_CanterFarm,
+                        World_RolandsgaardCastleBroadwalk,
+                        World_BallroomEntrance,
+                        World_GardenRoom,
+                        World_FountainRoom,
+                        World_RoyalRoom,
+                        World_FountainPlaza,
+                        World_BagatellaRow,
+                        World_ArtisansWay,
+                        World_Outskirts,
+                        World_Trailhead,
                         World_CanterDowns,
+                        World_OvergaardSkylands,
+                        World_DarkcombHedge,
+                        World_DarkcombForest,
+                        World_FastalonWestRiverbank,
+                        World_RoseValley,
+                        World_BodasCave,
+                        World_WolfsDen,
+                        World_Petalhome,
+                        World_DesertCave,
                         Common_UI
                     ]
                 };
