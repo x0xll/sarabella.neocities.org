@@ -93,7 +93,9 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
     if (node.attributes){
         for (let index = 0; index < node.attributes.length; index++) {
             const attribute = node.attributes[index];
-            if (attribute.name !== "id" && (node.nodeName !== "object" && attribute.name !== "type")){
+            if (node.nodeName === "object" && attribute.name === "type") {
+                nodeObject[attribute.name] = attribute.value.replace("questData.", "")
+            } else if (attribute.name !== "id") {
                 nodeObject[attribute.name] = attribute.value
             }
         }
@@ -123,12 +125,10 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
         nodeName = customName
     } else if (node.attributes && node.attributes["id"]) {
         nodeName = node.attributes["id"].value
-    } else if (node.nodeName === "object" && node.attributes && node.attributes["type"]) {
-        nodeName = node.attributes.type.nodeValue.replace("questData.", "")
     } else {
         nodeName = node.nodeName
     }
-
+    
     // Determine if node object should be in an array or not
     const nonArrayNodes = [
         "description",
@@ -153,10 +153,22 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
 function altParseQuestXML(xmlObj) {
     let result = {}
 
-
     xmlObj.querySelectorAll("adventures").forEach(adventures => {
         parseXMLNode(adventures, result)
     })
+
+    for (let [key] of Object.entries(result)) {
+        adventures = result[key]
+
+        for (let [key] of Object.entries(adventures)) {
+            adventure = adventures[key]
+
+            for (let [key] of Object.entries(adventure)) {
+                quest = adventure[key]
+                quest.status = QUEST_STATES.UNAVAILABLE
+            }
+        }
+    }
 
    return result
 }

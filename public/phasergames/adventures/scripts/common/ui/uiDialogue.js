@@ -118,8 +118,13 @@ class uiDialogue extends uiManagerBase
         super.initialize();
     }
 
-    show(phaserScene, character, text, choices)
+
+    // TODO: Handle if dialogue has no character to display
+    show(phaserScene, characterid, text, choices)
     {
+        // TODO get character name from id
+        const character = {name: characterid, id: characterid}
+
         if (phaserScene.sharedData.dialogue.ui.elements === undefined)
             this.initialize();
 
@@ -134,7 +139,6 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
-        
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
             (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
              : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
