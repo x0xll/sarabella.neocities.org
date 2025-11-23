@@ -73,7 +73,7 @@ class uiMinimap extends uiManagerBase
                         .setScrollFactor(0)
                         .setInteractive();
 
-        var icon = this.phaserScene.add.image(110, 430, this.MINIMAP_ZOOM_ICON)
+        var iconZoom = this.phaserScene.add.image(110, 430, this.MINIMAP_ZOOM_ICON)
                     .setOrigin(0)
                     .setScrollFactor(0)
                     .setInteractive();
@@ -83,7 +83,7 @@ class uiMinimap extends uiManagerBase
             this.hide();
         });
 
-        icon.on('pointerup', (pointer) => 
+        iconZoom.on('pointerup', (pointer) => 
         {
             this.#isFullMap = !this.#isFullMap;
             if (!this.#isFullMap)
@@ -105,7 +105,8 @@ class uiMinimap extends uiManagerBase
             mapFull: mapFull,
             border: border,
             icon: icon,
-            closeBtn: closeBtn
+            closeBtn: closeBtn,
+            iconZoom: iconZoom
         };
 
         super.initialize();
@@ -132,6 +133,7 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
+        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(1);
 
         super.show();
     }
@@ -146,5 +148,6 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
+        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(0);
     }
 }
