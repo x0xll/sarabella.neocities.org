@@ -109,10 +109,14 @@ class ZoneBase extends Phaser.Scene
         var cellValue = game.zoneParsed[0][pos.y][pos.x];
         if (game.zoneParsed[1][cellValue].entity !== undefined)
         {
-            if (game.zoneParsed[1][cellValue].entity === "Z012a")
-            {
+            let entity = game.zoneParsed[1][cellValue].entity;
+
+            if (entity === "Z012a")
                 this.goToNextZone("world_canterdowns");
-            }
+            else if (entity === "R001")
+                this.goToNextZone("world_cottage01");
+            else if (entity === "Z001a")
+                this.goToNextZone("world_canterfarm");
         }
     }
     
