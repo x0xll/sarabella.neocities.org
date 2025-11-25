@@ -1,177 +1,94 @@
 /* Handles the backend aspect of the quests
 *  Save/Load quests, Unlock/Finish, etc.
 */
-
-// TODO make this a class
-const QUEST_STATES = 
-{
-    UNAVAILABLE: -1,
-    WAITING: 0,
-    STARTED: 1,
-    FINISHED: 2,
-    CANCELLED: 3
-}
-
-const QUEST_ACTIONS = 
-{
-    STARTQUEST: "LogAdventureBeginAction",
-    ENDQUEST: "LogQuestEndAction",
-    REMOVEQUEST: "RemoveQuestAction",
-    NEXTQUEST: "AddQuestAction",
-    DIALOGUE: "DialogueAction",
-    ADDINVENTORY: "AddMultipleInventoryAction",
-    REMOVEINVENTORY: 2,
-    GIVEITEMTRIGGER: "GiveItemTrigger",
-    TALKQUESTTRIGGER: "TalkQuestTrigger",
-    CONTEXTITEMTRIGGER: "ContextItemTrigger",
-    ENTERZONETRIGGER: "EnterZoneTrigger",
-    STOPNEARTRIGGER: "StopNearTrigger",
-    DIALOGUEIMAGEACTION: "DialogueImageAction",
-    ADDHORSESHOES: "AddHorseshoesAction",
-    STARTTRIGGER: 10,
-    ONTEMPLATECONDITION: "ActionOnTemplateCondition",
-    TRADETRIGGER: "TradeTrigger",
-    ADDZONEITEMANYWHEREACTION: "AddZoneItemAnywhereAction",
-    // "LogAdventureEndAction"
-    // "RemoveQuestFileAction"
-    // "RemoveZoneItemAnywhereAction"
-    // "ActionTrigger"
-}
-
-
-//------- QUEST HELPER -------
-function getAllQuestsByStatus(phaserScene, status)
-{
-    var quests = [];
-
-    phaserScene.sharedData.quest.logic.quests.forEach(file => 
-    {
-        for (let [key] of Object.entries(file)) {
-            adventures = file[key]
-
-            for (let [key] of Object.entries(adventures)) {
-                adventure = adventures[key]
-
-                for (let [key] of Object.entries(adventure)) {
-                    quest = adventure[key]
-
-                    if (quest.status === status)
-                        quests.push(quest);
-                }
-            }
-        }
-    });
-
-    return quests;
-}
-
-function getQuestPerID(phaserScene, globalID, adventureID, questID)
-{
-    for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
-    {
-        if (phaserScene.sharedData.quest.logic.quests[i][globalID]) {
-            return phaserScene.sharedData.quest.logic.quests[i][globalID][adventureID][questID];
-        }
+class QuestManager {
+    QUEST_STATES = {
+        UNAVAILABLE: -1,
+        WAITING: 0,
+        STARTED: 1,
+        FINISHED: 2,
+        CANCELLED: 3
     }
 
-    console.error("No Quest found! " + globalID + " - " + adventureID + " - " + questID);
-}
-
-function getAdventurePerID(phaserScene, globalID, adventureID)
-{
-    for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
-    {
-        if (phaserScene.sharedData.quest.logic.quests[i][globalID]) {
-            return phaserScene.sharedData.quest.logic.quests[i][globalID][adventureID];
-        }
+    constructor () {
     }
 
-    console.error("No Adventure found! " + globalID + " - " + adventureID);
-}
 
-function getQuestStatus(phaserScene, globalID, adventureID, questID)
-{
-    return getQuestPerID(phaserScene, globalID, adventureID, questID).status;
-}
-
-//------- END QUEST HELPER -------
-
-//------- QUEST TRIGGERS -------
-function tryTriggerQuest(phaserScene, xPos, yPos)
-{
-    for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+    //------- HELPER FUNCTIONS -------
+    getAllQuestsByStatus(phaserScene, status)
     {
-        let questGlobalData = phaserScene.sharedData.quest.logic.activeQuests[i];
-        let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine++;
-        if (nextLine >= questGlobalData.questData.line.length || 
-            questGlobalData.questData.line[nextLine].trigger === undefined || 
-            questGlobalData.questData.line[nextLine].trigger.object === undefined) continue;
+        var quests = [];
 
-        let triggers = questGlobalData.questData.line[nextLine].trigger.object
-        for (let index = 0; index < triggers.length; index++) {
-            const trigger = triggers[index];
-            switch (trigger.type) {
-                case QUEST_ACTIONS.STOPNEARTRIGGER:
-                        if (stopNearTrigger(phaserScene, xPos, yPos, trigger, i)) {return true}
-                    break;
-                case QUEST_ACTIONS.TALKQUESTTRIGGER:
-                        if (talkQuestTrigger(phaserScene, trigger, i)) {return true}
-                    break;
-            
-                default:
-                    break;
+        phaserScene.sharedData.quest.logic.quests.forEach(file => 
+        {
+            for (let [key] of Object.entries(file)) {
+                adventures = file[key]
+
+                for (let [key] of Object.entries(adventures)) {
+                    adventure = adventures[key]
+
+                    for (let [key] of Object.entries(adventure)) {
+                        quest = adventure[key]
+
+                        if (quest.status === status)
+                            quests.push(quest);
+                    }
+                }
             }
-        }
+        });
+
+        return quests;
     }
 
-    return false;
-}
-
-// TODO Make this a private function
-function stopNearTrigger(phaserScene, xPos, yPos, triggerData, activeQuest) {
-    let questGlobalData = phaserScene.sharedData.quest.logic.activeQuests[activeQuest];
-    let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine++;
-
-    if (triggerData 
-        && triggerData.zoneId 
-        && triggerData.zoneId === phaserScene.ZONE_ID
-    )
+    getAdventurePerID(phaserScene, adventureID)
     {
-        // TODO: need to modify to be a circle check based on radius
-        if (parseInt(triggerData.centerX) - parseInt(triggerData.radius) <= xPos && 
-            parseInt(triggerData.centerX) + parseInt(triggerData.radius) >= xPos &&
-            parseInt(triggerData.centerY) - parseInt(triggerData.radius) <= yPos && 
-            parseInt(triggerData.centerY) + parseInt(triggerData.radius) >= yPos)
-            {
-                if (nextLine == 0)
-                {
-                    startQuest(phaserScene, questGlobalData.fileID, questGlobalData.adventureID, questGlobalData.questID);
-                }
-                else
-                {
-                    doQuestAction(phaserScene, questGlobalData);
-                }
-                return true;
+        for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
+        {
+            if (phaserScene.sharedData.quest.logic.quests[i][adventureID[0]] &&
+                phaserScene.sharedData.quest.logic.quests[i][adventureID[0]][adventureID[1]]
+            ) {
+                return phaserScene.sharedData.quest.logic.quests[i][adventureID[0]][adventureID[1]];
             }
-    } 
-    return false
-}
-
-// TODO Make this a private function
-function talkQuestTrigger(phaserScene, triggerData, activeQuest) {
-    let questGlobalData = phaserScene.sharedData.quest.logic.activeQuests[activeQuest];
-    let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine++;
-
-    if (nextLine == 0) {
-            startQuest(phaserScene, questGlobalData.fileID, questGlobalData.adventureID, questGlobalData.questID);
-        } else {
-            doQuestAction(phaserScene, questGlobalData);
         }
-        return true;
-}
+
+        console.error("No Adventure found! " + adventureID[0] + " - " + adventureID[1]);
+    }
+
+    getQuestPerID(phaserScene, questID)
+    {
+        for (let i = 0; i < phaserScene.sharedData.quest.logic.quests.length; i++)
+        {
+            if (phaserScene.sharedData.quest.logic.quests[i][questID[0]] &&
+                phaserScene.sharedData.quest.logic.quests[i][questID[0]][questID[1]] &&
+                phaserScene.sharedData.quest.logic.quests[i][questID[0]][questID[1]][questID[2]]
+            ) {
+                return phaserScene.sharedData.quest.logic.quests[i][questID[0]][questID[1]][questID[2]];
+            }
+        }
+
+        console.error("No Quest found! " + questID[0] + " - " + questID[1] + " - " + questID[2]);
+    }
+
+    getQuestStatus(phaserScene, questID)
+    {
+        var questData = this.getQuestPerID(phaserScene, questID);
+        if (questData !== undefined) return questData.status;
+    }
+
+    startQuest(phaserScene, questID)
+    {
+        var questData = this.getQuestPerID(phaserScene, questID);
+        if (questData === undefined) return;
+        questData.status = this.QUEST_STATES.STARTED;
+        questData.currentLine = 0
+
+        console.log("Start quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description);
+        this.doQuestAction(phaserScene, questID, questData);
+    }
+
 
 // Todo: update to use new parser
-function debug_DrawTriggerQuest(phaserScene)
+debug_DrawTriggerQuest(phaserScene)
 {
     if (phaserScene.questTriggerDebug === undefined)
         phaserScene.questTriggerDebug = [];
@@ -186,207 +103,316 @@ function debug_DrawTriggerQuest(phaserScene)
 
     for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
     {
-        let questGlobalData = phaserScene.sharedData.quest.logic.activeQuests[i];
-        let triggerData = questGlobalData.questData.line[0].trigger;
+        let questGlobalData = this.getQuestPerID(phaserScene, phaserScene.sharedData.quest.logic.activeQuests[i]);
+        let triggerData = questGlobalData.line[0].trigger.object[0];
 
-        if (triggerData.zone != undefined && 
-            triggerData.zone == phaserScene.ZONE_ID)
+        if (triggerData.zoneId != undefined && 
+            triggerData.zoneId == phaserScene.ZONE_ID)
         {
-            let pos = phaserScene.playerObj.gridToIsoMap(parseInt(triggerData.centerX), parseInt(triggerData.centerY));
-            // TODO: figure out correct values
-            let width = (parseInt(triggerData.radius) * 2) * 50;
-            let height = (parseInt(triggerData.radius) * 2) * 50;
-
-            // TODO: figure out why alpha isn't working
-            // TODO: update to circle shape when we change the trigger check to be more accurate in tryTriggerQuest();
-            var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, width, height, 0xff0000, 1);
-            phaserScene.add.existing(rect);
+            for (let x = triggerData.centerX - triggerData.radius; x < triggerData.centerX + triggerData.radius; x++) {
+                for (let y = triggerData.centerY - triggerData.radius; y < triggerData.centerY + triggerData.radius; y++) {
+                    if (Math.abs(x - triggerData.centerX) + Math.abs(y - triggerData.centerY) <= triggerData.radius) {
+                        let pos = phaserScene.playerObj.gridToIsoMap(parseInt(x), parseInt(y));
+                        var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, 25, 12, 0xff0000, 1).setAlpha(.5);
+                        phaserScene.add.existing(rect);
+                    }
+                }
+            }
         }  
     }
 }
-//------- END QUEST TRIGGERS -------
 
-//------- QUEST MECHANIC -------
-// TODO : get the quests info from somewhere
-const QUEST_DATA_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
-const QUEST_FILE_NAMES = [
-    "freeplay_v2",
-    "tutorials",
-    "collectibles",
-    "free_springfestival",
-    "intro_cottage",
-    "repeatable",
-    "sc_1",
-    "sc_6",
-    "spc1activation",
-    "gp",
-    "furniturestore"
-    //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
-]
-function preloadQuestData(phaserScene) {
 
-    QUEST_FILE_NAMES.forEach(file => {
-        phaserScene.load.xml(file, `${QUEST_DATA_FOLDER}/${file}.xml`);
-    });
-}
-
-function loadQuestData(phaserScene) {
-    phaserScene.sharedData.questData = []
-    for (let index = 0; index < QUEST_FILE_NAMES.length; index++) {
-        phaserScene.sharedData.questData.push(altParseQuestXML(phaserScene.cache.xml.get(QUEST_FILE_NAMES[index])))
-    }
-}
-
-function initializeQuestData(phaserScene)
-{
-    phaserScene.sharedData.quest = {};
-    phaserScene.sharedData.quest.logic = 
-    {
-        quests: phaserScene.sharedData.questData,
-        activeQuests: []
-    }
-
-    // console.log(phaserScene.sharedData.quest.logic.quests);
-
-    // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
-
-    // If first time on the game -> we show the first tutorial quests   
-    showQuest(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002110"); // freeplay_v2.xml
-    showQuest(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105"); // freeplay_v2.xml
-    //showQuest(phaserScene, "ADS-0000001163", "ADV-0000001798", "QUE-0000006273"); // intro_cottage.xml
-}
-
-function showQuest(phaserScene, fileID, adventureID, questID)
-{
-    var questData = getQuestPerID(phaserScene, fileID, adventureID, questID);
-    if (questData === undefined) return;
-    questData.status = QUEST_STATES.WAITING;
-    console.log("Showing quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
-
-    phaserScene.sharedData.quest.logic.activeQuests.push({
-        questData: questData,
-        fileID: fileID,
-        adventureID: adventureID,
-        questID: questID
-    })
-
-    // TODO: Handle showing icons on map and handling correct triggers
-}
-
-function startQuest(phaserScene, fileID, adventureID, questID)
-{
-
-    var questData = getQuestPerID(phaserScene, fileID, adventureID, questID);
-    if (questData === undefined) return;
-    questData.status = QUEST_STATES.STARTED;
-
-    let globalData = {
-        questData: questData,
-        fileID: fileID,
-        adventureID: adventureID,
-        questID: questID,
-        currentLine: 0
-    };
-
-    phaserScene.sharedData.quest.logic.activeQuests.push(globalData);
-
-    // Wait until quest has been added before continuing
-    let addingQuest = true
-    const duplicates = []
-    while (addingQuest) {
-        phaserScene.sharedData.quest.logic.activeQuests.forEach(quest => {
-            let questMatch = quest.fileID === fileID && quest.adventureID === adventureID && quest.questID === questID
-            if (!addingQuest && questMatch) {
-                duplicates.push(phaserScene.sharedData.quest.logic.activeQuests.indexOf(quest))
-            }
-            addingQuest = !questMatch && addingQuest
+    //------- QUEST LOADING -------
+    // TODO : get the quests info from somewhere
+    #QUEST_DATA_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
+    #QUEST_FILE_NAMES = [
+        "freeplay_v2",
+        "tutorials",
+        "collectibles",
+        "free_springfestival",
+        "intro_cottage",
+        "repeatable",
+        "sc_1",
+        "sc_6",
+        "spc1activation",
+        "gp",
+        "furniturestore"
+        //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
+    ]
+    
+    /**
+     * Preloads the xml files for the quests into cache so they can be used later. Should be called from the loadScreen scene
+     * @param {*} phaserScene 
+     */
+    preloadQuestData(phaserScene) {
+        this.#QUEST_FILE_NAMES.forEach(file => {
+            phaserScene.load.xml(file, `${this.#QUEST_DATA_FOLDER}/${file}.xml`);
         });
+    }
 
-        // Remove duplicate quests
-        let removedTotal = 0
-        for (let index = 0; index < duplicates.length; index++) {
-            phaserScene.sharedData.quest.logic.activeQuests.splice(duplicates - removedTotal, 1)
+    /**
+     * Loads and parses the xml files from the cache. Should be called from the loadScreen scene
+     * @param {*} phaserScene 
+     */
+    loadQuestData(phaserScene) {
+        phaserScene.sharedData.questData = []
+
+        for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
+            phaserScene.sharedData.questData.push(altParseQuestXML(this, phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
         }
     }
 
-    console.log("Start quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
-    doQuestAction(phaserScene, globalData);
-}
-
-// Todo: update to use new parser
-function finishQuest(phaserScene, fileID, adventureID, questID)
-{
-    var questData = getQuestPerID(phaserScene, fileID, adventureID, questID);
-    if (questData === undefined) return;
-    questData.status = QUEST_STATES.FINISHED;
-
-    let questIndex = -1;
-
-    for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+    initializeQuestData(phaserScene)
     {
-        if (phaserScene.sharedData.quest.logic.activeQuests[i].questData !== questData) continue;
+        phaserScene.sharedData.quest = {};
+        phaserScene.sharedData.quest.logic = 
+        {
+            quests: phaserScene.sharedData.questData,
+            activeQuests: []
+        }
 
-        questIndex = i;
-        break;
+        // console.log(phaserScene.sharedData.quest.logic.quests);
+
+        // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
+
+        // If first time on the game -> we show the first tutorial quests   
+        this.#makeQuestAvailable(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002110"); // freeplay_v2.xml
+        this.#makeQuestAvailable(phaserScene, "ADS-0000000825", "ADV-0000000899", "QUE-0000002105"); // freeplay_v2.xml
+        //this.#makeQuestAvailable(phaserScene, "ADS-0000001163", "ADV-0000001798", "QUE-0000006273"); // intro_cottage.xml
     }
 
-    phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
-
-    console.log("End quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
-}
-
-// Todo: update to use new parser
-function checkIfCanDoQuestAction(phaserScene)
-{
-    for(let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+    #makeQuestAvailable(phaserScene, fileID, adventureID, questID)
     {
-        if (phaserScene.sharedData.quest.logic.activeQuests[i].questData.status != QUEST_STATES.STARTED)
-            continue;
+        var questData = this.getQuestPerID(phaserScene, [fileID, adventureID, questID]);
+        if (questData === undefined) return;
+        questData.status = this.QUEST_STATES.WAITING;
+        console.log("Showing quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 
-        let globalData = phaserScene.sharedData.quest.logic.activeQuests[i];
-        if (globalData.questData.line[globalData.currentLine].currentAction > 0)
-            doQuestAction(phaserScene, globalData);
+        phaserScene.sharedData.quest.logic.activeQuests.push([fileID, adventureID, questID])
+
+        // TODO: Handle showing icons on map and handling correct triggers
     }
-}
 
-function doQuestAction(phaserScene, globalData)
-{
-    console.log("do action")
-    if (globalData.questData.status == QUEST_STATES.UNAVAILABLE ||
-        globalData.questData.status == QUEST_STATES.CANCELLED ||
-        globalData.questData.status == QUEST_STATES.FINISHED)
-        return;
 
-    let actionData = globalData.questData.line[globalData.currentLine].actions;
+    //------- QUEST TRIGGERS -------
+    /**
+     * Checks if any active quests should be triggered.
+     * @param {*} phaserScene 
+     * @param {*} triggerData The data to send to the trigger function
+     * @returns 
+     */
+    tryTriggerQuest(phaserScene, triggerData)
+    {
+        for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+        {
+            let questGlobalData = this.getQuestPerID(phaserScene, phaserScene.sharedData.quest.logic.activeQuests[i]);
+            let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine + 1;
+            if (nextLine >= questGlobalData.line.length || 
+                questGlobalData.line[nextLine].trigger === undefined || 
+                questGlobalData.line[nextLine].trigger.object === undefined) continue;
 
-    for (let index = 0; index < actionData.object.length; index++) {
-        const action = actionData.object[index];
-        // console.log(action)
+            let triggers = questGlobalData.line[nextLine].trigger.object
+            for (let index = 0; index < triggers.length; index++) {
+                const trigger = triggers[index];
+                if (this.#QUEST_TRIGGERS[trigger.type]) {
+                    this.#QUEST_TRIGGERS[trigger.type](phaserScene, trigger, i, triggerData)
+                }
+            }
+        }
 
-        switch(action.type) {
-            default:
-                break;
-            case QUEST_ACTIONS.DIALOGUE:
-                console.log("dialogue")
-                let character = action.identifier
+        return false;
+    }
 
-                let triggers = globalData.questData.line[globalData.currentLine].trigger.object
-                for (let index = 0; index < triggers.length; index++) {
-                    const trigger = triggers[index];
-                    if (trigger.type === QUEST_ACTIONS.TALKQUESTTRIGGER && trigger.identifier) {
-                        character = trigger.identifier
+    #QUEST_TRIGGERS = {
+        "TalkQuestTrigger": this.#talkQuestTrigger,
+        "StopNearTrigger": this.#stopNearTrigger,
+        "RemoveEntityTrigger": this.#missingTrigger,
+        "ActionTrigger": this.#missingTrigger,
+        "ContextItemTrigger": this.#missingTrigger,
+        "GiveItemTrigger": this.#missingTrigger,
+        "DialogueChoiceTrigger": this.#missingTrigger,
+        "ApplyItemTrigger": this.#missingTrigger,
+        "PlantGrownInRadiusTrigger": this.#missingTrigger,
+        "EnterZoneTrigger": this.#missingTrigger,
+        "TradeTrigger": this.#missingTrigger,
+        "ApplicationStartTrigger": this.#missingTrigger,
+        "NullTrigger": this.#missingTrigger
+    }
+
+    #missingTrigger (phaserScene, trigger, activeQuestIndex, triggerData) {
+        console.warn(`Missing trigger: ${trigger.type}`)
+    }
+
+    #stopNearTrigger(phaserScene, trigger, activeQuestIndex, triggerData) {
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        let questGlobalData = phaserScene.sharedData.questManager.getQuestPerID(phaserScene, questGlobalID);
+        let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine + 1;
+
+        if (trigger 
+            && trigger.zoneId 
+            && trigger.zoneId === phaserScene.ZONE_ID
+            && triggerData.x !== undefined
+            && triggerData.y !== undefined
+        ) {
+
+
+            {
+                for (let x = triggerData.centerX - triggerData.radius; x < triggerData.centerX + triggerData.radius; x++) {
+                    for (let y = triggerData.centerY - triggerData.radius; y < triggerData.centerY + triggerData.radius; y++) {
+                        if (Math.abs(x - triggerData.centerX) + Math.abs(y - triggerData.centerY) <= triggerData.radius) {
+                            let pos = phaserScene.playerObj.gridToIsoMap(parseInt(x), parseInt(y));
+                            var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, 25, 12, 0xff0000, 1).setAlpha(.5);
+                            phaserScene.add.existing(rect);
+                        }
                     }
                 }
-                
-                // globalData.questData.line[globalData.currentLine].trigger.identifier
-                phaserScene.sharedData.dialogue.ui.manager.show(phaserScene, character, action.text, undefined);
-                break;
-            case QUEST_ACTIONS.REMOVEQUEST:
-                console.log("remove quest")
-                finishQuest(phaserScene, globalData.fileID, globalData.adventureID, globalData.questID);
-                break;
+            }  
+            // TODO: verify if this seems correct for quest trigger
+            if (Math.abs(triggerData.x - trigger.centerX) + Math.abs(triggerData.y - trigger.centerY) <= trigger.radius) {
+                if (nextLine == 0)
+                {
+                    phaserScene.sharedData.questManager.startQuest(phaserScene, questGlobalID);
+                }
+                else
+                {
+                    phaserScene.sharedData.questManager.doQuestAction(phaserScene, questGlobalID, questGlobalData);
+                }
+                return true;
+            }
+        } 
+        return false
+    }
+
+    // TODO: This function is a placeholder to trigger the dialogue box
+    #talkQuestTrigger(phaserScene, trigger, activeQuestIndex, triggerData) {
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        let questGlobalData = phaserScene.sharedData.questManager.getQuestPerID(phaserScene, questGlobalID);
+        let nextLine = (questGlobalData.currentLine === undefined) ? 0 : questGlobalData.currentLine + 1;
+
+        console.warn("TalkQuestTrigger is currently a placeholder function")
+        if (nextLine == 0) {
+                phaserScene.sharedData.questManager.startQuest(phaserScene, questGlobalID);
+            } else {
+                phaserScene.sharedData.questManager.doQuestAction(phaserScene, questGlobalID, questGlobalData);
+            }
+            return true;
+    }
+
+
+    //------- QUEST CONDITIONS -------
+    // TODO: add condition checks
+    #QUEST_CONDITIONS = {
+        "ActionOnTemplateCondition": this.#missingCondition,
+        "HasMultipleItemsCondition": this.#missingCondition,
+        "ContainsTokenItemCondition": this.#missingCondition,
+        "HasQuestCondition": this.#missingCondition
+    }
+
+    #missingCondition (conditionType) {
+        console.warn(`Missing condition: ${conditionType}`)
+    }
+
+
+    //------- QUEST ACTIONS -------
+    // Todo: update to use new parser (Note: unused function)
+    checkIfCanDoQuestAction(phaserScene) {
+        for(let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+        {
+            let questData = this.getQuestPerID(phaserScene, phaserScene.sharedData.quest.logic.activeQuests[i])
+            if (questData.status != this.QUEST_STATES.STARTED)
+                continue;
+
+            if (questData.line[globalData.currentLine].currentAction > 0)
+                this.doQuestAction(phaserScene, i, questData);
         }
     }
-}
 
-//------- END QUEST MECHANIC -------
+    doQuestAction(phaserScene, questGlobalID, globalData) {
+        if (globalData.status == this.QUEST_STATES.UNAVAILABLE ||
+            globalData.status == this.QUEST_STATES.CANCELLED ||
+            globalData.status == this.QUEST_STATES.FINISHED)
+            return;
+
+        let actionData = globalData.line[globalData.currentLine].actions;
+
+        for (let index = 0; index < actionData.object.length; index++) {
+            const action = actionData.object[index];
+            // console.log("do action")
+            // console.log(action)
+
+            if (this.#QUEST_ACTIONS[action.type]) {
+                this.#QUEST_ACTIONS[action.type](phaserScene, questGlobalID, action)
+            }
+        }
+    }
+    #QUEST_ACTIONS = {
+        "LogAdventureBeginAction": this.#missingAction,
+        "LogAdventureEndAction": this.#missingAction,
+        "LogQuestEndAction": this.#missingAction,
+        "AddQuestAction": this.#missingAction,
+        "RemoveQuestAction": this.#removeQuestAction,
+        "AddQuestFileAction": this.#missingAction,
+        "RemoveQuestFileAction": this.#missingAction,
+        "ShowAdventureCompleteAction": this.#missingAction,
+        "DialogueAction": this.#dialogueAction,
+        "DialogueImageAction": this.#missingAction,
+        "DialogueChoiceAction": this.#missingAction,
+        "MonologueAction": this.#missingAction,
+        "AddZoneItemAnywhereAction": this.#missingAction,
+        "RemoveZoneItemAnywhereAction": this.#missingAction,
+        "TryAddZoneItemToAction": this.#missingAction,
+        "AddHorseshoesAction": this.#missingAction,
+        "AddMultipleInventoryAction": this.#missingAction,
+        "RemoveMultipleInventoryAction": this.#missingAction,
+        "AddTokenItemAction": this.#missingAction,
+        "RemoveTokenAction": this.#missingAction,
+        "TemporaryAnimationAction": this.#missingAction,
+        "PlayMovieClipAction": this.#missingAction,
+        "PlayHeadsUpDisplayMovieClipAction": this.#missingAction,
+        "NullAction": this.#missingAction
+    }
+
+    #missingAction (phaserScene, questID, action) {
+        console.warn(`Missing action: ${action.type}`)
+    }
+
+    // Todo: update to use new parser
+    #removeQuestAction(phaserScene, questID, action)
+    {
+        var questData = phaserScene.sharedData.questManager.getQuestPerID(phaserScene, questID);
+        if (questData === undefined) return;
+        questData.status = phaserScene.sharedData.questManager.QUEST_STATES.FINISHED;
+
+        let questIndex = -1;
+
+        for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+        {
+            if (phaserScene.sharedData.quest.logic.activeQuests[i].questData !== questData) continue;
+
+            questIndex = i;
+            break;
+        }
+
+        phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
+
+        console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description);
+    }
+
+    #dialogueAction(phaserScene, questID, action) {
+        let character = action.identifier
+        let globalData = phaserScene.sharedData.questManager.getQuestPerID(phaserScene, questID);
+
+        
+        let triggers = globalData.line[globalData.currentLine].trigger.object
+        for (let index = 0; index < triggers.length; index++) {
+            const trigger = triggers[index];
+            if (trigger.type === "TalkQuestTrigger" && trigger.identifier) {
+                character = trigger.identifier
+            }
+        }
+        
+        // Add check for this existing or load it earlier
+        phaserScene.sharedData.dialogue.ui.manager.show(phaserScene, character, action.text, undefined);
+    }
+}

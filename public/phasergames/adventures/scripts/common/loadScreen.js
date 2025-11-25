@@ -11,7 +11,8 @@ class Common_Load extends Phaser.Scene
     preload ()
     {
         loadLoadingUI(this);
-        preloadQuestData(this)
+        this.questManager = new QuestManager();
+        this.questManager.preloadQuestData(this)
     }
 
     create (sharedData)
@@ -19,12 +20,16 @@ class Common_Load extends Phaser.Scene
         const loader = this
         loader.sharedData = sharedData
 
-        if (loader.sharedData.worldToLoad === undefined)
-        {
+        if (loader.sharedData.worldToLoad === undefined) {
             loader.sharedData.worldToLoad = "world_canterfarm"
         }
 
-        loadQuestData(this)
+        // Load quest data
+        if (loader.sharedData.questManager === undefined) {
+            loader.sharedData.questManager = loader.questManager
+        }
+        loader.sharedData.questManager.loadQuestData(this)
+
         // TESTING
         this.scene.launch(loader.sharedData.worldToLoad, loader.sharedData);
 

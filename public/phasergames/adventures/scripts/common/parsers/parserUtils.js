@@ -150,22 +150,25 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
     }
 }
 
-function altParseQuestXML(xmlObj) {
-    let result = {}
+function altParseQuestXML(questManager, xmlObj) {
+    const result = {}
 
     xmlObj.querySelectorAll("adventures").forEach(adventures => {
         parseXMLNode(adventures, result)
     })
 
     for (let [key] of Object.entries(result)) {
+        if (!key.includes("ADS")) {continue}
         adventures = result[key]
 
         for (let [key] of Object.entries(adventures)) {
+            if (!key.includes("ADV")) {continue}
             adventure = adventures[key]
 
             for (let [key] of Object.entries(adventure)) {
+                if (!key.includes("QUE")) {continue}
                 quest = adventure[key]
-                quest.status = QUEST_STATES.UNAVAILABLE
+                quest.status = questManager.QUEST_STATES.UNAVAILABLE
             }
         }
     }

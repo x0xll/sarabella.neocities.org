@@ -125,14 +125,6 @@ class Player
             // Start moving player towards the target
             this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
             // TODO: Change player animation (walk, need animated sprite first)
-
-            // Check if we are in a quest trigger -> if so, we stop the movement and start the quest
-            let gridPos = this.isoToGridMap(this.target.x, this.target.y);
-            if (tryTriggerQuest(this.phaserScene, gridPos.x, gridPos.y))
-            {
-                this.pathList.length = 0;
-                this.pathIndex = 0;
-            }
         }
         this.checkIfReachedDestination()
     }
@@ -146,7 +138,17 @@ class Player
             const distanceFromTarget = this.distanceBetweenPoints(this.phaserScene.player.x, this.phaserScene.player.y, this.target.x, this.target.y)
             if (distanceFromTarget < 20) {
                 this.phaserScene.player.body.reset(this.target.x, this.target.y);
-                this.pathIndex++
+                
+
+                // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
+                let gridPos = this.isoToGridMap(this.target.x, this.target.y);
+                if (this.phaserScene.sharedData.questManager.tryTriggerQuest(this.phaserScene, gridPos)) {
+                    this.pathList = [];
+                    this.pathIndex = 0;
+                } else {
+                    this.pathIndex++
+                }
+
                 if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
                     this.pathList.shift()
                     this.pathIndex = 0

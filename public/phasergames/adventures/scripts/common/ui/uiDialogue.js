@@ -94,7 +94,7 @@ class uiDialogue extends uiManagerBase
         continueBtn.on('pointerup', (pointer) => 
         { 
             this.hide();
-            checkIfCanDoQuestAction(this.phaserScene);
+            this.phaserScene.sharedData.questManager.checkIfCanDoQuestAction(this.phaserScene);
         });
 
         var continueTxt = this.phaserScene.add.text(155, 412, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)

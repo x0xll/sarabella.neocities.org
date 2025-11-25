@@ -45,7 +45,7 @@ class ZoneBase extends Phaser.Scene
 
         game.itemDatabase.setupDatabase();
 
-        initializeQuestData(game);
+        game.sharedData.questManager.initializeQuestData(game);
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
