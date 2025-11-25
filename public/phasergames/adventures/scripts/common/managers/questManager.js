@@ -290,6 +290,25 @@ function startQuest(phaserScene, fileID, adventureID, questID)
 
     phaserScene.sharedData.quest.logic.activeQuests.push(globalData);
 
+    // Wait until quest has been added before continuing
+    let addingQuest = true
+    const duplicates = []
+    while (addingQuest) {
+        phaserScene.sharedData.quest.logic.activeQuests.forEach(quest => {
+            let questMatch = quest.fileID === fileID && quest.adventureID === adventureID && quest.questID === questID
+            if (!addingQuest && questMatch) {
+                duplicates.push(phaserScene.sharedData.quest.logic.activeQuests.indexOf(quest))
+            }
+            addingQuest = !questMatch && addingQuest
+        });
+
+        // Remove duplicate quests
+        let removedTotal = 0
+        for (let index = 0; index < duplicates.length; index++) {
+            phaserScene.sharedData.quest.logic.activeQuests.splice(duplicates - removedTotal, 1)
+        }
+    }
+
     console.log("Start quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
     doQuestAction(phaserScene, globalData);
 }
@@ -311,9 +330,7 @@ function finishQuest(phaserScene, fileID, adventureID, questID)
         break;
     }
 
-    console.log(phaserScene.sharedData.quest.logic.activeQuests.length)
     phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
-    console.log(phaserScene.sharedData.quest.logic.activeQuests.length)
 
     console.log("End quest: " + fileID + " - " + adventureID + " - " + questID + " - " + questData.description);
 }
