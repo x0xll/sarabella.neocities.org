@@ -152,19 +152,17 @@ debug_DrawTriggerQuest(phaserScene)
     }
 
     /**
-     * Loads and parses the xml files from the cache. Should be called from the loadScreen scene
+     * Loads and parses the xml files from the cache, and then initializes the quests. Should be called from the loadScreen scene
      * @param {*} phaserScene 
      */
-    loadQuestData(phaserScene) {
-        phaserScene.sharedData.questData = []
-
-        for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
-            phaserScene.sharedData.questData.push(altParseQuestXML(this, phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
-        }
-    }
 
     initializeQuestData(phaserScene)
     {
+        phaserScene.sharedData.questData = []
+        for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
+            phaserScene.sharedData.questData.push(altParseQuestXML(this, phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
+        }
+
         phaserScene.sharedData.quest = {};
         phaserScene.sharedData.quest.logic = 
         {

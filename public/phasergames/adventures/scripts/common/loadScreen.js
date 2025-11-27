@@ -13,6 +13,8 @@ class Common_Load extends Phaser.Scene
         loadLoadingUI(this);
         this.questManager = new QuestManager();
         this.questManager.preloadQuestData(this)
+        this.itemDatabase = new ItemDatabase(this);
+        this.inventory = new InventoryManager(this);
     }
 
     create (sharedData)
@@ -24,20 +26,34 @@ class Common_Load extends Phaser.Scene
             loader.sharedData.worldToLoad = "world_canterfarm"
         }
 
+        // TODO: handle through save data
+        loader.sharedData.magicTree = 
+        {
+            logic: 
+            {
+                level: 0
+            }
+        }
+        loader.sharedData.inventory = 
+        {
+            logic:
+            {
+                manager: loader.inventory
+            }
+        }
+        loader.itemDatabase.setupDatabase();
+
         // Load quest data
         if (loader.sharedData.questManager === undefined) {
             loader.sharedData.questManager = loader.questManager
+            loader.sharedData.questManager.initializeQuestData(loader);
         }
-        loader.sharedData.questManager.loadQuestData(this)
+
 
         // TESTING
-        this.scene.launch(loader.sharedData.worldToLoad, loader.sharedData);
+        this.scene.launch("common_ui", loader.sharedData)
+                    .stop();
 
-        // Add a delay to make sure the ui is setup after the world loads to prevent null refs
-        // TODO: find a good value
-        this.time.delayedCall(100, () => {
-            this.scene.launch("common_ui", loader.sharedData)
-                      .stop();
-        }, [], this); 
+        this.scene.launch(loader.sharedData.worldToLoad, loader.sharedData);
     }
 }

@@ -11,7 +11,10 @@ class World_CanterFarm extends ZoneBase
         this.AREA_NAME = "CanterFarms";
         this.ZONE_ID = "Z001";
 
-        // TODO: may need to set pos in create based on sharedData to know which entry of the scene we are on
+        // These values are to offset the tile grid for the map
+        this.xOffset = -320
+        this.yOffset = 865
+
         this.playerData = 
         {
             xPosStart: 17,
@@ -36,7 +39,12 @@ class World_CanterFarm extends ZoneBase
 
     create (sharedData)
     {
+
         this.instantiateBackgrounds(1500, 0);
+        // Set pos based on previous zone to know which entry of the scene we are on
+        this.sceneEntryPoints = {
+            "Z012": [35, 37]
+        };
         super.create(sharedData);
     }
 

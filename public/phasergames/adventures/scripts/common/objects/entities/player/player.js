@@ -174,6 +174,16 @@ class Player
 
         // TODO: add facing backwards or forwards once sprite is updated to include it
     }
+
+    /**
+     * Sets the player position on the grid
+     * @param {*} x 
+     * @param {*} y 
+     */
+    setPlayerGridPosition(x, y) {
+        const pos = this.gridToIsoMap(x, y)
+        this.phaserScene.player.body.reset(pos.x, pos.y);
+    }
         
     FindPathToNextDestination() {
         let path = null
@@ -181,6 +191,20 @@ class Player
             this.onPathIndex = 0;
             let playerGridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
             path = this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
+            
+            let lastMatch = null
+            for (let index = 1; index < path.length; index++) {
+                const prevPoint = path[index-1];
+                const point = path[index];
+                
+                if (lastMatch === null || prevPoint[lastMatch] !== point[lastMatch]) {
+                    lastMatch = prevPoint["y"] === point["y"] ? "y" : "x"
+                } else {
+                    path.splice(index-1, 1);
+                    index--
+                }
+            }
+
             return path
         }
     }

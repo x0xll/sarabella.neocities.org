@@ -16,8 +16,6 @@ class ZoneBase extends Phaser.Scene
         const game = this;
         game.sharedData = sharedData
         game.tileWidth = 80
-        game.xOffset = -320
-        game.yOffset = 865
         game.tiles = []
         game.timeManager.startClock()
         game.sharedData.global = 
@@ -25,27 +23,6 @@ class ZoneBase extends Phaser.Scene
             AREA_NAME: game.AREA_NAME,
             ZONE_ID: game.ZONE_ID
         }
-
-        // TODO: handle through save data
-        game.sharedData.magicTree = 
-        {
-            logic: 
-            {
-                level: 0
-            }
-        }
-
-        game.sharedData.inventory = 
-        {
-            logic:
-            {
-                manager: game.inventory
-            }
-        }
-
-        game.itemDatabase.setupDatabase();
-
-        game.sharedData.questManager.initializeQuestData(game);
 
         // Waiting for the zone file to be fully parsed and the images to be loaded before starting the world
         function instantiateWorld()
@@ -91,6 +68,10 @@ class ZoneBase extends Phaser.Scene
         
         // TODO : Create the isometric grid
         instantiateWorld();
+
+        if (game.sharedData !== undefined && game.sharedData.prevZone !== undefined) {
+            game.playerObj.setPlayerGridPosition(game.sceneEntryPoints[game.sharedData.prevZone][0], game.sceneEntryPoints[game.sharedData.prevZone][1])
+        }
         game.playerObj.move();
         game.timeManager.renderDayNight()
     }
@@ -101,6 +82,7 @@ class ZoneBase extends Phaser.Scene
 
         game.playerObj.updatePlayer();
         game.timeManager.updateTime();
+        game.sharedData.prevZone = this.ZONE_ID
 
         //debug_DrawTriggerQuest(game);
 
@@ -136,8 +118,6 @@ class ZoneBase extends Phaser.Scene
     {
         this.playerObj = new Player(this, this.playerData.xPosStart, this.playerData.yPosStart, this.camBound.xBounds, this.camBound.yBounds);
         this.timeManager = new TimeManager(this);    
-        this.itemDatabase = new ItemDatabase(this);
-        this.inventory = new InventoryManager(this);
     }
 
     loadBackgrounds(xSize, ySize)

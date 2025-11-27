@@ -11,11 +11,14 @@ class World_CanterDowns extends ZoneBase
         this.AREA_NAME = "CanterDowns";
         this.ZONE_ID = "Z012";
 
-        // TODO: may need to set pos in create based on sharedData to know which entry of the scene we are on
+        // These values are to offset the tile grid for the map
+        this.xOffset = -1380
+        this.yOffset = 1905
+
         this.playerData = 
         {
-            xPosStart: 66,
-            yPosStart: 3
+            xPosStart: 62,
+            yPosStart: 20
         };
 
         this.camBound = 
@@ -34,7 +37,12 @@ class World_CanterDowns extends ZoneBase
 
     create (sharedData)
     {
+
         this.instantiateBackgrounds(2868, 2075);
+        // Set pos based on previous zone to know which entry of the scene we are on
+        this.sceneEntryPoints = {
+            "Z001": [62, 5]
+        }
         super.create(sharedData);
     }
 
