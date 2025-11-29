@@ -81,11 +81,12 @@
             <script type="text/javascript">
                 // Handle constants here? May need to do a file for this, or handle it completely differently
                 const AVAILABLE = [
-                    "fr"
+                    "fr",
+                    "en"
                 ]
                 let  lang = getCurrentLanguageCode()
                 if (AVAILABLE.indexOf(lang) === -1) {
-                    lang = "fr"
+                    lang = "en"
                 }
                 const ZONE_XML_PATH = "./data/common/Maps/";
                 const SHOP_XML_PATH = "./data/common/Shops/";
