@@ -91,12 +91,6 @@ class uiDialogue extends uiManagerBase
 
         });
 
-        continueBtn.on('pointerup', (pointer) => 
-        { 
-            this.hide();
-            this.phaserScene.sharedData.questManager.checkIfCanDoQuestAction(this.phaserScene);
-        });
-
         var continueTxt = this.phaserScene.add.text(155, 412, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
@@ -120,15 +114,15 @@ class uiDialogue extends uiManagerBase
 
 
     // TODO: Handle if dialogue has no character to display
-    show(phaserScene, characterid, text, choices)
+    show(questID, characterid, text, choices)
     {
         // TODO get character name from id
         const character = {name: characterid, id: characterid}
 
-        if (phaserScene.sharedData.dialogue.ui.elements === undefined)
+        if (this.phaserScene.sharedData.dialogue.ui.elements === undefined)
             this.initialize();
 
-        if (phaserScene.sharedData.global.uiOpen)
+        if (this.phaserScene.sharedData.global.uiOpen)
             return;
 
         this.phaserScene.sharedData.global.uiOpen = true;
@@ -151,6 +145,17 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
 
+
+        let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
+        
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', (pointer) => 
+        { 
+            this.hide();
+            this.phaserScene.sharedData.lastChoice = "continue"
+            this.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
+        });
+        
+        
         // TODO : get the dialogue choices
     }
 

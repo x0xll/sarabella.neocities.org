@@ -11,8 +11,8 @@ class Common_Load extends Phaser.Scene
     preload ()
     {
         loadLoadingUI(this);
-        this.questManager = new QuestManager();
-        this.questManager.preloadQuestData(this)
+        this.questManager = new QuestManager(this);
+        this.questManager.preloadQuestData()
         this.itemDatabase = new ItemDatabase(this);
         this.inventory = new InventoryManager(this);
     }
@@ -46,7 +46,7 @@ class Common_Load extends Phaser.Scene
         // Load quest data
         if (loader.sharedData.questManager === undefined) {
             loader.sharedData.questManager = loader.questManager
-            loader.sharedData.questManager.initializeQuestData(loader);
+            loader.sharedData.questManager.initializeQuestData();
         }
 
 

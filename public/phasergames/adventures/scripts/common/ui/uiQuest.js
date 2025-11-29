@@ -132,7 +132,7 @@ class uiQuest extends uiManagerBase
             for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
             {
                 firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[i];
-                isShowable = this.selectCurrentQuestForDetails(firstQuest.fileID, firstQuest.adventureID, firstQuest.questID);
+                isShowable = this.selectCurrentQuestForDetails(firstQuest);
                 if (isShowable)
                     break;
             }
@@ -158,13 +158,15 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
     }
 
-    selectCurrentQuestForDetails(globalID, adventureID, questID)
+    selectCurrentQuestForDetails(questID)
     {
-        let quest = getQuestPerID(this.phaserScene, globalID, adventureID, questID);
+        let adventure = this.phaserScene.sharedData.questManager.getAdventurePerID(questID);
+        let quest = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
 
-        if (quest.target.id === undefined && quest.status == QUEST_STATES.WAITING) return false;
-
-        if (quest === undefined) return false;
+        if (quest === undefined || 
+            quest.status !== this.phaserScene.sharedData.questManager.QUEST_STATES.AVAILABLE || 
+            (quest.visible !== undefined && !quest.visible)
+        ) return false;
 
         this.phaserScene.sharedData.quest.ui.elements.questTitle.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.lookforTxt.setAlpha(1);
@@ -175,10 +177,10 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
 
-        this.phaserScene.sharedData.quest.ui.elements.questTitle.setText(getAdventurePerID(this.phaserScene, globalID, adventureID).description);
+        this.phaserScene.sharedData.quest.ui.elements.questTitle.setText(adventure.description.text);
         this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(""); // TODO: find where we get
         this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(""); // TODO: find where we get
-        this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setText(quest.description);
+        this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setText(quest.description.text);
         //this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(); // TODO: find where we get
         return true;
     }
