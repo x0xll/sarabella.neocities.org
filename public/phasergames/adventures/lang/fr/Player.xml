@@ -1,0 +1,70 @@
+<things version="1">
+  <!-- ================ PLAYER TEMPLATES ================ -->
+  <!-- This file should eventually be a READ/WRITE file so
+		 nifty things like player customization can be stored here.
+		 as it is now, it is read-only, and only the location of 
+		 the player character's thumbnail and identifier are stored
+		 in this file.-->
+  <template name="PlayerTemplate">
+    <component type="components.AvatarIdleComponent" name="AvatarIdle">
+      <idleCount>3</idleCount>
+    </component>
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>A001</identifier>
+    </component>
+    <component type="components.CustomizedAvatarComponent" name="Avatar">
+      <containerScale>
+        <x>.4</x>
+        <y>.4</y>
+      </containerScale>
+    </component>
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>false</blocksSpawn>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.MovieClipComponent" name="MovieClip">
+      <!-- WHY DIRECTLY THE F*CK IS THERE THIS flash.display.MovieClip
+      value for class name?  In all other cases, className is the string under
+      which a particular art asset was exported, like H001, T0184, P003Produce, 
+      etc... 
+      Because in this case we just want to have an empty, default movie clip
+      for the avatar.  We'll place the appropriate bones and skins and whatnot
+      into it.-->
+      <className>flash.display.MovieClip</className>
+    </component>
+    <component type="components.NameComponent" name="Name">
+      <name>You</name>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/npcs/humansthumbnail.swf</fileName>
+      <className>A001</className>
+    </component>
+  </template>
+  <template name="KittyAvatarTemplate">
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+    <component type="components.CharacterComponent" name="Character">
+      <identifier>A001</identifier>
+    </component>
+    <component type="components.SimpleAvatarComponent" name="Avatar">
+      <containerScale>
+        <x>.8</x>
+        <y>.8</y>
+      </containerScale>
+    </component>
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <blocksSpawn>false</blocksSpawn>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.MovieClipComponent" name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/placeableobjects1.swf</fileName>
+      <className>T0500</className>
+    </component>
+    <component type="components.NameComponent" name="Name">
+      <name>You</name>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/npcs/humansthumbnail.swf</fileName>
+      <className>A001</className>
+    </component>
+  </template>
+</things>
