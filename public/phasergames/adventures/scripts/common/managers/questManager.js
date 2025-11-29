@@ -186,7 +186,6 @@ class QuestManager {
 
     //------- QUEST LOADING -------
     // TODO : get the quests info from somewhere
-    #QUEST_DATA_FOLDER = "./lang/fr/"; // TODO : Handle with loca system
     #QUEST_FILE_NAMES = [
         "freeplay_v2",
         "tutorials",
@@ -207,7 +206,7 @@ class QuestManager {
      */
     preloadQuestData() {
         this.#QUEST_FILE_NAMES.forEach(file => {
-            this.phaserScene.load.xml(file, `${this.#QUEST_DATA_FOLDER}/${file}.xml`);
+            this.phaserScene.load.xml(file, `${QUEST_XML_PATH}${file}.xml`);
         });
     }
 

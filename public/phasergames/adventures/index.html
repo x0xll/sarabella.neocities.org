@@ -73,18 +73,27 @@
         </style>
     </head>
 
-    <script>
-        // Handle constants here? May need to do a file for this, or handle it completely differently
-        const ZONE_XML_PATH = "./datas/zones/";
-        const LEVEL_ASSETS_PATH = "./assets/extracted/Tilemaps/";
-    </script>
-
     <script src="/language.js"></script>
 
     <body style="text-align: center;"  onload="loadLanguagePref()">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
+                // Handle constants here? May need to do a file for this, or handle it completely differently
+                const AVAILABLE = [
+                    "fr"
+                ]
+                let  lang = getCurrentLanguageCode()
+                if (AVAILABLE.indexOf(lang) === -1) {
+                    lang = "fr"
+                }
+                const ZONE_XML_PATH = "./data/common/Maps/";
+                const SHOP_XML_PATH = "./data/common/Shops/";
+                const QUEST_XML_PATH = `./data/lang/${lang}/Quests/`;
+                const TEMPLATE_XML_PATH = `./data/lang/${lang}/Templates/`;
+                const UI_XML_PATH = `./data/lang/${lang}/UI/`;
+                const LEVEL_ASSETS_PATH = "./assets/extracted/Tilemaps/";
+
                 // Gets lang file
                 // TODO: Link to loca
                 // We will need to figure out the best way to handle this,
