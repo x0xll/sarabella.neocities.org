@@ -112,7 +112,7 @@ class Player
      */
     updatePlayer() {  
         if (this.playerMove) {      
-            if ( this.pathList[0] === null ) {
+            if ( !this.pathList[0] ) {
                 this.pathList.shift()
             } else if (this.pathList.length > 0 && this.pathList[0].length > 0) {
                 // Set new target position
@@ -197,7 +197,7 @@ class Player
             path = await this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
             
             let lastMatch = null
-            if (path.length === null) {return}
+            if (path === null || path.length === null) {return}
             for (let index = 1; index < path.length; index++) {
                 const prevPoint = path[index-1];
                 const point = path[index];
