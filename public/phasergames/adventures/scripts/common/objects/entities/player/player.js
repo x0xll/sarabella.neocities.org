@@ -15,7 +15,7 @@ class Player
 
     constructor(phaserScene, startX, startY, camBoundX, camBoundY)
     {
-        this.PLAYER_SPEED = 800;
+        this.PLAYER_SPEED = 600;
         this.phaserScene = phaserScene;
         this.startPos = [startX, startY];
         this.camBounds = [camBoundX, camBoundY];
@@ -89,7 +89,7 @@ class Player
         // TODO: Add pathfinding so the player moves completely on the grid.
         // This might be useful here: https://www.geeksforgeeks.org/rat-in-a-maze/
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
-        this.phaserScene.input.on('pointerup', (pointer) => {
+        this.phaserScene.input.on('pointerup', async (pointer) => {
             // Prevent moving when a UI is open
             if (this.phaserScene.sharedData.global.uiOpen) 
                 return;
@@ -102,31 +102,34 @@ class Player
             this.nextX = gridTarget.x
             this.nextY = gridTarget.y
             this.hasNext = true;
-            this.pathList.push(this.FindPathToNextDestination())
+            this.pathList.push(await this.FindPathToNextDestination())
+            this.playerMove = true
         });
     }
 
     /**
      * Updates player sprite and movement throughout gameplay. Should be called during the update phase of scene setup
      */
-    updatePlayer() {        
-        if ( this.pathList[0] === null ) {
-            this.pathList.shift()
-        } else if (this.pathList.length > 0 && this.pathList[0].length > 0) {
-            // Set new target position
-            let target = this.pathList[0][this.pathIndex]
-            let isoTarget = this.gridToIsoMap(Math.round(target.x), Math.round(target.y))
-            this.target.x = isoTarget.x;
-            this.target.y = isoTarget.y;
+    updatePlayer() {  
+        if (this.playerMove) {      
+            if ( this.pathList[0] === null ) {
+                this.pathList.shift()
+            } else if (this.pathList.length > 0 && this.pathList[0].length > 0) {
+                // Set new target position
+                let target = this.pathList[0][this.pathIndex]
+                let isoTarget = this.gridToIsoMap(Math.round(target.x), Math.round(target.y))
+                this.target.x = isoTarget.x;
+                this.target.y = isoTarget.y;
 
-            // Face correct direction
-            this.setPlayerFacing(this.target.x, this.target.y)
+                // Face correct direction
+                this.setPlayerFacing(this.target.x, this.target.y)
 
-            // Start moving player towards the target
-            this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
-            // TODO: Change player animation (walk, need animated sprite first)
-        }
-        this.checkIfReachedDestination()
+                // Start moving player towards the target
+                this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
+                // TODO: Change player animation (walk, need animated sprite first)
+            }
+                this.checkIfReachedDestination()
+            }
     }
 
     /**
@@ -134,15 +137,15 @@ class Player
      */
     checkIfReachedDestination()
     {
+        this.playerMove = false
         if (this.phaserScene.player.body.speed > 0) {
             const distanceFromTarget = this.distanceBetweenPoints(this.phaserScene.player.x, this.phaserScene.player.y, this.target.x, this.target.y)
             if (distanceFromTarget < 20) {
                 this.phaserScene.player.body.reset(this.target.x, this.target.y);
                 
-
                 // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
                 let gridPos = this.isoToGridMap(this.target.x, this.target.y);
-                if (this.phaserScene.sharedData.questManager.tryTriggerQuest(this.phaserScene, gridPos)) {
+                if (this.pathList.length === 1 && this.phaserScene.sharedData.questManager.tryTriggerQuest(this.phaserScene, gridPos)) {
                     this.pathList = [];
                     this.pathIndex = 0;
                 } else {
@@ -157,6 +160,7 @@ class Player
             }
             this.updatePlayerSpriteDepth()
         }
+        this.playerMove = true
     }
 
     /**
@@ -185,12 +189,12 @@ class Player
         this.phaserScene.player.body.reset(pos.x, pos.y);
     }
         
-    FindPathToNextDestination() {
+    async FindPathToNextDestination() {
         let path = null
         if(this.hasNext) {
             this.onPathIndex = 0;
             let playerGridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
-            path = this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
+            path = await this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
             
             let lastMatch = null
             for (let index = 1; index < path.length; index++) {

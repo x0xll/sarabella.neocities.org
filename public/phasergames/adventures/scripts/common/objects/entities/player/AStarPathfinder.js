@@ -93,7 +93,7 @@
      * @param {*} targetY 
      * @returns 
      */
-    Calculate(startX, startY, targetX, targetY) {
+    async Calculate(startX, startY, targetX, targetY) {
         let radius = 0
         let path = null;
         let nextOpenX = 0;
