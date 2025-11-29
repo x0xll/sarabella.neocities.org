@@ -17,8 +17,8 @@ class World_CanterFarm extends ZoneBase
 
         this.playerData = 
         {
-            xPosStart: 17,
-            yPosStart: 3
+            xPosStart: 19,
+            yPosStart: 10
         };
 
         this.camBound = 

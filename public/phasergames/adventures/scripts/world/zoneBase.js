@@ -48,17 +48,16 @@ class ZoneBase extends Phaser.Scene
                     var cellValue = game.zoneParsed[0][y][x];
 
                     // We get the actual visual id
-                    if (game.zoneParsed[1][cellValue] === undefined)
-                    {
+                    if (game.zoneParsed[1][cellValue] === undefined) {
                         console.error("Tile isn't defined: " + cellValue);
                         continue;
                     }
-                    
-                    let tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, `${game.zoneParsed[1][cellValue].file}JSON`, `${game.zoneParsed[1][cellValue].file}Atlas`);
-                    
-                    game.timeManager.setTile(tile, cellValue)
-                    
-                    tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
+                    let tile = {}
+                    if (game.zoneParsed[1][cellValue].id !== "x") {
+                        tile = game.add.spine((x*game.tileWidth/2)+(y*game.tileWidth/2)+game.xOffset, (y*game.tileWidth/4)-(x*game.tileWidth/4)+game.yOffset, `${game.zoneParsed[1][cellValue].file}JSON`, `${game.zoneParsed[1][cellValue].file}Atlas`);
+                        game.timeManager.setTile(tile, cellValue)
+                        tile.setDepth((game.zoneParsed[0][y][x].length - x) + y - game.zoneParsed[1][cellValue].depth)
+                    }
 
                     tile.parsedData = game.zoneParsed[1][cellValue]
                     game.tiles[y][x] = tile

@@ -30,6 +30,7 @@ class TimeManager
      * @param {*} a 
      */
     changeTint(sprite, r, g, b, shade, a) {
+        if (sprite === undefined) {return}
         let layers = []
         sprite.slots.forEach(slot => {
             if (slot.data.name.includes("_night")) {
@@ -53,6 +54,7 @@ class TimeManager
     }
 
     setTile(tile, cellValue) {
+        if (!tile.skeleton) { return }
         let gameTime = this.isDay ? 'day' : 'night'
         const skeletonData = tile.skeleton.data;
         const skin = new spine.Skin("custom");
