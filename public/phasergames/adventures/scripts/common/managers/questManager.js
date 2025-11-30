@@ -11,6 +11,7 @@ class QuestManager {
     constructor (phaserScene) {
         this.phaserScene = phaserScene
         this.busy = true // Used to prevent trigger checks if the manager is currently checking already
+        this.preloadQuestData()
     }
 
 
@@ -216,14 +217,14 @@ class QuestManager {
     async initializeQuestData() {
         const savedUserQuestData = this.#parseSavedQuestData()
 
-        this.phaserScene.sharedData.questData = []
+        let questData = []
         for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
-            this.phaserScene.sharedData.questData.push(altParseQuestXML(this, this.phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
+            questData.push(parseQuestXML(this, this.phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
         }
 
         this.phaserScene.sharedData.quest = {};
         this.phaserScene.sharedData.quest.logic =  {
-            quests: this.phaserScene.sharedData.questData,
+            quests: questData,
             activeQuests: []
         }
 

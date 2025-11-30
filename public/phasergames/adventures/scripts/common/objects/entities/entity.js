@@ -8,14 +8,10 @@ class Entity {
         West: '_w',
         Northwest: '_nw'
     }
-    SPRITE_TYPE = {
-        image: 0,
-        spine: 1
-    }
     
     assetPath = "./assets/extracted"
     spriteScale = 1
-    facingDirection = this.FACING_DIRECTIONS.Southwest
+    facingDirection = this.FACING_DIRECTIONS.Southeast
 
     constructor(zoneScene, entityID, startX, startY) {
         this.zoneScene = zoneScene;

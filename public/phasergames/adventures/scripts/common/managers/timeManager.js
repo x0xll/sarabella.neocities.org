@@ -5,8 +5,12 @@ class TimeManager
     constructor(phaserScene)
     {
         this.phaserScene = phaserScene;
-        this.phaserScene.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
-        this.startAt = 0
+        if (this.phaserScene.sharedData.timePausedAt) {
+            this.startAt = this.phaserScene.sharedData.timePausedAt
+        } else {
+            this.phaserScene.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
+            this.startAt = 0
+        }
         this.isDay = true
         this.nightLength = 120000 // should be 120000
         this.dayLength = 180000 // should be 180000
@@ -147,5 +151,9 @@ class TimeManager
         } else {
             this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('night3')
         }
+    }
+
+    getCurrentTime() {
+        return this.clock.now
     }
 }

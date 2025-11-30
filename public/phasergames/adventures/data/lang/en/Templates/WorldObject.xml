@@ -63,7 +63,7 @@
       <isBlocked>false</isBlocked>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pont (réparé)</ToolTipText>
+      <ToolTipText>Bridge (fixed)</ToolTipText>
     </component>
   </template>
   <template name="T0004dTemplate" template="GiveObjectTemplate">
@@ -80,7 +80,7 @@
       <yOffset>3</yOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pont (cassé)</ToolTipText>
+      <ToolTipText>Bridge (broken)</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I019Template</item>
@@ -98,7 +98,7 @@
       <isBlocked>false</isBlocked>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Arc-en-ciel</ToolTipText>
+      <ToolTipText>Rainbow</ToolTipText>
     </component>
   </template>
   <template name="T0076Template" template="ExitToZone13a">
@@ -117,7 +117,7 @@
       <name>Home Cottage (basic)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Maisonnette (de base)</ToolTipText>
+      <ToolTipText>Home Cottage (basic)</ToolTipText>
     </component>
   </template>
   <template name="T0108Template" template="ObjectTemplate">
@@ -129,7 +129,7 @@
       <name>Humming bird</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Oiseau-mouche</ToolTipText>
+      <ToolTipText>Humming bird</ToolTipText>
     </component>
   </template>
   <template name="T0112bTemplate" template="ObjectTemplate">
@@ -141,7 +141,7 @@
       <name>Cauldron</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chaudron</ToolTipText>
+      <ToolTipText>Cauldron</ToolTipText>
     </component>
   </template>
   <template name="T0112cTemplate" template="ObjectTemplate">
@@ -153,7 +153,7 @@
       <name>Cauldron</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chaudron</ToolTipText>
+      <ToolTipText>Cauldron</ToolTipText>
     </component>
   </template>
   <template name="T0112dTemplate" template="ObjectTemplate">
@@ -165,7 +165,7 @@
       <name>Cauldron</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chaudron</ToolTipText>
+      <ToolTipText>Cauldron</ToolTipText>
     </component>
   </template>
   <template name="T0115Template" template="ObjectTemplate">
@@ -177,7 +177,7 @@
       <name>Dreamcatcher </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Attrape-rêves</ToolTipText>
+      <ToolTipText>Dreamcatcher</ToolTipText>
     </component>
   </template>
   <template name="T0116aTemplate" template="ObjectTemplate">
@@ -189,7 +189,7 @@
       <name>Yellow Paper</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papier jaune</ToolTipText>
+      <ToolTipText>Yellow Paper</ToolTipText>
     </component>
   </template>
   <template name="T0126aTemplate" template="ObjectTemplate">
@@ -246,7 +246,7 @@
       <name>Scarecrow</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Epouvantail</ToolTipText>
+      <ToolTipText>Scarecrow</ToolTipText>
     </component>
   </template>
   <template name="T0133aTemplate" template="ObjectTemplate">
@@ -258,7 +258,7 @@
       <name>Firecracker</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pétard</ToolTipText>
+      <ToolTipText>Firecracker</ToolTipText>
     </component>
   </template>
   <template name="T0165Template" template="ObjectTemplate">
@@ -270,7 +270,7 @@
       <name>Arborium Metal</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Métal d'Arborium</ToolTipText>
+      <ToolTipText>Arborium Metal</ToolTipText>
     </component>
   </template>
   <template name="T0176Template" template="ObjectTemplate">
@@ -282,7 +282,7 @@
       <name>Concrete slab for Cottage</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Dalle de béton pour maisonnette</ToolTipText>
+      <ToolTipText>Concrete slab for Cottage</ToolTipText>
     </component>
     <component name="Isometric">
       <depthOffset>-250</depthOffset>
@@ -297,7 +297,7 @@
       <name>Land Horse Topiary</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Buisson en forme de cheval</ToolTipText>
+      <ToolTipText>Land Horse Topiary</ToolTipText>
     </component>
   </template>
   <template name="T0020bTemplate" template="ObjectTemplate">
@@ -309,7 +309,7 @@
       <name>Air Horse Topiary</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Buisson en forme de cheval volant</ToolTipText>
+      <ToolTipText>Air Horse Topiary</ToolTipText>
     </component>
   </template>
   <template name="T0022eTemplate" template="ObjectTemplate">
@@ -321,7 +321,7 @@
       <name>Water Horse Topiary</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Buisson en forme de cheval aquatique</ToolTipText>
+      <ToolTipText>Water Horse Topiary</ToolTipText>
     </component>
   </template>
   <template name="T0054aTemplate" template="ObjectTemplate">
@@ -336,7 +336,7 @@
       <depthOffset>1</depthOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Piquet de clôture</ToolTipText>
+      <ToolTipText>Fences - Picket</ToolTipText>
     </component>
   </template>
   <template name="T0179Template" template="ObjectTemplate">
@@ -357,7 +357,7 @@
       <name>Hoofprint - North</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -372,7 +372,7 @@
       <name>Hoofprint - Northeast</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -387,7 +387,7 @@
       <name>Hoofprint - East</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -402,7 +402,7 @@
       <name>Hoofprint - South</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -417,7 +417,7 @@
       <name>Hoofprint - Southeast</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -432,7 +432,7 @@
       <name>Hoofprint - West</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -447,7 +447,7 @@
       <name>Hoofprint - Southwest</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -462,7 +462,7 @@
       <name>Hoofprint - Northwest</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -477,7 +477,7 @@
       <name>Wolf prints</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreintes de loup</ToolTipText>
+      <ToolTipText>Wolf prints</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -492,7 +492,7 @@
       <name>Wolf prints</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreintes de loup</ToolTipText>
+      <ToolTipText>Wolf prints</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -507,7 +507,7 @@
       <name>Wolf prints</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreintes de loup</ToolTipText>
+      <ToolTipText>Wolf prints</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -522,7 +522,7 @@
       <name>Campfire</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Feu de camp</ToolTipText>
+      <ToolTipText>Campfire</ToolTipText>
     </component>
   </template>
   <template name="T0171aTemplate" template="ObjectTemplate">
@@ -534,7 +534,7 @@
       <name>Puddle drops</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gouttes d'eau</ToolTipText>
+      <ToolTipText>Puddle drops</ToolTipText>
     </component>
     <component name="GridPosition">
       <isBlocked>false</isBlocked>
@@ -549,7 +549,7 @@
       <name>Puddle</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Flaque</ToolTipText>
+      <ToolTipText>Puddle</ToolTipText>
     </component>
   </template>
   <template name="T0132bTemplate" template="ObjectTemplate">
@@ -561,7 +561,7 @@
       <name>Pumpkin Court - Happy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cour des citrouilles - Joyeuse</ToolTipText>
+      <ToolTipText>Pumpkin Court - Happy</ToolTipText>
     </component>
   </template>
   <template name="T0055bTemplate" template="ObjectTemplate">
@@ -573,7 +573,7 @@
       <name>Gate - Closed</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Portail fermé</ToolTipText>
+      <ToolTipText>Gate - Closed</ToolTipText>
     </component>
   </template>
   <template name="T0055eTemplate" template="ObjectTemplate">
@@ -588,7 +588,7 @@
       <name>Gate - Opened</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Portail ouvert</ToolTipText>
+      <ToolTipText>Gate - Opened</ToolTipText>
     </component>
   </template>
   <template name="T0077aTemplate" template="ObjectTemplate">
@@ -600,7 +600,7 @@
       <name>Cake - cut</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gâteau coupé</ToolTipText>
+      <ToolTipText>Cake - cut</ToolTipText>
     </component>
   </template>
   <template name="T0129aTemplate" template="ObjectTemplate">
@@ -612,7 +612,7 @@
       <name>Scarecrow - cow shaped</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Epouvantail en forme de vache</ToolTipText>
+      <ToolTipText>Scarecrow - cow shaped</ToolTipText>
     </component>
   </template>
   <template name="T0130Template" template="ObjectTemplate">
@@ -624,7 +624,7 @@
       <name>Black crow</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Corbeau noir</ToolTipText>
+      <ToolTipText>Black crow</ToolTipText>
     </component>
   </template>
   <template name="T0128Template" template="ObjectTemplate">
@@ -641,7 +641,7 @@
       <yOffset>-200</yOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cerf-volant</ToolTipText>
+      <ToolTipText>CKite</ToolTipText>
     </component>
   </template>
   <template name="T0201Template" template="ObjectTemplate">
@@ -653,7 +653,7 @@
       <name>Dam</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Barrage</ToolTipText>
+      <ToolTipText>Dam</ToolTipText>
     </component>
   </template>
   <template name="T0244Template" template="ObjectTemplate">
@@ -665,7 +665,7 @@
       <name>Fog</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Brouillard</ToolTipText>
+      <ToolTipText>Fog</ToolTipText>
     </component>
   </template>
   <template name="T0241aTemplate" template="ObjectTemplate">
@@ -684,7 +684,7 @@
       <depthOffset>-100</depthOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gros rocher</ToolTipText>
+      <ToolTipText>Big Boulder</ToolTipText>
     </component>
   </template>
   <template name="T0241bTemplate" template="ObjectTemplate">
@@ -703,7 +703,7 @@
       <depthOffset>-100</depthOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gros rocher</ToolTipText>
+      <ToolTipText>Big Boulder</ToolTipText>
     </component>
   </template>
   <template name="PurpleGemTemplate" template="ObjectTemplate">
@@ -715,7 +715,7 @@
       <name>Mysterious Gemstone</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mystérieuse gemme</ToolTipText>
+      <ToolTipText>Mysterious Gemstone</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1689,7 +1689,7 @@
       <name>Hoofprints</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Empreinte de sabot</ToolTipText>
+      <ToolTipText>Hoofprint</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>5</gridFootX>

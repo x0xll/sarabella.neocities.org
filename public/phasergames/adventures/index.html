@@ -27,6 +27,7 @@
         <script src="./scripts/common/ui/uiDialogue.js"></script>
 
         <!-- Manager -->
+        <script src="./scripts/common/managers/NPCManager.js"></script>
         <script src="./scripts/common/managers/questManager.js"></script>
         <script src="./scripts/common/managers/saveManager.js"></script>
         <script src="./scripts/common/managers/loadingManager.js"></script>
@@ -63,6 +64,7 @@
 
         <!-- Entities -->
         <script src="./scripts/common/objects/entities/entity.js"></script>
+        <script src="./scripts/common/objects/entities/characters/character.js"></script>
         <script src="./scripts/common/objects/entities/player/player.js"></script>
         <script src="./scripts/common/objects/entities/player/AStarPathfinder.js"></script>
         <script src="./scripts/common/objects/entities/items/item.js"></script>
@@ -95,6 +97,7 @@
                 const TEMPLATE_XML_PATH = `./data/lang/${lang}/Templates/`;
                 const UI_XML_PATH = `./data/lang/${lang}/UI/`;
                 const LEVEL_ASSETS_PATH = "./assets/extracted/Tilemaps/";
+                const TILE_ASSETS_PATH = "./assets/newTiles/";
 
                 // Gets lang file
                 // TODO: Link to loca
@@ -145,31 +148,6 @@
                     scene: [
                         Common_Load,
                         ZoneBase,
-                        World_CanterFarm,
-                        World_RolandsgaardCastleBroadwalk,
-                        World_BallroomEntrance,
-                        World_GardenRoom,
-                        World_FountainRoom,
-                        World_RoyalRoom,
-                        World_FountainPlaza,
-                        World_BagatellaRow,
-                        World_ArtisansWay,
-                        World_Outskirts,
-                        World_Trailhead,
-                        World_CanterDowns,
-                        World_OvergaardSkylands,
-                        World_DarkcombHedge,
-                        World_DarkcombForest,
-                        World_FastalonWestRiverbank,
-                        World_RoseValley,
-                        World_BodasCave,
-                        World_WolfsDen,
-                        World_Petalhome,
-                        World_DesertCave,
-                        World_Cottage01,
-                        World_Cottage10,
-                        World_Cottage11,
-                        World_Cottage50,
                         Common_UI
                     ]
                 };

@@ -24,10 +24,6 @@ class Player extends Entity {
         this.aStar = new AStar(this.zoneScene.tiles);
 
 
-        if (this.zoneScene.sharedData !== undefined && this.zoneScene.sharedData.prevZone !== undefined) {
-            this.setSpritePosition(this.zoneScene.sceneEntryPoints[this.zoneScene.sharedData.prevZone][0], this.zoneScene.sceneEntryPoints[zone.sharedData.prevZone][1])
-        }
-
         this.#move();
     }
 
@@ -110,7 +106,11 @@ class Player extends Entity {
             gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
 
             // Check if position is valid
-            if((0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length) && (0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length) && (zoneTiles[gridTarget.y][gridTarget.x].parsedData.walkable === 'true')){
+            if(zoneTiles[gridTarget.y] !== undefined 
+                && zoneTiles[gridTarget.y][gridTarget.x] !== undefined
+                && (0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length) 
+                && (0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length) 
+                && (zoneTiles[gridTarget.y][gridTarget.x].parsedData.walkable === 'true')){
                 // Move cursor to target position
                 let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y+1))
                 const polygon = [

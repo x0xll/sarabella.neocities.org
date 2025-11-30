@@ -5755,9 +5755,9 @@
       <identifier>H047</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Crois en tes amis et aide-les à prendre leur envol.</text>
-      <text>Bonjour. Mon nom est Wings .</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>Believe in your friends and help them find their wings.</text>
+      <text>Hello. My name is Wings.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Wings </name>
@@ -5771,7 +5771,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Wings</description>
+        <description>Wings' favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5801,7 +5801,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Wings pour ta collection. </text>
+              <text>Yum! That's my favorite thing to eat. Thank you so much. Take this Wings card for your collection.</text>
               <identifier>H047</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">

@@ -1,0 +1,85 @@
+{
+    "world_cottage01": {
+        "ID": "R001",
+        "name": "Cottage01",
+
+        "tileXOffset": 80,
+        "tileYOffset": 415,
+        "tileAssets": [
+            "canterfarmsmain"
+        ],
+
+        "backgroundXOffset": 1500,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [1, 5],
+            "Z001": [1, 5]
+        },
+
+        "camBound": {
+            "xBounds": 1040,
+            "yBounds": 696
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+
+    "world_canterfarm": {
+        "ID": "Z001",
+        "name": "CanterFarms",
+
+        "tileXOffset": -320,
+        "tileYOffset": 856,
+        "tileAssets": [
+            "canterfarmsmain",
+            "Ti021b"
+        ],
+
+        "backgroundXOffset": 1500,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [19, 10],
+            "Z012": [35, 37],
+            "R001": [21, 28]
+        },
+
+        "camBound": {
+            "xBounds": 3000,
+            "yBounds": 1600
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+
+
+    "world_canterdowns": {
+        "ID": "Z012",
+        "name": "CanterDowns",
+
+        "tileXOffset": -1380,
+        "tileYOffset": 1905,
+        "tileAssets": [
+            "ruralskymain"
+        ],
+
+        "backgroundXOffset": 2868,
+        "backgroundYOffset": 2075,
+
+        "sceneEntryPoints": {
+            "default": [ 62, 20],
+            "Z001": [62, 5]
+        },
+
+        "camBound": {
+            "xBounds": 5736,
+            "yBounds": 4150
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 2
+    }
+}
