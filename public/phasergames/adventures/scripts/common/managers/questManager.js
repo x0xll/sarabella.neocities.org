@@ -172,7 +172,7 @@ class QuestManager {
                     for (let x = triggerData.centerX - triggerData.radius; x < triggerData.centerX + triggerData.radius; x++) {
                         for (let y = triggerData.centerY - triggerData.radius; y < triggerData.centerY + triggerData.radius; y++) {
                             if (Math.abs(x - triggerData.centerX) + Math.abs(y - triggerData.centerY) <= triggerData.radius) {
-                                let pos = phaserScene.playerObj.gridToIsoMap(parseInt(x), parseInt(y));
+                                let pos = phaserScene.gridToIsoMap(parseInt(x), parseInt(y));
                                 var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, 25, 12, 0xff0000, 1).setAlpha(.5);
                                 phaserScene.add.existing(rect);
                             }
@@ -420,7 +420,7 @@ class QuestManager {
             for (let x = triggerData.centerX - triggerData.radius; x < triggerData.centerX + triggerData.radius; x++) {
                 for (let y = triggerData.centerY - triggerData.radius; y < triggerData.centerY + triggerData.radius; y++) {
                     if (Math.abs(x - triggerData.centerX) + Math.abs(y - triggerData.centerY) <= triggerData.radius) {
-                        let pos = phaserScene.playerObj.gridToIsoMap(parseInt(x), parseInt(y));
+                        let pos = phaserScene.gridToIsoMap(parseInt(x), parseInt(y));
                         var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, 25, 12, 0xff0000, 1).setAlpha(.5);
                         phaserScene.add.existing(rect);
                     }

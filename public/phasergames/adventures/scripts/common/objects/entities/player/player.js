@@ -1,65 +1,107 @@
-class Player
-{
-    facingDirection = {
-        North: '_n',
-        Northeast: '_ne',
-        East: '_e',
-        Southeast: '_se',
-        South: '_s',
-        Southwest: '_sw',
-        West: '_w',
-        Northwest: '_nw'
-    }
+class Player extends Entity {
     pathList = []
     pathIndex = 0
+    spriteScale = .25
 
-    constructor(phaserScene, startX, startY, camBoundX, camBoundY)
-    {
+    constructor(zoneScene, startX, startY, camBoundX, camBoundY) {
+        super(zoneScene, "player", startX, startY);
+
         this.PLAYER_SPEED = 600;
-        this.phaserScene = phaserScene;
-        this.startPos = [startX, startY];
         this.camBounds = [camBoundX, camBoundY];
-
-        this.loadPlayerSprites();
+        this.load("TestCharacter");
     }
+
 
     // ------- INITIALIZE PLAYER -------
     /**
-     * Loads assets for player sprites. Should run during the preload phase of scene setup
+     * Instantiates player sprite, camera and cursor indicator. Should run during the create phase of scene setup
      */
-    loadPlayerSprites()
-    {
-        this.phaserScene.load.image("Player", `./assets/extracted/TestCharacter.png`)
+    create() {
+        let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1])
+        this.sprite = this.zoneScene.physics.add.image(isoStart.x, isoStart.y, 'player').setScale(this.spriteScale, this.spriteScale).setOrigin(0.5, 1)
+        this.zoneScene.cameras.main.startFollow(this.sprite, true).setBounds(0, 0, this.camBounds[0], this.camBounds[1]);
+        this.cursor = this.zoneScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setAlpha(0).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
+        this.aStar = new AStar(this.zoneScene.tiles);
+
+
+        if (this.zoneScene.sharedData !== undefined && this.zoneScene.sharedData.prevZone !== undefined) {
+            this.setSpritePosition(this.zoneScene.sceneEntryPoints[this.zoneScene.sharedData.prevZone][0], this.zoneScene.sceneEntryPoints[zone.sharedData.prevZone][1])
+        }
+
+        this.#move();
+    }
+
+
+    /**
+     * Updates player sprite and movement throughout gameplay. Should be called during the update phase of scene setup
+     */
+    update() {  
+        if (this.playerMove) {      
+            if ( !this.pathList[0] ) {
+                this.pathList.shift()
+            } else if (this.pathList.length > 0 && this.pathList[0].length > 0) {
+                // Set new target position
+                let target = this.pathList[0][this.pathIndex]
+                let isoTarget = this.gridToIsoMap(Math.round(target.x), Math.round(target.y))
+                this.target.x = isoTarget.x;
+                this.target.y = isoTarget.y;
+
+                // Face correct direction
+                this.setFacingTarget(this.target.x, this.target.y)
+
+                // Start moving player towards the target
+                this.zoneScene.physics.moveToObject(this.sprite, this.target, this.PLAYER_SPEED);
+                // TODO: Change player animation (walk, need animated sprite first)
+            }
+                this.#checkIfReachedDestination()
+            }
+    }
+    // ------- END INITIALIZE PLAYER -------
+
+
+    // ------- SPRITE PLACEMENT IN ZONE ------
+    /**
+     * Sets the player position on the grid
+     * @param {*} x 
+     * @param {*} y 
+     */
+    setSpritePosition(x, y) {
+        const pos = this.gridToIsoMap(x, y)
+        this.sprite.body.reset(pos.x, pos.y);
     }
 
     /**
-     * Instantiates player sprite, camera and cursor indicator. Should run during the create phase of scene setup
-     */
-    instantiatePlayerSprites()
+     * Makes the player sprite face in the direction of a target point
+     * @param {number} targetDirectionX The x coordinate of the target to look towards
+     * @param {number} targetDirectionY  The x coordinate of the target to look towards
+     */ 
+    setFacingTarget(targetDirectionX, targetDirectionY)
     {
-        let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1])
-        this.phaserScene.player = this.phaserScene.physics.add.image(isoStart.x, isoStart.y, 'Player').setScale(0.25, 0.25).setOrigin(0.5, 1)
-        this.phaserScene.cameras.main.startFollow(this.phaserScene.player, true).setBounds(0, 0, this.camBounds[0], this.camBounds[1]);
-        this.cursor = this.phaserScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setAlpha(0).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
-        this.aStar = new AStar(this.phaserScene.tiles);
+        // TODO: add facing backwards or forwards once sprite is updated to include it
+        if (targetDirectionX > this.sprite.x) {
+            this.facingDirection = this.FACING_DIRECTIONS.Southwest
+        } else {
+            this.facingDirection = this.FACING_DIRECTIONS.Southeast
+        }
+
+        this.resetSpriteFacingDirection()
     }
+    // ------- END SPRITE PLACEMENT IN ZONE ------
 
-    // ------- END INITIALIZE PLAYER -------
 
-    // ------- START MOVEMENT -------
+    // ------- MOVEMENT LOGIC -------
     /**
      * Handles player (and cursor indicator) movement within the level
      * Player can move by clicking a valid (tile) position on the level
      * Should run during the create phase of scene setup
      */
-    move()
-    {
-        let zoneTiles = this.phaserScene.tiles
-        this.target = {x: this.phaserScene.player.x, y: this.phaserScene.player.y}
+    #move() {
+        let zoneTiles = this.zoneScene.tiles
+        this.target = {x: this.sprite.x, y: this.sprite.y}
 
         // Move cursor
         // TODO: Hide when mouse is outside of level view (e.g. do not react when hovering over HUD buttons or dialogue menus)
-        this.phaserScene.input.on('pointermove', (pointer) => {
+        this.zoneScene.input.on('pointermove', (pointer) => {
             // Get the WORLD x and y position of the pointer
             const {worldX, worldY} = pointer;
             
@@ -78,7 +120,7 @@ class Player
                     isoTarget.x, isoTarget.y-20
                 ];
                 this.cursor.setTo(polygon).setAlpha(0.5)
-                this.cursor.setDepth((Object.keys(this.phaserScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
+                this.cursor.setDepth((Object.keys(this.zoneScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
             } else {
                 this.cursor.setAlpha(0)
             }
@@ -86,12 +128,10 @@ class Player
 
 
         // Moves the player on pointerup event
-        // TODO: Add pathfinding so the player moves completely on the grid.
-        // This might be useful here: https://www.geeksforgeeks.org/rat-in-a-maze/
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
-        this.phaserScene.input.on('pointerup', async (pointer) => {
+        this.zoneScene.input.on('pointerup', async (pointer) => {
             // Prevent moving when a UI is open
-            if (this.phaserScene.sharedData.global.uiOpen) 
+            if (this.zoneScene.sharedData.global.uiOpen) 
                 return;
 
             // Get the grid x and y position of the target
@@ -102,50 +142,24 @@ class Player
             this.nextX = gridTarget.x
             this.nextY = gridTarget.y
             this.hasNext = true;
-            this.pathList.push(await this.FindPathToNextDestination())
+            this.pathList.push(await this.#findPathToNextDestination())
             this.playerMove = true
         });
     }
 
     /**
-     * Updates player sprite and movement throughout gameplay. Should be called during the update phase of scene setup
-     */
-    updatePlayer() {  
-        if (this.playerMove) {      
-            if ( !this.pathList[0] ) {
-                this.pathList.shift()
-            } else if (this.pathList.length > 0 && this.pathList[0].length > 0) {
-                // Set new target position
-                let target = this.pathList[0][this.pathIndex]
-                let isoTarget = this.gridToIsoMap(Math.round(target.x), Math.round(target.y))
-                this.target.x = isoTarget.x;
-                this.target.y = isoTarget.y;
-
-                // Face correct direction
-                this.setPlayerFacing(this.target.x, this.target.y)
-
-                // Start moving player towards the target
-                this.phaserScene.physics.moveToObject(this.phaserScene.player, this.target, this.PLAYER_SPEED);
-                // TODO: Change player animation (walk, need animated sprite first)
-            }
-                this.checkIfReachedDestination()
-            }
-    }
-
-    /**
      * If close to target, stop the player at target position and recheck sprite depth
      */
-    checkIfReachedDestination()
-    {
+    #checkIfReachedDestination() {
         this.playerMove = false
-        if (this.phaserScene.player.body.speed > 0) {
-            const distanceFromTarget = this.distanceBetweenPoints(this.phaserScene.player.x, this.phaserScene.player.y, this.target.x, this.target.y)
+        if (this.sprite.body.speed > 0) {
+            const distanceFromTarget = this.distanceBetweenPoints(this.sprite.x, this.sprite.y, this.target.x, this.target.y)
             if (distanceFromTarget < 20) {
-                this.phaserScene.player.body.reset(this.target.x, this.target.y);
+                this.sprite.body.reset(this.target.x, this.target.y);
                 
                 // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
                 let gridPos = this.isoToGridMap(this.target.x, this.target.y);
-                if (this.pathList.length === 1 && this.phaserScene.sharedData.questManager.tryTriggerQuest(this.phaserScene, gridPos)) {
+                if (this.pathList.length === 1 && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, gridPos)) {
                     this.pathList = [];
                     this.pathIndex = 0;
                 } else {
@@ -158,42 +172,16 @@ class Player
                     // TODO: Change player animation (idle, need animated sprite first)
                 }
             }
-            this.updatePlayerSpriteDepth()
+            this.resetSpriteDepth()
         }
         this.playerMove = true
     }
-
-    /**
-     * Makes the player sprite face in the direction of a target point
-     * @param {number} targetDirectionX The x coordinate of the target to look towards
-     * @param {number} targetDirectionY  The x coordinate of the target to look towards
-     */ 
-    setPlayerFacing(targetDirectionX, targetDirectionY)
-    {
-        if (targetDirectionX > this.phaserScene.player.x) {
-            this.phaserScene.player.setScale(-0.25, 0.25)
-        } else {
-            this.phaserScene.player.setScale(0.25, 0.25)
-        }
-
-        // TODO: add facing backwards or forwards once sprite is updated to include it
-    }
-
-    /**
-     * Sets the player position on the grid
-     * @param {*} x 
-     * @param {*} y 
-     */
-    setPlayerGridPosition(x, y) {
-        const pos = this.gridToIsoMap(x, y)
-        this.phaserScene.player.body.reset(pos.x, pos.y);
-    }
         
-    async FindPathToNextDestination() {
+    async #findPathToNextDestination() {
         let path = null
         if(this.hasNext) {
             this.onPathIndex = 0;
-            let playerGridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
+            let playerGridPosition = this.isoToGridMap(this.sprite.x, this.sprite.y)
             path = await this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
             
             let lastMatch = null
@@ -213,60 +201,5 @@ class Player
             return path
         }
     }
-
-    /**
-     * Place player sprite at correct depth within the scene
-     */
-    updatePlayerSpriteDepth() {
-        let gridPosition = this.isoToGridMap(this.phaserScene.player.x, this.phaserScene.player.y)
-        this.phaserScene.player.setDepth((Object.keys(this.phaserScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
-    }
     // ------- END MOVEMENT -------
-
-    
-    // ------- HELPER FUNCTIONS -------
-    /**
-     * Takes grid coordinatetes and converts them to the corresponding isometric coordinates on the level map
-     * @param {number} x The grid x coordinate
-     * @param {number} y The grid y coordinate
-     * @returns {object} An object {x, y} with the isometric-based x and y coordinates
-     */
-    gridToIsoMap(x, y) {
-        let isoX = (x*this.phaserScene.tileWidth/2)+(y*this.phaserScene.tileWidth/2)+this.phaserScene.xOffset
-        let isoY = (y*this.phaserScene.tileWidth/4)-(x*this.phaserScene.tileWidth/4)+this.phaserScene.yOffset
-         return {x: isoX, y: isoY}
-    }
-
-    /**
-     * Takes isometric coordinatetes and converts them to the corresponding grid coordinates (tile position) on the level map
-     * @param {number} x The ismometric x coordinate
-     * @param {number} y The ismometric y coordinate
-     * @returns {object} An object {x, y} with the grid-based x and y coordinates
-     */
-    isoToGridMap(x, y) {
-        let gridX = (-2 * (y-this.phaserScene.yOffset) + (x-this.phaserScene.xOffset)) / this.phaserScene.tileWidth
-        let gridY = (2 * (y-this.phaserScene.yOffset) + (x-this.phaserScene.xOffset)) / this.phaserScene.tileWidth
-        return {x: Math.round(gridX), y: Math.round(gridY)}
-    }
-
-    /**
-     * Finds the distance between two points
-     * @param {number} x1 x coordinate of point 1
-     * @param {number} y1 y coordinate of point 1
-     * @param {number} x2 x coordinate of point 2
-     * @param {number} y2 y coordinate of point 2
-     * @returns {number} The distance between the given points
-     */
-    distanceBetweenPoints(x1, y1, x2, y2) {
-        return Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2))
-    }
-
-    /**
-     * 
-     * @returns true if the player is moving, false if not
-     */
-    isMoving()
-    {
-        return this.phaserScene.player.body.speed > 0;
-    }
 }
