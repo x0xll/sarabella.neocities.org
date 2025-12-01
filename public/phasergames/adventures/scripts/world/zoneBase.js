@@ -41,13 +41,18 @@ class ZoneBase extends Phaser.Scene
         zone.sharedData.global = {
             ZONE_ID: zone.zoneConfig.ID
         }
-        
+
         // // TODO : Create the isometric grid
         this.instantiateBackgrounds(zone.zoneConfig.backgroundXOffset, zone.zoneConfig.backgroundYOffset); 
         this.instantiateZoneWorld();
         zone.timeManager.renderDayNight()
 
         this.instantiateEntities();
+
+        if (zone.sharedData.hud !== undefined)
+        {
+            zone.sharedData.hud.ui.manager.updateTexts();            
+        }
     }
 
     update() 
