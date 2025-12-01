@@ -187,8 +187,6 @@ function parseZoneNameXML(xmlObj)
         parseXMLNode(location, result)
     })
 
-    console.log(result);
-
    return result;
 }
 
