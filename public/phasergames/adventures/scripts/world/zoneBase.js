@@ -12,7 +12,7 @@ class ZoneBase extends Phaser.Scene
         } else {
             console.error(`Zone config for ${sharedData.worldToLoad} not found! Loading canterfarms instead`)
 
-            this.zoneConfig = sharedData.zoneData["world_canterfarm"]
+            this.zoneConfig = sharedData.zoneData["Z001"]
         }
     }
 
@@ -38,10 +38,6 @@ class ZoneBase extends Phaser.Scene
         zone.tiles = []
         zone.timeManager.startClock()
 
-        zone.sharedData.global = {
-            ZONE_ID: zone.zoneConfig.ID
-        }
-
         // // TODO : Create the isometric grid
         this.instantiateBackgrounds(zone.zoneConfig.backgroundXOffset, zone.zoneConfig.backgroundYOffset); 
         this.instantiateZoneWorld();
@@ -49,10 +45,10 @@ class ZoneBase extends Phaser.Scene
 
         this.instantiateEntities();
 
-        if (zone.sharedData.hud !== undefined)
-        {
-            zone.sharedData.hud.ui.manager.updateTexts();            
-        }
+        // if (zone.sharedData.hud !== undefined)
+        // {
+        //     zone.sharedData.hud.ui.manager.updateTexts();            
+        // }
     }
 
     update() 
@@ -70,41 +66,9 @@ class ZoneBase extends Phaser.Scene
         var cellValue = zone.zoneParsed[0][pos.y][pos.x];
         if (zone.zoneParsed[1][cellValue].entity !== undefined)
         {
-            let entity = zone.zoneParsed[1][cellValue].entity.substring(0,4);
-            let tp = null
-            switch(entity)
-            {
-                default: return;
-                case "R001": tp = "world_cottage01"; break;
-                case "R010": tp = "world_cottage10"; break;
-                case "R011": tp = "world_cottage11"; break;
-                case "R050": tp = "world_cottage50"; break;
-                case "Z001": tp = "world_canterfarm"; break;
-                case "Z002": tp = "world_rolandsgaardcastleboardwalk"; break;
-                case "Z003": tp = "world_ballroomentrance"; break;
-                case "Z004": tp = "world_gardenroom"; break;
-                case "Z005": tp = "world_fountainroom"; break;
-                case "Z006": tp = "world_royalroom"; break;
-                case "Z007": tp = "world_fountainplaza"; break;
-                case "Z008": tp = "world_bagatellarow"; break;
-                case "Z009": tp = "world_artisansway"; break;
-                case "Z010": tp = "world_outskirts"; break;
-                case "Z011": tp = "world_trailhead"; break;
-                case "Z012": tp = "world_canterdowns"; break;
-                case "Z013": tp = "world_overgaardskylands"; break;
-                case "Z015": tp = "world_darkcombhedge"; break;
-                case "Z016": tp = "world_darkcombforest"; break;
-                case "Z022": tp = "world_fastalonwestriverbank"; break;
-                case "Z023": tp = "world_rosevalley"; break;
-                case "Z025": tp = "world_bodascave"; break;
-                case "Z026": tp = "world_wolfsden"; break;
-                case "Z027": tp = "world_petalhome"; break;
-                case "Z028": tp = "world_desertcave"; break;
-            }
-
-            if (tp !== null) {
-                this.tiles = undefined
-                this.goToNextZone(tp)
+            let tile = zone.zoneParsed[1][cellValue].id;
+            if (this.zoneConfig.sceneExitTiles && this.zoneConfig.sceneExitTiles[tile]) {
+                this.goToNextZone(this.zoneConfig.sceneExitTiles[tile])
             }
         }
     }
@@ -126,9 +90,9 @@ class ZoneBase extends Phaser.Scene
         this.entities = {}
         new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
-        if (this.sharedData.NPCManager.NPCLocations[this.zoneConfig.ID]) {
-            for (let [key] of Object.entries(this.sharedData.NPCManager.NPCLocations[this.zoneConfig.ID])) {
-                let entityPos = this.sharedData.NPCManager.NPCLocations[this.zoneConfig.ID][key]
+        if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
+            for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
+                let entityPos = this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID][key]
                 new Character(this, key, entityPos[0], entityPos[1])
             }
         }
@@ -197,13 +161,19 @@ class ZoneBase extends Phaser.Scene
                     continue;
                 }
                 let tile = {}
-                if (zone.zoneParsed[1][cellValue].id !== "x") {
+                if (zone.zoneParsed[1][cellValue].id !== "x"
+                     && zone.zoneParsed[1][cellValue].id !== "."
+                    ) {
                     try {
-                        tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${zone.zoneParsed[1][cellValue].file}JSON`, `${zone.zoneParsed[1][cellValue].file}Atlas`);
+                        let file = zone.zoneConfig.tileAssets[0]
+                        if (zone.zoneParsed[1][cellValue].file) {
+                            file = zone.zoneParsed[1][cellValue].file
+                        }
+                        tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
                         zone.timeManager.setTile(tile, cellValue)
                         tile.setDepth((zone.zoneParsed[0][y][x].length - x) + y - zone.zoneParsed[1][cellValue].depth)
                     } catch (error) {
-                        console.error(`Spine sprite could not be instantiated! Please ensure the files for ${zone.zoneParsed[1][cellValue].file} are available`)
+                        console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
                     }
                 }
@@ -267,6 +237,14 @@ class ZoneBase extends Phaser.Scene
      */
     distanceBetweenPoints(x1, y1, x2, y2) {
         return Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2))
+    }
+
+    getTileAt(gridX, gridY) {
+        return this.tiles[gridY][gridX]
+    }
+
+    getEntitiesAt(gridX, gridY) {
+        return this.tiles[gridY][gridX].hasEntity
     }
     // ------- END HELPER FUNCTIONS -------
 }

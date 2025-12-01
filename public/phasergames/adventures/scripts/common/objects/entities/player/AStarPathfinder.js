@@ -30,11 +30,12 @@
     /**
      * 
      * @param {*} mapData Should be this.phaserScene.tiles in most cases
-     * @param {*} isWalkable Function to check if tile is walkable 
+     * @param {*} entities Should be this.phaserScene.sharedData.entities in most cases
      */
-    constructor(mapData) {
+    constructor(mapData, entities) {
         // this.isWalkableFunction = isWalkable;
         this.mapData = mapData
+        this.entities = entities
         this.width = Object.keys(mapData[0]).length;
         this.height = Object.keys(mapData).length;
         this.spaces = Array.from({ length: this.width }, () => new Array(this.height).fill(null));
@@ -62,7 +63,17 @@
      * @returns If the space is available or not
      */
     isWalkable(x, y) {
-        let test = this.spaces[x][y].walkable !== "false" ? true : false
+        if (this.spaces[x][y].walkable === "false") {return false}
+        
+        let test = true
+        if (this.mapData[y][x].hasEntity) {
+            this.mapData[y][x].hasEntity.forEach(entity => {
+                if (this.entities[entity].templateData.isBlocked === "true") {
+                    test = false
+                }
+            });
+        }
+
         return test
     }
       
@@ -75,6 +86,7 @@
                 this.spaces[x][y] = {}
                 this.spaces[x][y].name = this.mapData[y][x].parsedData.id
                 this.spaces[x][y].walkable = this.mapData[y][x].parsedData.walkable
+                this.spaces[x][y].entity = this.mapData[y][x].hasEntity
                 this.spaces[x][y].F = 0
                 this.spaces[x][y].G = 0
                 this.spaces[x][y].ParentX = null

@@ -12,7 +12,7 @@ class Common_Load extends Phaser.Scene
     {
         loadLoadingUI(this);
         this.questManager = new QuestManager(this);
-        this.NPCManager = new NPCManager(this);
+        this.templateManager = new TemplateManager(this);
         this.itemDatabase = new ItemDatabase(this);
         this.inventory = new InventoryManager(this);
         this.zoneManager = new ZoneManager(this);
@@ -30,7 +30,10 @@ class Common_Load extends Phaser.Scene
         }
 
         if (loader.sharedData.worldToLoad === undefined) {
-            loader.sharedData.worldToLoad = "world_canterfarm"
+            loader.sharedData.worldToLoad = "Z001"
+        }
+        loader.sharedData.global = {
+            ZONE_ID: sharedData.zoneData[sharedData.worldToLoad].ID
         }
 
         // TODO: handle through save data
@@ -51,9 +54,9 @@ class Common_Load extends Phaser.Scene
             loader.sharedData.questManager = loader.questManager
             loader.sharedData.questManager.initializeQuestData();
         }
-        if (loader.sharedData.NPCManager === undefined) {
-            loader.sharedData.NPCManager = loader.NPCManager
-            loader.sharedData.NPCManager.initializeData();
+        if (loader.sharedData.templateManager === undefined) {
+            loader.sharedData.templateManager = loader.templateManager
+            loader.sharedData.templateManager.initializeData();
         }
 
         if (loader.sharedData.zoneManager === undefined){

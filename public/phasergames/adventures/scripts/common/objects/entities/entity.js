@@ -81,7 +81,7 @@ class Entity {
      */
     resetSpriteDepth() {
         let gridPosition = this.isoToGridMap(this.sprite.x, this.sprite.y)
-        this.sprite.setDepth((Object.keys(this.zoneScene.tiles[gridPosition.y][gridPosition.x]).length - gridPosition.x) + gridPosition.y-30)
+        this.sprite.setDepth((7 - gridPosition.x) + gridPosition.y)
     }
     // ------- END SPRITE PLACEMENT IN ZONE -------
 

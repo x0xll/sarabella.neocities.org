@@ -21,10 +21,10 @@ class Player extends Entity {
         this.sprite = this.zoneScene.physics.add.image(isoStart.x, isoStart.y, 'player').setScale(this.spriteScale, this.spriteScale).setOrigin(0.5, 1)
         this.zoneScene.cameras.main.startFollow(this.sprite, true).setBounds(0, 0, this.camBounds[0], this.camBounds[1]);
         this.cursor = this.zoneScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setAlpha(0).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
-        this.aStar = new AStar(this.zoneScene.tiles);
-
+        this.aStar = new AStar(this.zoneScene.tiles, this.zoneScene.entities);
 
         this.#move();
+        this.resetSpriteDepth()
     }
 
 
@@ -120,7 +120,9 @@ class Player extends Entity {
                     isoTarget.x, isoTarget.y-20
                 ];
                 this.cursor.setTo(polygon).setAlpha(0.5)
-                this.cursor.setDepth((Object.keys(this.zoneScene.tiles[gridTarget.y][gridTarget.x]).length - gridTarget.x) + gridTarget.y-30)
+                this.cursor.setDepth((37 - gridTarget.x) + gridTarget.y-30)
+                // console.log(zoneTiles[gridTarget.y][gridTarget.x])
+
             } else {
                 this.cursor.setAlpha(0)
             }
@@ -143,6 +145,10 @@ class Player extends Entity {
             this.nextY = gridTarget.y
             this.hasNext = true;
             this.pathList.push(await this.#findPathToNextDestination())
+            if (this.pathList[0] === undefined) {
+                let triggerInfo = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+                this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+            }
             this.playerMove = true
         });
     }
@@ -158,8 +164,8 @@ class Player extends Entity {
                 this.sprite.body.reset(this.target.x, this.target.y);
                 
                 // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
-                let gridPos = this.isoToGridMap(this.target.x, this.target.y);
-                if (this.pathList.length === 1 && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, gridPos)) {
+                let triggerInfo = this.isoToGridMap(this.target.x, this.target.y);
+                if (this.pathList.length === 1 && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)) {
                     this.pathList = [];
                     this.pathIndex = 0;
                 } else {
@@ -182,6 +188,7 @@ class Player extends Entity {
         if(this.hasNext) {
             this.onPathIndex = 0;
             let playerGridPosition = this.isoToGridMap(this.sprite.x, this.sprite.y)
+            if (playerGridPosition.x === this.nextX && playerGridPosition.y === this.nextY) return null
             path = await this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
             
             let lastMatch = null

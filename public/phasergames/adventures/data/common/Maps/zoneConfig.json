@@ -1,5 +1,5 @@
 {
-    "world_cottage01": {
+    "R001": {
         "ID": "R001",
 
         "tileXOffset": 80,
@@ -15,6 +15,9 @@
             "default": [1, 5, "ne"],
             "Z001": [1, 5, "ne"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z001"
+        },
 
         "camBound": {
             "xBounds": 1040,
@@ -25,7 +28,7 @@
         "backgroundCountY": 1
     },
     
-    "world_cottage10": {
+    "R010": {
         "ID": "R010",
 
         "tileXOffset": 80,
@@ -51,7 +54,7 @@
         "backgroundCountY": 1
     },
 
-    "world_cottage11": {
+    "R011": {
         "ID": "R011",
 
         "tileXOffset": 80,
@@ -67,6 +70,9 @@
             "default": [0, 5, "nw"],
             "Z001": [0, 5, "nw"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z001"
+        },
 
         "camBound": {
             "xBounds": 1040,
@@ -77,8 +83,9 @@
         "backgroundCountY": 1
     },
 
-    "world_cottage50": {
+    "R050": {
         "ID": "R050",
+        "name": "Cottage50",
 
         "tileXOffset": 80,
         "tileYOffset": 415,
@@ -86,24 +93,27 @@
             "canterfarmsmain"
         ],
 
-        "backgroundXOffset": 0,
+        "backgroundXOffset": 1500,
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [1, 5, "ne"],
-            "Z001": [1, 5, "ne"]
+            "default": [1, 5],
+            "Z001": [1, 5]
+        },
+        "sceneExitTiles": {
+            "Ti000w": "Z001"
         },
 
         "camBound": {
             "xBounds": 1040,
-            "yBounds": 693
+            "yBounds": 696
         },
 
         "backgroundCountX": 1,
         "backgroundCountY": 1
     },
 
-    "world_canterfarm": {
+    "Z001": {
         "ID": "Z001",
 
         "tileXOffset": -320,
@@ -117,10 +127,17 @@
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [19, 10, "se"],
-            "Z012": [35, 37, "nw"],
-            "R001": [21, 28, "sw"],
-            "R050": [35, 36, "sw"]
+            "default": [19, 10],
+            "R001": [21, 28],
+            "R050": [17, 15],
+            "Z007": [35, 37],
+            "Z012": [35, 37]
+        },
+        "sceneExitTiles": {
+            "Ti000w": "R001",
+            "Ti002w": "R050",
+            "Ti062w": "Z007",
+            "Ti063w": "Z012"
         },
 
         "camBound": {
@@ -132,7 +149,7 @@
         "backgroundCountY": 1
     },
 
-    "world_rolandsgaardcastleboardwalk": {
+    "Z002": {
         "ID": "Z002",
 
         "tileXOffset": -215,
@@ -150,6 +167,11 @@
             "Z010": [38, 28, "w"],
             "Z011": [20, 7, "e"]
         },
+        "sceneExitTiles": {
+            "Ti047w": "Z003",
+            "Ti046w": "Z010",
+            "Ti049w": "Z011"
+        },
 
         "camBound": {
             "xBounds": 3090,
@@ -160,7 +182,7 @@
         "backgroundCountY": 1
     },
 
-    "world_ballroomentrance": {
+    "Z003": {
         "ID": "Z003",
 
         "tileXOffset": -1000,
@@ -179,6 +201,12 @@
             "Z006": [30, 53, "nw"], 
             "Z002": [45, 3, "se"]
         },
+        "sceneExitTiles": {
+            "Ti064w": "Z002",
+            "Ti061w": "Z004",
+            "Ti063w": "Z005",
+            "Ti062w": "Z006"
+        },
 
         "camBound": {
             "xBounds": 1500,
@@ -189,7 +217,7 @@
         "backgroundCountY": 1
     },
 
-    "world_gardenroom": {
+    "Z004": {
         "ID": "Z004",
 
         "tileXOffset": 0,
@@ -207,6 +235,11 @@
             "Z005": [56, 31, "sw"],
             "Z006": [53, 37, "w"]
         },
+        "sceneExitTiles": {
+            "Ti001w": "Z003",
+            "Ti002w": "Z005",
+            "Ti003w": "Z006"
+        },
 
         "camBound": {
             "xBounds": 3090,
@@ -217,7 +250,7 @@
         "backgroundCountY": 1
     },
 
-    "world_fountainroom": {
+    "Z005": {
         "ID": "Z005",
 
         "tileXOffset": -385,
@@ -235,6 +268,11 @@
             "Z004": [9, 17, "ne"],
             "Z006": [13, 24, "n"]
         },
+        "sceneExitTiles": {
+            "Ti002w": "Z003",
+            "Ti001w": "Z004",
+            "Ti000w": "Z006"
+        },
 
         "camBound": {
             "xBounds": 1300,
@@ -245,7 +283,7 @@
         "backgroundCountY": 1
     },
     
-    "world_royalroom": {
+    "Z006": {
         "ID": "Z006",
 
         "tileXOffset": -845,
@@ -263,6 +301,11 @@
             "Z004": [20, 11, "e"],
             "Z005": [28, 14, "s"]
         },
+        "sceneExitTiles": {
+            "Ti001w": "Z003",
+            "Ti002w": "Z004",
+            "Ti000w": "Z005"
+        },
 
         "camBound": {
             "xBounds": 1300,
@@ -273,7 +316,7 @@
         "backgroundCountY": 1
     },
     
-    "world_fountainplaza": {
+    "Z007": {
         "ID": "Z007",
 
         "tileXOffset": -785,
@@ -291,6 +334,11 @@
             "Z001": [17, 49, "n"],
             "Z008": [61, 29, "sw"]
         },
+        "sceneExitTiles": {
+            "Ti049w": "Z001",
+            "Ti050w": "Z008",
+            "Ti052w": "Z009"
+        },
 
         "camBound": {
             "xBounds": 3600,
@@ -301,7 +349,7 @@
         "backgroundCountY": 1
     },
     
-    "world_bagatellarow": {
+    "Z008": {
         "ID": "Z008",
 
         "tileXOffset": -525,
@@ -318,6 +366,10 @@
             "Z007": [7, 14, "e"],
             "Z010": [47, 55, "w"]
         },
+        "sceneExitTiles": {
+            "Ti045w": "Z007",
+            "Ti044w": "Z010"
+        },
 
         "camBound": {
             "xBounds": 4200,
@@ -328,7 +380,7 @@
         "backgroundCountY": 1
     },
     
-    "world_artisansway": {
+    "Z009": {
         "ID": "Z009",
 
         "tileXOffset": -525,
@@ -345,6 +397,10 @@
             "Z007": [47, 60, "w"],
             "Z011": [21, 14, "se"]
         },
+        "sceneExitTiles": {
+            "Ti034w": "Z007",
+            "Ti046w": "Z011"
+        },
 
         "camBound": {
             "xBounds": 4200,
@@ -355,7 +411,7 @@
         "backgroundCountY": 1
     },
     
-    "world_outskirts": {
+    "Z010": {
         "ID": "Z010",
 
         "tileXOffset": -1625,
@@ -375,6 +431,12 @@
             "Z015": [72, 45, "nw"],
             "R010": [60, 34, "sw"]
         },
+        "sceneExitTiles": {
+            "Ti001w": "Z002",
+            "Ti002w": "Z008",
+            "Ti003w": "Z015",
+            "Ti000w": "Z022"
+        },
 
         "camBound": {
             "xBounds": 4000,
@@ -385,7 +447,7 @@
         "backgroundCountY": 2
     },
     
-    "world_trailhead": {
+    "Z011": {
         "ID": "Z011",
 
         "tileXOffset": -1200,
@@ -404,6 +466,12 @@
             "Z023": [77, 6, "se"],
             "Z027": [28, 33, "s"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z002",
+            "Ti001w": "Z009",
+            "Ti104w": "Z023",
+            "Ti106w": "Z027"
+        },
 
         "camBound": {
             "xBounds": 5500,
@@ -414,7 +482,8 @@
         "backgroundCountY": 2
     },
 
-    "world_canterdowns": {
+
+    "Z012": {
         "ID": "Z012",
 
         "tileXOffset": -1400,
@@ -427,10 +496,13 @@
         "backgroundYOffset": 2075,
 
         "sceneEntryPoints": {
-            "default": [62, 20, "se"],
-            "Z001": [62, 5, "e"],
-            "Z013": [85, 36, "s"],
-            "Z027": [49, 23, "s"]
+            "default": [ 62, 20],
+            "Z001": [62, 5],
+            "Z027": [62, 20]
+        },
+        "sceneExitTiles": {
+            "Ti000w": "Z001",
+            "Ti090w": "Z027"
         },
 
         "camBound": {
@@ -442,7 +514,7 @@
         "backgroundCountY": 2
     },
     
-    "world_overgaardskylands": {
+    "Z013": {
         "ID": "Z013",
 
         "tileXOffset": -1885,
@@ -458,6 +530,9 @@
             "default": [57, 30, "se"],
             "Z012": [10, 66, "ne"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z012"
+        },
 
         "camBound": {
             "xBounds": 5000,
@@ -468,7 +543,7 @@
         "backgroundCountY": 2
     },
     
-    "world_darkcombhedge": {
+    "Z015": {
         "ID": "Z015",
 
         "tileXOffset": -750,
@@ -487,6 +562,11 @@
             "Z016": [40, 41, "nw"],
             "Z027": [21, 13, "e"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z010",
+            "Ti001w": "Z016",
+            "Ti046w": "Z027"
+        },
 
         "camBound": {
             "xBounds": 3000,
@@ -497,7 +577,7 @@
         "backgroundCountY": 1
     },
     
-    "world_darkcombforest": {
+    "Z016": {
         "ID": "Z016",
 
         "tileXOffset": -860,
@@ -514,6 +594,10 @@
             "Z015": [16, 23, "ne"],
             "Z025": [35, 58, "nw"]
         },
+        "sceneExitTiles": {
+            "Ti003w": "Z015",
+            "Ti002w": "Z025"
+        },
 
         "camBound": {
             "xBounds": 5000,
@@ -524,7 +608,7 @@
         "backgroundCountY": 2
     },
     
-    "world_fastalonwestriverbank": {
+    "Z022": {
         "ID": "Z022",
 
         "tileXOffset": -1200,
@@ -541,6 +625,10 @@
             "Z010": [6, 41, "ne"],
             "Z026": [91, 4, "s"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z010",
+            "Ti001w": "Z026"
+        },
 
         "camBound": {
             "xBounds": 3096,
@@ -551,7 +639,7 @@
         "backgroundCountY": 2
     },
     
-    "world_rosevalley": {
+    "Z023": {
         "ID": "Z023",
 
         "tileXOffset": -1000,
@@ -568,6 +656,11 @@
             "Z028": [40, 23, "sw"],
             "Z027": [19, 19, "w"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z011",
+            "Ti002w": "Z027",
+            "Ti001w": "Z028"
+        },
 
         "camBound": {
             "xBounds": 2880,
@@ -578,7 +671,7 @@
         "backgroundCountY": 1
     },
     
-    "world_bodascave": {
+    "Z025": {
         "ID": "Z025",
 
         "tileXOffset": -250,
@@ -594,6 +687,9 @@
             "default": [53, 35, "se"],
             "Z016": [53, 35, "se"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z016"
+        },
 
         "camBound": {
             "xBounds": 4600,
@@ -604,7 +700,7 @@
         "backgroundCountY": 1
     },
     
-    "world_wolfsden": {
+    "Z026": {
         "ID": "Z026",
 
         "tileXOffset": -350,
@@ -620,6 +716,9 @@
             "default": [31, 6, "s"],
             "Z022": [31, 6, "s"]
         },
+        "sceneExitTiles": {
+            "Ti000w": "Z022"
+        },
 
         "camBound": {
             "xBounds": 3000,
@@ -630,7 +729,7 @@
         "backgroundCountY": 1
     },
     
-    "world_petalhome": {
+    "Z027": {
         "ID": "Z027",
 
         "tileXOffset": -1200,
@@ -644,6 +743,12 @@
         "sceneEntryPoints": {
             "default": [30, 30, "n"]
         },
+        "sceneExitTiles": {
+            "Ti039w": "Z011",
+            "Ti031w": "Z012",
+            "Ti032w": "Z015",
+            "Ti033w": "Z023"
+        },
 
         "camBound": {
             "xBounds": 2880,
@@ -654,7 +759,7 @@
         "backgroundCountY": 1
     },
     
-    "world_desertcave": {
+    "Z028": {
         "ID": "Z028",
 
         "tileXOffset": 0,
@@ -668,6 +773,9 @@
         "sceneEntryPoints": {
             "default": [5, 5, "ne"],
             "Z023": [5, 5, "ne"]
+        },
+        "sceneExitTiles": {
+            "Ti000w": "Z023"
         },
 
         "camBound": {

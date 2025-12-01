@@ -46,7 +46,8 @@ class uiHUD extends uiManagerBase
     {
         if (this.phaserScene.sharedData.hud.ui.areaName === undefined)
             this.phaserScene.sharedData.hud.ui.areaName = this.phaserScene.add.text(350, 10, this.phaserScene.sharedData.zoneManager.getCurrentZoneName(), {font: "18px Arial", color: "#000000ff"}).setDepth(100);
-        else
+        else{
             this.phaserScene.sharedData.hud.ui.areaName.text = this.phaserScene.sharedData.zoneManager.getCurrentZoneName();
+        }
     }
 }

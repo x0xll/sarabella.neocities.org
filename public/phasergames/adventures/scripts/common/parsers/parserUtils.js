@@ -49,24 +49,27 @@ function parseZoneXML(xmlObj)
             }
 
             // Grid kid datas
-            var grid = tile.children[0];
-            for (var i = 0; i < grid.attributes.length; i++)
-                {
-                    switch(grid.attributes[i].name)
+            if (tile.children[0]) {
+
+                var grid = tile.children[0];
+                for (var i = 0; i < grid.attributes.length; i++)
                     {
-                        default:
-                            break;
-                        case "width":
-                            data.width = grid.attributes[i].value;
-                            break;
-                        case "height":
-                            data.height = grid.attributes[i].value;
-                            break;
-                        case "depth":
-                            data.depth = grid.attributes[i].value;
-                            break;
+                        switch(grid.attributes[i].name)
+                        {
+                            default:
+                                break;
+                            case "width":
+                                data.width = grid.attributes[i].value;
+                                break;
+                            case "height":
+                                data.height = grid.attributes[i].value;
+                                break;
+                            case "depth":
+                                data.depth = grid.attributes[i].value;
+                                break;
+                        }
                     }
-                }
+            }
 
             tileDatas[data.id] = data;
         }   
@@ -126,6 +129,8 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
         nodeName = customName
     } else if (node.attributes && node.attributes["id"]) {
         nodeName = node.attributes["id"].value
+    } else if (nodeObject.name) {
+        nodeName = nodeObject.name
     } else {
         nodeName = node.nodeName
     }
