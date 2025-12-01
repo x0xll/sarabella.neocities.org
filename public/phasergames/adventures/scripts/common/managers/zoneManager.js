@@ -36,6 +36,7 @@ class ZoneManager {
 
     getCurrentZoneName()
     {
+        if (this.phaserScene.sharedData.global.ZONE_ID === undefined) return "";
         return this.getZoneName(this.phaserScene.sharedData.global.ZONE_ID);
     }
 }
