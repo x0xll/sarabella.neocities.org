@@ -88,7 +88,7 @@
     <tile id="Ti033w" file="canterfarmsmain" walkable="true" isBillboard="false" grounds="Gr0030">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti002w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0007" entities="R001">
+    <tile id="Ti002w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0007" entities="R050">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti058w" file="canterfarmsmain" walkable="true" isBillboard="false" grounds="Gr0001">

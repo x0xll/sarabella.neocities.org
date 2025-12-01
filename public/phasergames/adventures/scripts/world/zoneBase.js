@@ -74,6 +74,8 @@ class ZoneBase extends Phaser.Scene
                 tp = "world_cottage01"
             else if (entity === "Z001")
                 tp = "world_canterfarm"
+            else if (entity == "R050")
+                tp = "world_cottage50";
 
             if (tp !== null) {
                 this.tiles = undefined

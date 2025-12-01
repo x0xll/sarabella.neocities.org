@@ -1,7 +1,6 @@
 {
     "world_cottage01": {
         "ID": "R001",
-        "name": "Cottage01",
 
         "tileXOffset": 80,
         "tileYOffset": 415,
@@ -9,12 +8,64 @@
             "canterfarmsmain"
         ],
 
-        "backgroundXOffset": 1500,
+        "backgroundXOffset": 0,
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [1, 5],
-            "Z001": [1, 5]
+            "default": [1, 5, "ne"],
+            "Z001": [1, 5, "ne"]
+        },
+
+        "camBound": {
+            "xBounds": 1040,
+            "yBounds": 696
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+    
+    "world_cottage10": {
+        "ID": "R010",
+
+        "tileXOffset": 80,
+        "tileYOffset": 415,
+        "tileAssets": [
+            "canterfarmsmain"
+        ],
+
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [0, 5, "ne"],
+            "Z001": [0, 5, "ne"]
+        },
+
+        "camBound": {
+            "xBounds": 1040,
+            "yBounds": 690
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+
+    "world_cottage11": {
+        "ID": "R011",
+
+        "tileXOffset": 80,
+        "tileYOffset": 415,
+        "tileAssets": [
+            "canterfarmsmain"
+        ],
+
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [0, 5, "nw"],
+            "Z001": [0, 5, "nw"]
         },
 
         "camBound": {
@@ -26,12 +77,37 @@
         "backgroundCountY": 1
     },
 
+    "world_cottage50": {
+        "ID": "R050",
+
+        "tileXOffset": 80,
+        "tileYOffset": 415,
+        "tileAssets": [
+            "canterfarmsmain"
+        ],
+
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [1, 5, "ne"],
+            "Z001": [1, 5, "ne"]
+        },
+
+        "camBound": {
+            "xBounds": 1040,
+            "yBounds": 693
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+
     "world_canterfarm": {
         "ID": "Z001",
-        "name": "CanterFarms",
 
         "tileXOffset": -320,
-        "tileYOffset": 856,
+        "tileYOffset": 850,
         "tileAssets": [
             "canterfarmsmain",
             "Ti021b"
@@ -41,9 +117,10 @@
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [19, 10],
-            "Z012": [35, 37],
-            "R001": [21, 28]
+            "default": [19, 10, "se"],
+            "Z012": [35, 37, "nw"],
+            "R001": [21, 28, "sw"],
+            "R050": [35, 36, "sw"]
         },
 
         "camBound": {
@@ -55,13 +132,293 @@
         "backgroundCountY": 1
     },
 
+    "world_rolandsgaardcastleboardwalk": {
+        "ID": "Z002",
+
+        "tileXOffset": -215,
+        "tileYOffset": 945,
+        "tileAssets": [
+            "castletownmain"
+        ],
+
+        "backgroundXOffset": 1545,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [25, 10, "se"],
+            "Z003": [25, 5, "sw"],
+            "Z010": [38, 28, "w"],
+            "Z011": [20, 7, "e"]
+        },
+
+        "camBound": {
+            "xBounds": 3090,
+            "yBounds": 1626
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+
+    "world_ballroomentrance": {
+        "ID": "Z003",
+
+        "tileXOffset": -1000,
+        "tileYOffset": 1315,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [25, 10],
+            "Z004": [22, 49, "n"],
+            "Z005": [39, 48, "w"],
+            "Z006": [30, 53, "nw"], 
+            "Z002": [45, 3, "se"]
+        },
+
+        "camBound": {
+            "xBounds": 1500,
+            "yBounds": 2200
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+
+    "world_gardenroom": {
+        "ID": "Z004",
+
+        "tileXOffset": 0,
+        "tileYOffset": 0,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30],
+            "Z003": [57, 24, "s"],
+            "Z005": [56, 31, "sw"],
+            "Z006": [53, 37, "w"]
+        },
+
+        "camBound": {
+            "xBounds": 3090,
+            "yBounds": 1626
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+
+    "world_fountainroom": {
+        "ID": "Z005",
+
+        "tileXOffset": -385,
+        "tileYOffset": 1165,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30],
+            "Z003": [13, 9, "e"],
+            "Z004": [9, 17, "ne"],
+            "Z006": [13, 24, "n"]
+        },
+
+        "camBound": {
+            "xBounds": 1300,
+            "yBounds": 1800
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+    
+    "world_royalroom": {
+        "ID": "Z006",
+
+        "tileXOffset": -845,
+        "tileYOffset": 600,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30],
+            "Z003": [25, 9, "se"],
+            "Z004": [20, 11, "e"],
+            "Z005": [28, 14, "s"]
+        },
+
+        "camBound": {
+            "xBounds": 1300,
+            "yBounds": 1500
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+    
+    "world_fountainplaza": {
+        "ID": "Z007",
+
+        "tileXOffset": -785,
+        "tileYOffset": 1320,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 1800,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z009": [37, 3, "se"],
+            "Z001": [17, 49, "n"],
+            "Z008": [61, 29, "sw"]
+        },
+
+        "camBound": {
+            "xBounds": 3600,
+            "yBounds": 2300
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+    
+    "world_bagatellarow": {
+        "ID": "Z008",
+
+        "tileXOffset": -525,
+        "tileYOffset": 850,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 2100,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z007": [7, 14, "e"],
+            "Z010": [47, 55, "w"]
+        },
+
+        "camBound": {
+            "xBounds": 4200,
+            "yBounds": 1500
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+    
+    "world_artisansway": {
+        "ID": "Z009",
+
+        "tileXOffset": -525,
+        "tileYOffset": 850,
+        "tileAssets": [
+            "castletownmain"
+        ],
+        
+        "backgroundXOffset": 2100,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z007": [47, 60, "w"],
+            "Z011": [21, 14, "se"]
+        },
+
+        "camBound": {
+            "xBounds": 4200,
+            "yBounds": 1500
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+    
+    "world_outskirts": {
+        "ID": "Z010",
+
+        "tileXOffset": -1625,
+        "tileYOffset": 1495,
+        "tileAssets": [
+            "ruralskymain"
+        ],
+        
+        "backgroundXOffset": 2000,
+        "backgroundYOffset": 1750,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z009": [23, 31, "e"],
+            "Z002": [52, 5, "se"],
+            "Z022": [59, 3, "sw"],
+            "Z015": [72, 45, "nw"],
+            "R010": [60, 34, "sw"]
+        },
+
+        "camBound": {
+            "xBounds": 4000,
+            "yBounds": 3500
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 2
+    },
+    
+    "world_trailhead": {
+        "ID": "Z011",
+
+        "tileXOffset": -1200,
+        "tileYOffset": 2460,
+        "tileAssets": [
+            "ruralskymain"
+        ],
+        
+        "backgroundXOffset": 2750,
+        "backgroundYOffset": 2000,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z009": [51, 83, "nw"],
+            "Z002": [106, 20, "sw"],
+            "Z023": [77, 6, "se"],
+            "Z027": [28, 33, "s"]
+        },
+
+        "camBound": {
+            "xBounds": 5500,
+            "yBounds": 4000
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 2
+    },
 
     "world_canterdowns": {
         "ID": "Z012",
-        "name": "CanterDowns",
 
-        "tileXOffset": -1380,
-        "tileYOffset": 1905,
+        "tileXOffset": -1400,
+        "tileYOffset": 2000,
         "tileAssets": [
             "ruralskymain"
         ],
@@ -70,8 +427,10 @@
         "backgroundYOffset": 2075,
 
         "sceneEntryPoints": {
-            "default": [ 62, 20],
-            "Z001": [62, 5]
+            "default": [62, 20, "se"],
+            "Z001": [62, 5, "e"],
+            "Z013": [85, 36, "s"],
+            "Z027": [49, 23, "s"]
         },
 
         "camBound": {
@@ -81,5 +440,242 @@
 
         "backgroundCountX": 2,
         "backgroundCountY": 2
+    },
+    
+    "world_overgaardskylands": {
+        "ID": "Z013",
+
+        "tileXOffset": -1885,
+        "tileYOffset": 1920,
+        "tileAssets": [
+            "ruralskymain"
+        ],
+        
+        "backgroundXOffset": 2500,
+        "backgroundYOffset": 2000,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z012": [10, 66, "ne"]
+        },
+
+        "camBound": {
+            "xBounds": 5000,
+            "yBounds": 4000
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 2
+    },
+    
+    "world_darkcombhedge": {
+        "ID": "Z015",
+
+        "tileXOffset": -750,
+        "tileYOffset": 650,
+        "tileAssets": [
+            "forestcavemain"
+        ],
+        
+        "backgroundXOffset": 1500,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "R011": [45, 28, "sw"],
+            "Z010": [24, 9, "se"],
+            "Z016": [40, 41, "nw"],
+            "Z027": [21, 13, "e"]
+        },
+
+        "camBound": {
+            "xBounds": 3000,
+            "yBounds": 1500
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+    
+    "world_darkcombforest": {
+        "ID": "Z016",
+
+        "tileXOffset": -860,
+        "tileYOffset": 1735,
+        "tileAssets": [
+            "forestcavemain"
+        ],
+        
+        "backgroundXOffset": 2500,
+        "backgroundYOffset": 1510,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z015": [16, 23, "ne"],
+            "Z025": [35, 58, "nw"]
+        },
+
+        "camBound": {
+            "xBounds": 5000,
+            "yBounds": 3020
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 2
+    },
+    
+    "world_fastalonwestriverbank": {
+        "ID": "Z022",
+
+        "tileXOffset": -1200,
+        "tileYOffset": 2300,
+        "tileAssets": [
+            "forestcavemain"
+        ],
+        
+        "backgroundXOffset": 1548,
+        "backgroundYOffset": 1752,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z010": [6, 41, "ne"],
+            "Z026": [91, 4, "s"]
+        },
+
+        "camBound": {
+            "xBounds": 3096,
+            "yBounds": 3504
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 2
+    },
+    
+    "world_rosevalley": {
+        "ID": "Z023",
+
+        "tileXOffset": -1000,
+        "tileYOffset": 1250,
+        "tileAssets": [
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [57, 30, "se"],
+            "Z011": [13, 59, "nw"],
+            "Z028": [40, 23, "sw"],
+            "Z027": [19, 19, "w"]
+        },
+
+        "camBound": {
+            "xBounds": 2880,
+            "yBounds": 2880
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+    
+    "world_bodascave": {
+        "ID": "Z025",
+
+        "tileXOffset": -250,
+        "tileYOffset": 995,
+        "tileAssets": [
+            "forestcavemain"
+        ],
+        
+        "backgroundXOffset": 2300,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [53, 35, "se"],
+            "Z016": [53, 35, "se"]
+        },
+
+        "camBound": {
+            "xBounds": 4600,
+            "yBounds": 2000
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+    
+    "world_wolfsden": {
+        "ID": "Z026",
+
+        "tileXOffset": -350,
+        "tileYOffset": 1000,
+        "tileAssets": [
+            "forestcavemain"
+        ],
+        
+        "backgroundXOffset": 1500,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [31, 6, "s"],
+            "Z022": [31, 6, "s"]
+        },
+
+        "camBound": {
+            "xBounds": 3000,
+            "yBounds": 2000
+        },
+
+        "backgroundCountX": 2,
+        "backgroundCountY": 1
+    },
+    
+    "world_petalhome": {
+        "ID": "Z027",
+
+        "tileXOffset": -1200,
+        "tileYOffset": 2000,
+        "tileAssets": [
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [30, 30, "n"]
+        },
+
+        "camBound": {
+            "xBounds": 2880,
+            "yBounds": 2880
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
+    },
+    
+    "world_desertcave": {
+        "ID": "Z028",
+
+        "tileXOffset": 0,
+        "tileYOffset": 800,
+        "tileAssets": [
+        ],
+        
+        "backgroundXOffset": 0,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [5, 5, "ne"],
+            "Z023": [5, 5, "ne"]
+        },
+
+        "camBound": {
+            "xBounds": 2856,
+            "yBounds": 1506
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
     }
 }
