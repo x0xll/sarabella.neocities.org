@@ -27,7 +27,7 @@
     <tile id="Ti002b" walkable="false" isBillboard="false" entities="WallTemplateSE">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" isBillboard="false" skins="Sk0002" entities="ExitToZone1d">
+    <tile id="Ti000w" walkable="true" isBillboard="false" skins="Sk0002" entities="Z001">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti048w" walkable="true" isBillboard="false" entities="WaterBarrelSpawner">

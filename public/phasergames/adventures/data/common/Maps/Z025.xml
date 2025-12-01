@@ -88,7 +88,7 @@
     <tile id="Ti035b" walkable="false" skins="Sk0016"/>
     <tile id="Ti021b" walkable="false" grounds="Gr0011"/>
     <tile id="Ti031b" walkable="false" grounds="Gr0013"/>
-    <tile id="Ti000w" walkable="true" skins="Sk0009" entities="ExitToZone16b"/>
+    <tile id="Ti000w" walkable="true" skins="Sk0009" entities="Z016"/>
     <tile id="Ti049w" walkable="true" grounds="Gr0009"/>
     <tile id="Ti074b" walkable="false" grounds="Gr0014"/>
     <tile id="Ti073w" walkable="true" grounds="Gr0022,Gr0023"/>

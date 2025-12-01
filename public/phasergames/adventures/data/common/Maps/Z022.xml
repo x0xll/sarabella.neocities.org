@@ -43,9 +43,9 @@
     <tile id="Ti013w" walkable="true" grounds="Gr0001,Gr0005" entities="FreshwaterTemplate"/>
     <tile id="Ti006w" walkable="true" skins="Sk0010"/>
     <tile id="Ti016b" walkable="false" skins="Sk0004"/>
-    <tile id="Ti000w" walkable="true" skins="Sk0011" entities="ExitToZone10c"/>
+    <tile id="Ti000w" walkable="true" skins="Sk0011" entities="Z010"/>
     <tile id="Ti002w" walkable="true" grounds="Gr0001" entities="FreshwaterTemplate"/>
-    <tile id="Ti001w" walkable="true" skins="Sk0000" entities="ExitToZone26a"/>
+    <tile id="Ti001w" walkable="true" skins="Sk0000" entities="Z026"/>
     <tile id="Ti009w" walkable="true" grounds="Gr0001,Gr0002" entities="FreshwaterTemplate"/>
     <tile id="Ti020b" walkable="false" skins="Sk0002"/>
     <tile id="Ti018b" walkable="false" skins="Sk0005"/>

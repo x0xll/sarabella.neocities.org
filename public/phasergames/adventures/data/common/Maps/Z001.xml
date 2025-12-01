@@ -73,7 +73,7 @@
     <tile id="Ti093b" file="canterfarmsmain" walkable="false" isBillboard="false" skins="Sk0019" entities="StreetSignZone7">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti062w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0007" entities="ExitToZone7b">
+    <tile id="Ti062w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0007" entities="Z007">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti064w" file="canterfarmsmain" walkable="true" isBillboard="false" grounds="Gr0021">
@@ -115,7 +115,7 @@
     <tile id="Ti007b" file="canterfarmsmain" walkable="false" isBillboard="false" skins="Sk0001">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti063w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0020" entities="Z012a">
+    <tile id="Ti063w" file="canterfarmsmain" walkable="true" isBillboard="false" skins="Sk0020" entities="Z012">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti011w" file="canterfarmsmain" walkable="true" isBillboard="false" grounds="Gr0002,Gr0009" entities="DirtTemplate">

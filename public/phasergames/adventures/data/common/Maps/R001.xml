@@ -12,7 +12,7 @@
     <tile id="Ti001b" file="canterfarmsmain" walkable="false" entities="WallTemplateSW">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" file="canterfarmsmain" walkable="true" skins="Sk0000" entities="Z001a">
+    <tile id="Ti000w" file="canterfarmsmain" walkable="true" skins="Sk0000" entities="Z001">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="x" file="canterfarmsmain" walkable="false">

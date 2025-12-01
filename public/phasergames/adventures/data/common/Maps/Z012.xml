@@ -49,7 +49,7 @@
     <tile id="Ti025w" file="ruralskymain" walkable="true" grounds="Gr0000" entities="StarfishSpawner">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti090w" file="ruralskymain" walkable="true" skins="Sk0008" entities="ExitToZone27">
+    <tile id="Ti090w" file="ruralskymain" walkable="true" skins="Sk0008" entities="Z027">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti038b" file="ruralskymain" walkable="false" skins="Sk0000">
@@ -235,7 +235,7 @@
     <tile id="Ti065b" file="ruralskymain" walkable="false" skins="Sk0013" entities="StreetSignZone1">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" file="ruralskymain" walkable="true" skins="Sk0002" entities="ExitToZone1b">
+    <tile id="Ti000w" file="ruralskymain" walkable="true" skins="Sk0002" entities="Z001">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
   </tiles>

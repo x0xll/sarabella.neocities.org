@@ -36,18 +36,18 @@
   <tiles>
     <tile id="Ti003b" walkable="false" skins="Sk0012"/>
     <tile id="Ti033b" walkable="false" grounds="Gr0005"/>
-    <tile id="Ti001w" walkable="true" skins="Sk0007" entities="ExitToZone4a"/>
+    <tile id="Ti001w" walkable="true" skins="Sk0007" entities="Z004"/>
     <tile id="Ti072w" walkable="true" grounds="Gr0009" entities="FreshwaterTemplate"/>
     <tile id="Ti015b" walkable="false" grounds="Gr0004"/>
     <tile id="Ti035b" walkable="false" grounds="Gr0002"/>
     <tile id="Ti073b" walkable="false" skins="Sk0006"/>
-    <tile id="Ti002w" walkable="true" skins="Sk0002" entities="ExitToZone3c"/>
+    <tile id="Ti002w" walkable="true" skins="Sk0002" entities="Z003"/>
     <tile id="Ti068b" walkable="false" skins="Sk0010"/>
     <tile id="Ti052b" walkable="false" skins="Sk0009"/>
     <tile id="Ti004b" walkable="false" skins="Sk0003"/>
     <tile id="Ti019b" walkable="false" grounds="Gr0011"/>
     <tile id="Ti016b" walkable="false" grounds="Gr0000"/>
-    <tile id="Ti000w" walkable="true" skins="Sk0011" entities="ExitToZone6c"/>
+    <tile id="Ti000w" walkable="true" skins="Sk0011" entities="Z006"/>
     <tile id="Ti014b" walkable="false" grounds="Gr0001"/>
     <tile id="Ti067b" walkable="false" skins="Sk0008"/>
     <tile id="." walkable="true"/>

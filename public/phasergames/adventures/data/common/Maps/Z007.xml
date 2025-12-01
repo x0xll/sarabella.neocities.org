@@ -117,7 +117,7 @@
     <tile id="Ti093b" walkable="false" skins="Sk0028" entities="StreetSignZone9"/>
     <tile id="Ti003b" walkable="false" skins="Sk0039"/>
     <tile id="Ti020b" walkable="false" skins="Sk0007"/>
-    <tile id="Ti049w" walkable="true" skins="Sk0055" entities="ExitToZone1a"/>
+    <tile id="Ti049w" walkable="true" skins="Sk0055" entities="Z001"/>
     <tile id="Ti089b" walkable="false" skins="Sk0004"/>
     <tile id="Ti163b" walkable="false" skins="Sk0030"/>
     <tile id="Ti102b" walkable="false" grounds="Gr0010,Gr0011,Gr0012"/>
@@ -144,7 +144,7 @@
     <tile id="Ti071b" walkable="false" skins="Sk0011"/>
     <tile id="Ti082b" walkable="false" skins="Sk0047" entities="StreetSignZone8"/>
     <tile id="Ti108b" walkable="false" grounds="Gr0010,Gr0013,Gr0018"/>
-    <tile id="Ti052w" walkable="true" skins="Sk0001" entities="ExitToZone9a"/>
+    <tile id="Ti052w" walkable="true" skins="Sk0001" entities="Z009"/>
     <tile id="Ti096w" walkable="true" skins="Sk0035"/>
     <tile id="Ti042b" walkable="false" skins="Sk0060"/>
     <tile id="Ti029w" walkable="true" skins="Sk0044"/>
@@ -171,7 +171,7 @@
     <tile id="Ti067b" walkable="false" skins="Sk0043"/>
     <tile id="Ti047b" walkable="false" skins="Sk0016"/>
     <tile id="Ti068b" walkable="false" skins="Sk0063"/>
-    <tile id="Ti050w" walkable="true" skins="Sk0033" entities="ExitToZone8a"/>
+    <tile id="Ti050w" walkable="true" skins="Sk0033" entities="Z008"/>
     <tile id="Ti112b" walkable="false" skins="Sk0050"/>
     <tile id="Ti074b" walkable="false" skins="Sk0020"/>
     <tile id="Ti026b" walkable="false" skins="Sk0025"/>

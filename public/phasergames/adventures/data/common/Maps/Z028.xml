@@ -65,7 +65,7 @@
     <tile id="Ti058b" walkable="false" skins="Sk0000">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" skins="Sk0001" entities="ExitToZone23b">
+    <tile id="Ti000w" walkable="true" skins="Sk0001" entities="Z023">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti013w" walkable="true" grounds="Gr0004">
