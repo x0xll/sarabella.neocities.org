@@ -39,7 +39,6 @@ class ZoneBase extends Phaser.Scene
         zone.timeManager.startClock()
 
         zone.sharedData.global = {
-            AREA_NAME: zone.zoneConfig.name,
             ZONE_ID: zone.zoneConfig.ID
         }
         

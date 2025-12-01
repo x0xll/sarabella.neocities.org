@@ -15,7 +15,7 @@ class Common_Load extends Phaser.Scene
         this.NPCManager = new NPCManager(this);
         this.itemDatabase = new ItemDatabase(this);
         this.inventory = new InventoryManager(this);
-
+        this.zoneManager = new ZoneManager(this);
 
         this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
     }
@@ -24,7 +24,6 @@ class Common_Load extends Phaser.Scene
     {
         const loader = this
         loader.sharedData = sharedData
-
 
         if (loader.sharedData.zoneData === undefined) {
             loader.sharedData.zoneData = this.cache.json.get("Zones")
@@ -57,6 +56,10 @@ class Common_Load extends Phaser.Scene
             loader.sharedData.NPCManager.initializeData();
         }
 
+        if (loader.sharedData.zoneManager === undefined){
+            loader.sharedData.zoneManager = loader.zoneManager;
+            loader.sharedData.zoneManager.initializeData();
+        }
 
         // TESTING
         this.scene.launch("common_ui", loader.sharedData)

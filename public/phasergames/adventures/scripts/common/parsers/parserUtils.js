@@ -179,6 +179,19 @@ function parseQuestXML(questManager, xmlObj) {
    return result
 }
 
+function parseZoneNameXML(xmlObj)
+{
+    const result = {}
+
+    xmlObj.querySelectorAll("location").forEach(location => {
+        parseXMLNode(location, result)
+    })
+
+    console.log(result);
+
+   return result;
+}
+
 function parseTemplateXML(questManager, xmlObj) {
     const result = {}
 
