@@ -504,7 +504,7 @@ class QuestManager {
         "RemoveQuestFileAction": this.#missingAction,
         "ShowAdventureCompleteAction": this.#missingAction,
         "DialogueAction": this.#dialogueAction,
-        "DialogueImageAction": this.#dialogueAction, // TODO replace with actual action
+        "DialogueImageAction": this.#dialogueImageAction,
         "DialogueChoiceAction": this.#missingAction,
         "MonologueAction": this.#missingAction,
         "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
@@ -576,6 +576,38 @@ class QuestManager {
         
         // TODO Need some way to detect once the user has closed the dialogue
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined);
+    }
+
+    async #dialogueImageAction(phaserScene, questID, lineIndex, action) {
+        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+        let triggers = questData.line[lineIndex].trigger.object
+
+        let character = undefined
+        if (action.identifier) {character = action.identifier}
+        if (character === undefined) {
+            for (let index = 0; index < triggers.length; index++) {
+                const trigger = triggers[index];
+                if (trigger.type === "TalkQuestTrigger" && trigger.identifier) {
+                    character = trigger.identifier
+                }
+            }
+        }
+        if (character === undefined) {
+            let actions = questData.line[lineIndex].actions.object
+            for (let index = 0; index < actions.length; index++) {
+                const action = actions[index];
+                if (action.type === "DialogueAction" 
+                    && action.identifier) {
+                    character = action.identifier
+                }
+            }
+        }
+
+        let img = undefined;
+        if (action.imageFileName) { img = action.imageFileName }
+        
+        // TODO Need some way to detect once the user has closed the dialogue
+        phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined, img);
     }
 
     async #addZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {

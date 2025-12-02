@@ -225,7 +225,7 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Go and remove the weeds from the garden that you see there. Click on the weed, then click on the b&gt;&lt;i&gt;Remove&lt;/i&gt;&lt;/b&gt; bubble.</text>
+            <text>Go and remove the weeds from the garden that you see there. Click on the weed, then click on the &lt;b&gt;&lt;i&gt;Remove&lt;/i&gt;&lt;/b&gt; bubble.</text>
           </object>
         </actions>
       </line>

@@ -32,6 +32,8 @@ class uiDialogue extends uiManagerBase
     constructor(phaserScene)
     {
         super(phaserScene);
+
+        this.phaserScene.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
     }
 
     load()
@@ -72,9 +74,20 @@ class uiDialogue extends uiManagerBase
         // TODO : Character avatar mask
 
         // Normal text
-        var normalText = this.phaserScene.add.text(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var normalText = this.phaserScene.add.rexBBCodeText(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0);
+
+        // Normal images text
+        var normalImgText = this.phaserScene.add.rexBBCodeText(155, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+                            .setOrigin(0)
+                            .setScrollFactor(0);
+
+        // Side Image
+        var sideImg = this.phaserScene.add.image(105, 330, "dialogue_sideimgtxt")
+                            .setOrigin(0)
+                            .setScrollFactor(0)
+                            .setInteractive();
 
         // Continue button
         var continueBtn = this.phaserScene.add.image(105, 400, this.DIALOGUE_CONTINUE_BTN)
@@ -99,6 +112,8 @@ class uiDialogue extends uiManagerBase
         // Choice text
         // TODO
 
+        // Image icons
+
         this.phaserScene.sharedData.dialogue.ui.elements = 
         {
             panelImg: panel,
@@ -106,7 +121,9 @@ class uiDialogue extends uiManagerBase
             charaPortrait: charaPortrait,
             normalText : normalText,
             continueBtn : continueBtn,
-            continueTxt : continueTxt
+            continueTxt : continueTxt,
+            normalImgText : normalImgText,
+            sideImg : sideImg
         };
 
         super.initialize();
@@ -114,7 +131,7 @@ class uiDialogue extends uiManagerBase
 
 
     // TODO: Handle if dialogue has no character to display
-    show(questID, characterid, text, choices)
+    show(questID, characterid, text, choices, image)
     {
         // TODO get character name from id
         const character = {name: characterid, id: characterid}
@@ -139,8 +156,18 @@ class uiDialogue extends uiManagerBase
              : this.DIALOGUE_HORSES_THUMBNAILS));
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
 
-        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text)); // TODO : Handle with localization 
+        if (image !== undefined)
+        {
+            this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setText(this.formatQuestText(text));
+            this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(1);
+            //this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(); // TODO : set depending on image
+        }
+        else
+        {
+            this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text));
+        }
 
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
@@ -170,37 +197,16 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(0);
+        this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(0);
+        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(0);
     }
 
     formatQuestText(text)
     {
-        // TODO: Handle formatting correctly for the bold/italic/font size/color change in the middle of the text
-        // Potential solution: https://www.html5gamedevs.com/topic/37309-rexbbcodetext-rextagtext/
-        if (text.indexOf("b&gt;") > 0)
-        {
-            // Bold
-            text = text.replaceAll("/b&gt;", "");
-            text = text.replaceAll("b&gt;", "");
-        }
-
-        if (text.indexOf("i&gt;") > 0)
-        {
-            // Italic
-            text = text.replaceAll("/i&gt;", "");
-            text = text.replaceAll("i&gt;", "");
-        }
-
-        if (text.indexOf("&lt;") > 0)
-        {
-            text = text.replaceAll("&lt;", "");
-        }
-
-        if (text.indexOf("font size='12' color='grey'") > 0)
-        {
-            // TODO: Temporary to have clean text while testing other elements
-            text = text.replaceAll("font size='12' color='grey'&gt;", "");
-            text = text.replaceAll("/font&gt;", "");
-        }
+        if (text.indexOf("<b>") > 0) text = text.replaceAll("<b>", "[b]");
+        if (text.indexOf("</b>") > 0) text = text.replaceAll("</b>", "[/b]");
+        if (text.indexOf("<i>") > 0) text = text.replaceAll("<i>", "[i]");
+        if (text.indexOf("</i>") > 0) text = text.replaceAll("</i>", "[/i]");
 
         return text;
     }
