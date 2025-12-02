@@ -78,6 +78,17 @@ class uiDialogue extends uiManagerBase
                             .setOrigin(0)
                             .setScrollFactor(0);
 
+        // Normal images text
+        var normalImgText = this.phaserScene.add.rexBBCodeText(155, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+                            .setOrigin(0)
+                            .setScrollFactor(0);
+
+        // Side Image
+        var sideImg = this.phaserScene.add.image(105, 330, "dialogue_sideimgtxt")
+                            .setOrigin(0)
+                            .setScrollFactor(0)
+                            .setInteractive();
+
         // Continue button
         var continueBtn = this.phaserScene.add.image(105, 400, this.DIALOGUE_CONTINUE_BTN)
                             .setOrigin(0)
@@ -101,6 +112,8 @@ class uiDialogue extends uiManagerBase
         // Choice text
         // TODO
 
+        // Image icons
+
         this.phaserScene.sharedData.dialogue.ui.elements = 
         {
             panelImg: panel,
@@ -108,7 +121,9 @@ class uiDialogue extends uiManagerBase
             charaPortrait: charaPortrait,
             normalText : normalText,
             continueBtn : continueBtn,
-            continueTxt : continueTxt
+            continueTxt : continueTxt,
+            normalImgText : normalImgText,
+            sideImg : sideImg
         };
 
         super.initialize();
@@ -116,7 +131,7 @@ class uiDialogue extends uiManagerBase
 
 
     // TODO: Handle if dialogue has no character to display
-    show(questID, characterid, text, choices)
+    show(questID, characterid, text, choices, image)
     {
         // TODO get character name from id
         const character = {name: characterid, id: characterid}
@@ -141,8 +156,18 @@ class uiDialogue extends uiManagerBase
              : this.DIALOGUE_HORSES_THUMBNAILS));
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
 
-        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text));
+        if (image !== undefined)
+        {
+            this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setText(this.formatQuestText(text));
+            this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(1);
+            //this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(); // TODO : set depending on image
+        }
+        else
+        {
+            this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text));
+        }
 
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
@@ -172,6 +197,8 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(0);
+        this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(0);
+        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(0);
     }
 
     formatQuestText(text)
