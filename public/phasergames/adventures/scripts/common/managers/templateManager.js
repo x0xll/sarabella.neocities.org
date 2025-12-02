@@ -12,6 +12,7 @@ class TemplateManager {
             "H047": [15, 6]
         } 
     }
+    
     TEMPLATE_TYPES = {
         //<KEY>.xml -> templates.<VALUES>Data
         "Detritus": "detritus",

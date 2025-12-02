@@ -1,0 +1,23 @@
+{
+"skeleton": { "hash": "WXO5lve43Cs", "spine": "4.2.43", "images": "D:/GitHub/SinGala/BeSa/sarabella.neocities.org/public/phasergames/adventures/assets/extracted/World Elements/Interactables/Insects/Ladybug", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Main", "bone": "root", "attachment": "1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Main": {
+				"1": { "width": 89, "height": 39 }
+			}
+		}
+	},
+	{ "name": "T0179" }
+],
+"animations": {
+	"animation": {}
+}
+}

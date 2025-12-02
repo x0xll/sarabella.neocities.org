@@ -42,6 +42,7 @@
         <script src="./scripts/common/objects/entities/entity.js"></script>
         <script src="./scripts/common/objects/entities/characters/character.js"></script>
         <script src="./scripts/common/objects/entities/player/player.js"></script>
+        <script src="./scripts/common/objects/entities/collectables/collectable.js"></script>
         <script src="./scripts/common/objects/entities/player/AStarPathfinder.js"></script>
         <script src="./scripts/common/objects/entities/items/item.js"></script>
         <script src="./scripts/common/objects/entities/items/itemDatabase.js"></script>
@@ -67,8 +68,10 @@
                 if (AVAILABLE.indexOf(lang) === -1) {
                     lang = "en"
                 }
-                const ZONE_XML_PATH = "./data/common/Maps/";
-                const SHOP_XML_PATH = "./data/common/Shops/";
+
+                const COMMON_XML_PATH = "./data/common/";
+                const ZONE_XML_PATH = `${COMMON_XML_PATH}Maps/`;
+                const SHOP_XML_PATH = `${COMMON_XML_PATH}Shops/`;
                 const QUEST_XML_PATH = `./data/lang/${lang}/Quests/`;
                 const TEMPLATE_XML_PATH = `./data/lang/${lang}/Templates/`;
                 const UI_XML_PATH = `./data/lang/${lang}/UI/`;

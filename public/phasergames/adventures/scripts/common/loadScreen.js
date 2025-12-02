@@ -18,6 +18,7 @@ class Common_Load extends Phaser.Scene
         this.zoneManager = new ZoneManager(this);
 
         this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
+        this.load.json("Collectables", `${COMMON_XML_PATH}collectablesConfig.json`);
     }
 
     create (sharedData)
@@ -27,6 +28,10 @@ class Common_Load extends Phaser.Scene
 
         if (loader.sharedData.zoneData === undefined) {
             loader.sharedData.zoneData = this.cache.json.get("Zones")
+        }
+
+        if (loader.sharedData.collectableData === undefined) {
+            loader.sharedData.collectableData = this.cache.json.get("Collectables")
         }
 
         if (loader.sharedData.worldToLoad === undefined) {

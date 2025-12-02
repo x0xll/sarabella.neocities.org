@@ -96,6 +96,13 @@ class ZoneBase extends Phaser.Scene
                 new Character(this, key, entityPos[0], entityPos[1])
             }
         }
+
+        if (this.sharedData.collectableData[this.zoneConfig.ID]) {
+            for (let [key] of Object.entries(this.sharedData.collectableData[this.zoneConfig.ID])) {
+                let entityPos = this.sharedData.collectableData[this.zoneConfig.ID][key]
+                new Collectable(this, key, entityPos[0], entityPos[1])
+            }
+        }
     }
 
     // Parse the zone file
@@ -173,12 +180,23 @@ class ZoneBase extends Phaser.Scene
                         if (tileData.file) {
                             file = tileData.file
                         }
-                        tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
-                        zone.timeManager.setTile(tile, cellValue)
-                        tile.setDepth((rowCells[x].length - x) + y - tileData.gridSize[0].depth)
-                        if (tileData.gridSize[0].scaleX === undefined) {tileData.gridSize[0].scaleX = 1;}
-                        if (tileData.gridSize[0].scaleY === undefined) {tileData.gridSize[0].scaleY = 1;}
-                        tile.setScale(tileData.gridSize[0].scaleX, tileData.gridSize[0].scaleY);
+
+                        // We do not show the pink square since we are showing the actual element
+                        if ((tileData.entities !== undefined && tileData.entities.indexOf("Spawner") <= 0) || tileData.entities === undefined)
+                        {
+                            tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
+                            zone.timeManager.setTile(tile, cellValue)
+                            tile.setDepth((rowCells[x].length - x) + y - tileData.gridSize[0].depth)
+                            if (tileData.gridSize[0].scaleX === undefined) {tileData.gridSize[0].scaleX = 1;}
+                            if (tileData.gridSize[0].scaleY === undefined) {tileData.gridSize[0].scaleY = 1;}
+                            tile.setScale(tileData.gridSize[0].scaleX, tileData.gridSize[0].scaleY);
+                        }
+
+                        // To help know where to place the entities when creating the config files
+                        if (tileData.entities !== undefined && tileData.entities.indexOf("Spawner") > 0)
+                        {
+                            console.log(`X: ${x}, Y: ${y}, ENTITY: ${tileData.entities}`);
+                        }
                     } catch (error) {
                         console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
