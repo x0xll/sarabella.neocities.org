@@ -87,7 +87,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
@@ -112,7 +112,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
@@ -135,7 +135,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
@@ -158,7 +158,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
