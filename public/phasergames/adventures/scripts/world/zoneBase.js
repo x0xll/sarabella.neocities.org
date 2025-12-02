@@ -93,7 +93,7 @@ class ZoneBase extends Phaser.Scene
         if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
                 let entityPos = this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID][key]
-                new Character(this, key, entityPos[0], entityPos[1])
+                new Character(this, key, entityPos[0], entityPos[1], entityPos[2])
             }
         }
     }

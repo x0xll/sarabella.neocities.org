@@ -9,7 +9,7 @@ class TemplateManager {
     // Only save to player data if different from the default
     NPCLocations = {
         "Z001": {
-            "H047": [15, 6]
+            "H047": [15, 6, "se"]
         } 
     }
     TEMPLATE_TYPES = {
