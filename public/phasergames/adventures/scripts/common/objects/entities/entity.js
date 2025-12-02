@@ -88,6 +88,14 @@ class Entity {
     
     // ------- HELPER FUNCTIONS -------
     /**
+     * Is used when the player clicks on a tile containing this entity
+     * @param {*} interactData any data about the interaction that should be passed in
+     */
+    interact(interactData = undefined) {
+        // TODO ignore if template does not include a Click option
+    }
+
+    /**
      * Takes grid coordinatetes and converts them to the corresponding isometric coordinates on the level map
      * @param {number} x The grid x coordinate
      * @param {number} y The grid y coordinate

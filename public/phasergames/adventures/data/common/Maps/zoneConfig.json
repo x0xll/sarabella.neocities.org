@@ -645,6 +645,7 @@
         "tileXOffset": -1000,
         "tileYOffset": 1250,
         "tileAssets": [
+            "desertmain"
         ],
         
         "backgroundXOffset": 0,
@@ -735,6 +736,7 @@
         "tileXOffset": -1200,
         "tileYOffset": 2000,
         "tileAssets": [
+            "petalhomemain"
         ],
         
         "backgroundXOffset": 0,
@@ -765,6 +767,7 @@
         "tileXOffset": 0,
         "tileYOffset": 800,
         "tileAssets": [
+            "desertmain"
         ],
         
         "backgroundXOffset": 0,

@@ -146,8 +146,11 @@ class Player extends Entity {
             this.hasNext = true;
             this.pathList.push(await this.#findPathToNextDestination())
             if (this.pathList[0] === undefined) {
-                let triggerInfo = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
-                this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+                let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+                // TODO For now, this just tries to trigger th
+                entities.forEach(entity => {
+                    this.zoneScene.entities[entity].interact()
+                });
             }
             this.playerMove = true
         });

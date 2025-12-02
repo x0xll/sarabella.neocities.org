@@ -366,6 +366,7 @@ class QuestManager {
      * @returns 
      */
     tryTriggerQuest(phaserScene, triggerData) {
+        // TODO Add variable to pass in a known known trigger type (e.g. try trigger after dialogue click, so only check dialogue trigger)
         if (!this.busy) {
             this.busy = true
             for (let activeQuestIndex = 0; activeQuestIndex < phaserScene.sharedData.quest.logic.activeQuests.length; activeQuestIndex++) {
@@ -441,12 +442,10 @@ class QuestManager {
     // TODO: This function is a placeholder to trigger the dialogue box
     #talkQuestTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
-        for (let index = 0; index < triggerData.length; index++) {
-            const entity = triggerData[index];
-            if (entity === trigger.identifier) {
-                phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
-                return true
-            }
+        const entity = triggerData.entityID;
+        if (entity === trigger.identifier) {
+            phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+            return true
         }
         return false
     }
@@ -508,7 +507,7 @@ class QuestManager {
         "DialogueImageAction": this.#dialogueAction, // TODO replace with actual action
         "DialogueChoiceAction": this.#missingAction,
         "MonologueAction": this.#missingAction,
-        "AddZoneItemAnywhereAction": this.#missingAction,
+        "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
         "RemoveZoneItemAnywhereAction": this.#missingAction,
         "TryAddZoneItemToAction": this.#missingAction,
         "AddHorseshoesAction": this.#missingAction,
@@ -551,11 +550,11 @@ class QuestManager {
 
     async #dialogueAction(phaserScene, questID, lineIndex, action) {
         let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
-        let triggers = questData.line[lineIndex].trigger.object
 
         let character = undefined
         if (action.identifier) {character = action.identifier}
         if (character === undefined) {
+            let triggers = questData.line[lineIndex].trigger.object
             for (let index = 0; index < triggers.length; index++) {
                 const trigger = triggers[index];
                 if (trigger.type === "TalkQuestTrigger" && trigger.identifier) {
@@ -577,5 +576,14 @@ class QuestManager {
         
         // TODO Need some way to detect once the user has closed the dialogue
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined);
+    }
+
+    async #addZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
+        // TODO Add item to world
+        // TODO check all template files
+        // TODO Actually add this for realsies
+        console.warn(`Missing action: ${action.type}`)
+        // console.log(action.template)
+        // console.log(phaserScene.sharedData.templateManager.getTemplate(action.template))
     }
 }

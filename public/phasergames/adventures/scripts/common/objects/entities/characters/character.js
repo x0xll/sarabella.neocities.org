@@ -23,13 +23,13 @@ class Character extends Entity {
         // this.facingDirection = this.FACING_DIRECTIONS.Southwest
 
         // Set template
-        this.template = this.zoneScene.sharedData.templateManager.getTemplate("npc", `${this.entityID}Template`)
+        this.template = this.zoneScene.sharedData.templateManager.getTemplate(`${this.entityID}Template`)
         if (this.template) {
             this.templateData = {}
             this.templateData.gridFootX = this.findTemplateValue(["GridPosition", 0, "gridFootX", 0, "text"])
             this.templateData.gridFootY = this.findTemplateValue(["GridPosition", 0, "gridFootY", 0, "text"])
             this.templateData.isBlocked = this.findTemplateValue(["GridPosition", 0, "isBlocked", 0, "text"])
-            // console.log(this.templateData)
+            // console.log(this.template)
 
             // x = 1, y = 2
         }
@@ -72,25 +72,20 @@ class Character extends Entity {
     // ------- END INITIALIZE ENTITY -------
 
     // ------- HELPER FUNCTIONS -------
-    findTemplateValue(keysArray, getFirstValueOnly = true) {
-        let result
-        let results = []
-        for (let index = 0; index < this.template.length; index++) {
-            result = this.template[index];
+    interact(interactData) {
+        // TODO add actual interactions
+        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, this)
+    }
+
+    findTemplateValue(keysArray) {
+        let template = this.template;
             
             for (let keyindex = 0; keyindex < keysArray.length; keyindex++) {
                 const key = keysArray[keyindex];
-                if (!result[key]) continue
-                result = result[key]
-
-                if (getFirstValueOnly && keyindex === keysArray.length-1) {
-                    return result
-                } else if (keyindex === keysArray.length-1) {
-                    results.push(result)
-                }
+                if (!template[key]) continue
+                template = template[key]
             }
-        }
-        return results
+        return template
     }
     // ------- END HELPER FUNCTIONS -------
 }

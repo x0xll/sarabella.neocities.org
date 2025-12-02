@@ -15,10 +15,10 @@
           <object type="questData.LogAdventureBeginAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Well done! I'm sure you'll become an excellent gardener. Let me show you how to grow plants. </text>
+            <text>Great job! I bet you will be an excellent gardener. Let me teach you how to grow plants. </text>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Remove&lt;/i&gt;&lt;/b&gt; bubble. You can use it to get rid of certain objects in the world, like weeds or trash. First, click on the weed in the large garden in front of me and then click the &lt;b&gt;&lt;i&gt;Remove&lt;/i&gt;&lt;/b&gt; bubble.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Remove&lt;/i&gt;&lt;/b&gt; bubble. You can use this option to get rid of objects from the world like weeds or trash. First, click on the weed from the big garden patch in front of me and click the &lt;b&gt;&lt;i&gt;Remove&lt;/i&gt;&lt;/b&gt; bubble.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Remove.png</imageFileName>
             <hspace>5</hspace>
             <vspace>5</vspace>
@@ -60,13 +60,13 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, click on me and select the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. Try it now by clicking  &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window. &lt;font size='12' color='grey'&gt;The exclamation mark indicates that someone needs your help. &lt;/font&gt;
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, click on me and select the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. Try it now by clicking  &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window. &lt;font size='12' color='grey'&gt;The exclamation mark indicates that someone needs your help. &lt;/font&gt;
  &lt;font size='12' color='grey'&gt; The Talk bubble lets you talk to a friend you've clicked on.&lt;/font&gt;
 </text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you want. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you like. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Talk.png</imageFileName>
             <hspace>5</hspace>
             <vspace>5</vspace>
@@ -87,11 +87,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you want. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you like. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Talk.png</imageFileName>
             <hspace>5</hspace>
             <vspace>5</vspace>
@@ -112,11 +112,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you want. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you like. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Talk.png</imageFileName>
           </object>
           <object type="questData.RemoveQuestAction" />
@@ -135,11 +135,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you want. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you like. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Talk.png</imageFileName>
           </object>
           <object type="questData.RemoveQuestAction" />
@@ -158,11 +158,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Welcome, young traveler. My name is Wings. Did you notice the exclamation mark above my head? It means I have an adventure for you. To find out more, just talk to me.</text>
+            <text>Welcome, young traveler. My name is Wings. Notice the exclamation point above my head? That means I have an adventure for you. To learn more about the adventure, just talk to me.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you want. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Talk&lt;/i&gt;&lt;/b&gt; bubble. You can talk to me or any other horse whenever you like. Try it now by clicking &lt;b&gt;&lt;i&gt;Continue&lt;/i&gt;&lt;/b&gt; to close this window.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Talk.png</imageFileName>
           </object>
           <object type="questData.RemoveQuestAction" />
@@ -185,10 +185,10 @@
           <object type="questData.LogAdventureBeginAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Great! The soil is ready for the next step. Here's a daisy seed to plant. All your seeds are in your &lt;b&gt;&lt;i&gt;Inventory Bag&lt;/i&gt;&lt;/b&gt;.</text>
+            <text>Nice! The soil is now ready for the next step. Here's a daisy seed to plant. All of your seeds are in your &lt;b&gt;&lt;i&gt;Inventory Bag&lt;/i&gt;&lt;/b&gt;.</text>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is your &lt;b&gt;&lt;i&gt;Inventory Bag&lt;/i&gt;&lt;/b&gt;. Click on it and select the daisy seed. Then, click on a garden plot to plant it.</text>
+            <text>This is your &lt;b&gt;&lt;i&gt;Inventory Bag&lt;/i&gt;&lt;/b&gt;. It's at the bottom of the screen. Click on it and then choose the daisy seed. Then, click on a garden spot to plant it.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/HUD_Inventory.png</imageFileName>
             <hspace>5</hspace>
             <vspace>5</vspace>
@@ -246,11 +246,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Well done! Now that the seed is in the ground, we need to water it so it can grow. All plants need water to grow.</text>
+            <text>Great job! Now that the seed is in the ground, we need to water it so it can grow. Every seed needs to be watered once before it can grow.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Water&lt;/i&gt;&lt;/b&gt; bubble. Click on the plant you want to water and then select this bubble to give it water.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Water&lt;/i&gt;&lt;/b&gt; bubble. Click on the plant you want to water and then choose it to water that plant.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Water.png</imageFileName>
             <hspace>5</hspace>
             <vspace>5</vspace>
@@ -304,11 +304,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Look, the daisy has just grown! Did you notice the Magic Tree in the bottom right corner? Your daisy has brought a little magic back into the world. Your Magic Tree will become more and more beautiful each time you bring magic to the North. Keep going, you're on the right track!</text>
+            <text>Look, the daisy just grew! Did you notice the Tree of Magic in the bottom right corner? Your daisy just added magic back into the world. Your Tree of Magic will become more beautiful as you increase the magic in North of North. Keep up the good work!</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>This is the &lt;b&gt;&lt;i&gt;Pick Up&lt;/i&gt;&lt;/b&gt; bubble. Once your plants have fully grown, you can pick them up and place them in your inventory bag. Try it now by clicking on your daisy and selecting the &lt;b&gt;&lt;i&gt;Pick Up&lt;/i&gt;&lt;/b&gt; bubble.</text>
+            <text>This is the &lt;b&gt;&lt;i&gt;Pick up&lt;/i&gt;&lt;/b&gt; bubble. Once your plants are fully grown, you can pick them up and place them in your Inventory Bag. Try it now by clicking on your daisy and choosing the &lt;b&gt;&lt;i&gt;Pick up&lt;/i&gt;&lt;/b&gt; bubble.</text>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Take.png</imageFileName>
             <hspace>5</hspace>
             <vspace>5</vspace>
@@ -359,7 +359,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Well done! You're good at gardening. I have another adventure for you. Come back and talk to me to find out more.</text>
+            <text>Great job! You're a natural at gardening. I have another adventure for you. Please come talk to me to find out more about it.</text>
             <identifier>H047</identifier>
           </object>
           <object type="questData.AddQuestAction">
