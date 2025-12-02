@@ -1,14 +1,5 @@
 {
-"skeleton": {
-	"hash": "vEMtnYjta10",
-	"spine": "4.2.43",
-	"x": -83,
-	"y": -62,
-	"width": 166,
-	"height": 124,
-	"images": "D:/GitHub/SinGala/BeSa/sarabella.neocities.org/public/phasergames/adventures/assets/extracted/Tilemaps/RuralSky/",
-	"audio": "./audio"
-},
+"skeleton": { "hash": "XznJwmMwwg8", "spine": "4.2.43", "images": "../GitHub/SinGala/BeSa/sarabella.neocities.org/public/phasergames/adventures/assets/extracted/Tilemaps/RuralSky/", "audio": "./audio" },
 "bones": [
 	{ "name": "root" }
 ],
@@ -19,7 +10,7 @@
 	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay", "visible": false },
 	{ "name": "Main", "bone": "root", "attachment": "Main" },
 	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
-	{ "name": "Overlay", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Overlay", "bone": "root", "attachment": "Overlay", "visible": false },
 	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay", "visible": false }
 ],
 "skins": [
@@ -101,10 +92,10 @@
 		"name": "Ti027w",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0055k/1", "scaleX": -1, "width": 148, "height": 94 }
+				"Main": { "name": "T0055k/1", "width": 148, "height": 94 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0055k/1", "scaleX": -1, "width": 148, "height": 94 }
+				"Main": { "name": "T0055k/1", "width": 148, "height": 94 }
 			}
 		}
 	},
@@ -183,10 +174,10 @@
 		"name": "Ti038b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0053ca/1", "scaleX": -1, "width": 137, "height": 97 }
+				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0053ca/1", "scaleX": -1, "width": 137, "height": 97 }
+				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
 			}
 		}
 	},
@@ -194,10 +185,10 @@
 		"name": "Ti039b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0053na/1", "scaleX": -1, "width": 103, "height": 70 }
+				"Main": { "name": "T0053na/1", "width": 103, "height": 70 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0053na/1", "scaleX": -1, "width": 103, "height": 70 }
+				"Main": { "name": "T0053na/1", "width": 103, "height": 70 }
 			}
 		}
 	},
@@ -293,13 +284,10 @@
 		"name": "Ti051b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0041d/1", "y": 5, "width": 80, "height": 58 }
+				"Main": { "name": "T0041d/1", "width": 80, "height": 58 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0041d/1", "y": 5, "width": 80, "height": 58 }
-			},
-			"Underlay": {
-				"Underlay": { "name": "T0042/1", "x": -14, "y": -27, "width": 103, "height": 80 }
+				"Main": { "name": "T0041d/1", "width": 80, "height": 58 }
 			}
 		}
 	},
@@ -307,10 +295,10 @@
 		"name": "Ti053b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0082b/1", "scaleX": -1, "width": 166, "height": 124 }
+				"Main": { "name": "T0082b/1", "width": 166, "height": 124 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0082b/1", "scaleX": -1, "width": 166, "height": 124 }
+				"Main": { "name": "T0082b/1", "width": 166, "height": 124 }
 			}
 		}
 	},
@@ -318,10 +306,10 @@
 		"name": "Ti054b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0082e/1", "scaleX": -1, "width": 166, "height": 124 }
+				"Main": { "name": "T0082e/1", "width": 166, "height": 124 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0082e/1", "scaleX": -1, "width": 166, "height": 124 }
+				"Main": { "name": "T0082e/1", "width": 166, "height": 124 }
 			}
 		}
 	},
@@ -329,10 +317,10 @@
 		"name": "Ti056b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0103b/1", "scaleX": -1, "width": 230, "height": 240 }
+				"Main": { "name": "T0103b/1", "width": 230, "height": 240 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0103b/1", "scaleX": -1, "width": 230, "height": 240 }
+				"Main": { "name": "T0103b/1", "width": 230, "height": 240 }
 			}
 		}
 	},
@@ -384,10 +372,10 @@
 		"name": "Ti066b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0073/1", "scaleX": -1, "rotation": -0.2, "width": 55, "height": 133 }
+				"Main": { "name": "T0073/1", "width": 55, "height": 133 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0073/1", "scaleX": -1, "width": 55, "height": 133 }
+				"Main": { "name": "T0073/1", "width": 55, "height": 133 }
 			}
 		}
 	},
@@ -483,10 +471,10 @@
 		"name": "Ti081b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0138b/1", "scaleX": -1, "width": 449, "height": 535 }
+				"Main": { "name": "T0138b/1", "width": 449, "height": 535 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0138b/1", "scaleX": -1, "width": 449, "height": 535 }
+				"Main": { "name": "T0138b/1", "width": 449, "height": 535 }
 			}
 		}
 	},
@@ -494,10 +482,10 @@
 		"name": "Ti082w",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0139b/1", "scaleX": -1, "width": 783, "height": 772 }
+				"Main": { "name": "T0139b/1", "width": 783, "height": 772 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0139b/1", "scaleX": -1, "width": 783, "height": 772 }
+				"Main": { "name": "T0139b/1", "width": 783, "height": 772 }
 			}
 		}
 	},
@@ -505,10 +493,10 @@
 		"name": "Ti083b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0159b/1", "scaleX": -1, "width": 386, "height": 519 }
+				"Main": { "name": "T0159b/1", "width": 386, "height": 519 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0159b/1", "scaleX": -1, "width": 386, "height": 519 }
+				"Main": { "name": "T0159b/1", "width": 386, "height": 519 }
 			}
 		}
 	},
