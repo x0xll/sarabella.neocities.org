@@ -32,6 +32,8 @@ class uiDialogue extends uiManagerBase
     constructor(phaserScene)
     {
         super(phaserScene);
+
+        this.phaserScene.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
     }
 
     load()
@@ -72,7 +74,7 @@ class uiDialogue extends uiManagerBase
         // TODO : Character avatar mask
 
         // Normal text
-        var normalText = this.phaserScene.add.text(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var normalText = this.phaserScene.add.rexBBCodeText(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0);
 
@@ -140,7 +142,7 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
 
         this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text)); // TODO : Handle with localization 
+        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text));
 
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
@@ -174,33 +176,10 @@ class uiDialogue extends uiManagerBase
 
     formatQuestText(text)
     {
-        // TODO: Handle formatting correctly for the bold/italic/font size/color change in the middle of the text
-        // Potential solution: https://www.html5gamedevs.com/topic/37309-rexbbcodetext-rextagtext/
-        if (text.indexOf("b&gt;") > 0)
-        {
-            // Bold
-            text = text.replaceAll("/b&gt;", "");
-            text = text.replaceAll("b&gt;", "");
-        }
-
-        if (text.indexOf("i&gt;") > 0)
-        {
-            // Italic
-            text = text.replaceAll("/i&gt;", "");
-            text = text.replaceAll("i&gt;", "");
-        }
-
-        if (text.indexOf("&lt;") > 0)
-        {
-            text = text.replaceAll("&lt;", "");
-        }
-
-        if (text.indexOf("font size='12' color='grey'") > 0)
-        {
-            // TODO: Temporary to have clean text while testing other elements
-            text = text.replaceAll("font size='12' color='grey'&gt;", "");
-            text = text.replaceAll("/font&gt;", "");
-        }
+        if (text.indexOf("<b>") > 0) text = text.replaceAll("<b>", "[b]");
+        if (text.indexOf("</b>") > 0) text = text.replaceAll("</b>", "[/b]");
+        if (text.indexOf("<i>") > 0) text = text.replaceAll("<i>", "[i]");
+        if (text.indexOf("</i>") > 0) text = text.replaceAll("</i>", "[/i]");
 
         return text;
     }
