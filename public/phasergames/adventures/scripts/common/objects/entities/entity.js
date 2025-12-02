@@ -95,6 +95,10 @@ class Entity {
         // TODO ignore if template does not include a Click option
     }
 
+    findTemplateValue(keys) {
+        return this.zoneScene.sharedData.templateManager.findTemplateValue(`${this.entityID}Template`, keys)
+    }
+
     /**
      * Takes grid coordinatetes and converts them to the corresponding isometric coordinates on the level map
      * @param {number} x The grid x coordinate

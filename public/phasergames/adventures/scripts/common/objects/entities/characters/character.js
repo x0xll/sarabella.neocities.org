@@ -22,17 +22,13 @@ class Character extends Entity {
     create() {
         // this.facingDirection = this.FACING_DIRECTIONS.Southwest
 
-        // Set template
-        this.template = this.zoneScene.sharedData.templateManager.getTemplate(`${this.entityID}Template`)
-        if (this.template) {
+        // if (this.template) {
             this.templateData = {}
-            this.templateData.gridFootX = this.findTemplateValue(["GridPosition", 0, "gridFootX", 0, "text"])
-            this.templateData.gridFootY = this.findTemplateValue(["GridPosition", 0, "gridFootY", 0, "text"])
-            this.templateData.isBlocked = this.findTemplateValue(["GridPosition", 0, "isBlocked", 0, "text"])
-            // console.log(this.template)
+            this.templateData.gridFootX = this.findTemplateValue(["GridPosition", "gridFootX", "text"])
+            this.templateData.gridFootY = this.findTemplateValue(["GridPosition", "gridFootY", "text"])
 
             // x = 1, y = 2
-        }
+        // }
 
         // Add entity data to tiles
         for (let x = 0; x < this.templateData.gridFootX; x++) {
@@ -75,17 +71,6 @@ class Character extends Entity {
     interact(interactData) {
         // TODO add actual interactions
         this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, this)
-    }
-
-    findTemplateValue(keysArray) {
-        let template = this.template;
-            
-            for (let keyindex = 0; keyindex < keysArray.length; keyindex++) {
-                const key = keysArray[keyindex];
-                if (!template[key]) continue
-                template = template[key]
-            }
-        return template
     }
     // ------- END HELPER FUNCTIONS -------
 }

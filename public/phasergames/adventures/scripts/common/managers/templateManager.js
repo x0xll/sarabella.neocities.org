@@ -23,8 +23,15 @@ class TemplateManager {
         "Soil": "soil",
         "WorldObject": "worldObject",
     }
+    // This is used to quickly fetch some of the more common variables out of a template
+    COMMON_KEYS = {
+        "gridFootX": ["GridPosition", "gridFootX", "text"],
+        "gridFootY": ["GridPosition", "gridFootY", "text"],
+        "isBlocked": ["GridPosition", "isBlocked", "text"],
+        "name": ["component", "name", 1, "text"]
+    }
 
-    // TODO : get the quests info from somewhere
+    // TODO : get addition quests info from the NPC file
     
     /**
      * Preloads the xml files for the quests into cache so they can be used later. Should be called from the loadScreen scene
@@ -44,6 +51,30 @@ class TemplateManager {
         for (let [key] of Object.entries(this.TEMPLATE_TYPES)) {
             this.phaserScene.sharedData.templates[`${this.TEMPLATE_TYPES[key]}Data`] = parseTemplateXML(this, this.phaserScene.cache.xml.get(key))
         }
+    }
+
+    /**
+     * 
+     * @param {*} templateID The ID for the template (e.g. H001)
+     * @param {*} keys The key for the COMMON_KEYS to check, or an array of key names within the template
+     * @returns 
+     */
+    findTemplateValue(templateID, keys) {
+        let template = this.getTemplate(templateID);
+
+        let keysArray = keys
+        if (!Array.isArray(keys)) { keysArray = this.COMMON_KEYS[keys] } 
+
+        for (let keyindex = 0; keyindex < keysArray.length; keyindex++) {
+            const key = keysArray[keyindex];
+            if (!template[key]) continue
+            template = template[key]
+
+            if (Array.isArray(template) && template.length === 1) {
+                template = template[0]
+            }
+        }
+        return template
     }
 
     getTemplate(templateID) {
@@ -98,6 +129,7 @@ class TemplateManager {
             }
             else {
                 const element1 = object1[key]
+                // If element is an array or an object
                 if (Array.isArray(element1) || (typeof element1 === 'object' && !Array.isArray(element1) && element1 !== null))
                     this.#mergeNext(element1, object2[key])
             }

@@ -134,7 +134,10 @@ class uiDialogue extends uiManagerBase
     show(questID, characterid, text, choices, image)
     {
         // TODO get character name from id
-        const character = {name: characterid, id: characterid}
+        const character = {
+            name: this.phaserScene.sharedData.templateManager.findTemplateValue(`${characterid}Template`, "name"), 
+            id: characterid
+        }
 
         if (this.phaserScene.sharedData.dialogue.ui.elements === undefined)
             this.initialize();

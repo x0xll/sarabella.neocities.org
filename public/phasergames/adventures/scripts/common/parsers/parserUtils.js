@@ -68,7 +68,7 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
         nodeName = customName
     } else if (node.attributes && node.attributes["id"]) {
         nodeName = node.attributes["id"].value
-    } else if (nodeObject.name) {
+    } else if (nodeObject.name && (typeof nodeObject.name === 'string' || nodeObject.name instanceof String)) {
         nodeName = nodeObject.name
     } else {
         nodeName = node.nodeName

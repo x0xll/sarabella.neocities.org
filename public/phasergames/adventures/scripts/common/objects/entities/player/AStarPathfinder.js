@@ -68,7 +68,7 @@
         let test = true
         if (this.mapData[y][x].hasEntity) {
             this.mapData[y][x].hasEntity.forEach(entity => {
-                if (this.entities[entity].templateData.isBlocked === "true") {
+                if (this.entities[entity].findTemplateValue("isBlocked") === "true") {
                     test = false
                 }
             });
