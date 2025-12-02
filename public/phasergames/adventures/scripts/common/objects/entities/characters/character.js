@@ -1,6 +1,6 @@
 class Character extends Entity {
-    constructor(zoneScene, entityID, startX, startY) {
-        super(zoneScene, entityID, startX, startY);
+    constructor(zoneScene, entityID, startX, startY, facingDirection) {
+        super(zoneScene, entityID, startX, startY, facingDirection);
 
         this.assetPath = `${this.assetPath}/Characters`
         this.load();
@@ -22,13 +22,9 @@ class Character extends Entity {
     create() {
         // this.facingDirection = this.FACING_DIRECTIONS.Southwest
 
-        // if (this.template) {
-            this.templateData = {}
-            this.templateData.gridFootX = this.findTemplateValue(["GridPosition", "gridFootX", "text"])
-            this.templateData.gridFootY = this.findTemplateValue(["GridPosition", "gridFootY", "text"])
-
-            // x = 1, y = 2
-        // }
+        this.templateData = {}
+        this.templateData.gridFootX = this.findTemplateValue(["GridPosition", "gridFootX", "text"])
+        this.templateData.gridFootY = this.findTemplateValue(["GridPosition", "gridFootY", "text"])
 
         // Add entity data to tiles
         for (let x = 0; x < this.templateData.gridFootX; x++) {
@@ -56,14 +52,11 @@ class Character extends Entity {
 
 
         // Set idle animations
-        this.idleAnimations = []
-        this.sprite.skeleton.data.animations.forEach(animation => {
-            if (animation.name.includes("idle")) this.idleAnimations.push(animation.name)
-        });
 
 
         this.resetSpriteFacingDirection()
         this.resetSpriteDepth()
+        this.setAnimations()
     }
     // ------- END INITIALIZE ENTITY -------
 
@@ -71,6 +64,36 @@ class Character extends Entity {
     interact(interactData) {
         // TODO add actual interactions
         this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, this)
+    }
+
+    setAnimations() {
+        let character = this
+        character.animationQueue = []
+        character.idleAnimations = []
+        character.sprite.skeleton.data.animations.forEach(animation => {
+            if (animation.name.includes("idle")) character.idleAnimations.push(animation.name)
+        });
+
+        if (character.idleAnimations.length > 0) {
+            character.sprite.animationState.setAnimation(0, character.idleAnimations[Math.floor(Math.random()*this.idleAnimations.length)], false)
+        }
+        
+
+        character.sprite.animationState.addListener({
+                // start: (entry) => console.log(`Started animation ${entry.animation.name}`),
+                // interrupt: (entry) => console.log(`Interrupted animation ${entry.animation.name}`),
+                // end: (entry) => console.log(`Ended animation ${entry.animation.name}`),
+                // dispose: (entry) => console.log(`Disposed animation ${entry.animation.name}`),
+                complete: function endAnimation(entry) { 
+                    if (character.animationQueue.length === 0) {
+                        let animation = character.idleAnimations[Math.floor(Math.random()*character.idleAnimations.length)]
+                        
+                        const delay = randomIntFromInterval(3, 5)
+                        character.sprite.animationState.addAnimation(0, animation, false, delay);
+                    }
+                }
+                // event: (entry, event) => console.log(`Custom event for ${entry.animation.name}: ${event.data.name}`)          
+             })
     }
     // ------- END HELPER FUNCTIONS -------
 }

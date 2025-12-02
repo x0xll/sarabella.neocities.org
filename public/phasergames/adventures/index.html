@@ -78,6 +78,16 @@
                 const LEVEL_ASSETS_PATH = "./assets/extracted/Tilemaps/";
                 const TILE_ASSETS_PATH = "./assets/newTiles/";
 
+                /**
+                 * Generates a random integer between two values
+                 * @param {number} min The minimum number that could be returned
+                 * @param {number} max The maximum number that could be returned
+                 * @returns 
+                 */
+                function randomIntFromInterval(min, max) { // min and max included 
+                    return Math.floor(Math.random() * (max - min + 1) + min)
+                }
+
                 // Gets lang file
                 // TODO: Link to loca
                 // We will need to figure out the best way to handle this,

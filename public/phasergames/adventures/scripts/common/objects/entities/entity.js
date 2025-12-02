@@ -1,23 +1,23 @@
 class Entity {
     FACING_DIRECTIONS = {
-        Northeast: '_ne',
-        East: '_e',
-        Southeast: '_se',
-        South: '_s',
-        Southwest: '_sw',
-        West: '_w',
-        Northwest: '_nw'
+        Northeast: 'ne',
+        East: 'e',
+        Southeast: 'se',
+        South: 's',
+        Southwest: 'sw',
+        West: 'w',
+        Northwest: 'nw'
     }
     
     assetPath = "./assets/extracted"
     spriteScale = 1
-    facingDirection = this.FACING_DIRECTIONS.Southeast
 
-    constructor(zoneScene, entityID, startX, startY) {
+    constructor(zoneScene, entityID, startX, startY, facingDirection) {
         this.zoneScene = zoneScene;
         this.zoneScene.entities[entityID] = this
         this.entityID = entityID;
         this.startPos = [startX, startY];
+        this.facingDirection = facingDirection
     }
 
     // ------- INITIALIZE ENTITY -------
