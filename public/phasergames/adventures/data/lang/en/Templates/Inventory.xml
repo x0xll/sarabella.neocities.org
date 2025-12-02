@@ -222,7 +222,7 @@
       <identifier>P001_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de marguerite</name>
+      <name>Daisy Seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -243,7 +243,7 @@
       <identifier>P001_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Marguerite</name>
+      <name>Daisy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1194,7 +1194,7 @@
       <identifier>P028_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de maïs barbu</name>
+      <name>Tassel Corn Seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1215,7 +1215,7 @@
       <identifier>P028_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Maïs barbu</name>
+      <name>Tassel Corn</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1446,7 +1446,7 @@
       <identifier>P035_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de winterberry</name>
+      <name>Winterberry Seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
