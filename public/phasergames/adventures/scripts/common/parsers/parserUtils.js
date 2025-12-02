@@ -6,6 +6,14 @@ function parseZoneXML(xmlObj)
         parseXMLNode(map, result)
     })
 
+    let tiles = result.map[0].tiles[0];
+    result.mappedTiles = new Map();
+
+    for (let [key, value] of Object.entries(tiles)) {
+        value.id = key;
+        result.mappedTiles.set(key, value);
+    }
+
     console.log(result);
 
     return result;

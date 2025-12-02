@@ -63,10 +63,10 @@ class ZoneBase extends Phaser.Scene
 
         // TEST tp
         let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
-        var cellValue = zone.zoneParsed[0][pos.y][pos.x];
-        if (zone.zoneParsed[1][cellValue].entity !== undefined)
+        var cellValue = zone.tiles[pos.y][pos.x];
+        if (cellValue.entity !== undefined)
         {
-            let tile = zone.zoneParsed[1][cellValue].id;
+            let tile = cellValue.id;
             if (this.zoneConfig.sceneExitTiles && this.zoneConfig.sceneExitTiles[tile]) {
                 this.goToNextZone(this.zoneConfig.sceneExitTiles[tile])
             }
@@ -145,40 +145,44 @@ class ZoneBase extends Phaser.Scene
         const zone = this
         this.zoneParsed = parseZoneXML(this.cache.xml.get(this.zoneConfig.ID)); 
         
-        
         zone.tiles = {}
 
+        const levelRows = zone.zoneParsed.map[0].layout[0].levels[0][0].levelRow
+        const tiles = zone.zoneParsed.mappedTiles;
+
         // Column
-        for (var y = 0; y < zone.zoneParsed[0].length; y++) {
+        for (var y = 0; y < levelRows.length; y++) {
             zone.tiles[y] = {}
+            var rowCells = levelRows[y].text.split(",");
             // Row
-            for (var x = 0; x < zone.zoneParsed[0][y].length; x++) {
-                var cellValue = zone.zoneParsed[0][y][x];
+            for (var x = 0; x < rowCells.length; x++) {
+                var cellValue = rowCells[x];
+                let tileData = tiles.get(cellValue);
 
                 // We get the actual visual id
-                if (zone.zoneParsed[1][cellValue] === undefined) {
+                if (tileData === undefined) {
                     console.error("Tile isn't defined: " + cellValue);
                     continue;
                 }
                 let tile = {}
-                if (zone.zoneParsed[1][cellValue].id !== "x"
-                     && zone.zoneParsed[1][cellValue].id !== "."
+                if (cellValue !== "x"
+                     && cellValue !== "."
                     ) {
                     try {
                         let file = zone.zoneConfig.tileAssets[0]
-                        if (zone.zoneParsed[1][cellValue].file) {
-                            file = zone.zoneParsed[1][cellValue].file
+                        if (tileData.file) {
+                            file = tileData.file
                         }
                         tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
                         zone.timeManager.setTile(tile, cellValue)
-                        tile.setDepth((zone.zoneParsed[0][y][x].length - x) + y - zone.zoneParsed[1][cellValue].depth)
+                        tile.setDepth((rowCells[x].length - x) + y - tileData.depth)
                     } catch (error) {
                         console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
                     }
                 }
 
-                tile.parsedData = zone.zoneParsed[1][cellValue]
+                tile.parsedData = tileData
                 zone.tiles[y][x] = tile
             }
         }
