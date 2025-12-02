@@ -176,6 +176,9 @@ class ZoneBase extends Phaser.Scene
                         tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
                         zone.timeManager.setTile(tile, cellValue)
                         tile.setDepth((rowCells[x].length - x) + y - tileData.gridSize[0].depth)
+                        if (tileData.gridSize[0].scaleX === undefined) {tileData.gridSize[0].scaleX = 1;}
+                        if (tileData.gridSize[0].scaleY === undefined) {tileData.gridSize[0].scaleY = 1;}
+                        tile.setScale(tileData.gridSize[0].scaleX, tileData.gridSize[0].scaleY);
                     } catch (error) {
                         console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
