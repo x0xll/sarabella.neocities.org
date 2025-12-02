@@ -26,7 +26,7 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti056b" file="ruralskymain" walkable="false" skins="Sk0028">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti046b" file="ruralskymain" walkable="false" skins="Sk0003">
       <gridSize width="1" height="1" depth="1"/>
@@ -50,10 +50,10 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti090w" file="ruralskymain" walkable="true" skins="Sk0008" entities="Z027">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti038b" file="ruralskymain" walkable="false" skins="Sk0000">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti020w" file="ruralskymain" walkable="true" grounds="Gr0011,Gr0017" entities="FreshwaterTemplate">
       <gridSize width="1" height="1" depth="1"/>
@@ -101,7 +101,7 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti054b" file="ruralskymain" walkable="false" skins="Sk0026">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti018w" file="ruralskymain" walkable="true" grounds="Gr0011,Gr0016" entities="FreshwaterTemplate">
       <gridSize width="1" height="1" depth="1"/>
@@ -119,7 +119,7 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti053b" file="ruralskymain" walkable="false" skins="Sk0011">
-      <gridSize width="2" height="3" depth="3"/>
+      <gridSize width="2" height="3" depth="3" scaleX="-1"/>
     </tile>
     <tile id="Ti069b" file="ruralskymain" walkable="false" skins="Sk0004">
       <gridSize width="1" height="1" depth="1"/>
@@ -170,7 +170,7 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti083b" file="ruralskymain" walkable="false" skins="Sk0036">
-      <gridSize width="8" height="4" depth="3"/>
+      <gridSize width="8" height="4" depth="3" scaleX="-1"/>
     </tile>
     <tile id="Ti021w" file="ruralskymain" walkable="true" grounds="Gr0011,Gr0015" entities="FreshwaterTemplate">
       <gridSize width="1" height="1" depth="1"/>
@@ -203,16 +203,16 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti082w" file="ruralskymain" walkable="true" skins="Sk0023">
-      <gridSize width="8" height="4" depth="3"/>
+      <gridSize width="8" height="4" depth="3" scale="-1"/>
     </tile>
     <tile id="Ti063b" file="ruralskymain" walkable="false" skins="Sk0029" entities="StreetSignZone13">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti027w" file="ruralskymain" walkable="true" skins="Sk0030">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti081b" file="ruralskymain" walkable="false" skins="Sk0025">
-      <gridSize width="5" height="5" depth="3"/>
+      <gridSize width="5" height="5" depth="3" scaleX="-1"/>
     </tile>
     <tile id="Ti064b" file="ruralskymain" walkable="false" skins="Sk0013" entities="StreetSignZone13">
       <gridSize width="1" height="1" depth="1"/>
@@ -224,19 +224,19 @@
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti087b" file="ruralskymain" walkable="false" skins="Sk0034">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" />
     </tile>
     <tile id="Ti066b" file="ruralskymain" walkable="false" skins="Sk0032">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti039b" file="ruralskymain" walkable="false" skins="Sk0016">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
     <tile id="Ti065b" file="ruralskymain" walkable="false" skins="Sk0013" entities="StreetSignZone1">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti000w" file="ruralskymain" walkable="true" skins="Sk0002" entities="Z001">
-      <gridSize width="1" height="1" depth="1"/>
+      <gridSize width="1" height="1" depth="1" scaleX="-1"/>
     </tile>
   </tiles>
   <backgrounds>
