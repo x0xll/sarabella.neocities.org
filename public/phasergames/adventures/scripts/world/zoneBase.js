@@ -64,9 +64,9 @@ class ZoneBase extends Phaser.Scene
         // TEST tp
         let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
         var cellValue = zone.tiles[pos.y][pos.x];
-        if (cellValue.entity !== undefined)
+        if (cellValue.parsedData.entities !== undefined)
         {
-            let tile = cellValue.id;
+            let tile = cellValue.parsedData.id;
             if (this.zoneConfig.sceneExitTiles && this.zoneConfig.sceneExitTiles[tile]) {
                 this.goToNextZone(this.zoneConfig.sceneExitTiles[tile])
             }
