@@ -22,6 +22,17 @@ class uiDialogue extends uiManagerBase
         wordWrap: { width: 650 }
     }
 
+    DIALOGUE_TEXT_BLACK_SETTINGS_BBCODE = 
+    {
+        fontFamily: "Arial",
+        fontSize: "18px",
+        color: "#792AA8",
+        wrap: {
+            mode: 'word',
+            width: 650
+        }
+    }
+
     DIALOGUE_TEXT_PURPLE_SETTINGS = 
     {
         font: "18px Arial",
@@ -74,12 +85,12 @@ class uiDialogue extends uiManagerBase
         // TODO : Character avatar mask
 
         // Normal text
-        var normalText = this.phaserScene.add.rexBBCodeText(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var normalText = this.phaserScene.add.rexBBCodeText(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS_BBCODE)
                             .setOrigin(0)
                             .setScrollFactor(0);
 
         // Normal images text
-        var normalImgText = this.phaserScene.add.rexBBCodeText(155, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var normalImgText = this.phaserScene.add.rexBBCodeText(155, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS_BBCODE)
                             .setOrigin(0)
                             .setScrollFactor(0);
 
@@ -210,6 +221,10 @@ class uiDialogue extends uiManagerBase
         if (text.indexOf("</b>") > 0) text = text.replaceAll("</b>", "[/b]");
         if (text.indexOf("<i>") > 0) text = text.replaceAll("<i>", "[i]");
         if (text.indexOf("</i>") > 0) text = text.replaceAll("</i>", "[/i]");
+
+        // TODO: make more general, this is for testing
+        if (text.indexOf("<font size='12' color='grey'>") > 0) text = text.replaceAll("<font size='12' color='grey'>", "[size=12][color=grey]");
+        if (text.indexOf("</font>") > 0) text = text.replaceAll("</font>", "[/color][/size]");
 
         return text;
     }
