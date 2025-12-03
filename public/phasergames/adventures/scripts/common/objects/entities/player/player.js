@@ -147,10 +147,12 @@ class Player extends Entity {
             this.pathList.push(await this.#findPathToNextDestination())
             if (this.pathList[0] === undefined) {
                 let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
-                entities.forEach(entity => {
-                    this.zoneScene.entities[entity].interact()
-                });
-            }
+                if (entities !== undefined) {
+                        entities.forEach(entity => {
+                            this.zoneScene.entities[entity].interact()
+                        });
+                    }
+                }
             this.playerMove = true
         });
     }

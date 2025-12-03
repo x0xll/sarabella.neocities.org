@@ -97,35 +97,19 @@ class ZoneBase extends Phaser.Scene
             }
         }
 
+        // TODO figure out a way to preload this from the zone xml file directly instead of using collectablesConfig
         if (this.sharedData.collectableData[this.zoneConfig.ID]) {
-            for (let [key] of Object.entries(this.sharedData.collectableData[this.zoneConfig.ID])) {
-                let isSpawner = false;
-                if (key.indexOf("Spawner") > 0) {isSpawner = true;}
-                let entityPos = this.sharedData.collectableData[this.zoneConfig.ID][key]
-                if (entityPos.length > 2)
-                {
-                    for (let i = 0; i < entityPos.length; i++)
-                    {
-                        new Collectable(this, key, entityPos[i][0], entityPos[i][1], isSpawner);
-                    }
-                    continue;
-                }
-                new Collectable(this, key, entityPos[0], entityPos[1], isSpawner)
-            }
+            let assetPath = "./assets/extracted/World Elements/Interactables/"
+            this.sharedData.collectableData[this.zoneConfig.ID].forEach(entityToPreload => {
+                
+                this.load.spineAtlas(`${entityToPreload}-atlas`, `${assetPath}/${entityToPreload}/skeleton.atlas`);
+                this.load.spineJson(`${entityToPreload}-json`, `${assetPath}/${entityToPreload}/skeleton.json`);
+            });
         }
     }
 
     // Parse the zone file
-    async loadZoneFromXMLData(zoneID) {
-        // TODO
-        // Temporarily using a modified zone test file because some tiles seems to be able to have multiple grounds and/or skins..
-        // We will need to understand how those are supposed to work before being able to reuse the original file
-        // const ZONE_XML_NAME = ZONE_XML_PATH + zoneID + ".xml"; 
-        // var zoneObj = await loadXML(ZONE_XML_NAME);
-
-        // this.zoneParsed = parseZoneXML(zoneObj);
-
-
+    loadZoneFromXMLData(zoneID) {
         this.load.xml(zoneID, `${ZONE_XML_PATH}${zoneID}.xml`);
     }
 
@@ -203,9 +187,17 @@ class ZoneBase extends Phaser.Scene
                         }
 
                         // To help know where to place the entities when creating the config files
-                        if (tileData.entities !== undefined && tileData.entities.indexOf("Spawner") > 0)
+                        if (tileData.entities !== undefined )
                         {
-                            console.log(`X: ${x}, Y: ${y}, ENTITY: ${tileData.entities}`);
+                            // TODO consider making the base entity class even more generic and using the template directly to create the rest of the data.
+                            // That should make it much easier to add entities directly from the zone xml
+                            if (this.sharedData.collectableData[this.zoneConfig.ID] && this.sharedData.collectableData[this.zoneConfig.ID].indexOf(tileData.entities) > -1 
+                                && tileData.entities.indexOf("Spawner") > 0
+                            ) {
+                                new Collectable(zone, tileData.entities, x, y)
+                            } else {
+                                console.warn(`Missing ENTITY: ${tileData.entities} X: ${x}, Y: ${y} in collectiblesConfig`);
+                            }
                         }
                     } catch (error) {
                         console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available`)

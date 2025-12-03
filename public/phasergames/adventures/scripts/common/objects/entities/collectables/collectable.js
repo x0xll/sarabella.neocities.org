@@ -1,9 +1,11 @@
 class Collectable extends Entity {
-    constructor(zoneScene, entityID, startX, startY, isSpawner) {
+    constructor(zoneScene, entityID, startX, startY) {
         super(zoneScene, entityID, startX, startY);
 
-        this.isSpawner = isSpawner;
-        this.assetPath = `${this.assetPath}/World Elements/Interactables/`
+
+        this.isSpawner = entityID.indexOf("Spawner") > 0
+
+        this.assetPath = `${this.assetPath}/World Elements/Interactables`
         this.load();
     }
 
@@ -21,24 +23,29 @@ class Collectable extends Entity {
      * Instantiates the entity sprite. Should run during the create phase of zone scene setup
      */
     create() {
-        // this.facingDirection = this.FACING_DIRECTIONS.Southwest
-
-        // if (this.template) {
-            this.templateData = {}
-            this.templateData.gridFootX = this.findTemplateValue(["GridPosition", "gridFootX", "text"])
-            this.templateData.gridFootY = this.findTemplateValue(["GridPosition", "gridFootY", "text"])
-
-            // x = 1, y = 2
-        // }
+        this.templateData = {}
+        this.templateData.gridFootX = 1 //this.findTemplateValue("gridFootX") // TODO findTemplateValue should return undefined if a value is not found
+        this.templateData.gridFootY = 1 //this.findTemplateValue("gridFootY")
 
         // Add entity data to tiles
         for (let x = 0; x < this.templateData.gridFootX; x++) {
             for (let y = 0; y < this.templateData.gridFootY; y++) {
-                    let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
-                    tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
+                let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
+                switch (this.facingDirection) {
+                    case this.FACING_DIRECTIONS.Southwest:
+                    case this.FACING_DIRECTIONS.West:
+                    case this.FACING_DIRECTIONS.Northwest:
+                        tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
+                        break;
+                    default:
+                        break;
+                }
+                if (!tile.hasEntity) {
+                    tile.hasEntity = []
                 }
                 tile.hasEntity.push(this.entityID)
             }
+        }
 
         let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
         this.sprite = this.zoneScene.add.spine(isoStart.x, isoStart.y, `${this.entityID}-json`, `${this.entityID}-atlas`).setScale();

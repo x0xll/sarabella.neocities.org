@@ -14,7 +14,15 @@ class Entity {
 
     constructor(zoneScene, entityID, startX, startY, facingDirection) {
         this.zoneScene = zoneScene;
-        this.zoneScene.entities[entityID] = this
+
+
+        let entityCount = 0
+        for (let [key] of Object.entries(this.zoneScene.entities)) {
+            if (key.includes(entityID)) {entityCount++}
+        }
+        const key = entityCount > 0 ? entityID+entityCount : entityID
+        this.zoneScene.entities[key] = this
+
         this.entityID = entityID;
         this.startPos = [startX, startY];
         this.facingDirection = facingDirection

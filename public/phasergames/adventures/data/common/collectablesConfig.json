@@ -1,13 +1,8 @@
 {
-    "Z001":
-    {
-        "LadyBugSpawner": [18, 24],
-        "ButterflySpawner": [19, 1],
-        "HayStackSpawner": [
-            [19, 12],
-            [18, 17],
-            [18, 18]
-        ],
-        "PixieSpawner": [5, 31]
-    }
+    "Z001":[
+        "LadyBugSpawner",
+        "ButterflySpawner",
+        "HayStackSpawner",
+        "PixieSpawner"
+    ]
 }
