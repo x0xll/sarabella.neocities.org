@@ -1,0 +1,26 @@
+{
+"skeleton": { "hash": "6z3PySkEQuc", "spine": "4.2.43", "images": "D:/GitHub/SinGala/BeSa/sarabella.neocities.org/public/phasergames/adventures/assets/extracted/World Elements/Interactables/Insects", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Main", "bone": "root", "attachment": "sprites/DefineSprite_740_M023/1" },
+	{ "name": "Bottom", "bone": "root", "attachment": "sprites/DefineSprite_1264_T0202/1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Bottom": {
+				"sprites/DefineSprite_1264_T0202/1": { "width": 37, "height": 25 }
+			},
+			"Main": {
+				"sprites/DefineSprite_740_M023/1": { "y": 61, "width": 63, "height": 130 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

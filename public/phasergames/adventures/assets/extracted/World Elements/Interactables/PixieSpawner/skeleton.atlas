@@ -1,0 +1,10 @@
+skeleton.png
+size:155,60
+filter:Linear,Linear
+sprites/DefineSprite_1264_T0202/1
+bounds:128,21,37,25
+rotate:90
+sprites/DefineSprite_740_M023/1
+bounds:2,2,56,124
+offsets:6,0,63,130
+rotate:90

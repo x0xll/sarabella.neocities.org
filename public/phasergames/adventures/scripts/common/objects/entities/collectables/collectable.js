@@ -1,7 +1,8 @@
 class Collectable extends Entity {
-    constructor(zoneScene, entityID, startX, startY) {
+    constructor(zoneScene, entityID, startX, startY, isSpawner) {
         super(zoneScene, entityID, startX, startY);
 
+        this.isSpawner = isSpawner;
         this.assetPath = `${this.assetPath}/World Elements/Interactables/`
         this.load();
     }
@@ -49,8 +50,14 @@ class Collectable extends Entity {
 
     // ------- HELPER FUNCTIONS -------
     interact(interactData) {
-        // TODO add actual interactions
-        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, this)
+        // TODO: Handle interaction
+        console.log(`Collecting: ${this.entityID}`);
+    }
+
+    findTemplateValue(keys) {
+        if (this.isSpawner)
+            return this.zoneScene.sharedData.templateManager.findTemplateValue(`${this.entityID}`, keys)
+        return super.findTemplateValue(keys);
     }
     // ------- END HELPER FUNCTIONS -------
 }

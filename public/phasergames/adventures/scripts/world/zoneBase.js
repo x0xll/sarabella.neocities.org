@@ -99,8 +99,18 @@ class ZoneBase extends Phaser.Scene
 
         if (this.sharedData.collectableData[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.collectableData[this.zoneConfig.ID])) {
+                let isSpawner = false;
+                if (key.indexOf("Spawner") > 0) {isSpawner = true;}
                 let entityPos = this.sharedData.collectableData[this.zoneConfig.ID][key]
-                new Collectable(this, key, entityPos[0], entityPos[1])
+                if (entityPos.length > 2)
+                {
+                    for (let i = 0; i < entityPos.length; i++)
+                    {
+                        new Collectable(this, key, entityPos[i][0], entityPos[i][1], isSpawner);
+                    }
+                    continue;
+                }
+                new Collectable(this, key, entityPos[0], entityPos[1], isSpawner)
             }
         }
     }
