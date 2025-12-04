@@ -14,12 +14,13 @@ class ZoneBase extends Phaser.Scene
 
             this.zoneConfig = sharedData.zoneData["Z001"]
         }
+        this.sharedData.zoneTileData
     }
 
     preload ()
     {
+        this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData); 
         this.loadEntitiesData();
-        this.loadZoneFromXMLData(this.zoneConfig.ID);
         this.loadBackgrounds(this.zoneConfig.backgroundCountX, this.zoneConfig.backgroundCountY, this.zoneConfig.ID)
 
         this.zoneConfig.tileAssets.forEach(assetName => {
@@ -38,17 +39,11 @@ class ZoneBase extends Phaser.Scene
         zone.tiles = []
         zone.timeManager.startClock()
 
-        // // TODO : Create the isometric grid
         this.instantiateBackgrounds(zone.zoneConfig.backgroundXOffset, zone.zoneConfig.backgroundYOffset); 
         this.instantiateZoneWorld();
         zone.timeManager.renderDayNight()
 
         this.instantiateEntities();
-
-        // if (zone.sharedData.hud !== undefined)
-        // {
-        //     zone.sharedData.hud.ui.manager.updateTexts();            
-        // }
     }
 
     update() 
@@ -61,7 +56,7 @@ class ZoneBase extends Phaser.Scene
 
         //debug_DrawTriggerQuest(zone);
 
-        // TEST tp
+        // Telport between zones
         let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
         var cellValue = zone.tiles[pos.y][pos.x];
         if (cellValue.parsedData.entities !== undefined)
@@ -90,6 +85,7 @@ class ZoneBase extends Phaser.Scene
         this.entities = {}
         new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
+        // TODO create a base templateEntity class to use for all entities that use a template for their logic
         if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
                 let entityPos = this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID][key]
@@ -97,20 +93,32 @@ class ZoneBase extends Phaser.Scene
             }
         }
 
-        // TODO figure out a way to preload this from the zone xml file directly instead of using collectablesConfig
-        if (this.sharedData.collectableData[this.zoneConfig.ID]) {
-            let assetPath = "./assets/extracted/World Elements/Interactables/"
-            this.sharedData.collectableData[this.zoneConfig.ID].forEach(entityToPreload => {
-                
-                this.load.spineAtlas(`${entityToPreload}-atlas`, `${assetPath}/${entityToPreload}/skeleton.atlas`);
-                this.load.spineJson(`${entityToPreload}-json`, `${assetPath}/${entityToPreload}/skeleton.json`);
-            });
-        }
-    }
+        const zone = this
+        zone.tiles = {}
 
-    // Parse the zone file
-    loadZoneFromXMLData(zoneID) {
-        this.load.xml(zoneID, `${ZONE_XML_PATH}${zoneID}.xml`);
+        const levelRows = zone.zoneParsed.map[0].layout[0].levels[0][0].levelRow
+        const tiles = zone.zoneParsed.mappedTiles;
+
+        // Column
+        for (var y = 0; y < levelRows.length; y++) {
+            zone.tiles[y] = {}
+            var rowCells = levelRows[y].text.split(",");
+            // Row
+            for (var x = 0; x < rowCells.length; x++) {
+                var cellValue = rowCells[x];
+                let tileData = tiles.get(cellValue);
+
+                // We get the actual visual id
+                if (tileData === undefined) {
+                    console.error("Tile isn't defined: " + cellValue);
+                    continue;
+                }
+                    let file = zone.zoneConfig.tileAssets[0]
+                    if (tileData.file) {
+                        file = tileData.file
+                    }
+                }
+        }
     }
 
     loadBackgrounds(xSize, ySize, zoneID) {
@@ -144,8 +152,6 @@ class ZoneBase extends Phaser.Scene
     // Instantiation the images from the parsed zone xml
     instantiateZoneWorld() { 
         const zone = this
-        this.zoneParsed = parseZoneXML(this.cache.xml.get(this.zoneConfig.ID)); 
-        
         zone.tiles = {}
 
         const levelRows = zone.zoneParsed.map[0].layout[0].levels[0][0].levelRow
@@ -187,18 +193,18 @@ class ZoneBase extends Phaser.Scene
                         }
 
                         // To help know where to place the entities when creating the config files
-                        if (tileData.entities !== undefined )
-                        {
-                            // TODO consider making the base entity class even more generic and using the template directly to create the rest of the data.
-                            // That should make it much easier to add entities directly from the zone xml
-                            if (this.sharedData.collectableData[this.zoneConfig.ID] && this.sharedData.collectableData[this.zoneConfig.ID].indexOf(tileData.entities) > -1 
-                                && tileData.entities.indexOf("Spawner") > 0
-                            ) {
-                                new Collectable(zone, tileData.entities, x, y)
-                            } else {
-                                console.warn(`Missing ENTITY: ${tileData.entities} X: ${x}, Y: ${y} in collectiblesConfig`);
-                            }
-                        }
+                        // if (tileData.entities !== undefined )
+                        // {
+                        //     // TODO consider making the base entity class even more generic and using the template directly to create the rest of the data.
+                        //     // That should make it much easier to add entities directly from the zone xml
+                        //     if (this.sharedData.collectableData[this.zoneConfig.ID] && this.sharedData.collectableData[this.zoneConfig.ID].indexOf(tileData.entities) > -1 
+                        //         && tileData.entities.indexOf("Spawner") > 0
+                        //     ) {
+                        //         new Collectable(zone, tileData.entities, x, y)
+                        //     } else {
+                        //         console.warn(`Missing ENTITY: ${tileData.entities} X: ${x}, Y: ${y} in collectiblesConfig`);
+                        //     }
+                        // }
                     } catch (error) {
                         console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")

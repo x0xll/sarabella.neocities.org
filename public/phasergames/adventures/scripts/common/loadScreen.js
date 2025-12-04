@@ -8,6 +8,14 @@ class Common_Load extends Phaser.Scene
         super({ key: 'common_load' });
     }
 
+    init (sharedData) {
+        // Used to preload certain data for the zone
+        this.sharedData = sharedData
+        if (this.sharedData.worldToLoad === undefined) {
+            this.sharedData.worldToLoad = "Z001"
+        }
+    }
+
     preload ()
     {
         loadLoadingUI(this);
@@ -18,7 +26,7 @@ class Common_Load extends Phaser.Scene
         this.zoneManager = new ZoneManager(this);
 
         this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
-        this.load.json("Collectables", `${COMMON_XML_PATH}collectablesConfig.json`);
+        this.load.xml(this.sharedData.worldToLoad, `${ZONE_XML_PATH}${this.sharedData.worldToLoad}.xml`);
     }
 
     create (sharedData)
@@ -29,14 +37,12 @@ class Common_Load extends Phaser.Scene
         if (loader.sharedData.zoneData === undefined) {
             loader.sharedData.zoneData = this.cache.json.get("Zones")
         }
+        loader.sharedData.zoneTileData = this.cache.xml.get(loader.sharedData.worldToLoad)
 
         if (loader.sharedData.collectableData === undefined) {
             loader.sharedData.collectableData = this.cache.json.get("Collectables")
         }
 
-        if (loader.sharedData.worldToLoad === undefined) {
-            loader.sharedData.worldToLoad = "Z001"
-        }
         loader.sharedData.global = {
             ZONE_ID: sharedData.zoneData[sharedData.worldToLoad].ID
         }
@@ -75,7 +81,6 @@ class Common_Load extends Phaser.Scene
 
 
         this.scene.stop("common_zone")
-        // this.scene.launch(loader.sharedData.worldToLoad, loader.sharedData);
         this.scene.launch("common_zone", loader.sharedData);
     }
 }
