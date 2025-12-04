@@ -14,7 +14,7 @@ function parseZoneXML(xmlObj)
         result.mappedTiles.set(key, value);
     }
 
-    console.log(result);
+    //console.log(result);
 
     return result;
 }
