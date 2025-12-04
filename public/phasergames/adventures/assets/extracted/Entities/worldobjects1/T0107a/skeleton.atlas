@@ -1,0 +1,10 @@
+skeleton.png
+size:44,24
+filter:Linear,Linear
+T0107a/crop2
+bounds:2,2,20,20
+offsets:3,3,24,24
+T0107a/crop3
+bounds:24,3,19,18
+offsets:3,3,24,24
+rotate:90
