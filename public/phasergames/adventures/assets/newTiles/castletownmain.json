@@ -1,0 +1,44 @@
+{
+"skeleton": { "hash": "VWDNAIg0qcA", "spine": "4.2.43", "x": -33.5, "y": -15, "width": 63.5, "height": 45.5 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Underlay2", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Underlay2_night", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Underlay", "bone": "root", "attachment": "Underlay" },
+	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay" },
+	{ "name": "Main", "bone": "root", "attachment": "Main" },
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
+	{ "name": "Overlay", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay" }
+],
+"skins": [
+	{
+		"name": "Ti041w",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0038d/1", "width": 60, "height": 30 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0038d/1", "width": 60, "height": 30 }
+			},
+			"Overlay": {
+				"Overlay": { "name": "T0038f/1", "x": 11, "y": 15, "width": 32, "height": 31 }
+			},
+			"Overlay_night": {
+				"Overlay": { "name": "T0038f/1", "x": 11, "y": 15, "width": 32, "height": 31 }
+			},
+			"Underlay": {
+				"Underlay": { "name": "T0039a/1", "x": -9, "y": -2, "width": 49, "height": 20 }
+			},
+			"Underlay_night": {
+				"Underlay": { "name": "T0039a/1", "x": -9, "y": -2, "width": 49, "height": 20 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
