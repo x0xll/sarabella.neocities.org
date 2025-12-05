@@ -39,7 +39,7 @@
       <className>T0040a</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mauvaises herbes</ToolTipText>
+      <ToolTipText>Weeds</ToolTipText>
     </component>
   </template>
   <template name="Detritus1Template" template="DetritusTemplate">
@@ -48,7 +48,7 @@
       <className>T0040f</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mauvaises herbes</ToolTipText>
+      <ToolTipText>Weeds</ToolTipText>
     </component>
   </template>
   <template name="Detritus2Template" template="DetritusTemplate">
@@ -57,7 +57,7 @@
       <className>T0040g</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mauvaises herbes</ToolTipText>
+      <ToolTipText>Weeds</ToolTipText>
     </component>
   </template>
   <!-- Haystack -->

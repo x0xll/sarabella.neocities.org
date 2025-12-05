@@ -102,7 +102,7 @@
       <name>Round Gemstone (Red)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme ronde (Rouge)</ToolTipText>
+      <ToolTipText>Round Gemstone (Red)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158aTemplate</template>
@@ -121,7 +121,7 @@
       <name>Square Gemstone (Red)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme carrée (Rouge)</ToolTipText>
+      <ToolTipText>Square Gemstone (Red)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158bTemplate</template>
@@ -140,7 +140,7 @@
       <name>Round Gemstone (Blue)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme ronde (Bleue)</ToolTipText>
+      <ToolTipText>Round Gemstone (Blue)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158cTemplate</template>
@@ -159,7 +159,7 @@
       <name>Square Gemstone (Blue)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme carrée  (Bleue)</ToolTipText>
+      <ToolTipText>Square Gemstone (Blue)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158dTemplate</template>
@@ -178,7 +178,7 @@
       <name>Round Gemstone (Green)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme ronde(Verte)</ToolTipText>
+      <ToolTipText>Round Gemstone (Green)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158eTemplate</template>
@@ -197,7 +197,7 @@
       <name>Square Gemstone (Green)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme carrée  (Verte)</ToolTipText>
+      <ToolTipText>Square Gemstone (Green)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158fTemplate</template>
@@ -216,7 +216,7 @@
       <name>Round Gemstone (Purple)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme ronde (Violette)</ToolTipText>
+      <ToolTipText>Round Gemstone (Purple)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158gTemplate</template>
@@ -235,7 +235,7 @@
       <name>Square Gemstone (Purple)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme carrée  (Violette)</ToolTipText>
+      <ToolTipText>Square Gemstone (Purple)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158hTemplate</template>
@@ -254,7 +254,7 @@
       <name>Round Gemstone (Pink)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme ronde (Rose)</ToolTipText>
+      <ToolTipText>Round Gemstone (Pink)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158iTemplate</template>
@@ -273,7 +273,7 @@
       <name>Square Gemstone (Pink)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gemme carrée  (Rose)</ToolTipText>
+      <ToolTipText>Square Gemstone (Pink)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I158jTemplate</template>
@@ -293,7 +293,7 @@
       <name>Land Horse Ice Sculpture (Green)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Sculpture de cheval terrestre (verte)</ToolTipText>
+      <ToolTipText>Land Horse Ice Sculpture (Green)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I110Template</template>
@@ -316,7 +316,7 @@
       <yOffset>-30</yOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Vasque pour oiseaux</ToolTipText>
+      <ToolTipText>Birdbath</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I101Template</template>
@@ -336,7 +336,7 @@
       <name>Trellis - Tan</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Treillis brun</ToolTipText>
+      <ToolTipText>Trellis - Tan</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I099bTemplate</template>
@@ -356,7 +356,7 @@
       <name>Trellis - White with flowers</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Treillis blanc avec fleurs</ToolTipText>
+      <ToolTipText>Trellis - White with flowers</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I099cTemplate</template>
@@ -376,7 +376,7 @@
       <name>Trellis - White</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Treillis blanc</ToolTipText>
+      <ToolTipText>Trellis - White</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I099aTemplate</template>
@@ -396,7 +396,7 @@
       <name>Trellis - Tan with flowers</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Treillis brun avec fleurs</ToolTipText>
+      <ToolTipText>Trellis - Tan with flowers</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I099dTemplate</template>
@@ -412,7 +412,7 @@
       <name>Mini Pumpkin Light</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mini lanterne citrouille</ToolTipText>
+      <ToolTipText>Mini Pumpkin Light</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I096Template</template>
@@ -428,7 +428,7 @@
       <name>Living sculpture</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Sculpture vivante</ToolTipText>
+      <ToolTipText>Living sculpture</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I107Template</template>
@@ -444,7 +444,7 @@
       <name>Sundial</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cadran solaire</ToolTipText>
+      <ToolTipText>Sundial</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I098Template</template>
@@ -464,7 +464,7 @@
       <name>Sigga Statue</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Statue de Sigga</ToolTipText>
+      <ToolTipText>Sigga Statue</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I113Template</template>
@@ -484,7 +484,7 @@
       <name>Sara Statue</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Statue de Sara</ToolTipText>
+      <ToolTipText>Sara Statue</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I109Template</template>
@@ -504,7 +504,7 @@
       <name>Nike statue</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Statue de Nike</ToolTipText>
+      <ToolTipText>Nike statue</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I106Template</template>
@@ -520,7 +520,7 @@
       <name>Weathervane</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Girouette</ToolTipText>
+      <ToolTipText>Weathervane</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I105Template</template>
@@ -540,7 +540,7 @@
       <name>Welcome Mat</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tapis de bienvenue</ToolTipText>
+      <ToolTipText>Welcome Mat</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I075Template</template>
@@ -556,7 +556,7 @@
       <name>Garden Gnome</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Nain de jardin</ToolTipText>
+      <ToolTipText>Garden Gnome</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I095Template</template>
@@ -572,7 +572,7 @@
       <name>Beehive</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Ruche</ToolTipText>
+      <ToolTipText>Beehive</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I100Template</template>
@@ -593,7 +593,7 @@
       <name>Birdhouse on Pole</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mangeoire à oiseaux sur mât</ToolTipText>
+      <ToolTipText>Birdhouse on Pole</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I097Template</template>
@@ -609,7 +609,7 @@
       <name>Flower Basket</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Panier de fleurs</ToolTipText>
+      <ToolTipText>Flower Basket</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I006cTemplate</template>
@@ -625,7 +625,7 @@
       <name>Jar of flies</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bocal de mouches</ToolTipText>
+      <ToolTipText>Jar of flies</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023dTemplate</template>
@@ -1359,7 +1359,7 @@
       </tradeDictionary>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Machine à teinture</ToolTipText>
+      <ToolTipText>Dye Machine</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I142Template</template>

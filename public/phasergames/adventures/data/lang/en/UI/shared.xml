@@ -17,8 +17,8 @@
   <inventoryFilterCard>Horse cards only</inventoryFilterCard>
   <inventoryFilterClothing>Clothing only</inventoryFilterClothing>
   <!--Hud-->
-  <hudSave>Saving</hudSave>
-  <hudLevelUp>Congratulations!&lt;br/&gt;Your magic level has increasd</hudLevelUp>
+  <hudSave>Save</hudSave>
+  <hudLevelUp>Congratulations!&lt;br/&gt;Your magic level has increased</hudLevelUp>
   <hudLevelUpPunctuation>!</hudLevelUpPunctuation>
   <hudChangeClothes>Change clothes</hudChangeClothes>
   <!--HUD Tooltips-->
