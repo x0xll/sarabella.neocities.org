@@ -176,7 +176,7 @@
     <tile id="Ti009w" walkable="true" entities="SpiderSilkSpawner"/>
     <tile id="Ti038b" walkable="false" skins="Sk0011"/>
     <tile id="Ti037b" walkable="false" skins="Sk0003"/>
-    <tile id="Ti003w" walkable="true" skins="Sk0002" entities="Z015"/>
+    <tile id="Ti003w" walkable="true" skins="Sk0002" entities="ExitToZone15b"/>
     <tile id="Ti027w" walkable="true" grounds="Gr0035,Gr0045" entities="DirtTemplate"/>
     <tile id="Ti035b" walkable="false" skins="Sk0012"/>
     <tile id="Ti068w" walkable="true" grounds="Gr0002,Gr0003,Gr0004,Gr0005"/>
@@ -202,7 +202,7 @@
     <tile id="Ti044w" walkable="true" skins="Sk0017"/>
     <tile id="Ti082b" walkable="false" grounds="Gr0041" skins="Sk0014"/>
     <tile id="Ti016w" walkable="true" grounds="Gr0064,Gr0065" entities="DarksoilTemplate"/>
-    <tile id="Ti002w" walkable="true" skins="Sk0023" entities="Z025"/>
+    <tile id="Ti002w" walkable="true" skins="Sk0023" entities="ExitToZone25a"/>
     <tile id="Ti012w" walkable="true" grounds="Gr0012" entities="DarkResinSpawner"/>
     <tile id="Ti085w" walkable="true" grounds="Gr0061" skins="Sk0020"/>
     <tile id="Ti036b" walkable="false" skins="Sk0000"/>

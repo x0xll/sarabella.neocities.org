@@ -51,13 +51,13 @@
     <tile id="Ti014b" walkable="false" isBillboard="false" skins="Sk0005">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti046w" walkable="true" isBillboard="false" skins="Sk0003" entities="Z027">
+    <tile id="Ti046w" walkable="true" isBillboard="false" skins="Sk0003" entities="ExitToZone27">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti008b" walkable="false" isBillboard="false" skins="Sk0026">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" isBillboard="false" skins="Sk0000" entities="Z010">
+    <tile id="Ti000w" walkable="true" isBillboard="false" skins="Sk0000" entities="ExitToZone10d">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti007w" walkable="true" isBillboard="false" skins="Sk0012">
@@ -129,7 +129,7 @@
     <tile id="Ti002b" walkable="false" isBillboard="false" skins="Sk0024" entities="StreetSignZone10">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti001w" walkable="true" isBillboard="false" skins="Sk0028" entities="Z016">
+    <tile id="Ti001w" walkable="true" isBillboard="false" skins="Sk0028" entities="ExitToZone16a">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti013b" walkable="false" isBillboard="false" skins="Sk0002">

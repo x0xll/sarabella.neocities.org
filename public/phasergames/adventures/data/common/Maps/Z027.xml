@@ -139,7 +139,7 @@
     <tile id="Ti038w" walkable="true" grounds="Gr0016"/>
     <tile id="Ti016w" walkable="true" grounds="Gr0007,Gr0015" entities="FreshwaterTemplate"/>
     <tile id="Ti075b" walkable="false" skins="Sk0009"/>
-    <tile id="Ti032w" walkable="true" skins="Sk0032" entities="Z015"/>
+    <tile id="Ti032w" walkable="true" skins="Sk0032" entities="ExitToZone15c"/>
     <tile id="Ti062w" walkable="true" skins="Sk0020"/>
     <tile id="Ti003b" walkable="false" skins="Sk0001"/>
     <tile id="Ti027w" walkable="true" skins="Sk0024"/>
@@ -148,9 +148,9 @@
     <tile id="." walkable="true"/>
     <tile id="Ti053w" walkable="true" skins="Sk0036"/>
     <tile id="Ti124w" walkable="true" grounds="Gr0000,Gr0006" entities="DirtTemplate"/>
-    <tile id="Ti033w" walkable="true" skins="Sk0028" entities="Z023"/>
+    <tile id="Ti033w" walkable="true" skins="Sk0028" entities="ExitToZone23c"/>
     <tile id="Ti037w" walkable="true" grounds="Gr0019"/>
-    <tile id="Ti031w" walkable="true" skins="Sk0029" entities="Z012"/>
+    <tile id="Ti031w" walkable="true" skins="Sk0029" entities="ExitToZone12c"/>
     <tile id="Ti019w" walkable="true" grounds="Gr0007,Gr0014" entities="FreshwaterTemplate"/>
     <tile id="Ti026b" walkable="false" skins="Sk0025"/>
     <tile id="Ti020w" walkable="true" grounds="Gr0007,Gr0011" entities="FreshwaterTemplate"/>
@@ -162,7 +162,7 @@
     <tile id="Ti058b" walkable="false" skins="Sk0047,Sk0048,Sk0049"/>
     <tile id="Ti057b" walkable="false" skins="Sk0050"/>
     <tile id="Ti005b" walkable="false" skins="Sk0017"/>
-    <tile id="Ti039w" walkable="true" skins="Sk0031" entities="Z011"/>
+    <tile id="Ti039w" walkable="true" skins="Sk0031" entities="ExitToZone11d"/>
     <tile id="Ti002w" walkable="true" skins="Sk0023"/>
     <tile id="Ti078b" walkable="false" skins="Sk0043"/>
     <tile id="Ti036w" walkable="true" grounds="Gr0020"/>

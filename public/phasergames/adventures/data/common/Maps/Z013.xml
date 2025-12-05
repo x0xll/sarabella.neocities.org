@@ -224,7 +224,7 @@
     <tile id="Ti081b" walkable="false" grounds="Gr0029">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" skins="Sk0024" entities="Z012">
+    <tile id="Ti000w" walkable="true" skins="Sk0024" entities="ExitToZone12b">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti039w" walkable="true" grounds="Gr0015" entities="DirtTemplate">

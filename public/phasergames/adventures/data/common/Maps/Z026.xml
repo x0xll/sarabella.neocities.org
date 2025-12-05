@@ -17,7 +17,7 @@
     <tile id="Ti001b" walkable="false" grounds="Gr0000"/>
     <tile id="Ti002b" walkable="false" grounds="Gr0003"/>
     <tile id="Ti003b" walkable="false" grounds="Gr0001"/>
-    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="Z022"/>
+    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="ExitToZone22b"/>
     <tile id="Ti004b" walkable="false" grounds="Gr0002"/>
     <tile id="." walkable="true"/>
     <tile id="x" walkable="false"/>

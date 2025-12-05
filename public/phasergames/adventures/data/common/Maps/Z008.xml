@@ -99,7 +99,7 @@
     <tile id="Ti019b" walkable="false" isBillboard="false" skins="Sk0014">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti044w" walkable="true" isBillboard="false" skins="Sk0018" entities="Z010">
+    <tile id="Ti044w" walkable="true" isBillboard="false" skins="Sk0018" entities="ExitToZone10a">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="x" walkable="false" isBillboard="false">
@@ -108,7 +108,7 @@
     <tile id="Ti074b" walkable="false" isBillboard="false" skins="Sk0010">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti045w" walkable="true" isBillboard="false" skins="Sk0000" entities="Z007">
+    <tile id="Ti045w" walkable="true" isBillboard="false" skins="Sk0000" entities="ExitToZone7c">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti046b" walkable="false" isBillboard="true" skins="Sk0001">

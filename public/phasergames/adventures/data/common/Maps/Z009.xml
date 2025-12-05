@@ -85,7 +85,7 @@
     <tile id="Ti057b" walkable="false" skins="Sk0019">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti034w" walkable="true" skins="Sk0029" entities="Z007">
+    <tile id="Ti034w" walkable="true" skins="Sk0029" entities="ExitToZone7a">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti056b" walkable="false" skins="Sk0016">
@@ -127,7 +127,7 @@
     <tile id="Ti058b" walkable="false" skins="Sk0030" entities="StreetSignZone7">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti046w" walkable="true" skins="Sk0001" entities="Z011">
+    <tile id="Ti046w" walkable="true" skins="Sk0001" entities="ExitToZone11a">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti037b" walkable="false" skins="Sk0000">

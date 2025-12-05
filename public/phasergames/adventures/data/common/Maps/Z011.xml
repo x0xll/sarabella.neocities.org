@@ -186,7 +186,7 @@
     <tile id="Ti074w" walkable="true" skins="Sk0010"/>
     <tile id="Ti014w" walkable="true" grounds="Gr0000,Gr0003" entities="FreshwaterTemplate"/>
     <tile id="Ti059b" walkable="false" grounds="Gr0067,Gr0068,Gr0069,Gr0070"/>
-    <tile id="Ti001w" walkable="true" skins="Sk0018" entities="Z009"/>
+    <tile id="Ti001w" walkable="true" skins="Sk0018" entities="ExitToZone9b"/>
     <tile id="Ti025b" walkable="false" skins="Sk0002"/>
     <tile id="Ti070b" walkable="false" grounds="Gr0037"/>
     <tile id="Ti065b" walkable="false" grounds="Gr0014,Gr0015,Gr0016" skins="Sk0001"/>
@@ -202,7 +202,7 @@
     <tile id="Ti050w" walkable="true" grounds="Gr0100,Gr0104"/>
     <tile id="Ti049w" walkable="true" grounds="Gr0100,Gr0105"/>
     <tile id="Ti095w" walkable="true" grounds="Gr0018,Gr0019,Gr0035"/>
-    <tile id="Ti104w" walkable="true" skins="Sk0000" entities="Z023"/>
+    <tile id="Ti104w" walkable="true" skins="Sk0000" entities="ExitToZone23a"/>
     <tile id="Ti069w" walkable="true" grounds="Gr0045,Gr0046"/>
     <tile id="Ti066b" walkable="false" grounds="Gr0043,Gr0044" skins="Sk0005"/>
     <tile id="Ti034w" walkable="true" grounds="Gr0081"/>
@@ -212,7 +212,7 @@
     <tile id="Ti051w" walkable="true" grounds="Gr0100,Gr0107"/>
     <tile id="Ti084w" walkable="true" grounds="Gr0053"/>
     <tile id="Ti089w" walkable="true" grounds="Gr0055"/>
-    <tile id="Ti106w" walkable="true" skins="Sk0015" entities="Z027"/>
+    <tile id="Ti106w" walkable="true" skins="Sk0015" entities="ExitToZone27"/>
     <tile id="Ti059w" walkable="true" grounds="Gr0067,Gr0068,Gr0069,Gr0070"/>
     <tile id="Ti099w" walkable="true" grounds="Gr0018,Gr0019,Gr0029"/>
     <tile id="Ti058w" walkable="true" grounds="Gr0057,Gr0058,Gr0059,Gr0060"/>
@@ -230,7 +230,7 @@
     <tile id="Ti110b" walkable="false" skins="Sk0012"/>
     <tile id="Ti087w" walkable="true" grounds="Gr0088,Gr0089,Gr0090"/>
     <tile id="Ti018w" walkable="true" grounds="Gr0000,Gr0002" entities="FreshwaterTemplate"/>
-    <tile id="Ti000w" walkable="true" skins="Sk0011" entities="Z002"/>
+    <tile id="Ti000w" walkable="true" skins="Sk0011" entities="ExitToZone2a"/>
     <tile id="Ti008w" walkable="true" grounds="Gr0030,Gr0031" entities="DirtTemplate"/>
     <tile id="Ti085w" walkable="true" grounds="Gr0042"/>
     <tile id="Ti082w" walkable="true" grounds="Gr0056"/>

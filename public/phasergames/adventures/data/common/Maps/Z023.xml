@@ -168,13 +168,13 @@
     <tile id="Ti106w" walkable="true" grounds="Gr0006,Gr0008" entities="DirtTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti001w" walkable="true" skins="Sk0019" entities="Z028">
+    <tile id="Ti001w" walkable="true" skins="Sk0019" entities="ExitToZone28">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti092w" walkable="true" grounds="Gr0018,Gr0026" entities="FreshwaterTemplate">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti002w" walkable="true" skins="Sk0016" entities="Z027">
+    <tile id="Ti002w" walkable="true" skins="Sk0016" entities="ExitToZone27">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti093w" walkable="true" grounds="Gr0018,Gr0019" entities="FreshwaterTemplate">
@@ -183,7 +183,7 @@
     <tile id="Ti009b" walkable="false" skins="Sk0015">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" skins="Sk0039" entities="Z011">
+    <tile id="Ti000w" walkable="true" skins="Sk0039" entities="ExitToZone11c">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti004b" walkable="false" grounds="Gr0000">

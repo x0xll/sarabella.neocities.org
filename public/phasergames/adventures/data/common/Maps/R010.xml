@@ -12,7 +12,7 @@
     <tile id="x" walkable="false">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="Z010">
+    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="ExitToZone10e">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="." walkable="true">

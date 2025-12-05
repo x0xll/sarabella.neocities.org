@@ -9,19 +9,19 @@
     <skin id="Sk0000" file="Lb001" className="Overlay_ExitNE" scaleX="-1" scaleY="-1"/>
   </skins>
   <tiles>
-    <tile id="Ti001b" file="canterfarmsmain" walkable="false" entities="WallTemplateSW">
+    <tile id="Ti001b" walkable="false" entities="WallTemplateSW">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti000w" file="canterfarmsmain" walkable="true" skins="Sk0000" entities="Z001">
+    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="ExitToZone1c">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="x" file="canterfarmsmain" walkable="false">
+    <tile id="x" walkable="false">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti002b" file="canterfarmsmain" walkable="false" entities="WallTemplateSE">
+    <tile id="Ti002b" walkable="false" entities="WallTemplateSE">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="." file="canterfarmsmain" walkable="true">
+    <tile id="." walkable="true">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
   </tiles>
