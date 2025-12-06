@@ -195,7 +195,7 @@
     <tile id="Ti040b" walkable="false" isBillboard="false" grounds="Gr0012">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
-    <tile id="Ti021b" file="Ti021b" walkable="false" isBillboard="false" grounds="Gr0020">
+    <tile id="Ti021b" walkable="false" isBillboard="false" grounds="Gr0020">
       <gridSize width="1" height="1" depth="1"/>
     </tile>
     <tile id="Ti084b" walkable="false" isBillboard="false" skins="Sk0006">

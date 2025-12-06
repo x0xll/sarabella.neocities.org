@@ -177,8 +177,12 @@ class ZoneBase extends Phaser.Scene
                     ) {
                     try {
                         let file = zone.zoneConfig.tileAssets[0]
-                        if (tileData.file) {
-                            file = tileData.file
+
+                        if (zone.zoneConfig.tileAssets.length > 1)
+                        {
+                            let index = zone.zoneConfig.tileAssets.indexOf(cellValue);
+                            if (index !== -1)
+                                file = zone.zoneConfig.tileAssets[index];
                         }
 
                         // We do not show the pink square since we are showing the actual element
