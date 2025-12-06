@@ -24,8 +24,8 @@ class ZoneBase extends Phaser.Scene
         this.loadBackgrounds(this.zoneConfig.backgroundCountX, this.zoneConfig.backgroundCountY, this.zoneConfig.ID)
 
         this.zoneConfig.tileAssets.forEach(assetName => {
-            this.load.spineAtlas(`${assetName}Atlas`, `${TILE_ASSETS_PATH}${assetName}.atlas`);
-            this.load.spineJson(`${assetName}JSON`, `${TILE_ASSETS_PATH}${assetName}.json`);
+            this.load.spineAtlas(`${assetName}Atlas`, `${TILE_ASSETS_PATH}${assetName}/skeleton.atlas`);
+            this.load.spineJson(`${assetName}JSON`, `${TILE_ASSETS_PATH}${assetName}/skeleton.json`);
         });
 
         this.timeManager = new TimeManager(this);
