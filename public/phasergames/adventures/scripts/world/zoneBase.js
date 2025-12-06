@@ -194,7 +194,7 @@ class ZoneBase extends Phaser.Scene
 
                             // We only need to set the info from the skin xml when there's one skin only
                             // When there is more than one, the elements are placed correctly in spine directly
-                            if (tileData.skins.length === 1)
+                            if (typeof tileData.skins === "string")
                             {
                                 let scaleX = 1;
                                 let scaleY = 1;
