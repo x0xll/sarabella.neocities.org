@@ -222,7 +222,7 @@ class ZoneBase extends Phaser.Scene
                         //     }
                         // }
                     } catch (error) {
-                        console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}`)
+                        console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}\nError Message: ${error}`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
                     }
                 }
