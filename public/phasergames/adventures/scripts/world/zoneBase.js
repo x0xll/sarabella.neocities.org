@@ -192,20 +192,25 @@ class ZoneBase extends Phaser.Scene
                             zone.timeManager.setTile(tile, cellValue)
                             tile.setDepth((rowCells[x].length - x) + y - ((tileData.gridSize !== undefined) ? tileData.gridSize[0].depth : 0))
 
-                            let scaleX = 1;
-                            let scaleY = 1;
-                            if (tileData.gridSize === undefined)
+                            // We only need to set the info from the skin xml when there's one skin only
+                            // When there is more than one, the elements are placed correctly in spine directly
+                            if (tileData.skins.length === 1)
                             {
-                                if (tileData.scaleX !== undefined) {scaleX = tileData.scaleX;}
-                                if (tileData.scaleY !== undefined) {scaleY = tileData.scaleY;}
-                            }
-                            else
-                            {
-                                if (tileData.gridSize[0].scaleX !== undefined) {scaleX = tileData.gridSize[0].scaleX;}
-                                if (tileData.gridSize[0].scaleY !== undefined) {scaleY = tileData.gridSize[0].scaleY;}
-                            }
+                                let scaleX = 1;
+                                let scaleY = 1;
+                                let skinID = tileData.skins;
 
-                            tile.setScale(scaleX, scaleY);
+                                let skinArray = (skinID.indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
+                                    
+                                let skinData = skinArray[skinID];
+                                if (skinData !== undefined)
+                                {
+                                    if (skinData.scaleX !== undefined) {scaleX = skinData.scaleX;}
+                                    if (skinData.scaleY !== undefined) {scaleY = skinData.scaleY;}
+                                }
+
+                                tile.setScale(scaleX, scaleY);
+                            }
 
                             // TODO: Find a better way to check this
                             if (tile.skeleton.skin.attachments.length === 0)
