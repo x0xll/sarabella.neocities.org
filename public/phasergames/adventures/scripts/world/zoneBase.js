@@ -205,17 +205,20 @@ class ZoneBase extends Phaser.Scene
 
                                 let skinArray = (skinID.indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
                                     
+                                if (cellValue === "Ti052b")
+                                    console.log("Hi");
+
                                 let skinData = skinArray[skinID];
                                 if (skinData !== undefined)
                                 {
-                                    if (skinData.scaleX !== undefined) {scaleX = skinData.scaleX;}
-                                    if (skinData.scaleY !== undefined) {scaleY = skinData.scaleY;}
+                                    if (skinData.scaleX !== undefined) {scaleX = parseInt(skinData.scaleX);}
+                                    if (skinData.scaleY !== undefined) {scaleY = parseInt(skinData.scaleY);}
 
-                                    if (skinData.x !== undefined) {offsetX = skinData.x;}
-                                    if (skinData.y !== undefined) {offsetY = skinData.y;}
+                                    if (skinData.x !== undefined) {offsetX = parseInt(skinData.x);}
+                                    if (skinData.y !== undefined) {offsetY = parseInt(skinData.y);}
 
                                     // TODO: figure out how to use this one
-                                    if (skinData.depthOffset !== undefined) {depthOffset = skinData.depthOffset;}
+                                    if (skinData.depthOffset !== undefined) {depthOffset = parseInt(skinData.depthOffset);}
                                 }
 
                                 tile.setScale(scaleX, scaleY);
