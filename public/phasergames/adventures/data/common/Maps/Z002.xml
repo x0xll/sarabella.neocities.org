@@ -47,7 +47,7 @@
   <tiles>
     <tile id="Ti057b" walkable="false" skins="Sk0011" scaleX="-1"/>
     <tile id="Ti038b" walkable="false" skins="Sk0003"/>
-    <tile id="Ti049w" walkable="true" skins="Sk0005" entities="ExitToZone11b"/>
+    <tile id="Ti049w" walkable="true" skins="Sk0005" entities="ExitToZone11b" scaleX="-1"/>
     <tile id="Ti009w" walkable="true" grounds="Gr0007,Gr0012" entities="DirtTemplate"/>
     <tile id="Ti059b" walkable="false" skins="Sk0010"/>
     <tile id="Ti010w" walkable="true" grounds="Gr0007,Gr0011" entities="DirtTemplate"/>
