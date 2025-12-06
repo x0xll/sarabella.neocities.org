@@ -191,9 +191,21 @@ class ZoneBase extends Phaser.Scene
                             tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
                             zone.timeManager.setTile(tile, cellValue)
                             tile.setDepth((rowCells[x].length - x) + y - tileData.gridSize[0].depth)
-                            if (tileData.gridSize[0].scaleX === undefined) {tileData.gridSize[0].scaleX = 1;}
-                            if (tileData.gridSize[0].scaleY === undefined) {tileData.gridSize[0].scaleY = 1;}
-                            tile.setScale(tileData.gridSize[0].scaleX, tileData.gridSize[0].scaleY);
+
+                            let scaleX = 1;
+                            let scaleY = 1;
+                            if (tileData.gridSize === undefined)
+                            {
+                                if (tileData.scaleX !== undefined) {scaleX = tileData.scaleX;}
+                                if (tileData.scaleY !== undefined) {scaleY = tileData.scaleY;}
+                            }
+                            else
+                            {
+                                if (tileData.gridSize[0].scaleX !== undefined) {scaleX = tileData.gridSize[0].scaleX;}
+                                if (tileData.gridSize[0].scaleY !== undefined) {scaleY = tileData.gridSize[0].scaleY;}
+                            }
+
+                            tile.setScale(scaleX, scaleY);
                         }
 
                         // To help know where to place the entities when creating the config files
