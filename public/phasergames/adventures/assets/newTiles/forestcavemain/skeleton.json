@@ -1,0 +1,32 @@
+{
+"skeleton": { "hash": "yH1JmZTr2jo", "spine": "4.2.43", "x": -68.5, "y": -48.5, "width": 137, "height": 97 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Underlay2", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Underlay2_night", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Underlay", "bone": "root", "attachment": "Underlay" },
+	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay" },
+	{ "name": "Main", "bone": "root", "attachment": "Main" },
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
+	{ "name": "Overlay", "bone": "root", "attachment": "Overlay" },
+	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay" }
+],
+"skins": [
+	{
+		"name": "Ti037b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "ForestCave/T0053c/1", "width": 137, "height": 97 }
+			},
+			"Main_night": {
+				"Main": { "name": "ForestCave/T0053c/1", "width": 137, "height": 97 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
