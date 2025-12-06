@@ -45,14 +45,14 @@
     <skin id="Sk0015" file="Lb000" className="T0038d" x="7" y="-11"/>
   </skins>
   <tiles>
-    <tile id="Ti057b" walkable="false" skins="Sk0011"/>
+    <tile id="Ti057b" walkable="false" skins="Sk0011" scaleX="-1"/>
     <tile id="Ti038b" walkable="false" skins="Sk0003"/>
     <tile id="Ti049w" walkable="true" skins="Sk0005" entities="ExitToZone11b"/>
     <tile id="Ti009w" walkable="true" grounds="Gr0007,Gr0012" entities="DirtTemplate"/>
     <tile id="Ti059b" walkable="false" skins="Sk0010"/>
     <tile id="Ti010w" walkable="true" grounds="Gr0007,Gr0011" entities="DirtTemplate"/>
     <tile id="Ti071b" walkable="false" skins="Sk0000"/>
-    <tile id="Ti063b" walkable="false" skins="Sk0017"/>
+    <tile id="Ti063b" walkable="false" skins="Sk0017" scaleX="-1"/>
     <tile id="." walkable="true"/>
     <tile id="Ti074b" walkable="false" skins="Sk0018" entities="StreetSignZone10"/>
     <tile id="Ti046w" walkable="true" skins="Sk0001" entities="ExitToZone10b"/>
@@ -63,11 +63,11 @@
     <tile id="Ti047w" walkable="true" skins="Sk0001" entities="ExitToZone3a"/>
     <tile id="Ti041w" walkable="true" skins="Sk0013,Sk0014,Sk0015"/>
     <tile id="Ti005w" walkable="true" grounds="Gr0007,Gr0015" entities="DirtTemplate"/>
-    <tile id="Ti064b" walkable="false" skins="Sk0016"/>
+    <tile id="Ti064b" walkable="false" skins="Sk0016" scaleX="-1"/>
     <tile id="Ti007w" walkable="true" grounds="Gr0007,Gr0010" entities="DirtTemplate"/>
     <tile id="Ti052w" walkable="true" grounds="Gr0003,Gr0004,Gr0005,Gr0006"/>
     <tile id="Ti060b" walkable="false" skins="Sk0012"/>
-    <tile id="Ti061b" walkable="false" skins="Sk0009"/>
+    <tile id="Ti061b" walkable="false" skins="Sk0009" scaleX="-1"/>
     <tile id="Ti051w" walkable="true" grounds="Gr0000,Gr0001,Gr0002"/>
     <tile id="Ti006w" walkable="true" grounds="Gr0007,Gr0014" entities="DirtTemplate"/>
     <tile id="Ti002w" walkable="true" grounds="Gr0007" entities="DirtTemplate"/>
