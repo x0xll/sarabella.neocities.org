@@ -198,6 +198,9 @@ class ZoneBase extends Phaser.Scene
                             {
                                 let scaleX = 1;
                                 let scaleY = 1;
+                                let offsetX = 0;
+                                let offsetY = 0;
+                                let depthOffset = 0;
                                 let skinID = tileData.skins;
 
                                 let skinArray = (skinID.indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
@@ -207,9 +210,16 @@ class ZoneBase extends Phaser.Scene
                                 {
                                     if (skinData.scaleX !== undefined) {scaleX = skinData.scaleX;}
                                     if (skinData.scaleY !== undefined) {scaleY = skinData.scaleY;}
+
+                                    if (skinData.x !== undefined) {offsetX = skinData.x;}
+                                    if (skinData.y !== undefined) {offsetY = skinData.y;}
+
+                                    // TODO: figure out how to use this one
+                                    if (skinData.depthOffset !== undefined) {depthOffset = skinData.depthOffset;}
                                 }
 
                                 tile.setScale(scaleX, scaleY);
+                                tile.setPosition(tile.x + offsetX, tile.y + offsetY);
                             }
 
                             // TODO: Find a better way to check this
