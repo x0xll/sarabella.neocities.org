@@ -206,6 +206,11 @@ class ZoneBase extends Phaser.Scene
                             }
 
                             tile.setScale(scaleX, scaleY);
+
+                            if (tile.skeleton.skin.attachments.length === 0)
+                            {
+                                console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}`)
+                            }
                         }
 
                         // To help know where to place the entities when creating the config files
