@@ -150,6 +150,7 @@ class Player extends Entity {
                 for (let index = 0; index < entities.length; index++) {
                     const entity = entities[index];
                     test = test || this.zoneScene.entities[entity].interact()
+                    if (test) {break}
                 }
             }
             if (!test) {

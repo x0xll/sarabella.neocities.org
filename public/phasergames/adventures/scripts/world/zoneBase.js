@@ -15,10 +15,18 @@ class ZoneBase extends Phaser.Scene
             this.zoneConfig = sharedData.zoneData["Z001"]
         }
         this.sharedData.zoneTileData
+
+        if (sharedData.timeTrackedEntities === undefined) {
+            sharedData.timeTrackedEntities = {}
+            sharedData.timeTrackedEntities[this.zoneConfig.ID] = {}
+        } else if (sharedData.timeTrackedEntities[this.zoneConfig.ID] === undefined) {
+            sharedData.timeTrackedEntities[this.zoneConfig.ID] = {}
+        }
     }
 
     preload ()
     {
+        this.timeManager = new TimeManager(this);
         this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData); 
         this.loadEntitiesData();
         this.loadBackgrounds(this.zoneConfig.backgroundCountX, this.zoneConfig.backgroundCountY, this.zoneConfig.ID)
@@ -27,8 +35,6 @@ class ZoneBase extends Phaser.Scene
             this.load.spineAtlas(`${assetName}Atlas`, `${TILE_ASSETS_PATH}${assetName}/skeleton.atlas`);
             this.load.spineJson(`${assetName}JSON`, `${TILE_ASSETS_PATH}${assetName}/skeleton.json`);
         });
-
-        this.timeManager = new TimeManager(this);
     }
 
     create (sharedData)
@@ -57,6 +63,7 @@ class ZoneBase extends Phaser.Scene
         //debug_DrawTriggerQuest(zone);
 
         // Telport between zones
+        // TODO Save entity data when teleporting between zones (so spawned items don't reset)
         let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
         var cellValue = zone.tiles[pos.y][pos.x];
         if (cellValue.parsedData.entities !== undefined)

@@ -131,6 +131,12 @@ class TimeManager
             this.clock.seek(0)
             this.isDay = true
             this.renderDayNight()
+            for (let [key] of Object.entries(this.phaserScene.sharedData.timeTrackedEntities)) {
+                const zoneEntities = this.phaserScene.sharedData.timeTrackedEntities[key]
+                for (let [key] of Object.entries(zoneEntities)) {
+                    zoneEntities[key].daysCount++
+                }
+            }
         } else if (this.clock.now >= this.dayLength) {
             this.isDay = false
             this.renderDayNight()
@@ -151,9 +157,29 @@ class TimeManager
         } else {
             this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('night3')
         }
+
+
+        const zoneEntities = this.phaserScene.sharedData.timeTrackedEntities[this.phaserScene.zoneConfig.ID]
+        for (let [key] of Object.entries(zoneEntities)) {
+            this.phaserScene.entities[key].update()
+        }
     }
 
     getCurrentTime() {
-        return this.clock.now
+        let currentTime = 0
+        if (this.clock && this.clock.now) {
+            currentTime = this.clock.now
+        } else if (this.phaserScene.sharedData.timePausedAt) {
+            currentTime = this.phaserScene.sharedData.timePausedAt
+        }
+        return currentTime
+    }
+
+    getCurrentTimeType() {
+        if (this.getCurrentTime() <= this.dayLength) {
+            return "Day"
+        } else {
+            return "Night"
+        }
     }
 }

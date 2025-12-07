@@ -12,6 +12,7 @@ class TemplateEntity extends Entity {
     constructor(zoneScene, templateID, startX, startY, facingDirection = "se") {
         super(zoneScene, templateID, startX, startY, facingDirection);
         this.templateID = templateID
+        this.zoneID = zoneScene.zoneConfig.ID
 
         if (this.getTemplateValue(["Character", "identifier", "text"])) {
             this.characterID = this.getTemplateValue(templateID, ["Character", "identifier", "text"])
@@ -85,6 +86,12 @@ class TemplateEntity extends Entity {
             this.resetSpriteFacingDirection()
             this.resetSpriteDepth()
         }
+
+        if (this.isSpawner) {this.#trySpawn()}
+    }
+
+    update() {
+        this.#trySpawn()
     }
     // ------- END INITIALIZE ENTITY -------
 
@@ -119,19 +126,72 @@ class TemplateEntity extends Entity {
     #loadSpawnerData() {
         let spawnerData = this.getTemplateValue(["EntitySpawning", "spawnType"])
         if (spawnerData) {
-            let spawnType
+            this.isSpawner = true
             if (Array.isArray(spawnerData)) {
                 for (let index = 0; index < spawnerData.length; index++) {
                     const element = spawnerData[index];
                     this.#loadSpriteData(element.text)
                 }
-                let rand = randomIntFromInterval(0, spawnerData.length-1)
-                spawnType = spawnerData[rand].text
             } else {
-                spawnType = spawnerData.text
+                this.#loadSpriteData(spawnerData.text)
             }
-            new TemplateEntity(this.zoneScene, spawnType, this.startPos[0], this.startPos[1])
+        } else {
+            this.isSpawner = false
         }
+    }
+    #trySpawn() {
+        const spawnerData = this.getTemplateValue(["EntitySpawning"])
+
+        // Check for day/night spawn conditions
+        if (spawnerData.spawnTimeType[0].text !== this.zoneScene.timeManager.getCurrentTimeType()) { 
+            return
+        }
+
+        // Check spawn time has elapsed
+        const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
+        if (timeData !== undefined) {
+            let duration = this.zoneScene.timeManager.getCurrentTime() - timeData.startTime
+            if (timeData.daysCount > 0) {
+                const fullDay = this.zoneScene.timeManager.nightLength + this.zoneScene.timeManager.dayLength
+                duration = (fullDay - timeData.startTime) + (timeData.daysCount - 1 * fullDay) + this.zoneScene.timeManager.getCurrentTime()
+            }
+            if (duration < parseFloat(spawnerData.entitySpawnTime[0].text)) {return}
+        }
+
+        // Reset spawn time
+        this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
+            startTime: this.zoneScene.timeManager.getCurrentTime(),
+            daysCount: 0
+        }
+
+        // Check if spawning is blocked
+        const spawnType = spawnerData.spawnType
+        const entities = this.zoneScene.getEntitiesAt(this.startPos[0], this.startPos[1])
+        if (entities !== undefined) {
+            for (let index = 0; index < entities.length; index++) {
+                const entity = this.zoneScene.entities[entities[index]].templateID
+                let blocksSpawn = this.getTemplateValue(["GridPosition", "blocksSpawn", "text"], entity)
+                if (blocksSpawn === "True") { return }
+                for (let index = 0; index < spawnType.length; index++) {
+                    if (spawnType[index].text === entity) {return}
+                }
+            }
+        }
+
+        // If all conditions met, try spawning
+        const random = Math.random()
+        let chanceCounter = 0
+        for (let index = 0; index < spawnType.length; index++) {
+            const type = spawnType[index];
+
+            chanceCounter = chanceCounter + parseFloat(type.chance)
+            if (random <= chanceCounter) {
+                let spawnedEntity = new TemplateEntity(this.zoneScene, type.text, this.startPos[0], this.startPos[1])
+                spawnedEntity.create()
+                return
+            }
+        }
+
     }
     // ------- END LOAD FUNCTIONS -------
 
