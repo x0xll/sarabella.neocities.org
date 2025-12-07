@@ -136,24 +136,7 @@ class TemplateEntity extends Entity {
     // ------- END LOAD FUNCTIONS -------
 
 
-    // ------- HELPER FUNCTIONS -------
-    getTemplateValue(keys, templateID = this.templateID) {
-        // console.log(templateID + " " + keys + ": " + this.zoneScene.sharedData.templateManager.getTemplateValue(`${templateID}`, keys))
-        return this.zoneScene.sharedData.templateManager.getTemplateValue(`${templateID}`, keys)
-    }
-    
-    /**
-     * Is used when the player clicks on a tile containing this entity
-     * @param {*} interactData any data about the interaction that should be passed in
-     */
-    interact(interactData) {
-        // TODO ignore if template does not include a Click option in the template
-        if (this.getTemplateValue(["Click", "name"])) {
-            // TODO add actual interactions
-            this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, this)
-        }
-    }
-
+    // ------- CREATE FUNCTIONS -------
     setAnimations() {
         let character = this
         character.animationQueue = []
@@ -176,12 +159,127 @@ class TemplateEntity extends Entity {
                     if (character.animationQueue.length === 0) {
                         let animation = character.idleAnimations[Math.floor(Math.random()*character.idleAnimations.length)]
                         
-                        const delay = 0//randomIntFromInterval(3, 5)
+                        const delay = randomIntFromInterval(3, 5)
                         character.sprite.animationState.addAnimation(0, animation, false, delay);
                     }
                 }
                 // event: (entry, event) => console.log(`Custom event for ${entry.animation.name}: ${event.data.name}`)          
              })
+    }
+    // ------- END CREATE FUNCTIONS -------
+
+
+    // ------- COMMAND FUNCTIONS -------
+    // These functions are used to handle player interactions as defined in each entity's template
+    /**
+     * Is used when the player clicks on a tile containing this entity
+     * @param {*} interactData any data about the interaction that should be passed in
+     */
+    interact(interactData) {
+        // TODO ignore if template does not include a Click option in the template
+        if (this.getTemplateValue(["Click", "name"])) {
+            // TODO add actual interactions
+
+            if (this.getTemplateValue(["TalkCommand", "name"])) {
+                this.#talkCommand()
+            } else if (this.getTemplateValue(["TrashCommand", "name"])) {
+                this.#trashCommand()
+            } 
+            return true
+        }
+        return false
+    }
+
+    #brushCommand() { }
+    #talkCommand() {
+        const triggerData = {
+            type: "TalkQuestTrigger",
+            entityID: this.entityID
+        }
+        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+    }
+
+    #tradeCommand() { }
+    #takeCommand() {
+        /*
+        * Click entity to see takeCommand option
+        * Select takeCommand option
+        * takeItem item is added to inventory
+        * Entity is removed from world
+        */
+        const takeItem = this.getTemplateValue(["TakeCommand", "item", "text"])
+        console.log(`Take command not fully implemented. Take item is: ${takeItem}`)
+       }
+    #trashCommand() {
+        /*
+        * Click entity to see trashCommand option
+        * Select trashCommand option
+        * Entity is removed from world
+        */
+        const triggerData = {
+            type: "RemoveEntityTrigger",
+            templateID: this.templateID
+        }
+        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+        this.destroy()
+    }
+    #applyCommand() { }
+    #giveCommand() {
+        /*
+        * Click entity to see giveCommand option
+        * Select giveCommand option
+        * Inventory menu appears with the available giveItem options visible
+        * User can then select a giveItem item to give
+        * giveItem is removed from inventory
+        */
+        const giveItem = this.getTemplateValue(["GiveCommand", "item", "text"])
+        console.log(`Give command not fully implemented. Give item is: ${giveItem}`)
+    }
+
+    #shopCommand() { }
+    #avatarShopCommand() { }
+    #interactCommand() { }
+    #moveCommand() {}
+    #waterRemoveCommand() {}
+    // ------- END COMMAND FUNCTIONS -------
+
+
+    // ------- HELPER FUNCTIONS -------
+    getTemplateValue(keys, templateID = this.templateID) {
+        // console.log(templateID + " " + keys + ": " + this.zoneScene.sharedData.templateManager.getTemplateValue(`${templateID}`, keys))
+        return this.zoneScene.sharedData.templateManager.getTemplateValue(`${templateID}`, keys)
+    }
+
+    destroy () {
+        // Removes the sprite for the entity
+        if (this.sprite) { this.sprite.destroy() }
+
+        // Removes the entity from the tiles it is on
+        let gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
+        if ( gridFootX === undefined) { gridFootX = 1}
+        let gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
+        if ( gridFootY === undefined) { gridFootY = 1}
+        for (let x = 0; x < gridFootX; x++) {
+            for (let y = 0; y < gridFootY; y++) {
+                let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
+                switch (this.facingDirection) {
+                    case this.FACING_DIRECTIONS.Southwest:
+                    case this.FACING_DIRECTIONS.West:
+                    case this.FACING_DIRECTIONS.Northwest:
+                        tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
+                        break;
+                    default:
+                        break;
+                }
+                const index = tile.hasEntity.indexOf(this.entityKey);
+                if (index !== -1) {
+                    tile.hasEntity.splice(index, 1);
+                }
+            }
+        }
+
+        // Removes the entity from the zone
+        delete this.zoneScene.entities[this.entityKey]
     }
     // ------- END HELPER FUNCTIONS -------
 }

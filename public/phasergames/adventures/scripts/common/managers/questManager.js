@@ -372,11 +372,12 @@ class QuestManager {
             for (let activeQuestIndex = 0; activeQuestIndex < phaserScene.sharedData.quest.logic.activeQuests.length; activeQuestIndex++) {
                 let questGlobalData = this.getQuestPerID(phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex]);
 
+                if (questGlobalData.targetZone && questGlobalData.targetZone !== phaserScene.sharedData.global.ZONE_ID) continue
                 for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                     const triggers = questGlobalData.line[lineIndex].trigger.object
                     for (let index = 0; index < triggers.length; index++) {
                         const trigger = triggers[index];
-                        if (this.#QUEST_TRIGGERS[trigger.type]) {
+                        if (trigger.type === triggerData.type && this.#QUEST_TRIGGERS[trigger.type]) {
                             if (this.#QUEST_TRIGGERS[trigger.type](phaserScene, trigger, activeQuestIndex, lineIndex, triggerData)) {
                                 this.busy = false
                                 return true
@@ -394,7 +395,7 @@ class QuestManager {
     #QUEST_TRIGGERS = {
         "TalkQuestTrigger": this.#talkQuestTrigger,
         "StopNearTrigger": this.#stopNearTrigger,
-        "RemoveEntityTrigger": this.#missingTrigger,
+        "RemoveEntityTrigger": this.#removeEntityTrigger,
         "ActionTrigger": this.#missingTrigger,
         "ContextItemTrigger": this.#missingTrigger,
         "GiveItemTrigger": this.#missingTrigger,
@@ -447,6 +448,19 @@ class QuestManager {
         if (entity === trigger.identifier) {
             phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
             return true
+        }
+        return false
+    }
+
+    #removeEntityTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        const entity = triggerData.templateID;
+        for (let index = 0; index < trigger.template.length; index++) {
+            const template = trigger.template[index];
+            if (entity === template) {
+                phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+                return true
+            }
         }
         return false
     }
@@ -522,8 +536,8 @@ class QuestManager {
         "NullAction": this.#missingAction
     }
     #ACTIONS_TO_PAUSE = [
-        "DialogueAction"
-        // "DialogueImageAction",
+        "DialogueAction",
+        "DialogueImageAction",
         // "DialogueChoiceAction",
         // "MonologueAction"
     ]
@@ -555,27 +569,19 @@ class QuestManager {
         let character = undefined
         if (action.identifier) {character = action.identifier}
         if (character === undefined) {
-            let triggers = questData.line[lineIndex].trigger.object
-            for (let index = 0; index < triggers.length; index++) {
-                const trigger = triggers[index];
-                if (trigger.type === "TalkQuestTrigger" && trigger.identifier) {
-                    character = trigger.identifier
-                }
-            }
+            character = phaserScene.sharedData.questManager.getDialogueCharacter(questData, lineIndex)
         }
         if (character === undefined) {
-            let actions = questData.line[lineIndex].actions.object
-            for (let index = 0; index < actions.length; index++) {
-                const action = actions[index];
-                if (action.type === "DialogueAction" 
-                    && action.identifier) {
-                    character = action.identifier
+            for (let index = 0; index < questData.line.length; index++) {
+                if (index === lineIndex) continue
+                const check = phaserScene.sharedData.questManager.getDialogueCharacter(questData, index)
+                if (check !== undefined) {
+                    character = check
+                    break
                 }
             }
         }
 
-        
-        // TODO Need some way to detect once the user has closed the dialogue
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined);
     }
 
@@ -583,14 +589,36 @@ class QuestManager {
         let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
         let triggers = questData.line[lineIndex].trigger.object
 
+        
         let character = undefined
         if (action.identifier) {character = action.identifier}
         if (character === undefined) {
-            for (let index = 0; index < triggers.length; index++) {
-                const trigger = triggers[index];
-                if (trigger.type === "TalkQuestTrigger" && trigger.identifier) {
-                    character = trigger.identifier
+            character = phaserScene.sharedData.questManager.getDialogueCharacter(questData, lineIndex)
+        }
+        if (character === undefined) {
+            for (let index = 0; index < questData.line.length; index++) {
+                if (index === lineIndex) continue
+                const check = phaserScene.sharedData.questManager.getDialogueCharacter(questData, index)
+                if (check !== undefined) {
+                    character = check
+                    break
                 }
+            }
+        }
+
+        let img = undefined;
+        if (action.imageFileName) { img = action.imageFileName }
+        
+        phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined, img);
+    }
+
+    getDialogueCharacter(questData, lineIndex) {
+        let character
+        let triggers = questData.line[lineIndex].trigger.object
+        for (let index = 0; index < triggers.length; index++) {
+            const trigger = triggers[index];
+            if (trigger.type === "TalkQuestTrigger" && trigger.identifier) {
+                character = trigger.identifier
             }
         }
         if (character === undefined) {
@@ -603,17 +631,11 @@ class QuestManager {
                 }
             }
         }
-
-        let img = undefined;
-        if (action.imageFileName) { img = action.imageFileName }
-        
-        // TODO Need some way to detect once the user has closed the dialogue
-        phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined, img);
+        return character
     }
 
     async #addZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
         // TODO Add item to world
-        // TODO check all template files
         // TODO Actually add this for realsies
         console.warn(`Missing action: ${action.type}`)
         // console.log(action.template)

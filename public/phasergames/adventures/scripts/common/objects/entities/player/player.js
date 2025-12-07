@@ -144,15 +144,17 @@ class Player extends Entity {
             this.nextX = gridTarget.x
             this.nextY = gridTarget.y
             this.hasNext = true;
-            this.pathList.push(await this.#findPathToNextDestination())
-            if (this.pathList[0] === undefined) {
-                let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
-                if (entities !== undefined) {
-                        entities.forEach(entity => {
-                            this.zoneScene.entities[entity].interact()
-                        });
-                    }
+            let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+            let test = false
+            if (entities !== undefined) {
+                for (let index = 0; index < entities.length; index++) {
+                    const entity = entities[index];
+                    test = test || this.zoneScene.entities[entity].interact()
                 }
+            }
+            if (!test) {
+                this.pathList.push(await this.#findPathToNextDestination())
+            }
             this.playerMove = true
         });
     }
@@ -169,6 +171,7 @@ class Player extends Entity {
                 
                 // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
                 let triggerInfo = this.isoToGridMap(this.target.x, this.target.y);
+                triggerInfo.type = "StopNearTrigger"
                 if (this.pathList.length === 1 && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)) {
                     this.pathList = [];
                     this.pathIndex = 0;
