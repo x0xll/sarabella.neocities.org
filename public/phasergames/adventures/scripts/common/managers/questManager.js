@@ -414,24 +414,26 @@ class QuestManager {
 
     #stopNearTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        const centerX = parseInt(trigger.centerX)
+        const centerY = parseInt(trigger.centerY)
+        const radius = parseInt(trigger.radius)
 
         if (trigger 
-            && trigger.zoneId 
+            && trigger.zoneId
             && trigger.zoneId === phaserScene.zoneConfig.ID
             && triggerData.x !== undefined
             && triggerData.y !== undefined
         ) {
-            for (let x = triggerData.centerX - triggerData.radius; x < triggerData.centerX + triggerData.radius; x++) {
-                for (let y = triggerData.centerY - triggerData.radius; y < triggerData.centerY + triggerData.radius; y++) {
-                    if (Math.abs(x - triggerData.centerX) + Math.abs(y - triggerData.centerY) <= triggerData.radius) {
-                        let pos = phaserScene.gridToIsoMap(parseInt(x), parseInt(y));
-                        var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, 25, 12, 0xff0000, 1).setAlpha(.5);
-                        phaserScene.add.existing(rect);
-                    }
-                }
-            }
-            // TODO: verify if this seems correct for quest trigger
-            if (Math.abs(triggerData.x - trigger.centerX) + Math.abs(triggerData.y - trigger.centerY) <= trigger.radius) {
+            // for (let x = centerX - radius; x < centerX + radius; x++) {
+            //     for (let y = centerY - radius; y < centerY + radius; y++) {
+            //         if (Math.abs(x - centerX) + Math.abs(y - centerY) <= radius) {
+            //             let pos = phaserScene.gridToIsoMap(parseInt(x), parseInt(y));
+            //             var rect = new Phaser.GameObjects.Rectangle(phaserScene, pos.x, pos.y, 25, 12, 0xff0000, 1).setAlpha(.5);
+            //             phaserScene.add.existing(rect);
+            //         }
+            //     }
+            // }
+            if (Math.abs(triggerData.x - centerX) + Math.abs(triggerData.y - centerY) <= radius) {
                 phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
                 return true;
             }
@@ -439,7 +441,6 @@ class QuestManager {
         return false
     }
 
-    // TODO: This function is a placeholder to trigger the dialogue box
     #talkQuestTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
         const entity = triggerData.entityID;

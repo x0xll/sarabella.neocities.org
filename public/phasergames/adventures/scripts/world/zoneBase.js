@@ -89,7 +89,7 @@ class ZoneBase extends Phaser.Scene
         if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
                 let entityPos = this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID][key]
-                new Character(this, key, entityPos[0], entityPos[1], entityPos[2])
+                new TemplateEntity(this, key, entityPos[0], entityPos[1], entityPos[2])
             }
         }
 
@@ -113,11 +113,11 @@ class ZoneBase extends Phaser.Scene
                     console.error("Tile isn't defined: " + cellValue);
                     continue;
                 }
-                    let file = zone.zoneConfig.tileAssets[0]
-                    if (tileData.file) {
-                        file = tileData.file
-                    }
+
+                if (tileData.entities) {
+                    new TemplateEntity(zone, tileData.entities, x, y)
                 }
+            }
         }
     }
 

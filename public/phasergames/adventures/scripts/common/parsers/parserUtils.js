@@ -44,16 +44,40 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
         }
     }
 
+
+    const nonArrayNodes = [
+        "description",
+        "trigger",
+        "conditions",
+        "actions",
+        "identifier",
+        "zoneId",
+        "radius",
+        "centerX",
+        "centerY",
+        "isPrimary",
+        "questId"
+    ]
+
     // Check child nodes
     if (node.childNodes && node.childNodes.length > 0) {
         node.childNodes.forEach(childNode => {
             const textOnlyNodes = [
                 "text"
             ]
-            if (textOnlyNodes.includes(childNode.nodeName) || node.nodeName === "object") {
-                if (childNode.childNodes && childNode.childNodes.length > 0) {
-                    nodeObject[childNode.nodeName] = childNode.childNodes[0].wholeText
+            if (!nonArrayNodes.includes(childNode.nodeName) &&
+                (textOnlyNodes.includes(childNode.nodeName) || node.nodeName === "object")
+            ) {
+                if (!nodeObject[childNode.nodeName]) {
+                    nodeObject[childNode.nodeName] = []
+                } else if (!Array.isArray(nodeObject[childNode.nodeName])) {
+                    nodeObject[childNode.nodeName] = [nodeObject[childNode.nodeName]]
                 }
+                if (childNode.childNodes && childNode.childNodes.length > 0) {
+                    nodeObject[childNode.nodeName].push(childNode.childNodes[0].wholeText)
+                }
+            } else if (textOnlyNodes.includes(childNode.nodeName) || node.nodeName === "object") {
+                nodeObject[childNode.nodeName] = childNode.childNodes[0].wholeText
             } else {
                 parseXMLNode(childNode, nodeObject)
             }
@@ -75,13 +99,6 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
     }
     
     // Determine if node object should be in an array or not
-    const nonArrayNodes = [
-        "description",
-        "trigger",
-        "conditions",
-        "actions",
-        "text",
-    ]
     const inArray = !(nonArrayNodes.includes(node.nodeName) || (node.attributes && node.attributes["id"]))
     
     // Add to parent object

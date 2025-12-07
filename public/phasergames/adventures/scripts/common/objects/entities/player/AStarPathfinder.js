@@ -65,15 +65,15 @@
     isWalkable(x, y) {
         if (this.spaces[x][y].walkable === "false") {return false}
         
+        // Check if this is actually the correct way to test for entity isBlocked with template entity class
         let test = true
         if (this.mapData[y][x].hasEntity) {
             this.mapData[y][x].hasEntity.forEach(entity => {
-                if (this.entities[entity].findTemplateValue("isBlocked") === "true") {
+                if (this.entities[entity].getTemplateValue("isBlocked") === "true") {
                     test = false
                 }
             });
         }
-
         return test
     }
       

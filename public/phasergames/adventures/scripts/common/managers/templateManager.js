@@ -9,7 +9,7 @@ class TemplateManager {
     // Only save to player data if different from the default
     NPCLocations = {
         "Z001": {
-            "H047": [15, 6, "se"]
+            "H047Template": [15, 6, "se"]
         } 
     }
     
@@ -60,15 +60,19 @@ class TemplateManager {
      * @param {*} keys The key for the COMMON_KEYS to check, or an array of key names within the template
      * @returns 
      */
-    findTemplateValue(templateID, keys) {
+    getTemplateValue(templateID, keys) {
         let template = this.getTemplate(templateID);
+        if (!template) return
 
         let keysArray = keys
         if (!Array.isArray(keys)) { keysArray = this.COMMON_KEYS[keys] } 
 
         for (let keyindex = 0; keyindex < keysArray.length; keyindex++) {
             const key = keysArray[keyindex];
-            if (!template[key]) continue
+            if (!template[key]) {
+                // console.log(`No value found for ${key} in ${templateID}`)
+                return undefined
+            }
             template = template[key]
 
             if (Array.isArray(template) && template.length === 1) {
@@ -79,7 +83,7 @@ class TemplateManager {
     }
 
     getTemplate(templateID) {
-        const templateType = this.#getTemplateType(templateID)
+        const templateType = this.getTemplateType(templateID)
         if (templateType !== undefined) {
             const templateArray = this.#getMatchingTemplates(templateType, templateID)
             this.#mergeTemplates(templateArray)
@@ -87,9 +91,10 @@ class TemplateManager {
             return templateArray[0]
         }
         console.warn(`No template found for ${templateID}`)
+        return undefined
     }
 
-    #getTemplateType(templateID) {
+    getTemplateType(templateID) {
         for (let [key] of Object.entries(this.TEMPLATE_TYPES)) {
             const templateType = this.TEMPLATE_TYPES[key];
             if (this.phaserScene.sharedData.templates[`${templateType}Data`].things[0][templateID]) {

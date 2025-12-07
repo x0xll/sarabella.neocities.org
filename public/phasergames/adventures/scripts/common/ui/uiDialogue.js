@@ -146,8 +146,16 @@ class uiDialogue extends uiManagerBase
     {
         // TODO get character name from id
         const character = {
-            name: this.phaserScene.sharedData.templateManager.findTemplateValue(`${characterid}Template`, "name"), 
+            name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
             id: characterid
+        }
+
+        // TODO check if this actually works
+        if (Array.isArray(text) && text.length === 1) {
+            text = text[0]
+        } else if (Array.isArray(text)) {
+            let rand = randomIntFromInterval(0, text.length - 1)
+            text = text[rand]
         }
 
         if (this.phaserScene.sharedData.dialogue.ui.elements === undefined)

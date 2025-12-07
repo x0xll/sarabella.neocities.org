@@ -15,13 +15,12 @@ class Entity {
     constructor(zoneScene, entityID, startX, startY, facingDirection) {
         this.zoneScene = zoneScene;
 
-
         let entityCount = 0
         for (let [key] of Object.entries(this.zoneScene.entities)) {
             if (key.includes(entityID)) {entityCount++}
         }
-        const key = entityCount > 0 ? entityID+entityCount : entityID
-        this.zoneScene.entities[key] = this
+        this.entityKey = entityCount > 0 ? entityID+entityCount : entityID
+        this.zoneScene.entities[this.entityKey] = this
 
         this.entityID = entityID;
         this.startPos = [startX, startY];
@@ -95,18 +94,6 @@ class Entity {
 
     
     // ------- HELPER FUNCTIONS -------
-    /**
-     * Is used when the player clicks on a tile containing this entity
-     * @param {*} interactData any data about the interaction that should be passed in
-     */
-    interact(interactData = undefined) {
-        // TODO ignore if template does not include a Click option
-    }
-
-    findTemplateValue(keys) {
-        return this.zoneScene.sharedData.templateManager.findTemplateValue(`${this.entityID}Template`, keys)
-    }
-
     /**
      * Takes grid coordinatetes and converts them to the corresponding isometric coordinates on the level map
      * @param {number} x The grid x coordinate
