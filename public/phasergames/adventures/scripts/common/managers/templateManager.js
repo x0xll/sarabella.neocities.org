@@ -23,6 +23,7 @@ class TemplateManager {
         // "Player": "player", // Is this one needed anywhere?
         "Soil": "soil",
         "WorldObject": "worldObject",
+        "Zone": "zone",
     }
     // This is used to quickly fetch some of the more common variables out of a template
     COMMON_KEYS = {

@@ -176,7 +176,7 @@ class TemplateEntity extends Entity {
                     if (character.animationQueue.length === 0) {
                         let animation = character.idleAnimations[Math.floor(Math.random()*character.idleAnimations.length)]
                         
-                        const delay = randomIntFromInterval(3, 5)
+                        const delay = 0//randomIntFromInterval(3, 5)
                         character.sprite.animationState.addAnimation(0, animation, false, delay);
                     }
                 }
