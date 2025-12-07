@@ -1,18 +1,18 @@
 {
-"skeleton": { "hash": "dYzAhCFUbdk", "spine": "4.2.43", "x": 15.5, "y": -9.37, "width": 24, "height": 24 },
+"skeleton": { "hash": "TPexNKOKqt4", "spine": "4.2.43", "x": 15.5, "y": -9.37, "width": 24, "height": 24 },
 "bones": [
 	{ "name": "root" },
 	{ "name": "bone", "parent": "root", "x": 25.9 }
 ],
 "slots": [
-	{ "name": "Main", "bone": "bone", "attachment": "T0107a/crop" }
+	{ "name": "Main", "bone": "bone", "attachment": "Extracted/crop" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
 			"Main": {
-				"T0107a/crop": {
+				"Extracted/crop": {
 					"x": 1.6,
 					"y": 2.63,
 					"width": 24,
@@ -24,7 +24,7 @@
 	}
 ],
 "animations": {
-	"animation": {
+	"idle": {
 		"bones": {
 			"bone": {
 				"rotate": [
@@ -58,7 +58,7 @@
 		"attachments": {
 			"default": {
 				"Main": {
-					"T0107a/crop": {
+					"Extracted/crop": {
 						"sequence": [
 							{ "time": 0.0417, "mode": "loop", "delay": 0.0417 },
 							{ "time": 1.5833 },
