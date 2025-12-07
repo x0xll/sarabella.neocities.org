@@ -1,7 +1,7 @@
 {
-"skeleton": { "hash": "TPexNKOKqt4", "spine": "4.2.43", "x": 15.5, "y": -9.37, "width": 24, "height": 24 },
+"skeleton": { "hash": "DFlGrNWq2AU", "spine": "4.2.43", "x": -44.5, "y": 4.46, "width": 89, "height": 39 },
 "bones": [
-	{ "name": "root" },
+	{ "name": "root", "y": 23.96 },
 	{ "name": "bone", "parent": "root", "x": 25.9 }
 ],
 "slots": [
