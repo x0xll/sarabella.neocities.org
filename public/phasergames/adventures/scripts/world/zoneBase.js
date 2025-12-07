@@ -204,9 +204,6 @@ class ZoneBase extends Phaser.Scene
                                 let skinID = tileData.skins;
 
                                 let skinArray = (skinID.indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
-                                    
-                                if (cellValue === "Ti052b")
-                                    console.log("Hi");
 
                                 let skinData = skinArray[skinID];
                                 if (skinData !== undefined)
