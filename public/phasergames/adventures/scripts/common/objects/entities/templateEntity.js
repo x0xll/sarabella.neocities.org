@@ -156,6 +156,12 @@ class TemplateEntity extends Entity {
                 duration = (fullDay - timeData.startTime) + (timeData.daysCount - 1 * fullDay) + this.zoneScene.timeManager.getCurrentTime()
             }
             if (duration < parseFloat(spawnerData.entitySpawnTime[0].text)) {return}
+        } else {
+            this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
+                startTime: this.zoneScene.timeManager.getCurrentTime(),
+                daysCount: 0
+            }
+            return
         }
 
         // Reset spawn time
@@ -186,8 +192,7 @@ class TemplateEntity extends Entity {
 
             chanceCounter = chanceCounter + parseFloat(type.chance)
             if (random <= chanceCounter) {
-                let spawnedEntity = new TemplateEntity(this.zoneScene, type.text, this.startPos[0], this.startPos[1])
-                spawnedEntity.create()
+                this.zoneScene.spawnEntity(type.text, this.startPos[0], this.startPos[1])
                 return
             }
         }
@@ -340,6 +345,7 @@ class TemplateEntity extends Entity {
 
         // Removes the entity from the zone
         delete this.zoneScene.entities[this.entityKey]
+        delete this.zoneScene.sharedData.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
     }
     // ------- END HELPER FUNCTIONS -------
 }

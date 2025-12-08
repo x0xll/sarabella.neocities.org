@@ -22,6 +22,12 @@ class ZoneBase extends Phaser.Scene
         } else if (sharedData.timeTrackedEntities[this.zoneConfig.ID] === undefined) {
             sharedData.timeTrackedEntities[this.zoneConfig.ID] = {}
         }
+        if (sharedData.spawnedEntities === undefined) {
+            sharedData.spawnedEntities = {}
+            sharedData.spawnedEntities[this.zoneConfig.ID] = {}
+        } else if (sharedData.spawnedEntities[this.zoneConfig.ID] === undefined) {
+            sharedData.spawnedEntities[this.zoneConfig.ID] = {}
+        }
     }
 
     preload ()
@@ -125,6 +131,14 @@ class ZoneBase extends Phaser.Scene
                     new TemplateEntity(zone, tileData.entities, x, y)
                 }
             }
+        }
+
+        const spawnedEntities = structuredClone(this.sharedData.spawnedEntities[this.zoneConfig.ID]);
+        this.sharedData.spawnedEntities[this.zoneConfig.ID] = {}
+
+        for (let [key] of Object.entries(spawnedEntities)) {
+            const entity = spawnedEntities[key]
+            this.spawnEntity(entity.template, entity.gridX, entity.gridY, false)
         }
     }
 
@@ -322,6 +336,14 @@ class ZoneBase extends Phaser.Scene
 
     getEntitiesAt(gridX, gridY) {
         return this.tiles[gridY][gridX].hasEntity
+    }
+
+    spawnEntity(template, gridX, gridY, runCreate = true) {
+        let spawnedEntity = new TemplateEntity(this, template, gridX, gridY)
+        this.sharedData.spawnedEntities[this.zoneConfig.ID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
+        if (runCreate) {
+            spawnedEntity.create()
+        }
     }
     // ------- END HELPER FUNCTIONS -------
 }
