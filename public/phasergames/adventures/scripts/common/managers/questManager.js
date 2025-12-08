@@ -522,7 +522,7 @@ class QuestManager {
         "DialogueChoiceAction": this.#missingAction,
         "MonologueAction": this.#missingAction,
         "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
-        "RemoveZoneItemAnywhereAction": this.#missingAction,
+        "RemoveZoneItemAnywhereAction": this.#removeZoneItemAnywhereAction,
         "TryAddZoneItemToAction": this.#missingAction,
         "AddHorseshoesAction": this.#missingAction,
         "AddMultipleInventoryAction": this.#missingAction,
@@ -635,9 +635,27 @@ class QuestManager {
 
     async #addZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
         if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID) {
-            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], true)
+            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], true, action.zone[0], action.instanceIdentifier[0])
         } else {
-            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], false, action.zone[0])
+            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], false, action.zone[0], action.instanceIdentifier[0])
+        }
+    }
+
+    async #removeZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
+        let entitiesList = phaserScene.sharedData.spawnedEntities[action.zone[0]]
+        console.log(entitiesList)
+
+        for (let [key] of Object.entries(entitiesList)) {
+            const entity = entitiesList[key];
+            if (action.instanceIdentifier[0] !== undefined 
+                && action.instanceIdentifier[0] === entity.instID
+            ) {
+                if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID ){
+                    phaserScene.entities[key].destroy()
+                } else {
+                    delete entitiesList[key]
+                }
+            }
         }
     }
 }

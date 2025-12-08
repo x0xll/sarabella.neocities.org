@@ -337,9 +337,9 @@ class ZoneBase extends Phaser.Scene
         return this.tiles[gridY][gridX].hasEntity
     }
 
-    spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID) {
+    spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID, instanceIdentifier = undefined) {
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, "se", zoneID === this.zoneConfig.ID, runCreate)
-        this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
+        this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY, instID: instanceIdentifier}
     }
     // ------- END HELPER FUNCTIONS -------
 }

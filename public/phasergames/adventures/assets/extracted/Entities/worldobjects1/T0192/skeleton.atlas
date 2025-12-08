@@ -1,0 +1,6 @@
+skeleton.png
+size:55,64
+filter:Linear,Linear
+idle0/1
+bounds:2,2,51,60
+offsets:0,0,51,68
