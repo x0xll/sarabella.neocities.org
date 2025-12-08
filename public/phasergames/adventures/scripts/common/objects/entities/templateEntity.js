@@ -9,7 +9,7 @@ class TemplateEntity extends Entity {
         spine: 2
     }
 
-    constructor(zoneScene, templateID, startX, startY, facingDirection = "se") {
+    constructor(zoneScene, templateID, startX, startY, facingDirection = "se", addToCurrentZone = true, loadLate = false) {
         super(zoneScene, templateID, startX, startY, facingDirection);
         this.templateID = templateID
         this.zoneID = zoneScene.zoneConfig.ID
@@ -19,7 +19,14 @@ class TemplateEntity extends Entity {
         }
 
         // console.log(this.zoneScene.sharedData.templateManager.getTemplate(this.templateID))
-        this.load();
+
+        if (addToCurrentZone && loadLate) {
+            zoneScene.load.once('complete', this.create, this);
+            this.load();
+            zoneScene.load.start();
+        } else if (addToCurrentZone) {
+            this.load();
+        }
     }
 
 
@@ -127,14 +134,6 @@ class TemplateEntity extends Entity {
         let spawnerData = this.getTemplateValue(["EntitySpawning", "spawnType"])
         if (spawnerData) {
             this.isSpawner = true
-            if (Array.isArray(spawnerData)) {
-                for (let index = 0; index < spawnerData.length; index++) {
-                    const element = spawnerData[index];
-                    this.#loadSpriteData(element.text)
-                }
-            } else {
-                this.#loadSpriteData(spawnerData.text)
-            }
         } else {
             this.isSpawner = false
         }
