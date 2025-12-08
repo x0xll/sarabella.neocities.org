@@ -209,24 +209,38 @@ class ZoneBase extends Phaser.Scene
                         // We do not show the pink square since we are showing the actual element
                         if ((tileData.entities !== undefined && tileData.entities.indexOf("Spawner") <= 0) || tileData.entities === undefined)
                         {
-                            tile = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
-                            zone.timeManager.setTile(tile, cellValue)
-                            tile.setDepth((rowCells[x].length - x) + y - ((tileData.gridSize !== undefined) ? tileData.gridSize[0].depth : 0))
-
-                            // We only need to set the info from the skin xml when there's one skin only
-                            // When there is more than one, the elements are placed correctly in spine directly
-                            if (typeof tileData.skins === "string")
+                            let skins;
+                            if (tileData.grounds !== undefined)
                             {
+                                skins = tileData.grounds.split(',');
+                            }
+                            if (tileData.skins !== undefined)
+                            {
+                                let skinData = tileData.skins.split(',');
+                                if (skins === undefined)
+                                    skins = skinData;
+                                else
+                                {
+                                    for(let i = 0; i < skinData.length; i++)
+                                    {
+                                        skins.push(skinData[i]);
+                                    }
+                                }
+                            }
+
+                            for (let i = 0; i < skins.length; i++)
+                            {                                
+                                let skinArray = (skins[i].indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
+                                let skinData = skinArray[skins[i]];
+
+                                tile[skins[i]] = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
+                                zone.timeManager.setTile(tile[skins[i]], skinData.className)
+                                tile[skins[i]].setDepth((rowCells[x].length - x) + y - ((tileData.gridSize !== undefined) ? tileData.gridSize[0].depth : 0))
+
                                 let scaleX = 1;
                                 let scaleY = 1;
                                 let offsetX = 0;
                                 let offsetY = 0;
-                                let depthOffset = 0;
-                                let skinID = tileData.skins;
-
-                                let skinArray = (skinID.indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
-
-                                let skinData = skinArray[skinID];
                                 if (skinData !== undefined)
                                 {
                                     if (skinData.scaleX !== undefined) {scaleX = parseInt(skinData.scaleX);}
@@ -234,35 +248,18 @@ class ZoneBase extends Phaser.Scene
 
                                     if (skinData.x !== undefined) {offsetX = parseInt(skinData.x);}
                                     if (skinData.y !== undefined) {offsetY = parseInt(skinData.y);}
-
-                                    // TODO: figure out how to use this one
-                                    if (skinData.depthOffset !== undefined) {depthOffset = parseInt(skinData.depthOffset);}
                                 }
 
-                                tile.setScale(scaleX, scaleY);
-                                tile.setPosition(tile.x + offsetX, tile.y + offsetY);
-                            }
+                                tile[skins[i]].setScale(scaleX, scaleY);
+                                tile[skins[i]].setPosition(tile[skins[i]].x + offsetX, tile[skins[i]].y + offsetY);
 
-                            // TODO: Find a better way to check this
-                            if (tile.skeleton.skin.attachments.length === 0)
-                            {
-                                console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}`)
+                                // TODO: Find a better way to check this
+                                if (tile[skins[i]].skeleton.skin.attachments.length === 0)
+                                {
+                                    console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}`)
+                                }
                             }
                         }
-
-                        // To help know where to place the entities when creating the config files
-                        // if (tileData.entities !== undefined )
-                        // {
-                        //     // TODO consider making the base entity class even more generic and using the template directly to create the rest of the data.
-                        //     // That should make it much easier to add entities directly from the zone xml
-                        //     if (this.sharedData.collectableData[this.zoneConfig.ID] && this.sharedData.collectableData[this.zoneConfig.ID].indexOf(tileData.entities) > -1 
-                        //         && tileData.entities.indexOf("Spawner") > 0
-                        //     ) {
-                        //         new Collectable(zone, tileData.entities, x, y)
-                        //     } else {
-                        //         console.warn(`Missing ENTITY: ${tileData.entities} X: ${x}, Y: ${y} in collectiblesConfig`);
-                        //     }
-                        // }
                     } catch (error) {
                         console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}\nError Message: ${error}`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
