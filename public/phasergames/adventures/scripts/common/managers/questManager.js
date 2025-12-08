@@ -316,7 +316,18 @@ class QuestManager {
         questData.status = this.QUEST_STATES.AVAILABLE;
         console.log("Quest made available: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
 
-        this.phaserScene.sharedData.quest.logic.activeQuests.push(questID)
+
+        let questIndex = -1
+        for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++) {
+            if (questID[2] === this.phaserScene.sharedData.quest.logic.activeQuests[i][2]) { 
+                questIndex = i 
+                break;
+            }
+        }
+        if (questIndex === -1) {
+            this.phaserScene.sharedData.quest.logic.activeQuests.push(questID)
+        }
+
 
         // TODO: Handle showing icons on map and handling correct triggers
 
@@ -328,6 +339,7 @@ class QuestManager {
             }
             return
         }
+        
     }
 
     /**
@@ -351,6 +363,7 @@ class QuestManager {
         
         if (questIndex >=0) {
             this.phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
+            console.log(this.phaserScene.sharedData.quest.logic.activeQuests)
             console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
         }
         
@@ -371,7 +384,6 @@ class QuestManager {
             this.busy = true
             for (let activeQuestIndex = 0; activeQuestIndex < phaserScene.sharedData.quest.logic.activeQuests.length; activeQuestIndex++) {
                 let questGlobalData = this.getQuestPerID(phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex]);
-
                 if (questGlobalData.targetZone && questGlobalData.targetZone !== phaserScene.sharedData.global.ZONE_ID) continue
                 for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                     const triggers = questGlobalData.line[lineIndex].trigger.object
@@ -643,7 +655,6 @@ class QuestManager {
 
     async #removeZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
         let entitiesList = phaserScene.sharedData.spawnedEntities[action.zone[0]]
-        console.log(entitiesList)
 
         for (let [key] of Object.entries(entitiesList)) {
             const entity = entitiesList[key];
