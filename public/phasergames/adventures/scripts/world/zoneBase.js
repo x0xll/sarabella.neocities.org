@@ -28,6 +28,8 @@ class ZoneBase extends Phaser.Scene
         } else if (sharedData.spawnedEntities[this.zoneConfig.ID] === undefined) {
             sharedData.spawnedEntities[this.zoneConfig.ID] = {}
         }
+
+        this.sharedData.questManager.phaserScene = this
     }
 
     preload ()
@@ -335,7 +337,8 @@ class ZoneBase extends Phaser.Scene
         return this.tiles[gridY][gridX].hasEntity
     }
 
-    spawnEntity(template, gridX, gridY, runCreate = true) {
+    spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID) {
+        // TODO figure out how to load in new assets if they were not previously loaded
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY)
         this.sharedData.spawnedEntities[this.zoneConfig.ID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
         if (runCreate) {

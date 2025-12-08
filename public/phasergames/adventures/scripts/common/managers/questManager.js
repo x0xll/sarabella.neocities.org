@@ -495,16 +495,15 @@ class QuestManager {
             const action = actionData.object[index];
 
             if (this.#QUEST_ACTIONS[action.type]) {
+                questData.currentLine= lineIndex
+                questData.currentAction= index+1
                 if ((this.#ACTIONS_TO_PAUSE.indexOf(action.type) > -1) &&
                     index+1 < actionData.object.length)
                 {
-                    questData.currentLine= lineIndex
-                    questData.currentAction= index+1
                     this.#QUEST_ACTIONS[action.type](this.phaserScene, questGlobalID, lineIndex, action)
                     return
                 } else {
-
-                await this.#QUEST_ACTIONS[action.type](this.phaserScene, questGlobalID, lineIndex, action)
+                    await this.#QUEST_ACTIONS[action.type](this.phaserScene, questGlobalID, lineIndex, action)
                 }
             }
         }
@@ -635,10 +634,10 @@ class QuestManager {
     }
 
     async #addZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
-        // TODO Add item to world
-        // TODO Actually add this for realsies
-        console.warn(`Missing action: ${action.type}`)
-        // console.log(action.template)
-        // console.log(phaserScene.sharedData.templateManager.getTemplate(action.template))
+        if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID) {
+            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], true)
+        } else {
+            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], false, action.zone[0])
+        }
     }
 }

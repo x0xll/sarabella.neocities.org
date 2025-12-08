@@ -23,7 +23,7 @@ class Entity {
         this.zoneScene.entities[this.entityKey] = this
 
         this.entityID = entityID;
-        this.startPos = [startX, startY];
+        this.startPos = [parseInt(startX), parseInt(startY)];
         this.facingDirection = facingDirection
     }
 
