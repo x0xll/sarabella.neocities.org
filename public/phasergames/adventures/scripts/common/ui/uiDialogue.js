@@ -29,7 +29,7 @@ class uiDialogue extends uiManagerBase
         color: "#792AA8",
         wrap: {
             mode: 'word',
-            width: 650
+            width: 600
         }
     }
 
