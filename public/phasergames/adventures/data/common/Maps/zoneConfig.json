@@ -401,8 +401,7 @@
         "tileYOffset": 850,
         "tileAssets": [
             "common",
-            "castletownmain",
-            "canterfarmsmain"
+            "castletownmain"
         ],
         
         "backgroundXOffset": 2100,
