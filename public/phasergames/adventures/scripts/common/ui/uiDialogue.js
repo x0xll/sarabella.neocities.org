@@ -214,6 +214,7 @@ class uiDialogue extends uiManagerBase
 
         let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
         
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup")
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', (pointer) => 
         { 
             this.hide();
