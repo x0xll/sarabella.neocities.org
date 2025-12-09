@@ -1,10 +1,11 @@
 {
-"skeleton": { "hash": "VQxkGpweQyE", "spine": "4.2.43", "x": -16.5, "y": -18.5, "width": 33, "height": 37 },
+"skeleton": { "hash": "76kMi/Tgo7U", "spine": "4.2.43", "x": -16.5, "y": -18.5, "width": 33, "height": 37 },
 "bones": [
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "Main", "bone": "root", "attachment": "Main" }
+	{ "name": "Main", "bone": "root", "attachment": "Main" },
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" }
 ],
 "skins": [
 	{
@@ -36,6 +37,9 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/T0016a/1", "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0016a/1", "width": 80, "height": 40 }
 			}
 		}
 	},
@@ -43,6 +47,9 @@
 		"name": "T0016c",
 		"attachments": {
 			"Main": {
+				"Main": { "name": "CanterFarms/T0016c/1", "width": 81, "height": 40 }
+			},
+			"Main_night": {
 				"Main": { "name": "CanterFarms/T0016c/1", "width": 81, "height": 40 }
 			}
 		}
@@ -52,6 +59,9 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/T0017a/1", "y": -10.28, "width": 80, "height": 24 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0017a/1", "y": -10.28, "width": 80, "height": 24 }
 			}
 		}
 	},
@@ -59,6 +69,9 @@
 		"name": "T0017b",
 		"attachments": {
 			"Main": {
+				"Main": { "name": "CanterFarms/T0017b/1", "x": 18.33, "y": -2.01, "width": 43, "height": 47 }
+			},
+			"Main_night": {
 				"Main": { "name": "CanterFarms/T0017b/1", "x": 18.33, "y": -2.01, "width": 43, "height": 47 }
 			}
 		}
@@ -68,6 +81,9 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/T0017c/1", "x": 18.33, "y": -10.95, "width": 44, "height": 30 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0017c/1", "x": 18.33, "y": -10.95, "width": 44, "height": 30 }
 			}
 		}
 	},
@@ -76,6 +92,9 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/T0017d/1", "y": 10.28, "width": 85, "height": 23 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0017d/1", "y": 10.28, "width": 85, "height": 23 }
 			}
 		}
 	},
@@ -83,6 +102,9 @@
 		"name": "T0017e",
 		"attachments": {
 			"Main": {
+				"Main": { "name": "CanterFarms/T0017e/1", "x": -20.56, "y": 10.28, "width": 44, "height": 24 }
+			},
+			"Main_night": {
 				"Main": { "name": "CanterFarms/T0017e/1", "x": -20.56, "y": 10.28, "width": 44, "height": 24 }
 			}
 		}

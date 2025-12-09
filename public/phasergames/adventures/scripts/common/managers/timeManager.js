@@ -109,7 +109,15 @@ class TimeManager
                     // Row
                     for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
                     {
-                        this.changeTint(this.phaserScene.tiles[y][x].skeleton, 0, 0.2, 0.4, 0, 0)
+                        let tile = this.phaserScene.tiles[y][x];
+                        for (let i = 0; i < Object.keys(tile).length; i++)
+                        {
+                            let index = Object.keys(tile)[i];
+                            if (tile[index].skeleton !== undefined)
+                            {
+                                this.changeTint(tile[index].skeleton, 0, 0.2, 0.4, 0, 0)
+                            }
+                        }
                     }
                 }
         } else {
@@ -120,7 +128,15 @@ class TimeManager
                 // Row
                 for (var x = 0; x < Object.keys(this.phaserScene.tiles[y]).length; x++)
                 {
-                    this.changeTint(this.phaserScene.tiles[y][x].skeleton, 0, 0.2, 0.4, 0, .75)
+                    let tile = this.phaserScene.tiles[y][x];
+                    for (let i = 0; i < Object.keys(tile).length; i++)
+                    {
+                        let index = Object.keys(tile)[i];
+                        if (tile[index].skeleton !== undefined)
+                        {
+                            this.changeTint(tile[index].skeleton, 0, 0.2, 0.4, 0, .75)
+                        }
+                    }
                 }
             }
         }
