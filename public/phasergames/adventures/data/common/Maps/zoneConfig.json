@@ -194,6 +194,7 @@
         "tileXOffset": -1000,
         "tileYOffset": 1315,
         "tileAssets": [
+            "common",
             "castletownmain"
         ],
         
@@ -229,6 +230,7 @@
         "tileXOffset": 0,
         "tileYOffset": 0,
         "tileAssets": [
+            "common",
             "castletownmain"
         ],
         
@@ -262,6 +264,7 @@
         "tileXOffset": -385,
         "tileYOffset": 1165,
         "tileAssets": [
+            "common",
             "castletownmain"
         ],
         
@@ -295,6 +298,7 @@
         "tileXOffset": -845,
         "tileYOffset": 600,
         "tileAssets": [
+            "common",
             "castletownmain"
         ],
         
@@ -364,6 +368,7 @@
         "tileXOffset": -525,
         "tileYOffset": 850,
         "tileAssets": [
+            "common",
             "castletownmain"
         ],
         
@@ -395,6 +400,7 @@
         "tileXOffset": -525,
         "tileYOffset": 850,
         "tileAssets": [
+            "common",
             "castletownmain"
         ],
         
@@ -426,6 +432,7 @@
         "tileXOffset": -1625,
         "tileYOffset": 1495,
         "tileAssets": [
+            "common",
             "ruralskymain"
         ],
         
@@ -462,6 +469,7 @@
         "tileXOffset": -1200,
         "tileYOffset": 2460,
         "tileAssets": [
+            "common",
             "ruralskymain"
         ],
         
@@ -530,6 +538,7 @@
         "tileXOffset": -1885,
         "tileYOffset": 1920,
         "tileAssets": [
+            "common",
             "ruralskymain"
         ],
         
@@ -559,6 +568,7 @@
         "tileXOffset": -750,
         "tileYOffset": 650,
         "tileAssets": [
+            "common",
             "forestcavemain"
         ],
         
@@ -593,6 +603,7 @@
         "tileXOffset": -860,
         "tileYOffset": 1735,
         "tileAssets": [
+            "common",
             "forestcavemain"
         ],
         
@@ -624,6 +635,7 @@
         "tileXOffset": -1200,
         "tileYOffset": 2300,
         "tileAssets": [
+            "common",
             "forestcavemain"
         ],
         
@@ -655,6 +667,7 @@
         "tileXOffset": -1000,
         "tileYOffset": 1250,
         "tileAssets": [
+            "common",
             "desertmain"
         ],
         
@@ -688,6 +701,7 @@
         "tileXOffset": -250,
         "tileYOffset": 995,
         "tileAssets": [
+            "common",
             "forestcavemain"
         ],
         
@@ -717,6 +731,7 @@
         "tileXOffset": -350,
         "tileYOffset": 1000,
         "tileAssets": [
+            "common",
             "forestcavemain"
         ],
         
@@ -746,6 +761,7 @@
         "tileXOffset": -1200,
         "tileYOffset": 2000,
         "tileAssets": [
+            "common",
             "petalhomemain"
         ],
         
@@ -777,6 +793,7 @@
         "tileXOffset": 0,
         "tileYOffset": 800,
         "tileAssets": [
+            "common",
             "desertmain"
         ],
         
