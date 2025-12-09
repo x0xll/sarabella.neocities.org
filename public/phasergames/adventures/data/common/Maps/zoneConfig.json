@@ -368,14 +368,15 @@
         "tileYOffset": 850,
         "tileAssets": [
             "common",
-            "castletownmain"
+            "castletownmain",
+            "ruralskymain"
         ],
         
         "backgroundXOffset": 2100,
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [7, 14, "se"],
             "Z007": [7, 14, "e"],
             "Z010": [47, 55, "w"]
         },
