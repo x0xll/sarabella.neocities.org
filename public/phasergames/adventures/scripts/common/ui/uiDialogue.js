@@ -216,6 +216,7 @@ class uiDialogue extends uiManagerBase
         
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', (pointer) => 
         { 
+            if (!this.phaserScene.sharedData.dialogue.ui.open) return
             this.hide();
             this.phaserScene.sharedData.lastChoice = "continue"
             this.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
