@@ -1,546 +1,274 @@
 {
-"skeleton": { "hash": "XznJwmMwwg8", "spine": "4.2.43", "images": "../GitHub/SinGala/BeSa/sarabella.neocities.org/public/phasergames/adventures/assets/extracted/Tilemaps/RuralSky/", "audio": "./audio" },
+"skeleton": {
+	"hash": "7mQOh2nI1pY",
+	"spine": "4.2.43",
+	"x": -144,
+	"y": -183.5,
+	"width": 288,
+	"height": 367,
+	"images": "../../extracted/Tilemaps/RuralSky/",
+	"audio": "./audio"
+},
 "bones": [
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "Underlay2", "bone": "root", "attachment": "Overlay", "visible": false },
-	{ "name": "Underlay2_night", "bone": "root", "attachment": "Overlay", "visible": false },
-	{ "name": "Underlay", "bone": "root", "attachment": "Underlay" },
-	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay", "visible": false },
-	{ "name": "Main", "bone": "root", "attachment": "Main" },
-	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
-	{ "name": "Overlay", "bone": "root", "attachment": "Overlay", "visible": false },
-	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay", "visible": false }
+	{ "name": "Main", "bone": "root", "attachment": "Main" }
 ],
 "skins": [
-	{ "name": "Ti011w" },
 	{
-		"name": "Ti013w",
+		"name": "T0001a",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0017c/1", "width": 44, "height": 30 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0017c/1", "width": 44, "height": 30 }
-			}
-		}
-	},
-	{ "name": "Ti014w" },
-	{
-		"name": "Ti015b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0072e/1", "width": 90, "height": 250 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0072e/1", "width": 90, "height": 250 }
-			}
-		}
-	},
-	{ "name": "Ti016w" },
-	{ "name": "Ti017w" },
-	{ "name": "Ti018w" },
-	{
-		"name": "Ti019w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0157a/1", "width": 87, "height": 28 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0157a/1", "width": 87, "height": 28 }
+				"Main": { "name": "T0001a/1", "width": 424, "height": 320 }
 			}
 		}
 	},
 	{
-		"name": "Ti020w",
+		"name": "T0028b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0157e/1", "width": 41, "height": 22 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0157e/1", "width": 41, "height": 22 }
-			}
-		}
-	},
-	{ "name": "Ti021w" },
-	{ "name": "Ti022w" },
-	{
-		"name": "Ti023w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0157c/1", "width": 41, "height": 25 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0157c/1", "width": 41, "height": 25 }
-			}
-		}
-	},
-	{ "name": "Ti025w" },
-	{
-		"name": "Ti026b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
-			}
-		}
-	},
-	{
-		"name": "Ti027w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0055k/1", "width": 148, "height": 94 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0055k/1", "width": 148, "height": 94 }
-			}
-		}
-	},
-	{ "name": "Ti028w" },
-	{
-		"name": "Ti029w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0017b/1", "x": 17.82, "y": -1.83, "width": 43, "height": 47 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0017b/1", "x": 17.82, "y": -1.6, "width": 43, "height": 47 }
-			},
-			"Underlay": {
-				"Underlay": { "name": "T0016a/1", "width": 80, "height": 40 }
-			}
-		}
-	},
-	{
-		"name": "Ti030w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0017b/1", "width": 43, "height": 47 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0017b/1", "width": 43, "height": 47 }
-			}
-		}
-	},
-	{
-		"name": "Ti031w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0017a/1", "width": 80, "height": 24 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0017a/1", "width": 80, "height": 24 }
-			}
-		}
-	},
-	{
-		"name": "Ti032w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0017e/1", "width": 44, "height": 24 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0017e/1", "width": 44, "height": 24 }
-			}
-		}
-	},
-	{ "name": "Ti034w" },
-	{
-		"name": "Ti036w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0016a/1", "width": 80, "height": 40 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0016a/1", "width": 80, "height": 40 }
-			}
-		}
-	},
-	{
-		"name": "Ti037b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053fa/1", "width": 91, "height": 74 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053fa/1", "width": 91, "height": 74 }
-			}
-		}
-	},
-	{
-		"name": "Ti038b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
-			}
-		}
-	},
-	{
-		"name": "Ti039b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053na/1", "width": 103, "height": 70 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053na/1", "width": 103, "height": 70 }
-			}
-		}
-	},
-	{
-		"name": "Ti040b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0029/1", "width": 81, "height": 79 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0029/1", "width": 81, "height": 79 }
-			}
-		}
-	},
-	{
-		"name": "Ti041b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0047h/1", "width": 363, "height": 529 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0047h/1", "width": 363, "height": 529 }
-			}
-		}
-	},
-	{
-		"name": "Ti042b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0048a/1", "width": 288, "height": 367 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0048a/1", "width": 288, "height": 367 }
-			}
-		}
-	},
-	{
-		"name": "Ti044w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0048c/1", "width": 292, "height": 363 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0048c/1", "width": 292, "height": 363 }
-			}
-		}
-	},
-	{
-		"name": "Ti045b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0047i/1", "width": 322, "height": 463 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0047i/1", "width": 322, "height": 463 }
-			}
-		}
-	},
-	{
-		"name": "Ti046b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0047g/1", "width": 355, "height": 426 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0047g/1", "width": 355, "height": 426 }
-			}
-		}
-	},
-	{
-		"name": "Ti048b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0002/1", "width": 49, "height": 65 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0002/1", "width": 49, "height": 65 }
-			}
-		}
-	},
-	{
-		"name": "Ti050b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0028b/1", "width": 41, "height": 48 }
-			},
-			"Main_night": {
 				"Main": { "name": "T0028b/1", "width": 41, "height": 48 }
 			}
 		}
 	},
 	{
-		"name": "Ti051b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0041d/1", "width": 80, "height": 58 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0041d/1", "width": 80, "height": 58 }
-			}
-		}
-	},
-	{
-		"name": "Ti053b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0082b/1", "width": 166, "height": 124 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0082b/1", "width": 166, "height": 124 }
-			}
-		}
-	},
-	{
-		"name": "Ti054b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0082e/1", "width": 166, "height": 124 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0082e/1", "width": 166, "height": 124 }
-			}
-		}
-	},
-	{
-		"name": "Ti056b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0103b/1", "width": 230, "height": 240 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0103b/1", "width": 230, "height": 240 }
-			}
-		}
-	},
-	{
-		"name": "Ti060b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0057f/1", "width": 87, "height": 124 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0057f/1", "width": 87, "height": 124 }
-			}
-		}
-	},
-	{
-		"name": "Ti061b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0001a/1", "width": 424, "height": 320 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0001a/1", "width": 424, "height": 320 }
-			}
-		}
-	},
-	{
-		"name": "Ti062w",
+		"name": "T0028c",
 		"attachments": {
 			"Main": {
 				"Main": { "name": "T0028c/1", "width": 43, "height": 48 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0028c/1", "width": 43, "height": 48 }
 			}
 		}
 	},
 	{
-		"name": "Ti063b",
+		"name": "T0041d",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0072d/1", "width": 90, "height": 261 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0072d/1", "width": 90, "height": 261 }
+				"Main": { "name": "T0041d/1", "y": 5, "width": 80, "height": 58 }
 			}
 		}
 	},
 	{
-		"name": "Ti066b",
+		"name": "T0044b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0073/1", "width": 55, "height": 133 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0073/1", "width": 55, "height": 133 }
-			}
-		}
-	},
-	{
-		"name": "Ti067b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053ia/1", "width": 11, "height": 64 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053ia/1", "width": 11, "height": 64 }
-			}
-		}
-	},
-	{
-		"name": "Ti069b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053aa/1", "width": 89, "height": 54 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053aa/1", "width": 89, "height": 54 }
-			}
-		}
-	},
-	{
-		"name": "Ti071b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053ea/1", "width": 102, "height": 74 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053ea/1", "width": 102, "height": 74 }
-			}
-		}
-	},
-	{
-		"name": "Ti073b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053pa/1", "width": 115, "height": 76 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053pa/1", "width": 115, "height": 76 }
-			}
-		}
-	},
-	{
-		"name": "Ti076b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0055h/1", "width": 90, "height": 91 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0055h/1", "width": 90, "height": 91 }
-			}
-		}
-	},
-	{
-		"name": "Ti077b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053ha/1", "width": 115, "height": 76 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053ha/1", "width": 115, "height": 76 }
-			}
-		}
-	},
-	{
-		"name": "Ti078b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053oa/1", "width": 112, "height": 54 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053oa/1", "width": 112, "height": 54 }
-			}
-		}
-	},
-	{
-		"name": "Ti079b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0053qa/1", "width": 14, "height": 62 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0053qa/1", "width": 14, "height": 62 }
-			}
-		}
-	},
-	{
-		"name": "Ti081b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0138b/1", "width": 449, "height": 535 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0138b/1", "width": 449, "height": 535 }
-			}
-		}
-	},
-	{
-		"name": "Ti082w",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0139b/1", "width": 783, "height": 772 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0139b/1", "width": 783, "height": 772 }
-			}
-		}
-	},
-	{
-		"name": "Ti083b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0159b/1", "width": 386, "height": 519 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0159b/1", "width": 386, "height": 519 }
-			}
-		}
-	},
-	{
-		"name": "Ti087b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "T0044b/1", "width": 298, "height": 281 }
-			},
-			"Main_night": {
 				"Main": { "name": "T0044b/1", "width": 298, "height": 281 }
 			}
 		}
 	},
 	{
-		"name": "Ti091w",
+		"name": "T0047g",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0072c/1", "width": 94, "height": 261 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0072c/1", "width": 94, "height": 261 }
+				"Main": { "name": "T0047g/1", "width": 355, "height": 426 }
 			}
 		}
 	},
 	{
-		"name": "Ti092w",
+		"name": "T0047h",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0096a/1", "width": 146, "height": 206 }
-			},
-			"Main_night": {
+				"Main": { "name": "T0047h/1", "width": 363, "height": 529 }
+			}
+		}
+	},
+	{
+		"name": "T0047i",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0047i/1", "width": 322, "height": 463 }
+			}
+		}
+	},
+	{
+		"name": "T0048a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0048a/1", "width": 288, "height": 367 }
+			}
+		}
+	},
+	{
+		"name": "T0048c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0048c/1", "width": 292, "height": 363 }
+			}
+		}
+	},
+	{
+		"name": "T0053aa",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053aa/1", "width": 89, "height": 54 }
+			}
+		}
+	},
+	{
+		"name": "T0053ca",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053ca/1", "width": 137, "height": 97 }
+			}
+		}
+	},
+	{
+		"name": "T0053ea",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053ea/1", "width": 102, "height": 74 }
+			}
+		}
+	},
+	{
+		"name": "T0053fa",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053fa/1", "width": 91, "height": 74 }
+			}
+		}
+	},
+	{
+		"name": "T0053ha",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053ha/1", "width": 115, "height": 76 }
+			}
+		}
+	},
+	{
+		"name": "T0053ia",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053ia/1", "width": 11, "height": 64 }
+			}
+		}
+	},
+	{
+		"name": "T0053na",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053na/1", "scaleX": -1, "width": 103, "height": 70 }
+			}
+		}
+	},
+	{
+		"name": "T0053oa",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053oa/1", "width": 112, "height": 54 }
+			}
+		}
+	},
+	{
+		"name": "T0053pa",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053pa/1", "width": 115, "height": 76 }
+			}
+		}
+	},
+	{
+		"name": "T0053qa",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0053qa/1", "width": 14, "height": 62 }
+			}
+		}
+	},
+	{
+		"name": "T0055h",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0055h/1", "width": 90, "height": 91 }
+			}
+		}
+	},
+	{
+		"name": "T0055k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0055k/1", "scaleX": -1, "width": 148, "height": 94 }
+			}
+		}
+	},
+	{
+		"name": "T0082b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0082b/1", "width": 166, "height": 124 }
+			}
+		}
+	},
+	{
+		"name": "T0082e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0082e/1", "width": 166, "height": 124 }
+			}
+		}
+	},
+	{
+		"name": "T0096a",
+		"attachments": {
+			"Main": {
 				"Main": { "name": "T0096a/1", "width": 146, "height": 206 }
 			}
 		}
 	},
 	{
-		"name": "Ti093w",
+		"name": "T0103b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0275/1", "width": 43, "height": 65 }
-			},
-			"Main_night": {
-				"Main": { "name": "T0275/1", "width": 43, "height": 65 }
+				"Main": { "name": "T0103b/1", "width": 230, "height": 240 }
+			}
+		}
+	},
+	{
+		"name": "T0138b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0138b/1", "width": 449, "height": 535 }
+			}
+		}
+	},
+	{
+		"name": "T0139b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0139b/1", "width": 783, "height": 772 }
+			}
+		}
+	},
+	{
+		"name": "T0157a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0157a/1", "width": 87, "height": 28 }
+			}
+		}
+	},
+	{
+		"name": "T0157c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0157c/1", "width": 41, "height": 25 }
+			}
+		}
+	},
+	{
+		"name": "T0157e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0157e/1", "width": 41, "height": 22 }
+			}
+		}
+	},
+	{
+		"name": "T0159b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0159b/1", "width": 386, "height": 519 }
 			}
 		}
 	}
