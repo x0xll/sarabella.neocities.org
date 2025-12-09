@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "m/dB+xvoX0Y", "spine": "4.2.43", "x": -102.75, "y": -40.19, "width": 147, "height": 94 },
+"skeleton": { "hash": "XtNmRvLHMOE", "spine": "4.2.43", "x": -42.5, "y": -132.5, "width": 85, "height": 265 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -8,6 +8,28 @@
 	{ "name": "Main_night", "bone": "root", "attachment": "Main" }
 ],
 "skins": [
+	{
+		"name": "T0019a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0019a/1", "width": 92, "height": 220 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0019a/1", "width": 92, "height": 220 }
+			}
+		}
+	},
+	{
+		"name": "T0019b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0019b/1", "width": 92, "height": 220 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0019b/1", "width": 92, "height": 220 }
+			}
+		}
+	},
 	{
 		"name": "T0019c",
 		"attachments": {
@@ -20,6 +42,17 @@
 		}
 	},
 	{
+		"name": "T0019d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0019d/1", "width": 92, "height": 220 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0019d/1", "width": 92, "height": 220 }
+			}
+		}
+	},
+	{
 		"name": "T0019e",
 		"attachments": {
 			"Main": {
@@ -27,6 +60,28 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0019e/1", "width": 92, "height": 220 }
+			}
+		}
+	},
+	{
+		"name": "T0020a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0020a/1", "width": 69, "height": 102 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0020a/1", "width": 69, "height": 102 }
+			}
+		}
+	},
+	{
+		"name": "T0020c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0020c/1", "width": 69, "height": 102 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0020c/1", "width": 69, "height": 102 }
 			}
 		}
 	},
@@ -49,6 +104,39 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0021a/1", "width": 65, "height": 103 }
+			}
+		}
+	},
+	{
+		"name": "T0021b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0021b/1", "width": 65, "height": 103 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0021b/1", "width": 65, "height": 103 }
+			}
+		}
+	},
+	{
+		"name": "T0022b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0022b/1", "width": 69, "height": 101 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0022b/1", "width": 69, "height": 101 }
+			}
+		}
+	},
+	{
+		"name": "T0022e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0022e/1", "width": 69, "height": 101 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0022e/1", "width": 69, "height": 101 }
 			}
 		}
 	},
@@ -141,6 +229,17 @@
 		}
 	},
 	{
+		"name": "T0038h",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0038h/1", "width": 29, "height": 18 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0038h/1", "width": 29, "height": 18 }
+			}
+		}
+	},
+	{
 		"name": "T0039a",
 		"attachments": {
 			"Main": {
@@ -174,6 +273,28 @@
 		}
 	},
 	{
+		"name": "T0044a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0044a/1", "width": 298, "height": 281 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0044a/1", "width": 298, "height": 281 }
+			}
+		}
+	},
+	{
+		"name": "T0048b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0048b/1", "width": 206, "height": 261 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0048b/1", "width": 206, "height": 261 }
+			}
+		}
+	},
+	{
 		"name": "T0059a",
 		"attachments": {
 			"Main": {
@@ -181,6 +302,39 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CanterFarms/T0059a/1", "width": 50, "height": 30 }
+			}
+		}
+	},
+	{
+		"name": "T0059b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0059b/1", "width": 85, "height": 47 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0059b/1", "width": 85, "height": 47 }
+			}
+		}
+	},
+	{
+		"name": "T0059e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0059e/1", "width": 105, "height": 49 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0059e/1", "width": 105, "height": 49 }
+			}
+		}
+	},
+	{
+		"name": "T0060a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0060a/1", "width": 51, "height": 48 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0060a/1", "width": 51, "height": 48 }
 			}
 		}
 	},
@@ -229,6 +383,116 @@
 		}
 	},
 	{
+		"name": "T0060f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0060f/1", "width": 34, "height": 28 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0060f/2", "path": "CastleTown/T0060f/1", "width": 34, "height": 28 }
+			}
+		}
+	},
+	{
+		"name": "T0071a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0071a/1", "width": 92, "height": 272 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0071a/1", "width": 92, "height": 272 }
+			}
+		}
+	},
+	{
+		"name": "T0071b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0071b/1", "width": 91, "height": 272 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0071b/1", "width": 91, "height": 272 }
+			}
+		}
+	},
+	{
+		"name": "T0071c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0071c/1", "width": 91, "height": 264 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0071c/1", "width": 91, "height": 264 }
+			}
+		}
+	},
+	{
+		"name": "T0071d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0071d/1", "width": 93, "height": 264 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0071d/1", "width": 93, "height": 264 }
+			}
+		}
+	},
+	{
+		"name": "T0071e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0071e/1", "width": 85, "height": 265 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0071e/1", "width": 85, "height": 265 }
+			}
+		}
+	},
+	{
+		"name": "T0071f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0071f/1", "width": 85, "height": 265 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0071f/1", "width": 85, "height": 265 }
+			}
+		}
+	},
+	{
+		"name": "T0079a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0079a/1", "width": 671, "height": 447 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0079a/1", "width": 671, "height": 447 }
+			}
+		}
+	},
+	{
+		"name": "T0079b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0079b/1", "width": 895, "height": 447 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0079b/2", "path": "CastleTown/T0079b/1", "width": 895, "height": 447 }
+			}
+		}
+	},
+	{
+		"name": "T0079c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0079c/2", "path": "CastleTown/T0079c/1", "width": 895, "height": 447 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0079c/1", "width": 895, "height": 447 }
+			}
+		}
+	},
+	{
 		"name": "T0080",
 		"attachments": {
 			"Main": {
@@ -236,6 +500,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0080/1", "width": 667, "height": 447 }
+			}
+		}
+	},
+	{
+		"name": "T0080b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0080b/1", "width": 1179, "height": 686 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0080b/1", "width": 1179, "height": 686 }
 			}
 		}
 	},
@@ -262,6 +537,116 @@
 		}
 	},
 	{
+		"name": "T0083a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0083a/1", "width": 60, "height": 93 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0083a/1", "width": 60, "height": 93 }
+			}
+		}
+	},
+	{
+		"name": "T0083b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0083b/1", "width": 60, "height": 93 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0083b/1", "width": 60, "height": 93 }
+			}
+		}
+	},
+	{
+		"name": "T0083c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0083c/1", "width": 60, "height": 93 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0083c/2", "path": "CastleTown/T0083c/1", "width": 60, "height": 93 }
+			}
+		}
+	},
+	{
+		"name": "T0083d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0083d/1", "width": 60, "height": 93 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0083d/1", "width": 60, "height": 93 }
+			}
+		}
+	},
+	{
+		"name": "T0083e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0083e/1", "width": 60, "height": 93 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0083e/1", "width": 60, "height": 93 }
+			}
+		}
+	},
+	{
+		"name": "T0084a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0084a/1", "width": 48, "height": 62 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0084a/1", "width": 48, "height": 62 }
+			}
+		}
+	},
+	{
+		"name": "T0084b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0084b/1", "width": 48, "height": 62 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0084b/1", "width": 48, "height": 62 }
+			}
+		}
+	},
+	{
+		"name": "T0084c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0084c/1", "width": 48, "height": 62 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0084c/1", "width": 48, "height": 62 }
+			}
+		}
+	},
+	{
+		"name": "T0084d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0084d/1", "width": 48, "height": 62 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0084d/1", "width": 48, "height": 62 }
+			}
+		}
+	},
+	{
+		"name": "T0084e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0084e/1", "width": 48, "height": 62 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0084e/1", "width": 48, "height": 62 }
+			}
+		}
+	},
+	{
 		"name": "T0094a",
 		"attachments": {
 			"Main": {
@@ -280,6 +665,28 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0094d/1", "width": 42, "height": 76 }
+			}
+		}
+	},
+	{
+		"name": "T0094g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0094g/1", "width": 49, "height": 115 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0094g/1", "width": 49, "height": 115 }
+			}
+		}
+	},
+	{
+		"name": "T0094h",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0094h/1", "width": 49, "height": 115 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0094h/1", "width": 49, "height": 115 }
 			}
 		}
 	},
@@ -361,6 +768,17 @@
 		}
 	},
 	{
+		"name": "T0123",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0123/1", "width": 414, "height": 521 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0123/1", "width": 414, "height": 521 }
+			}
+		}
+	},
+	{
 		"name": "T0124b",
 		"attachments": {
 			"Main": {
@@ -372,6 +790,28 @@
 		}
 	},
 	{
+		"name": "T0124c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0124c/1", "width": 111, "height": 72 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0124c/2", "path": "CastleTown/T0124c/1", "width": 111, "height": 72 }
+			}
+		}
+	},
+	{
+		"name": "T0124k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0124k/1", "width": 92, "height": 78 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0124k/1", "width": 92, "height": 78 }
+			}
+		}
+	},
+	{
 		"name": "T0124l",
 		"attachments": {
 			"Main": {
@@ -379,6 +819,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0124l/1", "width": 92, "height": 78 }
+			}
+		}
+	},
+	{
+		"name": "T0124p",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0124p/1", "width": 117, "height": 82 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0124p/1", "width": 117, "height": 82 }
 			}
 		}
 	},
