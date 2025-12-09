@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "GVCz/zHJLTc", "spine": "4.2.43", "x": -27.5, "y": -7.72, "width": 55, "height": 133 },
+"skeleton": { "hash": "eAVPYO/StsI", "spine": "4.2.43", "x": -51, "y": -42.5, "width": 102, "height": 85 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -610,6 +610,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CanterFarms/T0053f/1", "x": -17.07, "y": 26.59, "width": 91, "height": 79 }
+			}
+		}
+	},
+	{
+		"name": "T0053g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053g/1", "width": 102, "height": 85 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053g/1", "width": 102, "height": 85 }
 			}
 		}
 	},
