@@ -198,16 +198,8 @@ class ZoneBase extends Phaser.Scene
                 if (cellValue !== "x"
                      && cellValue !== "."
                     ) {
+                    let spriteName = undefined;
                     try {
-                        let file = zone.zoneConfig.tileAssets[0]
-
-                        if (zone.zoneConfig.tileAssets.length > 1)
-                        {
-                            let index = zone.zoneConfig.tileAssets.indexOf(cellValue);
-                            if (index !== -1)
-                                file = zone.zoneConfig.tileAssets[index];
-                        }
-
                         // We do not show the pink square since we are showing the actual element
                         if ((tileData.entities !== undefined && tileData.entities.indexOf("Spawner") <= 0) || tileData.entities === undefined)
                         {
@@ -231,12 +223,52 @@ class ZoneBase extends Phaser.Scene
                             }
 
                             for (let i = 0; i < skins.length; i++)
-                            {                                
+                            {                   
                                 let skinArray = (skins[i].indexOf("Sk") > -1) ? zone.zoneParsed.map[0].skins[0] : zone.zoneParsed.map[0].grounds[0];
                                 let skinData = skinArray[skins[i]];
+                                spriteName = skinData.className;
+
+                                let file = undefined;
+
+                                if (zone.zoneConfig.tileAssets.length > 1)
+                                {
+                                    let index = zone.zoneConfig.tileAssets.indexOf(spriteName);
+                                    if (index > -1)
+                                    {
+                                        file = zone.zoneConfig.tileAssets[index];
+                                    }
+                                    else
+                                    {
+                                        for (let i = 0; i < zone.zoneConfig.tileAssets.length; i++)
+                                        {
+                                            let cachedSpine = zone.cache.json.get(zone.zoneConfig.tileAssets[i] + "JSON").skins;
+
+                                            for (let j = 0; j < cachedSpine.length; j++)
+                                            {
+                                                if (cachedSpine[j].name !== spriteName)
+                                                {
+                                                    if (cachedSpine[j].name.includes(spriteName) && 
+                                                        cachedSpine[j].name === spriteName + "/day")
+                                                    {
+                                                        file = zone.zoneConfig.tileAssets[i];
+                                                        break;
+                                                    }
+                                                    continue;
+                                                }
+                                                file = zone.zoneConfig.tileAssets[i];
+                                                break;
+                                            }
+
+                                            if (file !== undefined)
+                                                break;
+                                        }
+                                    }
+                                }
+                                else
+                                    file = zone.zoneConfig.tileAssets[0];
 
                                 tile[skins[i]] = zone.add.spine((x*zone.tileWidth/2)+(y*zone.tileWidth/2)+zone.zoneConfig.tileXOffset, (y*zone.tileWidth/4)-(x*zone.tileWidth/4)+zone.zoneConfig.tileYOffset, `${file}JSON`, `${file}Atlas`);
-                                zone.timeManager.setTile(tile[skins[i]], skinData.className)
+                                zone.timeManager.setTile(tile[skins[i]], spriteName)
                                 tile[skins[i]].setDepth((rowCells[x].length - x) + y - ((tileData.gridSize !== undefined) ? tileData.gridSize[0].depth : 0))
 
                                 let scaleX = 1;
@@ -263,7 +295,7 @@ class ZoneBase extends Phaser.Scene
                             }
                         }
                     } catch (error) {
-                        console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue}\nError Message: ${error}`)
+                        console.error(`Spine sprite could not be instantiated! Please ensure the files for the tile are available: ${cellValue} - ${spriteName}\nError Message: ${error}`)
                         console.warn("Note this may happen if the 'file' name for the tile in the zone xml file does not match any of the atlas and json files provided")
                     }
                 }

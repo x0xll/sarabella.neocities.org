@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "YmwOXgdagXQ", "spine": "4.2.43", "x": -62.57, "y": -12.91, "width": 91, "height": 79 },
+"skeleton": { "hash": "wvNxrsuz5eY", "spine": "4.2.43", "x": -9, "y": -14.5, "width": 18, "height": 29 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -452,6 +452,14 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/T0039c/1", "width": 39, "height": 26 }
+			}
+		}
+	},
+	{
+		"name": "T0040a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040a/1", "width": 18, "height": 29 }
 			}
 		}
 	},

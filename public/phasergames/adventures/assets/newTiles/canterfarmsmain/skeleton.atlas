@@ -46,11 +46,12 @@ bounds:1207,2,66,34
 CanterFarms/T0007i/1
 bounds:123,6,64,21
 CanterFarms/T0007j/1
-bounds:1508,6,29,16
+bounds:1586,23,29,16
+rotate:90
 CanterFarms/T0007k/1
 bounds:398,6,42,21
 CanterFarms/T0007l/1
-bounds:1419,43,38,16
+bounds:1508,6,38,16
 CanterFarms/T0007m/1
 bounds:1339,41,33,36
 CanterFarms/T0007n/1
@@ -132,6 +133,9 @@ CanterFarms/T0039a/1
 bounds:253,7,49,20
 CanterFarms/T0039c/1
 bounds:1461,126,39,26
+CanterFarms/T0040a/1
+bounds:1419,41,18,29
+rotate:90
 CanterFarms/T0040b/1
 bounds:1529,54,30,52
 CanterFarms/T0040e/1
