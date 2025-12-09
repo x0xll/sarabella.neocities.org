@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "Ux+LIyHi0xA", "spine": "4.2.43", "x": -32.5, "y": -51.5, "width": 65, "height": 103 },
+"skeleton": { "hash": "m/dB+xvoX0Y", "spine": "4.2.43", "x": -102.75, "y": -40.19, "width": 147, "height": 94 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -64,6 +64,50 @@
 		}
 	},
 	{
+		"name": "T0026c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0026c/1", "width": 21, "height": 17 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0026c/1", "width": 21, "height": 17 }
+			}
+		}
+	},
+	{
+		"name": "T0027d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0027d/1", "width": 24, "height": 31 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0027d/1", "width": 24, "height": 31 }
+			}
+		}
+	},
+	{
+		"name": "T0027g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0027g/1", "width": 24, "height": 31 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0027g/1", "width": 24, "height": 31 }
+			}
+		}
+	},
+	{
+		"name": "T0027k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0027k/1", "width": 30, "height": 26 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0027k/1", "width": 30, "height": 26 }
+			}
+		}
+	},
+	{
 		"name": "T0029",
 		"attachments": {
 			"Main": {
@@ -71,6 +115,61 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0029/1", "width": 81, "height": 79 }
+			}
+		}
+	},
+	{
+		"name": "T0038d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0038d/1", "width": 60, "height": 30 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0038d/1", "width": 60, "height": 30 }
+			}
+		}
+	},
+	{
+		"name": "T0038f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0038f/1", "width": 32, "height": 31 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0038f/1", "width": 32, "height": 31 }
+			}
+		}
+	},
+	{
+		"name": "T0039a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0039a/1", "width": 49, "height": 20 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0039a/1", "width": 49, "height": 20 }
+			}
+		}
+	},
+	{
+		"name": "T0039c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0039c/1", "width": 39, "height": 26 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0039c/1", "width": 39, "height": 26 }
+			}
+		}
+	},
+	{
+		"name": "T0040a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040a/1", "width": 18, "height": 29 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040a/1", "width": 18, "height": 29 }
 			}
 		}
 	},
@@ -188,10 +287,10 @@
 		"name": "T0098a",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "CastleTown/T0098a/1", "width": 91, "height": 59 }
+				"Main": { "name": "CastleTown/T0098a/1", "y": 20, "width": 91, "height": 59 }
 			},
 			"Main_night": {
-				"Main": { "name": "CastleTown/T0098a/1", "width": 91, "height": 59 }
+				"Main": { "name": "CastleTown/T0098a/1", "y": 20, "width": 91, "height": 59 }
 			}
 		}
 	},
@@ -199,10 +298,10 @@
 		"name": "T0098b",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "CastleTown/T0098b/1", "width": 135, "height": 87 }
+				"Main": { "name": "CastleTown/T0098b/1", "x": 7.97, "y": 20, "width": 135, "height": 87 }
 			},
 			"Main_night": {
-				"Main": { "name": "CastleTown/T0098b/1", "width": 135, "height": 87 }
+				"Main": { "name": "CastleTown/T0098b/1", "x": 7.97, "y": 20, "width": 135, "height": 87 }
 			}
 		}
 	},
@@ -210,10 +309,10 @@
 		"name": "T0098d",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "CastleTown/T0098d/1", "width": 147, "height": 94 }
+				"Main": { "name": "CastleTown/T0098d/1", "x": -5.65, "y": 6.81, "width": 147, "height": 94 }
 			},
 			"Main_night": {
-				"Main": { "name": "CastleTown/T0098d/1", "width": 147, "height": 94 }
+				"Main": { "name": "CastleTown/T0098d/1", "x": -5.65, "y": 6.81, "width": 147, "height": 94 }
 			}
 		}
 	},
@@ -232,10 +331,10 @@
 		"name": "T0098f",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "CastleTown/T0098f/1", "width": 109, "height": 85 }
+				"Main": { "name": "CastleTown/T0098f/1", "x": 14.13, "y": 33.44, "width": 109, "height": 85 }
 			},
 			"Main_night": {
-				"Main": { "name": "CastleTown/T0098f/1", "width": 109, "height": 85 }
+				"Main": { "name": "CastleTown/T0098f/1", "x": 14.13, "y": 33.44, "width": 109, "height": 85 }
 			}
 		}
 	},
@@ -254,10 +353,10 @@
 		"name": "T0098k",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "CastleTown/T0098k/1", "width": 125, "height": 119 }
+				"Main": { "name": "CastleTown/T0098k/1", "x": -20.8, "y": 24, "width": 125, "height": 119 }
 			},
 			"Main_night": {
-				"Main": { "name": "CastleTown/T0098k/1", "width": 125, "height": 119 }
+				"Main": { "name": "CastleTown/T0098k/1", "x": -20.8, "y": 24, "width": 125, "height": 119 }
 			}
 		}
 	},
@@ -313,6 +412,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0173f/1", "width": 91, "height": 271 }
+			}
+		}
+	},
+	{
+		"name": "T0187b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0187b/1", "width": 49, "height": 49 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0187b/2", "path": "CastleTown/T0187b/1", "width": 49, "height": 49 }
 			}
 		}
 	}
