@@ -12,7 +12,7 @@ class Common_Load extends Phaser.Scene
         // Used to preload certain data for the zone
         this.sharedData = sharedData
         if (this.sharedData.worldToLoad === undefined) {
-            this.sharedData.worldToLoad = "Z007"
+            this.sharedData.worldToLoad = "Z001"
         }
     }
 
