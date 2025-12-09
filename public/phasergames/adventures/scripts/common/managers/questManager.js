@@ -363,7 +363,6 @@ class QuestManager {
         
         if (questIndex >=0) {
             this.phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
-            console.log(this.phaserScene.sharedData.quest.logic.activeQuests)
             console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
         }
         
@@ -618,7 +617,11 @@ class QuestManager {
         }
 
         let img = undefined;
-        if (action.imageFileName) { img = action.imageFileName }
+        if (action.imageFileName) { 
+            img = action.imageFileName[0]
+            img = img.split("/")
+            img = img[img.length - 1].replace(".png", "")
+        }
         
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined, img);
     }

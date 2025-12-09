@@ -53,7 +53,7 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.load.image(this.DIALOGUE_PANEL_IMG, "./assets/extracted/UI/Dialogue/Panel.png");
 
         // Avatar mask
-        //phaserScene.load.image(DIALOGUE_AVATAR_MASK, "./assets/extracted/UI/Dialogue/PortraitMask.png");
+        this.phaserScene.load.image(this.DIALOGUE_AVATAR_MASK, "./assets/extracted/UI/Dialogue/PortraitMask.png");
 
         // Avatars
         this.phaserScene.load.atlas(this.DIALOGUE_HUMANS_THUMBNAILS, './assets/extracted/Characters/humansthumbnail.png', './assets/extracted/Characters/humansthumbnail.json');
@@ -78,11 +78,19 @@ class uiDialogue extends uiManagerBase
                             .setOrigin(0)
                             .setScrollFactor(0);
 
-        // Character Avatar
-        var charaPortrait = this.phaserScene.add.image(22.5, 255, this.DIALOGUE_HUMANS_THUMBNAILS, "C001")
+        // Character avatar mask
+        const x = 10
+        const y = 270
+        var charaPortraitMask = this.phaserScene.add.image(x, y, this.DIALOGUE_AVATAR_MASK)
                                 .setOrigin(0)
                                 .setScrollFactor(0);
-        // TODO : Character avatar mask
+
+        // Character Avatar
+        var charaPortrait = this.phaserScene.add.image(x, y, this.DIALOGUE_HUMANS_THUMBNAILS, "C001")
+                                .setOrigin(0)
+                                .setScrollFactor(0);
+        const mask = new Phaser.Display.Masks.BitmapMask(this.phaserScene, charaPortraitMask);
+        charaPortrait.setMask(mask);
 
         // Normal text
         var normalText = this.phaserScene.add.rexBBCodeText(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS_BBCODE)
@@ -129,6 +137,7 @@ class uiDialogue extends uiManagerBase
         {
             panelImg: panel,
             charaName: charaName,
+            charaPortraitMask: charaPortraitMask,
             charaPortrait: charaPortrait,
             normalText : normalText,
             continueBtn : continueBtn,
@@ -172,6 +181,7 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
             (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
              : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
@@ -182,8 +192,15 @@ class uiDialogue extends uiManagerBase
         {
             this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(1);
             this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setText(this.formatQuestText(text));
-            this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(1);
-            //this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(); // TODO : set depending on image
+            
+            this.lastImage = image
+            this.phaserScene.load.once('complete', () => {
+                    this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
+                    this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(1);
+                }, this);
+            this.phaserScene.load.image(`Dialogue${image}`, `./assets/extracted/UI/Dialogue/Images/${image}.png`);
+            this.phaserScene.load.start();
+
         }
         else
         {
@@ -216,6 +233,7 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(0);
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(0);
