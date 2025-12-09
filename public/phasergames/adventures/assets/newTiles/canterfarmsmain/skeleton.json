@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "eAVPYO/StsI", "spine": "4.2.43", "x": -51, "y": -42.5, "width": 102, "height": 85 },
+"skeleton": { "hash": "7Ftr9sNOTRI", "spine": "4.2.43", "x": -4.5, "y": -7.5, "width": 9, "height": 15 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -482,6 +482,28 @@
 		}
 	},
 	{
+		"name": "T0027b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0027b/1", "width": 30, "height": 26 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0027b/1", "width": 30, "height": 26 }
+			}
+		}
+	},
+	{
+		"name": "T0027c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0027c/1", "width": 14, "height": 39 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0027c/2", "path": "CanterFarms/T0027c/1", "width": 14, "height": 39 }
+			}
+		}
+	},
+	{
 		"name": "T0027e",
 		"attachments": {
 			"Main": {
@@ -559,6 +581,17 @@
 		}
 	},
 	{
+		"name": "T0040c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040c/1", "width": 22, "height": 47 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040c/1", "width": 22, "height": 47 }
+			}
+		}
+	},
+	{
 		"name": "T0040e",
 		"attachments": {
 			"Main": {
@@ -566,6 +599,28 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CanterFarms/T0040e/1", "y": 20.65, "width": 52, "height": 40 }
+			}
+		}
+	},
+	{
+		"name": "T0040f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040f/1", "width": 9, "height": 19 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040f/1", "width": 9, "height": 19 }
+			}
+		}
+	},
+	{
+		"name": "T0040g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040g/1", "width": 9, "height": 15 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040g/1", "width": 9, "height": 15 }
 			}
 		}
 	},
