@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "5mD9RVBavro", "spine": "4.2.43", "x": -62.5, "y": -59.5, "width": 125, "height": 119 },
+"skeleton": { "hash": "d9yVvr3hSqk", "spine": "4.2.43", "x": -26.5, "y": -23, "width": 53, "height": 46 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -8,10 +8,82 @@
 ],
 "skins": [
 	{
+		"name": "T0019c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0019c/1", "width": 92, "height": 220 }
+			}
+		}
+	},
+	{
+		"name": "T0019e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0019e/1", "width": 92, "height": 220 }
+			}
+		}
+	},
+	{
+		"name": "T0025a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0025a/1", "width": 64, "height": 34 }
+			}
+		}
+	},
+	{
 		"name": "T0029",
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CastleTown/T0029/1", "width": 81, "height": 79 }
+			}
+		}
+	},
+	{
+		"name": "T0059a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0059a/1", "width": 50, "height": 30 }
+			}
+		}
+	},
+	{
+		"name": "T0060b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0060b/1", "width": 53, "height": 46 }
+			}
+		}
+	},
+	{
+		"name": "T0060c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0060c/1", "width": 51, "height": 48 }
+			}
+		}
+	},
+	{
+		"name": "T0060d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0060d/1", "width": 35, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "T0060e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0060e/1", "width": 35, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "T0080",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0080/1", "width": 667, "height": 447 }
 			}
 		}
 	},

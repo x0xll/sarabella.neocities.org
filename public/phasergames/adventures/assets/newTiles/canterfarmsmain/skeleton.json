@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "wvNxrsuz5eY", "spine": "4.2.43", "x": -9, "y": -14.5, "width": 18, "height": 29 },
+"skeleton": { "hash": "IEhg0W6+vi0", "spine": "4.2.43", "x": -32, "y": -17, "width": 64, "height": 34 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -36,14 +36,6 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/I029/1", "width": 80, "height": 71 }
-			}
-		}
-	},
-	{
-		"name": "Overlay_ExitNE",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "Common/Exits/ExitNE/1", "width": 34, "height": 24 }
 			}
 		}
 	},
@@ -332,62 +324,6 @@
 		"attachments": {
 			"Main": {
 				"Main": { "name": "CanterFarms/T0015a/1", "x": 19.59, "y": 12.36, "width": 74, "height": 48 }
-			}
-		}
-	},
-	{
-		"name": "T0016a",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0016a/1", "width": 80, "height": 40 }
-			}
-		}
-	},
-	{
-		"name": "T0016c",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0016c/1", "width": 81, "height": 40 }
-			}
-		}
-	},
-	{
-		"name": "T0017a",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0017a/1", "y": -10.28, "width": 80, "height": 24 }
-			}
-		}
-	},
-	{
-		"name": "T0017b",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0017b/1", "x": 18.33, "y": -2.01, "width": 43, "height": 47 }
-			}
-		}
-	},
-	{
-		"name": "T0017c",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0017c/1", "x": 18.33, "y": -10.95, "width": 44, "height": 30 }
-			}
-		}
-	},
-	{
-		"name": "T0017d",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0017d/1", "y": 10.28, "width": 85, "height": 23 }
-			}
-		}
-	},
-	{
-		"name": "T0017e",
-		"attachments": {
-			"Main": {
-				"Main": { "name": "CanterFarms/T0017e/1", "x": -20.56, "y": 10.28, "width": 44, "height": 24 }
 			}
 		}
 	},

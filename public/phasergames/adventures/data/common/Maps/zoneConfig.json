@@ -118,6 +118,7 @@
         "tileXOffset": -320,
         "tileYOffset": 865,
         "tileAssets": [
+            "common",
             "canterfarmsmain",
             "T0059c"
         ],
@@ -154,6 +155,7 @@
         "tileXOffset": -215,
         "tileYOffset": 945,
         "tileAssets": [
+            "common",
             "castletownmain",
             "canterfarmsmain"
         ],
@@ -322,6 +324,7 @@
         "tileXOffset": -785,
         "tileYOffset": 1320,
         "tileAssets": [
+            "common",
             "castletownmain",
             "ruralskymain",
             "canterfarmsmain",
@@ -491,6 +494,7 @@
         "tileXOffset": -1400,
         "tileYOffset": 2000,
         "tileAssets": [
+            "common",
             "ruralskymain",
             "canterfarmsmain"
         ],
