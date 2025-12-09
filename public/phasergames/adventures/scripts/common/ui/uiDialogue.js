@@ -196,7 +196,7 @@ class uiDialogue extends uiManagerBase
             this.lastImage = image
             this.phaserScene.load.once('complete', () => {
                     this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
-                    this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(1);
+                    this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.alpha);
                 }, this);
             this.phaserScene.load.image(`Dialogue${image}`, `./assets/extracted/UI/Dialogue/Images/${image}.png`);
             this.phaserScene.load.start();
