@@ -401,14 +401,15 @@
         "tileYOffset": 850,
         "tileAssets": [
             "common",
-            "castletownmain"
+            "castletownmain",
+            "canterfarmsmain"
         ],
         
         "backgroundXOffset": 2100,
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [47, 60, "se"],
             "Z007": [47, 60, "w"],
             "Z011": [21, 14, "se"]
         },
