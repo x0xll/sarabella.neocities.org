@@ -72,13 +72,16 @@ class ZoneBase extends Phaser.Scene
 
         // Telport between zones
         // TODO Save entity data when teleporting between zones (so spawned items don't reset)
-        let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
-        var cellValue = zone.tiles[pos.y][pos.x];
-        if (cellValue.parsedData.entities !== undefined)
+        if (zone.entities.player.pathList.length === 0)
         {
-            let tile = cellValue.parsedData.id;
-            if (this.zoneConfig.sceneExitTiles && this.zoneConfig.sceneExitTiles[tile]) {
-                this.goToNextZone(this.zoneConfig.sceneExitTiles[tile])
+            let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
+            var cellValue = zone.tiles[pos.y][pos.x];
+            if (cellValue.parsedData.entities !== undefined)
+            {
+                let tile = cellValue.parsedData.id;
+                if (this.zoneConfig.sceneExitTiles && this.zoneConfig.sceneExitTiles[tile]) {
+                    this.goToNextZone(this.zoneConfig.sceneExitTiles[tile])
+                }
             }
         }
     }
