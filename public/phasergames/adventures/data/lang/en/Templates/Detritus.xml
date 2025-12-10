@@ -67,7 +67,7 @@
       <className>T0030a</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Foin</ToolTipText>
+      <ToolTipText>Haystack</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I046Template</template>
@@ -92,7 +92,7 @@
       <className>T0107a</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coccinelles</ToolTipText>
+      <ToolTipText>Ladybugs</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023aTemplate</template>
@@ -106,7 +106,7 @@
       <className>T0106a</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -120,7 +120,7 @@
       <className>T0106b</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -134,7 +134,7 @@
       <className>T0106c</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -148,7 +148,7 @@
       <className>T0202</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Poussière de pixie</ToolTipText>
+      <ToolTipText>Pixie dust</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I056Template</template>
@@ -160,7 +160,7 @@
       <className>T0240</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Argile</ToolTipText>
+      <ToolTipText>Clay</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I148Template</template>
@@ -172,7 +172,7 @@
       <className>T0140</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cristaux de fumée</ToolTipText>
+      <ToolTipText>Smoke Crystals</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I059Template</template>
@@ -184,7 +184,7 @@
       <className>T0165b</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Métal d'Arborium</ToolTipText>
+      <ToolTipText>Auroborus Metal</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I069Template</template>
@@ -196,7 +196,7 @@
       <className>T0110</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Eclats de lune</ToolTipText>
+      <ToolTipText>Lunar Sparkles</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I024Template</template>
@@ -208,7 +208,7 @@
       <className>T0191</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Sifflet des loups</ToolTipText>
+      <ToolTipText>Wolf Whistle</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>P047SeedTemplate</template>
@@ -220,7 +220,7 @@
       <className>T0203</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Terreau</ToolTipText>
+      <ToolTipText>Loam sack</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I054Template</template>
@@ -233,7 +233,7 @@
       <className>T0182</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pignon de pin</ToolTipText>
+      <ToolTipText>Pine nut</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I049Template</template>
@@ -245,7 +245,7 @@
       <className>T0141</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Résine noire</ToolTipText>
+      <ToolTipText>Dark resin</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I090Template</template>
@@ -258,7 +258,7 @@
       <className>T0183</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Soie d'araignée</ToolTipText>
+      <ToolTipText>Spider silk</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I012Template</template>
@@ -271,7 +271,7 @@
       <className>T0170a</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Escargot</ToolTipText>
+      <ToolTipText>Snaill shell</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I062Template</template>
@@ -283,7 +283,7 @@
       <className>T0170c</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coquillage</ToolTipText>
+      <ToolTipText>Conch shell</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I040Template</template>
@@ -295,7 +295,7 @@
       <className>T0170b</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coquillage</ToolTipText>
+      <ToolTipText>Scallop shell</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I040Template</template>
@@ -307,7 +307,7 @@
       <className>T0170d</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Etoile de mer</ToolTipText>
+      <ToolTipText>Starfish</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I041Template</template>
@@ -325,7 +325,7 @@
       <yOffset>-15</yOffset>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Perle des songes</ToolTipText>
+      <ToolTipText>Dream Bauble</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I039Template</template>
