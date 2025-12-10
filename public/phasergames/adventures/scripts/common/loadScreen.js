@@ -21,7 +21,6 @@ class Common_Load extends Phaser.Scene
         loadLoadingUI(this);
         this.questManager = new QuestManager(this);
         this.templateManager = new TemplateManager(this);
-        this.itemDatabase = new ItemDatabase(this);
         this.inventory = new InventoryManager(this);
         this.zoneManager = new ZoneManager(this);
 
@@ -53,22 +52,13 @@ class Common_Load extends Phaser.Scene
                 level: 0
             }
         }
-        loader.sharedData.inventory =  {
-            logic: {
-                manager: loader.inventory
-            }
-        }
-        loader.itemDatabase.setupDatabase();
 
         // Load quest data
         if (loader.sharedData.questManager === undefined) {
             loader.sharedData.questManager = loader.questManager
             loader.sharedData.questManager.initializeQuestData();
         }
-        if (loader.sharedData.templateManager === undefined) {
-            loader.sharedData.templateManager = loader.templateManager
-            loader.sharedData.templateManager.initializeData();
-        }
+        this.templateManager.create()
 
         if (loader.sharedData.zoneManager === undefined){
             loader.sharedData.zoneManager = loader.zoneManager;

@@ -1,9 +1,9 @@
 const ITEM_TYPES = 
 {
-    NONE: -1,
+    ALL: -1,
     SPECIAL: 0,
     CLOTHES: 1,
-    PLANT: 2,
+    PLANTS: 2,
     PLACEABLE: 3,
     CARDS: 4,
     PRODUCE: 5

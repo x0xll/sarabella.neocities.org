@@ -1,103 +1,107 @@
 class InventoryManager
 {
-    constructor(phaserScene)
-    {
+    constructor(phaserScene) {
         this.phaserScene = phaserScene;
-    }
 
-    addItem(itemData, amount)
-    {
-        let logicContainer = this.phaserScene.sharedData.inventory.logic;
-
-        if (logicContainer.allItems.get(itemData.id) === undefined)
-        {
-            console.log("No item created with this id!");
-            return;
-        }
-
-        if (logicContainer.currentItems === undefined)
-            logicContainer.currentItems = new Map();
-
-        let currentAmount = logicContainer.currentItems.get(itemData.id);
-        if (currentAmount === undefined)
-            currentAmount = 0;
-        logicContainer.currentItems.set(itemData.id, currentAmount + amount);
-    }
-
-    removeItem(itemData, amount)
-    {
-        let logicContainer = this.phaserScene.sharedData.inventory.logic;
-
-        if (logicContainer.allItems.get(itemData.id) === undefined)
-        {
-            console.log("No item created with this id!");
-            return;
-        }
-
-        if (logicContainer.currentItems === undefined)
-            logicContainer.currentItems = new Map();
-
-        let currentAmount = logicContainer.currentItems.get(itemData.id);
-        if (currentAmount === undefined || currentAmount - amount <= 0)
-        {
-            logicContainer.currentItems.delete(itemData.id);
-            return;
-        }
-
-        logicContainer.currentItems.set(itemData.id, currentAmount - amount);
-    }
-
-    hasItem(itemData, amount)
-    {
-        let logicContainer = this.phaserScene.sharedData.inventory.logic;
-
-        if (logicContainer.allItems.get(itemData.id) === undefined)
-        {
-            console.log("No item created with this id!");
-            return;
-        }
-
-        if (logicContainer.currentItems === undefined)
-            logicContainer.currentItems = new Map();
-
-        let currentAmount = logicContainer.currentItems.get(itemData.id);
-        if (currentAmount === undefined)
-            currentAmount = 0;
-
-        return currentAmount >= amount;
-    }
-
-    getItemPerType(type)
-    {
-        let logicContainer = this.phaserScene.sharedData.inventory.logic.currentItems;
-        let items = [];
-
-        if (logicContainer === undefined)
-            return items;
-
-        let allItems = this.phaserScene.sharedData.inventory.logic.allItems;
-        let itemList = [];
-        for (let [key, value] of allItems.entries()) {
-            itemList.push(value);
-        }
-
-        for (let i = 0; i < logicContainer.size; i++)
-        {
-            let data = itemList[i];
-
-            if (data !== undefined && data.type == type)
-            {
-                let slotData = 
-                {
-                    id: data.id,
-                    type: data.type,
-                    amount: logicContainer[i]
-                }
-
-                items.push(slotData);
+        if (phaserScene.sharedData.inventory === undefined) {
+            phaserScene.sharedData.inventory = {
+                manager: this,
+                allItems: {}
             }
         }
+        // Note: each item in the inventory (allItems) has a template name as the key and the number of that item as its value
+    }
 
-        return items;
+    addItem(itemTemplate, amount=1) {
+        const allItems = this.phaserScene.sharedData.inventory.allItems
+
+        if (allItems[itemTemplate]) { 
+            allItems[itemTemplate] = allItems[itemTemplate] + amount 
+        }  else { 
+            allItems[itemTemplate] = amount 
+        }
+    }
+
+    removeItem(itemTemplate, amount=1) {
+        const allItems = this.phaserScene.sharedData.inventory.allItems
+        const count = this.getItemCount(itemTemplate)
+
+        if (count >= amount) {
+            allItems[itemTemplate] = allItems[itemTemplate] - amount
+            if (allItems[itemTemplate] === 0) { allItems[itemTemplate] }
+            return true
+        } else {
+            console.log(`Could not remove ${amount} ${itemTemplate}. Only have ${count}`)
+            return false
+        }
+    }
+
+    getItemCount(itemTemplate) {
+        const allItems = this.phaserScene.sharedData.inventory.allItems
+
+        let count
+        if (allItems[itemTemplate] === undefined) {
+            count = 0
+        } else {
+            count = allItems[itemTemplate]
+        }
+        return count
+    }
+
+    getItemByType(type) {
+        const allItems = this.phaserScene.sharedData.inventory.allItems
+
+        const filteredItems = {}
+        for (let [key] of Object.entries(allItems)) {
+            const template = this.phaserScene.sharedData.templateManager.getTemplate(key)
+
+            let test = false
+            switch (type) {
+                case ITEM_TYPES.ALL:
+                    test = true
+                    break;
+                case ITEM_TYPES.PRODUCE:
+                    test = template.template === "PlantProduceTemplate"
+                    break;
+                case ITEM_TYPES.SPECIAL:
+                    test = template.QuestItem !== undefined
+                    break;
+                case ITEM_TYPES.PLANTS:
+                    test = template.Seed !== undefined
+                    break;
+                case ITEM_TYPES.CARDS:
+                    test = template.CardEntity !== undefined
+                    break;
+                case ITEM_TYPES.PLACEABLE:
+                    test = template.PlaceEntity !== undefined
+                    break;
+                case ITEM_TYPES.CLOTHES:
+                    test = template.AvatarCustomizationData !== undefined
+                    break;
+            
+                default:
+                    break;
+            }
+            
+            if (test) {
+                filteredItems[key] = allItems[key]
+            }
+        }
+        return filteredItems
+    }
+
+    getItemByTemplates(templateArray) {
+        const allItems = this.phaserScene.sharedData.inventory.allItems
+
+        const filteredItems = {}
+        for (let [key] of Object.entries(allItems)) {
+            templateArray.forEach(templateID => {
+                if (templateID === key) {
+                    filteredItems[key] = allItems[key]
+                }
+            });
+            
+        }
+        return filteredItems
     }
 }

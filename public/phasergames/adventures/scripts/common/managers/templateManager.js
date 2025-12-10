@@ -34,7 +34,17 @@ class TemplateManager {
         "name": ["component", "name", 1, "text"]
     }
 
-    // TODO : get addition quests info from the NPC file
+    // TODO : get additional quest info from the NPC file
+
+    /**
+     * Runs during the create phase of the load scene
+     */
+    create() {
+        if (this.phaserScene.sharedData.templateManager === undefined) {
+            this.phaserScene.sharedData.templateManager = this
+            this.initializeData();
+        }
+    }
     
     /**
      * Preloads the xml files for the quests into cache so they can be used later. Should be called from the loadScreen scene
@@ -120,6 +130,7 @@ class TemplateManager {
     
     #mergeTemplates(templateArray) {
         const baseTemplate = templateArray[0]
+        if (baseTemplate.alreadyMerged) return
         baseTemplate.alreadyMerged = true
         for (let index = 1; index < templateArray.length; index++) {
             const nextTemplate = templateArray[index];

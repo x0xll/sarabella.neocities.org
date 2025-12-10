@@ -71,7 +71,6 @@ class ZoneBase extends Phaser.Scene
         //debug_DrawTriggerQuest(zone);
 
         // Telport between zones
-        // TODO Save entity data when teleporting between zones (so spawned items don't reset)
         if (zone.entities.player.pathList.length === 0)
         {
             let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
@@ -103,7 +102,6 @@ class ZoneBase extends Phaser.Scene
         this.entities = {}
         new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
-        // TODO create a base templateEntity class to use for all entities that use a template for their logic
         if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
                 let entityPos = this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID][key]
@@ -310,7 +308,6 @@ class ZoneBase extends Phaser.Scene
     }
 
     instantiateEntities() {
-        // TODO : Instantiate entities (player, npcs, plants)
         for (let [key] of Object.entries(this.entities)) {
             this.entities[key].create();
         }

@@ -14,10 +14,6 @@ class TemplateEntity extends Entity {
         this.templateID = templateID
         this.zoneID = zoneScene.zoneConfig.ID
 
-        if (this.getTemplateValue(["Character", "identifier", "text"])) {
-            this.characterID = this.getTemplateValue(templateID, ["Character", "identifier", "text"])
-        }
-
         // console.log(this.zoneScene.sharedData.templateManager.getTemplate(this.templateID))
 
         if (addToCurrentZone && loadLate) {
@@ -89,6 +85,8 @@ class TemplateEntity extends Entity {
             }
         } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
             let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
+            // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
+            // this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
             this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`)
             this.resetSpriteFacingDirection()
             this.resetSpriteDepth()

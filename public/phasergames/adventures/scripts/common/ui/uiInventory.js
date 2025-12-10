@@ -22,7 +22,7 @@ class uiInventory extends uiManagerBase
         height: 3
     }
 
-    #currentTab = ITEM_TYPES.SPECIAL;
+    #currentTab = ITEM_TYPES.ALL;
 
     constructor(phaserScene)
     {
@@ -67,6 +67,7 @@ class uiInventory extends uiManagerBase
 
     initialize()
     {
+        // TODO make inventory bag clickable so it can be clicked to remove show ITEM_TYPES.ALL
         // TODO mask background based on border
         var background = this.phaserScene.add.image(270, 120, this.INVENTORY_BACKGROUND_PANEL)
                     .setOrigin(0)
@@ -112,7 +113,7 @@ class uiInventory extends uiManagerBase
 
         plantBtn.on('pointerup', (pointer) =>  
         { 
-            this.changeTab(ITEM_TYPES.PLANT);
+            this.changeTab(ITEM_TYPES.PLANTS);
         });
 
         var placeableBtn = this.phaserScene.add.image(220, 275, this.INVENTORY_BTN_PLACEABLE)
@@ -261,20 +262,9 @@ class uiInventory extends uiManagerBase
 
     updateSlots()
     {
-        let allItems = this.phaserScene.sharedData.inventory.logic.manager.getItemPerType(this.#currentTab);
+        let allItems = this.phaserScene.sharedData.inventory.manager.getItemByType(this.#currentTab);
+        console.log(allItems)
 
-        for (let i = 0; i < this.phaserScene.sharedData.inventory.ui.elements.slots.length; i++)
-        {
-            if (i >= allItems.length)
-            {
-                this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(0);
-                this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(0);
-                return;
-            }
-
-            this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(1);
-            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(1);
-            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setTexture("TEST_" + allItems[i].id);
-        }
+        // TODO Rewrite UI to use new system
     }
 }

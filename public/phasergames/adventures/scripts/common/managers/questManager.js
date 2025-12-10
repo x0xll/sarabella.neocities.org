@@ -197,7 +197,8 @@ class QuestManager {
         "sc_1",
         "sc_6",
         "spc1activation",
-        "gp",
+        "gp1.01",
+        "gp1.07",
         "furniturestore"
         //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
     ]
@@ -536,8 +537,8 @@ class QuestManager {
         "RemoveZoneItemAnywhereAction": this.#removeZoneItemAnywhereAction,
         "TryAddZoneItemToAction": this.#missingAction,
         "AddHorseshoesAction": this.#missingAction,
-        "AddMultipleInventoryAction": this.#missingAction,
-        "RemoveMultipleInventoryAction": this.#missingAction,
+        "AddMultipleInventoryAction": this.#addMultipleInventoryAction,
+        "RemoveMultipleInventoryAction": this.#removeMultipleInventoryAction,
         "AddTokenItemAction": this.#missingAction,
         "RemoveTokenAction": this.#missingAction,
         "TemporaryAnimationAction": this.#missingAction,
@@ -671,5 +672,13 @@ class QuestManager {
                 }
             }
         }
+    }
+
+    async #addMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
+        phaserScene.sharedData.inventory.manager.addItem(action.itemId[0], action.count[0])
+    }
+
+    async #removeMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
+        phaserScene.sharedData.inventory.manager.removeItem(action.itemId[0], action.count[0])
     }
 }
