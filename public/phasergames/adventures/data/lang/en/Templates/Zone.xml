@@ -35,7 +35,7 @@
       <scale>0.5</scale>
     </component>
     <component type="components.ToolTipComponent" name="ToolTip">
-      <ToolTipText>Le Théâtre</ToolTipText>
+      <ToolTipText>The Gazebo</ToolTipText>
     </component>
   </template>
   <template name="MarkerR011">
@@ -52,63 +52,63 @@
       <scale>0.5</scale>
     </component>
     <component type="components.ToolTipComponent" name="ToolTip">
-      <ToolTipText>Cabane de Wildscape</ToolTipText>
+      <ToolTipText>Wildscape Cabin</ToolTipText>
     </component>
   </template>
   <!-- Street Signs-->
   <template name="StreetSignZone1" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Fermes de Canter</ToolTipText>
+      <ToolTipText>Canter Farms</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone2" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Promenade de Rolandsgaard</ToolTipText>
+      <ToolTipText>Rolandsgaard Boardwalk</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone3" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Entrée de la salle de bal de Rolandsgaard</ToolTipText>
+      <ToolTipText>Rolandsgaard's Ballroom Entrance Room</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone4" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Salle du jardin de Rolandsgaard</ToolTipText>
+      <ToolTipText>Rolandsgaard's Garden Room</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone5" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Salle de la fontaine de Rolandsgaard</ToolTipText>
+      <ToolTipText>Rolandsgaard's Foutain Room</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone6" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Salle royale de Rolandsgaard</ToolTipText>
+      <ToolTipText>Rolandsgaard's Royal Room</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone7" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Place de la fontaine</ToolTipText>
+      <ToolTipText>Fountain Plaza</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone8" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Allée de Bagatella</ToolTipText>
+      <ToolTipText>Bagatella Row</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone9" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Rue des Artisans</ToolTipText>
+      <ToolTipText>Artisans Way</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone10" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>La Lisière</ToolTipText>
+      <ToolTipText>The Outskirts</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone11" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Le Sentier</ToolTipText>
+      <ToolTipText>The Trailhead</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone12" template="SignPost">
@@ -123,32 +123,32 @@
   </template>
   <template name="StreetSignZone15" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Orée de la forêt de Darkcomb</ToolTipText>
+      <ToolTipText>Darkcomb Hedge</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone16" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Forêt de Darkcomb</ToolTipText>
+      <ToolTipText>Darkcomb Forest</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone22" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Rive ouest de la rivière Fastalon</ToolTipText>
+      <ToolTipText>Fastalon West Riverbank</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone23" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>La Vallée des Roses</ToolTipText>
+      <ToolTipText>The Rose Valley</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone25" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Caverne de Boda</ToolTipText>
+      <ToolTipText>Boda's Cave</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone26" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Repaire des loups</ToolTipText>
+      <ToolTipText>Wolf Den</ToolTipText>
     </component>
   </template>
   <template name="StreetSignZone27" template="SignPost">
@@ -158,7 +158,7 @@
   </template>
   <template name="StreetSignZone28" template="SignPost">
     <component name="ToolTip">
-      <ToolTipText>Grotte du désert</ToolTipText>
+      <ToolTipText>Desert Cave</ToolTipText>
     </component>
   </template>
   <!-- To: Canter Farm, From: Canter Farms Cottage -->
