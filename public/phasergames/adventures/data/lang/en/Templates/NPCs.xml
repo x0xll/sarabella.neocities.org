@@ -21,11 +21,11 @@
       <scale>0.5</scale>
     </component>
     <component type="components.commands.TalkCommand" name="TalkCommand">
-      <text>Bonjour !</text>
-      <text>Quelle belle journée !</text>
-      <text>As-tu fait pousser toutes les plantes que tu pouvais ?</text>
-      <text>Faire pousser des plantes ramène la magie au Nord du Septentrion.</text>
-      <text>Ce que tu fais est très important. </text>
+      <text>Hello!</text>
+      <text>It's such a pretty day today!</text>
+      <text>Have you been growing as many plants as you can?</text>
+      <text>Growing plants brings magic back to North of North.</text>
+      <text>You are doing very important work.</text>
     </component>
   </template>
   <template name="GadgetTemplate">
@@ -222,8 +222,8 @@
       <item>I255Template</item>
     </component>
     <component type="components.commands.TalkCommand" name="TalkCommand">
-      <text>Bonjour !</text>
-      <text>Quelle belle journée !</text>
+      <text>Hello!</text>
+      <text>It's such a pretty day today.</text>
       <text>Donne-moi des friandises et je te ferai un tour !</text>
       <text>Tu peux utiliser des plantes pour créer des teintures colorées.</text>
       <text>Rends visite à M. Bartholomew pour obtenir des graines de jolies fleurs. </text>
@@ -254,7 +254,7 @@
       <name>Citrustack (blue)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Citrustack (bleu)</ToolTipText>
+      <ToolTipText>Citrustack (blue)</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I150dTemplate</template>
@@ -600,7 +600,7 @@
       <identifier>C001</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Cade Traveler.</text>
+      <text>Hello, I am Cade Traveler.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Cade Traveler</ToolTipText>
@@ -622,7 +622,7 @@
       <identifier>C002</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Emma Roland.</text>
+      <text>Hello, I am Emma Roland.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Emma Roland</ToolTipText>
@@ -644,7 +644,7 @@
       <identifier>C003</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Colm Roland.</text>
+      <text>Hello, I am Colm Roland.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Colm Roland</ToolTipText>
@@ -666,7 +666,7 @@
       <identifier>C004</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Penny Inkwell.</text>
+      <text>Hello, I am Penny Inkwell.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Penny Inkwell</ToolTipText>
@@ -688,7 +688,7 @@
       <identifier>C005</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Sara .</text>
+      <text>Hello, I am Sara.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Sara </ToolTipText>
@@ -710,7 +710,7 @@
       <identifier>C006</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Deru .</text>
+      <text>Hello, I am Deru.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Deru </ToolTipText>
@@ -732,7 +732,7 @@
       <identifier>C007</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Tyri .</text>
+      <text>Hello, I am Tyri.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Tyri </ToolTipText>
@@ -754,7 +754,7 @@
       <identifier>C008</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Iverson P. Opus.</text>
+      <text>Hello, I am Iverson P. Opus.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Iverson P. Opus</ToolTipText>
@@ -780,7 +780,7 @@
       <identifier>C009</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Winston Snowshire.</text>
+      <text>Hello, I am Winston Snowshire.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Winston Snowshire</ToolTipText>
@@ -802,7 +802,7 @@
       <identifier>C010</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Ivenna .</text>
+      <text>Hello, I am Ivenna .</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Ivenna </ToolTipText>
@@ -824,7 +824,7 @@
       <identifier>C011</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Shine Anders.</text>
+      <text>Hello, I am Shine Anders.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Shine Anders</ToolTipText>
@@ -846,7 +846,7 @@
       <identifier>C012</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Ray Smithin.</text>
+      <text>Hello, I am Ray Smithin.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Ray Smithin</ToolTipText>
@@ -868,10 +868,10 @@
       <identifier>C013</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Boda la sorcière.</text>
+      <text>Hello, I am Boda the Sorceress.</text>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Boda la sorcière</ToolTipText>
+      <ToolTipText>Boda the Sorceress</ToolTipText>
     </component>
   </template>
   <template name="C014Template" template="ShopkeeperTemplate">
@@ -890,7 +890,7 @@
       <identifier>C014</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Mr Bartholomew.</text>
+      <text>Hello, I am Mr Bartholomew.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Mister Bartholomew</ToolTipText>
@@ -916,7 +916,7 @@
       <identifier>C015</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Mother Comfort.</text>
+      <text>Hello, I am Mother Comfort.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Mother Comfort</ToolTipText>
@@ -938,7 +938,7 @@
       <identifier>C016</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Jory Critterton.</text>
+      <text>Hello, I am Jory Critterton.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Jory Critterton</ToolTipText>
@@ -964,7 +964,7 @@
       <identifier>C017</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Gaelic “le Forestier” Weyland.</text>
+      <text>Hello, I am Gaelic “Woods” Weyland.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Gaelic "Woods" Weyland</ToolTipText>
@@ -990,7 +990,7 @@
       <identifier>C018</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Hannah Lovet.</text>
+      <text>Hello, I am Hannah Lovet.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Hannah Lovet</ToolTipText>
@@ -1016,7 +1016,7 @@
       <identifier>C019</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Marta Thomas.</text>
+      <text>Hello, I am Marta Thomas.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Marta Thomas</ToolTipText>
@@ -1038,7 +1038,7 @@
       <identifier>C024</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Salut. Je suis Marta la monitrice.</text>
+      <text>Hi, I am Marta the Camp Counselor</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Camp Counselor Marta</ToolTipText>
@@ -1066,7 +1066,7 @@
       <identifier>C020</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Tiff Miltondotter.</text>
+      <text>Hello, I am Tiff Miltondotter.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Tiff Miltondotter</ToolTipText>
@@ -1088,7 +1088,7 @@
       <identifier>C021</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je ne suis qu'une simple vieille femme.</text>
+      <text>Hello, I am just an old woman.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Old Crone</ToolTipText>
@@ -1110,7 +1110,7 @@
       <identifier>C022</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Johan Bloom.</text>
+      <text>Hello, I am Johan Bloom.</text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Johan Bloom</ToolTipText>
@@ -1132,7 +1132,7 @@
       <identifier>C023</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Bonjour, je suis Barush. </text>
+      <text>Hello, I am Barush. </text>
     </component>
     <component name="ToolTip">
       <ToolTipText>Barush </ToolTipText>
@@ -1370,7 +1370,7 @@
       <name>Wildscape Nix</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Nix de Wildscape</ToolTipText>
+      <ToolTipText>Wildscape Nix</ToolTipText>
     </component>
   </template>
   <template name="M005Template" template="NPCTemplate">
@@ -1393,7 +1393,7 @@
       <name>Wolf</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Loup</ToolTipText>
+      <ToolTipText>Wolf</ToolTipText>
     </component>
     <component type="components.commands.ApplyCommand" name="ApplyCommand">
       <item>I003Template</item>
@@ -1427,7 +1427,7 @@
       <gridFootY>3</gridFootY>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Loups en cage</ToolTipText>
+      <ToolTipText>Caged Wolves</ToolTipText>
     </component>
   </template>
   <template name="M005gTemplate" template="NPCTemplate">
@@ -1449,7 +1449,7 @@
       <name>Wolf</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Loup</ToolTipText>
+      <ToolTipText>Wolf</ToolTipText>
     </component>
     <component type="components.commands.GiveCommand" name="GiveCommand">
       <item>P036ProduceTemplate</item>
@@ -1476,7 +1476,7 @@
       <name>Wolf</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Loup</ToolTipText>
+      <ToolTipText>Wolf</ToolTipText>
     </component>
     <component type="components.commands.ApplyCommand" name="ApplyCommand">
       <item>I003Template</item>
@@ -1506,7 +1506,7 @@
       <name>Wolf Cub</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Louveteau</ToolTipText>
+      <ToolTipText>Wolf Cub</ToolTipText>
     </component>
   </template>
   <template name="M012Template" template="NPCTemplate">
@@ -1538,7 +1538,7 @@
       <item>P012ProduceTemplate</item>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Araignée géante</ToolTipText>
+      <ToolTipText>Giant Spider</ToolTipText>
     </component>
   </template>
   <template name="M014Template" template="NPCTemplate">
@@ -1560,7 +1560,7 @@
       <name>Fairy Ring</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Anneau de fée</ToolTipText>
+      <ToolTipText>Fairy Ring</ToolTipText>
     </component>
     <component type="components.commands.GiveCommand" name="GiveCommand">
       <item>P023ProduceTemplate</item>
@@ -1586,7 +1586,7 @@
       <name>Fairy Ring</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Anneau de fée</ToolTipText>
+      <ToolTipText>Fairy Ring</ToolTipText>
     </component>
     <component type="components.commands.GiveCommand" name="GiveCommand">
       <item>P031ProduceTemplate</item>
@@ -1613,7 +1613,7 @@
       <name>Fairy Ring</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Anneau de fée</ToolTipText>
+      <ToolTipText>Fairy Ring</ToolTipText>
     </component>
   </template>
   <template name="M016aTemplate" template="NPCTemplate">
@@ -1635,7 +1635,7 @@
       <name>Fairy Ring</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Anneau de fée</ToolTipText>
+      <ToolTipText>Fairy Ring</ToolTipText>
     </component>
     <component type="components.commands.GiveCommand" name="GiveCommand">
       <item>I159aTemplate</item>
@@ -1699,7 +1699,7 @@
     <component type="components.commands.InteractCommand" name="InteractCommand" />
     <component type="components.LogicComponent" name="Logic">
       <quest id="QUE-0000002105">
-        <description>Parle au Twinkle Imp</description>
+        <description>Talk to the Twinkle Imp</description>
         <line description="Test">
           <trigger>
             <object type="questData.ContextItemTrigger">
@@ -1810,7 +1810,7 @@
       <name>Wildscape Whiffle Bear</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Whiffle Bear de Wildscape</ToolTipText>
+      <ToolTipText>Wildscape Whiffle Bear</ToolTipText>
     </component>
   </template>
   <template name="M021Template" template="NPCTemplate">
@@ -1856,7 +1856,7 @@
       <name>Wildscape Bubble Turtle</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bubble Turtle de Wildscape</ToolTipText>
+      <ToolTipText>Wildscape Bubble Turtle</ToolTipText>
     </component>
   </template>
   <template name="M021bTemplate" template="NPCTemplate">
@@ -1925,7 +1925,7 @@
       <name>Caged Starstone Otter</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Starstone Otter en cage</ToolTipText>
+      <ToolTipText>Caged Starstone Otter</ToolTipText>
     </component>
     <component type="components.commands.ApplyCommand" name="ApplyCommand">
       <item>I033Template</item>
@@ -2073,7 +2073,7 @@
       <name>Wildscape Angelic Cavy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Angelic Cavy de Wildscape</ToolTipText>
+      <ToolTipText>Wildscape Angelic Cavy</ToolTipText>
     </component>
   </template>
   <template name="M029bTemplate" template="NPCTemplate">
@@ -2096,7 +2096,7 @@
       <name>Sick Angelic Cavy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Angelic Cavy malade</ToolTipText>
+      <ToolTipText>Sick Angelic Cavy</ToolTipText>
     </component>
     <component type="components.commands.GiveCommand" name="GiveCommand">
       <item>I143bTemplate</item>
@@ -11900,4 +11900,5 @@
       <template>IM018fcTemplate</template>
     </component>
   </template>
+
 </things>
