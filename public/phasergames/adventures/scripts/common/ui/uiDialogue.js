@@ -86,7 +86,7 @@ class uiDialogue extends uiManagerBase
                                 .setScrollFactor(0);
 
         // Character Avatar
-        var charaPortrait = this.phaserScene.add.image(x, y, this.DIALOGUE_HUMANS_THUMBNAILS, "C001")
+        var charaPortrait = this.phaserScene.add.image(x-2, y, this.DIALOGUE_HUMANS_THUMBNAILS, "C001")
                                 .setOrigin(0)
                                 .setScrollFactor(0);
         const mask = new Phaser.Display.Masks.BitmapMask(this.phaserScene, charaPortraitMask);
@@ -109,7 +109,7 @@ class uiDialogue extends uiManagerBase
                             .setInteractive();
 
         // Continue button
-        var continueBtn = this.phaserScene.add.image(105, 400, this.DIALOGUE_CONTINUE_BTN)
+        var continueBtn = this.phaserScene.add.image(105, 480, this.DIALOGUE_CONTINUE_BTN)
                             .setOrigin(0)
                             .setScrollFactor(0)
                             .setInteractive();
@@ -123,7 +123,7 @@ class uiDialogue extends uiManagerBase
 
         });
 
-        var continueTxt = this.phaserScene.add.text(155, 412, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var continueTxt = this.phaserScene.add.text(continueBtn.x+50, continueBtn.y+12, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
                             .setDepth(100);
@@ -153,12 +153,6 @@ class uiDialogue extends uiManagerBase
     // TODO: Handle if dialogue has no character to display
     show(questID, characterid, text, choices, image)
     {
-        // TODO get character name from id
-        const character = {
-            name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
-            id: characterid
-        }
-
         // TODO check if this actually works
         if (Array.isArray(text) && text.length === 1) {
             text = text[0]
@@ -175,23 +169,23 @@ class uiDialogue extends uiManagerBase
 
         this.phaserScene.sharedData.global.uiOpen = true;
         this.phaserScene.sharedData.dialogue.ui.open = true;
-        this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(1);
 
-        // TODO :Need to get the localized name
-        this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
+        // Character portrait
+        const character = {
+            name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
+            id: characterid
+        }
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
             (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
              : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
              : this.DIALOGUE_HORSES_THUMBNAILS));
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
 
+        let textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalText
         if (image !== undefined)
         {
-            this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(1);
-            this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setText(this.formatQuestText(text));
+            textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalImgText
             
             this.lastImage = image
             this.phaserScene.load.once('complete', () => {
@@ -200,20 +194,11 @@ class uiDialogue extends uiManagerBase
                 }, this);
             this.phaserScene.load.image(`Dialogue${image}`, `./assets/extracted/UI/Dialogue/Images/${image}.png`);
             this.phaserScene.load.start();
-
         }
-        else
-        {
-            this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(1);
-            this.phaserScene.sharedData.dialogue.ui.elements.normalText.setText(this.formatQuestText(text));
-        }
-
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
+        textElement.setText(this.formatQuestText(text));
 
 
         let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
-        
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup")
         this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', (pointer) => 
         { 
@@ -224,6 +209,25 @@ class uiDialogue extends uiManagerBase
         
         
         // TODO : get the dialogue choices
+
+
+
+        // Set UI item position
+        textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - textElement.height - 20)
+        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setY(textElement.y+5) // +5
+        this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setY(textElement.y-55)
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setY(textElement.y-55)
+        this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setY(textElement.y-55)
+
+        // Set UI items visible
+        this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(1);
+        textElement.setAlpha(1);
+        this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
+        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
+        this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
     }
 
     hide()
