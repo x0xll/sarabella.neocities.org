@@ -74,10 +74,11 @@ class uiInventory extends uiManagerBase
         this.tabDownSound = this.phaserScene.sound.add(this.SOUNDS.tabDown, {volume: VOLUME});
         this.itemHoverSound = this.phaserScene.sound.add(this.SOUNDS.itemHover, {volume: VOLUME});
         this.itemDownSound = this.phaserScene.sound.add(this.SOUNDS.itemDown, {volume: VOLUME});
-        // TODO make inventory bag clickable so it can be clicked to remove show ITEM_TYPES.ALL
-        // TODO mask background based on border
         const sprite = this.phaserScene.add.spine(405, 265, `inventory-json`, `inventory-atlas`)
                     .setScrollFactor(0);
+
+        // TODO add horseshoe count to bottom
+        
 
         const hitboxes = [
             this.phaserScene.add.graphics().setInteractive(new Phaser.Geom.Rectangle(249, 82, 64, 78), Phaser.Geom.Rectangle.Contains).setScrollFactor(0), // main
@@ -339,6 +340,7 @@ class uiInventory extends uiManagerBase
 
         this.phaserScene.sharedData.inventory.ui.elements.scrollBar.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.main.animationState.setAnimation(8, `scroll/hide`, false)
+        this.phaserScene.sharedData.inventory.ui.elements.main.animationState.setAnimation(7, `x/up`, false)
         this.phaserScene.sharedData.inventory.ui.elements.scrollZone.disableInteractive()
         this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(0).disableInteractive();
         this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(0).disableInteractive();
