@@ -53,7 +53,7 @@
 
     <script src="/language.js"></script>
 
-    <body style="text-align: center;"  onload="loadLanguagePref()">
+    <body style="text-align: center;">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
@@ -62,7 +62,8 @@
                     "fr",
                     "en"
                 ]
-                let  lang = getCurrentLanguageCode()
+                loadLanguagePref(false); 
+                let lang = getCurrentLanguageCode()
                 if (AVAILABLE.indexOf(lang) === -1) {
                     lang = "en"
                 }
