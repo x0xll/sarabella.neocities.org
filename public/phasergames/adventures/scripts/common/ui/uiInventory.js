@@ -27,6 +27,7 @@ class uiInventory extends uiManagerBase
     constructor(phaserScene)
     {
         super(phaserScene);
+        this.slots = {}
     }
 
     load()
@@ -59,10 +60,9 @@ class uiInventory extends uiManagerBase
         // TODO : Get scroll bar
         // TODO : Get horseshoes bottom section
 
-
-        // TEST ITEM
-        this.phaserScene.load.image("TEST_P001_Produce", "./assets/extracted/Items/Produce/P001_Produce.png");
-        this.phaserScene.load.image("TEST_P001_Seed", "./assets/extracted/Items/Seeds/P001_Seed.png");
+        this.phaserScene.load.atlas('inv_items', './assets/extracted/Items/items.png', './assets/extracted/Items/items.json');
+        this.phaserScene.load.atlas('inv_items2', './assets/extracted/Items/items2.png', './assets/extracted/Items/items2.json');
+        this.phaserScene.load.atlas('inv_plantinventory', './assets/extracted/Items/plantinventory.png', './assets/extracted/Items/plantinventory.json');
     }
 
     initialize()
@@ -150,29 +150,16 @@ class uiInventory extends uiManagerBase
         });
 
         // TODO: Handle scrolling
-        var slotList = [];
-        for (let x = 0; x < this.INVENTORY_SLOT_SIZE.width; x++)
-        {
-            for (let y = 0; y < this.INVENTORY_SLOT_SIZE.height; y++)
-            {
-                var slot = this.phaserScene.add.image(this.INVENTORY_SLOT_SIZE.xStart + x * this.INVENTORY_SLOT_SIZE.xOffset, this.INVENTORY_SLOT_SIZE.yStart + y * this.INVENTORY_SLOT_SIZE.yOffset, this.INVENTORY_SLOT)
-                            .setOrigin(0)
-                            .setScrollFactor(0);
-
-                var slotIcon = this.phaserScene.add.image(this.INVENTORY_SLOT_SIZE.xStart + x * this.INVENTORY_SLOT_SIZE.xOffset + 8, this.INVENTORY_SLOT_SIZE.yStart + y * this.INVENTORY_SLOT_SIZE.yOffset + 8, this.INVENTORY_SLOT)
-                                .setOrigin(0)
-                                .setScrollFactor(0)
-                                .setScale(.5);
-
-                let slotData = 
-                {
-                    bg: slot,
-                    icon: slotIcon
-                }
-
-                slotList.push(slotData);
-            }
-        }
+        // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(270, 170, 275, 200).setAlpha(.5)
+        //                 .setScrollFactor(0);
+        const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(270, 170, 275, 200)
+                        .setScrollFactor(0))
+        const tempScrollBar = this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(510, 170, 29, 200).setAlpha(.5)
+                        .setScrollFactor(0);
+        const scrollZone = this.phaserScene.add.zone(510, 170, 29, 200)
+                        .setScrollFactor(0)
+                        .setOrigin(0)
+                        .setInteractive()
 
         var closeBtn = this.phaserScene.add.image(510, 105, this.INVENTORY_CLOSE_BUTTON)
                         .setOrigin(0)
@@ -195,7 +182,9 @@ class uiInventory extends uiManagerBase
             placeableBtn: placeableBtn,
             cardsBtn: cardsBtn,
             produceBtn: produceBtn,
-            slots: slotList
+            scrollMask: scrollMask,
+            scrollZone: scrollZone,
+            tempScrollBar: tempScrollBar
         };
 
         super.initialize();
@@ -227,6 +216,7 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.produceBtn.setAlpha(1);
 
         this.updateSlots();
+        this.updateScrollBar()
 
         super.show();
     }
@@ -234,6 +224,11 @@ class uiInventory extends uiManagerBase
     hide()
     {
         super.hide();
+
+
+        for (let [key, value] of Object.entries(this.slots)) {
+            this.slots[key].destroy()
+        }
 
         this.phaserScene.sharedData.inventory.ui.open = false;
         this.phaserScene.sharedData.inventory.ui.elements.background.setAlpha(0);
@@ -247,24 +242,73 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.cardsBtn.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.produceBtn.setAlpha(0);
 
-        for (let i = 0; i < this.phaserScene.sharedData.inventory.ui.elements.slots.length; i++)
-        {
-            this.phaserScene.sharedData.inventory.ui.elements.slots[i].bg.setAlpha(0);
-            this.phaserScene.sharedData.inventory.ui.elements.slots[i].icon.setAlpha(0);
-        }
+        this.phaserScene.sharedData.inventory.ui.elements.tempScrollBar.setAlpha(0);
+        this.phaserScene.sharedData.inventory.ui.elements.scrollZone.off("pointermove")
     }
 
     changeTab(newType)
     {
         this.#currentTab = newType;
         this.updateSlots();
+        this.updateScrollBar();
     }
 
     updateSlots()
     {
         let allItems = this.phaserScene.sharedData.inventory.manager.getItemByType(this.#currentTab);
-        console.log(allItems)
 
-        // TODO Rewrite UI to use new system
+        for (let [key, value] of Object.entries(this.slots)) {
+            if (allItems[key] === undefined) {
+                this.slots[key].destroy()
+            }
+        }
+
+        let slotCount = 0
+        for (let [key, value] of Object.entries(allItems)) {
+            if (this.slots[key] === undefined) {
+                this.slots[key] = new InventorySlot(this.phaserScene, key, value, slotCount)
+            } else {
+                this.slots[key].resetSlot(0, slotCount)
+            }
+            slotCount++
+        }
+    }
+
+    updateScrollBar() {
+        const UI = this
+        const slotNumber = Object.keys(UI.slots).length
+        if (((slotNumber - (slotNumber % 4)) / 4) > 2) {
+            this.phaserScene.sharedData.inventory.ui.elements.tempScrollBar.setAlpha(.5);
+            this.phaserScene.sharedData.inventory.ui.elements.scrollZone.on('pointermove', function (pointer) {
+                if (pointer.isDown)
+                {
+                    const slotNumber = Object.keys(UI.slots).length
+
+                    const topPos = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.y
+                    const scrollHeight = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.height
+                    const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
+                    const maskHeight = 200//scrollMask.height
+                    // game.entryScroll.y = pointer.y
+                    let moveText = (pointer.y - topPos) / scrollHeight * (slotsHeight - maskHeight)
+
+                    let percentage = (pointer.y - topPos) / scrollHeight * 100
+                    if (percentage < 7) {
+                        moveText = 0
+                        // game.entryScroll.y = topPos
+                    } else if (percentage > 93) {
+                        moveText = slotsHeight - maskHeight
+                        // game.entryScroll.y = topPos + scrollHeight
+                    }
+
+                    for (let [key, value] of Object.entries(UI.slots)) {
+                        UI.slots[key].resetSlot(-moveText)
+                    }
+                }
+
+            });
+        } else {
+            this.phaserScene.sharedData.inventory.ui.elements.tempScrollBar.setAlpha(0);
+            this.phaserScene.sharedData.inventory.ui.elements.scrollZone.off("pointermove")
+        }
     }
 }

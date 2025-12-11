@@ -246,6 +246,8 @@ class TemplateEntity extends Entity {
                 this.#talkCommand()
             } else if (this.getTemplateValue(["TrashCommand", "name"])) {
                 this.#trashCommand()
+            }  else if (this.getTemplateValue(["TakeCommand", "name"])) {
+                this.#takeCommand()
             } 
             return true
         }
@@ -269,8 +271,18 @@ class TemplateEntity extends Entity {
         * takeItem item is added to inventory
         * Entity is removed from world
         */
-        const takeItem = this.getTemplateValue(["TakeCommand", "item", "text"])
-        console.log(`Take command not fully implemented. Take item is: ${takeItem}`)
+        const takeItem = this.getTemplateValue(["TakeCommand", "template", "text"])
+        this.zoneScene.sharedData.inventory.manager.addItem(takeItem)
+
+        // TODO check if this part is correct (may be different for plants as well, since they use different take/harvest logic)
+        const triggerData = {
+            type: "ContextItemTrigger",
+            contextItem: "take",
+            templateID: takeItem
+        }
+        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+
+        this.destroy()
        }
     #trashCommand() {
         /*

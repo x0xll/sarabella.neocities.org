@@ -675,10 +675,10 @@ class QuestManager {
     }
 
     async #addMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
-        phaserScene.sharedData.inventory.manager.addItem(action.itemId[0], action.count[0])
+        phaserScene.sharedData.inventory.manager.addItem(action.itemId[0], parseInt(action.count[0]))
     }
 
     async #removeMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
-        phaserScene.sharedData.inventory.manager.removeItem(action.itemId[0], action.count[0])
+        phaserScene.sharedData.inventory.manager.removeItem(action.itemId[0], parseInt(action.count[0]))
     }
 }

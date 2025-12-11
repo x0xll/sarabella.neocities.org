@@ -31,7 +31,9 @@ class TemplateManager {
         "gridFootX": ["GridPosition", "gridFootX", "text"],
         "gridFootY": ["GridPosition", "gridFootY", "text"],
         "isBlocked": ["GridPosition", "isBlocked", "text"],
-        "name": ["component", "name", 1, "text"]
+        "name": ["component", "name", 1, "text"],
+        "movieClipFile":["MovieClip", "fileName", "text"],
+        "movieClipClass":["MovieClip", "className", "text"],
     }
 
     // TODO : get additional quest info from the NPC file
