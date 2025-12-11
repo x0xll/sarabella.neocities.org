@@ -248,6 +248,8 @@ class TemplateEntity extends Entity {
                 this.#trashCommand()
             }  else if (this.getTemplateValue(["TakeCommand", "name"])) {
                 this.#takeCommand()
+            }  else if (this.getTemplateValue(["BasicGrowing", "name"])) {
+                this.#takePlantCommand()
             } 
             return true
         }
@@ -264,26 +266,37 @@ class TemplateEntity extends Entity {
     }
 
     #tradeCommand() { }
-    #takeCommand() {
+
+    #takeCommand(takeItem = this.getTemplateValue(["TakeCommand", "template", "text"])) {
         /*
         * Click entity to see takeCommand option
         * Select takeCommand option
         * takeItem item is added to inventory
         * Entity is removed from world
         */
-        const takeItem = this.getTemplateValue(["TakeCommand", "template", "text"])
         this.zoneScene.sharedData.inventory.manager.addItem(takeItem)
 
         // TODO check if this part is correct (may be different for plants as well, since they use different take/harvest logic)
         const triggerData = {
             type: "ContextItemTrigger",
             contextItem: "take",
-            templateID: takeItem
+            templateID: this.templateID
         }
         this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
 
         this.destroy()
        }
+    #takePlantCommand() {
+        let takeItem = this.getTemplateValue(["BasicGrowing", "harvestSeedsItemId", "text"])
+        if (this.currentStage === this.getTemplateValue(["PlantMovieClip", "stages", "text"])) {
+            takeItem = this.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
+        }
+        this.#takeCommand(takeItem)
+    }
+    #uprootPlantCommand() {
+        this.#takeCommand(takeItem)
+    }
+
     #trashCommand() {
         /*
         * Click entity to see trashCommand option

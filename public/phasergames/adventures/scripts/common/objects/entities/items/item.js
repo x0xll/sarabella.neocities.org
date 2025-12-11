@@ -22,7 +22,7 @@ const CLOTHE_TYPES =
 class InventorySlot
 {
     PADDING = {x: 55, y: 55}
-    POS_START = {x: 315, y: 200}
+    POS_START = {x: 318, y: 200}
     SIZE = 40
     TEXT_SETTINGS = 
     {
@@ -47,11 +47,27 @@ class InventorySlot
 
         const slotPos = this.getSlotPos()
 
-        this.background = this.phaserScene.add.image(slotPos.x, slotPos.y, "Inventory_Slot")
+        this.background = this.phaserScene.add.sprite(slotPos.x, slotPos.y, this.phaserScene.sharedData.inventory.ui.manager.INVENTORY_SLOT, "up").setInteractive()
         this.image = this.phaserScene.add.sprite(slotPos.x, slotPos.y, "inv_"+spriteFile, spriteClass)
         this.text = this.phaserScene.add.text(slotPos.x + this.NUMBER_OFFSET.x, slotPos.y + this.NUMBER_OFFSET.y, this.itemCount, this.TEXT_SETTINGS)
                     .setOrigin(1)
                     .setScrollFactor(0);
+
+        
+        this.background.on('pointerout', (pointer) =>  
+        { 
+            this.background.setFrame("up")
+        });
+        this.background.on('pointerover', (pointer) =>  
+        { 
+            this.background.setFrame("over")
+            this.phaserScene.sharedData.inventory.ui.manager.itemDownSound.play()
+        });
+        this.background.on('pointerdown', (pointer) =>  
+        { 
+            this.background.setFrame("down")
+            this.phaserScene.sharedData.inventory.ui.manager.itemDownSound.play()
+        });
 
         // Set mask
         const mask = this.phaserScene.sharedData.inventory.ui.elements.scrollMask
