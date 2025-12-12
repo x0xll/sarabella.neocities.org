@@ -141,7 +141,7 @@ class ZoneBase extends Phaser.Scene
 
         for (let [key] of Object.entries(spawnedEntities)) {
             const entity = spawnedEntities[key]
-            this.spawnEntity(entity.template, entity.gridX, entity.gridY, false)
+            this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID)
         }
     }
 
@@ -371,7 +371,8 @@ class ZoneBase extends Phaser.Scene
 
     spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID, instanceIdentifier = undefined) {
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, "se", zoneID === this.zoneConfig.ID, runCreate)
-        this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY, instID: instanceIdentifier}
+        this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
+        if (instanceIdentifier) { this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
     }
     // ------- END HELPER FUNCTIONS -------
 }
