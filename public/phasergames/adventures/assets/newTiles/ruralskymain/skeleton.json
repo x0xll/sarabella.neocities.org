@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "VXVxjH0YyPg",
+	"hash": "kU3fhRiHjsY",
 	"spine": "4.2.43",
-	"x": -21,
-	"y": -21.5,
-	"width": 42,
-	"height": 43,
+	"x": -51.5,
+	"y": -40,
+	"width": 103,
+	"height": 80,
 	"images": "../../extracted/Tilemaps/RuralSky/",
 	"audio": "./audio"
 },
@@ -520,6 +520,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "T0041d/1", "y": 5, "width": 80, "height": 58 }
+			}
+		}
+	},
+	{
+		"name": "T0042",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0042/1", "width": 103, "height": 80 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0042/1", "width": 103, "height": 80 }
 			}
 		}
 	},

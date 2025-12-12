@@ -511,7 +511,8 @@
         "tileAssets": [
             "common",
             "ruralskymain",
-            "canterfarmsmain"
+            "canterfarmsmain",
+            "castletownmain"
         ],
 
         "backgroundXOffset": 2868,
