@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "xzy3FQkf31g", "spine": "4.2.43", "x": -144, "y": -60.5, "width": 308, "height": 509 },
+"skeleton": { "hash": "ahqTySFMfHc", "spine": "4.2.43", "x": -38, "y": -24, "width": 76, "height": 48 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -49,6 +49,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "T0047m/1", "x": 16, "y": 207, "width": 318, "height": 530 }
+			}
+		}
+	},
+	{
+		"name": "T0198",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0198/1", "width": 76, "height": 48 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0198/1", "width": 76, "height": 48 }
 			}
 		}
 	}
