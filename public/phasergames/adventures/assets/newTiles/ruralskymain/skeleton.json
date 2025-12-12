@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "d+g8uIpP7qI",
+	"hash": "YMUyexpC4tQ",
 	"spine": "4.2.43",
-	"x": -149,
-	"y": -8.2,
-	"width": 298,
-	"height": 281,
+	"x": -224.5,
+	"y": -267.5,
+	"width": 449,
+	"height": 535,
 	"images": "../../extracted/Tilemaps/RuralSky/",
 	"audio": "./audio"
 },
@@ -21,10 +21,10 @@
 		"name": "T0001a",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0001a/1", "width": 424, "height": 320 }
+				"Main": { "name": "T0001a/1", "x": -24.66, "y": 163.31, "width": 424, "height": 320 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0001a/1", "width": 424, "height": 320 }
+				"Main": { "name": "T0001a/1", "x": -24.66, "y": 163.31, "width": 424, "height": 320 }
 			}
 		}
 	},
@@ -32,10 +32,10 @@
 		"name": "T0001e",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0001e/1", "width": 424, "height": 320 }
+				"Main": { "name": "T0001e/1", "x": -24.66, "y": 163.31, "width": 424, "height": 320 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0001e/1", "width": 424, "height": 320 }
+				"Main": { "name": "T0001e/1", "x": -24.66, "y": 163.31, "width": 424, "height": 320 }
 			}
 		}
 	},
@@ -384,10 +384,10 @@
 		"name": "T0047g",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047g/1", "width": 355, "height": 426 }
+				"Main": { "name": "T0047g/1", "x": 10.43, "y": 170, "width": 355, "height": 426 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047g/1", "width": 355, "height": 426 }
+				"Main": { "name": "T0047g/1", "x": 10.43, "y": 170, "width": 355, "height": 426 }
 			}
 		}
 	},
@@ -395,10 +395,10 @@
 		"name": "T0047h",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047h/1", "width": 363, "height": 529 }
+				"Main": { "name": "T0047h/1", "x": 1.86, "y": 210.63, "width": 363, "height": 529 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047h/1", "width": 363, "height": 529 }
+				"Main": { "name": "T0047h/1", "x": 1.86, "y": 210.63, "width": 363, "height": 529 }
 			}
 		}
 	},
@@ -406,10 +406,10 @@
 		"name": "T0047i",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047i/1", "width": 322, "height": 463 }
+				"Main": { "name": "T0047i/1", "x": 2.8, "y": 176.15, "width": 322, "height": 463 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047i/1", "width": 322, "height": 463 }
+				"Main": { "name": "T0047i/1", "x": 2.8, "y": 176.15, "width": 322, "height": 463 }
 			}
 		}
 	},
@@ -417,10 +417,10 @@
 		"name": "T0047j",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047j/2", "path": "T0047j/1", "width": 308, "height": 500 }
+				"Main": { "name": "T0047j/2", "path": "T0047j/1", "x": 8.39, "y": 186.4, "width": 308, "height": 500 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047j/2", "path": "T0047j/1", "width": 308, "height": 500 }
+				"Main": { "name": "T0047j/2", "path": "T0047j/1", "x": 8.39, "y": 186.4, "width": 308, "height": 500 }
 			}
 		}
 	},
@@ -428,10 +428,10 @@
 		"name": "T0047l",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047l/1", "width": 295, "height": 497 }
+				"Main": { "name": "T0047l/1", "x": 6.52, "y": 196.65, "width": 295, "height": 497 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047l/1", "width": 295, "height": 497 }
+				"Main": { "name": "T0047l/1", "x": 6.52, "y": 196.65, "width": 295, "height": 497 }
 			}
 		}
 	},
@@ -439,10 +439,10 @@
 		"name": "T0047n",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047n/1", "width": 170, "height": 402 }
+				"Main": { "name": "T0047n/1", "x": 5.59, "y": 162.17, "width": 170, "height": 402 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047n/1", "width": 170, "height": 402 }
+				"Main": { "name": "T0047n/1", "x": 5.59, "y": 162.17, "width": 170, "height": 402 }
 			}
 		}
 	},
@@ -450,10 +450,10 @@
 		"name": "T0047o",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0047o/1", "width": 308, "height": 500 }
+				"Main": { "name": "T0047o/1", "x": 9.32, "y": 188.26, "width": 308, "height": 500 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0047o/1", "width": 308, "height": 500 }
+				"Main": { "name": "T0047o/1", "x": 9.32, "y": 188.26, "width": 308, "height": 500 }
 			}
 		}
 	},
@@ -461,10 +461,10 @@
 		"name": "T0048a",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0048a/1", "width": 288, "height": 367 }
+				"Main": { "name": "T0048a/1", "x": -14.91, "y": 144.46, "width": 288, "height": 367 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0048a/1", "width": 288, "height": 367 }
+				"Main": { "name": "T0048a/1", "x": -14.91, "y": 144.46, "width": 288, "height": 367 }
 			}
 		}
 	},
@@ -472,10 +472,10 @@
 		"name": "T0048c",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0048c/1", "width": 292, "height": 363 }
+				"Main": { "name": "T0048c/1", "x": -16.78, "y": 142.6, "width": 292, "height": 363 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0048c/1", "width": 292, "height": 363 }
+				"Main": { "name": "T0048c/1", "x": -16.78, "y": 142.6, "width": 292, "height": 363 }
 			}
 		}
 	},
@@ -505,10 +505,10 @@
 		"name": "T0051h",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0051h/1", "width": 159, "height": 142 }
+				"Main": { "name": "T0051h/1", "y": 39.45, "width": 159, "height": 142 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0051h/1", "width": 159, "height": 142 }
+				"Main": { "name": "T0051h/1", "y": 39.45, "width": 159, "height": 142 }
 			}
 		}
 	},
@@ -516,10 +516,10 @@
 		"name": "T0051i",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0051i/1", "width": 123, "height": 141 }
+				"Main": { "name": "T0051i/1", "y": 39.45, "width": 123, "height": 141 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0051i/1", "width": 123, "height": 141 }
+				"Main": { "name": "T0051i/1", "y": 39.45, "width": 123, "height": 141 }
 			}
 		}
 	},
@@ -736,10 +736,10 @@
 		"name": "T0057c",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0057c/1", "width": 87, "height": 124 }
+				"Main": { "name": "T0057c/1", "y": 39.45, "width": 87, "height": 124 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0057c/1", "width": 87, "height": 124 }
+				"Main": { "name": "T0057c/1", "y": 39.45, "width": 87, "height": 124 }
 			}
 		}
 	},
@@ -1165,10 +1165,10 @@
 		"name": "T0604",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "T0604/1", "y": 132.3, "width": 298, "height": 281 }
+				"Main": { "name": "T0604/1", "y": 100, "width": 298, "height": 281 }
 			},
 			"Main_night": {
-				"Main": { "name": "T0604/1", "y": 132.3, "width": 298, "height": 281 }
+				"Main": { "name": "T0604/1", "y": 100, "width": 298, "height": 281 }
 			}
 		}
 	}
