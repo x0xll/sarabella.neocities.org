@@ -641,7 +641,9 @@
         "tileYOffset": 2300,
         "tileAssets": [
             "common",
-            "forestcavemain"
+            "forestcavemain",
+            "canterfarmsmain",
+            "ruralskymain"
         ],
         
         "backgroundXOffset": 1548,
