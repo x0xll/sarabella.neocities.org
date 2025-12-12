@@ -100,7 +100,7 @@ class ZoneBase extends Phaser.Scene
         }
 
         this.entities = {}
-        new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
+        this.sharedData.player = new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
         if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
@@ -317,6 +317,7 @@ class ZoneBase extends Phaser.Scene
 
     // ------- UPDATE -------
     goToNextZone(sceneKey) {
+        // TODO save placeable entity facing direction when switching scenes
         this.sharedData.timePausedAt = this.timeManager.getCurrentTime()
         this.sharedData.worldToLoad = sceneKey;
         this.scene.start("common_load", this.sharedData);

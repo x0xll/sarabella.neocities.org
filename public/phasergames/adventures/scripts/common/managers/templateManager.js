@@ -34,6 +34,17 @@ class TemplateManager {
         "name": ["component", "name", 1, "text"],
         "movieClipFile":["MovieClip", "fileName", "text"],
         "movieClipClass":["MovieClip", "className", "text"],
+        "soilType":["Soil", "soil", "text"],
+
+        "seedSoilTarget":["Seed", "soilTarget", "text"],
+        "seedPlantItemID":["Seed", "plantItemId", "text"],
+        "seedPlantWidth":["Seed", "plantWidth", "text"],
+        "seedPlantHeight":["Seed", "plantHeight", "text"],
+
+        "placeableItemEntityTemplate":["PlaceEntity", "entityTemplate", "text"],
+        "placeableItemRequiresMove":["PlaceEntity", "requiresMove", "text"],
+        "placeableItemWidth":["PlaceEntity", "width", "text"],
+        "placeableItemHeight":["PlaceEntity", "height", "text"],
     }
 
     // TODO : get additional quest info from the NPC file
@@ -96,9 +107,10 @@ class TemplateManager {
         return template
     }
 
-    getTemplate(templateID) {
-        const templateType = this.getTemplateType(templateID)
-        if (templateType !== undefined) {
+    getTemplate(templateID, templateType = undefined) {
+        if (templateType === undefined) { templateType = this.getTemplateType(templateID) }
+        
+        if (templateType !== undefined && Object.values(this.TEMPLATE_TYPES).indexOf(templateType) > -1 ) {
             const templateArray = this.#getMatchingTemplates(templateType, templateID)
             this.#mergeTemplates(templateArray)
             
@@ -127,12 +139,13 @@ class TemplateManager {
                 this.#getMatchingTemplates(templateType, template[0].template, templateArray)
             }
         }
+        if (templateArray[0] === undefined) {console.warn(`No templates found for ${templateID}`)}
         return templateArray
     }
     
     #mergeTemplates(templateArray) {
         const baseTemplate = templateArray[0]
-        if (baseTemplate.alreadyMerged) return
+        if (baseTemplate === undefined || baseTemplate.alreadyMerged) return
         baseTemplate.alreadyMerged = true
         for (let index = 1; index < templateArray.length; index++) {
             const nextTemplate = templateArray[index];

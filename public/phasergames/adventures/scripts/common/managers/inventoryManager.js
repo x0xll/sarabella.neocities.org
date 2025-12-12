@@ -9,6 +9,29 @@ class InventoryManager
                 allItems: {}
             }
         }
+        this.addItem("P001ProduceTemplate")
+        this.addItem("P001SeedTemplate")
+        this.addItem("P002ProduceTemplate")
+        this.addItem("P002SeedTemplate")
+        this.addItem("P003ProduceTemplate")
+        this.addItem("P003SeedTemplate")
+        this.addItem("P004ProduceTemplate")
+        this.addItem("P004SeedTemplate")
+        this.addItem("P005ProduceTemplate")
+        this.addItem("P005SeedTemplate")
+        this.addItem("P006ProduceTemplate")
+        this.addItem("P006SeedTemplate")
+        this.addItem("P007ProduceTemplate")
+        this.addItem("P007SeedTemplate")
+        this.addItem("P008ProduceTemplate")
+        this.addItem("P008SeedTemplate")
+        this.addItem("P010ProduceTemplate")
+        this.addItem("P010SeedTemplate")
+        this.addItem("P011ProduceTemplate")
+        this.addItem("I158bTemplate",2)
+        // this.addItem("P011SeedTemplate")
+        // this.addItem("P012ProduceTemplate")
+        // this.addItem("P012SeedTemplate")
         // Note: each item in the inventory (allItems) has a template name as the key and the number of that item as its value
     }
 
@@ -28,7 +51,7 @@ class InventoryManager
 
         if (count >= amount) {
             allItems[itemTemplate] = allItems[itemTemplate] - amount
-            if (allItems[itemTemplate] === 0) { allItems[itemTemplate] }
+            if (allItems[itemTemplate] === 0) { delete allItems[itemTemplate] }
             return true
         } else {
             console.log(`Could not remove ${amount} ${itemTemplate}. Only have ${count}`)

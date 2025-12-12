@@ -85,18 +85,23 @@ class TemplateEntity extends Entity {
             }
         } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
             let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
-            // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
-            // this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
-            this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`)
+            if (this.zoneScene.sharedData.templateManager.getTemplateType(`${this.templateID}`) === "plant") {
+                // For sprites where the middle of the tile is aligned with the middle, bottom of the sprite
+                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`).setOrigin(.5, 1)
+            } else {
+                // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
+                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
+            }
+            // this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`)
             this.resetSpriteFacingDirection()
             this.resetSpriteDepth()
         }
 
-        if (this.isSpawner) {this.#trySpawn()}
+        if (this.isSpawner) {this.#trySpawn() }
     }
 
     update() {
-        this.#trySpawn()
+        if (this.isSpawner) { this.#trySpawn() }
     }
     // ------- END INITIALIZE ENTITY -------
 
@@ -135,9 +140,10 @@ class TemplateEntity extends Entity {
         } else {
             this.isSpawner = false
         }
+        this.spawnerData = this.getTemplateValue(["EntitySpawning"])
     }
     #trySpawn() {
-        const spawnerData = this.getTemplateValue(["EntitySpawning"])
+        const spawnerData = this.spawnerData
 
         // Check for day/night spawn conditions
         if (spawnerData.spawnTimeType[0].text !== this.zoneScene.timeManager.getCurrentTimeType()) { 
@@ -365,9 +371,12 @@ class TemplateEntity extends Entity {
             }
         }
 
+        // TODO Reset all spawners in the same tile so they don't instantly try to spawn
+
         // Removes the entity from the zone
         delete this.zoneScene.entities[this.entityKey]
         delete this.zoneScene.sharedData.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
+        // TODO also delete from time tracked entities?
     }
     // ------- END HELPER FUNCTIONS -------
 }

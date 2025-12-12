@@ -67,6 +67,48 @@ class InventorySlot
         { 
             this.background.setFrame("down")
             this.phaserScene.sharedData.inventory.ui.manager.itemDownSound.play()
+
+            this.phaserScene.sharedData.inventory.currentItem = {
+                templateID: this.templateID,
+            }
+            const template = this.phaserScene.sharedData.templateManager.getTemplate(this.templateID)
+            if (template.template === "PlantProduceTemplate") {
+                // PRODUCE
+                console.warn("Produce item use not yet implemented")
+            } else if (template.QuestItem !== undefined) {
+                // SPECIAL
+                console.warn("Special item use not yet implemented")
+            } else if (template.Seed !== undefined) {
+                // PLANTS
+                this.phaserScene.sharedData.inventory.currentItem = {
+                    templateID: this.templateID,
+                    soilTarget: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedSoilTarget"),
+                    plantItemID: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantItemID"),
+                    plantWidth: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantWidth"),
+                    plantHeight: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantHeight")
+                }
+                this.phaserScene.sharedData.player.cursor.cursorMode = this.phaserScene.sharedData.player.cursor.MODE.planting
+                this.phaserScene.sharedData.inventory.ui.manager.hide()
+            } else if (template.CardEntity !== undefined) {
+                // CARDS
+                console.warn("Card item use not yet implemented")
+            } else if (template.PlaceEntity !== undefined) {
+                // PLACEABLE
+                this.phaserScene.sharedData.inventory.currentItem = {
+                    templateID: this.templateID,
+                    entityTemplate: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemEntityTemplate"),
+                    requiresMove: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemRequiresMove"),
+                    width: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemWidth"),
+                    height: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemHeight")
+                }
+                this.phaserScene.sharedData.player.cursor.cursorMode = this.phaserScene.sharedData.player.cursor.MODE.placing
+                this.phaserScene.sharedData.inventory.ui.manager.hide()
+            } else if (template.AvatarCustomizationData !== undefined) {
+                // CLOTHING
+                console.warn("Clothing item use not yet implemented")
+            } else {
+                console.warn("Da frick is this?!", template)
+            }
         });
 
         // Set mask

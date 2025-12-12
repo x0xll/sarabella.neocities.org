@@ -20,8 +20,8 @@ class Player extends Entity {
         let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1])
         this.sprite = this.zoneScene.physics.add.image(isoStart.x, isoStart.y, 'player').setScale(this.spriteScale, this.spriteScale).setOrigin(0.5, 1)
         this.zoneScene.cameras.main.startFollow(this.sprite, true).setBounds(0, 0, this.camBounds[0], this.camBounds[1]);
-        this.cursor = this.zoneScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setAlpha(0).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
         this.aStar = new AStar(this.zoneScene.tiles, this.zoneScene.entities);
+        this.cursor = new Cursor(this.zoneScene)
 
         this.#move();
         this.resetSpriteDepth()
@@ -92,71 +92,66 @@ class Player extends Entity {
      * Should run during the create phase of scene setup
      */
     #move() {
-        let zoneTiles = this.zoneScene.tiles
         this.target = {x: this.sprite.x, y: this.sprite.y}
-
-        // Move cursor
-        // TODO: Hide when mouse is outside of level view (e.g. do not react when hovering over HUD buttons or dialogue menus)
-        this.zoneScene.input.on('pointermove', (pointer) => {
-            // Get the WORLD x and y position of the pointer
-            const {worldX, worldY} = pointer;
-            
-            // Convert coordinates
-            let gridTarget = this.isoToGridMap(worldX, worldY)
-            gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
-
-            // Check if position is valid
-            if(zoneTiles[gridTarget.y] !== undefined 
-                && zoneTiles[gridTarget.y][gridTarget.x] !== undefined
-                && (0 <= gridTarget.y && gridTarget.y <= Object.keys(zoneTiles).length) 
-                && (0 <= gridTarget.x && gridTarget.x <= Object.keys(zoneTiles[gridTarget.y]).length) 
-                && (zoneTiles[gridTarget.y][gridTarget.x].parsedData.walkable === 'true')){
-                // Move cursor to target position
-                let isoTarget = this.gridToIsoMap(Math.round(gridTarget.x), Math.round(gridTarget.y+1))
-                const polygon = [
-                    isoTarget.x+40, isoTarget.y,
-                    isoTarget.x, isoTarget.y+20,
-                    isoTarget.x-40, isoTarget.y,
-                    isoTarget.x, isoTarget.y-20
-                ];
-                this.cursor.setTo(polygon).setAlpha(0.5)
-                this.cursor.setDepth((37 - gridTarget.x) + gridTarget.y-30)
-                // console.log(zoneTiles[gridTarget.y][gridTarget.x])
-
-            } else {
-                this.cursor.setAlpha(0)
-            }
-        });
 
 
         // Moves the player on pointerup event
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
-        this.zoneScene.input.on('pointerup', async (pointer) => {
-            // Prevent moving when a UI is open
+        this.zoneScene.input.on('pointerdown', async (pointer) => {
+            // Prevent interaction when a UI is open
             if (this.zoneScene.sharedData.global.uiOpen) 
                 return;
 
             // Get the grid x and y position of the target
             const {worldX, worldY} = pointer;
             let gridTarget = this.isoToGridMap(worldX, worldY)
+            let item = this.zoneScene.sharedData.inventory.currentItem
 
-            // Add new destination
-            this.nextX = gridTarget.x
-            this.nextY = gridTarget.y
-            this.hasNext = true;
-            let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
-            let test = false
-            if (entities !== undefined) {
-                for (let index = 0; index < entities.length; index++) {
-                    const entity = entities[index];
-                    test = test || this.zoneScene.entities[entity].interact()
-                    if (test) {break}
-                }
+            switch (this.cursor.cursorMode) {
+                case this.cursor.MODE.placing:
+                    if (this.cursor.canPlace(gridTarget, item)) {
+                        console.log("Placing")
+                        this.zoneScene.sharedData.inventory.manager.removeItem(item.templateID)
+                        this.zoneScene.spawnEntity(item.entityTemplate, gridTarget.x, gridTarget.y)
+                    } else {
+                        console.log("Placing failed")
+                    }
+                    this.zoneScene.sharedData.inventory.currentItem = null
+                    this.cursor.reset()
+                    break;
+
+                case this.cursor.MODE.planting:
+                    if (this.cursor.canPlant(gridTarget, item)) {
+                        console.log("Planting")
+                        this.zoneScene.sharedData.inventory.manager.removeItem(item.templateID)
+                        this.zoneScene.spawnEntity(item.plantItemID, gridTarget.x, gridTarget.y)
+                    } else {
+                        console.log("Planting failed")
+                    }
+                    this.zoneScene.sharedData.inventory.currentItem = null
+                    this.cursor.reset()
+                    break;
+            
+                default:
+                    // Add new destination
+                    this.nextX = gridTarget.x
+                    this.nextY = gridTarget.y
+                    this.hasNext = true;
+                    let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+                    let test = false
+                    if (entities !== undefined) {
+                        for (let index = 0; index < entities.length; index++) {
+                            const entity = entities[index];
+                            test = test || this.zoneScene.entities[entity].interact()
+                            if (test) {break}
+                        }
+                    }
+                    if (!test) {
+                        this.pathList.push(await this.#findPathToNextDestination())
+                    }
+                    this.playerMove = true
+                    break;
             }
-            if (!test) {
-                this.pathList.push(await this.#findPathToNextDestination())
-            }
-            this.playerMove = true
         });
     }
 
@@ -172,8 +167,12 @@ class Player extends Entity {
                 
                 // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
                 let triggerInfo = this.isoToGridMap(this.target.x, this.target.y);
-                triggerInfo.type = "StopNearTrigger"
-                if (this.pathList.length === 1 && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)) {
+                    triggerInfo.type = "StopNearTrigger"
+                    
+                if (triggerInfo.x === this.nextX
+                    && triggerInfo.y === this.nextY
+                    && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+                ) {
                     this.pathList = [];
                     this.pathIndex = 0;
                 } else {
