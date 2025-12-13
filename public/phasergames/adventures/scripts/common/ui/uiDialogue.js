@@ -42,9 +42,12 @@ class uiDialogue extends uiManagerBase
 
     constructor(phaserScene)
     {
-        super(phaserScene);
+        super(phaserScene, "dialogue");
 
         this.phaserScene.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
+
+        super.load()
+        this.phaserScene.sharedData[this.key].ui.manager = this;
     }
 
     load()
@@ -65,6 +68,14 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.load.image(this.DIALOGUE_CONTINUE_BTN, "./assets/extracted/UI/Common/CloseButton.png");
 
         // TODO : get the scroll bar
+    }
+
+    create()
+    {
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {}, this);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     initialize()
@@ -138,22 +149,13 @@ class uiDialogue extends uiManagerBase
         };
 
         super.initialize();
-
-
-        continueBtn.on('pointerover', (pointer) => 
-        { 
-
-        });
-        continueBtn.on('pointerout', (pointer) => 
-        { 
-
-        });
     }
-
 
     // TODO: Handle if dialogue has no character to display
     show(questID, characterid, text, choices, image)
     {
+        if (!super.show()) return
+
         // TODO check if this actually works
         if (Array.isArray(text) && text.length === 1) {
             text = text[0]
@@ -161,15 +163,6 @@ class uiDialogue extends uiManagerBase
             let rand = randomIntFromInterval(0, text.length - 1)
             text = text[rand]
         }
-
-        if (this.phaserScene.sharedData.dialogue.ui.elements === undefined)
-            this.initialize();
-
-        if (this.phaserScene.sharedData.global.uiOpen)
-            return;
-
-        this.phaserScene.sharedData.global.uiOpen = true;
-        this.phaserScene.sharedData.dialogue.ui.open = true;
 
         // Character portrait
         const character = {
@@ -198,23 +191,9 @@ class uiDialogue extends uiManagerBase
         }
         textElement.setText(this.formatQuestText(text));
 
-
-        let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
-
-        let UI = this
-        function continueOption() { 
-            UI.hide();
-            UI.phaserScene.sharedData.lastChoice = "continue"
-            UI.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
-        }
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', continueOption);
-        this.phaserScene.sharedData.keyboard.space.on("up", continueOption);
-        this.phaserScene.sharedData.keyboard.enter.on("up", continueOption);
-        
-        
         // TODO : get the dialogue choices
 
-
+        this.turnOnEvents(questID)
 
         // Set UI item position
         textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - textElement.height - 20)
@@ -238,7 +217,6 @@ class uiDialogue extends uiManagerBase
     {
         super.hide();
 
-        this.phaserScene.sharedData.dialogue.ui.open = false;
         this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(0);
@@ -249,10 +227,36 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(0);
 
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup")
-        this.phaserScene.sharedData.keyboard.space.off("up");
-        this.phaserScene.sharedData.keyboard.enter.off("up");
     }
+
+
+    // ------- UI EVENTS -------
+    turnOnEvents(questID)
+    {
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerover', (pointer) => { });
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerout', (pointer) => { });
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', this.#continueOption, {questID: questID, UI: this});
+        this.phaserScene.sharedData.keyboard.space.on("up", this.#continueOption, {questID: questID, UI: this});
+        this.phaserScene.sharedData.keyboard.enter.on("up", this.#continueOption, {questID: questID, UI: this});
+    }
+
+    turnOffEvents()
+    {
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off('pointerover');
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off('pointerout');
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup", this.#continueOption)
+        this.phaserScene.sharedData.keyboard.space.off("up", this.#continueOption);
+        this.phaserScene.sharedData.keyboard.enter.off("up", this.#continueOption);
+    }
+    
+    #continueOption() { 
+        this.UI.hide();
+        this.UI.phaserScene.sharedData.lastChoice = "continue"
+
+        let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
+        this.UI.phaserScene.sharedData.questManager.doQuestAction(this.questID, questData.currentLine, questData.currentAction)
+    }
+    // ------- END UI EVENTS -------
 
     formatQuestText(text)
     {

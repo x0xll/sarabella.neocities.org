@@ -22,7 +22,10 @@ class uiMinimap extends uiManagerBase
 
     constructor(phaserScene)
     {
-        super(phaserScene);
+        super(phaserScene, "minimap");
+        
+        super.load()
+        this.phaserScene.sharedData[this.key].ui.manager = this;
     }
 
     load()
@@ -47,6 +50,19 @@ class uiMinimap extends uiManagerBase
 
         // Close btn
         this.phaserScene.load.image(this.MINIMAP_CLOSE_BTN, "./assets/extracted/UI/Quest/closebtn.png")
+    }
+
+    create()
+    { 
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            this.phaserScene.sharedData.hud.ui.mapButton.on('pointerup', function (pointer){
+                this.phaserScene.sharedData[this.key].ui.manager.show();
+            }, this)
+            this.phaserScene.sharedData.hud.ui.mapButton.setAlpha(1)
+        }, this);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     initialize()
@@ -78,27 +94,6 @@ class uiMinimap extends uiManagerBase
                     .setScrollFactor(0)
                     .setInteractive();
 
-        closeBtn.on('pointerup', (pointer) =>  
-        { 
-            this.hide();
-        });
-
-        iconZoom.on('pointerup', (pointer) => 
-        {
-            this.#isFullMap = !this.#isFullMap;
-            if (!this.#isFullMap)
-            {
-                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
-            }
-            else
-            {
-                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(1);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(0);
-            }
-        });
-
         this.phaserScene.sharedData.minimap.ui.elements = 
         {
             map: map,
@@ -114,19 +109,9 @@ class uiMinimap extends uiManagerBase
 
     show()
     {
-        if (this.phaserScene.sharedData.minimap.ui.elements === undefined)
-            this.initialize();
+        if (!super.show()) return
+        this.turnOnEvents()
 
-        if (this.phaserScene.sharedData.minimap.ui.open)
-        {
-            this.hide();
-            return;
-        }
-
-        if (this.phaserScene.sharedData.global.uiOpen)
-            return;
-
-        this.phaserScene.sharedData.minimap.ui.open = true;
         this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
         this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
@@ -134,8 +119,6 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
         this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(1);
-
-        super.show();
     }
 
     hide()
@@ -149,5 +132,35 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
         this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(0);
+    }
+
+    turnOnEvents()
+    {
+        this.phaserScene.sharedData.minimap.ui.elements.closeBtn.on('pointerup', (pointer) =>  
+        { 
+            this.hide();
+        });
+
+        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.on('pointerup', (pointer) => 
+        {
+            this.#isFullMap = !this.#isFullMap;
+            if (!this.#isFullMap)
+            {
+                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
+            }
+            else
+            {
+                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(1);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(0);
+            }
+        });
+    }
+
+    turnOffEvents()
+    {
+        this.phaserScene.sharedData.minimap.ui.elements.closeBtn.off('pointerup');
+        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.off('pointerup');
     }
 }

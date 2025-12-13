@@ -2,11 +2,14 @@ class uiHUD extends uiManagerBase
 {
     constructor(phaserScene)
     {
-        super(phaserScene);
+        super(phaserScene, "hud");
+        this.load()
     }
 
     load()
     {
+        super.load()
+
         const HUDAssetsPath = "./assets/extracted/UI/HUD"
         this.phaserScene.load.image("HUD_Ref", `${HUDAssetsPath}/HUD_Ref.png`)
         this.phaserScene.load.image("HUD_Main", `${HUDAssetsPath}/HUD_Main.png`)
@@ -21,6 +24,11 @@ class uiHUD extends uiManagerBase
         this.phaserScene.load.atlas('helpButton', `${HUDAssetsPath}/btnHelp.png`, `${HUDAssetsPath}/btnHelp.json`);
     }
 
+    create()
+    {
+        this.phaserScene.sharedData.hud.ui.manager.initialize();
+    }
+
     initialize()
     {
         this.phaserScene.add.image(-7, 0, 'HUD_Main').setOrigin(0, 0).setScrollFactor(0).setDepth(100);
@@ -28,11 +36,11 @@ class uiHUD extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.timeIndicator = this.phaserScene.add.sprite(748, 52, 'timeIndicator', 'day1').setScale(.3333).setDepth(100);
 
         this.phaserScene.sharedData.hud.ui.potrait = this.phaserScene.add.sprite(282, 561, 'portrait', 'up').setScale(.56).setDepth(100);
-        this.phaserScene.sharedData.hud.ui.mapButton = this.phaserScene.add.sprite(337, 549, 'mapButton', 'up').setScale(.75).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.inventoryButton = this.phaserScene.add.sprite(400, 549, 'inventoryButton', 'up').setScale(.75).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.journalButton = this.phaserScene.add.sprite(463, 549, 'journalButton', 'up').setScale(.75).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.skillProgressButton = this.phaserScene.add.sprite(526, 550, 'skillProgressButton').setScale(.6).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.levelIndicator = this.phaserScene.add.sprite(519, 552, 'levelIndicator', this.phaserScene.sharedData.magicTree.logic.level.toString()).setScale(.75).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.mapButton = this.phaserScene.add.sprite(337, 549, 'mapButton', 'up').setScale(.75).setInteractive().setDepth(100).setAlpha(0);
+        this.phaserScene.sharedData.hud.ui.inventoryButton = this.phaserScene.add.sprite(400, 549, 'inventoryButton', 'up').setScale(.75).setInteractive().setDepth(100).setAlpha(0);
+        this.phaserScene.sharedData.hud.ui.journalButton = this.phaserScene.add.sprite(463, 549, 'journalButton', 'up').setScale(.75).setInteractive().setDepth(100).setAlpha(0);
+        this.phaserScene.sharedData.hud.ui.skillProgressButton = this.phaserScene.add.sprite(526, 550, 'skillProgressButton').setScale(.6).setInteractive().setDepth(100).setAlpha(0);
+        this.phaserScene.sharedData.hud.ui.levelIndicator = this.phaserScene.add.sprite(519, 552, 'levelIndicator', this.phaserScene.sharedData.magicTree.logic.level.toString()).setScale(.75).setDepth(100).setAlpha(0);
 
         this.phaserScene.sharedData.hud.ui.saveButton = this.phaserScene.add.sprite(681, 565, 'saveButton', 'up').setScale(.9).setDepth(100);
         this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100);

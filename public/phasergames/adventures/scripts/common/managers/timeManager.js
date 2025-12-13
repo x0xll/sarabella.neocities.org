@@ -162,7 +162,10 @@ class TimeManager
         }
 
         // HUD Time Indicator
-        if (this.phaserScene.sharedData.hud === undefined || this.phaserScene.sharedData.hud.ui === undefined) return;
+        if (this.phaserScene.sharedData.hud === undefined 
+            || this.phaserScene.sharedData.hud.ui === undefined 
+            || this.phaserScene.sharedData.hud.ui.timeIndicator === undefined
+        ) return;
         if (this.clock.now <= this.dayLength/3) {
             this.phaserScene.sharedData.hud.ui.timeIndicator.setFrame('day1')
         } else if (this.clock.now <= this.dayLength*2/3) {

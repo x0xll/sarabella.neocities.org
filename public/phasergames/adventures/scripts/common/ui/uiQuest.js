@@ -18,7 +18,10 @@ class uiQuest extends uiManagerBase
 
     constructor(phaserScene)
     {
-        super(phaserScene);
+        super(phaserScene, "quest");
+
+        super.load()
+        this.phaserScene.sharedData[this.key].ui.manager = this;
     }
 
     load()
@@ -28,6 +31,19 @@ class uiQuest extends uiManagerBase
 
         // Close btn
         this.phaserScene.load.image("closebtn", "./assets/extracted/UI/Quest/closebtn.png")
+    }
+
+    create()
+    {
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            this.phaserScene.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
+                this.phaserScene.sharedData.quest.ui.manager.show();
+            }, this);
+            this.phaserScene.sharedData.hud.ui.journalButton.setAlpha(1)
+        }, this);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     initialize()
@@ -80,11 +96,6 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0)
                         .setInteractive();
 
-        closeBtn.on('pointerup', (pointer) => 
-        { 
-            this.hide();
-        });
-
         this.phaserScene.sharedData.quest.ui.elements =
         {
             open: false,
@@ -107,19 +118,8 @@ class uiQuest extends uiManagerBase
 
     show()
     {
-        if (this.phaserScene.sharedData.quest.ui.elements === undefined)
-            this.initialize();
+        if (!super.show()) return
 
-        if (this.phaserScene.sharedData.quest.ui.open)
-        {
-            this.hide();
-            return;
-        }
-
-        if (this.phaserScene.sharedData.global.uiOpen)
-            return;
-
-        this.phaserScene.sharedData.quest.ui.open = true;
         this.phaserScene.sharedData.quest.ui.elements.panelImg.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.closeBtn.setAlpha(1);
 
@@ -137,8 +137,8 @@ class uiQuest extends uiManagerBase
                     break;
             }
         }
-
-        super.show();
+        
+        this.turnOnEvents()
     }
 
     hide()
@@ -183,5 +183,14 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setText(quest.description.text);
         //this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(); // TODO: find where we get
         return true;
+    }
+
+    turnOnEvents()
+    {
+        this.phaserScene.sharedData.quest.ui.elements.closeBtn.on('pointerup', (pointer) => { this.hide(); });
+    }
+    turnOffEvents()
+    {
+        this.phaserScene.sharedData.quest.ui.elements.closeBtn.off('pointerup');
     }
 }

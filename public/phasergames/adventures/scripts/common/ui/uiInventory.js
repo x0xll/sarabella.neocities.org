@@ -24,7 +24,7 @@ class uiInventory extends uiManagerBase
 
     constructor(phaserScene)
     {
-        super(phaserScene);
+        super(phaserScene, "inventory");
         this.slots = {}
         this.disabled = {
             "main": false,
@@ -35,10 +35,9 @@ class uiInventory extends uiManagerBase
             "cards": false,
             "produce": false,
         }
-    }
 
-    load()
-    {   
+        super.load()
+        this.phaserScene.sharedData[this.key].ui.manager = this;
         this.buttons[ITEM_TYPES.ALL] = "main"
         this.buttons[ITEM_TYPES.SPECIAL] = "special"
         this.buttons[ITEM_TYPES.CLOTHES] = "clothes"
@@ -46,11 +45,10 @@ class uiInventory extends uiManagerBase
         this.buttons[ITEM_TYPES.PLACEABLE] = "placeable"
         this.buttons[ITEM_TYPES.CARDS] = "cards"
         this.buttons[ITEM_TYPES.PRODUCE] = "produce"
+    }
 
-        // Slot
-        // TODO : Get scroll bar
-        // TODO : Get horseshoes bottom section
-
+    load()
+    {   
         this.phaserScene.load.audio(this.SOUNDS.itemHover, `${ROOT_ASSETS_PATH}Audio/Inventory/12.mp3`);
         this.phaserScene.load.audio(this.SOUNDS.itemDown, `${ROOT_ASSETS_PATH}Audio/Inventory/13.mp3`);
         this.phaserScene.load.audio(this.SOUNDS.tabHover, `${ROOT_ASSETS_PATH}Audio/Inventory/35.mp3`);
@@ -68,6 +66,19 @@ class uiInventory extends uiManagerBase
         this.phaserScene.load.atlas('inv_plantinventory', `${ROOT_ASSETS_PATH}Items/plantinventory.png`, `${ROOT_ASSETS_PATH}/Items/plantinventory.json`);
     }
 
+    create()
+    {
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
+                this.phaserScene.sharedData[this.key].ui.manager.show();
+            }, this);
+            this.phaserScene.sharedData.hud.ui.inventoryButton.setAlpha(1)
+        }, this);
+        this.load();
+        this.phaserScene.load.start();
+    }
+
     initialize()
     {
         this.tabHoverSound = this.phaserScene.sound.add(this.SOUNDS.tabHover, {volume: VOLUME});
@@ -76,6 +87,7 @@ class uiInventory extends uiManagerBase
         this.itemDownSound = this.phaserScene.sound.add(this.SOUNDS.itemDown, {volume: VOLUME});
         const sprite = this.phaserScene.add.spine(405, 265, `inventory-json`, `inventory-atlas`)
                     .setScrollFactor(0);
+        sprite.animationState.setAnimation(8, `scroll/hide`, false)
 
         // TODO add horseshoe count to bottom
         
@@ -121,10 +133,6 @@ class uiInventory extends uiManagerBase
                         .setScrollFactor(0)
                         .setOrigin(1, 0)
                         .setAngle(180);
-        
-        const scrollAmountOnClick = 55
-        this.scrollAmount = 0
-        const arrows = [scrollUp, scrollDown]
 
         this.phaserScene.sharedData.inventory.ui.elements = {
             main: sprite,
@@ -139,183 +147,14 @@ class uiInventory extends uiManagerBase
         this.setSelected(ITEM_TYPES.ALL)
 
         super.initialize();
-
-
-        // After super.initialisation since close breaks some of these
-        for (let [key] of Object.entries(ITEM_TYPES)) {
-            const buttonIndex = ITEM_TYPES[key]+1
-            const hitbox = hitboxes[buttonIndex]
-            hitbox.on('pointerout', (pointer) =>  
-                { 
-                    if (buttonIndex !== this.#currentTab+1) {
-                        sprite.animationState.setAnimation(buttonIndex, `${this.buttons[buttonIndex-1]}/up`, false)
-                    }
-                });
-            hitbox.on('pointerover', (pointer) =>  
-                { 
-                    if (buttonIndex !== this.#currentTab+1) {
-                        sprite.animationState.setAnimation(buttonIndex, `${this.buttons[buttonIndex-1]}/over`, false)
-                        this.tabHoverSound.play()
-                    }
-                });
-            hitbox.on('pointerdown', (pointer) =>  
-                {  
-                    if (buttonIndex !== this.#currentTab+1) {
-                        sprite.animationState.setAnimation(buttonIndex, `${this.buttons[buttonIndex-1]}/down`, false)
-                        this.tabDownSound.play()
-                    }
-                });
-            hitbox.on('pointerup', (pointer) =>  
-                {  
-                    this.changeTab(ITEM_TYPES[key]);
-                });
-        }
-        hitboxes[7].on('pointerup', (pointer) =>  
-        { 
-            this.hide();
-        });
-        hitboxes[7].on('pointerout', (pointer) =>  
-        { 
-            sprite.animationState.setAnimation(7, `x/up`, false)
-        });
-        hitboxes[7].on('pointerover', (pointer) =>  
-        { 
-            sprite.animationState.setAnimation(7, `x/over`, false)
-        });
-        hitboxes[7].on('pointerdown', (pointer) =>  
-        { 
-            sprite.animationState.setAnimation(7, `x/down`, false)
-        });
-        sprite.animationState.setAnimation(8, `scroll/hide`, false)
-
-
-        arrows.forEach(arrow => {
-            arrow.on('pointerout', (pointer) =>  
-            { 
-                arrow.setFrame("arrowScroll_1")
-            });
-            arrow.on('pointerup', (pointer) =>  
-            { 
-                arrow.setFrame("arrowScroll_1")
-            });
-            arrow.on('pointerover', (pointer) =>  
-            { 
-                arrow.setFrame("arrowScroll_2")
-            });
-        });
-        scrollUp.on('pointerdown', (pointer) =>  
-        { 
-            const scrollBar = this.phaserScene.sharedData.inventory.ui.elements.scrollBar
-            const slotNumber = Object.keys(this.slots).length - 1
-            const topPos = this.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
-            let moveText = this.scrollAmount - scrollAmountOnClick
-            const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
-            const maskHeight = 200//scrollMask.height
-            const scrollHeight = this.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
-
-            if (moveText < 0) {
-                moveText = 0
-            }
-
-            scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
-            for (let [key] of Object.entries(this.slots)) {
-                this.slots[key].resetSlot(-moveText)
-            }
-            this.scrollAmount = moveText
-        });
-        scrollDown.on('pointerdown', (pointer) =>  
-        {
-            const scrollBar = this.phaserScene.sharedData.inventory.ui.elements.scrollBar
-            const slotNumber = Object.keys(this.slots).length - 1
-            const topPos = this.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
-            let moveText = this.scrollAmount + scrollAmountOnClick
-            const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
-            const maskHeight = 200//scrollMask.height
-            const scrollHeight = this.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
-
-            if (moveText > slotsHeight-maskHeight) {
-                moveText = slotsHeight-maskHeight
-            }
-
-            scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
-            for (let [key] of Object.entries(this.slots)) {
-                this.slots[key].resetSlot(-moveText)
-            }
-            this.scrollAmount = moveText
-        });
-        const UI = this
-        scrollZone.on('pointermove', function (pointer) {
-                if (pointer.isDown)
-                {
-                    const slotNumber = Object.keys(UI.slots).length - 1
-                    const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
-
-                    const topPos = scrollZone.y + (scrollBar.height/2)
-                    const scrollHeight = scrollZone.height - scrollBar.height
-                    const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
-                    const maskHeight = 200//scrollMask.height
-
-                    scrollBar.y = pointer.y - (scrollBar.height/2)
-                    let moveText = (pointer.y - topPos) / scrollHeight * (slotsHeight - maskHeight)
-
-                    let percentage = (pointer.y - topPos) / scrollHeight * 100
-                    if (percentage < 7) {
-                        moveText = 0
-                        scrollBar.y = topPos - (scrollBar.height/2)
-                    } else if (percentage > 93) {
-                        moveText = slotsHeight - maskHeight
-                        scrollBar.y = topPos + scrollHeight - (scrollBar.height/2)
-                    }
-
-                    for (let [key] of Object.entries(UI.slots)) {
-                        UI.slots[key].resetSlot(-moveText)
-                    }
-                    UI.scrollAmount = moveText
-                }
-            });
-        scrollZone.on('pointerdown', function (pointer) {
-                const slotNumber = Object.keys(UI.slots).length - 1
-                const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
-
-                const topPos = scrollZone.y + (scrollBar.height/2)
-                const scrollHeight = scrollZone.height - scrollBar.height
-                const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
-                const maskHeight = 200//scrollMask.height
-
-                scrollBar.y = pointer.y - (scrollBar.height/2)
-                let moveText = (pointer.y - topPos) / scrollHeight * (slotsHeight - maskHeight)
-
-                let percentage = (pointer.y - topPos) / scrollHeight * 100
-                if (percentage < 7) {
-                    moveText = 0
-                    scrollBar.y = topPos - (scrollBar.height/2)
-                } else if (percentage > 93) {
-                    moveText = slotsHeight - maskHeight
-                    scrollBar.y = topPos + scrollHeight - (scrollBar.height/2)
-                }
-
-                for (let [key] of Object.entries(UI.slots)) {
-                    UI.slots[key].resetSlot(-moveText)
-                }
-                UI.scrollAmount = moveText
-            });
     }
 
     show()
     {
-        if (this.phaserScene.sharedData.inventory.ui.elements === undefined)
-            this.initialize();
+        if (!super.show()) return
 
-        if (this.phaserScene.sharedData.inventory.ui.open) {
-            this.hide();
-            return;
-        }
-
-        if (this.phaserScene.sharedData.global.uiOpen)
-            return;
-
+        this.turnOnEvents()
         this.setSelected(ITEM_TYPES.ALL)
-        this.phaserScene.sharedData.inventory.ui.open =  true;
         this.phaserScene.sharedData.inventory.ui.elements.main.setAlpha(1);
 
         this.updateSlots();
@@ -326,34 +165,6 @@ class uiInventory extends uiManagerBase
             const hitbox = hitboxes[index];
             hitbox.setInteractive()
         }
-
-        super.show();
-
-        const UI = this
-        this.phaserScene.input.on( 
-            "wheel", 
-            function (pointer, currentlyOver, dx, dy, dz, event) {
-                const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
-                const slotNumber = Object.keys(UI.slots).length - 1
-                const topPos = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
-                let moveText = UI.scrollAmount + dy
-                const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
-                const maskHeight = 200//scrollMask.height
-                const scrollHeight = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
-
-                if (moveText > slotsHeight-maskHeight) {
-                    moveText = slotsHeight-maskHeight
-                } else if (moveText < 0) {
-                    moveText = 0
-                }
-
-                scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
-                for (let [key] of Object.entries(UI.slots)) {
-                    UI.slots[key].resetSlot(-moveText)
-                }
-                UI.scrollAmount = moveText
-            } 
-        );
     }
 
     hide()
@@ -374,7 +185,6 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.scrollZone.disableInteractive()
         this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(0).disableInteractive();
         this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(0).disableInteractive();
-        this.phaserScene.input.off( "wheel");
 
         const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
         for (let index = 0; index < hitboxes.length; index++) {
@@ -445,5 +255,158 @@ class uiInventory extends uiManagerBase
             this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(0).disableInteractive();
             this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(0).disableInteractive();
         }
+    }
+
+    turnOnEvents()
+    {
+        const sprite = this.phaserScene.sharedData.inventory.ui.elements.main
+        const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
+        const scrollZone = this.phaserScene.sharedData.inventory.ui.elements.scrollZone
+        const scrollUp = this.phaserScene.sharedData.inventory.ui.elements.scrollUp
+        const scrollDown = this.phaserScene.sharedData.inventory.ui.elements.scrollDown
+        const scrollAmountOnClick = 55
+        this.scrollAmount = 0
+        const arrows = [scrollUp, scrollDown]
+        
+        // Filter buttons
+        for (let [key] of Object.entries(ITEM_TYPES)) {
+            const buttonIndex = ITEM_TYPES[key]+1
+            const hitbox = hitboxes[buttonIndex]
+            hitbox.on('pointerout', (pointer) =>  
+                { 
+                    if (buttonIndex !== this.#currentTab+1) {
+                        sprite.animationState.setAnimation(buttonIndex, `${this.buttons[buttonIndex-1]}/up`, false)
+                    }
+                });
+            hitbox.on('pointerover', (pointer) =>  
+                { 
+                    if (buttonIndex !== this.#currentTab+1) {
+                        sprite.animationState.setAnimation(buttonIndex, `${this.buttons[buttonIndex-1]}/over`, false)
+                        this.tabHoverSound.play()
+                    }
+                });
+            hitbox.on('pointerdown', (pointer) =>  
+                {  
+                    if (buttonIndex !== this.#currentTab+1) {
+                        sprite.animationState.setAnimation(buttonIndex, `${this.buttons[buttonIndex-1]}/down`, false)
+                        this.tabDownSound.play()
+                    }
+                });
+            hitbox.on('pointerup', (pointer) => { this.changeTab(ITEM_TYPES[key]); });
+        }
+
+        // Close button
+        hitboxes[7].on('pointerup', (pointer) =>  
+        { 
+            this.hide();
+        });
+        hitboxes[7].on('pointerout', (pointer) =>  
+        { 
+            sprite.animationState.setAnimation(7, `x/up`, false)
+        });
+        hitboxes[7].on('pointerover', (pointer) =>  
+        { 
+            sprite.animationState.setAnimation(7, `x/over`, false)
+        });
+        hitboxes[7].on('pointerdown', (pointer) =>  
+        { 
+            sprite.animationState.setAnimation(7, `x/down`, false)
+        });
+
+        arrows.forEach(arrow => {
+            arrow.on('pointerout', (pointer) => { arrow.setFrame("arrowScroll_1") });
+            arrow.on('pointerup', (pointer) => { arrow.setFrame("arrowScroll_1") });
+            arrow.on('pointerover', (pointer) => { arrow.setFrame("arrowScroll_2") });
+        });
+        const scrollBy = function (moveText, context) 
+            {
+                const scrollBar = context.phaserScene.sharedData.inventory.ui.elements.scrollBar
+                const slotNumber = Object.keys(context.slots).length - 1
+                const topPos = context.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
+                const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
+                const maskHeight = 200//scrollMask.height
+                const scrollHeight = context.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
+
+                if (moveText < 0) {
+                    moveText = 0
+                } else if (moveText > slotsHeight-maskHeight) {
+                    moveText = slotsHeight-maskHeight
+                }
+
+                scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
+                for (let [key] of Object.entries(context.slots)) {
+                    context.slots[key].resetSlot(-moveText)
+                }
+                context.scrollAmount = moveText
+            }
+        scrollUp.on('pointerdown', (pointer) => { scrollBy(this.scrollAmount - scrollAmountOnClick, this) });
+        scrollDown.on('pointerdown', (pointer) => { scrollBy(this.scrollAmount + scrollAmountOnClick, this) });
+        this.phaserScene.input.on( 
+            "wheel", 
+            function (pointer, currentlyOver, dx, dy, dz, event) {
+                scrollBy(this.scrollAmount + dy, this)
+            }, this
+        );
+        
+        const scrollZoneEvent = function (pointer, UI) {
+                if (pointer.isDown)
+                {
+                    const slotNumber = Object.keys(UI.slots).length - 1
+                    const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
+
+                    const topPos = scrollZone.y + (scrollBar.height/2)
+                    const scrollHeight = scrollZone.height - scrollBar.height
+                    const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
+                    const maskHeight = 200//scrollMask.height
+
+                    scrollBar.y = pointer.y - (scrollBar.height/2)
+                    let moveText = (pointer.y - topPos) / scrollHeight * (slotsHeight - maskHeight)
+
+                    let percentage = (pointer.y - topPos) / scrollHeight * 100
+                    if (percentage < 7) {
+                        moveText = 0
+                        scrollBar.y = topPos - (scrollBar.height/2)
+                    } else if (percentage > 93) {
+                        moveText = slotsHeight - maskHeight
+                        scrollBar.y = topPos + scrollHeight - (scrollBar.height/2)
+                    }
+
+                    for (let [key] of Object.entries(UI.slots)) {
+                        UI.slots[key].resetSlot(-moveText)
+                    }
+                    UI.scrollAmount = moveText
+                }
+            }
+        scrollZone.on('pointermove', function (pointer) { scrollZoneEvent(pointer, this) }, this);
+        scrollZone.on('pointerdown', function (pointer) { scrollZoneEvent(pointer, this) }, this);
+    }
+
+    turnOffEvents()
+    {
+        const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
+        const scrollZone = this.phaserScene.sharedData.inventory.ui.elements.scrollZone
+        const scrollUp = this.phaserScene.sharedData.inventory.ui.elements.scrollUp
+        const scrollDown = this.phaserScene.sharedData.inventory.ui.elements.scrollDown
+        const arrows = [scrollUp, scrollDown]
+
+        // Close button
+        for (let index = 0; index < hitboxes.length; index++) {
+            const hitbox = hitboxes[index];
+            hitbox.off('pointerup');
+            hitbox.off('pointerout');
+            hitbox.off('pointerover');
+            hitbox.off('pointerdown');
+        }
+
+        arrows.forEach(arrow => {
+            arrow.off('pointerout');
+            arrow.off('pointerup');
+            arrow.off('pointerover');
+        });
+        scrollUp.off('pointerdown');
+        scrollDown.off('pointerdown');
+        this.phaserScene.input.off("wheel");
+        scrollZone.off('pointermove');
+        scrollZone.off('pointerdown');
     }
 }
