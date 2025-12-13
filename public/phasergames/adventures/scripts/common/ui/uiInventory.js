@@ -299,30 +299,6 @@ class uiInventory extends uiManagerBase
                 }
                 UI.scrollAmount = moveText
             });
-        this.phaserScene.input.on( 
-            "wheel", 
-            function (pointer, currentlyOver, dx, dy, dz, event) {
-                const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
-                const slotNumber = Object.keys(UI.slots).length - 1
-                const topPos = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
-                let moveText = UI.scrollAmount + dy
-                const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
-                const maskHeight = 200//scrollMask.height
-                const scrollHeight = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
-
-                if (moveText > slotsHeight-maskHeight) {
-                    moveText = slotsHeight-maskHeight
-                } else if (moveText < 0) {
-                    moveText = 0
-                }
-
-                scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
-                for (let [key] of Object.entries(UI.slots)) {
-                    UI.slots[key].resetSlot(-moveText)
-                }
-                UI.scrollAmount = moveText
-            } 
-        );
     }
 
     show()
@@ -352,6 +328,32 @@ class uiInventory extends uiManagerBase
         }
 
         super.show();
+
+        const UI = this
+        this.phaserScene.input.on( 
+            "wheel", 
+            function (pointer, currentlyOver, dx, dy, dz, event) {
+                const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
+                const slotNumber = Object.keys(UI.slots).length - 1
+                const topPos = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
+                let moveText = UI.scrollAmount + dy
+                const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
+                const maskHeight = 200//scrollMask.height
+                const scrollHeight = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
+
+                if (moveText > slotsHeight-maskHeight) {
+                    moveText = slotsHeight-maskHeight
+                } else if (moveText < 0) {
+                    moveText = 0
+                }
+
+                scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
+                for (let [key] of Object.entries(UI.slots)) {
+                    UI.slots[key].resetSlot(-moveText)
+                }
+                UI.scrollAmount = moveText
+            } 
+        );
     }
 
     hide()

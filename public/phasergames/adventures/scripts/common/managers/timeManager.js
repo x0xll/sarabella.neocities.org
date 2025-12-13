@@ -12,7 +12,7 @@ class TimeManager
             this.startAt = 0
         }
         this.isDay = true
-        this.nightLength = 120000 // should be 120000
+        this.nightLength = 30000 // should be 30000
         this.dayLength = 180000 // should be 180000
     }
 
@@ -149,6 +149,9 @@ class TimeManager
             this.renderDayNight()
             for (let [key] of Object.entries(this.phaserScene.sharedData.timeTrackedEntities)) {
                 const zoneEntities = this.phaserScene.sharedData.timeTrackedEntities[key]
+                if (zoneEntities === undefined) {
+                    continue
+                }
                 for (let [key] of Object.entries(zoneEntities)) {
                     zoneEntities[key].daysCount++
                 }
@@ -177,6 +180,10 @@ class TimeManager
 
         const zoneEntities = this.phaserScene.sharedData.timeTrackedEntities[this.phaserScene.zoneConfig.ID]
         for (let [key] of Object.entries(zoneEntities)) {
+            if (this.phaserScene.entities[key] === undefined) {
+                delete this.phaserScene.sharedData.timeTrackedEntities[this.phaserScene.zoneConfig.ID][key]
+                continue
+            }
             this.phaserScene.entities[key].update()
         }
     }

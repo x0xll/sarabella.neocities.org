@@ -110,11 +110,9 @@ class Player extends Entity {
             switch (this.cursor.cursorMode) {
                 case this.cursor.MODE.placing:
                     if (this.cursor.canPlace(gridTarget, item)) {
-                        console.log("Placing")
                         this.zoneScene.sharedData.inventory.manager.removeItem(item.templateID)
                         this.zoneScene.spawnEntity(item.entityTemplate, gridTarget.x, gridTarget.y)
                     } else {
-                        console.log("Placing failed")
                     }
                     this.zoneScene.sharedData.inventory.currentItem = null
                     this.cursor.reset()
@@ -122,11 +120,9 @@ class Player extends Entity {
 
                 case this.cursor.MODE.planting:
                     if (this.cursor.canPlant(gridTarget, item)) {
-                        console.log("Planting")
                         this.zoneScene.sharedData.inventory.manager.removeItem(item.templateID)
                         this.zoneScene.spawnEntity(item.plantItemID, gridTarget.x, gridTarget.y)
                     } else {
-                        console.log("Planting failed")
                     }
                     this.zoneScene.sharedData.inventory.currentItem = null
                     this.cursor.reset()

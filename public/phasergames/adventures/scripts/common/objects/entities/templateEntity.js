@@ -6,7 +6,8 @@ class TemplateEntity extends Entity {
     SPRITE_TYPES = {
         noSprite: 0,
         stillImage: 1,
-        spine: 2
+        atlas: 2,
+        spine: 3
     }
 
     constructor(zoneScene, templateID, startX, startY, facingDirection = "se", addToCurrentZone = true, loadLate = false) {
@@ -72,36 +73,14 @@ class TemplateEntity extends Entity {
             }
         }
 
-
-        if (this.spriteType === this.SPRITE_TYPES.spine) {
-            try {
-                let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
-                this.sprite = this.zoneScene.add.spine(isoStart.x, isoStart.y, `${this.templateID}-json`, `${this.templateID}-atlas`).setScale();
-                this.resetSpriteFacingDirection()
-                this.resetSpriteDepth()
-                this.setAnimations()
-            } catch (error) {
-                console.log(`Could not load spine file for ${this.templateID}`)
-            }
-        } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
-            let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
-            if (this.zoneScene.sharedData.templateManager.getTemplateType(`${this.templateID}`) === "plant") {
-                // For sprites where the middle of the tile is aligned with the middle, bottom of the sprite
-                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`).setOrigin(.5, 1)
-            } else {
-                // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
-                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
-            }
-            // this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`)
-            this.resetSpriteFacingDirection()
-            this.resetSpriteDepth()
-        }
-
+        this.#createPlantData()
+        this.#createSprite()
         if (this.isSpawner) {this.#trySpawn() }
     }
 
     update() {
         if (this.isSpawner) { this.#trySpawn() }
+        if (this.isPlant) { this.#tryGrow() }
     }
     // ------- END INITIALIZE ENTITY -------
 
@@ -117,7 +96,10 @@ class TemplateEntity extends Entity {
             folderName = folderName[folderName.length - 1].replace(".swf", "")
 
 
-            if (this.getTemplateValue(["CharacterIdle"], templateID) === undefined
+            if (this.templateID === "P001Template") {
+                spriteType = this.SPRITE_TYPES.atlas
+                this.zoneScene.load.atlas(`${templateID}`, `${this.assetPath}/${folderName}/${spriteClass}/sprite.png`, `${this.assetPath}/${folderName}/${spriteClass}/sprite.json`);
+            } else if (this.getTemplateValue(["CharacterIdle"], templateID) === undefined
                 // || this.zoneScene.sharedData.templateManager.getTemplateType(`${templateID}`) !== "npc"
                 ) {
                 // TODO actually add this
@@ -134,13 +116,13 @@ class TemplateEntity extends Entity {
     }
 
     #loadSpawnerData() {
-        let spawnerData = this.getTemplateValue(["EntitySpawning", "spawnType"])
+        let spawnerData = this.getTemplateValue(["EntitySpawning"])
         if (spawnerData) {
             this.isSpawner = true
+            this.spawnerData = spawnerData
         } else {
             this.isSpawner = false
         }
-        this.spawnerData = this.getTemplateValue(["EntitySpawning"])
     }
     #trySpawn() {
         const spawnerData = this.spawnerData
@@ -199,12 +181,67 @@ class TemplateEntity extends Entity {
                 return
             }
         }
-
     }
     // ------- END LOAD FUNCTIONS -------
 
 
     // ------- CREATE FUNCTIONS -------
+    #createPlantData() {
+        let plantData = this.getTemplateValue(["BasicGrowing"])
+        if (plantData) {
+            this.isPlant = true
+            this.plantData = {
+                growthData: plantData,
+                spriteData: this.getTemplateValue(["PlantMovieClip"])
+            }
+            if (this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] === undefined) {
+                this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
+                    startTime: this.zoneScene.timeManager.getCurrentTime(),
+                    daysCount: 0
+                }
+            }
+            // console.log("Plant template data:", this.plantData)
+            // TODO (placeholder) add interactions and save states between zones
+            this.isWatered = true
+            this.isWilted = false
+            this.currentStage = 1
+        } else {
+            this.isPlant = false
+        }
+        this.#tryGrow()
+    }
+    #createSprite() {
+        if (this.spriteType === this.SPRITE_TYPES.spine) {
+            try {
+                let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
+                this.sprite = this.zoneScene.add.spine(isoStart.x, isoStart.y, `${this.templateID}-json`, `${this.templateID}-atlas`).setScale();
+                this.resetSpriteFacingDirection()
+                this.resetSpriteDepth()
+                this.setAnimations()
+            } catch (error) {
+                console.log(`Could not load spine file for ${this.templateID}`)
+            }
+        } else if (this.spriteType === this.SPRITE_TYPES.atlas) {
+            let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
+            if (this.getTemplateValue(["BasicGrowing"], this.templateID) !== undefined) {
+                this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, `${this.currentStage}`).setOrigin(.5, 1).setScale(.5)
+            } else {
+                this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, "1").setOrigin(.5, 1)
+            }
+        } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
+            let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
+            if (this.zoneScene.sharedData.templateManager.getTemplateType(`${this.templateID}`) === "plant") {
+                // For sprites where the middle of the tile is aligned with the middle, bottom of the sprite
+                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`).setOrigin(.5, 1)
+            } else {
+                // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
+                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
+            }
+            // this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`)
+            this.resetSpriteFacingDirection()
+            this.resetSpriteDepth()
+        }
+    }
     setAnimations() {
         let character = this
         character.animationQueue = []
@@ -235,6 +272,56 @@ class TemplateEntity extends Entity {
              })
     }
     // ------- END CREATE FUNCTIONS -------
+
+
+    // ------- UPDATE FUNCTIONS -------
+    #tryGrow() {
+        const plantData = this.plantData
+
+        // Check for day/night, wilted and watered conditions
+        if (!this.sprite
+            || this.isWilted
+            || !this.isWatered
+            || plantData.growthData.growthType[0].text !== this.zoneScene.timeManager.getCurrentTimeType()
+        ) {
+            return
+        }
+
+        // Check growth time
+        const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
+        if (timeData !== undefined) {
+            let duration = this.zoneScene.timeManager.getCurrentTime() - timeData.startTime
+            const fullDay = this.zoneScene.timeManager.nightLength + this.zoneScene.timeManager.dayLength
+            if (timeData.daysCount > 0) {
+                duration = (fullDay - timeData.startTime) + (timeData.daysCount - 1 * fullDay) + this.zoneScene.timeManager.getCurrentTime()
+            }
+
+            const stageTime = parseInt(plantData.growthData.fullGrowthTime[0].text) / parseInt(plantData.spriteData.stages[0].text)
+            let currentStage = 1
+
+            // TODO Check if we have any refs for how long plants took to wilt
+            const isWilted = duration > parseInt(plantData.growthData.fullGrowthTime[0].text) + fullDay
+            for (let index = 1; index <= parseInt(plantData.spriteData.stages[0].text); index++) {
+                const timeForCurrentStage = stageTime * index;
+                if (duration > timeForCurrentStage) {
+                    currentStage++
+                    break
+                }
+            }
+            if (isWilted) { currentStage++ }
+
+            if (currentStage > this.currentStage && this.spriteType === this.SPRITE_TYPES.atlas) {
+                if (isWilted) {
+                    this.sprite.setFrame("Wilted")
+                    this.isWilted = isWilted
+                } else {
+                    this.sprite.setFrame(`${currentStage}`)
+                }
+                this.currentStage = currentStage
+            }
+        }
+    }
+    // ------- END UPDATE FUNCTIONS -------
 
 
     // ------- COMMAND FUNCTIONS -------
@@ -294,7 +381,7 @@ class TemplateEntity extends Entity {
        }
     #takePlantCommand() {
         let takeItem = this.getTemplateValue(["BasicGrowing", "harvestSeedsItemId", "text"])
-        if (this.currentStage === this.getTemplateValue(["PlantMovieClip", "stages", "text"])) {
+        if (!this.isWilted && this.currentStage === parseInt(this.getTemplateValue(["PlantMovieClip", "stages", "text"]))) {
             takeItem = this.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
         }
         this.#takeCommand(takeItem)
