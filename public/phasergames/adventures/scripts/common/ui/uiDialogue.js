@@ -70,14 +70,6 @@ class uiDialogue extends uiManagerBase
         // TODO : get the scroll bar
     }
 
-    create()
-    {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {}, this);
-        this.load();
-        this.phaserScene.load.start();
-    }
-
     initialize()
     {
         var panel = this.phaserScene.add.image(10, 270, this.DIALOGUE_PANEL_IMG)
@@ -154,63 +146,69 @@ class uiDialogue extends uiManagerBase
     // TODO: Handle if dialogue has no character to display
     show(questID, characterid, text, choices, image)
     {
-        if (!super.show()) return
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            let test = super.show()
+            if (!test) return
 
-        // TODO check if this actually works
-        if (Array.isArray(text) && text.length === 1) {
-            text = text[0]
-        } else if (Array.isArray(text)) {
-            let rand = randomIntFromInterval(0, text.length - 1)
-            text = text[rand]
-        }
+            // TODO check if this actually works
+            if (Array.isArray(text) && text.length === 1) {
+                text = text[0]
+            } else if (Array.isArray(text)) {
+                let rand = randomIntFromInterval(0, text.length - 1)
+                text = text[rand]
+            }
 
-        // Character portrait
-        const character = {
-            name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
-            id: characterid
-        }
-        this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
-            (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
-             : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
-             : this.DIALOGUE_HORSES_THUMBNAILS));
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
+            // Character portrait
+            const character = {
+                name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
+                id: characterid
+            }
+            this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
+                (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
+                : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
+                : this.DIALOGUE_HORSES_THUMBNAILS));
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
 
-        let textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalText
-        if (image !== undefined)
-        {
-            textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalImgText
-            
-            this.lastImage = image
-            this.phaserScene.load.once('complete', () => {
-                    this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
-                    this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.alpha);
-                }, this);
-            this.phaserScene.load.image(`Dialogue${image}`, `./assets/extracted/UI/Dialogue/Images/${image}.png`);
-            this.phaserScene.load.start();
-        }
-        textElement.setText(this.formatQuestText(text));
+            let textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalText
+            if (image !== undefined)
+            {
+                textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalImgText
+                
+                this.lastImage = image
+                this.phaserScene.load.once('complete', () => {
+                        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
+                        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.alpha);
+                    }, this);
+                this.phaserScene.load.image(`Dialogue${image}`, `./assets/extracted/UI/Dialogue/Images/${image}.png`);
+                this.phaserScene.load.start();
+            }
+            textElement.setText(this.formatQuestText(text));
 
-        // TODO : get the dialogue choices
+            // TODO : get the dialogue choices
 
-        this.turnOnEvents(questID)
+            this.turnOnEvents(questID)
 
-        // Set UI item position
-        textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - textElement.height - 20)
-        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setY(textElement.y+5) // +5
-        this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setY(textElement.y-55)
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setY(textElement.y-55)
-        this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setY(textElement.y-55)
+            // Set UI item position
+            textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - textElement.height - 20)
+            this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setY(textElement.y+5) // +5
+            this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setY(textElement.y-55)
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setY(textElement.y-55)
+            this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setY(textElement.y-55)
 
-        // Set UI items visible
-        this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(1);
-        textElement.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
-        this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
+            // Set UI items visible
+            this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(1);
+            textElement.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
+            this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
+        }, this, true);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     hide()

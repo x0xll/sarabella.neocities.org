@@ -54,15 +54,10 @@ class uiMinimap extends uiManagerBase
 
     create()
     { 
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
-            this.phaserScene.sharedData.hud.ui.mapButton.on('pointerup', function (pointer){
-                this.phaserScene.sharedData[this.key].ui.manager.show();
-            }, this)
-            this.phaserScene.sharedData.hud.ui.mapButton.setAlpha(1)
-        }, this);
-        this.load();
-        this.phaserScene.load.start();
+        this.phaserScene.sharedData.hud.ui.mapButton.on('pointerup', function (pointer){
+            this.phaserScene.sharedData[this.key].ui.manager.show();
+        }, this)
+        this.phaserScene.sharedData.hud.ui.mapButton.setAlpha(1)
     }
 
     initialize()
@@ -109,16 +104,22 @@ class uiMinimap extends uiManagerBase
 
     show()
     {
-        if (!super.show()) return
-        this.turnOnEvents()
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            let test = super.show()
+            if (!test) return
+            this.turnOnEvents()
 
-        this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
-        this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
-        this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
-        this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(1);
-        this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
-        this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
-        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(1);
+            this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
+            this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
+            this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
+            this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(1);
+            this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
+            this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(1);
+        }, this);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     hide()
@@ -155,7 +156,7 @@ class uiMinimap extends uiManagerBase
                 this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(1);
                 this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(0);
             }
-        });
+        }, this, true);
     }
 
     turnOffEvents()

@@ -57,8 +57,15 @@ class uiManagerBase
 
     hide()
     {
-        this.phaserScene.sharedData.global.uiOpen = false;
         this.phaserScene.sharedData[this.key].ui.open = false;
+
+        let test = false;
+        this.phaserScene.sharedData.UIkeys.forEach(key => {
+            if (this.phaserScene.sharedData[key].ui.open === undefined) return
+            test = test || this.phaserScene.sharedData[key].ui.open
+        });
+        this.phaserScene.sharedData.global.uiOpen = test;
+
         this.turnOffEvents()
     }
 

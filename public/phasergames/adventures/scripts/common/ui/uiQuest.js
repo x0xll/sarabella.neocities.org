@@ -35,15 +35,10 @@ class uiQuest extends uiManagerBase
 
     create()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
-            this.phaserScene.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
-                this.phaserScene.sharedData.quest.ui.manager.show();
-            }, this);
-            this.phaserScene.sharedData.hud.ui.journalButton.setAlpha(1)
+        this.phaserScene.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
+            this.phaserScene.sharedData.quest.ui.manager.show();
         }, this);
-        this.load();
-        this.phaserScene.load.start();
+        this.phaserScene.sharedData.hud.ui.journalButton.setAlpha(1)
     }
 
     initialize()
@@ -118,27 +113,33 @@ class uiQuest extends uiManagerBase
 
     show()
     {
-        if (!super.show()) return
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            let test = super.show()
+            if (!test) return
 
-        this.phaserScene.sharedData.quest.ui.elements.panelImg.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData.quest.ui.elements.panelImg.setAlpha(1);
+            this.phaserScene.sharedData.quest.ui.elements.closeBtn.setAlpha(1);
 
-        if (this.phaserScene.sharedData.quest.logic.activeQuests !== undefined && this.phaserScene.sharedData.quest.logic.activeQuests.length > 0)
-        {
-            // We default on the first quest, if it isn't possible to show it (ie: waiting state + no trigger)
-            // Then we try the next one until we either have one or nothing
-            let firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[0];
-            let isShowable = false;
-            for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+            if (this.phaserScene.sharedData.quest.logic.activeQuests !== undefined && this.phaserScene.sharedData.quest.logic.activeQuests.length > 0)
             {
-                firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[i];
-                isShowable = this.selectCurrentQuestForDetails(firstQuest);
-                if (isShowable)
-                    break;
+                // We default on the first quest, if it isn't possible to show it (ie: waiting state + no trigger)
+                // Then we try the next one until we either have one or nothing
+                let firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[0];
+                let isShowable = false;
+                for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+                {
+                    firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[i];
+                    isShowable = this.selectCurrentQuestForDetails(firstQuest);
+                    if (isShowable)
+                        break;
+                }
             }
-        }
-        
-        this.turnOnEvents()
+            
+            this.turnOnEvents()
+        }, this, true);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     hide()

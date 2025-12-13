@@ -68,15 +68,10 @@ class uiInventory extends uiManagerBase
 
     create()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
-            this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
-                this.phaserScene.sharedData[this.key].ui.manager.show();
-            }, this);
-            this.phaserScene.sharedData.hud.ui.inventoryButton.setAlpha(1)
+        this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
+            this.phaserScene.sharedData[this.key].ui.manager.show();
         }, this);
-        this.load();
-        this.phaserScene.load.start();
+        this.phaserScene.sharedData.hud.ui.inventoryButton.setAlpha(1)
     }
 
     initialize()
@@ -151,20 +146,26 @@ class uiInventory extends uiManagerBase
 
     show()
     {
-        if (!super.show()) return
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            let test = super.show()
+            if (!test) return
 
-        this.turnOnEvents()
-        this.setSelected(ITEM_TYPES.ALL)
-        this.phaserScene.sharedData.inventory.ui.elements.main.setAlpha(1);
+            this.turnOnEvents()
+            this.setSelected(ITEM_TYPES.ALL)
+            this.phaserScene.sharedData.inventory.ui.elements.main.setAlpha(1);
 
-        this.updateSlots();
-        this.updateScrollBar()
+            this.updateSlots();
+            this.updateScrollBar()
 
-        const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
-        for (let index = 0; index < hitboxes.length; index++) {
-            const hitbox = hitboxes[index];
-            hitbox.setInteractive()
-        }
+            const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
+            for (let index = 0; index < hitboxes.length; index++) {
+                const hitbox = hitboxes[index];
+                hitbox.setInteractive()
+            }
+        }, this, true);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     hide()

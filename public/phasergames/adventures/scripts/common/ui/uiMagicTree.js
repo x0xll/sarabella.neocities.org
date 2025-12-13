@@ -33,16 +33,11 @@ class uiMagicTree extends uiManagerBase
 
     create()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
-            this.phaserScene.sharedData.hud.ui.skillProgressButton.on('pointerup', function (pointer) {
-                this.phaserScene.sharedData[this.key].ui.manager.show();
-            }, this);
-            this.phaserScene.sharedData.hud.ui.skillProgressButton.setAlpha(1)
-            this.phaserScene.sharedData.hud.ui.levelIndicator.setAlpha(1)
+        this.phaserScene.sharedData.hud.ui.skillProgressButton.on('pointerup', function (pointer) {
+            this.phaserScene.sharedData[this.key].ui.manager.show();
         }, this);
-        this.load();
-        this.phaserScene.load.start();
+        this.phaserScene.sharedData.hud.ui.skillProgressButton.setAlpha(1)
+        this.phaserScene.sharedData.hud.ui.levelIndicator.setAlpha(1)
     }
 
     initialize()
@@ -79,16 +74,23 @@ class uiMagicTree extends uiManagerBase
 
     show()
     {
-        if (!super.show()) return
-        this.turnOnEvents()
+        // Lazy loading UI
+        this.phaserScene.load.once('complete', () => {
+            let test = super.show()
+            if (!test) return
+            
+            this.turnOnEvents()
 
-        this.phaserScene.sharedData.magicTree.ui.elements.tree.setAlpha(1);
-        let level = this.phaserScene.sharedData.magicTree.logic.level;
-        this.phaserScene.sharedData.magicTree.ui.elements.tree.setTexture(this.MAGICTREE_IMAGE + level);
+            this.phaserScene.sharedData.magicTree.ui.elements.tree.setAlpha(1);
+            let level = this.phaserScene.sharedData.magicTree.logic.level;
+            this.phaserScene.sharedData.magicTree.ui.elements.tree.setTexture(this.MAGICTREE_IMAGE + level);
 
-        this.phaserScene.sharedData.magicTree.ui.elements.border.setAlpha(1);
-        this.phaserScene.sharedData.magicTree.ui.elements.icon.setAlpha(1);
-        this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData.magicTree.ui.elements.border.setAlpha(1);
+            this.phaserScene.sharedData.magicTree.ui.elements.icon.setAlpha(1);
+            this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.setAlpha(1);
+        }, this, true);
+        this.load();
+        this.phaserScene.load.start();
     }
 
     hide()
