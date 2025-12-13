@@ -1,27 +1,65 @@
 {
-"skeleton": { "hash": "yH1JmZTr2jo", "spine": "4.2.43", "x": -68.5, "y": -48.5, "width": 137, "height": 97 },
+"skeleton": { "hash": "ahqTySFMfHc", "spine": "4.2.43", "x": -38, "y": -24, "width": 76, "height": 48 },
 "bones": [
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "Underlay2", "bone": "root", "attachment": "Overlay" },
-	{ "name": "Underlay2_night", "bone": "root", "attachment": "Overlay" },
-	{ "name": "Underlay", "bone": "root", "attachment": "Underlay" },
-	{ "name": "Underlay_night", "bone": "root", "attachment": "Underlay" },
 	{ "name": "Main", "bone": "root", "attachment": "Main" },
-	{ "name": "Main_night", "bone": "root", "attachment": "Main" },
-	{ "name": "Overlay", "bone": "root", "attachment": "Overlay" },
-	{ "name": "Overlay_night", "bone": "root", "attachment": "Overlay" }
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" }
 ],
 "skins": [
 	{
-		"name": "Ti037b",
+		"name": "T0047a",
 		"attachments": {
 			"Main": {
-				"Main": { "name": "ForestCave/T0053c/1", "width": 137, "height": 97 }
+				"Main": { "name": "T0047a/1", "x": 17, "y": 204, "width": 318, "height": 530 }
 			},
 			"Main_night": {
-				"Main": { "name": "ForestCave/T0053c/1", "width": 137, "height": 97 }
+				"Main": { "name": "T0047a/1", "x": 17, "y": 204, "width": 318, "height": 530 }
+			}
+		}
+	},
+	{
+		"name": "T0047d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0047d/1", "x": 10, "y": 194, "width": 308, "height": 509 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0047d/1", "x": 10, "y": 194, "width": 308, "height": 509 }
+			}
+		}
+	},
+	{
+		"name": "T0047f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0047f/1", "y": 206, "width": 338, "height": 469 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0047f/1", "y": 206, "width": 338, "height": 469 }
+			}
+		}
+	},
+	{
+		"name": "T0047m",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0047m/1", "x": 16, "y": 207, "width": 318, "height": 530 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0047m/1", "x": 16, "y": 207, "width": 318, "height": 530 }
+			}
+		}
+	},
+	{
+		"name": "T0198",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0198/1", "width": 76, "height": 48 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0198/1", "width": 76, "height": 48 }
 			}
 		}
 	}

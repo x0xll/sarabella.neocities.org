@@ -433,7 +433,9 @@
         "tileYOffset": 1495,
         "tileAssets": [
             "common",
-            "ruralskymain"
+            "ruralskymain",
+            "canterfarmsmain",
+            "castletownmain"
         ],
         
         "backgroundXOffset": 2000,
@@ -470,7 +472,9 @@
         "tileYOffset": 2460,
         "tileAssets": [
             "common",
-            "ruralskymain"
+            "ruralskymain",
+            "canterfarmsmain",
+            "castletownmain"
         ],
         
         "backgroundXOffset": 2750,
@@ -507,7 +511,8 @@
         "tileAssets": [
             "common",
             "ruralskymain",
-            "canterfarmsmain"
+            "canterfarmsmain",
+            "castletownmain"
         ],
 
         "backgroundXOffset": 2868,
@@ -636,7 +641,9 @@
         "tileYOffset": 2300,
         "tileAssets": [
             "common",
-            "forestcavemain"
+            "forestcavemain",
+            "canterfarmsmain",
+            "ruralskymain"
         ],
         
         "backgroundXOffset": 1548,
@@ -732,7 +739,8 @@
         "tileYOffset": 1000,
         "tileAssets": [
             "common",
-            "forestcavemain"
+            "forestcavemain",
+            "ruralskymain"
         ],
         
         "backgroundXOffset": 1500,
