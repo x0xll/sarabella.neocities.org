@@ -32,6 +32,10 @@ class Common_UI extends Phaser.Scene
     {   
         const UI = this;
         UI.sharedData = sharedData // Used to share data across multiple scenes, managers, &c.
+        sharedData.keyboard = {}
+        sharedData.keyboard.enter = UI.input.keyboard.addKey("ENTER");
+        sharedData.keyboard.space = UI.input.keyboard.addKey("SPACE");
+        sharedData.keyboard.esc = UI.input.keyboard.addKey("ESC");
 
         // initializeLoadingUI(UI);
 

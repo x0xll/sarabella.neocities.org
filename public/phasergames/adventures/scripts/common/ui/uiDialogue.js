@@ -114,15 +114,6 @@ class uiDialogue extends uiManagerBase
                             .setScrollFactor(0)
                             .setInteractive();
 
-        continueBtn.on('pointerover', (pointer) => 
-        { 
-
-        });
-        continueBtn.on('pointerout', (pointer) => 
-        { 
-
-        });
-
         var continueTxt = this.phaserScene.add.text(continueBtn.x+50, continueBtn.y+12, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
@@ -147,6 +138,16 @@ class uiDialogue extends uiManagerBase
         };
 
         super.initialize();
+
+
+        continueBtn.on('pointerover', (pointer) => 
+        { 
+
+        });
+        continueBtn.on('pointerout', (pointer) => 
+        { 
+
+        });
     }
 
 
@@ -199,13 +200,16 @@ class uiDialogue extends uiManagerBase
 
 
         let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup")
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', (pointer) => 
-        { 
-            this.hide();
-            this.phaserScene.sharedData.lastChoice = "continue"
-            this.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
-        });
+
+        let UI = this
+        function continueOption() { 
+            UI.hide();
+            UI.phaserScene.sharedData.lastChoice = "continue"
+            UI.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
+        }
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', continueOption);
+        this.phaserScene.sharedData.keyboard.space.on("up", continueOption);
+        this.phaserScene.sharedData.keyboard.enter.on("up", continueOption);
         
         
         // TODO : get the dialogue choices
@@ -244,6 +248,10 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(0);
         this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(0);
+
+        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup")
+        this.phaserScene.sharedData.keyboard.space.off("up");
+        this.phaserScene.sharedData.keyboard.enter.off("up");
     }
 
     formatQuestText(text)

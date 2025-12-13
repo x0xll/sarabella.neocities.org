@@ -102,6 +102,46 @@ class uiInventory extends uiManagerBase
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(225, 355, 35, 35).setAlpha(.5); // produce
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(508, 104, 35, 35).setAlpha(.5); // close
 
+        // TODO: Handle scrolling
+        // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(270, 173, 275, 200).setAlpha(.5).setScrollFactor(0);
+        const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(270, 173, 275, 200)
+                        .setScrollFactor(0))
+        // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(511, 192, 20, 174).setAlpha(.5).setScrollFactor(0);
+        const scrollZone = this.phaserScene.add.zone(511, 192, 20, 174)
+                        .setScrollFactor(0)
+                        .setOrigin(0)
+                        .setInteractive()
+        const scrollBar = this.phaserScene.add.sprite(515, 191, this.SCROLL, "scroll")
+                        .setScrollFactor(0)
+                        .setOrigin(0);
+        const scrollUp = this.phaserScene.add.sprite(scrollZone.x, scrollZone.y-21, this.SCROLL, "arrowScroll_1")
+                        .setScrollFactor(0)
+                        .setOrigin(0);
+        const scrollDown = this.phaserScene.add.sprite(scrollZone.x, scrollZone.y + scrollZone.height + 20, this.SCROLL, "arrowScroll_1")
+                        .setScrollFactor(0)
+                        .setOrigin(1, 0)
+                        .setAngle(180);
+        
+        const scrollAmountOnClick = 55
+        this.scrollAmount = 0
+        const arrows = [scrollUp, scrollDown]
+
+        this.phaserScene.sharedData.inventory.ui.elements = {
+            main: sprite,
+            hitboxes: hitboxes,
+            scrollMask: scrollMask,
+            scrollZone: scrollZone,
+            scrollBar: scrollBar,
+            scrollUp: scrollUp,
+            scrollDown: scrollDown
+        };
+
+        this.setSelected(ITEM_TYPES.ALL)
+
+        super.initialize();
+
+
+        // After super.initialisation since close breaks some of these
         for (let [key] of Object.entries(ITEM_TYPES)) {
             const buttonIndex = ITEM_TYPES[key]+1
             const hitbox = hitboxes[buttonIndex]
@@ -149,29 +189,6 @@ class uiInventory extends uiManagerBase
         sprite.animationState.setAnimation(8, `scroll/hide`, false)
 
 
-        // TODO: Handle scrolling
-        // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(270, 173, 275, 200).setAlpha(.5).setScrollFactor(0);
-        const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(270, 173, 275, 200)
-                        .setScrollFactor(0))
-        // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(511, 192, 20, 174).setAlpha(.5).setScrollFactor(0);
-        const scrollZone = this.phaserScene.add.zone(511, 192, 20, 174)
-                        .setScrollFactor(0)
-                        .setOrigin(0)
-                        .setInteractive()
-        const scrollBar = this.phaserScene.add.sprite(515, 191, this.SCROLL, "scroll")
-                        .setScrollFactor(0)
-                        .setOrigin(0);
-        const scrollUp = this.phaserScene.add.sprite(scrollZone.x, scrollZone.y-21, this.SCROLL, "arrowScroll_1")
-                        .setScrollFactor(0)
-                        .setOrigin(0);
-        const scrollDown = this.phaserScene.add.sprite(scrollZone.x, scrollZone.y + scrollZone.height + 20, this.SCROLL, "arrowScroll_1")
-                        .setScrollFactor(0)
-                        .setOrigin(1, 0)
-                        .setAngle(180);
-        
-        const scrollAmountOnClick = 55
-        this.scrollAmount = 0
-        const arrows = [scrollUp, scrollDown]
         arrows.forEach(arrow => {
             arrow.on('pointerout', (pointer) =>  
             { 
@@ -282,19 +299,30 @@ class uiInventory extends uiManagerBase
                 }
                 UI.scrollAmount = moveText
             });
+        this.phaserScene.input.on( 
+            "wheel", 
+            function (pointer, currentlyOver, dx, dy, dz, event) {
+                const scrollBar = UI.phaserScene.sharedData.inventory.ui.elements.scrollBar
+                const slotNumber = Object.keys(UI.slots).length - 1
+                const topPos = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.y + (scrollBar.height/2)
+                let moveText = UI.scrollAmount + dy
+                const slotsHeight = (((slotNumber - (slotNumber % 4)) / 4) + 1) * 55 // height the slots take up
+                const maskHeight = 200//scrollMask.height
+                const scrollHeight = UI.phaserScene.sharedData.inventory.ui.elements.scrollZone.height - scrollBar.height
 
-        this.phaserScene.sharedData.inventory.ui.elements = {
-            main: sprite,
-            hitboxes: hitboxes,
-            scrollMask: scrollMask,
-            scrollZone: scrollZone,
-            scrollBar: scrollBar,
-            scrollUp: scrollUp,
-            scrollDown: scrollDown
-        };
+                if (moveText > slotsHeight-maskHeight) {
+                    moveText = slotsHeight-maskHeight
+                } else if (moveText < 0) {
+                    moveText = 0
+                }
 
-        super.initialize();
-        this.setSelected(ITEM_TYPES.ALL)
+                scrollBar.y = topPos - (scrollBar.height/2) + (moveText * scrollHeight /(slotsHeight-maskHeight))
+                for (let [key] of Object.entries(UI.slots)) {
+                    UI.slots[key].resetSlot(-moveText)
+                }
+                UI.scrollAmount = moveText
+            } 
+        );
     }
 
     show()
@@ -344,6 +372,7 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.inventory.ui.elements.scrollZone.disableInteractive()
         this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(0).disableInteractive();
         this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(0).disableInteractive();
+        this.phaserScene.input.off( "wheel");
 
         const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
         for (let index = 0; index < hitboxes.length; index++) {
