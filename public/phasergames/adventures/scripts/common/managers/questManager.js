@@ -386,7 +386,7 @@ class QuestManager {
                 let questGlobalData = this.getQuestPerID(phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex]);
 
                 if (questGlobalData.targetZone && questGlobalData.targetZone !== phaserScene.sharedData.global.ZONE_ID) continue
-                if (questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.templateID) continue
+                if (triggerData.templateID && questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.templateID) continue
 
                 for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                     const triggers = questGlobalData.line[lineIndex].trigger.object

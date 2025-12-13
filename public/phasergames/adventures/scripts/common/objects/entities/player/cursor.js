@@ -151,6 +151,7 @@ class Cursor {
      */
     canPlant(gridTarget, item = this.zoneScene.sharedData.inventory.currentItem, gridFoot = this.gridFoot) {
         return !this.#runCursorChecks(gridTarget, [this.#isIncorrectSoil], item)
+                && !this.#runCursorChecks(gridTarget, [this.#hasPlantEntity])
     }
     
     /**
@@ -168,6 +169,20 @@ class Cursor {
         let tile = context.zoneScene.getTileAt(gridTarget.x, gridTarget.y)
         if (tile.hasEntity) {
             return true
+        }
+        return false
+    }
+
+    #hasPlantEntity(context, gridTarget, filterContext) {
+        const entities = context.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+
+        if (entities) {
+            for (let index = 0; index < entities.length; index++) {
+                const entityID = context.zoneScene.entities[entities[index]].templateID
+                if (context.zoneScene.sharedData.templateManager.getTemplateType(entityID) === "plant") {
+                    return true
+                }
+            }
         }
         return false
     }
