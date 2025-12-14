@@ -58,6 +58,7 @@ class ZoneBase extends Phaser.Scene
         zone.timeManager.renderDayNight()
 
         this.instantiateEntities();
+        zone.sharedData.questManager.initializeSavedQuests();
     }
 
     update() 

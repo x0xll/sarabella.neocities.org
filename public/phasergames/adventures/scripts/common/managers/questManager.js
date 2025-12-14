@@ -216,8 +216,6 @@ class QuestManager {
      * Loads and parses the xml files from the cache, and then initializes the quests. Should be called from the loadScreen scene
      */
     async initializeQuestData() {
-        const savedUserQuestData = this.#parseSavedQuestData()
-
         let questData = []
         for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
             questData.push(parseQuestXML(this, this.phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
@@ -238,6 +236,14 @@ class QuestManager {
         // await this.makeQuestAvailable(["ADS-0000000825", "ADV-0000000899", "QUE-0000002105"]); // freeplay_v2.xml
         // await this.makeQuestAvailable(["ADS-0000001163", "ADV-0000001798", "QUE-0000006273"]); // intro_cottage.xml
 
+        // this.saveUserQuestData()
+        this.busy = false
+    }
+
+    async initializeSavedQuests()
+    {
+        const savedUserQuestData = this.#parseSavedQuestData()
+
         // Make quests available based on the user save data
         for (let index = 0; index < savedUserQuestData[0].length; index++) {
             await this.makeQuestAvailable(savedUserQuestData[0][index]);
@@ -245,9 +251,6 @@ class QuestManager {
         for (let index = 0; index < savedUserQuestData[1].length; index++) {
             await this.markQuestFinished(savedUserQuestData[1][index]);
         }
-
-        // this.saveUserQuestData()
-        this.busy = false
     }
 
     /**
@@ -317,6 +320,53 @@ class QuestManager {
         questData.status = this.QUEST_STATES.AVAILABLE;
         console.log("Quest made available: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
 
+        let questConfigData = this.phaserScene.sharedData.questConfig[questID[0] + "-" + questID[1]];
+        if (questConfigData !== undefined)
+        {
+            let adventureAlreadyStarted = false;
+            for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+            {
+                if (questID[1] === this.phaserScene.sharedData.quest.logic.activeQuests[i][1])
+                {
+                    adventureAlreadyStarted = true;
+                    break;
+                }
+            }
+
+            if (!adventureAlreadyStarted)
+            {
+                let questIDCustom = questConfigData[1];
+                let fileIndex = this.#QUEST_FILE_NAMES.indexOf(questConfigData[0]);
+                let customQuest = {
+                    description: "Custom quest",
+                    line: [
+                        {
+                            actions: {
+                                object: []
+                            },
+                            conditions: {},
+                            description: "",
+                            trigger: []
+                        }
+                    ],
+                    status: this.QUEST_STATES.AVAILABLE
+                }
+                for (let i = 2; i < questConfigData.length; i++)
+                {
+                    let actionObj = {
+                        instanceIdentifier: [questConfigData[i].instanceIdentifier],
+                        template: [questConfigData[i].template],
+                        type: questConfigData[i].action,
+                        x: [questConfigData[i].x],
+                        y: [questConfigData[i].y],
+                        zone: [questConfigData[i].zone]
+                    }
+                    customQuest.line[0].actions.object.push(actionObj);
+                }
+                this.phaserScene.sharedData.quest.logic.quests[fileIndex][questID[0]][questID[1]][questIDCustom] = customQuest;
+                this.doQuestAction([questID[0], questID[1], questIDCustom], 0);
+            }
+        }
 
         let questIndex = -1
         for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++) {
@@ -340,7 +390,6 @@ class QuestManager {
             }
             return
         }
-        
     }
 
     /**

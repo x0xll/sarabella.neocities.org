@@ -10,9 +10,7 @@ class TemplateManager {
     NPCLocations = {
         "Z001": {
             "H047Template": [15, 6, "se"],
-            "C001Template": [13, 27, "sw"],
-            "M022aTemplate": [15, 38, "sw"],
-            "M005gTemplate": [18, 37, "sw"]
+            "C001Template": [13, 27, "sw"]
         } 
     }
     
