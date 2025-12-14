@@ -364,7 +364,6 @@ class QuestManager {
         
         if (questIndex >=0) {
             this.phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
-            console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
         }
         
         return
@@ -524,9 +523,9 @@ class QuestManager {
         }
     }
     #QUEST_ACTIONS = {
-        "LogAdventureBeginAction": this.#missingAction,
+        "LogAdventureBeginAction": this.#logAdventureBeginAction,
         "LogAdventureEndAction": this.#logAdventureEndAction,
-        "LogQuestEndAction": this.#missingAction,
+        "LogQuestEndAction": this.#logQuestEndAction,
         "AddQuestAction": this.#addQuestAction,
         "RemoveQuestAction": this.#removeQuestAction,
         "AddQuestFileAction": this.#missingAction,
@@ -558,6 +557,16 @@ class QuestManager {
 
     async #missingAction (phaserScene, questID, lineIndex, action) {
         console.warn(`Missing action: ${action.type}`)
+    }
+
+    async #logAdventureBeginAction(phaserScene, questID, lineIndex, action) {
+        console.log(`Starting adventure ${questID[0]} - ${questID[1]}`)
+    }
+
+    async #logQuestEndAction(phaserScene, questID, lineIndex, action) {
+        if (!questID[0] || !questID[1]) {questID = this.getFullQuestID(questID)}
+        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+        console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
     }
 
     async #logAdventureEndAction(phaserScene, questID, lineIndex, action) {
