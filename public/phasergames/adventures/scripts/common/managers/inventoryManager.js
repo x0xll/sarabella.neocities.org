@@ -27,7 +27,7 @@ class InventoryManager
             this.addItem("P010ProduceTemplate")
             this.addItem("P010SeedTemplate")
             this.addItem("P011ProduceTemplate")
-            this.addItem("I158bTemplate",2)
+            this.addItem("I0536Template",2)
             // this.addItem("P011SeedTemplate")
             // this.addItem("P012ProduceTemplate")
             // this.addItem("P012SeedTemplate")
