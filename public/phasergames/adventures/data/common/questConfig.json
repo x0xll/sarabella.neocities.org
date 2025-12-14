@@ -8,16 +8,16 @@
             "template": "T0179Template",
             "instanceIdentifier": "bridgeblock1",
             "zone": "Z001",
-            "x": 0,
-            "y": 0
+            "x": 8,
+            "y": 17
         },
         {
             "action": "AddZoneItemAnywhereAction",
             "template": "T0179Template",
             "instanceIdentifier": "bridgeblock2",
             "zone": "Z001",
-            "x": 0,
-            "y": 0
+            "x": 7,
+            "y": 17
         },
         {
             "action": "AddZoneItemAnywhereAction",
@@ -29,8 +29,8 @@
         },
         {
             "action": "AddZoneItemAnywhereAction",
-            "template": "T0055eTemplate",
-            "instanceIdentifier": "gateOpened",
+            "template": "T0055bTemplate",
+            "instanceIdentifier": "gateClosed",
             "zone": "Z001",
             "x": 33,
             "y": 36
