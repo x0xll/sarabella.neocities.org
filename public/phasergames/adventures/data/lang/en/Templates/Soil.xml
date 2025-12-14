@@ -68,7 +68,7 @@
   </template>
   <template name="DirtTemplate" template="SoilTemplate">
     <component name="Name">
-      <name>Terre</name>
+      <name>Dirt</name>
     </component>
     <component name="Soil">
       <soil>dirt</soil>
@@ -91,7 +91,7 @@
   </template>
   <template name="CloudTemplate" template="SoilTemplate">
     <component name="Name">
-      <name>Sol nuageux</name>
+      <name>Cloud</name>
     </component>
     <component name="Soil">
       <soil>cloud</soil>
@@ -114,7 +114,7 @@
   </template>
   <template name="FreshwaterTemplate" template="SoilTemplate">
     <component name="Name">
-      <name>Eau fraîche</name>
+      <name>Fresh Water</name>
     </component>
     <component name="Soil">
       <soil>freshwater</soil>
@@ -137,7 +137,7 @@
   </template>
   <template name="DarksoilTemplate" template="SoilTemplate">
     <component name="Name">
-      <name>Terre sombre</name>
+      <name>Dark Soil</name>
     </component>
     <component name="Soil">
       <soil>darksoil</soil>
@@ -160,7 +160,7 @@
   </template>
   <template name="MagicBeanSoilTemplate" template="SoilTemplate">
     <component name="Name">
-      <name>Terre étoilée</name>
+      <name>Starry Soil</name>
     </component>
     <component name="Soil">
       <soil>magicbeansoil</soil>
@@ -369,7 +369,7 @@
       <entitySpawnTime>60000</entitySpawnTime>
     </component>
     <component type="components.ToolTipComponent" name="ToolTip">
-      <ToolTipText>Pin</ToolTipText>
+      <ToolTipText>Pine nut</ToolTipText>
     </component>
   </template>
   <template name="DarkResinSpawner" template="EntitySpawningTemplate">
