@@ -47,15 +47,15 @@ class TemplateEntity extends Entity {
      * Instantiates the entity sprite. Should run during the create phase of zone scene setup
      */
     create() {
-        let gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
-        if ( gridFootX === undefined) { gridFootX = 1}
-        let gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
-        if ( gridFootY === undefined) { gridFootY = 1}
+        this.gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
+        if ( this.gridFootX === undefined) { this.gridFootX = 1}
+        this.gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
+        if ( this.gridFootY === undefined) { this.gridFootY = 1}
 
         // Add entity data to tiles
         // TODO get facing direction from Isometric scaleX?
-        for (let x = 0; x < gridFootX; x++) {
-            for (let y = 0; y < gridFootY; y++) {
+        for (let x = 0; x < this.gridFootX; x++) {
+            for (let y = 0; y < this.gridFootY; y++) {
                 let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
                 switch (this.facingDirection) {
                     case this.FACING_DIRECTIONS.Southwest:
@@ -435,12 +435,10 @@ class TemplateEntity extends Entity {
         if (this.sprite) { this.sprite.destroy() }
 
         // Removes the entity from the tiles it is on
-        let gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
-        if ( gridFootX === undefined) { gridFootX = 1}
-        let gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
-        if ( gridFootY === undefined) { gridFootY = 1}
-        for (let x = 0; x < gridFootX; x++) {
-            for (let y = 0; y < gridFootY; y++) {
+        if ( this.gridFootX === undefined) { this.gridFootX = 1}
+        if ( this.gridFootY === undefined) { this.gridFootY = 1}
+        for (let x = 0; x < this.gridFootX; x++) {
+            for (let y = 0; y < this.gridFootY; y++) {
                 let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
                 switch (this.facingDirection) {
                     case this.FACING_DIRECTIONS.Southwest:

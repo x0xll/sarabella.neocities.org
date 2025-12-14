@@ -38,16 +38,19 @@ class Cursor {
             // Convert coordinates
             let gridTarget = this.isoToGridMap(worldX, worldY)
             gridTarget = {x: Math.round(gridTarget.x), y: Math.round(gridTarget.y)}
+
+            if (this.lastPos !== undefined && this.lastPos.x === gridTarget.x && this.lastPos.y === gridTarget.y) return
+
             this.lastPos = gridTarget
             // let gridFoot = {x: 2, y: 2}
 
             // Check if position is valid
             if(!this.#runCursorChecks(gridTarget, [this.#isInvalidTile])) {
                 const item = this.zoneScene.sharedData.inventory.currentItem
-                this.#moveCursorToGridTarget(gridTarget)
                 switch (this.cursorMode) {
                     case this.MODE.placing:
                             // TODO add actual checks
+                            this.#moveCursorToGridTarget(gridTarget)
                             this.gridFoot = {
                                 x: parseInt(item.width),
                                 y: parseInt(item.height)
@@ -61,6 +64,7 @@ class Cursor {
                         break;
                     case this.MODE.planting:
                             // TODO add actual checks
+                            this.#moveCursorToGridTarget(gridTarget)
                             this.gridFoot = {
                                 x: parseInt(item.plantWidth),
                                 y: parseInt(item.plantHeight)
@@ -75,6 +79,8 @@ class Cursor {
                 
                     default:
                         // case this.MODE.normal:
+                        gridTarget = this.#findEntityGridFootData(gridTarget)
+                        this.#moveCursorToGridTarget(gridTarget)
                         this.#setColourNormal()
                         break;
                 }
@@ -105,6 +111,28 @@ class Cursor {
         // console.log(zoneTiles[gridTarget.y][gridTarget.x])
     }
 
+    #findEntityGridFootData(gridTarget) {
+         const entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+         let newTarget = gridTarget
+
+        if (entities) {
+            for (let index = 0; index < entities.length; index++) {
+                const entity = this.zoneScene.entities[entities[index]]
+                const gridFootX = entity.gridFootX
+                const gridFootY = entity.gridFootY
+                if (gridFootX !== 1 || gridFootY !==1) {
+                    this.gridFoot.x = gridFootX
+                    this.gridFoot.y = gridFootY
+                    newTarget = {x: entity.startPos[0], y: entity.startPos[1]}
+                    return newTarget
+                }
+            }
+        }
+        this.gridFoot.x = 1
+        this.gridFoot.y = 1
+
+        return newTarget
+    }
     #runCursorChecks(gridTarget, filterFunctions, filterContext, gridFoot = this.gridFoot) {
         for (let x = 0; x < gridFoot.x; x++) {
             for (let y = 0; y < gridFoot.y; y++) {
@@ -125,7 +153,8 @@ class Cursor {
         this.gridFoot = { x: 1, y: 1 }
         this.cursorMode = this.MODE.normal
         this.#setColourNormal()
-        this.#moveCursorToGridTarget(this.lastPos)
+        const gridTarget = this.#findEntityGridFootData(this.lastPos)
+        this.#moveCursorToGridTarget(gridTarget)
     }
     // ------- END MAIN FUNCTIONS -------
 

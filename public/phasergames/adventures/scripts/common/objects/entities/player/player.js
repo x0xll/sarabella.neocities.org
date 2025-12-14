@@ -95,7 +95,7 @@ class Player extends Entity {
         this.target = {x: this.sprite.x, y: this.sprite.y}
 
 
-        // Moves the player on pointerup event
+        // Moves the player on pointerdown event
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
         this.zoneScene.input.on('pointerdown', async (pointer) => {
             // Prevent interaction when a UI is open
