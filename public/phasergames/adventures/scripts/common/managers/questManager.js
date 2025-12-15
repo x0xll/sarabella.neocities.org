@@ -424,6 +424,9 @@ class QuestManager {
 
                 for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                     const triggers = questGlobalData.line[lineIndex].trigger.object
+
+                    if (!this.checkConditions(phaserScene, questGlobalData, lineIndex, triggerData)) continue
+
                     for (let index = 0; index < triggers.length; index++) {
                         const trigger = triggers[index];
                         if (trigger.type === triggerData.type && this.#QUEST_TRIGGERS[trigger.type]) {
@@ -445,8 +448,8 @@ class QuestManager {
         "TalkQuestTrigger": this.#talkQuestTrigger,
         "StopNearTrigger": this.#stopNearTrigger,
         "RemoveEntityTrigger": this.#removeEntityTrigger,
-        "ActionTrigger": this.#missingTrigger,
-        "ContextItemTrigger": this.#missingTrigger,
+        "ActionTrigger": this.#actionTrigger,
+        "ContextItemTrigger": this.#contextItemTrigger,
         "GiveItemTrigger": this.#missingTrigger,
         "DialogueChoiceTrigger": this.#missingTrigger,
         "ApplyItemTrigger": this.#missingTrigger,
@@ -514,11 +517,39 @@ class QuestManager {
         return false
     }
 
+    #actionTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        if (trigger.className[0].replace("actions::", "") !== triggerData.actionClass) return false
+
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+    }
+
+    #contextItemTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        if (trigger.contextItem[0] !== triggerData.actionClass
+            || trigger.template[0] !== triggerData.template
+        ) return false
+
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+
+    }
+
 
     //------- QUEST CONDITIONS -------
+    checkConditions (phaserScene, questData, lineIndex, trigger) {
+        const questLine = questData.line[lineIndex]
+
+        if (questLine.conditions === undefined
+            || questLine.conditions.object === undefined
+            || questLine.conditions.object[0] === undefined
+            || questLine.conditions.object[0].type === undefined
+        ) {return true}
+
+        return this.#QUEST_CONDITIONS[questLine.conditions.object[0].type](phaserScene, questData, lineIndex, trigger)
+    }
     // TODO: add condition checks
     #QUEST_CONDITIONS = {
-        "ActionOnTemplateCondition": this.#missingCondition,
+        "ActionOnTemplateCondition": this.#actionOnTemplate,
         "HasMultipleItemsCondition": this.#missingCondition,
         "ContainsTokenItemCondition": this.#missingCondition,
         "HasQuestCondition": this.#missingCondition
@@ -528,15 +559,20 @@ class QuestManager {
         console.warn(`Missing condition: ${conditionType}`)
     }
 
+    #actionOnTemplate(phaserScene, questData, lineIndex, trigger) {
+        const questLine = questData.line[lineIndex]
+        return questLine.conditions.object[0].template[0] === trigger.template
+    }
+
 
     //------- QUEST ACTIONS -------
     async doQuestAction(questGlobalID, lineIndex, actionIndex = 0) {
         let questData = this.getQuestPerID(questGlobalID);
-        if (questData.status == this.QUEST_STATES.UNAVAILABLE ||
-            questData.status == this.QUEST_STATES.CANCELLED ||
-            questData.status == this.QUEST_STATES.FINISHED ||
-            questData.line[lineIndex] === undefined)
-            return;
+        // if (questData.status == this.QUEST_STATES.UNAVAILABLE ||
+        //     questData.status == this.QUEST_STATES.CANCELLED ||
+        //     questData.status == this.QUEST_STATES.FINISHED ||
+        //     questData.line[lineIndex] === undefined)
+        //     return;
 
         let actionData = questData.line[lineIndex].actions;
 

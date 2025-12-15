@@ -80,7 +80,7 @@ class TemplateEntity extends Entity {
 
     update() {
         if (this.isSpawner) { this.#trySpawn() }
-        if (this.isPlant) { this.#tryGrow() }
+        if (this.isPlant) { this.#tryGrow()}
     }
     // ------- END INITIALIZE ENTITY -------
 
@@ -194,26 +194,29 @@ class TemplateEntity extends Entity {
                 growthData: plantData,
                 spriteData: this.getTemplateValue(["PlantMovieClip"])
             }
-            if (this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] === undefined) {
-                this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
-                    startTime: this.zoneScene.timeManager.getCurrentTime(),
-                    daysCount: 0
-                }
-            }
-            // console.log("Plant template data:", this.plantData)
             // TODO (placeholder) add interactions and save states between zones
-            this.isWatered = true
             this.isWilted = false
             this.currentStage = 1
         } else {
             this.isPlant = false
         }
-        this.#tryGrow()
     }
     #createSprite() {
+
+        let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
+        let xOffset = 0
+        if (this.getTemplateValue(["Isometric", "xOffset"], this.templateID)) {
+            xOffset = parseInt(this.getTemplateValue(["Isometric", "xOffset", "text"], this.templateID))
+        }
+        let yOffset = 0
+        if (this.getTemplateValue(["Isometric", "yOffset"], this.templateID)) {
+            yOffset = parseInt(this.getTemplateValue(["Isometric", "yOffset", "text"], this.templateID))
+        }
+        isoStart.x = isoStart.x + xOffset
+        isoStart.y = isoStart.y + yOffset
+
         if (this.spriteType === this.SPRITE_TYPES.spine) {
             try {
-                let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
                 this.sprite = this.zoneScene.add.spine(isoStart.x, isoStart.y, `${this.templateID}-json`, `${this.templateID}-atlas`).setScale();
                 this.resetSpriteFacingDirection()
                 this.resetSpriteDepth()
@@ -222,14 +225,12 @@ class TemplateEntity extends Entity {
                 console.log(`Could not load spine file for ${this.templateID}`)
             }
         } else if (this.spriteType === this.SPRITE_TYPES.atlas) {
-            let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
             if (this.getTemplateValue(["BasicGrowing"], this.templateID) !== undefined) {
                 this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, `${this.currentStage}`).setOrigin(.5, 1).setScale(.5)
             } else {
                 this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, "1").setOrigin(.5, 1)
             }
         } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
-            let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
             if (this.zoneScene.sharedData.templateManager.getTemplateType(`${this.templateID}`) === "plant") {
                 // For sprites where the middle of the tile is aligned with the middle, bottom of the sprite
                 this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`).setOrigin(.5, 1)
@@ -281,7 +282,7 @@ class TemplateEntity extends Entity {
         // Check for day/night, wilted and watered conditions
         if (!this.sprite
             || this.isWilted
-            || !this.isWatered
+            || this.isWatered 
             || plantData.growthData.growthType[0].text !== this.zoneScene.timeManager.getCurrentTimeType()
         ) {
             return
@@ -297,24 +298,23 @@ class TemplateEntity extends Entity {
             }
 
             const stageTime = parseInt(plantData.growthData.fullGrowthTime[0].text) / parseInt(plantData.spriteData.stages[0].text)
-            let currentStage = 1
+            let currentStage = this.currentStage !== undefined ? this.currentStage : 1
 
             // TODO Check if we have any refs for how long plants took to wilt
             const isWilted = duration > parseInt(plantData.growthData.fullGrowthTime[0].text) + fullDay
-            for (let index = 1; index <= parseInt(plantData.spriteData.stages[0].text); index++) {
-                const timeForCurrentStage = stageTime * index;
-                if (duration > timeForCurrentStage) {
-                    currentStage++
-                    break
-                }
+
+            const timeForCurrentStage = stageTime * currentStage;
+            if (duration > timeForCurrentStage && currentStage < parseInt(plantData.spriteData.stages[0].text)) {
+                currentStage++
             }
             if (isWilted) { currentStage++ }
 
-            if (currentStage > this.currentStage && this.spriteType === this.SPRITE_TYPES.atlas) {
+            if (currentStage > this.currentStage) {
+                console.log(this.templateID, currentStage,  this.isWilted)
                 if (isWilted) {
-                    this.sprite.setFrame("Wilted")
+                    if (this.spriteType === this.SPRITE_TYPES.atlas) {this.sprite.setFrame("Wilted")}
                     this.isWilted = isWilted
-                } else {
+                } else if (this.spriteType === this.SPRITE_TYPES.atlas) {
                     this.sprite.setFrame(`${currentStage}`)
                 }
                 this.currentStage = currentStage
@@ -415,23 +415,29 @@ class TemplateEntity extends Entity {
         if (context.getTemplateValue(["TakePlantCommand"])) {
             if (!context.isWilted && context.currentStage === parseInt(context.getTemplateValue(["PlantMovieClip", "stages", "text"]))) {
                 takeItem = context.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
+                const triggerInfo = {
+                    type: "ContextItemTrigger",
+                    actionClass: "take",
+                    template: context.templateID
+                }
+                context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
             } else {
                 console.log("Plant not correct stage")
             }
         } else if (context.getTemplateValue(["TakeCommand"])) {
             takeItem = context.getTemplateValue(["TakeCommand", "template", "text"])
+            const triggerData = {
+                type: "ContextItemTrigger",
+                contextItem: "take",
+                templateID: context.templateID
+            }
+            context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
         }
 
         if (takeItem == undefined) { return }
         context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
 
         // TODO check if this part is correct (may be different for plants as well, since they use different take/harvest logic)
-        const triggerData = {
-            type: "ContextItemTrigger",
-            contextItem: "take",
-            templateID: context.templateID
-        }
-        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
 
         context.destroy()
     }
@@ -444,11 +450,6 @@ class TemplateEntity extends Entity {
         * Select trashCommand option
         * Entity is removed from world
         */
-        const triggerData = {
-            type: "RemoveEntityTrigger",
-            templateID: context.templateID
-        }
-        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
         context.destroy()
     }
     #talkCommand(context, interactData) {
@@ -475,7 +476,20 @@ class TemplateEntity extends Entity {
         console.log("Brush not yet implemented")
     }
     #waterPlantCommand(context, interactData) { 
-        console.log("Water not yet implemented")
+        if (context.zoneScene.sharedData.timeTrackedEntities[context.zoneID][context.entityKey] === undefined) {
+            context.zoneScene.sharedData.timeTrackedEntities[context.zoneID][context.entityKey] = {
+                startTime: context.zoneScene.timeManager.getCurrentTime(),
+                daysCount: 0
+            }
+        }
+        this.isWatered = true
+
+        const triggerInfo = {
+            type: "ActionTrigger",
+            actionClass: "WaterPlantAction",
+            template: context.templateID
+        }
+        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
     }
     #uprootPlantCommand(context, interactDat) { 
         console.log("UprootPlant not yet implemented")
@@ -522,6 +536,13 @@ class TemplateEntity extends Entity {
                 }
             }
         }
+
+        // Check for any triggers
+        const triggerInfo = {
+            type: "RemoveEntityTrigger",
+            templateID: this.templateID
+        }
+        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
 
         // TODO Reset all spawners in the same tile so they don't instantly try to spawn
 

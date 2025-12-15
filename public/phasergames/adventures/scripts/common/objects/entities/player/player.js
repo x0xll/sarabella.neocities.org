@@ -110,12 +110,17 @@ class Player extends Entity {
             const {worldX, worldY} = pointer;
             let gridTarget = this.isoToGridMap(worldX, worldY)
             let item = this.zoneScene.sharedData.inventory.currentItem
+            let triggerInfo = {}
 
             switch (this.cursor.cursorMode) {
                 case this.cursor.MODE.placing:
                     if (this.cursor.canPlace(gridTarget, item)) {
                         this.zoneScene.sharedData.inventory.manager.removeItem(item.templateID)
                         this.zoneScene.spawnEntity(item.entityTemplate, gridTarget.x, gridTarget.y)
+                        triggerInfo.type = "ActionTrigger"
+                        triggerInfo.actionClass = "PlaceEntityAction"
+                        triggerInfo.template = item.entityTemplate
+                        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
                     } else {
                     }
                     this.zoneScene.sharedData.inventory.currentItem = null
@@ -126,6 +131,10 @@ class Player extends Entity {
                     if (this.cursor.canPlant(gridTarget, item)) {
                         this.zoneScene.sharedData.inventory.manager.removeItem(item.templateID)
                         this.zoneScene.spawnEntity(item.plantItemID, gridTarget.x, gridTarget.y)
+                        triggerInfo.type = "ActionTrigger"
+                        triggerInfo.actionClass = "PlantAction"
+                        triggerInfo.template = item.plantItemID
+                        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
                     } else {
                     }
                     this.zoneScene.sharedData.inventory.currentItem = null
