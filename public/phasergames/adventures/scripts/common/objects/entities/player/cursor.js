@@ -227,6 +227,13 @@ class Cursor {
                     const interaction = interactions[index-1].replace("Command", "").replace("Plant", "").replace("Avatar", "");
                     const theta = ((360/7 * (index - 1))-90) * (Math.PI / 180)
                     this.sprites[interaction].setAlpha(1).setPosition(pos.x + (this.RADIUS * Math.cos(theta)), pos.y + (this.RADIUS * Math.sin(theta)))
+
+                    const plantTest = (this.zoneScene.entities[entity].isWilted
+                        || parseInt(this.zoneScene.entities[entity].getTemplateValue(["PlantMovieClip", "stages", "text"])) !== this.zoneScene.entities[entity].currentStage)
+                    if (this.zoneScene.entities[entity].isPlant && plantTest) {
+                            this.sprites["Collect"].setAlpha(0)
+                            this.sprites["Take"].setAlpha(0)
+                        }
                 }
                 this.circle.setAlpha(1).setPosition(pos.x, pos.y )
                 this.entityTarget = entity
@@ -260,7 +267,7 @@ class Cursor {
      */
     canPlant(gridTarget, item = this.zoneScene.sharedData.inventory.currentItem, gridFoot = this.gridFoot) {
         return !this.#runCursorChecks(gridTarget, [this.#isIncorrectSoil], item)
-                && !this.#runCursorChecks(gridTarget, [this.#hasPlantEntity])
+                && !this.#runCursorChecks(gridTarget, [this.#plantingBlocked])
     }
     
     /**
@@ -282,13 +289,15 @@ class Cursor {
         return false
     }
 
-    #hasPlantEntity(context, gridTarget, filterContext) {
+    #plantingBlocked(context, gridTarget, filterContext) {
         const entities = context.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
 
         if (entities) {
             for (let index = 0; index < entities.length; index++) {
                 const entityID = context.zoneScene.entities[entities[index]].templateID
-                if (context.zoneScene.sharedData.templateManager.getTemplateType(entityID) === "plant") {
+                if (context.zoneScene.sharedData.templateManager.getTemplateType(entityID) === "plant"
+                    || context.zoneScene.sharedData.templateManager.getTemplateType(entityID) === "detritus" 
+                ) {
                     return true
                 }
             }

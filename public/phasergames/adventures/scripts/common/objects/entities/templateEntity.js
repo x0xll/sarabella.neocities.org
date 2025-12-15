@@ -197,6 +197,7 @@ class TemplateEntity extends Entity {
             // TODO (placeholder) add interactions and save states between zones
             this.isWilted = false
             this.currentStage = 1
+            this.timeToGrow = parseInt(this.plantData.growthData.fullGrowthTime[0].text)
         } else {
             this.isPlant = false
         }
@@ -297,11 +298,11 @@ class TemplateEntity extends Entity {
                 duration = (fullDay - timeData.startTime) + (timeData.daysCount - 1 * fullDay) + this.zoneScene.timeManager.getCurrentTime()
             }
 
-            const stageTime = parseInt(plantData.growthData.fullGrowthTime[0].text) / parseInt(plantData.spriteData.stages[0].text)
+            const stageTime = this.timeToGrow / parseInt(plantData.spriteData.stages[0].text)
             let currentStage = this.currentStage !== undefined ? this.currentStage : 1
 
             // TODO Check if we have any refs for how long plants took to wilt
-            const isWilted = duration > parseInt(plantData.growthData.fullGrowthTime[0].text) + fullDay
+            const isWilted = duration > this.timeToGrow + fullDay
 
             const timeForCurrentStage = stageTime * currentStage;
             if (duration > timeForCurrentStage && currentStage < parseInt(plantData.spriteData.stages[0].text)) {
@@ -335,7 +336,6 @@ class TemplateEntity extends Entity {
             "GiveCommand",
             "ApplyCommand",
             "TakeCommand",
-            "TakePlantCommand",
             "TrashCommand",
             "TalkCommand",
             "ShopCommand",
@@ -344,11 +344,16 @@ class TemplateEntity extends Entity {
             "BrushCommand",
             "WaterPlantCommand",
             "UprootCommand",
-            "CollectPlantCommand",
             "VariantCommand",
             "RotateCommand"
         ]
         const entityInteractions = []
+
+        if (this.getTemplateValue(["BasicGrowing", "type"]) === "components.FruitGrowingComponent") {
+            entityInteractions.push("CollectPlantCommand")
+        } else if (this.isPlant) {
+            entityInteractions.push("TakePlantCommand")
+        }
 
 
         if (this.getTemplateValue(["Click", "name"])) {
@@ -403,11 +408,21 @@ class TemplateEntity extends Entity {
         * User can then select a giveItem item to give
         * giveItem is removed from inventory
         */
-        const giveItem = context.getTemplateValue(["GiveCommand", "item", "text"])
-        console.log(`Give command not fully implemented. Give item is: ${giveItem}`)
+        const giveItem = context.getTemplateValue(["GiveCommand", "item"])
+        console.log(`Give command not fully implemented. Give item is:`, giveItem)
+
+        // Some entities have an specific give item, but we'll also need to check active quests. Format for quests is
+            // <trigger>
+            //   <object type="questData.GiveItemTrigger">
+            //     <inventoryTemplate>P028ProduceTemplate</inventoryTemplate>
+            //     <targetTemplate>H047Template</targetTemplate>
+            //   </object>
+            // </trigger>
     }
     #applyCommand(context, interactData) { 
         console.log("Apply not yet implemented")
+        const applyItem = context.getTemplateValue(["ApplyCommand", "item"])
+        console.log(`Give command not fully implemented. Apply item is:`, applyItem)
     }
     #takeCommand(context, interactData) {
         let takeItem
@@ -442,7 +457,35 @@ class TemplateEntity extends Entity {
         context.destroy()
     }
     #collectCommand(context, interactData) { 
-        console.log("Collect not yet implemented")
+        let takeItem
+        // Check if takePlantCommand or takeCommand
+        if (context.getTemplateValue(["CollectPlantCommand"])) {
+            if (!context.isWilted && context.currentStage === parseInt(context.getTemplateValue(["PlantMovieClip", "stages", "text"]))) {
+                takeItem = context.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
+                const triggerInfo = {
+                    type: "ContextItemTrigger",
+                    actionClass: "take",
+                    template: context.templateID
+                }
+                context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
+                console.log("harvest", takeItem)
+            } else {
+                console.log("Plant not correct stage")
+            }
+        }
+
+        if (takeItem == undefined) { return }
+
+        context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
+
+
+        // TODO currently doesn't regrow - add regrowth ability
+        this.currentStage = parseInt(context.plantData.growthData.unWiltStage[0].text)
+        this.timeToGrow = parseInt(context.plantData.growthData.reGrowthTime[0].text)
+        context.zoneScene.sharedData.timeTrackedEntities[context.zoneID][context.entityKey] = {
+            startTime: context.zoneScene.timeManager.getCurrentTime(),
+            daysCount: 0
+        }
     }
     #trashCommand(context, interactData) {
         /*
@@ -492,13 +535,28 @@ class TemplateEntity extends Entity {
         context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
     }
     #uprootPlantCommand(context, interactDat) { 
-        console.log("UprootPlant not yet implemented")
+        let takeItem
+        if (context.getTemplateValue(["UprootCommand"])) {
+                takeItem = context.getTemplateValue(["BasicGrowing", "harvestSeedsItemId", "text"])
+                // const triggerInfo = {
+                //     type: "ContextItemTrigger",
+                //     actionClass: "uproot", // ?
+                //     template: context.templateID
+                // }
+                // context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
+        }
+
+        if (takeItem == undefined) { return }
+        context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
+        context.destroy()
     }
     #variantCommand(context, interactData) { 
         console.log("Variant not yet implemented")
     }
     #rotateCommand(context, interactData) { 
-        console.log("Rotate not yet implemented")
+        console.log("Placeholder - Rotate not yet fully implemented")
+        context.facingDirection = context.facingDirection === context.FACING_DIRECTIONS.Southwest ? context.FACING_DIRECTIONS.Southeast : context.FACING_DIRECTIONS.Southwest
+        context.resetSpriteFacingDirection()
     }
 
 
@@ -512,6 +570,24 @@ class TemplateEntity extends Entity {
     }
 
     destroy () {
+        // Check for any triggers
+
+        for (let x = 0; x < this.gridFootX; x++) {
+            for (let y = 0; y < this.gridFootY; y++) {
+                const entities = this.zoneScene.getEntitiesAt(this.startPos[0]+x, this.startPos[1]-y)
+                for (let index = 0; index < entities.length; index++) {
+                    const entity = entities[index];
+                    const triggerInfo = {
+                        type: "RemoveEntityTrigger",
+                        templateID: this.templateID,
+                        targetTemplate: this.zoneScene.entities[entity].templateID
+                    }
+                    this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+                    
+                }
+            }
+        }
+
         // Removes the sprite for the entity
         if (this.sprite) { this.sprite.destroy() }
 
@@ -536,13 +612,6 @@ class TemplateEntity extends Entity {
                 }
             }
         }
-
-        // Check for any triggers
-        const triggerInfo = {
-            type: "RemoveEntityTrigger",
-            templateID: this.templateID
-        }
-        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
 
         // TODO Reset all spawners in the same tile so they don't instantly try to spawn
 

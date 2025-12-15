@@ -251,6 +251,10 @@ class QuestManager {
     async #initializeQuestConfig() {
         const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
 
+        // Note: check to be sure, but since these are added as spawned entities, they should stick around if they are not removed by later quests.
+        // Could swap quest ids and file key around though if not, but we'd need to be sure it's not adding the same entities multiple times if it 
+        // was previously saved (based on finished quests?)
+
         for (let index = 0; index < activeQuests.length; index++) {
             const quest = activeQuests[index];
             const questConfig = this.phaserScene.sharedData.questConfig[`${quest[0]}_${quest[1]}_${quest[2]}`]
@@ -309,6 +313,7 @@ class QuestManager {
 
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = "v1_Q0000000825-0000000899-0000002110_Q0000000825-0000000899-0000002105"
+        // const activeSavedString = "v1_Q0000000825-0000000902-0000002123"
         const activeSavedData = unstringifyQuest(activeSavedString)
 
         const finisedSavedString = "v1"
@@ -420,7 +425,9 @@ class QuestManager {
                 let questGlobalData = this.getQuestPerID(phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex]);
 
                 if (questGlobalData.targetZone && questGlobalData.targetZone !== phaserScene.sharedData.global.ZONE_ID) continue
-                if (triggerData.templateID && questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.templateID) continue
+                if ((triggerData.templateID && questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.templateID)
+                    && (triggerData.targetTemplate && questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.targetTemplate)
+                ) continue
 
                 for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                     const triggers = questGlobalData.line[lineIndex].trigger.object
