@@ -1,0 +1,39 @@
+{
+    "ADS-0000000825-ADV-0000000899":
+    [
+        "freeplay_v2",
+        "QUE-Custom-1",
+        {
+            "action": "AddZoneItemAnywhereAction",
+            "template": "T0179Template",
+            "instanceIdentifier": "bridgeblock1",
+            "zone": "Z001",
+            "x": 8,
+            "y": 17
+        },
+        {
+            "action": "AddZoneItemAnywhereAction",
+            "template": "T0179Template",
+            "instanceIdentifier": "bridgeblock2",
+            "zone": "Z001",
+            "x": 7,
+            "y": 17
+        },
+        {
+            "action": "AddZoneItemAnywhereAction",
+            "template": "T0004dTemplate",
+            "instanceIdentifier": "ruinedbridge",
+            "zone": "Z001",
+            "x": 6,
+            "y": 19
+        },
+        {
+            "action": "AddZoneItemAnywhereAction",
+            "template": "T0055bTemplate",
+            "instanceIdentifier": "gateClosed",
+            "zone": "Z001",
+            "x": 33,
+            "y": 36
+        }
+    ]
+}

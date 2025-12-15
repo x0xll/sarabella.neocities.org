@@ -10614,7 +10614,7 @@
       <identifier>I0536</identifier>
     </component>
     <component name="Name">
-      <name>Chaise Starlight</name>
+      <name>Starlight Chair</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10635,7 +10635,7 @@
       <identifier>I0537</identifier>
     </component>
     <component name="Name">
-      <name>Canapé Starlight</name>
+      <name>Starlight Couch</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10656,7 +10656,7 @@
       <identifier>I0538</identifier>
     </component>
     <component name="Name">
-      <name>Lit Starlight</name>
+      <name>Starlight Bed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>

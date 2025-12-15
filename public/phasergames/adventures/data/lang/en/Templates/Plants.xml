@@ -100,7 +100,7 @@
       <magic>20</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Marguerite</ToolTipText>
+      <ToolTipText>Daisy</ToolTipText>
     </component>
   </template>
   <template name="P002Template" template="BasicPlantTemplate">
@@ -120,7 +120,7 @@
       <magic>50</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Ail</ToolTipText>
+      <ToolTipText>Garlic</ToolTipText>
     </component>
   </template>
   <template name="P003Template" template="BasicPlantTemplate">
@@ -144,7 +144,7 @@
       <magic>150</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Citrouille</ToolTipText>
+      <ToolTipText>Pumpkin</ToolTipText>
     </component>
   </template>
   <template name="P004Template" template="FruitPlantTemplate">
@@ -170,7 +170,7 @@
       <magic>175</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pommier</ToolTipText>
+      <ToolTipText>Apple tree</ToolTipText>
     </component>
   </template>
   <template name="P005Template" template="BasicPlantTemplate">
@@ -240,7 +240,7 @@
       <magic>275</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bananier</ToolTipText>
+      <ToolTipText>Banana tree</ToolTipText>
     </component>
   </template>
   <template name="P008Template" template="BasicPlantTemplate">
@@ -312,7 +312,7 @@
       <magic>325</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cacaotier</ToolTipText>
+      <ToolTipText>Cacao tree</ToolTipText>
     </component>
   </template>
   <template name="P011Template" template="BasicPlantTemplate">
@@ -336,7 +336,7 @@
       <magic>475</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Rose de cristal</ToolTipText>
+      <ToolTipText>Crystal Rose</ToolTipText>
     </component>
   </template>
   <template name="P012Template" template="BasicPlantTemplate">
@@ -376,7 +376,7 @@
       <magic>140</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tulipe de feu</ToolTipText>
+      <ToolTipText>Fire Tulip</ToolTipText>
     </component>
   </template>
   <template name="P014Template" template="FruitPlantTemplate">
@@ -568,7 +568,7 @@
       <magic>175</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Ananas </ToolTipText>
+      <ToolTipText>Pineapple</ToolTipText>
     </component>
   </template>
   <template name="P022Template" template="BasicPlantTemplate">
@@ -658,7 +658,7 @@
       <magic>175</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Canne à sucre</ToolTipText>
+      <ToolTipText>Sugar cane</ToolTipText>
     </component>
   </template>
   <template name="P026Template" template="BasicPlantTemplate">
@@ -706,7 +706,7 @@
       <magic>75</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tournesol</ToolTipText>
+      <ToolTipText>Sunflower</ToolTipText>
     </component>
   </template>
   <template name="P028Template" template="BasicPlantTemplate">
@@ -754,7 +754,7 @@
       <magic>200</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Thé de bambou</ToolTipText>
+      <ToolTipText>Bamboo tea</ToolTipText>
     </component>
   </template>
   <template name="P030Template" template="FruitPlantTemplate">
@@ -780,7 +780,7 @@
       <magic>90</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tomate</ToolTipText>
+      <ToolTipText>Tomato</ToolTipText>
     </component>
   </template>
   <template name="P031Template" template="BasicPlantTemplate">
@@ -804,7 +804,7 @@
       <magic>60</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pastèque</ToolTipText>
+      <ToolTipText>Watermelon</ToolTipText>
     </component>
   </template>
   <template name="P032Template" template="BasicPlantTemplate">
@@ -924,7 +924,7 @@
       <magic>95</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Champignon steak</ToolTipText>
+      <ToolTipText>Steak mushroom</ToolTipText>
     </component>
   </template>
   <template name="P037Template" template="FruitPlantTemplate">
@@ -1090,7 +1090,7 @@
       <magic>100</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Vanille</ToolTipText>
+      <ToolTipText>Vanilla</ToolTipText>
     </component>
   </template>
   <template name="P044Template" template="BasicPlantTemplate">
@@ -1276,7 +1276,7 @@
       <magic>175</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fraisier</ToolTipText>
+      <ToolTipText>Strawberry bush</ToolTipText>
     </component>
   </template>
   <template name="P052Template" template="BasicPlantTemplate">
@@ -1458,7 +1458,7 @@
       <magic>475</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Rose du désert</ToolTipText>
+      <ToolTipText>Desert's Rose</ToolTipText>
     </component>
   </template>
 </things>

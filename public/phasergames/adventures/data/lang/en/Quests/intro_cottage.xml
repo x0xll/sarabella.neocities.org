@@ -1,8 +1,8 @@
 <adventures id="ADS-0000001163" description="Cottage Introduction">
   <adventure id="ADV-0000001798">
-    <description>La maisonnette des Fermes de Canter</description>
+    <description>Canter Farms Cottage</description>
     <quest id="QUE-0000006273">
-      <description>Quête d'introduction à la maisonnette</description>
+      <description>Introduction quest to the Cottage</description>
       <line description="Complete">
         <trigger>
           <object type="questData.ApplicationStartTrigger" />
@@ -17,7 +17,7 @@
       </line>
     </quest>
     <quest id="QUE-0000006239">
-      <description>Parle à Cade</description>
+      <description>Talk to Cade</description>
       <line description="Complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -28,9 +28,9 @@
         <conditions />
         <actions>
           <object type="questData.DialogueChoiceAction">
-            <text>Salut ! Tu as maintenant ta maisonnette rien qu'à toi aux fermes de Canter (Canter Farms). Je peux t'en parler si tu le désires. </text>
-            <choice id="line 1">Oui, dites-moi ce qu'il faut savoir. </choice>
-            <choice id="line 2">Non, merci. Je reviendrai plus tard. </choice>
+            <text>Hi there! You now have your very own cottage in Canter Farms. Let me tell you about it.</text>
+            <choice id="line 1">Yes, please tell me about it.</choice>
+            <choice id="line 2">No thank you, I'll stop by later.</choice>
           </object>
         </actions>
       </line>
@@ -45,13 +45,13 @@
           <object type="questData.LogAdventureBeginAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Cette maisonnette est la tienne : tu peux la décorer comme bon te semble. Pour entrer, passe par la porte de devant, derrière moi. </text>
+            <text>This cottage is yours to decorate as you wish. Enter in the front door behind me.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Tu peux y &lt;b&gt;placer&lt;/b&gt; n'importe quel objet de ton sac d'inventaire. Il te suffit d'ouvrir ton inventaire et de faire glisser un objet dans ta chambre. </text>
+            <text>Any object you can &lt;b&gt;PLACE&lt;/b&gt; from your inventory bag. Just open your inventory and drag and item to your room.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Prends ce cadeau pour commencer à décorer. Emporte cet objet dans ta chambre et place-le. </text>
+            <text>Please take this gift to start your decorating. Take this item into your room and set it down.</text>
           </object>
           <object type="questData.AddMultipleInventoryAction">
             <itemId>I0536Template</itemId>
@@ -72,14 +72,14 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>OK. Reviens quand tu auras le temps. </text>
+            <text>OK. Come back when you have the time.</text>
             <identifier>C001</identifier>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000006259" targetZone="R001">
-      <description>Entre dans ta chambre</description>
+      <description>Enter your room</description>
       <line description="Complete">
         <trigger>
           <object type="questData.EnterZoneTrigger">
@@ -90,11 +90,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Bienvenue ! Prends le temps de visiter.</text>
+            <text>Welcome! Take a look around.</text>
             <identifier>C001</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>&lt;b&gt;PLACE&lt;/b&gt; ton nouvel objet où tu veux dans la pièce.</text>
+            <text>&lt;b&gt;PLACE&lt;/b&gt; your new item anywhere in the room.</text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000006260</questId>
@@ -120,14 +120,14 @@
           <object type="questData.LogAdventureEndAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Il y a beaucoup de place ici ! Tu peux toujours &lt;b&gt;DEPLACER&lt;/b&gt; un objet quand tu l'as posé.</text>
+            <text>That's a great place! You can always &lt;b&gt;MOVE&lt;/b&gt; an object once you have set it down.</text>
             <identifier>C001</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>Tu peux également faire &lt;b&gt;PIVOTER&lt;/b&gt; des objets. Utilise &lt;b&gt;RAMASSER&lt;/b&gt; pour retirer un objet de la pièce.</text>
+            <text>You can &lt;b&gt;ROTATE&lt;/b&gt; some objects as well. Use &lt;b&gt;PICK UP&lt;/b&gt; to remove an object from the room.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Voici d'autres objets et des fers à cheval pour en acheter. Amuse-toi bien !</text>
+            <text>Here are some more things and some horseshoes to buy more. Have fun!</text>
           </object>
           <object type="questData.AddMultipleInventoryAction">
             <itemId>I0537Template</itemId>
