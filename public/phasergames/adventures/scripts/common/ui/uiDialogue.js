@@ -46,12 +46,13 @@ class uiDialogue extends uiManagerBase
 
         this.phaserScene.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
 
-        super.load()
+        this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
     }
 
     load()
     {
+        super.load()
         // Background panel
         this.phaserScene.load.image(this.DIALOGUE_PANEL_IMG, "./assets/extracted/UI/Dialogue/Panel.png");
 

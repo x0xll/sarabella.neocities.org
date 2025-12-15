@@ -43,9 +43,6 @@ class Common_Load extends Phaser.Scene
             loader.sharedData.collectableData = this.cache.json.get("Collectables")
         }
 
-        if (loader.sharedData.questConfig === undefined) {
-            loader.sharedData.questConfig = this.cache.json.get("QuestConfig")
-        }
 
         loader.sharedData.global = {
             ZONE_ID: sharedData.zoneData[sharedData.worldToLoad].ID
@@ -59,6 +56,9 @@ class Common_Load extends Phaser.Scene
         }
 
         // Load quest data
+        if (loader.sharedData.questConfig === undefined) {
+            loader.sharedData.questConfig = this.cache.json.get("QuestConfig")
+        }
         if (loader.sharedData.questManager === undefined) {
             loader.sharedData.questManager = loader.questManager
             loader.sharedData.questManager.initializeQuestData();

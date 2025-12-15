@@ -1,39 +1,31 @@
 {
-    "ADS-0000000825-ADV-0000000899":
-    [
-        "freeplay_v2",
-        "QUE-Custom-1",
-        {
-            "action": "AddZoneItemAnywhereAction",
-            "template": "T0179Template",
-            "instanceIdentifier": "bridgeblock1",
-            "zone": "Z001",
-            "x": 8,
-            "y": 17
-        },
-        {
-            "action": "AddZoneItemAnywhereAction",
-            "template": "T0179Template",
-            "instanceIdentifier": "bridgeblock2",
-            "zone": "Z001",
-            "x": 7,
-            "y": 17
-        },
-        {
-            "action": "AddZoneItemAnywhereAction",
-            "template": "T0004dTemplate",
-            "instanceIdentifier": "ruinedbridge",
-            "zone": "Z001",
-            "x": 6,
-            "y": 19
-        },
-        {
-            "action": "AddZoneItemAnywhereAction",
-            "template": "T0055bTemplate",
-            "instanceIdentifier": "gateClosed",
-            "zone": "Z001",
-            "x": 33,
-            "y": 36
+    "ADS-0000000825_ADV-0000000899_QUE-0000002105": {
+        "fileKey": "freeplay_v2",
+        "Z001": {
+            "T0179Template-1": {
+                    "template": "T0179Template",
+                    "instID": "bridgeblock1",
+                    "gridX": 8,
+                    "gridY": 17
+                },
+            "T0179Template-2": {
+                    "template": "T0179Template",
+                    "instID": "bridgeblock2",
+                    "gridX": 7,
+                    "gridY": 17
+                },
+            "T0004dTemplate-1": {
+                    "template": "T0004dTemplate",
+                    "instID": "ruinedbridge",
+                    "gridX": 6,
+                    "gridY": 19
+                },
+            "T0055bTemplate-1": {
+                    "template": "T0055bTemplate",
+                    "instID": "gateClosed",
+                    "gridX": 33,
+                    "gridY": 36
+                }
         }
-    ]
+    }
 }

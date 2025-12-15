@@ -228,6 +228,12 @@ class QuestManager {
         }
 
         await this.#initializeSavedQuests();
+        await this.#initializeQuestConfig()
+
+        // console.log(this.phaserScene.sharedData.spawnedEntities)
+
+        // this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey]
+
 
         // console.log(phaserScene.sharedData.quest.logic.quests);
 
@@ -240,6 +246,34 @@ class QuestManager {
 
         // this.saveUserQuestData()
         this.busy = false
+    }
+
+    async #initializeQuestConfig() {
+        const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
+        console.log(activeQuests)
+
+        for (let index = 0; index < activeQuests.length; index++) {
+            const quest = activeQuests[index];
+            const questConfig = this.phaserScene.sharedData.questConfig[`${quest[0]}_${quest[1]}_${quest[2]}`]
+            if (questConfig !== undefined && this.#QUEST_FILE_NAMES.includes(questConfig.fileKey)) {
+                for (let [zoneKey] of Object.entries(questConfig)) {
+                    if (zoneKey === "fileKey") continue
+
+                    const zoneData = questConfig[zoneKey]
+                    if (this.phaserScene.sharedData.spawnedEntities === undefined) {
+                        this.phaserScene.sharedData.spawnedEntities = {}
+                        this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
+                    } 
+                    else if (this.phaserScene.sharedData.spawnedEntities[zoneKey] === undefined) {
+                        this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
+                    } else {
+                        this.phaserScene.sharedData.spawnedEntities[zoneKey] = {...zoneData, ...this.phaserScene.sharedData.spawnedEntities[zoneKey]}
+                    }
+                    while (Object.entries(questConfig).length > this.phaserScene.sharedData.spawnedEntities[zoneKey]) {}
+                    
+                }
+            }
+        }
     }
 
     async #initializeSavedQuests()
@@ -322,54 +356,6 @@ class QuestManager {
         questData.status = this.QUEST_STATES.AVAILABLE;
         console.log("Quest made available: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
 
-        let questConfigData = this.phaserScene.sharedData.questConfig[questID[0] + "-" + questID[1]];
-        if (questConfigData !== undefined)
-        {
-            let adventureAlreadyStarted = false;
-            for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
-            {
-                if (questID[1] === this.phaserScene.sharedData.quest.logic.activeQuests[i][1])
-                {
-                    adventureAlreadyStarted = true;
-                    break;
-                }
-            }
-
-            if (!adventureAlreadyStarted)
-            {
-                let questIDCustom = questConfigData[1];
-                let fileIndex = this.#QUEST_FILE_NAMES.indexOf(questConfigData[0]);
-                let customQuest = {
-                    description: "Custom quest",
-                    line: [
-                        {
-                            actions: {
-                                object: []
-                            },
-                            conditions: {},
-                            description: "",
-                            trigger: []
-                        }
-                    ],
-                    status: this.QUEST_STATES.AVAILABLE
-                }
-                for (let i = 2; i < questConfigData.length; i++)
-                {
-                    let actionObj = {
-                        instanceIdentifier: [questConfigData[i].instanceIdentifier],
-                        template: [questConfigData[i].template],
-                        type: questConfigData[i].action,
-                        x: [questConfigData[i].x],
-                        y: [questConfigData[i].y],
-                        zone: [questConfigData[i].zone]
-                    }
-                    customQuest.line[0].actions.object.push(actionObj);
-                }
-                this.phaserScene.sharedData.quest.logic.quests[fileIndex][questID[0]][questID[1]][questIDCustom] = customQuest;
-                this.doQuestAction([questID[0], questID[1], questIDCustom], 0);
-            }
-        }
-
         let questIndex = -1
         for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++) {
             if (questID[2] === this.phaserScene.sharedData.quest.logic.activeQuests[i][2]) { 
@@ -380,7 +366,6 @@ class QuestManager {
         if (questIndex === -1) {
             this.phaserScene.sharedData.quest.logic.activeQuests.push(questID)
         }
-
 
         // TODO: Handle showing icons on map and handling correct triggers
 
