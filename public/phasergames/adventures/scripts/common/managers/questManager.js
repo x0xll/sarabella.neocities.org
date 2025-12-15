@@ -227,6 +227,8 @@ class QuestManager {
             activeQuests: []
         }
 
+        await this.#initializeSavedQuests();
+
         // console.log(phaserScene.sharedData.quest.logic.quests);
 
         // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
@@ -240,7 +242,7 @@ class QuestManager {
         this.busy = false
     }
 
-    async initializeSavedQuests()
+    async #initializeSavedQuests()
     {
         const savedUserQuestData = this.#parseSavedQuestData()
 
