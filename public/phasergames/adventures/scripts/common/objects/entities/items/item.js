@@ -40,8 +40,8 @@ class InventorySlot
     }
 
     create() {
-        let spriteClass = this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "movieClipClass")
-        let spriteFile = this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "movieClipFile")
+        let spriteClass = this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "movieClipClass", "inventory")
+        let spriteFile = this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "movieClipFile", "inventory")
             spriteFile = spriteFile.split("/")
             spriteFile = spriteFile[spriteFile.length - 1].replace(".swf", "")
 

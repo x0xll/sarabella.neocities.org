@@ -8,11 +8,16 @@ class Player extends Entity {
 
         this.PLAYER_SPEED = 600;
         this.camBounds = [camBoundX, camBoundY];
-        this.load("TestCharacter");
+        this.load()
     }
 
 
     // ------- INITIALIZE PLAYER -------
+    load() {
+        super.load("TestCharacter");
+        this.cursor = new Cursor(this.zoneScene)
+    }
+
     /**
      * Instantiates player sprite, camera and cursor indicator. Should run during the create phase of scene setup
      */
@@ -21,7 +26,7 @@ class Player extends Entity {
         this.sprite = this.zoneScene.physics.add.image(isoStart.x, isoStart.y, 'player').setScale(this.spriteScale, this.spriteScale).setOrigin(0.5, 1)
         this.zoneScene.cameras.main.startFollow(this.sprite, true).setBounds(0, 0, this.camBounds[0], this.camBounds[1]);
         this.aStar = new AStar(this.zoneScene.tiles, this.zoneScene.entities);
-        this.cursor = new Cursor(this.zoneScene)
+        this.cursor.create()
 
         this.#move();
         this.resetSpriteDepth()
@@ -97,10 +102,9 @@ class Player extends Entity {
 
         // Moves the player on pointerdown event
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
-        this.zoneScene.input.on('pointerdown', async (pointer) => {
-            // Prevent interaction when a UI is open
-            if (this.zoneScene.sharedData.global.uiOpen) 
-                return;
+        this.zoneScene.input.on('pointerdown', async (pointer, currentyOver) => {
+            // Prevent interaction when a UI is open or if event is over a game object (to allow cursor context buttons to be clicked)
+            if (this.zoneScene.sharedData.global.uiOpen || currentyOver.length > 0) { return; }
 
             // Get the grid x and y position of the target
             const {worldX, worldY} = pointer;
@@ -136,11 +140,9 @@ class Player extends Entity {
                     let entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
                     let test = false
                     if (entities !== undefined) {
-                        for (let index = 0; index < entities.length; index++) {
-                            const entity = entities[index];
-                            test = test || this.zoneScene.entities[entity].interact()
-                            if (test) {break}
-                        }
+                        test = this.cursor.openInteractionMenu({x: worldX, y: worldY}, entities)
+                    } else {
+                        this.cursor.reset()
                     }
                     if (!test) {
                         this.pathList.push(await this.#findPathToNextDestination())

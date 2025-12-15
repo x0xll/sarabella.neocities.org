@@ -4,19 +4,69 @@ class Cursor {
         "placing": 2,
         "planting": 3
     }
+    RADIUS = 50
 
     constructor(zoneScene) {
         this.zoneScene = zoneScene
-        this.create()
+        this.load()
     }
 
 
     // ------- MAIN FUNCTIONS -------
+    load() {
+        this.zoneScene.load.atlas(`contextMenu`, `${ROOT_ASSETS_PATH}UI/Context Menu/ToolsIcons.png`, `${ROOT_ASSETS_PATH}UI/Context Menu/ToolsIcons.json`);
+    }
+
     create() {
         this.cursor = this.zoneScene.add.polygon(0, 0, [0,0, 0,0, 0,0, 0,0], 0x808080).setStrokeStyle(1, 0x303030).setFillStyle(0x808080, 0.5);
         this.cursorMode = this.MODE.normal
         this.gridFoot = {x: 1, y: 1}
+        this.circle = this.zoneScene.add.circle(0, 0, this.RADIUS);
+            this.circle.setStrokeStyle(1, 0xe5d9c3);
+        this.sprites = {
+            Give: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Give_1"),
+            Apply: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Use_1"),
+            Take: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Take_1"),
+            Trash: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Trash_1"),
+            Talk: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Talk_1"),
+            Shop: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Shop_1"),
+            Move: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Move_1"),
+            Interact: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Play_1"),
+            Brush: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Brush_1"),
+            Water: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Water_1"),
+            Uproot: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Uproot_1"),
+            Collect: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Collect_1"),
+            Variant: this.zoneScene.add.sprite(0, 0, `contextMenu`, "ChangeVariant_1"),
+            Rotate: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Rotate_1"),
+        }
         this.#move()
+
+
+        for (let [key] of Object.entries(this.sprites)) {
+            this.sprites[key].setInteractive().setOrigin(.6, .6).setScale(.5).setAlpha(0)
+            this.sprites[key].depth = 100
+            this.sprites[key].on('pointerover', (pointer) => { 
+                    const sprite = this.sprites[key]
+                    sprite.setFrame(sprite.frame.name.replace(/.$/, "2") )
+                });
+            this.sprites[key].on('pointerout', (pointer) => { 
+                    const sprite = this.sprites[key]
+                    sprite.setFrame(sprite.frame.name.replace(/.$/, "1") )
+                });
+            this.sprites[key].on('pointerdown', (pointer) => { 
+                    const sprite = this.sprites[key]
+                    sprite.setFrame(sprite.frame.name.replace(/.$/, "3") )
+                });
+            this.sprites[key].on('pointerup', (pointer) => { 
+                    const sprite = this.sprites[key]
+
+                    for (let [key] of Object.entries(this.sprites)) {
+                        this.sprites[key].setFrame(this.sprites[key].frame.name.replace(/.$/, "1") ).setAlpha(0)
+                        this.circle.setAlpha(0)
+                    }
+                    this.zoneScene.entities[this.entityTarget].interact({interactionType: key})
+                });
+        }
     }
 
     #move() {
@@ -42,7 +92,6 @@ class Cursor {
             if (this.lastPos !== undefined && this.lastPos.x === gridTarget.x && this.lastPos.y === gridTarget.y) return
 
             this.lastPos = gridTarget
-            // let gridFoot = {x: 2, y: 2}
 
             // Check if position is valid
             if(!this.#runCursorChecks(gridTarget, [this.#isInvalidTile])) {
@@ -153,8 +202,39 @@ class Cursor {
         this.gridFoot = { x: 1, y: 1 }
         this.cursorMode = this.MODE.normal
         this.#setColourNormal()
+
+        for (let [key] of Object.entries(this.sprites)) {
+            this.sprites[key].setAlpha(0)
+        }
+        this.circle.setAlpha(0)
+
         const gridTarget = this.#findEntityGridFootData(this.lastPos)
         this.#moveCursorToGridTarget(gridTarget)
+    }
+
+    openInteractionMenu(pos, entities) {
+        for (let [key] of Object.entries(this.sprites)) {
+            this.sprites[key].setAlpha(0)
+        }
+        this.circle.setAlpha(0)
+
+        let test = false
+        for (let index = 0; index < entities.length; index++) {
+            const entity = entities[index];
+            const interactions = this.zoneScene.entities[entity].getInteractOptions()
+            if (interactions.length > 0) {
+                for (let index = 1; index <= interactions.length; index++) {
+                    const interaction = interactions[index-1].replace("Command", "").replace("Plant", "").replace("Avatar", "");
+                    const theta = ((360/7 * (index - 1))-90) * (Math.PI / 180)
+                    this.sprites[interaction].setAlpha(1).setPosition(pos.x + (this.RADIUS * Math.cos(theta)), pos.y + (this.RADIUS * Math.sin(theta)))
+                }
+                this.circle.setAlpha(1).setPosition(pos.x, pos.y )
+                this.entityTarget = entity
+                test = true
+                break
+            }
+        }
+        return test
     }
     // ------- END MAIN FUNCTIONS -------
 

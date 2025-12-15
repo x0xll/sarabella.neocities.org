@@ -330,81 +330,72 @@ class TemplateEntity extends Entity {
      * Is used when the player clicks on a tile containing this entity
      * @param {*} interactData any data about the interaction that should be passed in
      */
-    interact(interactData) {
-        // TODO ignore if template does not include a Click option in the template
-        if (this.getTemplateValue(["Click", "name"])) {
-            // TODO add actual interactions
+    getInteractOptions(interactData) {
+        const allInteractions = [
+            "GiveCommand",
+            "ApplyCommand",
+            "TakeCommand",
+            "TakePlantCommand",
+            "TrashCommand",
+            "TalkCommand",
+            "ShopCommand",
+            "MoveCommand",
+            "InteractCommand",
+            "BrushCommand",
+            "WaterPlantCommand",
+            "UprootCommand",
+            "CollectPlantCommand",
+            "VariantCommand",
+            "RotateCommand"
+        ]
+        const entityInteractions = []
 
-            if (this.getTemplateValue(["TalkCommand", "name"])) {
-                this.#talkCommand()
-            } else if (this.getTemplateValue(["TrashCommand", "name"])) {
-                this.#trashCommand()
-            }  else if (this.getTemplateValue(["TakeCommand", "name"])) {
-                this.#takeCommand()
-            }  else if (this.getTemplateValue(["BasicGrowing", "name"])) {
-                this.#takePlantCommand()
-            } 
+
+        if (this.getTemplateValue(["Click", "name"])) {
+            for (let index = 0; index < allInteractions.length; index++) {
+                const interaction = allInteractions[index];
+                if (this.getTemplateValue([interaction, "name"])) {
+                    entityInteractions.push(interaction)
+                }
+            }
+        }
+
+        // TODO actions should not be visible if they are unavailable, but they should still offset the circle
+        // TODO add check for collectCommand vs takePlantCommand on plants
+
+        return entityInteractions
+    }
+
+    // These functions are used to handle player interactions as defined in each entity's template
+    /**
+     * Is used when the player clicks on a tile containing this entity
+     * @param {*} interactData any data about the interaction that should be passed in
+     */
+    interact(interactData) {
+        if (this.getTemplateValue(["Click", "name"])) {
+            const interactions = {
+                Give: this.#giveCommand,
+                Apply: this.#applyCommand,
+                Take: this.#takeCommand,
+                Trash: this.#trashCommand,
+                Talk: this.#talkCommand,
+                Shop: this.#shopCommand,
+                Move: this.#moveCommand,
+                Interact: this.#interactCommand,
+                Brush: this.#brushCommand,
+                Water: this.#waterPlantCommand,
+                Uproot: this.#uprootPlantCommand,
+                Collect: this.#collectCommand,
+                Variant: this.#variantCommand,
+                Rotate: this.#rotateCommand
+            }
+            interactions[interactData.interactionType](this, interactData)
             return true
         }
         return false
     }
 
-    #brushCommand() { }
-    #talkCommand() {
-        const triggerData = {
-            type: "TalkQuestTrigger",
-            entityID: this.entityID
-        }
-        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
-    }
-
-    #tradeCommand() { }
-
-    #takeCommand(takeItem = this.getTemplateValue(["TakeCommand", "template", "text"])) {
-        /*
-        * Click entity to see takeCommand option
-        * Select takeCommand option
-        * takeItem item is added to inventory
-        * Entity is removed from world
-        */
-        this.zoneScene.sharedData.inventory.manager.addItem(takeItem)
-
-        // TODO check if this part is correct (may be different for plants as well, since they use different take/harvest logic)
-        const triggerData = {
-            type: "ContextItemTrigger",
-            contextItem: "take",
-            templateID: this.templateID
-        }
-        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
-
-        this.destroy()
-       }
-    #takePlantCommand() {
-        let takeItem = this.getTemplateValue(["BasicGrowing", "harvestSeedsItemId", "text"])
-        if (!this.isWilted && this.currentStage === parseInt(this.getTemplateValue(["PlantMovieClip", "stages", "text"]))) {
-            takeItem = this.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
-        }
-        this.#takeCommand(takeItem)
-    }
-    #uprootPlantCommand() {
-        this.#takeCommand(takeItem)
-    }
-
-    #trashCommand() {
-        /*
-        * Click entity to see trashCommand option
-        * Select trashCommand option
-        * Entity is removed from world
-        */
-        const triggerData = {
-            type: "RemoveEntityTrigger",
-            templateID: this.templateID
-        }
-        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
-        this.destroy()
-    }
-    #applyCommand() { }
-    #giveCommand() {
+    #giveCommand(context, interactData) {
         /*
         * Click entity to see giveCommand option
         * Select giveCommand option
@@ -412,15 +403,91 @@ class TemplateEntity extends Entity {
         * User can then select a giveItem item to give
         * giveItem is removed from inventory
         */
-        const giveItem = this.getTemplateValue(["GiveCommand", "item", "text"])
+        const giveItem = context.getTemplateValue(["GiveCommand", "item", "text"])
         console.log(`Give command not fully implemented. Give item is: ${giveItem}`)
     }
+    #applyCommand(context, interactData) { 
+        console.log("Apply not yet implemented")
+    }
+    #takeCommand(context, interactData) {
+        let takeItem
+        // Check if takePlantCommand or takeCommand
+        if (context.getTemplateValue(["TakePlantCommand"])) {
+            if (!context.isWilted && context.currentStage === parseInt(context.getTemplateValue(["PlantMovieClip", "stages", "text"]))) {
+                takeItem = context.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
+            } else {
+                console.log("Plant not correct stage")
+            }
+        } else if (context.getTemplateValue(["TakeCommand"])) {
+            takeItem = context.getTemplateValue(["TakeCommand", "template", "text"])
+        }
 
-    #shopCommand() { }
-    #avatarShopCommand() { }
-    #interactCommand() { }
-    #moveCommand() {}
-    #waterRemoveCommand() {}
+        if (takeItem == undefined) { return }
+        context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
+
+        // TODO check if this part is correct (may be different for plants as well, since they use different take/harvest logic)
+        const triggerData = {
+            type: "ContextItemTrigger",
+            contextItem: "take",
+            templateID: context.templateID
+        }
+        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
+
+        context.destroy()
+    }
+    #collectCommand(context, interactData) { 
+        console.log("Collect not yet implemented")
+    }
+    #trashCommand(context, interactData) {
+        /*
+        * Click entity to see trashCommand option
+        * Select trashCommand option
+        * Entity is removed from world
+        */
+        const triggerData = {
+            type: "RemoveEntityTrigger",
+            templateID: context.templateID
+        }
+        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
+        context.destroy()
+    }
+    #talkCommand(context, interactData) {
+        const triggerData = {
+            type: "TalkQuestTrigger",
+            entityID: context.entityID
+        }
+        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
+    }
+    #shopCommand(context, interactData) {
+        if (context.getTemplateValue(["AvatarShopCommand"])) {
+            console.log("Avatar shop not yet implemented")
+        } else {
+            console.log("Shop not yet implemented")
+        }
+    }
+    #moveCommand(context, interactData) { 
+        console.log("Move not yet implemented")
+    }
+    #interactCommand(context, interactData) { 
+        console.log("Interact not yet implemented")
+    }
+    #brushCommand(context, interactData) { 
+        console.log("Brush not yet implemented")
+    }
+    #waterPlantCommand(context, interactData) { 
+        console.log("Water not yet implemented")
+    }
+    #uprootPlantCommand(context, interactDat) { 
+        console.log("UprootPlant not yet implemented")
+    }
+    #variantCommand(context, interactData) { 
+        console.log("Variant not yet implemented")
+    }
+    #rotateCommand(context, interactData) { 
+        console.log("Rotate not yet implemented")
+    }
+
+
     // ------- END COMMAND FUNCTIONS -------
 
 

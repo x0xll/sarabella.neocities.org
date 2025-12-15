@@ -38,9 +38,11 @@ class InventoryManager
     addItem(itemTemplate, amount=1) {
         const allItems = this.phaserScene.sharedData.inventory.allItems
 
-        if (allItems[itemTemplate]) { 
+        if (typeof itemTemplate !== "string") {
+            console.log(`Item not added. ${itemTemplate} is not a string`)
+        } else if (allItems[itemTemplate]) { 
             allItems[itemTemplate] = allItems[itemTemplate] + amount 
-        }  else { 
+        } else { 
             allItems[itemTemplate] = amount 
         }
     }
@@ -76,7 +78,7 @@ class InventoryManager
 
         const filteredItems = {}
         for (let [key] of Object.entries(allItems)) {
-            const template = this.phaserScene.sharedData.templateManager.getTemplate(key)
+            const template = this.phaserScene.sharedData.templateManager.getTemplate(key, "inventory")
 
             let test = false
             switch (type) {

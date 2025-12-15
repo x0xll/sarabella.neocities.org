@@ -87,8 +87,8 @@ class TemplateManager {
      * @param {*} keys The key for the COMMON_KEYS to check, or an array of key names within the template
      * @returns 
      */
-    getTemplateValue(templateID, keys) {
-        let template = this.getTemplate(templateID);
+    getTemplateValue(templateID, keys, templateType = undefined) {
+        let template = this.getTemplate(templateID, templateType);
         if (!template) return
 
         let keysArray = keys
