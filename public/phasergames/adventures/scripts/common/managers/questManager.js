@@ -250,7 +250,6 @@ class QuestManager {
 
     async #initializeQuestConfig() {
         const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
-        console.log(activeQuests)
 
         for (let index = 0; index < activeQuests.length; index++) {
             const quest = activeQuests[index];

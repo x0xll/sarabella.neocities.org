@@ -20,12 +20,13 @@ class uiQuest extends uiManagerBase
     {
         super(phaserScene, "quest");
 
-        super.load()
+        this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
     }
 
     load()
     {
+        super.load()
         // Background panel
         this.phaserScene.load.image(this.QUEST_PANEL_IMG, "./assets/extracted/UI/Quest/Journal_Panel.png");
 
@@ -38,7 +39,6 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
             this.phaserScene.sharedData.quest.ui.manager.show();
         }, this);
-        this.phaserScene.sharedData.hud.ui.journalButton.setAlpha(1)
     }
 
     initialize()
@@ -113,8 +113,6 @@ class uiQuest extends uiManagerBase
 
     show()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
             let test = super.show()
             if (!test) return
 
@@ -137,9 +135,6 @@ class uiQuest extends uiManagerBase
             }
             
             this.turnOnEvents()
-        }, this, true);
-        this.load();
-        this.phaserScene.load.start();
     }
 
     hide()

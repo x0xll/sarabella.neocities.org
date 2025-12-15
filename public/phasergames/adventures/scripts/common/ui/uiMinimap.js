@@ -24,12 +24,13 @@ class uiMinimap extends uiManagerBase
     {
         super(phaserScene, "minimap");
         
-        super.load()
+        this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
     }
 
     load()
     {
+        super.load()
         // Zone map
         for (let i = 0; i < this.ZONE_NAMES.length; i++)
         {
@@ -57,7 +58,6 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.mapButton.on('pointerup', function (pointer){
             this.phaserScene.sharedData[this.key].ui.manager.show();
         }, this)
-        this.phaserScene.sharedData.hud.ui.mapButton.setAlpha(1)
     }
 
     initialize()
@@ -104,8 +104,6 @@ class uiMinimap extends uiManagerBase
 
     show()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
             let test = super.show()
             if (!test) return
             this.turnOnEvents()
@@ -117,9 +115,6 @@ class uiMinimap extends uiManagerBase
             this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
             this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
             this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(1);
-        }, this);
-        this.load();
-        this.phaserScene.load.start();
     }
 
     hide()

@@ -34,25 +34,17 @@ class Common_Load extends Phaser.Scene
         const loader = this
         loader.sharedData = sharedData
 
+
         if (loader.sharedData.zoneData === undefined) {
             loader.sharedData.zoneData = this.cache.json.get("Zones")
+        }
+        loader.sharedData.global = {
+            ZONE_ID: sharedData.zoneData[sharedData.worldToLoad].ID
         }
         loader.sharedData.zoneTileData = this.cache.xml.get(loader.sharedData.worldToLoad)
 
         if (loader.sharedData.collectableData === undefined) {
             loader.sharedData.collectableData = this.cache.json.get("Collectables")
-        }
-
-
-        loader.sharedData.global = {
-            ZONE_ID: sharedData.zoneData[sharedData.worldToLoad].ID
-        }
-
-        // TODO: handle through save data
-        loader.sharedData.magicTree =  {
-            logic:  {
-                level: 0
-            }
         }
 
         // Load quest data

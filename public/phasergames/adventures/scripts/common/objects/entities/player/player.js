@@ -102,9 +102,9 @@ class Player extends Entity {
 
         // Moves the player on pointerdown event
         // TODO: Check that mouse is not outside of level view (e.g. do not react when clicking HUD buttons or dialogue menus)
-        this.zoneScene.input.on('pointerdown', async (pointer, currentyOver) => {
+        this.zoneScene.input.on('pointerdown', async (pointer, currentlyOver) => {
             // Prevent interaction when a UI is open or if event is over a game object (to allow cursor context buttons to be clicked)
-            if (this.zoneScene.sharedData.global.uiOpen || currentyOver.length > 0) { return; }
+            if (this.zoneScene.sharedData.global.uiOpen || currentlyOver.length > 0) { return; }
 
             // Get the grid x and y position of the target
             const {worldX, worldY} = pointer;

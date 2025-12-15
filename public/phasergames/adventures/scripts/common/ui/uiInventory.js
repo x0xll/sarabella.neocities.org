@@ -36,7 +36,7 @@ class uiInventory extends uiManagerBase
             "produce": false,
         }
 
-        super.load()
+        this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
         this.buttons[ITEM_TYPES.ALL] = "main"
         this.buttons[ITEM_TYPES.SPECIAL] = "special"
@@ -49,6 +49,7 @@ class uiInventory extends uiManagerBase
 
     load()
     {   
+        super.load()
         this.phaserScene.load.audio(this.SOUNDS.itemHover, `${ROOT_ASSETS_PATH}Audio/Inventory/12.mp3`);
         this.phaserScene.load.audio(this.SOUNDS.itemDown, `${ROOT_ASSETS_PATH}Audio/Inventory/13.mp3`);
         this.phaserScene.load.audio(this.SOUNDS.tabHover, `${ROOT_ASSETS_PATH}Audio/Inventory/35.mp3`);
@@ -71,7 +72,6 @@ class uiInventory extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
             this.phaserScene.sharedData[this.key].ui.manager.show();
         }, this);
-        this.phaserScene.sharedData.hud.ui.inventoryButton.setAlpha(1)
     }
 
     initialize()
@@ -146,8 +146,6 @@ class uiInventory extends uiManagerBase
 
     show()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
             let test = super.show()
             if (!test) return
 
@@ -163,9 +161,6 @@ class uiInventory extends uiManagerBase
                 const hitbox = hitboxes[index];
                 hitbox.setInteractive()
             }
-        }, this, true);
-        this.load();
-        this.phaserScene.load.start();
     }
 
     hide()

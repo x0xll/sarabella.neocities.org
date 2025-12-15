@@ -8,6 +8,11 @@ class uiManagerBase
 
         this.key = key
         phaserScene.sharedData.UIkeys.push(key)
+
+        if (this.phaserScene.sharedData[this.key] 
+            && this.phaserScene.sharedData[this.key].ui
+            && this.phaserScene.sharedData[this.key].ui.elements
+        ) {delete this.phaserScene.sharedData[this.key].ui.elements}
     }
 
     load()
@@ -58,6 +63,8 @@ class uiManagerBase
     hide()
     {
         this.phaserScene.sharedData[this.key].ui.open = false;
+
+        // this.phaserScene.sharedData.global.uiOpen = false;
 
         let test = false;
         this.phaserScene.sharedData.UIkeys.forEach(key => {

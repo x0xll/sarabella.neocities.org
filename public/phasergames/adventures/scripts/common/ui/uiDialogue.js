@@ -147,8 +147,6 @@ class uiDialogue extends uiManagerBase
     // TODO: Handle if dialogue has no character to display
     show(questID, characterid, text, choices, image)
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
             let test = super.show()
             if (!test) return
 
@@ -207,9 +205,6 @@ class uiDialogue extends uiManagerBase
             this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
             this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
             this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
-        }, this, true);
-        this.load();
-        this.phaserScene.load.start();
     }
 
     hide()

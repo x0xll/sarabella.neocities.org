@@ -9,12 +9,16 @@ class uiMagicTree extends uiManagerBase
     {
         super(phaserScene,"magicTree");
 
-        super.load()
+        this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
+        this.phaserScene.sharedData[this.key].logic =  {
+                level: 0
+            }
     }
 
     load()
     {
+        super.load()
         // Main border
         this.phaserScene.load.image(this.MAGICTREE_BORDER, "./assets/extracted/UI/Magic Tree/MT_Border.png");
         
@@ -36,8 +40,6 @@ class uiMagicTree extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.skillProgressButton.on('pointerup', function (pointer) {
             this.phaserScene.sharedData[this.key].ui.manager.show();
         }, this);
-        this.phaserScene.sharedData.hud.ui.skillProgressButton.setAlpha(1)
-        this.phaserScene.sharedData.hud.ui.levelIndicator.setAlpha(1)
     }
 
     initialize()
@@ -74,8 +76,6 @@ class uiMagicTree extends uiManagerBase
 
     show()
     {
-        // Lazy loading UI
-        this.phaserScene.load.once('complete', () => {
             let test = super.show()
             if (!test) return
             
@@ -88,9 +88,6 @@ class uiMagicTree extends uiManagerBase
             this.phaserScene.sharedData.magicTree.ui.elements.border.setAlpha(1);
             this.phaserScene.sharedData.magicTree.ui.elements.icon.setAlpha(1);
             this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.setAlpha(1);
-        }, this, true);
-        this.load();
-        this.phaserScene.load.start();
     }
 
     hide()

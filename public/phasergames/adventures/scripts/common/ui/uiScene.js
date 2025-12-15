@@ -25,6 +25,7 @@ class Common_UI extends Phaser.Scene
     create (sharedData)
     {   
         const UI = this;
+        UI.sharedData.global.uiOpen
 
         // Add inputs
         UI.sharedData.keyboard = {}
@@ -33,7 +34,13 @@ class Common_UI extends Phaser.Scene
         UI.sharedData.keyboard.esc = UI.input.keyboard.addKey("ESC");
 
         this.sharedData.UIkeys.forEach(key => {
+            this.sharedData[key].ui.manager.phaserScene = this
             this.sharedData[key].ui.manager.create()
+            if (this.sharedData[this.key]
+                && this.sharedData[this.key].ui
+            ) {
+                this.sharedData[this.key].ui.open = false
+            }
         });
     }
 }
