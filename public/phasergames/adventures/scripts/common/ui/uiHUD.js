@@ -46,17 +46,16 @@ class uiHUD extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100);
         
         this.phaserScene.sharedData.hud.ui.saveText = this.phaserScene.add.text(665, 555, "Save", {font: "15px Arial", color: "#ffffffff"}).setDepth(100);
+        
+        this.phaserScene.sharedData.hud.ui.areaName = this.phaserScene.add.text(400, 20, "zoneName", {font: "18px Arial", color: "#000000ff"}).setDepth(100);
     
         this.updateTexts();
     }
 
     updateTexts()
     {
-        if (this.phaserScene.sharedData.hud.ui.areaName === undefined)
-            this.phaserScene.sharedData.hud.ui.areaName = this.phaserScene.add.text(400, 20, this.phaserScene.sharedData.zoneManager.getCurrentZoneName(), {font: "18px Arial", color: "#000000ff"}).setDepth(100);
-        else{
-            this.phaserScene.sharedData.hud.ui.areaName.text = this.phaserScene.sharedData.zoneManager.getCurrentZoneName();
-        }
+        const zoneName = this.phaserScene.sharedData.zoneManager.getCurrentZoneName()
+        this.phaserScene.sharedData.hud.ui.areaName.text = zoneName;
         this.phaserScene.sharedData.hud.ui.areaName.setOrigin(.5)
     }
 }
