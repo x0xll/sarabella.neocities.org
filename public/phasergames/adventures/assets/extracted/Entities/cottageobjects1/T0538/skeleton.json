@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "qk+Pa2LRZgc", "spine": "4.2.43", "x": -151, "y": -49.23, "width": 302, "height": 181 },
+"skeleton": { "hash": "kOF4VwvCiX4", "spine": "4.2.43", "x": -151, "y": -20.94, "width": 302, "height": 181 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -14,16 +14,16 @@
 		"name": "T0538",
 		"attachments": {
 			"ne": {
-				"ne": { "name": "1/13", "y": 41.27, "scaleX": -1, "width": 302, "height": 181 }
+				"ne": { "name": "1/13", "y": 69.56, "scaleX": -1, "width": 302, "height": 181 }
 			},
 			"nw": {
-				"nw": { "name": "1/15", "path": "1/13", "y": 41.27, "width": 302, "height": 181 }
+				"nw": { "name": "1/15", "path": "1/13", "y": 69.56, "width": 302, "height": 181 }
 			},
 			"se": {
-				"se": { "name": "1/1", "y": 41.27, "scaleX": -1, "width": 302, "height": 181 }
+				"se": { "name": "1/1", "y": 69.56, "scaleX": -1, "width": 302, "height": 181 }
 			},
 			"sw": {
-				"sw": { "name": "1/2", "path": "1/1", "y": 41.27, "width": 302, "height": 181 }
+				"sw": { "name": "1/2", "path": "1/1", "y": 69.56, "width": 302, "height": 181 }
 			}
 		}
 	},
@@ -31,16 +31,16 @@
 		"name": "T0538_01",
 		"attachments": {
 			"ne": {
-				"ne": { "name": "2/13", "y": 41.27, "scaleX": -1, "width": 302, "height": 181 }
+				"ne": { "name": "2/13", "y": 69.56, "width": 302, "height": 181 }
 			},
 			"nw": {
-				"nw": { "name": "2/13", "y": 41.27, "width": 302, "height": 181 }
+				"nw": { "name": "2/13", "y": 69.56, "width": 302, "height": 181 }
 			},
 			"se": {
-				"se": { "name": "2/1", "y": 41.27, "scaleX": -1, "width": 302, "height": 181 }
+				"se": { "name": "2/1", "y": 69.56, "scaleX": -1, "width": 302, "height": 181 }
 			},
 			"sw": {
-				"sw": { "name": "2/1", "y": 41.27, "width": 302, "height": 181 }
+				"sw": { "name": "2/1", "y": 69.56, "width": 302, "height": 181 }
 			}
 		}
 	}
