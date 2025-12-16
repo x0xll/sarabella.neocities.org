@@ -14,6 +14,7 @@
         <!-- Utils -->
         <script src="./scripts/common/loaders/loaderUtils.js"></script>
         <script src="./scripts/common/parsers/parserUtils.js"></script>
+        <script src="./scripts/common/debug.js"></script>
 
         <!-- UI -->
         <script src="./scripts/common/ui/uiScene.js"></script>
@@ -79,6 +80,7 @@
                 const LEVEL_ASSETS_PATH = "./assets/extracted/Tilemaps/";
                 const TILE_ASSETS_PATH = "./assets/newTiles/";
                 const VOLUME = .5
+                const debug = new Debug()
 
                 /**
                  * Generates a random integer between two values

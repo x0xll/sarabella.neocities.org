@@ -27,6 +27,8 @@ class Common_Load extends Phaser.Scene
         this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
         this.load.xml(this.sharedData.worldToLoad, `${ZONE_XML_PATH}${this.sharedData.worldToLoad}.xml`);
         this.load.json("QuestConfig", `${COMMON_XML_PATH}questConfig.json`);
+
+        debug.loadScene = this
     }
 
     create (sharedData)

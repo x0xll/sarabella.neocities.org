@@ -677,7 +677,7 @@ class QuestManager {
     }
 
     async #logQuestEndAction(phaserScene, questID, lineIndex, action) {
-        if (!questID[0] || !questID[1]) {questID = this.getFullQuestID(questID)}
+        if (!questID[0] || !questID[1]) {questID = phaserScene.sharedData.questManager.getFullQuestID(questID)}
         let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
         console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
     }

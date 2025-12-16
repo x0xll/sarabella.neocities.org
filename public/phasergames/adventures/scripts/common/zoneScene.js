@@ -43,6 +43,8 @@ class ZoneBase extends Phaser.Scene
             this.load.spineAtlas(`${assetName}Atlas`, `${TILE_ASSETS_PATH}${assetName}/skeleton.atlas`);
             this.load.spineJson(`${assetName}JSON`, `${TILE_ASSETS_PATH}${assetName}/skeleton.json`);
         });
+
+        debug.zoneScene = this
     }
 
     create (sharedData)

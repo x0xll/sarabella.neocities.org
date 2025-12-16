@@ -41,6 +41,7 @@
         this.spaces = Array.from({ length: this.width }, () => new Array(this.height).fill(null));
         this.resetSpaces()
         this.adjacentCandidates = this.ADJACENT_CANDIDATES_4WAY_MINI;
+        this.ignoreBlocked = false
     }
     
     /**
@@ -70,7 +71,7 @@
         if (this.mapData[y][x].hasEntity) {
             this.mapData[y][x].hasEntity.forEach(entity => {
                 if (this.entities[entity].getTemplateValue("isBlocked") === "true") {
-                    test = false
+                    test = this.ignoreBlocked
                 }
             });
         }
