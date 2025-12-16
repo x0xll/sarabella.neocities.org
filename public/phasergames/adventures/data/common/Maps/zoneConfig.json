@@ -611,14 +611,17 @@
         "tileYOffset": 1735,
         "tileAssets": [
             "common",
-            "forestcavemain"
+            "forestcavemain",
+            "canterfarmsmain",
+            "castletownmain",
+            "ruralskymain"
         ],
         
         "backgroundXOffset": 2500,
         "backgroundYOffset": 1510,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [16, 23, "se"],
             "Z015": [16, 23, "ne"],
             "Z025": [35, 58, "nw"]
         },
