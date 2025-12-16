@@ -319,7 +319,7 @@ class ZoneBase extends Phaser.Scene
 
     // ------- UPDATE -------
     goToNextZone(sceneKey) {
-        // TODO save placeable entity facing direction when switching scenes
+        // TODO save placeable entity facing direction/variation when switching scenes
         this.sharedData.timePausedAt = this.timeManager.getCurrentTime()
         this.sharedData.worldToLoad = sceneKey;
         this.scene.start("common_load", this.sharedData);
