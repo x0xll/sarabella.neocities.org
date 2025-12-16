@@ -313,7 +313,7 @@ class QuestManager {
 
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = "v1_Q0000000825-0000000899-0000002110_Q0000000825-0000000899-0000002105"
-        // const activeSavedString = "v1_Q0000000825-0000000902-0000002123"
+        // const activeSavedString = "v1_Q0000000825-0000000903-0000002127"
         const activeSavedData = unstringifyQuest(activeSavedString)
 
         const finisedSavedString = "v1"
@@ -405,7 +405,6 @@ class QuestManager {
         if (questIndex >=0) {
             this.phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
         }
-        
         return
     }
 
@@ -432,12 +431,13 @@ class QuestManager {
                 for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                     const triggers = questGlobalData.line[lineIndex].trigger.object
 
-                    if (!this.checkConditions(phaserScene, questGlobalData, lineIndex, triggerData)) continue
+                    if (questGlobalData.wasTriggered || !this.checkConditions(phaserScene, questGlobalData, lineIndex, triggerData)) continue
 
                     for (let index = 0; index < triggers.length; index++) {
                         const trigger = triggers[index];
                         if (trigger.type === triggerData.type && this.#QUEST_TRIGGERS[trigger.type]) {
                             if (this.#QUEST_TRIGGERS[trigger.type](phaserScene, trigger, activeQuestIndex, lineIndex, triggerData)) {
+                                questGlobalData.wasTriggered = true
                                 this.busy = false
                                 return true
                             }
@@ -446,8 +446,9 @@ class QuestManager {
                 }
             }
             this.busy = false
+        } else {
+            console.warn("Skipped. We might need to add a queue if this starts happening", triggerData)
         }
-
         return false;
     }
 
@@ -557,18 +558,26 @@ class QuestManager {
     // TODO: add condition checks
     #QUEST_CONDITIONS = {
         "ActionOnTemplateCondition": this.#actionOnTemplate,
-        "HasMultipleItemsCondition": this.#missingCondition,
+        "HasMultipleItemsCondition": this.#hasMultipleItemsCondition,
         "ContainsTokenItemCondition": this.#missingCondition,
         "HasQuestCondition": this.#missingCondition
     }
 
-    #missingCondition (conditionType) {
-        console.warn(`Missing condition: ${conditionType}`)
+    #missingCondition (phaserScene, questData, lineIndex, trigger) {
+        const questLine = questData.line[lineIndex]
+        console.warn(`Missing condition: ${questLine.conditions.object[0].type}`)
     }
 
     #actionOnTemplate(phaserScene, questData, lineIndex, trigger) {
         const questLine = questData.line[lineIndex]
         return questLine.conditions.object[0].template[0] === trigger.template
+    }
+
+    #hasMultipleItemsCondition(phaserScene, questData, lineIndex, trigger) {
+        const questLine = questData.line[lineIndex]
+        const condition = questLine.conditions.object[0]
+        
+        return phaserScene.sharedData.inventory.allItems[condition.template[0]] >= parseInt(condition.count[0])
     }
 
 
@@ -599,6 +608,7 @@ class QuestManager {
                 }
             }
         }
+        questData.wasTriggered = false
     }
     #QUEST_ACTIONS = {
         "LogAdventureBeginAction": this.#logAdventureBeginAction,
@@ -769,6 +779,10 @@ class QuestManager {
     }
 
     async #removeMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
-        phaserScene.sharedData.inventory.manager.removeItem(action.itemId[0], parseInt(action.count[0]))
+        if (action.itemId) {
+            phaserScene.sharedData.inventory.manager.removeItem(action.itemId[0], parseInt(action.count[0]))
+        } else if (action.template) {
+            phaserScene.sharedData.inventory.manager.removeItem(action.template[0], parseInt(action.count[0]))
+        }
     }
 }

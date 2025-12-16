@@ -200,8 +200,9 @@ class TemplateEntity extends Entity {
         if (this.getTemplateValue(["Isometric", "yOffset"], this.templateID)) {
             yOffset = parseInt(this.getTemplateValue(["Isometric", "yOffset", "text"], this.templateID))
         }
-        isoStart.x = isoStart.x + xOffset
-        isoStart.y = isoStart.y + yOffset
+        // TODO figure out actual values - only used bridge as ref so far
+        isoStart.x = isoStart.x + (xOffset/6)
+        isoStart.y = isoStart.y + (yOffset*23)
 
         if (this.spriteType === this.SPRITE_TYPES.spine) {
             try {
@@ -587,20 +588,23 @@ class TemplateEntity extends Entity {
     destroy () {
         // Check for any triggers
 
+        const nearbyEntities = new Set()
         for (let x = 0; x < this.gridFootX; x++) {
             for (let y = 0; y < this.gridFootY; y++) {
                 const entities = this.zoneScene.getEntitiesAt(this.startPos[0]+x, this.startPos[1]-y)
                 for (let index = 0; index < entities.length; index++) {
-                    const entity = entities[index];
-                    const triggerInfo = {
-                        type: "RemoveEntityTrigger",
-                        templateID: this.templateID,
-                        targetTemplate: this.zoneScene.entities[entity].templateID
-                    }
-                    this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
-                    
+                    nearbyEntities.add(this.zoneScene.entities[entities[index]].templateID)
                 }
             }
+        }
+        for (const entity of nearbyEntities) {
+            if (this.zoneScene.entities[entity]=== undefined) {continue}
+            const triggerInfo = {
+                type: "RemoveEntityTrigger",
+                templateID: this.templateID,
+                targetTemplate: this.zoneScene.entities[entity].templateID
+            }
+            this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
         }
 
         // Removes the sprite for the entity

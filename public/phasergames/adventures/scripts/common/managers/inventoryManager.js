@@ -10,13 +10,12 @@ class InventoryManager
             }
             // this.addItem("P001ProduceTemplate")
             this.addItem("P001SeedTemplate")
-            this.addItem("P028SeedTemplate")
             // this.addItem("P002ProduceTemplate")
-            this.addItem("P002SeedTemplate")
+            // this.addItem("P002SeedTemplate")
             // this.addItem("P003ProduceTemplate")
-            this.addItem("P003SeedTemplate")
+            // this.addItem("P003SeedTemplate")
             // this.addItem("P004ProduceTemplate")
-            this.addItem("P035SeedTemplate")
+            // this.addItem("P035SeedTemplate")
             // this.addItem("P005ProduceTemplate")
             // this.addItem("P005SeedTemplate")
             // this.addItem("P006ProduceTemplate")
@@ -28,11 +27,13 @@ class InventoryManager
             // this.addItem("P010ProduceTemplate")
             // this.addItem("P010SeedTemplate")
             // this.addItem("P011ProduceTemplate")
-            // this.addItem("I0536Template",2)
             // this.addItem("P011SeedTemplate")
             // this.addItem("P012ProduceTemplate")
             // this.addItem("P012SeedTemplate")
+            this.addItem("P028SeedTemplate")
+            this.addItem("P028ProduceTemplate")
             this.addItem("I0536Template",2)
+            this.addItem("I019Template", 1)
         }
         // Note: each item in the inventory (allItems) has a template name as the key and the number of that item as its value
     }

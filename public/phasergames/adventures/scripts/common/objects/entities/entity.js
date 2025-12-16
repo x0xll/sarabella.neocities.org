@@ -68,6 +68,7 @@ class Entity {
      * @param {*} y 
      */
     setSpritePosition(x, y) {
+        if (this.sprite === undefined) return
         const pos = this.gridToIsoMap(x, y)
         this.sprite.setPosition(pos.x, pos.y);
     }
@@ -76,6 +77,7 @@ class Entity {
      * Makes the entity sprite face in its current facing direction
      */ 
     resetSpriteFacingDirection() {
+        if (this.sprite === undefined) return
         switch (this.facingDirection) {
             case this.FACING_DIRECTIONS.Southwest:
             case this.FACING_DIRECTIONS.West:
@@ -93,6 +95,7 @@ class Entity {
      * Place sprite at correct depth within the scene
      */
     resetSpriteDepth() {
+        if (this.sprite === undefined) return
         let gridPosition = this.isoToGridMap(this.sprite.x, this.sprite.y)
         this.sprite.setDepth((7 - gridPosition.x) + gridPosition.y)
     }
