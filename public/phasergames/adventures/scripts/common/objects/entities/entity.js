@@ -78,6 +78,30 @@ class Entity {
      */ 
     resetSpriteFacingDirection() {
         if (this.sprite === undefined) return
+
+        if (this.sprite.skeleton !== undefined && 
+            (this.sprite.skeleton.data.slots[0].name.includes("ne") ||
+            this.sprite.skeleton.data.slots[0].name.includes("nw") ||
+            this.sprite.skeleton.data.slots[0].name.includes("se") ||
+            this.sprite.skeleton.data.slots[0].name.includes("sw")))
+        {
+            const slots = ["sw", "se", "nw", "ne"]
+
+            for (let i = 0; i < slots.length; i++)
+            {
+                let slot = this.sprite.skeleton.findSlot(slots[i]);
+                if (slots[i] === this.facingDirection)
+                {
+                    slot.color.a = 1;
+                }
+                else
+                {
+                    slot.color.a = 0;
+                }
+            }
+            return;
+        }
+
         switch (this.facingDirection) {
             case this.FACING_DIRECTIONS.Southwest:
             case this.FACING_DIRECTIONS.West:
@@ -117,6 +141,22 @@ class Entity {
                 this.sprite.setTint('0x6699cc')
             }
         }
+    }
+
+    /**
+     * Updates sprite based on the current variation. Mostly for placeable objects
+     */
+    updateSpriteVariant(variantData)
+    {
+        if (this.getTemplateValue(["MovieClip", "variants"]) === undefined) {return;}
+        let skinData = this.sprite.skeleton.data.findSkin(variantData);
+        if (skinData === undefined) {return;}
+
+        const skin = new spine.Skin("custom");
+        skin.addSkin(skinData);
+        
+        this.sprite.skeleton.setSkin(skin);
+        this.resetSpriteFacingDirection();
     }
     // ------- END SPRITE PLACEMENT IN ZONE -------
 

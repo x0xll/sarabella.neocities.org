@@ -14,6 +14,7 @@ class TemplateEntity extends Entity {
         super(zoneScene, templateID, startX, startY, facingDirection);
         this.templateID = templateID
         this.zoneID = zoneScene.zoneConfig.ID
+        this.variant = this.getTemplateValue(["MovieClip", "className", "text"], this.templateID);
 
         // console.log(this.zoneScene.sharedData.templateManager.getTemplate(this.templateID))
 
@@ -89,6 +90,7 @@ class TemplateEntity extends Entity {
 
         this.#createPlantData()
         this.#createSprite()
+        this.updateSpriteVariant(this.variant);
         if (this.isSpawner) {this.#trySpawn() }
     }
 
@@ -110,6 +112,7 @@ class TemplateEntity extends Entity {
             folderName = folderName[folderName.length - 1].replace(".swf", "")
             if (!this.getTemplateValue(["PlantMovieClip"]) 
                 && this.getTemplateValue(["CharacterIdle"], templateID) === undefined
+                && !urlExists(`${this.assetPath}/${folderName}/${spriteClass}/skeleton.atlas`)
             ) {
                 // TODO consider having the simple image sprites in one atlas file per swf file. Then, if not in there, we could assume it should use spine instead
                 spriteType = this.SPRITE_TYPES.stillImage
@@ -612,12 +615,55 @@ class TemplateEntity extends Entity {
         context.destroy()
     }
     #variantCommand(context, interactData) { 
-        console.log("Variant not yet implemented")
-        // TODO Set variants as skins in spine?
+        let possibleVariants = context.getTemplateValue(["MovieClip", "variants"]);
+        if (possibleVariants === undefined) { return; }
+
+        let variantFound = false;
+        if (context.variant === context.getTemplateValue(["MovieClip", "className", "text"], this.templateID))
+        {
+            variantFound = true;
+        }
+        for (let [key] of Object.entries(possibleVariants)) {
+            if (key === "childType") {continue;}
+
+            if (key === context.variant)
+            {
+                variantFound = true;
+                continue;
+            }
+
+            if (variantFound)
+            {
+                variantFound = false;
+                context.variant = key;
+                break;
+            }
+        }
+
+        if (variantFound)
+        {
+            context.variant = context.getTemplateValue(["MovieClip", "className", "text"], context.templateID);;
+        }
+
+        context.updateSpriteVariant(context.variant);
     }
     #rotateCommand(context, interactData) { 
-        console.log("Placeholder - Rotate not yet fully implemented")
-        context.facingDirection = context.facingDirection === context.FACING_DIRECTIONS.Southwest ? context.FACING_DIRECTIONS.Southeast : context.FACING_DIRECTIONS.Southwest
+        switch(context.facingDirection)
+        {
+            default:
+            case context.FACING_DIRECTIONS.Northwest:
+                context.facingDirection = context.FACING_DIRECTIONS.Southwest;
+                break;
+            case context.FACING_DIRECTIONS.Southwest:
+                context.facingDirection = context.FACING_DIRECTIONS.Southeast;
+                break;
+            case context.FACING_DIRECTIONS.Southeast:
+                context.facingDirection = context.FACING_DIRECTIONS.Northeast;
+                break;
+            case context.FACING_DIRECTIONS.Northeast:
+                context.facingDirection = context.FACING_DIRECTIONS.Northwest;
+                break;
+        }
         context.resetSpriteFacingDirection()
     }
 
