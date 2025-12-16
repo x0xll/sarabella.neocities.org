@@ -10,7 +10,7 @@ class TemplateEntity extends Entity {
         "apply": 2
     }
 
-    constructor(zoneScene, templateID, startX, startY, facingDirection = "se", addToCurrentZone = true, loadLate = false) {
+    constructor(zoneScene, templateID, startX, startY, facingDirection = undefined, addToCurrentZone = true, loadLate = false) {
         super(zoneScene, templateID, startX, startY, facingDirection);
         this.templateID = templateID
         this.zoneID = zoneScene.zoneConfig.ID
@@ -39,6 +39,16 @@ class TemplateEntity extends Entity {
         if (charName) {
             this.entityID = charName
         }
+        let facing = parseInt(this.getTemplateValue(["Isometric", "scaleX", "text"]))
+        if (facing && (this.facingDirection === undefined || this.facingDirection === "default")) {
+            this.facingDirection = facing === -1 ? "sw" : "se"
+        } else {
+            this.facingDirection = "se"
+        }
+        
+    // <component name="Isometric">
+    //   <scaleX>-1</scaleX>
+    // </component>
         this.spriteType = this.#loadSpriteData()
         this.#loadSpawnerData()
     }

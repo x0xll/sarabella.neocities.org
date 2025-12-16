@@ -3,9 +3,9 @@ class uiDialogue extends uiManagerBase
     DIALOGUE_PANEL_IMG = "Dialogue_Panel";
     DIALOGUE_AVATAR_MASK = "Dialogue_Avatar_Mask";
     DIALOGUE_CONTINUE_BTN = "Dialogue_Continue_Btn";
-    DIALOGUE_HUMANS_THUMBNAILS = "humansthumbnails";
-    DIALOGUE_HORSES_THUMBNAILS = "horsesthumbnails";
-    DIALOGUE_MAGICFRIENDS_THUMBNAILS = "magicfriendsthumbnails";
+    DIALOGUE_HUMANS_THUMBNAILS = "humansthumbnail";
+    DIALOGUE_HORSES_THUMBNAILS = "horsesthumbnail";
+    DIALOGUE_MAGICFRIENDS_THUMBNAILS = "magicalfriendsthumbnail";
 
     CHARA_NAME_TEXT_SETTINGS = 
     {
@@ -54,19 +54,19 @@ class uiDialogue extends uiManagerBase
     {
         super.load()
         // Background panel
-        this.phaserScene.load.image(this.DIALOGUE_PANEL_IMG, "./assets/extracted/UI/Dialogue/Panel.png");
+        this.phaserScene.load.image(this.DIALOGUE_PANEL_IMG, `${ROOT_ASSETS_PATH}UI/Dialogue/Panel.png`);
 
         // Avatar mask
-        this.phaserScene.load.image(this.DIALOGUE_AVATAR_MASK, "./assets/extracted/UI/Dialogue/PortraitMask.png");
+        this.phaserScene.load.image(this.DIALOGUE_AVATAR_MASK, `${ROOT_ASSETS_PATH}UI/Dialogue/PortraitMask.png`);
 
         // Avatars
-        this.phaserScene.load.atlas(this.DIALOGUE_HUMANS_THUMBNAILS, './assets/extracted/Characters/humansthumbnail.png', './assets/extracted/Characters/humansthumbnail.json');
-        this.phaserScene.load.atlas(this.DIALOGUE_HORSES_THUMBNAILS, './assets/extracted/Characters/horsesthumbnails.png', './assets/extracted/Characters/horsesthumbnails.json');
-        this.phaserScene.load.atlas(this.DIALOGUE_MAGICFRIENDS_THUMBNAILS, './assets/extracted/Characters/magicfriendsthumbnails.png', './assets/extracted/Characters/magicfriendsthumbnails.json');
+        this.phaserScene.load.atlas(this.DIALOGUE_HUMANS_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HUMANS_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HUMANS_THUMBNAILS}.json`);
+        this.phaserScene.load.atlas(this.DIALOGUE_HORSES_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HORSES_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HORSES_THUMBNAILS}.json`);
+        this.phaserScene.load.atlas(this.DIALOGUE_MAGICFRIENDS_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_MAGICFRIENDS_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_MAGICFRIENDS_THUMBNAILS}.json`);
 
         // Continue button
         // TODO : Find / Recreate the correct button
-        this.phaserScene.load.image(this.DIALOGUE_CONTINUE_BTN, "./assets/extracted/UI/Common/CloseButton.png");
+        this.phaserScene.load.image(this.DIALOGUE_CONTINUE_BTN, `${ROOT_ASSETS_PATH}UI/Common/CloseButton.png`);
 
         // TODO : get the scroll bar
     }
@@ -159,16 +159,20 @@ class uiDialogue extends uiManagerBase
             }
 
             // Character portrait
+            let thumbnailFolderName = this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "fileName", "text"])
+            thumbnailFolderName = thumbnailFolderName.split("/")
+            thumbnailFolderName = thumbnailFolderName[thumbnailFolderName.length - 1].replace(".swf", "")
+
             const character = {
                 name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
-                id: characterid
+                id: characterid,
+                thumbnail: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "className", "text"]),
+                thumbnailFolderName: thumbnailFolderName
             }
+
             this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(
-                (character.id.indexOf('C') > -1 ? this.DIALOGUE_HUMANS_THUMBNAILS 
-                : (character.id.indexOf('M') > -1) ? this.DIALOGUE_MAGICFRIENDS_THUMBNAILS 
-                : this.DIALOGUE_HORSES_THUMBNAILS));
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.id);
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(character.thumbnailFolderName);
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.thumbnail);
 
             let textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalText
             if (image !== undefined)
@@ -180,7 +184,7 @@ class uiDialogue extends uiManagerBase
                         this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
                         this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.alpha);
                     }, this);
-                this.phaserScene.load.image(`Dialogue${image}`, `./assets/extracted/UI/Dialogue/Images/${image}.png`);
+                this.phaserScene.load.image(`Dialogue${image}`, `${ROOT_ASSETS_PATH}UI/Dialogue/Images/${image}.png`);
                 this.phaserScene.load.start();
             }
             textElement.setText(this.formatQuestText(text));
@@ -193,7 +197,11 @@ class uiDialogue extends uiManagerBase
             textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - textElement.height - 20)
             this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setY(textElement.y+5) // +5
             this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setY(textElement.y-55)
+            if (character.thumbnailFolderName === this.DIALOGUE_HUMANS_THUMBNAILS) {
+                this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(23, textElement.y-65)
+            } else  {
+                this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(8, textElement.y-55)
+            }
             this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setY(textElement.y-55)
             this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setY(textElement.y-55)
 

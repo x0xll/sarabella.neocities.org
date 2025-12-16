@@ -257,25 +257,36 @@ class QuestManager {
 
         for (let index = 0; index < activeQuests.length; index++) {
             const quest = activeQuests[index];
-            const questConfig = this.phaserScene.sharedData.questConfig[`${quest[0]}_${quest[1]}_${quest[2]}`]
-            if (questConfig !== undefined && this.#QUEST_FILE_NAMES.includes(questConfig.fileKey)) {
-                for (let [zoneKey] of Object.entries(questConfig)) {
-                    if (zoneKey === "fileKey") continue
 
-                    const zoneData = questConfig[zoneKey]
-                    if (this.phaserScene.sharedData.spawnedEntities === undefined) {
-                        this.phaserScene.sharedData.spawnedEntities = {}
-                        this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
-                    } 
-                    else if (this.phaserScene.sharedData.spawnedEntities[zoneKey] === undefined) {
-                        this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
-                    } else {
-                        this.phaserScene.sharedData.spawnedEntities[zoneKey] = {...zoneData, ...this.phaserScene.sharedData.spawnedEntities[zoneKey]}
+            for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
+                const fileKey = this.#QUEST_FILE_NAMES[index];
+                const questConfig = this.phaserScene.sharedData.questConfig[fileKey]
+                if (questConfig !== undefined && questConfig.quests.includes(`${quest[0]}_${quest[1]}_${quest[2]}`)) {
+                    for (let [zoneKey] of Object.entries(questConfig)) {
+                        if (zoneKey === "quests") continue
+
+                        const zoneData = questConfig[zoneKey]
+                        if (this.phaserScene.sharedData.spawnedEntities === undefined) {
+                            this.phaserScene.sharedData.spawnedEntities = {}
+                            this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
+                        } 
+                        else if (this.phaserScene.sharedData.spawnedEntities[zoneKey] === undefined) {
+                            this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
+                        } else {
+                            this.phaserScene.sharedData.spawnedEntities[zoneKey] = {...zoneData, ...this.phaserScene.sharedData.spawnedEntities[zoneKey]}
+                        }
+                        while (Object.entries(questConfig).length > this.phaserScene.sharedData.spawnedEntities[zoneKey]) {}
+                        
                     }
-                    while (Object.entries(questConfig).length > this.phaserScene.sharedData.spawnedEntities[zoneKey]) {}
-                    
                 }
             }
+
+
+
+            // const questConfig = this.phaserScene.sharedData.questConfig[`${quest[0]}_${quest[1]}_${quest[2]}`]
+            // if (questConfig !== undefined && this.#QUEST_FILE_NAMES.includes(questConfig.fileKey)) {
+                
+            // }
         }
     }
 
@@ -313,7 +324,7 @@ class QuestManager {
 
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = "v1_Q0000000825-0000000899-0000002110_Q0000000825-0000000899-0000002105"
-        // const activeSavedString = "v1_Q0000000825-0000000903-0000002127"
+        // const activeSavedString = "v1_Q0000000825-0000000903-0000002130" // To start with apply mortar to bridge quest
         const activeSavedData = unstringifyQuest(activeSavedString)
 
         const finisedSavedString = "v1"
