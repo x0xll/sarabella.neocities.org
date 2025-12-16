@@ -1,5 +1,14 @@
 {
-"skeleton": { "hash": "BUMLrMvYRXs", "spine": "4.2.43", "images": "./Main/", "audio": "./audio" },
+"skeleton": {
+	"hash": "BUMLrMvYRXs",
+	"spine": "4.2.43",
+	"x": -120,
+	"y": -20,
+	"width": 240,
+	"height": 173.25,
+	"images": "./Main/",
+	"audio": "./audio"
+},
 "bones": [
 	{ "name": "root" },
 	{ "name": "bone", "parent": "root", "scaleX": 0.5, "scaleY": 0.5 }

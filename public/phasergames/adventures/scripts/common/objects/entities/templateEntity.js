@@ -42,9 +42,13 @@ class TemplateEntity extends Entity {
      */
     create() {
         this.gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
-        if ( this.gridFootX === undefined) { this.gridFootX = 1}
         this.gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
-        if ( this.gridFootY === undefined) { this.gridFootY = 1}
+        if (this.getTemplateValue(["GridPosition", "gridFoot", "text"])) {
+            this.gridFootX = this.getTemplateValue(["GridPosition", "gridFoot", "text"])
+            this.gridFootY = this.getTemplateValue(["GridPosition", "gridFoot", "text"])
+        }
+        if (this.gridFootX === undefined) { this.gridFootX = 1}
+        if (this.gridFootY === undefined) { this.gridFootY = 1}
 
         // Add entity data to tiles
         // TODO get facing direction from Isometric scaleX?
