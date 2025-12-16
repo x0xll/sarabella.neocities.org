@@ -4,6 +4,12 @@
  */
 class TemplateEntity extends Entity {
 
+    ITEM_REQUEST_TYPES = {
+        "none": 0,
+        "give": 1,
+        "apply": 2
+    }
+
     constructor(zoneScene, templateID, startX, startY, facingDirection = "se", addToCurrentZone = true, loadLate = false) {
         super(zoneScene, templateID, startX, startY, facingDirection);
         this.templateID = templateID
@@ -234,6 +240,7 @@ class TemplateEntity extends Entity {
         let character = this
         character.animationQueue = []
         character.idleAnimations = []
+        if (character.sprite === undefined) { return }
         character.sprite.skeleton.data.animations.forEach(animation => {
             if (animation.name.includes("idle")) character.idleAnimations.push(animation.name)
         });
@@ -242,7 +249,6 @@ class TemplateEntity extends Entity {
             character.sprite.animationState.setAnimation(0, character.idleAnimations[Math.floor(Math.random()*this.idleAnimations.length)], false)
         }
         
-
         character.sprite.animationState.addListener({
                 // start: (entry) => console.log(`Started animation ${entry.animation.name}`),
                 // interrupt: (entry) => console.log(`Interrupted animation ${entry.animation.name}`),
@@ -418,6 +424,38 @@ class TemplateEntity extends Entity {
         }
         return false
     }
+    returnItem(itemTemplate) {
+        // console.log(`Got ${itemTemplate}. Mode is ${this.itemRequestType}`)
+        let triggerData
+
+        switch (this.itemRequestType) {
+            case this.ITEM_REQUEST_TYPES.give:
+                triggerData = {
+                    type: "GiveItemTrigger",
+                    inventoryTemplate: itemTemplate,
+                    templateID: this.templateID
+                }
+                this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+                this.zoneScene.sharedData.inventory.manager.removeItem(itemTemplate)
+                
+                break;
+            case this.ITEM_REQUEST_TYPES.apply:
+                // TODO double check this works
+                triggerData = {
+                    type: "ApplyItemTrigger",
+                    inventoryTemplate: itemTemplate,
+                    templateID: this.templateID
+                }
+                this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+                
+                break;
+        
+            default:
+                break;
+        }
+
+        this.itemRequestType = this.ITEM_REQUEST_TYPES.none
+    }
 
     #giveCommand(context, interactData) {
         /*
@@ -428,20 +466,14 @@ class TemplateEntity extends Entity {
         * giveItem is removed from inventory
         */
         const giveItem = context.getTemplateValue(["GiveCommand", "item"])
-        console.log(`Give command not fully implemented. Give item is:`, giveItem)
-
-        // Some entities have an specific give item, but we'll also need to check active quests. Format for quests is
-            // <trigger>
-            //   <object type="questData.GiveItemTrigger">
-            //     <inventoryTemplate>P028ProduceTemplate</inventoryTemplate>
-            //     <targetTemplate>H047Template</targetTemplate>
-            //   </object>
-            // </trigger>
+        context.itemRequestType = context.ITEM_REQUEST_TYPES.give
+        context.zoneScene.sharedData.inventory.ui.manager.show(giveItem, context);
     }
     #applyCommand(context, interactData) { 
-        console.log("Apply not yet implemented")
+        // TODO double check this works
         const applyItem = context.getTemplateValue(["ApplyCommand", "item"])
-        console.log(`Give command not fully implemented. Apply item is:`, applyItem)
+        context.itemRequestType = context.ITEM_REQUEST_TYPES.apply
+        context.zoneScene.sharedData.inventory.ui.manager.show(applyItem, context);
     }
     #takeCommand(context, interactData) {
         let takeItem

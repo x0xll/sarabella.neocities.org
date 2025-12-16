@@ -71,6 +71,13 @@ class InventorySlot
             this.phaserScene.sharedData.inventory.currentItem = {
                 templateID: this.templateID,
             }
+
+            if (this.phaserScene.sharedData.inventory.ui.manager.requestingEntity !== undefined) {
+                this.phaserScene.sharedData.inventory.ui.manager.requestingEntity.returnItem(this.templateID)
+                this.phaserScene.sharedData.inventory.ui.manager.hide()
+                return
+            }
+
             const template = this.phaserScene.sharedData.templateManager.getTemplate(this.templateID)
             if (template.template === "PlantProduceTemplate") {
                 // PRODUCE

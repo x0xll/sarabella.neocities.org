@@ -144,7 +144,7 @@ class uiInventory extends uiManagerBase
         super.initialize();
     }
 
-    show()
+    show(itemFilterArray = undefined, requestingEntity = undefined)
     {
             let test = super.show()
             if (!test) return
@@ -153,7 +153,9 @@ class uiInventory extends uiManagerBase
             this.setSelected(ITEM_TYPES.ALL)
             this.phaserScene.sharedData.inventory.ui.elements.main.setAlpha(1);
 
-            this.updateSlots();
+            this.itemFilterArray = itemFilterArray
+            this.requestingEntity = requestingEntity
+            this.updateSlots(itemFilterArray);
             this.updateScrollBar()
 
             const hitboxes = this.phaserScene.sharedData.inventory.ui.elements.hitboxes
@@ -206,9 +208,9 @@ class uiInventory extends uiManagerBase
         this.#currentTab = selected;
     }
 
-    updateSlots()
+    updateSlots(itemFilterArray = this.itemFilterArray)
     {
-        let allItems = this.phaserScene.sharedData.inventory.manager.getItemByType(this.#currentTab);
+        let allItems = this.phaserScene.sharedData.inventory.manager.getItemByType(this.#currentTab, itemFilterArray);
 
         for (let [key, value] of Object.entries(this.slots)) {
             if (allItems[key] === undefined) {

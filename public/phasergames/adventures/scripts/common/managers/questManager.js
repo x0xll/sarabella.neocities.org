@@ -454,15 +454,15 @@ class QuestManager {
 
     #QUEST_TRIGGERS = {
         "TalkQuestTrigger": this.#talkQuestTrigger,
+        "EnterZoneTrigger": this.#missingTrigger,
         "StopNearTrigger": this.#stopNearTrigger,
         "RemoveEntityTrigger": this.#removeEntityTrigger,
         "ActionTrigger": this.#actionTrigger,
         "ContextItemTrigger": this.#contextItemTrigger,
-        "GiveItemTrigger": this.#missingTrigger,
+        "GiveItemTrigger": this.#giveItemTrigger,
+        "ApplyItemTrigger": this.#giveItemTrigger, // TODO double check this works
         "DialogueChoiceTrigger": this.#missingTrigger,
-        "ApplyItemTrigger": this.#missingTrigger,
         "PlantGrownInRadiusTrigger": this.#missingTrigger,
-        "EnterZoneTrigger": this.#missingTrigger,
         "TradeTrigger": this.#missingTrigger,
         "ApplicationStartTrigger": this.#missingTrigger,
         "NullTrigger": this.#missingTrigger
@@ -530,6 +530,8 @@ class QuestManager {
 
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
         phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+
+        return true
     }
 
     #contextItemTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
@@ -540,6 +542,18 @@ class QuestManager {
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
         phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
 
+        return true
+    }
+
+    #giveItemTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        if (trigger.inventoryTemplate[0] !== triggerData.inventoryTemplate
+            || trigger.targetTemplate[0] !== triggerData.templateID
+        ) return false
+
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+
+        return true
     }
 
 

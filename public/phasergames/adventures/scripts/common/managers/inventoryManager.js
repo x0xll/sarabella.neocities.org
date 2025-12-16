@@ -76,8 +76,11 @@ class InventoryManager
         return count
     }
 
-    getItemByType(type) {
-        const allItems = this.phaserScene.sharedData.inventory.allItems
+    getItemByType(type, itemArray = undefined) {
+        let allItems = this.phaserScene.sharedData.inventory.allItems
+        if (itemArray !== undefined) {
+            allItems = this.getItemByTemplates(itemArray)
+        }
 
         const filteredItems = {}
         for (let [key] of Object.entries(allItems)) {
@@ -89,7 +92,13 @@ class InventoryManager
                     test = true
                     break;
                 case ITEM_TYPES.PRODUCE:
+                    // test = template.template === "PlantProduceTemplate"
                     test = template.template === "PlantProduceTemplate"
+                            || (template.QuestItem === undefined
+                            && template.Seed === undefined
+                            && template.CardEntity === undefined
+                            && template.PlaceEntity === undefined
+                            && template.AvatarCustomizationData === undefined)
                     break;
                 case ITEM_TYPES.SPECIAL:
                     test = template.QuestItem !== undefined
@@ -118,13 +127,17 @@ class InventoryManager
         return filteredItems
     }
 
-    getItemByTemplates(templateArray) {
+    getItemByTemplates(itemArray) {
         const allItems = this.phaserScene.sharedData.inventory.allItems
+
+        if (!Array.isArray(itemArray)) { 
+            itemArray = [itemArray]
+        }
 
         const filteredItems = {}
         for (let [key] of Object.entries(allItems)) {
-            templateArray.forEach(templateID => {
-                if (templateID === key) {
+            itemArray.forEach(item => {
+                if (item.text === key && (item.count === undefined || parseInt(item.count)) <= allItems[key]) {
                     filteredItems[key] = allItems[key]
                 }
             });
