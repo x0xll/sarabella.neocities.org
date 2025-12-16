@@ -323,12 +323,15 @@ class QuestManager {
         }
 
         // TODO replace with a call to fetch the actual save data
-        const activeSavedString = "v1_Q0000000825-0000000899-0000002110_Q0000000825-0000000899-0000002105_0000001163-0000001798-0000006239"
-        // const activeSavedString = "v1_Q0000000825-0000000903-0000002130" // To start with apply mortar to bridge quest
+        const activeSavedString = 
+            "v1_Q0000000825-0000000899-0000002110_" + // Intro tuto
+            "Q0000000825-0000000899-0000002105_" + // Talk to Wings
+            "0000001163-0000001798-0000006239" // Intro Cottage
         const activeSavedData = unstringifyQuest(activeSavedString)
 
         const finisedSavedString = "v1"
         const finishedSavedData = unstringifyQuest(finisedSavedString)
+
         return [activeSavedData, finishedSavedData]
     }
 
@@ -475,13 +478,19 @@ class QuestManager {
         "DialogueChoiceTrigger": this.#missingTrigger,
         "PlantGrownInRadiusTrigger": this.#missingTrigger,
         "TradeTrigger": this.#missingTrigger,
-        "ApplicationStartTrigger": this.#missingTrigger,
+        "ApplicationStartTrigger": this.#applicationStartTrigger,
         "NullTrigger": this.#missingTrigger
     }
 
     #missingTrigger (phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         console.warn(`Missing trigger: ${trigger.type}`)
         return false
+    }
+
+    #applicationStartTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+        return true;
     }
 
     #stopNearTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {

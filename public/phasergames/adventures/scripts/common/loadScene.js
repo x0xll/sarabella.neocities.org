@@ -71,5 +71,10 @@ class Common_Load extends Phaser.Scene
 
         this.scene.stop("common_zone")
         this.scene.launch("common_zone", loader.sharedData);
+
+        let triggerInfo = {
+            type: "ApplicationStartTrigger"
+        }
+        this.sharedData.questManager.tryTriggerQuest(this, triggerInfo);
     }
 }
