@@ -32,7 +32,6 @@ class InventoryManager
             // this.addItem("P012SeedTemplate")
             this.addItem("P028SeedTemplate")
             this.addItem("P028ProduceTemplate")
-            this.addItem("I0536Template",2)
             this.addItem("I019Template", 1)
         }
         // Note: each item in the inventory (allItems) has a template name as the key and the number of that item as its value

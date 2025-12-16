@@ -42,9 +42,9 @@ class TemplateEntity extends Entity {
         }
         let facing = parseInt(this.getTemplateValue(["Isometric", "scaleX", "text"]))
         if (facing && (this.facingDirection === undefined || this.facingDirection === "default")) {
-            this.facingDirection = facing === -1 ? "sw" : "se"
+            this.facingDirection = facing === -1 ? this.FACING_DIRECTIONS.Southwest : this.FACING_DIRECTIONS.Southeast;
         } else {
-            this.facingDirection = "se"
+            this.facingDirection = this.FACING_DIRECTIONS.Southeast
         }
         
     // <component name="Isometric">
