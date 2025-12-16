@@ -323,7 +323,7 @@ class QuestManager {
         }
 
         // TODO replace with a call to fetch the actual save data
-        const activeSavedString = "v1_Q0000000825-0000000899-0000002110_Q0000000825-0000000899-0000002105"
+        const activeSavedString = "v1_Q0000000825-0000000899-0000002110_Q0000000825-0000000899-0000002105_0000001163-0000001798-0000006239"
         // const activeSavedString = "v1_Q0000000825-0000000903-0000002130" // To start with apply mortar to bridge quest
         const activeSavedData = unstringifyQuest(activeSavedString)
 
