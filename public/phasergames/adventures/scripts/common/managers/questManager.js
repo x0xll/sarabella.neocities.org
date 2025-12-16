@@ -465,7 +465,7 @@ class QuestManager {
 
     #QUEST_TRIGGERS = {
         "TalkQuestTrigger": this.#talkQuestTrigger,
-        "EnterZoneTrigger": this.#missingTrigger,
+        "EnterZoneTrigger": this.#enterZoneTrigger,
         "StopNearTrigger": this.#stopNearTrigger,
         "RemoveEntityTrigger": this.#removeEntityTrigger,
         "ActionTrigger": this.#actionTrigger,
@@ -520,6 +520,19 @@ class QuestManager {
             phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
             return true
         }
+        return false
+    }
+
+    #enterZoneTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+
+        if (trigger 
+            && trigger.zoneName !== undefined
+            && trigger.zoneName[0] === phaserScene.zoneConfig.ID
+        ) {
+            phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+            return true;
+        } 
         return false
     }
 

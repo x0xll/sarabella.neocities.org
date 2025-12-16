@@ -29,7 +29,7 @@ class ZoneBase extends Phaser.Scene
             sharedData.spawnedEntities[this.zoneConfig.ID] = {}
         }
 
-        this.sharedData.questManager.phaserScene = this
+        this.sharedData.questManager.phaserScene = this;
     }
 
     preload ()
@@ -60,6 +60,11 @@ class ZoneBase extends Phaser.Scene
         zone.timeManager.renderDayNight()
 
         this.instantiateEntities();
+        
+        let triggerInfo = {
+            type: "EnterZoneTrigger"
+        }
+        this.sharedData.questManager.tryTriggerQuest(this, triggerInfo);
     }
 
     update() 
