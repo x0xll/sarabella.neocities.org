@@ -110,7 +110,6 @@ class uiInventory extends uiManagerBase
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(225, 355, 35, 35).setAlpha(.5); // produce
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(508, 104, 35, 35).setAlpha(.5); // close
 
-        // TODO: Handle scrolling
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(270, 173, 275, 200).setAlpha(.5).setScrollFactor(0);
         const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(270, 173, 275, 200)
                         .setScrollFactor(0))
