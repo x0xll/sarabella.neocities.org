@@ -1,0 +1,49 @@
+{
+"skeleton": { "hash": "BUMLrMvYRXs", "spine": "4.2.43", "images": "./Main/", "audio": "./audio" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "scaleX": 0.5, "scaleY": 0.5 }
+],
+"slots": [
+	{ "name": "Main_night", "bone": "bone", "attachment": "Main" },
+	{ "name": "Main", "bone": "bone", "attachment": "Main" }
+],
+"skins": [
+	{
+		"name": "P053/1",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P053_Day/P053.1_Day", "x": -13.99, "y": 663.72, "width": 791, "height": 1580 }
+			}
+		}
+	},
+	{
+		"name": "P053/2",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P053_Day/P053.2_Day", "x": -1.62, "y": 694.21, "width": 791, "height": 1580 }
+			}
+		}
+	},
+	{
+		"name": "P053/3",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P053_Day/P053.2_Day", "x": -1.62, "y": 694.21, "width": 791, "height": 1580 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

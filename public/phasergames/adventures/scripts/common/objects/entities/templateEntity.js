@@ -3,12 +3,6 @@
  * The templates included should be
  */
 class TemplateEntity extends Entity {
-    SPRITE_TYPES = {
-        noSprite: 0,
-        stillImage: 1,
-        atlas: 2,
-        spine: 3
-    }
 
     constructor(zoneScene, templateID, startX, startY, facingDirection = "se", addToCurrentZone = true, loadLate = false) {
         super(zoneScene, templateID, startX, startY, facingDirection);
@@ -94,15 +88,9 @@ class TemplateEntity extends Entity {
             let folderName = this.getTemplateValue(["MovieClip", "fileName", "text"], templateID)
             folderName = folderName.split("/")
             folderName = folderName[folderName.length - 1].replace(".swf", "")
-
-
-            if (this.templateID === "P001Template") {
-                spriteType = this.SPRITE_TYPES.atlas
-                this.zoneScene.load.atlas(`${templateID}`, `${this.assetPath}/${folderName}/${spriteClass}/sprite.png`, `${this.assetPath}/${folderName}/${spriteClass}/sprite.json`);
-            } else if (this.getTemplateValue(["CharacterIdle"], templateID) === undefined
-                // || this.zoneScene.sharedData.templateManager.getTemplateType(`${templateID}`) !== "npc"
-                ) {
-                // TODO actually add this
+            if (!this.getTemplateValue(["PlantMovieClip"]) 
+                && this.getTemplateValue(["CharacterIdle"], templateID) === undefined
+            ) {
                 // TODO consider having the simple image sprites in one atlas file per swf file. Then, if not in there, we could assume it should use spine instead
                 spriteType = this.SPRITE_TYPES.stillImage
                 this.zoneScene.load.image(`${templateID}`, `${this.assetPath}/${folderName}/${spriteClass}/1.png`);
@@ -203,7 +191,6 @@ class TemplateEntity extends Entity {
         }
     }
     #createSprite() {
-
         let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1]);
         let xOffset = 0
         if (this.getTemplateValue(["Isometric", "xOffset"], this.templateID)) {
@@ -219,29 +206,23 @@ class TemplateEntity extends Entity {
         if (this.spriteType === this.SPRITE_TYPES.spine) {
             try {
                 this.sprite = this.zoneScene.add.spine(isoStart.x, isoStart.y, `${this.templateID}-json`, `${this.templateID}-atlas`).setScale();
-                this.resetSpriteFacingDirection()
-                this.resetSpriteDepth()
-                this.setAnimations()
+
             } catch (error) {
                 console.log(`Could not load spine file for ${this.templateID}`)
             }
-        } else if (this.spriteType === this.SPRITE_TYPES.atlas) {
-            if (this.getTemplateValue(["BasicGrowing"], this.templateID) !== undefined) {
-                this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, `${this.currentStage}`).setOrigin(.5, 1).setScale(.5)
-            } else {
-                this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, "1").setOrigin(.5, 1)
-            }
-        } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
-            if (this.zoneScene.sharedData.templateManager.getTemplateType(`${this.templateID}`) === "plant") {
-                // For sprites where the middle of the tile is aligned with the middle, bottom of the sprite
-                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`).setOrigin(.5, 1)
-            } else {
-                // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
-                this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
-            }
-            // this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y, `${this.templateID}`)
             this.resetSpriteFacingDirection()
             this.resetSpriteDepth()
+            this.setAnimations()
+            this.updateSprite()
+        } else if (this.spriteType === this.SPRITE_TYPES.atlas) {
+            this.sprite = this.zoneScene.add.sprite(isoStart.x, isoStart.y, `${this.templateID}`, "1").setOrigin(.5, 1)
+            this.updateSprite()
+        } else if (this.spriteType === this.SPRITE_TYPES.stillImage) {
+            // For sprites where the bottom corner is aligned with the middle, bottom of the sprite
+            this.sprite = this.zoneScene.add.image(isoStart.x, isoStart.y + 20, `${this.templateID}`).setOrigin(.5, 1)
+            this.resetSpriteFacingDirection()
+            this.resetSpriteDepth()
+            this.updateSprite()
         }
     }
     setAnimations() {
@@ -311,16 +292,49 @@ class TemplateEntity extends Entity {
             if (isWilted) { currentStage++ }
 
             if (currentStage > this.currentStage) {
+                this.currentStage = currentStage
                 console.log(this.templateID, currentStage,  this.isWilted)
                 if (isWilted) {
-                    if (this.spriteType === this.SPRITE_TYPES.atlas) {this.sprite.setFrame("Wilted")}
                     this.isWilted = isWilted
-                } else if (this.spriteType === this.SPRITE_TYPES.atlas) {
-                    this.sprite.setFrame(`${currentStage}`)
+                    this.updateSprite()
+                } else {
+                    this.updateSprite()
                 }
-                this.currentStage = currentStage
             }
         }
+    }
+
+
+    updateSprite() {
+        if (!this.isPlant || !this.sprite || !this.sprite.skeleton) { 
+            super.updateSprite()
+            return
+         }
+        let gameTime = this.zoneScene.timeManager.isDay ? 'day' : 'night'
+        const skeletonData = this.sprite.skeleton.data;
+        const skin = new spine.Skin("custom");
+
+        const baseName = this.templateID.replace("Template", "")
+        let stageName = `${baseName}/${this.currentStage}`
+        if (this.isWilted) { stageName = `${this.templateID.replace("Template", "")}/Wilted` }
+
+        if (skeletonData.findSkin(stageName) !== null){
+            skin.addSkin(skeletonData.findSkin(stageName));
+        }
+        else if (skeletonData.findSkin(stageName + '_' + gameTime) !== null){
+            skin.addSkin(skeletonData.findSkin(stageName + '_' + gameTime));
+        }  else {
+            console.warn(`Could not find skins ${stageName} or ${stageName + '_' + gameTime}`)
+        }
+        this.sprite.skeleton.setSkin(skin);
+        this.sprite.skeleton.setToSetupPose();
+
+        for (let index = 0; index < this.sprite.skeleton.data.animations.length; index++) {
+            if (this.sprite.skeleton.data.animations[index].name === "idle0") {
+                this.sprite.animationState.addAnimation(1, "idle0", true)
+            }
+        }
+        super.updateSprite()
     }
     // ------- END UPDATE FUNCTIONS -------
 
@@ -552,6 +566,7 @@ class TemplateEntity extends Entity {
     }
     #variantCommand(context, interactData) { 
         console.log("Variant not yet implemented")
+        // TODO Set variants as skins in spine?
     }
     #rotateCommand(context, interactData) { 
         console.log("Placeholder - Rotate not yet fully implemented")

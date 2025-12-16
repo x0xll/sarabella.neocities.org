@@ -25,7 +25,9 @@ class TimeManager
     }
 
     /**
-     * Changes the tint of a given sprite. Is used to render day and night cycle
+     * Changes the tint of a given sprite. Is used to render day and night cycle.
+     * Any slots with names that include _night will render as day/night
+     * Slot names without _night will render as day only
      * @param {*} sprite 
      * @param {*} r 
      * @param {*} g 
@@ -93,6 +95,12 @@ class TimeManager
                     this.setTile(tile, cellValue)
                 }
             }
+
+        // Entities
+        for (let [key] of Object.entries(this.phaserScene.entities))
+            {
+                this.phaserScene.entities[key].updateSprite()
+            }
     }
 
     /**
@@ -156,7 +164,7 @@ class TimeManager
                     zoneEntities[key].daysCount++
                 }
             }
-        } else if (this.clock.now >= this.dayLength) {
+        } else if (this.clock.now >= this.dayLength && this.isDay) {
             this.isDay = false
             this.renderDayNight()
         }

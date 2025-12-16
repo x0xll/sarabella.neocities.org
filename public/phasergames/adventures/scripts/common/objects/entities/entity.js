@@ -8,6 +8,12 @@ class Entity {
         West: 'w',
         Northwest: 'nw'
     }
+    SPRITE_TYPES = {
+        noSprite: 0,
+        stillImage: 1,
+        atlas: 2,
+        spine: 3
+    }
     
     assetPath = "./assets/extracted"
     spriteScale = 1
@@ -89,6 +95,25 @@ class Entity {
     resetSpriteDepth() {
         let gridPosition = this.isoToGridMap(this.sprite.x, this.sprite.y)
         this.sprite.setDepth((7 - gridPosition.x) + gridPosition.y)
+    }
+
+    /**
+     * Updates sprite based on conditions such as day/night or plant growth stage
+     */
+    updateSprite() {
+        if (this.sprite && this.sprite.skeleton) {
+            if (this.zoneScene.timeManager.isDay) { 
+                this.zoneScene.timeManager.changeTint(this.sprite.skeleton, 1, 1, 1, 0, 1)
+            } else {
+                this.zoneScene.timeManager.changeTint(this.sprite.skeleton, 0.4, 0.6, 0.8, 0, .75)
+            }
+        } else if (this.sprite) {
+            if (this.zoneScene.timeManager.isDay) { 
+                this.sprite.clearTint()
+            } else {
+                this.sprite.setTint('0x6699cc')
+            }
+        }
     }
     // ------- END SPRITE PLACEMENT IN ZONE -------
 
