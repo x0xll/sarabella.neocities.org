@@ -660,7 +660,7 @@ class QuestManager {
         "DialogueAction": this.#dialogueAction,
         "DialogueImageAction": this.#dialogueImageAction,
         "DialogueChoiceAction": this.#missingAction,
-        "MonologueAction": this.#missingAction,
+        "MonologueAction": this.#monologueAction,
         "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
         "RemoveZoneItemAnywhereAction": this.#removeZoneItemAnywhereAction,
         "TryAddZoneItemToAction": this.#missingAction,
@@ -678,7 +678,7 @@ class QuestManager {
         "DialogueAction",
         "DialogueImageAction",
         // "DialogueChoiceAction",
-        // "MonologueAction"
+        "MonologueAction"
     ]
 
     async #missingAction (phaserScene, questID, lineIndex, action) {
@@ -732,6 +732,10 @@ class QuestManager {
         }
 
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined);
+    }
+
+    async #monologueAction(phaserScene, questID, lineIndex, action) {
+        phaserScene.sharedData.dialogue.ui.manager.show(questID, undefined, action.text, undefined);
     }
 
     async #dialogueImageAction(phaserScene, questID, lineIndex, action) {

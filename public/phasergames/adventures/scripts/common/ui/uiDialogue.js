@@ -159,6 +159,12 @@ class uiDialogue extends uiManagerBase
             }
 
             // Character portrait
+            if (characterid === undefined)
+            {
+                // TODO: find the bubble 
+                characterid = "BSA";
+            }
+
             let thumbnailFolderName = this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "fileName", "text"])
             thumbnailFolderName = thumbnailFolderName.split("/")
             thumbnailFolderName = thumbnailFolderName[thumbnailFolderName.length - 1].replace(".swf", "")
