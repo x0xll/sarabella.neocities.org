@@ -4,30 +4,30 @@ class uiQuest extends uiManagerBase
 
     THIN_TEXT_BLACK_SETTINGS = 
     {
-        font: "12px Arial",
+        font: "14px Arial",
         color: "black",
         wordWrap: { width: 650 }
     }
 
     BOLD_TEXT_BLACK_SETTINGS = 
     {
-        font: "24px Arial bold",
+        font: "700 18px Arial",
+        color: "black",
+        wordWrap: { width: 250 }
+    }
+
+    MEDIUM_BOLD_TEXT_BLACK_SETTINGS = 
+    {
+        font: "700 16px Arial",
         color: "black",
         wordWrap: { width: 250 }
     }
 
     SMALL_BOLD_TEXT_BLACK_SETTINGS = 
     {
-        font: "20px Arial bold",
+        font: "700 14px Arial",
         color: "black",
         wordWrap: { width: 250 }
-    }
-
-    BIG_THIN_TEXT_BLACK_SETTINGS = 
-    {
-        font: "18px Arial",
-        color: "black",
-        wordWrap: { width: 650 }
     }
 
 
@@ -73,7 +73,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0);
 
         // TODO: Link to loca
-        var lookforTxt = this.phaserScene.add.text(520, 200, 'Look for:', this.THIN_TEXT_BLACK_SETTINGS)
+        var lookforTxt = this.phaserScene.add.text(520, 200, 'Look for:', this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
 
@@ -82,7 +82,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0);
 
         // TODO: Link to loca
-        var locationTxt = this.phaserScene.add.text(520, 250, 'Location:', this.THIN_TEXT_BLACK_SETTINGS)
+        var locationTxt = this.phaserScene.add.text(520, 250, 'Location:', this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
 
@@ -91,7 +91,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0);
             
         // TODO: Link to loca
-        var goalTxt = this.phaserScene.add.text(435, 310, 'Goal:', this.THIN_TEXT_BLACK_SETTINGS)
+        var goalTxt = this.phaserScene.add.text(435, 310, 'Goal:', this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
 
@@ -198,8 +198,8 @@ class uiQuest extends uiManagerBase
         let shownQuestsCount = 0
         this.shownQuests = {};
 
-        let startPos = [130, 100];
-        let offset = 70;
+        let startPos = [130, 140];
+        let offset = 40;
 
         for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
         {
@@ -209,23 +209,19 @@ class uiQuest extends uiManagerBase
 
             if (questData.visible !== undefined && questData.visible === "False") continue;
 
-            if (this.shownQuests.length === 1)
-            {
-                this.selectCurrentQuestForDetails(questID);
-            }
-
-            //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(startPos[0], startPos[1] + (offset * i) - 5, 250, 50).setAlpha(.5).setScrollFactor(0);
+            shownQuestsCount++;
+            //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(startPos[0], startPos[1] + (offset * this.shownQuests.length - 1) - 5, 250, 50).setAlpha(.5).setScrollFactor(0);
             let slotBtn = this.phaserScene.add.graphics().setInteractive(
-                new Phaser.Geom.Rectangle(startPos[0], startPos[1] + (offset * i) - 5, 250, 50), Phaser.Geom.Rectangle.Contains);
+                new Phaser.Geom.Rectangle(startPos[0], startPos[1] + (offset * shownQuestsCount) - 5, 250, 50), Phaser.Geom.Rectangle.Contains);
             slotBtn.on("pointerdown", () => 
             {
                 this.selectCurrentQuestForDetails(questID);
             })
 
-            let titleTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i), adventure.description.text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
+            let titleTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * shownQuestsCount), adventure.description.text, this.MEDIUM_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
-            let descTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i) + 20, questData.description.text, this.BIG_THIN_TEXT_BLACK_SETTINGS)
+            let descTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * shownQuestsCount) + 20, questData.description.text, this.THIN_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
             
@@ -235,7 +231,11 @@ class uiQuest extends uiManagerBase
                 title: titleTxt,
                 desc: descTxt
             }
-            shownQuestsCount++;
+
+            if (shownQuestsCount === 1)
+            {
+                this.selectCurrentQuestForDetails(questID);
+            }
         }
     }
 
