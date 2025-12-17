@@ -714,8 +714,8 @@ class QuestManager {
         "AddTokenItemAction": this.#missingAction,
         "RemoveTokenAction": this.#missingAction,
         "TemporaryAnimationAction": this.#missingAction,
-        "PlayMovieClipAction": this.#missingAction,
-        "PlayHeadsUpDisplayMovieClipAction": this.#missingAction,
+        "PlayMovieClipAction": this.#playMovieClipAction,
+        "PlayHeadsUpDisplayMovieClipAction": this.#playMovieClipAction, // TODO: Confirm it works correctly
         "NullAction": this.#missingAction
     }
     #ACTIONS_TO_PAUSE = [
@@ -891,5 +891,14 @@ class QuestManager {
         } else if (action.template) {
             phaserScene.sharedData.inventory.manager.removeItem(action.template[0], parseInt(action.count[0]))
         }
+    }
+
+    async #playMovieClipAction (phaserScene, questID, lineIndex, action) {
+        let filePath = action.fileName[0];
+        let fileName = filePath.split("/");
+        fileName = fileName[fileName.length - 1];
+        filePath = `${CUTSCENE_ASSETS_PATH}${fileName}`;
+
+        onFlashStarted(filePath);
     }
 }
