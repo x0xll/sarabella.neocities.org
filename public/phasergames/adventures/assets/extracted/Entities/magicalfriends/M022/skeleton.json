@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "Vy8hABkjO7g", "spine": "4.2.43", "x": -36.16, "y": -14.41, "width": 106, "height": 95 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Main", "bone": "root", "attachment": "Spine Refs/1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Main": {
+				"Spine Refs/1": { "x": 16.84, "y": 33.09, "width": 106, "height": 95 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
