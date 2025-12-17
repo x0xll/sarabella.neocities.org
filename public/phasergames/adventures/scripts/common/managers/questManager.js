@@ -878,9 +878,8 @@ class QuestManager {
                 } else {
                     delete entitiesList[key]
                 }
-            } else if (action.template === undefined 
-                && action.template[0] !== undefined 
-                && action.template[0] === entity.templateID
+            } else if (action.instanceIdentifier === undefined 
+                && action.template[0] === entity.template
             ) {
                 if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID ){
                     phaserScene.entities[key].destroy()
