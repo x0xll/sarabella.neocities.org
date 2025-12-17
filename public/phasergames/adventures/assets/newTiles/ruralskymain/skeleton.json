@@ -1,14 +1,5 @@
 {
-"skeleton": {
-	"hash": "YZSarlO+Fls",
-	"spine": "4.2.43",
-	"x": -84.5,
-	"y": -8.75,
-	"width": 169,
-	"height": 81,
-	"images": "../../extracted/Tilemaps/RuralSky/",
-	"audio": "./audio"
-},
+"skeleton": { "hash": "MfnXgoIEJc0", "spine": "4.2.43", "x": -37, "y": -23.5, "width": 74, "height": 47 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -179,6 +170,28 @@
 			},
 			"Main_night": {
 				"Main": { "name": "T0013d/1", "width": 19, "height": 14 }
+			}
+		}
+	},
+	{
+		"name": "T0015b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0015b/1", "width": 74, "height": 47 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0015b/1", "width": 74, "height": 47 }
+			}
+		}
+	},
+	{
+		"name": "T0015d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "T0015d/1", "width": 33, "height": 50 }
+			},
+			"Main_night": {
+				"Main": { "name": "T0015d/1", "width": 33, "height": 50 }
 			}
 		}
 	},

@@ -680,6 +680,9 @@
         "tileYOffset": 1250,
         "tileAssets": [
             "common",
+            "forestcavemain",
+            "castletownmain",
+            "ruralskymain",
             "desertmain"
         ],
         
@@ -687,7 +690,7 @@
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [13, 59, "se"],
             "Z011": [13, 59, "nw"],
             "Z028": [40, 23, "sw"],
             "Z027": [19, 19, "w"]
@@ -777,6 +780,9 @@
         "tileYOffset": 2000,
         "tileAssets": [
             "common",
+            "ruralskymain",
+            "castletownmain",
+            "canterfarmsmain",
             "petalhomemain"
         ],
         
@@ -809,6 +815,7 @@
         "tileYOffset": 800,
         "tileAssets": [
             "common",
+            "forestcavemain",
             "desertmain"
         ],
         
