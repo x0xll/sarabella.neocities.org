@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "wePIzNKoT0w", "spine": "4.2.43", "x": -39.5, "y": -20, "width": 79, "height": 40 },
+"skeleton": { "hash": "E3JqH226mLU", "spine": "4.2.43", "x": -164.5, "y": -135, "width": 329, "height": 270 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -240,6 +240,17 @@
 		}
 	},
 	{
+		"name": "T0031b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0031b/1", "width": 21, "height": 112 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0031b/1", "width": 21, "height": 112 }
+			}
+		}
+	},
+	{
 		"name": "T0038d",
 		"attachments": {
 			"Main": {
@@ -357,6 +368,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0046e/1", "width": 329, "height": 270 }
+			}
+		}
+	},
+	{
+		"name": "T0046f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0046f/1", "width": 329, "height": 270 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0046f/1", "width": 329, "height": 270 }
 			}
 		}
 	},
@@ -526,6 +548,17 @@
 		}
 	},
 	{
+		"name": "T0063c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0063c/1", "width": 483, "height": 555 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0063c/1", "width": 483, "height": 555 }
+			}
+		}
+	},
+	{
 		"name": "T0063d",
 		"attachments": {
 			"Main": {
@@ -537,6 +570,28 @@
 		}
 	},
 	{
+		"name": "T0064b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0064b/1", "width": 483, "height": 555 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0064b/1", "width": 483, "height": 555 }
+			}
+		}
+	},
+	{
+		"name": "T0064e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0064e/1", "width": 483, "height": 555 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0064e/1", "width": 483, "height": 555 }
+			}
+		}
+	},
+	{
 		"name": "T0065a",
 		"attachments": {
 			"Main": {
@@ -544,6 +599,17 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0065a/1", "width": 483, "height": 555 }
+			}
+		}
+	},
+	{
+		"name": "T0066",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0066/1", "x": 2.91, "y": 584.81, "width": 799, "height": 1265 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0066/1", "x": 2.91, "y": 584.81, "width": 799, "height": 1265 }
 			}
 		}
 	},
@@ -1120,6 +1186,50 @@
 		}
 	},
 	{
+		"name": "T0122b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0122b/1", "width": 34, "height": 35 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0122b/1", "width": 34, "height": 35 }
+			}
+		}
+	},
+	{
+		"name": "T0122c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0122c/1", "width": 26, "height": 20 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0122c/1", "width": 26, "height": 20 }
+			}
+		}
+	},
+	{
+		"name": "T0122d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0122d/1", "width": 48, "height": 20 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0122d/1", "width": 48, "height": 20 }
+			}
+		}
+	},
+	{
+		"name": "T0122e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0122e/1", "width": 61, "height": 25 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0122e/1", "width": 61, "height": 25 }
+			}
+		}
+	},
+	{
 		"name": "T0123",
 		"attachments": {
 			"Main": {
@@ -1171,6 +1281,28 @@
 			},
 			"Main_night": {
 				"Main": { "name": "CastleTown/T0124l/1", "width": 92, "height": 78 }
+			}
+		}
+	},
+	{
+		"name": "T0124m",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0124m/1", "width": 123, "height": 81 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0124m/1", "width": 123, "height": 81 }
+			}
+		}
+	},
+	{
+		"name": "T0124n",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CastleTown/T0124n/1", "width": 123, "height": 81 }
+			},
+			"Main_night": {
+				"Main": { "name": "CastleTown/T0124n/1", "width": 123, "height": 81 }
 			}
 		}
 	},
