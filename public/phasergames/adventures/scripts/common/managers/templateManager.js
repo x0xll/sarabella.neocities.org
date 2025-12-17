@@ -11,7 +11,10 @@ class TemplateManager {
         "Z001": {
             "H047Template": [15, 6, "se"],
             "C001Template": [13, 27, "sw"]
-        } 
+        },
+        "Z007": {
+            "H001Template": [22, 38, "sw"]
+        }
     }
     
     TEMPLATE_TYPES = {
