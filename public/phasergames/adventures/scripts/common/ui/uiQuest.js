@@ -4,21 +4,21 @@ class uiQuest extends uiManagerBase
 
     THIN_TEXT_BLACK_SETTINGS = 
     {
-        font: "14px Arial",
+        font: "12px Arial",
         color: "black",
-        wordWrap: { width: 650 }
+        wordWrap: { width: 250 }
     }
 
     BOLD_TEXT_BLACK_SETTINGS = 
     {
-        font: "700 18px Arial",
+        font: "700 16px Arial",
         color: "black",
         wordWrap: { width: 250 }
     }
 
     MEDIUM_BOLD_TEXT_BLACK_SETTINGS = 
     {
-        font: "700 16px Arial",
+        font: "700 14px Arial",
         color: "black",
         wordWrap: { width: 250 }
     }
@@ -64,9 +64,6 @@ class uiQuest extends uiManagerBase
                             .setOrigin(0)
                             .setScrollFactor(0);
 
-        // Left page
-        // TODO: scrollview with quests
-
         // Right page
         var currentQuestTitle = this.phaserScene.add.text(430, 140, 'Quest Title', this.BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
@@ -99,7 +96,7 @@ class uiQuest extends uiManagerBase
                         .setOrigin(0)
                         .setScrollFactor(0);
 
-        var questIcon = this.phaserScene.add.image(455, 222.5, "closebtn")
+        var questIcon = this.phaserScene.add.image(440, 180, "closebtn")
                             .setOrigin(0)
                             .setScrollFactor(0);
 
@@ -109,6 +106,7 @@ class uiQuest extends uiManagerBase
                         .setInteractive();
 
         
+        // Left page
         //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(115, 150, 260, 300).setAlpha(.5).setScrollFactor(0);
         const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(115, 150, 280, 300)
                         .setScrollFactor(0))
@@ -269,7 +267,15 @@ class uiQuest extends uiManagerBase
                 let identifier = quest.line[0].trigger.object[0].identifier;
                 this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, "name"));
                 this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
-                //this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(identifier);
+
+                let thumbnailFolderName = this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "fileName", "text"])
+                thumbnailFolderName = thumbnailFolderName.split("/")
+                thumbnailFolderName = thumbnailFolderName[thumbnailFolderName.length - 1].replace(".swf", "")
+                let thumbnail = this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "className", "text"]);
+
+                this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(thumbnailFolderName);
+                this.phaserScene.sharedData.quest.ui.elements.questIcon.setFrame(thumbnail);
+
             }
             else
             {
