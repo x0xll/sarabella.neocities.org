@@ -298,14 +298,15 @@
         "tileYOffset": 600,
         "tileAssets": [
             "common",
-            "castletownmain"
+            "castletownmain",
+            "ruralskymain"
         ],
         
-        "backgroundXOffset": 0,
-        "backgroundYOffset": 0,
+        "backgroundXOffset": 1300,
+        "backgroundYOffset": 1500,
 
         "sceneEntryPoints": {
-            "default": [57, 30],
+            "default": [25, 9, "se"],
             "Z003": [25, 9, "se"],
             "Z004": [20, 11, "e"],
             "Z005": [28, 14, "s"]
@@ -317,11 +318,11 @@
         },
 
         "camBound": {
-            "xBounds": 1300,
-            "yBounds": 1500
+            "xBounds": 2600,
+            "yBounds": 3000
         },
 
-        "backgroundCountX": 1,
+        "backgroundCountX": 2,
         "backgroundCountY": 1
     },
     
@@ -341,7 +342,7 @@
         "backgroundYOffset": 0,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [37, 3, "se"],
             "Z009": [37, 3, "se"],
             "Z001": [17, 49, "n"],
             "Z008": [61, 29, "sw"]
@@ -442,7 +443,7 @@
         "backgroundYOffset": 1750,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [23, 31, "se"],
             "Z009": [23, 31, "e"],
             "Z002": [52, 5, "se"],
             "Z022": [59, 3, "sw"],
@@ -481,7 +482,7 @@
         "backgroundYOffset": 2000,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [51, 83, "se"],
             "Z009": [51, 83, "nw"],
             "Z002": [106, 20, "sw"],
             "Z023": [77, 6, "se"],
@@ -519,7 +520,7 @@
         "backgroundYOffset": 2075,
 
         "sceneEntryPoints": {
-            "default": [ 62, 20],
+            "default": [62, 5],
             "Z001": [62, 5],
             "Z027": [62, 20]
         },
