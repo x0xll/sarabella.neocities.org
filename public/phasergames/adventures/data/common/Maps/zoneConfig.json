@@ -194,14 +194,15 @@
         "tileYOffset": 1315,
         "tileAssets": [
             "common",
-            "castletownmain"
+            "castletownmain",
+            "ruralskymain"
         ],
         
-        "backgroundXOffset": 0,
-        "backgroundYOffset": 0,
+        "backgroundXOffset": 1500,
+        "backgroundYOffset": 2200,
 
         "sceneEntryPoints": {
-            "default": [25, 10],
+            "default": [22, 49],
             "Z004": [22, 49, "n"],
             "Z005": [39, 48, "w"],
             "Z006": [30, 53, "nw"], 
@@ -215,11 +216,11 @@
         },
 
         "camBound": {
-            "xBounds": 1500,
+            "xBounds": 3000,
             "yBounds": 2200
         },
 
-        "backgroundCountX": 1,
+        "backgroundCountX": 2,
         "backgroundCountY": 1
     },
 
