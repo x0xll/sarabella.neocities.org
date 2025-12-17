@@ -869,8 +869,18 @@ class QuestManager {
 
         for (let [key] of Object.entries(entitiesList)) {
             const entity = entitiesList[key];
-            if (action.instanceIdentifier[0] !== undefined 
+            if (action.instanceIdentifier !== undefined 
+                && action.instanceIdentifier[0] !== undefined 
                 && action.instanceIdentifier[0] === entity.instID
+            ) {
+                if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID ){
+                    phaserScene.entities[key].destroy()
+                } else {
+                    delete entitiesList[key]
+                }
+            } else if (action.template === undefined 
+                && action.template[0] !== undefined 
+                && action.template[0] === entity.templateID
             ) {
                 if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID ){
                     phaserScene.entities[key].destroy()

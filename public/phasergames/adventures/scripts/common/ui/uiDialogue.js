@@ -202,7 +202,7 @@ class uiDialogue extends uiManagerBase
 
             let choiceHeight = 0
             if (choices) {
-                choiceHeight = Object.entries(choices).length * this.CHOICE_HEIGHT
+                choiceHeight = (Object.entries(choices).length-1) * this.CHOICE_HEIGHT
             }
             // Set UI item position
             textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - choiceHeight - textElement.height - 20)
@@ -259,7 +259,7 @@ class uiDialogue extends uiManagerBase
     {
         if (choices) {
             this.phaserScene.sharedData.dialogue.ui.elements.choiceElements = []
-            const choiceHeight = Object.entries(choices).length * this.CHOICE_HEIGHT
+            const choiceHeight = (Object.entries(choices).length-1) * this.CHOICE_HEIGHT
             const buttonRef = this.phaserScene.sharedData.dialogue.ui.elements.continueBtn
             const buttonTextRef = this.phaserScene.sharedData.dialogue.ui.elements.continueTxt
             let index = 0

@@ -317,7 +317,6 @@ class TemplateEntity extends Entity {
 
             if (currentStage > this.currentStage) {
                 this.currentStage = currentStage
-                console.log(this.templateID, currentStage,  this.isWilted)
                 if (isWilted) {
                     this.isWilted = isWilted
                     this.updateSprite()
@@ -507,8 +506,8 @@ class TemplateEntity extends Entity {
             takeItem = context.getTemplateValue(["TakeCommand", "template", "text"])
             const triggerData = {
                 type: "ContextItemTrigger",
-                contextItem: "take",
-                templateID: context.templateID
+                actionClass: "take",
+                template: context.templateID
             }
             context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
         }
@@ -572,7 +571,11 @@ class TemplateEntity extends Entity {
             }
         }
         if (quests.length > 0 ) {
-            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, "Talk?", choices);
+            choices["none"] = {
+                entityID: character,
+                text: "Nevermind" // TODO get localised version
+            }
+            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, "What would you like to talk about?", choices); // TODO get localised version
         }
     }
     #shopCommand(context, interactData) {
