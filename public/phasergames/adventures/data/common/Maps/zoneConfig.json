@@ -267,11 +267,11 @@
             "castletownmain"
         ],
         
-        "backgroundXOffset": 0,
-        "backgroundYOffset": 0,
+        "backgroundXOffset": 1300,
+        "backgroundYOffset": 1800,
 
         "sceneEntryPoints": {
-            "default": [57, 30],
+            "default": [13, 9, "e"],
             "Z003": [13, 9, "e"],
             "Z004": [9, 17, "ne"],
             "Z006": [13, 24, "n"]
@@ -283,11 +283,11 @@
         },
 
         "camBound": {
-            "xBounds": 1300,
+            "xBounds": 3200,
             "yBounds": 1800
         },
 
-        "backgroundCountX": 1,
+        "backgroundCountX": 2,
         "backgroundCountY": 1
     },
     
@@ -319,7 +319,7 @@
 
         "camBound": {
             "xBounds": 2600,
-            "yBounds": 3000
+            "yBounds": 1500
         },
 
         "backgroundCountX": 2,

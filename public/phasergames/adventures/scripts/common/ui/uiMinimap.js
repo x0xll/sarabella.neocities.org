@@ -8,6 +8,9 @@ class uiMinimap extends uiManagerBase
     ZONE_NAMES = [
         "Z001",
         "Z002",
+        "Z003", // TODO: get a cleaner version
+        "Z004", // TODO: get a cleaner version
+        "Z005", // TODO: get a cleaner version
         "Z006", // TODO: get a cleaner version
         "Z007",
         "Z008",
