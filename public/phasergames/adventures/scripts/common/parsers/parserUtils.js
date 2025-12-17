@@ -60,12 +60,18 @@ function parseXMLNode(node, parentNodeObject, customName = "") {
     ]
 
     // Check child nodes
+    // TODO need to get choice id instead of just array of text options
     if (node.childNodes && node.childNodes.length > 0) {
         node.childNodes.forEach(childNode => {
             const textOnlyNodes = [
                 "text"
             ]
-            if (!nonArrayNodes.includes(childNode.nodeName) &&
+            if (node.nodeName === "object" && childNode.nodeName === "choice") {
+                if (!nodeObject[childNode.nodeName]) {
+                    nodeObject[childNode.nodeName] = {}
+                }
+                parseXMLNode(childNode, nodeObject[childNode.nodeName])
+            } else if (!nonArrayNodes.includes(childNode.nodeName) &&
                 (textOnlyNodes.includes(childNode.nodeName) || node.nodeName === "object")
             ) {
                 if (!nodeObject[childNode.nodeName]) {

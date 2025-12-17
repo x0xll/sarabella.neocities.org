@@ -324,9 +324,12 @@ class QuestManager {
 
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = 
-            "v1_Q0000000825-0000000899-0000002110_" + // Intro tuto
-            "Q0000000825-0000000899-0000002105_" + // Talk to Wings
-            "0000001163-0000001798-0000006239" // Intro Cottage
+            "v1_Q0000000825-0000000899-0000002110" // Intro tuto
+            + "_Q0000000825-0000000899-0000002105" // Talk to Wings
+            + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fix bridge
+            + "_Q0000001163-0000001798-0000006239"// Intro Cottage
+            // + "_Q0000001051-0000001468-0000004839"  // Free spring carnival (app start trigger)
+            // + "_Q0000001173-0000001823-0000006281"  // Furniture store (zone trigger)
         const activeSavedData = unstringifyQuest(activeSavedString)
 
         const finisedSavedString = "v1"
@@ -475,7 +478,7 @@ class QuestManager {
         "ContextItemTrigger": this.#contextItemTrigger,
         "GiveItemTrigger": this.#giveItemTrigger,
         "ApplyItemTrigger": this.#giveItemTrigger, // TODO double check this works
-        "DialogueChoiceTrigger": this.#missingTrigger,
+        "DialogueChoiceTrigger": this.#dialogueChoiceTrigger,
         "PlantGrownInRadiusTrigger": this.#missingTrigger,
         "TradeTrigger": this.#missingTrigger,
         "ApplicationStartTrigger": this.#applicationStartTrigger,
@@ -589,6 +592,15 @@ class QuestManager {
         return true
     }
 
+    #dialogueChoiceTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        if (trigger.identifier === triggerData.line) {
+            let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
+            phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+            return true
+        }
+        return false
+    }
+
 
     //------- QUEST CONDITIONS -------
     checkConditions (phaserScene, questData, lineIndex, trigger) {
@@ -668,7 +680,7 @@ class QuestManager {
         "ShowAdventureCompleteAction": this.#missingAction,
         "DialogueAction": this.#dialogueAction,
         "DialogueImageAction": this.#dialogueImageAction,
-        "DialogueChoiceAction": this.#missingAction,
+        "DialogueChoiceAction": this.#dialogueChoiceAction,
         "MonologueAction": this.#monologueAction,
         "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
         "RemoveZoneItemAnywhereAction": this.#removeZoneItemAnywhereAction,
@@ -686,7 +698,7 @@ class QuestManager {
     #ACTIONS_TO_PAUSE = [
         "DialogueAction",
         "DialogueImageAction",
-        // "DialogueChoiceAction",
+        "DialogueChoiceAction",
         "MonologueAction"
     ]
 
@@ -776,6 +788,28 @@ class QuestManager {
         }
         
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, undefined, img);
+    }
+
+    async #dialogueChoiceAction(phaserScene, questID, lineIndex, action) {
+        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+
+        let character = undefined
+        if (action.identifier) {character = action.identifier}
+        if (character === undefined) {
+            character = phaserScene.sharedData.questManager.getDialogueCharacter(questData, lineIndex)
+        }
+        if (character === undefined) {
+            for (let index = 0; index < questData.line.length; index++) {
+                if (index === lineIndex) continue
+                const check = phaserScene.sharedData.questManager.getDialogueCharacter(questData, index)
+                if (check !== undefined) {
+                    character = check
+                    break
+                }
+            }
+        }
+
+        phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, action.choice);
     }
 
     getDialogueCharacter(questData, lineIndex) {
