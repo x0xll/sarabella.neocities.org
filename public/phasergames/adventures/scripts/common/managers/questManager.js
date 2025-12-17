@@ -124,6 +124,7 @@ class QuestManager {
      * @returns 
      */
     getFullQuestID(questID) {
+        if (questID[0] && !questID[1]) {return questID}
         const quests = this.phaserScene.sharedData.quest.logic.quests
         for (let i = 0; i < quests.length; i++) {
             for (let [adsKey] of Object.entries(quests[i])) {
@@ -182,6 +183,24 @@ class QuestManager {
                 }
             }
         }
+    }
+
+    getActiveQuestsWithCharacter(characterID) {
+        let available = this.phaserScene.sharedData.quest.logic.activeQuests
+        const quests = []
+        let counter = 0
+        for (let index = 0; index < available.length; index++) {
+            const questData = this.getQuestPerID(available[index]);
+            for (let lineIndex = 0; lineIndex < questData.line.length; lineIndex++) {
+                if (questData.line[lineIndex].trigger.object[0].type === "TalkQuestTrigger" && questData.line[lineIndex].trigger.object[0].identifier === characterID) {
+                    console.log(questData.line[lineIndex].trigger.object[0].identifier, available[index])
+                    quests.push(available[index])
+                    counter++
+                }
+            }
+        }
+        while (quests.length < counter) {}
+        return quests
     }
 
 
@@ -324,9 +343,11 @@ class QuestManager {
 
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = 
-            "v1_Q0000000825-0000000899-0000002110" // Intro tuto
+            "v1"
+            + "_Q0000000825-0000000899-0000002110" // Intro tuto
             + "_Q0000000825-0000000899-0000002105" // Talk to Wings
-            + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fix bridge
+            // + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
+            // + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fixed bridge
             + "_Q0000001163-0000001798-0000006239"// Intro Cottage
             // + "_Q0000001051-0000001468-0000004839"  // Free spring carnival (app start trigger)
             // + "_Q0000001173-0000001823-0000006281"  // Furniture store (zone trigger)
@@ -528,7 +549,9 @@ class QuestManager {
     #talkQuestTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
         const entity = triggerData.entityID;
-        if (entity === trigger.identifier) {
+        if (entity === trigger.identifier
+            && triggerData.questID === phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex][2]
+        ) {
             phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
             return true
         }
@@ -811,7 +834,6 @@ class QuestManager {
 
         phaserScene.sharedData.dialogue.ui.manager.show(questID, character, action.text, action.choice);
     }
-
     getDialogueCharacter(questData, lineIndex) {
         let character
         let triggers = questData.line[lineIndex].trigger.object

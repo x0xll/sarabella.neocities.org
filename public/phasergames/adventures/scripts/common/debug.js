@@ -85,6 +85,7 @@ class Debug {
     }
 
     getQuestData(questID) {
+        questID = this.getFullQuestID(questID)
         return this.loadScene.sharedData.questManager.getQuestPerID(questID)
     }
 

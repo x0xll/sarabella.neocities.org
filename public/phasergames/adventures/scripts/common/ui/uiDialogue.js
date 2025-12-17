@@ -68,8 +68,7 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.load.atlas(this.DIALOGUE_SPECIAL_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_SPECIAL_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_SPECIAL_THUMBNAILS}.json`);
 
         // Continue button
-        // TODO : Find / Recreate the correct button
-        this.phaserScene.load.image(this.DIALOGUE_CONTINUE_BTN, `${ROOT_ASSETS_PATH}UI/Common/CloseButton.png`);
+        this.phaserScene.load.image(this.DIALOGUE_CONTINUE_BTN, `${ROOT_ASSETS_PATH}UI/Dialogue/DialogueBtn.png`);
 
         // TODO : get the scroll bar
     }
@@ -119,9 +118,10 @@ class uiDialogue extends uiManagerBase
         var continueBtn = this.phaserScene.add.image(105, 480, this.DIALOGUE_CONTINUE_BTN)
                             .setOrigin(0)
                             .setScrollFactor(0)
-                            .setInteractive();
+                            .setInteractive()
+                            .setScale(.75);
 
-        var continueTxt = this.phaserScene.add.text(continueBtn.x+50, continueBtn.y+12, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
                             .setDepth(100);
@@ -268,7 +268,8 @@ class uiDialogue extends uiManagerBase
                 var choiceBtn = this.phaserScene.add.image(buttonRef.x, buttonRef.y - choiceHeight + (index*this.CHOICE_HEIGHT), this.DIALOGUE_CONTINUE_BTN)
                                     .setOrigin(0)
                                     .setScrollFactor(0)
-                                    .setInteractive();
+                                    .setInteractive()
+                                    .setScale(.75);
 
                 var choiceTxt = this.phaserScene.add.text(choiceBtn.x+(buttonTextRef.x - buttonRef.x), choiceBtn.y+(buttonTextRef.y - buttonRef.y), choices[key].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
                                     .setOrigin(0)
@@ -280,8 +281,8 @@ class uiDialogue extends uiManagerBase
 
                 choiceBtn.on('pointerover', (pointer) => { });
                 choiceBtn.on('pointerout', (pointer) => { });
-                choiceBtn.on('pointerup', this.#choiceOption, {questID: questID, UI: this, key: key});
-                choiceTxt.on('pointerup', this.#choiceOption, {questID: questID, UI: this, key: key});
+                choiceBtn.on('pointerup', this.#choiceOption, {questID: questID, UI: this, key: key, entityID: choices[key].entityID});
+                choiceTxt.on('pointerup', this.#choiceOption, {questID: questID, UI: this, key: key, entityID: choices[key].entityID});
                 index++
             }
 
@@ -315,8 +316,18 @@ class uiDialogue extends uiManagerBase
         this.UI.hide();
         this.UI.phaserScene.sharedData.lastChoice = this.key
 
-        let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
-        this.UI.phaserScene.sharedData.questManager.tryTriggerQuest(this.UI.phaserScene, {type: "DialogueChoiceTrigger", line: this.key})
+        if (this.entityID) {
+            const triggerData = {
+                type: "TalkQuestTrigger",
+                entityID: this.entityID,
+                questID: this.key
+            }
+            this.UI.phaserScene.sharedData.questManager.tryTriggerQuest(this.UI.phaserScene, triggerData)
+        } else {
+            let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
+            this.UI.phaserScene.sharedData.questManager.tryTriggerQuest(this.UI.phaserScene, {type: "DialogueChoiceTrigger", line: this.key})
+        }
+
     }
     #debugContinue(questID) {
         this.phaserScene.sharedData.lastChoice = "continue"

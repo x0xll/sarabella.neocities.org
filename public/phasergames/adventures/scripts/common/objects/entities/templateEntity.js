@@ -560,11 +560,20 @@ class TemplateEntity extends Entity {
         context.destroy()
     }
     #talkCommand(context, interactData) {
-        const triggerData = {
-            type: "TalkQuestTrigger",
-            entityID: context.entityID
+        const character = context.getTemplateValue(["Character", "identifier", "text"])
+        const choices = { }
+        const quests = context.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
+        for (let index = 0; index < quests.length; index++) {
+            const quest = quests[index];
+            const advData = context.zoneScene.sharedData.questManager.getAdventurePerID(quest)
+            choices[quest[2]] = {
+                entityID: character,
+                text: advData.description.text
+            }
         }
-        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
+        if (quests.length > 0 ) {
+            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, "Talk?", choices);
+        }
     }
     #shopCommand(context, interactData) {
         if (context.getTemplateValue(["AvatarShopCommand"])) {
