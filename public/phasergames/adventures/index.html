@@ -6,6 +6,7 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
         <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
+        <script src="/ruffle/ruffle.js"></script>
 
         <!-- TODO: Do we want/need to load all the files here? 
         --- Cause we may have A LOT of them by the end of the project
@@ -73,12 +74,16 @@
                 const COMMON_XML_PATH = "./data/common/";
                 const ZONE_XML_PATH = `${COMMON_XML_PATH}Maps/`;
                 const SHOP_XML_PATH = `${COMMON_XML_PATH}Shops/`;
-                const QUEST_XML_PATH = `./data/lang/${lang}/Quests/`;
-                const TEMPLATE_XML_PATH = `./data/lang/${lang}/Templates/`;
-                const UI_XML_PATH = `./data/lang/${lang}/UI/`;
-                const ROOT_ASSETS_PATH = "./assets/extracted/";
-                const LEVEL_ASSETS_PATH = "./assets/extracted/Tilemaps/";
-                const TILE_ASSETS_PATH = "./assets/newTiles/";
+                const LOCALIZED_XML_PATH = `./data/lang/${lang}/`;
+                const QUEST_XML_PATH = `${LOCALIZED_XML_PATH}Quests/`;
+                const TEMPLATE_XML_PATH = `${LOCALIZED_XML_PATH}Templates/`;
+                const UI_XML_PATH = `${LOCALIZED_XML_PATH}UI/`;
+                const ASSETS_PATH = "./assets/";
+                const ROOT_ASSETS_PATH = `${ASSETS_PATH}extracted/`;
+                const LEVEL_ASSETS_PATH = `${ROOT_ASSETS_PATH}Tilemaps/`;
+                const TILE_ASSETS_PATH = `${ASSETS_PATH}newTiles/`;
+                const SWF_ASSETS_PATH = `${ASSETS_PATH}swf/`;
+                const CUTSCENE_ASSETS_PATH = `${SWF_ASSETS_PATH}cutscenes/`;
                 const VOLUME = .5
                 const debug = new Debug()
 
@@ -150,12 +155,38 @@
             </script>
         </div>
         
-        <div class="footer">
-            <a href="/index.html" class="global-lowernav-link">Home</a> |
-            <a href="https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures" class="global-lowernav-link">Wiki Page</a>
+        <div id="ruffleSwf" class="swf" dir="ltr" rbidi="on" style="display:none;">
+            <!--Here goes the cutscenes-->
+        </div>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures', githubLink: 'https://github.com/Bella-Sara-Archival-Team/sarabella.neocities.org/tree/develop/public/phasergames/adventures'});
+          </script>
         </div>
 
         <script src="/flags.js"></script>
+
+        <script src="/flash/common/js/flashutils.js"></script>
+        <script>
+            setupRuffle();
+            const PHASER_DIV = document.getElementById("gameDiv");
+            const RUFFLE_DIV = document.getElementById("ruffleSwf");
+
+            function onFlashFinished()
+            {
+                PHASER_DIV.style.display = "block";
+                RUFFLE_DIV.style.display = "none";
+            }
+
+            function onFlashStarted(filePath, flashvars = '', transparentBg = true)
+            {
+                PHASER_DIV.style.display = "none";
+                RUFFLE_DIV.style.display = "block";
+                loadSWF(filePath, '611', '800', lang, flashvars, transparentBg)
+            }
+        </script>
 
     </body>
 </html>
