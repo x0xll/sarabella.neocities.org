@@ -16,12 +16,29 @@ class uiQuest extends uiManagerBase
         wordWrap: { width: 250 }
     }
 
+    SMALL_BOLD_TEXT_BLACK_SETTINGS = 
+    {
+        font: "20px Arial bold",
+        color: "black",
+        wordWrap: { width: 250 }
+    }
+
+    BIG_THIN_TEXT_BLACK_SETTINGS = 
+    {
+        font: "18px Arial",
+        color: "black",
+        wordWrap: { width: 650 }
+    }
+
+
     constructor(phaserScene)
     {
         super(phaserScene, "quest");
 
         this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
+        
+        this.shownQuests = {};
     }
 
     load()
@@ -91,6 +108,26 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0)
                         .setInteractive();
 
+        
+        //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(115, 150, 260, 300).setAlpha(.5).setScrollFactor(0);
+        const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(115, 150, 280, 300)
+                        .setScrollFactor(0))
+        //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(380, 150, 20, 300).setAlpha(.5).setScrollFactor(0);
+        const scrollZone = this.phaserScene.add.zone(380, 150, 20, 300)
+                        .setScrollFactor(0)
+                        .setOrigin(0)
+                        .setInteractive()
+        const scrollBar = this.phaserScene.add.sprite(515, 191, this.SCROLL, "scroll")
+                        .setScrollFactor(0)
+                        .setOrigin(0);
+        const scrollUp = this.phaserScene.add.sprite(scrollZone.x, scrollZone.y-21, this.SCROLL, "arrowScroll_1")
+                        .setScrollFactor(0)
+                        .setOrigin(0);
+        const scrollDown = this.phaserScene.add.sprite(scrollZone.x, scrollZone.y + scrollZone.height + 20, this.SCROLL, "arrowScroll_1")
+                        .setScrollFactor(0)
+                        .setOrigin(1, 0)
+                        .setAngle(180);
+
         this.phaserScene.sharedData.quest.ui.elements =
         {
             open: false,
@@ -104,8 +141,13 @@ class uiQuest extends uiManagerBase
             locationDescTxt: locationDescTxt,
             goalTxt: goalTxt,
             goalDescTxt: goalDescTxt,
-            questIcon: questIcon
+            questIcon: questIcon,
             // Left page
+            scrollMask: scrollMask,
+            scrollZone: scrollZone,
+            scrollBar: scrollBar,
+            scrollUp: scrollUp,
+            scrollDown: scrollDown
         }
 
         super.initialize();
@@ -119,21 +161,8 @@ class uiQuest extends uiManagerBase
             this.phaserScene.sharedData.quest.ui.elements.panelImg.setAlpha(1);
             this.phaserScene.sharedData.quest.ui.elements.closeBtn.setAlpha(1);
 
-            if (this.phaserScene.sharedData.quest.logic.activeQuests !== undefined && this.phaserScene.sharedData.quest.logic.activeQuests.length > 0)
-            {
-                // We default on the first quest, if it isn't possible to show it (ie: waiting state + no trigger)
-                // Then we try the next one until we either have one or nothing
-                let firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[0];
-                let isShowable = false;
-                for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
-                {
-                    firstQuest = this.phaserScene.sharedData.quest.logic.activeQuests[i];
-                    isShowable = this.selectCurrentQuestForDetails(firstQuest);
-                    if (isShowable)
-                        break;
-                }
-            }
-            
+            this.updateQuestList();
+
             this.turnOnEvents()
     }
 
@@ -152,17 +181,68 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.goalTxt.setAlpha(0);
         this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setAlpha(0);
         this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
+
+        for (let key in this.shownQuests) {
+            let quest = this.shownQuests[key];
+
+            for (let subKey in quest) {
+                quest[subKey].destroy();
+            }
+        }
+
+        this.shownQuests = {};
+    }
+
+    updateQuestList()
+    {
+        let shownQuestsCount = 0
+        this.shownQuests = {};
+
+        let startPos = [130, 100];
+        let offset = 70;
+
+        for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+        {
+            let questID = this.phaserScene.sharedData.quest.logic.activeQuests[i];
+            let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
+            let adventure = this.phaserScene.sharedData.questManager.getAdventurePerID(questID);
+
+            if (questData.visible !== undefined && questData.visible === "False") continue;
+
+            if (this.shownQuests.length === 1)
+            {
+                this.selectCurrentQuestForDetails(questID);
+            }
+
+            //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(startPos[0], startPos[1] + (offset * i) - 5, 250, 50).setAlpha(.5).setScrollFactor(0);
+            let slotBtn = this.phaserScene.add.graphics().setInteractive(
+                new Phaser.Geom.Rectangle(startPos[0], startPos[1] + (offset * i) - 5, 250, 50), Phaser.Geom.Rectangle.Contains);
+            slotBtn.on("pointerdown", () => 
+            {
+                this.selectCurrentQuestForDetails(questID);
+            })
+
+            let titleTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i), adventure.description.text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
+                        .setOrigin(0)
+                        .setScrollFactor(0);
+            let descTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i) + 10, questData.description.title, this.BIG_THIN_TEXT_BLACK_SETTINGS)
+                        .setOrigin(0)
+                        .setScrollFactor(0);
+            
+            this.shownQuests[questID] =
+            {
+                btn: slotBtn,
+                title: titleTxt,
+                desc: descTxt
+            }
+            shownQuestsCount++;
+        }
     }
 
     selectCurrentQuestForDetails(questID)
     {
         let adventure = this.phaserScene.sharedData.questManager.getAdventurePerID(questID);
         let quest = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
-
-        if (quest === undefined || 
-            quest.status !== this.phaserScene.sharedData.questManager.QUEST_STATES.AVAILABLE || 
-            (quest.visible !== undefined && !quest.visible)
-        ) return false;
 
         this.phaserScene.sharedData.quest.ui.elements.questTitle.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.lookforTxt.setAlpha(1);
@@ -174,11 +254,41 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
 
         this.phaserScene.sharedData.quest.ui.elements.questTitle.setText(adventure.description.text);
-        this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(""); // TODO: find where we get
-        this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(""); // TODO: find where we get
+
+
+        if (quest.line[0].trigger === undefined)
+        {
+            this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText("");
+            this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText("");
+            this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
+        }
+        else
+        {
+            if (quest.line[0].trigger.object[0].identifier !== undefined)
+            {
+                let identifier = quest.line[0].trigger.object[0].identifier;
+                this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, "name"));
+                this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
+                //this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(identifier);
+            }
+            else
+            {
+                this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText("");
+                this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
+            }
+
+            if (quest.line[0].trigger.object[0].zone !== undefined)
+            {
+                this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(quest.line[0].trigger.object[0].zone);
+            }
+            else
+            {
+                this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText("");
+            }
+        }
+        
+
         this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setText(quest.description.text);
-        //this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(); // TODO: find where we get
-        return true;
     }
 
     turnOnEvents()
