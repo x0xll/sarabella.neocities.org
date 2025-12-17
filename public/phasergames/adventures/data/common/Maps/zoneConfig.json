@@ -226,18 +226,19 @@
     "Z004": {
         "ID": "Z004",
 
-        "tileXOffset": 0,
-        "tileYOffset": 0,
+        "tileXOffset": -470,
+        "tileYOffset": 1010,
         "tileAssets": [
             "common",
-            "castletownmain"
+            "castletownmain",
+            "ruralskymain"
         ],
         
-        "backgroundXOffset": 0,
-        "backgroundYOffset": 0,
+        "backgroundXOffset": 1850,
+        "backgroundYOffset": 1900,
 
         "sceneEntryPoints": {
-            "default": [57, 30],
+            "default": [57, 24],
             "Z003": [57, 24, "s"],
             "Z005": [56, 31, "sw"],
             "Z006": [53, 37, "w"]
@@ -249,8 +250,8 @@
         },
 
         "camBound": {
-            "xBounds": 3090,
-            "yBounds": 1626
+            "xBounds": 3700,
+            "yBounds": 1900
         },
 
         "backgroundCountX": 2,
