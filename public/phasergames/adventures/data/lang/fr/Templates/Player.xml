@@ -36,7 +36,7 @@
       <name>You</name>
     </component>
     <component type="components.ThumbnailComponent" name="Thumbnail">
-      <fileName>flash/adventures/art/npcs/humansthumbnail.swf</fileName>
+      <fileName>flash/adventures/art/npcs/specialthumbnail.swf</fileName>
       <className>A001</className>
     </component>
   </template>
@@ -63,7 +63,7 @@
       <name>You</name>
     </component>
     <component type="components.ThumbnailComponent" name="Thumbnail">
-      <fileName>flash/adventures/art/npcs/humansthumbnail.swf</fileName>
+      <fileName>flash/adventures/art/npcs/specialthumbnail.swf</fileName>
       <className>A001</className>
     </component>
   </template>

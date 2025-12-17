@@ -21,7 +21,7 @@ class TemplateManager {
         "NPCs": "npc",
         "PlaceableObject": "placeableObject",
         "Plants": "plant",
-        // "Player": "player", // Is this one needed anywhere?
+        "Player": "player",
         "Soil": "soil",
         "WorldObject": "worldObject",
         "Zone": "zone",

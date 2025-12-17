@@ -22,7 +22,17 @@ class Debug {
         this.loadScene.sharedData.questManager.markQuestFinished(questID)
     }
 
-    advanceQuest(questID, activeOnly = true) {        
+    setSkipDialogue(shouldSkip = true) {
+        this.skipDialogue = shouldSkip
+    }
+
+    advanceQuest(questID = this.nextQuest, activeOnly = true, skipDialogue = this.skipDialogue) {     
+        if (questID === undefined) {
+            this.nextQuest = this.loadScene.sharedData.quest.logic.activeQuests[0]
+            console.log(this.nextQuest)
+            questID = this.nextQuest
+        }
+
         questID = this.getFullQuestID(questID)
         const questData = this.getQuestData(questID)
         let questActive = true
@@ -56,6 +66,7 @@ class Debug {
                 }
             }
             this.loadScene.sharedData.questManager.doQuestAction(questID, endLine);
+            this.nextQuest = startedQuests[0]
             return startedQuests
         }
     }
@@ -85,7 +96,8 @@ class Debug {
             }
             questID = [undefined, undefined, questID]
         }
-        return this.loadScene.sharedData.questManager.getFullQuestID(questID)
+        if (!questID[0] || !questID[1]) {questID = this.loadScene.sharedData.questManager.getFullQuestID(questID)}
+        return questID
     }
     // ------- END QUEST FUNCTIONS -------
 
@@ -102,6 +114,10 @@ class Debug {
 
 
     // ------- ZONE FUNCTIONS -------
+    switchZone(zoneID = "Z001") {
+        this.zoneScene.goToNextZone(zoneID)
+    }
+
     getEntities(zoneID = undefined) {
         if (zoneID = undefined) {
             return this.zoneScene.entities

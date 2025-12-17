@@ -127,12 +127,12 @@ class QuestManager {
         const quests = this.phaserScene.sharedData.quest.logic.quests
         for (let i = 0; i < quests.length; i++) {
             for (let [adsKey] of Object.entries(quests[i])) {
-                if (questID[0]) { adsKey = questID[0]; continue}
+                if (questID[0]) { adsKey = questID[0] }
                 if (!adsKey.includes("ADS")) {continue}
                 adventures = quests[i][adsKey]
 
                 for (let [advKey] of Object.entries(adventures)) {
-                    if (questID[1]) { advKey = questID[1]; continue}
+                    if (questID[1]) { advKey = questID[1]}
                     if (!advKey.includes("ADV")) {continue}
                     adventure = adventures[advKey]
 

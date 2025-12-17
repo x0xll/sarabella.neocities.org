@@ -6,6 +6,7 @@ class uiDialogue extends uiManagerBase
     DIALOGUE_HUMANS_THUMBNAILS = "humansthumbnail";
     DIALOGUE_HORSES_THUMBNAILS = "horsesthumbnail";
     DIALOGUE_MAGICFRIENDS_THUMBNAILS = "magicalfriendsthumbnail";
+    DIALOGUE_SPECIAL_THUMBNAILS = "specialthumbnail";
 
     CHARA_NAME_TEXT_SETTINGS = 
     {
@@ -63,6 +64,7 @@ class uiDialogue extends uiManagerBase
         this.phaserScene.load.atlas(this.DIALOGUE_HUMANS_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HUMANS_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HUMANS_THUMBNAILS}.json`);
         this.phaserScene.load.atlas(this.DIALOGUE_HORSES_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HORSES_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_HORSES_THUMBNAILS}.json`);
         this.phaserScene.load.atlas(this.DIALOGUE_MAGICFRIENDS_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_MAGICFRIENDS_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_MAGICFRIENDS_THUMBNAILS}.json`);
+        this.phaserScene.load.atlas(this.DIALOGUE_SPECIAL_THUMBNAILS, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_SPECIAL_THUMBNAILS}.png`, `${ROOT_ASSETS_PATH}Characters/${this.DIALOGUE_SPECIAL_THUMBNAILS}.json`);
 
         // Continue button
         // TODO : Find / Recreate the correct button
@@ -147,6 +149,10 @@ class uiDialogue extends uiManagerBase
     // TODO: Handle if dialogue has no character to display
     show(questID, characterid, text, choices, image)
     {
+            if (debug.skipDialogue) {
+                this.#debugContinue(questID)
+            }
+
             let test = super.show()
             if (!test) return
 
@@ -159,10 +165,8 @@ class uiDialogue extends uiManagerBase
             }
 
             // Character portrait
-            if (characterid === undefined)
-            {
-                // TODO: find the bubble 
-                characterid = "BSA";
+            if (characterid === undefined) { 
+                characterid = "Player"; 
             }
 
             let thumbnailFolderName = this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "fileName", "text"])
@@ -205,6 +209,8 @@ class uiDialogue extends uiManagerBase
             this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
             if (character.thumbnailFolderName === this.DIALOGUE_HUMANS_THUMBNAILS) {
                 this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(23, textElement.y-65)
+            } else if (character.thumbnailFolderName === this.DIALOGUE_SPECIAL_THUMBNAILS) {
+                this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(23, textElement.y-40)
             } else  {
                 this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(8, textElement.y-55)
             }
@@ -263,6 +269,11 @@ class uiDialogue extends uiManagerBase
 
         let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
         this.UI.phaserScene.sharedData.questManager.doQuestAction(this.questID, questData.currentLine, questData.currentAction)
+    }
+    #debugContinue(questID) {
+        this.phaserScene.sharedData.lastChoice = "continue"
+        let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
+        this.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
     }
     // ------- END UI EVENTS -------
 
