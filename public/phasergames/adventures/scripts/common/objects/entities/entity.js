@@ -148,9 +148,12 @@ class Entity {
      */
     updateSpriteVariant(variantData)
     {
-        if (this.getTemplateValue(["MovieClip", "variants"]) === undefined) {return;}
+        if (this.sprite === undefined ||
+            this.sprite.skeleton === undefined ||
+            this.sprite.skeleton.data === undefined
+        ) {return;}
         let skinData = this.sprite.skeleton.data.findSkin(variantData);
-        if (skinData === undefined) {return;}
+        if (skinData === undefined || skinData === null) {return;}
 
         const skin = new spine.Skin("custom");
         skin.addSkin(skinData);
