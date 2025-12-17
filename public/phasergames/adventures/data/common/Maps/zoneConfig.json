@@ -544,14 +544,16 @@
         "tileYOffset": 1920,
         "tileAssets": [
             "common",
-            "ruralskymain"
+            "ruralskymain",
+            "castletownmain",
+            "canterfarmsmain"
         ],
         
         "backgroundXOffset": 2500,
         "backgroundYOffset": 2000,
 
         "sceneEntryPoints": {
-            "default": [57, 30, "se"],
+            "default": [10, 66, "ne"],
             "Z012": [10, 66, "ne"]
         },
         "sceneExitTiles": {

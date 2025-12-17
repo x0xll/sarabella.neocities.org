@@ -14,6 +14,7 @@ class uiMinimap extends uiManagerBase
         "Z010",
         "Z011",
         "Z012",
+        "Z013", // TODO: get a cleaner version
         "Z022",
         "Z026"
     ]
