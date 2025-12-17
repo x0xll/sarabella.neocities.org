@@ -225,7 +225,7 @@ class uiQuest extends uiManagerBase
             let titleTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i), adventure.description.text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
-            let descTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i) + 10, questData.description.title, this.BIG_THIN_TEXT_BLACK_SETTINGS)
+            let descTxt = this.phaserScene.add.text(startPos[0], startPos[1] + (offset * i) + 20, questData.description.text, this.BIG_THIN_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
             
