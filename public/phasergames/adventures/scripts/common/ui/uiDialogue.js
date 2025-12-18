@@ -208,13 +208,7 @@ class uiDialogue extends uiManagerBase
             textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - choiceHeight - textElement.height - 20)
             this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setY(textElement.y+5) // +5
             this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
-            if (character.thumbnailFolderName === this.DIALOGUE_HUMANS_THUMBNAILS) {
-                this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(23, textElement.y-65)
-            } else if (character.thumbnailFolderName === this.DIALOGUE_SPECIAL_THUMBNAILS) {
-                this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(23, textElement.y-40)
-            } else  {
-                this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(8, textElement.y-55)
-            }
+            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(7, textElement.y-47)
             this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setY(textElement.y-55)
             this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setY(textElement.y-55)
 

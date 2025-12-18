@@ -286,6 +286,12 @@ class uiQuest extends uiManagerBase
 
                 this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(thumbnailFolderName);
                 this.phaserScene.sharedData.quest.ui.elements.questIcon.setFrame(thumbnail);
+                if (thumbnailFolderName === "specialthumbnail" || thumbnail === "BSA") {
+                    this.phaserScene.sharedData.quest.ui.elements.questIcon.setPosition(430, 185);
+                } else {
+                    this.phaserScene.sharedData.quest.ui.elements.questIcon.setPosition(420, 185);
+                }
+                
 
             }
             else
