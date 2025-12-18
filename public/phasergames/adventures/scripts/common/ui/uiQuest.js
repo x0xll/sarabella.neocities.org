@@ -1,6 +1,7 @@
 class uiQuest extends uiManagerBase
 {
     QUEST_PANEL_IMG = "quest_bgpanel"
+    QUEST_MASK_IMG = "quest_mask_bgpanel"
 
     THIN_TEXT_BLACK_SETTINGS = 
     {
@@ -46,6 +47,8 @@ class uiQuest extends uiManagerBase
         super.load()
         // Background panel
         this.phaserScene.load.image(this.QUEST_PANEL_IMG, "./assets/extracted/UI/Quest/Journal_Panel.png");
+        // Background panel
+        this.phaserScene.load.image(this.QUEST_MASK_IMG, "./assets/extracted/UI/Quest/mask.png");
 
         // Close btn
         this.phaserScene.load.image("closebtn", "./assets/extracted/UI/Quest/closebtn.png")
@@ -96,9 +99,14 @@ class uiQuest extends uiManagerBase
                         .setOrigin(0)
                         .setScrollFactor(0);
 
-        var questIcon = this.phaserScene.add.image(440, 180, "closebtn")
+        var questMask = this.phaserScene.add.image(432, 196, this.QUEST_MASK_IMG)
                             .setOrigin(0)
                             .setScrollFactor(0);
+        var questIcon = this.phaserScene.add.image(430, 190, "closebtn")
+                            .setOrigin(0)
+                            .setScrollFactor(0);
+        const mask = new Phaser.Display.Masks.BitmapMask(this.phaserScene, questMask);
+        questIcon.setMask(mask);
 
         var closeBtn = this.phaserScene.add.image(687, 112, "closebtn")
                         .setOrigin(0)
@@ -139,6 +147,7 @@ class uiQuest extends uiManagerBase
             locationDescTxt: locationDescTxt,
             goalTxt: goalTxt,
             goalDescTxt: goalDescTxt,
+            questMask: questMask,
             questIcon: questIcon,
             // Left page
             scrollMask: scrollMask,
@@ -179,6 +188,7 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.goalTxt.setAlpha(0);
         this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setAlpha(0);
         this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
+        this.phaserScene.sharedData.quest.ui.elements.questMask.setAlpha(0);
 
         for (let key in this.shownQuests) {
             let quest = this.shownQuests[key];
@@ -250,6 +260,7 @@ class uiQuest extends uiManagerBase
         this.phaserScene.sharedData.quest.ui.elements.goalTxt.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
+        this.phaserScene.sharedData.quest.ui.elements.questMask.setAlpha(1);
 
         this.phaserScene.sharedData.quest.ui.elements.questTitle.setText(adventure.description.text);
 
