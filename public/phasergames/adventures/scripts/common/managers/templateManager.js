@@ -3,20 +3,7 @@ class TemplateManager {
         this.phaserScene = phaserScene
         this.preloadData()
     }
-
-    // Used to place NPCs into each zone
-    // TODO move this info to a config to store default locations.
-    // Only save to player data if different from the default
-    NPCLocations = {
-        "Z001": {
-            "H047Template": [15, 6, "se"],
-            "C001Template": [13, 27, "sw"]
-        },
-        "Z007": {
-            "H001Template": [22, 38, "sw"]
-        }
-    }
-    
+   
     TEMPLATE_TYPES = {
         //<KEY>.xml -> templates.<VALUES>Data
         "Detritus": "detritus",

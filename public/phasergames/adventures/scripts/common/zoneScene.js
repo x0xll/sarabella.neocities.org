@@ -109,9 +109,9 @@ class ZoneBase extends Phaser.Scene
         this.entities = {}
         this.sharedData.player = new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
-        if (this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID]) {
-            for (let [key] of Object.entries(this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID])) {
-                let entityPos = this.sharedData.templateManager.NPCLocations[this.zoneConfig.ID][key]
+        if (this.sharedData.npcConfig[this.zoneConfig.ID]) {
+            for (let [key] of Object.entries(this.sharedData.npcConfig[this.zoneConfig.ID])) {
+                let entityPos = this.sharedData.npcConfig[this.zoneConfig.ID][key]
                 new TemplateEntity(this, key, entityPos[0], entityPos[1], entityPos[2])
             }
         }

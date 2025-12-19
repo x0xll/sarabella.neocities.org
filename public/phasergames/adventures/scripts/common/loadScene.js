@@ -27,6 +27,7 @@ class Common_Load extends Phaser.Scene
         this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
         this.load.xml(this.sharedData.worldToLoad, `${ZONE_XML_PATH}${this.sharedData.worldToLoad}.xml`);
         this.load.json("QuestConfig", `${COMMON_XML_PATH}questConfig.json`);
+        this.load.json("NPCConfig", `${COMMON_XML_PATH}npcConfig.json`);
 
         debug.loadScene = this
     }
@@ -47,6 +48,11 @@ class Common_Load extends Phaser.Scene
 
         if (loader.sharedData.collectableData === undefined) {
             loader.sharedData.collectableData = this.cache.json.get("Collectables")
+        }
+
+        // Load NPC base setup
+        if (loader.sharedData.npcConfig === undefined) {
+            loader.sharedData.npcConfig = this.cache.json.get("NPCConfig");
         }
 
         // Load quest data
