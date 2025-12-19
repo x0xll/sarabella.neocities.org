@@ -231,12 +231,22 @@ class Cursor {
                     const plantTest = (this.zoneScene.entities[entity].isWilted
                         || parseInt(this.zoneScene.entities[entity].getTemplateValue(["PlantMovieClip", "stages", "text"])) !== this.zoneScene.entities[entity].currentStage)
                     if (this.zoneScene.entities[entity].isPlant && plantTest) {
-                            this.sprites["Collect"].setAlpha(0)
-                            this.sprites["Take"].setAlpha(0)
-                        }
+                        this.sprites["Collect"].setAlpha(0)
+                        this.sprites["Take"].setAlpha(0)
+                    }
+                    if (!this.zoneScene.entities[entity].canGive()) {
+                        this.sprites["Give"].setAlpha(0)
+                    }
+                    if (!this.zoneScene.entities[entity].canGive(true)) {
+                        this.sprites["Apply"].setAlpha(0)
+                    }
                 }
-                this.circle.setAlpha(1).setPosition(pos.x, pos.y )
-                this.entityTarget = entity
+                for (let [key] of Object.entries(this.sprites)) {
+                    if (this.sprites[key].alpha !== 0) {
+                        this.circle.setAlpha(1).setPosition(pos.x, pos.y )
+                        this.entityTarget = entity
+                    }
+                }
                 test = true
                 break
             }

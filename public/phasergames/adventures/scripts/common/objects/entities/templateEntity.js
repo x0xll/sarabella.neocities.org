@@ -481,6 +481,31 @@ class TemplateEntity extends Entity {
         context.itemRequestType = context.ITEM_REQUEST_TYPES.give
         context.zoneScene.sharedData.inventory.ui.manager.show(giveItem, context);
     }
+    canGive(checkApplyInstead = false) {        
+        const activeQuests = []
+        for (let index = 0; index < this.zoneScene.sharedData.quest.logic.activeQuests.length; index++) {
+            const questID = this.zoneScene.sharedData.quest.logic.activeQuests[index];
+            activeQuests.push(this.zoneScene.sharedData.questManager.getQuestPerID(questID))
+        }
+
+        const items = []
+        for (let index = 0; index < activeQuests.length; index++) {
+            const quest = activeQuests[index];
+
+            for (let lineIndex = 0; lineIndex < quest.line.length; lineIndex++) {
+                let triggerData = quest.line[lineIndex].trigger.object[0];
+                if((!checkApplyInstead && triggerData.type !== "GiveItemTrigger") || (checkApplyInstead && triggerData.type !== "ApplyItemTrigger")) continue
+
+                if (triggerData.targetTemplate[0] === this.templateID) {
+                    items.push({text: triggerData.inventoryTemplate[0], count: 1})
+                }
+            }
+            
+        }
+        if (items.length === 0) return false
+        const haveItems = this.zoneScene.sharedData.inventory.manager.getItemByTemplates(items)
+        return Object.entries(haveItems).length === items.length
+    }
     #applyCommand(context, interactData) { 
         // TODO double check this works
         const applyItem = context.getTemplateValue(["ApplyCommand", "item"])
