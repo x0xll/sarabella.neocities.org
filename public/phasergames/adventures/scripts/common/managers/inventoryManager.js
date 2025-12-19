@@ -121,6 +121,11 @@ class InventoryManager
     }
 }
 
-module.exports = {
-    InventoryManager
+try{
+    module.exports = {
+        InventoryManager
+    }
+}
+catch(e) {
+
 }
