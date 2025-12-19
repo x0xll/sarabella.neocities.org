@@ -56,7 +56,7 @@
 
     <script src="/language.js"></script>
 
-    <body style="text-align: center;">
+    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown();">
         <script src="/header.js"></script>
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
@@ -187,6 +187,7 @@
                 loadSWF(filePath, '611', '800', lang, flashvars, transparentBg)
             }
         </script>
+<script src="/userManager.js"></script>
 
     </body>
 </html>
