@@ -120,3 +120,7 @@ class InventoryManager
         return filteredItems
     }
 }
+
+module.exports = {
+    InventoryManager
+}
