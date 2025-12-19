@@ -193,7 +193,6 @@ class QuestManager {
             const questData = this.getQuestPerID(available[index]);
             for (let lineIndex = 0; lineIndex < questData.line.length; lineIndex++) {
                 if (questData.line[lineIndex].trigger.object[0].type === "TalkQuestTrigger" && questData.line[lineIndex].trigger.object[0].identifier === characterID) {
-                    console.log(questData.line[lineIndex].trigger.object[0].identifier, available[index])
                     quests.push(available[index])
                     counter++
                 }

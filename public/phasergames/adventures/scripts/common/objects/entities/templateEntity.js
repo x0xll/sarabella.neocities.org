@@ -584,24 +584,29 @@ class TemplateEntity extends Entity {
         context.destroy()
     }
     #talkCommand(context, interactData) {
+        const talkData = context.getTalkData()
         const character = context.getTemplateValue(["Character", "identifier", "text"])
+        if (talkData.quests.length > 0 ) {
+            talkData.choices["none"] = {
+                entityID: character,
+                text: "Nevermind" // TODO get localised version
+            }
+            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, "What would you like to talk about?", talkData.choices); // TODO get localised version
+        }
+    }
+    getTalkData() {
+        const character = this.getTemplateValue(["Character", "identifier", "text"])
         const choices = { }
-        const quests = context.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
+        const quests = this.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
         for (let index = 0; index < quests.length; index++) {
             const quest = quests[index];
-            const advData = context.zoneScene.sharedData.questManager.getAdventurePerID(quest)
+            const advData = this.zoneScene.sharedData.questManager.getAdventurePerID(quest)
             choices[quest[2]] = {
                 entityID: character,
                 text: advData.description.text
             }
         }
-        if (quests.length > 0 ) {
-            choices["none"] = {
-                entityID: character,
-                text: "Nevermind" // TODO get localised version
-            }
-            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, "What would you like to talk about?", choices); // TODO get localised version
-        }
+        return {quests: quests, choices:choices}
     }
     #shopCommand(context, interactData) {
         if (context.getTemplateValue(["AvatarShopCommand"])) {

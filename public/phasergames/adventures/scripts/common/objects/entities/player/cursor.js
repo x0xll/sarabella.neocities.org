@@ -240,6 +240,9 @@ class Cursor {
                     if (!this.zoneScene.entities[entity].canGive(true)) {
                         this.sprites["Apply"].setAlpha(0)
                     }
+                    if (this.zoneScene.entities[entity].getTalkData().quests.length === 0) {
+                        this.sprites["Talk"].setAlpha(0)
+                    }
                 }
                 for (let [key] of Object.entries(this.sprites)) {
                     if (this.sprites[key].alpha !== 0) {
