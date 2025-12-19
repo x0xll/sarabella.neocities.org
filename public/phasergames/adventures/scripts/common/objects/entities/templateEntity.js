@@ -589,9 +589,9 @@ class TemplateEntity extends Entity {
         if (talkData.quests.length > 0 ) {
             talkData.choices["none"] = {
                 entityID: character,
-                text: "Nevermind" // TODO get localised version
+                text: context.zoneScene.sharedData.sharedLocalizationUI.items[0].dialogueCancel[0].text
             }
-            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, "What would you like to talk about?", talkData.choices); // TODO get localised version
+            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, context.zoneScene.sharedData.sharedLocalizationUI.items[0].dialogueChoiceText[0].text, talkData.choices); 
         }
     }
     getTalkData() {

@@ -26,6 +26,7 @@ class Common_Load extends Phaser.Scene
 
         this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
         this.load.xml(this.sharedData.worldToLoad, `${ZONE_XML_PATH}${this.sharedData.worldToLoad}.xml`);
+        this.load.xml("SharedUI", `${UI_XML_PATH}shared.xml`);
         this.load.json("QuestConfig", `${COMMON_XML_PATH}questConfig.json`);
         this.load.json("NPCConfig", `${COMMON_XML_PATH}npcConfig.json`);
 
@@ -37,6 +38,7 @@ class Common_Load extends Phaser.Scene
         const loader = this
         loader.sharedData = sharedData
 
+        loader.sharedData.sharedLocalizationUI = parseSharedXML(this.cache.xml.get("SharedUI"))
 
         if (loader.sharedData.zoneData === undefined) {
             loader.sharedData.zoneData = this.cache.json.get("Zones")
@@ -69,6 +71,8 @@ class Common_Load extends Phaser.Scene
             loader.sharedData.zoneManager = loader.zoneManager;
             loader.sharedData.zoneManager.initializeData();
         }
+
+console.log(this.sharedData.sharedLocalizationUI);
 
         // TESTING
         this.scene.launch("common_ui", loader.sharedData)

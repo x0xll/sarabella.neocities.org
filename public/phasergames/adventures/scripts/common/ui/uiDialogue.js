@@ -121,7 +121,7 @@ class uiDialogue extends uiManagerBase
                             .setInteractive()
                             .setScale(.75);
 
-        var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, 'Continue', this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, this.phaserScene.sharedData.sharedLocalizationUI.items[0].dialogueContinue[0].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
                             .setDepth(100);
@@ -332,6 +332,7 @@ class uiDialogue extends uiManagerBase
 
     formatQuestText(text)
     {
+        if (text.indexOf("<br/>") > 0) text = text.replaceAll("<br/>", "");
         if (text.indexOf("<b>") > 0) text = text.replaceAll("<b>", "[b]");
         if (text.indexOf("</b>") > 0) text = text.replaceAll("</b>", "[/b]");
         if (text.indexOf("<i>") > 0) text = text.replaceAll("<i>", "[i]");

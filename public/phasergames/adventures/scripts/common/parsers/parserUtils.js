@@ -166,3 +166,13 @@ function parseTemplateXML(questManager, xmlObj) {
 
    return result
 }
+
+function parseSharedXML(xmlObj){
+    const result = {}
+
+    xmlObj.querySelectorAll("items").forEach(thing => {
+        parseXMLNode(thing, result)
+    })
+
+   return result
+}
