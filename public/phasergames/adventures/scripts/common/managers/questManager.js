@@ -86,7 +86,7 @@ class QuestManager {
      */
     getAdventurePerID(adventureID) {
         const quests = this.phaserScene.sharedData.quest.logic.quests
-        for (let i = 0; i < quests.length; i++)
+        for (let [i] of Object.entries(quests))
         {
             if (quests[i][adventureID[0]] &&
                 quests[i][adventureID[0]][adventureID[1]]
@@ -329,24 +329,23 @@ class QuestManager {
 
         this.phaserScene.sharedData.quest.logic.quests.npcQuests = {}
         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"] = {
-            description: "NPC quests"
-        }
-        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"]["ADV-NPCs"] = {
-            description: "NPC quests"
+            description: {text:"NPC quests"}
         }
 
-        const npcs = this.phaserScene.sharedData.templates.npcData.things[0]//, this.phaserScene.sharedData.quest.logic.quests
+        const npcs = this.phaserScene.sharedData.templates.npcData.things[0]
         this.phaserScene.sharedData.quest.logic.npcQuests = []
         for (let [npcKey] of Object.entries(npcs)) {
             const npc = npcs[npcKey][0]
             if (npc.Logic) {
                 const advKey = "ADV-"+npcKey
-                this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey] ={}
+                this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey] ={
+                    description: {text: "NPC quests"}
+                }
                 for (let [key] of Object.entries(npc.Logic[0])) {
                     if (key.startsWith("QUE")) {
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key] = npc.Logic[0][key]
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].status = this.phaserScene.sharedData.questManager.QUEST_STATES.AVAILABLE
-                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].visible = false
+                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].visible = "False"
                         // TODO figure out actual zone from NPC config or make a condition check for npc quests that the NPC must be in the zone/room
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].targetZone = "Z-1"
                         this.phaserScene.sharedData.quest.logic.activeQuests.push(["ADS-NPCs", advKey, key])
