@@ -310,6 +310,7 @@ class TemplateEntity extends Entity {
             if (parseInt(plantData.spriteData.stages[0].text) === this.currentStage && !this.hasGivenMagic)
             {
                 this.hasGivenMagic = true;
+                this.zoneScene.sharedData.magicTree.logic.manager.addExperience(parseInt(plantData.growthData.magic[0].text));
             }
 
             // TODO Check if we have any refs for how long plants took to wilt
