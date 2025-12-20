@@ -137,20 +137,19 @@ class TemplateEntity extends Entity {
     }
     #trySpawn() {
         const spawnerData = this.spawnerData
+        const spawnTimeType = spawnerData.spawnTimeType[0].text
 
         // Check for day/night spawn conditions
-        if (spawnerData.spawnTimeType[0].text !== this.zoneScene.timeManager.getCurrentTimeType()) { 
+        if (spawnTimeType !== this.zoneScene.timeManager.getCurrentTimeType()) { 
             return
         }
 
         // Check spawn time has elapsed
         const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
         if (timeData !== undefined) {
-            let duration = this.zoneScene.timeManager.getCurrentTime() - timeData.startTime
-            if (timeData.daysCount > 0) {
-                const fullDay = this.zoneScene.timeManager.nightLength + this.zoneScene.timeManager.dayLength
-                duration = (fullDay - timeData.startTime) + (timeData.daysCount - 1 * fullDay) + this.zoneScene.timeManager.getCurrentTime()
-            }
+            const countDay = spawnTimeType === "Day"
+            const countNight = spawnTimeType === "Night"
+            const duration = this.getTimeDuration(countDay, countNight)
             if (duration < parseFloat(spawnerData.entitySpawnTime[0].text)) {return}
         } else {
             this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
@@ -282,14 +281,33 @@ class TemplateEntity extends Entity {
 
 
     // ------- UPDATE FUNCTIONS -------
+    getTimeDuration(countDay, countNight) {
+        const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
+
+        if (timeData !== undefined) {
+            if (!countNight && timeData.startTime > this.zoneScene.timeManager.dayLength) {
+                timeData.startTime = 0
+                timeData.daysCount--
+            }
+            // const dayZeroTime = this.zoneScene.timeManager.getCurrentTime() - timeData.startTime
+            const dayDurationCount = countDay ? this.zoneScene.timeManager.dayLength : 0
+            const nightDurationCount = countNight ? this.zoneScene.timeManager.nightLength : 0
+            const fullDay = dayDurationCount + nightDurationCount
+            const additionalTime = Math.max(this.zoneScene.timeManager.getCurrentTime() - timeData.startTime, 0)
+            const duration = (fullDay * timeData.daysCount) + additionalTime
+            return duration
+        }
+    }
     #tryGrow() {
         const plantData = this.plantData
+        const growthType = plantData.growthData.growthType[0].text
+        const timeType = this.zoneScene.timeManager.getCurrentTimeType()
 
         // Check for day/night, wilted and watered conditions
         if (!this.sprite
             || this.isWilted
             || this.isWatered 
-            || plantData.growthData.growthType[0].text !== this.zoneScene.timeManager.getCurrentTimeType()
+            || growthType !== timeType
         ) {
             return
         }
@@ -297,11 +315,9 @@ class TemplateEntity extends Entity {
         // Check growth time
         const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
         if (timeData !== undefined) {
-            let duration = this.zoneScene.timeManager.getCurrentTime() - timeData.startTime
-            const fullDay = this.zoneScene.timeManager.nightLength + this.zoneScene.timeManager.dayLength
-            if (timeData.daysCount > 0) {
-                duration = (fullDay - timeData.startTime) + (timeData.daysCount - 1 * fullDay) + this.zoneScene.timeManager.getCurrentTime()
-            }
+            const countDay = growthType === "Day"
+            const countNight = growthType === "Night"
+            const duration = this.getTimeDuration(countDay, countNight)
 
             const stageTime = this.timeToGrow / parseInt(plantData.spriteData.stages[0].text)
             let currentStage = this.currentStage !== undefined ? this.currentStage : 1
@@ -314,6 +330,9 @@ class TemplateEntity extends Entity {
             }
 
             // TODO Check if we have any refs for how long plants took to wilt
+            const dayDurationCount = countDay ? this.zoneScene.timeManager.dayLength : 0
+            const nightDurationCount = countNight ? this.zoneScene.timeManager.nightLength : 0
+            const fullDay = dayDurationCount + nightDurationCount
             const isWilted = duration > this.timeToGrow + fullDay
 
             const timeForCurrentStage = stageTime * currentStage;
@@ -794,4 +813,13 @@ class TemplateEntity extends Entity {
         // TODO also delete from time tracked entities?
     }
     // ------- END HELPER FUNCTIONS -------
+}
+
+try{
+    module.exports = {
+        TemplateEntity
+    }
+}
+catch(e) {
+
 }
