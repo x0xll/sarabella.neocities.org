@@ -808,8 +808,8 @@ class TemplateEntity extends Entity {
         // TODO Reset all spawners in the same tile so they don't instantly try to spawn
 
         // Removes the entity from the zone
-        delete this.zoneScene.entities[this.entityKey]
         delete this.zoneScene.sharedData.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
+        delete this.zoneScene.entities[this.entityKey]
         // TODO also delete from time tracked entities?
     }
     // ------- END HELPER FUNCTIONS -------
