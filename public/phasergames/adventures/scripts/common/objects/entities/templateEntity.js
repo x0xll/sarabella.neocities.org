@@ -511,10 +511,9 @@ class TemplateEntity extends Entity {
 
             for (let lineIndex = 0; lineIndex < quest.line.length; lineIndex++) {
                 let triggerData = quest.line[lineIndex].trigger.object[0];
-                if((!checkApplyInstead && triggerData.type !== "GiveItemTrigger") || (checkApplyInstead && triggerData.type !== "ApplyItemTrigger")) continue
+                if((checkApplyInstead && triggerData.type !== "GiveItemTrigger") || (checkApplyInstead && triggerData.type !== "ApplyItemTrigger")) continue
 
-                if (triggerData.targetTemplate[0] === this.templateID 
-                    // && itemsToCheck.includes(triggerData.inventoryTemplate[0])
+                if (triggerData.targetTemplate && triggerData.targetTemplate[0] === this.templateID 
                 ) {
                     items.push({text: triggerData.inventoryTemplate[0], count: 1})
                 }
@@ -616,7 +615,7 @@ class TemplateEntity extends Entity {
     getTalkData() {
         const character = this.getTemplateValue(["Character", "identifier", "text"])
         let talkDefault = this.getTemplateValue(["TalkCommand", "text"])
-        if (talkDefault === undefined) {talkDefault = []}
+        if (talkDefault === undefined || this.templateID === "M005gTemplate") {talkDefault = []}
         const choices = { }
         const quests = this.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
         for (let index = 0; index < quests.length; index++) {
