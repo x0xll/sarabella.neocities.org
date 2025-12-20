@@ -111,7 +111,7 @@ class uiQuest extends uiManagerBase
         var closeBtn = this.phaserScene.add.image(687, 112, "closebtn")
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setInteractive();
+                        .setInteractive({ useHandCursor: true });
 
         
         // Left page

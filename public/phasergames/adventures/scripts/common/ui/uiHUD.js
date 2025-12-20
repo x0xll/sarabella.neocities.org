@@ -36,15 +36,19 @@ class uiHUD extends uiManagerBase
         this.phaserScene.sharedData.hud.ui.timeIndicator = this.phaserScene.add.sprite(748, 52, 'timeIndicator', 'day1').setScale(.3333).setDepth(100);
 
         this.phaserScene.sharedData.hud.ui.potrait = this.phaserScene.add.sprite(282, 561, 'portrait', 'up').setScale(.56).setDepth(100);
-        this.phaserScene.sharedData.hud.ui.mapButton = this.phaserScene.add.sprite(337, 549, 'mapButton', 'up').setScale(.75).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.inventoryButton = this.phaserScene.add.sprite(400, 549, 'inventoryButton', 'up').setScale(.75).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.journalButton = this.phaserScene.add.sprite(463, 549, 'journalButton', 'up').setScale(.75).setInteractive().setDepth(100);
-        this.phaserScene.sharedData.hud.ui.skillProgressButton = this.phaserScene.add.sprite(526, 550, 'skillProgressButton').setScale(.6).setInteractive().setDepth(100);
+        this.phaserScene.sharedData.hud.ui.mapButton = this.phaserScene.add.sprite(337, 549, 'mapButton', 'up').setScale(.75).setInteractive({ useHandCursor: true }).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.inventoryButton = this.phaserScene.add.sprite(400, 549, 'inventoryButton', 'up').setScale(.75).setInteractive({ useHandCursor: true }).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.journalButton = this.phaserScene.add.sprite(463, 549, 'journalButton', 'up').setScale(.75).setInteractive({ useHandCursor: true }).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.skillProgressButton = this.phaserScene.add.sprite(526, 550, 'skillProgressButton').setScale(.6).setInteractive({ useHandCursor: true }).setDepth(100);
         this.phaserScene.sharedData.hud.ui.levelIndicator = this.phaserScene.add.sprite(519, 552, 'levelIndicator', '0').setScale(.75).setDepth(100);
         this.updateLevel();
 
         this.phaserScene.sharedData.hud.ui.saveButton = this.phaserScene.add.sprite(681, 565, 'saveButton', 'up').setScale(.9).setDepth(100);
-        this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100).setInteractive({ useHandCursor: true });
+        this.phaserScene.sharedData.hud.ui.helpButton.on("pointerdown", () => 
+        {
+            goToExternalURL("https://web.archive.org/web/20100528225638/http://bellasara.com/bsa-helphome.aspx");
+        })
         
         this.phaserScene.sharedData.hud.ui.saveText = this.phaserScene.add.text(680, 565, this.phaserScene.sharedData.sharedLocalizationUI.items[0].hudSave[0].text, {font: "700 13px Arial", color: "#ffffffff"}).setDepth(100).setOrigin(.5);
         

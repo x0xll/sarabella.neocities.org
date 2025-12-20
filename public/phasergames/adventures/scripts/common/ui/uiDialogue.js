@@ -118,7 +118,7 @@ class uiDialogue extends uiManagerBase
         var continueBtn = this.phaserScene.add.image(105, 480, this.DIALOGUE_CONTINUE_BTN)
                             .setOrigin(0)
                             .setScrollFactor(0)
-                            .setInteractive()
+                            .setInteractive({ useHandCursor: true })
                             .setScale(.75);
 
         var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, this.phaserScene.sharedData.sharedLocalizationUI.items[0].dialogueContinue[0].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
@@ -262,7 +262,7 @@ class uiDialogue extends uiManagerBase
                 var choiceBtn = this.phaserScene.add.image(buttonRef.x, buttonRef.y - choiceHeight + (index*this.CHOICE_HEIGHT), this.DIALOGUE_CONTINUE_BTN)
                                     .setOrigin(0)
                                     .setScrollFactor(0)
-                                    .setInteractive()
+                                    .setInteractive({ useHandCursor: true })
                                     .setScale(.75);
 
                 var choiceTxt = this.phaserScene.add.text(choiceBtn.x+(buttonTextRef.x - buttonRef.x), choiceBtn.y+(buttonTextRef.y - buttonRef.y), choices[key].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)

@@ -243,9 +243,9 @@ class uiInventory extends uiManagerBase
                 UI.slots[key].resetSlot()
             }
             this.phaserScene.sharedData.inventory.ui.elements.scrollBar.setAlpha(1);
-            this.phaserScene.sharedData.inventory.ui.elements.scrollZone.setInteractive()
-            this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(1).setInteractive();
-            this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(1).setInteractive();
+            this.phaserScene.sharedData.inventory.ui.elements.scrollZone.setInteractive({ useHandCursor: true })
+            this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(1).setInteractive({ useHandCursor: true });
+            this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(1).setInteractive({ useHandCursor: true });
         } else {
             this.phaserScene.sharedData.inventory.ui.elements.scrollBar.setAlpha(0);
             this.phaserScene.sharedData.inventory.ui.elements.main.animationState.setAnimation(8, `scroll/hide`, false)
