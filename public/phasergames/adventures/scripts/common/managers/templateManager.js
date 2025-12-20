@@ -171,4 +171,73 @@ class TemplateManager {
             this.#mergeObjects(element1, element2)
         }
     }
+
+    /**
+     * @param {*} templateID (Optional) the templateID to find the locations for
+     * @returns Returns either an array of zones for the template provided or a map of the locations of all entities in the game
+     */
+    getEntityZones(templateID = undefined) {
+        const entities = {}
+        for (let index = 0; index < this.phaserScene.sharedData.ZONES_ARRAY.length; index++) {
+            const zoneID = this.phaserScene.sharedData.ZONES_ARRAY[index];
+
+            // Get spawn data (should include questConfig and saved entity data)
+            const spawned = this.phaserScene.sharedData.spawnedEntities[zoneID] // gets the entities that have been spawned in a location
+            if (spawned) {
+                for (let index = 0; index < spawned.length; index++) {
+                    const entity = spawned[index];
+                    if (entities[entity] === undefined) {
+                        entities[entity] = new Set([zoneID])
+                    } else {
+                        entities[entity].add(zoneID)
+                    }
+                }
+            }
+
+            // Get data from the npcConfig
+            if (this.phaserScene.sharedData.npcConfig[zoneID]) {
+                for (let [key] of Object.entries(this.phaserScene.sharedData.npcConfig[zoneID])) {
+                    if (entities[key] === undefined) {
+                        entities[key] = new Set([zoneID])
+                    } else {
+                        entities[key].add(zoneID)
+                    }
+                }
+
+            }
+
+            // Check all the tile data
+            const zoneParsed = parseZoneXML(this.phaserScene.sharedData.zoneTileData[zoneID]); 
+            const levelRows = zoneParsed.map[0].layout[0].levels[0][0].levelRow
+            const tiles = zoneParsed.mappedTiles;
+            // Column
+            for (var y = 0; y < levelRows.length; y++) {
+                var rowCells = levelRows[y].text.split(",");
+                // Row
+                for (var x = 0; x < rowCells.length; x++) {
+                    var cellValue = rowCells[x];
+                    let tileData = tiles.get(cellValue);
+
+                    if (tileData && tileData.entities) {
+                        const entity = tileData.entities
+                        if (entities[entity] === undefined) {
+                            entities[entity] = new Set([zoneID])
+                        } else {
+                            entities[entity].add(zoneID)
+                        }
+                    }
+                }
+            }
+
+        }
+        
+        if (templateID) {
+            return Array.from(entities[templateID])
+        } else {
+            for (let [key] of Object.entries(entities)) {
+                entities[key] = Array.from(entities[key])
+            }
+            return entities
+        }
+    }
 }

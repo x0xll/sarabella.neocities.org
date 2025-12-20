@@ -14,7 +14,7 @@ class ZoneBase extends Phaser.Scene
 
             this.zoneConfig = sharedData.zoneData["Z001"]
         }
-        this.sharedData.zoneTileData
+        this.sharedData.zoneTileData["Z001"]
 
         if (sharedData.timeTrackedEntities === undefined) {
             sharedData.timeTrackedEntities = {}
@@ -36,7 +36,7 @@ class ZoneBase extends Phaser.Scene
     {
         this.levelManager = new LevelManager(this);
         this.timeManager = new TimeManager(this);
-        this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData); 
+        this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData["Z001"]); 
         this.loadEntitiesData();
         this.loadBackgrounds(this.zoneConfig.backgroundCountX, this.zoneConfig.backgroundCountY, this.zoneConfig.ID)
 

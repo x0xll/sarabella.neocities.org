@@ -291,8 +291,6 @@ class uiQuest extends uiManagerBase
                 } else {
                     this.phaserScene.sharedData.quest.ui.elements.questIcon.setPosition(420, 185);
                 }
-                
-
             }
             else
             {
@@ -303,6 +301,18 @@ class uiQuest extends uiManagerBase
             if (quest.line[0].trigger.object[0].zone !== undefined)
             {
                 this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(quest.line[0].trigger.object[0].zone);
+            }
+            else if (quest.line[0].trigger.object[0].identifier !== undefined)
+            {
+                let identifier = quest.line[0].trigger.object[0].identifier;
+                const locationData = this.phaserScene.sharedData.templateManager.getEntityZones(`${identifier}Template`)
+                if (locationData[0]) {
+                    this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(this.phaserScene.sharedData.zoneManager.getZoneName(locationData[0]));
+                }
+                else
+                {
+                    this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText("");
+                }
             }
             else
             {
