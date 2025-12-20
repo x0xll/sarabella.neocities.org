@@ -106,7 +106,7 @@ class QuestManager {
     getQuestPerID(questID) {
         const quests = this.phaserScene.sharedData.quest.logic.quests
         if (!questID[0] || !questID[1]) {questID = this.getFullQuestID(questID)}
-        for (let i = 0; i < quests.length; i++) {
+        for (let [i] of Object.entries(quests)) {
             if (quests[i][questID[0]] &&
                 quests[i][questID[0]][questID[1]] &&
                 quests[i][questID[0]][questID[1]][questID[2]]
@@ -192,7 +192,9 @@ class QuestManager {
         for (let index = 0; index < available.length; index++) {
             const questData = this.getQuestPerID(available[index]);
             for (let lineIndex = 0; lineIndex < questData.line.length; lineIndex++) {
-                if (questData.line[lineIndex].trigger.object[0].type === "TalkQuestTrigger" && questData.line[lineIndex].trigger.object[0].identifier === characterID) {
+                if (questData.line[lineIndex].trigger.object[0].type === "TalkQuestTrigger"
+                     && questData.line[lineIndex].trigger.object[0].identifier === characterID
+                    ) {
                     quests.push(available[index])
                     counter++
                 }
@@ -247,6 +249,7 @@ class QuestManager {
 
         await this.#initializeSavedQuests();
         await this.#initializeQuestConfig()
+        await this.#initializeNPCQuestData()
 
         // console.log(this.phaserScene.sharedData.spawnedEntities)
 
@@ -318,6 +321,38 @@ class QuestManager {
         }
         for (let index = 0; index < savedUserQuestData[1].length; index++) {
             await this.markQuestFinished(savedUserQuestData[1][index]);
+        }
+    }
+
+    async #initializeNPCQuestData() {
+        this.phaserScene.sharedData.templates[`npcData`] = parseTemplateXML(this, this.phaserScene.cache.xml.get("NPCs"))
+
+        this.phaserScene.sharedData.quest.logic.quests.npcQuests = {}
+        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"] = {
+            description: "NPC quests"
+        }
+        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"]["ADV-NPCs"] = {
+            description: "NPC quests"
+        }
+
+        const npcs = this.phaserScene.sharedData.templates.npcData.things[0]//, this.phaserScene.sharedData.quest.logic.quests
+        this.phaserScene.sharedData.quest.logic.npcQuests = []
+        for (let [npcKey] of Object.entries(npcs)) {
+            const npc = npcs[npcKey][0]
+            if (npc.Logic) {
+                const advKey = "ADV-"+npcKey
+                this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey] ={}
+                for (let [key] of Object.entries(npc.Logic[0])) {
+                    if (key.startsWith("QUE")) {
+                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key] = npc.Logic[0][key]
+                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].status = this.phaserScene.sharedData.questManager.QUEST_STATES.AVAILABLE
+                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].visible = false
+                        // TODO figure out actual zone from NPC config or make a condition check for npc quests that the NPC must be in the zone/room
+                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].targetZone = "Z-1"
+                        this.phaserScene.sharedData.quest.logic.activeQuests.push(["ADS-NPCs", advKey, key])
+                    }
+                }
+            }
         }
     }
 
