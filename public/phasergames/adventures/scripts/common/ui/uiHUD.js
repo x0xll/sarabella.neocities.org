@@ -44,7 +44,11 @@ class uiHUD extends uiManagerBase
         this.updateLevel();
 
         this.phaserScene.sharedData.hud.ui.saveButton = this.phaserScene.add.sprite(681, 565, 'saveButton', 'up').setScale(.9).setDepth(100);
-        this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100);
+        this.phaserScene.sharedData.hud.ui.helpButton = this.phaserScene.add.sprite(751, 564, 'helpButton', 'up').setScale(.66).setDepth(100).setInteractive();
+        this.phaserScene.sharedData.hud.ui.helpButton.on("pointerdown", () => 
+        {
+            goToExternalURL("https://web.archive.org/web/20100528225638/http://bellasara.com/bsa-helphome.aspx");
+        })
         
         this.phaserScene.sharedData.hud.ui.saveText = this.phaserScene.add.text(680, 565, this.phaserScene.sharedData.sharedLocalizationUI.items[0].hudSave[0].text, {font: "700 13px Arial", color: "#ffffffff"}).setDepth(100).setOrigin(.5);
         

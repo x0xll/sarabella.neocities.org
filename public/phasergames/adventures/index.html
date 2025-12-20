@@ -98,34 +98,9 @@
                     return Math.floor(Math.random() * (max - min + 1) + min)
                 }
 
-                // Gets lang file
-                // TODO: Link to loca
-                // We will need to figure out the best way to handle this,
-                // Considering we probably will have multiple loca files
-                // For different things (quests, items, ui, etc.)
-                /*
-                loadLanguagePref(false); 
-                lang = getCurrentLanguageCode()
-                console.log(lang)
-                function urlExists(url)
-                {
-                    var http = new XMLHttpRequest();
-                    http.open('HEAD', url, false);
-                    http.send();
-                    return http.status!=404;
+                function goToExternalURL(url) {
+                    window.location.href = url;
                 }
-
-                if (!lang || !urlExists(`./lang/${lang}.json`)) {
-                    lang ='en'
-                }
-                let langData
-                const xmlHttp = new XMLHttpRequest();
-                xmlHttp.onload = function() {
-                    const myObj = JSON.parse(this.responseText);
-                    langData = myObj
-                }
-                xmlHttp.open("GET", `./lang/${lang}.json`);
-                xmlHttp.send();*/          
 
                 let config = {
                     parent: "gameDiv",
