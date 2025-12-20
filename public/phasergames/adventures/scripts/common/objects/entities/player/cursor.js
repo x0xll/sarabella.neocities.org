@@ -43,7 +43,7 @@ class Cursor {
 
 
         for (let [key] of Object.entries(this.sprites)) {
-            this.sprites[key].setInteractive().setOrigin(.6, .6).setScale(.5).setAlpha(0)
+            this.sprites[key].setInteractive({ useHandCursor: true }).setOrigin(.6, .6).setScale(.5).setAlpha(0)
             this.sprites[key].depth = 100
             this.sprites[key].on('pointerover', (pointer) => { 
                     const sprite = this.sprites[key]

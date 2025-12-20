@@ -87,12 +87,12 @@ class uiMinimap extends uiManagerBase
         var closeBtn = this.phaserScene.add.image(668, 62, this.MINIMAP_CLOSE_BTN)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setInteractive();
+                        .setInteractive({ useHandCursor: true });
 
         var iconZoom = this.phaserScene.add.image(110, 430, this.MINIMAP_ZOOM_ICON)
                     .setOrigin(0)
                     .setScrollFactor(0)
-                    .setInteractive();
+                    .setInteractive({ useHandCursor: true });
 
         this.phaserScene.sharedData.minimap.ui.elements = 
         {

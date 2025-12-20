@@ -47,7 +47,7 @@ class InventorySlot
 
         const slotPos = this.getSlotPos()
 
-        this.background = this.phaserScene.add.sprite(slotPos.x, slotPos.y, this.phaserScene.sharedData.inventory.ui.manager.INVENTORY_SLOT, "up").setInteractive()
+        this.background = this.phaserScene.add.sprite(slotPos.x, slotPos.y, this.phaserScene.sharedData.inventory.ui.manager.INVENTORY_SLOT, "up").setInteractive({ useHandCursor: true })
         this.image = this.phaserScene.add.sprite(slotPos.x, slotPos.y, "inv_"+spriteFile, spriteClass)
         this.text = this.phaserScene.add.text(slotPos.x + this.NUMBER_OFFSET.x, slotPos.y + this.NUMBER_OFFSET.y, this.itemCount, this.TEXT_SETTINGS)
                     .setOrigin(1)

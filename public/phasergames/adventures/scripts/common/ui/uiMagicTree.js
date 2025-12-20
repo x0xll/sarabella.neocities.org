@@ -57,7 +57,7 @@ class uiMagicTree extends uiManagerBase
         var closeBtn = this.phaserScene.add.image(675, 45, this.MAGICTREE_CLOSE_BTN)
                         .setOrigin(0)
                         .setScrollFactor(0)
-                        .setInteractive();
+                        .setInteractive({ useHandCursor: true });
         // TODO: Handle masking of the tree image based on the border
 
         this.phaserScene.sharedData.magicTree.ui.elements = 
