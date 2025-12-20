@@ -5,6 +5,12 @@ class Cursor {
         "planting": 3
     }
     RADIUS = 50
+    TOOLTIP_TEXT_SETTINGS = 
+    {
+        font: "12px Arial",
+        color: "#792AA8",
+        wordWrap: { width: 650 }
+    }
 
     constructor(zoneScene) {
         this.zoneScene = zoneScene
@@ -40,6 +46,18 @@ class Cursor {
             Rotate: this.zoneScene.add.sprite(0, 0, `contextMenu`, "Rotate_1"),
         }
         this.#move()
+
+
+        this.toolTipBG = this.zoneScene.add.graphics({ lineStyle: { width: 2, color: 0x792aa8 }, fillStyle: { color: 0xf7fadb }}).setDepth(5000)
+        this.toolTipText = this.zoneScene.add.text(105, 325, 'Tooltip Text goes here...', this.TOOLTIP_TEXT_SETTINGS)
+                            .setOrigin(0).setDepth(5000);
+        this.setToolTip("")
+
+
+        // const graphics = this.zoneScene.add.graphics({ lineStyle: { width: 2, color: 0x00ff00 }, fillStyle: { color: 0xff0000 }});
+        // const rect = new Phaser.Geom.Rectangle(100, 100, 400, 400);
+        // //  The green rectangle is the original one
+        // graphics.strokeRectShape(rect);
 
 
         for (let [key] of Object.entries(this.sprites)) {
@@ -131,6 +149,7 @@ class Cursor {
                         gridTarget = this.#findEntityGridFootData(gridTarget)
                         this.#moveCursorToGridTarget(gridTarget)
                         this.#setColourNormal()
+                        this.setToolTip({x:worldX, y:worldY}, this.#findTooltipData(gridTarget))
                         break;
                 }
             } else {
@@ -181,6 +200,20 @@ class Cursor {
         this.gridFoot.y = 1
 
         return newTarget
+    }
+    #findTooltipData(gridTarget) {
+        let tooltipText = ""
+        
+
+        const entities = this.zoneScene.getEntitiesAt(gridTarget.x, gridTarget.y)
+        if (entities) {
+            for (let index = 0; index < entities.length; index++) {
+                const entity = this.zoneScene.entities[entities[index]]
+                tooltipText = entity.getTemplateValue(["ToolTip", "ToolTipText", "text"])
+            }
+        }
+
+        return tooltipText
     }
     #runCursorChecks(gridTarget, filterFunctions, filterContext, gridFoot = this.gridFoot) {
         for (let x = 0; x < gridFoot.x; x++) {
@@ -269,6 +302,22 @@ class Cursor {
     }
     #setColourGreen() {
         this.cursor.setStrokeStyle(1, 0x308030).setFillStyle(0x60ef60, 0.9)
+    }
+    setToolTip(isoTarget, text) {
+        if (text) {
+            this.toolTipText.setText(text).setAlpha(1)
+            this.toolTipBG.setAlpha(1)
+        } else {
+            this.toolTipText.setAlpha(0)
+            this.toolTipBG.setAlpha(0)
+        }
+        this.toolTipText.setPosition(isoTarget.x, isoTarget.y + 30)
+        this.toolTipBG.clear()
+        const rect = new Phaser.Geom.Rectangle(this.toolTipText.x-2, this.toolTipText.y-2, this.toolTipText.width+4, this.toolTipText.height+4);
+        this.toolTipBG.fillStyle(0xf7fadb)
+                        .lineStyle(1, 0x792aa8)
+                        .fillRect(this.toolTipText.x-2, this.toolTipText.y-2, this.toolTipText.width+4, this.toolTipText.height+4)
+                        .strokeRectShape(rect);
     }
     // ------- END COLOUR FUNCTIONS -------
 

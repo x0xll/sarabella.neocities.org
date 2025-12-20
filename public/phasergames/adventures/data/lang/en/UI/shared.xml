@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <items>
   <!--Dialogue-->
-  <dialogueChoiceText>What do you want to talk about? &lt;br/&gt; </dialogueChoiceText>
+  <dialogueChoiceText>What should we talk about? &lt;br/&gt; </dialogueChoiceText>
   <dialogueDefault>...</dialogueDefault>
   <dialogueShop>Shop</dialogueShop>
-  <dialogueCancel>It doesn't matter.</dialogueCancel>
+  <dialogueCancel>Nevermind</dialogueCancel>
   <dialogueContinue>Continue</dialogueContinue>
   <!--Inventory-->
   <inventoryFilterSeeds>Seeds only</inventoryFilterSeeds>

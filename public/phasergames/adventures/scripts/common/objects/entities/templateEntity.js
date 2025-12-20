@@ -484,16 +484,24 @@ class TemplateEntity extends Entity {
         * User can then select a giveItem item to give
         * giveItem is removed from inventory
         */
-        const giveItem = context.getTemplateValue(["GiveCommand", "item"])
+        const giveItem = context.getGiveItems()
         context.itemRequestType = context.ITEM_REQUEST_TYPES.give
         context.zoneScene.sharedData.inventory.ui.manager.show(giveItem, context);
     }
-    canGive(checkApplyInstead = false) {        
+    canGive(checkApplyInstead = false) {
+        const items = this.getGiveItems()
+        if (items.length === 0) return false
+        const haveItems = this.zoneScene.sharedData.inventory.manager.getItemByTemplates(items)
+        return Object.entries(haveItems).length > 0
+    }
+    getGiveItems(checkApplyInstead = false) {  
         const activeQuests = []
         for (let index = 0; index < this.zoneScene.sharedData.quest.logic.activeQuests.length; index++) {
             const questID = this.zoneScene.sharedData.quest.logic.activeQuests[index];
             activeQuests.push(this.zoneScene.sharedData.questManager.getQuestPerID(questID))
         }
+
+        const itemsToCheck = this.getTemplateValue(["GiveCommand", "item"])
 
         const items = []
         for (let index = 0; index < activeQuests.length; index++) {
@@ -503,16 +511,16 @@ class TemplateEntity extends Entity {
                 let triggerData = quest.line[lineIndex].trigger.object[0];
                 if((!checkApplyInstead && triggerData.type !== "GiveItemTrigger") || (checkApplyInstead && triggerData.type !== "ApplyItemTrigger")) continue
 
-                if (triggerData.targetTemplate[0] === this.templateID) {
+                if (triggerData.targetTemplate[0] === this.templateID 
+                    // && itemsToCheck.includes(triggerData.inventoryTemplate[0])
+                ) {
                     items.push({text: triggerData.inventoryTemplate[0], count: 1})
                 }
             }
-            
         }
-        if (items.length === 0) return false
-        const haveItems = this.zoneScene.sharedData.inventory.manager.getItemByTemplates(items)
-        return Object.entries(haveItems).length === items.length
+        return items
     }
+
     #applyCommand(context, interactData) { 
         // TODO double check this works
         const applyItem = context.getTemplateValue(["ApplyCommand", "item"])
@@ -605,7 +613,8 @@ class TemplateEntity extends Entity {
     }
     getTalkData() {
         const character = this.getTemplateValue(["Character", "identifier", "text"])
-        const talkDefault = this.getTemplateValue(["TalkCommand", "text"])
+        let talkDefault = this.getTemplateValue(["TalkCommand", "text"])
+        if (talkDefault === undefined) {talkDefault = []}
         const choices = { }
         const quests = this.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
         for (let index = 0; index < quests.length; index++) {

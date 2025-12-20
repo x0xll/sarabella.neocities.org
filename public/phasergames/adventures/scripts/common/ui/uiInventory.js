@@ -246,12 +246,21 @@ class uiInventory extends uiManagerBase
             this.phaserScene.sharedData.inventory.ui.elements.scrollZone.setInteractive({ useHandCursor: true })
             this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(1).setInteractive({ useHandCursor: true });
             this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(1).setInteractive({ useHandCursor: true });
+
+            this.phaserScene.input.on( 
+                "wheel", 
+                function (pointer, currentlyOver, dx, dy, dz, event) {
+                    scrollBy(this.scrollAmount + dy, this)
+                }, this
+            );
         } else {
             this.phaserScene.sharedData.inventory.ui.elements.scrollBar.setAlpha(0);
             this.phaserScene.sharedData.inventory.ui.elements.main.animationState.setAnimation(8, `scroll/hide`, false)
             this.phaserScene.sharedData.inventory.ui.elements.scrollZone.disableInteractive()
             this.phaserScene.sharedData.inventory.ui.elements.scrollUp.setAlpha(0).disableInteractive();
             this.phaserScene.sharedData.inventory.ui.elements.scrollDown.setAlpha(0).disableInteractive();
+
+            this.phaserScene.input.off("wheel");
         }
     }
 
