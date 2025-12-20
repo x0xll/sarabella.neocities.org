@@ -194,7 +194,7 @@ class QuestManager {
             for (let lineIndex = 0; lineIndex < questData.line.length; lineIndex++) {
                 if (questData.line[lineIndex].trigger.object[0].type === "TalkQuestTrigger"
                      && questData.line[lineIndex].trigger.object[0].identifier === characterID
-                    ) {
+                ) {
                     quests.push(available[index])
                     counter++
                 }
@@ -301,13 +301,6 @@ class QuestManager {
                     }
                 }
             }
-
-
-
-            // const questConfig = this.phaserScene.sharedData.questConfig[`${quest[0]}_${quest[1]}_${quest[2]}`]
-            // if (questConfig !== undefined && this.#QUEST_FILE_NAMES.includes(questConfig.fileKey)) {
-                
-            // }
         }
     }
 
@@ -346,9 +339,8 @@ class QuestManager {
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key] = npc.Logic[0][key]
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].status = this.phaserScene.sharedData.questManager.QUEST_STATES.AVAILABLE
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].visible = "False"
-                        // TODO figure out actual zone from NPC config or make a condition check for npc quests that the NPC must be in the zone/room
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].targetZone = "Z-1"
-                        this.phaserScene.sharedData.quest.logic.activeQuests.push(["ADS-NPCs", advKey, key])
+                        await this.phaserScene.sharedData.questManager.makeQuestAvailable(["ADS-NPCs", advKey, key])
                     }
                 }
             }
@@ -454,7 +446,9 @@ class QuestManager {
 
         let questIndex = -1
         for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++) {
-            if (questID[2] === this.phaserScene.sharedData.quest.logic.activeQuests[i][2]) { 
+            if (questID[2] === this.phaserScene.sharedData.quest.logic.activeQuests[i][2]
+                && questID[1] === this.phaserScene.sharedData.quest.logic.activeQuests[i][1]
+            ) { 
                 questIndex = i 
                 break;
             }

@@ -446,6 +446,8 @@ class TemplateEntity extends Entity {
     returnItem(itemTemplate) {
         // console.log(`Got ${itemTemplate}. Mode is ${this.itemRequestType}`)
         let triggerData
+        
+        this.zoneScene.sharedData.inventory.ui.manager.hide()
 
         switch (this.itemRequestType) {
             case this.ITEM_REQUEST_TYPES.give:
