@@ -34,6 +34,7 @@ class ZoneBase extends Phaser.Scene
 
     preload ()
     {
+        this.levelManager = new LevelManager(this);
         this.timeManager = new TimeManager(this);
         this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData); 
         this.loadEntitiesData();

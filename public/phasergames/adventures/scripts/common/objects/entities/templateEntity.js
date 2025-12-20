@@ -306,6 +306,12 @@ class TemplateEntity extends Entity {
             const stageTime = this.timeToGrow / parseInt(plantData.spriteData.stages[0].text)
             let currentStage = this.currentStage !== undefined ? this.currentStage : 1
 
+            // Give magic to the tree on first full growth
+            if (parseInt(plantData.spriteData.stages[0].text) === this.currentStage && !this.hasGivenMagic)
+            {
+                this.hasGivenMagic = true;
+            }
+
             // TODO Check if we have any refs for how long plants took to wilt
             const isWilted = duration > this.timeToGrow + fullDay
 

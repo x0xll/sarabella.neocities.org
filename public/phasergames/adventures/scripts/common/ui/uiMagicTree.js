@@ -11,9 +11,6 @@ class uiMagicTree extends uiManagerBase
 
         this.load()
         this.phaserScene.sharedData[this.key].ui.manager = this;
-        this.phaserScene.sharedData[this.key].logic =  {
-                level: 0
-            }
     }
 
     load()
@@ -23,9 +20,9 @@ class uiMagicTree extends uiManagerBase
         this.phaserScene.load.image(this.MAGICTREE_BORDER, "./assets/extracted/UI/Magic Tree/MT_Border.png");
         
         // Magic Tree
-        for (let i = 0; i < 10; i++)
+        for (let i = 0; i < 13; i++)
         {
-            this.phaserScene.load.image(this.MAGICTREE_IMAGE + i, "./assets/extracted/UI/Magic Tree/Planting Levels/MT_TreeLevel_0" + i + ".png")
+            this.phaserScene.load.image(this.MAGICTREE_IMAGE + i, "./assets/extracted/UI/Magic Tree/Planting Levels/MT_TreeLevel_" + i + ".png")
         }
 
         // Icon

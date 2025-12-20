@@ -139,4 +139,23 @@ class Debug {
         }
     }
     // ------- END ZONE FUNCTIONS -------
+
+    // ------- START MAGIC TREE FUNCTIONS ------
+    getCurrentMagicTreeLevel() {
+        return this.zoneScene.sharedData.magicTree.logic.level;
+    }
+
+    getCurrentMagicTreeExperience() {
+        return this.zoneScene.sharedData.magicTree.logic.experience;
+    }
+
+    addMagicTreeLevel(amount = 1) {
+        this.zoneScene.sharedData.magicTree.logic.manager.debugAddLevel(amount);
+    }
+
+    addMagicTreeExperience(amount) {
+        this.zoneScene.sharedData.magicTree.logic.manager.addExperience(amount);
+    }
+
+    // ------- END MAGIC TREE FUNCTIONS -------
 }
