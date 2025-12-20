@@ -390,9 +390,9 @@ class QuestManager {
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = 
             "v1"
-            + "_Q0000000825-0000000899-0000002110" // Intro tuto
-            + "_Q0000000825-0000000899-0000002105" // Talk to Wings
-            // + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
+            // + "_Q0000000825-0000000899-0000002110" // Intro tuto
+            // + "_Q0000000825-0000000899-0000002105" // Talk to Wings
+            + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
             // + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fixed bridge
             + "_Q0000001163-0000001798-0000006239"// Intro Cottage
             // + "_Q0000001051-0000001468-0000004839"  // Free spring carnival (app start trigger)

@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "tICutJ/+hvQ", "spine": "4.2.43", "x": -69.87, "y": -0.04, "width": 143, "height": 121 },
+"skeleton": { "hash": "qMLAyBAWguc", "spine": "4.2.43", "x": -69.87, "y": -34.14, "width": 143, "height": 121 },
 "bones": [
 	{ "name": "root" }
 ],
@@ -11,7 +11,7 @@
 		"name": "default",
 		"attachments": {
 			"Main": {
-				"Spine Refs/1": { "x": 1.63, "y": 41.62, "width": 143, "height": 121 }
+				"Spine Refs/1": { "x": 1.63, "y": 26.36, "width": 143, "height": 121 }
 			}
 		}
 	}
