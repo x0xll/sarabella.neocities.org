@@ -302,8 +302,10 @@ class uiDialogue extends uiManagerBase
         this.UI.hide();
         this.UI.phaserScene.sharedData.lastChoice = "continue"
 
-        let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
-        this.UI.phaserScene.sharedData.questManager.doQuestAction(this.questID, questData.currentLine, questData.currentAction)
+        if (this.questID) {
+            let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
+            this.UI.phaserScene.sharedData.questManager.doQuestAction(this.questID, questData.currentLine, questData.currentAction)
+        }
     }
     
     #choiceOption() { 

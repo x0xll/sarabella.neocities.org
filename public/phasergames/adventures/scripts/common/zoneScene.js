@@ -14,7 +14,6 @@ class ZoneBase extends Phaser.Scene
 
             this.zoneConfig = sharedData.zoneData["Z001"]
         }
-        this.sharedData.zoneTileData["Z001"]
 
         if (sharedData.timeTrackedEntities === undefined) {
             sharedData.timeTrackedEntities = {}
@@ -36,7 +35,7 @@ class ZoneBase extends Phaser.Scene
     {
         this.levelManager = new LevelManager(this);
         this.timeManager = new TimeManager(this);
-        this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData["Z001"]); 
+        this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData[this.sharedData.worldToLoad]); 
         this.loadEntitiesData();
         this.loadBackgrounds(this.zoneConfig.backgroundCountX, this.zoneConfig.backgroundCountY, this.zoneConfig.ID)
 
@@ -118,14 +117,12 @@ class ZoneBase extends Phaser.Scene
         }
 
         const zone = this
-        zone.tiles = {}
 
         const levelRows = zone.zoneParsed.map[0].layout[0].levels[0][0].levelRow
         const tiles = zone.zoneParsed.mappedTiles;
 
         // Column
         for (var y = 0; y < levelRows.length; y++) {
-            zone.tiles[y] = {}
             var rowCells = levelRows[y].text.split(",");
             // Row
             for (var x = 0; x < rowCells.length; x++) {
@@ -382,6 +379,7 @@ class ZoneBase extends Phaser.Scene
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate)
         this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
         if (instanceIdentifier) { this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
+        this.sharedData.templateManager.getEntityZones(undefined, true)
     }
     // ------- END HELPER FUNCTIONS -------
 }

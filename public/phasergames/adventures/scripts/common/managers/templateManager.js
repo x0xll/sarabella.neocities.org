@@ -176,7 +176,8 @@ class TemplateManager {
      * @param {*} templateID (Optional) the templateID to find the locations for
      * @returns Returns either an array of zones for the template provided or a map of the locations of all entities in the game
      */
-    getEntityZones(templateID = undefined) {
+    getEntityZones(templateID = undefined, forceUpdate = false) {
+        if (this.entityZones && !forceUpdate) {return this.entityZones}
         const entities = {}
         for (let index = 0; index < this.phaserScene.sharedData.ZONES_ARRAY.length; index++) {
             const zoneID = this.phaserScene.sharedData.ZONES_ARRAY[index];
@@ -231,12 +232,13 @@ class TemplateManager {
 
         }
         
+        for (let [key] of Object.entries(entities)) {
+            entities[key] = Array.from(entities[key])
+        }
+        this.entityZones = entities
         if (templateID) {
             return Array.from(entities[templateID])
         } else {
-            for (let [key] of Object.entries(entities)) {
-                entities[key] = Array.from(entities[key])
-            }
             return entities
         }
     }

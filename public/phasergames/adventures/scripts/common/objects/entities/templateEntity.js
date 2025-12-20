@@ -377,11 +377,11 @@ class TemplateEntity extends Entity {
      */
     getInteractOptions(interactData) {
         const allInteractions = [
+            "TalkCommand",
             "GiveCommand",
             "ApplyCommand",
             "TakeCommand",
             "TrashCommand",
-            "TalkCommand",
             "ShopCommand",
             "MoveCommand",
             "InteractCommand",
@@ -599,10 +599,13 @@ class TemplateEntity extends Entity {
                 text: context.zoneScene.sharedData.sharedLocalizationUI.items[0].dialogueCancel[0].text
             }
             context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, context.zoneScene.sharedData.sharedLocalizationUI.items[0].dialogueChoiceText[0].text, talkData.choices); 
+        } else if (talkData.default.length > 0) {
+            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, talkData.default[randomIntFromInterval(0, talkData.default.length-1)]); 
         }
     }
     getTalkData() {
         const character = this.getTemplateValue(["Character", "identifier", "text"])
+        const talkDefault = this.getTemplateValue(["TalkCommand", "text"])
         const choices = { }
         const quests = this.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
         for (let index = 0; index < quests.length; index++) {
@@ -613,7 +616,7 @@ class TemplateEntity extends Entity {
                 text: advData.description.text
             }
         }
-        return {quests: quests, choices:choices}
+        return {quests: quests, choices:choices, default: talkDefault}
     }
     #shopCommand(context, interactData) {
         if (context.getTemplateValue(["AvatarShopCommand"])) {

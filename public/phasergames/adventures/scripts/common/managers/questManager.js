@@ -353,6 +353,27 @@ class QuestManager {
                 }
             }
         }
+        this.setNPCQuestLocations()
+    }
+
+    setNPCQuestLocations() {
+        const entityZones = this.phaserScene.sharedData.templateManager.getEntityZones()
+        const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
+
+        for (let [entityKey] of Object.entries(entityZones)) {
+            for (let index = 0; index < activeQuests.length; index++) {
+                const questID = activeQuests[index];
+                // console.log(questID[1], entityKey)
+                if (questID[1].replace("ADV-", "").startsWith(entityKey)) {
+                    const questData = this.getQuestPerID(questID)
+                    if (entityZones[entityKey].includes(this.phaserScene.sharedData.global.ZONE_ID)) {
+                        questData.targetZone = this.phaserScene.sharedData.global.ZONE_ID
+                    } else {
+                        questData.targetZone = entityZones[entityKey][0]
+                    }
+                }
+            }
+        }
     }
 
     /**
