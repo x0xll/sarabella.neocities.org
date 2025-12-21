@@ -16,6 +16,22 @@ class TemplateEntity extends Entity {
         this.zoneID = zoneScene.zoneConfig.ID
         this.variant = this.getTemplateValue(["MovieClip", "className", "text"], this.templateID);
 
+        if (additionalConfig) {
+            console.log("Additional config: ", additionalConfig)
+            if (additionalConfig.isWatered) {
+                this.isWatered = additionalConfig.isWatered
+            }
+            if (additionalConfig.isWilted) {
+                this.isWilted = additionalConfig.isWilted
+            }
+            if (additionalConfig.variant) {
+                this.variant = additionalConfig.variant
+            }
+            if (additionalConfig.facingDirection) {
+                this.facingDirection = additionalConfig.facingDirection
+            }
+        }
+
 
         if (addToCurrentZone && loadLate) {
             zoneScene.load.once('complete', this.create, this);
@@ -23,15 +39,6 @@ class TemplateEntity extends Entity {
             zoneScene.load.start();
         } else if (addToCurrentZone) {
             this.load();
-        }
-
-        if (additionalConfig) {
-            if (additionalConfig.isWatered) {
-                this.isWatered = additionalConfig.isWatered
-            }
-            if (additionalConfig.isWilted) {
-                this.isWilted = additionalConfig.isWilted
-            }
         }
     }
 
@@ -49,9 +56,10 @@ class TemplateEntity extends Entity {
             this.entityID = charName
         }
         let facing = parseInt(this.getTemplateValue(["Isometric", "scaleX", "text"]))
+        
         if (facing && (this.facingDirection === undefined || this.facingDirection === "default")) {
             this.facingDirection = facing === -1 ? this.FACING_DIRECTIONS.Southwest : this.FACING_DIRECTIONS.Southeast;
-        } else {
+        } else if (this.facingDirection === undefined) {
             this.facingDirection = this.FACING_DIRECTIONS.Southeast
         }
         
@@ -734,11 +742,14 @@ class TemplateEntity extends Entity {
 
         if (variantFound)
         {
-            context.variant = context.getTemplateValue(["MovieClip", "className", "text"], context.templateID);;
+            context.variant = context.getTemplateValue(["MovieClip", "className", "text"], context.templateID);
         }
 
+        
+        context.zoneScene.sharedData.entities.spawnedEntities[context.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.variant = context.variant;
         context.updateSpriteVariant(context.variant);
     }
+    // TODO: update gridFoot in here somewhere
     #rotateCommand(context, interactData) { 
         switch(context.facingDirection)
         {
@@ -757,6 +768,7 @@ class TemplateEntity extends Entity {
                 break;
         }
         context.resetSpriteFacingDirection()
+        context.zoneScene.sharedData.entities.spawnedEntities[context.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.facingDirection = context.facingDirection;
     }
 
 
