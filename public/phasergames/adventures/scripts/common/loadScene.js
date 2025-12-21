@@ -70,6 +70,10 @@ class Common_Load extends Phaser.Scene
             this.sharedData.global.currentZone = "Z001"
         }
         this.sharedData.global.uiOpen = false
+
+        if (this.sharedData.ui === undefined) {
+            this.sharedData.ui = {}
+        }
     }
 
     preload ()
@@ -99,7 +103,13 @@ class Common_Load extends Phaser.Scene
         const loader = this
         loader.sharedData = sharedData
 
-        loader.sharedData.sharedLocalizationUI = parseSharedXML(this.cache.xml.get("SharedUI"))
+        // Add inputs
+        loader.sharedData.keyboard = {}
+        loader.sharedData.keyboard.enter = loader.input.keyboard.addKey("ENTER");
+        loader.sharedData.keyboard.space = loader.input.keyboard.addKey("SPACE");
+        loader.sharedData.keyboard.esc = loader.input.keyboard.addKey("ESC");
+
+        loader.sharedData.ui.localization = parseSharedXML(this.cache.xml.get("SharedUI"))
 
         if (loader.sharedData.zone.config === undefined) {
             loader.sharedData.zone.config = this.cache.json.get("ZoneConfig")

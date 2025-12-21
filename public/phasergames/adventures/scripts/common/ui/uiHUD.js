@@ -50,7 +50,7 @@ class uiHUD extends uiManagerBase
             goToExternalURL("https://web.archive.org/web/20100528225638/http://bellasara.com/bsa-helphome.aspx");
         })
         
-        this.phaserScene.sharedData.hud.ui.saveText = this.phaserScene.add.text(680, 565, this.phaserScene.sharedData.sharedLocalizationUI.items[0].hudSave[0].text, {font: "700 13px Arial", color: "#ffffffff"}).setDepth(100).setOrigin(.5);
+        this.phaserScene.sharedData.hud.ui.saveText = this.phaserScene.add.text(680, 565, this.phaserScene.sharedData.ui.localization.items[0].hudSave[0].text, {font: "700 13px Arial", color: "#ffffffff"}).setDepth(100).setOrigin(.5);
         
 
         this.phaserScene.sharedData.hud.ui.areaName = this.phaserScene.add.text(400, 20, "zoneName", {font: "18px Arial", color: "#000000ff"}).setDepth(100);

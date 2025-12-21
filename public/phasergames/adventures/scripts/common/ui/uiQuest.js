@@ -73,7 +73,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0);
 
         // TODO: Link to loca
-        var lookforTxt = this.phaserScene.add.text(520, 200, this.phaserScene.sharedData.sharedLocalizationUI.items[0].journalGiver[0].text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
+        var lookforTxt = this.phaserScene.add.text(520, 200, this.phaserScene.sharedData.ui.localization.items[0].journalGiver[0].text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
 
@@ -82,7 +82,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0);
 
         // TODO: Link to loca
-        var locationTxt = this.phaserScene.add.text(520, 250, this.phaserScene.sharedData.sharedLocalizationUI.items[0].journalLocation[0].text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
+        var locationTxt = this.phaserScene.add.text(520, 250, this.phaserScene.sharedData.ui.localization.items[0].journalLocation[0].text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
 
@@ -91,7 +91,7 @@ class uiQuest extends uiManagerBase
                         .setScrollFactor(0);
             
         // TODO: Link to loca
-        var goalTxt = this.phaserScene.add.text(435, 310, this.phaserScene.sharedData.sharedLocalizationUI.items[0].journalGoal[0].text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
+        var goalTxt = this.phaserScene.add.text(435, 310, this.phaserScene.sharedData.ui.localization.items[0].journalGoal[0].text, this.SMALL_BOLD_TEXT_BLACK_SETTINGS)
                         .setOrigin(0)
                         .setScrollFactor(0);
 

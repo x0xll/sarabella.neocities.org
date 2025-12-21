@@ -550,6 +550,32 @@ class QuestManager {
         return false;
     }
 
+    // Note: this is both checked and set off multiple times due to loading times between scenes not always being consistent, 
+    // so we may find that what we need to check or where we need to set it off changes over time
+    tryZoneStartTriggers() {
+        if (this.lastZoneTrigger !== this.phaserScene.zoneConfig.ID 
+            && this.isInitialised 
+            && this.phaserScene.sharedData.ui.isInitialized 
+            && this.phaserScene.sharedData.keyboard !== undefined
+        ) {
+            this.lastZoneTrigger = this.phaserScene.zoneConfig.ID
+
+            let triggerInfo = {
+                type: "EnterZoneTrigger"
+            }
+            this.tryTriggerQuest(this.phaserScene, triggerInfo);
+
+
+            if (!this.phaserScene.sharedData.global.appStarted) {
+                this.phaserScene.sharedData.global.appStarted = true
+                triggerInfo = {
+                    type: "ApplicationStartTrigger"
+                }
+                this.tryTriggerQuest(this.phaserScene, triggerInfo);
+            }
+        }
+    }
+
     #QUEST_TRIGGERS = {
         "TalkQuestTrigger": this.#talkQuestTrigger,
         "EnterZoneTrigger": this.#enterZoneTrigger,

@@ -12,7 +12,7 @@ class Common_UI extends Phaser.Scene
     preload ()
     {
         const UI = this
-        UI.sharedData.UIkeys = []
+        UI.sharedData.ui.keys = []
 
         UI.hudUI = new uiHUD(this);
         UI.inventoryUI = new uiInventory(this);
@@ -28,14 +28,9 @@ class Common_UI extends Phaser.Scene
     {   
         const UI = this;
         UI.sharedData.global.uiOpen = false
+        this.sharedData.ui.isInitialized = false
 
-        // Add inputs
-        UI.sharedData.keyboard = {}
-        UI.sharedData.keyboard.enter = UI.input.keyboard.addKey("ENTER");
-        UI.sharedData.keyboard.space = UI.input.keyboard.addKey("SPACE");
-        UI.sharedData.keyboard.esc = UI.input.keyboard.addKey("ESC");
-
-        this.sharedData.UIkeys.forEach(key => {
+        this.sharedData.ui.keys.forEach(key => {
             this.sharedData[key].ui.manager.phaserScene = this
             this.sharedData[key].ui.manager.create()
             if (this.sharedData[this.key]
@@ -44,5 +39,8 @@ class Common_UI extends Phaser.Scene
                 this.sharedData[this.key].ui.open = false
             }
         });
+        this.sharedData.ui.isInitialized = true
+        while (!this.sharedData.ui.isInitialized) {}
+        this.sharedData.quest.manager.tryZoneStartTriggers()
     }
 }

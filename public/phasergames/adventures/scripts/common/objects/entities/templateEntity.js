@@ -624,9 +624,9 @@ class TemplateEntity extends Entity {
         if (talkData.quests.length > 0 ) {
             talkData.choices["none"] = {
                 entityID: character,
-                text: context.zoneScene.sharedData.sharedLocalizationUI.items[0].dialogueCancel[0].text
+                text: context.zoneScene.sharedData.ui.localization.items[0].dialogueCancel[0].text
             }
-            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, context.zoneScene.sharedData.sharedLocalizationUI.items[0].dialogueChoiceText[0].text, talkData.choices); 
+            context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, context.zoneScene.sharedData.ui.localization.items[0].dialogueChoiceText[0].text, talkData.choices); 
         } else if (talkData.default.length > 0) {
             context.zoneScene.sharedData.dialogue.ui.manager.show(null, character, talkData.default[randomIntFromInterval(0, talkData.default.length-1)]); 
         }

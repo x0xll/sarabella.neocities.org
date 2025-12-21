@@ -121,7 +121,7 @@ class uiDialogue extends uiManagerBase
                             .setInteractive({ useHandCursor: true })
                             .setScale(.75);
 
-        var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, this.phaserScene.sharedData.sharedLocalizationUI.items[0].dialogueContinue[0].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
+        var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, this.phaserScene.sharedData.ui.localization.items[0].dialogueContinue[0].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
                             .setDepth(100);

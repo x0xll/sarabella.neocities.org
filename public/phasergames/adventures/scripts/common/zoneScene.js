@@ -55,8 +55,7 @@ class ZoneBase extends Phaser.Scene
         zone.timeManager.renderDayNight()
 
         this.instantiateEntities();
-
-        this.tryZoneStartTriggers()
+        this.sharedData.quest.manager.tryZoneStartTriggers()
     }
 
     update() 
@@ -315,22 +314,6 @@ class ZoneBase extends Phaser.Scene
         this.sharedData.global.timePausedAt = this.timeManager.getCurrentTime()
         this.sharedData.global.currentZone = sceneKey;
         this.scene.start("common_load", this.sharedData);
-    }
-
-    // TODO figure out where these need to go to avoid breaking
-    tryZoneStartTriggers() {
-        let triggerInfo = {
-            type: "EnterZoneTrigger"
-        }
-        this.sharedData.quest.manager.tryTriggerQuest(this, triggerInfo);
-
-        if (!this.sharedData.global.appStarted) {
-            this.sharedData.global.appStarted = true
-            triggerInfo = {
-                type: "ApplicationStartTrigger"
-            }
-            this.sharedData.quest.manager.tryTriggerQuest(this, triggerInfo);
-        }
     }
     // ------- END UPDATE -------
     

@@ -7,7 +7,7 @@ class uiManagerBase
         this.phaserScene = phaserScene;
 
         this.key = key
-        phaserScene.sharedData.UIkeys.push(key)
+        phaserScene.sharedData.ui.keys.push(key)
 
         if (this.phaserScene.sharedData[this.key] 
             && this.phaserScene.sharedData[this.key].ui
@@ -67,7 +67,7 @@ class uiManagerBase
         // this.phaserScene.sharedData.global.uiOpen = false;
 
         let test = false;
-        this.phaserScene.sharedData.UIkeys.forEach(key => {
+        this.phaserScene.sharedData.ui.keys.forEach(key => {
             if (this.phaserScene.sharedData[key].ui.open === undefined) return
             test = test || this.phaserScene.sharedData[key].ui.open
         });
