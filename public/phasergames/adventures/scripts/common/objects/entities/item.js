@@ -94,7 +94,7 @@ class InventorySlot
                     plantWidth: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantWidth"),
                     plantHeight: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantHeight")
                 }
-                this.phaserScene.sharedData.player.cursor.cursorMode = this.phaserScene.sharedData.player.cursor.MODE.planting
+                this.phaserScene.sharedData.entities.player.cursor.cursorMode = this.phaserScene.sharedData.entities.player.cursor.MODE.planting
                 this.phaserScene.sharedData.inventory.ui.manager.hide()
             } else if (template.CardEntity !== undefined) {
                 // CARDS
@@ -108,7 +108,7 @@ class InventorySlot
                     width: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemWidth"),
                     height: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemHeight")
                 }
-                this.phaserScene.sharedData.player.cursor.cursorMode = this.phaserScene.sharedData.player.cursor.MODE.placing
+                this.phaserScene.sharedData.entities.player.cursor.cursorMode = this.phaserScene.sharedData.entities.player.cursor.MODE.placing
                 this.phaserScene.sharedData.inventory.ui.manager.hide()
             } else if (template.AvatarCustomizationData !== undefined) {
                 // CLOTHING

@@ -7,26 +7,34 @@ class ZoneBase extends Phaser.Scene
     init (sharedData) {
         this.sharedData = sharedData
         // Set zone variables from shared data here (before preload)
-        if (sharedData.zoneData[sharedData.worldToLoad]) {
-            this.zoneConfig = sharedData.zoneData[sharedData.worldToLoad]
+        if (sharedData.zoneData.config[sharedData.worldToLoad]) {
+            this.zoneConfig = sharedData.zoneData.config[sharedData.worldToLoad]
         } else {
             console.error(`Zone config for ${sharedData.worldToLoad} not found! Loading canterfarms instead`)
 
-            this.zoneConfig = sharedData.zoneData["Z001"]
+            this.zoneConfig = sharedData.zoneData.config["Z001"]
         }
 
-        if (sharedData.timeTrackedEntities === undefined) {
-            sharedData.timeTrackedEntities = {}
-            sharedData.timeTrackedEntities[this.zoneConfig.ID] = {}
-        } else if (sharedData.timeTrackedEntities[this.zoneConfig.ID] === undefined) {
-            sharedData.timeTrackedEntities[this.zoneConfig.ID] = {}
+        // Initialise entity data
+        if (sharedData.entities === undefined) {
+            sharedData.entities = {}
+            if (sharedData.entities.timeTrackedEntities === undefined) {
+                sharedData.entities.timeTrackedEntities = {}
+                sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
+            }
+            if (sharedData.entities.spawnedEntities === undefined) {
+                sharedData.entities.spawnedEntities = {}
+                sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
+            } 
+        } else {
+            if (sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] === undefined) {
+                sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
+            }
+            if (sharedData.entities.spawnedEntities[this.zoneConfig.ID] === undefined) {
+                sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
+            }
         }
-        if (sharedData.spawnedEntities === undefined) {
-            sharedData.spawnedEntities = {}
-            sharedData.spawnedEntities[this.zoneConfig.ID] = {}
-        } else if (sharedData.spawnedEntities[this.zoneConfig.ID] === undefined) {
-            sharedData.spawnedEntities[this.zoneConfig.ID] = {}
-        }
+        this.sharedData.entities.entityDataLoaded = true
 
         this.sharedData.questManager.phaserScene = this;
     }
@@ -97,7 +105,9 @@ class ZoneBase extends Phaser.Scene
     // Load entities
     loadEntitiesData() {
         this.zoneConfig.sceneEntryPoints
+        this.entities = {}
 
+        // Player
         let playerStartPos = this.zoneConfig.sceneEntryPoints["default"]
         if (this.sharedData !== undefined
             && this.sharedData.prevZone !== undefined
@@ -105,10 +115,9 @@ class ZoneBase extends Phaser.Scene
         ) {
             playerStartPos = this.zoneConfig.sceneEntryPoints[this.sharedData.prevZone]
         }
+        this.sharedData.entities.player = new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
-        this.entities = {}
-        this.sharedData.player = new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
-
+        // Entities from Zone Config
         if (this.sharedData.npcConfig[this.zoneConfig.ID]) {
             for (let [key] of Object.entries(this.sharedData.npcConfig[this.zoneConfig.ID])) {
                 let entityPos = this.sharedData.npcConfig[this.zoneConfig.ID][key]
@@ -116,11 +125,10 @@ class ZoneBase extends Phaser.Scene
             }
         }
 
+        // Entities from Zone XML
         const zone = this
-
         const levelRows = zone.zoneParsed.map[0].layout[0].levels[0][0].levelRow
         const tiles = zone.zoneParsed.mappedTiles;
-
         // Column
         for (var y = 0; y < levelRows.length; y++) {
             var rowCells = levelRows[y].text.split(",");
@@ -129,25 +137,22 @@ class ZoneBase extends Phaser.Scene
                 var cellValue = rowCells[x];
                 let tileData = tiles.get(cellValue);
 
-                // We get the actual visual id
-                if (tileData === undefined) {
-                    console.error("Tile isn't defined: " + cellValue);
-                    continue;
-                }
-
-                if (tileData.entities) {
+                if (tileData && tileData.entities) {
                     new TemplateEntity(zone, tileData.entities, x, y)
                 }
             }
         }
 
-        const spawnedEntities = structuredClone(this.sharedData.spawnedEntities[this.zoneConfig.ID]);
-        this.sharedData.spawnedEntities[this.zoneConfig.ID] = {}
-
+        // Spawned Entities
+        const spawnedEntities = structuredClone(this.sharedData.entities.spawnedEntities[this.zoneConfig.ID]);
+        this.sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
         for (let [key] of Object.entries(spawnedEntities)) {
             const entity = spawnedEntities[key]
             this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID)
         }
+
+        // Once entities have loaded
+        this.sharedData.questManager.initializeQuestData()
     }
 
     loadBackgrounds(xSize, ySize, zoneID) {
@@ -377,8 +382,8 @@ class ZoneBase extends Phaser.Scene
 
     spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID, instanceIdentifier = undefined) {
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate)
-        this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
-        if (instanceIdentifier) { this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
+        this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
+        if (instanceIdentifier) { this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
         this.sharedData.templateManager.getEntityZones(undefined, true)
     }
     // ------- END HELPER FUNCTIONS -------

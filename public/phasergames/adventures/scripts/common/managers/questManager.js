@@ -11,7 +11,24 @@ class QuestManager {
     constructor (phaserScene) {
         this.phaserScene = phaserScene
         this.busy = true // Used to prevent trigger checks if the manager is currently checking already
-        this.preloadQuestData()
+
+        if (this.phaserScene.sharedData.quest === undefined) {
+            this.phaserScene.sharedData.quest = {};
+        }
+        if (this.phaserScene.sharedData.quest.logic === undefined) {
+            this.isInitialised = false
+            this.phaserScene.sharedData.quest.logic =  {
+                quests: [],
+                activeQuests: []
+            }
+        } else {
+            this.isInitialised = true
+        }
+        if (!this.isLoaded) {
+            this.isLoaded = false
+            this.preloadQuestData()
+            this.isLoaded = true
+        }
     }
 
 
@@ -236,24 +253,19 @@ class QuestManager {
      * Loads and parses the xml files from the cache, and then initializes the quests. Should be called from the loadScreen scene
      */
     async initializeQuestData() {
-        let questData = []
+        if (this.isInitialised) {return}
+        let questData = this.phaserScene.sharedData.quest.logic.quests
         for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
             questData.push(parseQuestXML(this, this.phaserScene.cache.xml.get(this.#QUEST_FILE_NAMES[index])))
-        }
-
-        this.phaserScene.sharedData.quest = {};
-        this.phaserScene.sharedData.quest.logic =  {
-            quests: questData,
-            activeQuests: []
         }
 
         await this.#initializeSavedQuests();
         await this.#initializeQuestConfig()
         await this.#initializeNPCQuestData()
 
-        // console.log(this.phaserScene.sharedData.spawnedEntities)
+        // console.log(this.phaserScene.sharedData.entities.spawnedEntities)
 
-        // this.sharedData.spawnedEntities[zoneID][spawnedEntity.entityKey]
+        // this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey]
 
 
         // console.log(phaserScene.sharedData.quest.logic.quests);
@@ -267,6 +279,7 @@ class QuestManager {
 
         // this.saveUserQuestData()
         this.busy = false
+        this.isInitialised = true
     }
 
     async #initializeQuestConfig() {
@@ -287,16 +300,16 @@ class QuestManager {
                         if (zoneKey === "quests") continue
 
                         const zoneData = questConfig[zoneKey]
-                        if (this.phaserScene.sharedData.spawnedEntities === undefined) {
-                            this.phaserScene.sharedData.spawnedEntities = {}
-                            this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
+                        if (this.phaserScene.sharedData.entities.spawnedEntities === undefined) {
+                            this.phaserScene.sharedData.entities.spawnedEntities = {}
+                            this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] = zoneData
                         } 
-                        else if (this.phaserScene.sharedData.spawnedEntities[zoneKey] === undefined) {
-                            this.phaserScene.sharedData.spawnedEntities[zoneKey] = zoneData
+                        else if (this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] === undefined) {
+                            this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] = zoneData
                         } else {
-                            this.phaserScene.sharedData.spawnedEntities[zoneKey] = {...zoneData, ...this.phaserScene.sharedData.spawnedEntities[zoneKey]}
+                            this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] = {...zoneData, ...this.phaserScene.sharedData.entities.spawnedEntities[zoneKey]}
                         }
-                        while (Object.entries(questConfig).length > this.phaserScene.sharedData.spawnedEntities[zoneKey]) {}
+                        while (Object.entries(questConfig).length > this.phaserScene.sharedData.entities.spawnedEntities[zoneKey]) {}
                         
                     }
                 }
@@ -390,9 +403,9 @@ class QuestManager {
         // TODO replace with a call to fetch the actual save data
         const activeSavedString = 
             "v1"
-            // + "_Q0000000825-0000000899-0000002110" // Intro tuto
-            // + "_Q0000000825-0000000899-0000002105" // Talk to Wings
-            + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
+            + "_Q0000000825-0000000899-0000002110" // Intro tuto
+            + "_Q0000000825-0000000899-0000002105" // Talk to Wings
+            // + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
             // + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fixed bridge
             + "_Q0000001163-0000001798-0000006239"// Intro Cottage
             // + "_Q0000001051-0000001468-0000004839"  // Free spring carnival (app start trigger)
@@ -533,7 +546,13 @@ class QuestManager {
             }
             this.busy = false
         } else {
-            console.warn("Skipped. We might need to add a queue if this starts happening", triggerData)
+            if (!this.isLoaded) {
+                console.error("Skipped. Trigger attempted before quest manager was loaded", triggerData)
+            } else if (!this.isInitialised) {
+                console.error("Skipped. Trigger attempted before quest manager was initialised", triggerData)
+            } else {
+                console.warn("Skipped. We might need to add a queue if this starts happening", triggerData)
+            }
         }
         return false;
     }
@@ -913,7 +932,7 @@ class QuestManager {
     }
 
     async #removeZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
-        let entitiesList = phaserScene.sharedData.spawnedEntities[action.zone[0]]
+        let entitiesList = phaserScene.sharedData.entities.spawnedEntities[action.zone[0]]
 
         for (let [key] of Object.entries(entitiesList)) {
             const entity = entitiesList[key];

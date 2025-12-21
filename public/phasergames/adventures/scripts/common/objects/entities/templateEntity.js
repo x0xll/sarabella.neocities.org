@@ -145,14 +145,14 @@ class TemplateEntity extends Entity {
         }
 
         // Check spawn time has elapsed
-        const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
+        const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
         if (timeData !== undefined) {
             const countDay = spawnTimeType === "Day"
             const countNight = spawnTimeType === "Night"
             const duration = this.getTimeDuration(countDay, countNight)
             if (duration < parseFloat(spawnerData.entitySpawnTime[0].text)) {return}
         } else {
-            this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
+            this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] = {
                 startTime: this.zoneScene.timeManager.getCurrentTime(),
                 daysCount: 0
             }
@@ -160,7 +160,7 @@ class TemplateEntity extends Entity {
         }
 
         // Reset spawn time
-        this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey] = {
+        this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] = {
             startTime: this.zoneScene.timeManager.getCurrentTime(),
             daysCount: 0
         }
@@ -282,7 +282,7 @@ class TemplateEntity extends Entity {
 
     // ------- UPDATE FUNCTIONS -------
     getTimeDuration(countDay, countNight) {
-        const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
+        const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
 
         if (timeData !== undefined) {
             if (!countNight && timeData.startTime > this.zoneScene.timeManager.dayLength) {
@@ -313,7 +313,7 @@ class TemplateEntity extends Entity {
         }
 
         // Check growth time
-        const timeData = this.zoneScene.sharedData.timeTrackedEntities[this.zoneID][this.entityKey]
+        const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
         if (timeData !== undefined) {
             const countDay = growthType === "Day"
             const countNight = growthType === "Night"
@@ -605,7 +605,7 @@ class TemplateEntity extends Entity {
         // TODO currently doesn't regrow - add regrowth ability
         this.currentStage = parseInt(context.plantData.growthData.unWiltStage[0].text)
         this.timeToGrow = parseInt(context.plantData.growthData.reGrowthTime[0].text)
-        context.zoneScene.sharedData.timeTrackedEntities[context.zoneID][context.entityKey] = {
+        context.zoneScene.sharedData.entities.timeTrackedEntities[context.zoneID][context.entityKey] = {
             startTime: context.zoneScene.timeManager.getCurrentTime(),
             daysCount: 0
         }
@@ -635,6 +635,7 @@ class TemplateEntity extends Entity {
         const character = this.getTemplateValue(["Character", "identifier", "text"])
         let talkDefault = this.getTemplateValue(["TalkCommand", "text"])
         if (talkDefault === undefined || this.templateID === "M005gTemplate") {talkDefault = []}
+        else if (!Array.isArray(talkDefault)) { talkDefault = [talkDefault]}
         const choices = { }
         const quests = this.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
         for (let index = 0; index < quests.length; index++) {
@@ -664,8 +665,8 @@ class TemplateEntity extends Entity {
         console.log("Brush not yet implemented")
     }
     #waterPlantCommand(context, interactData) { 
-        if (context.zoneScene.sharedData.timeTrackedEntities[context.zoneID][context.entityKey] === undefined) {
-            context.zoneScene.sharedData.timeTrackedEntities[context.zoneID][context.entityKey] = {
+        if (context.zoneScene.sharedData.entities.timeTrackedEntities[context.zoneID][context.entityKey] === undefined) {
+            context.zoneScene.sharedData.entities.timeTrackedEntities[context.zoneID][context.entityKey] = {
                 startTime: context.zoneScene.timeManager.getCurrentTime(),
                 daysCount: 0
             }
@@ -808,7 +809,7 @@ class TemplateEntity extends Entity {
         // TODO Reset all spawners in the same tile so they don't instantly try to spawn
 
         // Removes the entity from the zone
-        delete this.zoneScene.sharedData.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
+        delete this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
         delete this.zoneScene.entities[this.entityKey]
         // TODO also delete from time tracked entities?
     }

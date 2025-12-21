@@ -123,7 +123,7 @@ class Debug {
         if (zoneID = undefined) {
             return this.zoneScene.entities
         } else {
-            return this.zoneScene.sharedData.spawnedEntities[zoneID]
+            return this.zoneScene.sharedData.entities.spawnedEntities[zoneID]
         }
     }
     getEntitiesAt(x, y, idsOnly = true) {

@@ -155,8 +155,8 @@ class TimeManager
             this.clock.seek(0)
             this.isDay = true
             this.renderDayNight()
-            for (let [key] of Object.entries(this.phaserScene.sharedData.timeTrackedEntities)) {
-                const zoneEntities = this.phaserScene.sharedData.timeTrackedEntities[key]
+            for (let [key] of Object.entries(this.phaserScene.sharedData.entities.timeTrackedEntities)) {
+                const zoneEntities = this.phaserScene.sharedData.entities.timeTrackedEntities[key]
                 if (zoneEntities === undefined) {
                     continue
                 }
@@ -189,10 +189,10 @@ class TimeManager
         }
 
 
-        const zoneEntities = this.phaserScene.sharedData.timeTrackedEntities[this.phaserScene.zoneConfig.ID]
+        const zoneEntities = this.phaserScene.sharedData.entities.timeTrackedEntities[this.phaserScene.zoneConfig.ID]
         for (let [key] of Object.entries(zoneEntities)) {
             if (this.phaserScene.entities[key] === undefined) {
-                delete this.phaserScene.sharedData.timeTrackedEntities[this.phaserScene.zoneConfig.ID][key]
+                delete this.phaserScene.sharedData.entities.timeTrackedEntities[this.phaserScene.zoneConfig.ID][key]
                 continue
             }
             this.phaserScene.entities[key].update()

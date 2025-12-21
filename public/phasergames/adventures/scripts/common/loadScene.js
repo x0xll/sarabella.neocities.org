@@ -39,9 +39,14 @@ class Common_Load extends Phaser.Scene
     init (sharedData) {
         // Used to preload certain data for the zone
         this.sharedData = sharedData
+
+        if (this.sharedData.zoneData === undefined) {
+            this.sharedData.zoneData = {}
+            this.sharedData.zoneData.ZONES_ARRAY = this.ZONES_ARRAY
+        }
+
         if (this.sharedData.worldToLoad === undefined) {
             this.sharedData.worldToLoad = "Z001"
-            this.sharedData.ZONES_ARRAY = this.ZONES_ARRAY
         }
     }
 
@@ -53,7 +58,7 @@ class Common_Load extends Phaser.Scene
         this.inventory = new InventoryManager(this);
         this.zoneManager = new ZoneManager(this);
 
-        this.load.json("Zones", `${ZONE_XML_PATH}zoneConfig.json`);
+        this.load.json("ZoneConfig", `${ZONE_XML_PATH}zoneConfig.json`);
 
         // Loading xml for all zones so we can use it to find entity locations
         this.ZONES_ARRAY.forEach(zone => {
@@ -74,11 +79,11 @@ class Common_Load extends Phaser.Scene
 
         loader.sharedData.sharedLocalizationUI = parseSharedXML(this.cache.xml.get("SharedUI"))
 
-        if (loader.sharedData.zoneData === undefined) {
-            loader.sharedData.zoneData = this.cache.json.get("Zones")
+        if (loader.sharedData.zoneData.config === undefined) {
+            loader.sharedData.zoneData.config = this.cache.json.get("ZoneConfig")
         }
         loader.sharedData.global = {
-            ZONE_ID: sharedData.zoneData[sharedData.worldToLoad].ID
+            ZONE_ID: sharedData.zoneData.config[sharedData.worldToLoad].ID
         }
 
         if (loader.sharedData.zoneTileData === undefined || loader.sharedData.zoneTileData[loader.sharedData.worldToLoad] === undefined) {
@@ -87,10 +92,6 @@ class Common_Load extends Phaser.Scene
             this.ZONES_ARRAY.forEach(zone => {
                 this.sharedData.zoneTileData[zone] = this.cache.xml.get(`${zone}Tiles`)
             });
-        }
-
-        if (loader.sharedData.collectableData === undefined) {
-            loader.sharedData.collectableData = this.cache.json.get("Collectables")
         }
 
         // Load NPC base setup
@@ -104,7 +105,6 @@ class Common_Load extends Phaser.Scene
         }
         if (loader.sharedData.questManager === undefined) {
             loader.sharedData.questManager = loader.questManager
-            loader.sharedData.questManager.initializeQuestData();
         }
         this.templateManager.create()
 

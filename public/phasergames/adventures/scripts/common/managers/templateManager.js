@@ -179,11 +179,11 @@ class TemplateManager {
     getEntityZones(templateID = undefined, forceUpdate = false) {
         if (this.entityZones && !forceUpdate) {return this.entityZones}
         const entities = {}
-        for (let index = 0; index < this.phaserScene.sharedData.ZONES_ARRAY.length; index++) {
-            const zoneID = this.phaserScene.sharedData.ZONES_ARRAY[index];
+        for (let index = 0; index < this.phaserScene.sharedData.zoneData.ZONES_ARRAY.length; index++) {
+            const zoneID = this.phaserScene.sharedData.zoneData.ZONES_ARRAY[index];
 
             // Get spawn data (should include questConfig and saved entity data)
-            const spawned = this.phaserScene.sharedData.spawnedEntities[zoneID] // gets the entities that have been spawned in a location
+            const spawned = this.phaserScene.sharedData.entities.spawnedEntities[zoneID] // gets the entities that have been spawned in a location
             if (spawned) {
                 for (let index = 0; index < spawned.length; index++) {
                     const entity = spawned[index];

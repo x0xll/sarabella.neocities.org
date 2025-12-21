@@ -157,7 +157,6 @@ class uiDialogue extends uiManagerBase
             let test = super.show()
             if (!test) return
 
-            // TODO check if this actually works
             if (Array.isArray(text) && text.length === 1) {
                 text = text[0]
             } else if (Array.isArray(text)) {
