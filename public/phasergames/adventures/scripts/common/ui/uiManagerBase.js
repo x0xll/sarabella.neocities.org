@@ -29,6 +29,8 @@ class uiManagerBase
             UI.sharedData[this.key].ui = {};
             UI.sharedData[this.key].ui.manager = this;
         }
+
+        this.phaserScene.sharedData[this.key].ui.open = false
     }
 
     create()
