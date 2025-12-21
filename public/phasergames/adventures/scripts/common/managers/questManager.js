@@ -278,7 +278,6 @@ class QuestManager {
 
         // this.saveUserQuestData()
         this.busy = false
-        this.isInitialised = true
     }
 
     async #initializeSavedQuests() {
@@ -352,6 +351,7 @@ class QuestManager {
             }
         }
         this.setNPCQuestLocations()
+        this.isInitialised = true
     }
 
     setNPCQuestLocations() {

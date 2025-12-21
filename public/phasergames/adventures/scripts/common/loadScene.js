@@ -69,6 +69,7 @@ class Common_Load extends Phaser.Scene
         if (this.sharedData.global.currentZone === undefined) {
             this.sharedData.global.currentZone = "Z001"
         }
+        this.sharedData.global.uiOpen = false
     }
 
     preload ()
