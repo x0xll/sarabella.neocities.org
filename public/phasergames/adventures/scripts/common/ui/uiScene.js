@@ -14,6 +14,12 @@ class Common_UI extends Phaser.Scene
         const UI = this
         UI.sharedData.ui.keys = []
 
+        // Add inputs
+        UI.sharedData.keyboard = {}
+        UI.sharedData.keyboard.enter = UI.input.keyboard.addKey("ENTER");
+        UI.sharedData.keyboard.space = UI.input.keyboard.addKey("SPACE");
+        UI.sharedData.keyboard.esc = UI.input.keyboard.addKey("ESC");
+
         UI.hudUI = new uiHUD(this);
         UI.inventoryUI = new uiInventory(this);
         UI.magicTreeUI = new uiMagicTree(this);

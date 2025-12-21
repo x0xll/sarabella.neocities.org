@@ -17,7 +17,6 @@ class TemplateEntity extends Entity {
         this.variant = this.getTemplateValue(["MovieClip", "className", "text"], this.templateID);
 
         if (additionalConfig) {
-            console.log("Additional config: ", additionalConfig)
             if (additionalConfig.isWatered) {
                 this.isWatered = additionalConfig.isWatered
             }
@@ -63,9 +62,6 @@ class TemplateEntity extends Entity {
             this.facingDirection = this.FACING_DIRECTIONS.Southeast
         }
         
-    // <component name="Isometric">
-    //   <scaleX>-1</scaleX>
-    // </component>
         this.spriteType = this.#loadSpriteData()
         this.#loadSpawnerData()
     }
