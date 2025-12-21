@@ -704,7 +704,7 @@ class TemplateEntity extends Entity {
 
         if (takeItem == undefined) { return }
         context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
-        context.destroy()
+        context.destroy(true)
     }
     #variantCommand(context, interactData) { 
         let possibleVariants = context.getTemplateValue(["MovieClip", "variants"]);
@@ -769,26 +769,28 @@ class TemplateEntity extends Entity {
         return this.zoneScene.sharedData.template.manager.getTemplateValue(`${templateID}`, keys)
     }
 
-    destroy () {
+    destroy (ignoreRemoveEntityTrigger = false) {
         // Check for any triggers
 
-        const nearbyEntities = new Set()
-        for (let x = 0; x < this.gridFootX; x++) {
-            for (let y = 0; y < this.gridFootY; y++) {
-                const entities = this.zoneScene.getEntitiesAt(this.startPos[0]+x, this.startPos[1]-y)
-                for (let index = 0; index < entities.length; index++) {
-                    nearbyEntities.add(this.zoneScene.entities[entities[index]].templateID)
+        if (!ignoreRemoveEntityTrigger) {
+            const nearbyEntities = new Set()
+            for (let x = 0; x < this.gridFootX; x++) {
+                for (let y = 0; y < this.gridFootY; y++) {
+                    const entities = this.zoneScene.getEntitiesAt(this.startPos[0]+x, this.startPos[1]-y)
+                    for (let index = 0; index < entities.length; index++) {
+                        nearbyEntities.add(this.zoneScene.entities[entities[index]].templateID)
+                    }
                 }
             }
-        }
-        for (const entity of nearbyEntities) {
-            if (this.zoneScene.entities[entity]=== undefined) {continue}
-            const triggerInfo = {
-                type: "RemoveEntityTrigger",
-                templateID: this.templateID,
-                targetTemplate: this.zoneScene.entities[entity].templateID
+            for (const entity of nearbyEntities) {
+                if (this.zoneScene.entities[entity]=== undefined) {continue}
+                const triggerInfo = {
+                    type: "RemoveEntityTrigger",
+                    templateID: this.templateID,
+                    targetTemplate: this.zoneScene.entities[entity].templateID
+                }
+                this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
             }
-            this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
         }
 
         // Removes the sprite for the entity
