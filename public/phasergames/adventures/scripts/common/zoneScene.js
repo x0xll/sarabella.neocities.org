@@ -128,11 +128,21 @@ class ZoneBase extends Phaser.Scene
 
         // Spawned Entities
         const spawnedEntities = structuredClone(this.sharedData.entities.spawnedEntities[this.zoneConfig.ID]);
+        const timeTrackedEntities = structuredClone(this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID]);
         this.sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
         for (let [key] of Object.entries(spawnedEntities)) {
             const entity = spawnedEntities[key]
-            this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID)
+            const entityKey = this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID, entity.respawnConfig)
+            if (key !== entityKey) {
+                this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][entityKey] = timeTrackedEntities[key]
+            }
         }
+        for (let [key] of Object.entries(this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID])) {
+            if (!this.sharedData.entities.spawnedEntities[this.zoneConfig.ID][key]) {
+                delete this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][key]
+            }
+        }
+
 
         // Once entities have loaded
         this.sharedData.quest.manager.initializeNPCQuestData()
@@ -363,11 +373,15 @@ class ZoneBase extends Phaser.Scene
         return this.tiles[gridY][gridX].hasEntity
     }
 
-    spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID, instanceIdentifier = undefined) {
-        let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate)
-        this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
+    spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID, instanceIdentifier = undefined, respawnConfig) {
+        let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate, respawnConfig)
+
+        if (!respawnConfig) { respawnConfig = {} }
+        this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY, respawnConfig: respawnConfig}
         if (instanceIdentifier) { this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
+
         this.sharedData.template.manager.getEntityZones(undefined, true)
+        return spawnedEntity.entityKey
     }
     // ------- END HELPER FUNCTIONS -------
 }

@@ -10,13 +10,12 @@ class TemplateEntity extends Entity {
         "apply": 2
     }
 
-    constructor(zoneScene, templateID, startX, startY, facingDirection = undefined, addToCurrentZone = true, loadLate = false) {
+    constructor(zoneScene, templateID, startX, startY, facingDirection = undefined, addToCurrentZone = true, loadLate = false, additionalConfig) {
         super(zoneScene, templateID, startX, startY, facingDirection);
         this.templateID = templateID
         this.zoneID = zoneScene.zoneConfig.ID
         this.variant = this.getTemplateValue(["MovieClip", "className", "text"], this.templateID);
 
-        // console.log(this.zoneScene.sharedData.template.manager.getTemplate(this.templateID))
 
         if (addToCurrentZone && loadLate) {
             zoneScene.load.once('complete', this.create, this);
@@ -24,6 +23,15 @@ class TemplateEntity extends Entity {
             zoneScene.load.start();
         } else if (addToCurrentZone) {
             this.load();
+        }
+
+        if (additionalConfig) {
+            if (additionalConfig.isWatered) {
+                this.isWatered = additionalConfig.isWatered
+            }
+            if (additionalConfig.isWilted) {
+                this.isWilted = additionalConfig.isWilted
+            }
         }
     }
 
@@ -306,7 +314,7 @@ class TemplateEntity extends Entity {
         // Check for day/night, wilted and watered conditions
         if (!this.sprite
             || this.isWilted
-            || this.isWatered 
+            || !this.isWatered 
             || growthType !== timeType
         ) {
             return
@@ -345,6 +353,7 @@ class TemplateEntity extends Entity {
                 this.currentStage = currentStage
                 if (isWilted) {
                     this.isWilted = isWilted
+                    this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.isWilted = isWilted
                     this.updateSprite()
                 } else {
                     this.updateSprite()
@@ -671,7 +680,8 @@ class TemplateEntity extends Entity {
                 daysCount: 0
             }
         }
-        this.isWatered = true
+        context.isWatered = true
+        context.zoneScene.sharedData.entities.spawnedEntities[context.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.isWatered = true
 
         const triggerInfo = {
             type: "ActionTrigger",
