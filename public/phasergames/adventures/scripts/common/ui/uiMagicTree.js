@@ -29,7 +29,7 @@ class uiMagicTree extends uiManagerBase
         this.phaserScene.load.image(this.MAGICTREE_ICON, "./assets/extracted/UI/Magic Tree/MT_Icon.png");
 
         // Close btn
-        this.phaserScene.load.image(this.MAGICTREE_CLOSE_BTN, "./assets/extracted/UI/Quest/closebtn.png")
+        this.phaserScene.load.atlas("closeBtn", `${ROOT_ASSETS_PATH}UI/Common/closeBtn.png`, `${ROOT_ASSETS_PATH}UI/Common/closeBtn.json`);
     }
 
     create()
@@ -54,13 +54,13 @@ class uiMagicTree extends uiManagerBase
                     .setOrigin(0)
                     .setScrollFactor(0);
 
-        var closeBtn = this.phaserScene.add.image(675, 45, this.MAGICTREE_CLOSE_BTN)
+        var closeBtn = this.phaserScene.add.sprite(675, 45, "closeBtn", "up")
                         .setOrigin(0)
                         .setScrollFactor(0)
                         .setInteractive({ useHandCursor: true });
         // TODO: Handle masking of the tree image based on the border
 
-        this.phaserScene.sharedData.magicTree.ui.elements = 
+        this.phaserScene.sharedData[this.key].ui.elements = 
         {
             tree: tree,
             border: border,
@@ -78,33 +78,37 @@ class uiMagicTree extends uiManagerBase
             
             this.turnOnEvents()
 
-            this.phaserScene.sharedData.magicTree.ui.elements.tree.setAlpha(1);
-            let level = this.phaserScene.sharedData.magicTree.logic.level;
-            this.phaserScene.sharedData.magicTree.ui.elements.tree.setTexture(this.MAGICTREE_IMAGE + level);
+            this.phaserScene.sharedData[this.key].ui.elements.tree.setAlpha(1);
+            let level = this.phaserScene.sharedData[this.key].logic.level;
+            this.phaserScene.sharedData[this.key].ui.elements.tree.setTexture(this.MAGICTREE_IMAGE + level);
 
-            this.phaserScene.sharedData.magicTree.ui.elements.border.setAlpha(1);
-            this.phaserScene.sharedData.magicTree.ui.elements.icon.setAlpha(1);
-            this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1);
     }
 
     hide()
     {
         super.hide();
 
-        this.phaserScene.sharedData.magicTree.ui.open = false;
-        this.phaserScene.sharedData.magicTree.ui.elements.tree.setAlpha(0);
-        this.phaserScene.sharedData.magicTree.ui.elements.border.setAlpha(0);
-        this.phaserScene.sharedData.magicTree.ui.elements.icon.setAlpha(0);
-        this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.open = false;
+        this.phaserScene.sharedData[this.key].ui.elements.tree.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(0);
     }
 
     turnOnEvents()
     {
-        this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.on('pointerup', (pointer) => { this.hide(); });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerup', (pointer) => { this.hide(); });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerover', (pointer) => { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("over_alt"); });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerout', (pointer) => { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("up"); });
     }
 
     turnOffEvents()
     {
-        this.phaserScene.sharedData.magicTree.ui.elements.closeBtn.off('pointerup');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerup');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerover');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerout');
     }
 }

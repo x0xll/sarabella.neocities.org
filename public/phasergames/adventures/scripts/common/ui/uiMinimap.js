@@ -55,7 +55,7 @@ class uiMinimap extends uiManagerBase
         this.phaserScene.load.image(this.MINIMAP_ICON, "./assets/extracted/UI/Map/MapIcon.png");
 
         // Close btn
-        this.phaserScene.load.image(this.MINIMAP_CLOSE_BTN, "./assets/extracted/UI/Quest/closebtn.png")
+        this.phaserScene.load.atlas("closeBtn", `${ROOT_ASSETS_PATH}UI/Common/closeBtn.png`, `${ROOT_ASSETS_PATH}UI/Common/closeBtn.json`);
     }
 
     create()
@@ -84,7 +84,7 @@ class uiMinimap extends uiManagerBase
                     .setOrigin(0)
                     .setScrollFactor(0);
 
-        var closeBtn = this.phaserScene.add.image(668, 62, this.MINIMAP_CLOSE_BTN)
+        var closeBtn = this.phaserScene.add.sprite(668, 62, "closeBtn", "up")
                         .setOrigin(0)
                         .setScrollFactor(0)
                         .setInteractive({ useHandCursor: true });
@@ -94,7 +94,7 @@ class uiMinimap extends uiManagerBase
                     .setScrollFactor(0)
                     .setInteractive({ useHandCursor: true });
 
-        this.phaserScene.sharedData.minimap.ui.elements = 
+        this.phaserScene.sharedData[this.key].ui.elements = 
         {
             map: map,
             mapFull: mapFull,
@@ -113,55 +113,58 @@ class uiMinimap extends uiManagerBase
             if (!test) return
             this.turnOnEvents()
 
-            this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
-            this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
-            this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
-            this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(1);
-            this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
-            this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(1);
-            this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
+            this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(0);
+            this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.iconZoom.setAlpha(1);
     }
 
     hide()
     {
         super.hide();
 
-        this.phaserScene.sharedData.minimap.ui.open = false;
-        this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(0);
-        this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(0);
-        this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(0);
-        this.phaserScene.sharedData.minimap.ui.elements.closeBtn.setAlpha(0);
-        this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
-        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.open = false;
+        this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.iconZoom.setAlpha(0);
     }
 
     turnOnEvents()
     {
-        this.phaserScene.sharedData.minimap.ui.elements.closeBtn.on('pointerup', (pointer) =>  
-        { 
-            this.hide();
-        });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerup', (pointer) =>  { this.hide(); });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerdown', (pointer) =>  { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("down") });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerover', (pointer) =>  { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("over") });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerout', (pointer) =>  { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("up") });
 
-        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.on('pointerup', (pointer) => 
+        this.phaserScene.sharedData[this.key].ui.elements.iconZoom.on('pointerup', (pointer) => 
         {
             this.#isFullMap = !this.#isFullMap;
             if (!this.#isFullMap)
             {
-                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
+                this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(0);
+                this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
             }
             else
             {
-                this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(1);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(0);
+                this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(0);
             }
         }, this, true);
     }
 
     turnOffEvents()
     {
-        this.phaserScene.sharedData.minimap.ui.elements.closeBtn.off('pointerup');
-        this.phaserScene.sharedData.minimap.ui.elements.iconZoom.off('pointerup');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerup');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerdown');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerover');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerout');
+        this.phaserScene.sharedData[this.key].ui.elements.iconZoom.off('pointerup');
     }
 }

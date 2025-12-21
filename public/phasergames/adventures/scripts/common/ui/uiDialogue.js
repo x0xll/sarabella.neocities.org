@@ -131,7 +131,7 @@ class uiDialogue extends uiManagerBase
 
         // Image icons
 
-        this.phaserScene.sharedData.dialogue.ui.elements = 
+        this.phaserScene.sharedData[this.key].ui.elements = 
         {
             panelImg: panel,
             charaName: charaName,
@@ -180,19 +180,19 @@ class uiDialogue extends uiManagerBase
                 thumbnailFolderName: thumbnailFolderName
             }
 
-            this.phaserScene.sharedData.dialogue.ui.elements.charaName.text = character.name;
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setTexture(character.thumbnailFolderName);
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setFrame(character.thumbnail);
+            this.phaserScene.sharedData[this.key].ui.elements.charaName.text = character.name;
+            this.phaserScene.sharedData[this.key].ui.elements.charaPortrait.setTexture(character.thumbnailFolderName);
+            this.phaserScene.sharedData[this.key].ui.elements.charaPortrait.setFrame(character.thumbnail);
 
-            let textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalText
+            let textElement = this.phaserScene.sharedData[this.key].ui.elements.normalText
             if (image !== undefined)
             {
-                textElement = this.phaserScene.sharedData.dialogue.ui.elements.normalImgText
+                textElement = this.phaserScene.sharedData[this.key].ui.elements.normalImgText
                 
                 this.lastImage = image
                 this.phaserScene.load.once('complete', () => {
-                        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
-                        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.alpha);
+                        this.phaserScene.sharedData[this.key].ui.elements.sideImg.setTexture(`Dialogue${this.lastImage}`);
+                        this.phaserScene.sharedData[this.key].ui.elements.sideImg.setAlpha(this.phaserScene.sharedData[this.key].ui.elements.charaPortrait.alpha);
                     }, this);
                 this.phaserScene.load.image(`Dialogue${image}`, `${ROOT_ASSETS_PATH}UI/Dialogue/Images/${image}.png`);
                 this.phaserScene.load.start();
@@ -204,24 +204,24 @@ class uiDialogue extends uiManagerBase
                 choiceHeight = (Object.entries(choices).length-1) * this.CHOICE_HEIGHT
             }
             // Set UI item position
-            textElement.setY(this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.y - choiceHeight - textElement.height - 20)
-            this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setY(textElement.y+5) // +5
-            this.phaserScene.sharedData.dialogue.ui.elements.charaName.setY(textElement.y-44)
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setPosition(7, textElement.y-47)
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setY(textElement.y-55)
-            this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setY(textElement.y-55)
+            textElement.setY(this.phaserScene.sharedData[this.key].ui.elements.continueBtn.y - choiceHeight - textElement.height - 20)
+            this.phaserScene.sharedData[this.key].ui.elements.sideImg.setY(textElement.y+5) // +5
+            this.phaserScene.sharedData[this.key].ui.elements.charaName.setY(textElement.y-44)
+            this.phaserScene.sharedData[this.key].ui.elements.charaPortrait.setPosition(7, textElement.y-47)
+            this.phaserScene.sharedData[this.key].ui.elements.charaPortraitMask.setY(textElement.y-55)
+            this.phaserScene.sharedData[this.key].ui.elements.panelImg.setY(textElement.y-55)
 
             this.turnOnEvents(questID, choices)
 
             // Set UI items visible
-            this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(1);
             textElement.setAlpha(1);
-            this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(1);
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(1);
-            this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.charaName.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.charaPortrait.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.charaPortraitMask.setAlpha(1);
             if (!choices) {
-                this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(1);
-                this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.continueBtn.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.continueTxt.setAlpha(1);
             }
     }
 
@@ -229,18 +229,18 @@ class uiDialogue extends uiManagerBase
     {
         super.hide();
 
-        this.phaserScene.sharedData.dialogue.ui.elements.panelImg.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaName.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortrait.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.charaPortraitMask.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.normalText.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.continueTxt.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.normalImgText.setAlpha(0);
-        this.phaserScene.sharedData.dialogue.ui.elements.sideImg.setAlpha(0);
-        if (this.phaserScene.sharedData.dialogue.ui.elements.choiceElements) {
-            for (let index = 0; index < this.phaserScene.sharedData.dialogue.ui.elements.choiceElements.length; index++) {
-                const element = this.phaserScene.sharedData.dialogue.ui.elements.choiceElements[index];
+        this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.charaName.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.charaPortrait.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.charaPortraitMask.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.normalText.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.continueBtn.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.continueTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.normalImgText.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.sideImg.setAlpha(0);
+        if (this.phaserScene.sharedData[this.key].ui.elements.choiceElements) {
+            for (let index = 0; index < this.phaserScene.sharedData[this.key].ui.elements.choiceElements.length; index++) {
+                const element = this.phaserScene.sharedData[this.key].ui.elements.choiceElements[index];
                 element.destroy()
             }
         }
@@ -251,10 +251,10 @@ class uiDialogue extends uiManagerBase
     turnOnEvents(questID, choices)
     {
         if (choices) {
-            this.phaserScene.sharedData.dialogue.ui.elements.choiceElements = []
+            this.phaserScene.sharedData[this.key].ui.elements.choiceElements = []
             const choiceHeight = (Object.entries(choices).length-1) * this.CHOICE_HEIGHT
-            const buttonRef = this.phaserScene.sharedData.dialogue.ui.elements.continueBtn
-            const buttonTextRef = this.phaserScene.sharedData.dialogue.ui.elements.continueTxt
+            const buttonRef = this.phaserScene.sharedData[this.key].ui.elements.continueBtn
+            const buttonTextRef = this.phaserScene.sharedData[this.key].ui.elements.continueTxt
             let index = 0
             for (let [key] of Object.entries(choices)) {
                 // Continue button
@@ -269,8 +269,8 @@ class uiDialogue extends uiManagerBase
                                     .setScrollFactor(0)
                                     .setDepth(100);
 
-                this.phaserScene.sharedData.dialogue.ui.elements.choiceElements.push(choiceBtn)
-                this.phaserScene.sharedData.dialogue.ui.elements.choiceElements.push(choiceTxt)
+                this.phaserScene.sharedData[this.key].ui.elements.choiceElements.push(choiceBtn)
+                this.phaserScene.sharedData[this.key].ui.elements.choiceElements.push(choiceTxt)
 
                 choiceBtn.on('pointerover', (pointer) => { });
                 choiceBtn.on('pointerout', (pointer) => { });
@@ -280,9 +280,9 @@ class uiDialogue extends uiManagerBase
             }
 
         } else {
-            this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerover', (pointer) => { });
-            this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerout', (pointer) => { });
-            this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.on('pointerup', this.#continueOption, {questID: questID, UI: this});
+            this.phaserScene.sharedData[this.key].ui.elements.continueBtn.on('pointerover', (pointer) => { });
+            this.phaserScene.sharedData[this.key].ui.elements.continueBtn.on('pointerout', (pointer) => { });
+            this.phaserScene.sharedData[this.key].ui.elements.continueBtn.on('pointerup', this.#continueOption, {questID: questID, UI: this});
             this.phaserScene.sharedData.keyboard.space.on("up", this.#continueOption, {questID: questID, UI: this});
             this.phaserScene.sharedData.keyboard.enter.on("up", this.#continueOption, {questID: questID, UI: this});
         }
@@ -290,16 +290,16 @@ class uiDialogue extends uiManagerBase
 
     turnOffEvents()
     {
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off('pointerover');
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off('pointerout');
-        this.phaserScene.sharedData.dialogue.ui.elements.continueBtn.off("pointerup", this.#continueOption)
+        this.phaserScene.sharedData[this.key].ui.elements.continueBtn.off('pointerover');
+        this.phaserScene.sharedData[this.key].ui.elements.continueBtn.off('pointerout');
+        this.phaserScene.sharedData[this.key].ui.elements.continueBtn.off("pointerup", this.#continueOption)
         this.phaserScene.sharedData.keyboard.space.off("up", this.#continueOption);
         this.phaserScene.sharedData.keyboard.enter.off("up", this.#continueOption);
     }
     
     #continueOption() { 
         this.UI.hide();
-        this.UI.phaserScene.sharedData.dialogue.lastChoice = "continue"
+        this.UI.phaserScene.sharedData[this.UI.key].lastChoice = "continue"
 
         if (this.questID) {
             let questData = this.UI.phaserScene.sharedData.quest.manager.getQuestPerID(this.questID);
@@ -309,7 +309,7 @@ class uiDialogue extends uiManagerBase
     
     #choiceOption() { 
         this.UI.hide();
-        this.UI.phaserScene.sharedData.dialogue.lastChoice = this.key
+        this.UI.phaserScene.sharedData[this.UI.key].lastChoice = this.key
 
         if (this.entityID) {
             const triggerData = {
@@ -325,7 +325,7 @@ class uiDialogue extends uiManagerBase
 
     }
     #debugContinue(questID) {
-        this.phaserScene.sharedData.dialogue.lastChoice = "continue"
+        this.phaserScene.sharedData[this.key].lastChoice = "continue"
         let questData = this.phaserScene.sharedData.quest.manager.getQuestPerID(questID);
         this.phaserScene.sharedData.quest.manager.doQuestAction(questID, questData.currentLine, questData.currentAction)
     }

@@ -161,6 +161,10 @@ class TimeManager
                     continue
                 }
                 for (let [key] of Object.entries(zoneEntities)) {
+                    if (zoneEntities[key] = undefined) {
+                        delete zoneEntities[key]
+                        continue
+                    }
                     zoneEntities[key].daysCount++
                 }
             }

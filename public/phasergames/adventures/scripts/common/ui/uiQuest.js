@@ -51,13 +51,13 @@ class uiQuest extends uiManagerBase
         this.phaserScene.load.image(this.QUEST_MASK_IMG, "./assets/extracted/UI/Quest/mask.png");
 
         // Close btn
-        this.phaserScene.load.image("closebtn", "./assets/extracted/UI/Quest/closebtn.png")
+        this.phaserScene.load.atlas("closeBtn", `${ROOT_ASSETS_PATH}UI/Common/closeBtn.png`, `${ROOT_ASSETS_PATH}UI/Common/closeBtn.json`);
     }
 
     create()
     {
         this.phaserScene.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
-            this.phaserScene.sharedData.quest.ui.manager.show();
+            this.phaserScene.sharedData[this.key].ui.manager.show();
         }, this);
     }
 
@@ -102,14 +102,15 @@ class uiQuest extends uiManagerBase
         var questMask = this.phaserScene.add.image(432, 196, this.QUEST_MASK_IMG)
                             .setOrigin(0)
                             .setScrollFactor(0);
-        var questIcon = this.phaserScene.add.image(430, 190, "closebtn")
+        var questIcon = this.phaserScene.add.image(430, 190, "closeBtn", "up")
                             .setOrigin(0)
                             .setScrollFactor(0);
         const mask = new Phaser.Display.Masks.BitmapMask(this.phaserScene, questMask);
         questIcon.setMask(mask);
 
-        var closeBtn = this.phaserScene.add.image(687, 112, "closebtn")
+        var closeBtn = this.phaserScene.add.sprite(687, 112, "closeBtn", "up")
                         .setOrigin(0)
+                        .setScale(0.8)
                         .setScrollFactor(0)
                         .setInteractive({ useHandCursor: true });
 
@@ -134,7 +135,7 @@ class uiQuest extends uiManagerBase
                         .setOrigin(1, 0)
                         .setAngle(180);
 
-        this.phaserScene.sharedData.quest.ui.elements =
+        this.phaserScene.sharedData[this.key].ui.elements =
         {
             open: false,
             panelImg: panel,
@@ -165,8 +166,8 @@ class uiQuest extends uiManagerBase
             let test = super.show()
             if (!test) return
 
-            this.phaserScene.sharedData.quest.ui.elements.panelImg.setAlpha(1);
-            this.phaserScene.sharedData.quest.ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1);
 
             this.updateQuestList();
 
@@ -177,18 +178,18 @@ class uiQuest extends uiManagerBase
     {
         super.hide();
 
-        this.phaserScene.sharedData.quest.ui.open = false;
-        this.phaserScene.sharedData.quest.ui.elements.panelImg.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.closeBtn.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.questTitle.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.lookforTxt.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.locationTxt.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.goalTxt.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
-        this.phaserScene.sharedData.quest.ui.elements.questMask.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.open = false;
+        this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.questTitle.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.lookforTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.lookforDescTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.locationTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.goalTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.goalDescTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.questIcon.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.elements.questMask.setAlpha(0);
 
         for (let key in this.shownQuests) {
             let quest = this.shownQuests[key];
@@ -209,11 +210,11 @@ class uiQuest extends uiManagerBase
         let startPos = [130, 140];
         let offset = 40;
 
-        for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
+        for (let i = 0; i < this.phaserScene.sharedData[this.key].logic.activeQuests.length; i++)
         {
-            let questID = this.phaserScene.sharedData.quest.logic.activeQuests[i];
-            let questData = this.phaserScene.sharedData.quest.manager.getQuestPerID(questID);
-            let adventure = this.phaserScene.sharedData.quest.manager.getAdventurePerID(questID);
+            let questID = this.phaserScene.sharedData[this.key].logic.activeQuests[i];
+            let questData = this.phaserScene.sharedData[this.key].manager.getQuestPerID(questID);
+            let adventure = this.phaserScene.sharedData[this.key].manager.getAdventurePerID(questID);
 
             if (questData.visible !== undefined && questData.visible === "False") continue;
 
@@ -249,87 +250,93 @@ class uiQuest extends uiManagerBase
 
     selectCurrentQuestForDetails(questID)
     {
-        let adventure = this.phaserScene.sharedData.quest.manager.getAdventurePerID(questID);
-        let quest = this.phaserScene.sharedData.quest.manager.getQuestPerID(questID);
+        let adventure = this.phaserScene.sharedData[this.key].manager.getAdventurePerID(questID);
+        let quest = this.phaserScene.sharedData[this.key].manager.getQuestPerID(questID);
 
-        this.phaserScene.sharedData.quest.ui.elements.questTitle.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.lookforTxt.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.locationTxt.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.goalTxt.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
-        this.phaserScene.sharedData.quest.ui.elements.questMask.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.questTitle.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.lookforTxt.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.lookforDescTxt.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.locationTxt.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.goalTxt.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.goalDescTxt.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.questIcon.setAlpha(1);
+        this.phaserScene.sharedData[this.key].ui.elements.questMask.setAlpha(1);
 
-        this.phaserScene.sharedData.quest.ui.elements.questTitle.setText(adventure.description.text);
+        this.phaserScene.sharedData[this.key].ui.elements.questTitle.setText(adventure.description.text);
 
 
         if (quest.line[0].trigger === undefined)
         {
-            this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText("");
-            this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText("");
-            this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
+            this.phaserScene.sharedData[this.key].ui.elements.lookforDescTxt.setText("");
+            this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setText("");
+            this.phaserScene.sharedData[this.key].ui.elements.questIcon.setAlpha(0);
         }
         else
         {
             if (quest.line[0].trigger.object[0].identifier !== undefined)
             {
                 let identifier = quest.line[0].trigger.object[0].identifier;
-                this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, "name"));
-                this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.lookforDescTxt.setText(this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, "name"));
+                this.phaserScene.sharedData[this.key].ui.elements.questIcon.setAlpha(1);
 
                 let thumbnailFolderName = this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "fileName", "text"])
                 thumbnailFolderName = thumbnailFolderName.split("/")
                 thumbnailFolderName = thumbnailFolderName[thumbnailFolderName.length - 1].replace(".swf", "")
                 let thumbnail = this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "className", "text"]);
 
-                this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(thumbnailFolderName);
-                this.phaserScene.sharedData.quest.ui.elements.questIcon.setFrame(thumbnail);
+                this.phaserScene.sharedData[this.key].ui.elements.questIcon.setTexture(thumbnailFolderName);
+                this.phaserScene.sharedData[this.key].ui.elements.questIcon.setFrame(thumbnail);
                 if (thumbnailFolderName === "specialthumbnail" || thumbnail === "BSA") {
-                    this.phaserScene.sharedData.quest.ui.elements.questIcon.setPosition(430, 185);
+                    this.phaserScene.sharedData[this.key].ui.elements.questIcon.setPosition(430, 185);
                 } else {
-                    this.phaserScene.sharedData.quest.ui.elements.questIcon.setPosition(420, 185);
+                    this.phaserScene.sharedData[this.key].ui.elements.questIcon.setPosition(420, 185);
                 }
             }
             else
             {
-                this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText("");
-                this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(0);
+                this.phaserScene.sharedData[this.key].ui.elements.lookforDescTxt.setText("");
+                this.phaserScene.sharedData[this.key].ui.elements.questIcon.setAlpha(0);
             }
 
             if (quest.line[0].trigger.object[0].zone !== undefined)
             {
-                this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(quest.line[0].trigger.object[0].zone);
+                this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setText(quest.line[0].trigger.object[0].zone);
             }
             else if (quest.line[0].trigger.object[0].identifier !== undefined)
             {
                 let identifier = quest.line[0].trigger.object[0].identifier;
                 const locationData = this.phaserScene.sharedData.template.manager.getEntityZones(`${identifier}Template`)
                 if (locationData[0]) {
-                    this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(this.phaserScene.sharedData.zone.manager.getZoneName(locationData[0]));
+                    this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setText(this.phaserScene.sharedData.zone.manager.getZoneName(locationData[0]));
                 }
                 else
                 {
-                    this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText("");
+                    this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setText("");
                 }
             }
             else
             {
-                this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText("");
+                this.phaserScene.sharedData[this.key].ui.elements.locationDescTxt.setText("");
             }
         }
         
 
-        this.phaserScene.sharedData.quest.ui.elements.goalDescTxt.setText(quest.description.text);
+        this.phaserScene.sharedData[this.key].ui.elements.goalDescTxt.setText(quest.description.text);
     }
 
     turnOnEvents()
     {
-        this.phaserScene.sharedData.quest.ui.elements.closeBtn.on('pointerup', (pointer) => { this.hide(); });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerup', (pointer) => { this.hide(); });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerdown', (pointer) =>  { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("down") });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerover', (pointer) =>  { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("over") });
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.on('pointerout', (pointer) =>  { this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setFrame("up") });
     }
     turnOffEvents()
     {
-        this.phaserScene.sharedData.quest.ui.elements.closeBtn.off('pointerup');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerup');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerdown');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerover');
+        this.phaserScene.sharedData[this.key].ui.elements.closeBtn.off('pointerout');
     }
 }

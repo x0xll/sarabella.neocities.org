@@ -604,7 +604,7 @@ class TemplateEntity extends Entity {
                 takeItem = context.getTemplateValue(["BasicGrowing", "harvestProduceItemId", "text"])
                 const triggerInfo = {
                     type: "ContextItemTrigger",
-                    actionClass: "take",
+                    actionClass: "collect",
                     template: context.templateID
                 }
                 context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
@@ -679,6 +679,12 @@ class TemplateEntity extends Entity {
         console.log("Interact not yet implemented")
     }
     #brushCommand(context, interactData) { 
+        const triggerInfo = {
+            type: "ContextItemTrigger",
+            actionClass: "brush",
+            template: context.templateID
+        }
+        context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
         console.log("Brush not yet implemented")
     }
     #waterPlantCommand(context, interactData) { 
