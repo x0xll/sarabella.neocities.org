@@ -114,7 +114,7 @@ class uiMinimap extends uiManagerBase
             this.turnOnEvents()
 
             this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
-            this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
+            this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
             this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
             this.phaserScene.sharedData.minimap.ui.elements.border.setAlpha(1);
             this.phaserScene.sharedData.minimap.ui.elements.icon.setAlpha(1);
@@ -149,7 +149,7 @@ class uiMinimap extends uiManagerBase
             {
                 this.phaserScene.sharedData.minimap.ui.elements.mapFull.setAlpha(0);
                 this.phaserScene.sharedData.minimap.ui.elements.map.setAlpha(1);
-                this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.ZONE_ID);
+                this.phaserScene.sharedData.minimap.ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
             }
             else
             {

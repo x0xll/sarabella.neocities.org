@@ -7,43 +7,30 @@ class ZoneBase extends Phaser.Scene
     init (sharedData) {
         this.sharedData = sharedData
         // Set zone variables from shared data here (before preload)
-        if (sharedData.zoneData.config[sharedData.worldToLoad]) {
-            this.zoneConfig = sharedData.zoneData.config[sharedData.worldToLoad]
+        if (sharedData.zone.config[sharedData.global.currentZone]) {
+            this.zoneConfig = sharedData.zone.config[sharedData.global.currentZone]
         } else {
-            console.error(`Zone config for ${sharedData.worldToLoad} not found! Loading canterfarms instead`)
+            console.error(`Zone config for ${sharedData.global.currentZone} not found! Loading canterfarms instead`)
 
-            this.zoneConfig = sharedData.zoneData.config["Z001"]
+            this.zoneConfig = sharedData.zone.config["Z001"]
         }
 
         // Initialise entity data
-        if (sharedData.entities === undefined) {
-            sharedData.entities = {}
-            if (sharedData.entities.timeTrackedEntities === undefined) {
-                sharedData.entities.timeTrackedEntities = {}
-                sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
-            }
-            if (sharedData.entities.spawnedEntities === undefined) {
-                sharedData.entities.spawnedEntities = {}
-                sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
-            } 
-        } else {
-            if (sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] === undefined) {
-                sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
-            }
-            if (sharedData.entities.spawnedEntities[this.zoneConfig.ID] === undefined) {
-                sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
-            }
+        if (sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] === undefined) {
+            sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
         }
-        this.sharedData.entities.entityDataLoaded = true
+        if (sharedData.entities.spawnedEntities[this.zoneConfig.ID] === undefined) {
+            sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
+        }
 
-        this.sharedData.questManager.phaserScene = this;
+        this.sharedData.quest.manager.phaserScene = this;
     }
 
     preload ()
     {
         this.levelManager = new LevelManager(this);
         this.timeManager = new TimeManager(this);
-        this.zoneParsed = parseZoneXML(this.sharedData.zoneTileData[this.sharedData.worldToLoad]); 
+        this.zoneParsed = parseZoneXML(this.sharedData.zone.data.tiles[this.sharedData.global.currentZone]); 
         this.loadEntitiesData();
         this.loadBackgrounds(this.zoneConfig.backgroundCountX, this.zoneConfig.backgroundCountY, this.zoneConfig.ID)
 
@@ -68,11 +55,8 @@ class ZoneBase extends Phaser.Scene
         zone.timeManager.renderDayNight()
 
         this.instantiateEntities();
-        
-        let triggerInfo = {
-            type: "EnterZoneTrigger"
-        }
-        this.sharedData.questManager.tryTriggerQuest(this, triggerInfo);
+
+        this.tryZoneStartTriggers()
     }
 
     update() 
@@ -81,7 +65,7 @@ class ZoneBase extends Phaser.Scene
 
         zone.entities.player.update();
         zone.timeManager.updateTime();
-        zone.sharedData.prevZone = this.zoneConfig.ID
+        zone.sharedData.global.previousZone = this.zoneConfig.ID
 
         //debug_DrawTriggerQuest(zone);
 
@@ -110,17 +94,17 @@ class ZoneBase extends Phaser.Scene
         // Player
         let playerStartPos = this.zoneConfig.sceneEntryPoints["default"]
         if (this.sharedData !== undefined
-            && this.sharedData.prevZone !== undefined
-            && this.zoneConfig.sceneEntryPoints[this.sharedData.prevZone]
+            && this.sharedData.global.previousZone !== undefined
+            && this.zoneConfig.sceneEntryPoints[this.sharedData.global.previousZone]
         ) {
-            playerStartPos = this.zoneConfig.sceneEntryPoints[this.sharedData.prevZone]
+            playerStartPos = this.zoneConfig.sceneEntryPoints[this.sharedData.global.previousZone]
         }
         this.sharedData.entities.player = new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
         // Entities from Zone Config
-        if (this.sharedData.npcConfig[this.zoneConfig.ID]) {
-            for (let [key] of Object.entries(this.sharedData.npcConfig[this.zoneConfig.ID])) {
-                let entityPos = this.sharedData.npcConfig[this.zoneConfig.ID][key]
+        if (this.sharedData.entities.spawnConfig[this.zoneConfig.ID]) {
+            for (let [key] of Object.entries(this.sharedData.entities.spawnConfig[this.zoneConfig.ID])) {
+                let entityPos = this.sharedData.entities.spawnConfig[this.zoneConfig.ID][key]
                 new TemplateEntity(this, key, entityPos[0], entityPos[1], entityPos[2])
             }
         }
@@ -152,7 +136,7 @@ class ZoneBase extends Phaser.Scene
         }
 
         // Once entities have loaded
-        this.sharedData.questManager.initializeQuestData()
+        this.sharedData.quest.manager.initializeNPCQuestData()
     }
 
     loadBackgrounds(xSize, ySize, zoneID) {
@@ -328,9 +312,25 @@ class ZoneBase extends Phaser.Scene
     // ------- UPDATE -------
     goToNextZone(sceneKey) {
         // TODO save placeable entity facing direction/variation when switching scenes
-        this.sharedData.timePausedAt = this.timeManager.getCurrentTime()
-        this.sharedData.worldToLoad = sceneKey;
+        this.sharedData.global.timePausedAt = this.timeManager.getCurrentTime()
+        this.sharedData.global.currentZone = sceneKey;
         this.scene.start("common_load", this.sharedData);
+    }
+
+    // TODO figure out where these need to go to avoid breaking
+    tryZoneStartTriggers() {
+        let triggerInfo = {
+            type: "EnterZoneTrigger"
+        }
+        this.sharedData.quest.manager.tryTriggerQuest(this, triggerInfo);
+
+        if (!this.sharedData.global.appStarted) {
+            this.sharedData.global.appStarted = true
+            triggerInfo = {
+                type: "ApplicationStartTrigger"
+            }
+            this.sharedData.quest.manager.tryTriggerQuest(this, triggerInfo);
+        }
     }
     // ------- END UPDATE -------
     
@@ -384,7 +384,7 @@ class ZoneBase extends Phaser.Scene
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate)
         this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY}
         if (instanceIdentifier) { this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
-        this.sharedData.templateManager.getEntityZones(undefined, true)
+        this.sharedData.template.manager.getEntityZones(undefined, true)
     }
     // ------- END HELPER FUNCTIONS -------
 }

@@ -60,7 +60,7 @@ class uiHUD extends uiManagerBase
 
     updateTexts()
     {
-        const zoneName = this.phaserScene.sharedData.zoneManager.getCurrentZoneName()
+        const zoneName = this.phaserScene.sharedData.zone.manager.getCurrentZoneName()
         this.phaserScene.sharedData.hud.ui.areaName.text = zoneName;
         this.phaserScene.sharedData.hud.ui.areaName.setOrigin(.5)
     }

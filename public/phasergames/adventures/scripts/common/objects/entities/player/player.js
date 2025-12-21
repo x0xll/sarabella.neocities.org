@@ -120,7 +120,7 @@ class Player extends Entity {
                         triggerInfo.type = "ActionTrigger"
                         triggerInfo.actionClass = "PlaceEntityAction"
                         triggerInfo.template = item.entityTemplate
-                        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+                        this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
                     } else {
                     }
                     this.zoneScene.sharedData.inventory.currentItem = null
@@ -134,7 +134,7 @@ class Player extends Entity {
                         triggerInfo.type = "ActionTrigger"
                         triggerInfo.actionClass = "PlantAction"
                         triggerInfo.template = item.plantItemID
-                        this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+                        this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
                     } else {
                     }
                     this.zoneScene.sharedData.inventory.currentItem = null
@@ -178,7 +178,7 @@ class Player extends Entity {
                     
                 if (triggerInfo.x === this.nextX
                     && triggerInfo.y === this.nextY
-                    && this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+                    && this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
                 ) {
                     this.pathList = [];
                     this.pathIndex = 0;

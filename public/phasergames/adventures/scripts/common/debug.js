@@ -15,11 +15,11 @@ class Debug {
 
     // ------- QUEST FUNCTIONS -------
     addQuest(questID) {
-        this.loadScene.sharedData.questManager.makeQuestAvailable(questID)
+        this.loadScene.sharedData.quest.manager.makeQuestAvailable(questID)
     }
 
     removeQuest(questID) {
-        this.loadScene.sharedData.questManager.markQuestFinished(questID)
+        this.loadScene.sharedData.quest.manager.markQuestFinished(questID)
     }
 
     setSkipDialogue(shouldSkip = true) {
@@ -36,7 +36,7 @@ class Debug {
         questID = this.getFullQuestID(questID)
         const questData = this.getQuestData(questID)
         let questActive = true
-        if (questData.status !== this.loadScene.sharedData.questManager.QUEST_STATES.AVAILABLE) {
+        if (questData.status !== this.loadScene.sharedData.quest.manager.QUEST_STATES.AVAILABLE) {
             console.log("Quest not available")
             questActive = false
         }
@@ -65,7 +65,7 @@ class Debug {
                     break 
                 }
             }
-            this.loadScene.sharedData.questManager.doQuestAction(questID, endLine);
+            this.loadScene.sharedData.quest.manager.doQuestAction(questID, endLine);
             this.nextQuest = startedQuests[0]
             return startedQuests
         }
@@ -78,7 +78,7 @@ class Debug {
             const quests = []
             for (let index = 0; index < this.loadScene.sharedData.quest.logic.activeQuests.length; index++) {
                 const questID = this.loadScene.sharedData.quest.logic.activeQuests[index];
-                quests.push(this.loadScene.sharedData.questManager.getQuestPerID(questID))
+                quests.push(this.loadScene.sharedData.quest.manager.getQuestPerID(questID))
             }
             return quests
         }
@@ -86,7 +86,7 @@ class Debug {
 
     getQuestData(questID) {
         questID = this.getFullQuestID(questID)
-        return this.loadScene.sharedData.questManager.getQuestPerID(questID)
+        return this.loadScene.sharedData.quest.manager.getQuestPerID(questID)
     }
 
     getFullQuestID(questID) {
@@ -97,7 +97,7 @@ class Debug {
             }
             questID = [undefined, undefined, questID]
         }
-        if (!questID[0] || !questID[1]) {questID = this.loadScene.sharedData.questManager.getFullQuestID(questID)}
+        if (!questID[0] || !questID[1]) {questID = this.loadScene.sharedData.quest.manager.getFullQuestID(questID)}
         return questID
     }
     // ------- END QUEST FUNCTIONS -------

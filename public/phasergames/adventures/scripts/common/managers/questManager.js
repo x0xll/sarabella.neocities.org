@@ -187,7 +187,7 @@ class QuestManager {
                 let triggerData = questGlobalData.line[lineIndex].trigger.object[0];
 
                 if (triggerData.zoneId != undefined && 
-                    triggerData.zoneId == phaserScene.sharedData.global.ZONE_ID) {
+                    triggerData.zoneId == phaserScene.sharedData.global.currentZone) {
                     for (let x = triggerData.centerX - triggerData.radius; x < triggerData.centerX + triggerData.radius; x++) {
                         for (let y = triggerData.centerY - triggerData.radius; y < triggerData.centerY + triggerData.radius; y++) {
                             if (Math.abs(x - triggerData.centerX) + Math.abs(y - triggerData.centerY) <= triggerData.radius) {
@@ -260,8 +260,7 @@ class QuestManager {
         }
 
         await this.#initializeSavedQuests();
-        await this.#initializeQuestConfig()
-        await this.#initializeNPCQuestData()
+        this.#initializeQuestConfig()
 
         // console.log(this.phaserScene.sharedData.entities.spawnedEntities)
 
@@ -282,7 +281,19 @@ class QuestManager {
         this.isInitialised = true
     }
 
-    async #initializeQuestConfig() {
+    async #initializeSavedQuests() {
+        const savedUserQuestData = this.#parseSavedQuestData()
+
+        // Make quests available based on the user save data
+        for (let index = 0; index < savedUserQuestData[0].length; index++) {
+            await this.makeQuestAvailable(savedUserQuestData[0][index]);
+        }
+        for (let index = 0; index < savedUserQuestData[1].length; index++) {
+            await this.markQuestFinished(savedUserQuestData[1][index]);
+        }
+    }
+
+    #initializeQuestConfig() {
         const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
 
         // Note: check to be sure, but since these are added as spawned entities, they should stick around if they are not removed by later quests.
@@ -294,17 +305,13 @@ class QuestManager {
 
             for (let index = 0; index < this.#QUEST_FILE_NAMES.length; index++) {
                 const fileKey = this.#QUEST_FILE_NAMES[index];
-                const questConfig = this.phaserScene.sharedData.questConfig[fileKey]
+                const questConfig = this.phaserScene.sharedData.quest.config[fileKey]
                 if (questConfig !== undefined && questConfig.quests.includes(`${quest[0]}_${quest[1]}_${quest[2]}`)) {
                     for (let [zoneKey] of Object.entries(questConfig)) {
                         if (zoneKey === "quests") continue
 
                         const zoneData = questConfig[zoneKey]
-                        if (this.phaserScene.sharedData.entities.spawnedEntities === undefined) {
-                            this.phaserScene.sharedData.entities.spawnedEntities = {}
-                            this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] = zoneData
-                        } 
-                        else if (this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] === undefined) {
+                        if (this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] === undefined) {
                             this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] = zoneData
                         } else {
                             this.phaserScene.sharedData.entities.spawnedEntities[zoneKey] = {...zoneData, ...this.phaserScene.sharedData.entities.spawnedEntities[zoneKey]}
@@ -317,28 +324,14 @@ class QuestManager {
         }
     }
 
-    async #initializeSavedQuests()
-    {
-        const savedUserQuestData = this.#parseSavedQuestData()
-
-        // Make quests available based on the user save data
-        for (let index = 0; index < savedUserQuestData[0].length; index++) {
-            await this.makeQuestAvailable(savedUserQuestData[0][index]);
-        }
-        for (let index = 0; index < savedUserQuestData[1].length; index++) {
-            await this.markQuestFinished(savedUserQuestData[1][index]);
-        }
-    }
-
-    async #initializeNPCQuestData() {
-        this.phaserScene.sharedData.templates[`npcData`] = parseTemplateXML(this, this.phaserScene.cache.xml.get("NPCs"))
-
+    async initializeNPCQuestData() {
+        if (this.isInitialised) {return}
         this.phaserScene.sharedData.quest.logic.quests.npcQuests = {}
         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"] = {
             description: {text:"NPC quests"}
         }
 
-        const npcs = this.phaserScene.sharedData.templates.npcData.things[0]
+        const npcs = this.phaserScene.sharedData.template.data.npcData.things[0]
         this.phaserScene.sharedData.quest.logic.npcQuests = []
         for (let [npcKey] of Object.entries(npcs)) {
             const npc = npcs[npcKey][0]
@@ -350,10 +343,10 @@ class QuestManager {
                 for (let [key] of Object.entries(npc.Logic[0])) {
                     if (key.startsWith("QUE")) {
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key] = npc.Logic[0][key]
-                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].status = this.phaserScene.sharedData.questManager.QUEST_STATES.AVAILABLE
+                        this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].status = this.phaserScene.sharedData.quest.manager.QUEST_STATES.AVAILABLE
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].visible = "False"
                         this.phaserScene.sharedData.quest.logic.quests.npcQuests["ADS-NPCs"][advKey][key].targetZone = "Z-1"
-                        await this.phaserScene.sharedData.questManager.makeQuestAvailable(["ADS-NPCs", advKey, key])
+                        await this.phaserScene.sharedData.quest.manager.makeQuestAvailable(["ADS-NPCs", advKey, key])
                     }
                 }
             }
@@ -362,7 +355,7 @@ class QuestManager {
     }
 
     setNPCQuestLocations() {
-        const entityZones = this.phaserScene.sharedData.templateManager.getEntityZones()
+        const entityZones = this.phaserScene.sharedData.template.manager.getEntityZones()
         const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
 
         for (let [entityKey] of Object.entries(entityZones)) {
@@ -371,8 +364,8 @@ class QuestManager {
                 // console.log(questID[1], entityKey)
                 if (questID[1].replace("ADV-", "").startsWith(entityKey)) {
                     const questData = this.getQuestPerID(questID)
-                    if (entityZones[entityKey].includes(this.phaserScene.sharedData.global.ZONE_ID)) {
-                        questData.targetZone = this.phaserScene.sharedData.global.ZONE_ID
+                    if (entityZones[entityKey].includes(this.phaserScene.sharedData.global.currentZone)) {
+                        questData.targetZone = this.phaserScene.sharedData.global.currentZone
                     } else {
                         questData.targetZone = entityZones[entityKey][0]
                     }
@@ -522,7 +515,7 @@ class QuestManager {
             for (let activeQuestIndex = 0; activeQuestIndex < phaserScene.sharedData.quest.logic.activeQuests.length; activeQuestIndex++) {
                 let questGlobalData = this.getQuestPerID(phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex]);
 
-                if (questGlobalData.targetZone && questGlobalData.targetZone !== phaserScene.sharedData.global.ZONE_ID) continue
+                if (questGlobalData.targetZone && questGlobalData.targetZone !== phaserScene.sharedData.global.currentZone) continue
                 if ((triggerData.templateID && questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.templateID)
                     && (triggerData.targetTemplate && questGlobalData.targetTemplate && questGlobalData.targetTemplate !== triggerData.targetTemplate)
                 ) continue
@@ -580,7 +573,7 @@ class QuestManager {
 
     #applicationStartTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
-        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+        phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
         return true;
     }
 
@@ -606,7 +599,7 @@ class QuestManager {
             //     }
             // }
             if (Math.abs(triggerData.x - centerX) + Math.abs(triggerData.y - centerY) <= radius) {
-                phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+                phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
                 return true;
             }
         } 
@@ -619,7 +612,7 @@ class QuestManager {
         if (entity === trigger.identifier
             && triggerData.questID === phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex][2]
         ) {
-            phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+            phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
             return true
         }
         return false
@@ -632,7 +625,7 @@ class QuestManager {
             && trigger.zoneName !== undefined
             && trigger.zoneName[0] === phaserScene.zoneConfig.ID
         ) {
-            phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+            phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
             return true;
         } 
         return false
@@ -644,7 +637,7 @@ class QuestManager {
         for (let index = 0; index < trigger.template.length; index++) {
             const template = trigger.template[index];
             if (entity === template) {
-                phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+                phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
                 return true
             }
         }
@@ -655,7 +648,7 @@ class QuestManager {
         if (trigger.className[0].replace("actions::", "") !== triggerData.actionClass) return false
 
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
-        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+        phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
 
         return true
     }
@@ -666,7 +659,7 @@ class QuestManager {
         ) return false
 
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
-        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+        phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
 
         return true
     }
@@ -677,7 +670,7 @@ class QuestManager {
         ) return false
 
         let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
-        phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+        phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
 
         return true
     }
@@ -685,7 +678,7 @@ class QuestManager {
     #dialogueChoiceTrigger(phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
         if (trigger.identifier === triggerData.line) {
             let questGlobalID = phaserScene.sharedData.quest.logic.activeQuests[activeQuestIndex];
-            phaserScene.sharedData.questManager.doQuestAction(questGlobalID, lineIndex);
+            phaserScene.sharedData.quest.manager.doQuestAction(questGlobalID, lineIndex);
             return true
         }
         return false
@@ -801,40 +794,40 @@ class QuestManager {
     }
 
     async #logQuestEndAction(phaserScene, questID, lineIndex, action) {
-        if (!questID[0] || !questID[1]) {questID = phaserScene.sharedData.questManager.getFullQuestID(questID)}
-        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+        if (!questID[0] || !questID[1]) {questID = phaserScene.sharedData.quest.manager.getFullQuestID(questID)}
+        let questData = phaserScene.sharedData.quest.manager.getQuestPerID(questID);
         console.log("End quest: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
     }
 
     async #logAdventureEndAction(phaserScene, questID, lineIndex, action) {
-        let adventure = phaserScene.sharedData.questManager.getAdventurePerID(questID)
+        let adventure = phaserScene.sharedData.quest.manager.getAdventurePerID(questID)
         console.log(`Ending adventure ${questID[0]} - ${questID[1]}`)
         for (let [key] of Object.entries(adventure)) {
             if (!key.includes("QUE")) {continue}
-            await phaserScene.sharedData.questManager.markQuestFinished([questID[0], questID[1], key])
+            await phaserScene.sharedData.quest.manager.markQuestFinished([questID[0], questID[1], key])
         }
     }
 
     async #addQuestAction(phaserScene, questID, lineIndex, action) {
-        await phaserScene.sharedData.questManager.makeQuestAvailable([null, null, action.questId])
+        await phaserScene.sharedData.quest.manager.makeQuestAvailable([null, null, action.questId])
     }
 
     async #removeQuestAction(phaserScene, questID, lineIndex, action) {
-        await phaserScene.sharedData.questManager.markQuestFinished(questID)
+        await phaserScene.sharedData.quest.manager.markQuestFinished(questID)
     }
 
     async #dialogueAction(phaserScene, questID, lineIndex, action) {
-        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+        let questData = phaserScene.sharedData.quest.manager.getQuestPerID(questID);
 
         let character = undefined
         if (action.identifier) {character = action.identifier}
         if (character === undefined) {
-            character = phaserScene.sharedData.questManager.getDialogueCharacter(questData, lineIndex)
+            character = phaserScene.sharedData.quest.manager.getDialogueCharacter(questData, lineIndex)
         }
         if (character === undefined) {
             for (let index = 0; index < questData.line.length; index++) {
                 if (index === lineIndex) continue
-                const check = phaserScene.sharedData.questManager.getDialogueCharacter(questData, index)
+                const check = phaserScene.sharedData.quest.manager.getDialogueCharacter(questData, index)
                 if (check !== undefined) {
                     character = check
                     break
@@ -850,19 +843,19 @@ class QuestManager {
     }
 
     async #dialogueImageAction(phaserScene, questID, lineIndex, action) {
-        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+        let questData = phaserScene.sharedData.quest.manager.getQuestPerID(questID);
         let triggers = questData.line[lineIndex].trigger.object
 
         
         let character = undefined
         if (action.identifier) {character = action.identifier}
         if (character === undefined) {
-            character = phaserScene.sharedData.questManager.getDialogueCharacter(questData, lineIndex)
+            character = phaserScene.sharedData.quest.manager.getDialogueCharacter(questData, lineIndex)
         }
         if (character === undefined) {
             for (let index = 0; index < questData.line.length; index++) {
                 if (index === lineIndex) continue
-                const check = phaserScene.sharedData.questManager.getDialogueCharacter(questData, index)
+                const check = phaserScene.sharedData.quest.manager.getDialogueCharacter(questData, index)
                 if (check !== undefined) {
                     character = check
                     break
@@ -881,17 +874,17 @@ class QuestManager {
     }
 
     async #dialogueChoiceAction(phaserScene, questID, lineIndex, action) {
-        let questData = phaserScene.sharedData.questManager.getQuestPerID(questID);
+        let questData = phaserScene.sharedData.quest.manager.getQuestPerID(questID);
 
         let character = undefined
         if (action.identifier) {character = action.identifier}
         if (character === undefined) {
-            character = phaserScene.sharedData.questManager.getDialogueCharacter(questData, lineIndex)
+            character = phaserScene.sharedData.quest.manager.getDialogueCharacter(questData, lineIndex)
         }
         if (character === undefined) {
             for (let index = 0; index < questData.line.length; index++) {
                 if (index === lineIndex) continue
-                const check = phaserScene.sharedData.questManager.getDialogueCharacter(questData, index)
+                const check = phaserScene.sharedData.quest.manager.getDialogueCharacter(questData, index)
                 if (check !== undefined) {
                     character = check
                     break
@@ -924,7 +917,7 @@ class QuestManager {
     }
 
     async #addZoneItemAnywhereAction (phaserScene, questID, lineIndex, action) {
-        if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID) {
+        if (action.zone[0] === phaserScene.sharedData.global.currentZone) {
             phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], true, action.zone[0], action.instanceIdentifier[0])
         } else {
             phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], false, action.zone[0], action.instanceIdentifier[0])
@@ -940,7 +933,7 @@ class QuestManager {
                 && action.instanceIdentifier[0] !== undefined 
                 && action.instanceIdentifier[0] === entity.instID
             ) {
-                if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID ){
+                if (action.zone[0] === phaserScene.sharedData.global.currentZone ){
                     phaserScene.entities[key].destroy()
                 } else {
                     delete entitiesList[key]
@@ -948,7 +941,7 @@ class QuestManager {
             } else if (action.instanceIdentifier === undefined 
                 && action.template[0] === entity.template
             ) {
-                if (action.zone[0] === phaserScene.sharedData.global.ZONE_ID ){
+                if (action.zone[0] === phaserScene.sharedData.global.currentZone ){
                     phaserScene.entities[key].destroy()
                 } else {
                     delete entitiesList[key]

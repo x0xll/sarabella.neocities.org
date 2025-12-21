@@ -40,8 +40,8 @@ class InventorySlot
     }
 
     create() {
-        let spriteClass = this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "movieClipClass", "inventory")
-        let spriteFile = this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "movieClipFile", "inventory")
+        let spriteClass = this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "movieClipClass", "inventory")
+        let spriteFile = this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "movieClipFile", "inventory")
             spriteFile = spriteFile.split("/")
             spriteFile = spriteFile[spriteFile.length - 1].replace(".swf", "")
 
@@ -78,7 +78,7 @@ class InventorySlot
                 return
             }
 
-            const template = this.phaserScene.sharedData.templateManager.getTemplate(this.templateID)
+            const template = this.phaserScene.sharedData.template.manager.getTemplate(this.templateID)
             if (template.template === "PlantProduceTemplate") {
                 // PRODUCE
                 console.warn("Produce item use not yet implemented")
@@ -89,10 +89,10 @@ class InventorySlot
                 // PLANTS
                 this.phaserScene.sharedData.inventory.currentItem = {
                     templateID: this.templateID,
-                    soilTarget: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedSoilTarget"),
-                    plantItemID: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantItemID"),
-                    plantWidth: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantWidth"),
-                    plantHeight: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "seedPlantHeight")
+                    soilTarget: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "seedSoilTarget"),
+                    plantItemID: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "seedPlantItemID"),
+                    plantWidth: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "seedPlantWidth"),
+                    plantHeight: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "seedPlantHeight")
                 }
                 this.phaserScene.sharedData.entities.player.cursor.cursorMode = this.phaserScene.sharedData.entities.player.cursor.MODE.planting
                 this.phaserScene.sharedData.inventory.ui.manager.hide()
@@ -103,10 +103,10 @@ class InventorySlot
                 // PLACEABLE
                 this.phaserScene.sharedData.inventory.currentItem = {
                     templateID: this.templateID,
-                    entityTemplate: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemEntityTemplate"),
-                    requiresMove: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemRequiresMove"),
-                    width: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemWidth"),
-                    height: this.phaserScene.sharedData.templateManager.getTemplateValue(this.templateID, "placeableItemHeight")
+                    entityTemplate: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "placeableItemEntityTemplate"),
+                    requiresMove: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "placeableItemRequiresMove"),
+                    width: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "placeableItemWidth"),
+                    height: this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "placeableItemHeight")
                 }
                 this.phaserScene.sharedData.entities.player.cursor.cursorMode = this.phaserScene.sharedData.entities.player.cursor.MODE.placing
                 this.phaserScene.sharedData.inventory.ui.manager.hide()

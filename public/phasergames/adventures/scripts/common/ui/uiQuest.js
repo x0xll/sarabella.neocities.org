@@ -212,8 +212,8 @@ class uiQuest extends uiManagerBase
         for (let i = 0; i < this.phaserScene.sharedData.quest.logic.activeQuests.length; i++)
         {
             let questID = this.phaserScene.sharedData.quest.logic.activeQuests[i];
-            let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
-            let adventure = this.phaserScene.sharedData.questManager.getAdventurePerID(questID);
+            let questData = this.phaserScene.sharedData.quest.manager.getQuestPerID(questID);
+            let adventure = this.phaserScene.sharedData.quest.manager.getAdventurePerID(questID);
 
             if (questData.visible !== undefined && questData.visible === "False") continue;
 
@@ -249,8 +249,8 @@ class uiQuest extends uiManagerBase
 
     selectCurrentQuestForDetails(questID)
     {
-        let adventure = this.phaserScene.sharedData.questManager.getAdventurePerID(questID);
-        let quest = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
+        let adventure = this.phaserScene.sharedData.quest.manager.getAdventurePerID(questID);
+        let quest = this.phaserScene.sharedData.quest.manager.getQuestPerID(questID);
 
         this.phaserScene.sharedData.quest.ui.elements.questTitle.setAlpha(1);
         this.phaserScene.sharedData.quest.ui.elements.lookforTxt.setAlpha(1);
@@ -276,13 +276,13 @@ class uiQuest extends uiManagerBase
             if (quest.line[0].trigger.object[0].identifier !== undefined)
             {
                 let identifier = quest.line[0].trigger.object[0].identifier;
-                this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, "name"));
+                this.phaserScene.sharedData.quest.ui.elements.lookforDescTxt.setText(this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, "name"));
                 this.phaserScene.sharedData.quest.ui.elements.questIcon.setAlpha(1);
 
-                let thumbnailFolderName = this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "fileName", "text"])
+                let thumbnailFolderName = this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "fileName", "text"])
                 thumbnailFolderName = thumbnailFolderName.split("/")
                 thumbnailFolderName = thumbnailFolderName[thumbnailFolderName.length - 1].replace(".swf", "")
-                let thumbnail = this.phaserScene.sharedData.templateManager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "className", "text"]);
+                let thumbnail = this.phaserScene.sharedData.template.manager.getTemplateValue(`${identifier}Template`, ["Thumbnail", "className", "text"]);
 
                 this.phaserScene.sharedData.quest.ui.elements.questIcon.setTexture(thumbnailFolderName);
                 this.phaserScene.sharedData.quest.ui.elements.questIcon.setFrame(thumbnail);
@@ -305,9 +305,9 @@ class uiQuest extends uiManagerBase
             else if (quest.line[0].trigger.object[0].identifier !== undefined)
             {
                 let identifier = quest.line[0].trigger.object[0].identifier;
-                const locationData = this.phaserScene.sharedData.templateManager.getEntityZones(`${identifier}Template`)
+                const locationData = this.phaserScene.sharedData.template.manager.getEntityZones(`${identifier}Template`)
                 if (locationData[0]) {
-                    this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(this.phaserScene.sharedData.zoneManager.getZoneName(locationData[0]));
+                    this.phaserScene.sharedData.quest.ui.elements.locationDescTxt.setText(this.phaserScene.sharedData.zone.manager.getZoneName(locationData[0]));
                 }
                 else
                 {

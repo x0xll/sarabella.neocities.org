@@ -5,8 +5,8 @@ class TimeManager
     constructor(phaserScene)
     {
         this.phaserScene = phaserScene;
-        if (this.phaserScene.sharedData.timePausedAt) {
-            this.startAt = this.phaserScene.sharedData.timePausedAt
+        if (this.phaserScene.sharedData.global.timePausedAt) {
+            this.startAt = this.phaserScene.sharedData.global.timePausedAt
         } else {
             this.phaserScene.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
             this.startAt = 0
@@ -203,8 +203,8 @@ class TimeManager
         let currentTime = 0
         if (this.clock && this.clock.now) {
             currentTime = this.clock.now
-        } else if (this.phaserScene.sharedData.timePausedAt) {
-            currentTime = this.phaserScene.sharedData.timePausedAt
+        } else if (this.phaserScene.sharedData.global.timePausedAt) {
+            currentTime = this.phaserScene.sharedData.global.timePausedAt
         }
         return currentTime
     }

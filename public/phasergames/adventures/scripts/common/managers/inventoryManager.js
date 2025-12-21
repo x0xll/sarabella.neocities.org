@@ -58,7 +58,7 @@ class InventoryManager
 
         const filteredItems = {}
         for (let [key] of Object.entries(allItems)) {
-            const template = this.phaserScene.sharedData.templateManager.getTemplate(key, "inventory")
+            const template = this.phaserScene.sharedData.template.manager.getTemplate(key, "inventory")
 
             let test = false
             switch (type) {

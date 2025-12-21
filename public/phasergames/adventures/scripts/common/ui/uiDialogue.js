@@ -169,14 +169,14 @@ class uiDialogue extends uiManagerBase
                 characterid = "Player"; 
             }
 
-            let thumbnailFolderName = this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "fileName", "text"])
+            let thumbnailFolderName = this.phaserScene.sharedData.template.manager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "fileName", "text"])
             thumbnailFolderName = thumbnailFolderName.split("/")
             thumbnailFolderName = thumbnailFolderName[thumbnailFolderName.length - 1].replace(".swf", "")
 
             const character = {
-                name: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, "name"), 
+                name: this.phaserScene.sharedData.template.manager.getTemplateValue(`${characterid}Template`, "name"), 
                 id: characterid,
-                thumbnail: this.phaserScene.sharedData.templateManager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "className", "text"]),
+                thumbnail: this.phaserScene.sharedData.template.manager.getTemplateValue(`${characterid}Template`, ["Thumbnail", "className", "text"]),
                 thumbnailFolderName: thumbnailFolderName
             }
 
@@ -299,17 +299,17 @@ class uiDialogue extends uiManagerBase
     
     #continueOption() { 
         this.UI.hide();
-        this.UI.phaserScene.sharedData.lastChoice = "continue"
+        this.UI.phaserScene.sharedData.dialogue.lastChoice = "continue"
 
         if (this.questID) {
-            let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
-            this.UI.phaserScene.sharedData.questManager.doQuestAction(this.questID, questData.currentLine, questData.currentAction)
+            let questData = this.UI.phaserScene.sharedData.quest.manager.getQuestPerID(this.questID);
+            this.UI.phaserScene.sharedData.quest.manager.doQuestAction(this.questID, questData.currentLine, questData.currentAction)
         }
     }
     
     #choiceOption() { 
         this.UI.hide();
-        this.UI.phaserScene.sharedData.lastChoice = this.key
+        this.UI.phaserScene.sharedData.dialogue.lastChoice = this.key
 
         if (this.entityID) {
             const triggerData = {
@@ -317,17 +317,17 @@ class uiDialogue extends uiManagerBase
                 entityID: this.entityID,
                 questID: this.key
             }
-            this.UI.phaserScene.sharedData.questManager.tryTriggerQuest(this.UI.phaserScene, triggerData)
+            this.UI.phaserScene.sharedData.quest.manager.tryTriggerQuest(this.UI.phaserScene, triggerData)
         } else {
-            let questData = this.UI.phaserScene.sharedData.questManager.getQuestPerID(this.questID);
-            this.UI.phaserScene.sharedData.questManager.tryTriggerQuest(this.UI.phaserScene, {type: "DialogueChoiceTrigger", line: this.key})
+            let questData = this.UI.phaserScene.sharedData.quest.manager.getQuestPerID(this.questID);
+            this.UI.phaserScene.sharedData.quest.manager.tryTriggerQuest(this.UI.phaserScene, {type: "DialogueChoiceTrigger", line: this.key})
         }
 
     }
     #debugContinue(questID) {
-        this.phaserScene.sharedData.lastChoice = "continue"
-        let questData = this.phaserScene.sharedData.questManager.getQuestPerID(questID);
-        this.phaserScene.sharedData.questManager.doQuestAction(questID, questData.currentLine, questData.currentAction)
+        this.phaserScene.sharedData.dialogue.lastChoice = "continue"
+        let questData = this.phaserScene.sharedData.quest.manager.getQuestPerID(questID);
+        this.phaserScene.sharedData.quest.manager.doQuestAction(questID, questData.currentLine, questData.currentAction)
     }
     // ------- END UI EVENTS -------
 

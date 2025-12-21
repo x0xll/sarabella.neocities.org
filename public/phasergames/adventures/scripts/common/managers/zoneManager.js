@@ -15,18 +15,18 @@ class ZoneManager {
      * Loads and parses the xml files from the cache. Should be called from the loadScreen scene
      */
     initializeData() {
-        this.phaserScene.sharedData.zoneNames = parseZoneNameXML(this.phaserScene.cache.xml.get("ZoneNames"))
+        this.phaserScene.sharedData.zone.data.names = parseZoneNameXML(this.phaserScene.cache.xml.get("ZoneNames"))
     }
 
     getZoneName(zoneID)
     {
         let name = "";
 
-        for (let i = 0; i < this.phaserScene.sharedData.zoneNames.location.length; i++)
+        for (let i = 0; i < this.phaserScene.sharedData.zone.data.names.location.length; i++)
         {
-            if (this.phaserScene.sharedData.zoneNames.location[i].identifier === zoneID)
+            if (this.phaserScene.sharedData.zone.data.names.location[i].identifier === zoneID)
             {
-                name = this.phaserScene.sharedData.zoneNames.location[i].text;
+                name = this.phaserScene.sharedData.zone.data.names.location[i].text;
                 break;
             }
         }
@@ -36,7 +36,7 @@ class ZoneManager {
 
     getCurrentZoneName()
     {
-        if (this.phaserScene.sharedData.global.ZONE_ID === undefined) return "";
-        return this.getZoneName(this.phaserScene.sharedData.global.ZONE_ID);
+        if (this.phaserScene.sharedData.global.currentZone === undefined) return "";
+        return this.getZoneName(this.phaserScene.sharedData.global.currentZone);
     }
 }

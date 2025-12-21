@@ -43,8 +43,8 @@ class TemplateManager {
      * Runs during the create phase of the load scene
      */
     create() {
-        if (this.phaserScene.sharedData.templateManager === undefined) {
-            this.phaserScene.sharedData.templateManager = this
+        if (this.phaserScene.sharedData.template.manager === undefined) {
+            this.phaserScene.sharedData.template.manager = this
             this.initializeData();
         }
     }
@@ -62,10 +62,10 @@ class TemplateManager {
      * Loads and parses the xml files from the cache, and then initializes the quests. Should be called from the loadScreen scene
      */
     initializeData() {
-        this.phaserScene.sharedData.templates = {}
+        this.phaserScene.sharedData.template.data = {}
 
         for (let [key] of Object.entries(this.TEMPLATE_TYPES)) {
-            this.phaserScene.sharedData.templates[`${this.TEMPLATE_TYPES[key]}Data`] = parseTemplateXML(this, this.phaserScene.cache.xml.get(key))
+            this.phaserScene.sharedData.template.data[`${this.TEMPLATE_TYPES[key]}Data`] = parseTemplateXML(this, this.phaserScene.cache.xml.get(key))
         }
     }
 
@@ -113,7 +113,7 @@ class TemplateManager {
     getTemplateType(templateID) {
         for (let [key] of Object.entries(this.TEMPLATE_TYPES)) {
             const templateType = this.TEMPLATE_TYPES[key];
-            if (this.phaserScene.sharedData.templates[`${templateType}Data`].things[0][templateID]) {
+            if (this.phaserScene.sharedData.template.data[`${templateType}Data`].things[0][templateID]) {
                 return templateType
             }
         }
@@ -121,7 +121,7 @@ class TemplateManager {
     }
 
     #getMatchingTemplates(templateType, templateID, templateArray = []) {
-        const allTemplates = this.phaserScene.sharedData.templates[`${templateType}Data`].things[0]
+        const allTemplates = this.phaserScene.sharedData.template.data[`${templateType}Data`].things[0]
         if (allTemplates[templateID]) {
             const template = allTemplates[templateID]
             templateArray.push(template[0])
@@ -179,8 +179,8 @@ class TemplateManager {
     getEntityZones(templateID = undefined, forceUpdate = false) {
         if (this.entityZones && !forceUpdate) {return this.entityZones}
         const entities = {}
-        for (let index = 0; index < this.phaserScene.sharedData.zoneData.ZONES_ARRAY.length; index++) {
-            const zoneID = this.phaserScene.sharedData.zoneData.ZONES_ARRAY[index];
+        for (let index = 0; index < this.phaserScene.sharedData.zone.data.ZONES_ARRAY.length; index++) {
+            const zoneID = this.phaserScene.sharedData.zone.data.ZONES_ARRAY[index];
 
             // Get spawn data (should include questConfig and saved entity data)
             const spawned = this.phaserScene.sharedData.entities.spawnedEntities[zoneID] // gets the entities that have been spawned in a location
@@ -196,8 +196,8 @@ class TemplateManager {
             }
 
             // Get data from the npcConfig
-            if (this.phaserScene.sharedData.npcConfig[zoneID]) {
-                for (let [key] of Object.entries(this.phaserScene.sharedData.npcConfig[zoneID])) {
+            if (this.phaserScene.sharedData.entities.spawnConfig[zoneID]) {
+                for (let [key] of Object.entries(this.phaserScene.sharedData.entities.spawnConfig[zoneID])) {
                     if (entities[key] === undefined) {
                         entities[key] = new Set([zoneID])
                     } else {
@@ -208,7 +208,7 @@ class TemplateManager {
             }
 
             // Check all the tile data
-            const zoneParsed = parseZoneXML(this.phaserScene.sharedData.zoneTileData[zoneID]); 
+            const zoneParsed = parseZoneXML(this.phaserScene.sharedData.zone.data.tiles[zoneID]); 
             const levelRows = zoneParsed.map[0].layout[0].levels[0][0].levelRow
             const tiles = zoneParsed.mappedTiles;
             // Column

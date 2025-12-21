@@ -358,8 +358,8 @@ class Cursor {
         if (entities) {
             for (let index = 0; index < entities.length; index++) {
                 const entityID = context.zoneScene.entities[entities[index]].templateID
-                if (context.zoneScene.sharedData.templateManager.getTemplateType(entityID) === "plant"
-                    || context.zoneScene.sharedData.templateManager.getTemplateType(entityID) === "detritus" 
+                if (context.zoneScene.sharedData.template.manager.getTemplateType(entityID) === "plant"
+                    || context.zoneScene.sharedData.template.manager.getTemplateType(entityID) === "detritus" 
                 ) {
                     return true
                 }
@@ -375,7 +375,7 @@ class Cursor {
         if (entities) {
             for (let index = 0; index < entities.length; index++) {
                 const entityID = context.zoneScene.entities[entities[index]].templateID
-                if (context.zoneScene.sharedData.templateManager.getTemplateValue(entityID, "soilType") === soilTarget) {
+                if (context.zoneScene.sharedData.template.manager.getTemplateValue(entityID, "soilType") === soilTarget) {
                     return false
                 }
             }
@@ -407,7 +407,7 @@ class Cursor {
         if (entities) {
             for (let index = 0; index < entities.length; index++) {
                 const entityID = context.zoneScene.entities[entities[index]].templateID
-                if (context.zoneScene.sharedData.templateManager.getTemplateValue(entityID, "isBlocked") === "true") {
+                if (context.zoneScene.sharedData.template.manager.getTemplateValue(entityID, "isBlocked") === "true") {
                     return true
                 }
             }

@@ -16,7 +16,7 @@ class TemplateEntity extends Entity {
         this.zoneID = zoneScene.zoneConfig.ID
         this.variant = this.getTemplateValue(["MovieClip", "className", "text"], this.templateID);
 
-        // console.log(this.zoneScene.sharedData.templateManager.getTemplate(this.templateID))
+        // console.log(this.zoneScene.sharedData.template.manager.getTemplate(this.templateID))
 
         if (addToCurrentZone && loadLate) {
             zoneScene.load.once('complete', this.create, this);
@@ -475,7 +475,7 @@ class TemplateEntity extends Entity {
                     inventoryTemplate: itemTemplate,
                     templateID: this.templateID
                 }
-                this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+                this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerData)
                 this.zoneScene.sharedData.inventory.manager.removeItem(itemTemplate)
                 
                 break;
@@ -486,7 +486,7 @@ class TemplateEntity extends Entity {
                     inventoryTemplate: itemTemplate,
                     templateID: this.templateID
                 }
-                this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerData)
+                this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerData)
                 
                 break;
         
@@ -519,7 +519,7 @@ class TemplateEntity extends Entity {
         const activeQuests = []
         for (let index = 0; index < this.zoneScene.sharedData.quest.logic.activeQuests.length; index++) {
             const questID = this.zoneScene.sharedData.quest.logic.activeQuests[index];
-            activeQuests.push(this.zoneScene.sharedData.questManager.getQuestPerID(questID))
+            activeQuests.push(this.zoneScene.sharedData.quest.manager.getQuestPerID(questID))
         }
 
         const itemsToCheck = this.getTemplateValue(["GiveCommand", "item"])
@@ -558,7 +558,7 @@ class TemplateEntity extends Entity {
                     actionClass: "take",
                     template: context.templateID
                 }
-                context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
+                context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
             } else {
                 console.log("Plant not correct stage")
             }
@@ -569,7 +569,7 @@ class TemplateEntity extends Entity {
                 actionClass: "take",
                 template: context.templateID
             }
-            context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerData)
+            context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerData)
         }
 
         if (takeItem == undefined) { return }
@@ -590,7 +590,7 @@ class TemplateEntity extends Entity {
                     actionClass: "take",
                     template: context.templateID
                 }
-                context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
+                context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
                 console.log("harvest", takeItem)
             } else {
                 console.log("Plant not correct stage")
@@ -637,10 +637,10 @@ class TemplateEntity extends Entity {
         if (talkDefault === undefined || this.templateID === "M005gTemplate") {talkDefault = []}
         else if (!Array.isArray(talkDefault)) { talkDefault = [talkDefault]}
         const choices = { }
-        const quests = this.zoneScene.sharedData.questManager.getActiveQuestsWithCharacter(character)
+        const quests = this.zoneScene.sharedData.quest.manager.getActiveQuestsWithCharacter(character)
         for (let index = 0; index < quests.length; index++) {
             const quest = quests[index];
-            const advData = this.zoneScene.sharedData.questManager.getAdventurePerID(quest)
+            const advData = this.zoneScene.sharedData.quest.manager.getAdventurePerID(quest)
             choices[quest[2]] = {
                 entityID: character,
                 text: advData.description.text
@@ -678,7 +678,7 @@ class TemplateEntity extends Entity {
             actionClass: "WaterPlantAction",
             template: context.templateID
         }
-        context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
+        context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
     }
     #uprootPlantCommand(context, interactDat) { 
         let takeItem
@@ -689,7 +689,7 @@ class TemplateEntity extends Entity {
                 //     actionClass: "uproot", // ?
                 //     template: context.templateID
                 // }
-                // context.zoneScene.sharedData.questManager.tryTriggerQuest(context.zoneScene, triggerInfo)
+                // context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
         }
 
         if (takeItem == undefined) { return }
@@ -755,8 +755,8 @@ class TemplateEntity extends Entity {
 
     // ------- HELPER FUNCTIONS -------
     getTemplateValue(keys, templateID = this.templateID) {
-        // console.log(templateID + " " + keys + ": " + this.zoneScene.sharedData.templateManager.getTemplateValue(`${templateID}`, keys))
-        return this.zoneScene.sharedData.templateManager.getTemplateValue(`${templateID}`, keys)
+        // console.log(templateID + " " + keys + ": " + this.zoneScene.sharedData.template.manager.getTemplateValue(`${templateID}`, keys))
+        return this.zoneScene.sharedData.template.manager.getTemplateValue(`${templateID}`, keys)
     }
 
     destroy () {
@@ -778,7 +778,7 @@ class TemplateEntity extends Entity {
                 templateID: this.templateID,
                 targetTemplate: this.zoneScene.entities[entity].templateID
             }
-            this.zoneScene.sharedData.questManager.tryTriggerQuest(this.zoneScene, triggerInfo)
+            this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
         }
 
         // Removes the sprite for the entity
