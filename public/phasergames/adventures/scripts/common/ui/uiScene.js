@@ -27,7 +27,7 @@ class Common_UI extends Phaser.Scene
     create (sharedData)
     {   
         const UI = this;
-        UI.sharedData.global.uiOpen
+        UI.sharedData.global.uiOpen = false
 
         // Add inputs
         UI.sharedData.keyboard = {}

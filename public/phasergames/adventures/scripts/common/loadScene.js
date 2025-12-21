@@ -103,9 +103,6 @@ class Common_Load extends Phaser.Scene
         if (loader.sharedData.zone.config === undefined) {
             loader.sharedData.zone.config = this.cache.json.get("ZoneConfig")
         }
-        loader.sharedData.global = {
-            currentZone: sharedData.zone.config[sharedData.global.currentZone].ID
-        }
 
         if (loader.sharedData.zone.data.tiles[loader.sharedData.global.currentZone] === undefined) {
             // Loading xml for all zones so we can use it to find entity locations
