@@ -589,7 +589,7 @@ class QuestManager {
         "PlantGrownInRadiusTrigger": this.#missingTrigger,
         "TradeTrigger": this.#missingTrigger,
         "ApplicationStartTrigger": this.#applicationStartTrigger,
-        "NullTrigger": this.#missingTrigger
+        "NullTrigger": this.#nullTrigger
     }
 
     #missingTrigger (phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
@@ -710,6 +710,10 @@ class QuestManager {
         return false
     }
 
+    #nullTrigger (phaserScene, trigger, activeQuestIndex, lineIndex, triggerData) {
+        return false
+    }
+
 
     //------- QUEST CONDITIONS -------
     checkConditions (phaserScene, questData, lineIndex, trigger) {
@@ -802,7 +806,7 @@ class QuestManager {
         "TemporaryAnimationAction": this.#missingAction,
         "PlayMovieClipAction": this.#playMovieClipAction,
         "PlayHeadsUpDisplayMovieClipAction": this.#playMovieClipAction, // TODO: Confirm it works correctly
-        "NullAction": this.#missingAction
+        "NullAction": this.#nullAction
     }
     #ACTIONS_TO_PAUSE = [
         "DialogueAction",
@@ -995,5 +999,8 @@ class QuestManager {
         filePath = `${CUTSCENE_ASSETS_PATH}${fileName}`;
 
         onFlashStarted(filePath);
+    }
+
+    async #nullAction (phaserScene, questID, lineIndex, action) {
     }
 }
