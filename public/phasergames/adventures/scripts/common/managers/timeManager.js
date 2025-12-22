@@ -165,7 +165,16 @@ class TimeManager
                         delete zoneEntities[key]
                         continue
                     }
-                    zoneEntities[key].daysCount++
+                    try {
+                        zoneEntities[key].daysCount++
+                    } catch (error) {
+                        console.error("Could not update dayCount for", key, error)
+                        if (zoneEntities[key] = undefined) {
+                            delete zoneEntities[key]
+                            console.log("Deleting undefined entity")
+                            continue
+                        }
+                    }
                 }
             }
         } else if (this.clock.now >= this.dayLength && this.isDay) {
@@ -196,7 +205,6 @@ class TimeManager
         const zoneEntities = this.phaserScene.sharedData.entities.timeTrackedEntities[this.phaserScene.zoneConfig.ID]
         for (let [key] of Object.entries(zoneEntities)) {
             if (this.phaserScene.entities[key] === undefined) {
-                delete this.phaserScene.sharedData.entities.timeTrackedEntities[this.phaserScene.zoneConfig.ID][key]
                 continue
             }
             this.phaserScene.entities[key].update()

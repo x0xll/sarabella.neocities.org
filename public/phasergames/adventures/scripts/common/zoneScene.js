@@ -2,6 +2,7 @@ class ZoneBase extends Phaser.Scene
 {
     constructor () {
         super({ key: "common_zone" });
+        this.entitiesInitialized = false
     }
 
     init (sharedData) {
@@ -63,7 +64,9 @@ class ZoneBase extends Phaser.Scene
         const zone = this;
 
         zone.entities.player.update();
-        zone.timeManager.updateTime();
+        if (this.entitiesInitialized) {
+            zone.timeManager.updateTime();
+        }
         zone.sharedData.global.previousZone = this.zoneConfig.ID
 
         //debug_DrawTriggerQuest(zone);
@@ -129,23 +132,28 @@ class ZoneBase extends Phaser.Scene
         // Spawned Entities
         const spawnedEntities = structuredClone(this.sharedData.entities.spawnedEntities[this.zoneConfig.ID]);
         const timeTrackedEntities = structuredClone(this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID]);
+
         this.sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
+        this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
+
         for (let [key] of Object.entries(spawnedEntities)) {
             const entity = spawnedEntities[key]
-            const entityKey = this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID, entity.respawnConfig)
-            if (key !== entityKey) {
-                this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][entityKey] = timeTrackedEntities[key]
-            }
-        }
-        for (let [key] of Object.entries(this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID])) {
-            if (!this.sharedData.entities.spawnedEntities[this.zoneConfig.ID][key]) {
-                delete this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][key]
+            const newKey = this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID, entity.respawnConfig)
+            if (timeTrackedEntities[key] !== undefined) {
+                this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][newKey] = timeTrackedEntities[key]
+                delete timeTrackedEntities[key]
             }
         }
 
+        for (let [key] of Object.entries(timeTrackedEntities)) {
+            if (timeTrackedEntities[key]) {
+                this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][key] = timeTrackedEntities[key]
+            }
+        }
 
         // Once entities have loaded
         this.sharedData.quest.manager.initializeNPCQuestData()
+        this.entitiesInitialized = true
     }
 
     loadBackgrounds(xSize, ySize, zoneID) {
