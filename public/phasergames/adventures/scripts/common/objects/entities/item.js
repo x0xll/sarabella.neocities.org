@@ -22,7 +22,8 @@ const CLOTHE_TYPES =
 class InventorySlot
 {
     PADDING = {x: 55, y: 55}
-    POS_START = {x: 318, y: 200}
+    INVENTORY_POS_START = {x: 318, y: 200}
+    SUCCESS_POS_START = {x: 445, y: 365}
     SIZE = 40
     TEXT_SETTINGS = 
     {
@@ -30,20 +31,29 @@ class InventorySlot
         color: "#000000"
     }
     NUMBER_OFFSET = {x: 24, y: 26}
-    constructor(phaserScene, templateID, itemCount, slotNumber)
+    constructor(phaserScene, templateID, itemCount, slotNumber, uiType = "inventory")
     {
         this.phaserScene = phaserScene
         this.templateID = templateID;
         this.itemCount = itemCount;
         this.slotNumber = slotNumber
+        this.uiType = uiType
         this.create()
     }
 
     create() {
-        let spriteClass = this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "movieClipClass", "inventory")
-        let spriteFile = this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "movieClipFile", "inventory")
-            spriteFile = spriteFile.split("/")
-            spriteFile = spriteFile[spriteFile.length - 1].replace(".swf", "")
+        // Get file to load
+        let spriteClass
+        let spriteFile
+        if (this.templateID === "horseshoe") {
+            spriteClass = "horseshoe"
+            spriteFile = "horseshoe"
+        } else {
+            spriteClass = this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "movieClipClass", "inventory")
+            spriteFile = this.phaserScene.sharedData.template.manager.getTemplateValue(this.templateID, "movieClipFile", "inventory")
+                spriteFile = spriteFile.split("/")
+                spriteFile = spriteFile[spriteFile.length - 1].replace(".swf", "")
+        }
 
         const slotPos = this.getSlotPos()
 
@@ -53,7 +63,35 @@ class InventorySlot
                     .setOrigin(1)
                     .setScrollFactor(0);
 
+
+        if (this.uiType === "inventory") {
+            this.addInventoryInteractions()
+            this.setInventoryMask()
+        }
+
+        let bigger = this.image.width > this.image.height ? this.image.width : this.image.height
+        let scale = this.SIZE / bigger
+        this.image.setScale(scale)
+    }
+
+    getSlotPos(scroll = 0, slotNumber = this.slotNumber) {
+        let gridPos
+        switch (this.uiType) {
+            case "inventory":
+                    gridPos = {x: slotNumber % 4, y: (slotNumber - (slotNumber % 4)) / 4}
+                    return {x: this.INVENTORY_POS_START.x + (gridPos.x* this.PADDING.x), y: this.INVENTORY_POS_START.y - scroll + (gridPos.y* this.PADDING.y)}
+                break;
+
+            case "success":
+                    return {x: this.SUCCESS_POS_START.x + (slotNumber* this.PADDING.x), y: this.SUCCESS_POS_START.y}
+                break;
         
+            default:
+                break;
+        }
+    }
+
+    addInventoryInteractions() {
         this.background.on('pointerout', (pointer) =>  
         { 
             this.background.setFrame("up")
@@ -117,30 +155,24 @@ class InventorySlot
                 console.warn("Da frick is this?!", template)
             }
         });
+    }
 
+    setInventoryMask() {
         // Set mask
         const mask = this.phaserScene.sharedData.inventory.ui.elements.scrollMask
         this.background.setMask(mask);
         this.image.setMask(mask);
         this.text.setMask(mask);
-
-        let bigger = this.image.width > this.image.height ? this.image.width : this.image.height
-        let scale = this.SIZE / bigger
-        this.image.setScale(scale)
     }
 
-    resetSlot(scroll = 0, slotNumber = this.slotNumber) {
+    resetSlot(scroll = 0, slotNumber = this.slotNumber, xSlotReposition = 0) {
         this.slotNumber = slotNumber
         let slotPos = this.getSlotPos()
         slotPos.y = slotPos.y + scroll
+        slotPos.x = slotPos.x - (xSlotReposition * 55) // Used to move the current slot the set number of positions to the side
         this.background.setPosition(slotPos.x, slotPos.y)
         this.image.setPosition(slotPos.x, slotPos.y)
         this.text.setPosition(slotPos.x + this.NUMBER_OFFSET.x, slotPos.y + this.NUMBER_OFFSET.y)
-    }
-
-    getSlotPos(scroll = 0, slotNumber = this.slotNumber) {
-        const gridPos = {x: slotNumber % 4, y: (slotNumber - (slotNumber % 4)) / 4}
-        return {x: this.POS_START.x + (gridPos.x* this.PADDING.x), y: this.POS_START.y - scroll + (gridPos.y* this.PADDING.y)}
     }
 
     destroy() {

@@ -26,6 +26,7 @@ class Common_UI extends Phaser.Scene
         UI.questUI = new uiQuest(this);
         UI.minimapUI = new uiMinimap(this);
         UI.dialogueUI = new uiDialogue(this);
+        UI.successUI = new uiSuccess(this);
 
         debug.uiScene = this
     }

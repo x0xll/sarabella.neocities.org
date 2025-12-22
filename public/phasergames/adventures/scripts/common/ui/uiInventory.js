@@ -62,6 +62,7 @@ class uiInventory extends uiManagerBase
         this.phaserScene.load.atlas(this.INVENTORY_SLOT, `${ROOT_ASSETS_PATH}UI/Inventory/itemSlot.png`, `${ROOT_ASSETS_PATH}UI/Inventory/itemSlot.json`);
         this.phaserScene.load.atlas(this.SCROLL, `${ROOT_ASSETS_PATH}UI/Common/scroll.png`, `${ROOT_ASSETS_PATH}UI/Common/scroll.json`);
 
+        this.phaserScene.load.atlas('inv_horseshoe', `${ROOT_ASSETS_PATH}UI/Common/horseshoe.png`, `${ROOT_ASSETS_PATH}UI/Common/horseshoe.json`);
         this.phaserScene.load.atlas('inv_items', `${ROOT_ASSETS_PATH}Items/items.png`, `${ROOT_ASSETS_PATH}/Items/items.json`);
         this.phaserScene.load.atlas('inv_items2', `${ROOT_ASSETS_PATH}Items/items2.png`, `${ROOT_ASSETS_PATH}/Items/items2.json`);
         this.phaserScene.load.atlas('inv_plantinventory', `${ROOT_ASSETS_PATH}Items/plantinventory.png`, `${ROOT_ASSETS_PATH}/Items/plantinventory.json`);
