@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "7dudM+dxhSQ",
+	"hash": "6ipia5y62dU",
 	"spine": "4.2.43",
 	"x": -60.52,
 	"y": -16.53,
@@ -13,14 +13,14 @@
 	{ "name": "root_sw" }
 ],
 "slots": [
-	{ "name": "C001", "bone": "root_sw", "attachment": "C001" }
+	{ "name": "C010", "bone": "root_sw", "attachment": "C010" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
-			"C001": {
-				"C001": { "x": 2.73, "y": 71.2, "scaleX": 0.55, "scaleY": 0.55, "width": 230, "height": 319 }
+			"C010": {
+				"C010": { "x": -2.05, "y": 74.41, "scaleX": 0.46, "scaleY": 0.46, "width": 268, "height": 451 }
 			}
 		}
 	}

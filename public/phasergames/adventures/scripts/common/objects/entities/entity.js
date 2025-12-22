@@ -101,16 +101,19 @@ class Entity {
             }
             return;
         }
+        let reverseX = this.sprite.skeleton !== undefined && 
+            (this.sprite.skeleton.bones[0].data.name.includes("sw") ||
+            this.sprite.skeleton.bones[0].data.name.includes("nw"))
 
         switch (this.facingDirection) {
             case this.FACING_DIRECTIONS.Southwest:
             case this.FACING_DIRECTIONS.West:
             case this.FACING_DIRECTIONS.Northwest:
-                this.sprite.setScale(-this.spriteScale, this.spriteScale)
+                this.sprite.setScale(reverseX ? this.spriteScale : -this.spriteScale, this.spriteScale)
                 break;
         
             default:
-                this.sprite.setScale(this.spriteScale, this.spriteScale)
+                this.sprite.setScale(reverseX ? -this.spriteScale : this.spriteScale, this.spriteScale)
                 break;
         }
     }
