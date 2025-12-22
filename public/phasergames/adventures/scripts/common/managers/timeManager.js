@@ -161,19 +161,10 @@ class TimeManager
                     continue
                 }
                 for (let [key] of Object.entries(zoneEntities)) {
-                    if (zoneEntities[key] = undefined) {
-                        delete zoneEntities[key]
-                        continue
-                    }
                     try {
                         zoneEntities[key].daysCount++
                     } catch (error) {
                         console.error("Could not update dayCount for", key, error)
-                        if (zoneEntities[key] = undefined) {
-                            delete zoneEntities[key]
-                            console.log("Deleting undefined entity")
-                            continue
-                        }
                     }
                 }
             }

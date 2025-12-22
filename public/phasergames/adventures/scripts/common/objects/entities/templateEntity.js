@@ -586,6 +586,7 @@ class TemplateEntity extends Entity {
         }
 
         if (takeItem == undefined) { return }
+        context.zoneScene.sharedData.inventoryAnimation.ui.manager.show(takeItem, 1, true)
         context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
 
         // TODO check if this part is correct (may be different for plants as well, since they use different take/harvest logic)
@@ -612,6 +613,7 @@ class TemplateEntity extends Entity {
 
         if (takeItem == undefined) { return }
 
+        context.zoneScene.sharedData.inventoryAnimation.ui.manager.show(takeItem, 1, true)
         context.zoneScene.sharedData.inventory.manager.addItem(takeItem)
 
 
@@ -836,8 +838,8 @@ class TemplateEntity extends Entity {
 
         // Removes the entity from the zone
         delete this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
+        delete this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
         delete this.zoneScene.entities[this.entityKey]
-        // TODO also delete from time tracked entities?
     }
     // ------- END HELPER FUNCTIONS -------
 }

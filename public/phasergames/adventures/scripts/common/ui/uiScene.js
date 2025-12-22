@@ -22,6 +22,7 @@ class Common_UI extends Phaser.Scene
 
         UI.hudUI = new uiHUD(this);
         UI.inventoryUI = new uiInventory(this);
+        UI.inventoryAnimations = new uiInventoryAnimations(this);
         UI.magicTreeUI = new uiMagicTree(this);
         UI.questUI = new uiQuest(this);
         UI.minimapUI = new uiMinimap(this);
@@ -49,5 +50,14 @@ class Common_UI extends Phaser.Scene
         this.sharedData.ui.isInitialized = true
         while (!this.sharedData.ui.isInitialized) {}
         this.sharedData.quest.manager.tryZoneStartTriggers()
+    }
+
+    update () {
+        if (this.sharedData.inventoryAnimation
+            && this.sharedData.inventoryAnimation.ui
+            && this.sharedData.inventoryAnimation.ui.manager
+        ) {
+            this.sharedData.inventoryAnimation.ui.manager.update()
+        }
     }
 }

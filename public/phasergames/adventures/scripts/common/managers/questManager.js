@@ -798,7 +798,7 @@ class QuestManager {
         "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
         "RemoveZoneItemAnywhereAction": this.#removeZoneItemAnywhereAction,
         "TryAddZoneItemToAction": this.#missingAction,
-        "AddHorseshoesAction": this.#missingAction,
+        "AddHorseshoesAction": this.#addHorseshoesAction,
         "AddMultipleInventoryAction": this.#addMultipleInventoryAction,
         "RemoveMultipleInventoryAction": this.#removeMultipleInventoryAction,
         "AddTokenItemAction": this.#missingAction,
@@ -985,8 +985,13 @@ class QuestManager {
         }
     }
 
+    async #addHorseshoesAction (phaserScene, questID, lineIndex, action) {
+        phaserScene.sharedData.inventoryAnimation.ui.manager.show("horseshoe", parseInt(action.count[0]), true)
+    }
+
     async #addMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
         phaserScene.sharedData.inventory.manager.addItem(action.itemId[0], parseInt(action.count[0]))
+        phaserScene.sharedData.inventoryAnimation.ui.manager.show(action.itemId[0], parseInt(action.count[0]), true)
     }
 
     async #removeMultipleInventoryAction (phaserScene, questID, lineIndex, action) {

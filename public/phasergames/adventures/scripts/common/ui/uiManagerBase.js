@@ -2,13 +2,15 @@ class uiManagerBase
 {
     phaserScene;
 
-    constructor(phaserScene, key)
+    constructor(phaserScene, key, trackKey = true)
     {
         this.phaserScene = phaserScene;
 
         this.key = key
-        phaserScene.sharedData.ui.keys.push(key)
-
+        if (trackKey) {
+            phaserScene.sharedData.ui.keys.push(key)
+        }
+        
         if (this.phaserScene.sharedData[this.key] 
             && this.phaserScene.sharedData[this.key].ui
             && this.phaserScene.sharedData[this.key].ui.elements

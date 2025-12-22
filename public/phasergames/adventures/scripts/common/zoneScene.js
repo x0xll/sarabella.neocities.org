@@ -136,18 +136,20 @@ class ZoneBase extends Phaser.Scene
         this.sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
         this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
 
+        // Moving data over for entities which should have the same ids
+        for (let [key] of Object.entries(timeTrackedEntities)) {
+            if (this.entities[key] && timeTrackedEntities[key]) {
+                this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][key] = timeTrackedEntities[key]
+            }
+        }
+
+        // Spawning new entities and moving any time data over
         for (let [key] of Object.entries(spawnedEntities)) {
             const entity = spawnedEntities[key]
             const newKey = this.spawnEntity(entity.template, entity.gridX, entity.gridY, false, this.zoneConfig.ID, entity.instID, entity.respawnConfig)
             if (timeTrackedEntities[key] !== undefined) {
                 this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][newKey] = timeTrackedEntities[key]
                 delete timeTrackedEntities[key]
-            }
-        }
-
-        for (let [key] of Object.entries(timeTrackedEntities)) {
-            if (timeTrackedEntities[key]) {
-                this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID][key] = timeTrackedEntities[key]
             }
         }
 
