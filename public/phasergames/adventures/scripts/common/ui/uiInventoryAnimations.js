@@ -9,6 +9,14 @@ class uiInventoryAnimations extends uiManagerBase
     Y_START_REMOVE = 440
     ADD_SOUND = "inv_add"
     REMOVE_SOUND = "inv_remove"
+
+    TEXT_PURPLE_SETTINGS = 
+    {
+        font: "bold 18px Arial",
+        color: "#792AA8",
+        stroke: "white",
+        strokeThickness: 2
+    }
     
 
     constructor(phaserScene)
@@ -36,7 +44,7 @@ class uiInventoryAnimations extends uiManagerBase
     {
     }
 
-    initialize()
+    initialize(add)
     {
         const animationSpine = this.phaserScene.add.spine(400, this.yStart, this.ADD_ITEM_JSON, this.ADD_ITEM_ATLAS)
 
@@ -61,11 +69,15 @@ class uiInventoryAnimations extends uiManagerBase
         this.itemScale = this.ITEM_SIZE / bigger
         itemImage.setScale(this.itemScale)
 
-        // TODO: add the text above the animation
+        const text = this.phaserScene.add.text(400, this.yStart-(add ? 45 : 80), "", this.TEXT_PURPLE_SETTINGS)
+                            .setOrigin(.5)
+                            .setScrollFactor(0);
+
 
         this.phaserScene.sharedData[this.key].ui.elements = {
             animationSpine: animationSpine,
-            itemImage: itemImage
+            itemImage: itemImage,
+            text: text
         };
     }
 
@@ -104,6 +116,13 @@ class uiInventoryAnimations extends uiManagerBase
             this.phaserScene.sharedData[this.key].ui.elements.animationSpine.animationState.setAnimation(0, "removeItem", false)
             this.removeSound.play()
         }
+
+
+        if (itemID === "horseshoe") {
+            this.phaserScene.sharedData[this.key].ui.elements.text.setText(this.phaserScene.sharedData.ui.localization.items[0].horseshoeNotification[0].text.replace("%DELTA%", count))
+        } else {
+            this.phaserScene.sharedData[this.key].ui.elements.text.setText(this.phaserScene.sharedData.template.manager.getTemplateValue(itemID, "name"))
+        }
         
         let UI = this
         this.phaserScene.sharedData[this.key].ui.elements.animationSpine.animationState.addListener({
@@ -132,6 +151,7 @@ class uiInventoryAnimations extends uiManagerBase
     {
         this.phaserScene.sharedData[this.key].ui.elements.animationSpine.destroy()
         this.phaserScene.sharedData[this.key].ui.elements.itemImage.destroy()
+        this.phaserScene.sharedData[this.key].ui.elements.text.destroy()
         this.phaserScene.sharedData[this.key].ui.elements = {}
         
         this.phaserScene.sharedData[this.key].ui.open = false
