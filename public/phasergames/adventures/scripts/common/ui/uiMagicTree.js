@@ -84,7 +84,7 @@ class uiMagicTree extends uiManagerBase
 
             this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(1);
             this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(1);
-            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1).setFrame("up");
     }
 
     hide()

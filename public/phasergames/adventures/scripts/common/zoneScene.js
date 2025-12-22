@@ -217,7 +217,7 @@ class ZoneBase extends Phaser.Scene
                         // We do not show the pink square since we are showing the actual element
                         if ((tileData.entities !== undefined && tileData.entities.indexOf("Spawner") <= 0) || tileData.entities === undefined)
                         {
-                            let skins;
+                            let skins = [];
                             if (tileData.grounds !== undefined)
                             {
                                 skins = tileData.grounds.split(',');

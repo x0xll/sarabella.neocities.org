@@ -167,7 +167,7 @@ class uiQuest extends uiManagerBase
             if (!test) return
 
             this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(1);
-            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1).setFrame("up");
 
             this.updateQuestList();
 

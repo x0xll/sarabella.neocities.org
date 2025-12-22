@@ -118,7 +118,7 @@ class uiMinimap extends uiManagerBase
             this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(0);
             this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(1);
             this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(1);
-            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1);
+            this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1).setFrame("up");
             this.phaserScene.sharedData[this.key].ui.elements.iconZoom.setAlpha(1);
     }
 
