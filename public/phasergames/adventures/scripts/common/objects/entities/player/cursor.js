@@ -186,8 +186,14 @@ class Cursor {
         if (entities) {
             for (let index = 0; index < entities.length; index++) {
                 const entity = this.zoneScene.entities[entities[index]]
-                const gridFootX = entity.gridFootX
-                const gridFootY = entity.gridFootY
+
+                let gridFootX = entity.gridFootX
+                let gridFootY = entity.gridFootY
+                if (entity.facingDirection.includes("w")) {
+                    gridFootX = entity.gridFootY
+                    gridFootY = entity.gridFootX
+                }
+                
                 if (gridFootX !== 1 || gridFootY !==1) {
                     this.gridFoot.x = gridFootX
                     this.gridFoot.y = gridFootY
