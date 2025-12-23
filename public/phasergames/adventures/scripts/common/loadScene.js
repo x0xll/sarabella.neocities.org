@@ -69,6 +69,9 @@ class Common_Load extends Phaser.Scene
         if (this.sharedData.global.currentZone === undefined) {
             this.sharedData.global.currentZone = "Z001"
         }
+        if (this.sharedData.global.stillImageEntities === undefined) {
+            this.sharedData.global.stillImageEntities = new Set([])
+        }
         this.sharedData.global.uiOpen = false
 
         if (this.sharedData.ui === undefined) {

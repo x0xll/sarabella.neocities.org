@@ -20,6 +20,9 @@ class TemplateEntity extends Entity {
             if (additionalConfig.isWatered) {
                 this.isWatered = additionalConfig.isWatered
             }
+            if (additionalConfig.hasGivenMagic) {
+                this.hasGivenMagic = additionalConfig.hasGivenMagic
+            }
             if (additionalConfig.isWilted) {
                 this.isWilted = additionalConfig.isWilted
             }
@@ -124,8 +127,11 @@ class TemplateEntity extends Entity {
             folderName = folderName[folderName.length - 1].replace(".swf", "")
             if (!this.getTemplateValue(["PlantMovieClip"]) 
                 && this.getTemplateValue(["CharacterIdle"], templateID) === undefined
-                && !urlExists(`${this.assetPath}/${folderName}/${spriteClass}/skeleton.atlas`)
+                && !this.zoneScene.cache.json.exists(`${templateID}-json`) // If the spine version is already cached, no need to check
+                && (this.zoneScene.sharedData.global.stillImageEntities.has(templateID) // Using this to track missing spine files
+                    || !urlExists(`${this.assetPath}/${folderName}/${spriteClass}/skeleton.atlas`))
             ) {
+                this.zoneScene.sharedData.global.stillImageEntities.add(templateID)
                 // TODO consider having the simple image sprites in one atlas file per swf file. Then, if not in there, we could assume it should use spine instead
                 spriteType = this.SPRITE_TYPES.stillImage
                 this.zoneScene.load.image(`${templateID}`, `${this.assetPath}/${folderName}/${spriteClass}/1.png`);
@@ -281,6 +287,7 @@ class TemplateEntity extends Entity {
             if (parseInt(plantData.spriteData.stages[0].text) === this.currentStage && !this.hasGivenMagic)
             {
                 this.hasGivenMagic = true;
+                this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.hasGivenMagic = this.hasGivenMagic
                 this.zoneScene.sharedData.magicTree.logic.manager.addExperience(parseInt(plantData.growthData.magic[0].text));
             }
 
