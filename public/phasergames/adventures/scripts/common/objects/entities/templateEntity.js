@@ -283,14 +283,6 @@ class TemplateEntity extends Entity {
             const stageTime = this.timeToGrow / parseInt(plantData.spriteData.stages[0].text)
             let currentStage = this.currentStage !== undefined ? this.currentStage : 1
 
-            // Give magic to the tree on first full growth
-            if (parseInt(plantData.spriteData.stages[0].text) === this.currentStage && !this.hasGivenMagic)
-            {
-                this.hasGivenMagic = true;
-                this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.hasGivenMagic = this.hasGivenMagic
-                this.zoneScene.sharedData.magicTree.logic.manager.addExperience(parseInt(plantData.growthData.magic[0].text));
-            }
-
             // TODO Check if we have any refs for how long plants took to wilt
             const dayDurationCount = countDay ? this.zoneScene.timeManager.dayLength : 0
             const nightDurationCount = countNight ? this.zoneScene.timeManager.nightLength : 0
@@ -307,10 +299,19 @@ class TemplateEntity extends Entity {
                 this.currentStage = currentStage
                 if (isWilted) {
                     this.isWilted = isWilted
-                    this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.isWilted = isWilted
+                    this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.sharedData.global.currentZone][this.entityKey].respawnConfig.isWilted = isWilted
                     this.updateSprite()
                 } else {
                     this.updateSprite()
+
+                    // Give magic to the tree on first full growth
+                    if (parseInt(plantData.spriteData.stages[0].text) === this.currentStage && !this.hasGivenMagic)
+                    {
+                        this.hasGivenMagic = true;
+                        this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.sharedData.global.currentZone][this.entityKey].respawnConfig.hasGivenMagic = this.hasGivenMagic
+                        this.zoneScene.sharedData.magicTree.logic.manager.addExperience(parseInt(plantData.growthData.magic[0].text));
+                        this.zoneScene.sharedData.hud.ui.manager.playLevelSparkle()
+                    }
                 }
             }
         }
@@ -349,6 +350,7 @@ class TemplateEntity extends Entity {
                 const entity = this.zoneScene.entities[entities[index]].templateID
                 let blocksSpawn = this.getTemplateValue(["GridPosition", "blocksSpawn", "text"], entity)
                 if (blocksSpawn === "True") { return }
+                // TODO figure out why this is still allowing spawns through
                 for (let index = 0; index < spawnType.length; index++) {
                     if (spawnType[index].text === entity) {return}
                 }
@@ -368,11 +370,11 @@ class TemplateEntity extends Entity {
             }
         }
     }
-    
-    resetTimeData() {
+
+    resetTimeData(startDuration = 0) {
         const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
         
-        timeData.startTime = this.zoneScene.timeManager.getCurrentTime()
+        timeData.startTime = this.zoneScene.timeManager.getCurrentTime() - startDuration
         timeData.daysCount = 0
     }
 

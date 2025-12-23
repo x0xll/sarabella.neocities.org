@@ -62,7 +62,20 @@ class uiMinimap extends uiManagerBase
     { 
         this.phaserScene.sharedData.hud.ui.mapButton.on('pointerup', function (pointer){
             this.phaserScene.sharedData[this.key].ui.manager.show();
-        }, this)
+            this.phaserScene.sharedData.hud.ui.mapButton.setFrame("up")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.mapButton.on('pointerdown', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.mapButton.setFrame("down")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.mapButton.on('pointerover', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.mapButton.setFrame("over")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.mapButton.on('pointerout', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.mapButton.setFrame("up")
+        }, this);
     }
 
     initialize()
@@ -112,6 +125,8 @@ class uiMinimap extends uiManagerBase
             let test = super.show()
             if (!test) return
             this.turnOnEvents()
+
+            this.phaserScene.sharedData.hud.ui.manager.hudMapDown.play();
 
             this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(1);
             this.phaserScene.sharedData[this.key].ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);

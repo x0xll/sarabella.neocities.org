@@ -73,6 +73,19 @@ class uiInventory extends uiManagerBase
     {
         this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerup', function (pointer) {
             this.phaserScene.sharedData[this.key].ui.manager.show();
+            this.phaserScene.sharedData.hud.ui.inventoryButton.setFrame("up")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerdown', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.inventoryButton.setFrame("down")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerover', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.inventoryButton.setFrame("over")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.inventoryButton.on('pointerout', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.inventoryButton.setFrame("up")
         }, this);
     }
 
@@ -149,6 +162,8 @@ class uiInventory extends uiManagerBase
     {
             let test = super.show()
             if (!test) return
+
+            this.phaserScene.sharedData.hud.ui.manager.hudInventoryDown.play();
 
             this.turnOnEvents()
             this.setSelected(ITEM_TYPES.ALL)

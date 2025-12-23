@@ -96,7 +96,11 @@ class uiSuccess extends uiManagerBase
         var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, this.phaserScene.sharedData.ui.localization.items[0].dialogueContinue[0].text, this.SUCCESS_CONTINUE_PURPLE_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
-                            .setDepth(100);
+
+        
+        this.phaserScene.sharedData[this.key].ui.sparkle = this.phaserScene.add.spine(165, 128, `sparkle-json`, `sparkle-atlas`)
+                    .setAlpha(0)
+                    .setScrollFactor(0);
 
 
         this.phaserScene.sharedData[this.key].ui.elements = 
@@ -143,8 +147,6 @@ class uiSuccess extends uiManagerBase
                 
             }
 
-            // TODO add rewards diplay (reuse inventory item display)
-
             this.phaserScene.sharedData[this.key].ui.elements.normalText.setText(
                 this.phaserScene.sharedData.ui.localization.items[0].adventureCompleteBody[0].text
                     .replace("%adventureName%", `"${questData.description.text}"`)
@@ -152,6 +154,17 @@ class uiSuccess extends uiManagerBase
 
             // Play sound
             this.openSound.play()
+
+
+            this.phaserScene.sharedData[this.key].ui.sparkle.animationState.setAnimation(0, `animation`, false)
+            this.phaserScene.sharedData[this.key].ui.sparkle.setAlpha(1)
+
+            let UI = this
+            this.phaserScene.sharedData[this.key].ui.sparkle.animationState.addListener({
+                    complete: function endAnimation(entry) { 
+                        UI.phaserScene.sharedData[UI.key].ui.sparkle.setAlpha(0)
+                    }       
+                })
 
             // Set UI items visible
             this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(1);

@@ -58,6 +58,19 @@ class uiQuest extends uiManagerBase
     {
         this.phaserScene.sharedData.hud.ui.journalButton.on('pointerup', function (pointer){
             this.phaserScene.sharedData[this.key].ui.manager.show();
+            this.phaserScene.sharedData.hud.ui.journalButton.setFrame("up")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.journalButton.on('pointerdown', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.journalButton.setFrame("down")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.journalButton.on('pointerover', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.journalButton.setFrame("over")
+        }, this);
+
+        this.phaserScene.sharedData.hud.ui.journalButton.on('pointerout', function (pointer) {
+            this.phaserScene.sharedData.hud.ui.journalButton.setFrame("up")
         }, this);
     }
 
@@ -165,6 +178,8 @@ class uiQuest extends uiManagerBase
     {
             let test = super.show()
             if (!test) return
+
+            this.phaserScene.sharedData.hud.ui.manager.hudJournalDown.play();
 
             this.phaserScene.sharedData[this.key].ui.elements.panelImg.setAlpha(1);
             this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1).setFrame("up");
