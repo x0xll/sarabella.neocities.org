@@ -23,7 +23,8 @@ class Entity {
 
         let entityCount = 0
         for (let [key] of Object.entries(this.zoneScene.entities)) {
-            if (key.includes(entityID)) {entityCount++}
+            const testKey = entityCount > 0 ? entityID+entityCount : entityID
+            if (key === testKey) { entityCount++ }
         }
         this.entityKey = entityCount > 0 ? entityID+entityCount : entityID
         this.zoneScene.entities[this.entityKey] = this
