@@ -147,63 +147,6 @@ class TemplateEntity extends Entity {
             this.isSpawner = false
         }
     }
-    #trySpawn() {
-        const spawnerData = this.spawnerData
-        const spawnTimeType = spawnerData.spawnTimeType[0].text
-
-        // Check for day/night spawn conditions
-        if (spawnTimeType !== this.zoneScene.timeManager.getCurrentTimeType()) { 
-            return
-        }
-
-        // Check spawn time has elapsed
-        const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
-        if (timeData !== undefined) {
-            const countDay = spawnTimeType === "Day"
-            const countNight = spawnTimeType === "Night"
-            const duration = this.getTimeDuration(countDay, countNight)
-            if (duration < parseFloat(spawnerData.entitySpawnTime[0].text)) {return}
-        } else {
-            this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] = {
-                startTime: this.zoneScene.timeManager.getCurrentTime(),
-                daysCount: 0
-            }
-            return
-        }
-
-        // Reset spawn time
-        this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] = {
-            startTime: this.zoneScene.timeManager.getCurrentTime(),
-            daysCount: 0
-        }
-
-        // Check if spawning is blocked
-        const spawnType = spawnerData.spawnType
-        const entities = this.zoneScene.getEntitiesAt(this.startPos[0], this.startPos[1])
-        if (entities !== undefined) {
-            for (let index = 0; index < entities.length; index++) {
-                const entity = this.zoneScene.entities[entities[index]].templateID
-                let blocksSpawn = this.getTemplateValue(["GridPosition", "blocksSpawn", "text"], entity)
-                if (blocksSpawn === "True") { return }
-                for (let index = 0; index < spawnType.length; index++) {
-                    if (spawnType[index].text === entity) {return}
-                }
-            }
-        }
-
-        // If all conditions met, try spawning
-        const random = Math.random()
-        let chanceCounter = 0
-        for (let index = 0; index < spawnType.length; index++) {
-            const type = spawnType[index];
-
-            chanceCounter = chanceCounter + parseFloat(type.chance)
-            if (random <= chanceCounter) {
-                this.zoneScene.spawnEntity(type.text, this.startPos[0], this.startPos[1])
-                return
-            }
-        }
-    }
     // ------- END LOAD FUNCTIONS -------
 
 
@@ -364,6 +307,66 @@ class TemplateEntity extends Entity {
                 }
             }
         }
+    }
+
+    #trySpawn() {
+        const spawnerData = this.spawnerData
+        const spawnTimeType = spawnerData.spawnTimeType[0].text
+
+        // Check for day/night spawn conditions
+        if (spawnTimeType !== this.zoneScene.timeManager.getCurrentTimeType()) { 
+            return
+        }
+
+        // Check spawn time has elapsed
+        const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
+        if (timeData !== undefined) {
+            const countDay = spawnTimeType === "Day"
+            const countNight = spawnTimeType === "Night"
+            const duration = this.getTimeDuration(countDay, countNight)
+            if (duration < parseFloat(spawnerData.entitySpawnTime[0].text)) {return}
+        } else {
+            this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] = {}
+            this.resetTimeData()
+            return
+        }
+
+        // Reset spawn time
+        this.resetTimeData()
+
+        // Check if spawning is blocked
+        const spawnType = spawnerData.spawnType
+        const entities = this.zoneScene.getEntitiesAt(this.startPos[0], this.startPos[1])
+        if (entities !== undefined) {
+            for (let index = 0; index < entities.length; index++) {
+                const entity = this.zoneScene.entities[entities[index]].templateID
+                let blocksSpawn = this.getTemplateValue(["GridPosition", "blocksSpawn", "text"], entity)
+                if (blocksSpawn === "True") { return }
+                for (let index = 0; index < spawnType.length; index++) {
+                    if (spawnType[index].text === entity) {return}
+                }
+            }
+        }
+
+        // If all conditions met, try spawning
+        const random = Math.random()
+        let chanceCounter = 0
+        for (let index = 0; index < spawnType.length; index++) {
+            const type = spawnType[index];
+
+            chanceCounter = chanceCounter + parseFloat(type.chance)
+            if (random <= chanceCounter) {
+                this.zoneScene.spawnEntity(type.text, this.startPos[0], this.startPos[1])
+                return
+            }
+        }
+    }
+    
+    resetTimeData() {
+        const timeData = this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey]
+        
+        timeData.startTime = this.zoneScene.timeManager.getCurrentTime()
+        timeData.daysCount = 0
     }
 
 
@@ -786,26 +789,39 @@ class TemplateEntity extends Entity {
     }
 
     destroy (ignoreRemoveEntityTrigger = false) {
-        // Check for any triggers
-
-        if (!ignoreRemoveEntityTrigger) {
-            const nearbyEntities = new Set()
-            for (let x = 0; x < this.gridFootX; x++) {
-                for (let y = 0; y < this.gridFootY; y++) {
-                    const entities = this.zoneScene.getEntitiesAt(this.startPos[0]+x, this.startPos[1]-y)
-                    for (let index = 0; index < entities.length; index++) {
-                        nearbyEntities.add(this.zoneScene.entities[entities[index]].templateID)
-                    }
+        const nearbyEntities = new Set()
+        for (let x = 0; x < this.gridFootX; x++) {
+            for (let y = 0; y < this.gridFootY; y++) {
+                const entities = this.zoneScene.getEntitiesAt(this.startPos[0]+x, this.startPos[1]-y)
+                for (let index = 0; index < entities.length; index++) {
+                    nearbyEntities.add(this.zoneScene.entities[entities[index]].templateID)
                 }
             }
-            for (const entity of nearbyEntities) {
-                if (this.zoneScene.entities[entity]=== undefined) {continue}
+        }
+
+        for (const entity of nearbyEntities) {
+            const otherEntity = this.zoneScene.entities[entity]
+            if (otherEntity=== undefined) {continue}
+
+            // Check for any triggers
+            if (!ignoreRemoveEntityTrigger) {
                 const triggerInfo = {
                     type: "RemoveEntityTrigger",
                     templateID: this.templateID,
-                    targetTemplate: this.zoneScene.entities[entity].templateID
+                    targetTemplate: otherEntity.templateID
                 }
                 this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
+            }
+
+            // Reset any spawners
+            if (otherEntity.isSpawner) {
+                for (let index = 0; index < otherEntity.spawnerData.spawnType.length; index++) {
+                    const spawnsTemplate = otherEntity.spawnerData.spawnType[index];
+                    if (spawnsTemplate.text === this.templateID) {
+                        otherEntity.resetTimeData()
+                        break
+                    }
+                }
             }
         }
 
@@ -834,21 +850,10 @@ class TemplateEntity extends Entity {
             }
         }
 
-        // TODO Reset all spawners in the same tile so they don't instantly try to spawn
-
         // Removes the entity from the zone
         delete this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
         delete this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
         delete this.zoneScene.entities[this.entityKey]
     }
     // ------- END HELPER FUNCTIONS -------
-}
-
-try{
-    module.exports = {
-        TemplateEntity
-    }
-}
-catch(e) {
-
 }
