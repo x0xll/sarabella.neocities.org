@@ -126,7 +126,6 @@ class TemplateEntity extends Entity {
             folderName = folderName.split("/")
             folderName = folderName[folderName.length - 1].replace(".swf", "")
             if (!this.getTemplateValue(["PlantMovieClip"]) 
-                && this.getTemplateValue(["CharacterIdle"], templateID) === undefined
                 && !this.zoneScene.cache.json.exists(`${templateID}-json`) // If the spine version is already cached, no need to check
                 && (this.zoneScene.sharedData.global.stillImageEntities.has(templateID) // Using this to track missing spine files
                     || !urlExists(`${this.assetPath}/${folderName}/${spriteClass}/skeleton.atlas`))

@@ -192,6 +192,7 @@ class uiSuccess extends uiManagerBase
         this.phaserScene.sharedData[this.key].ui.elements.rewardText.setAlpha(0);
         this.phaserScene.sharedData[this.key].ui.elements.continueBtn.setAlpha(0);
         this.phaserScene.sharedData[this.key].ui.elements.continueTxt.setAlpha(0);
+        this.phaserScene.sharedData[this.key].ui.sparkle.setAlpha(0)
     }
 
 
