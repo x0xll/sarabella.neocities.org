@@ -29,6 +29,7 @@ class Common_Load extends Phaser.Scene
         "Z026",
         "Z027",
         "Z028",
+        "Debug"
     ]
 
     constructor ()

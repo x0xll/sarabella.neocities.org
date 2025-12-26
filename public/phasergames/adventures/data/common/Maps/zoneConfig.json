@@ -842,5 +842,37 @@
 
         "backgroundCountX": 1,
         "backgroundCountY": 1
+    },
+     
+    "Debug": {
+        "ID": "Debug",
+
+        "tileXOffset": -320,
+        "tileYOffset": 865,
+        "tileAssets": [
+            "common",
+            "canterfarmsmain",
+            "ruralskymain",
+            "T0059c"
+        ],
+
+        "backgroundXOffset": 1500,
+        "backgroundYOffset": 0,
+
+        "sceneEntryPoints": {
+            "default": [19, 10]
+        },
+        "sceneExitTiles": {
+            "Ti002w": "R050",
+            "Ti063w": "Z001"
+        },
+
+        "camBound": {
+            "xBounds": 1500,
+            "yBounds": 1600
+        },
+
+        "backgroundCountX": 1,
+        "backgroundCountY": 1
     }
 }
