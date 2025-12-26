@@ -288,7 +288,14 @@ class BellapediaOpen extends Phaser.Scene
                 game.currentEntry += langData.books[index].pages.length;
             }
         }
+        
         function selectEntry() {
+            game.load.once('complete', displayEntry, game);
+                game.load.image(game.allEntries[game.currentEntry].name, game.allEntries[game.currentEntry].image);
+            game.load.start();
+        }
+
+        function displayEntry() {
             game.entryOpen.setVisible(true)
             game.entryOpenTitle.text = game.allEntries[game.currentEntry].name
             game.entryOpenTitle.setFontSize(23)
