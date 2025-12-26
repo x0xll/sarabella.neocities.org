@@ -23,11 +23,9 @@ class BellapediaOpen extends Phaser.Scene
         this.allEntries = []
         langData.books.forEach(book => {
             book.pages.forEach(entry => {
-                this.load.image(entry.name, entry.image);
                 this.allEntries.push(entry)
             });
         });
-
         
         this.load.image('pageRef', './images/page_open_ref.png');
     }
@@ -81,14 +79,32 @@ class BellapediaOpen extends Phaser.Scene
         }
 
         /**
-         * Opens the selected book to the given page. Can be used to switch books or turn the page.
+         * Loads then opens the selected book to the given page. Can be used to switch books or turn the page.
          * @param {*} book The book to open
          * @param {*} page The page to open to
          */
-        function selectBook(book, page = 0) {
+        function lazyLoad(book, page = 0) {
+            game.load.once('complete', selectBook, {game: game, book: book, page: page});
+
             game.book = book
             game.currentBook = book
-            book = langData.books[book]
+            const bookData = langData.books[book]
+
+            for (let index = 0; index < 10; index++) {
+                if (index + page*10 in bookData.pages) {
+                    const entry = bookData.pages[index + page*10]
+
+                    game.load.image(entry.name, entry.image);
+                }
+            }
+            
+            game.load.start();
+        }
+
+        function selectBook() {
+            const game = this.game
+            const book = langData.books[this.book]
+            const page = this.page
 
             // Indicate the current book as open
             placeBookSelector(game.book, game.bookSelected)
@@ -183,7 +199,7 @@ class BellapediaOpen extends Phaser.Scene
                 });
                 selector.on('pointerdown', function (pointer) { 
                     game.currentPage = 0
-                    selectBook(index, game.currentPage)
+                    lazyLoad(index, game.currentPage)
                 });
             }
             this.bookSelectors[0].setInteractive(new Phaser.Geom.Rectangle(53, 80, 50, 30), Phaser.Geom.Rectangle.Contains);
@@ -198,14 +214,14 @@ class BellapediaOpen extends Phaser.Scene
             bookArrowRight.on('pointerout', function (pointer) { bookArrowRight.setFrame('idle') });
             bookArrowRight.on('pointerdown', function (pointer) { 
                 game.currentPage += 1
-                selectBook(game.currentBook, game.currentPage)
+                lazyLoad(game.currentBook, game.currentPage)
             });
         let bookArrowLeft = this.add.sprite(113, 440, 'arrow', 'idle').setInteractive({ pixelPerfect: true, useHandCursor: true }).setVisible(false).setFlipX(true)
             bookArrowLeft.on('pointerover', function (pointer) { bookArrowLeft.setFrame('hover') });
             bookArrowLeft.on('pointerout', function (pointer) { bookArrowLeft.setFrame('idle') });
             bookArrowLeft.on('pointerdown', function (pointer) { 
                 game.currentPage -= 1
-                selectBook(game.currentBook, game.currentPage)
+                lazyLoad(game.currentBook, game.currentPage)
             });
         
         // Entry titles
@@ -272,7 +288,14 @@ class BellapediaOpen extends Phaser.Scene
                 game.currentEntry += langData.books[index].pages.length;
             }
         }
+        
         function selectEntry() {
+            game.load.once('complete', displayEntry, game);
+                game.load.image(game.allEntries[game.currentEntry].name, game.allEntries[game.currentEntry].image);
+            game.load.start();
+        }
+
+        function displayEntry() {
             game.entryOpen.setVisible(true)
             game.entryOpenTitle.text = game.allEntries[game.currentEntry].name
             game.entryOpenTitle.setFontSize(23)
@@ -316,7 +339,7 @@ class BellapediaOpen extends Phaser.Scene
         }
 
         // Entry Selection Elements
-        this.entryImage = this.add.image(157, 111, null).setOrigin(0,0)
+        this.entryImage = this.add.image(157, 111, null).setOrigin(0,0).setVisible(false)
         this.entryOpen = this.add.image(646, 220, 'entryOpen').setVisible(false)
 
         let entryTitleConfig = {
@@ -414,7 +437,7 @@ class BellapediaOpen extends Phaser.Scene
         
 
         // ---------- Show Opened Book ---------- //
-        selectBook(data.book, 0)
+        lazyLoad(data.book, 0)
         // this.add.image(444, 234, 'pageRef').setAlpha(.25)
     }
 }
