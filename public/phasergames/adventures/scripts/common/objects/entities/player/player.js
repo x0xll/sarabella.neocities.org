@@ -1,7 +1,7 @@
 class Player extends Entity {
     pathList = []
     pathIndex = 0
-    spriteScale = .25
+    spriteScale = .35
 
     constructor(zoneScene, startX, startY, camBoundX, camBoundY) {
         super(zoneScene, "player", startX, startY);
@@ -14,7 +14,8 @@ class Player extends Entity {
 
     // ------- INITIALIZE PLAYER -------
     load() {
-        super.load("TestCharacter");
+        this.zoneScene.load.spineAtlas(`player-atlas`, `${this.assetPath}/Entities/player/skeleton.atlas`);
+        this.zoneScene.load.spineJson(`player-json`, `${this.assetPath}/Entities/player/skeleton.json`);
         this.cursor = new Cursor(this.zoneScene)
     }
 
@@ -23,7 +24,9 @@ class Player extends Entity {
      */
     create() {
         let isoStart = this.gridToIsoMap(this.startPos[0], this.startPos[1])
-        this.sprite = this.zoneScene.physics.add.image(isoStart.x, isoStart.y, 'player').setScale(this.spriteScale, this.spriteScale).setOrigin(0.5, 1)
+        this.sprite = this.zoneScene.add.spine(isoStart.x, isoStart.y, `player-json`, 'player-atlas').setOrigin(0.5, 1).setScale(this.spriteScale, this.spriteScale)
+        this.setSkin(["a", undefined, "k", "d", "a"])
+        this.zoneScene.physics.add.existing(this.sprite)
         this.zoneScene.cameras.main.startFollow(this.sprite, true).setBounds(0, 0, this.camBounds[0], this.camBounds[1]);
         this.aStar = new AStar(this.zoneScene.tiles, this.zoneScene.entities);
         this.cursor.create()
@@ -86,6 +89,35 @@ class Player extends Entity {
         }
 
         this.resetSpriteFacingDirection()
+    }
+
+    /**
+     * Sets the skin for the sprite to display the current features
+     */
+    setSkin(outfit){
+        const skeletonData = this.sprite.skeleton.data;
+        console.log(skeletonData)
+        const skin = new spine.Skin("custom");
+            for (let index = 0; index < outfit.length; index++) {
+                if (outfit[index] !== undefined) {
+                    console.log(`B00${index+1}/S00${index+1}${outfit[index]}`)
+                    skin.addSkin(skeletonData.findSkin(`B00${index+1}/S00${index+1}${outfit[index]}`));
+                }
+            }
+        this.sprite.skeleton.setSkin(skin);
+        this.sprite.skeleton.setToSetupPose();
+    }
+
+    changeTint(part, r, g, b, shade) {
+        this.sprite.skeleton.findSlot(`${part}`).color.r = r
+        this.sprite.skeleton.findSlot(`${part}`).color.g = g
+        this.sprite.skeleton.findSlot(`${part}`).color.b = b
+        
+        if (shade !== 0) {
+            this.sprite.skeleton.findSlot(`${part}`).darkColor = {r: r-shade, g: g-shade, b: b-shade, a: 1}
+        } else {
+            this.sprite.skeleton.findSlot(`${part}`).darkColor = null
+        }
     }
     // ------- END SPRITE PLACEMENT IN ZONE ------
 
@@ -180,16 +212,21 @@ class Player extends Entity {
                     && triggerInfo.y === this.nextY
                     && this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
                 ) {
+                    this.sprite.animationState.setAnimation(0, "idle0", false)
                     this.pathList = [];
                     this.pathIndex = 0;
                 } else {
                     this.pathIndex++
+                    if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
+                        this.sprite.animationState.setAnimation(0, "idle0", false)
+                    } else {
+                        this.sprite.animationState.setAnimation(0, "walk", true)
+                    }
                 }
 
                 if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
                     this.pathList.shift()
                     this.pathIndex = 0
-                    // TODO: Change player animation (idle, need animated sprite first)
                 }
             }
             this.resetSpriteDepth()

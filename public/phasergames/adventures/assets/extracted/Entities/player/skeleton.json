@@ -1,0 +1,6351 @@
+{
+"skeleton": {
+	"hash": "eF0q1JsfTYM",
+	"spine": "4.2.43",
+	"x": -59.34,
+	"y": -15.71,
+	"width": 150.5,
+	"height": 370.42,
+	"fps": 24,
+	"images": "",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root", "length": 10 },
+	{ "name": "root2", "parent": "root", "length": 10, "x": -3.23, "y": 139.27 },
+	{ "name": "Torso", "parent": "root2", "length": 50, "rotation": 84.21 },
+	{ "name": "Pelvis", "parent": "root2", "length": 30, "rotation": -87.03 },
+	{ "name": "Head", "parent": "Torso", "length": 60, "rotation": 5.79, "x": 55.12, "y": 1.05 },
+	{ "name": "ArmUpper_L", "parent": "Torso", "length": 30, "rotation": -152.01, "x": 46.43, "y": -21.23 },
+	{ "name": "ArmUpper_R", "parent": "Torso", "length": 28, "rotation": -188.64, "x": 39.14, "y": 29.18 },
+	{ "name": "ArmLower_L", "parent": "ArmUpper_L", "length": 30, "rotation": -34.11, "x": 35.96, "y": -1.78 },
+	{ "name": "ArmLower_R", "parent": "ArmUpper_R", "length": 30, "rotation": 2.52, "x": 30.38 },
+	{ "name": "Hand_L", "parent": "ArmLower_L", "length": 20, "rotation": -0.55, "x": 36.61, "y": 0.58 },
+	{ "name": "Hand_R", "parent": "ArmLower_R", "length": 18, "rotation": 11.88, "x": 34.43, "y": -0.07 },
+	{ "name": "LegUpper_L", "parent": "Pelvis", "length": 30, "rotation": 1.01, "x": 30.34, "y": 10 },
+	{ "name": "LegLower_L", "parent": "LegUpper_L", "length": 50, "rotation": 0.4, "x": 32.67, "y": 0.18 },
+	{ "name": "Foot_L_Reset", "parent": "LegLower_L", "length": 10, "x": 50 },
+	{ "name": "Foot_L", "parent": "Foot_L_Reset", "length": 25, "rotation": -18.22, "x": 5.19, "y": 0.34 },
+	{ "name": "LegUpper_R", "parent": "Pelvis", "length": 30, "rotation": 3.01, "x": 28.94, "y": -16.94 },
+	{ "name": "LegLower_R", "parent": "LegUpper_R", "length": 45, "rotation": 0.4, "x": 32.67, "y": 0.18 },
+	{ "name": "Foot_R", "parent": "LegLower_R", "length": 25, "rotation": -40.8, "x": 48.49, "y": 0.38 }
+],
+"slots": [
+	{ "name": "Wing_R_Slot", "bone": "root2", "attachment": "Wing_R_Slot" },
+	{ "name": "Wing_L_Slot", "bone": "root2", "attachment": "Wing_L_Slot" },
+	{ "name": "Hand_R", "bone": "Hand_R", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Hand_L" },
+	{ "name": "ArmLower_R", "bone": "ArmLower_R", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_ArmLower_R" },
+	{ "name": "Foot_R", "bone": "Foot_R", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Foot_R" },
+	{ "name": "LegLower_R", "bone": "LegLower_R", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_LegLower_R" },
+	{ "name": "LegUpper_R", "bone": "LegUpper_R", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_LegUpper_R" },
+	{ "name": "Foot_R_Sock_Slot", "bone": "Foot_R", "attachment": "Foot_R_Sock_Slot" },
+	{ "name": "Foot_R_Sock_Embellish_Slot", "bone": "Foot_R", "attachment": "Foot_R_Sock_Embellish_Slot" },
+	{ "name": "LegLower_R_Sock_Slot", "bone": "LegLower_R", "attachment": "LegLower_R_Sock_Slot" },
+	{ "name": "LegLower_R_Sock_Embellish_Slot", "bone": "LegLower_R", "attachment": "LegLower_R_Sock_Embellish_Slot" },
+	{ "name": "LegLower_R_Slot", "bone": "LegLower_R", "color": "4a6fafff", "attachment": "LegLower_R_Slot" },
+	{ "name": "LegLower_R_Embellish_Slot", "bone": "LegLower_R", "color": "365b9bff", "attachment": "LegLower_R_Slot" },
+	{ "name": "LegUpper_R_Slot", "bone": "LegUpper_R", "color": "4a6fafff", "attachment": "LegUpper_R_Slot" },
+	{ "name": "LegUpper_R_Embellish_Slot", "bone": "LegUpper_R", "color": "365b9bff", "attachment": "LegUpper_R_Embellish_Slot" },
+	{ "name": "Foot_R_Shoe_Slot", "bone": "Foot_R", "color": "f3bb42ff", "attachment": "Foot_R_Shoe_Slot" },
+	{ "name": "Foot_R_Shoe_Embellish_Slot", "bone": "Foot_R", "attachment": "Foot_R_Shoe_Embellish_Slot" },
+	{ "name": "LegLower_R_Shoe_Embellish_Slot", "bone": "LegLower_R", "attachment": "LegLower_R_Shoe_Embellish_Slot" },
+	{ "name": "Foot_L", "bone": "Foot_L", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Foot_L" },
+	{ "name": "LegLower_L", "bone": "LegLower_L", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_LegLower_L" },
+	{ "name": "LegUpper_L", "bone": "LegUpper_L", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_LegUpper_L" },
+	{ "name": "Foot_L_Sock_Slot", "bone": "Foot_L", "attachment": "Foot_L_Slot" },
+	{ "name": "Foot_L_Sock_Embellish_Slot", "bone": "Foot_L", "attachment": "Foot_L_Slot" },
+	{ "name": "LegLower_L_Sock_Slot", "bone": "LegLower_L", "attachment": "LegLower_L_Sock_Slot" },
+	{ "name": "LegLower_L_Sock_Embellish_Slot", "bone": "LegLower_L", "attachment": "LegLower_L_Sock_Embellish_Slot" },
+	{ "name": "LegLower_L_Slot", "bone": "LegLower_L", "color": "4a6fafff", "attachment": "LegLower_L_Slot" },
+	{ "name": "LegLower_L_Embellish_Slot", "bone": "LegLower_L", "color": "365b9bff", "attachment": "LegLower_L_Embellish_Slot" },
+	{ "name": "LegUpper_L_Slot", "bone": "LegUpper_L", "color": "4a6fafff", "attachment": "LegUpper_L_Slot" },
+	{ "name": "LegUpper_L_Embellish_Slot", "bone": "LegUpper_L", "color": "365b9bff", "attachment": "LegUpper_L_Embellish_Slot" },
+	{ "name": "Foot_L_Shoe_Slot", "bone": "Foot_L", "color": "f3bb42ff", "attachment": "Foot_L_Slot" },
+	{ "name": "Foot_L_Shoe_Embellish_Slot", "bone": "Foot_L", "attachment": "A101_SW_Foot_L_walk" },
+	{ "name": "LegLower_L_Shoe_Embellish_Slot", "bone": "LegLower_L", "attachment": "LegLower_L_Shoe_Embellish_Slot" },
+	{ "name": "ArmUpper_R", "bone": "ArmUpper_R", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_ArmUpper_R" },
+	{ "name": "ArmLower_R_Slot", "bone": "ArmLower_R", "color": "fbfd9bff", "attachment": "ArmLower_R_Slot" },
+	{ "name": "ArmLower_R_Embellish_Slot", "bone": "ArmLower_R", "color": "dadc94ff", "attachment": "ArmLower_R_Embellish_Slot" },
+	{ "name": "Pelvis", "bone": "Pelvis", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Pelvis" },
+	{ "name": "Torso", "bone": "Torso", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Torso" },
+	{ "name": "Pelvis_Slot", "bone": "Pelvis", "color": "4a6fafff", "attachment": "Pelvis_Slot" },
+	{ "name": "Pelvis_Embellish_Slot", "bone": "Pelvis", "color": "365b9bff", "attachment": "Pelvis_Embellish_Slot" },
+	{ "name": "Pelvis_Embellish_Slot2", "bone": "Pelvis", "color": "365b9bff", "attachment": "Pelvis_Embellish_Slot2" },
+	{ "name": "ArmUpper_R_Slot", "bone": "ArmUpper_R", "color": "fbfd9bff", "attachment": "ArmUpper_R_Slot" },
+	{ "name": "ArmUpper_R_Embellish_Slot", "bone": "ArmUpper_R", "color": "dadc94ff", "attachment": "ArmUpper_R_Embellish_Slot" },
+	{ "name": "Torso_Slot", "bone": "Torso", "color": "fbfd9bff", "attachment": "Torso_Slot" },
+	{ "name": "Torso_Embellish_Slot", "bone": "Torso", "color": "dadc94ff", "attachment": "Torso_Embellish_Slot" },
+	{ "name": "ArmLower_L", "bone": "ArmLower_L", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_ArmLower_L" },
+	{ "name": "ArmUpper_L", "bone": "ArmUpper_L", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_ArmUpper_L" },
+	{ "name": "Hand_L", "bone": "Hand_L", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Hand_R" },
+	{ "name": "ArmLower_L_Slot", "bone": "ArmLower_L", "color": "fbfd9bff", "attachment": "ArmLower_L_Slot" },
+	{ "name": "ArmLower_L_Embellish_Slot", "bone": "ArmLower_L", "color": "dadc94ff", "attachment": "ArmLower_L_Embellish_Slot" },
+	{ "name": "ArmUpper_L_Slot", "bone": "ArmUpper_L", "color": "fbfd9bff", "attachment": "ArmUpper_L_Slot" },
+	{ "name": "ArmUpper_L_Embellish_Slot", "bone": "ArmUpper_L", "color": "dadc94ff", "attachment": "ArmUpper_L_Embellish_Slot" },
+	{ "name": "Face", "bone": "Head", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_Face" },
+	{ "name": "EyeWhite", "bone": "Head", "attachment": "sw/Avatar/A101_SW_EyeWhite" },
+	{ "name": "EyeIris", "bone": "Head", "color": "8bb4fcff", "attachment": "sw/Avatar/A101_SW_EyeIris" },
+	{ "name": "EyePupil", "bone": "Head", "attachment": "sw/Avatar/A101_SW_EyePupil" },
+	{ "name": "EyeLid", "bone": "Head", "color": "f8d2aeff", "attachment": "sw/Avatar/A101_SW_EyeLid" },
+	{ "name": "Smile", "bone": "Head", "color": "ffffff00", "attachment": "sw/Avatar/A101_SW_Smile" },
+	{ "name": "Hair_Front_Slot", "bone": "Head", "color": "69311bff", "attachment": "Hair_Front_Slot" },
+	{ "name": "Hair_Accessory_Slot", "bone": "Head", "color": "f3bb42ff", "attachment": "Hair_Accessory_Slot" },
+	{ "name": "Hair_Accessory_Slot_Embellish", "bone": "Head", "attachment": "Hair_Accessory_Slot" },
+	{ "name": "Hair_Accessory_Slot_Embellish2", "bone": "Head", "attachment": "Hair_Accessory_Slot" },
+	{ "name": "Face_Slot", "bone": "Head", "attachment": "Face_Slot" },
+	{ "name": "Face_Slot_Embelish", "bone": "Head", "attachment": "Face_Slot_Embelish" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"ArmLower_L": {
+				"sw/Avatar/A101_SW_ArmLower_L": {
+					"x": 15.92,
+					"y": -0.03,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 32,
+					"height": 77
+				}
+			},
+			"ArmLower_R": {
+				"sw/Avatar/A101_SW_ArmLower_R": {
+					"x": 14.61,
+					"y": -0.3,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 34,
+					"height": 74
+				}
+			},
+			"ArmUpper_L": {
+				"sw/Avatar/A101_SW_ArmUpper_L": {
+					"x": 14.06,
+					"y": -1.33,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 48,
+					"height": 92
+				}
+			},
+			"ArmUpper_R": {
+				"sw/Avatar/A101_SW_ArmUpper_R": {
+					"x": 9.17,
+					"y": 0.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 40,
+					"height": 80
+				}
+			},
+			"EyeIris": {
+				"sw/Avatar/A101_SW_EyeIris": {
+					"x": 31.91,
+					"y": 22.74,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 79,
+					"height": 34
+				}
+			},
+			"EyeLid": {
+				"sw/Avatar/A101_SW_EyeLid": {
+					"x": 37.42,
+					"y": 21.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 108,
+					"height": 28
+				}
+			},
+			"EyePupil": {
+				"sw/Avatar/A101_SW_EyePupil": {
+					"x": 32.61,
+					"y": 23.41,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 70,
+					"height": 23
+				}
+			},
+			"EyeWhite": {
+				"sw/Avatar/A101_SW_EyeWhite": {
+					"x": 32.58,
+					"y": 21.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 95,
+					"height": 37
+				}
+			},
+			"Face": {
+				"sw/Avatar/A101_SW_Face": {
+					"x": 65.5,
+					"y": -14.62,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 301,
+					"height": 380
+				}
+			},
+			"Foot_L": {
+				"sw/Avatar/A101_SW_Foot_L": {
+					"x": 14,
+					"y": 5.39,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 77
+				},
+				"sw/Avatar/A101_SW_Foot_L2": {
+					"x": 11.72,
+					"y": 0.09,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 88,
+					"height": 73
+				}
+			},
+			"Foot_R": {
+				"sw/Avatar/A101_SW_Foot_R": {
+					"x": 16.41,
+					"y": -0.48,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 87,
+					"height": 76
+				}
+			},
+			"Hand_L": {
+				"sw/Avatar/A101_SW_Hand_R": {
+					"x": 9.62,
+					"y": -0.01,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.89,
+					"width": 31,
+					"height": 52
+				}
+			},
+			"Hand_R": {
+				"sw/Avatar/A101_SW_Hand_L": {
+					"x": 7.82,
+					"y": -0.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 90.03,
+					"width": 27,
+					"height": 53
+				}
+			},
+			"LegLower_L": {
+				"sw/Avatar/A101_SW_LegLower_L": {
+					"x": 26.25,
+					"y": -2,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 47,
+					"height": 123
+				}
+			},
+			"LegLower_R": {
+				"sw/Avatar/A101_SW_LegLower_R": {
+					"x": 22.42,
+					"y": -0.92,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 50,
+					"height": 115
+				}
+			},
+			"LegUpper_L": {
+				"sw/Avatar/A101_SW_LegUpper_L": {
+					"x": 17.93,
+					"y": -1.17,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 86.02,
+					"width": 57,
+					"height": 82
+				}
+			},
+			"LegUpper_R": {
+				"sw/Avatar/A101_SW_LegUpper_R": {
+					"x": 14.64,
+					"y": -0.66,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 54,
+					"height": 82
+				}
+			},
+			"Pelvis": {
+				"sw/Avatar/A101_SW_Pelvis": {
+					"x": 17.93,
+					"y": -2.1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 109,
+					"height": 97
+				}
+			},
+			"Smile": {
+				"sw/Avatar/A101_SW_Smile": {
+					"x": 6.32,
+					"y": 19.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 50,
+					"height": 22
+				}
+			},
+			"Torso": {
+				"sw/Avatar/A101_SW_Torso": {
+					"x": 35.58,
+					"y": 2.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 105,
+					"height": 147
+				}
+			}
+		}
+	},
+	{
+		"name": "B002",
+		"attachments": {
+			"ArmLower_L_Embellish_Slot": {
+				"ArmLower_L_Embellish_Slot": { "name": "sw/Clothes/B002_SW_ArmUpper_R", "x": -9.54, "y": -72.28, "rotation": 101.91, "width": 25, "height": 33 }
+			},
+			"ArmLower_R_Embellish_Slot": {
+				"ArmLower_R_Embellish_Slot": { "name": "sw/Clothes/B002_SW_ArmUpper_R", "x": -21.72, "y": -2.9, "rotation": 101.91, "width": 25, "height": 33 }
+			},
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": { "name": "sw/Clothes/B002_SW_ArmUpper_L", "x": 11.08, "y": 3.27, "rotation": 67.8, "width": 25, "height": 38 }
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": { "name": "sw/Clothes/B002_SW_ArmUpper_L", "x": 11.08, "y": 3.27, "rotation": 67.8, "width": 25, "height": 38 }
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": { "name": "sw/Clothes/B002_SW_ArmUpper_R", "x": 8.8, "y": -3.85, "rotation": 104.43, "width": 25, "height": 33 }
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": { "name": "sw/Clothes/B002_SW_ArmUpper_R", "x": 8.8, "y": -3.85, "rotation": 104.43, "width": 25, "height": 33 }
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": { "name": "sw/Clothes/B002_SW_Pelvis", "x": 27.76, "y": -4.52, "rotation": 87.03, "width": 109, "height": 70 }
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": { "name": "sw/Clothes/B002_SW_Pelvis", "x": 27.76, "y": -4.52, "rotation": 87.03, "width": 109, "height": 70 }
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": { "name": "sw/Clothes/B002_SW_Torso", "x": 29.96, "y": 1.26, "rotation": -84.21, "width": 58, "height": 58 }
+			},
+			"Torso_Slot": {
+				"Torso_Slot": { "name": "sw/Clothes/B002_SW_Torso", "x": 29.96, "y": 1.26, "rotation": -84.21, "width": 58, "height": 58 }
+			}
+		}
+	},
+	{
+		"name": "B001/S001a",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001a_SW/S001a_SW_ArmUpper_L",
+					"x": 11.37,
+					"y": 2.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 61,
+					"height": 78
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001a_SW/S001a_SW_ArmUpper_R",
+					"x": 7.76,
+					"y": -2.87,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 42,
+					"height": 64
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001a_SW/S001a_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 123,
+					"height": 161
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001b",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001b_SW/S001b_SW_ArmUpper_L_Embellish",
+					"x": 13.29,
+					"y": 1.56,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 45,
+					"height": 42
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001a_SW/S001a_SW_ArmUpper_L",
+					"x": 11.37,
+					"y": 2.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 61,
+					"height": 78
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001b_SW/S001b_SW_ArmUpper_R_Embellish",
+					"x": 13.06,
+					"y": -1.5,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 46,
+					"height": 50
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001a_SW/S001a_SW_ArmUpper_R",
+					"x": 7.76,
+					"y": -2.87,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 42,
+					"height": 64
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001b_SW/S001b_SW_Torso_Embellish",
+					"x": 12,
+					"y": 1.22,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 122,
+					"height": 138
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001a_SW/S001a_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 123,
+					"height": 161
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001c",
+		"attachments": {
+			"ArmLower_L_Slot": {
+				"ArmLower_L_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmLower_L",
+					"x": 15.49,
+					"y": 0.95,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 39,
+					"height": 79
+				}
+			},
+			"ArmLower_R_Slot": {
+				"ArmLower_R_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmLower_R",
+					"x": 13.62,
+					"y": -1.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 44,
+					"height": 77
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmUpper_L",
+					"x": 12.95,
+					"y": -1.77,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 63,
+					"height": 97
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmUpper_R",
+					"x": 10.69,
+					"y": -2.12,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 48,
+					"height": 78
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_Torso_Embellish",
+					"x": 39.95,
+					"y": 2.72,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 115,
+					"height": 70
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001d",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001d_SW/S001d_SW_ArmUpper_L",
+					"x": 8.21,
+					"y": 2.62,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 57,
+					"height": 69
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001d_SW/S001d_SW_ArmUpper_R",
+					"x": 6.85,
+					"y": -4.66,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 50,
+					"height": 63
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001d_SW/S001d_SW_Torso",
+					"x": 12.88,
+					"y": 1.31,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 136,
+					"height": 180
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001e",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001e_SW/S001e_SW_ArmUpper_L",
+					"x": 5.78,
+					"y": 1.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 48,
+					"height": 63
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001e_SW/S001e_SW_ArmUpper_R",
+					"x": 3.21,
+					"y": -1.89,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 39,
+					"height": 51
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001e_SW/S001e_SW_Torso_Embellish",
+					"x": -3.07,
+					"y": -5.63,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 89,
+					"height": 78
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001e_SW/S001e_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001f",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001f_SW/S001f_SW_ArmUpper_L",
+					"x": 8.98,
+					"y": 2.5,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 65,
+					"height": 80
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001f_SW/S001f_SW_ArmUpper_R",
+					"x": 3.21,
+					"y": -1.89,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 59,
+					"height": 63
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001f_SW/S001f_SW_Torso_Embellish",
+					"x": 32.48,
+					"y": -4.11,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 94,
+					"height": 102
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001f_SW/S001f_SW_Torso",
+					"x": 11.37,
+					"y": 1.15,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 150,
+					"height": 181
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001g",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001g_SW/S001g_SW_ArmUpper_L_Embellish",
+					"x": 18.32,
+					"y": 2.37,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 39,
+					"height": 37
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001g_SW/S001g_SW_ArmUpper_L",
+					"x": 8.21,
+					"y": 1.6,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 56,
+					"height": 71
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001g_SW/S001g_SW_ArmUpper_R_Embellish",
+					"x": 14.95,
+					"y": -2.77,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 37,
+					"height": 28
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001g_SW/S001g_SW_ArmUpper_R",
+					"x": 5.23,
+					"y": -1.37,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 49,
+					"height": 64
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001g_SW/S001g_SW_Torso_Embellish",
+					"x": 17.9,
+					"y": 2.95,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 115,
+					"height": 163
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001g_SW/S001g_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001h",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_ArmUpper_L",
+					"x": 6.34,
+					"y": 0.52,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 56,
+					"height": 69
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_ArmUpper_R",
+					"x": 3.48,
+					"y": -0.65,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 45,
+					"height": 58
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_Torso_Embellish",
+					"x": 9.89,
+					"y": 3.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 67,
+					"height": 86
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001i",
+		"attachments": {
+			"ArmLower_L_Slot": {
+				"ArmLower_L_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmLower_L",
+					"x": 13.99,
+					"y": -1.1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 39,
+					"height": 79
+				}
+			},
+			"ArmLower_R_Slot": {
+				"ArmLower_R_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmLower_R",
+					"x": 13.86,
+					"y": -2.27,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 44,
+					"height": 77
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001i_SW/S001i_SW_ArmUpper_L",
+					"x": 13.45,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 53,
+					"height": 91
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001i_SW/S001i_SW_ArmUpper_R",
+					"x": 10.69,
+					"y": -2.12,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 51,
+					"height": 78
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001i_SW/S001i_SW_Torso_Embellish",
+					"x": 14.55,
+					"y": 4.13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 116,
+					"height": 169
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001i_SW/S001i_SW_Torso",
+					"x": 18.14,
+					"y": 1.84,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 121,
+					"height": 157
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001j",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_ArmUpper_L",
+					"x": 6.34,
+					"y": 0.52,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 56,
+					"height": 69
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_ArmUpper_R",
+					"x": 3.48,
+					"y": -0.65,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 45,
+					"height": 58
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001j_SW/S001j_SW_Torso_Embellish",
+					"x": 9.89,
+					"y": 3.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 60,
+					"height": 65
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001h_SW/S001h_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001k",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001k_SW/S001k_SW_ArmUpper_L",
+					"x": 6.34,
+					"y": 0.52,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 56,
+					"height": 71
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001k_SW/S001k_SW_ArmUpper_R",
+					"x": 4.4,
+					"y": -0.42,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 49,
+					"height": 64
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001k_SW/S001k_SW_Torso_Embellish",
+					"x": 11.79,
+					"y": 3.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 83,
+					"height": 90
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001k_SW/S001k_SW_Torso",
+					"x": 17.77,
+					"y": 1.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001l",
+		"attachments": {
+			"ArmLower_L_Slot": {
+				"ArmLower_L_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmLower_L",
+					"x": 13.99,
+					"y": -1.1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 39,
+					"height": 79
+				}
+			},
+			"ArmLower_R_Slot": {
+				"ArmLower_R_Slot": {
+					"name": "sw/Clothes/S001/S001c_SW/S001c_SW_ArmLower_R",
+					"x": 13.86,
+					"y": -2.27,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 44,
+					"height": 77
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001i_SW/S001i_SW_ArmUpper_L",
+					"x": 13.45,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 53,
+					"height": 91
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001i_SW/S001i_SW_ArmUpper_R",
+					"x": 10.69,
+					"y": -2.12,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 51,
+					"height": 78
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001l_SW/S001l_SW_Torso_Embellish",
+					"x": 14.55,
+					"y": 4.13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 88,
+					"height": 108
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001l_SW/S001l_SW_Torso",
+					"x": 19.23,
+					"y": 1.95,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 121,
+					"height": 157
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001m",
+		"attachments": {
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001m_SW/S001m_SW_Torso_Embellish",
+					"x": 12.35,
+					"y": 7.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 83,
+					"height": 80
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001m_SW/S001m_SW_Torso",
+					"x": 15.24,
+					"y": 1.55,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 135,
+					"height": 177
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001p",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001p_SW/S001p_SW_ArmUpper_L_Embellish",
+					"x": 1.93,
+					"y": 7.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 52,
+					"height": 42
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001p_SW/S001p_SW_ArmUpper_L",
+					"x": 9.57,
+					"y": 2.29,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 64,
+					"height": 77
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001p_SW/S001p_SW_ArmUpper_R_Embellish",
+					"x": 2.49,
+					"y": -7.24,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 38,
+					"height": 47
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001p_SW/S001p_SW_ArmUpper_R",
+					"x": 9.21,
+					"y": -1.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 58,
+					"height": 77
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001p_SW/S001p_SW_Torso_Embellish",
+					"x": 11.02,
+					"y": 1.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 108,
+					"height": 196
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001p_SW/S001p_SW_Torso",
+					"x": 14.5,
+					"y": 1.47,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 131,
+					"height": 179
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001q",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001q_SW/S001q_SW_ArmUpper_L_Embellish",
+					"x": -3.23,
+					"y": 0.63,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 47,
+					"height": 45
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001q_SW/S001q_SW_ArmUpper_L",
+					"x": 5.5,
+					"y": 1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 48,
+					"height": 60
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001q_SW/S001q_SW_ArmUpper_R",
+					"x": 8.56,
+					"y": -3.79,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 48,
+					"height": 60
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001q_SW/S001q_SW_Torso_Embellish",
+					"x": 19.28,
+					"y": 3.42,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 114,
+					"height": 154
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001q_SW/S001q_SW_Torso",
+					"x": 7.41,
+					"y": 0.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 147,
+					"height": 189
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001r",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001r_SW/S001r_SW_ArmUpper_L_Embellish",
+					"x": -0.41,
+					"y": -3.12,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 51,
+					"height": 86
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001r_SW/S001r_SW_ArmUpper_L",
+					"x": -0.19,
+					"y": -3.17,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 29,
+					"height": 44
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001r_SW/S001r_SW_ArmUpper_R_Embellish",
+					"x": 7.75,
+					"y": -3.26,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 24,
+					"height": 52
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001r_SW/S001r_SW_ArmUpper_R",
+					"x": -1.33,
+					"y": 0.86,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 27,
+					"height": 30
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001r_SW/S001r_SW_Torso_Embellish",
+					"x": 19.07,
+					"y": 4.07,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 131,
+					"height": 167
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001r_SW/S001r_SW_Torso",
+					"x": 16.65,
+					"y": 1.69,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 123,
+					"height": 164
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001s",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001s_SW/S001s_SW_ArmUpper_L_Embellish",
+					"x": 11.13,
+					"y": 0.66,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 54,
+					"height": 77
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001s_SW/S001s_SW_ArmUpper_L",
+					"x": 10.47,
+					"y": 2.47,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 61,
+					"height": 75
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001s_SW/S001s_SW_ArmUpper_R_Embellish",
+					"x": 9.04,
+					"y": -2.15,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 40,
+					"height": 68
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001s_SW/S001s_SW_ArmUpper_R",
+					"x": 8.23,
+					"y": -3.23,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 43,
+					"height": 64
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001s_SW/S001s_SW_Torso_Embellish",
+					"x": 20.05,
+					"y": 2,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 121,
+					"height": 160
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001s_SW/S001s_SW_Torso",
+					"x": 19.69,
+					"y": 1.87,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 122,
+					"height": 161
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001t",
+		"attachments": {
+			"ArmLower_L_Embellish_Slot": {
+				"ArmLower_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_ArmLower_L_Embellish",
+					"x": 24.37,
+					"y": 1.4,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 35,
+					"height": 39
+				}
+			},
+			"ArmLower_L_Slot": {
+				"ArmLower_L_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_ArmLower_L",
+					"x": 14.53,
+					"y": 0.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 38,
+					"height": 78
+				}
+			},
+			"ArmLower_R_Embellish_Slot": {
+				"ArmLower_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_ArmLower_R_Embellish",
+					"x": 27.78,
+					"y": -1.26,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 31,
+					"height": 20
+				}
+			},
+			"ArmLower_R_Slot": {
+				"ArmLower_R_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_ArmLower_R",
+					"x": 12.68,
+					"y": -1.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 44,
+					"height": 78
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_ArmUpper_L",
+					"x": 12.44,
+					"y": -0.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 53,
+					"height": 91
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_ArmUpper_R",
+					"x": 10.16,
+					"y": -1.99,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 51,
+					"height": 78
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_Torso_Embellish",
+					"x": 35.29,
+					"y": 2.74,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 108,
+					"height": 95
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001t_SW/S001t_SW_Torso",
+					"x": 19.69,
+					"y": 1.87,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 121,
+					"height": 157
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001u",
+		"attachments": {
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001u_SW/S001u_SW_ArmUpper_L",
+					"x": 7.32,
+					"y": 1.26,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 56,
+					"height": 71
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001u_SW/S001u_SW_ArmUpper_R",
+					"x": 5.41,
+					"y": -0.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 49,
+					"height": 64
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001u_SW/S001u_SW_Torso_Embellish",
+					"x": 11.27,
+					"y": 5.33,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 62,
+					"height": 68
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001u_SW/S001u_SW_Torso",
+					"x": 17.09,
+					"y": 1.61,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 166
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001v",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001v_SW/S001v_SW_ArmUpper_L_Embellish",
+					"x": 1.68,
+					"y": 1.46,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 13,
+					"height": 14
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001v_SW/S001v_SW_ArmUpper_L",
+					"x": 5.37,
+					"y": 1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 48,
+					"height": 63
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001v_SW/S001v_SW_ArmUpper_R_Embellish",
+					"x": 2.45,
+					"y": -4.38,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 13,
+					"height": 14
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001v_SW/S001v_SW_ArmUpper_R",
+					"x": 4.03,
+					"y": -2.33,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 39,
+					"height": 51
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001v_SW/S001v_SW_Torso_Embellish",
+					"x": 18.13,
+					"y": 3.87,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 95,
+					"height": 160
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001v_SW/S001v_SW_Torso",
+					"x": 17.62,
+					"y": 1.79,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 120,
+					"height": 163
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001w",
+		"attachments": {
+			"ArmLower_L_Embellish_Slot": {
+				"ArmLower_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmLower_L_Embellish",
+					"x": 34.89,
+					"y": 4.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 52,
+					"height": 38
+				}
+			},
+			"ArmLower_L_Slot": {
+				"ArmLower_L_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmLower_L",
+					"x": 16.91,
+					"y": 1.01,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 38,
+					"height": 78
+				}
+			},
+			"ArmLower_R_Embellish_Slot": {
+				"ArmLower_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmLower_R_Embellish",
+					"x": 31.14,
+					"y": -2.47,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 55,
+					"height": 33
+				}
+			},
+			"ArmLower_R_Slot": {
+				"ArmLower_R_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmLower_R",
+					"x": 12.68,
+					"y": -1.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 101.91,
+					"width": 44,
+					"height": 76
+				}
+			},
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmUpper_L_Embellish",
+					"x": 10.44,
+					"y": 2.03,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 47,
+					"height": 49
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmUpper_L",
+					"x": 23.55,
+					"y": -2.24,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 48,
+					"height": 63
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmUpper_R_Embellish",
+					"x": 3.74,
+					"y": -3.88,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 46,
+					"height": 45
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_ArmUpper_R",
+					"x": 15.9,
+					"y": -0.51,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 47,
+					"height": 57
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_Torso_Embellish",
+					"x": 35.52,
+					"y": 4.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 108,
+					"height": 100
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001w_SW/S001w_SW_Torso",
+					"x": 12.25,
+					"y": 3.44,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 109,
+					"height": 94
+				}
+			}
+		}
+	},
+	{
+		"name": "B001/S001x",
+		"attachments": {
+			"ArmUpper_L_Embellish_Slot": {
+				"ArmUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001x_SW/S001x_SW_ArmUpper_L_Embellish",
+					"x": 25.41,
+					"y": 1.77,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 43,
+					"height": 24
+				}
+			},
+			"ArmUpper_L_Slot": {
+				"ArmUpper_L_Slot": {
+					"name": "sw/Clothes/S001/S001x_SW/S001x_SW_ArmUpper_L",
+					"x": 7.79,
+					"y": 1.62,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 67.8,
+					"width": 60,
+					"height": 73
+				}
+			},
+			"ArmUpper_R_Embellish_Slot": {
+				"ArmUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001x_SW/S001x_SW_ArmUpper_R_Embellish",
+					"x": 18.41,
+					"y": -3.71,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 46,
+					"height": 25
+				}
+			},
+			"ArmUpper_R_Slot": {
+				"ArmUpper_R_Slot": {
+					"name": "sw/Clothes/S001/S001x_SW/S001x_SW_ArmUpper_R",
+					"x": 4.41,
+					"y": -0.89,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 104.43,
+					"width": 51,
+					"height": 53
+				}
+			},
+			"Torso_Embellish_Slot": {
+				"Torso_Embellish_Slot": {
+					"name": "sw/Clothes/S001/S001x_SW/S001x_SW_Torso_Embellish",
+					"x": 4.44,
+					"y": -0.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 106,
+					"height": 207
+				}
+			},
+			"Torso_Slot": {
+				"Torso_Slot": {
+					"name": "sw/Clothes/S001/S001x_SW/S001x_SW_Torso",
+					"x": 19.06,
+					"y": 1.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -84.21,
+					"width": 119,
+					"height": 157
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003a",
+		"attachments": {
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegLower_L",
+					"x": 25.42,
+					"y": -0.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 56,
+					"height": 116
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegLower_R",
+					"x": 21.89,
+					"y": -0.49,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 53,
+					"height": 104
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegUpper_L",
+					"x": 17.53,
+					"y": -2.65,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 59,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegUpper_R",
+					"x": 16.54,
+					"y": -1.07,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 86
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_Pelvis",
+					"x": 21.68,
+					"y": -2.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 82
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003aa",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003aa_SW/S003aa_SW_Skirt_Embellish",
+					"x": 31.82,
+					"y": -3.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 116,
+					"height": 114
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003aa_SW/S003aa_SW_Skirt",
+					"x": 33.67,
+					"y": -4.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 203,
+					"height": 147
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003ab",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003ab_SW/S003ab_SW_Skirt_Embellish",
+					"x": 34.62,
+					"y": -3.91,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 161,
+					"height": 147
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003ab_SW/S003ab_SW_Skirt",
+					"x": 32.4,
+					"y": -4.46,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 157,
+					"height": 136
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003b",
+		"attachments": {
+			"LegLower_L_Embellish_Slot": {
+				"LegLower_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003b_SW/S003b_SW_LegLower_L_Embellish",
+					"x": 25.5,
+					"y": 0.82,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 57,
+					"height": 115
+				}
+			},
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegLower_L",
+					"x": 25.42,
+					"y": -0.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 56,
+					"height": 116
+				}
+			},
+			"LegLower_R_Embellish_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003b_SW/S003b_SW_LegLower_R_Embellish",
+					"x": 21.81,
+					"y": -1.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 50,
+					"height": 105
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegLower_R",
+					"x": 21.89,
+					"y": -0.49,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 53,
+					"height": 104
+				}
+			},
+			"LegUpper_L_Embellish_Slot": {
+				"LegUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003b_SW/S003b_SW_LegUpper_L_Embellish",
+					"x": 17.54,
+					"y": -2.46,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 58,
+					"height": 93
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegUpper_L",
+					"x": 17.54,
+					"y": -2.46,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 59,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Embellish_Slot": {
+				"LegUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003b_SW/S003b_SW_LegUpper_R_Embellish",
+					"x": 16.5,
+					"y": -1.46,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 86
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegUpper_R",
+					"x": 16.54,
+					"y": -1.07,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 86
+				}
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003b_SW/S003b_SW_Pelvis_Embellish",
+					"x": 21.68,
+					"y": -2.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 109,
+					"height": 77
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_Pelvis",
+					"x": 21.68,
+					"y": -2.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 82
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003c",
+		"attachments": {
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003c_SW/S003c_SW_LegLower_L",
+					"x": 27.78,
+					"y": 2.37,
+					"scaleX": 0.5,
+					"scaleY": 0.45,
+					"rotation": 85.62,
+					"width": 66,
+					"height": 137
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003c_SW/S003c_SW_LegLower_R",
+					"x": 24.97,
+					"y": -0.7,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 63,
+					"height": 121
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegUpper_L",
+					"x": 17.54,
+					"y": -2.46,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 59,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_LegUpper_R",
+					"x": 16.53,
+					"y": -1.17,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 86
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003a_SW/S003a_SW_Pelvis",
+					"x": 21.68,
+					"y": -2.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 82
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003d",
+		"attachments": {
+			"LegLower_L_Embellish_Slot": {
+				"LegLower_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_LegLower_L_Embellish",
+					"x": 40.89,
+					"y": 2.45,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 49,
+					"height": 62
+				}
+			},
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_LegLower_L",
+					"x": 27.69,
+					"y": 0.64,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 60,
+					"height": 113
+				}
+			},
+			"LegLower_R_Embellish_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_LegLower_R_Embellish",
+					"x": 35.03,
+					"y": -0.19,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 47,
+					"height": 56
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_LegLower_R",
+					"x": 21.9,
+					"y": -0.4,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 54,
+					"height": 106
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_LegUpper_L",
+					"x": 17.53,
+					"y": -2.7,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 60,
+					"height": 103
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_LegUpper_R",
+					"x": 17.13,
+					"y": -1.23,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 85
+				}
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_Pelvis_Embellish",
+					"x": 24.47,
+					"y": -4.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 118,
+					"height": 71
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003d_SW/S003d_SW_Pelvis",
+					"x": 25.22,
+					"y": -2.75,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 111,
+					"height": 70
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003e",
+		"attachments": {
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003e_SW/S003e_SW_LegLower_L",
+					"x": 29.16,
+					"y": 7.51,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 92,
+					"height": 116
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003e_SW/S003e_SW_LegLower_R",
+					"x": 24.22,
+					"y": -0.12,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 98,
+					"height": 111
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003e_SW/S003e_SW_LegUpper_L",
+					"x": 18.51,
+					"y": -2.28,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 59,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003e_SW/S003e_SW_LegUpper_R",
+					"x": 17.14,
+					"y": -1.14,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 85
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003e_SW/S003e_SW_Pelvis",
+					"x": 25.22,
+					"y": -2.75,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 111,
+					"height": 70
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003f",
+		"attachments": {
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003f_SW/S003f_SW_LegUpper_L",
+					"x": 15.97,
+					"y": -1.45,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 86.02,
+					"width": 61,
+					"height": 75
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003f_SW/S003f_SW_LegUpper_R",
+					"x": 16.3,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 57,
+					"height": 73
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003f_SW/S003f_SW_Pelvis",
+					"x": 25.22,
+					"y": -2.75,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 109,
+					"height": 82
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003g",
+		"attachments": {
+			"LegUpper_L_Embellish_Slot": {
+				"LegUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003g_SW/S003g_SW_LegUpper_L_Embellish",
+					"x": 17.88,
+					"y": -0.53,
+					"scaleX": 0.53,
+					"scaleY": 0.5,
+					"rotation": 86.02,
+					"width": 65,
+					"height": 78
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003g_SW/S003g_SW_LegUpper_L",
+					"x": 18,
+					"y": 1.31,
+					"scaleX": 0.53,
+					"scaleY": 0.5,
+					"rotation": 86.02,
+					"width": 74,
+					"height": 79
+				}
+			},
+			"LegUpper_R_Embellish_Slot": {
+				"LegUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003g_SW/S003g_SW_LegUpper_R_Embellish",
+					"x": 16.03,
+					"y": -3.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 59,
+					"height": 85
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003g_SW/S003g_SW_LegUpper_R",
+					"x": 15.92,
+					"y": -4.21,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 67,
+					"height": 85
+				}
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003g_SW/S003g_SW_Pelvis_Embellish",
+					"x": 25.72,
+					"y": -8.31,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 86,
+					"height": 56
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003g_SW/S003g_SW_Pelvis",
+					"x": 25.22,
+					"y": -2.75,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 111,
+					"height": 73
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003h",
+		"attachments": {
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003h_SW/S003h_SW_LegUpper_L",
+					"x": 19.32,
+					"y": 1.22,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 76,
+					"height": 103
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003h_SW/S003h_SW_LegUpper_R",
+					"x": 16.76,
+					"y": -3.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 71,
+					"height": 94
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003h_SW/S003h_SW_Pelvis",
+					"x": 27.85,
+					"y": -2.89,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 57
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003i",
+		"attachments": {
+			"LegUpper_L_Embellish_Slot": {
+				"LegUpper_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003i_SW/S003i_SW_LegUpper_L_Embellish",
+					"x": 20.41,
+					"y": 9.32,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 38,
+					"height": 95
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003i_SW/S003i_SW_LegUpper_L",
+					"x": 20.29,
+					"y": 0.1,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 77,
+					"height": 99
+				}
+			},
+			"LegUpper_R_Embellish_Slot": {
+				"LegUpper_R_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003i_SW/S003i_SW_LegUpper_R_Embellish",
+					"x": 15.02,
+					"y": -12.84,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 11,
+					"height": 97
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003i_SW/S003i_SW_LegUpper_R",
+					"x": 16.36,
+					"y": -0.02,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 62,
+					"height": 99
+				}
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003i_SW/S003i_SW_Pelvis_Embellish",
+					"x": 27.27,
+					"y": -3.91,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 107,
+					"height": 47
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003i_SW/S003i_SW_Pelvis",
+					"x": 25.22,
+					"y": -2.75,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 115,
+					"height": 73
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003j",
+		"attachments": {
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003j_SW/S003j_SW_LegUpper_L",
+					"x": 19.01,
+					"y": 4.41,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 83,
+					"height": 78
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003j_SW/S003j_SW_LegUpper_R",
+					"x": 13.76,
+					"y": -2.13,
+					"scaleX": 0.53,
+					"scaleY": 0.5,
+					"rotation": 84.02,
+					"width": 68,
+					"height": 82
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003j_SW/S003j_SW_Pelvis",
+					"x": 28.64,
+					"y": -2.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 115,
+					"height": 67
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003k",
+		"attachments": {
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003k_SW/S003k_SW_LegLower_L",
+					"x": 25.42,
+					"y": -0.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 56,
+					"height": 116
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003k_SW/S003k_SW_LegLower_R",
+					"x": 21.89,
+					"y": -0.49,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 53,
+					"height": 104
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003k_SW/S003k_SW_LegUpper_L",
+					"x": 17.53,
+					"y": -2.65,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 59,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003k_SW/S003k_SW_LegUpper_R",
+					"x": 16.54,
+					"y": -1.07,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 85
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003k_SW/S003k_SW_Pelvis",
+					"x": 21.68,
+					"y": -2.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 82
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003l",
+		"attachments": {
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003l_SW/S003l_SW_LegLower_L",
+					"x": 14.66,
+					"y": 0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 56,
+					"height": 77
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003l_SW/S003l_SW_LegLower_R",
+					"x": 12.47,
+					"y": 0.56,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 52,
+					"height": 66
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003l_SW/S003l_SW_LegUpper_L",
+					"x": 17.53,
+					"y": -2.65,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 59,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003l_SW/S003l_SW_LegUpper_R",
+					"x": 16.54,
+					"y": -1.07,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 55,
+					"height": 85
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003l_SW/S003l_SW_Pelvis",
+					"x": 21.68,
+					"y": -2.57,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 109,
+					"height": 82
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003m",
+		"attachments": {
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003m_SW/S003m_SW_LegLower_L",
+					"x": 26.87,
+					"y": 4.88,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 83,
+					"height": 117
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003m_SW/S003m_SW_LegLower_R",
+					"x": 20.67,
+					"y": 0.44,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 64,
+					"height": 110
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003m_SW/S003m_SW_LegUpper_L",
+					"x": 17.69,
+					"y": -0.29,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 66,
+					"height": 94
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003m_SW/S003m_SW_LegUpper_R",
+					"x": 16.65,
+					"y": -0.03,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 58,
+					"height": 90
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003m_SW/S003m_SW_Pelvis",
+					"x": 24.57,
+					"y": -2.72,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 73
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003n",
+		"attachments": {
+			"LegLower_L_Embellish_Slot": {
+				"LegLower_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_LegLower_L_Embellish",
+					"x": 46.83,
+					"y": 3.67,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 58,
+					"height": 25
+				}
+			},
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_LegLower_L",
+					"x": 25.42,
+					"y": -0.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 60,
+					"height": 119
+				}
+			},
+			"LegLower_R_Embellish_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_LegLower_R_Embellish",
+					"x": 38.06,
+					"y": -5.09,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 59,
+					"height": 21
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_LegLower_R",
+					"x": 21.89,
+					"y": -0.49,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 58,
+					"height": 107
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_LegUpper_L",
+					"x": 17.49,
+					"y": -3.24,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 60,
+					"height": 93
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_LegUpper_R",
+					"x": 16.54,
+					"y": -1.07,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 56,
+					"height": 85
+				}
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_Pelvis_Embellish",
+					"x": 18.97,
+					"y": -2.43,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 146,
+					"height": 89
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003n_SW/S003n_SW_Pelvis",
+					"x": 24.04,
+					"y": -2.69,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 110,
+					"height": 73
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003o",
+		"attachments": {
+			"LegLower_L_Embellish_Slot": {
+				"LegLower_L_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_LegLower_L_Embellish",
+					"x": 33.24,
+					"y": 0.27,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 48,
+					"height": 65
+				}
+			},
+			"LegLower_L_Slot": {
+				"LegLower_L_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_LegLower_L",
+					"x": 25.45,
+					"y": 0.14,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 62,
+					"height": 115
+				}
+			},
+			"LegLower_R_Embellish_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_LegLower_R_Embellish",
+					"x": 26.73,
+					"y": -0.01,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 46,
+					"height": 59
+				}
+			},
+			"LegLower_R_Slot": {
+				"LegLower_R_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_LegLower_R",
+					"x": 21.98,
+					"y": 0.34,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 57,
+					"height": 99
+				}
+			},
+			"LegUpper_L_Slot": {
+				"LegUpper_L_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_LegUpper_L",
+					"x": 15.8,
+					"y": -3.13,
+					"scaleX": 0.53,
+					"scaleY": 0.45,
+					"rotation": 86.02,
+					"width": 61,
+					"height": 104
+				}
+			},
+			"LegUpper_R_Slot": {
+				"LegUpper_R_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_LegUpper_R",
+					"x": 17.49,
+					"y": -0.11,
+					"scaleX": 0.5,
+					"scaleY": 0.47,
+					"rotation": 84.02,
+					"width": 58,
+					"height": 88
+				}
+			},
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_Pelvis_Embellish",
+					"x": 37.48,
+					"y": -4.02,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 119,
+					"height": 75
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003o_SW/S003o_SW_Pelvis",
+					"x": 26.78,
+					"y": -2.83,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 134,
+					"height": 72
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003p",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003p_SW/S003p_SW_Skirt_Embellish1",
+					"x": 30.74,
+					"y": -1.77,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 147,
+					"height": 132
+				}
+			},
+			"Pelvis_Embellish_Slot2": {
+				"Pelvis_Embellish_Slot2": {
+					"name": "sw/Clothes/S003/S003p_SW/S003p_SW_Skirt_Embellish2",
+					"x": 15.83,
+					"y": -2.9,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 109,
+					"height": 74
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003p_SW/S003p_SW_Skirt",
+					"x": 30.24,
+					"y": -2.25,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 152,
+					"height": 137
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003q",
+		"attachments": {
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003q_SW_Skirt",
+					"x": 30.56,
+					"y": -3.41,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 173,
+					"height": 116
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003r",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003r_SW/S003r_SW_Skirt_Embellish",
+					"x": 42.2,
+					"y": -1.22,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 216,
+					"height": 103
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003r_SW/S003r_SW_Skirt",
+					"x": 30.68,
+					"y": -1.13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 211,
+					"height": 133
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003s",
+		"attachments": {
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003s_SW_Skirt",
+					"x": 30.56,
+					"y": -3.41,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 245,
+					"height": 135
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003t",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003t_SW/S003t_SW_Skirt_Embellish",
+					"x": 34.14,
+					"y": -3.37,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 253,
+					"height": 139
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003t_SW/S003t_SW_Skirt",
+					"x": 29.36,
+					"y": -4.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 226,
+					"height": 120
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003u",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003u_SW/S003u_SW_Skirt_Embellish",
+					"x": 34.14,
+					"y": -3.37,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 128,
+					"height": 135
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003u_SW/S003u_SW_Skirt",
+					"x": 29.36,
+					"y": -4.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 120,
+					"height": 122
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003v",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003v_SW/S003v_SW_Skirt_Embellish",
+					"x": 32.02,
+					"y": -4.79,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 163,
+					"height": 141
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003v_SW/S003v_SW_Skirt",
+					"x": 33.41,
+					"y": -4.51,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 160,
+					"height": 149
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003w",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003w_SW/S003w_SW_Skirt_Embellish",
+					"x": 33.53,
+					"y": -0.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 208,
+					"height": 137
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003w_SW/S003w_SW_Skirt",
+					"x": 33.6,
+					"y": -0.95,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 211,
+					"height": 137
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003x",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003x_SW/S003x_SW_Skirt_Embellish",
+					"x": 39.81,
+					"y": -2.14,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 237,
+					"height": 146
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003x_SW/S003x_SW_Skirt",
+					"x": 38.15,
+					"y": -1.7,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 231,
+					"height": 138
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003y",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003y_SW/S003y_SW_Skirt_Embellish",
+					"x": 30.01,
+					"y": -4.18,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 217,
+					"height": 120
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003y_SW/S003y_SW_Skirt",
+					"x": 29.61,
+					"y": -4.06,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 231,
+					"height": 120
+				}
+			}
+		}
+	},
+	{
+		"name": "B003/S003z",
+		"attachments": {
+			"Pelvis_Embellish_Slot": {
+				"Pelvis_Embellish_Slot": {
+					"name": "sw/Clothes/S003/S003z_SW/S003z_SW_Skirt_Embellish",
+					"x": 28.06,
+					"y": -2.55,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 129,
+					"height": 122
+				}
+			},
+			"Pelvis_Slot": {
+				"Pelvis_Slot": {
+					"name": "sw/Clothes/S003/S003z_SW/S003z_SW_Skirt",
+					"x": 29.61,
+					"y": -4.06,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 87.03,
+					"width": 120,
+					"height": 129
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004a",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 77
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_L_walk",
+					"x": 14.52,
+					"y": 1.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 92,
+					"height": 69
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_R",
+					"x": 20.1,
+					"y": 0.67,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 70
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004b",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 77
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_L_walk",
+					"x": 14.52,
+					"y": 1.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 92,
+					"height": 69
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004b_SW/S004b_SW_Sock_L",
+					"x": 9.56,
+					"y": 5,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 97
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004b_SW/S004b_SW_Sock_L_walk",
+					"x": 9.63,
+					"y": -2.5,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 90
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_R",
+					"x": 20.1,
+					"y": 0.67,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 70
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004b_SW/S004b_SW_Sock_R",
+					"x": 14.87,
+					"y": -2.5,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 90
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004c",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 64,
+					"height": 80
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Shoe_L_walk",
+					"x": 14.52,
+					"y": 1.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 71
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Sock_L_walk",
+					"x": 12.19,
+					"y": 0.65,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Shoe_R",
+					"x": 20.1,
+					"y": 0.67,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 71
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Sock_L_leg",
+					"x": 32.39,
+					"y": -1.17,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 46,
+					"height": 98
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Sock_L_leg_walk",
+					"x": 33.6,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 45,
+					"height": 93
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Sock_R_leg",
+					"x": 28.4,
+					"y": -0.78,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 48,
+					"height": 91
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004d",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 77
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_L_walk",
+					"x": 14.52,
+					"y": 1.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 92,
+					"height": 69
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004d_SW/S004d_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004d_SW/S004d_SW_Sock_L_walk",
+					"x": 12.35,
+					"y": 0.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004a_SW/S004a_SW_Shoe_R",
+					"x": 20.1,
+					"y": 0.67,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 70
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004d_SW/S004d_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004d_SW/S004d_SW_Sock_L_leg",
+					"x": 32.72,
+					"y": -1.19,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 46,
+					"height": 98
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004d_SW/S004d_SW_Sock_L_leg_walk",
+					"x": 33.6,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 45,
+					"height": 93
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004d_SW/S004d_SW_Sock_R_leg",
+					"x": 28.4,
+					"y": -0.78,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 48,
+					"height": 91
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004e",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 64,
+					"height": 80
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Shoe_L_walk",
+					"x": 14.52,
+					"y": 1.97,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 71
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L_walk",
+					"x": 12.35,
+					"y": 0.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004c_SW/S004c_SW_Shoe_R",
+					"x": 20.1,
+					"y": 0.67,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 71
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L_leg",
+					"x": 33.88,
+					"y": -0.95,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 44,
+					"height": 92
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L_leg_walk",
+					"x": 34.32,
+					"y": 0.38,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 44,
+					"height": 90
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_R_leg",
+					"x": 28.83,
+					"y": 0.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 45,
+					"height": 83
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004f",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L",
+					"x": 18.49,
+					"y": 6.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 65,
+					"height": 71
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L_walk",
+					"x": 14.68,
+					"y": 3.29,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_R",
+					"x": 20.3,
+					"y": 1.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 94,
+					"height": 68
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004g",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L",
+					"x": 18.49,
+					"y": 6.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 65,
+					"height": 71
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L_walk",
+					"x": 14.68,
+					"y": 3.29,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004g_SW/S004g_SW_Sock_L",
+					"x": 9.68,
+					"y": 4.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 83
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004g_SW/S004g_SW_Sock_L_walk",
+					"x": 10.77,
+					"y": -0.62,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 84
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_R",
+					"x": 20.3,
+					"y": 1.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004g_SW/S004g_SW_Sock_R",
+					"x": 15.85,
+					"y": -1.45,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 84
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004h",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L",
+					"x": 18.49,
+					"y": 6.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 65,
+					"height": 71
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L_walk",
+					"x": 14.68,
+					"y": 3.29,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004h_SW/S004h_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004h_SW/S004h_SW_Sock_L_walk",
+					"x": 12.35,
+					"y": 0.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_R",
+					"x": 20.3,
+					"y": 1.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004h_SW/S004h_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004h_SW/S004h_SW_Sock_L_leg",
+					"x": 32.39,
+					"y": -1.17,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 46,
+					"height": 98
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004h_SW/S004h_SW_Sock_L_leg_walk",
+					"x": 33.6,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 45,
+					"height": 94
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004h_SW/S004h_SW_Sock_R_leg",
+					"x": 28.4,
+					"y": -0.78,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 48,
+					"height": 91
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004i",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L",
+					"x": 18.49,
+					"y": 6.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 65,
+					"height": 71
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L_walk",
+					"x": 14.68,
+					"y": 3.29,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004i_SW/S004i_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004i_SW/S004i_SW_Sock_L_walk",
+					"x": 11.74,
+					"y": 0.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_R",
+					"x": 20.3,
+					"y": 1.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004i_SW/S004i_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004i_SW/S004i_SW_Sock_L_leg",
+					"x": 32.39,
+					"y": -1.17,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 46,
+					"height": 98
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004i_SW/S004i_SW_Sock_L_leg_walk",
+					"x": 33.6,
+					"y": -0.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 45,
+					"height": 94
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004i_SW/S004i_SW_Sock_R_leg",
+					"x": 28.4,
+					"y": -0.78,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 48,
+					"height": 91
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004j",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L",
+					"x": 18.49,
+					"y": 6.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 65,
+					"height": 71
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_L_walk",
+					"x": 14.68,
+					"y": 3.29,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L_walk",
+					"x": 12.19,
+					"y": 0.65,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004f_SW/S004f_SW_Shoe_R",
+					"x": 20.3,
+					"y": 1.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L_leg",
+					"x": 34.72,
+					"y": -1.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 44,
+					"height": 92
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_L_leg_walk",
+					"x": 33.64,
+					"y": 0.08,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 44,
+					"height": 90
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004e_SW/S004e_SW_Sock_R_leg",
+					"x": 28.5,
+					"y": 0.15,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 45,
+					"height": 83
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004k",
+		"attachments": {
+			"Foot_L_Sock_Embellish_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_Embellish",
+					"x": 10.31,
+					"y": 4.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 55,
+					"height": 51
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_Embellish_walk",
+					"x": 8.46,
+					"y": 2.6,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 75,
+					"height": 70
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L",
+					"x": 15.08,
+					"y": 5.85,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 59,
+					"height": 74
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_walk",
+					"x": 12.19,
+					"y": 0.65,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"Foot_R_Sock_Embellish_Slot": {
+				"Foot_R_Sock_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_R_Embellish",
+					"x": 13.28,
+					"y": 1.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 75,
+					"height": 70
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_R",
+					"x": 16.98,
+					"y": -1.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 76
+				}
+			},
+			"LegLower_L_Sock_Embellish_Slot": {
+				"LegLower_L_Sock_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_leg_Embellish",
+					"x": 34.72,
+					"y": -1.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 46,
+					"height": 98
+				},
+				"LegLower_L_Sock_Embellish_walk_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_leg_Embellish_walk",
+					"x": 33.64,
+					"y": 0.08,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 45,
+					"height": 93
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_leg",
+					"x": 34.72,
+					"y": -1.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 46,
+					"height": 98
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_L_leg_walk",
+					"x": 33.64,
+					"y": 0.08,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 45,
+					"height": 93
+				}
+			},
+			"LegLower_R_Sock_Embellish_Slot": {
+				"LegLower_R_Sock_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_R_leg_Embellish",
+					"x": 28.43,
+					"y": -0.47,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 48,
+					"height": 91
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004k_SW/S004k_SW_Sock_R_leg",
+					"x": 28.43,
+					"y": -0.47,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 48,
+					"height": 91
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004l",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004l_SW/S004l_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 77
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004l_SW/S004l_SW_Shoe_L_walk",
+					"x": 13.58,
+					"y": 0.74,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 78
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004l_SW/S004l_SW_Shoe_R",
+					"x": 17.53,
+					"y": -1.38,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 78
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004l_SW/S004l_SW_Shoe_L_leg",
+					"x": 35.51,
+					"y": -0.19,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 40,
+					"height": 92
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004l_SW/S004l_SW_Shoe_L_leg_walk",
+					"x": 37.68,
+					"y": 0.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 43,
+					"height": 76
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004l_SW/S004l_SW_Shoe_R_leg",
+					"x": 29.49,
+					"y": 0.2,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 44,
+					"height": 76
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004m",
+		"attachments": {
+			"Foot_L_Shoe_Embellish_Slot": {
+				"A101_SW_Foot_L": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_L_Embellish",
+					"x": 13.27,
+					"y": 5.02,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 68,
+					"height": 40
+				},
+				"A101_SW_Foot_L_walk": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_L_Embellish_walk",
+					"x": 16.69,
+					"y": 0.24,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 59,
+					"height": 40
+				}
+			},
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 78
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_L_walk",
+					"x": 12.81,
+					"y": 1.3,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 73
+				}
+			},
+			"Foot_R_Shoe_Embellish_Slot": {
+				"Foot_R_Shoe_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_R_Embellish",
+					"x": 21.54,
+					"y": -3.88,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 55,
+					"height": 48
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_R",
+					"x": 17.85,
+					"y": -0.13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 73
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004n",
+		"attachments": {
+			"Foot_L_Shoe_Embellish_Slot": {
+				"A101_SW_Foot_L": {
+					"name": "sw/Clothes/S004/S004n_SW/S004n_SW_Shoe_L_Embellish",
+					"x": 14.39,
+					"y": 6.55,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 58,
+					"height": 44
+				},
+				"A101_SW_Foot_L_walk": {
+					"name": "sw/Clothes/S004/S004n_SW/S004n_SW_Shoe_L_Embellish_walk",
+					"x": 15.98,
+					"y": -1.94,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 61,
+					"height": 40
+				}
+			},
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_L",
+					"x": 17.35,
+					"y": 6.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 78
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_L_walk",
+					"x": 12.81,
+					"y": 1.3,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 73
+				}
+			},
+			"Foot_R_Shoe_Embellish_Slot": {
+				"Foot_R_Shoe_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004n_SW/S004n_SW_Shoe_R_Embellish",
+					"x": 19.88,
+					"y": -3.39,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 61,
+					"height": 40
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004m_SW/S004m_SW_Shoe_R",
+					"x": 17.85,
+					"y": -0.13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 73
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004o",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004o_SW/S004o_SW_Shoe_L",
+					"x": 24.54,
+					"y": 8.14,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 48
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004o_SW/S004o_SW_Shoe_L_walk",
+					"x": 17.48,
+					"y": 5.2,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 48
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004o_SW/S004o_SW_Shoe_R",
+					"x": 23.57,
+					"y": 3.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 48
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004p",
+		"attachments": {
+			"Foot_L_Shoe_Embellish_Slot": {
+				"A101_SW_Foot_L": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_Embellish",
+					"x": 25.02,
+					"y": 8.04,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 63,
+					"height": 51
+				},
+				"A101_SW_Foot_L_walk": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_Embellish_walk",
+					"x": 16.18,
+					"y": 3.36,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 93,
+					"height": 63
+				}
+			},
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L",
+					"x": 16.65,
+					"y": 6.19,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 62,
+					"height": 68
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_walk",
+					"x": 11.83,
+					"y": -0.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 91,
+					"height": 71
+				}
+			},
+			"Foot_R_Shoe_Embellish_Slot": {
+				"Foot_R_Shoe_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_R_Embellish",
+					"x": 21.57,
+					"y": 1.39,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 93,
+					"height": 63
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_R",
+					"x": 16.83,
+					"y": -1.42,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 91,
+					"height": 71
+				}
+			},
+			"LegLower_L_Shoe_Embellish_Slot": {
+				"LegLower_L_Shoe_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_leg_Embellish",
+					"x": 45.12,
+					"y": 5.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 72,
+					"height": 72
+				},
+				"LegLower_L_Shoe_Embellish_walk_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_leg_Embellish_walk",
+					"x": 44.86,
+					"y": 0.7,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 53,
+					"height": 72
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_leg",
+					"x": 36.49,
+					"y": 1.1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 37,
+					"height": 92
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_L_leg_walk",
+					"x": 45.71,
+					"y": 0.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 37,
+					"height": 44
+				}
+			},
+			"LegLower_R_Shoe_Embellish_Slot": {
+				"LegLower_R_Shoe_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_R_leg_Embellish",
+					"x": 39.61,
+					"y": -4.06,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 69,
+					"height": 71
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004p_SW/S004p_SW_Shoe_R_leg",
+					"x": 39.49,
+					"y": 0.35,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 38,
+					"height": 41
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004q",
+		"attachments": {
+			"Foot_L_Shoe_Embellish_Slot": {
+				"A101_SW_Foot_L": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Shoe_L_Embellish",
+					"x": 11.23,
+					"y": 3.4,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 41,
+					"height": 39
+				},
+				"A101_SW_Foot_L_walk": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Shoe_L_Embellish_walk",
+					"x": 10.04,
+					"y": 1.3,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 73,
+					"height": 43
+				}
+			},
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Shoe_L",
+					"x": 19.09,
+					"y": 6.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 60,
+					"height": 75
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Shoe_L_walk",
+					"x": 17.05,
+					"y": 1.52,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 96,
+					"height": 65
+				}
+			},
+			"Foot_R_Shoe_Embellish_Slot": {
+				"Foot_R_Shoe_Embellish_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Shoe_R_Embellish",
+					"x": 13.08,
+					"y": 0.46,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 69,
+					"height": 46
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Shoe_R",
+					"x": 20.3,
+					"y": 0.63,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 96,
+					"height": 64
+				}
+			},
+			"LegLower_L_Sock_Slot": {
+				"LegLower_L_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Sock_L_leg",
+					"x": 46.3,
+					"y": 0.89,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 35,
+					"height": 40
+				},
+				"LegLower_L_Sock_walk_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Sock_L_leg_walk",
+					"x": 46.41,
+					"y": 1.11,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 85.62,
+					"width": 38,
+					"height": 39
+				}
+			},
+			"LegLower_R_Sock_Slot": {
+				"LegLower_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004q_SW/S004q_SW_Sock_R_leg",
+					"x": 45.19,
+					"y": 0.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 83.63,
+					"width": 40,
+					"height": 39
+				}
+			}
+		}
+	},
+	{
+		"name": "B004/S004r",
+		"attachments": {
+			"Foot_L_Shoe_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004r_SW/S004r_SW_Shoe_L",
+					"x": 18.49,
+					"y": 6.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 65,
+					"height": 71
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004r_SW/S004r_SW_Shoe_L_walk",
+					"x": 14.99,
+					"y": 2.8,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_L_Sock_Slot": {
+				"Foot_L_Slot": {
+					"name": "sw/Clothes/S004/S004r_SW/S004r_SW_Sock_L",
+					"x": 9.68,
+					"y": 4.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 103.84,
+					"width": 60,
+					"height": 94
+				},
+				"Foot_L_walk_Slot": {
+					"name": "sw/Clothes/S004/S004r_SW/S004r_SW_Sock_L_walk",
+					"x": 8.78,
+					"y": -2.63,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 130.95,
+					"width": 90,
+					"height": 96
+				}
+			},
+			"Foot_R_Shoe_Slot": {
+				"Foot_R_Shoe_Slot": {
+					"name": "sw/Clothes/S004/S004r_SW/S004r_SW_Shoe_R",
+					"x": 20.3,
+					"y": 1.76,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 94,
+					"height": 68
+				}
+			},
+			"Foot_R_Sock_Slot": {
+				"Foot_R_Sock_Slot": {
+					"name": "sw/Clothes/S004/S004r_SW/S004r_SW_Sock_R",
+					"x": 12.93,
+					"y": -3.13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": 124.42,
+					"width": 90,
+					"height": 96
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005a",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005a_SW_Hair/S005a_SW_Hair_Accessory",
+					"x": 85,
+					"y": 4.77,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 153,
+					"height": 109
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005a_SW_Hair/S005a_SW_Hair_F",
+					"x": 70.36,
+					"y": -1.49,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 245
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005aa",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005aa_SW_Hair/S005aa_SW_Hair_Accessory",
+					"x": 60.98,
+					"y": 10.42,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 144,
+					"height": 83
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005p_SW_Hair_F",
+					"x": 44.73,
+					"y": 2.53,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 202,
+					"height": 280
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005b",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005b_SW_Hair/S005b_SW_Hair_Accessory",
+					"x": 74,
+					"y": -6.62,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 72,
+					"height": 79
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005b_SW_Hair/S005b_SW_Hair_F",
+					"x": 72.54,
+					"y": -1.49,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 236
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005c",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005c_SW_Hair/S005c_SW_Hair_Accessory",
+					"x": 82.98,
+					"y": 8.12,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 222,
+					"height": 158
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005c_SW_Hair/S005c_SW_Hair_F",
+					"x": 72.54,
+					"y": -6.1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 239,
+					"height": 236
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005d",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005d_SW_Hair/S005d_SW_Hair_Accessory",
+					"x": 90.27,
+					"y": -2.81,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 230,
+					"height": 130
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005c_SW_Hair/S005c_SW_Hair_F",
+					"x": 72.54,
+					"y": -6.1,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 239,
+					"height": 236
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005e",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005e_SW_Hair/S005e_SW_Hair_Accessory",
+					"x": 75.03,
+					"y": 1.27,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 168,
+					"height": 149
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005e_SW_Hair/S005e_SW_Hair_F",
+					"x": 59.28,
+					"y": -1.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 288
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005f",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005f_SW_Hair/S005f_SW_Hair_Accessory",
+					"x": 76.41,
+					"y": -3.21,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 54,
+					"height": 61
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005f_SW_Hair/S005f_SW_Hair_F",
+					"x": 59.28,
+					"y": -1.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 288
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005g",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005c_SW_Hair/S005c_SW_Hair_Accessory",
+					"x": 82.98,
+					"y": 8.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 222,
+					"height": 158
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005g_SW_Hair/S005g_SW_Hair_F",
+					"x": 59.28,
+					"y": -6.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 240,
+					"height": 288
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005h",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005h_SW_Hair/S005h_SW_Hair_Accessory",
+					"x": 90.27,
+					"y": -2.81,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 230,
+					"height": 130
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005g_SW_Hair/S005g_SW_Hair_F",
+					"x": 59.28,
+					"y": -6.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 240,
+					"height": 288
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005i",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005i_SW_Hair/S005i_SW_Hair_Accessory",
+					"x": 104.1,
+					"y": 19.15,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 125,
+					"height": 80
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005b_SW_Hair/S005b_SW_Hair_F",
+					"x": 70.73,
+					"y": -1.33,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 236
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005j",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005j_SW_Hair/S005j_SW_Hair_Accessory",
+					"x": 106.49,
+					"y": 15.01,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 111,
+					"height": 66
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005e_SW_Hair/S005e_SW_Hair_F",
+					"x": 59.7,
+					"y": -2.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 288
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005k",
+		"attachments": {
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005k_SW_Hair_F",
+					"x": 70.46,
+					"y": -1.71,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 245
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005l",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005l_SW_Hair/S005l_SW_Hair_Accessory",
+					"x": 95.28,
+					"y": -30.28,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 141,
+					"height": 99
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005e_SW_Hair/S005e_SW_Hair_F",
+					"x": 59.7,
+					"y": -2.16,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 258,
+					"height": 288
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005o",
+		"attachments": {
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005o_SW_Hair_F",
+					"x": 64.53,
+					"y": -11.09,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 306,
+					"height": 204
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005p",
+		"attachments": {
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005p_SW_Hair_F",
+					"x": 44.38,
+					"y": 3.08,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 202,
+					"height": 280
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005q",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005q_SW_Hair/S005q_SW_Hair_Accessory",
+					"x": 84.7,
+					"y": 5.58,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 285,
+					"height": 158
+				}
+			},
+			"Hair_Accessory_Slot_Embellish": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005q_SW_Hair/S005q_SW_Hair_Accessory_Embellish",
+					"x": 86.39,
+					"y": 3.47,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 205,
+					"height": 109
+				}
+			},
+			"Hair_Accessory_Slot_Embellish2": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005q_SW_Hair/S005q_SW_Hair_Accessory_Embellish2",
+					"x": 71.19,
+					"y": -42.15,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 97,
+					"height": 96
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005p_SW_Hair_F",
+					"x": 44.48,
+					"y": 3,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 202,
+					"height": 280
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005u",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005u_SW_Hair/S005u_SW_Hair_Accessory",
+					"x": 59.42,
+					"y": 6.87,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 216,
+					"height": 238
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005p_SW_Hair_F",
+					"x": 44.48,
+					"y": 3,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 202,
+					"height": 280
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005v",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005v_SW_Hair/S005v_SW_Hair_Accessory",
+					"x": 90.98,
+					"y": 2.32,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 302,
+					"height": 183
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005v_SW_Hair/S005v_SW_Hair_F",
+					"x": 51.7,
+					"y": -4.48,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 234,
+					"height": 260
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005w",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005w_SW_Hair/S005w_SW_Hair_Accessory",
+					"x": 107.49,
+					"y": 22.71,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 206,
+					"height": 274
+				}
+			},
+			"Hair_Accessory_Slot_Embellish": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005w_SW_Hair/S005w_SW_Hair_Accessory_Embellish",
+					"x": 127.43,
+					"y": 23.72,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 141,
+					"height": 122
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005o_SW_Hair_F",
+					"x": 64.6,
+					"y": -11.7,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 306,
+					"height": 204
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005x",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005x_SW_Hair/S005x_SW_Hair_Accessory",
+					"x": 75.92,
+					"y": -2.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 195,
+					"height": 183
+				}
+			},
+			"Hair_Accessory_Slot_Embellish": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005x_SW_Hair/S005x_SW_Hair_Accessory_Embellish",
+					"x": 88.76,
+					"y": -29.15,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 138,
+					"height": 151
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005x_SW_Hair/S005x_SW_Hair",
+					"x": 62.23,
+					"y": 7.24,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 223,
+					"height": 212
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005y",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005y_SW_Hair/S005y_SW_Hair_Accessory",
+					"x": 119.69,
+					"y": -3.18,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 285,
+					"height": 133
+				}
+			},
+			"Hair_Accessory_Slot_Embellish": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005y_SW_Hair/S005y_SW_Hair_Accessory_Embellish",
+					"x": 76.04,
+					"y": -55.56,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 81,
+					"height": 82
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005y_SW_Hair/S005y_SW_Hair",
+					"x": 75.93,
+					"y": -4.5,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 265,
+					"height": 312
+				}
+			}
+		}
+	},
+	{
+		"name": "B005/S005z",
+		"attachments": {
+			"Hair_Accessory_Slot": {
+				"Hair_Accessory_Slot": {
+					"name": "sw/Clothes/S005/S005z_SW_Hair/S005z_SW_Hair_Accessory",
+					"x": 70.5,
+					"y": -5.66,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 216,
+					"height": 292
+				}
+			},
+			"Hair_Front_Slot": {
+				"Hair_Front_Slot": {
+					"name": "sw/Clothes/S005/S005z_SW_Hair/S005z_SW_Hair",
+					"x": 55.41,
+					"y": -2.51,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 259,
+					"height": 305
+				}
+			}
+		}
+	},
+	{
+		"name": "B006/S006a",
+		"attachments": {
+			"Wing_L_Slot": {
+				"Wing_L_Slot": {
+					"name": "sw/Clothes/S006/S006a_SW_Wing/S006a_SW_Wing_L",
+					"x": 43.45,
+					"y": 23.84,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 123,
+					"height": 252
+				}
+			},
+			"Wing_R_Slot": {
+				"Wing_R_Slot": {
+					"name": "sw/Clothes/S006/S006a_SW_Wing/S006a_SW_Wing_R",
+					"x": -20,
+					"y": 29.54,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 109,
+					"height": 249
+				}
+			}
+		}
+	},
+	{
+		"name": "B006/S006b",
+		"attachments": {
+			"Wing_L_Slot": {
+				"Wing_L_Slot": {
+					"name": "sw/Clothes/S006/S006b_SW_Wing/S006b_SW_Wing_L",
+					"x": 32.3,
+					"y": 21.93,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 104,
+					"height": 153
+				}
+			},
+			"Wing_R_Slot": {
+				"Wing_R_Slot": {
+					"name": "sw/Clothes/S006/S006b_SW_Wing/S006b_SW_Wing_R",
+					"x": -14.78,
+					"y": 23.58,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 83,
+					"height": 154
+				}
+			}
+		}
+	},
+	{
+		"name": "B006/S006c",
+		"attachments": {
+			"Wing_L_Slot": {
+				"Wing_L_Slot": {
+					"name": "sw/Clothes/S006/S006c_SW_Wing/S006c_SW_Wing_L",
+					"x": 45.25,
+					"y": 15.64,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 184,
+					"height": 208
+				}
+			},
+			"Wing_R_Slot": {
+				"Wing_R_Slot": {
+					"name": "sw/Clothes/S006/S006c_SW_Wing/S006c_SW_Wing_R",
+					"x": -25.46,
+					"y": 21.82,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 159,
+					"height": 224
+				}
+			}
+		}
+	},
+	{
+		"name": "B006/S006d",
+		"attachments": {
+			"Wing_L_Slot": {
+				"Wing_L_Slot": {
+					"name": "sw/Clothes/S006/S006d_SW_Wing/S006d_SW_Wing_L",
+					"x": 37.04,
+					"y": 2.83,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 108,
+					"height": 268
+				}
+			},
+			"Wing_R_Slot": {
+				"Wing_R_Slot": {
+					"name": "sw/Clothes/S006/S006d_SW_Wing/S006d_SW_Wing_R",
+					"x": -13.08,
+					"y": 5.19,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 105,
+					"height": 271
+				}
+			}
+		}
+	},
+	{
+		"name": "B006/S006e",
+		"attachments": {
+			"Wing_L_Slot": {
+				"Wing_L_Slot": {
+					"name": "sw/Clothes/S006/S006e_SW_Wing/S006e_SW_Wing_L",
+					"x": 31.63,
+					"y": 23.26,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 86,
+					"height": 140
+				}
+			},
+			"Wing_R_Slot": {
+				"Wing_R_Slot": {
+					"name": "sw/Clothes/S006/S006e_SW_Wing/S006e_SW_Wing_R",
+					"x": -16.6,
+					"y": 24.59,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 82,
+					"height": 139
+				}
+			}
+		}
+	},
+	{
+		"name": "B006/S006f",
+		"attachments": {
+			"Wing_L_Slot": {
+				"Wing_L_Slot": {
+					"name": "sw/Clothes/S006/S006f_SW_Wing/S006f_SW_Wing_L",
+					"x": 50.33,
+					"y": 42.65,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 164,
+					"height": 185
+				}
+			},
+			"Wing_R_Slot": {
+				"Wing_R_Slot": {
+					"name": "sw/Clothes/S006/S006f_SW_Wing/S006f_SW_Wing_R",
+					"x": -25.93,
+					"y": 46.4,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"width": 155,
+					"height": 202
+				}
+			}
+		}
+	},
+	{
+		"name": "B007/S006r",
+		"attachments": {
+			"Face_Slot": {
+				"Face_Slot": {
+					"name": "sw/Clothes/S006/S006r_SW_Sunglasses",
+					"x": 33.76,
+					"y": 13,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 165,
+					"height": 56
+				}
+			}
+		}
+	},
+	{
+		"name": "B007/S006s",
+		"attachments": {
+			"Face_Slot": {
+				"Face_Slot": {
+					"name": "sw/Clothes/S006/S006s_SW_Sunglasses",
+					"x": 35.81,
+					"y": 13.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 166,
+					"height": 61
+				}
+			}
+		}
+	},
+	{
+		"name": "B007/S006t",
+		"attachments": {
+			"Face_Slot": {
+				"Face_Slot": {
+					"name": "sw/Clothes/S006/S006t_SW_Sunglasses",
+					"x": 31.93,
+					"y": 13.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 166,
+					"height": 80
+				}
+			}
+		}
+	},
+	{
+		"name": "B007/S006v",
+		"attachments": {
+			"Face_Slot": {
+				"Face_Slot": {
+					"name": "sw/Clothes/S006/S006v_SW_Sunglasses",
+					"x": 35.12,
+					"y": 15.05,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 172,
+					"height": 93
+				}
+			}
+		}
+	},
+	{
+		"name": "B007/S006w",
+		"attachments": {
+			"Face_Slot": {
+				"Face_Slot": {
+					"name": "sw/Clothes/S006/S006w_SW_Sunglasses",
+					"x": 31.7,
+					"y": 13.68,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 166,
+					"height": 80
+				}
+			},
+			"Face_Slot_Embelish": {
+				"Face_Slot_Embelish": {
+					"name": "sw/Clothes/S006/S006w_SW_Sunglasses_Embellish",
+					"x": 29.42,
+					"y": 17.56,
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"rotation": -90,
+					"width": 152,
+					"height": 110
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"idle0": {
+		"slots": {
+			"Foot_L_Shoe_Embellish_Slot": {
+				"attachment": [
+					{ "name": "A101_SW_Foot_L" }
+				]
+			}
+		},
+		"bones": {
+			"ArmLower_L": {
+				"rotate": [
+					{ "value": 0.31 },
+					{ "time": 0.1667, "value": -7.03 },
+					{ "time": 0.25, "value": -8.11 },
+					{ "time": 0.4167, "value": -1.58 },
+					{ "time": 0.5, "value": 0.31 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.1667, "x": -0.53, "y": -0.11 },
+					{ "time": 0.5 }
+				]
+			},
+			"Foot_R": {
+				"rotate": [
+					{},
+					{ "time": 0.1667, "value": -6.57 },
+					{ "time": 0.25, "value": -8.25 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -2.73, "y": -0.7 },
+					{ "time": 0.1667, "x": -4.92, "y": -0.06 },
+					{ "time": 0.25, "x": -5.35, "y": -0.39 },
+					{ "time": 0.3333, "x": -3.27, "y": -0.32 },
+					{ "time": 0.5 }
+				]
+			},
+			"LegLower_R": {
+				"rotate": [
+					{},
+					{ "time": 0.1667, "value": 15.6 },
+					{ "time": 0.25, "value": 19.06 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -1.59, "y": 0.33 },
+					{ "time": 0.1667, "x": -3.27, "y": 0.07 },
+					{ "time": 0.25, "x": -2.26, "y": 0.49 },
+					{ "time": 0.3333, "x": -2.43, "y": 0.29 },
+					{ "time": 0.4167, "x": -0.14, "y": 0.14 },
+					{ "time": 0.5 }
+				]
+			},
+			"LegUpper_R": {
+				"rotate": [
+					{},
+					{ "time": 0.0833, "value": -4.17 },
+					{ "time": 0.1667, "value": -8.83 },
+					{ "time": 0.25, "value": -10.76 },
+					{ "time": 0.5 }
+				]
+			},
+			"Foot_L": {
+				"rotate": [
+					{},
+					{ "time": 0.0833, "value": -0.19 },
+					{ "time": 0.25, "value": -3.16 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -2.81, "y": 0.41 },
+					{ "time": 0.1667, "x": -7.02, "y": 0.64 },
+					{ "time": 0.25, "x": -7.84, "y": 0.57 },
+					{ "time": 0.3333, "x": -5.51, "y": 0.21 },
+					{ "time": 0.4167, "x": -1.61, "y": -0.01 },
+					{ "time": 0.5 }
+				]
+			},
+			"LegLower_L": {
+				"rotate": [
+					{ "time": 0.0833 },
+					{ "time": 0.1667, "value": 5.25 },
+					{ "time": 0.25, "value": 8.62 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -1.69, "y": 0.02 },
+					{ "time": 0.25, "x": -1.66, "y": -0.22 },
+					{ "time": 0.5 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.25, "x": 0.9 },
+					{ "time": 0.5 }
+				]
+			},
+			"LegUpper_L": {
+				"rotate": [
+					{ "time": 0.0833 },
+					{ "time": 0.1667, "value": -2.99 },
+					{ "time": 0.25, "value": -4.65 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.1667, "x": -1.61, "y": 0.15 },
+					{ "time": 0.25, "x": -1.4, "y": 0.26 },
+					{ "time": 0.5 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.25, "x": 1.1 },
+					{ "time": 0.5 }
+				]
+			},
+			"Hand_R": {
+				"rotate": [
+					{},
+					{ "time": 0.25, "value": 2.48 },
+					{ "time": 0.5 }
+				]
+			},
+			"ArmLower_R": {
+				"rotate": [
+					{},
+					{ "time": 0.0833, "value": 2.18 },
+					{ "time": 0.1667, "value": 4.5 },
+					{ "time": 0.25, "value": 3.92 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -1.58, "y": -0.26 },
+					{ "time": 0.1667, "x": -2.4, "y": -0.32 },
+					{ "time": 0.3333, "x": -0.69, "y": 0.09 },
+					{ "time": 0.4167, "x": -0.51, "y": 0.14 },
+					{ "time": 0.5 }
+				]
+			},
+			"ArmUpper_R": {
+				"rotate": [
+					{},
+					{ "time": 0.25, "value": 1.02 },
+					{ "time": 0.4167, "value": -0.6 },
+					{ "time": 0.5 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.4167, "x": 0.26, "y": 0.03 },
+					{ "time": 0.5 }
+				]
+			},
+			"Head": {
+				"translate": [
+					{},
+					{ "time": 0.1667, "x": 2.98, "y": 0.3 },
+					{ "time": 0.25, "x": 3, "y": 0.3 },
+					{ "time": 0.5 }
+				]
+			},
+			"root2": {
+				"translate": [
+					{},
+					{ "time": 0.0833, "y": -4.52 },
+					{ "time": 0.1667, "y": -9.03 },
+					{ "time": 0.25, "y": -8.67 },
+					{ "time": 0.3333, "y": -6.05 },
+					{ "time": 0.4167, "y": -1.94 },
+					{ "time": 0.5 }
+				]
+			}
+		}
+	},
+	"walk": {
+		"slots": {
+			"Foot_L": {
+				"attachment": [
+					{ "name": "sw/Avatar/A101_SW_Foot_L2" }
+				]
+			},
+			"Foot_L_Shoe_Slot": {
+				"attachment": [
+					{ "name": "Foot_L_walk_Slot" }
+				]
+			},
+			"Foot_L_Sock_Embellish_Slot": {
+				"attachment": [
+					{ "name": "Foot_L_walk_Slot" }
+				]
+			},
+			"Foot_L_Sock_Slot": {
+				"attachment": [
+					{ "name": "Foot_L_walk_Slot" }
+				]
+			},
+			"LegLower_L_Shoe_Embellish_Slot": {
+				"attachment": [
+					{ "name": "LegLower_L_Shoe_Embellish_walk_Slot" }
+				]
+			},
+			"LegLower_L_Sock_Embellish_Slot": {
+				"attachment": [
+					{ "name": "LegLower_L_Sock_Embellish_walk_Slot" }
+				]
+			},
+			"LegLower_L_Sock_Slot": {
+				"attachment": [
+					{ "name": "LegLower_L_Sock_walk_Slot" }
+				]
+			}
+		},
+		"bones": {
+			"root2": {
+				"translate": [
+					{},
+					{ "time": 0.0833, "y": 2.8 },
+					{ "time": 0.1667 },
+					{ "time": 0.25, "y": -3.04 },
+					{ "time": 0.3333 },
+					{ "time": 0.4167, "y": 2.8 },
+					{ "time": 0.5 },
+					{ "time": 0.5833, "y": -3.04 },
+					{ "time": 0.6667 }
+				]
+			},
+			"LegUpper_R": {
+				"rotate": [
+					{},
+					{ "time": 0.0833, "value": 9.93, "curve": "stepped" },
+					{ "time": 0.25, "value": 9.93 },
+					{ "time": 0.3333, "value": -11.63 },
+					{ "time": 0.4167, "value": -18.27 },
+					{ "time": 0.5, "value": -18.93 },
+					{ "time": 0.5833, "value": -13.75 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -1.57, "y": 0.99 },
+					{ "time": 0.1667, "x": -1.11, "y": 0.49 },
+					{ "time": 0.25, "x": -1.42, "y": 0.8 },
+					{ "time": 0.3333, "x": 0.17, "y": -0.66 },
+					{ "time": 0.4167, "x": -1.8, "y": -0.17 },
+					{ "time": 0.5, "x": 0.45, "y": -0.61 },
+					{ "time": 0.5833, "x": 0.1, "y": -0.24 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "time": 0.3333 },
+					{ "time": 0.4167, "x": 1.1, "curve": "stepped" },
+					{ "time": 0.5833, "x": 1.1 },
+					{ "time": 0.6667 }
+				]
+			},
+			"LegLower_R": {
+				"rotate": [
+					{},
+					{ "time": 0.0833, "value": 3.83 },
+					{ "time": 0.1667, "value": 23.88 },
+					{ "time": 0.25, "value": 45.99 },
+					{ "time": 0.3333, "value": 28.2 },
+					{ "time": 0.4167, "value": 18.33 },
+					{ "time": 0.5, "value": 0.28 },
+					{ "time": 0.5833, "value": 14.31 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0833, "x": -0.1, "y": -0.02 },
+					{ "time": 0.1667, "x": -3.72, "y": -0.57 },
+					{ "time": 0.25, "x": -6, "y": -2.07 },
+					{ "time": 0.3333, "x": -3.81, "y": -0.5 },
+					{ "time": 0.4167, "x": -2.71, "y": -0.02 },
+					{ "time": 0.5, "x": -2.97, "y": -0.19 },
+					{ "time": 0.6667 }
+				]
+			},
+			"Foot_R": {
+				"rotate": [
+					{ "time": 0.25 },
+					{ "time": 0.3333, "value": -6.59 },
+					{ "time": 0.4167, "value": -9.11 },
+					{ "time": 0.5, "value": -13.33 },
+					{ "time": 0.5833, "value": -18.27 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "time": 0.0833 },
+					{ "time": 0.1667, "x": -2.83, "y": 0.06 },
+					{ "time": 0.25, "x": -5.65, "y": 0.12 },
+					{ "time": 0.3333, "x": -4.46, "y": -0.07 },
+					{ "time": 0.4167, "x": 0.1, "y": -0.29, "curve": "stepped" },
+					{ "time": 0.5, "x": 0.1, "y": -0.29 },
+					{ "time": 0.5833, "x": -2.39, "y": -0.02 },
+					{ "time": 0.6667 }
+				]
+			},
+			"LegUpper_L": {
+				"rotate": [
+					{ "value": -12.42 },
+					{ "time": 0.0833, "value": -13.44 },
+					{ "time": 0.1667, "value": -23.09 },
+					{ "time": 0.25, "value": -18.73 },
+					{ "time": 0.3333, "value": -4.49 },
+					{ "time": 0.4167, "value": 4.28 },
+					{ "time": 0.5, "value": 2.42 },
+					{ "time": 0.5833, "value": 3.46 },
+					{ "time": 0.6667, "value": -12.42 }
+				],
+				"translate": [
+					{ "x": -4.41, "y": 0.67 },
+					{ "time": 0.0833, "x": -3.37, "y": 0.7 },
+					{ "time": 0.1667, "x": -6.66, "y": 1.44 },
+					{ "time": 0.25, "x": -5.73, "y": 0.2 },
+					{ "time": 0.3333, "x": -5.71, "y": 1.19 },
+					{ "time": 0.4167, "x": -0.91, "y": 0.36 },
+					{ "time": 0.5, "x": -2.99, "y": -0.07 },
+					{ "time": 0.5833, "x": -2.02, "y": -0.27 },
+					{ "time": 0.6667, "x": -4.41, "y": 0.67 }
+				],
+				"scale": [
+					{ "x": 1.15 },
+					{ "time": 0.1667, "x": 1.25 },
+					{ "time": 0.25, "x": 1.4 },
+					{ "time": 0.6667, "x": 1.15 }
+				]
+			},
+			"LegLower_L": {
+				"rotate": [
+					{ "value": 36.86 },
+					{ "time": 0.0833, "value": 10.95 },
+					{ "time": 0.1667, "value": 7.98 },
+					{ "time": 0.25, "value": 17.84 },
+					{ "time": 0.3333, "value": 4.34 },
+					{ "time": 0.4167, "value": 15.6 },
+					{ "time": 0.5, "value": 36.52 },
+					{ "time": 0.5833, "value": 44.42 },
+					{ "time": 0.6667, "value": 36.86 }
+				],
+				"translate": [
+					{ "x": -4.31, "y": -2.22 },
+					{ "time": 0.0833, "x": -1.11, "y": 0.24 },
+					{ "time": 0.1667, "x": -0.32, "y": 0.07 },
+					{ "time": 0.25, "x": -2.04, "y": -0.46 },
+					{ "time": 0.3333, "x": -1.12, "y": 0.12 },
+					{ "time": 0.4167, "x": -1.27, "y": -0.43 },
+					{ "time": 0.5, "x": -2.99, "y": -2.08 },
+					{ "time": 0.5833, "x": -4.4, "y": -2.76 },
+					{ "time": 0.6667, "x": -4.31, "y": -2.22 }
+				],
+				"scale": [
+					{ "time": 0.3333 },
+					{ "time": 0.4167, "x": 0.838 },
+					{ "time": 0.5, "x": 0.718 },
+					{ "time": 0.5833, "x": 0.731 },
+					{ "time": 0.6667 }
+				]
+			},
+			"Foot_L": {
+				"rotate": [
+					{ "value": -34.5 },
+					{ "time": 0.0833, "value": -24.83 },
+					{ "time": 0.1667, "value": -34.35 },
+					{ "time": 0.25, "value": -35.3 },
+					{ "time": 0.3333, "value": -31.42 },
+					{ "time": 0.4167, "value": -35.08 },
+					{ "time": 0.5, "value": -17.12 },
+					{ "time": 0.6667, "value": -34.5 }
+				],
+				"translate": [
+					{ "x": -0.71, "y": -2.29 },
+					{ "time": 0.0833, "x": 0.11, "y": -1.58 },
+					{ "time": 0.1667, "x": 1.43, "y": -2.34 },
+					{ "time": 0.25, "x": 1.24, "y": -2.7 },
+					{ "time": 0.3333, "x": 2.26, "y": -2.35 },
+					{ "time": 0.4167, "x": 1.59, "y": -2.6 },
+					{ "time": 0.5, "x": 3.1, "y": -1.39 },
+					{ "time": 0.5833, "x": 1.71, "y": -2.09 },
+					{ "time": 0.6667, "x": -0.71, "y": -2.29 }
+				],
+				"scale": [
+					{ "x": 0.9 },
+					{ "time": 0.1667, "x": 0.95, "curve": "stepped" },
+					{ "time": 0.5, "x": 0.95 },
+					{ "time": 0.6667, "x": 0.9 }
+				]
+			},
+			"ArmUpper_L": {
+				"rotate": [
+					{ "value": -14.05 },
+					{ "time": 0.0833, "value": -10.3 },
+					{ "time": 0.1667, "value": -3.1 },
+					{ "time": 0.25, "value": 3.21 },
+					{ "time": 0.4167, "value": -19.38 },
+					{ "time": 0.5, "value": -24.05 },
+					{ "time": 0.5833, "value": -16.93 },
+					{ "time": 0.6667, "value": -14.05 }
+				],
+				"translate": [
+					{ "x": -1.52, "y": 0.58 },
+					{ "time": 0.0833, "x": -1.33, "y": 0.16 },
+					{ "time": 0.1667, "x": -0.75, "y": 0.22 },
+					{ "time": 0.25, "x": -0.22, "y": -0.85 },
+					{ "time": 0.3333, "x": -1.61, "y": -0.43 },
+					{ "time": 0.4167, "x": -2.72, "y": 0.16 },
+					{ "time": 0.5, "x": -3.1, "y": 0.75 },
+					{ "time": 0.5833, "x": -3.03, "y": 1.25 },
+					{ "time": 0.6667, "x": -1.52, "y": 0.58 }
+				]
+			},
+			"ArmLower_L": {
+				"rotate": [
+					{ "value": -7.43 },
+					{ "time": 0.0833, "value": 11.32 },
+					{ "time": 0.1667, "value": 12.18 },
+					{ "time": 0.25, "value": 14.72, "curve": "stepped" },
+					{ "time": 0.3333, "value": 14.72 },
+					{ "time": 0.4167, "value": 12.3 },
+					{ "time": 0.5, "value": 8.39 },
+					{ "time": 0.5833, "value": -0.17 },
+					{ "time": 0.6667, "value": -7.43 }
+				],
+				"translate": [
+					{ "x": -0.43, "y": 0.04 },
+					{ "time": 0.0833, "x": -0.34, "y": -0.96 },
+					{ "time": 0.1667, "x": -3.22, "y": 0.28 },
+					{ "time": 0.25, "x": -2.12, "y": -0.04 },
+					{ "time": 0.3333, "x": -3.17, "y": -0.05 },
+					{ "time": 0.4167, "x": -1.64, "y": -0.58 },
+					{ "time": 0.5, "x": -1.37, "y": -0.8, "curve": "stepped" },
+					{ "time": 0.5833, "x": -1.37, "y": -0.8 },
+					{ "time": 0.6667, "x": -0.43, "y": 0.04 }
+				]
+			},
+			"Hand_L": {
+				"rotate": [
+					{},
+					{ "time": 0.0833, "value": -1.51 },
+					{ "time": 0.1667, "value": 1.17 },
+					{ "time": 0.25, "value": -6.02 },
+					{ "time": 0.3333, "value": -0.02 },
+					{ "time": 0.4167, "value": -1.57 },
+					{ "time": 0.5, "value": -12.27 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": -4.86, "y": 0.1 },
+					{ "time": 0.0833, "x": -2.16, "y": -0.08 },
+					{ "time": 0.1667, "x": -0.61, "y": 0.04 },
+					{ "time": 0.25, "x": -2.47, "y": 1.01 },
+					{ "time": 0.3333, "x": -0.99, "y": 0.59 },
+					{ "time": 0.4167, "x": -1.04, "y": 0.35 },
+					{ "time": 0.5, "x": -1.14, "y": 0.41 },
+					{ "time": 0.5833, "x": -1.81, "y": -0.09 },
+					{ "time": 0.6667, "x": -4.86, "y": 0.1 }
+				]
+			},
+			"Head": {
+				"translate": [
+					{ "time": 0.3333 },
+					{ "time": 0.4167, "x": -1.83, "y": -0.19, "curve": "stepped" },
+					{ "time": 0.5833, "x": -1.83, "y": -0.19 },
+					{ "time": 0.6667 }
+				]
+			},
+			"ArmUpper_R": {
+				"rotate": [
+					{ "value": 26.46 },
+					{ "time": 0.0833, "value": 20.12 },
+					{ "time": 0.1667, "value": 9.9 },
+					{ "time": 0.25, "value": 0.77 },
+					{ "time": 0.3333, "value": 10.23 },
+					{ "time": 0.4167, "value": 13.59 },
+					{ "time": 0.5, "value": 21.1 },
+					{ "time": 0.5833, "value": 24.4 },
+					{ "time": 0.6667, "value": 26.46 }
+				],
+				"translate": [
+					{ "x": -3.58, "y": -1.9 },
+					{ "time": 0.0833, "x": -2.63, "y": -1.12 },
+					{ "time": 0.1667, "x": -2.31, "y": 0.79 },
+					{ "time": 0.25, "x": -1.02, "y": 1.61 },
+					{ "time": 0.3333, "x": -1.73, "y": 0.17 },
+					{ "time": 0.4167, "x": -1.66, "y": -0.51 },
+					{ "time": 0.5, "x": -1.47, "y": -2.43 },
+					{ "time": 0.5833, "x": -1.41, "y": -3 },
+					{ "time": 0.6667, "x": -3.58, "y": -1.9 }
+				]
+			},
+			"Hand_R": {
+				"translate": [
+					{ "time": 0.1667 },
+					{ "time": 0.25, "x": -2.49, "y": 0.01 }
+				]
+			},
+			"Foot_L_Reset": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.89, "y": 1.008 },
+					{ "time": 0.25, "x": 0.79, "y": 0.939 },
+					{ "time": 0.3333, "x": 0.795 },
+					{ "time": 0.4167, "x": 0.975 },
+					{ "time": 0.5, "x": 1.243, "y": 0.944 },
+					{ "time": 0.5833, "x": 1.269, "y": 0.942 },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{},
+					{ "time": 0.25, "x": 3.07, "y": -3.42 },
+					{ "time": 0.3333 },
+					{ "time": 0.4167, "x": 1, "y": 1 },
+					{ "time": 0.5, "x": 3.55, "y": -5.34 },
+					{ "time": 0.5833, "x": 5.87, "y": 5.08 },
+					{ "time": 0.6667, "x": 1, "y": 1 }
+				]
+			}
+		}
+	}
+}
+}
