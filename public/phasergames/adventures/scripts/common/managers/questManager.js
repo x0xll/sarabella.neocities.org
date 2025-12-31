@@ -987,6 +987,7 @@ class QuestManager {
 
     async #addHorseshoesAction (phaserScene, questID, lineIndex, action) {
         phaserScene.sharedData.inventoryAnimation.ui.manager.show("horseshoe", parseInt(action.count[0]), true)
+        addHorseshoes(parseInt(action.count[0]))
     }
 
     async #addMultipleInventoryAction (phaserScene, questID, lineIndex, action) {
