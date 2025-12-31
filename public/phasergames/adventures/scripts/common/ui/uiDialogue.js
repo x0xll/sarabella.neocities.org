@@ -124,6 +124,7 @@ class uiDialogue extends uiManagerBase
         var continueTxt = this.phaserScene.add.text(continueBtn.x+35, continueBtn.y, this.phaserScene.sharedData.ui.localization.items[0].dialogueContinue[0].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
                             .setOrigin(0)
                             .setScrollFactor(0)
+                            .setInteractive({ useHandCursor: true })
                             .setDepth(100);
 
         // Choice text
@@ -267,6 +268,7 @@ class uiDialogue extends uiManagerBase
                 var choiceTxt = this.phaserScene.add.text(choiceBtn.x+(buttonTextRef.x - buttonRef.x), choiceBtn.y+(buttonTextRef.y - buttonRef.y), choices[key].text, this.DIALOGUE_TEXT_BLACK_SETTINGS)
                                     .setOrigin(0)
                                     .setScrollFactor(0)
+                                    .setInteractive({ useHandCursor: true })
                                     .setDepth(100);
 
                 this.phaserScene.sharedData[this.key].ui.elements.choiceElements.push(choiceBtn)
@@ -276,10 +278,16 @@ class uiDialogue extends uiManagerBase
                 choiceBtn.on('pointerout', (pointer) => { });
                 choiceBtn.on('pointerup', this.#choiceOption, {questID: questID, UI: this, key: key, entityID: choices[key].entityID});
                 choiceTxt.on('pointerup', this.#choiceOption, {questID: questID, UI: this, key: key, entityID: choices[key].entityID});
+                let txtIndex = (index * 2) + 1;
+                choiceTxt.on('pointerover', function (pointer) { this.phaserScene.sharedData[this.key].ui.elements.choiceElements[txtIndex].setColor("#2a63a8ff") }, this);
+                choiceTxt.on('pointerout', function (pointer) {this.phaserScene.sharedData[this.key].ui.elements.choiceElements[txtIndex].setColor("#792AA8") }, this);
                 index++
             }
 
         } else {
+            this.phaserScene.sharedData[this.key].ui.elements.continueTxt.on('pointerover', function (pointer) { this.phaserScene.sharedData[this.key].ui.elements.continueTxt.setColor("#2a63a8ff")}, this)
+            this.phaserScene.sharedData[this.key].ui.elements.continueTxt.on('pointerout', function (pointer) { this.phaserScene.sharedData[this.key].ui.elements.continueTxt.setColor("#792AA8")}, this)
+            this.phaserScene.sharedData[this.key].ui.elements.continueTxt.on('pointerup', this.#continueOption, {questID: questID, UI: this});
             this.phaserScene.sharedData[this.key].ui.elements.continueBtn.on('pointerover', (pointer) => { });
             this.phaserScene.sharedData[this.key].ui.elements.continueBtn.on('pointerout', (pointer) => { });
             this.phaserScene.sharedData[this.key].ui.elements.continueBtn.on('pointerup', this.#continueOption, {questID: questID, UI: this});
