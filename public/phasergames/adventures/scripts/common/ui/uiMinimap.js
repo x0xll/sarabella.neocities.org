@@ -24,6 +24,7 @@ class uiMinimap extends uiManagerBase
     ]
 
     #isFullMap = false;
+    #useMiniMap = true;
 
     constructor(phaserScene)
     {
@@ -128,9 +129,30 @@ class uiMinimap extends uiManagerBase
 
             this.phaserScene.sharedData.hud.ui.manager.hudMapDown.play();
 
-            this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(1);
-            this.phaserScene.sharedData[this.key].ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
-            this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(0);
+            this.#useMiniMap = true;
+            for (let i = 0; i < this.phaserScene.sharedData.zone.data.names.location.length; i++)
+            {
+                if (this.phaserScene.sharedData.zone.data.names.location[i].identifier === this.phaserScene.sharedData.global.currentZone)
+                {
+                    this.#useMiniMap = (this.phaserScene.sharedData.zone.data.names.location[i].useMiniMap === "true");
+                    break;
+                }
+            }
+
+            if (this.#useMiniMap)
+            {
+                this.#isFullMap = false;
+                this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(0);
+                this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.map.setTexture(this.MINIMAP_IMG + this.phaserScene.sharedData.global.currentZone);
+            }
+            else
+            {
+                this.#isFullMap = true;          
+                this.phaserScene.sharedData[this.key].ui.elements.mapFull.setAlpha(1);
+                this.phaserScene.sharedData[this.key].ui.elements.map.setAlpha(0);
+            }
+        
             this.phaserScene.sharedData[this.key].ui.elements.border.setAlpha(1);
             this.phaserScene.sharedData[this.key].ui.elements.icon.setAlpha(1);
             this.phaserScene.sharedData[this.key].ui.elements.closeBtn.setAlpha(1).setFrame("up");
@@ -159,6 +181,11 @@ class uiMinimap extends uiManagerBase
 
         this.phaserScene.sharedData[this.key].ui.elements.iconZoom.on('pointerup', (pointer) => 
         {
+            if (!this.#useMiniMap)
+            {
+                return;
+            }
+
             this.#isFullMap = !this.#isFullMap;
             if (!this.#isFullMap)
             {
