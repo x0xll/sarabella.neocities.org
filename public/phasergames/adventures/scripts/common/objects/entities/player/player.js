@@ -96,7 +96,6 @@ class Player extends Entity {
      */
     setSkin(outfit){
         const skeletonData = this.sprite.skeleton.data;
-        console.log(skeletonData)
         const skin = new spine.Skin("custom");
             for (let index = 0; index < outfit.length; index++) {
                 if (outfit[index] !== undefined) {
@@ -212,13 +211,13 @@ class Player extends Entity {
                     && triggerInfo.y === this.nextY
                     && this.zoneScene.sharedData.quest.manager.tryTriggerQuest(this.zoneScene, triggerInfo)
                 ) {
-                    this.sprite.animationState.setAnimation(0, "idle0", false)
+                    this.sprite.animationState.setAnimation(0, "walkEnd", false)
                     this.pathList = [];
                     this.pathIndex = 0;
                 } else {
                     this.pathIndex++
                     if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
-                        this.sprite.animationState.setAnimation(0, "idle0", false)
+                        this.sprite.animationState.setAnimation(0, "walkEnd", false)
                     } else {
                         this.sprite.animationState.setAnimation(0, "walk", true)
                     }
