@@ -180,6 +180,7 @@ function loadData(dataType, gameID = "")
             case DATA_TYPES.lastPlayed: 
             case DATA_TYPES.gallery: 
             case DATA_TYPES.translatedQuotes: 
+            case DATA_TYPES.game: 
             case DATA_TYPES.mapPlayPage: 
             case DATA_TYPES.originalTranslations: {
                 return data[dataType]
@@ -189,9 +190,6 @@ function loadData(dataType, gameID = "")
             case DATA_TYPES.horseshoes:
             case DATA_TYPES.level: {
                 return parseInt(data[dataType]);
-            }
-            case DATA_TYPES.game: {
-                return JSON.parse(data[dataType]);
             }
             case DATA_TYPES.horseshoesMultiplier: {
                 return (data[dataType]) ? 100 : 1;

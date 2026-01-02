@@ -10,7 +10,6 @@ const GAME_DATA_TYPE = {
     tree: "tree"
 }
 
-// TODO: Uncomment stuffs when save refactor PR is merged
 class SaveManager
 {
     #saveData = {};
@@ -24,13 +23,18 @@ class SaveManager
     }
 
     saveGameData() {
-        //saveData(DATA_TYPES.game, data, GAME_ID.Adventures);
+        saveData(DATA_TYPES.game, this.#saveData, GAME_ID.Adventures);
         console.log("Adventure Data Saved: ");
         console.log(this.#saveData);
     }
 
     loadGameData() {
-        //this.#saveData = loadData(DATA_TYPES.game, GAME_ID.Adventures);
+        this.#saveData = loadData(DATA_TYPES.game, GAME_ID.Adventures);
+
+        if (!this.#saveData) {
+            this.#saveData = {}
+        }
+
         console.log("Adventure Data Loaded: ");
         console.log(this.#saveData);
     }
@@ -40,7 +44,7 @@ class SaveManager
             return {};
         }
 
-        //return this.#saveData[dataType];
+        return this.#saveData[dataType];
     }
 
     setGameData(dataType, data) {
