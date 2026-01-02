@@ -23,9 +23,8 @@ class SaveManager
     }
 
     saveGameData() {
+        this.setGameData(GAME_DATA_TYPE.time, this.phaserScene.time.now);
         saveData(DATA_TYPES.game, this.#saveData, GAME_ID.Adventures);
-        console.log("Adventure Data Saved: ");
-        console.log(this.#saveData);
     }
 
     loadGameData() {
@@ -34,14 +33,11 @@ class SaveManager
         if (!this.#saveData) {
             this.#saveData = {}
         }
-
-        console.log("Adventure Data Loaded: ");
-        console.log(this.#saveData);
     }
 
     getGameData(dataType) {
         if (this.#saveData[dataType] === undefined) {
-            return {};
+            return undefined;
         }
 
         return this.#saveData[dataType];
@@ -49,6 +45,5 @@ class SaveManager
 
     setGameData(dataType, data) {
         this.#saveData[dataType] = data;
-        this.saveGameData();
     }
 }

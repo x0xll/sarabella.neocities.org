@@ -9,7 +9,10 @@ class TimeManager
             this.startAt = this.phaserScene.sharedData.global.timePausedAt
         } else {
             this.phaserScene.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
-            this.startAt = 0
+            this.startAt = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.time);
+            if (!this.startAt) {
+                this.startAt = 0;
+            }
         }
         this.isDay = true
         this.nightLength = 30000 // should be 30000
