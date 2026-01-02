@@ -145,7 +145,7 @@ function loadData(dataType, gameID = "")
                 case DATA_TYPE_CREATIONS:
                     if (savedData.gameData[i].creations === undefined)
                         return "";
-                    return JSON.parse(savedData.gameData[i].creations);
+                    return savedData.gameData[i].creations
                 case DATA_TYPE_GAME:
                     if (savedData.gameData[i].game === undefined)
                         return "";
