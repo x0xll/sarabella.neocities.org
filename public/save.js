@@ -153,33 +153,35 @@ function loadData(dataType, gameID = "")
             }
         }
     }
-
-    switch(dataType)
+    else
     {
-        case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
-            if (savedData.translatedquotes === undefined)
-                return true;
-            return savedData.translatedquotes;
-        case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
-            if (savedData.oglocas === undefined)
-                return false;
-            return savedData.oglocas;
-        case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
-            if (savedData.horseshoesmul === undefined)
-                return 1;
-            return (savedData.horseshoesmul) ? 100 : 1;
-        case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
-            if (savedData.playpage === undefined)
-                return false;
-            return savedData.playpage;
-        case DATA_TYPE_HORSESHOES:
-            if (savedData.horseshoes === undefined)
+        switch(dataType)
+        {
+            case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
+                if (savedData.translatedquotes === undefined)
+                    return true;
+                return savedData.translatedquotes;
+            case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
+                if (savedData.oglocas === undefined)
+                    return false;
+                return savedData.oglocas;
+            case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
+                if (savedData.horseshoesmul === undefined)
+                    return 1;
+                return (savedData.horseshoesmul) ? 100 : 1;
+            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
+                if (savedData.playpage === undefined)
+                    return false;
+                return savedData.playpage;
+            case DATA_TYPE_HORSESHOES:
+                if (savedData.horseshoes === undefined)
+                    return 0;
+                return parseInt(savedData.horseshoes);
+            case DATA_TYPE_CREATIONS:
+                return null;
+            default:
                 return 0;
-            return parseInt(savedData.horseshoes);
-        case DATA_TYPE_CREATIONS:
-            return null;
-        default:
-            return 0;
+        }
     }
 }
 
