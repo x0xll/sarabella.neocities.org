@@ -101,9 +101,8 @@ function saveData(dataType, userData, gameID = "")
                 data.gameData[gameIndex][dataType] = userData; 
             } else {
                 data.gameData[gameIndex][dataType] = localStorage.getItem(CACHE_DATA[gameID]); 
+                updateSWFLocaleDatas(gameID); 
             }
-
-            updateSWFLocaleDatas(gameID); 
             break;
         }
         default: {
