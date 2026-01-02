@@ -99,7 +99,6 @@ class Player extends Entity {
         const skin = new spine.Skin("custom");
             for (let index = 0; index < outfit.length; index++) {
                 if (outfit[index] !== undefined) {
-                    console.log(`B00${index+1}/S00${index+1}${outfit[index]}`)
                     skin.addSkin(skeletonData.findSkin(`B00${index+1}/S00${index+1}${outfit[index]}`));
                 }
             }

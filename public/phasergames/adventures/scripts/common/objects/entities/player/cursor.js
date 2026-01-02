@@ -187,12 +187,10 @@ class Cursor {
             for (let index = 0; index < entities.length; index++) {
                 const entity = this.zoneScene.entities[entities[index]]
 
-                let gridFootX = entity.gridFootX
-                let gridFootY = entity.gridFootY
-                if (entity.facingDirection.includes("w")) {
-                    gridFootX = entity.gridFootY
-                    gridFootY = entity.gridFootX
-                }
+                const gridFootData = entity.getCurrentGridTileData()
+
+                const gridFootX = gridFootData.x
+                const gridFootY = gridFootData.y
                 
                 if (gridFootX !== 1 || gridFootY !==1) {
                     this.gridFoot.x = gridFootX
@@ -352,7 +350,7 @@ class Cursor {
 
     #hasEntity(context, gridTarget, filterContext) {
         let tile = context.zoneScene.getTileAt(gridTarget.x, gridTarget.y)
-        if (tile.hasEntity) {
+        if (tile.hasEntity && tile.hasEntity.length > 0) {
             return true
         }
         return false

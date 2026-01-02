@@ -73,36 +73,7 @@ class TemplateEntity extends Entity {
      * Instantiates the entity sprite. Should run during the create phase of zone scene setup
      */
     create() {
-        this.gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
-        this.gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
-        if (this.getTemplateValue(["GridPosition", "gridFoot", "text"])) {
-            this.gridFootX = this.getTemplateValue(["GridPosition", "gridFoot", "text"])
-            this.gridFootY = this.getTemplateValue(["GridPosition", "gridFoot", "text"])
-        }
-        if (this.gridFootX === undefined) { this.gridFootX = 1}
-        if (this.gridFootY === undefined) { this.gridFootY = 1}
-
-        // Add entity data to tiles
-        // TODO get facing direction from Isometric scaleX?
-        for (let x = 0; x < this.gridFootX; x++) {
-            for (let y = 0; y < this.gridFootY; y++) {
-                let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
-                switch (this.facingDirection) {
-                    case this.FACING_DIRECTIONS.Southwest:
-                    case this.FACING_DIRECTIONS.West:
-                    case this.FACING_DIRECTIONS.Northwest:
-                        tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
-                        break;
-                    default:
-                        break;
-                }
-                if (!tile.hasEntity) {
-                    tile.hasEntity = []
-                }
-                tile.hasEntity.push(this.entityKey)
-            }
-        }
-
+        this.#setGridTileData()
         this.#createPlantData()
         this.#createSprite()
         this.updateSpriteVariant(this.variant);
@@ -410,6 +381,129 @@ class TemplateEntity extends Entity {
         super.updateSprite()
     }
     // ------- END UPDATE FUNCTIONS -------
+
+
+    // ------- GRID TILE FUNCTIONS -------
+    gridFootDirectionsSwapped() {
+        switch (this.facingDirection) {
+            case this.FACING_DIRECTIONS.Southwest:
+            case this.FACING_DIRECTIONS.Northeast:
+                return true
+                break;
+            default:
+                return false
+                break;
+        }
+    }
+    // Set
+    #setGridTileData() {
+        // Get gridFootData from template
+        this.gridFootX = this.getTemplateValue(["GridPosition", "gridFootX", "text"])
+            this.gridFootX = this.gridFootX === undefined ? 1 : parseInt(this.gridFootX)
+
+        this.gridFootY = this.getTemplateValue(["GridPosition", "gridFootY", "text"])
+            this.gridFootY = this.gridFootY === undefined ? 1 : parseInt(this.gridFootY)
+
+        // Add entity data to tiles
+        for (let x = 0; x < this.gridFootX; x++) {
+            for (let y = 0; y < this.gridFootY; y++) {
+                let tile
+                if (this.gridFootDirectionsSwapped()) {
+                    tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
+                } else {
+                    tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
+                }
+
+                if (!tile.hasEntity) {
+                    tile.hasEntity = []
+                }
+                tile.hasEntity.push(this.entityKey)
+            }
+        }
+    }
+    // Remove
+    removeGridTileData() {
+        if ( this.gridFootX === undefined) { this.gridFootX = 1}
+        if ( this.gridFootY === undefined) { this.gridFootY = 1}
+        for (let x = 0; x < this.gridFootX; x++) {
+            for (let y = 0; y < this.gridFootY; y++) {
+                let tile
+                if (this.gridFootDirectionsSwapped()) {
+                    tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
+                } else {
+                    tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
+                }
+                
+                const index = tile.hasEntity.indexOf(this.entityKey);
+                if (index !== -1) {
+                    tile.hasEntity.splice(index, 1);
+                }
+            }
+        }
+    }
+    // Update
+    updateGridTileData() {
+        const bigger = this.gridFootX > this.gridFootY ? this.gridFootX : this.gridFootY
+        const smaller = this.gridFootX < this.gridFootY ? this.gridFootX : this.gridFootY
+
+        for (let i = smaller; i < bigger; i++) {
+            for (let j = 0; j < smaller; j++) {
+                let oldTile
+                let newTile
+
+                if (this.gridFootDirectionsSwapped()) {
+                    oldTile = this.zoneScene.getTileAt(this.startPos[0]+j, this.startPos[1]-i)
+                    newTile = this.zoneScene.getTileAt(this.startPos[0]+i, this.startPos[1]-j)
+                } else {
+                    oldTile = this.zoneScene.getTileAt(this.startPos[0]+i, this.startPos[1]-j)
+                    newTile = this.zoneScene.getTileAt(this.startPos[0]+j, this.startPos[1]-i)
+                }
+
+                // Deletes the entity from the old tile
+                if (oldTile && oldTile.hasEntity) {
+                    let index = oldTile.hasEntity.indexOf(this.entityKey);
+                    if (index !== -1) {
+                        oldTile.hasEntity.splice(index, 1);
+                    }
+                }
+
+                // Adds the entity to the new tile
+                if (newTile) {
+                    if (newTile.hasEntity) {
+                        let index = newTile.hasEntity.indexOf(this.entityKey)
+                        if (index === -1) {
+                            newTile.hasEntity.push(this.entityKey);
+                        } else {
+                        }
+                    } else {
+                        newTile.hasEntity = [this.entityKey]
+                    }
+                }
+            }
+        }
+    }
+    // Get
+    getCurrentGridTileData() {
+        if (this.gridFootDirectionsSwapped()) {
+            return {x: this.gridFootY, y: this.gridFootX}
+        } else {
+            return {x: this.gridFootX, y: this.gridFootY}
+        }
+    }
+
+    debugGridTileData() {
+        const bigger = this.gridFootX > this.gridFootY ? this.gridFootX : this.gridFootY
+        const tiles = []
+
+        for (let i = 0; i < bigger; i++) {
+            for (let j = 0; j < bigger; j++) {
+                let tile = this.zoneScene.getTileAt(this.startPos[0]+j, this.startPos[1]-i)
+                tiles.push(tile)
+            }
+        }
+        console.log("Tile data for", this.entityKey, tiles)
+    }
+    // ------- GRID TILE FUNCTIONS -------
 
 
     // ------- COMMAND FUNCTIONS -------
@@ -764,10 +858,9 @@ class TemplateEntity extends Entity {
         context.zoneScene.sharedData.entities.spawnedEntities[context.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.variant = context.variant;
         context.updateSpriteVariant(context.variant);
     }
-    // TODO: update gridFoot in here somewhere
+    
     #rotateCommand(context, interactData) { 
-        switch(context.facingDirection)
-        {
+        switch(context.facingDirection) {
             default:
             case context.FACING_DIRECTIONS.Northwest:
                 context.facingDirection = context.FACING_DIRECTIONS.Southwest;
@@ -782,6 +875,7 @@ class TemplateEntity extends Entity {
                 context.facingDirection = context.FACING_DIRECTIONS.Northwest;
                 break;
         }
+        context.updateGridTileData()
         context.resetSpriteFacingDirection()
         context.zoneScene.sharedData.entities.spawnedEntities[context.zoneScene.sharedData.global.currentZone][context.entityKey].respawnConfig.facingDirection = context.facingDirection;
     }
@@ -837,26 +931,7 @@ class TemplateEntity extends Entity {
         if (this.sprite) { this.sprite.destroy() }
 
         // Removes the entity from the tiles it is on
-        if ( this.gridFootX === undefined) { this.gridFootX = 1}
-        if ( this.gridFootY === undefined) { this.gridFootY = 1}
-        for (let x = 0; x < this.gridFootX; x++) {
-            for (let y = 0; y < this.gridFootY; y++) {
-                let tile = this.zoneScene.getTileAt(this.startPos[0]+x, this.startPos[1]-y)
-                switch (this.facingDirection) {
-                    case this.FACING_DIRECTIONS.Southwest:
-                    case this.FACING_DIRECTIONS.West:
-                    case this.FACING_DIRECTIONS.Northwest:
-                        tile = this.zoneScene.getTileAt(this.startPos[0]+y, this.startPos[1]-x)
-                        break;
-                    default:
-                        break;
-                }
-                const index = tile.hasEntity.indexOf(this.entityKey);
-                if (index !== -1) {
-                    tile.hasEntity.splice(index, 1);
-                }
-            }
-        }
+        this.removeGridTileData()
 
         // Removes the entity from the zone
         delete this.zoneScene.sharedData.entities.spawnedEntities[this.zoneScene.zoneConfig.ID][this.entityKey]
