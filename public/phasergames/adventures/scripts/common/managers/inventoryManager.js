@@ -8,8 +8,14 @@ class InventoryManager
                 manager: this,
                 allItems: {}
             }
+
+            this.loadInventory();
         }
         // Note: each item in the inventory (allItems) has a template name as the key and the number of that item as its value
+    }
+
+    loadInventory() {
+        this.phaserScene.sharedData.inventory.allItems = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.inventory)
     }
 
     addItem(itemTemplate, amount=1) {
@@ -22,6 +28,7 @@ class InventoryManager
         } else { 
             allItems[itemTemplate] = amount 
         }
+        this.phaserScene.sharedData.saving.setGameData(GAME_DATA_TYPE.inventory, allItems);
     }
 
     removeItem(itemTemplate, amount=1) {
@@ -31,6 +38,7 @@ class InventoryManager
         if (count >= amount) {
             allItems[itemTemplate] = allItems[itemTemplate] - amount
             if (allItems[itemTemplate] === 0) { delete allItems[itemTemplate] }
+            this.phaserScene.sharedData.saveManager.setGameData(GAME_DATA_TYPE.inventory, allItems);
             return true
         } else {
             console.log(`Could not remove ${amount} ${itemTemplate}. Only have ${count}`)

@@ -70,7 +70,7 @@ class uiHUD extends uiManagerBase
 
         this.phaserScene.sharedData.hud.ui.saveButton = this.phaserScene.add.sprite(681, 565, 'saveButton', 'up').setScale(.9).setDepth(100).setInteractive({ useHandCursor: true });
         this.phaserScene.sharedData.hud.ui.saveButton.on("pointerdown", () => {
-            this.phaserScene.sharedData.saveManager.saveGameData();
+            this.phaserScene.sharedData.saving.saveGameData();
             this.phaserScene.sharedData.hud.ui.saveButton.setFrame("down")
             this.hudButtonDown.play()
         }, this);

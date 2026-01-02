@@ -2,15 +2,25 @@
 *  Save/Load events
 */
 
+const GAME_DATA_TYPE = {
+    time: "time",
+    quest: "quest",
+    entities: "entities",
+    inventory: "inventory"
+}
+
 // TODO: Uncomment stuffs when save refactor PR is merged
 class SaveManager
 {
-    GAME_DATA_TYPE = {
-        quest: "quest",
-        // TODO: setup the elements we need to save here
-    }
-
     #saveData = {};
+
+    constructor(phaserScene) {
+        this.phaserScene = phaserScene;
+        if (phaserScene.sharedData.saving === undefined) {
+            phaserScene.sharedData.saving = this;
+            this.loadGameData();
+        }
+    }
 
     saveGameData() {
         //saveData(DATA_TYPES.game, data, GAME_ID.Adventures);
@@ -26,7 +36,7 @@ class SaveManager
 
     getGameData(dataType) {
         if (this.#saveData[dataType] === undefined) {
-            return "";
+            return {};
         }
 
         //return this.#saveData[dataType];

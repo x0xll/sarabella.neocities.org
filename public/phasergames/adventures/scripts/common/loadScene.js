@@ -83,6 +83,7 @@ class Common_Load extends Phaser.Scene
     preload ()
     {
         loadLoadingUI(this);
+        this.saveManager = new SaveManager(this);
         this.questManager = new QuestManager(this);
         this.templateManager = new TemplateManager(this);
         this.inventory = new InventoryManager(this);
@@ -106,9 +107,6 @@ class Common_Load extends Phaser.Scene
     {
         const loader = this
         loader.sharedData = sharedData
-        
-        loader.sharedData.saveManager = new SaveManager(this);
-        loader.sharedData.saveManager.loadGameData();
 
         loader.sharedData.ui.localization = parseSharedXML(this.cache.xml.get("SharedUI"))
 
