@@ -80,6 +80,7 @@ function saveData(dataType, userData, gameID = "")
 
     if (!data) {
         data = {
+            version : SAVE_VERSION,
             gameData : []
         }
     }
@@ -273,8 +274,8 @@ function updateAdventuresData(data)
 
 function updateSWFLocaleDatas(game)
 {
-    gameID = (GAME_ID[game] !== undefined) ? GAME_ID[game] : gameID;
-    let loadedDatas = loadData(DATA_TYPES.creations, gameID);
+    game = (GAME_ID[game] !== undefined) ? GAME_ID[game] : game;
+    let loadedDatas = loadData(DATA_TYPES.creations, game);
     if (loadedDatas === "" || loadedDatas === undefined || loadedDatas === null)
         localStorage.removeItem(CACHE_DATA[game]);
     else
