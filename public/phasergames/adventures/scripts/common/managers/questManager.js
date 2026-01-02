@@ -171,6 +171,10 @@ class QuestManager {
     }
 
     debug_DrawTriggerQuest(phaserScene) {
+        if (phaserScene === undefined) {
+            phaserScene = this.phaserScene;
+        }
+
         if (phaserScene.questTriggerDebug === undefined)
             phaserScene.questTriggerDebug = [];
         else {
@@ -183,7 +187,7 @@ class QuestManager {
         for (let i = 0; i < phaserScene.sharedData.quest.logic.activeQuests.length; i++) {
             let questGlobalData = this.getQuestPerID(phaserScene.sharedData.quest.logic.activeQuests[i]);
 
-            for (let lineIndex = 0; index < questGlobalData.line.length; lineIndex++) {
+            for (let lineIndex = 0; lineIndex < questGlobalData.line.length; lineIndex++) {
                 let triggerData = questGlobalData.line[lineIndex].trigger.object[0];
 
                 if (triggerData.zoneId != undefined && 

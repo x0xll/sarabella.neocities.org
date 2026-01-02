@@ -100,6 +100,11 @@ class Debug {
         if (!questID[0] || !questID[1]) {questID = this.loadScene.sharedData.quest.manager.getFullQuestID(questID)}
         return questID
     }
+
+    drawTriggerQuest()
+    {
+        this.loadScene.sharedData.quest.manager.debug_DrawTriggerQuest();
+    }
     // ------- END QUEST FUNCTIONS -------
 
 
