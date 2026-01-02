@@ -76,11 +76,11 @@ function saveData(dataType, userData, gameID = "")
 
     gameID = (GAME_ID[gameID] !== undefined) ? GAME_ID[gameID] : gameID;
 
-    let data = JSON.parse(localStorage.getItem(USER_KEY + currentUser));;
+    let data = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
 
     if (!data) {
         data = {
-            gameData : {}
+            gameData : []
         }
     }
 
@@ -96,7 +96,12 @@ function saveData(dataType, userData, gameID = "")
     switch(dataType)
     {
         case DATA_TYPES.creations: {
-            data.gameData[gameIndex][dataType] = localStorage.getItem(CACHE_DATA[gameID]); 
+            if (gameID === GAME_ID.DressUp) {
+                data.gameData[gameIndex][dataType] = userData; 
+            } else {
+                data.gameData[gameIndex][dataType] = localStorage.getItem(CACHE_DATA[gameID]); 
+            }
+
             updateSWFLocaleDatas(gameID); 
             break;
         }
@@ -132,7 +137,7 @@ function loadData(dataType, gameID = "")
                 return 10000;
             }
             default: {
-                return DATA_DEFAULT[key];
+                return DATA_DEFAULT[getKeyByValue(DATA_TYPES, dataType)];
             }
         }
     }
@@ -141,7 +146,7 @@ function loadData(dataType, gameID = "")
     if (!data) {      
         data = 
         {
-            gameData: {}
+            gameData: []
         }
     }
     let gameIndex = getGameIdSaveIndex(gameID, data);
@@ -151,26 +156,27 @@ function loadData(dataType, gameID = "")
             return DATA_DEFAULT[getKeyByValue(DATA_TYPES, dataType)];
         }
     else {
+        data = gameID === "" ? data : data.gameData[gameIndex]
         switch(dataType)
         {
-            case DATA_TYPES.highscore:
-            case DATA_TYPES.horseshoes:
-            case DATA_TYPES.level: {
-                if (gameID === "") {
-                    return parseInt(data[dataType]);
+            case DATA_TYPES.creations:
+                if (gameID === GAME_ID.DressUp) {
+                    return JSON.parse(data[dataType]);
+                } else {
+                    return data[dataType]
                 }
-                return parseInt(data.gameData[gameIndex][dataType]);
-            }
-            case DATA_TYPES.creations: {
-                return data.gameData[gameIndex][dataType]
-            }
-            case DATA_TYPES.game: {
-                return JSON.parse(data.gameData[gameIndex][dataType]);
-            }
             case DATA_TYPES.translatedQuotes: 
             case DATA_TYPES.mapPlayPage: 
             case DATA_TYPES.originalTranslations: {
-                return data[dataType];
+                return data[dataType]
+            }
+            case DATA_TYPES.highscore:
+            case DATA_TYPES.horseshoes:
+            case DATA_TYPES.level: {
+                return parseInt(data[dataType]);
+            }
+            case DATA_TYPES.game: {
+                return JSON.parse(data[dataType]);
             }
             case DATA_TYPES.horseshoesMultiplier: {
                 return (data[dataType]) ? 100 : 1;
@@ -216,15 +222,14 @@ function updateHighscore(data)
     // Initialize
     if (splittedData.length == 1)
     {
-        currentGame =  data;
-        gameID = (GAME_ID[data] !== undefined) ? GAME_ID[data] : gameID;
+        currentGame = data;
+        gameID = (GAME_ID[data] !== undefined) ? GAME_ID[data] : "";
         updateHighscoreUI(loadData(DATA_TYPES.highscore, gameID))
         return;
     }
 
     // Actually update
-
-    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : gameID;
+    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : "";
 
     loadedData = loadData(DATA_TYPES.highscore, gameID);
     if (parseInt(splittedData[0]) > loadedData)
@@ -246,7 +251,7 @@ function updateLevelReached(data)
 {
     splittedData = data.split("@");
 
-    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : gameID;
+    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : "";
 
     loadedData = loadData(DATA_TYPES.level, gameID);
     if (parseInt(splittedData[0]) > loadedData)
@@ -257,7 +262,7 @@ function updateCreations(data)
 {
     splittedData = data.split("@");
 
-    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : gameID;
+    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : "";
     saveData(DATA_TYPES.creations, splittedData[0], gameID);
 }
 

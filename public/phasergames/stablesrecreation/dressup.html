@@ -18,7 +18,6 @@
     </head>
 
     <script src="/save.js"></script> 
-    <script src="/save.js"></script>
 <script src="/language.js"></script>
     
     <body style="text-align: center;" onload="loadLanguagePref();">
@@ -58,7 +57,7 @@
 
                 setupUserDropdown()
                 const MAX_SAVED_HORSES = 10
-                let savedHorses = loadData(DATA_TYPES.creations, getGameID("DressUp"))
+                let savedHorses = loadData(DATA_TYPES.creations, GAME_ID.DressUp)
                 if (savedHorses != null && savedHorses.length > 0)
                 {
                     savedHorses = savedHorses;
