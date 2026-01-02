@@ -107,7 +107,12 @@ function saveData(dataType, userData, gameID = "")
         }
         default: {
             if (gameID === "") {
-                data[dataType] = userData; 
+                if (userData.checked === undefined) {
+                    data[dataType] = userData;
+                }
+                else {
+                    data[dataType] = userData.checked; 
+                }
             }
             else {
                 data.gameData[gameIndex][dataType] = userData;
@@ -146,6 +151,7 @@ function loadData(dataType, gameID = "")
     if (!data) {      
         data = 
         {
+            version : SAVE_VERSION,
             gameData: []
         }
     }
