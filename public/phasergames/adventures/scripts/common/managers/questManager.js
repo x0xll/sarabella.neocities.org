@@ -388,8 +388,8 @@ class QuestManager {
         let finishedSavedData;
         let activeSavedString;
         let finisedSavedString;
-        
-        if (!data.activeQuest) {
+
+        if (!data || !data.activeQuest) {
             activeSavedString = 
                 "v1"
                 + "_Q0000000825-0000000899-0000002110" // Intro tuto
@@ -404,7 +404,7 @@ class QuestManager {
             activeSavedString = data.activeQuest;
         }
 
-        if (!data.finishedQuest) {
+        if (!data || !data.finishedQuest) {
             finisedSavedString = "v1"
         }
         else {

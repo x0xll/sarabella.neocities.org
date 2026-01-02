@@ -38,7 +38,7 @@ class LevelManager
     #loadExperience()
     {
         let data = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.tree);
-        if (!data.experience) {
+        if (!data || !data.experience) {
             return;
         }
         
