@@ -7,7 +7,8 @@ const GAME_DATA_TYPE = {
     quest: "quest",
     entities: "entities",
     inventory: "inventory",
-    tree: "tree"
+    tree: "tree",
+    player: "player"
 }
 
 class SaveManager
@@ -24,6 +25,8 @@ class SaveManager
 
     saveGameData() {
         this.setGameData(GAME_DATA_TYPE.time, this.phaserScene.time.now);
+        this.setGameData(GAME_DATA_TYPE.entities, this.phaserScene.sharedData.entities.spawnedEntities);
+
         saveData(DATA_TYPES.game, this.#saveData, GAME_ID.Adventures);
     }
 

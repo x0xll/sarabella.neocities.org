@@ -93,6 +93,11 @@ class ZoneBase extends Phaser.Scene
         this.zoneConfig.sceneEntryPoints
         this.entities = {}
 
+        let data = this.sharedData.saving.getGameData(GAME_DATA_TYPE.entities);
+        if (data) {
+            this.sharedData.spawnedEntities = data;
+        }
+
         // Player
         let playerStartPos = this.zoneConfig.sceneEntryPoints["default"]
         if (this.sharedData !== undefined
