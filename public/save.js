@@ -1,15 +1,67 @@
-const ART_STUDIO_CACHE = "sarabella.neocities.org//BellaSaraArtStudioData";
-//const ART_STUDIO_CACHE = "127.0.0.1//BellaSaraArtStudioData"; // DEBUG ONLY
+const CACHE_DATA = {
+    AS: getBaseUrl() + "//BellaSaraArtStudioData",
+}
 
-const DATA_TYPE_HORSESHOES = "horseshoes";
-const DATA_TYPE_HIGHSCORE = "highscore";
-const DATA_TYPE_LEVEL = "level";
-const DATA_TYPE_CREATIONS = "creations";
-const DATA_TYPE_GAME = "game";
-const DATA_TYPE_SETTINGS_TRANSLATEDQUOTES = "settings_tdqt";
-const DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS = "settings_tdog";
-const DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR = "settings_hsmul";
-const DATA_TYPE_SETTINGS_MAPPLAYPAGE = "settings_mpp";
+const GAME_ID = {
+    MagicBubbleWand: "MBW",
+    SpectacularJumpingGame: "SJG",
+    Citrustacked: "CIT",
+    ArtStudio: "AS",
+    MyCottage: "COT",
+    DreamRider: "DR",
+    CloudJumper: "CJ",
+    TreasuresHunt: "TH",
+    SantoQuiz: "SQZ",
+    BelloQuiz: "BQZ",
+    YinYangMemory: "YYM",
+    FirelightFestival: "FF",
+    LanceRiding: "LR",
+    MyHorse: "FOA",
+    DressUp: "DUG",
+    AdventuresQuiz: "AQZ",
+    AutumnJourneyQuiz: "JQZ",
+    Adventures: "ADV",
+    Coloring: "COL",
+    Puzzle: "PUZ",
+    Stables: "STA",
+    ArtIdeaGenerator: "AIG",
+    Storybook: "STB",
+    MarvelousMagicMatch: "MMM",
+    WheelofWonders: "WOW",
+    BellisimosJumpingContest: "BJC",
+    Bellapedia: "BPD",
+    DynamosDressageArena: "DDA",
+    Trailblazer: "TBZ",
+    BellaBeautyBox: "BBB",
+    Journal: "JOU",
+    Bazaar: "BAZ",
+    MyThings: "THI",
+    Adventures: "BSA",
+}
+
+const DATA_TYPES = {
+    horseshoes : "horseshoes",
+    highscore : "highscore",
+    level : "level",
+    creations : "creations",
+    game : "game",
+    translatedQuotes : "settings_tdqt",
+    originalTranslations : "settings_tdog",
+    horseshoesMultiplier : "settings_hsmul",
+    mapPlayPage : "settings_mpp"
+}
+
+const DATA_DEFAULT = {
+    horseshoes : 100,
+    highscore : 0,
+    level : 0,
+    creations : null,
+    game : null,
+    translatedQuotes : true,
+    originalTranslations : false,
+    horseshoesMultiplier : 1,
+    mapPlayPage : false
+}
 
 const SAVE_VERSION = 1;
 
@@ -22,74 +74,44 @@ function saveData(dataType, userData, gameID = "")
 {
     if (currentUser === "guest") return;
 
-    let savedData = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
+    gameID = (GAME_ID[gameID] !== undefined) ? GAME_ID[gameID] : gameID;
 
-    let existingData = false;
+    let data = JSON.parse(localStorage.getItem(USER_KEY + currentUser));;
 
-    if (gameID !== "")
-    {
-        for (let i = 0; i < savedData.gameData.length; i++)
-        {
-            if (savedData.gameData[i].id !== gameID) continue;
-    
-            existingData = true;
-
-            switch(dataType)
-            {
-                case DATA_TYPE_HIGHSCORE: savedData.gameData[i].highscore = userData; break;
-                case DATA_TYPE_LEVEL: savedData.gameData[i].level = userData; break;
-                case DATA_TYPE_CREATIONS:
-                    switch(gameID)
-                    {
-                        case getGameID("ArtStudio"): savedData.gameData[i].creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
-                        default: savedData.gameData[i].creations = userData; break;
-                    }
-                    break;
-                case DATA_TYPE_GAME:
-                    if (gameID !== "Adventures")
-                        savedData.gameData[i].game = userData;
-            }
-        }
-
-        if (!existingData)
-        {
-            let currentGameData = 
-            {
-                id: gameID,
-            }
-
-            switch(dataType)
-            {
-                case DATA_TYPE_HIGHSCORE: currentGameData.highscore = userData; break;
-                case DATA_TYPE_LEVEL: currentGameData.level = userData; break;
-                case DATA_TYPE_CREATIONS: 
-                    switch(gameID)
-                    {
-                        case getGameID("ArtStudio"): currentGameData.creations = localStorage.getItem(ART_STUDIO_CACHE); updateSWFLocaleDatas(gameID); break;
-                        default: currentGameData.creations = userData; break;
-                    }
-                    break;
-                case DATA_TYPE_GAME:
-                    if (gameID !== "Adventures") break;
-                    currentGameData.game = userData;
-            }
-
-            savedData.gameData.push(currentGameData);
+    if (!data) {
+        data = {
+            gameData : {}
         }
     }
-    else
-    {
-        switch(dataType)
-        {
-            case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
-            case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
-            case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
-            case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
-            case DATA_TYPE_SETTINGS_MAPPLAYPAGE: savedData.playpage = userData.checked; break;
-        } 
+
+    let gameIndex = getGameIdSaveIndex(gameID, data);
+    if (gameIndex === -1)
+    {       
+        gameIndex = data.gameData.length;
+        data.gameData.push({
+            id: gameID
+        })
     }
 
-    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedData));
+    switch(dataType)
+    {
+        case DATA_TYPES.creations: {
+            data.gameData[gameIndex][dataType] = localStorage.getItem(CACHE_DATA[gameID]); 
+            updateSWFLocaleDatas(gameID); 
+            break;
+        }
+        default: {
+            if (gameID === "") {
+                data[dataType] = userData; 
+            }
+            else {
+                data.gameData[gameIndex][dataType] = userData;
+            }
+            break;
+        }
+    }
+
+    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(data));
     setupUserDropdown();
 }
 
@@ -106,93 +128,67 @@ function loadData(dataType, gameID = "")
     {
         switch(dataType)
         {
-            case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
-                return 1;
-            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
-            case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
-                return false;
-            case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
-                return true;
-            case DATA_TYPE_HORSESHOES:
+            case DATA_TYPES.horseshoes: {
                 return 10000;
-            case DATA_TYPE_HIGHSCORE:
-            case DATA_TYPE_LEVEL:
-                return 0;
-            case DATA_TYPE_CREATIONS:
-            case DATA_TYPE_GAME:
-                return null;
-        }
-    }
-
-    let savedData = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
-
-    if (gameID != "")
-    {
-        for (let i = 0; i < savedData.gameData.length; i++)
-        {
-            if (savedData.gameData[i].id !== gameID) continue;
-    
-            switch(dataType)
-            {
-                case DATA_TYPE_HIGHSCORE:
-                    if (savedData.gameData[i].highscore === undefined)
-                        return 0;
-                    return savedData.gameData[i].highscore;
-                case DATA_TYPE_LEVEL: 
-                    if (savedData.gameData[i].level === undefined)
-                        return 0;
-                    return savedData.gameData[i].level;
-                case DATA_TYPE_CREATIONS:
-                    if (savedData.gameData[i].creations === undefined)
-                        return "";
-                    return savedData.gameData[i].creations
-                case DATA_TYPE_GAME:
-                    if (savedData.gameData[i].game === undefined)
-                        return "";
-                    return JSON.parse(savedData.gameData[i].game);
+            }
+            default: {
+                return DATA_DEFAULT[key];
             }
         }
     }
-    else
-    {
-        switch(dataType)
+
+    let data = JSON.parse(localStorage.getItem(USER_KEY + currentUser));
+    if (!data) {      
+        data = 
         {
-            case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
-                if (savedData.translatedquotes === undefined)
-                    return true;
-                return savedData.translatedquotes;
-            case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
-                if (savedData.oglocas === undefined)
-                    return false;
-                return savedData.oglocas;
-            case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
-                if (savedData.horseshoesmul === undefined)
-                    return 1;
-                return (savedData.horseshoesmul) ? 100 : 1;
-            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
-                if (savedData.playpage === undefined)
-                    return false;
-                return savedData.playpage;
-            case DATA_TYPE_HORSESHOES:
-                if (savedData.horseshoes === undefined)
-                    return 0;
-                return parseInt(savedData.horseshoes);
-            case DATA_TYPE_CREATIONS:
-                return null;
-            default:
-                return 0;
+            gameData: {}
         }
     }
+    let gameIndex = getGameIdSaveIndex(gameID, data);
+
+    if ((gameID === "" && data[dataType] === undefined) ||
+        (gameID !== "" && (data.gameData[gameIndex] === undefined || (data.gameData[gameIndex] !== undefined && data.gameData[gameIndex][dataType] === undefined)))) {
+            return DATA_DEFAULT[getKeyByValue(DATA_TYPES, dataType)];
+        }
+    else {
+        switch(dataType)
+        {
+            case DATA_TYPES.highscore:
+            case DATA_TYPES.horseshoes:
+            case DATA_TYPES.level: {
+                if (gameID === "") {
+                    return parseInt(data[dataType]);
+                }
+                return parseInt(data.gameData[gameIndex][dataType]);
+            }
+            case DATA_TYPES.creations: {
+                return data.gameData[gameIndex][dataType]
+            }
+            case DATA_TYPES.game: {
+                return JSON.parse(data.gameData[gameIndex][dataType]);
+            }
+            case DATA_TYPES.translatedQuotes: 
+            case DATA_TYPES.mapPlayPage: 
+            case DATA_TYPES.originalTranslations: {
+                return data[dataType];
+            }
+            case DATA_TYPES.horseshoesMultiplier: {
+                return (data[dataType]) ? 100 : 1;
+            }
+        }
+    }
+
+    
 }
 
 function loadSettings()
 {
     horseshoemultiplicator = document.getElementById("horseshoemultiplicator");
-    horseshoemultiplicator.checked = (loadData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR) == 1 ? false : true);
+    horseshoemultiplicator.checked = (loadData(DATA_TYPES.horseshoesMultiplier) == 1 ? false : true);
     translatedquotes = document.getElementById("translatedquotes");
-    translatedquotes.checked = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
+    translatedquotes.checked = loadData(DATA_TYPES.translatedQuotes);
     mapplaypage = document.getElementById("mapplaypage");
-    mapplaypage.checked = loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE);
+    mapplaypage.checked = loadData(DATA_TYPES.mapPlayPage);
 }
 
 function addHorseshoes(amountAdded)
@@ -202,15 +198,15 @@ function addHorseshoes(amountAdded)
         amountAdded = parseInt(amountAdded);
     }
 
-    currentAmount = loadData(DATA_TYPE_HORSESHOES);
-    amountAdded *= loadData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR);
+    currentAmount = loadData(DATA_TYPES.horseshoes);
+    amountAdded *= loadData(DATA_TYPES.horseshoesMultiplier);
     
     if (Number.MAX_SAFE_INTEGER - amountAdded - currentAmount < 0)
         currentAmount = Number.MAX_SAFE_INTEGER;
     else
         currentAmount += amountAdded;
 
-    saveData(DATA_TYPE_HORSESHOES, currentAmount);
+    saveData(DATA_TYPES.horseshoes, currentAmount);
 }
 
 function updateHighscore(data)
@@ -221,17 +217,19 @@ function updateHighscore(data)
     if (splittedData.length == 1)
     {
         currentGame =  data;
-        updateHighscoreUI(loadData(DATA_TYPE_HIGHSCORE, getGameID(data)))
+        gameID = (GAME_ID[data] !== undefined) ? GAME_ID[data] : gameID;
+        updateHighscoreUI(loadData(DATA_TYPES.highscore, gameID))
         return;
     }
 
     // Actually update
-    gameID = getGameID(splittedData[1]);
 
-    loadedData = loadData(DATA_TYPE_HIGHSCORE, gameID);
+    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : gameID;
+
+    loadedData = loadData(DATA_TYPES.highscore, gameID);
     if (parseInt(splittedData[0]) > loadedData)
     {
-        saveData(DATA_TYPE_HIGHSCORE, splittedData[0], gameID);
+        saveData(DATA_TYPES.highscore, splittedData[0], gameID);
 
         updateHighscoreUI(splittedData[0].toString())
     }
@@ -248,37 +246,55 @@ function updateLevelReached(data)
 {
     splittedData = data.split("@");
 
-    gameID = getGameID(splittedData[1]);
+    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : gameID;
 
-    loadedData = loadData(DATA_TYPE_LEVEL, gameID);
+    loadedData = loadData(DATA_TYPES.level, gameID);
     if (parseInt(splittedData[0]) > loadedData)
-        saveData(DATA_TYPE_LEVEL, splittedData[0], gameID);
+        saveData(DATA_TYPES.level, splittedData[0], gameID);
 }
 
 function updateCreations(data)
 {
     splittedData = data.split("@");
 
-    gameID = getGameID(splittedData[1]);
-    saveData(DATA_TYPE_CREATIONS, splittedData[0], gameID);
+    gameID = (GAME_ID[splittedData[1]] !== undefined) ? GAME_ID[splittedData[1]] : gameID;
+    saveData(DATA_TYPES.creations, splittedData[0], gameID);
 }
 
 function updateAdventuresData(data)
 {
-    gameID = getGameID("Adventures");
-    saveData(DATA_TYPE_GAME, data, gameID);
+    saveData(DATA_TYPES.game, data, GAME_ID.Adventures);
 }
 
 function updateSWFLocaleDatas(game)
 {
-    switch(game)
+    gameID = (GAME_ID[game] !== undefined) ? GAME_ID[game] : gameID;
+    let loadedDatas = loadData(DATA_TYPES.creations, gameID);
+    if (loadedDatas === "" || loadedDatas === undefined || loadedDatas === null)
+        localStorage.removeItem(CACHE_DATA[game]);
+    else
+        localStorage.setItem(CACHE_DATA[game], loadedDatas);
+}
+
+function getGameIdSaveIndex(gameID, data)
+{
+    if (gameID === undefined || gameID === "")
+        return -2;
+
+    for (let i = 0; i < data.gameData.length; i++)
     {
-        case "ArtStudio":
-            let loadedDatas = loadData(DATA_TYPE_CREATIONS, getGameID(game));
-            if (loadedDatas === "" || loadedDatas === undefined || loadedDatas === null)
-                localStorage.removeItem(ART_STUDIO_CACHE);
-            else
-                localStorage.setItem(ART_STUDIO_CACHE, loadedDatas);
-        break;
+        if (data.gameData[i].id !== gameID) continue;
+        return i;
     }
+
+    return -1;
+}
+
+function getBaseUrl() {
+    let url = window.location.origin;
+    return url.replace("http://", "").replace(":5500", "");
+}
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key =>
+        object[key] === value);
 }

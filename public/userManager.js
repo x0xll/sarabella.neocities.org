@@ -88,7 +88,7 @@ function createUser()
             userNames += "²" + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
-        saveData(DATA_TYPE_HORSESHOES, 100)
+        saveData(DATA_TYPES.horseshoes, 100)
         setupUserDropdown();
         forceChooseUser(username);
         return;
@@ -114,8 +114,8 @@ function chooseUser(reloadPage = false)
 
         localStorage.setItem(CURRENT_USER_KEY, currentUser);
 
-        horseshoes = document.getElementById(DATA_TYPE_HORSESHOES);
-        horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " + loadData(DATA_TYPE_HORSESHOES).toString();
+        horseshoes = document.getElementById(DATA_TYPES.horseshoes);
+        horseshoes.innerHTML = "<img src=\"/images/nav/Horseshoe.png\"> " + loadData(DATA_TYPES.horseshoes).toString();
 
         if (reloadPage)
             location.reload();
@@ -295,47 +295,6 @@ function importUser()
 // ------- END USER -------
 
 //-------- HELPERS -------
-function getGameID(game)
-{
-    switch(game)
-    {
-        case "MagicBubbleWand": return "MBW";
-        case "SpectacularJumpingGame": return "SJG";
-        case "Citrustacked": return "CIT";
-        case "ArtStudio": return "AS";
-        case "MyCottage": return "COT";
-        case "DreamRider": return "DR";
-        case "CloudJumper": return "CJ";
-        case "TreasuresHunt": return "TH";
-        case "SantoQuiz": return "SQZ";
-        case "BelloQuiz": return "BQZ";
-        case "YinYangMemory": return "YYM";
-        case "FirelightFestival": return "FF";
-        case "LanceRiding": return "LR";
-        case "MyHorse": return "FOA";
-        case "DressUp": return "DUG";
-        case "AdventuresQuiz": return "AQZ";
-        case "AutumnJourneyQuiz": return "JQZ";
-        case "Adventures": return "ADV";
-        case "Coloring": return "COL";
-        case "Puzzle": return "PUZ";
-        case "Stables": return "STA";
-        case "ArtIdeaGenerator": return "AIG";
-        case "Storybook": return "STB";
-        case "MarvelousMagicMatch": return "MMM";
-        case "Wheel of Wonders": return "WOW";
-        case "BellisimosJumpingContest": return "BJC";
-        case "Bellapedia": return "BPD";
-        case "DynamosDressageArena": return "DDA";
-        case "Trailblazer": return "TBZ";
-        case "BellaBeautyBox": return "BBB";
-        case "Journal": return "JOU";
-        case "Bazaar": return "BAZ";
-        case "MyThings": return "THI";
-        case "Adventures": return "BSA";
-    }
-}
-
 function getCurrentUsername()
 {
     return currentUser;

@@ -50,7 +50,7 @@
   <script>
     function checkPlayPageDefault()
     {
-        if (!isGuest() && !loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+        if (!isGuest() && !loadData(DATA_TYPES.mapPlayPage))
             window.location.href = "/play.html"
         else if (!isGuest())
             document.getElementById("gotomap").style.display = "none";
