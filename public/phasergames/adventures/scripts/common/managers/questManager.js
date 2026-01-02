@@ -266,21 +266,7 @@ class QuestManager {
         await this.#initializeSavedQuests();
         this.#initializeQuestConfig()
 
-        // console.log(this.phaserScene.sharedData.entities.spawnedEntities)
-
-        // this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey]
-
-
-        // console.log(phaserScene.sharedData.quest.logic.quests);
-
-        // TODO: Handle state based on savesystem, for now we assume it's always the first time playing
-
-        // If first time on the game -> we show the first tutorial quests
-        // await this.makeQuestAvailable(["ADS-0000000825", "ADV-0000000899", "QUE-0000002110"]); // freeplay_v2.xml
-        // await this.makeQuestAvailable(["ADS-0000000825", "ADV-0000000899", "QUE-0000002105"]); // freeplay_v2.xml
-        // await this.makeQuestAvailable(["ADS-0000001163", "ADV-0000001798", "QUE-0000006273"]); // intro_cottage.xml
-
-        // this.saveUserQuestData()
+        this.saveUserQuestData()
         this.busy = false
     }
 
@@ -397,21 +383,36 @@ class QuestManager {
             return savedData
         }
 
-        // TODO replace with a call to fetch the actual save data
-        const activeSavedString = 
-            "v1"
-            + "_Q0000000825-0000000899-0000002110" // Intro tuto
-            + "_Q0000000825-0000000899-0000002105" // Talk to Wings
-            // + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
-            + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fixed bridge
-            + "_Q0000001163-0000001798-0000006239"// Intro Cottage
-            // + "_Q0000001051-0000001468-0000004839"  // Free spring carnival (app start trigger)
-            // + "_Q0000001173-0000001823-0000006281"  // Furniture store (zone trigger)
-        const activeSavedData = unstringifyQuest(activeSavedString)
+        let data = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.quest);
+        let activeSavedData;
+        let finishedSavedData;
+        let activeSavedString;
+        let finisedSavedString;
+        
+        if (!data.activeQuest) {
+            activeSavedString = 
+                "v1"
+                + "_Q0000000825-0000000899-0000002110" // Intro tuto
+                + "_Q0000000825-0000000899-0000002105" // Talk to Wings
+                // + "_Q0000000825-0000000903-0000002130" //  (DEBUG ONLY) Fix bridge
+                + "_Q0000000825-0000000903-0000002132" //  (DEBUG ONLY) Fixed bridge
+                + "_Q0000001163-0000001798-0000006239"// Intro Cottage
+                // + "_Q0000001051-0000001468-0000004839"  // Free spring carnival (app start trigger)
+                // + "_Q0000001173-0000001823-0000006281"  // Furniture store (zone trigger)
+        }
+        else {
+            activeSavedString = data.activeQuest;
+        }
 
-        const finisedSavedString = "v1"
-        const finishedSavedData = unstringifyQuest(finisedSavedString)
+        if (!data.finishedQuest) {
+            finisedSavedString = "v1"
+        }
+        else {
+            finisedSavedString = data.finishedQuest;
+        }
 
+        activeSavedData = unstringifyQuest(activeSavedString)
+        finishedSavedData = unstringifyQuest(finisedSavedString)
         return [activeSavedData, finishedSavedData]
     }
 
@@ -438,9 +439,12 @@ class QuestManager {
             finishedString = finishedString + stringifyQuest(finishedQuest)
         });
 
-        // TODO replace with a call to actually save the data
-        console.log(saveString)
-        console.log(finishedString)
+        let questData = {
+            activeQuest: saveString,
+            finishedQuest: finishedString
+        }
+
+        this.phaserScene.sharedData.saving.setGameData(GAME_DATA_TYPE.quest, questData);
     }
 
     /**

@@ -47,5 +47,4 @@ class SaveManager
         this.#saveData[dataType] = data;
         this.saveGameData();
     }
-
 }
