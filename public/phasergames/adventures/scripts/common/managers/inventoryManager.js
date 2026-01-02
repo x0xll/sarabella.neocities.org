@@ -15,7 +15,12 @@ class InventoryManager
     }
 
     loadInventory() {
-        this.phaserScene.sharedData.inventory.allItems = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.inventory)
+        let data = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.inventory)
+        if (!data) {
+            return;
+        }
+        
+        this.phaserScene.sharedData.inventory.allItems = data;
     }
 
     addItem(itemTemplate, amount=1) {
