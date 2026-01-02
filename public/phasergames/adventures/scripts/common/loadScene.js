@@ -106,6 +106,9 @@ class Common_Load extends Phaser.Scene
     {
         const loader = this
         loader.sharedData = sharedData
+        
+        loader.sharedData.saveManager = new SaveManager(this);
+        loader.sharedData.saveManager.loadGameData();
 
         loader.sharedData.ui.localization = parseSharedXML(this.cache.xml.get("SharedUI"))
 
