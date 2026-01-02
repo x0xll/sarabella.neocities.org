@@ -5,6 +5,7 @@ const DATA_TYPE_HORSESHOES = "horseshoes";
 const DATA_TYPE_HIGHSCORE = "highscore";
 const DATA_TYPE_LEVEL = "level";
 const DATA_TYPE_CREATIONS = "creations";
+const DATA_TYPE_GAME = "game";
 const DATA_TYPE_SETTINGS_TRANSLATEDQUOTES = "settings_tdqt";
 const DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS = "settings_tdog";
 const DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR = "settings_hsmul";
@@ -44,6 +45,9 @@ function saveData(dataType, userData, gameID = "")
                         default: savedData.gameData[i].creations = userData; break;
                     }
                     break;
+                case DATA_TYPE_GAME:
+                    if (gameID !== "Adventures")
+                        savedData.gameData[i].game = userData;
             }
         }
 
@@ -65,20 +69,25 @@ function saveData(dataType, userData, gameID = "")
                         default: currentGameData.creations = userData; break;
                     }
                     break;
+                case DATA_TYPE_GAME:
+                    if (gameID !== "Adventures") break;
+                    currentGameData.game = userData;
             }
 
             savedData.gameData.push(currentGameData);
         }
     }
-
-    switch(dataType)
+    else
     {
-        case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
-        case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
-        case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
-        case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
-        case DATA_TYPE_SETTINGS_MAPPLAYPAGE: savedData.playpage = userData.checked; break;
-    } 
+        switch(dataType)
+        {
+            case DATA_TYPE_HORSESHOES: savedData.horseshoes = userData; break;
+            case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES: savedData.translatedquotes = userData.checked; break;
+            case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS: savedData.oglocas = userData.checked; break;
+            case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR: savedData.horseshoesmul = userData.checked; break;
+            case DATA_TYPE_SETTINGS_MAPPLAYPAGE: savedData.playpage = userData.checked; break;
+        } 
+    }
 
     localStorage.setItem(USER_KEY + currentUser, JSON.stringify(savedData));
     setupUserDropdown();
@@ -99,18 +108,18 @@ function loadData(dataType, gameID = "")
         {
             case DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR:
                 return 1;
+            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
             case DATA_TYPE_SETTINGS_ORIGINALTRANSLATIONS:
                 return false;
             case DATA_TYPE_SETTINGS_TRANSLATEDQUOTES:
                 return true;
-            case DATA_TYPE_SETTINGS_MAPPLAYPAGE:
-                return false;
             case DATA_TYPE_HORSESHOES:
                 return 10000;
             case DATA_TYPE_HIGHSCORE:
             case DATA_TYPE_LEVEL:
                 return 0;
             case DATA_TYPE_CREATIONS:
+            case DATA_TYPE_GAME:
                 return null;
         }
     }
@@ -137,6 +146,10 @@ function loadData(dataType, gameID = "")
                     if (savedData.gameData[i].creations === undefined)
                         return "";
                     return JSON.parse(savedData.gameData[i].creations);
+                case DATA_TYPE_GAME:
+                    if (savedData.gameData[i].game === undefined)
+                        return "";
+                    return JSON.parse(savedData.gameData[i].game);
             }
         }
     }
@@ -246,6 +259,12 @@ function updateCreations(data)
 
     gameID = getGameID(splittedData[1]);
     saveData(DATA_TYPE_CREATIONS, splittedData[0], gameID);
+}
+
+function updateAdventuresData(data)
+{
+    gameID = getGameID("Adventures");
+    saveData(DATA_TYPE_GAME, data, gameID);
 }
 
 function updateSWFLocaleDatas(game)
