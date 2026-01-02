@@ -45,6 +45,9 @@ const DATA_TYPES = {
     level : "level",
     creations : "creations",
     game : "game",
+    lastPlayed : "lastplayed",
+    freespin : "freespin",
+    gallery: "gallery",
     translatedQuotes : "settings_tdqt",
     originalTranslations : "settings_tdog",
     horseshoesMultiplier : "settings_hsmul",
@@ -57,6 +60,9 @@ const DATA_DEFAULT = {
     level : 0,
     creations : null,
     game : null,
+    lastPlayed : -1,
+    freespin : 1,
+    gallery: null,
     translatedQuotes : true,
     originalTranslations : false,
     horseshoesMultiplier : 1,
@@ -171,12 +177,15 @@ function loadData(dataType, gameID = "")
                 } else {
                     return data[dataType]
                 }
+            case DATA_TYPES.lastPlayed: 
+            case DATA_TYPES.gallery: 
             case DATA_TYPES.translatedQuotes: 
             case DATA_TYPES.mapPlayPage: 
             case DATA_TYPES.originalTranslations: {
                 return data[dataType]
             }
             case DATA_TYPES.highscore:
+            case DATA_TYPES.freespin:
             case DATA_TYPES.horseshoes:
             case DATA_TYPES.level: {
                 return parseInt(data[dataType]);
@@ -285,6 +294,59 @@ function updateSWFLocaleDatas(game)
         localStorage.removeItem(CACHE_DATA[game]);
     else
         localStorage.setItem(CACHE_DATA[game], loadedDatas);
+}
+
+function addGalleryItem(itemName)
+{
+    gallery = loadData(DATA_TYPES.gallery);
+    if (gallery == null)
+        gallery = []
+
+    let existed = false;
+
+    gallery.forEach(item => {
+        if (item.name == itemName)
+        {
+            existed = true;
+            item.quantity++;
+            saveData(DATA_TYPES.gallery, gallery);
+            return;
+        }
+    });
+
+    if (existed) return;
+
+    gallery.push(
+        {
+            name: itemName,
+            quantity: 1
+        }
+    )
+    
+    saveData(DATA_TYPES.gallery, gallery);
+}
+
+function updateLastDatePlayed(gameID)
+{
+    gameID = (GAME_ID[gameID] !== undefined) ? GAME_ID[gameID] : gameID;
+    date = new Date();
+    playedDate = loadData(DATA_TYPES.lastPlayed, gameID);
+    playedDate = date.getDate().toString() + "/" + (date.getMonth() + 1).toString() + "/" + date.getFullYear().toString();
+    saveData(DATA_TYPES.lastPlayed, playedDate , gameID);
+}
+
+function removeFreeSpin()
+{
+    freespin = loadData(DATA_TYPES.freespin, GAME_ID.WheelofWonders);
+    freespin -= 1;
+    saveData(DATA_TYPES.freespin, freespin, GAME_ID.WheelofWonders);
+}
+
+function addFreeSpin()
+{
+    freespin = loadData(DATA_TYPES.freespin, GAME_ID.WheelofWonders);
+    freespin += 1;
+    saveData(DATA_TYPES.freespin, freespin, GAME_ID.WheelofWonders);
 }
 
 function getGameIdSaveIndex(gameID, data)
