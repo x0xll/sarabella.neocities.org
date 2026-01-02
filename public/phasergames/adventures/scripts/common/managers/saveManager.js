@@ -6,7 +6,8 @@ const GAME_DATA_TYPE = {
     time: "time",
     quest: "quest",
     entities: "entities",
-    inventory: "inventory"
+    inventory: "inventory",
+    tree: "tree"
 }
 
 // TODO: Uncomment stuffs when save refactor PR is merged

@@ -38,7 +38,7 @@ class InventoryManager
         if (count >= amount) {
             allItems[itemTemplate] = allItems[itemTemplate] - amount
             if (allItems[itemTemplate] === 0) { delete allItems[itemTemplate] }
-            this.phaserScene.sharedData.saveManager.setGameData(GAME_DATA_TYPE.inventory, allItems);
+            this.phaserScene.sharedData.saving.setGameData(GAME_DATA_TYPE.inventory, allItems);
             return true
         } else {
             console.log(`Could not remove ${amount} ${itemTemplate}. Only have ${count}`)

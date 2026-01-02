@@ -29,12 +29,21 @@ class LevelManager
 
     #saveExperience()
     {
-        // TODO : Handle with save system
+        let data = {
+            experience: this.phaserScene.sharedData.magicTree.logic.experience,
+        }
+        this.phaserScene.sharedData.saving.setGameData(GAME_DATA_TYPE.tree, data)
     }
 
     #loadExperience()
     {
-        // TODO : Handle with save system
+        let data = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.tree);
+        if (!data.experience) {
+            return;
+        }
+        
+        this.phaserScene.sharedData.magicTree.logic.experience = data.experience;
+
         this.#calculateLevel();
     }
 
