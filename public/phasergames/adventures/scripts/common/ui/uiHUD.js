@@ -114,6 +114,7 @@ class uiHUD extends uiManagerBase
                     .setScrollFactor(0);
     
         this.updateTexts();
+        this.updateLevel();
     }
 
     updateTexts()
@@ -125,6 +126,8 @@ class uiHUD extends uiManagerBase
 
     updateLevel()
     {
+        if(this.phaserScene.sharedData.hud.ui.levelIndicator === undefined) return;
+
         this.phaserScene.sharedData.hud.ui.levelIndicator.setTexture('levelIndicator', this.phaserScene.sharedData.magicTree.logic.level.toString())
         this.phaserScene.sharedData.hud.ui.levelText.setText(this.phaserScene.sharedData.magicTree.logic.level.toString())
     }

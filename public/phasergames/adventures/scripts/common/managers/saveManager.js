@@ -26,6 +26,7 @@ class SaveManager
     saveGameData() {
         this.setGameData(GAME_DATA_TYPE.time, this.phaserScene.time.now);
         this.setGameData(GAME_DATA_TYPE.entities, this.phaserScene.sharedData.entities.spawnedEntities);
+        this.phaserScene.sharedData.quest.manager.saveUserQuestData();
 
         saveData(DATA_TYPES.game, this.#saveData, GAME_ID.Adventures);
     }
