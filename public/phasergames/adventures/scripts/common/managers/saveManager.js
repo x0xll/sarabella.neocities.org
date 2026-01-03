@@ -35,6 +35,9 @@ class SaveManager
 
         if (!this.#saveData) {
             this.#saveData = {}
+            for (let i = 0; i < Object.keys(GAME_DATA_TYPE).length; i++) {
+                this.#saveData[Object.keys(GAME_DATA_TYPE)[i]] = {}
+            }
         }
     }
 

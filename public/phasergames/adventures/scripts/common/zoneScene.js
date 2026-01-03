@@ -99,13 +99,7 @@ class ZoneBase extends Phaser.Scene
         }
 
         // Player
-        let playerStartPos = this.zoneConfig.sceneEntryPoints["default"]
-        if (this.sharedData !== undefined
-            && this.sharedData.global.previousZone !== undefined
-            && this.zoneConfig.sceneEntryPoints[this.sharedData.global.previousZone]
-        ) {
-            playerStartPos = this.zoneConfig.sceneEntryPoints[this.sharedData.global.previousZone]
-        }
+        let playerStartPos = this.getEntryZonePosition();
         this.sharedData.entities.player = new Player(this, playerStartPos[0], playerStartPos[1], this.zoneConfig.camBound.xBounds, this.zoneConfig.camBound.yBounds);
 
         // Entities from Zone Config
@@ -335,7 +329,23 @@ class ZoneBase extends Phaser.Scene
 
     // ------- UPDATE -------
     goToNextZone(sceneKey) {
-        // TODO save placeable entity facing direction/variation when switching scenes
+        let player = this.sharedData.saving.getGameData(GAME_DATA_TYPE.player);
+        if (!player) {
+            player = {
+                zone: sceneKey,
+                position: this.getEntryZonePosition(),
+                rotation: undefined // TOGO: get correct rotation
+            }
+        }
+        else {
+            player.position = this.getNextEntryZonePosition(sceneKey);
+            player.rotation = undefined; // TODO : get correct rotation
+            player.zone = sceneKey;
+        }
+        this.sharedData.saving.setGameData(GAME_DATA_TYPE.player, player)
+
+        this.sharedData.saving.saveGameData();
+
         this.sharedData.global.timePausedAt = this.timeManager.getCurrentTime()
         this.sharedData.global.currentZone = sceneKey;
         this.scene.start("common_load", this.sharedData);
@@ -397,6 +407,28 @@ class ZoneBase extends Phaser.Scene
 
         this.sharedData.template.manager.getEntityZones(undefined, true)
         return spawnedEntity.entityKey
+    }
+
+    getEntryZonePosition() {
+        let playerStartPos = this.zoneConfig.sceneEntryPoints["default"]
+        if (this.sharedData !== undefined
+            && this.sharedData.global.previousZone !== undefined
+            && this.zoneConfig.sceneEntryPoints[this.sharedData.global.previousZone]
+        ) {
+            playerStartPos = this.zoneConfig.sceneEntryPoints[this.sharedData.global.previousZone]
+        }
+        return playerStartPos;
+    }
+
+    getNextEntryZonePosition(nextZone) {
+        let playerStartPos = this.sharedData.zone.config[nextZone].sceneEntryPoints["default"]
+        if (this.sharedData !== undefined
+            && this.sharedData.global.currentZone !== undefined
+            && this.sharedData.zone.config[nextZone].sceneEntryPoints[this.sharedData.global.currentZone]
+        ) {
+            playerStartPos = this.sharedData.zone.config[nextZone].sceneEntryPoints[this.sharedData.global.currentZone]
+        }
+        return playerStartPos;
     }
     // ------- END HELPER FUNCTIONS -------
 }

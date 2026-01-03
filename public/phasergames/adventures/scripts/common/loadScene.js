@@ -68,7 +68,7 @@ class Common_Load extends Phaser.Scene
             this.sharedData.global = {}
         }
         if (this.sharedData.global.currentZone === undefined) {
-            this.sharedData.global.currentZone = "Z001"
+            this.sharedData.global.currentZone = "Z001"    
         }
         if (this.sharedData.global.stillImageEntities === undefined) {
             this.sharedData.global.stillImageEntities = new Set([])
@@ -141,6 +141,15 @@ class Common_Load extends Phaser.Scene
             loader.sharedData.zone.manager = loader.zoneManager;
             loader.sharedData.zone.manager.initializeData();
         }
+
+        
+        let data = this.sharedData.saving.getGameData(GAME_DATA_TYPE.player);
+        if (!data || !data.zone) {
+            this.sharedData.global.currentZone = "Z001"
+        }
+        else {
+            this.sharedData.global.currentZone = data.zone;
+        }        
 
         // TESTING
         this.scene.launch("common_ui", loader.sharedData)

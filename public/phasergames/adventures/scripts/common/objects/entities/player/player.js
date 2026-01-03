@@ -4,7 +4,22 @@ class Player extends Entity {
     spriteScale = .35
 
     constructor(zoneScene, startX, startY, camBoundX, camBoundY) {
-        super(zoneScene, "player", startX, startY);
+        let data = zoneScene.sharedData.saving.getGameData(GAME_DATA_TYPE.player);
+        // TODO: fix rotation
+        if (!data || !data.position || data.zone !== zoneScene.zoneConfig.ID) {
+            super(zoneScene, "player", startX, startY);
+            data.position = {x: startX, y: startY}
+            data.zone = zoneScene.zoneConfig.ID;
+            data.rotation = this.facingDirection;
+        }
+        else {
+            if (data.position.x === undefined) {
+                super(zoneScene, "player", data.position[0], data.position[1], data.rotation);
+            }
+            else{
+                super(zoneScene, "player", data.position.x, data.position.y, data.rotation);
+            }
+        }
 
         this.PLAYER_SPEED = 600;
         this.camBounds = [camBoundX, camBoundY];
@@ -217,6 +232,18 @@ class Player extends Entity {
                     this.pathIndex++
                     if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
                         this.sprite.animationState.setAnimation(0, "walkEnd", false)
+                        let player = this.zoneScene.sharedData.saving.getGameData(GAME_DATA_TYPE.player);
+                        if (!player) {
+                            player = { 
+                                position: this.isoToGridMap(this.target.x, this.target.y),
+                                rotation: this.facingDirection
+                            }
+                        }
+                        else {
+                            player.position = this.isoToGridMap(this.target.x, this.target.y);
+                            player.rotation = this.facingDirection;
+                        }
+                        this.zoneScene.sharedData.saving.setGameData(GAME_DATA_TYPE.player, player)
                     } else {
                         this.sprite.animationState.setAnimation(0, "walk", true)
                     }
