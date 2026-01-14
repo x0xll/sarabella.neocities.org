@@ -5,19 +5,20 @@ class Player extends Entity {
 
     constructor(zoneScene, startX, startY, camBoundX, camBoundY) {
         let data = zoneScene.sharedData.saving.getGameData(GAME_DATA_TYPE.player);
-        // TODO: fix rotation
         if (!data || !data.position || data.zone !== zoneScene.zoneConfig.ID) {
             super(zoneScene, "player", startX, startY);
-            data.position = {x: startX, y: startY}
-            data.zone = zoneScene.zoneConfig.ID;
-            data.rotation = this.facingDirection;
+            data = { 
+                position: {x: this.startX, y: this.startY},
+                facingDirection: this.facingDirection,
+                zone: zoneScene.zoneConfig.ID
+            }
         }
         else {
             if (data.position.x === undefined) {
-                super(zoneScene, "player", data.position[0], data.position[1], data.rotation);
+                super(zoneScene, "player", data.position[0], data.position[1], data.facingDirection);
             }
             else{
-                super(zoneScene, "player", data.position.x, data.position.y, data.rotation);
+                super(zoneScene, "player", data.position.x, data.position.y, data.facingDirection);
             }
         }
 
@@ -48,6 +49,7 @@ class Player extends Entity {
 
         this.#move();
         this.resetSpriteDepth()
+        this.resetSpriteFacingDirection()
     }
 
 
@@ -232,18 +234,7 @@ class Player extends Entity {
                     this.pathIndex++
                     if (this.pathList.length > 0 && this.pathIndex === this.pathList[0].length ) {
                         this.sprite.animationState.setAnimation(0, "walkEnd", false)
-                        let player = this.zoneScene.sharedData.saving.getGameData(GAME_DATA_TYPE.player);
-                        if (!player) {
-                            player = { 
-                                position: this.isoToGridMap(this.target.x, this.target.y),
-                                rotation: this.facingDirection
-                            }
-                        }
-                        else {
-                            player.position = this.isoToGridMap(this.target.x, this.target.y);
-                            player.rotation = this.facingDirection;
-                        }
-                        this.zoneScene.sharedData.saving.setGameData(GAME_DATA_TYPE.player, player)
+                        this.#saveMovementData()
                     } else {
                         this.sprite.animationState.setAnimation(0, "walk", true)
                     }
@@ -283,6 +274,15 @@ class Player extends Entity {
 
             return path
         }
+    }
+
+    #saveMovementData() {
+        const player = { 
+            position: this.isoToGridMap(this.target.x, this.target.y),
+            facingDirection: this.facingDirection,
+            zone: this.zoneScene.zoneConfig.ID
+        }
+        this.zoneScene.sharedData.saving.setGameData(GAME_DATA_TYPE.player, player)
     }
     // ------- END MOVEMENT -------
 }

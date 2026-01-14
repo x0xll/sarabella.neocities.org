@@ -71,7 +71,7 @@ class ZoneBase extends Phaser.Scene
 
         //debug_DrawTriggerQuest(zone);
 
-        // Telport between zones
+        // Teleport between zones
         if (zone.entities.player.pathList.length === 0)
         {
             let pos = zone.isoToGridMap(zone.entities.player.sprite.x, zone.entities.player.sprite.y);
@@ -92,11 +92,6 @@ class ZoneBase extends Phaser.Scene
     loadEntitiesData() {
         this.zoneConfig.sceneEntryPoints
         this.entities = {}
-
-        let data = this.sharedData.saving.getGameData(GAME_DATA_TYPE.entities);
-        if (data) {
-            this.sharedData.spawnedEntities = data;
-        }
 
         // Player
         let playerStartPos = this.getEntryZonePosition();
@@ -131,7 +126,6 @@ class ZoneBase extends Phaser.Scene
         // Spawned Entities
         const spawnedEntities = structuredClone(this.sharedData.entities.spawnedEntities[this.zoneConfig.ID]);
         const timeTrackedEntities = structuredClone(this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID]);
-
         this.sharedData.entities.spawnedEntities[this.zoneConfig.ID] = {}
         this.sharedData.entities.timeTrackedEntities[this.zoneConfig.ID] = {}
 
@@ -334,12 +328,12 @@ class ZoneBase extends Phaser.Scene
             player = {
                 zone: sceneKey,
                 position: this.getEntryZonePosition(),
-                rotation: undefined // TOGO: get correct rotation
+                facingDirection: undefined // TOGO: get correct facingDirection
             }
         }
         else {
             player.position = this.getNextEntryZonePosition(sceneKey);
-            player.rotation = undefined; // TODO : get correct rotation
+            player.facingDirection = undefined; // TODO : get correct facingDirection
             player.zone = sceneKey;
         }
         this.sharedData.saving.setGameData(GAME_DATA_TYPE.player, player)
@@ -399,6 +393,8 @@ class ZoneBase extends Phaser.Scene
     }
 
     spawnEntity(template, gridX, gridY, runCreate = true, zoneID = this.zoneConfig.ID, instanceIdentifier = undefined, respawnConfig) {
+        gridX = parseInt(gridX)
+        gridY = parseInt(gridY)
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate, respawnConfig)
 
         if (!respawnConfig) { respawnConfig = {} }

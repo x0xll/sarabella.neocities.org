@@ -5,12 +5,13 @@ class TimeManager
     constructor(phaserScene)
     {
         this.phaserScene = phaserScene;
+        this.phaserScene.sharedData.timeManager = this
         if (this.phaserScene.sharedData.global.timePausedAt) {
             this.startAt = this.phaserScene.sharedData.global.timePausedAt
         } else {
             this.phaserScene.load.plugin('rexclockplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexclockplugin.min.js', true);
             this.startAt = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.time);
-            if (!this.startAt) {
+            if (isNaN(this.startAt)) {
                 this.startAt = 0;
             }
         }
@@ -25,6 +26,9 @@ class TimeManager
     startClock() {
         this.clock = this.phaserScene.plugins.get('rexclockplugin').add(this.phaserScene, config);
         this.clock.start(this.startAt);
+        if (this.getCurrentTimeType() === "Night") {
+            this.isDay = false
+        }
     }
 
     /**

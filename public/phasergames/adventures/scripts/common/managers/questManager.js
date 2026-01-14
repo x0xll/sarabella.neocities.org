@@ -17,6 +17,10 @@ class QuestManager {
         }
         if (this.phaserScene.sharedData.quest.logic === undefined) {
             this.isInitialised = false
+            this.questsToRetryInitializing = {
+                activeQuest: [],
+                finishedQuest: []
+            }
             this.phaserScene.sharedData.quest.logic =  {
                 quests: [],
                 activeQuests: []
@@ -131,8 +135,9 @@ class QuestManager {
                 return quests[i][questID[0]][questID[1]][questID[2]];
             }
         }
-        
-        console.error("No Quest found! " + questID[0] + " - " + questID[1] + " - " + questID[2]);
+        if (this.isInitialised) {
+            console.error("No Quest found! " + questID[0] + " - " + questID[1] + " - " + questID[2]);
+        }
     }
 
     /**
@@ -270,8 +275,13 @@ class QuestManager {
         this.busy = false
     }
 
-    async #initializeSavedQuests() {
-        const savedUserQuestData = this.#parseSavedQuestData()
+    async #initializeSavedQuests(isRetry = false) {
+        let savedUserQuestData
+        if (isRetry) {
+            savedUserQuestData = this.questsToRetryInitializing
+        } else {
+            savedUserQuestData = this.#parseSavedQuestData()
+        }
 
         // Make quests available based on the user save data
         for (let index = 0; index < savedUserQuestData[0].length; index++) {
@@ -283,12 +293,17 @@ class QuestManager {
     }
 
     #initializeQuestConfig() {
-        const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
+
+        let data = this.phaserScene.sharedData.saving.getGameData(GAME_DATA_TYPE.entities);
+        if (data) {
+            this.phaserScene.sharedData.entities.spawnedEntities = data;
+        }
 
         // Note: check to be sure, but since these are added as spawned entities, they should stick around if they are not removed by later quests.
         // Could swap quest ids and file key around though if not, but we'd need to be sure it's not adding the same entities multiple times if it 
         // was previously saved (based on finished quests?)
 
+        const activeQuests = this.phaserScene.sharedData.quest.logic.activeQuests
         for (let index = 0; index < activeQuests.length; index++) {
             const quest = activeQuests[index];
 
@@ -341,6 +356,8 @@ class QuestManager {
             }
         }
         this.setNPCQuestLocations()
+        // TODO: add system to add/finish quests that were loaded in by the NPC templates
+        console.log("Still need to retry adding these!", this.questsToRetryInitializing)
         this.isInitialised = true
     }
 
@@ -454,7 +471,12 @@ class QuestManager {
     async makeQuestAvailable(questID) {
         if (!questID[0] || !questID[1]) {questID = this.getFullQuestID(questID)}
         var questData = this.getQuestPerID(questID);
-        if (questData === undefined) return;
+        if (!this.isInitialised && questData === undefined) {
+            this.questsToRetryInitializing.activeQuest.push(questID)
+        }
+        if (questData === undefined) {
+            return
+        }
         questData.status = this.QUEST_STATES.AVAILABLE;
         console.log("Quest made available: " + questID[0] + " - " + questID[1] + " - " + questID[2] + " - " + questData.description.text);
 
@@ -490,7 +512,12 @@ class QuestManager {
     async markQuestFinished(questID) {
         if (!questID[0] || !questID[1]) {questID = this.getFullQuestID(questID)}
         let questData = this.getQuestPerID(questID);
-        if (questData === undefined || questData.status === this.QUEST_STATES.FINISHED) return;
+        if (!this.isInitialised && questData === undefined) {
+            this.questsToRetryInitializing.finishedQuest.push(questID)
+        }
+        if (questData === undefined || questData.status === this.QUEST_STATES.FINISHED) {
+            return
+        }
         questData.status = this.QUEST_STATES.FINISHED;
 
 

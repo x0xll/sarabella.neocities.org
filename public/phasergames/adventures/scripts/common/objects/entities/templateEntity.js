@@ -19,6 +19,14 @@ class TemplateEntity extends Entity {
         if (additionalConfig) {
             if (additionalConfig.isWatered) {
                 this.isWatered = additionalConfig.isWatered
+
+                // TODO: replace with actual time data saving
+                if (this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] === undefined) {
+                    this.zoneScene.sharedData.entities.timeTrackedEntities[this.zoneID][this.entityKey] = {
+                        startTime: this.zoneScene.timeManager.getCurrentTime(),
+                        daysCount: 0
+                    }
+                }
             }
             if (additionalConfig.hasGivenMagic) {
                 this.hasGivenMagic = additionalConfig.hasGivenMagic
@@ -135,8 +143,9 @@ class TemplateEntity extends Entity {
                 growthData: plantData,
                 spriteData: this.getTemplateValue(["PlantMovieClip"])
             }
-            // TODO (placeholder) add interactions and save states between zones
-            this.isWilted = false
+            if (!this.isWilted) {
+                this.isWilted = false
+            }
             this.currentStage = 1
             this.timeToGrow = parseInt(this.plantData.growthData.fullGrowthTime[0].text)
         } else {
@@ -546,9 +555,6 @@ class TemplateEntity extends Entity {
             }
         }
 
-        // TODO actions should not be visible if they are unavailable, but they should still offset the circle
-        // TODO add check for collectCommand vs takePlantCommand on plants
-
         return entityInteractions
     }
 
@@ -598,7 +604,6 @@ class TemplateEntity extends Entity {
                 
                 break;
             case this.ITEM_REQUEST_TYPES.apply:
-                // TODO double check this works
                 triggerData = {
                     type: "ApplyItemTrigger",
                     inventoryTemplate: itemTemplate,
@@ -660,7 +665,6 @@ class TemplateEntity extends Entity {
     }
 
     #applyCommand(context, interactData) { 
-        // TODO double check this works
         const applyItem = context.getTemplateValue(["ApplyCommand", "item"])
         context.itemRequestType = context.ITEM_REQUEST_TYPES.apply
         context.zoneScene.sharedData.inventory.ui.manager.show(applyItem, context);
