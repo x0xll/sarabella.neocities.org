@@ -1379,7 +1379,7 @@
       <template>I147Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pin éternel</ToolTipText>
+      <ToolTipText>Eternal Pine</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>2</gridFootX>
@@ -1396,7 +1396,7 @@
       <template>I146Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Reniflomètre</ToolTipText>
+      <ToolTipText>Sniffing Meter</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1413,7 +1413,7 @@
       <template>I156aTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Service à thé</ToolTipText>
+      <ToolTipText>Tea service</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1429,7 +1429,7 @@
       <template>I156bTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Service à thé</ToolTipText>
+      <ToolTipText>Tea service</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1445,7 +1445,7 @@
       <template>I156cTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Service à thé</ToolTipText>
+      <ToolTipText>Tea service</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1462,7 +1462,7 @@
       <template>I166aTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lapin en peluche</ToolTipText>
+      <ToolTipText>Rabbit Plushie</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1478,7 +1478,7 @@
       <template>I166bTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lapin en peluche</ToolTipText>
+      <ToolTipText>Rabbit Plushie</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1494,7 +1494,7 @@
       <template>I166cTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lapin en peluche</ToolTipText>
+      <ToolTipText>Rabbit Plushie</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1510,7 +1510,7 @@
       <template>I166dTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lapin en peluche</ToolTipText>
+      <ToolTipText>Rabbit Plushie</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1526,7 +1526,7 @@
       <template>I166eTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lapin en peluche (Marron)</ToolTipText>
+      <ToolTipText>Rabbit Plushie (Brown)</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1542,7 +1542,7 @@
       <template>I167aTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Arbre en fleur rose</ToolTipText>
+      <ToolTipText>Pink Flowers Tree</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>2</gridFootX>
@@ -1558,7 +1558,7 @@
       <template>I169Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Treillis de jardin rose</ToolTipText>
+      <ToolTipText>Pink garden trellis</ToolTipText>
     </component>
   </template>
   <template name="T0276Template" template="PlaceableObjectTemplate">
@@ -1570,7 +1570,7 @@
       <template>I170Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Vasque à oiseaux</ToolTipText>
+      <ToolTipText>Bird Bath</ToolTipText>
     </component>
   </template>
   <template name="T0277Template" template="PlaceableObjectTemplate">
@@ -1582,7 +1582,7 @@
       <template>I171Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Table et chaises de patio</ToolTipText>
+      <ToolTipText>Patio table and chairs</ToolTipText>
     </component>
   </template>
   <template name="T0278Template" template="PlaceableObjectTemplate">
@@ -1594,7 +1594,7 @@
       <template>I172Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pot de fleur souriant</ToolTipText>
+      <ToolTipText>Smiling flower pot</ToolTipText>
     </component>
   </template>
   <template name="T0279Template" template="PlaceableObjectTemplate">
@@ -1606,7 +1606,7 @@
       <template>I173Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Arbre fruitier en pot</ToolTipText>
+      <ToolTipText>Fruit tree in a pot</ToolTipText>
     </component>
   </template>
   <template name="T0280Template" template="PlaceableObjectTemplate">
@@ -1618,7 +1618,7 @@
       <template>I174Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Réverbère</ToolTipText>
+      <ToolTipText>Streetlight</ToolTipText>
     </component>
   </template>
   <template name="T0281Template" template="PlaceableObjectTemplate">
@@ -1630,7 +1630,7 @@
       <template>I175Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fontaine</ToolTipText>
+      <ToolTipText>Fountain</ToolTipText>
     </component>
   </template>
   <template name="T0283Template" template="PlaceableObjectTemplate">
@@ -1642,7 +1642,7 @@
       <template>I176Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Décor château des fées</ToolTipText>
+      <ToolTipText>Fairy castle decor</ToolTipText>
     </component>
   </template>
   <template name="T0284Template" template="PlaceableObjectTemplate">
@@ -1654,7 +1654,7 @@
       <template>I177Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Banc de jardin céleste</ToolTipText>
+      <ToolTipText>Heavenly Garden Bench</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>2</gridFootX>
@@ -1673,7 +1673,7 @@
       <template>I178Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Réverbère fées</ToolTipText>
+      <ToolTipText>Fairy lamppost</ToolTipText>
     </component>
   </template>
   <template name="T0286Template" template="PlaceableObjectTemplate">
@@ -1685,7 +1685,7 @@
       <template>I179Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mât floral croissant de lune</ToolTipText>
+      <ToolTipText>Crescent moon floral pole</ToolTipText>
     </component>
   </template>
   <template name="T0287Template" template="PlaceableObjectTemplate">
@@ -1697,7 +1697,7 @@
       <template>I180Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Canapé napperon</ToolTipText>
+      <ToolTipText>Doily Couch</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>2</gridFootX>
@@ -1716,7 +1716,7 @@
       <template>I181Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chaise napperon</ToolTipText>
+      <ToolTipText>Doily Chair</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1736,7 +1736,7 @@
       <template>I182Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Table napperon</ToolTipText>
+      <ToolTipText>Doily Table</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>2</gridFootX>
@@ -1756,7 +1756,7 @@
       <template>I183Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lampe napperon</ToolTipText>
+      <ToolTipText>Doily Lamp</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1776,7 +1776,7 @@
       <template>I184Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lit napperon</ToolTipText>
+      <ToolTipText>Doily Bed</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>3</gridFootX>
@@ -1796,7 +1796,7 @@
       <template>I185Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Commode napperon</ToolTipText>
+      <ToolTipText>Doily Commode</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1816,7 +1816,7 @@
       <template>I186Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Jouet en peluche renard</ToolTipText>
+      <ToolTipText>Fox Plushie Toy</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1836,7 +1836,7 @@
       <template>I187Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Jouet en peluche ours</ToolTipText>
+      <ToolTipText>Bear Plushie Toy</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1856,7 +1856,7 @@
       <template>I188Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Jouet en peluche chaton</ToolTipText>
+      <ToolTipText>Kitten Plushie Toy</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1876,7 +1876,7 @@
       <template>I189Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Jouet en peluche chiot</ToolTipText>
+      <ToolTipText>Puppy Plushie Toy</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1896,7 +1896,7 @@
       <template>I190Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Poupée souple</ToolTipText>
+      <ToolTipText>Soft doll</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1916,7 +1916,7 @@
       <template>I191Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pot à terreau</ToolTipText>
+      <ToolTipText>Pot of potting soil</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1936,7 +1936,7 @@
       <template>I198Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Jouet en peluche Bella</ToolTipText>
+      <ToolTipText>Bella Plushie Toy</ToolTipText>
     </component>
     <component type="components.CharacterIdleComponent" name="CharacterIdle" />
     <component type="components.IdleComponent" name="Idle" />
@@ -1958,7 +1958,7 @@
       </tradeDictionary>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Marmite à friandises</ToolTipText>
+      <ToolTipText>Candy pot</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I250Template</template>
@@ -1973,7 +1973,7 @@
       <template>I0510aTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gâteau d'anniversaire Geoffrey</ToolTipText>
+      <ToolTipText>Geoffrey's birthday cake</ToolTipText>
     </component>
   </template>
   <template name="T0511Template" template="RotatedObjectTemplate">
@@ -1985,7 +1985,7 @@
       <template>I0511Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Trophée Odyssée</ToolTipText>
+      <ToolTipText>Odyssey Trophy</ToolTipText>
     </component>
   </template>
   <template name="T0512Template" template="RotatedObjectTemplate">
@@ -1997,7 +1997,7 @@
       <template>I0512Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Trophée Aube</ToolTipText>
+      <ToolTipText>Dawn Trophy</ToolTipText>
     </component>
   </template>
   <template name="T0652Template" template="RotatedObjectTemplate">
@@ -2033,7 +2033,7 @@
       <template>I0500Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Joue en peluche Purrwing</ToolTipText>
+      <ToolTipText>Purrwing Plushie Toy</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -2051,7 +2051,7 @@
       <template>I0501Template</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Jouet en peluche Frostbite</ToolTipText>
+      <ToolTipText>Frostbite Plushie Toy</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
