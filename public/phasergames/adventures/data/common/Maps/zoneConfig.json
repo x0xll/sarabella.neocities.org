@@ -750,7 +750,7 @@
     "Z026": {
         "ID": "Z026",
 
-        "tileXOffset": -350,
+        "tileXOffset": 350,
         "tileYOffset": 1000,
         "tileAssets": [
             "common",
