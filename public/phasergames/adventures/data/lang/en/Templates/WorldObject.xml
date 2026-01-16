@@ -729,7 +729,7 @@
       <className>T0513</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Petite maison de fée</ToolTipText>
+      <ToolTipText>Small Fairy House</ToolTipText>
     </component>
   </template>
   <template name="T0509Template" template="ObjectTemplate">
@@ -738,7 +738,7 @@
       <className>T0509</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tas de friandises</ToolTipText>
+      <ToolTipText>Snacks pile</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>2</gridFootX>
@@ -759,7 +759,7 @@
       <gridFootY>3</gridFootY>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Nuage d'orage</ToolTipText>
+      <ToolTipText>Storm Cloud</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I258Template</item>
@@ -793,7 +793,7 @@
       <name>Ice Sheet</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Plaque de glace</ToolTipText>
+      <ToolTipText>Ice Sheet</ToolTipText>
     </component>
   </template>
   <template name="T0367Template" template="ObjectTemplate">
@@ -805,7 +805,7 @@
       <name>Frozen Sticks</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bâtons gelés</ToolTipText>
+      <ToolTipText>Frozen Stick</ToolTipText>
     </component>
   </template>
   <template name="T0368Template" template="ObjectTemplate">
@@ -817,7 +817,7 @@
       <name>Frozen Pinecones</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pommes de pin gelées</ToolTipText>
+      <ToolTipText>Frozen Pinecones</ToolTipText>
     </component>
   </template>
   <template name="T0369Template" template="ObjectTemplate">
@@ -829,7 +829,7 @@
       <name>Frozen Leaves</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Feuilles gelées</ToolTipText>
+      <ToolTipText>Frozen Leaves</ToolTipText>
     </component>
   </template>
   <template name="T0114bTemplate" template="ObjectTemplate">
@@ -841,7 +841,7 @@
       <name>Spider Web</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Toile d'araignée</ToolTipText>
+      <ToolTipText>Spider Web</ToolTipText>
     </component>
   </template>
   <template name="T0370Template" template="ObjectTemplate">
@@ -853,7 +853,7 @@
       <name>Frozen Spider Web</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Toile d'araignée gelée</ToolTipText>
+      <ToolTipText>Frozen Spider Web</ToolTipText>
     </component>
   </template>
   <!--<template name="T0505aTemplate" template="GiveObjectTemplate">
@@ -877,7 +877,7 @@
       <name>Harness</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Harnais</ToolTipText>
+      <ToolTipText>Harness</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I0504bTemplate</item>
@@ -898,7 +898,7 @@
       <name>Harness with Sleigh Bells</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Harnais à clochettes</ToolTipText>
+      <ToolTipText>Harness with Sleigh Bells</ToolTipText>
     </component>
     <component type="components.ThumbnailComponent" name="Thumbnail">
       <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
@@ -914,7 +914,7 @@
       <name>Unpainted Sleigh</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Traineau sans peinture</ToolTipText>
+      <ToolTipText>Unpainted Sleigh</ToolTipText>
     </component>
   </template>
   <template name="T0230cTemplate" template="ObjectTemplate">
@@ -926,7 +926,7 @@
       <name>Broken Sleigh</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Traineau cassé</ToolTipText>
+      <ToolTipText>Broken Sleigh</ToolTipText>
     </component>
   </template>
   <template name="T0234dTemplate" template="TakeObjectTemplate">
@@ -976,7 +976,7 @@
       <name>Snow Crystals</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cristaux de neige</ToolTipText>
+      <ToolTipText>Snow Crystals</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I258Template</template>
@@ -992,7 +992,7 @@
       <name>Yellow Wildflower</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fleur sauvage jaune</ToolTipText>
+      <ToolTipText>Yellow Wildflower</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I0605Template</template>
@@ -1007,7 +1007,7 @@
       <name>Purple Wildflower</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fleur sauvage violette</ToolTipText>
+      <ToolTipText>Purple Wildflower</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I0606Template</template>
@@ -1022,7 +1022,7 @@
       <name>Red Wildflower</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fleur sauvage rouge</ToolTipText>
+      <ToolTipText>Red Wildflower</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I0607Template</template>
@@ -1038,7 +1038,7 @@
       <name>Watermelon Candy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Friandise à la pastèque</ToolTipText>
+      <ToolTipText>Watermelon Candy</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I252Template</template>
@@ -1057,7 +1057,7 @@
       <name>Strawberry Candy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Friandise à la fraise</ToolTipText>
+      <ToolTipText>Strawberry Candy</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I251Template</template>
@@ -1076,7 +1076,7 @@
       <name>Lemon-Lime Candy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Friandise au citron bicolore</ToolTipText>
+      <ToolTipText>Lemon-Lime Candy</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I253Template</template>
@@ -1095,7 +1095,7 @@
       <name>Cinnamon Candy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Friandise à la cannelle</ToolTipText>
+      <ToolTipText>Cinnamon Candy</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I254Template</template>
@@ -1114,7 +1114,7 @@
       <name>Bubble Gum Candy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Friandise au chewing-gum</ToolTipText>
+      <ToolTipText>Bubble Gum Candy</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I255Template</template>
@@ -1133,7 +1133,7 @@
       <name>Moonstone</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pierre de lune</ToolTipText>
+      <ToolTipText>Moonstone</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I0506Template</template>
@@ -1148,7 +1148,7 @@
       <name>Sunstone</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pierre de soleil</ToolTipText>
+      <ToolTipText>Sunstone</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I141fTemplate</template>
@@ -1164,7 +1164,7 @@
       <name>Bella Carousel Horse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cheval de manège Bella</ToolTipText>
+      <ToolTipText>Bella Carousel Horse</ToolTipText>
     </component>
   </template>
   <template name="T0599Template" template="ObjectTemplate">
@@ -1176,7 +1176,7 @@
       <name>Jewel Carousel Horse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cheval de manège Jewel</ToolTipText>
+      <ToolTipText>Jewel Carousel Horse</ToolTipText>
     </component>
   </template>
   <template name="T0600Template" template="ObjectTemplate">
@@ -1188,7 +1188,7 @@
       <name>Thunder Carousel Horse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cheval de manège Thunder</ToolTipText>
+      <ToolTipText>Thunder Carousel Horse</ToolTipText>
     </component>
   </template>
   <template name="T0601Template" template="ObjectTemplate">
@@ -1200,7 +1200,7 @@
       <name>Fiona Carousel Horse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cheval de manège Fiona</ToolTipText>
+      <ToolTipText>Fiona Carousel Horse</ToolTipText>
     </component>
   </template>
   <template name="T0602Template" template="ObjectTemplate">
@@ -1212,7 +1212,7 @@
       <name>Nike Carousel Horse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cheval de manège Nike</ToolTipText>
+      <ToolTipText>Nike Carousel Horse</ToolTipText>
     </component>
   </template>
   <template name="T0603_05Template" template="ObjectTemplate">
@@ -1238,7 +1238,7 @@
       <name>Tutorial Tip: Weeds</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clique sur une mauvaise herbe, puis choisis la poubelle pour la jeter.</ToolTipText>
+      <ToolTipText>Click on a weed, then choose the trash to throw it away.</ToolTipText>
     </component>
   </template>
   <template name="T0192bTemplate" template="AnimatedObjectTemplate">
@@ -1250,7 +1250,7 @@
       <name>Tutorial Tip: Planting</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clique sur ton sac pour l'ouvrir. Choisis la graine de marguerite dans ton sac, puis sélectionne un endroit où la planter dans le jardin. </ToolTipText>
+      <ToolTipText>Click on your bag to open it. Choose the daisy seed in your bag, then select a place to plant it in the garden.</ToolTipText>
     </component>
   </template>
   <template name="T0192cTemplate" template="AnimatedObjectTemplate">
@@ -1262,7 +1262,7 @@
       <name>Tutorial Tip: Water</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clique sur la graine plantée, puis sélectionne l'arrosoir pour l'arroser. </ToolTipText>
+      <ToolTipText>Click on the planted seed, then select the watering can to water it.</ToolTipText>
     </component>
   </template>
   <template name="T0192dTemplate" template="AnimatedObjectTemplate">
@@ -1274,7 +1274,7 @@
       <name>Tutorial Tip: Harvest</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clique sur la plante, puis choisis Prendre. </ToolTipText>
+      <ToolTipText>Click on the plant, then choose Take.</ToolTipText>
     </component>
   </template>
   <template name="T0192eTemplate" template="AnimatedObjectTemplate">
@@ -1286,7 +1286,7 @@
       <name>Tutorial Tip: Use</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clique sur le pont, puis choisis le mortier pour l'utiliser dessus. </ToolTipText>
+      <ToolTipText>Click on the bridge, then choose the mortar to use it on it.</ToolTipText>
     </component>
   </template>
   <template name="T0192fTemplate" template="AnimatedObjectTemplate">
@@ -1298,7 +1298,7 @@
       <name>Tutorial Tip: Take</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clique sur la clef, puis clique sur l'option ramasser pour la metter dans ton sac.</ToolTipText>
+      <ToolTipText>Click on the key, then click on the option to pick it up to set it in your bag.</ToolTipText>
     </component>
   </template>
   <template name="T0070Template" template="AnimatedObjectTemplate">
@@ -1315,7 +1315,7 @@
       <name>Lightning rod</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Baguette de tonnerre</ToolTipText>
+      <ToolTipText>Lightning rod</ToolTipText>
     </component>
   </template>
   <template name="T0239bTemplate" template="ObjectTemplate">
@@ -1330,7 +1330,7 @@
       <template>Lean-to ShelterTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>appentis</ToolTipText>
+      <ToolTipText>Lean-to</ToolTipText>
     </component>
   </template>
   <!-- Magical Friends -->
@@ -1358,7 +1358,7 @@
       <name>Banana Slug</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Limace-banane</ToolTipText>
+      <ToolTipText>Banana Slug</ToolTipText>
     </component>
   </template>
   <template name="M013Template" template="ObjectTemplate">
@@ -1370,7 +1370,7 @@
       <name>Spider</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Araignée</ToolTipText>
+      <ToolTipText>Spider</ToolTipText>
     </component>
   </template>
   <template name="M009aTemplate" template="ObjectTemplate">
@@ -1382,7 +1382,7 @@
       <name>Giant Carnivorous Plant</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Plante carnivore géante</ToolTipText>
+      <ToolTipText>Giant Carnivorous Plant</ToolTipText>
     </component>
   </template>
   <template name="T0131aTemplate" template="ObjectTemplate">
@@ -1394,7 +1394,7 @@
       <name>Birdhouse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mangeoire à oiseaux</ToolTipText>
+      <ToolTipText>Birdhouse</ToolTipText>
     </component>
   </template>
   <template name="T0048dTemplate" template="ObjectTemplate">
@@ -1406,7 +1406,7 @@
       <name>Tree with Birdhouse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Arbre et mangeoire à oiseaux</ToolTipText>
+      <ToolTipText>Tree with Birdhouse</ToolTipText>
     </component>
   </template>
   <template name="T0273Template" template="ObjectTemplate">
@@ -1418,7 +1418,7 @@
       <name>Wolf Whistle Plant</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Plante sifflet des loups</ToolTipText>
+      <ToolTipText>Wolf Whistle Plant</ToolTipText>
     </component>
   </template>
   <!-- OBJECTS THAT ACCEPT WATER COMMAND -->
@@ -1431,7 +1431,7 @@
       <name>Fire</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Feu</ToolTipText>
+      <ToolTipText>Fire</ToolTipText>
     </component>
     <component type="components.ClickComponent" name="Click" />
     <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
@@ -1447,7 +1447,7 @@
       <name>Fire</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Feu</ToolTipText>
+      <ToolTipText>Fire</ToolTipText>
     </component>
     <component type="components.ClickComponent" name="Click" />
     <component type="components.ClickMovieClipComponent" name="ClickMovieClip" />
@@ -1468,7 +1468,7 @@
       <gridFootY>3</gridFootY>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Grande cage</ToolTipText>
+      <ToolTipText>Large cage</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I012Template</item>
@@ -1481,7 +1481,7 @@
       <className>T0267c</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mur de feu</ToolTipText>
+      <ToolTipText>Firewall</ToolTipText>
     </component>
     <component name="Isometric">
       <depthOffset>-100</depthOffset>
@@ -1504,7 +1504,7 @@
       <name>Puzzle Box</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Boîte à énigmes</ToolTipText>
+      <ToolTipText>Puzzle Box</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -1523,7 +1523,7 @@
       <name>Puzzle Box</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Boîte à énigmes</ToolTipText>
+      <ToolTipText>Puzzle Box</ToolTipText>
     </component>
   </template>
   <template name="T0243cTemplate" template="GiveObjectTemplate">
@@ -1535,7 +1535,7 @@
       <name>Puzzle Box</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Boîte à énigmes</ToolTipText>
+      <ToolTipText>Puzzle Box</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>P057ProduceTemplate</item>
@@ -1550,7 +1550,7 @@
       <name>Puzzle Box</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Boîte à énigmes</ToolTipText>
+      <ToolTipText>Puzzle Box</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I033Template</item>
@@ -1625,7 +1625,7 @@
       <name>Lost Bovo</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bovo perdu</ToolTipText>
+      <ToolTipText>Lost Bovo</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I074Template</item>
@@ -1640,7 +1640,7 @@
       <name>Tree</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Arbre</ToolTipText>
+      <ToolTipText>Tree</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I081Template</item>
@@ -1655,7 +1655,7 @@
       <name>Basket (partially complete)</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Panier inachevé</ToolTipText>
+      <ToolTipText>Basket (partially complete)</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>P034ProduceTemplate</item>
@@ -1673,7 +1673,7 @@
       <scaleX>-1</scaleX>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Rupert géant</ToolTipText>
+      <ToolTipText>Giant Rupert</ToolTipText>
     </component>
     <component name="GiveCommand">
       <item>I002aTemplate</item>
@@ -1706,7 +1706,7 @@
       <className>T0267b</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Barrière de toile</ToolTipText>
+      <ToolTipText>Canvas barrier</ToolTipText>
     </component>
     <component name="Isometric">
       <depthOffset>-100</depthOffset>
@@ -1725,7 +1725,7 @@
       <className>T0267d</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Barrière de bois</ToolTipText>
+      <ToolTipText>Wood barrier</ToolTipText>
     </component>
     <component name="Isometric">
       <depthOffset>-100</depthOffset>
@@ -1749,7 +1749,7 @@
       <name>Boulder</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Rocher</ToolTipText>
+      <ToolTipText>Boulder</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>I144cTemplate</item>
@@ -1764,7 +1764,7 @@
       <name>Cauldron</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chaudron</ToolTipText>
+      <ToolTipText>Cauldron</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>I063Template</item>
@@ -1794,7 +1794,7 @@
       <name>Topiary shaped as Wolf</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Buisson en forme de loup</ToolTipText>
+      <ToolTipText>Topiary shaped as Wolf</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>P027ProduceTemplate</item>
@@ -1809,7 +1809,7 @@
       <name>Topiary shaped as Ivenna</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Buisson en forme d'Ivenna</ToolTipText>
+      <ToolTipText>Topiary shaped as Ivenna</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>P027ProduceTemplate</item>
@@ -1824,7 +1824,7 @@
       <name>Cake - whole</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Gâteau entier</ToolTipText>
+      <ToolTipText>Cake - whole</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>I057Template</item>
@@ -1839,7 +1839,7 @@
       <name>Large Shrub</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Grand buisson</ToolTipText>
+      <ToolTipText>Large Shrub</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>I004bTemplate</item>
@@ -1854,7 +1854,7 @@
       <name>Pumpkin Court</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Cour des citrouilles</ToolTipText>
+      <ToolTipText>Pumpkin Court</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>I022Template</item>
@@ -1892,7 +1892,7 @@
       <name>Swarm of flies</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Mouches</ToolTipText>
+      <ToolTipText>Swarm of flies</ToolTipText>
     </component>
     <component name="ApplyCommand">
       <item>I023cTemplate</item>
@@ -2114,7 +2114,7 @@
       <template>ClayTemplate</template>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Argile</ToolTipText>
+      <ToolTipText>Clay</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I148Template</template>
@@ -2129,7 +2129,7 @@
       <name>Pretty bow</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Joli ruban</ToolTipText>
+      <ToolTipText>Pretty bow</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I009Template</template>
@@ -2144,7 +2144,7 @@
       <name>Basket</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Panier</ToolTipText>
+      <ToolTipText>Basket</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I006aTemplate</template>
@@ -2159,7 +2159,7 @@
       <name>Gift Basket</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Panier de cadeaux</ToolTipText>
+      <ToolTipText>Gift Basket</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I006bTemplate</template>
@@ -2174,7 +2174,7 @@
       <name>Bella's Ball Guest Book</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Livre des invités du Bal de Bella</ToolTipText>
+      <ToolTipText>Bella's Ball Guest Book</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I029Template</template>
@@ -2192,7 +2192,7 @@
       <name>Puddle Jumper Frog</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Puddle Jumper la grenouille</ToolTipText>
+      <ToolTipText>Puddle Jumper Frog</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I102Template</template>
@@ -2209,7 +2209,7 @@
       <name>Key</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Clef</ToolTipText>
+      <ToolTipText>Key</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I033Template</template>
@@ -2224,7 +2224,7 @@
       <name>Butterfly </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -2239,7 +2239,7 @@
       <name>Butterfly </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -2254,7 +2254,7 @@
       <name>Butterfly </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -2269,7 +2269,7 @@
       <name>Butterfly </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -2284,7 +2284,7 @@
       <name>Butterfly </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -2299,7 +2299,7 @@
       <name>Butterfly </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papillon</ToolTipText>
+      <ToolTipText>Butterfly</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023bTemplate</template>
@@ -2314,7 +2314,7 @@
       <name>Ladybugs</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coccinelles</ToolTipText>
+      <ToolTipText>Ladybugs</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I023aTemplate</template>
@@ -2389,7 +2389,7 @@
       <name>Skunk cabbage</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chou-putois</ToolTipText>
+      <ToolTipText>Skunk cabbage</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>P048ProduceTemplate</template>
@@ -2404,7 +2404,7 @@
       <name>Bella's Ball Invitation</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Invitation au Bal de Bella</ToolTipText>
+      <ToolTipText>Bella's Ball Invitation</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I026Template</template>
@@ -2419,7 +2419,7 @@
       <name>Seashells</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coquillages</ToolTipText>
+      <ToolTipText>Seashells</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I040Template</template>
@@ -2434,7 +2434,7 @@
       <name>Seashells</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coquillages</ToolTipText>
+      <ToolTipText>Seashells</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I040Template</template>
@@ -2449,7 +2449,7 @@
       <name>Seashells</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Coquillages</ToolTipText>
+      <ToolTipText>Seashells</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I040Template</template>
@@ -2464,7 +2464,7 @@
       <name>Lost Puppy</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chiot perdu</ToolTipText>
+      <ToolTipText>Lost Puppy</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I048Template</template>
@@ -2483,7 +2483,7 @@
       </name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fleur de lotus
+      <ToolTipText>Lotus Flower
 			</ToolTipText>
     </component>
     <component name="TakeCommand">
@@ -2499,7 +2499,7 @@
       <name>Sticks</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Branches</ToolTipText>
+      <ToolTipText>Sticks</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I079Template</template>
@@ -2514,7 +2514,7 @@
       <name>Tomtomme</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tyler le Tomtomme</ToolTipText>
+      <ToolTipText>Tyler the Tomtomme</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I067Template</template>
@@ -2544,7 +2544,7 @@
       <name>Kiki Tassel Mouse</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Kiki la Tassel Mouse</ToolTipText>
+      <ToolTipText>Kiki the Tassel Mouse</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I085Template</template>
@@ -2574,7 +2574,7 @@
       <name>Leaves - autumn variety</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Feuilles d'automne</ToolTipText>
+      <ToolTipText>Leaves - autumn variety</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I088Template</template>
@@ -2589,7 +2589,7 @@
       <name>Paper</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papier</ToolTipText>
+      <ToolTipText>Paper</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I089aTemplate</template>
@@ -2604,7 +2604,7 @@
       <name>Sheet Music 2</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Partition</ToolTipText>
+      <ToolTipText>Sheet Music 2</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I089Template</template>
@@ -2619,7 +2619,7 @@
       <name>Sheet Music 1</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Partition</ToolTipText>
+      <ToolTipText>Sheet Music 1</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I089Template</template>
@@ -2634,7 +2634,7 @@
       <name>Brush</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Brosse</ToolTipText>
+      <ToolTipText>Brush</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I108Template</template>
@@ -2649,7 +2649,7 @@
       <name>Brush</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Brosse</ToolTipText>
+      <ToolTipText>Brush</ToolTipText>
     </component>
     <component name="TakeCommand">
       <template>I108aTemplate</template>
@@ -2665,7 +2665,7 @@
       <name>Tan Paper</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Papier brun</ToolTipText>
+      <ToolTipText>Tan Paper</ToolTipText>
     </component>
   </template>
   <template name="T0267aTemplate" template="TrashObjectTemplate">
@@ -2685,7 +2685,7 @@
       <name>Bramble Barricade</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Barrière de ronces</ToolTipText>
+      <ToolTipText>Bramble Barricade</ToolTipText>
     </component>
   </template>
   <template name="T0062aTemplate" template="TrashObjectTemplate">
@@ -2697,7 +2697,7 @@
       <name>Dandelion</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pissenlit</ToolTipText>
+      <ToolTipText>Dandelion</ToolTipText>
     </component>
   </template>
   <template name="T0062bTemplate" template="TrashObjectTemplate">
@@ -2709,7 +2709,7 @@
       <name>Dandelion</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Pissenlit</ToolTipText>
+      <ToolTipText>Dandelion</ToolTipText>
     </component>
   </template>
   <template name="T0062gTemplate" template="TrashObjectTemplate">
@@ -2721,7 +2721,7 @@
       <name>Dandelion Patch</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Touffe de pissenlits</ToolTipText>
+      <ToolTipText>Dandelion Patch</ToolTipText>
     </component>
   </template>
   <template name="T0062hTemplate" template="TrashObjectTemplate">
@@ -2733,7 +2733,7 @@
       <name>Dandelion Patch</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Touffe de pissenlits</ToolTipText>
+      <ToolTipText>Dandelion Patch</ToolTipText>
     </component>
   </template>
   <template name="T0048bTemplate" template="TrashObjectTemplate">
@@ -2745,7 +2745,7 @@
       <name>Small Tree</name>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Petit arbre</ToolTipText>
+      <ToolTipText>Small Tree</ToolTipText>
     </component>
   </template>
   <!-- ================ TRADER TEMPLATES ================ -->
@@ -2775,7 +2775,7 @@
       </tradeDictionary>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Machine à teinture</ToolTipText>
+      <ToolTipText>Dye Machine</ToolTipText>
     </component>
   </template>
   <template name="BovoTemplate" template="AnimatedObjectTemplate">
@@ -2803,7 +2803,7 @@
       <className>M001a</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bovo rose</ToolTipText>
+      <ToolTipText>Pink Bovo</ToolTipText>
     </component>
     <component type="components.CharacterComponent" name="Character">
       <identifier>M001a</identifier>
@@ -2819,7 +2819,7 @@
       <className>M001b</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Bovo marron</ToolTipText>
+      <ToolTipText>Brown Bovo</ToolTipText>
     </component>
     <component type="components.CharacterComponent" name="Character">
       <identifier>M001b</identifier>
@@ -2859,7 +2859,7 @@
       </tradeDictionary>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Baratte à beurre</ToolTipText>
+      <ToolTipText>Butter Churn</ToolTipText>
     </component>
   </template>
   <!-- summer camp totems world objects for Marta -->
@@ -2869,7 +2869,7 @@
       <className>T0611</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Totem Spirituel du Volcan</ToolTipText>
+      <ToolTipText>Spiritual Totem of the Volcano</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -2882,7 +2882,7 @@
       <className>T0612</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Totem Spirituel du Nuage</ToolTipText>
+      <ToolTipText>Spiritual Totem of the Cloud</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -2895,7 +2895,7 @@
       <className>T0613</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Totem Spirituel de la Colline</ToolTipText>
+      <ToolTipText>Spiritual Totem of the Hill</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -2908,7 +2908,7 @@
       <className>T0614</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Totem Spirituel du Fleuve</ToolTipText>
+      <ToolTipText>Spiritual Totem of the River</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -2921,7 +2921,7 @@
       <className>T0096</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Puits</ToolTipText>
+      <ToolTipText>Well</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
@@ -2960,7 +2960,7 @@
       <className>T0002b</className>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Tonneau d'eau</ToolTipText>
+      <ToolTipText>Water Barrel</ToolTipText>
     </component>
     <component name="GridPosition">
       <gridFootX>1</gridFootX>
