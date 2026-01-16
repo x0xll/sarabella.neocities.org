@@ -614,7 +614,7 @@
       <magic>125</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Framboisier</ToolTipText>
+      <ToolTipText>Raspberry Bush</ToolTipText>
     </component>
   </template>
   <template name="P024Template" template="BasicPlantTemplate">
@@ -634,7 +634,7 @@
       <magic>75</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Muflier</ToolTipText>
+      <ToolTipText>Snapdragon</ToolTipText>
     </component>
   </template>
   <template name="P025Template" template="BasicPlantTemplate">
@@ -682,7 +682,7 @@
       <magic>375</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lotus-soleil</ToolTipText>
+      <ToolTipText>Sun-Lotus</ToolTipText>
     </component>
   </template>
   <template name="P027Template" template="BasicPlantTemplate">
@@ -730,7 +730,7 @@
       <magic>100</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Maïs barbu</ToolTipText>
+      <ToolTipText>Bearded corn</ToolTipText>
     </component>
   </template>
   <template name="P029Template" template="BasicPlantTemplate">
@@ -824,7 +824,7 @@
       <magic>500</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Orchidée royale</ToolTipText>
+      <ToolTipText>Royal Orchid</ToolTipText>
     </component>
   </template>
   <template name="P033Template" template="FruitPlantTemplate">
@@ -850,7 +850,7 @@
       <magic>375</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Erable lunaire</ToolTipText>
+      <ToolTipText>Moon maple</ToolTipText>
     </component>
   </template>
   <template name="P034Template" template="BasicPlantTemplate">
@@ -950,7 +950,7 @@
       <magic>200</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Baie épicée</ToolTipText>
+      <ToolTipText>Spicy berry</ToolTipText>
     </component>
   </template>
   <template name="P038Template" template="FruitPlantTemplate">
@@ -980,7 +980,7 @@
       <magic>175</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Arbre à plumberries</ToolTipText>
+      <ToolTipText>Plumberry tree</ToolTipText>
     </component>
   </template>
   <template name="P039Template" template="BasicPlantTemplate">
@@ -1044,7 +1044,7 @@
       <magic>300</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Barbe de dragon</ToolTipText>
+      <ToolTipText>Dragon's beard</ToolTipText>
     </component>
   </template>
   <template name="P042Template" template="BasicPlantTemplate">
@@ -1064,7 +1064,7 @@
       <magic>200</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Iris-drapeau bleu</ToolTipText>
+      <ToolTipText>Blue flag iris</ToolTipText>
     </component>
   </template>
   <template name="P043Template" template="FruitPlantTemplate">
@@ -1114,7 +1114,7 @@
       <magic>325</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Fleur de pétale de glace</ToolTipText>
+      <ToolTipText>Ice petal flower</ToolTipText>
     </component>
   </template>
   <template name="P045Template" template="BasicPlantTemplate">
@@ -1138,7 +1138,7 @@
       <magic>400</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Lys-araignée</ToolTipText>
+      <ToolTipText>Spider lily</ToolTipText>
     </component>
   </template>
   <template name="P046Template" template="BasicPlantTemplate">
@@ -1162,7 +1162,7 @@
       <magic>80</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chèvrefeuille (fleur de lait de miel)</ToolTipText>
+      <ToolTipText>Honeysuckle (honey flower)</ToolTipText>
     </component>
   </template>
   <template name="P047Template" template="BasicPlantTemplate">
@@ -1186,7 +1186,7 @@
       <magic>1</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Sifflet des loups</ToolTipText>
+      <ToolTipText>Wolves' whistle</ToolTipText>
     </component>
   </template>
   <template name="P048Template" template="BasicPlantTemplate">
@@ -1210,7 +1210,7 @@
       <magic>1</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Chou-putois</ToolTipText>
+      <ToolTipText>Polecat Cabbage</ToolTipText>
     </component>
   </template>
   <template name="P049Template" template="BasicPlantTemplate">
@@ -1230,7 +1230,7 @@
       <magic>225</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Ombrenuit</ToolTipText>
+      <ToolTipText>Shadownight</ToolTipText>
     </component>
   </template>
   <template name="P050Template" template="BasicPlantTemplate">
@@ -1250,7 +1250,7 @@
       <magic>375</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Orchidée pantoufle aux dames</ToolTipText>
+      <ToolTipText>Lady's slipper orchid</ToolTipText>
     </component>
   </template>
   <template name="P051Template" template="FruitPlantTemplate">
@@ -1320,7 +1320,7 @@
       <magic>10</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Perle de Luna</ToolTipText>
+      <ToolTipText>Luna's Pearl</ToolTipText>
     </component>
   </template>
   <template name="P055Template" template="BasicPlantTemplate">
@@ -1343,7 +1343,7 @@
       <magic>350</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Potiron des fées</ToolTipText>
+      <ToolTipText>Fairy's Pumpkin</ToolTipText>
     </component>
   </template>
   <template name="P056Template" template="BasicPlantTemplate">
@@ -1366,7 +1366,7 @@
       <magic>200</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Melon à nectar</ToolTipText>
+      <ToolTipText>Nectar melon</ToolTipText>
     </component>
   </template>
   <template name="P057Template" template="BasicPlantTemplate">
@@ -1389,7 +1389,7 @@
       <magic>175</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Valériane rouge</ToolTipText>
+      <ToolTipText>Red Valerian</ToolTipText>
     </component>
   </template>
   <template name="P058Template" template="BasicPlantTemplate">
@@ -1435,7 +1435,7 @@
       <magic>200</magic>
     </component>
     <component name="ToolTip">
-      <ToolTipText>Laurier ionique</ToolTipText>
+      <ToolTipText>Ionic laurel</ToolTipText>
     </component>
   </template>
   <template name="P060Template" template="BasicPlantTemplate">
