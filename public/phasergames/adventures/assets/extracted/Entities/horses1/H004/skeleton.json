@@ -1,0 +1,50 @@
+{
+"skeleton": { "hash": "oJlXg85K+2s", "spine": "4.2.43", "x": -132.2, "y": -45.48, "width": 251, "height": 273 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Dirt Ref", "bone": "root", "attachment": "T0016a" },
+	{ "name": "H001", "bone": "root", "attachment": "H001" },
+	{ "name": "H002", "bone": "root", "attachment": "H002" },
+	{ "name": "H003", "bone": "root", "attachment": "H003" },
+	{ "name": "H004", "bone": "root", "attachment": "H004" },
+	{ "name": "H005", "bone": "root", "attachment": "H005" },
+	{ "name": "H006", "bone": "root", "attachment": "H006" },
+	{ "name": "H057", "bone": "root", "attachment": "H057" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Dirt Ref": {
+				"T0016a": { "width": 80, "height": 40 }
+			},
+			"H001": {
+				"H001": { "x": -6.7, "y": 91.02, "scaleX": 0.5, "scaleY": 0.5, "width": 502, "height": 546 }
+			},
+			"H002": {
+				"H002": { "x": 1.5, "y": 70.22, "scaleX": 0.5, "scaleY": 0.5, "width": 460, "height": 521 }
+			},
+			"H003": {
+				"H003": { "x": 5.51, "y": 68.17, "scaleX": 0.5, "scaleY": 0.5, "width": 442, "height": 513 }
+			},
+			"H004": {
+				"H004": { "y": 56.14, "scaleX": 0.5, "scaleY": 0.5, "width": 491, "height": 593 }
+			},
+			"H005": {
+				"H005": { "x": -6.52, "y": 68.93, "scaleX": 0.5, "scaleY": 0.5, "width": 436, "height": 500 }
+			},
+			"H006": {
+				"H006": { "x": -33.34, "y": 79.45, "scaleX": 0.5, "scaleY": 0.5, "width": 649, "height": 568 }
+			},
+			"H057": {
+				"H057": { "x": 20.55, "y": 81.21, "scaleX": 0.5, "scaleY": 0.5, "width": 493, "height": 556 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
