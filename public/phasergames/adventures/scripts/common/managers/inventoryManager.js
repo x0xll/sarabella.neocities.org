@@ -87,9 +87,6 @@ class InventoryManager
                             && template.PlaceEntity === undefined
                             && template.AvatarCustomizationData === undefined)
                     break;
-                case ITEM_TYPES.SPECIAL:
-                    test = template.QuestItem !== undefined
-                    break;
                 case ITEM_TYPES.PLANTS:
                     test = template.Seed !== undefined
                     break;
@@ -101,6 +98,9 @@ class InventoryManager
                     break;
                 case ITEM_TYPES.CLOTHES:
                     test = template.AvatarCustomizationData !== undefined
+                    break;
+                case ITEM_TYPES.SPECIAL:
+                    test = template.QuestItem !== undefined
                     break;
             
                 default:
