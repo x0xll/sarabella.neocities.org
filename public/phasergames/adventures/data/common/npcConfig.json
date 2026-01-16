@@ -43,7 +43,8 @@
         "C006Template": [64, 12, "se"],
         "C007Template": [80, 66, "sw"],
         "C022Template": [58, 61, "sw"],
-        "H039Template": [25, 55, "sw"]
+        "H039Template": [25, 55, "sw"],
+        "M017Template": [51, 71, "sw"]
     },
     "Z025": {
         "C013Template": [7, 19, "se"]
