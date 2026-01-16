@@ -4,10 +4,14 @@
         "C001Template": [13, 27, "sw"]
     },
     "Z002": {
-        "C002Template": [26, 9, "sw"]
+        "C002Template": [26, 9, "sw"],
+        "H002Template": [37, 25, "se"],
+        "H005Template": [6, 9, "se"],
+        "H066Template": [26, 2, "sw"]
     },
     "Z003": {
-        "C020Template": [48, 0, "sw"]
+        "C020Template": [48, 0, "sw"],
+        "H003Template": [30, 36, "se"]
     },
     "Z007": {
         "H001Template": [22, 38, "se"]
@@ -29,10 +33,17 @@
         "C003Template": [41, 30, "se"],
         "C009Template": [72, 33, "sw"]
     },
+    "Z013": {
+        "H008Template": [12, 60, "se"],
+        "C005Template": [11, 70, "se"],
+        "H006Template": [18, 72, "sw"],
+        "C019Template": [69, 50, "sw"]
+    },
     "Z012": {
         "C006Template": [64, 12, "se"],
         "C007Template": [80, 66, "sw"],
-        "C022Template": [58, 61, "sw"]
+        "C022Template": [58, 61, "sw"],
+        "H039Template": [25, 55, "sw"]
     },
     "Z025": {
         "C013Template": [7, 19, "se"]
