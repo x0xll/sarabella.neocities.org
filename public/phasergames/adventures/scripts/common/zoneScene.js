@@ -389,7 +389,7 @@ class ZoneBase extends Phaser.Scene
     }
 
     getEntitiesAt(gridX, gridY) {
-        if (this.tiles[gridY][gridX] && this.tiles[gridY][gridX].hasEntity)
+        if (this.tiles[gridY] && this.tiles[gridY][gridX] && this.tiles[gridY][gridX].hasEntity)
             return this.tiles[gridY][gridX].hasEntity
         else
             return undefined
