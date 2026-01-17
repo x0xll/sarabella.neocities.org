@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "BD365M84D2E",
+	"spine": "4.2.43",
+	"x": -120.94,
+	"y": -63.18,
+	"width": 238.5,
+	"height": 290.64,
+	"images": "",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "H008", "bone": "root", "attachment": "H008" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"H008": {
+				"H008": { "x": -1.69, "y": 83.71, "scaleX": 0.5, "scaleY": 0.5, "width": 472, "height": 575 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

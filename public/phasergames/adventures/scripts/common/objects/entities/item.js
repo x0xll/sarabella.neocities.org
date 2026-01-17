@@ -120,9 +120,6 @@ class InventorySlot
             if (template.template === "PlantProduceTemplate") {
                 // PRODUCE
                 console.warn("Produce item use not yet implemented")
-            } else if (template.QuestItem !== undefined) {
-                // SPECIAL
-                console.warn("Special item use not yet implemented")
             } else if (template.Seed !== undefined) {
                 // PLANTS
                 this.phaserScene.sharedData.inventory.currentItem = {
@@ -151,6 +148,9 @@ class InventorySlot
             } else if (template.AvatarCustomizationData !== undefined) {
                 // CLOTHING
                 console.warn("Clothing item use not yet implemented")
+            } else if (template.QuestItem !== undefined) {
+                // SPECIAL
+                console.warn("Special item use not yet implemented")
             } else {
                 console.warn("Da frick is this?!", template)
             }

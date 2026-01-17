@@ -1,0 +1,91 @@
+{
+"skeleton": {
+	"hash": "wA4whVOKask",
+	"spine": "4.2.43",
+	"x": -200.82,
+	"y": -95.1,
+	"width": 344.73,
+	"height": 331.51,
+	"images": "",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Dirt Ref", "bone": "root", "attachment": "T0016a", "visible": false },
+	{ "name": "H001 REF", "bone": "root", "attachment": "H001", "visible": false },
+	{ "name": "H041", "bone": "root", "attachment": "H041", "visible": false },
+	{ "name": "H042", "bone": "root", "attachment": "H042" },
+	{ "name": "H043", "bone": "root", "attachment": "H043", "visible": false },
+	{ "name": "H044", "bone": "root", "attachment": "H044", "visible": false },
+	{ "name": "H045", "bone": "root", "attachment": "H045", "visible": false },
+	{ "name": "H046", "bone": "root", "attachment": "H046", "visible": false },
+	{ "name": "H048", "bone": "root", "attachment": "H048", "visible": false },
+	{ "name": "H049", "bone": "root", "attachment": "H049", "visible": false },
+	{ "name": "H050", "bone": "root", "attachment": "H050", "visible": false },
+	{ "name": "H052", "bone": "root", "attachment": "H052", "visible": false },
+	{ "name": "H053", "bone": "root", "attachment": "H053", "visible": false },
+	{ "name": "H054", "bone": "root", "attachment": "H054", "visible": false },
+	{ "name": "H055", "bone": "root", "attachment": "H055", "visible": false },
+	{ "name": "H056", "bone": "root", "attachment": "H056", "visible": false }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Dirt Ref": {
+				"T0016a": { "width": 80, "height": 40 }
+			},
+			"H001 REF": {
+				"H001": { "x": -6.7, "y": 91.02, "scaleX": 0.5, "scaleY": 0.5, "width": 502, "height": 546 }
+			},
+			"H041": {
+				"H041": { "x": -11.47, "y": 69.03, "scaleX": 0.5, "scaleY": 0.5, "width": 447, "height": 500 }
+			},
+			"H042": {
+				"H042": { "x": -12.17, "y": 89.18, "scaleX": 0.5, "scaleY": 0.5, "width": 470, "height": 524 }
+			},
+			"H043": {
+				"H043": { "x": -8.26, "y": 71.28, "scaleX": 0.5, "scaleY": 0.5, "width": 498, "height": 525 }
+			},
+			"H044": {
+				"H044": { "x": -6.4, "y": 74.46, "scaleX": 0.5, "scaleY": 0.5, "width": 492, "height": 538 }
+			},
+			"H045": {
+				"H045": { "x": 5.76, "y": 68.42, "scaleX": 0.5, "scaleY": 0.5, "width": 443, "height": 514 }
+			},
+			"H046": {
+				"H046": { "x": -13.14, "y": 54.9, "scaleX": 0.5, "scaleY": 0.5, "width": 543, "height": 600 }
+			},
+			"H048": {
+				"H048": { "x": -7.69, "y": 72.85, "scaleX": 0.5, "scaleY": 0.5, "width": 497, "height": 511 }
+			},
+			"H049": {
+				"H049": { "x": -5.91, "y": 83.61, "scaleX": 0.5, "scaleY": 0.5, "width": 489, "height": 575 }
+			},
+			"H050": {
+				"H050": { "x": 5.27, "y": 83.99, "scaleX": 0.5, "scaleY": 0.5, "width": 446, "height": 577 }
+			},
+			"H052": {
+				"H052": { "x": -13.84, "y": 68.24, "scaleX": 0.5, "scaleY": 0.5, "width": 520, "height": 532 }
+			},
+			"H053": {
+				"H053": { "x": -15.72, "y": 75.33, "scaleX": 0.5, "scaleY": 0.5, "width": 458, "height": 504 }
+			},
+			"H054": {
+				"H054": { "x": -9.98, "y": 79.42, "scaleX": 0.5, "scaleY": 0.5, "width": 460, "height": 543 }
+			},
+			"H055": {
+				"H055": { "x": 0.9, "y": 88.41, "scaleX": 0.5, "scaleY": 0.5, "width": 572, "height": 592 }
+			},
+			"H056": {
+				"H056": { "x": -32.07, "y": 80.61, "scaleX": 0.5, "scaleY": 0.5, "width": 675, "height": 604 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
