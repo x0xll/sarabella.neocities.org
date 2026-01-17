@@ -100,7 +100,7 @@ class uiInventory extends uiManagerBase
         sprite.animationState.setAnimation(8, `scroll/hide`, false)
 
         // TODO add horseshoe count to bottom
-        
+        const horseshoeTxt = this.phaserScene.add.text(405, 400, "0", {font: "700 13px Arial", color: "#a38529"}).setOrigin(.5);
 
         const hitboxes = [
             this.phaserScene.add.graphics().setInteractive(new Phaser.Geom.Rectangle(249, 82, 64, 78), Phaser.Geom.Rectangle.Contains).setScrollFactor(0), // main
@@ -150,7 +150,8 @@ class uiInventory extends uiManagerBase
             scrollZone: scrollZone,
             scrollBar: scrollBar,
             scrollUp: scrollUp,
-            scrollDown: scrollDown
+            scrollDown: scrollDown,
+            horseshoeTxt: horseshoeTxt
         };
 
         this.setSelected(ITEM_TYPES.ALL)
@@ -168,6 +169,8 @@ class uiInventory extends uiManagerBase
             this.turnOnEvents()
             this.setSelected(ITEM_TYPES.ALL)
             this.phaserScene.sharedData.inventory.ui.elements.main.setAlpha(1);
+            this.phaserScene.sharedData.inventory.ui.elements.horseshoeTxt.setAlpha(1);
+            this.phaserScene.sharedData.inventory.ui.elements.horseshoeTxt.setText(loadData(DATA_TYPES.horseshoes));
 
             this.itemFilterArray = itemFilterArray
             this.requestingEntity = requestingEntity
@@ -192,6 +195,7 @@ class uiInventory extends uiManagerBase
 
         this.phaserScene.sharedData.inventory.ui.open = false;
         this.phaserScene.sharedData.inventory.ui.elements.main.setAlpha(0);
+        this.phaserScene.sharedData.inventory.ui.elements.horseshoeTxt.setAlpha(0);
 
         this.phaserScene.sharedData.inventory.ui.elements.scrollBar.setAlpha(0);
         this.phaserScene.sharedData.inventory.ui.elements.main.animationState.setAnimation(8, `scroll/hide`, false)
