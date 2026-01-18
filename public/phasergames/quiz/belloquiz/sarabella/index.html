@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title data-il8n="game_belloquiz">Bello's Quiz</title>
+        <title data-il8n="game_belloquiz">SaraBella's Quiz</title>
         <link rel="icon" href="/images/favicons/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
@@ -16,19 +16,12 @@
 
     <script src="/language.js"></script>
 
-    <body style="text-align: center;"  onload="loadLanguagePref(); setupUserDropdown(); updateHighscore('BelloQuiz')"></body>>
+    <body style="text-align: center;"  onload="loadLanguagePref(); setupUserDropdown(); updateHighscore('SaraBellaQuiz')"></body>>
         <script src="/header.js"></script>
-
-        <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <p data-il8n="belloquiz_warning">
-              Due to the lack of references, this recreation may not be a 100% accurate.
-            </p>
-          </div> 
 
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
-                let currentGameID = "BelloQuiz";
+                let currentGameID = "SaraBellaQuiz";
 
                 // Gets lang file
                 loadLanguagePref(false); 
@@ -77,7 +70,7 @@
         <div id="footer" class="footer">
           <script src="/footer.js"></script>
           <script>
-            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Bello%27s_Quiz', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/phasergames/quiz/belloquiz'});
+            generateFooter({githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/phasergames/quiz/belloquiz'});
           </script>
         </div>
 
