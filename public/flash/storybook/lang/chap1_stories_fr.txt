@@ -8,8 +8,7 @@
 <p>De tout les chevaux du nord du septentrion, les chevaux terrestres sont les plus amicaux envers les humains. Nombre d'entre eux aiment vivre dans des écuries auprès d'eux. Certains parmi les plus sauvages préfèrent dormir à la belle étoile ou partager une caverne avec leur troupeau.</p></html>
 
 &air_story=<html><b>THE AIR HORSES</b>
-<p>Il existe plus de 30 race différentes de <b>chevaux volants</b>, et la plupart vivent au nord du septentrion. Le climat y est
-idéal : beaucoup de soleil, des vents doux et une température agréable.</p>
+<p>Il existe plus de 30 race différentes de <b>chevaux volants</b>, et la plupart vivent au nord du septentrion. Le climat y est idéal : beaucoup de soleil, des vents doux et une température agréable.</p>
 <p>Ceux qui s'en viennent du nord du septentrion sont assurés de croisé des nuées de chevaux volants. Certains chevaux sauvages cherchent les arbres imenses pour faire leur nid à l'aide de branches et de feuilles. D'autres nichent dans les crevasses des hautes falaises qui bordent l'océan. Les plus raffinés comme les pur sang volants, préfèrent vivre dans des maisons en bois. Leurs foyers se balancent aux branches des arbres ou reposent sur des mâts en bois qui peuvent atteindre plus de 15 mètres de haut !</p></html>
 
 &water_story=<html><b>THE WATER HORSES</b>
