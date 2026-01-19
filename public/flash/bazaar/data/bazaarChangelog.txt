@@ -1,0 +1,3 @@
+19/01/2026:
+    - Link to localized files:
+        "bazaarXmlReader.load("./data/bs_bazaar_" + _global.locale + ".xml");" replace "bazaarXmlReader.load("./data/bs_bazaar/en.xml");" in frame4 DoAction
