@@ -1,3 +1,25 @@
 19/01/2026:
     - Link to localized files:
         "bazaarXmlReader.load("./data/bs_bazaar_" + _global.locale + ".xml");" replace "bazaarXmlReader.load("./data/bs_bazaar/en.xml");" in frame4 DoAction
+    - Start trying to override WSDL:
+        - Replace "BellaSaraConfiguration.instance.addEventListener("configurationProgress",mx.utils.Delegate.create(this,onConfigurationProgress));
+BellaSaraConfiguration.instance.addEventListener("configurationComplete",mx.utils.Delegate.create(this,onConfigurationComplete));" in frame4 DoAction by "onConfigurationComplete();"
+        - Remove the inside of all the functions in BellaSaraWorldWebServiceConnector.as
+        - Replace the content of getCategories(callback) in BellaSaraWorldDataCache.as to be:
+            function getCategories(callback)
+            {
+                function gotCategories(o)
+                {
+                    var _loc1_;
+                    _loc1_ = objRef._categoriesSampleXml;
+                    objRef._categories = objRef.fromCategoryXml(_loc1_);
+                    callback(objRef._categories);
+                }
+                if(this._categories != undefined)
+                {
+                    callback(this._categories);
+                    return undefined;
+                }
+                this.setTimeOut(gotCategories,1000);
+                var objRef = this;
+            }
