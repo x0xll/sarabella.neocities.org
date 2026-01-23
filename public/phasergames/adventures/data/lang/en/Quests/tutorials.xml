@@ -1,6 +1,6 @@
 <adventures id="ADS-0000000932" description="Tutorials">
   <adventure id="ADV-0000001159">
-    <description>Nourrir et brosser les chevaux</description>
+    <description>Feeding and Brushing Horses</description>
     <quest id="QUE-0000003329" visible="False">
       <description unusedLocId="LOC-0000008675">Talk to Bella</description>
       <line description="Complete">
@@ -15,10 +15,10 @@
           <object type="questData.LogAdventureBeginAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Beaucoup de chevaux aiment manger autre chose que du foin. Si tu nous donne notre nourriture préférée, tu obtiendras une carte cheval à collectionner et quelques fers à cheval.</text>
+            <text>Many horses love to eat more than just hay. If you give us our favorite food, you’ll get a  collectible horse card and a little horseshoe bonus too.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Ma nourriture favorite, ce sont les gousses de vanille. Tiens, en voici une que tu peux me donner à manger dès à présent. </text>
+            <text>My favorite food is vanilla bean. Let me give you one so you can try feeding me one now. </text>
           </object>
           <object type="questData.AddMultipleInventoryAction">
             <itemId>P043ProduceTemplate</itemId>
@@ -32,7 +32,7 @@
       </line>
     </quest>
     <quest id="QUE-0000003331" targetTemplate="H001Template">
-      <description>Donner la gousse de vanille à Bella</description>
+      <description>Give Bella the vanilla bean</description>
       <line description="Complete">
         <trigger>
           <object type="questData.GiveItemTrigger">
@@ -44,11 +44,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>J'adore la vanille, c'est si bon ! Parle à tes chevaux pour découvrir s'ils ont une nourriture favorite. Donne-la-leur pour collectionner leurs cartes !</text>
+            <text>Thanks for the vanilla bean. It tasted wonderful. Talk to horses you meet to find out if they have a favorite food. Feed them their favorite food to collect their horse card!</text>
             <identifier>H001</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>Nous autres les chevaux, nous adorons être brossés, pour garder un pelage brillant. Essaie de me brosser dès maintenant.</text>
+            <text>We horses also love to be brushed. It keeps our coats shiny. Try brushing me now.</text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000003332</questId>
@@ -66,13 +66,13 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Ma nourriture favorite, ce sont les gousses de vanille. Essaie de m'en donner pour gagner une carte à collectionner et une petite récompense en fers à cheval.</text>
+            <text>My favorite food is vanilla beans. Give me one to get a collectable card and a small horseshoe bonus.</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000003332" targetTemplate="H001Template">
-      <description>Brosse Bella</description>
+      <description>Brush Bella</description>
       <line description="Complete">
         <trigger>
           <object type="questData.ContextItemTrigger">
@@ -85,11 +85,11 @@
           <object type="questData.LogAdventureEndAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Merci de m'avoir brossée. As-tu vu l'émoticône au-dessus de ma tête ? C'est comme ça que je te montre ce que je ressens. </text>
+            <text>Thank you for brushing me. Did you see the smiley face above my head? That’s how I can show you how I’m feeling. </text>
             <identifier>H001</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>Tu peux rendre les chevaux heureux en les brossant. Fais plaisir à tes nouveaux amis en les brossant.</text>
+            <text>You can make horses happy by brushing them. Brush your new friends to make them happy.</text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000001639</questId>
@@ -107,14 +107,14 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>S'il te plaît, brosse-moi.</text>
+            <text>Brush me please.</text>
           </object>
         </actions>
       </line>
     </quest>
   </adventure>
   <adventure id="ADV-0000001327">
-    <description>Chez Hannah - A la Brosse et la Tresse</description>
+    <description>Hannah’s Brush -n- Braid</description>
     <quest id="QUE-0000004181" visible="False">
       <description unusedLocId="LOC-0000012460">[Silent] Stop Near Hannah</description>
       <line description="Enter Bagatella Row">
@@ -126,7 +126,7 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>La boutique Chez Hannah - A la Brosse et la Tresse est ouverte ! Tu la trouveras à l'est de l'allée de Bagatella.</text>
+            <text>Hannah’s Brush -n- Braid shop is open! You can find it East of Bagatella Row.</text>
             <identifier>C005</identifier>
           </object>
         </actions>
@@ -144,18 +144,18 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Bienvenue ! Je suis Hannah, et je dirige la boutique A la Brosse et la Tresse. J'ai là de merveilleux vêtements que tu peux acheter et porter. </text>
+            <text>Welcome! I’m Hannah, and I run the Brush -n- Braid shop. I have some wonderful clothes for you to buy and wear. </text>
             <identifier>C018</identifier>
           </object>
           <object type="questData.DialogueImageAction">
-            <text>Ceci est la bulle &lt;b&gt;Boutique&lt;/b&gt;. Clique dessus pour voir les vêtements et accessoires que j'ai à vendre.</text>
+            <text>This is the &lt;b&gt;Shop&lt;/b&gt;bubble. Click on it to see the clothes and accessories that you can buy.</text>
             <identifier>C018</identifier>
             <imageFileName>Flash/Adventures/Art/Dialogue/Context_Shop.png</imageFileName>
             <hspace>0</hspace>
             <vspace>0</vspace>
           </object>
           <object type="questData.DialogueAction">
-            <text>Aujourd'hui, c'est l'ouverture et je donne à tous mes clients 50 fers à cheval pour acheter ce qu'ils veulent. Bons achats !</text>
+            <text>Today is the opening, and I’m giving all of my customers 50 horseshoes to buy what they want. Happy shopping!</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>50</count>
@@ -166,7 +166,7 @@
     </quest>
   </adventure>
   <adventure id="ADV-0000001330">
-    <description>Teindre les vêtements</description>
+    <description>Get clothes</description>
     <quest id="QUE-0000004185" visible="False">
       <description unusedLocId="LOC-0000012471">[Silent] Application launch</description>
       <line description="Complete">
@@ -178,15 +178,15 @@
           <object type="questData.LogAdventureBeginAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Quelle belle tenue ! Reviens chez Hannah - A la Brosse et la Couette, dans l'allée de Bagatella, pour acheter d'autres vêtements. </text>
+            <text>What a great outfit! Visit Hannah’s Brush -n- Braid shop in Bagatella Row to buy more clothes. </text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>Sais-tu que tu peux teindre tes vêtements pour en changer la couleur ? Il te suffit de faire pousser des plantes et de les donner à une Machine à Teinture. Essayons de faire de la teinture ensemble. </text>
+            <text>Did you know you can also dye your clothes to change their color? All you need to do is grow plants and give them to a Dye Machine. Let’s try making some dye now. </text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>Voici une graine de winterberry (baie d'hiver) à planter. Rapporte-moi une winterberry quand elle aura poussé et je te montrerai comment utiliser la Machine à Teinture. </text>
+            <text>Here’s a winterberry seed to grow. Collect a winterberry from it when it’s done growing. When you’re done, I’ll show you how to use the Dye Machine. </text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.AddMultipleInventoryAction">
@@ -201,7 +201,7 @@
       </line>
     </quest>
     <quest id="QUE-0000004186" targetTemplate="DirtTemplate">
-      <description>Fais pousser une winterberry</description>
+      <description>Grow a winterberry</description>
       <line description="Complete">
         <trigger>
           <object type="questData.ActionTrigger">
@@ -216,11 +216,11 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Super ! Maintenant, tu as une winterberry. Voici une Machine à Teinture. Tu peux la garder dans ton sac d'inventaire, mais pour l'utiliser, il faut la sortir et la poser par terre.</text>
+            <text>Great! Now you have a winterberry. Hannah has a Dye Machine near her shop, but here’s one you can keep in your Inventory Bag. To use it, you’ll need to take it out and put it on the ground.</text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.DialogueAction">
-            <text>Sors ta Machine à Teinture et je te montrerai comment transformer ta winterberry en teinture !</text>
+            <text>Take your Dye Machine out now and I’ll show you how to turn your winterberry into dye!</text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.AddMultipleInventoryAction">
@@ -235,7 +235,7 @@
       </line>
     </quest>
     <quest id="QUE-0000004188">
-      <description>Place la Machine à Teinture dans le Monde</description>
+      <description>Place the Dye Machine in the world</description>
       <line description="Complete">
         <trigger>
           <object type="questData.ActionTrigger">
@@ -250,7 +250,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>C'est l'endroit idéal pour placer une Machine à Teinture. Maintenant, clique sur la Machine à Teinture et choisis la bulle &lt;b&gt;Donner&lt;/b&gt; pour lui donner la winterberry que tu viens de cueillir et voir quelle merveilleuse teinture tu obtiendras.</text>
+            <text>That’s a great place to put a Dye Machine. Now, click on the Dye Machine and choose the  &lt;b&gt;Give&lt;/b&gt; bubble to give it the winterberry you collected and see what wonderful dye you get.</text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.AddQuestAction">
@@ -261,7 +261,7 @@
       </line>
     </quest>
     <quest id="QUE-0000004187" targetTemplate="T0246aTemplate">
-      <description>Donne la winterberry à la Machine à Teinture</description>
+      <description>Give the Dye Machine a winterberry</description>
       <line description="Complete">
         <trigger>
           <object type="questData.TradeTrigger">
@@ -274,7 +274,7 @@
           <object type="questData.LogAdventureEndAction" />
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Wow ! Tu as une bouteille de teinture Bleu glace. Facile, non ? Essaie de faire pousser différentes plantes pour voir quelle teinture tu obtiendras. Cette Machine à Teinture ne fonctionne qu'avec 16 plantes. Essaie de les découvrir toutes ! </text>
+            <text>Yay! You got an Ice Blue dye bottle. Easy, right? Try growing different plants to see which dye you get. This Dye Machine only works with 16 plants, try to find them all! </text>
             <identifier>C005</identifier>
           </object>
           <object type="questData.RemoveQuestAction" />
