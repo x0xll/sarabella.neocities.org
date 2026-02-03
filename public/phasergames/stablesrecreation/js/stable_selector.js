@@ -4,6 +4,7 @@ const font_name = 'Arial'
 // List of all horses - these should match the folder names for the horses which should appear in the selector
 const horses = [
     'peter',
+    'abenaki',
     'amor',
     'anemone',
     'angel',
@@ -30,6 +31,7 @@ const horses = [
     'ghost',
     'halloween',
     'hercules',
+    'honey',
     'icarus',
     'ivy',
     'jaida',
