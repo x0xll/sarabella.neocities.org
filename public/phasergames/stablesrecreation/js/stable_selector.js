@@ -54,6 +54,7 @@ const horses = [
     'skeleton',
     'sleipnir',
     'socorro',
+    'starfrost',
     'starunna',
     'thunder',
     'uranus',
