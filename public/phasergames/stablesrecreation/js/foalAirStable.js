@@ -321,7 +321,7 @@ class FoalAirStable extends Phaser.Scene
 
 
         // Berries
-        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setInteractive();
+        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setAngle(0).setInteractive();
             game.stablesManager.addSpriteAnims(berries, 'berries_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'idle'
                 ])

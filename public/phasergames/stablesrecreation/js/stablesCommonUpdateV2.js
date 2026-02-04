@@ -603,7 +603,7 @@ class StablesManager {
             this.#updateGameCursor(game.HAND.hoofpick, 'hold', hoofpickXOffset, hoofpickYOffset)
         }
         else if (game.handCurrent === game.HAND.apple) {
-            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('apple');
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('apple').setAngle(0).setScale(1);
             game.headInteractive.setInteractive()
         }
         else if (game.handCurrent === game.HAND.bottle) {
@@ -625,7 +625,7 @@ class StablesManager {
     #updateGameCursor(sprite, frame, xOffset, yOffset) {
             const game = this.#game
             const pointer = game.input.activePointer;
-            game.cursor.setPosition(pointer.worldX+xOffset, pointer.worldY+yOffset);
+            game.cursor.setPosition(pointer.worldX+xOffset, pointer.worldY+yOffset).setAngle(0).setScale(1);
             if (!game.cursor.visible) {
                 game.cursor.setTexture(sprite).setFrame(frame)
                 game.cursor.setAlpha(0).setVisible(true)
