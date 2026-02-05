@@ -30,6 +30,7 @@ const horses = [
     'ghost',
     'halloween',
     'hercules',
+    'honey',
     'icarus',
     'ivy',
     'jaida',
