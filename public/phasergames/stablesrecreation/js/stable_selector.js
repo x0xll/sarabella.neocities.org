@@ -58,6 +58,7 @@ const horses = [
     'thunder',
     'uranus',
     'vesta',
+    'viking',
     'virstan',
     'wavebreaker',
     'zephan',
