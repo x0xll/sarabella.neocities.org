@@ -27,7 +27,7 @@ const horses = [
     'faxon',
     'fiona',
     'firewalker',
-    //'generosity',
+    'generosity',
     'ghost',
     'halloween',
     'hercules',
