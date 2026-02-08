@@ -40,6 +40,8 @@ const horses = [
     'kendra',
     'king',
     'lillova',
+    'magic1',
+    'magic2',
     'mellonie',
     'mireldis',
     'nike',
