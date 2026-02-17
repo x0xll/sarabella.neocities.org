@@ -136,6 +136,10 @@ class LandStable extends Phaser.Scene
                 game.stablesManager.updateBar(game.cleanlinessBar, 1/3)
                 game.stablesManager.updateBar(game.happinessBar, 1/6 + 0.05)
             }
+            else if (game.handCurrent == game.HAND.fork)
+            {
+                return; // To prevent a stack overflow if the fork is empty
+            }
             else if ((parseInt(straw1.frame.name.substr(7,2)) + parseInt(straw2.frame.name.substr(7,2)) + parseInt(straw3.frame.name.substr(7,2))) <= 30) {
                 switch (straw) {
                     case straw1:
