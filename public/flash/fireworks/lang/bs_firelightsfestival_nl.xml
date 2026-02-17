@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bs_firelightsfestival timerJump="false">
+	<!-- ======================================================================================================================================================= -->
+	<intro>
+		<text _x="-160" _y="-130" _width="335" selectable="0"><![CDATA[<p class="intro_1">Welkom bij het</p>]]></text>
+		<text _x="-190" _y="-18" _width="397" selectable="0"><![CDATA[<p class="intro_2">Vuurlicht Festival</p>]]></text>
+		<play_btn>
+			<label _x="30" _y="8" _width="135" selectable="0"><![CDATA[<p class="intro_btn_1">Speel het puzzelspel</p>]]></label>
+		</play_btn>
+	</intro>
+	<!-- ======================================================================================================================================================= -->
+	<help>
+		<instruct>
+			<text _x="0" _y="20" _width="450" selectable="0"><![CDATA[<p class="help_instruct_1">Een spannend spel dat eindigt met &#13;JOUW indrukwekkende vuurwerkshow!</p>]]></text>
+			<text _x="25" _y="75" _width="400" selectable="0"><![CDATA[<p class="help_instruct_1">Spelregels:&#13;Klik op de molentjes om het vuurwerk bloot te leggen en zo veel mogelijk vuurwerk te verzamelen. Hoe meer je verzamelt, hoe groter je show! Zodra de zon ondergaat is de tijd op en gaat de show van start.&#13;Succes!</p>]]></text>
+		</instruct>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">De teller laat zien hoeveel vuurwerk er in elke buis zit</p>]]></text>
+		</tip>
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Klik op het vuurwerk of gebruik de spatiebalk om ze aan je show toe te voegen</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">De molentjes zullen uit het scherm vliegen</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Je kan alleen vuurwerk verzamelen waar geen andere tegels meer op liggen</p>]]></text>
+		</tip>	
+		<tip>
+			<text _x="14" _y="25" _width="240" selectable="0"><![CDATA[<p class="help_tip_1">Zodra de zon ondergaat begint de vuurwerkshow!</p>]]></text>
+		</tip>
+		<begin_btn>
+			<label _x="-60" _y="-15" _width="125" selectable="0"><![CDATA[<p class="begin_btn_1">Begin</p>]]></label>
+		</begin_btn>		
+	</help>
+	<!-- ======================================================================================================================================================= -->
+	<ui>
+		<pause_btn>
+			<label _x="-45" _y="-12" _width="90" selectable="0"><![CDATA[<p class="pause_btn">Pauzeer</p>]]></label>			
+		</pause_btn>
+	</ui>
+	<!-- ======================================================================================================================================================= -->
+	<pause_screen>
+		<text _x="0" _y="0" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Vuurlicht Festival</p>]]></text>
+		<text _x="0" _y="0" _width="350" selectable="0"><![CDATA[<p class="pause_screen_2">Het spel is gepauzeerd</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Hervat</p>]]></label>
+		</continue_btn>
+	</pause_screen>
+	<!-- ======================================================================================================================================================= -->
+	<end_screen>
+		<text _x="0" _y="10" _width="550" selectable="0"><![CDATA[<p class="pause_screen_1">Vuurlicht Festival</p>]]></text>
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_1">Het is gelukt!</p>]]></text>		
+		<text _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="end_screen_2">Jouw Score</p>]]></text>
+		<text _x="20" _y="0" _width="400" selectable="0"><![CDATA[<p class="end_screen_3">Goed gedaan!&#13;Klik op de knop hieronder om je show te bekijken.&#13;Veel plezier!</p>]]></text>
+		<continue_btn>
+			<label _x="0" _y="0" _width="150" selectable="0"><![CDATA[<p class="continue_btn_1">Verdergaan</p>]]></label>
+		</continue_btn>		
+	</end_screen>
+	<!-- ======================================================================================================================================================= -->
+</bs_firelightsfestival>
