@@ -11,7 +11,7 @@
     },
     "Z003": {
         "C020Template": [48, 0, "sw"],
-        "H003Template": [30, 36, "se"]
+        "H003Template": [28, 35, "se"]
     },
     "Z007": {
         "H001Template": [22, 38, "se"]
