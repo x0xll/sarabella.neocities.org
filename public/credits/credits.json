@@ -18,10 +18,18 @@
         ]
     },
     {
+        "title" : "English Translators",
+        "people" :[
+        {
+            "name": "shadowspark04"
+        }
+        ]
+    },
+    {
         "title" : "Japanese Translators",
         "people" :[
         {
-            "name": "bellasaraarchivist"
+            "name": "forestsandtea"
         }
         ]
     },
