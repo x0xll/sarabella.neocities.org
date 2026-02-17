@@ -681,6 +681,13 @@ class TemplateEntity extends Entity {
                     template: context.templateID
                 }
                 context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
+                
+                const harvestTriggerInfo = {
+                    type: "ActionTrigger",
+                    actionClass: "HarvestProduceAction",
+                    template: context.templateID
+                }
+                context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, harvestTriggerInfo)
             } else {
                 console.log("Plant not correct stage")
             }
@@ -714,6 +721,14 @@ class TemplateEntity extends Entity {
                     template: context.templateID
                 }
                 context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, triggerInfo)
+
+                const harvestTriggerInfo = {
+                    type: "ActionTrigger",
+                    actionClass: "HarvestProduceAction",
+                    template: context.templateID
+                }
+                context.zoneScene.sharedData.quest.manager.tryTriggerQuest(context.zoneScene, harvestTriggerInfo)
+                
                 console.log("harvest", takeItem)
             } else {
                 console.log("Plant not correct stage")

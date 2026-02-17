@@ -832,7 +832,7 @@ class QuestManager {
         "MonologueAction": this.#monologueAction,
         "AddZoneItemAnywhereAction": this.#addZoneItemAnywhereAction,
         "RemoveZoneItemAnywhereAction": this.#removeZoneItemAnywhereAction,
-        "TryAddZoneItemToAction": this.#missingAction,
+        "TryAddZoneItemToAction": this.#tryAddZoneItemToAction,
         "AddHorseshoesAction": this.#addHorseshoesAction,
         "AddMultipleInventoryAction": this.#addMultipleInventoryAction,
         "RemoveMultipleInventoryAction": this.#removeMultipleInventoryAction,
@@ -1017,6 +1017,14 @@ class QuestManager {
                     delete entitiesList[key]
                 }
             }
+        }
+    }
+
+    async #tryAddZoneItemToAction (phaserScene, questID, lineIndex, action) {
+        if (action.zone[0] === phaserScene.sharedData.global.currentZone) {
+            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], true, action.zone[0], action.instanceIdentifier[0])
+        } else {
+            phaserScene.spawnEntity(action.template[0], action.x[0], action.y[0], false, action.zone[0], action.instanceIdentifier[0])
         }
     }
 
