@@ -563,13 +563,13 @@ class StablesManager {
 
         // Display held items under cursor
         if (game.handCurrent === game.HAND.shovel) {
-            game.cursor.setPosition(pointer.worldX+shovelXOffset, pointer.worldY+shovelYOffset);
+            game.cursor.setPosition(pointer.worldX+shovelXOffset, pointer.worldY+shovelYOffset).setAngle(0).setScale(1);;
             if (!game.cursor.visible) {
                 game.cursor.setVisible(true).play('shovel_pickup');
             }
         }
         else if (game.handCurrent === game.HAND.fork) {
-            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset)
+            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset).setAngle(0).setScale(1);
             if (!game.cursor.visible) {
                 game.cursor.setVisible(true).play('fork_pickup');
             }
@@ -578,13 +578,13 @@ class StablesManager {
             }
         }
         else if (game.handCurrent === game.HAND.forkFilled) {
-            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset)
+            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset).setAngle(0).setScale(1);
             if (game.cursor.anims.getName() === 'fork_pickup' || game.cursor.anims.getName() === 'fork_place') {
                 game.cursor.play('fork_fill')
             }
         }
         else if (game.handCurrent === game.HAND.grainScoop) {
-            game.cursor.setPosition(pointer.worldX, pointer.worldY)
+            game.cursor.setPosition(pointer.worldX, pointer.worldY).setAngle(0).setScale(1);
             if (!game.cursor.visible) {
                 game.cursor.setAlpha(0).setVisible(true).setTexture('grain_scoop')
                 game.time.delayedCall(630, function () {game.cursor.setAlpha(.5)});

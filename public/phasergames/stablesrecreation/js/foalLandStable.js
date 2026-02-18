@@ -29,12 +29,12 @@ class FoalLandStable extends Phaser.Scene
         game.load.atlas('straw3', './images/landFoalStable/straw3.png', './images/landFoalStable/straw3.json');
         game.load.atlas('hay_loft', './images/landStable/hay_loft.png', './images/landStable/hay_loft.json');
 
-        game.load.atlas('trough', './images/landStable/water.png', './images/landStable/water.json');
-        game.load.atlas('trough_mask', './images/landStable/water_mask.png', './images/landStable/water_mask.json');
+        game.load.atlas('trough', './images/landFoalStable/water.png', './images/landFoalStable/water.json');
+        game.load.atlas('trough_mask', './images/landFoalStable/water_mask.png', './images/landFoalStable/water_mask.json');
         game.load.atlas('appleBin', './images/landStable/apples.png','./images/landStable/apples.json');
         game.load.image('apple', './images/landStable/apple.png');
         game.load.atlas('bottleBin', './images/landFoalStable/bottleBin.png','./images/landFoalStable/bottleBin.json');
-        game.load.image('bottle', './images/landFoalStable/bottle.png');
+        game.load.image('bottle', './images/airFoalStable/bottleHeld.png');
         
         game.load.atlas('brush', './images/landFoalStable/brush.png', './images/landFoalStable/brush.json');
         game.load.atlas('brush_small', './images/landFoalStable/brush_small.png', './images/landFoalStable/brush_small.json');
@@ -58,6 +58,9 @@ class FoalLandStable extends Phaser.Scene
         game.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
         game.load.image('stat_box', './images/StatBox.png');
         game.load.image('goworld_box', './images/landStable/ToWorldBox.png');
+
+
+        game.load.image('ref', './images/landFoalStable/stable-ref2.png');
 
         game.stablesManager.preloadAudio({
             'luckSound': `./sounds/luck_sound.mp3`,
@@ -148,7 +151,7 @@ class FoalLandStable extends Phaser.Scene
 
 
         // Hay loft
-        const hayLoft = game.add.sprite(350, 56, 'hay_loft', 'idle').setInteractive().setScale(.88);
+        const hayLoft = game.add.sprite(255, 60, 'hay_loft', 'idle').setInteractive().setScale(.88);
             game.stablesManager.addSpriteAnims(hayLoft, 'get_hay', [
                     'idle', 'idle', 'idle', 'idle', 'idle', 'idle', 'idle', 'idle',
                     'shuffle0000', 'shuffle0001', 'shuffle0000',
@@ -164,11 +167,9 @@ class FoalLandStable extends Phaser.Scene
 
 
         // Water Trough
-        game.trough = game.add.sprite(153, 455, 'trough', 'idle').setInteractive({ pixelPerfect: true });
+        game.trough = game.add.sprite(193, 415, 'trough', 'idle').setInteractive({ pixelPerfect: true }).setScale(1,1.1);
             game.stablesManager.addSpriteAnims(game.trough, 'fill_water', [
-                    'water0011', 'water0011', 'water0011',
-                    'water0014', 'water0014',
-                    'water0016', 'water0016',
+                    'water0011', 'water0011', 'water0011', 'water0011', 'water0011', 'water0011', 'water0011',
                     'water0018', 'water0019', 'water0020', 'water0021', 'water0022', 'water0023', 'water0024', 'water0025', 'water0025',
                     'water0027', 'water0028', 'water0029', 'water0030', 'water0031', 'water0032', 'water0033', 'water0034', 'water0035',
                     'water0036', 'water0037', 'water0038', 'water0039', 'water0040', 'water0041', 'water0042', 'water0043', 'water0044',
@@ -215,26 +216,11 @@ class FoalLandStable extends Phaser.Scene
 
 
         // Inspirational message frame
-        const frame = game.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
-        game.add.image(517, 126, 'horse_image').setScale(.32);
-        const frameInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(478, 65, 75, 110), Phaser.Geom.Rectangle.Contains);
-            frameInteractive.on('pointerover', function (pointer) {
-                if (game.canPlayInspiration) {
-                    frame.setFrame('hover');
-                    game.inspirationHover.play()
-                }
-            });
-            frameInteractive.on('pointerout', function (pointer) { frame.setFrame('idle') });
-            frameInteractive.on('pointerdown', function (pointer) { 
-                if (game.canPlayInspiration) {
-                    game.playInspiration = true 
-                    game.inspirationSound.play()
-                }
-            })
+        game.stablesManager.createFoalInspiration(590, 65, .35)
 
 
         // Horse
-        game.stablesManager.createHorse(418, 295, 90, .8)
+        game.stablesManager.createHorse(440, 345, 90, .75)
 
 
         // Pitchfork
@@ -358,7 +344,7 @@ class FoalLandStable extends Phaser.Scene
             game.stablesManager.addSpriteAnims(brushSmall, 'brush_use_small', [
                     'hold',
                     'brush0000', 'brush0001', 'brush0002', 'brush0003', 'brush0004', 'brush0005', 'brush0006', 'brush0007', 'brush0008', 'brush0009', 'brush0010',
-                    'hold'
+                    'brush0011', 'hold'
                 ])
             game.stablesManager.addSpriteAnims(brushSmall, 'brush_place_small', [
                     'place0000', 'place0001', 'place0002', 'place0003', 'place0004', 'place0005',
@@ -427,42 +413,30 @@ class FoalLandStable extends Phaser.Scene
 
 
         // Apple Bin
-        const appleBin = game.add.sprite(680, 505, 'appleBin', 'idle').setInteractive();
+        const appleBin = game.add.sprite(685, 505, 'appleBin', 'idle').setInteractive();
             game.stablesManager.addSpriteAnims(appleBin, 'takeApple', ['idle'])
             appleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (appleBin, game.hover1) });
             appleBin.on('pointerout', function (pointer) { appleBin.setFrame('idle') });
             appleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(appleBin, game.HAND.apple, 'takeApple', 'takeApple') }); 
         
         // Bottle Bin
-        const bottleBin = game.add.sprite(820, 440, 'bottleBin', 'idle').setInteractive();
+        const bottleBin = game.add.sprite(810, 428, 'bottleBin', 'idle').setInteractive();
             game.stablesManager.addSpriteAnims(bottleBin, 'takeBottle', ['empty'])
             bottleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (bottleBin, game.hover1) });
             bottleBin.on('pointerout', function (pointer) { bottleBin.setFrame('idle') });
             bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
 
-        game.troughMask = game.add.sprite(153, 455, 'trough_mask', 'water0000').setVisible(false);
+        game.troughMask = game.add.sprite(194, 415, 'trough_mask', 'trough_mask').setScale(1,1.1).setVisible(false);
             game.stablesManager.addSpriteAnims(game.troughMask, 'mask_fill_water', [
-                    'water0011', 'water0011', 'water0011',
-                    'water0014', 'water0014',
-                    'water0016', 'water0016',
-                    'water0018', 'water0019', 'water0020', 'water0021', 'water0022', 'water0023', 'water0024', 'water0025', 'water0025',
-                    'water0027', 'water0028', 'water0029', 'water0030', 'water0031', 'water0032', 'water0033', 'water0034', 'water0035',
-                    'water0036', 'water0037', 'water0038', 'water0039', 'water0040', 'water0041', 'water0042', 'water0043', 'water0044',
-                    'water0045', 'water0046', 'water0047', 'water0048', 'water0049', 'water0050', 'water0051', 'water0052', 'water0053',
-                    'water0054', 'water0055', 'water0056', 'water0057', 'water0058', 'water0059', 'water0060'
+                    'trough_mask'
                 ])
             game.stablesManager.addSpriteAnims(game.troughMask, 'mask_water_trough_drink', [
-                    'water0060', 'water0060', 'water0060',
-                    'water0060', 'water0060', 'water0060', 'water0060', 'water0060', 'water0060', 'water0060', 'water0060', 'water0060', 'water0060',
-                    'water0092', 'water0093', 'water0094', 'water0095', 'water0096', 'water0097', 'water0098', 'water0099', 'water0100',
-                    'water0101', 'water0102', 'water0103', 'water0104', 'water0105', 'water0106', 'water0107', 'water0108', 'water0109', 'water0110',
-                    'water0111', 'water0112', 'water0113', 'water0114', 'water0115', 'water0116', 'water0117', 'water0118', 'water0119', 'water0120',
-                    'water0121', 'water0121', 'water0122', 'water0123', 'water0124', 'water0125', 'water0126'
+                    'trough_mask'
                 ])
 
 
         // Lucky Horseshoe
-        const luck = game.add.sprite(453, 268, 'luck', 'idle').setInteractive({ pixelPerfect: true });
+        const luck = game.add.sprite(110, 90, 'luck', 'idle').setInteractive({ pixelPerfect: true }).setOrigin(0).setScale(.5);
             game.stablesManager.addSpriteAnims(luck, 'good_luck', [
                     'idle',
                     'good_luck0000', 'good_luck0001', 'good_luck0002', 'good_luck0003', 'good_luck0004', 'good_luck0005', 'good_luck0006', 'good_luck0007', 'good_luck0008', 'good_luck0009',
@@ -508,6 +482,9 @@ class FoalLandStable extends Phaser.Scene
             [670, 107, localeData.txtHelpBrush, "Small"],
             [507, 23, localeData.txtHelpLuck, "OneLine"]
         ])
+
+
+        // game.add.image(444, 260, 'ref').setAlpha(.25)
     }
 
     update () {
