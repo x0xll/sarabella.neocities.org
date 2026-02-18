@@ -173,14 +173,14 @@ class StablesManager {
         this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
     }
 
-    createFoalInspiration(posX, posY, scale) {
+    createFoalInspiration(posX, posY, scale, magnifierX = 52, magnifierY = 96) {
         const game = this.#game
         game.familyTreeOpen = false
         for (let index = 0; index < family.ids.length; index++) {
             let type = family.data[index].type
             family.data[index].quote = quoteData[family.data[index].type][family.ids[index] + "Quote"]
         }
-        this.#placeFamilyTreeUI(posX, posY, scale)
+        this.#placeFamilyTreeUI(posX, posY, scale, magnifierX, magnifierY)
 
         this.#game.parentImage = this.#game.add.image(0, 0, family.ids[0])
         this.#addQuotesInteraction(this.#game.parentImage, family.data[0].quote)
@@ -198,7 +198,7 @@ class StablesManager {
         
     }
 
-    #placeFamilyTreeUI(posX, posY, scale) {
+    #placeFamilyTreeUI(posX, posY, scale, magnifierX, magnifierY) {
         const game = this.#game
         const helper = this
         game.familyTree = game.add.image(444, 261, 'family_tree').setScale(1.5).setAlpha(0);
@@ -213,7 +213,7 @@ class StablesManager {
                 game.familyTreeOpen = false
             })
 
-        game.magnifier = game.add.image(52, 96, 'magnifier').setScale(.15).setInteractive();
+        game.magnifier = game.add.image(magnifierX, magnifierY, 'magnifier').setScale(.15).setInteractive();
             game.magnifier.on('pointerdown', function (pointer) { 
                 game.familyTree.setAlpha(1)
                 helper.placeFoalImages(460, 200, .45)

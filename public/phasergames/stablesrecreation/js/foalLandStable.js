@@ -51,8 +51,10 @@ class FoalLandStable extends Phaser.Scene
         game.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
         game.load.atlas('luck', './images/landFoalStable/luck.png', './images/landFoalStable/luck.json');
-        game.load.atlas('frame', './images/landStable/frame.png', './images/landStable/frame.json');
         game.load.image('inspiration', './images/landStable/inspiration.png');
+        game.load.atlas('frame', './images/airStable/frame.png', './images/airStable/frame.json');
+        game.load.image('family_tree', './images/airFoalStable/family_tree_full.png');
+        game.load.image('magnifier', './images/airFoalStable/magnifier.png');
 
         game.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
         game.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
@@ -216,7 +218,7 @@ class FoalLandStable extends Phaser.Scene
 
 
         // Inspirational message frame
-        game.stablesManager.createFoalInspiration(590, 65, .35)
+        game.stablesManager.createFoalInspiration(580, 65, .35, 690, 185)
 
 
         // Horse
@@ -374,16 +376,8 @@ class FoalLandStable extends Phaser.Scene
             hoofpickInteractive.on('pointerover', function (pointer) { game.stablesManager.pointerover (hoofpick, game.hover1) });
             hoofpickInteractive.on('pointerout', function (pointer) { game.stablesManager.pointerout (hoofpick)});
         // Hoof highlight circles
-        let hooves1
-        let hooves2
-        if (horseData.height === 'short') {
-            // TODO: Still need to postition these
-            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-        } else {
-            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-        }
+        let hooves1 = game.add.sprite(366, 450, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+        let hooves2 = game.add.sprite(526, 450, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
         game.additionalCleanCondition = () => {return hooves1.frame.name === 2 && hooves2.frame.name === 2}
             /**
              * Updates the hoofpick highlight circle to show the next stage, plays the hoofpick use animation
@@ -466,7 +460,6 @@ class FoalLandStable extends Phaser.Scene
 
         // ---------- Stable foreground and UI ---------- //
         game.stablesManager.createStatBox(625, 130)
-        game.stablesManager.createBeSaWorldLink(625, 130, .8, .7, "Main")
         game.stablesManager.createUI([
             [115, 85, localeData.txtHelpTrophyRoom, "Small"],
             [103, 300, localeData.txtHelpWater, "Small"],
@@ -482,6 +475,7 @@ class FoalLandStable extends Phaser.Scene
             [670, 107, localeData.txtHelpBrush, "Small"],
             [507, 23, localeData.txtHelpLuck, "OneLine"]
         ])
+        game.stablesManager.createBeSaWorldLink(100, 195, .8, .7, "Main")
 
 
         // game.add.image(444, 260, 'ref').setAlpha(.25)
