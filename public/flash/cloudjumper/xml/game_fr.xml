@@ -1,46 +1,43 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version=”1.0”?>
 <root>
 
 	<!-- button text goes here -->
 	<help_btn>Aide</help_btn>
 	<pause_btn>Pause</pause_btn>
-	<start_btn>Commencer la partie</start_btn>
+	<start_btn> Commencer la partie</start_btn>
 
-	<turbobtn>Joue en mode Turbo</turbobtn>
+	<turbobtn>Jouer en mode Turbo</turbobtn>
 
-	<pauseheading>Ton Jeu est en Pause</pauseheading>
-	<pause2>Ferme cette fenêtre pour continuer à jouer.</pause2>
+	<pauseheading> Ton jeu est en pause</pauseheading>
+	<pause2>Pour continuer à jouer ferme cette fenêtre.</pause2>
 
-	<how_to_play_btn>Comment jouer</how_to_play_btn>
+	<how_to_plau_btn>Comment Jouer</how_to_play_btn>
 
 	<play_again_btn>Rejouer</play_again_btn>
 
-	<!-- intro text goes here -->
-	<intro>Intro From XML!</intro>
+	<!-- intro text goes here-->
+	<intro> Introduction par XML !</intro>
 
 	<!-- how to play title goes here -->
-	<how_to_play_title>Comment jouer</how_to_play_title>
+	<how_to_play2> Aide Pegasus à récupérer les fleurs spéciales pendant que tu voles      dans le ciel du Royaume. 
 
-	<!-- how to play text goes here -->
-	<how_to_play2>Help Pegasus collect special flowers as you fly across the kingdom sky. 
+	Appuie sur la barre d’espace ou clic gauche de la souris pour la faire voler.
 
-Press the space bar or mouse click to flap her wings.
+	Récupère autant de fleurs que possible avant le coucher du soleil et ton retour au château. 
 
-Collect as many flowers as you can before sundown and arriving at you castle.
-
-Good luck!</how_to_play2>
+Bonne chance !</how_to_play2>
 
 	<!-- win message -->
-	<win>Félicitations</win>
-	
-	<win2>Bien joué ! Veux-tu rejouer et ramasser encore plus de fleurs ?</win2>
-	
+	<win> Félicitations !</win>
+
+	<win2> Bien joué ! Est-ce-que tu veux rejouer et récupérer encore plus de fleurs ?</win2>
+
 	<!-- Non translated texts in original -->
 	<score>Score Actuel</score>
-	<intro_howto>Help Pegasus collect special flowers as you fly across the kingdom sky. Press the space bar or mouse click to flap her wings.Collect as many flowers as you can before sundown and arriving at the castle.</intro_howto>
-	<enterName>Please Enter your Name</enterName>
-	<greatFlying>Great Flying!</greatFlying>
-	<end>Tu es arrivé au bout du voyage.</end>
-	<end2>Il n'y a plus rien à collecter.</end2>
+	<intro_howto> Aide Pegasus à récupérer les fleurs spéciales pendant que tu voles dans le ciel du Royaume. Appuie sur la barre d’espace ou clic gauche de la souris pour la faire voler. Récupère autant de fleurs que possible avant le coucher du soleil et ton retour au château.</intro_howto>
+	<enterName>Ton Nom</enterName>
+	<greatFlying>Bon vol !</greatFlying>
+	<end>Tu es arrivé à la fin de ton voyage</end>
+	<end2>Il n’y a plus de fleurs à récupérer.</end2>
 
 </root>

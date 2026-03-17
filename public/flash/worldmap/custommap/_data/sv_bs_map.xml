@@ -49,21 +49,24 @@
         <item link="/flash/bubblewand/bubblewand.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Magic Bubble Wand</p>]]></label>
         </item>
-				<item link="/flash/cloudjumper/cloudjumper.html?version=1">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Molnhoppning</p>]]></label>	
-				</item>
-				<item link="/flash/dreamrider/dreamrider.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Dream Rider</p>]]></label>	
-				</item>
-				<item link="/flash/jumpinggame/jumpinggame.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Spektakulär Hoppning Spel</p>]]></label>	
-				</item>
-				<item link="/flash/treasureshunt/treasureshunt.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Treasures Jakt</p>]]></label>	
-				</item>
-				<item link="/flash/worldmap/worldmap_new.html">
-					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Ny Karta</p>]]></label>	
-				</item>
+		<item link="/flash/cloudjumper/cloudjumper.html?version=1">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Molnhoppning</p>]]></label>	
+		</item>
+		<item link="/flash/dreamrider/dreamrider.html">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Dream Rider</p>]]></label>	
+		</item>
+		<item link="/flash/jumpinggame/jumpinggame.html">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Spektakulär Hoppning Spel</p>]]></label>	
+		</item>
+		<item link="/flash/treasureshunt/treasureshunt.html">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Treasures Jakt</p>]]></label>	
+		</item>
+		<item link="/flash/wheelofwonders/wheelofwonders.html">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Wheel of Wonders</p>]]></label>	
+		</item>
+		<item link="/flash/worldmap/worldmap_new.html">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Ny Karta</p>]]></label>	
+		</item>
 			</menu>
 
 		</location>		

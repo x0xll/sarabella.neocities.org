@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+	<play>Speel</play>
+	<pause>Pauzeer</pause>
+    <beautyeh>Je hebt een prachtige vuurwerkshow gemaakt.</beautyeh>
+    <greatshow>Geweldige show!</greatshow>
+    <replay>Opnieuw afspelen</replay>
+    <newshow>Nieuwe show</newshow>
+    <quit>Stop</quit>
+
+    <welcome>Welkom bij het</welcome>
+    <gameTitle>Vuurlicht Festival</gameTitle>
+    <playPuzzle>Speel het puzzelspel</playPuzzle>
+    
+    <rulesTime>Zodra de zon ondergaat begint de vuurwerkshow!</rulesTime>
+    <rulesCounter>De teller laat zien hoeveel vuurwerk er in elke buis zit.</rulesCounter>
+    <rulesPinwheels>De molentjes zullen uit het scherm vliegen.</rulesPinwheels>
+    <rulesUncoveredFireworks>Je kan alleen vuurwerk verzamelen waar geen andere tegels meer op liggen.</rulesUncoveredFireworks>
+    <rulesCollectFireworks>Klik op het vuurwerk of gebruik de spatiebalk om ze aan je show toe te voegen.</rulesCollectFireworks>
+
+    <intro>Een spannend spel dat eindigt met JOUW indrukwekkende vuurwerkshow!</intro>
+    <howToPlayTitle>Spelregels:</howToPlayTitle>
+    <howToPlayDesc>Klik op de molentjes om het vuurwerk bloot te leggen en zo veel mogelijk vuurwerk te verzamelen. Hoe meer je verzamelt, hoe groter je show! Zodra de zon ondergaat is de tijd op en gaat de show van start.</howToPlayDesc>
+    <goodLuck>Succes!</goodLuck>
+
+    <begin>Begin</begin>
+
+    <score>Jouw Score</score>
+    <continue>Verdergaan</continue>
+    <won>Het is gelukt!</won>
+
+    <outroGreat>Goed gedaan!</outroGreat>
+    <outroWatchShow>Klik op de knop hieronder om je show te bekijken.</outroWatchShow>
+    <outroEnjoy>Veel plezier!</outroEnjoy>
+</root>
