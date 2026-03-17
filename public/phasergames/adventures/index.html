@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title data-il8n="game_adventures">Bella Sara Adventures</title>
+        <link rel="icon" href="/images/favicons/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+        <meta charset="UTF-8" />
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
+        <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
+        <script src="/ruffle/ruffle.js"></script>
+
+        <!-- TODO: Do we want/need to load all the files here? 
+        --- Cause we may have A LOT of them by the end of the project
+        --- Should search if we can load them based on needs 
+        --- Directly from the other .js files-->
+        <!-- Utils -->
+        <script src="./scripts/common/loaders/loaderUtils.js"></script>
+        <script src="./scripts/common/parsers/parserUtils.js"></script>
+        <script src="./scripts/common/debug.js"></script>
+
+        <!-- UI -->
+        <script src="./scripts/common/ui/uiScene.js"></script>
+        <script src="./scripts/common/ui/uiManagerBase.js"></script>
+        <script src="./scripts/common/ui/uiInventory.js"></script>
+        <script src="./scripts/common/ui/uiInventoryAnimations.js"></script>
+        <script src="./scripts/common/ui/uiHUD.js"></script>
+        <script src="./scripts/common/ui/uiMagicTree.js"></script>
+        <script src="./scripts/common/ui/uiQuest.js"></script>
+        <script src="./scripts/common/ui/uiMinimap.js"></script>
+        <script src="./scripts/common/ui/uiDialogue.js"></script>
+        <script src="./scripts/common/ui/uiSuccess.js"></script>
+
+        <!-- Manager -->
+        <script src="./scripts/common/managers/templateManager.js"></script>
+        <script src="./scripts/common/managers/questManager.js"></script>
+        <script src="./scripts/common/managers/saveManager.js"></script>
+        <script src="./scripts/common/managers/loadingManager.js"></script>
+        <script src="./scripts/common/managers/timeManager.js"></script>
+        <script src="./scripts/common/managers/inventoryManager.js"></script>
+        <script src="./scripts/common/managers/zoneManager.js"></script>
+        <script src="./scripts/common/managers/levelManager.js"></script>
+
+        <!-- World -->
+        <script src="./scripts/common/loadScene.js"></script>
+        <script src="./scripts/common/zoneScene.js"></script>
+
+        <!-- Entities -->
+        <script src="./scripts/common/objects/entities/entity.js"></script>
+        <script src="./scripts/common/objects/entities/templateEntity.js"></script>
+        <script src="./scripts/common/objects/entities/item.js"></script>
+        <script src="./scripts/common/objects/entities/player/player.js"></script>
+        <script src="./scripts/common/objects/entities/player/AStarPathfinder.js"></script>
+        <script src="./scripts/common/objects/entities/player/cursor.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <script src="/save.js"></script>
+    <script src="/language.js"></script>
+
+    <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown();">
+        <script src="/header.js"></script>
+        <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
+            <script type="text/javascript">
+                // Handle constants here? May need to do a file for this, or handle it completely differently
+                const AVAILABLE = [
+                    "fr",
+                    "en"
+                ]
+                loadLanguagePref(false); 
+                let lang = getCurrentLanguageCode()
+                if (AVAILABLE.indexOf(lang) === -1) {
+                    lang = "en"
+                }
+
+                const COMMON_XML_PATH = "./data/common/";
+                const ZONE_XML_PATH = `${COMMON_XML_PATH}Maps/`;
+                const SHOP_XML_PATH = `${COMMON_XML_PATH}Shops/`;
+                const LOCALIZED_XML_PATH = `./data/lang/${lang}/`;
+                const QUEST_XML_PATH = `${LOCALIZED_XML_PATH}Quests/`;
+                const TEMPLATE_XML_PATH = `${LOCALIZED_XML_PATH}Templates/`;
+                const UI_XML_PATH = `${LOCALIZED_XML_PATH}UI/`;
+                const ASSETS_PATH = "./assets/";
+                const ROOT_ASSETS_PATH = `${ASSETS_PATH}extracted/`;
+                const LEVEL_ASSETS_PATH = `${ROOT_ASSETS_PATH}Tilemaps/`;
+                const TILE_ASSETS_PATH = `${ASSETS_PATH}newTiles/`;
+                const SWF_ASSETS_PATH = `${ASSETS_PATH}swf/`;
+                const CUTSCENE_ASSETS_PATH = `${SWF_ASSETS_PATH}cutscenes/`;
+                const VOLUME = .5
+                const debug = new Debug()
+
+                /**
+                 * Generates a random integer between two values
+                 * @param {number} min The minimum number that could be returned
+                 * @param {number} max The maximum number that could be returned
+                 * @returns 
+                 */
+                function randomIntFromInterval(min, max) { // min and max included 
+                    return Math.floor(Math.random() * (max - min + 1) + min)
+                }
+
+                function goToExternalURL(url) {
+                    window.location.href = url;
+                }
+                
+                let config = {
+                    parent: "gameDiv",
+                    type: Phaser.WEBGL,
+                    width: 800,
+                    height: 611,
+                    backgroundColor: '#110c27',
+                    plugins: {
+                        scene: [
+                        { key: "spine.SpinePlugin", plugin: spine.SpinePlugin, mapping: "spine" }
+                        ]
+                    },
+                    physics: {
+                        default: 'arcade',
+                        arcade: {
+                            debug: false
+                        }
+                    },
+                    scene: [
+                        Common_Load,
+                        ZoneBase,
+                        Common_UI
+                    ],
+                    mipmapFilter: "LINEAR_MIPMAP_LINEAR",
+                    antialias: true,
+                    pixelArt: false
+                };
+
+                const game = new Phaser.Game(config);
+        
+            </script>
+        </div>
+        
+        <div id="ruffleSwf" class="swf" dir="ltr" rbidi="on" style="display:none;">
+            <!--Here goes the cutscenes-->
+        </div>
+
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Bella_Sara_Adventures', githubLink: 'https://github.com/Bella-Sara-Archival-Team/sarabella.neocities.org/tree/develop/public/phasergames/adventures'});
+          </script>
+        </div>
+
+        <script src="/flags.js"></script>
+
+        <script src="/flash/common/js/flashutils.js"></script>
+        <script>
+            setupRuffle();
+            const PHASER_DIV = document.getElementById("gameDiv");
+            const RUFFLE_DIV = document.getElementById("ruffleSwf");
+
+            function onFlashFinished()
+            {
+                PHASER_DIV.style.display = "block";
+                RUFFLE_DIV.style.display = "none";
+            }
+
+            function onFlashStarted(filePath, flashvars = '', transparentBg = true)
+            {
+                PHASER_DIV.style.display = "none";
+                RUFFLE_DIV.style.display = "block";
+                loadSWF(filePath, '611', '800', lang, flashvars, transparentBg)
+            }
+        </script>
+<script src="/userManager.js"></script>
+
+    </body>
+</html>

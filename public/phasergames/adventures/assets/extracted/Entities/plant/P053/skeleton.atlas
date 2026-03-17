@@ -1,0 +1,13 @@
+skeleton.png
+size:1650,777
+filter:Linear,Linear
+Empty
+bounds:1583,700,1,1
+P053_Day/P053.1_Day
+bounds:1583,703,72,65
+offsets:376,188,791,1580
+rotate:90
+P053_Day/P053.2_Day
+bounds:2,2,773,1579
+offsets:18,1,791,1580
+rotate:90

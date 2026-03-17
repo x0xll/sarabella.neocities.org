@@ -1,0 +1,79 @@
+<adventures id="ADS-0000001173" description="Furniture Store">
+  <adventure id="ADV-0000001823">
+    <description>Entre dans la Place de la Fontaine (Fountain plaza)</description>
+    <quest id="QUE-0000006281" visible="False">
+      <description unusedLocId="LOC-0000024929">[Silent] Funtiure Shop Intro</description>
+      <line description="Enter Fountain Plaza">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z007</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>As-tu décoré ta nouvelle maisonnette ? Si tu cherches des meubles, visite la NOUVELLE boutique de Gaelic, "Le Bric-à-brac, Meubles et Cadeaux" dans la rue des Artisans. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001822">
+    <description>Le Bric-à-brac de Gaelic, Meubles et Cadeaux</description>
+    <quest id="QUE-0000006279" visible="False">
+      <description unusedLocId="LOC-0000024924">[Silent] Stop Near Gaelic</description>
+      <line description="Enter Artisan Way">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z009</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Le Bric-à-brac de Gaelic, Meubles et Cadeaux est enfin ouvert ! Retrouve cette boutique à l'extrémité ouest de la rue des Artisans. </text>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.StopNearTrigger">
+            <zoneId>Z009</zoneId>
+            <centerX>12</centerX>
+            <centerY>17</centerY>
+            <radius>6</radius>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Bienvenue. Je suis Gaelic et je suis le propriétaire du Bric-à-brac, Meubles et Cadeaux. Nous avons un vaste choix de meubles et de décorations que tu peux acheter pour ta maisonnette. </text>
+            <identifier>C017</identifier>
+          </object>
+          <object type="questData.DialogueImageAction">
+            <text>Voici la bulle &lt;b&gt;Achète&lt;/b&gt;. Clique dessus pour vérifier les vêtements et accessoires disponibles dans ma boutique.</text>
+            <identifier>C017</identifier>
+            <imageFileName>Flash/Adventures/Art/Dialogue/Context_Shop.png</imageFileName>
+            <hspace>0</hspace>
+            <vspace>0</vspace>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Aujourd'hui, c'est l'ouverture et je donne 20 fers à cheval à chaque client pour qu'il achète ce qu'il veut. Fais de bonnes affaires !</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>20</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>furnitureshop.xml</fileName>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

@@ -1,0 +1,260 @@
+<adventures id="ADS-0000000804" description="GP1.01">
+  <adventure id="ADV-0000000855">
+    <description>Le Bovo errant</description>
+    <quest id="QUE-0000001914">
+      <description>Parle à Bella</description>
+      <line description="Bella grant">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'ai besoin de toi. Marta Thomas vient de m'avertir qu'un de ses bovos avait disparu. Il a dû dériver dans les airs depuis les Overgaard Skylands et atterrir sur la terre ferme !</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Tu pourras le ramener chez lui avec une carotte au bout d'un bâton. Tu peux faire pousser des carottes dans un jardin et tu trouveras des branches dans la Forêt de Darkcomb. Tu auras également besoin d'un épi de maïs barbu avec lequel nous ferons une ficelle. Apporte-moi tout ça et je t'aiderai.</text>
+          </object>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001917</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002086</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002087</questId>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002086" visible="False">
+      <description unusedLocId="LOC-0000005087">Add bovo</description>
+      <line description="add bovo">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z012</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>LostBovoTemplate</template>
+            <instanceIdentifier>missingbovo</instanceIdentifier>
+            <zone>Z012</zone>
+            <x>82</x>
+            <y>31</y>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002087" visible="False">
+      <description unusedLocId="LOC-0000005088">Add stick</description>
+      <line description="add stick">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z016</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0034dTemplate</template>
+            <instanceIdentifier>stick</instanceIdentifier>
+            <zone>Z016</zone>
+            <x>23</x>
+            <y>23</y>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001917" targetTemplate="DirtTemplate">
+      <description>Fais pousser une carotte et du maïs barbu et apporte-les à Bella</description>
+      <line description="Bella Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>P008ProduceTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>P028ProduceTemplate</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Beau travail ! À présent, il nous manque juste une branche. Va en chercher une dans la Forêt de Darkcomb.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001915</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002087</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>P008ProduceTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>P028ProduceTemplate</template>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Bella Reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les carottes poussent dans le jardin. Tu devras aussi faire pousser un épi de Maïs Barbu pour en faire une ficelle.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001915" targetTemplate="T0034dTemplate">
+      <description>Trouve des branches et apporte-les à Bella.</description>
+      <line description="Bella complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I079Template</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Bien joué. Maintenant que tu as une carotte, une branche et une ficelle à base de Maïs Barbu, nous allons pouvoir confectionner une sorte de “canne à pêche à Bovo” pour l’attirer jusqu’à chez lui.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>J’ignore où se trouve le bovo, mais c’est probablement le seul à se promener sur la terre ferme. Quand tu l’auras trouvé, utilise la carotte au bout de la branche sur lui et il reviendra flotter dans les Overgaard Skylands. Parle à Marta Thomas quand tu l’auras fait : elle aura peut-être une récompense à te donner.</text>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I079Template</template>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I074Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001916</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Bella reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Tu peux trouver des branches dans la Forêt de Darkcomb.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001916" targetTemplate="LostBovoTemplate" targetZone="Z012">
+      <description>Utilise la carotte au bout de la branche sur le bovo égaré</description>
+      <line description="use COS">
+        <trigger>
+          <object type="questData.GiveItemTrigger">
+            <inventoryTemplate>I074Template</inventoryTemplate>
+            <targetTemplate>LostBovoTemplate</targetTemplate>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.PlayMovieClipAction">
+            <fileName>Flash/Adventures/Art/CutScenes/GP01.swf</fileName>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>LostBovoTemplate</template>
+            <instanceIdentifier>missingbovo</instanceIdentifier>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001918</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Bella reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Quand tu auras trouvé le bovo, utilise la carotte au bout de la branche sur lui et il reviendra flotter dans les Overgaard Skylands. Parle à Marta Thomas quand tu l’auras fait : elle aura peut-être une récompense à te donner.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001918">
+      <description>Parle à Marta Thomas</description>
+      <line description="Marta complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C019</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Oh, Bella m’a dit que tu m’avais aidée à retrouver mon Bovo. Il est revenu en flottant jusque chez lui. Quel soulagement ! Je n’aurais jamais dû le quitter des yeux. Merci.</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>10</count>
+          </object>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.ShowAdventureCompleteAction" />
+        </actions>
+      </line>
+      <line description="Bella reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Quand tu auras trouvé le bovo, utilise la carotte au bout de la branche sur lui et il reviendra flotter dans les Overgaard Skylands. Parle à Marta Thomas quand tu l’auras fait : elle aura peut-être une récompense à te donner.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

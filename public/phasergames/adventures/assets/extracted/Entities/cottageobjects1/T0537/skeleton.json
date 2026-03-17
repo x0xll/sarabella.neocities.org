@@ -1,0 +1,68 @@
+{
+"skeleton": { "hash": "G81N5GmjZ3Q", "spine": "4.2.43", "x": -115, "y": -25.83, "width": 230, "height": 154 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "ne", "bone": "root", "attachment": "ne" },
+	{ "name": "nw", "bone": "root", "attachment": "nw" },
+	{ "name": "sw", "bone": "root", "attachment": "sw" },
+	{ "name": "se", "bone": "root", "attachment": "se" }
+],
+"skins": [
+	{
+		"name": "T0537",
+		"attachments": {
+			"ne": {
+				"ne": { "name": "1/13", "y": 51.17, "scaleX": -1, "width": 230, "height": 154 }
+			},
+			"nw": {
+				"nw": { "name": "1/15", "path": "1/13", "y": 51.17, "width": 230, "height": 154 }
+			},
+			"se": {
+				"se": { "name": "1/1", "y": 51.17, "scaleX": -1, "width": 230, "height": 154 }
+			},
+			"sw": {
+				"sw": { "name": "1/2", "path": "1/1", "y": 51.17, "width": 230, "height": 154 }
+			}
+		}
+	},
+	{
+		"name": "T0537_01",
+		"attachments": {
+			"ne": {
+				"ne": { "name": "2/13", "y": 51.17, "scaleX": -1, "width": 230, "height": 154 }
+			},
+			"nw": {
+				"nw": { "name": "2/13", "y": 51.17, "width": 230, "height": 154 }
+			},
+			"se": {
+				"se": { "name": "2/1", "y": 51.17, "scaleX": -1, "width": 230, "height": 154 }
+			},
+			"sw": {
+				"sw": { "name": "2/1", "y": 51.17, "width": 230, "height": 154 }
+			}
+		}
+	},
+	{
+		"name": "T0537_02",
+		"attachments": {
+			"ne": {
+				"ne": { "name": "3/13", "y": 51.17, "scaleX": -1, "width": 230, "height": 155 }
+			},
+			"nw": {
+				"nw": { "name": "3/13", "y": 51.17, "width": 230, "height": 155 }
+			},
+			"se": {
+				"se": { "name": "3/1", "y": 51.17, "scaleX": -1, "width": 230, "height": 155 }
+			},
+			"sw": {
+				"sw": { "name": "3/1", "y": 51.17, "width": 230, "height": 155 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
