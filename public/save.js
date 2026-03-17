@@ -184,6 +184,7 @@ function loadData(dataType, gameID = "")
             case DATA_TYPES.translatedQuotes: 
             case DATA_TYPES.game: 
             case DATA_TYPES.mapPlayPage: 
+            case DATA_TYPES.accurateTranslations:
             case DATA_TYPES.originalTranslations: {
                 return data[dataType]
             }
@@ -210,7 +211,7 @@ function loadSettings()
     translatedquotes.checked = loadData(DATA_TYPES.translatedQuotes);
     mapplaypage = document.getElementById("mapplaypage");
     mapplaypage.checked = loadData(DATA_TYPES.mapPlayPage);
-    accurateTranslations = document.getElementById("accurateTranslations");
+    accurateTranslations = document.getElementById("accuratetext");
     accurateTranslations.checked = loadData(DATA_TYPES.accurateTranslations);
 }
 
