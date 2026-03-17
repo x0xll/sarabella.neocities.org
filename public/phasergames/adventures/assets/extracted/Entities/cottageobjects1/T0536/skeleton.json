@@ -1,0 +1,51 @@
+{
+"skeleton": { "hash": "eoSHuyFerB8", "spine": "4.2.43", "x": -34, "y": -17.23, "width": 68, "height": 117 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "ne", "bone": "root", "attachment": "ne" },
+	{ "name": "nw", "bone": "root", "attachment": "nw" },
+	{ "name": "sw", "bone": "root", "attachment": "sw" },
+	{ "name": "se", "bone": "root", "attachment": "se" }
+],
+"skins": [
+	{
+		"name": "T0536",
+		"attachments": {
+			"ne": {
+				"ne": { "name": "1/13", "y": 41.27, "scaleX": -1, "width": 66, "height": 113 }
+			},
+			"nw": {
+				"nw": { "name": "1/15", "path": "1/13", "y": 41.27, "width": 66, "height": 113 }
+			},
+			"se": {
+				"se": { "name": "1/1", "y": 41.27, "scaleX": -1, "width": 66, "height": 113 }
+			},
+			"sw": {
+				"sw": { "name": "1/2", "path": "1/1", "y": 41.27, "width": 66, "height": 113 }
+			}
+		}
+	},
+	{
+		"name": "T0536_01",
+		"attachments": {
+			"ne": {
+				"ne": { "name": "2/13", "y": 41.27, "scaleX": -1, "width": 68, "height": 117 }
+			},
+			"nw": {
+				"nw": { "name": "2/13", "y": 41.27, "width": 68, "height": 117 }
+			},
+			"se": {
+				"se": { "name": "2/1", "y": 41.27, "scaleX": -1, "width": 68, "height": 117 }
+			},
+			"sw": {
+				"sw": { "name": "2/1", "y": 41.27, "width": 68, "height": 117 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

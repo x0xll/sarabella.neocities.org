@@ -1,0 +1,69 @@
+{
+"skeleton": {
+	"hash": "kzErEGQvu7Q",
+	"spine": "4.2.43",
+	"x": -165.72,
+	"y": -20,
+	"width": 370,
+	"height": 479.71,
+	"images": "./Main/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "scaleX": 0.5, "scaleY": 0.5 }
+],
+"slots": [
+	{ "name": "Main_night", "bone": "bone", "attachment": "Main" },
+	{ "name": "Main", "bone": "bone" }
+],
+"skins": [
+	{
+		"name": "P024/1",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P024_Day/P024.1_Day", "x": -3.01, "y": 49.06, "width": 116, "height": 144 }
+			}
+		}
+	},
+	{
+		"name": "P024/2",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P024_Day/P024.2_Day", "x": -3.01, "y": 49.06, "width": 116, "height": 144 }
+			}
+		}
+	},
+	{
+		"name": "P024/3",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P024_Day/P024.3_Day", "x": -3.01, "y": 49.06, "width": 116, "height": 144 }
+			}
+		}
+	},
+	{
+		"name": "P024/Wilted",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P024_Day/P024.Wilted_Day", "x": -3.01, "y": 49.06, "width": 116, "height": 144 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

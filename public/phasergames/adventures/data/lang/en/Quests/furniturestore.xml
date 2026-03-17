@@ -1,0 +1,79 @@
+<adventures id="ADS-0000001173" description="Furniture Store">
+  <adventure id="ADV-0000001823">
+    <description>Enter Fountain Plaza</description>
+    <quest id="QUE-0000006281" visible="False">
+      <description unusedLocId="LOC-0000024929">[Silent] Furniture Shop Intro</description>
+      <line description="Enter Fountain Plaza">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z007</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Have you decorated your new cottage? If you are looking for furniture, visit Gaelic's NEW shop, "Bric-a-brac, Furniture and Gifts" on Artisans Way.</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001822">
+    <description>Gaelic's Bric-a-brac, Furniture and Gifts</description>
+    <quest id="QUE-0000006279" visible="False">
+      <description unusedLocId="LOC-0000024924">[Silent] Stop Near Gaelic</description>
+      <line description="Enter Artisan Way">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z009</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Gaelic's Bric-a-brac, Furniture and Gifts is finally open! Find this shop at the west end of Artisans Way. </text>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.StopNearTrigger">
+            <zoneId>Z009</zoneId>
+            <centerX>12</centerX>
+            <centerY>17</centerY>
+            <radius>6</radius>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Welcome. I'm Gaelic, and I own the Bric-a-brac, Furniture, and Gift shop. We have a wide selection of furniture and decorations that you can buy for your cottage.</text>
+            <identifier>C017</identifier>
+          </object>
+          <object type="questData.DialogueImageAction">
+            <text>This is the &lt;b&gt;Buy&lt;/b&gt; bubble. Click on it to check out the clothes and accessories available in my shop.</text>
+            <identifier>C017</identifier>
+            <imageFileName>Flash/Adventures/Art/Dialogue/Context_Shop.png</imageFileName>
+            <hspace>0</hspace>
+            <vspace>0</vspace>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Today is opening day and I'm giving 20 horseshoes to each customer so they can buy whatever they want. Grab a bargain!</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>20</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>furnitureshop.xml</fileName>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

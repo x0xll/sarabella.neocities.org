@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <script src="/language.js"></script>
+    <script src="/save.js"></script>
+<script src="/language.js"></script>
 
     <body onload="loadLanguagePref(); setupUserDropdown(); checkPlayPageDefault();">
         <script src="/header.js"></script>
@@ -42,6 +43,7 @@
                 <h2 data-il8n="play_recreatedgames_title">Recreated Games</h2>
                 <em data-il8n="play_recreatedgames_desc">These are games which have been recreated with new code</em><br>
                 <ul>
+                    <!-- <li><a href="./phasergames/adventures/index.html" data-il8n="game_adventure">Adventures</a></li> -->
                     <li><a href="./phasergames/stablesrecreation/index.html" data-il8n="gamestables">Stables</a></li>
                     <li><a href="./phasergames/citrustacked/index.html" data-il8n="game_citrustacked_wip">Citrustacked (WIP)</a></li>
                     <li><a href="./phasergames/jumpinggame/index.html" data-il8n="game_spectacularjumpinggame_wip">Spectacular Jumping Game (WIP)</a></li>
@@ -85,7 +87,7 @@
     <script>
         function checkPlayPageDefault()
         {
-            if (!isGuest() && loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+            if (!isGuest() && loadData(DATA_TYPES.mapPlayPage))
                 window.location.href = "/flash/worldmap/worldmap_custom.html"
             else if (!isGuest())
                 document.getElementById("gotomap").style.display = "none";

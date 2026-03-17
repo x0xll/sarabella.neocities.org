@@ -1,0 +1,80 @@
+{
+"skeleton": {
+	"hash": "r/+jwXCNtG4",
+	"spine": "4.2.43",
+	"x": -165.72,
+	"y": -20,
+	"width": 370,
+	"height": 479.71,
+	"images": "./Main/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "scaleX": 0.5, "scaleY": 0.5 }
+],
+"slots": [
+	{ "name": "Main_night", "bone": "bone", "attachment": "Main" },
+	{ "name": "Main", "bone": "bone" }
+],
+"skins": [
+	{
+		"name": "P032/1",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P032_Day/P032.1_Day", "x": -3.01, "y": 90.52, "width": 114, "height": 221 }
+			}
+		}
+	},
+	{
+		"name": "P032/2",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P032_Day/P032.2_Day", "x": -3.01, "y": 90.52, "width": 114, "height": 221 }
+			}
+		}
+	},
+	{
+		"name": "P032/3",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P032_Day/P032.3_Day", "x": -3.01, "y": 90.52, "width": 114, "height": 221 }
+			}
+		}
+	},
+	{
+		"name": "P032/4",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P032_Day/P032.4_Day", "x": -3.01, "y": 90.52, "width": 114, "height": 221 }
+			}
+		}
+	},
+	{
+		"name": "P032/Wilted",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P032_Day/P032.Wilted_Day", "x": -3.01, "y": 90.52, "width": 114, "height": 221 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

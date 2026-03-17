@@ -18,7 +18,8 @@
         </style>
     </head>
 
-    <script src="/language.js"></script>
+    <script src="/save.js"></script>
+<script src="/language.js"></script>
 
         <script src="/userManager.js"></script>
     <body style="text-align: center;" onload="loadLanguagePref(); setupUserDropdown()">
@@ -47,7 +48,7 @@
                     horseName ='peter'
                 }
                 let horseData
-                let localizedQuote = loadData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES);
+                let localizedQuote = loadData(DATA_TYPES.translatedQuotes);
                 let loadInto = `Stables`
 
                 let config = {

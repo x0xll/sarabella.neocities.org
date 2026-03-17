@@ -1,0 +1,110 @@
+<adventures id="ADS-0000001217" description="Spring Carnival 1-5 Activation">
+  <adventure id="ADV-0000001872">
+    <description>Spring Carnival Activation</description>
+    <quest id="QUE-0000006402" visible="False">
+      <description unusedLocId="LOC-0000025439">Activation Reward</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157aTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157bTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006403" visible="False">
+      <description unusedLocId="LOC-0000025440">Activation Reward</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157cTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157dTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006404" visible="False">
+      <description unusedLocId="LOC-0000025441">Activation Reward</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157eTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157fTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006405" visible="False">
+      <description unusedLocId="LOC-0000025442">Activation Reward</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157jTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157lTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006406" visible="False">
+      <description unusedLocId="LOC-0000025443">Activation Reward</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157pTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I157nTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

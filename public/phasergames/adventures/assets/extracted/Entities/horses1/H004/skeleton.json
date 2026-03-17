@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "iz6Sezk5uGQ",
+	"spine": "4.2.43",
+	"x": -132.2,
+	"y": -45.48,
+	"width": 251,
+	"height": 273,
+	"images": "",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "H004", "bone": "root", "attachment": "H004" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"H004": {
+				"H004": { "y": 56.14, "scaleX": 0.5, "scaleY": 0.5, "width": 491, "height": 593 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
