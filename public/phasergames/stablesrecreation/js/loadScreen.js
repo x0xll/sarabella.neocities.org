@@ -17,44 +17,15 @@ class Load extends Phaser.Scene
     { 
         if (loadInto === "Stables") {
 
-            let accurateTrad = loadData(DATA_TYPES.accurateTranslations);
             let langFile = null
             if (horseData.type === 'dressup') {
-                if (accurateTrad)
-                    langFile = `./lang/og/dressup`
-                else
-                    langFile = `./lang/improved/dressup`
-
-                if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
-                    if ((!accurateTrad && !urlExists(`./lang/og/dressup_${locale}.json`)) || accurateTrad)
-                    {
-                        locale ='en'
-                        langFile = `./lang/og/dressup_${locale}.json`
-                    }
-                    else
-                    {
-                        langFile = `./lang/og/dressup_${locale}.json`
-                    }
-                }
+                langFile = `./lang/dressup`
             } else {
-                if (accurateTrad)
-                    langFile = `./lang/og/${horseData.type}`
-                else
-                    langFile = `./lang/improved/${horseData.type}`
-
-                if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
-                    if ((!accurateTrad && !urlExists(`./lang/og/${horseData.type}.json`)) || accurateTrad)
-                    {
-                        locale ='en'
-                        langFile = `./lang/og/${horseData.type}.json`
-                    }
-                    else
-                    {
-                        langFile = `./lang/og/${horseData.type}.json`
-                    }
-                }
+                langFile = `./lang/${horseData.type}`
             }
-
+            if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
+                locale ='en'
+            }
             const xmlHttplocale = new XMLHttpRequest();
             xmlHttplocale.onload = function() {
                 const myObj = JSON.parse(this.responseText);
