@@ -93,15 +93,18 @@ class FoalLandStable extends Phaser.Scene
                 ])
             const straw2Interactive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(419, 309, 170, 170), Phaser.Geom.Rectangle.Contains);
             straw2Interactive.on('pointerdown', function (pointer) {cleanStraw(straw2, 'straw2_pickup', 'straw2_place')});
+
         const straw1 = game.add.sprite(351, 420, 'straw1', 'frame0000').setScale(0.65);
             game.stablesManager.addSpriteAnims(straw1, 'straw1_pickup', [
-                    'frame0000', 'frame0001', 'frame0002', 'frame0003', 'frame0004', 'frame0005', 'frame0006'
+                    //'frame0000', 'frame0001', 'frame0002', 'frame0003', 'frame0004', 'frame0005', 
+                    'frame0006'
                 ])
             game.stablesManager.addSpriteAnims(straw1, 'straw1_place', [
                     'frame0006', 'frame0007', 'frame0008', 'frame0009', 'frame0010', 'frame0011', 'frame0012'
                 ])
             const straw1Interactive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(249, 309, 170, 170), Phaser.Geom.Rectangle.Contains);
             straw1Interactive.on('pointerdown', function (pointer) {cleanStraw(straw1, 'straw1_pickup', 'straw1_place')});
+
         const straw3 = game.add.sprite(643, 411, 'straw3', 'frame0000').setScale(0.75);
             game.stablesManager.addSpriteAnims(straw3, 'straw3_pickup', [
                     'frame0000', 'frame0001', 'frame0002', 'frame0003', 'frame0004', 'frame0005', 'frame0006'
@@ -326,7 +329,7 @@ class FoalLandStable extends Phaser.Scene
                 ])
             game.stablesManager.addSpriteAnims(brush, 'brush_use', [
                     'hold',
-                    'brush0000', 'brush0001', 'brush0002', 'brush0003', 'brush0004', 'brush0005', 'brush0006', 'brush0007', 'brush0008', 'brush0009',
+                    'brush0000', 'brush0001', 'brush0002', 'brush0003', 'brush0004', 'brush0005', 'brush0006', 'brush0007', 'brush0008', //'brush0009',
                     'hold'
                 ])
             game.stablesManager.addSpriteAnims(brush, 'brush_place', [
@@ -414,11 +417,13 @@ class FoalLandStable extends Phaser.Scene
             appleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(appleBin, game.HAND.apple, 'takeApple', 'takeApple') }); 
         
         // Bottle Bin
-        const bottleBin = game.add.sprite(810, 428, 'bottleBin', 'idle').setInteractive();
-            game.stablesManager.addSpriteAnims(bottleBin, 'takeBottle', ['empty'])
-            bottleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (bottleBin, game.hover1) });
-            bottleBin.on('pointerout', function (pointer) { bottleBin.setFrame('idle') });
-            bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
+        game.bottleBin = game.add.sprite(810, 428, 'bottleBin', 'idle').setInteractive();
+            game.stablesManager.addSpriteAnims(game.bottleBin, 'takeBottle', ['empty'])
+            game.bottleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (game.bottleBin, game.hover1) });
+            game.bottleBin.on('pointerout', function (pointer) { game.bottleBin.setFrame('idle') });
+            game.bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(game.bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
+
+        game.floatingBottle = game.add.image(208, 255, 'bottle').setScale(.75).setAngle(90).setAlpha(0);
 
         game.troughMask = game.add.sprite(194, 415, 'trough_mask', 'trough_mask').setScale(1,1.1).setVisible(false);
             game.stablesManager.addSpriteAnims(game.troughMask, 'mask_fill_water', [
@@ -509,8 +514,16 @@ class FoalLandStable extends Phaser.Scene
                 });
             }
             else if (animation === game.HORSE_STATES.eatingFood) {
+                game.floatingBottle.setAlpha(1)
                 game.time.delayedCall(800, function () { game.stablesManager.horsePlayAnimation('eat_food') });
                 game.time.delayedCall(1000, function () { game.oatsEat.play() });
+                game.time.delayedCall(3000, function () { game.floatingBottle.setAlpha(.75) });
+                game.time.delayedCall(3100, function () { game.floatingBottle.setAlpha(.5) });
+                game.time.delayedCall(3200, function () { game.floatingBottle.setAlpha(.25) });
+                game.time.delayedCall(3300, function () { 
+                    game.floatingBottle.setAlpha(0) 
+                    game.bottleBin.setFrame("idle")
+                });
             }
             else if (animation === game.HORSE_STATES.eatingApple) {
                 game.appleMunch.play();
