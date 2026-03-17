@@ -17,6 +17,7 @@
         </style>
     </head>
 
+        <script src="/userManager.js"></script>
     <script src="/save.js"></script>
 <script src="/language.js"></script>
 
@@ -43,17 +44,26 @@
                     http.send();
                     return http.status!=404;
                 }
-
-                if (!lang || !urlExists(`./lang/${lang}.json`)) {
-                    lang ='en'
-                }
+                let accurateTrad = loadData(DATA_TYPES.accurateTranslations);
+                let langFile = (accurateTrad) ? `./lang/og/${lang}.json` : `./lang/improved/${lang}.json`
+                if (!lang || !urlExists(langFile)) {
+                    if ((!accurateTrad && !urlExists(`./lang/og/${lang}.json`)) || accurateTrad)
+                    {
+                        lang ='en'
+                        langFile = `./lang/og/${lang}.json`
+                    }
+                    else
+                    {
+                        langFile = `./lang/og/${lang}.json`
+                    }
+                };
                 let langData
                 const xmlHttp = new XMLHttpRequest();
                 xmlHttp.onload = function() {
                     const myObj = JSON.parse(this.responseText);
                     langData = myObj
                 }
-                xmlHttp.open("GET", `./lang/${lang}.json`);
+                xmlHttp.open("GET", langFile);
                 xmlHttp.send();
                 
 
@@ -97,7 +107,6 @@
           </script>
         </div>
         <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
 
     </body>
 </html>
