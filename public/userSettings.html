@@ -36,7 +36,10 @@
                             <h2 data-il8n="settings_locas_title">Localization Settings</h2>
                             <form>
                                 <label for="data" data-il8n="settings_translatedquotes">Translated Quotes:</label>
-                                <input type="checkbox" id="translatedquotes" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPES.translatedQuotes, this)">           
+                                <input type="checkbox" id="translatedquotes" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPES.translatedQuotes, this)">                            
+                                <br/>    
+                                <label for="data" data-il8n="settings_accuratetext">Accurate Text:</label>
+                                <input type="checkbox" id="accuratetext" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPES.accurateTranslations, this)">            
                             </form>
                         </div>
                     </div>
@@ -50,6 +53,9 @@
                             <br/>
                             <br/>
                             "Translated Quotes": Choose whether you want by default to have the Stables quotes in English or translated (may not be accurate to the original game).
+                            <br/>
+                            <br/>
+                            "Accurate Text": Choose whether you want by default to have the original accurate texts in the games (with the original gramatical errors), or corrected and improved texts.
                         </p>
                     </div>
                 </div>

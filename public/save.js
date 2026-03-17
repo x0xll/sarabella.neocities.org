@@ -50,6 +50,7 @@ const DATA_TYPES = {
     gallery: "gallery",
     translatedQuotes : "settings_tdqt",
     originalTranslations : "settings_tdog",
+    accurateTranslations : "settings_atxt",
     horseshoesMultiplier : "settings_hsmul",
     mapPlayPage : "settings_mpp"
 }
@@ -65,6 +66,7 @@ const DATA_DEFAULT = {
     gallery: null,
     translatedQuotes : true,
     originalTranslations : false,
+    accurateTranslations : true,
     horseshoesMultiplier : 1,
     mapPlayPage : false
 }
@@ -208,6 +210,8 @@ function loadSettings()
     translatedquotes.checked = loadData(DATA_TYPES.translatedQuotes);
     mapplaypage = document.getElementById("mapplaypage");
     mapplaypage.checked = loadData(DATA_TYPES.mapPlayPage);
+    accurateTranslations = document.getElementById("accurateTranslations");
+    accurateTranslations.checked = loadData(DATA_TYPES.accurateTranslations);
 }
 
 function addHorseshoes(amountAdded)
