@@ -207,7 +207,7 @@ class StablesManager {
                 game.inspirationHover.play()
             });
             familyXButton.on('pointerdown', function (pointer) { 
-                game.familyTree.setAlpha(0)
+                game.familyTree.setAlpha(0).setDepth(0)
                 helper.placeFoalImages(posX, posY, scale)
                 game.canPlayInspiration = false
                 game.familyTreeOpen = false
@@ -215,31 +215,31 @@ class StablesManager {
 
         game.magnifier = game.add.image(magnifierX, magnifierY, 'magnifier').setScale(.15).setInteractive();
             game.magnifier.on('pointerdown', function (pointer) { 
-                game.familyTree.setAlpha(1)
-                helper.placeFoalImages(460, 200, .45)
+                game.familyTree.setAlpha(1).setDepth(100)
+                helper.placeFoalImages(460, 200, .45, 100)
                 game.canPlayInspiration = true
                 game.familyTreeOpen = true
             })
 
     }
-    placeFoalImages(posX, posY, scale) {
+    placeFoalImages(posX, posY, scale, depth = 0) {
         const game = this.#game
 
-        this.#game.parentImage.setPosition(posX, posY).setScale(scale)
-        this.#placeSiblingImages(this.#game.childImages[0], 1, scale)
+        this.#game.parentImage.setPosition(posX, posY).setScale(scale).setDepth(depth)
+        this.#placeSiblingImages(this.#game.childImages[0], 1, scale, depth)
         if (family.ids.length > 1)
-            this.#placeSiblingImages(this.#game.childImages[1], 0, scale)
+            this.#placeSiblingImages(this.#game.childImages[1], 0, scale, depth)
         if (family.ids.length > 2)
-            this.#placeSiblingImages(this.#game.childImages[2], 2, scale)
+            this.#placeSiblingImages(this.#game.childImages[2], 2, scale, depth)
 
     }
-    #placeSiblingImages(image, locationIndex, scale) {
+    #placeSiblingImages(image, locationIndex, scale, depth) {
         const game = this.#game
         const separation = 30 * scale
         image.setPosition(
             game.parentImage.x - ((game.parentImage.displayWidth) + separation) + ((game.parentImage.displayWidth + separation) * locationIndex), 
             game.parentImage.y + (game.parentImage.displayHeight) + separation
-        ).setScale(scale)
+        ).setScale(scale).setDepth(depth)
     }
     #addQuotesInteraction(image, quote) {
         image.setInteractive();
