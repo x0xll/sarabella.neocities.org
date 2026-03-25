@@ -295,8 +295,8 @@ class FoalAirStable extends Phaser.Scene
 
         
         // Bottle
-        game.bottle = game.add.sprite(87, 300, 'bottle_interactive', 'idle').setInteractive({ pixelPerfect: true })
-        game.add.image(0, 0, 'left_tree').setOrigin(0,0);
+        game.bottle = game.add.sprite(87, 300, 'bottle_interactive', 'idle').setDepth(1).setInteractive({ pixelPerfect: true })
+        game.add.image(0, 0, 'left_tree').setOrigin(0,0).setDepth(1);
             game.bottle.on('pointerdown', function (pointer) {
                 if (game.handCurrent === game.HAND.empty) {
                     game.handCurrent = game.HAND.bottle
@@ -318,11 +318,11 @@ class FoalAirStable extends Phaser.Scene
             });
 
         // Food Trough (Bottle)
-        game.floatingBottle = game.add.image(158, 240, 'bottle').setScale(-.75, .75).setAngle(90).setAlpha(0);
+        game.floatingBottle = game.add.image(158, 240, 'bottle').setScale(-.75, .75).setAngle(90).setAlpha(0).setDepth(1);
 
 
         // Berries
-        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setAngle(0).setInteractive();
+        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setAngle(0).setInteractive().setDepth(1);
             game.stablesManager.addSpriteAnims(berries, 'berries_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'idle'
                 ])
@@ -334,7 +334,7 @@ class FoalAirStable extends Phaser.Scene
             });
         
         // Horn
-        const horn = game.add.sprite(8, 145, 'horn', 'idle').setScale(.63).setInteractive({ pixelPerfect: true });
+        const horn = game.add.sprite(8, 145, 'horn', 'idle').setScale(.63).setInteractive({ pixelPerfect: true }).setDepth(1);
             game.stablesManager.addSpriteAnims(horn, 'soothe', [
                     '10', '11', '12', '13', '13', '15', '16', '17', '18', '19',
                     '20', '21', '22', '23', '23', '25', '26', '27', '28', '29',
@@ -405,7 +405,7 @@ class FoalAirStable extends Phaser.Scene
 
         
         // Tree (for leaves)
-        const treeInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(740, 330, 200, 150), Phaser.Geom.Rectangle.Contains);
+        const treeInteractive = game.add.graphics().setDepth(1).setInteractive(new Phaser.Geom.Rectangle(740, 330, 200, 150), Phaser.Geom.Rectangle.Contains);
         game.leafTree = game.add.sprite(443, 260, 'leaf_tree_shake1', 'idle');
             game.stablesManager.addImageAnims('leaf_tree_shake2', 'tree_shake1', [
                     '0010', '0011', '0012', '0013', '0014', '0015', '0016', '0017', '0018', '0019',

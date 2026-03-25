@@ -140,6 +140,7 @@ class StablesManager {
         // Variables
         this.#game.HAND = {
             empty: 'empty',
+            emptyAlt: 'emptyAlt',
             shovel: 'shovel',
             fork: 'fork',
             forkFilled: 'fork_filled',
@@ -211,14 +212,18 @@ class StablesManager {
                 helper.placeFoalImages(posX, posY, scale)
                 game.canPlayInspiration = false
                 game.familyTreeOpen = false
+                game.handCurrent = game.HAND.empty
             })
 
         game.magnifier = game.add.image(magnifierX, magnifierY, 'magnifier').setScale(.15).setInteractive();
             game.magnifier.on('pointerdown', function (pointer) { 
-                game.familyTree.setAlpha(1).setDepth(100)
-                helper.placeFoalImages(460, 200, .45, 100)
-                game.canPlayInspiration = true
-                game.familyTreeOpen = true
+                if (game.handCurrent === game.HAND.empty) {
+                    game.familyTree.setAlpha(1).setDepth(2)
+                    helper.placeFoalImages(460, 200, .45, 2)
+                    game.canPlayInspiration = true
+                    game.familyTreeOpen = true
+                    game.handCurrent = game.HAND.emptyAlt
+                }
             })
 
     }
@@ -295,11 +300,11 @@ class StablesManager {
 
     createHorse(x, y, angle, scale = 1) {
             const game = this.#game
-            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale);
+            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale).setDepth(1);
             game.horse.animationState.setAnimation(0, "idle", false)
-            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle).setScale(scale);
+            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle).setScale(scale).setDepth(1);
             game.horseDirty.animationState.setAnimation(0, "idle", false)
-            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale);
+            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale).setDepth(1);
             game.horseOverlay.animationState.setAnimation(0, "idle", false)
             
             this.#addConstantAnimation()
@@ -387,8 +392,8 @@ class StablesManager {
      * @param {*} y position of stat box
      */
     createStatBox(x, y) {
-        this.#game.statBox = this.#game.add.image(x, y, 'stat_box').setAlpha(0)
-        this.#game.statBoxText = this.#game.add.text(x, y, 'Static Text Object', this.hoverTextSettingsMain).setAlpha(0);
+        this.#game.statBox = this.#game.add.image(x, y, 'stat_box').setAlpha(0).setDepth(1)
+        this.#game.statBoxText = this.#game.add.text(x, y, 'Static Text Object', this.hoverTextSettingsMain).setAlpha(0).setDepth(1);
         this.#game.statBoxText.setOrigin(.5, .5)
     }
 
@@ -409,8 +414,8 @@ class StablesManager {
                 settings = this.hoverTextSettingsMain
                 break;
         }
-        const gotoWorldBg = this.#game.add.image(x, y, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(scaleX, scaleY);
-        const gotoWorldTxt = this.#game.add.text(x, y, 'Static Text Object', settings).setAlpha(0).setOrigin(.5, .5);
+        const gotoWorldBg = this.#game.add.image(x, y, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(scaleX, scaleY).setDepth(1);
+        const gotoWorldTxt = this.#game.add.text(x, y, 'Static Text Object', settings).setAlpha(0).setOrigin(.5, .5).setDepth(1);
         gotoWorldTxt.text = localeData.txtToWorld;
         gotoWorldBg.on('pointerover', function (pointer) {
                 gotoWorldBg.setAlpha(1);
@@ -428,11 +433,11 @@ class StablesManager {
     /** Creates the UI elements  */
     createUI(helpTexts) {
         const game = this.#game
-        this.#game.add.image(444, 260, 'stable_fg');
+        this.#game.add.image(444, 260, 'stable_fg').setDepth(1);
         this.#createInspirationalMessage()
 
         // Horse name
-        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' });
+        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' }).setDepth(1);
         game.horseNameText.text = localeData[horseName + "Name"];
         game.horseNameText.setOrigin(.5, .5)
 
@@ -446,7 +451,7 @@ class StablesManager {
         this.#createMusicButton()
 
         // Cursor
-        game.cursor = game.add.sprite(0, 0, 'brush_small', 'hold').setVisible(false);
+        game.cursor = game.add.sprite(0, 0, 'brush_small', 'hold').setVisible(false).setDepth(4);
     }
 
     /** Adds the visuals, text and sounds for displaying the inspirational message */
@@ -454,14 +459,14 @@ class StablesManager {
         this.#game.playInspiration = true
         this.#game.canPlayInspiration = false
 
-        this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false).setDepth(110);
+        this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false).setDepth(2);
         this.#game.inspirationMessage = this.#game.add.text(444, 133, 'Static Text Object', { 
             fontFamily: this.#font, 
             fontSize: 55, 
             color: '#ffffff', 
             align: 'center' ,
             wordWrap: { width: 800 } 
-        }).setVisible(false).setDepth(110);
+        }).setVisible(false).setDepth(2);
         this.#game.inspirationMessage.text = localeData[horseName + "Quote"];
         this.#game.inspirationMessage.setOrigin(0.5)
         this.#game.inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
@@ -471,7 +476,7 @@ class StablesManager {
         const game = this.#game
         const pos = x - 32 + (startLevel*this.#bar/2)
         const width = 1 + startLevel*this.#bar
-        game.add.rectangle(x, 505, 66, 2, color1);
+        game.add.rectangle(x, 505, 66, 2, color1).setDepth(1);
 
         const newBar = {
             x: x,
@@ -483,7 +488,7 @@ class StablesManager {
             level: startLevel
         }
 
-        game.add.image(x-2, 509, image);
+        game.add.image(x-2, 509, image).setDepth(1);
         const text = game.add.text(x-2, 498, 'Static Text Object', { 
             fontFamily: this.#font, 
             fontSize: 11.5, 
@@ -491,7 +496,7 @@ class StablesManager {
         });
         text.text = statName;
         text.setColor(color3);
-        text.setOrigin(0.5)
+        text.setOrigin(0.5).setDepth(1)
 
         return newBar
     }
@@ -499,7 +504,7 @@ class StablesManager {
     #createHelpButton(helpTexts) {
         const game = this.#game
         game.helpPopups = [];
-        game.helpButton =game.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.#game.input.makePixelPerfect(150));
+        game.helpButton =game.add.sprite(444, 261, 'help_button', 'idle').setDepth(3).setInteractive(this.#game.input.makePixelPerfect(150));
         helpTexts.forEach(helptext => {
             switch (helptext[3]) {
                 case "OneLine":
@@ -533,7 +538,7 @@ class StablesManager {
 
     #createMusicButton() {
         const game = this.#game
-        game.musicButton =game.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });
+        game.musicButton =game.add.sprite(867, 498, 'music_button', 'music_on').setDepth(1).setInteractive({ pixelPerfect: true });
         game.musicButton.on('pointerdown', function (pointer)
         {
             if (game.playMusic) {
@@ -736,7 +741,7 @@ class StablesManager {
     #showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings) {
         const helpTxt = this.#game.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
         helpTxt.text = localeTxtKey;
-        helpTxt.setOrigin(0.5)
+        helpTxt.setOrigin(0.5).setDepth(3)
         this.#game.helpPopups.push(helpTxt);
     }
 

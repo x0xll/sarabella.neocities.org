@@ -358,8 +358,8 @@ class WaterStable extends Phaser.Scene
             buttonDisplace =  -72
         }
         let tempWrong = game.stablesManager.randomIntFromInterval(1, 5)
-        const temperatureBar = game.add.sprite(59, 101, 'temperature_bar', `${temp}_${tempWrong}`).setScale(1.02)
-        const temperatureButtons = game.add.sprite(55, 101 + buttonDisplace, 'temperature_buttons', `${temp}_idle`).setScale(1.02).setInteractive()
+        const temperatureBar = game.add.sprite(59, 101, 'temperature_bar', `${temp}_${tempWrong}`).setScale(1.02).setDepth(1)
+        const temperatureButtons = game.add.sprite(55, 101 + buttonDisplace, 'temperature_buttons', `${temp}_idle`).setScale(1.02).setInteractive().setDepth(1)
             temperatureButtons.on('pointerover', function (pointer) { 
                 if (temperatureButtons.frame.name === `${temp}_idle`) {
                     temperatureButtons.setFrame(`${temp}_hover`)
@@ -392,7 +392,7 @@ class WaterStable extends Phaser.Scene
 
 
         // Treats
-        game.treatDispenser = game.add.sprite(52, 435, 'treat_dispenser', 'idle').setInteractive();
+        game.treatDispenser = game.add.sprite(52, 435, 'treat_dispenser', 'idle').setInteractive().setDepth(1);
             game.stablesManager.addSpriteAnims(game.treatDispenser, 'treat_pickup', [
                     'dispense0000', 'dispense0001', 'dispense0002', 'dispense0003', 'dispense0004', 'dispense0005', 'dispense0006', 'dispense0007', 'dispense0008', 'dispense0009',
                     'dispense0010', 'dispense0011', 'dispense0012', 'dispense0013', 'dispense0014', 'dispense0015', 'dispense0016',
@@ -405,7 +405,7 @@ class WaterStable extends Phaser.Scene
 
 
         // Bubbles
-        game.bubbles2 = game.add.sprite(176, 220, 'bubbles2', 'bubbles0000')
+        game.bubbles2 = game.add.sprite(176, 220, 'bubbles2', 'bubbles0000').setDepth(1)
             game.stablesManager.addSpriteAnims(game.bubbles2, 'bubbles2', [
                     'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000', 'bubbles0000',
                     'bubbles0000', 'bubbles0000', 'bubbles0012', 'bubbles0013', 'bubbles0014', 'bubbles0015', 'bubbles0016', 'bubbles0017', 'bubbles0018', 'bubbles0019',
@@ -440,7 +440,7 @@ class WaterStable extends Phaser.Scene
 
                     'bubbles0000'
                 ])
-        game.bubbles = game.add.spine(525, 75, 'bubbles-json', 'bubbles-atlas')
+        game.bubbles = game.add.spine(525, 75, 'bubbles-json', 'bubbles-atlas').setDepth(1)
             game.bubbles.animationState.setAnimation(0, "idle", false)
             game.bubblesBusy = false
             game.bubblesInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(647, 400, 200, 150), Phaser.Geom.Rectangle.Contains);
@@ -491,8 +491,8 @@ class WaterStable extends Phaser.Scene
 
 
         // Dirty Water
-        const waterSpinnerHolder = game.add.sprite(865, 54, 'water_spinner_holder', 'idle').setInteractive({ pixelPerfect: true });
-        const waterSpinner = game.add.sprite(800, 57, 'water_spinner', '1').setInteractive({ pixelPerfect: true });
+        const waterSpinnerHolder = game.add.sprite(865, 54, 'water_spinner_holder', 'idle').setInteractive({ pixelPerfect: true }).setDepth(1);
+        const waterSpinner = game.add.sprite(800, 57, 'water_spinner', '1').setInteractive({ pixelPerfect: true }).setDepth(1);
             game.anims.create({
                     key: 'water_spinner',
                     frames: game.anims.generateFrameNumbers('water_spinner', { frames: [
@@ -504,7 +504,7 @@ class WaterStable extends Phaser.Scene
                     repeat: -1
                 });
             waterSpinner.play('water_spinner')
-        game.water = game.add.spine(436, 259, 'water-json', 'water-atlas').setScale(1.01);
+        game.water = game.add.spine(436, 259, 'water-json', 'water-atlas').setScale(1.01).setDepth(1);
             game.water.animationState.setAnimation(0, "water_dirty", false)
             game.waterClean = false
             game.water.animationState.addListener({

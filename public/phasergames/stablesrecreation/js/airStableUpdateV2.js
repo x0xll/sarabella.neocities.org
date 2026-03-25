@@ -306,8 +306,8 @@ class AirStable extends Phaser.Scene
             game.additionalCleanCondition = () => {return game.extraCleanLevel === 2}
 
              
-        game.add.image(92, 285, 'left_tree');
-        game.foodTrough = game.add.sprite(-164, 299, 'food_interactive', 'idle').setInteractive({ pixelPerfect: true });
+        game.add.image(92, 285, 'left_tree').setDepth(1);
+        game.foodTrough = game.add.sprite(-164, 299, 'food_interactive', 'idle').setDepth(1).setInteractive({ pixelPerfect: true });
             game.anims.create({
                 key: 'pull_back',
                 frames: game.anims.generateFrameNumbers('food_interactive', { frames: [
@@ -335,7 +335,7 @@ class AirStable extends Phaser.Scene
 
 
         // Berries
-        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setInteractive();
+        const berries = game.add.sprite(702, 30, 'berries', 'idle').setScale(.43).setDepth(1).setInteractive();
             game.stablesManager.addSpriteAnims(berries, 'berries_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009'
                 ])
@@ -348,7 +348,7 @@ class AirStable extends Phaser.Scene
 
         // Tree (for leaves)
         const treeInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(740, 330, 200, 150), Phaser.Geom.Rectangle.Contains);
-        const leafTree = game.add.sprite(443, 260, 'leaf_tree_shake', 'idle');
+        const leafTree = game.add.sprite(443, 260, 'leaf_tree_shake', 'idle').setDepth(1);
             game.stablesManager.addSpriteAnims(leafTree, 'tree_shake', [
                     'shake0000', 'shake0001', 'shake0002', 'shake0003', 'shake0004', 'shake0005', 'shake0006', 'shake0007', 'shake0008', 'shake0009',
                     'shake0010', 'shake0011', 'shake0012', 'shake0013', 'shake0014', 'shake0015', 'shake0016', 'shake0017', 'shake0018', 'shake0019',
@@ -382,7 +382,7 @@ class AirStable extends Phaser.Scene
             });
         
         // Horn
-        const horn = game.add.sprite(10, 120, 'horn', 'idle').setInteractive({ pixelPerfect: true });
+        const horn = game.add.sprite(10, 120, 'horn', 'idle').setDepth(1).setInteractive({ pixelPerfect: true });
             game.stablesManager.addSpriteAnims(horn, 'soothe', [
                     'play0000', 'play0001', 'play0002', 'play0003', 'play0004', 'play0005', 'play0006', 'play0007', 'play0008', 'play0009',
                     'play0010', 'play0011', 'play0012', 'play0013', 'play0013', 'play0015', 'play0016', 'play0017', 'play0018', 'play0019',

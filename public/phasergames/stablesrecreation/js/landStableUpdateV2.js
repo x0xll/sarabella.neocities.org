@@ -292,9 +292,9 @@ class LandStable extends Phaser.Scene
 
 
         // Pitchfork
-        const fork = game.add.sprite(718, 177, 'fork', 'idle').setInteractive(
+        const fork = game.add.sprite(718, 177, 'fork', 'idle').setDepth(1).setInteractive(
                 new Phaser.Geom.Polygon('212 363 172 363 212 133 267 133'), Phaser.Geom.Polygon.Contains);
-            const forkText = game.add.text(643, 225, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0).setOrigin(0.5);
+            const forkText = game.add.text(643, 225, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0).setOrigin(0.5).setDepth(1);
                 forkText.text = localeData.txtPitchForkHilite2;
             game.stablesManager.addSpriteAnims(fork, 'fork_fill', [
                     'fill0000', 'fill0001', 'fill0002', 'fill0003', 'fill0004', 'fill0005', 'fill0006', 'fill0007', 'held_filled'
@@ -338,9 +338,9 @@ class LandStable extends Phaser.Scene
             
 
         // Shovel
-        const shovel = game.add.sprite(742, 189, 'shovel', 'idle').setInteractive(
+        const shovel = game.add.sprite(742, 189, 'shovel', 'idle').setDepth(1).setInteractive(
                 new Phaser.Geom.Polygon('220 410 170 380 215 175 260 175'), Phaser.Geom.Polygon.Contains);
-            const shovelText = game.add.text(685, 270, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0).setOrigin(.5, .5);
+            const shovelText = game.add.text(685, 270, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0).setOrigin(.5, .5).setDepth(1);
                 shovelText.text = localeData.txtShovelHilite2;
             game.stablesManager.addSpriteAnims(shovel, 'shovel_pickup', [
                     'hold0000', 'hold0001', 'held'
@@ -384,7 +384,7 @@ class LandStable extends Phaser.Scene
 
 
         // Brush
-        const brush = game.add.sprite(767, 100, 'brush', 'idle').setScale(0.75);
+        const brush = game.add.sprite(767, 100, 'brush', 'idle').setScale(0.75).setDepth(1);
         const brushInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(753, 88, 40, 50), Phaser.Geom.Rectangle.Contains);
             game.stablesManager.addSpriteAnims(brush, 'brush_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005',
@@ -403,7 +403,7 @@ class LandStable extends Phaser.Scene
             brushInteractive.on('pointerout', function (pointer) { game.stablesManager.pointerout (brush) });
 
         // Small Brush
-        const brushSmall = game.add.sprite(746, 64, 'brush_small', 'idle');
+        const brushSmall = game.add.sprite(746, 64, 'brush_small', 'idle').setDepth(1);
         const brushSmallInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(753, 54, 40, 28), Phaser.Geom.Rectangle.Contains);
             game.stablesManager.addSpriteAnims(brushSmall, 'brush_pickup_small', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005',
@@ -423,7 +423,7 @@ class LandStable extends Phaser.Scene
             brushSmallInteractive.on('pointerout', function (pointer) { game.stablesManager.pointerout (brushSmall) });
 
         // Hoofpick
-        const hoofpick = game.add.sprite(823, 80, 'hoofpick', 'idle').setScale(0.75);
+        const hoofpick = game.add.sprite(823, 80, 'hoofpick', 'idle').setScale(0.75).setDepth(1);
         const hoofpickInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(801, 60, 26, 75), Phaser.Geom.Rectangle.Contains);
             game.stablesManager.addSpriteAnims(hoofpick, 'hoofpick_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'in_use'
@@ -445,11 +445,11 @@ class LandStable extends Phaser.Scene
         let hooves1
         let hooves2
         if (horseData.height === 'short') {
-            hooves1 = game.add.sprite(323, 442, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-            hooves2 = game.add.sprite(485, 438, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+            hooves1 = game.add.sprite(323, 442, 'hooves', 0).setInteractive().setScale(.84).setVisible(false).setDepth(1);
+            hooves2 = game.add.sprite(485, 438, 'hooves', 0).setInteractive().setScale(.84).setVisible(false).setDepth(1);
         } else {
-            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
-            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false);
+            hooves1 = game.add.sprite(316, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false).setDepth(1);
+            hooves2 = game.add.sprite(531, 445, 'hooves', 0).setInteractive().setScale(.84).setVisible(false).setDepth(1);
         }
         game.additionalCleanCondition = () => {return hooves1.frame.name === 2 && hooves2.frame.name === 2}
             /**
@@ -480,7 +480,7 @@ class LandStable extends Phaser.Scene
 
 
         // Apple Bin
-        const appleBin = game.add.sprite(680, 505, 'appleBin', 'idle').setInteractive();
+        const appleBin = game.add.sprite(680, 505, 'appleBin', 'idle').setInteractive().setDepth(1);
             game.stablesManager.addSpriteAnims(appleBin, 'takeApple', ['idle'])
             appleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (appleBin, game.hover1) });
             appleBin.on('pointerout', function (pointer) { appleBin.setFrame('idle') });
@@ -488,8 +488,8 @@ class LandStable extends Phaser.Scene
         
 
         // Grain Bin
-        const grainBin = game.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true });
-        const grainText = game.add.text(610, 325, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0);
+        const grainBin = game.add.sprite(736, 413, 'grain_bin', 'idle').setInteractive({ pixelPerfect: true }).setDepth(1);
+        const grainText = game.add.text(610, 325, 'Static Text Object', game.stablesManager.hoverTextSettingsMain).setAlpha(0).setDepth(1);
             grainText.text = localeData.txtOatsRollOver;
             game.stablesManager.addSpriteAnims(grainBin, 'gain_pickup', [
                     'idle',
@@ -525,7 +525,7 @@ class LandStable extends Phaser.Scene
             });
 
         
-        game.troughMask = game.add.sprite(153, 455, 'trough_mask', 'water0000').setVisible(false);
+        game.troughMask = game.add.sprite(153, 455, 'trough_mask', 'water0000').setVisible(false).setDepth(1);
             game.stablesManager.addSpriteAnims(game.troughMask, 'mask_fill_water', [
                     'water0011', 'water0011', 'water0011',
                     'water0014', 'water0014',
@@ -547,7 +547,7 @@ class LandStable extends Phaser.Scene
 
 
         // Lucky Horseshoe
-        const luck = game.add.sprite(453, 268, 'luck', 'idle').setInteractive({ pixelPerfect: true });
+        const luck = game.add.sprite(453, 268, 'luck', 'idle').setInteractive({ pixelPerfect: true }).setDepth(1);
             game.stablesManager.addSpriteAnims(luck, 'good_luck', [
                     'idle',
                     'good_luck0000', 'good_luck0001', 'good_luck0002', 'good_luck0003', 'good_luck0004', 'good_luck0005', 'good_luck0006', 'good_luck0007', 'good_luck0008', 'good_luck0009',
