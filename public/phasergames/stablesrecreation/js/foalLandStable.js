@@ -414,8 +414,19 @@ class FoalLandStable extends Phaser.Scene
         // Bottle Bin
         game.bottleBin = game.add.sprite(810, 428, 'bottleBin', 'idle').setInteractive();
             game.stablesManager.addSpriteAnims(game.bottleBin, 'takeBottle', ['empty'])
-            game.bottleBin.on('pointerover', function (pointer) { game.stablesManager.pointerover (game.bottleBin, game.hover1) });
-            game.bottleBin.on('pointerout', function (pointer) { game.bottleBin.setFrame('idle') });
+            game.bottleBin.on('pointerover', function (pointer) {
+                if (game.handCurrent === game.HAND.empty && game.floatingBottle.alpha === 0) {
+                    game.bottleBin.setFrame('hover')
+                    game.hover1.play();
+                }
+             });
+            game.bottleBin.on('pointerout', function (pointer) { 
+                if (game.handCurrent === game.HAND.bottle || game.floatingBottle.alpha !== 0) {
+                    game.bottleBin.setFrame('empty') 
+                } else {
+                    game.bottleBin.setFrame('idle') 
+                }
+            });
             game.bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(game.bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
 
         game.floatingBottle = game.add.image(208, 255, 'bottle').setScale(.75).setAngle(90).setAlpha(0);
