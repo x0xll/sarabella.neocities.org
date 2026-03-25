@@ -454,14 +454,14 @@ class StablesManager {
         this.#game.playInspiration = true
         this.#game.canPlayInspiration = false
 
-        this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
+        this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false).setDepth(110);
         this.#game.inspirationMessage = this.#game.add.text(444, 133, 'Static Text Object', { 
             fontFamily: this.#font, 
             fontSize: 55, 
             color: '#ffffff', 
             align: 'center' ,
             wordWrap: { width: 800 } 
-        }).setVisible(false);
+        }).setVisible(false).setDepth(110);
         this.#game.inspirationMessage.text = localeData[horseName + "Quote"];
         this.#game.inspirationMessage.setOrigin(0.5)
         this.#game.inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)

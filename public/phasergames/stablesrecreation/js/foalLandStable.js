@@ -212,12 +212,7 @@ class FoalLandStable extends Phaser.Scene
             });
 
         // Horse hit box
-        if (horseData.height === 'short') {
-            //TODO: still need to size this
-            game.stablesManager.createHorseHitbox(230, 100, 356, 256)
-        } else {
-            game.stablesManager.createHorseHitbox(230, 100, 356, 256)
-        }
+        game.stablesManager.createHorseHitbox(240, 210, 356, 165, () => {}, 0, -20)
 
 
         // Inspirational message frame
