@@ -123,7 +123,7 @@ class FoalAirStable extends Phaser.Scene
             brushSmall.on('pointerout', function (pointer) { game.stablesManager.pointerout (brushSmall) });
 
         // Hoofpick
-        const hoofpick = game.add.sprite(684, 187, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
+        const hoofpick = game.add.sprite(674, 187, 'hoofpick', 'idle').setInteractive( { pixelPerfect: true } );
             game.stablesManager.addSpriteAnims(hoofpick, 'hoofpick_pickup', [
                     'pickup0000', 'pickup0001', 'pickup0002', 'pickup0003', 'pickup0004', 'pickup0005', 'pickup0006', 'pickup0007', 'pickup0008', 'pickup0009',
                     'in_use'
