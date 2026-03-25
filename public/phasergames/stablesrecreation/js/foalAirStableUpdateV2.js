@@ -317,7 +317,7 @@ class FoalAirStable extends Phaser.Scene
             });
 
         // Food Trough (Bottle)
-        game.floatingBottle = game.add.image(158, 240, 'bottle').setScale(.75).setAngle(90).setAlpha(0);
+        game.floatingBottle = game.add.image(158, 240, 'bottle').setScale(-.75, .75).setAngle(90).setAlpha(0);
 
 
         // Berries

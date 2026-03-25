@@ -436,7 +436,7 @@ class FoalLandStable extends Phaser.Scene
             });
             game.bottleBin.on('pointerdown', function (pointer) { game.stablesManager.pointerdown(game.bottleBin, game.HAND.bottle, 'takeBottle', 'takeBottle') }); 
 
-        game.floatingBottle = game.add.image(208, 255, 'bottle').setScale(.75).setAngle(90).setAlpha(0);
+        game.floatingBottle = game.add.image(208, 255, 'bottle').setScale(-.75, .75).setAngle(90).setAlpha(0);
 
         game.troughMask = game.add.sprite(194, 415, 'trough_mask', 'trough_mask').setScale(1,1.1).setVisible(false);
             game.stablesManager.addSpriteAnims(game.troughMask, 'mask_fill_water', [
