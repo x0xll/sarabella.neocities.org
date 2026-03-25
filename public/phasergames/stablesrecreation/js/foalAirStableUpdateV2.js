@@ -177,6 +177,7 @@ class FoalAirStable extends Phaser.Scene
                     }
                     if(entry.animation.name === 'fall') {
                         game.beddingState = 2;
+                        game.leaves.animationState.setAnimation(0, "idle", false)
                     }
                 }
             })

@@ -24,8 +24,8 @@ class AirStable extends Phaser.Scene
 
         game.load.atlas('leaf_tree_shake', './images/airStable/leaf_tree_shake.png', './images/airStable/leaf_tree_shake.json');
         game.load.atlas('leaf_chimes', './images/airStable/leaf_chimes.png', './images/airStable/leaf_chimes.json');
-        game.load.atlas('leaves_fall', './images/airStable/leaves_fall.png', './images/airStable/leaves_fall.json');
-        game.load.atlas('leaves_wind', './images/airStable/leaves_wind.png', './images/airStable/leaves_wind.json');
+        game.load.spineAtlas("leaves-atlas", `./images/airStable/leavesskeleton.atlas`);
+        game.load.spineJson("leaves-json", `./images/airStable/leavesskeleton.json`);
 
         game.load.image('left_tree', './images/airStable/leftTree.png');
         game.load.atlas('fountain', './images/airStable/fountain.png', './images/airStable/fountain.json');
@@ -149,25 +149,31 @@ class AirStable extends Phaser.Scene
 
             
         // Leaves (on floor)
-        const leaves = game.add.sprite(520, 261, 'leaves_wind', 'wind0000');
-             game.stablesManager.addSpriteAnims(leaves, 'leaves_wind', [
-                    'wind0000', 'wind0001', 'wind0002', 'wind0003', 'wind0004', 'wind0005', 'wind0006', 'wind0007', 'wind0008', 'wind0009',
-                    'wind0010', 'wind0011', 'wind0012', 'wind0013', 'wind0014', 'wind0015', 'wind0016', 'wind0017', 'wind0018', 'wind0019',
-                    'wind0020', 'wind0021', 'wind0022', 'wind0023', 'wind0024', 'wind0025', 'wind0026', 'wind0027', 'wind0028', 'wind0029',
-                ])
-            this.anims.create({
-                key: 'leaves_fall',
-                frames: this.anims.generateFrameNumbers('leaves_fall', { frames: [
-                    'fall0000', 'fall0001', 'fall0002', 'fall0003', 'fall0004', 'fall0005', 'fall0006', 'fall0007', 'fall0008', 'fall0009',
-                    'fall0010', 'fall0011', 'fall0012', 'fall0013', 'fall0014', 'fall0015', 'fall0016', 'fall0017', 'fall0018', 'fall0019',
-                    'fall0020', 'fall0021', 'fall0022', 'fall0023', 'fall0024', 'fall0025', 'fall0026', 'fall0027', 'fall0028', 'fall0029',
-                    'fall0030', 'fall0031', 'fall0032', 'fall0033', 'fall0034', 'fall0035', 'fall0036', 'fall0037', 'fall0038', 'fall0039',
-                    'fall0040', 'fall0041', 'fall0042', 'fall0043', 'fall0044', 'fall0045', 'fall0046', 'fall0047', 'fall0048', 'fall0049',
-                    'fall0050', 'fall0051', 'fall0052', 'fall0053', 'fall0054', 'fall0055', 'fall0056', 'fall0057', 'fall0058', 'fall0059',
-                    'fall0060', 'fall0061', 'fall0062'
-                ] }),
-                frameRate: 24
-            });
+            game.leaves = game.add.spine(770, 280, 'leaves-json', 'leaves-atlas').setAngle(0).setScale(1);
+            game.beddingState = 0;
+            let rand = game.stablesManager.randomIntFromInterval(2,4)
+            setLeaves(game.leaves, rand)
+            game.leaves.animationState.setAnimation(0, "idle", false)
+
+            function setLeaves(leavesSkeleton, number) {
+                const skeletonData = leavesSkeleton.skeleton.data;
+                const skin = new spine.Skin("custom");
+                    skin.addSkin(skeletonData.findSkin(`Leaf${number}`));
+                leavesSkeleton.skeleton.setSkin(skin);
+            }
+
+            game.leaves.animationState.addListener({
+                complete: function endAnimation(entry) { 
+                    if(entry.animation.name === 'wind') {
+                        setLeaves(game.leaves, 1)
+                        game.beddingState = 1;
+                    }
+                    if(entry.animation.name === 'fall') {
+                        game.beddingState = 2;
+                        game.leaves.animationState.setAnimation(0, "idle", false)
+                    }
+                }
+            })
 
 
         // Inspirational message frame
@@ -255,7 +261,7 @@ class AirStable extends Phaser.Scene
                     'idle'
                 ])
             windchimes.on('pointerover', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0000') {
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 0) {
                     windchimes.setFrame('hover');
                     game.hover2.play();
                 }
@@ -266,8 +272,8 @@ class AirStable extends Phaser.Scene
                 }
             });
             windchimes.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0000') {
-                    leaves.play('leaves_wind');
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 0) {
+                    game.leaves.animationState.setAnimation(0, "wind", false);
                     windchimes.play('windchimes_blow');
                     game.cleanLeaves.play();
                 }
@@ -354,7 +360,7 @@ class AirStable extends Phaser.Scene
                      'idle'
                 ])
             treeInteractive.on('pointerover', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 1) {
                     leafTree.setFrame('hover');
                     game.hover2.play();
                 }
@@ -365,8 +371,8 @@ class AirStable extends Phaser.Scene
                 }
             });
             treeInteractive.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty && leaves.frame.name === 'wind0029') {
-                    leaves.play('leaves_fall')
+                if (game.handCurrent === game.HAND.empty && game.beddingState === 1) {
+                    game.leaves.animationState.setAnimation(0, "fall", false);
                     leafTree.play('tree_shake')
                     game.shakeLeaves.play()
                     game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtNoMoreLeaves)
