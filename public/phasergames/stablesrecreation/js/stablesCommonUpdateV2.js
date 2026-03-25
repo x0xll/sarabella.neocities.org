@@ -263,8 +263,8 @@ class StablesManager {
 
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
         const game = this.#game
-        const horseInteractive = this.addHitbox(x, y, width, height)// game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x, y, width, height), Phaser.Geom.Rectangle.Contains);
-        game.headInteractive = this.addHitbox(x+headOffsetX, y+headOffsetY, 150, 150)//game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x+headOffsetX, y+headOffsetY, 150, 150), Phaser.Geom.Rectangle.Contains);
+        const horseInteractive = this.addHitbox(x, y, width, height)
+        game.headInteractive = this.addHitbox(x+headOffsetX, y+headOffsetY, 150, 150)
         // interact with horse
         horseInteractive.on('pointerdown', function (pointer) {
             if (game.handCurrent === game.HAND.brush) {
@@ -607,7 +607,7 @@ class StablesManager {
             game.headInteractive.setInteractive()
         }
         else if (game.handCurrent === game.HAND.bottle) {
-            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle').setAngle(90).setScale(.75);
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle').setAngle(90).setScale(-.75, .75);
             game.headInteractive.setInteractive()
         }
         else {

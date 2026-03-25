@@ -28,6 +28,7 @@ class FoalLandStable extends Phaser.Scene
         game.load.atlas('straw2', './images/landFoalStable/straw2.png', './images/landFoalStable/straw2.json');
         game.load.atlas('straw3', './images/landFoalStable/straw3.png', './images/landFoalStable/straw3.json');
         game.load.atlas('hay_loft', './images/landStable/hay_loft.png', './images/landStable/hay_loft.json');
+        game.load.image('bed_bars', './images/landFoalStable/bedBars.png');
 
         game.load.atlas('trough', './images/landFoalStable/water.png', './images/landFoalStable/water.json');
         game.load.atlas('trough_mask', './images/landFoalStable/water_mask.png', './images/landFoalStable/water_mask.json');
@@ -169,6 +170,7 @@ class FoalLandStable extends Phaser.Scene
                     hayLoft.play('get_hay')
                 }
             });
+        game.add.image(264, 80, 'bed_bars');
 
 
         // Water Trough
@@ -452,13 +454,13 @@ class FoalLandStable extends Phaser.Scene
                     'idle'
                 ])
             luck.on('pointerdown', function (pointer) {
-                if (luck.frame.name === 'hover') {
+                if (luck.frame.name === 'hover' && game.familyTree.alpha === 0) {
                     luck.play('good_luck')
                     game.luckSound.play()
                 }
             });
             luck.on('pointerover', function (pointer) {
-                if (luck.frame.name === 'idle') {
+                if (luck.frame.name === 'idle' && game.familyTree.alpha === 0) {
                     luck.setFrame('hover')
                     game.hover1.play();
                 }
