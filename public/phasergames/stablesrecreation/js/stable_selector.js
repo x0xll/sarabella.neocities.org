@@ -5,6 +5,7 @@ const font_name = 'Arial'
 const horses = [
     'peter',
     'abenaki',
+    'achilles',
     'amor',
     'anemone',
     'angel',
