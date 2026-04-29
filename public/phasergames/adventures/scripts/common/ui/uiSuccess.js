@@ -39,8 +39,6 @@ class uiSuccess extends uiManagerBase
     {
         super(phaserScene, "success");
 
-        this.phaserScene.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
-
         this.rewards = {}
         this.load()
     }

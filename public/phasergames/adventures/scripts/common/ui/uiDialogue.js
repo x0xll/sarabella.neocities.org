@@ -94,9 +94,9 @@ class uiDialogue extends uiManagerBase
         // Character Avatar
         var charaPortrait = this.phaserScene.add.image(x-2, y, this.DIALOGUE_HUMANS_THUMBNAILS, "C001")
                                 .setOrigin(0)
-                                .setScrollFactor(0);
-        const mask = new Phaser.Display.Masks.BitmapMask(this.phaserScene, charaPortraitMask);
-        charaPortrait.setMask(mask);
+                                .setScrollFactor(0)
+                                .enableFilters();
+        charaPortrait.enableFilters().filters.external.addMask(charaPortraitMask);
 
         // Normal text
         var normalText = this.phaserScene.add.rexBBCodeText(105, 325, 'Dialogue Text goes here...', this.DIALOGUE_TEXT_BLACK_SETTINGS_BBCODE)
