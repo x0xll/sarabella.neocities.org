@@ -504,7 +504,7 @@ class StablesManager {
     #createHelpButton(helpTexts) {
         const game = this.#game
         game.helpPopups = [];
-        game.helpButton =game.add.sprite(444, 261, 'help_button', 'idle').setDepth(3).setInteractive(this.#game.input.makePixelPerfect(150));
+        game.helpButton =game.add.sprite(444, 261, 'help_button', 'idle').setDepth(3);
         helpTexts.forEach(helptext => {
             switch (helptext[3]) {
                 case "OneLine":
@@ -522,14 +522,15 @@ class StablesManager {
             }
             this.#showLocalizedHelpTexts(helptext[0], helptext[1], helptext[2], helptext[3]);
         });
-       game.helpButton.on('pointerover', function (pointer) { 
-            this.setFrame('help') 
+        let helpHitbox = this.addHitbox(0, 469, 50, 50);
+        helpHitbox.on('pointerover', function (pointer) { 
+            game.helpButton.setFrame('help') 
             game.helpPopups.forEach(helpTxt => {
                 helpTxt.setAlpha(1);
             });
-        });
-       game.helpButton.on('pointerout', function (pointer) { 
-            this.setFrame('idle') 
+            });
+        helpHitbox.on('pointerout', function (pointer) { 
+            game.helpButton.setFrame('idle') 
             game.helpPopups.forEach(helpTxt => {
                 helpTxt.setAlpha(0);
             });

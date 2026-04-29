@@ -547,7 +547,8 @@ class LandStable extends Phaser.Scene
 
 
         // Lucky Horseshoe
-        const luck = game.add.sprite(453, 268, 'luck', 'idle').setInteractive({ pixelPerfect: true }).setDepth(1);
+        const luck = game.add.sprite(453, 268, 'luck', 'idle').setDepth(1);
+        const luckHitbox = game.stablesManager.addHitbox(614, 25, 40, 40);
             game.stablesManager.addSpriteAnims(luck, 'good_luck', [
                     'idle',
                     'good_luck0000', 'good_luck0001', 'good_luck0002', 'good_luck0003', 'good_luck0004', 'good_luck0005', 'good_luck0006', 'good_luck0007', 'good_luck0008', 'good_luck0009',
@@ -557,19 +558,19 @@ class LandStable extends Phaser.Scene
                     'good_luck0040', 'good_luck0041', 'good_luck0042',
                     'idle'
                 ])
-            luck.on('pointerdown', function (pointer) {
+            luckHitbox.on('pointerdown', function (pointer) {
                 if (luck.frame.name === 'hover') {
                     luck.play('good_luck')
                     game.luckSound.play()
                 }
             });
-            luck.on('pointerover', function (pointer) {
+            luckHitbox.on('pointerover', function (pointer) {
                 if (luck.frame.name === 'idle') {
                     luck.setFrame('hover')
                     game.hover1.play();
                 }
             });
-            luck.on('pointerout', function (pointer) {
+            luckHitbox.on('pointerout', function (pointer) {
                 if (luck.frame.name === 'hover') {
                     luck.setFrame('idle')
                 }
