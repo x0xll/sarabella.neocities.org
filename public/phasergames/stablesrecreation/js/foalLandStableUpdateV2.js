@@ -58,7 +58,7 @@ class FoalLandStable extends Phaser.Scene
         game.load.image('magnifier', './images/airFoalStable/magnifier.png');
 
         game.load.atlas('music_button', './images/landStable/music.png', './images/landStable/music.json');
-        game.load.atlas('help_button', './images/landStable/help.png', './images/landStable/help.json');
+        game.load.atlas('help_button', './images/landFoalStable/help.png', './images/landFoalStable/help.json');
         game.load.image('stat_box', './images/StatBox.png');
         game.load.image('goworld_box', './images/landStable/ToWorldBox.png');
 
@@ -479,19 +479,19 @@ class FoalLandStable extends Phaser.Scene
         // ---------- Stable foreground and UI ---------- //
         game.stablesManager.createStatBox(625, 130)
         game.stablesManager.createUI([
-            [115, 85, localeData.txtHelpTrophyRoom, "Small"],
-            [103, 300, localeData.txtHelpWater, "Small"],
+            // [115, 85, localeData.txtHelpTrophyRoom, "Small"],
+            [70, 263, localeData.txtHelpWater, "Small"],
             [315, 400, localeData.txtHelpStats, "OneLine"],
             [400, 200, localeData.txtHelpPitchFork, "Big"],
-            [427, 115, localeData.txtHelpInspiration, "Small"],
+            [454, 70, localeData.txtHelpInspiration, "Small"],
             [515, 270, localeData.txtHelpShovel, "Big"],
             [537, 410, localeData.txtHelpApple, "Med"],
-            [535, 345, localeData.txtHelpOats, "Med"],
-            // [792, 243, localeData.txtHelpBottle, "Small"],
-            [490, 63, localeData.txtHelpWorld, "OneLine"],
+            // [535, 345, localeData.txtHelpOats, "Med"],
+            [535, 345, localeData.txtHelpBottle, "Med"],
+            [160, 155, localeData.txtHelpWorld, "OneLine"],
             [755, 33, localeData.txtHelpHoofPick, "Big"],
             [670, 107, localeData.txtHelpBrush, "Small"],
-            [507, 23, localeData.txtHelpLuck, "OneLine"]
+            [130, 55, localeData.txtHelpLuck, "OneLine"]
         ])
         game.stablesManager.createBeSaWorldLink(100, 195, .8, .7, "Main")
 
