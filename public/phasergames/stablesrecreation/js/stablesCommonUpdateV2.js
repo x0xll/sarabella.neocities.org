@@ -94,6 +94,33 @@ class StablesManager {
         });
     }
 
+    preloadHorse(horseType) {
+        this.#game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
+        this.#game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
+        if (isDressup) {
+            this.#game.load.spineAtlas("horsePicAtlas", `./images/horses/${horseName}/picture/skeleton.atlas`);
+            this.#game.load.spineJson("horsePicJson", `./images/horses/${horseName}/picture/skeleton.json`);
+        } else {
+            this.#game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
+            this.#game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
+
+            this.#game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        }
+
+        if (horseName === "skeleton") {
+            this.#game.load.spineAtlas("horse_dirty-atlas", `./images/landStable/skeleton_dirty/dirt_skeleton.atlas`);
+            this.#game.load.spineJson("horse_dirty-json", `./images/landStable/skeleton_dirty/dirt_skeleton.json`);
+        }
+        else if (horseName === 'wavebreaker' || horseName === 'tiffi') {
+            this.#game.load.spineAtlas("horse_dirty-atlas", `./images/waterStable/hippocampus_dirty/dirt_skeleton.atlas`);
+            this.#game.load.spineJson("horse_dirty-json", `./images/waterStable/hippocampus_dirty/dirt_skeleton.json`);
+        } 
+         else {
+            this.#game.load.spineAtlas("horse_dirty-atlas", `./images/${horseType}Stable/horse_dirty/dirt_skeleton.atlas`);
+            this.#game.load.spineJson("horse_dirty-json", `./images/${horseType}Stable/horse_dirty/dirt_skeleton.json`);
+        }
+    }
+
     preloadAudio(additionalSounds) {
         const path = './sounds/'
         this.#gameSounds = {
@@ -129,9 +156,15 @@ class StablesManager {
         Object.keys(this.#gameSounds).forEach(key => {
             this.#game[key] = this.#game.sound.add(key);
         });
-        this.#game.playMusic = true;
-        this.#game.backgroundMusic.loop = true; 
-        this.#game.backgroundMusic.play();
+        if (this.#game.data.playMusic !== undefined) {
+            this.#game.playMusic = this.#game.data.playMusic
+            this.#game.backgroundMusic = this.#game.data.backgroundMusic
+        } else {
+            this.#game.playMusic = true;
+            this.#game.backgroundMusic = this.#game.sound.add('backgroundMusic');
+            this.#game.backgroundMusic.loop = true; 
+            this.#game.backgroundMusic.play();
+        }
 
         this.#game.add.image(444, 260, 'stable_bg');
         this.#game.switchQuote = null;
@@ -172,6 +205,12 @@ class StablesManager {
         this.#game.statBoxBusy = false
         this.#game.statBoxQueue = []
         this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
+
+        if (isDressup) {
+            for (let [key, value] of Object.entries(dressupLocaleData)) {
+                localeData[key] = value
+            }
+        }
     }
 
     createFoalInspiration(posX, posY, scale, magnifierX = 52, magnifierY = 96) {
@@ -299,12 +338,18 @@ class StablesManager {
     }
 
     createHorse(x, y, angle, scale = 1) {
+            angle = isDressup ? 0 : angle;
             const game = this.#game
+
             game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale).setDepth(1);
             game.horse.animationState.setAnimation(0, "idle", false)
             game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle).setScale(scale).setDepth(1);
             game.horseDirty.animationState.setAnimation(0, "idle", false)
-            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale).setDepth(1);
+            if (isDressup) {
+                game.horseOverlay = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale).setDepth(1);
+            } else {
+                game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale).setDepth(1);
+            }
             game.horseOverlay.animationState.setAnimation(0, "idle", false)
             
             this.#addConstantAnimation()
@@ -382,8 +427,11 @@ class StablesManager {
                         game.splash1Sound.play()
                     }
                 }          
+            })}
+
+            if (isDressup) {
+                game.data.resetHorseSprite(game.horse, game.horseOverlay, game.horsePic)
             }
-        )}
     }
 
     /**
@@ -438,7 +486,7 @@ class StablesManager {
 
         // Horse name
         game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' }).setDepth(1);
-        game.horseNameText.text = localeData[horseName + "Name"];
+        game.horseNameText.text = isDressup ? horseData.name : localeData[horseName + "Name"];
         game.horseNameText.setOrigin(.5, .5)
 
         // Stat bars
@@ -449,6 +497,7 @@ class StablesManager {
         // Buttons
         this.#createHelpButton(helpTexts)
         this.#createMusicButton()
+        if (isDressup) { this.#createDressupButtons() }
 
         // Cursor
         game.cursor = game.add.sprite(0, 0, 'brush_small', 'hold').setVisible(false).setDepth(4);
@@ -456,7 +505,7 @@ class StablesManager {
 
     /** Adds the visuals, text and sounds for displaying the inspirational message */
     #createInspirationalMessage() {
-        this.#game.playInspiration = true
+        this.#game.playInspiration = !isDressup || (isDressup && /\S/.test(horseData.message))
         this.#game.canPlayInspiration = false
 
         this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false).setDepth(2);
@@ -467,7 +516,7 @@ class StablesManager {
             align: 'center' ,
             wordWrap: { width: 800 } 
         }).setVisible(false).setDepth(2);
-        this.#game.inspirationMessage.text = localeData[horseName + "Quote"];
+        this.#game.inspirationMessage.text = isDressup ? horseData.message : localeData[horseName + "Quote"];
         this.#game.inspirationMessage.setOrigin(0.5)
         this.#game.inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
     }
@@ -476,15 +525,15 @@ class StablesManager {
         const game = this.#game
         const pos = x - 32 + (startLevel*this.#bar/2)
         const width = 1 + startLevel*this.#bar
-        game.add.rectangle(x, 505, 66, 2, color1).setDepth(1);
+        game.add.rectangle(x, 505, 66, 2, color1).setDepth(5);
 
         const newBar = {
             x: x,
-            leftShine: game.add.rectangle(pos - width/2 - 1, 510, 3, 10, shineColor),
-            rightShade: game.add.rectangle(pos + width/2 + 1, 510, 3, 10, shadeColor),
-            topShine: game.add.rectangle(pos, 506, width, 3, shineColor),
-            bottomShade: game.add.rectangle(pos, 514, width, 2, shadeColor),
-            progress: game.add.rectangle(pos, 510, width, 7, color2),
+            leftShine: game.add.rectangle(pos - width/2 - 1, 510, 3, 10, shineColor).setDepth(1),
+            rightShade: game.add.rectangle(pos + width/2 + 1, 510, 3, 10, shadeColor).setDepth(1),
+            topShine: game.add.rectangle(pos, 506, width, 3, shineColor).setDepth(1),
+            bottomShade: game.add.rectangle(pos, 514, width, 2, shadeColor).setDepth(1),
+            progress: game.add.rectangle(pos, 510, width, 7, color2).setDepth(1),
             level: startLevel
         }
 
@@ -539,7 +588,7 @@ class StablesManager {
 
     #createMusicButton() {
         const game = this.#game
-        game.musicButton =game.add.sprite(867, 498, 'music_button', 'music_on').setDepth(1).setInteractive({ pixelPerfect: true });
+        game.musicButton =game.add.sprite(867, 498, 'music_button', game.playMusic ? 'music_on' : 'music_off').setDepth(1).setInteractive({ pixelPerfect: true });
         game.musicButton.on('pointerdown', function (pointer)
         {
             if (game.playMusic) {
@@ -554,6 +603,47 @@ class StablesManager {
         });
         game.musicButton.on('pointerover', function (pointer) { game.musicButton.setFrame(`music_${game.playMusic ? 'on' : 'off'}_hover`) });
         game.musicButton.on('pointerout', function (pointer) { game.musicButton.setFrame(`music_${game.playMusic ? 'on' : 'off'}`) });
+    }
+
+    #createDressupButtons() {
+        const game = this.#game
+        const playButton = game.add.text(150, 465, localeData.txtDressupBack, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5).setDepth(5);
+            playButton.setInteractive({ useHandCursor: true });
+            playButton.on('pointerover', () => {
+                playButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            playButton.on('pointerout', () => {
+                playButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            playButton.on('pointerdown', () => {
+                game.scene.start('dressupStable', {horseData: horseData, backgroundMusic: game.backgroundMusic, playMusic: game.playMusic});
+            })
+        // Copy Button
+        const copyButton = game.add.text(150, 500, localeData.txtDressupCopy, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5).setDepth(5);
+            copyButton.setInteractive({ useHandCursor: true });
+            copyButton.on('pointerover', () => {
+                copyButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            copyButton.on('pointerout', () => {
+                copyButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            copyButton.on('pointerdown', () => {
+                game.data.copy()
+            })
     }
 
     // /* ---------- UPDATE ---------- */
@@ -645,13 +735,15 @@ class StablesManager {
             game.playInspiration = false
             game.canPlayInspiration = false
 
-            if (localizedQuote && game.switchQuote === null)
-                game.inspirationMessage.text = localeData[horseName + "Quote"];
-            else if (game.switchQuote === null)
-                game.inspirationMessage.text = englishData[horseName + "Quote"];
-            else
-                game.inspirationMessage.text = game.switchQuote;
-
+            if (!isDressup){
+                if (localizedQuote && game.switchQuote === null)
+                    game.inspirationMessage.text = localeData[horseName + "Quote"];
+                else if (game.switchQuote === null)
+                    game.inspirationMessage.text = englishData[horseName + "Quote"];
+                else
+                    game.inspirationMessage.text = game.switchQuote;
+            }
+            
             game.inspiration.setVisible(true).setAlpha(0)
             game.inspirationMessage.setVisible(true).setAlpha(0)
             game.time.delayedCall(40, function () {game.inspiration.setAlpha(.1); game.inspirationMessage.setAlpha(0.1)});

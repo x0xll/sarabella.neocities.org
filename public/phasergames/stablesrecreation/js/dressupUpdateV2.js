@@ -138,7 +138,7 @@ class dressupStable extends Phaser.Scene
         this.load.atlas('next_button', './images/selector/next.png', './images/selector/next.json');
         this.load.atlas('previous_button', './images/selector/previous.png', './images/selector/previous.json');
 
-        this.load.audio('background_music', ['./sounds/stable_soundtrack.mp3']);
+        this.load.audio('backgroundMusic', ['./sounds/stable_soundtrack.mp3']);
         this.load.audio('apple_munch', ['./sounds/apple_munch.mp3']);
         this.load.audio('brush_sound', ['./sounds/brush_sound.mp3']);
         this.load.audio('brush_sound_small', ['./sounds/brush_sound_small.mp3']);
@@ -178,7 +178,7 @@ class dressupStable extends Phaser.Scene
         }
 
         horseData = {
-            type: 'dressup',
+            type: 'land',
             name: urlParameters.get('name'),
             message: urlParameters.get('message'),
             bodyColor: 0,
@@ -269,16 +269,17 @@ class dressupStable extends Phaser.Scene
     {
         // Makes functions easier to write
         const game = this;
+        game.data = data;
 
         //  If you disable topOnly it will fire events for all objects the pointer is over, regardless of place on the display list
         this.input.topOnly = true;
 
-        if (data.playMusic) {
-            game.playMusic = data.playMusic
-            game.backgroundMusic = data.backgroundMusic
+        if (game.data.playMusic !== undefined) {
+            game.playMusic = game.data.playMusic
+            game.backgroundMusic = game.data.backgroundMusic
         } else {
             game.playMusic = true;
-            game.backgroundMusic = this.sound.add('background_music');
+            game.backgroundMusic = game.sound.add('backgroundMusic');
             game.backgroundMusic.loop = true; 
             game.backgroundMusic.play();
         }
@@ -298,7 +299,7 @@ class dressupStable extends Phaser.Scene
         /**
          * Resets the horse sprite to show the correct features and colours
          */
-        function resetHorseSprite() {
+        function resetHorseSprite(horse, horseOverlay, horsePic) {
             for (let index = 0; index < horse.skeleton.slots.length; index++) {
                 horse.skeleton.slots[index].darkColor = null;
                 
@@ -329,11 +330,11 @@ class dressupStable extends Phaser.Scene
                 'MarkingHR', 'MarkingHR2', 'DarkHR', 'DarkHR2', `FeatheringHR`, 'HoofHR', `LowerHR`, `UpperHR`
             ])
 
-            tintHorse()
-            tintHoof('FL', horseData.flWhite)
-            tintHoof('HL', horseData.hlWhite)
-            tintHoof('FR', horseData.frWhite)
-            tintHoof('HR', horseData.hrWhite)
+            tintHorse(horse, horseOverlay, horsePic)
+            tintHoof(horse, 'FL', horseData.flWhite)
+            tintHoof(horse, 'HL', horseData.hlWhite)
+            tintHoof(horse, 'FR', horseData.frWhite)
+            tintHoof(horse, 'HR', horseData.hrWhite)
         }
 
         /**
@@ -392,7 +393,7 @@ class dressupStable extends Phaser.Scene
             skeleton.skeleton.setToSetupPose();
         }
 
-        function tintHoof(hoof, lighten) {
+        function tintHoof(horse, hoof, lighten) {
             if (lighten) {
                 horse.skeleton.findSlot(`Hoof${hoof}`).darkColor = {r: 197/255, g: 156/255, b: 110/255, a: 1}
             }
@@ -402,7 +403,7 @@ class dressupStable extends Phaser.Scene
 
         }
 
-        function tintHorse() {
+        function tintHorse(horse, horseOverlay, horsePic) {
             let shade = 1
 
             // Hair
@@ -614,7 +615,23 @@ class dressupStable extends Phaser.Scene
         }
 
         if (!data.horseData && urlParameters.get('data')) {
-            this.scene.start('dressupLandStable', sharedData);
+            let type = horseData.type;
+
+            // Get language file for stable type
+            if (type.includes("foal")) { type = type.substring("foal".length).toLowerCase() }
+            let langFile = `./lang/${type}`
+            if (!locale || !urlExists(`${langFile}_${locale}.json`)) { locale ='en' }
+
+            const xmlHttplocale = new XMLHttpRequest();
+            xmlHttplocale.onload = function() {
+                const myObj = JSON.parse(this.responseText);
+                localeData = myObj
+            }
+            xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
+            xmlHttplocale.send();
+
+            // Open stable
+            openStableScene();
         }
 
         const hover1 = this.sound.add('hover1');
@@ -685,7 +702,7 @@ class dressupStable extends Phaser.Scene
             randomiseHorse()
             makeRandomHorse = false
         }
-        resetHorseSprite()
+        resetHorseSprite(horse, horseOverlay, horsePic)
 
         // Setup animations
         for (let index = 0; index < horseOverlay.skeleton.data.animations.length; index++) {
@@ -819,7 +836,7 @@ class dressupStable extends Phaser.Scene
 
             valuechangeCallback(value) {
                 horseData.hairColor = splitHex(value)
-                tintHorse()
+                tintHorse(horse, horseOverlay, horsePic)
             },
             value: horseData.hairColor ? horseData.hairColor : Phaser.Math.Between(0, 0x1000000)
         }).layout()
@@ -852,7 +869,7 @@ class dressupStable extends Phaser.Scene
             valuechangeCallback(value) {
                 horseData.bodyColor = splitHex(value)
                 
-                tintHorse()
+                tintHorse(horse, horseOverlay, horsePic)
             },
             value: horseData.bodyColor ? horseData.bodyColor : Phaser.Math.Between(0, 0x1000000)
         }).layout()
@@ -885,7 +902,7 @@ class dressupStable extends Phaser.Scene
             valuechangeCallback(value) {
                 horseData.darkColor = splitHex(value)
                 
-                tintHorse()
+                tintHorse(horse, horseOverlay, horsePic)
             },
             value: horseData.darkColor !== -1 ? horseData.darkColor : randomDark()
         }).layout()
@@ -918,12 +935,12 @@ class dressupStable extends Phaser.Scene
             valuechangeCallback(value) {
                 horseData.whiteColor = splitHex(value)
                 
-                tintHorse()
+                tintHorse(horse, horseOverlay, horsePic)
             },
             value: horseData.whiteColor ? horseData.whiteColor : randomWhite()
         }).layout()
 
-        const nameInputText = this.add.rexInputText(723, 100, 150, 20, {
+        const nameInputText = this.add.rexInputText(717, 100, 150, 20, {
             fontFamily: 'Arial',
             fontSize: '12px',
             color: '#000000',
@@ -934,7 +951,7 @@ class dressupStable extends Phaser.Scene
             horseData.name = nameInputText.text
             horseNameText.text = horseData.name;
         });        
-        if (horseData.name) { nameInputText.text = horseData.name }
+        if (data.horseData && data.horseData.name) { nameInputText.text = data.horseData.name }
         nameInputText.placeholder = 'Name'
 
         const messageInputText = this.add.rexInputText(723, 160, 150, 60, {
@@ -947,9 +964,10 @@ class dressupStable extends Phaser.Scene
         })
         messageInputText.on('textchange', function(inputText, e){ 
             horseData.message = messageInputText.text
+            sharedData.horseData.message = messageInputText.text
             inspirationMessage.text = horseData.message;
         });
-        if (horseData.message) { messageInputText.text = horseData.message }
+        if (data.horseData && data.horseData.message) { messageInputText.text = data.horseData.message }
         messageInputText.placeholder = 'Message'
 
 
@@ -1006,7 +1024,7 @@ class dressupStable extends Phaser.Scene
                 pButton.on('pointerdown', () => {
                     if (0 < horseData[key]) {
                         horseData[key] = horseData[key] - 1
-                        resetHorseSprite()
+                        resetHorseSprite(horse, horseOverlay, horsePic)
                     }
                     0 < horseData[key] ? pButton.setFrame('idle') : pButton.setFrame('dull');
                     horseData[key] < options - 1 ? nButton.setFrame('idle') : nButton.setFrame('dull');
@@ -1028,7 +1046,7 @@ class dressupStable extends Phaser.Scene
                 nButton.on('pointerdown', () => {
                     if (horseData[key] < options - 1) {
                         horseData[key] = horseData[key] + 1
-                        resetHorseSprite()
+                        resetHorseSprite(horse, horseOverlay, horsePic)
                     }
                     horseData[key] < options - 1 ? nButton.setFrame('idle') : nButton.setFrame('dull');
                     0 < horseData[key] ? pButton.setFrame('idle') : pButton.setFrame('dull');
@@ -1147,7 +1165,11 @@ class dressupStable extends Phaser.Scene
             bodyColorPicker.value = data.horseData.bodyColor.color
             hairColorPicker.value = data.horseData.hairColor.color
             whiteColorPicker.value = data.horseData.whiteColor.color
-            resetHorseSprite()
+            resetHorseSprite(horse, horseOverlay, horsePic)
+        }
+
+        function openStableScene() {
+            game.scene.start(`${horseData.type}Stable`, sharedData);
         }
         
         
@@ -1220,7 +1242,7 @@ class dressupStable extends Phaser.Scene
                 bodyColorPicker.value = Phaser.Math.Between(0, 0x1000000)
                 darkColorPicker.value = randomDark()
                 whiteColorPicker.value = randomWhite()
-                resetHorseSprite()
+                resetHorseSprite(horse, horseOverlay, horsePic)
             })
             
 
@@ -1241,7 +1263,7 @@ class dressupStable extends Phaser.Scene
                 playButton.setBackgroundColor(COLOR_PRIMARY_HEX);
             });
             playButton.on('pointerdown', () => {
-                this.scene.start('dressupLandStable', sharedData);
+                openStableScene();
             })
 
         // Save Button
@@ -1269,7 +1291,7 @@ class dressupStable extends Phaser.Scene
             saveButton.setVisible(false);
 
         // music button
-        const musicButton = this.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });
+        const musicButton = this.add.sprite(867, 498, 'music_button', game.playMusic ? 'music_on' : 'music_off').setInteractive({ pixelPerfect: true });
             musicButton.on('pointerdown', function (pointer)
             {
                 if (game.playMusic) {
@@ -1281,6 +1303,7 @@ class dressupStable extends Phaser.Scene
                     this.setFrame('music_on_hover')
                 }
                 game.playMusic = !game.playMusic
+                sharedData.playMusic = game.playMusic
             });
             musicButton.on('pointerover', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}_hover`) });
             musicButton.on('pointerout', function (pointer) { this.setFrame(`music_${game.playMusic ? 'on' : 'off'}`) });

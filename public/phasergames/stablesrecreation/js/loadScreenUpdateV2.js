@@ -37,6 +37,9 @@ class Load extends Phaser.Scene
             xmlHttplocale.onload = function() {
                 const myObj = JSON.parse(this.responseText);
                 localeData = myObj
+                if (isDressup) {
+                    dressupLocaleData = myObj;
+                }
             }
             xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
             xmlHttplocale.send();
@@ -58,6 +61,6 @@ class Load extends Phaser.Scene
                 loadInto = `${horseData.type}Stable`
             }
         }
-        this.scene.start(loadInto);
+        this.scene.start(loadInto, {});
     }
 }

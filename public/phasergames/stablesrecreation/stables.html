@@ -4,8 +4,8 @@
         <link rel="icon" href="/images/favicons/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
-        <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
-        <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/phaser@4.0.0/dist/phaser.js"></script>
+        <script src="https://unpkg.com/@esotericsoftware/spine-phaser-v4@4.2.*/dist/iife/spine-phaser-v4.js"></script>
         <script src="./js/stablesCommonUpdateV2.js"></script> 
         <script src="./js/loadScreenUpdateV2.js"></script> 
         <script src="./js/loadFoalFamilyUpdateV2.js"></script> 
@@ -55,6 +55,7 @@
                 let quoteData
                 let localizedQuote = loadData(DATA_TYPES.translatedQuotes);
                 let loadInto = `Stables`
+                let isDressup = false
 
                 let config = {
                     parent: "gameDiv",

@@ -46,14 +46,7 @@ class FoalAirStable extends Phaser.Scene
         game.load.atlas('brush_small', './images/airStable/brush_small.png', './images/airStable/brush_small.json');
         game.load.atlas('hoofpick', './images/airStable/feather_oil.png', './images/airStable/feather_oil_updated.json');
         
-        game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
-        game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        game.load.spineAtlas("horse_dirty-atlas", `./images/airFoalStable/horse_dirty/dirt_skeleton.atlas`);
-        game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
-        game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        game.load.spineJson("horse_dirty-json", `./images/airFoalStable/horse_dirty/dirt_skeleton.json`);
-
-        game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.stablesManager.preloadHorse('airFoal');
 
         game.load.atlas('frame', './images/airStable/frame.png', './images/airStable/frame.json');
         game.load.image('family_tree', './images/airFoalStable/family_tree_full.png');
@@ -80,9 +73,10 @@ class FoalAirStable extends Phaser.Scene
 
 
     
-    create ()
+    create (data)
     {
         const game = this
+        game.data = data;
         game.stablesManager.createScene()
 
         // Brush

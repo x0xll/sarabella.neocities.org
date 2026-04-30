@@ -40,14 +40,7 @@ class AirStable extends Phaser.Scene
         game.load.atlas('brush_small', './images/airStable/brush_small.png', './images/airStable/brush_small.json');
         game.load.atlas('hoofpick', './images/airStable/feather_oil.png', './images/airStable/feather_oil_updated.json');
         
-        game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
-        game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        game.load.spineAtlas("horse_dirty-atlas", `./images/airStable/horse_dirty/dirt_skeleton.atlas`);
-        game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
-        game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        game.load.spineJson("horse_dirty-json", `./images/airStable/horse_dirty/dirt_skeleton.json`);
-
-        game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.stablesManager.preloadHorse('air');
 
         game.load.atlas('frame', './images/airStable/frame.png', './images/airStable/frame.json');
         game.load.image('inspiration', './images/airStable/inspiration.png');
@@ -72,9 +65,10 @@ class AirStable extends Phaser.Scene
 
 
     
-    create ()
+    create (data)
     {
         const game = this
+        game.data = data;
         game.stablesManager.createScene()
 
         // Brush
@@ -177,7 +171,11 @@ class AirStable extends Phaser.Scene
 
 
         // Inspirational message frame
-        game.add.image(164, 77, 'horse_image').setScale(.35);
+        if (isDressup) {
+            game.horsePic = game.add.spine(164, 77, 'horsePicJson', `horsePicAtlas`).setScale(.35);
+        } else {
+            game.add.image(164, 77, 'horse_image').setScale(.35);
+        }
         const frame = game.add.sprite(165, 73, 'frame', 'idle').setInteractive();
             frame.on('pointerover', function (pointer){
                 if (game.canPlayInspiration) {

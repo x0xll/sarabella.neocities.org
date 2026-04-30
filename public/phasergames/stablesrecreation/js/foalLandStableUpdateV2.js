@@ -41,14 +41,7 @@ class FoalLandStable extends Phaser.Scene
         game.load.atlas('brush_small', './images/landFoalStable/brush_small.png', './images/landFoalStable/brush_small.json');
         game.load.atlas('hoofpick', './images/landFoalStable/hoofpick.png', './images/landFoalStable/hoofpick.json');
         
-        game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
-        game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
-        game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        game.load.spineAtlas("horse_dirty-atlas", `./images/landFoalStable/horse_dirty/dirt_skeleton.atlas`);
-        game.load.spineJson("horse_dirty-json", `./images/landFoalStable/horse_dirty/dirt_skeleton.json`);
-
-        game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.stablesManager.preloadHorse('landFoal');
         game.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
         game.load.atlas('luck', './images/landFoalStable/luck.png', './images/landFoalStable/luck.json');
@@ -78,9 +71,10 @@ class FoalLandStable extends Phaser.Scene
         })
     }
 
-    create ()
+    create (data)
     {
         const game = this
+        game.data = data;
         game.stablesManager.createScene()
 
 

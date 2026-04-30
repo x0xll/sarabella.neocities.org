@@ -41,21 +41,9 @@ class LandStable extends Phaser.Scene
         
         game.load.atlas('brush', './images/landStable/brush.png', './images/landStable/brush.json');
         game.load.atlas('brush_small', './images/landStable/brush_small.png', './images/landStable/brush_small.json');
-        game.load.atlas('hoofpick', './images/landStable/hoofpick.png', './images/landStable/hoofpick_updated.json');
+        game.load.atlas('hoofpick', './images/landStable/hoofpick.png', './images/landStable/hoofpick.json');
         
-        game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
-        game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
-        game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        if (horseName === "skeleton") {
-            game.load.spineAtlas("horse_dirty-atlas", `./images/landStable/skeleton_dirty/dirt_skeleton.atlas`);
-            game.load.spineJson("horse_dirty-json", `./images/landStable/skeleton_dirty/dirt_skeleton.json`);
-        } else {
-            game.load.spineAtlas("horse_dirty-atlas", `./images/landStable/horse_dirty/dirt_skeleton.atlas`);
-            game.load.spineJson("horse_dirty-json", `./images/landStable/horse_dirty/dirt_skeleton.json`);
-        }
-
-        game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.stablesManager.preloadHorse('land');
         game.load.spritesheet('hooves', './images/landStable/hooves.png', { frameWidth: 53, frameHeight: 53 });
 
         game.load.atlas('luck', './images/landStable/luck.png', './images/landStable/luck.json');
@@ -80,9 +68,10 @@ class LandStable extends Phaser.Scene
         })
     }
 
-    create ()
+    create (data)
     {
         const game = this
+        game.data = data;
         game.stablesManager.createScene()
 
 
@@ -266,7 +255,11 @@ class LandStable extends Phaser.Scene
 
         // Inspirational message frame
         const frame = game.add.sprite(516, 118, 'frame', 'idle').setScale(.93);
-        game.add.image(517, 126, 'horse_image').setScale(.32);
+        if (isDressup) {
+            game.horsePic = game.add.spine(518, 125, 'horsePicJson', `horsePicAtlas`).setScale(.35);
+        } else {
+            game.add.image(517, 126, 'horse_image').setScale(.32);
+        }
         const frameInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(478, 65, 75, 110), Phaser.Geom.Rectangle.Contains);
             frameInteractive.on('pointerover', function (pointer) {
                 if (game.canPlayInspiration) {

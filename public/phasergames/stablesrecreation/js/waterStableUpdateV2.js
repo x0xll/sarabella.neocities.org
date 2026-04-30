@@ -45,19 +45,7 @@ class WaterStable extends Phaser.Scene
         game.load.atlas('temperature_buttons', './images/waterStable/temperature_buttons.png', './images/waterStable/temperature_buttons.json');
         game.load.atlas('temperature_bg', './images/waterStable/temperature_bg.png', './images/waterStable/temperature_bg.json');
         
-        game.load.spineAtlas("horse-atlas", `./images/horses/${horseName}/skeleton.atlas`);
-        game.load.spineAtlas("horse_overlay-atlas", `./images/horses/${horseName}/skeleton_overlay.atlas`);
-        game.load.spineJson("horse-json", `./images/horses/${horseName}/skeleton.json`);
-        game.load.spineJson("horse_overlay-json", `./images/horses/${horseName}/skeleton_overlay.json`);
-        if (horseName === 'wavebreaker') {
-            game.load.spineAtlas("horse_dirty-atlas", `./images/waterStable/hippocampus_dirty/dirt_skeleton.atlas`);
-            game.load.spineJson("horse_dirty-json", `./images/waterStable/hippocampus_dirty/dirt_skeleton.json`);
-        } else {
-            game.load.spineAtlas("horse_dirty-atlas", `./images/waterStable/horse_dirty/dirt_skeleton.atlas`);
-            game.load.spineJson("horse_dirty-json", `./images/waterStable/horse_dirty/dirt_skeleton.json`);
-        }
-
-        game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
+        this.stablesManager.preloadHorse('water');
 
         game.load.image('frame', './images/waterStable/frame.png');
         game.load.image('inspiration', './images/waterStable/inspiration.png');
@@ -85,9 +73,10 @@ class WaterStable extends Phaser.Scene
         })
     }
 
-    create ()
+    create (data)
     {
         const game = this
+        game.data = data;
         game.stablesManager.createScene()
      
         // Temp Change BG
@@ -311,7 +300,12 @@ class WaterStable extends Phaser.Scene
 
 
         // Inspirational message frame
-        game.add.image(55, 268, 'horse_image').setScale(.44);
+
+        if (isDressup) {
+            game.horsePic = game.add.spine(55, 268, 'horsePicJson', `horsePicAtlas`).setScale(.44);
+        } else {
+            game.add.image(55, 268, 'horse_image').setScale(.44);
+        }
         const frame = game.add.image(54, 266, 'frame').setInteractive();
             frame.on('pointerover', function (pointer) {
                 if (game.canPlayInspiration) {
