@@ -16,6 +16,7 @@
     "txtHelpBrush" : "Click to select a brush. Click again to gently preen the feathers of your horse.",
     "txtHelpLuck" : "Click for good luck!",
     "txtHelpBranch" : "Click to shake loose a bed of fresh leaves.",
+    "txtHelpBottle": "Click to grab bottle. Click again near horses's mouth to begin feeding bottle.",
 
     "txtFullHorse" : "Your horse is no longer hungry or thirsty.",
     "txtCleanHorse" : "Your horse is gleaming. Well done!",
@@ -80,6 +81,7 @@
     "larenaName": "Larena",
     "lillovaName": "Lillova",
     "lukanName": "Lukan",
+    "magic2Name": "Magic",
     "maxiName": "Maxi",
     "medusaName": "Medusa",
     "memoryName": "Memory",
@@ -125,6 +127,7 @@
     "woodlockName": "Woodlock",
     "zephyrosName": "Zephyros",
 
+    "BaBnyxQuote": "Hope is like magic. It takes you to exciting places.",
     "amorQuote": "Use your love to bring peace to the world.",
     "anemoneQuote": "Keep your heart open. Believe in getting and giving love.",
     "angelQuote": "Angel is coming. Make space and let heaven help you.",
@@ -176,6 +179,7 @@
     "larenaQuote": "You are ready to spread your wings and fly!",
     "lillovaQuote": "Love has no conditions.",
     "lukanQuote": "You can make this a moment you will always remember.",
+    "magic2Quote": "Look to the heavens for the shooting stars. Now make a wish.",
     "maxiQuote": "To find the way just follow me.",
     "medusaQuote": "Take advice from the people you trust.",
     "memoryQuote": "Write down your fondest memories and keep them alive forever.",

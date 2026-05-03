@@ -23,7 +23,10 @@ class Load extends Phaser.Scene
             if (horseData.type === 'dressup') {
                 langFile = `./lang/dressup`
             } else {
-                langFile = `./lang/${horseData.type}`
+                let type = horseData.type;
+                if (type.includes("foal"))
+                    type = type.substring("foal".length).toLowerCase();
+                langFile = `./lang/${type}`
             }
             if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
                 locale ='en'

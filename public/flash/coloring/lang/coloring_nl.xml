@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+    <print>Print</print>
+    <reset>Reset</reset>
+    <help>Hulp</help>
+    <currentColor>Huidige kleur</currentColor>
+    <moreColor>Meer kleuren</moreColor>
+    
+    <fionaTxt>Wees de held in je eigen verhaal.</fionaTxt>
+    <thunderTxt>Ik geef je moed. Nu kun je je angsten loslaten.</thunderTxt>
+    <bellaTxt>Denk elke dag positief! Voel het plezier en geluk dat daaruit voortkomt.</bellaTxt>
+    <jewelTxt>Ik zal je helpen in een vloed van weelde te blijven.</jewelTxt>
+</root>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>Hulp</help_btn>
+	<pause_btn>Pauzeer</pause_btn>
+	<start_btn>Start</start_btn>
+
+	<turbobtn>Play Turbo</turbobtn>
+
+	<pauseheading>Het spel is gepauzeerd</pauseheading>
+	<pause2>Sluit dit scherm om het spel te hervatten.</pause2>
+
+	<how_to_play_btn>Spelregels</how_to_play_btn>
+
+	<play_again_btn>Opnieuw spelen</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>Intro van XML!</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>Spelregels</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>Help Pegasus om speciale bloemen te verzamelen in de lucht van het koninkrijk.
+
+Gebruik de spatiebalk of klik met de muis om te vliegen.
+
+Verzamel zo veel mogelijk bloemen voordat de zon ondergaat en je het kasteel bereikt.
+
+Succes!</how_to_play2>
+
+	<!-- win message -->
+	<win>Gefeliciteerd</win>
+	
+	<win2>Goed gedaan! Wil je nog een keer spelen en nog meer bloemen verzamelen?</win2>
+	
+	<!-- Non translated texts in original -->
+	<score>Huidige Score</score>
+	<intro_howto>Help Pegasus om speciale bloemen te verzamelen in de lucht van het koninkrijk. Gebruik de spatiebalk of klik met de muis om te vliegen. Verzamel zo veel mogelijk bloemen voordat de zon ondergaat en je het kasteel bereikt.</intro_howto>
+	<enterName>Jouw naam</enterName>
+	<greatFlying>Je hebt geweldig gevlogen!</greatFlying>
+	<end>Je hebt het einde van jouw avontuur bereikt.</end>
+	<end2>Er zijn geen bloemen meer om te verzamelen.</end2>
+
+</root>

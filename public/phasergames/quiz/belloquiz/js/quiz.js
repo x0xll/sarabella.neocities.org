@@ -22,9 +22,6 @@ class Quiz extends Phaser.Scene
 
         // Loading the questions
         this.horseDatas = langData.horseDatas;
-        this.horseDatas.forEach(horse => {     
-            this.load.image(`${this.horseDatas.indexOf(horse)}_img`, `${horse.image}`);
-        });
 
         // Load in images and sounds
         this.load.image('background', '/phasergames/quiz/belloquiz/images/background.png');
@@ -105,12 +102,12 @@ class Quiz extends Phaser.Scene
         usedHorses = [];
         choiceBtns = [];
 
-        let guessImg = this.add.image(690, 315, `0_img`).setOrigin(.5);
+        let guessImg = this.add.image(690, 315, `0_img`).setOrigin(.5).setVisible(false);
         let guessQuestion = this.add.text(215, 280, `${horseDatas[0].question}`, globalTextSettings).setOrigin(.5, .5);
         let guessQuestionNum = this.add.text(215, 210, `${langData.ui.question}${(MAX_TURNS - turnsLeft) + 1}`, globalTextSettings).setOrigin(.5, .5);
 
         initializeGuessButtons(this);
-        updateGuessQuestion();
+        randomizeNextQuestion();
 
         function initializeGuessButtons()
         {
@@ -130,8 +127,7 @@ class Quiz extends Phaser.Scene
                 }        
         }
 
-        function updateGuessQuestion()
-        {
+        function randomizeNextQuestion() {
             var randHorse = -1;
             var failsafe = 100;
 
@@ -142,8 +138,19 @@ class Quiz extends Phaser.Scene
             }
             while (usedHorses.length > 0 && usedHorses.includes(randHorse) && failsafe > 0)
             usedHorses.push(randHorse);
+
+            // Lazy load in the horse image
+            game.load.once('complete', updateGuessQuestion, {game: game, randHorse: randHorse});
+                game.load.image(`${randHorse}_img`, `${game.horseDatas[randHorse].image}`);
+            game.load.start();
+        }
+
+        function updateGuessQuestion()
+        {
+            const game = this.game
+            const randHorse = this.randHorse
             
-            guessImg.setTexture(`${randHorse}_img`).setDisplaySize(353, 500);
+            guessImg.setTexture(`${randHorse}_img`).setDisplaySize(353, 500).setVisible(true);
 
             var question = -1;
             var attributeType = "";
@@ -231,7 +238,7 @@ class Quiz extends Phaser.Scene
                 return;
             }
             
-            updateGuessQuestion();
+            randomizeNextQuestion();
         }
 
         function showEndPopup()

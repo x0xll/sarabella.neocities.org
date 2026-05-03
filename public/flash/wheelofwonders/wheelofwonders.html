@@ -7,12 +7,14 @@
         <link rel="stylesheet" href="/styles.css">
     </head>
 
-    <script src="/language.js"></script>
+    <script src="/save.js"></script>
+<script src="/language.js"></script>
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
         <script src="/header.js"></script>
 
         <div class="alert">
+          <image src="/images/600px-Under_construction.webp" style="background-color: #110c27; padding: 10px"></image>
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
           <p data-il8n="wheelofwonder_warning"></p>
         </div> 
@@ -23,6 +25,7 @@
         <div id="footer" class="footer">
           <script src="/footer.js"></script>
           <script>
+            loadNewLocalizationFile('./lang/wow_prize_' + getCurrentLanguageCode() + ".json",'./lang/wow_prize_en.json', "wowprize")
             generateFooter({wikiLink: 'https://bellasara.wiki.gg/wiki/Wheel_of_Wonder', githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/wheelofwonders'});
           </script>
         </div>
@@ -31,6 +34,7 @@
 <script src="/userManager.js"></script>
 
         <script src="/flash/common/js/flashutils.js"></script>
+        <script src="/flash/common/js/flashWSOverride.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>

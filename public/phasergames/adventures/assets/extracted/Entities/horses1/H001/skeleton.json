@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "GUXNeen+KYM", "spine": "4.2.43", "x": -132.2, "y": -45.48, "width": 251, "height": 273 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Main", "bone": "root", "attachment": "Spine Refs/1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Main": {
+				"Spine Refs/1": { "x": -6.7, "y": 91.02, "width": 251, "height": 273 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

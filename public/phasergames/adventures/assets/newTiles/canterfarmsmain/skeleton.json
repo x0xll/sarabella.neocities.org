@@ -1,0 +1,834 @@
+{
+"skeleton": { "hash": "7Ftr9sNOTRI", "spine": "4.2.43", "x": -19.5, "y": -13, "width": 39, "height": 26 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Main", "bone": "root", "attachment": "Main" },
+	{ "name": "Main_night", "bone": "root", "attachment": "Main" }
+],
+"skins": [
+	{
+		"name": "DT0012e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/DT0012e/1", "width": 45, "height": 17 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/DT0012e/1", "width": 45, "height": 17 }
+			}
+		}
+	},
+	{
+		"name": "DT0012f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/DT0012f/1", "width": 73, "height": 29 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/DT0012f/1", "width": 73, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "I020",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/I020/1", "width": 80, "height": 23 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/I020/1", "width": 80, "height": 23 }
+			}
+		}
+	},
+	{
+		"name": "I029",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/I029/1", "width": 80, "height": 71 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/I029/1", "width": 80, "height": 71 }
+			}
+		}
+	},
+	{
+		"name": "T0001d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0001d/1", "x": -24.66, "y": 163.31, "width": 440, "height": 331 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0001d/1", "x": -24.66, "y": 163.31, "width": 440, "height": 331 }
+			}
+		}
+	},
+	{
+		"name": "T0002",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0002/1", "width": 49, "height": 65 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0002/1", "width": 49, "height": 65 }
+			}
+		}
+	},
+	{
+		"name": "T0002b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0002b/1", "width": 49, "height": 65 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0002b/1", "width": 49, "height": 65 }
+			}
+		}
+	},
+	{
+		"name": "T0004d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0004d/1", "x": -68.28, "y": 2.17, "width": 236, "height": 119 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0004d/1", "x": -68.28, "y": 2.17, "width": 236, "height": 119 }
+			}
+		}
+	},
+	{
+		"name": "T0004f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0004f/1", "x": -68.28, "y": 2.17, "width": 236, "height": 119 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0004f/1", "x": -68.28, "y": 2.17, "width": 236, "height": 119 }
+			}
+		}
+	},
+	{
+		"name": "T0007a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007a/1", "width": 72, "height": 37 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007a/1", "width": 72, "height": 37 }
+			}
+		}
+	},
+	{
+		"name": "T0007b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007b/1", "width": 49, "height": 30 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007b/1", "width": 49, "height": 30 }
+			}
+		}
+	},
+	{
+		"name": "T0007c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007c/1", "width": 37, "height": 25 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007c/1", "width": 37, "height": 25 }
+			}
+		}
+	},
+	{
+		"name": "T0007d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007d/1", "width": 19, "height": 14 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007d/1", "width": 19, "height": 14 }
+			}
+		}
+	},
+	{
+		"name": "T0007e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007e/1", "width": 43, "height": 18 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007e/1", "width": 43, "height": 18 }
+			}
+		}
+	},
+	{
+		"name": "T0007f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007f/1", "width": 76, "height": 28 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007f/1", "width": 76, "height": 28 }
+			}
+		}
+	},
+	{
+		"name": "T0007g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007g/1", "width": 71, "height": 31 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007g/1", "width": 71, "height": 31 }
+			}
+		}
+	},
+	{
+		"name": "T0007h",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007h/1", "width": 66, "height": 34 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007h/1", "width": 66, "height": 34 }
+			}
+		}
+	},
+	{
+		"name": "T0007i",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007i/1", "width": 64, "height": 21 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007i/1", "width": 64, "height": 21 }
+			}
+		}
+	},
+	{
+		"name": "T0007j",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007j/1", "width": 29, "height": 16 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007j/1", "width": 29, "height": 16 }
+			}
+		}
+	},
+	{
+		"name": "T0007k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007k/1", "width": 42, "height": 21 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007k/1", "width": 42, "height": 21 }
+			}
+		}
+	},
+	{
+		"name": "T0007l",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007l/1", "width": 38, "height": 16 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007l/1", "width": 38, "height": 16 }
+			}
+		}
+	},
+	{
+		"name": "T0007m",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007m/1", "width": 33, "height": 36 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007m/1", "width": 33, "height": 36 }
+			}
+		}
+	},
+	{
+		"name": "T0007n",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0007n/1", "width": 52, "height": 29 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0007n/1", "width": 52, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "T0008b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0008b/1", "width": 52, "height": 28 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0008b/1", "width": 52, "height": 28 }
+			}
+		}
+	},
+	{
+		"name": "T0009a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0009a/1", "width": 65, "height": 37 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0009a/1", "width": 65, "height": 37 }
+			}
+		}
+	},
+	{
+		"name": "T0009b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0009b/1", "width": 52, "height": 28 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0009b/1", "width": 52, "height": 28 }
+			}
+		}
+	},
+	{
+		"name": "T0009c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0009c/1", "width": 33, "height": 22 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0009c/1", "width": 33, "height": 22 }
+			}
+		}
+	},
+	{
+		"name": "T0009g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0009g/1", "width": 68, "height": 27 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0009g/1", "width": 68, "height": 27 }
+			}
+		}
+	},
+	{
+		"name": "T0009n",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0009n/1", "width": 55, "height": 33 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0009n/1", "width": 55, "height": 33 }
+			}
+		}
+	},
+	{
+		"name": "T0011a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0011a/1", "width": 65, "height": 37 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0011a/1", "width": 65, "height": 37 }
+			}
+		}
+	},
+	{
+		"name": "T0012a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012a/1", "width": 65, "height": 37 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012a/1", "width": 65, "height": 37 }
+			}
+		}
+	},
+	{
+		"name": "T0012d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012d/1", "width": 24, "height": 20 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012d/1", "width": 24, "height": 20 }
+			}
+		}
+	},
+	{
+		"name": "T0012f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012f/1", "width": 73, "height": 29 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012f/1", "width": 73, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "T0012g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012g/1", "width": 68, "height": 27 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012g/1", "width": 68, "height": 27 }
+			}
+		}
+	},
+	{
+		"name": "T0012i",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012i/1", "width": 62, "height": 19 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012i/1", "width": 62, "height": 19 }
+			}
+		}
+	},
+	{
+		"name": "T0012j",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012j/1", "width": 40, "height": 20 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012j/1", "width": 40, "height": 20 }
+			}
+		}
+	},
+	{
+		"name": "T0012k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012k/1", "width": 46, "height": 21 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012k/1", "width": 46, "height": 21 }
+			}
+		}
+	},
+	{
+		"name": "T0012l",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012l/1", "width": 31, "height": 22 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012l/1", "width": 31, "height": 22 }
+			}
+		}
+	},
+	{
+		"name": "T0012n",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0012n/1", "width": 55, "height": 33 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0012n/1", "width": 55, "height": 33 }
+			}
+		}
+	},
+	{
+		"name": "T0015a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0015a/1", "x": 19.59, "y": 12.36, "width": 74, "height": 48 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0015a/1", "x": 19.59, "y": 12.36, "width": 74, "height": 48 }
+			}
+		}
+	},
+	{
+		"name": "T0026a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0026a/1", "width": 64, "height": 34 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0026a/1", "width": 64, "height": 34 }
+			}
+		}
+	},
+	{
+		"name": "T0026f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0026f/1", "width": 71, "height": 35 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0026f/1", "width": 71, "height": 35 }
+			}
+		}
+	},
+	{
+		"name": "T0026g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0026g/1", "width": 66, "height": 34 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0026g/1", "width": 66, "height": 34 }
+			}
+		}
+	},
+	{
+		"name": "T0027b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0027b/1", "width": 30, "height": 26 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0027b/1", "width": 30, "height": 26 }
+			}
+		}
+	},
+	{
+		"name": "T0027c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0027c/1", "width": 14, "height": 39 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0027c/2", "path": "CanterFarms/T0027c/1", "width": 14, "height": 39 }
+			}
+		}
+	},
+	{
+		"name": "T0027e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0027e/1", "width": 30, "height": 26 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0027e/1", "width": 30, "height": 26 }
+			}
+		}
+	},
+	{
+		"name": "T0027j",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0027j/1", "width": 24, "height": 32 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0027j/1", "width": 24, "height": 32 }
+			}
+		}
+	},
+	{
+		"name": "T0038f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0038f/1", "width": 32, "height": 31 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0038f/1", "width": 32, "height": 31 }
+			}
+		}
+	},
+	{
+		"name": "T0039a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0039a/1", "width": 49, "height": 20 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0039a/1", "width": 49, "height": 20 }
+			}
+		}
+	},
+	{
+		"name": "T0039c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0039c/1", "width": 39, "height": 26 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0039c/1", "width": 39, "height": 26 }
+			}
+		}
+	},
+	{
+		"name": "T0040a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040a/1", "width": 18, "height": 29 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040a/1", "width": 18, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "T0040b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040b/1", "width": 30, "height": 52 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040b/1", "width": 30, "height": 52 }
+			}
+		}
+	},
+	{
+		"name": "T0040c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040c/1", "width": 22, "height": 47 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040c/1", "width": 22, "height": 47 }
+			}
+		}
+	},
+	{
+		"name": "T0040e",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040e/1", "y": 20.65, "width": 52, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040e/1", "y": 20.65, "width": 52, "height": 40 }
+			}
+		}
+	},
+	{
+		"name": "T0040f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040f/1", "width": 9, "height": 19 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040f/1", "width": 9, "height": 19 }
+			}
+		}
+	},
+	{
+		"name": "T0040g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0040g/1", "width": 9, "height": 15 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0040g/1", "width": 9, "height": 15 }
+			}
+		}
+	},
+	{
+		"name": "T0053a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053a/1", "y": 20, "width": 89, "height": 54 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053a/1", "y": 20, "width": 89, "height": 54 }
+			}
+		}
+	},
+	{
+		"name": "T0053c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053c/1", "x": 7.97, "y": 20, "width": 137, "height": 97 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053c/1", "x": 7.97, "y": 20, "width": 137, "height": 97 }
+			}
+		}
+	},
+	{
+		"name": "T0053d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053d/1", "x": 2.66, "y": 32, "width": 102, "height": 76 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053d/1", "x": 2.66, "y": 32, "width": 102, "height": 76 }
+			}
+		}
+	},
+	{
+		"name": "T0053f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053f/1", "x": -17.07, "y": 26.59, "width": 91, "height": 79 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053f/1", "x": -17.07, "y": 26.59, "width": 91, "height": 79 }
+			}
+		}
+	},
+	{
+		"name": "T0053g",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053g/1", "width": 102, "height": 85 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053g/1", "width": 102, "height": 85 }
+			}
+		}
+	},
+	{
+		"name": "T0053h",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053h/1", "x": 3.64, "y": 30, "width": 115, "height": 76 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053h/1", "x": 3.64, "y": 30, "width": 115, "height": 76 }
+			}
+		}
+	},
+	{
+		"name": "T0053i",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053i/1", "y": 20, "width": 11, "height": 64 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053i/1", "y": 20, "width": 11, "height": 64 }
+			}
+		}
+	},
+	{
+		"name": "T0053k",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053k/1", "x": -20.8, "y": 24, "width": 114, "height": 87 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053k/1", "x": -20.8, "y": 24, "width": 114, "height": 87 }
+			}
+		}
+	},
+	{
+		"name": "T0053n",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053n/1", "x": 15.48, "y": 16.21, "width": 97, "height": 74 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053n/1", "x": 15.48, "y": 16.21, "width": 97, "height": 74 }
+			}
+		}
+	},
+	{
+		"name": "T0053p",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0053p/1", "y": 32, "width": 115, "height": 76 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0053p/1", "y": 32, "width": 115, "height": 76 }
+			}
+		}
+	},
+	{
+		"name": "T0057f",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0057f/1", "y": 39.45, "width": 87, "height": 124 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0057f/1", "y": 39.45, "width": 87, "height": 124 }
+			}
+		}
+	},
+	{
+		"name": "T0059c",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0059c/1", "width": 88, "height": 54 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0059c/1", "width": 88, "height": 54 }
+			}
+		}
+	},
+	{
+		"name": "T0072a",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0072a/1", "x": 5.69, "y": 104.7, "width": 88, "height": 264 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0072a/1", "x": 5.69, "y": 104.7, "width": 88, "height": 264 }
+			}
+		}
+	},
+	{
+		"name": "T0072d",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0072d/1", "x": -5.7, "y": 104.7, "width": 90, "height": 261 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0072d/1", "x": -5.7, "y": 104.7, "width": 90, "height": 261 }
+			}
+		}
+	},
+	{
+		"name": "T0096",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0096/1", "y": 92.64, "width": 146, "height": 206 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0096/1", "y": 92.64, "width": 146, "height": 206 }
+			}
+		}
+	},
+	{
+		"name": "T0097b",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0097b/1", "x": 9.92, "y": 261.61, "width": 396, "height": 562 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0097b/1", "x": 9.92, "y": 261.61, "width": 396, "height": 562 }
+			}
+		}
+	},
+	{
+		"name": "T0179",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0179/1", "width": 43, "height": 65 }
+			},
+			"Main_night": {
+				"Main": { "name": "CanterFarms/T0179/1", "width": 43, "height": 65 }
+			}
+		}
+	},
+	{
+		"name": "T0073/day",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0073/1", "y": 58.78, "width": 55, "height": 132 }
+			}
+		}
+	},
+	{
+		"name": "T0073/night",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "CanterFarms/T0073_Night/1", "y": 58.78, "width": 55, "height": 133 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

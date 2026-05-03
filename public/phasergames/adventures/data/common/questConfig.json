@@ -1,0 +1,42 @@
+{
+    "freeplay_v2": {
+        "quests": [
+            "ADS-0000000825_ADV-0000000899_QUE-0000002105",
+            "ADS-0000000825_ADV-0000000902_QUE-0000002117",
+            "ADS-0000000825_ADV-0000000902_QUE-0000002118",
+            "ADS-0000000825_ADV-0000000902_QUE-0000002121",
+            "ADS-0000000825_ADV-0000000902_QUE-0000002122",
+            "ADS-0000000825_ADV-0000000902_QUE-0000002123",
+            "ADS-0000000825_ADV-0000000903_QUE-0000002126",
+            "ADS-0000000825_ADV-0000000903_QUE-0000002127",
+            "ADS-0000000825_ADV-0000000903_QUE-0000002672",
+            "ADS-0000000825_ADV-0000000903_QUE-0000002130"
+        ],
+        "Z001": {
+            "T0179Template-1": {
+                    "template": "T0179Template",
+                    "instID": "bridgeblock1",
+                    "gridX": 8,
+                    "gridY": 17
+                },
+            "T0179Template-2": {
+                    "template": "T0179Template",
+                    "instID": "bridgeblock2",
+                    "gridX": 7,
+                    "gridY": 17
+                },
+            "T0004dTemplate-1": {
+                    "template": "T0004dTemplate",
+                    "instID": "ruinedbridge",
+                    "gridX": 8,
+                    "gridY": 17
+                },
+            "T0055bTemplate-1": {
+                    "template": "T0055bTemplate",
+                    "instID": "gateClosed",
+                    "gridX": 33,
+                    "gridY": 36
+                }
+        }
+    }
+}

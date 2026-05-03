@@ -4,12 +4,18 @@
         <link rel="icon" href="/images/favicons/favicon.ico">
         <link rel="stylesheet" href="/styles.css">
         <meta charset="UTF-8" />
-        <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.js"></script>
-        <script src="/phasergames/_phaserbackup/spine-phaser.js"></script>
-        <script src="./js/loadScreen.js"></script> 
+        <script src="//cdn.jsdelivr.net/npm/phaser@4.0.0/dist/phaser.js"></script>
+        <script src="https://unpkg.com/@esotericsoftware/spine-phaser-v4@4.2.*/dist/iife/spine-phaser-v4.js"></script>
+        <script src="./js/loadScreenUpdateV2.js"></script> 
         <script src="./js/dressupStableSelector.js"></script> 
-        <script src="./js/dressup.js"></script> 
-        <script src="./js/dressupLandStable.js"></script> 
+        <script src="./js/dressupUpdateV2.js"></script> 
+        <script src="./js/stablesCommonUpdateV2.js"></script> 
+        <script src="./js/landStableUpdateV2.js"></script> 
+        <!-- <script src="./js/foalLandStableUpdateV2.js"></script>  -->
+        <script src="./js/airStableUpdateV2.js"></script> 
+        <!-- <script src="./js/foalAirStableUpdateV2.js"></script>  -->
+        <script src="./js/waterStableUpdateV2.js"></script> 
+        <!-- <script src="./js/foalWaterStableUpdateV2.js"></script>  -->
         <style type="text/css">
             body {
                 margin: 0;
@@ -18,7 +24,7 @@
     </head>
 
     <script src="/save.js"></script> 
-    <script src="/language.js"></script>
+<script src="/language.js"></script>
     
     <body style="text-align: center;" onload="loadLanguagePref();">
         <script src="/header.js"></script>
@@ -39,6 +45,7 @@
                 horseName = urlParameters.get('name')
                 locale = getCurrentLanguageCode()
                 let localeData
+                let dressupLocaleData
 
                 function urlExists(url)
                 {
@@ -51,13 +58,14 @@
                 let horseData = {type: 'dressup'}
 
                 let loadInto = `Stables`
+                let isDressup = true
 
                 let dressup_selectabletrue = document.getElementById('dressup_selectabletrue');
                 let dressup_selectablefalse = document.getElementById('dressup_selectablefalse')
 
                 setupUserDropdown()
                 const MAX_SAVED_HORSES = 10
-                let savedHorses = loadData(DATA_TYPE_CREATIONS, getGameID("DressUp"))
+                let savedHorses = loadData(DATA_TYPES.creations, GAME_ID.DressUp)
                 if (savedHorses != null && savedHorses.length > 0)
                 {
                     savedHorses = savedHorses;
@@ -98,7 +106,12 @@
                         Load,
                         dressupStableSelector,
                         dressupStable,
-                        dressupLandStable
+                        LandStable,
+                        // FoalLandStable,
+                        AirStable,
+                        // FoalAirStable,
+                        WaterStable,
+                        // FoalWaterStable
                     ]
                 };
 

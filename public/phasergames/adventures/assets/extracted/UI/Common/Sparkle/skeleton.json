@@ -1,0 +1,239 @@
+{
+"skeleton": {
+	"hash": "XjtsKXZkAG4",
+	"spine": "4.2.43",
+	"x": -89.22,
+	"y": -78.82,
+	"width": 182.78,
+	"height": 155.73,
+	"fps": 24,
+	"images": "",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root" }
+],
+"slots": [
+	{ "name": "Sparkle1", "bone": "root", "attachment": "Sparkle/" },
+	{ "name": "Sparkle3", "bone": "root", "color": "ffffff00", "attachment": "Sparkle/" },
+	{ "name": "Sparkle4", "bone": "root", "color": "ffffff00", "attachment": "Sparkle/" },
+	{ "name": "Sparkle5", "bone": "root", "color": "ffffff00", "attachment": "Sparkle/" },
+	{ "name": "Sparkle6", "bone": "root", "color": "ffffff00", "attachment": "Sparkle/" },
+	{ "name": "Sparkle7", "bone": "root", "color": "ffffff00", "attachment": "Sparkle/" },
+	{ "name": "Sparkle8", "bone": "root", "color": "ffffff00", "attachment": "Sparkle/" },
+	{ "name": "Sparkle2", "bone": "root", "attachment": "Sparkle/" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Sparkle1": {
+				"Sparkle/": {
+					"x": -23.74,
+					"y": -18.65,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": 74.19,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle2": {
+				"Sparkle/": {
+					"x": -14.62,
+					"y": -25.79,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": 87.52,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle3": {
+				"Sparkle/": {
+					"x": -15.17,
+					"y": -7.21,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": 38.39,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle4": {
+				"Sparkle/": {
+					"x": -22.35,
+					"y": 2.2,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": 38.47,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle5": {
+				"Sparkle/": {
+					"x": -9.72,
+					"y": 13.53,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": 10.59,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle6": {
+				"Sparkle/": {
+					"x": -1.01,
+					"y": 22.81,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": 11.99,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle7": {
+				"Sparkle/": {
+					"x": 38.74,
+					"y": -11.5,
+					"scaleX": 0.86,
+					"scaleY": 0.86,
+					"rotation": -103.04,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			},
+			"Sparkle8": {
+				"Sparkle/": {
+					"x": 27.11,
+					"y": -2.52,
+					"scaleX": 0.84,
+					"scaleY": 0.84,
+					"rotation": -80.69,
+					"width": 116,
+					"height": 104,
+					"sequence": { "count": 19, "digits": 1 }
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"Sparkle3": {
+				"rgba": [
+					{ "time": 0.0833, "color": "ffffff00" },
+					{ "time": 0.125, "color": "ffffffff" }
+				]
+			},
+			"Sparkle4": {
+				"rgba": [
+					{ "time": 0.0833, "color": "ffffff00" },
+					{ "time": 0.125, "color": "ffffffff" }
+				]
+			},
+			"Sparkle5": {
+				"rgba": [
+					{ "time": 0.2083, "color": "ffffff00" },
+					{ "time": 0.25, "color": "ffffffff" }
+				]
+			},
+			"Sparkle6": {
+				"rgba": [
+					{ "time": 0.2083, "color": "ffffff00" },
+					{ "time": 0.25, "color": "ffffffff" }
+				]
+			},
+			"Sparkle7": {
+				"rgba": [
+					{ "time": 0.3333, "color": "ffffff00" },
+					{ "time": 0.375, "color": "ffffffff" }
+				]
+			},
+			"Sparkle8": {
+				"rgba": [
+					{ "time": 0.3333, "color": "ffffff00" },
+					{ "time": 0.375, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 1.875 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Sparkle1": {
+					"Sparkle/": {
+						"sequence": [
+							{ "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle2": {
+					"Sparkle/": {
+						"sequence": [
+							{ "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle3": {
+					"Sparkle/": {
+						"sequence": [
+							{ "time": 0.125, "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle4": {
+					"Sparkle/": {
+						"sequence": [
+							{ "time": 0.125, "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle5": {
+					"Sparkle/": {
+						"sequence": [
+							{ "time": 0.25, "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle6": {
+					"Sparkle/": {
+						"sequence": [
+							{ "time": 0.25, "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle7": {
+					"Sparkle/": {
+						"sequence": [
+							{ "time": 0.375, "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				},
+				"Sparkle8": {
+					"Sparkle/": {
+						"sequence": [
+							{ "time": 0.375, "mode": "loop", "delay": 0.0417 }
+						]
+					}
+				}
+			}
+		}
+	}
+}
+}
