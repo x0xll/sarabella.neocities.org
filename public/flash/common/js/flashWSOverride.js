@@ -86,8 +86,8 @@ function initWheel()
 {
     let InitWheelReturnValues = { result : {DigitalObjects : [], FreeSpins: 1, Seed: 1}};
 
-    let freespinSaved = loadData(DATA_TYPE_FREESPIN, "WOW");
-    let lastTimePlayed = loadData(DATA_TYPE_LASTPLAYED, "WOW");
+    let freespinSaved = loadData(DATA_TYPES.freespin, GAME_ID.WheelofWonders);
+    let lastTimePlayed = loadData(DATA_TYPES.lastplayed, GAME_ID.WheelofWonders);
 
     if (freespinSaved <= 0)
     {
@@ -96,8 +96,8 @@ function initWheel()
         if (today !== lastTimePlayed)
         {
             freespinSaved = 1;
-            saveData(DATA_TYPE_FREESPIN, freespinSaved, "WOW");
-            updateLastDatePlayed("WOW");
+            saveData(DATA_TYPES.freespin, freespinSaved, GAME_ID.WheelofWonders);
+            updateLastDatePlayed(GAME_ID.WheelofWonders);
         }
     }
 
@@ -255,6 +255,11 @@ function getAllThings()
     console.log(ThingsValue);
 
     return ThingsValue;
+}
+
+function getHorseshoes()
+{
+    return loadData(DATA_TYPES.horseshoes);
 }
 
 
