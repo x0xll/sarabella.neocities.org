@@ -125,8 +125,9 @@ class uiInventory extends uiManagerBase
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(508, 104, 35, 35).setAlpha(.5); // close
 
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(270, 173, 275, 200).setAlpha(.5).setScrollFactor(0);
-        const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(270, 173, 275, 200)
-                        .setScrollFactor(0))
+        const scrollMask = this.phaserScene.add.rectangle(270, 173, 275, 200, 0x000000).setVisible(false)
+                        .setScrollFactor(0)
+                        .setOrigin(0)
         // this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(511, 192, 20, 174).setAlpha(.5).setScrollFactor(0);
         const scrollZone = this.phaserScene.add.zone(511, 192, 20, 174)
                         .setScrollFactor(0)

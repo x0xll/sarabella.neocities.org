@@ -86,18 +86,22 @@ function initWheel()
 {
     let InitWheelReturnValues = { result : {DigitalObjects : [], FreeSpins: 1, Seed: 1}};
 
-    let freespinSaved = loadData(DATA_TYPE_FREESPIN, "WOW");
-    let lastTimePlayed = loadData(DATA_TYPE_LASTPLAYED, "WOW");
+    let freespinSaved = loadData(DATA_TYPES.freespin, GAME_ID.WheelofWonders);
+    let lastTimePlayed = loadData(DATA_TYPES.lastPlayed, GAME_ID.WheelofWonders);
+
+    let date = new Date();
+    let today = date.getDate().toString() + "/" + (date.getMonth() + 1).toString() + "/" + date.getFullYear().toString();
+    if (lastTimePlayed === undefined)
+        saveData(DATA_TYPES.lastPlayed, today, GAME_ID.WheelofWonders);
 
     if (freespinSaved <= 0)
     {
-        let date = new Date();
-        let today = date.getDate().toString() + "/" + (date.getMonth() + 1).toString() + "/" + date.getFullYear().toString();
         if (today !== lastTimePlayed)
         {
             freespinSaved = 1;
-            saveData(DATA_TYPE_FREESPIN, freespinSaved, "WOW");
-            updateLastDatePlayed("WOW");
+            saveData(DATA_TYPES.freespin, freespinSaved, GAME_ID.WheelofWonders);    
+            saveData(DATA_TYPES.lastPlayed, today, GAME_ID.WheelofWonders);
+            updateLastDatePlayed(GAME_ID.WheelofWonders);
         }
     }
 
@@ -255,6 +259,11 @@ function getAllThings()
     console.log(ThingsValue);
 
     return ThingsValue;
+}
+
+function getHorseshoes()
+{
+    return loadData(DATA_TYPES.horseshoes);
 }
 
 

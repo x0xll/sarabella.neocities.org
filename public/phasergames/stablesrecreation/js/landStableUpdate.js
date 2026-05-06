@@ -135,12 +135,14 @@ class LandStable extends Phaser.Scene
                 game.forkPlace.play()
                 game.stablesManager.updateBar(game.cleanlinessBar, 1/3)
                 game.stablesManager.updateBar(game.happinessBar, 1/6 + 0.05)
+                if ((parseInt(straw1.frame.name.substr(7,2)) + parseInt(straw2.frame.name.substr(7,2)) + parseInt(straw3.frame.name.substr(7,2))) >= 30)  {
+                    game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtNoMoreHay)
+                }
             }
-            else if (game.handCurrent == game.HAND.fork)
-            {
-                return; // To prevent a stack overflow if the fork is empty
-            }
-            else if ((parseInt(straw1.frame.name.substr(7,2)) + parseInt(straw2.frame.name.substr(7,2)) + parseInt(straw3.frame.name.substr(7,2))) <= 30) {
+            else if ((game.handCurrent === game.HAND.shovel || game.handCurrent === game.HAND.forkFilled) &&
+                (parseInt(straw1.frame.name.substr(7,2)) + parseInt(straw2.frame.name.substr(7,2)) + parseInt(straw3.frame.name.substr(7,2))) <= 30) {
+                if (game.handCurrent === game.HAND.shovel && (straw1.frame.name !== 'frame0000' && straw2.frame.name !== 'frame0000' && straw3.frame.name !== 'frame0000')) {return}
+                else if (game.handCurrent === game.HAND.forkFilled && (straw1.frame.name !== 'frame0006' && straw2.frame.name !== 'frame0006' && straw3.frame.name !== 'frame0006')) {return}
                 switch (straw) {
                     case straw1:
                         cleanStraw(straw3, 'straw3_pickup', 'straw3_place')
@@ -153,9 +155,6 @@ class LandStable extends Phaser.Scene
                         break;
                 }
             }
-            if ((parseInt(straw1.frame.name.substr(7,2)) + parseInt(straw2.frame.name.substr(7,2)) + parseInt(straw3.frame.name.substr(7,2))) >= 30)  {
-                game.stablesManager.addToQueue(game.statBoxQueue, localeData.txtNoMoreHay)
-            }
         }
 
 
@@ -167,7 +166,9 @@ class LandStable extends Phaser.Scene
                     'idle'
                 ])
             hayLoft.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.fork) {
+                if (game.handCurrent === game.HAND.fork &&
+                    (parseInt(straw1.frame.name.substr(7,2)) + parseInt(straw2.frame.name.substr(7,2)) + parseInt(straw3.frame.name.substr(7,2))) <= 30
+                ) {
                     game.handCurrent = game.HAND.forkFilled
                     game.forkFill.play()
                     hayLoft.play('get_hay')
@@ -307,7 +308,7 @@ class LandStable extends Phaser.Scene
             fork.on('pointerover', function (pointer)
             {
                 if (game.handCurrent === game.HAND.empty) {
-                    if (straw1.frame.name !== 'frame0000' && straw2.frame.name !== 'frame0000' && straw3.frame.name !== 'frame0000') {
+                    if (straw1.frame.name !== 'frame0000' || straw2.frame.name !== 'frame0000' || straw3.frame.name !== 'frame0000') {
                         fork.setFrame('hover_use');
                         forkText.text = localeData.txtRollOverPitchFork;
                     }
@@ -322,7 +323,7 @@ class LandStable extends Phaser.Scene
             fork.on('pointerout', function (pointer) { game.stablesManager.pointerout(fork, forkText) });
             fork.on('pointerdown', function (pointer)
             {
-                if (game.handCurrent === game.HAND.empty) {
+                if (game.handCurrent === game.HAND.empty && (straw1.frame.name !== 'frame0000' || straw2.frame.name !== 'frame0000' || straw3.frame.name !== 'frame0000')) {
                     game.handCurrent = game.HAND.fork;
                     fork.setFrame('in_use')
                     forkText.setAlpha(0)
@@ -368,7 +369,7 @@ class LandStable extends Phaser.Scene
             });
             shovel.on('pointerout', function (pointer) { game.stablesManager.pointerout (shovel, shovelText) });
             shovel.on('pointerdown', function (pointer) {
-                if (game.handCurrent === game.HAND.empty) {
+                if (game.handCurrent === game.HAND.empty && (straw1.frame.name === 'frame0000' || straw2.frame.name === 'frame0000' || straw3.frame.name === 'frame0000')) {
                     game.handCurrent = game.HAND.shovel;
                     shovel.setFrame('in_use')
                     shovelText.setAlpha(0)

@@ -2,9 +2,8 @@ skeleton.png
 size:1229,205
 filter:Linear,Linear
 Apple
-bounds:742,51,18,17
-offsets:15,295,538,454
-rotate:90
+bounds:767,52,19,17
+offsets:16,15,55,37
 Body
 bounds:742,71,295,132
 offsets:126,179,538,454
@@ -16,8 +15,8 @@ bounds:1039,55,31,25
 offsets:15,294,538,454
 rotate:90
 HeadUpper
-bounds:1132,89,91,114
-offsets:6,298,538,454
+bounds:1132,89,92,114
+offsets:5,298,538,454
 HoofFL
 bounds:262,3,27,15
 offsets:151,10,538,454
@@ -25,7 +24,7 @@ HoofFR
 bounds:235,2,25,16
 offsets:178,32,538,454
 HoofHL
-bounds:761,52,23,17
+bounds:742,52,23,17
 offsets:420,14,538,454
 HoofHR
 bounds:291,4,21,14

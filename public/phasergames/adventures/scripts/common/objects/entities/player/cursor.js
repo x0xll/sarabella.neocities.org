@@ -168,10 +168,11 @@ class Cursor {
         const gridFootY_yOffset = 10 * (gridFoot.y-1)
         
         const polygon = [
-            [isoTarget.x + gridFootX_xOffset + gridFootY_xOffset, isoTarget.y+20 + gridFootX_yOffset + gridFootY_yOffset], // bottom
-            [isoTarget.x-40 + gridFootX_xOffset - gridFootY_xOffset, isoTarget.y + gridFootX_yOffset - gridFootY_yOffset], // left
-            [isoTarget.x +  + (gridFootX_xOffset*3) - gridFootY_xOffset, isoTarget.y-20 - gridFootX_yOffset - gridFootY_yOffset], // top
-            [isoTarget.x + 40 + (gridFootX_xOffset*3) + gridFootY_xOffset, isoTarget.y - gridFootX_yOffset + gridFootY_yOffset], // right
+            isoTarget.x + gridFootX_xOffset + gridFootY_xOffset, isoTarget.y+20 + gridFootX_yOffset + gridFootY_yOffset, // bottom
+            isoTarget.x-40 + gridFootX_xOffset - gridFootY_xOffset, isoTarget.y + gridFootX_yOffset - gridFootY_yOffset, // left
+            isoTarget.x +  + (gridFootX_xOffset*3) - gridFootY_xOffset, isoTarget.y-20 - gridFootX_yOffset - gridFootY_yOffset, // top
+            isoTarget.x + 40 + (gridFootX_xOffset*3) + gridFootY_xOffset, isoTarget.y - gridFootX_yOffset + gridFootY_yOffset, // right
+            isoTarget.x + 40 + (gridFootX_xOffset*3) + gridFootY_xOffset, isoTarget.y - gridFootX_yOffset + gridFootY_yOffset // right
         ];
 
         this.cursor.setTo(polygon).setAlpha(0.5)
