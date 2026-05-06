@@ -681,8 +681,8 @@
     "Z023": {
         "ID": "Z023",
 
-        "tileXOffset": -1000,
-        "tileYOffset": 1250,
+        "tileXOffset": -1020,
+        "tileYOffset": 1240,
         "tileAssets": [
             "common",
             "forestcavemain",
