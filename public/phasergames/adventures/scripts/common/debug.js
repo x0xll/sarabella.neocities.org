@@ -105,6 +105,18 @@ class Debug {
     {
         this.loadScene.sharedData.quest.manager.debug_DrawTriggerQuest();
     }
+
+    skipCanterFarm()
+    {
+        this.removeQuest(['ADS-0000000825', 'ADV-0000000899', 'QUE-0000002110']); // Intro tuto
+        this.removeQuest(['ADS-0000000825', 'ADV-0000000899', 'QUE-0000002050']); // Talk to Wings
+        this.addQuest(['ADS-0000000825', 'ADV-0000000909', 'QUE-0000002158']); // Talk to Mother Comfort
+        this.addQuest(['ADS-0000000825', 'ADV-0000000910', 'QUE-0000002157']); // Talk to Mr. Bartholomew
+        this.addQuest(['ADS-0000000825', 'ADV-0000000907', 'QUE-0000002152']); // Talk to Bella
+        this.addQuest(['ADS-0000000825', 'ADV-0000000905', 'QUE-0000002148']); // Talk to Deru
+        this.addQuest(['ADS-0000000825', 'ADV-0000000908', 'QUE-0000002154']); // Talk to Penny
+        this.switchZone("Z007");
+    }
     // ------- END QUEST FUNCTIONS -------
 
 
