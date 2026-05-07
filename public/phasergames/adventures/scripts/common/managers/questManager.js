@@ -240,8 +240,8 @@ class QuestManager {
         "free_springfestival",
         "intro_cottage",
         "repeatable",
-        "sc_1",
-        "sc_6",
+        "springcarnival/sc_1",
+        "springcarnival/sc_6",
         "spc1activation",
         "gp1.01",
         "gp1.07",
@@ -823,8 +823,8 @@ class QuestManager {
         "LogQuestEndAction": this.#logQuestEndAction,
         "AddQuestAction": this.#addQuestAction,
         "RemoveQuestAction": this.#removeQuestAction,
-        "AddQuestFileAction": this.#missingAction,
-        "RemoveQuestFileAction": this.#missingAction,
+        "AddQuestFileAction": this.#addQuestFileAction,
+        "RemoveQuestFileAction": this.#removeQuestFileAction,
         "ShowAdventureCompleteAction": this.#showAdventureCompleteAction,
         "DialogueAction": this.#dialogueAction,
         "DialogueImageAction": this.#dialogueImageAction,
@@ -853,6 +853,14 @@ class QuestManager {
 
     async #missingAction (phaserScene, questID, lineIndex, action) {
         console.warn(`Missing action: ${action.type}`)
+    }
+
+    async #addQuestFileAction(phaserScene, questID, lineIndex, action){
+        console.warn(`Fake adding file: ${action.type} - ${action.fileName} - ${questID}`);
+    }
+
+    async #removeQuestFileAction(phaserScene, questID, lineIndex, action){
+        console.warn(`Fake removing file: ${action.type} - ${action.fileName} - ${questID}`);
     }
 
     async #logAdventureBeginAction(phaserScene, questID, lineIndex, action) {
