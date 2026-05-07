@@ -11,6 +11,7 @@ const horses = [
     'angel',
     'aphaia',
     'bella',
+    'bello',
     'beran',
     'blossom',
     'bosi',
