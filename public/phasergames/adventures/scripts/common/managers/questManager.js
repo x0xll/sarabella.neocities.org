@@ -8,6 +8,8 @@ class QuestManager {
         FINISHED: 1
     }
 
+    QUEST_TOKENS = {}
+
     constructor (phaserScene) {
         this.phaserScene = phaserScene
         this.busy = true // Used to prevent trigger checks if the manager is currently checking already
@@ -248,7 +250,7 @@ class QuestManager {
         "furniturestore"
         //"freeplay" // not sure this one is used since there is a "freeplay_v2.xml" file
     ]
-    
+
     /**
      * Preloads the xml files for the quests into cache so they can be used later. Should be called from the loadScreen scene
      */
@@ -290,6 +292,9 @@ class QuestManager {
         for (let index = 0; index < savedUserQuestData[1].length; index++) {
             await this.markQuestFinished(savedUserQuestData[1][index]);
         }
+
+        // Load the tokens back from the user save data
+        this.QUEST_TOKENS = savedUserQuestData[2];
     }
 
     #initializeQuestConfig() {
@@ -383,7 +388,7 @@ class QuestManager {
 
     /**
      * Parses the saved quest data for the user
-     * @returns an array with the active quest save data and the finished quest save data
+     * @returns an array with the active quest save data, the finished quest save data and the quest tokens
      */
     #parseSavedQuestData() {
         function unstringifyQuest(savedData) {
@@ -405,6 +410,7 @@ class QuestManager {
         let finishedSavedData;
         let activeSavedString;
         let finisedSavedString;
+        let tokensData;
 
         if (!data || !data.activeQuest) {
             activeSavedString = 
@@ -428,9 +434,18 @@ class QuestManager {
             finisedSavedString = data.finishedQuest;
         }
 
+        if (!data || !data.tokens){
+            tokensData = {
+                "v": "1"
+            }
+        }
+        else {
+            tokensData = data.tokens;
+        }
+
         activeSavedData = unstringifyQuest(activeSavedString)
         finishedSavedData = unstringifyQuest(finisedSavedString)
-        return [activeSavedData, finishedSavedData]
+        return [activeSavedData, finishedSavedData, tokensData]
     }
 
     /**
@@ -458,7 +473,8 @@ class QuestManager {
 
         let questData = {
             activeQuest: saveString,
-            finishedQuest: finishedString
+            finishedQuest: finishedString,
+            tokens: this.QUEST_TOKENS
         }
 
         this.phaserScene.sharedData.saving.setGameData(GAME_DATA_TYPE.quest, questData);
@@ -766,7 +782,7 @@ class QuestManager {
     #QUEST_CONDITIONS = {
         "ActionOnTemplateCondition": this.#actionOnTemplate,
         "HasMultipleItemsCondition": this.#hasMultipleItemsCondition,
-        "ContainsTokenItemCondition": this.#missingCondition,
+        "ContainsTokenItemCondition": this.#containsTokenItemCondition,
         "HasQuestCondition": this.#missingCondition
     }
 
@@ -785,6 +801,12 @@ class QuestManager {
         const condition = questLine.conditions.object[0]
         
         return phaserScene.sharedData.inventory.allItems[condition.template[0]] >= parseInt(condition.count[0])
+    }
+
+    #containsTokenItemCondition(phaserScene, questData, lineIndex, trigger){
+        let tokens = phaserScene.sharedData.quest.manager.QUEST_TOKENS;
+        if (!tokens[trigger.key]){return false;}
+        return tokens[trigger.key].includes(trigger.item[0]);
     }
 
 
@@ -836,8 +858,8 @@ class QuestManager {
         "AddHorseshoesAction": this.#addHorseshoesAction,
         "AddMultipleInventoryAction": this.#addMultipleInventoryAction,
         "RemoveMultipleInventoryAction": this.#removeMultipleInventoryAction,
-        "AddTokenItemAction": this.#missingAction,
-        "RemoveTokenAction": this.#missingAction,
+        "AddTokenItemAction": this.#addTokenItemAction,
+        "RemoveTokenAction": this.#removeTokenAction,
         "TemporaryAnimationAction": this.#missingAction,
         "PlayMovieClipAction": this.#playMovieClipAction,
         "PlayHeadsUpDisplayMovieClipAction": this.#playMovieClipAction, // TODO: Confirm it works correctly
@@ -861,6 +883,22 @@ class QuestManager {
 
     async #removeQuestFileAction(phaserScene, questID, lineIndex, action){
         console.warn(`Fake removing file: ${action.type} - ${action.fileName} - ${questID}`);
+    }
+
+    async #addTokenItemAction(phaserScene, questID, lineIndex, action) {
+        console.log(`Adding token: ${action.item} - ${questID}`);
+        let tokens = phaserScene.sharedData.quest.manager.QUEST_TOKENS;
+        if (!tokens[action.key]){
+            tokens[action.key] = [];
+        }
+        tokens[action.key].push(action.item[0]);
+    }
+
+    async #removeTokenAction(phaserScene, questID, lineIndex, action){
+        console.log(`Removing token: ${questID}`);
+        let tokens = phaserScene.sharedData.quest.manager.QUEST_TOKENS;
+        if (!tokens[action.key]){return;}
+        delete[action.key];
     }
 
     async #logAdventureBeginAction(phaserScene, questID, lineIndex, action) {
