@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "3FYFVX8S+gs", "spine": "4.2.43", "x": -53.3, "y": -20, "width": 93.3, "height": 61.86 },
+"bones": [
+	{ "name": "root_sw" }
+],
+"slots": [
+	{ "name": "M010", "bone": "root_sw", "attachment": "M010" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"M010": {
+				"M010": { "x": -6.05, "y": 40.56, "width": 86, "height": 110 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

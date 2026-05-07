@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "BXznI24hrMM", "spine": "4.2.43", "x": -53.3, "y": -20, "width": 93.3, "height": 61.86 },
+"bones": [
+	{ "name": "root_sw" }
+],
+"slots": [
+	{ "name": "M029a", "bone": "root_sw", "attachment": "M029a" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"M029a": {
+				"M029a": { "x": -13.43, "y": 74.32, "width": 112, "height": 155 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

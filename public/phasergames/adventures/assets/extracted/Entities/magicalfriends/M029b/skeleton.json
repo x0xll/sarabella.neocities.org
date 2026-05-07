@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "uSAj/HM3bpc", "spine": "4.2.43", "x": -53.3, "y": -20, "width": 93.3, "height": 61.86 },
+"bones": [
+	{ "name": "root_sw" }
+],
+"slots": [
+	{ "name": "M029b", "bone": "root_sw", "attachment": "M029b" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"M029b": {
+				"M029b": { "x": -7.3, "y": 13.36, "width": 92, "height": 57 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

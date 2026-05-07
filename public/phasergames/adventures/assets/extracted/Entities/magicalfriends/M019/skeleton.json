@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "SXd515AFaSo", "spine": "4.2.43", "x": -53.3, "y": -20, "width": 93.3, "height": 61.86 },
+"bones": [
+	{ "name": "root_sw" }
+],
+"slots": [
+	{ "name": "M019", "bone": "root_sw", "attachment": "M019" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"M019": {
+				"M019": { "x": 0.89, "y": 29.62, "width": 114, "height": 105 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
