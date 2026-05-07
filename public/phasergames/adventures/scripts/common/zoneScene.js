@@ -401,6 +401,10 @@ class ZoneBase extends Phaser.Scene
         let spawnedEntity = new TemplateEntity(this, template, gridX, gridY, undefined, zoneID === this.zoneConfig.ID, runCreate, respawnConfig)
 
         if (!respawnConfig) { respawnConfig = {} }
+        if (this.sharedData.entities.spawnEntities === undefined) return;
+        if (this.sharedData.entities.spawnEntities[zoneID] === undefined) {
+            this.sharedData.entities.spawnEntities[zoneID] = {};
+        }
         this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey] = {template: template, gridX: gridX, gridY: gridY, respawnConfig: respawnConfig}
         if (instanceIdentifier) { this.sharedData.entities.spawnedEntities[zoneID][spawnedEntity.entityKey].instID = instanceIdentifier}
 
