@@ -783,7 +783,7 @@ class QuestManager {
         "ActionOnTemplateCondition": this.#actionOnTemplate,
         "HasMultipleItemsCondition": this.#hasMultipleItemsCondition,
         "ContainsTokenItemCondition": this.#containsTokenItemCondition,
-        "HasQuestCondition": this.#missingCondition
+        "HasQuestCondition": this.#hasQuestCondition
     }
 
     #missingCondition (phaserScene, questData, lineIndex, trigger) {
@@ -809,6 +809,12 @@ class QuestManager {
         return tokens[trigger.key].includes(trigger.item[0]);
     }
 
+    #hasQuestCondition(phaserScene, questData, lineIndex, trigger){
+        let finishedQuest = trigger.questId[0];
+        let quest = this.getQuestPerID([null, null, questData]);
+        if (!quest) {return false};
+        return quest.status == this.QUEST_STATES.FINISHED;
+    }
 
     //------- QUEST ACTIONS -------
     async doQuestAction(questGlobalID, lineIndex, actionIndex = 0) {
