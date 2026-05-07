@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "VtvlPjU/jxA", "spine": "4.2.43", "x": -176, "y": -20, "width": 352, "height": 479.56 },
+"bones": [
+	{ "name": "root_sw" }
+],
+"slots": [
+	{ "name": "T0603_05", "bone": "root_sw", "attachment": "T0603_05" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"T0603_05": {
+				"T0603_05": { "y": 229.56, "width": 352, "height": 460 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
