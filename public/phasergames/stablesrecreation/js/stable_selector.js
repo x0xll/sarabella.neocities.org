@@ -69,6 +69,7 @@ const horses = [
     'starunna',
     'thunder',
     'tiffi',
+    'tlingit',
     'uranus',
     'vesta',
     'viking',
