@@ -61,6 +61,9 @@
 				<item link="/flash/treasureshunt/treasureshunt.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Caccia al Treasure</p>]]></label>	
 				</item>
+		<item link="/flash/wheelofwonders/wheelofwonders.html">
+			<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Wheel of Wonders</p>]]></label>	
+		</item>
 				<item link="/flash/worldmap/worldmap_new.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Nuova Mappa</p>]]></label>	
 				</item>

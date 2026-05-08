@@ -1,0 +1,93 @@
+<root>
+	<cat1>Catégorie 1</cat1>
+	<cat2>Catégorie 2</cat2>
+	<cat3>Catégorie 3</cat3>
+
+	<start>Commencer</start>
+
+	<partsHorse>L’anatomie du Cheval</partsHorse>
+	<colorHorse>Robe du Cheval</colorHorse>
+	<saddleBridle>La Selle et la Bride</saddleBridle>
+
+	<quest1>Question 1.</quest1>
+	<quest2>Question 2.</quest2>
+	<quest3>Question 3.</quest3>
+	<quest4>Question 4.</quest4>
+	<quest5>Question 5.</quest5>
+	<quest6>Question 6.</quest6>
+	<quest7>Question 7.</quest7>
+	<quest8>Question 8.</quest8>
+	<quest9>Question 9.</quest9>
+	<quest10>Question 10.</quest10>
+	<quest11>Question 11.</quest11>
+	<quest12>Question 12.</quest12>
+
+	<next>Suivant</next>
+	<congrats>Félicitations !</congrats>
+	<retry> Rejouer</retry>
+	<selectAnswer> Choisis une réponse !</selectAnswer>
+
+	<completedRound1>Tu as maintenant fini le premier round.</completedRound1>
+	<completedRound2>Tu as maintenant fini le second round.</completedRound2>
+	<completedRound3>Tu as maintenant fini le troisième round.</completedRound3>
+
+<horsePart1>Coude</horsePart1>
+<horsePart2>Jarret</horsePart2>
+<horsePart3>Sabot</horsePart3>
+<horsePart4>Toupet</hosePart4>
+<horsePart5>Garrot</horsePart5>
+<horsePart6>Flanc</horsePart6>
+<horsePart7>Rotule</horsePart7>
+<horsePart8>Croupe</horsePart8>
+<horsePart9>Ergot</horsePart9>
+<horsePart10>Dos</horsePart10>
+<horsePart11>Épaule</horsePart11>
+<horsePart12>Museau<horsePart12>
+<horsePart13>Boulet</horsePart13>
+<horsePart14>Machoire</horsePart14>
+<horsePart15>Attache de la queue</horseParts15>
+<horsePart16>Crinière</horsePart16>
+<horsePart17>Canon</horsePart17>
+<horsePart18>Ventre</horsePart18>
+<horsePart19>Genou<horsePart19>
+<horsePart20>Queue</horsePart20>
+<horsePart21>Courone</horsePart21>
+
+<result> Bonne réponse = </result>
+<expert>Bravo ! Tu dois être un expert</expert>
+<nice>Bien joué, tu connais beaucoup de choses sur les chevaux</nice>
+<lose>Désolé, peut-être devrais-tu réessayer !</lose>
+
+<horseColor1>Gris</horseColor1>
+<horseColor2>Alezan</horseColor2>
+<horseColor3>Noir</horseColor3>
+<horseColor4>Brun<horseColor4>
+<horseColor5>Gris Truité<horseColor5>
+<horseColor6>Isabelle<horseColor6>
+<horseColor7>Gris Pommelé</horseColor7>
+<horseColor8>Pinto</horseColor8>
+<horseColor9>Bai</horseColor9>
+<horseColor10>Palomino</horseColor10>
+<horseColor11>Pie<horseColor11>
+<horseColor12>Alezan</horseColor12>
+
+
+<saddleBridle1>Rênes<saddleBridle1>
+<saddleBridle2>Muserolle<saddleBridle2>
+<saddleBridle3>Mors</saddleBridle3>
+<saddleBridle4>Assise</saddleBridle4>
+<saddleBridle5>Tapis de selle</saddleBridle5>
+<saddleBridle6>Arrêtoir</saddleBridle6>
+<saddleBridle7>Sangle</saddleBridle7>
+<saddleBridle8>Montants</saddleBridle8>
+<saddleBridle9>Montant frontal</saddleBridle9>
+<saddleBridle10>Étrivières</saddleBridle10>
+<saddleBridle11>Pommeau</saddleBridle11>
+<saddleBridle12>Genouillère</saddleBridle12>
+<saddleBridle13>Troussequin</saddleBridle13>
+<saddleBridle14>Coussin de selle</saddleBridle14>
+<saddleBridle15>Tétière</saddleBridle15>
+<saddleBridle16>Étrier</saddleBridle16>
+<saddleBridle17>Sous-gorge</saddleBridle17>
+
+</root>

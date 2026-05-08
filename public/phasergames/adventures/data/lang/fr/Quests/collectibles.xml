@@ -1,0 +1,602 @@
+<adventures id="ADS-0000000821" description="Collectibles">
+  <adventure id="ADV-0000000889">
+    <description>Collecte de coquillages</description>
+    <quest id="QUE-0000002074" targetTemplate="ConchShellTemplate" visible="False">
+      <description unusedLocId="LOC-0000005052">Collect 10 Seashells for Shine Anders</description>
+      <line description="Complete - aready have seashells">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I040Template</template>
+            <count>10</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh ! Ces coquillages feront un magnifique collier. Merci ! Voici quelques fers à cheval pour ta peine. Reviens chaque fois que tu en auras trouvé de nouveaux.</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I040Template</template>
+            <count>10</count>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - already have snail shells">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I062Template</template>
+            <count>10</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh ! Ces coquillages feront un magnifique collier. Merci ! Voici quelques fers à cheval pour ta peine. Reviens chaque fois que tu en auras trouvé de nouveaux.</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I062Template</template>
+            <count>10</count>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - seashell (conch)">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>ConchShellTemplate</template>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I040Template</template>
+            <count>9</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Shine cherche 10 coquillages pour faire des bijoux. Je devrais les lui apporter. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002814</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - seashell (scallop)">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>ScallopShellTemplate</template>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I040Template</template>
+            <count>9</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Shine cherche 10 coquillages pour faire des bijoux. Je devrais les lui apporter. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002814</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - snailshell">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>SnailShellTemplate</template>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I062Template</template>
+            <count>9</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Shine cherche 10 coquillages pour faire des bijoux. Je devrais les lui apporter. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002814</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Shine)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore fabriquer des bijoux, même quand j'ai du temps libre. Ce que j'aimerais faire, c'est un collier en coquillages.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Si tu m'apportes 10 coquillages, je te donnerai des fers à cheval en échange.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002814">
+      <description>Apporte 10 coquillages à Shine Anders</description>
+      <line description="Complete - seashells">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I040Template</template>
+            <count>10</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh, ces coquillages feront un délicieux collier. Merci ! Voici des fers à cheval pour ta peine. </text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002074</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I040Template</template>
+            <count>10</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - snailshells">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C011</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I062Template</template>
+            <count>10</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Oh ! Ces coquillages feront un magnifique collier. Merci ! Voici quelques fers à cheval pour ta peine. Reviens chaque fois que tu en auras trouvé de nouveaux.</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002074</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I062Template</template>
+            <count>10</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Shine)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>HUMANTEMPLATE</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'aime fabriquer des bijoux pendant mon temps libre. J'ai pour projet de faire des colliers avec des coquillages. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Si tu m'apportes 10 coquillages, je te les paierai en fers à cheval.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000000890">
+    <description>Collecte de soie d'araignée</description>
+    <quest id="QUE-0000002075" visible="False">
+      <description unusedLocId="LOC-0000005056">Collect 10 Spider Silk for Hannah Lovet</description>
+      <line description="Complete - already have item">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C018</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I012Template</template>
+            <count>10</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>De la soie d'araignée ! Tu es vraiment courageuse. Tiens, prends ces fers à cheval. Cette soie d'araignée est tellement splendide qu'elle les vaut bien. Merci !</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I012Template</template>
+            <count>10</count>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>SpiderSilkTemplate</template>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I012Template</template>
+            <count>9</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Hannah adore faire des expériences avec de nouveaux types de fil. Je parie qu'elle adorerait cette soie d'araignée. Je devrais la lui apporter. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002811</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Hannah)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C018</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore essayer de nouvelles matières à tisser. J'aimerais tenter le coup avec de la soie d'araignée, mais la Forêt de Darkcomb me fait tellement peur ! </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Si tu avais le courage de me trouver 10 soies d'araignée, je te serais très reconnaissante. Et je te paierais aussi !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002811">
+      <description>Apporte 10 Soies d'araignée à Hannah Lovet</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C018</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I012Template</template>
+            <count>10</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>De la soie d'araignée ! Tu es si courageuse. Tiens, prends ces fers à cheval? Tu les as bien mérités en échange de cette soie magnifique. Merci !</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002075</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I012Template</template>
+            <count>10</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Hannah)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C018</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>J'adore essayer de nouvelles matières à tisser. J'aimerais tenter le coup avec de la soie d'araignée, mais la Forêt de Darkcomb me fait tellement peur ! </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Si tu avais le courage de me trouver 10 soies d'araignée, je te serais très reconnaissante. Et je te paierais aussi !</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001048">
+    <description>Travaux de forge avec le métal d'arborium</description>
+    <quest id="QUE-0000002883" visible="False">
+      <description unusedLocId="LOC-0000006147">Collect 3 Arborium Metal for Mr. Smithin</description>
+      <line description="Complete - already have item">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C012</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I069Template</template>
+            <count>3</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merveilleux, merveilleux. Le métal d'arborium est si rare et précieux. Merci beaucoup de l'avoir trouvé pour moi. Tiens, prends ces fers à cheval pour ta peine. </text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I069Template</template>
+            <count>10</count>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>AuroborusMetalTemplate</template>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I069Template</template>
+            <count>2</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Je partie que Mr. Smithin me donnerait des fers à cheval si je lui apportait ce métal d'arborium.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002884</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Smithin)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C012</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu  entendu parler de l'arborium ? C'est une substance magique formée à partir des météores qui traversent l'Auroborus, ce voile de lumière nocturne. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Je te donnerai des fers à cheval si tu m'apportes trois morceaux de métal d'arborium. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002884">
+      <description>Apporte 3 morceaux de métal d'arborium à Mr. Smithin</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C012</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I069Template</template>
+            <count>3</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merveilleux, merveilleux. Le métal d'arborium est si rare et précieux. Merci beaucoup de l'avoir trouvé pour moi. Tiens, prends ces fers à cheval pour ta peine. </text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002883</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I069Template</template>
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Smithin)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C012</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu  entendu parler de l'arborium ? C'est une substance magique formée à partir des météores qui traversent l'Auroborus, ce voile de lumière nocturne. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Je te donnerai des fers à cheval si tu m'apportes trois morceaux de métal d'arborium. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001050">
+    <description>Désinsectisation grâce aux coccinelles</description>
+    <quest id="QUE-0000002887" visible="False">
+      <description unusedLocId="LOC-0000006164">Collect 6 Jars of Ladybugs for Marta Thomas</description>
+      <line description="Complete - already have item">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C019</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I023aTemplate</template>
+            <count>6</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merveilleux ! Les coccinelles sont des amies utiles, tout comme toi ! Voici les fers à cheval que je t'avais promis. </text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I023aTemplate</template>
+            <count>6</count>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.RemoveEntityTrigger">
+            <template>LadyBugTemplate</template>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I023aTemplate</template>
+            <count>5</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.MonologueAction">
+            <text>Je pense que ces coccinelles pourraient aider Marta à maîtriser les insectes de sa ferme. Je devrais les lui apporter. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002888</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Marta Thomas)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C019</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu déjà vu des coccinelles ? Elles ont l'excellente habitude de manger les insectes qui s'en prennent aux récoltes. Et elles sont mignonnes, en plus.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>J'aimerais beaucoup que tu m'apportes toutes les coccinelles que tu trouveras. Je te paiera si tu m'en apportes au moins 6.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000002888">
+      <description>Apporte 6 bocaux de coccinelles à Marta Thomas</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C019</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I023aTemplate</template>
+            <count>6</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Merveilleux ! Les coccinelles sont des amies utiles, tout comme toi ! Voici les fers à cheval que je t'avais promis. </text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000002887</questId>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I023aTemplate</template>
+            <count>6</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Marta)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C019</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>As-tu déjà vu des coccinelles ? Elles ont l'excellente habitude de manger les insectes qui s'en prennent aux récoltes. Et elles sont mignonnes, en plus.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>J'aimerais beaucoup que tu m'apportes toutes les coccinelles que tu trouveras. Je te paiera si tu m'en apportes au moins 6.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

@@ -1,0 +1,334 @@
+<things version="1">
+  <template name="DetritusTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.IsometricComponent" name="Isometric" />
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.DetritusComponent" name="Detritus" />
+    <component type="components.NightMovieClipComponent" name="NightMovieClip" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+    <component type="components.SpawnedEntityComponent" name="SpawnedEntity" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.TrashCommand" name="TrashCommand" />
+  </template>
+  <template name="SpawnedItemTemplate">
+    <component type="components.IsometricComponent" name="Isometric">
+      <depthOffset>1</depthOffset>
+    </component>
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.NightMovieClipComponent" name="NightMovieClip" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.TakeCommand" name="TakeCommand" />
+    <component type="components.SpawnedEntityComponent" name="SpawnedEntity" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <fillAlpha>.8</fillAlpha>
+      <lineColor>0x663399</lineColor>
+      <fillColor>0xcc99ff</fillColor>
+    </component>
+  </template>
+  <!-- Garden Weeds -->
+  <template name="Detritus0Template" template="DetritusTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0040a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mauvaises herbes</ToolTipText>
+    </component>
+  </template>
+  <template name="Detritus1Template" template="DetritusTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0040f</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mauvaises herbes</ToolTipText>
+    </component>
+  </template>
+  <template name="Detritus2Template" template="DetritusTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0040g</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Mauvaises herbes</ToolTipText>
+    </component>
+  </template>
+  <!-- Haystack -->
+  <template name="HayTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0030a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Foin</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I046Template</template>
+    </component>
+  </template>
+  <!-- Water Barrel -->
+  <template name="WaterBarrelTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/canterfarms.swf</fileName>
+      <className>T0002b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Water Barrel</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I010bTemplate</template>
+    </component>
+  </template>
+  <template name="LadyBugTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0107a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coccinelles</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023aTemplate</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="Butterfly1Template" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="Butterfly2Template" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="Butterfly3Template" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0106c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papillon</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I023bTemplate</template>
+    </component>
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.CharacterIdleComponent" name="CharacterIdle" />
+  </template>
+  <template name="PixieDustTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0202</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Poussière de pixie</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I056Template</template>
+    </component>
+  </template>
+  <template name="ClayTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0240</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Argile</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I148Template</template>
+    </component>
+  </template>
+  <template name="SmokeCrystalTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0140</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cristaux de fumée</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I059Template</template>
+    </component>
+  </template>
+  <template name="AuroborusMetalTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0165b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Métal d'Arborium</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I069Template</template>
+    </component>
+  </template>
+  <template name="LunarSparkleTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0110</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Eclats de lune</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I024Template</template>
+    </component>
+  </template>
+  <template name="WolfWhistleTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0191</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sifflet des loups</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>P047SeedTemplate</template>
+    </component>
+  </template>
+  <template name="LoamSackTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0203</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Terreau</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I054Template</template>
+    </component>
+  </template>
+  <!-- Tree -->
+  <template name="PineNutTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0182</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pignon de pin</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I049Template</template>
+    </component>
+  </template>
+  <template name="DarkResinTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0141</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Résine noire</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I090Template</template>
+    </component>
+  </template>
+  <!-- Spider Silk  -->
+  <template name="SpiderSilkTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0183</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Soie d'araignée</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I012Template</template>
+    </component>
+  </template>
+  <!-- Seashells  -->
+  <template name="SnailShellTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170a</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Escargot</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I062Template</template>
+    </component>
+  </template>
+  <template name="ConchShellTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170c</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coquillage</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I040Template</template>
+    </component>
+  </template>
+  <template name="ScallopShellTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170b</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Coquillage</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I040Template</template>
+    </component>
+  </template>
+  <template name="StarfishTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0170d</className>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Etoile de mer</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I041Template</template>
+    </component>
+  </template>
+  <!-- Dream Bauble  -->
+  <template name="DreamBaubleTemplate" template="SpawnedItemTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/tilesets/worldobjects1.swf</fileName>
+      <className>T0188</className>
+    </component>
+    <component name="Isometric">
+      <depthOffset>50</depthOffset>
+      <xOffset>-15</xOffset>
+      <yOffset>-15</yOffset>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Perle des songes</ToolTipText>
+    </component>
+    <component name="TakeCommand">
+      <template>I039Template</template>
+    </component>
+  </template>
+</things>

@@ -1,0 +1,1464 @@
+<!-- ================= TEMPLATES ================= -->
+<things version="1">
+  <template name="CorePlantTemplate">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.IsometricComponent" name="Isometric">
+      <shouldAlpha>true</shouldAlpha>
+    </component>
+    <component type="components.MovieClipComponent" name="MovieClip" />
+    <component type="components.PlantMovieClipComponent" name="PlantMovieClip" />
+    <component type="components.GridPositionComponent" name="GridPosition" />
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.ToolTipComponent" name="ToolTip" />
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.MiniMapTileComponent" name="MiniMapTile">
+      <lineThickness>1</lineThickness>
+      <lineAlpha>.5</lineAlpha>
+      <fillAlpha>.8</fillAlpha>
+      <lineColor>0x663333</lineColor>
+      <fillColor>0x339933</fillColor>
+      <!--<scale>1</scale>-->
+    </component>
+    <component type="components.commands.TakePlantCommand" name="TakePlantCommand" />
+    <component type="components.commands.CollectPlantCommand" name="CollectPlantCommand" />
+    <component type="components.commands.WaterPlantCommand" name="WaterPlantCommand" />
+    <component type="components.commands.UprootCommand" name="UprootCommand" />
+  </template>
+  <template name="BasicPlantTemplate" template="CorePlantTemplate">
+    <component type="components.BasicGrowingComponent" name="BasicGrowing">
+      <hasSeeds>false</hasSeeds>
+      <growthType>Day</growthType>
+      <isWilted>false</isWilted>
+      <wiltTime>-1</wiltTime>
+      <!-- wiltTime < 0: Means the plant won't ever wilt!!! -->
+      <stagesPerWatering>8</stagesPerWatering>
+    </component>
+  </template>
+  <template name="FruitPlantTemplate" template="CorePlantTemplate">
+    <component type="components.FruitGrowingComponent" name="BasicGrowing">
+      <hasSeeds>false</hasSeeds>
+      <growthType>Day</growthType>
+      <isWilted>false</isWilted>
+      <wiltTime>-1</wiltTime>
+      <!-- wiltTime < 0: Means the plant won't ever wilt!!! -->
+      <reGrowthTime>5000</reGrowthTime>
+      <fullGrowthTime>15000</fullGrowthTime>
+      <stagesPerWatering>8</stagesPerWatering>
+    </component>
+  </template>
+  <!-- ================= PLANTS ================= -->
+  <template name="P053Template">
+    <component type="components.BreadCrumbComponent" name="BreadCrumb" />
+    <component type="components.IsometricComponent" name="Isometric" />
+    <component type="components.MovieClipComponent" name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P053</className>
+    </component>
+    <component type="components.PlantMovieClipComponent" name="PlantMovieClip">
+      <stages>2</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component type="components.GridPositionComponent" name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+    <component type="components.ClickComponent" name="Click" />
+    <component type="components.IdleComponent" name="Idle" />
+    <component type="components.ToolTipComponent" name="ToolTip">
+      <ToolTipText>Tige de haricot magique</ToolTipText>
+    </component>
+    <component type="components.ContextComponent" name="Context" />
+    <component type="components.commands.WaterPlantCommand" name="WaterPlantCommand" />
+    <component type="components.FruitGrowingComponent" name="BasicGrowing">
+      <hasSeeds>false</hasSeeds>
+      <growthType>Day</growthType>
+      <isWilted>false</isWilted>
+      <wiltTime>-1</wiltTime>
+      <!-- wiltTime < 0: Means the plant won't ever wilt!!! -->
+      <reGrowthTime>5000</reGrowthTime>
+      <fullGrowthTime>4000</fullGrowthTime>
+      <stagesPerWatering>8</stagesPerWatering>
+      <harvestSeedsItemId>P053SeedTemplate</harvestSeedsItemId>
+      <magic>10</magic>
+    </component>
+  </template>
+  <template name="P001Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P001</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>2</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P001SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P001ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>2400</fullGrowthTime>
+      <unWiltStage>1</unWiltStage>
+      <magic>20</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Marguerite</ToolTipText>
+    </component>
+  </template>
+  <template name="P002Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P002</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P002SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P002ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>4500</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>50</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Ail</ToolTipText>
+    </component>
+  </template>
+  <template name="P003Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P003</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P003SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P003ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>75000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>150</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Citrouille</ToolTipText>
+    </component>
+  </template>
+  <template name="P004Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P004</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>8</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P004SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P004ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>132000</fullGrowthTime>
+      <reGrowthTime>99000</reGrowthTime>
+      <unWiltStage>6</unWiltStage>
+      <harvestedStage>6</harvestedStage>
+      <magic>175</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pommier</ToolTipText>
+    </component>
+  </template>
+  <template name="P005Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P005</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P005SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P005ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>30000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>425</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Orchidée papillon</ToolTipText>
+    </component>
+  </template>
+  <template name="P006Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P006</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P006SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P006ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>200000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>400</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lys de l'aurore</ToolTipText>
+    </component>
+  </template>
+  <template name="P007Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P007</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>6</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P007SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P007ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>135000</fullGrowthTime>
+      <reGrowthTime>101250</reGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <harvestedStage>4</harvestedStage>
+      <magic>275</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bananier</ToolTipText>
+    </component>
+  </template>
+  <template name="P008Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P008</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P008SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P008ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>4200</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>40</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Carotte</ToolTipText>
+    </component>
+  </template>
+  <template name="P009Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P009</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>6</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P009SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P009ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>202500</fullGrowthTime>
+      <reGrowthTime>151875</reGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <harvestedStage>4</harvestedStage>
+      <magic>275</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cannelier</ToolTipText>
+    </component>
+  </template>
+  <template name="P010Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P010</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P010SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P010ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>255000</fullGrowthTime>
+      <reGrowthTime>191250</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>325</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Cacaotier</ToolTipText>
+    </component>
+  </template>
+  <template name="P011Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P011</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P011SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P011ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>230000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>475</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rose de cristal</ToolTipText>
+    </component>
+  </template>
+  <template name="P012Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P012</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P012SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P012ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>31500</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>250</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lanterne aux fées</ToolTipText>
+    </component>
+  </template>
+  <template name="P013Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P013</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P013SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P013ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>14400</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>140</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tulipe de feu</ToolTipText>
+    </component>
+  </template>
+  <template name="P014Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P014</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P014SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P014ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>170000</fullGrowthTime>
+      <reGrowthTime>127500</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>325</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Piment ardent</ToolTipText>
+    </component>
+  </template>
+  <template name="P015Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P015</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P015SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P015ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>20000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>150</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Jeune pousse</ToolTipText>
+    </component>
+  </template>
+  <template name="P016Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P016</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>8</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>4</gridFootX>
+      <gridFootY>4</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P016SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P016ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>234000</fullGrowthTime>
+      <reGrowthTime>175500</reGrowthTime>
+      <unWiltStage>6</unWiltStage>
+      <harvestedStage>6</harvestedStage>
+      <magic>225</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Gommier</ToolTipText>
+    </component>
+  </template>
+  <template name="P017Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P017</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P017SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P017ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>97500</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>225</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Petits pois de glace</ToolTipText>
+    </component>
+  </template>
+  <template name="P018Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P018</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>8</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P018SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P018ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>252000</fullGrowthTime>
+      <reGrowthTime>189000</reGrowthTime>
+      <unWiltStage>6</unWiltStage>
+      <harvestedStage>6</harvestedStage>
+      <magic>250</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Citronnier bicolore</ToolTipText>
+    </component>
+  </template>
+  <template name="P019Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P019</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P019SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P019ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>15000</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>150</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Bouton d'or rouge à lèvres</ToolTipText>
+    </component>
+  </template>
+  <template name="P020Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P020</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>8</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P020SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P020ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>270000</fullGrowthTime>
+      <reGrowthTime>202500</reGrowthTime>
+      <unWiltStage>6</unWiltStage>
+      <harvestedStage>6</harvestedStage>
+      <magic>275</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Magnolia</ToolTipText>
+    </component>
+  </template>
+  <template name="P021Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P021</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P021SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P021ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>55000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>175</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Ananas </ToolTipText>
+    </component>
+  </template>
+  <template name="P022Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P022</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P022SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P022ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>64000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>300</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Marguerite-soleil</ToolTipText>
+    </component>
+  </template>
+  <template name="P023Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P023</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P023SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P023ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>45000</fullGrowthTime>
+      <reGrowthTime>33750</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>125</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Framboisier</ToolTipText>
+    </component>
+  </template>
+  <template name="P024Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P024</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P024SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P024ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>5250</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>75</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Muflier</ToolTipText>
+    </component>
+  </template>
+  <template name="P025Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P025</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P025SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P025ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>55000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>175</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Canne à sucre</ToolTipText>
+    </component>
+  </template>
+  <template name="P026Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P026</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P026SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P026ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>10000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>375</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lotus-soleil</ToolTipText>
+    </component>
+  </template>
+  <template name="P027Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P027</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P027SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P027ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>6000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>75</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tournesol</ToolTipText>
+    </component>
+  </template>
+  <template name="P028Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P028</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P028SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P028ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>5850</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>100</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Maïs barbu</ToolTipText>
+    </component>
+  </template>
+  <template name="P029Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P029</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P029SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P029ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>90000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>200</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Thé de bambou</ToolTipText>
+    </component>
+  </template>
+  <template name="P030Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P030</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P030SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P030ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>38000</fullGrowthTime>
+      <reGrowthTime>28500</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>90</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Tomate</ToolTipText>
+    </component>
+  </template>
+  <template name="P031Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P031</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P031SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P031ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>24000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>60</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Pastèque</ToolTipText>
+    </component>
+  </template>
+  <template name="P032Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P032</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P032SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P032ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>120000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>500</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Orchidée royale</ToolTipText>
+    </component>
+  </template>
+  <template name="P033Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P033</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>8</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P033SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P033ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>456000</fullGrowthTime>
+      <reGrowthTime>342000</reGrowthTime>
+      <unWiltStage>6</unWiltStage>
+      <harvestedStage>6</harvestedStage>
+      <magic>375</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Erable lunaire</ToolTipText>
+    </component>
+  </template>
+  <template name="P034Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P034</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P034SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P034ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>36000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>125</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Papyrus</ToolTipText>
+    </component>
+  </template>
+  <template name="P035Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P035</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P035SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P035ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>10000</fullGrowthTime>
+      <reGrowthTime>10000</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>10</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Winterberry</ToolTipText>
+    </component>
+  </template>
+  <template name="P036Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P036</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P036SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P036ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>5850</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>95</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Champignon steak</ToolTipText>
+    </component>
+  </template>
+  <template name="P037Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P037</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P037SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P037ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>90000</fullGrowthTime>
+      <reGrowthTime>67500</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>200</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Baie épicée</ToolTipText>
+    </component>
+  </template>
+  <template name="P038Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P038</className>
+    </component>
+    <component type="components.ThumbnailComponent" name="Thumbnail">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P038</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>6</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P038SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P038ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>20000</fullGrowthTime>
+      <reGrowthTime>7000</reGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <harvestedStage>4</harvestedStage>
+      <magic>175</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Arbre à plumberries</ToolTipText>
+    </component>
+  </template>
+  <template name="P039Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P039</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P039SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P039ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>18000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>125</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Starshine</ToolTipText>
+    </component>
+  </template>
+  <template name="P040Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P040</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>8</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P040SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P040ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>252000</fullGrowthTime>
+      <unWiltStage>7</unWiltStage>
+      <magic>250</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Baobab</ToolTipText>
+    </component>
+  </template>
+  <template name="P041Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P041</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P041SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P041ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>64000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>300</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Barbe de dragon</ToolTipText>
+    </component>
+  </template>
+  <template name="P042Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P042</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P042SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P042ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>36000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>200</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Iris-drapeau bleu</ToolTipText>
+    </component>
+  </template>
+  <template name="P043Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P043</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P043SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P043ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>40000</fullGrowthTime>
+      <reGrowthTime>30000</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>100</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Vanille</ToolTipText>
+    </component>
+  </template>
+  <template name="P044Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P044</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P044SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P044ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>170000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>325</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fleur de pétale de glace</ToolTipText>
+    </component>
+  </template>
+  <template name="P045Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P045</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P045SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P045ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>250000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>400</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Lys-araignée</ToolTipText>
+    </component>
+  </template>
+  <template name="P046Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P046</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P046SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P046ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>18000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>80</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chèvrefeuille (fleur de lait de miel)</ToolTipText>
+    </component>
+  </template>
+  <template name="P047Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P047</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P047SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P047ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>16160</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>1</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Sifflet des loups</ToolTipText>
+    </component>
+  </template>
+  <template name="P048Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P048</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>3</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>2</gridFootX>
+      <gridFootY>2</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P048SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P048ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>6060</fullGrowthTime>
+      <unWiltStage>2</unWiltStage>
+      <magic>1</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Chou-putois</ToolTipText>
+    </component>
+  </template>
+  <template name="P049Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P049</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P049SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P049ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>39000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>225</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Ombrenuit</ToolTipText>
+    </component>
+  </template>
+  <template name="P050Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P050</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P050SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P050ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>76000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>375</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Orchidée pantoufle aux dames</ToolTipText>
+    </component>
+  </template>
+  <template name="P051Template" template="FruitPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P051</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P051SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P051ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>82500</fullGrowthTime>
+      <reGrowthTime>61875</reGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <harvestedStage>3</harvestedStage>
+      <magic>175</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Fraisier</ToolTipText>
+    </component>
+  </template>
+  <template name="P052Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P052</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFootX>3</gridFootX>
+      <gridFootY>3</gridFootY>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P052SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P052ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>168750</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>275</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Indigo</ToolTipText>
+    </component>
+  </template>
+  <template name="P054Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P054</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>1</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P054SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P054SeedTemplate</harvestProduceItemId>
+      <fullGrowthTime>1010</fullGrowthTime>
+      <unWiltStage>0</unWiltStage>
+      <magic>10</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Perle de Luna</ToolTipText>
+    </component>
+  </template>
+  <template name="P055Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P055</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>5</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFoot>3</gridFoot>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P055SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P055ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>270000</fullGrowthTime>
+      <unWiltStage>4</unWiltStage>
+      <magic>350</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Potiron des fées</ToolTipText>
+    </component>
+  </template>
+  <template name="P056Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P056</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>6</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFoot>3</gridFoot>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P056SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P056ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>162000</fullGrowthTime>
+      <unWiltStage>5</unWiltStage>
+      <magic>200</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Melon à nectar</ToolTipText>
+    </component>
+  </template>
+  <template name="P057Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P057</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFoot>2</gridFoot>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P057SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P057ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>88000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>175</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Valériane rouge</ToolTipText>
+    </component>
+  </template>
+  <template name="P058Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P058</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFoot>2</gridFoot>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P058SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P058ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>78000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>225</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Hibiscus</ToolTipText>
+    </component>
+  </template>
+  <template name="P059Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P059</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFoot>2</gridFoot>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P059SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P059ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>72000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>200</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Laurier ionique</ToolTipText>
+    </component>
+  </template>
+  <template name="P060Template" template="BasicPlantTemplate">
+    <component name="MovieClip">
+      <fileName>flash/adventures/art/plants/plant.swf</fileName>
+      <className>P060</className>
+    </component>
+    <component name="PlantMovieClip">
+      <stages>4</stages>
+      <currentStage>1</currentStage>
+    </component>
+    <component name="GridPosition">
+      <gridFoot>2</gridFoot>
+    </component>
+    <component name="BasicGrowing">
+      <harvestSeedsItemId>P060SeedTemplate</harvestSeedsItemId>
+      <harvestProduceItemId>P060ProduceTemplate</harvestProduceItemId>
+      <fullGrowthTime>230000</fullGrowthTime>
+      <unWiltStage>3</unWiltStage>
+      <magic>475</magic>
+    </component>
+    <component name="ToolTip">
+      <ToolTipText>Rose du désert</ToolTipText>
+    </component>
+  </template>
+</things>

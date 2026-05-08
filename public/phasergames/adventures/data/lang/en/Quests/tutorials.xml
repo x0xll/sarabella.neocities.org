@@ -1,0 +1,285 @@
+<adventures id="ADS-0000000932" description="Tutorials">
+  <adventure id="ADV-0000001159">
+    <description>Feeding and Brushing Horses</description>
+    <quest id="QUE-0000003329" visible="False">
+      <description unusedLocId="LOC-0000008675">Talk to Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Many horses love to eat more than just hay. If you give us our favorite food, you’ll get a  collectible horse card and a little horseshoe bonus too.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>My favorite food is vanilla bean. Let me give you one so you can try feeding me one now. </text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P043ProduceTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000003331</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003331" targetTemplate="H001Template">
+      <description>Give Bella the vanilla bean</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.GiveItemTrigger">
+            <inventoryTemplate>P043ProduceTemplate</inventoryTemplate>
+            <targetTemplate>H001Template</targetTemplate>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Thanks for the vanilla bean. It tasted wonderful. Talk to horses you meet to find out if they have a favorite food. Feed them their favorite food to collect their horse card!</text>
+            <identifier>H001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>We horses also love to be brushed. It keeps our coats shiny. Try brushing me now.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000003332</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>My favorite food is vanilla beans. Give me one to get a collectable card and a small horseshoe bonus.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000003332" targetTemplate="H001Template">
+      <description>Brush Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ContextItemTrigger">
+            <contextItem>brush</contextItem>
+            <template>H001Template</template>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Thank you for brushing me. Did you see the smiley face above my head? That’s how I can show you how I’m feeling. </text>
+            <identifier>H001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>You can make horses happy by brushing them. Brush your new friends to make them happy.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001639</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Reminder (Bella)">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Brush me please.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001327">
+    <description>Hannah’s Brush -n- Braid</description>
+    <quest id="QUE-0000004181" visible="False">
+      <description unusedLocId="LOC-0000012460">[Silent] Stop Near Hannah</description>
+      <line description="Enter Bagatella Row">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z008</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Hannah’s Brush -n- Braid shop is open! You can find it East of Bagatella Row.</text>
+            <identifier>C005</identifier>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.StopNearTrigger">
+            <zoneId>Z008</zoneId>
+            <centerX>46</centerX>
+            <centerY>51</centerY>
+            <radius>8</radius>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Welcome! I’m Hannah, and I run the Brush -n- Braid shop. I have some wonderful clothes for you to buy and wear. </text>
+            <identifier>C018</identifier>
+          </object>
+          <object type="questData.DialogueImageAction">
+            <text>This is the &lt;b&gt;Shop&lt;/b&gt;bubble. Click on it to see the clothes and accessories that you can buy.</text>
+            <identifier>C018</identifier>
+            <imageFileName>Flash/Adventures/Art/Dialogue/Context_Shop.png</imageFileName>
+            <hspace>0</hspace>
+            <vspace>0</vspace>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Today is the opening, and I’m giving all of my customers 50 horseshoes to buy what they want. Happy shopping!</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>50</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+  <adventure id="ADV-0000001330">
+    <description>Get clothes</description>
+    <quest id="QUE-0000004185" visible="False">
+      <description unusedLocId="LOC-0000012471">[Silent] Application launch</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>What a great outfit! Visit Hannah’s Brush -n- Braid shop in Bagatella Row to buy more clothes. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Did you know you can also dye your clothes to change their color? All you need to do is grow plants and give them to a Dye Machine. Let’s try making some dye now. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Here’s a winterberry seed to grow. Collect a winterberry from it when it’s done growing. When you’re done, I’ll show you how to use the Dye Machine. </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>P035SeedTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004186</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004186" targetTemplate="DirtTemplate">
+      <description>Grow a winterberry</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::HarvestProduceAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>P035Template</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Great! Now you have a winterberry. Hannah has a Dye Machine near her shop, but here’s one you can keep in your Inventory Bag. To use it, you’ll need to take it out and put it on the ground.</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Take your Dye Machine out now and I’ll show you how to turn your winterberry into dye!</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I142Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004188</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004188">
+      <description>Place the Dye Machine in the world</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>T0246aTemplate</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>That’s a great place to put a Dye Machine. Now, click on the Dye Machine and choose the  &lt;b&gt;Give&lt;/b&gt; bubble to give it the winterberry you collected and see what wonderful dye you get.</text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000004187</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000004187" targetTemplate="T0246aTemplate">
+      <description>Give the Dye Machine a winterberry</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TradeTrigger">
+            <tradedItemTemplate>P035ProduceTemplate</tradedItemTemplate>
+            <targetEntityTemplate>T0246aTemplate</targetEntityTemplate>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Yay! You got an Ice Blue dye bottle. Easy, right? Try growing different plants to see which dye you get. This Dye Machine only works with 16 plants, try to find them all! </text>
+            <identifier>C005</identifier>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

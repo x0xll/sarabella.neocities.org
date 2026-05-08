@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="/styles.css">
     </head>
 
-    <script src="/language.js"></script>
+    <script src="/save.js"></script>
+<script src="/language.js"></script>
 
     <body class="game" onload="loadLanguagePref(); setupUserDropdown(); checkPlayPageDefault()">
         <script src="/header.js"></script>
@@ -29,7 +30,7 @@
         </div>
 
         <script src="/flags.js"></script>
-<script src="/userManager.js"></script>
+<script src="/userManagerUpdatev2.js"></script>
 
         <script src="/flash/common/js/flashutils.js"></script>
 
@@ -49,7 +50,7 @@
   <script>
     function checkPlayPageDefault()
     {
-        if (!isGuest() && !loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+        if (!isGuest() && !loadData(DATA_TYPES.mapPlayPage))
             window.location.href = "/play.html"
         else if (!isGuest())
             document.getElementById("gotomap").style.display = "none";

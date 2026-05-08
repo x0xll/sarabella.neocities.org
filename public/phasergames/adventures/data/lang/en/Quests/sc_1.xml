@@ -1,0 +1,348 @@
+<adventures id="ADS-0000001177" description="SpC Quest 1">
+  <adventure id="ADV-0000001827">
+    <description>Quête du Carnaval du Printemps 1 - Le carnaval de Bella</description>
+    <quest id="QUE-0000006290" visible="False">
+      <description unusedLocId="LOC-0000024961">Add Twig and Top Hat Tomtomme</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.AddQuestFileAction">
+            <fileName>springcarnival/sc_6.xml</fileName>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>H045Template</template>
+            <instanceIdentifier>spc1</instanceIdentifier>
+            <zone>Z001</zone>
+            <x>9</x>
+            <y>14</y>
+            <scaleX>-1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>M003dTemplate</template>
+            <instanceIdentifier>tophat</instanceIdentifier>
+            <zone>R010</zone>
+            <x>4</x>
+            <y>7</y>
+            <scaleX>-1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0603_05Template</template>
+            <instanceIdentifier>startcarousel</instanceIdentifier>
+            <zone>R010</zone>
+            <x>2</x>
+            <y>4</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>1</instanceIdentifier>
+            <zone>R010</zone>
+            <x>11</x>
+            <y>5</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>2</instanceIdentifier>
+            <zone>R010</zone>
+            <x>11</x>
+            <y>6</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>3</instanceIdentifier>
+            <zone>R010</zone>
+            <x>11</x>
+            <y>7</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>4</instanceIdentifier>
+            <zone>R010</zone>
+            <x>11</x>
+            <y>8</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>QuestItemSoilTemplate</template>
+            <instanceIdentifier>5</instanceIdentifier>
+            <zone>R010</zone>
+            <x>11</x>
+            <y>9</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006291</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006396</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006396" visible="False">
+      <description unusedLocId="LOC-0000025431">Add Exit to Playhouse from the Outskirts</description>
+      <line description="Add the exit if it doesn't already exist.">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>Z010</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.TryAddZoneItemToAction">
+            <template>ExitToZoneR010</template>
+            <instanceIdentifier>Z010_to_R010</instanceIdentifier>
+            <x>60</x>
+            <y>34</y>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006291">
+      <description>Parle à Twig</description>
+      <line description="Starting Dialog">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H045</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Bonjour, es-tu venue m'aider à réparer le manège du Carnaval du Printemps ?</text>
+            <choice id="line1">Bien sûr. </choice>
+            <choice id="line2">Plus tard, peut-être. </choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - Line1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Je suis si contente que tu m'aides. Il nous faut 5 chevaux pour réparer le manège.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, va voir Bella sur la Place de la Fontaine (Fountain Plaza). Elle te dira où se trouve son cheval de manège.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>En remerciement pour ton aide, prends cette chemise spéciale Bella. </text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>IS001xTemplate</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006292</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - Line2">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line2</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Reviens quand tu pourras m'aider. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006292">
+      <description>Parle à Bella</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>C'est déjà l'époque du Carnaval de Printemps ? Je n'ai pas mon cheval de manège ici. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Rends visite à Colm à la Lisière (Outskirts). Il garde mon cheval de manège quand on ne s'en sert pas. </text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006293</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Twig Reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H045</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, rends visite à Bella sur la Place de la Fontaine (Fountain Plaza), au nord. Elle te dira où trouver son cheval de manège. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006293">
+      <description>Obtiens la statue de manège Bella auprès de Colm</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Le cheval de manège de Bella ? Ouais, je dois l'avoir ici. Je l'ai nettoyé tout seul... Euh... avec l'aide des Citrustacks en fait. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Va vite au Théâtre, à La Lisière pour compléter le manège du Carnaval du Printemps.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0598Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006307</questId>
+          </object>
+        </actions>
+      </line>
+      <line description="Bella Reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H001</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Rends visite à Colm à la Lisière (Outskirts). Il garde mon cheval de manège quand on ne s'en sert pas. Utilise ta carte pour le trouver. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006307" targetZone="R010">
+      <description>Parler au Tomtomme</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M003d</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I0598Template</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Super, tu as apporté un cheval de manège : juste ce qu'il nous faut. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Laisse-moi te débarrasser de ce cheval. Je vais m'occuper de réparer le manège et de le mettre en marche. </text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Une fois que les 5 statues seront là, le manège sera prêt ! Un petit indice : chaque code secret du Carnaval du Printemps t'aide à trouver un nouveau cheval de manège. </text>
+          </object>
+          <object type="questData.AddZoneItemAnywhereAction">
+            <template>T0598Template</template>
+            <zone>R010</zone>
+            <x>11</x>
+            <y>5</y>
+            <scaleX>1</scaleX>
+            <scaleY>1</scaleY>
+          </object>
+          <object type="questData.RemoveZoneItemAnywhereAction">
+            <template>H045Template</template>
+            <instanceIdentifier>spc1</instanceIdentifier>
+            <zone>Z001</zone>
+          </object>
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I0598Template</template>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006382</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006383</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>springcarnival/sc_1.xml</fileName>
+          </object>
+        </actions>
+      </line>
+      <line description="Colm Reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C003</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Va vite au Théâtre, à La Lisière pour compléter le manège du Carnaval du Printemps.</text>
+          </object>
+        </actions>
+      </line>
+      <line description="Top Hat Tomtomme Reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M003d</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, apporte-moi le cheval de manège Bella pour que nous puissions réparer le manège. </text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>
