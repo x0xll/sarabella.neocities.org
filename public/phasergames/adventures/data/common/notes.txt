@@ -1,0 +1,12 @@
+Comments for the common config files can be written here to not lose them considering we can't add any in the .json files...
+
+#npcConfig:
+- In Z023, we should have multiple of the same magical friends (the M017 and M028). Those are the approximate coordinate of them all. For now we can't add more than one type of the same entity in the zone... so we'll need to add those later on     
+        "M017Template": [41, 38, "se"],
+        "M017Template": [19, 15, "se"],
+        "M017Template": [43, 10, "se"],
+        "M017Template": [44, 11, "se"],
+        "M028Template": [25, 19, "sw"],
+        "M028Template": [25, 18, "sw"],
+        "M028Template": [22, 18, "sw"]
+- In a general manner, we probably will need to replace slightly most of the npcs when the spine visuals for the buildings/worldobjects will be correctly placed on the grid as they still have some offset as of now

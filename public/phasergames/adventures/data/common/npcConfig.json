@@ -62,7 +62,8 @@
         "M021Template": [44, 32, "sw"]
     },
     "Z023": {
-        "M017Template": [41, 38, "se"]
+        "M017Template": [41, 38, "se"],
+        "M028Template": [25, 19, "sw"]
     },
     "Z025": {
         "C013Template": [7, 19, "se"]
