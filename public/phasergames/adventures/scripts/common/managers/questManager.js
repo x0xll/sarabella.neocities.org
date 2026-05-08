@@ -232,6 +232,40 @@ class QuestManager {
         return quests
     }
 
+    //------- QUEST OVERRIDES -------
+
+    #QUEST_OVERRIDES = {
+        "0000000825-0000000904-0000002142": [
+            ["ADS-0000000932", "ADV-0000001330", "QUE-0000004185"] // Dye tutorial, will trigger on the next game launch
+        ]
+    }
+
+    /**
+     * May be modified in the future. 
+     * An easy way for us to start specific quests after others without needing to modify the .xml for the release version
+     * This is supposed to help us be able to start code-related or time-related quests based on the last finished quest 
+     * @param {*} questID The last finished quest
+     */
+    #tryManuallyStartingQuests(questID)
+    {
+        // TODO: probably should separate this in it's own function since we use it at two spot
+        // although maybe we can also find a better way to handle how to store the QUEST_OVERRIDES to not need this too...
+        function stringifyQuest(quest) {
+            const ads = quest[0].replace("ADS-", "")
+            const adv = quest[1].replace("ADV", "")
+            const que = quest[2].replace("QUE", "")
+            return ads+adv+que
+        }
+
+        let finishedQuest = stringifyQuest(questID);
+        if (!this.#QUEST_OVERRIDES[finishedQuest]) return;
+
+        this.#QUEST_OVERRIDES[finishedQuest].forEach(quest => {
+            this.makeQuestAvailable(quest);
+        });
+    }
+
+    //------- END QUEST OVERRIDES -------
 
     //------- QUEST LOADING -------
     // TODO : get the quests info from somewhere
@@ -548,9 +582,11 @@ class QuestManager {
         if (questIndex >=0) {
             this.phaserScene.sharedData.quest.logic.activeQuests.splice(questIndex, 1);
         }
+
+        this.#tryManuallyStartingQuests(questID);
+
         return
     }
-
 
     //------- QUEST TRIGGERS -------
     /**
