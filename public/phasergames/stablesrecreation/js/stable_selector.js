@@ -30,6 +30,7 @@ const horses = [
     'epona',
     'faith',
     'falcha',
+    'farfalla',
     'faxon',
     'fiona',
     'firewalker',
