@@ -814,12 +814,14 @@ class QuestManager {
 
         return this.#QUEST_CONDITIONS[questLine.conditions.object[0].type](phaserScene, questData, lineIndex, trigger)
     }
-    // TODO: add condition checks
+
     #QUEST_CONDITIONS = {
         "ActionOnTemplateCondition": this.#actionOnTemplate,
         "HasMultipleItemsCondition": this.#hasMultipleItemsCondition,
         "ContainsTokenItemCondition": this.#containsTokenItemCondition,
-        "HasQuestCondition": this.#hasQuestCondition
+        "HasQuestCondition": this.#hasQuestCondition,
+        "TokenGreaterThanOrEqualCondition": this.#tokenGreaterThanOrEqualCondition, // TODO: to test
+        "CharacterNearCondition": this.#characterNearCondition // TODO: to test
     }
 
     #missingCondition (phaserScene, questData, lineIndex, trigger) {
@@ -850,6 +852,23 @@ class QuestManager {
         let quest = this.getQuestPerID([null, null, questData]);
         if (!quest) {return false};
         return quest.status == this.QUEST_STATES.FINISHED;
+    }
+
+    #tokenGreaterThanOrEqualCondition(phaserScene, questData, lineIndex, trigger){
+        let tokens = phaserScene.sharedData.quest.manager.QUEST_TOKENS;
+        if (!tokens[trigger.key]){return false;}
+
+        // We force the non-item tokens at 0 to easily get/set them
+        if (typeof tokens[trigger.key][0] === number)
+        {
+            let value = parseInt(tokens[trigger.key][0]);
+            return value >= trigger.valueText;
+        }
+        return false;
+    }
+
+    #characterNearCondition(phaserScene, questData, lineIndex, trigger){
+        return this.#stopNearTrigger(phaserScene, questData, lineIndex, trigger);
     }
 
     //------- QUEST ACTIONS -------
@@ -901,6 +920,7 @@ class QuestManager {
         "AddMultipleInventoryAction": this.#addMultipleInventoryAction,
         "RemoveMultipleInventoryAction": this.#removeMultipleInventoryAction,
         "AddTokenItemAction": this.#addTokenItemAction,
+        "IncrementTokenAction": this.#incrementTokenAction, // TODO: to test
         "RemoveTokenAction": this.#removeTokenAction,
         "TemporaryAnimationAction": this.#missingAction,
         "PlayMovieClipAction": this.#playMovieClipAction,
@@ -934,6 +954,20 @@ class QuestManager {
             tokens[action.key] = [];
         }
         tokens[action.key].push(action.item[0]);
+    }
+
+    async #incrementTokenAction(phaserScene, questID, lineIndex, action){
+        if (!tokens[action.key]){
+            tokens[action.key] = [];
+        }
+
+        if (typeof tokens[action.key][0] != "number")
+        {
+            tokens[action.key].unshift(0);
+        }
+
+        tokens[action.key][0] += 1;
+        console.log(`Incrementing token: ${questID} - ${tokens[action.key][0]}`);
     }
 
     async #removeTokenAction(phaserScene, questID, lineIndex, action){
