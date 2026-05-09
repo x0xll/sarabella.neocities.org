@@ -10,6 +10,7 @@ const horses = [
     'anemone',
     'angel',
     'aphaia',
+    'aurora',
     'bella',
     'bello',
     'beran',
