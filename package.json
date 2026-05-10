@@ -1,0 +1,36 @@
+{
+  "name": "1.-neocities-(full-site)",
+  "version": "1.0.0",
+  "description": "Repository for https://sarabella.neocities.org, a \"hub\" for information and updates on archiving the Bella Sara flash games, as well as a hosting site to play the games. Owned by @x0xll on the Bella Sara Discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^29.4.3"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": ["js", "json"],
+    "testMatch": ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js"],
+    "verbose": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x0xll/sarabella.neocities.org.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x0xll/sarabella.neocities.org/issues"
+  },
+  "homepage": "https://github.com/x0xll/sarabella.neocities.org#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

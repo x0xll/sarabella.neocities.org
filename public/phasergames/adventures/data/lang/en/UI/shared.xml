@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<items>
+  <!--Dialogue-->
+  <dialogueChoiceText>What should we talk about? &lt;br/&gt; </dialogueChoiceText>
+  <dialogueDefault>...</dialogueDefault>
+  <dialogueShop>Shop</dialogueShop>
+  <dialogueCancel>Nevermind</dialogueCancel>
+  <dialogueContinue>Continue</dialogueContinue>
+  <!--Inventory-->
+  <inventoryFilterSeeds>Seeds only</inventoryFilterSeeds>
+  <inventoryFilterAll>All my items</inventoryFilterAll>
+  <inventoryFilterSpecial>Special items only</inventoryFilterSpecial>
+  <inventoryFilterOther>Other things</inventoryFilterOther>
+  <inventoryFilterGive>Give</inventoryFilterGive>
+  <inventoryFilterUse>Use</inventoryFilterUse>
+  <inventoryFilterPlaceable>Placeable objects only</inventoryFilterPlaceable>
+  <inventoryFilterCard>Horse cards only</inventoryFilterCard>
+  <inventoryFilterClothing>Clothing only</inventoryFilterClothing>
+  <!--Hud-->
+  <hudSave>Save</hudSave>
+  <hudLevelUp>Congratulations!&lt;br/&gt;Your magic level has increased</hudLevelUp>
+  <hudLevelUpPunctuation>!</hudLevelUpPunctuation>
+  <hudChangeClothes>Change clothes</hudChangeClothes>
+  <!--HUD Tooltips-->
+  <hudMapTooltip>Map</hudMapTooltip>
+  <hudInventoryTooltip>Inventory</hudInventoryTooltip>
+  <hudJournalTooltip>Journal</hudJournalTooltip>
+  <hudHelpTooltip>Help</hudHelpTooltip>
+  <hudSkillTreeTooltip>Magic Tree</hudSkillTreeTooltip>
+  <!--Quest Journal-->
+  <journalGiver>Look for:</journalGiver>
+  <journalLocation>Location:</journalLocation>
+  <journalGoal>Goal:</journalGoal>
+  <journalGetPremium>Get Premium adventures</journalGetPremium>
+  <journalCompleteLeftHeader>Congratulations! You've finished filling out your journal!</journalCompleteLeftHeader>
+  <journalCompleteLeftBody>Check your World Map to discover the adventures that await you.</journalCompleteLeftBody>
+  <journalCompleteRightHeader>Get Premium adventures</journalCompleteRightHeader>
+  <journalCompleteRightBody>Search for secret codes on Bella Sara products to unlock wonders.</journalCompleteRightBody>
+  <journalCompleteButton>Premium adventures page</journalCompleteButton>
+  <!--Avatar Customization -->
+  <CustomizationDone>Done!</CustomizationDone>
+  <CustomizationBuy>Buy</CustomizationBuy>
+  <CustomizationSell>Sell</CustomizationSell>
+  <CustomizationDye>Dyd</CustomizationDye>
+  <CustomizationWear>Wear (clothing)</CustomizationWear>
+  <CustomizationTakeOff>Take off</CustomizationTakeOff>
+  <CustomizationShirts>Shirts</CustomizationShirts>
+  <CustomizationPants>Pants</CustomizationPants>
+  <CustomizationShoes>Shoes</CustomizationShoes>
+  <CustomizationHair>Hair</CustomizationHair>
+  <CustomizationEyes>Eyes</CustomizationEyes>
+  <CustomizationSkins>Skin</CustomizationSkins>
+  <CustomizationAccessories>Accessories</CustomizationAccessories>
+  <!--Trade-->
+  <tradeMyThings>My items for sale</tradeMyThings>
+  <!-- Loading and Saving -->
+  <loadingPleaseWait>Loading... Please wait...</loadingPleaseWait>
+  <savingPleaseWait>Saving... Patientez...</savingPleaseWait>
+  <invalidGameSession>Your game data has changed. You may have lost some progress. To continue, close this window and restart the game.</invalidGameSession>
+  <!-- Got Item Notification -->
+  <horseshoeNotification>%DELTA% horseshoes</horseshoeNotification>
+  <!-- Context -->
+  <contextApply>Apply</contextApply>
+  <contextAvatar>Change clothes</contextAvatar>
+  <contextBrush>Brush</contextBrush>
+  <contextChangeVariant>Change </contextChangeVariant>
+  <contextCollect>Collect</contextCollect>
+  <contextGive>Give</contextGive>
+  <contextMove>Move</contextMove>
+  <contextInteract>Interact</contextInteract>
+  <contextPlayMovieClip>Play the movie</contextPlayMovieClip>
+  <contextRotate>Rotate</contextRotate>
+  <contextShop>Buy/Sell</contextShop>
+  <contextStack>Stack</contextStack>
+  <contextSwap>Swap</contextSwap>
+  <contextTake>Take</contextTake>
+  <contextTalk>Talk</contextTalk>
+  <contextTrade>Trade</contextTrade>
+  <contextUnstack>Pick up the first object</contextUnstack>
+  <contextUnstackAll>Pick up</contextUnstackAll>
+  <contextTrash>Trash</contextTrash>
+  <contextUproot>Uproot</contextUproot>
+  <contextWater>Water</contextWater>
+  <!--Adventure Complete-->
+  <adventureCompleteHeader>Congratulations</adventureCompleteHeader>
+  <adventureCompleteTitle>Great Job!</adventureCompleteTitle>
+  <adventureCompleteBody>You completed %adventureName%. Check your Adventure Journal for more fun adventures. </adventureCompleteBody>
+  <adventureCompleteReward>Your Reward: </adventureCompleteReward>
+  <adventureCompleteContinue>Continue</adventureCompleteContinue>
+  <adventureCompleteHorseshoes>Horseshoes</adventureCompleteHorseshoes>
+  <!--Minimap-->
+  <miniMapPlayerCharacter>You</miniMapPlayerCharacter>
+  <!--Map-->
+  <mapZoomIn>Zoom +</mapZoomIn>
+  <mapZoomOut>Zoom -</mapZoomOut>
+  <mapQuest>Quest</mapQuest>
+  <mapQuests>Quest</mapQuests>
+</items>

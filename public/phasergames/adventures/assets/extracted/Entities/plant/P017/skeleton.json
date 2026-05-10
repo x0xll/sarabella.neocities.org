@@ -1,0 +1,91 @@
+{
+"skeleton": {
+	"hash": "dUXS1JQINew",
+	"spine": "4.2.43",
+	"x": -141.57,
+	"y": -20,
+	"width": 299,
+	"height": 361.86,
+	"images": "./Main/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "scaleX": 0.5, "scaleY": 0.5 }
+],
+"slots": [
+	{ "name": "Main_night", "bone": "bone", "attachment": "Main" },
+	{ "name": "Main", "bone": "bone", "attachment": "Main" }
+],
+"skins": [
+	{
+		"name": "P017/1",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P017_Day/P017.1_Day", "x": -2.76, "y": 124.38, "width": 297, "height": 251 }
+			}
+		}
+	},
+	{
+		"name": "P017/2",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P017_Day/P017.2_Day", "x": -2.76, "y": 124.38, "width": 297, "height": 251 }
+			}
+		}
+	},
+	{
+		"name": "P017/3",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P017_Day/P017.3_Day", "x": -2.76, "y": 124.38, "width": 297, "height": 251 }
+			}
+		}
+	},
+	{
+		"name": "P017/4",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P017_Day/P017.4_Day", "x": -2.76, "y": 124.38, "width": 297, "height": 251 }
+			}
+		}
+	},
+	{
+		"name": "P017/5",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P017_Day/P017.5_Day", "x": -2.76, "y": 124.38, "width": 297, "height": 251 }
+			}
+		}
+	},
+	{
+		"name": "P017/Wilted",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -13.99, "y": 663.72, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P017_Day/P017.Wilted_Day", "x": -2.76, "y": 124.38, "width": 297, "height": 251 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

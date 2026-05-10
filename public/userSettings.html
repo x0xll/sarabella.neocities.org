@@ -10,7 +10,8 @@
         <!-- <link rel="stylesheet" href="signup.css"> -->
     </head>
 
-    <script src="/language.js"></script>
+    <script src="/save.js"></script>
+<script src="/language.js"></script>
 
     <body onload="loadLanguagePref(); setupUserDropdown(); loadSettings();">
         <script src="/header.js"></script>
@@ -25,17 +26,17 @@
                             <h2 data-il8n="settings_general_title">General Settings</h2>
                             <form>
                                 <label for="data" data-il8n="settings_horseshoemultiplicator">Horseshoe Multiplicator:</label>
-                                <input type="checkbox" id="horseshoemultiplicator" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPE_SETTINGS_HORSESHOEMULTIPLICATOR, this)">   
+                                <input type="checkbox" id="horseshoemultiplicator" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPES.horseshoesMultiplier, this)">   
                                 <br/>
                                 <label for="data" data-il8n="settings_mapplaypage">Map Play Page:</label>
-                                <input type="checkbox" id="mapplaypage" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPE_SETTINGS_MAPPLAYPAGE, this)">           
+                                <input type="checkbox" id="mapplaypage" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPES.mapPlayPage, this)">           
                             </form>
                         </div>
                         <div class="signup-step">
                             <h2 data-il8n="settings_locas_title">Localization Settings</h2>
                             <form>
                                 <label for="data" data-il8n="settings_translatedquotes">Translated Quotes:</label>
-                                <input type="checkbox" id="translatedquotes" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPE_SETTINGS_TRANSLATEDQUOTES, this)">           
+                                <input type="checkbox" id="translatedquotes" style="margin-top: 10px; text-align: center;" onchange="saveData(DATA_TYPES.translatedQuotes, this)">           
                             </form>
                         </div>
                     </div>
@@ -62,7 +63,7 @@
         </div>
 
         <script src="/flags.js"></script>
-        <script src="/userManager.js"></script>
+        <script src="/userManagerUpdatev2.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "Txd+88Whcz4", "spine": "4.2.43", "x": -140.72, "y": -59.71, "width": 257, "height": 261.5 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "H066", "bone": "root", "attachment": "H066" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"H066": {
+				"H066": { "x": -6.7, "y": 54.73, "scaleX": 0.5, "scaleY": 0.5, "width": 518, "height": 600 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

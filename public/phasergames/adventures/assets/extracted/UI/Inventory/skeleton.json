@@ -1,0 +1,721 @@
+{
+"skeleton": {
+	"hash": "inDprzud+EU",
+	"spine": "4.2.43",
+	"x": -275,
+	"y": -200,
+	"width": 550,
+	"height": 400,
+	"fps": 24,
+	"images": "./sprites/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "BG", "bone": "root", "attachment": "BG" },
+	{ "name": "mainButton", "bone": "root", "attachment": "mainButton_" },
+	{ "name": "cardsButton", "bone": "root", "attachment": "cardsButton_" },
+	{ "name": "plantsButton", "bone": "root", "attachment": "plantsButton_" },
+	{ "name": "clothesButton", "bone": "root", "attachment": "clothesButton_" },
+	{ "name": "specialButton", "bone": "root", "attachment": "specialButton_" },
+	{ "name": "produceButton", "bone": "root", "attachment": "produceButton_" },
+	{ "name": "placeableButton", "bone": "root", "attachment": "placeableButton_" },
+	{ "name": "title", "bone": "root", "attachment": "title" },
+	{ "name": "scrollBar", "bone": "root", "attachment": "scrollBar" },
+	{ "name": "x_button", "bone": "root", "attachment": "x_" },
+	{ "name": "x_symbol", "bone": "root", "attachment": "x_symbol" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"BG": {
+				"BG": { "width": 550, "height": 400 }
+			},
+			"cardsButton": {
+				"cardsButton_": {
+					"x": -162.9,
+					"y": -70.54,
+					"scaleX": 0.9,
+					"scaleY": 0.9,
+					"width": 42,
+					"height": 42,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"clothesButton": {
+				"clothesButton_": {
+					"x": -154.73,
+					"y": 49.29,
+					"scaleX": 0.9,
+					"scaleY": 0.9,
+					"width": 42,
+					"height": 42,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"mainButton": {
+				"mainButton_": {
+					"x": -125.21,
+					"y": 20.09,
+					"scaleX": 1.2,
+					"scaleY": 1.2,
+					"rotation": 4.06,
+					"width": 93,
+					"height": 289,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"placeableButton": {
+				"placeableButton_": {
+					"x": -162.9,
+					"y": -29.94,
+					"scaleX": 0.9,
+					"scaleY": 0.9,
+					"width": 42,
+					"height": 42,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"plantsButton": {
+				"plantsButton_": {
+					"x": -158.33,
+					"y": 9.96,
+					"scaleX": 0.9,
+					"scaleY": 0.9,
+					"width": 42,
+					"height": 42,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"produceButton": {
+				"produceButton_": {
+					"x": -163.03,
+					"y": -110.81,
+					"scaleX": 0.9,
+					"scaleY": 0.9,
+					"width": 42,
+					"height": 42,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"scrollBar": {
+				"scrollBar": { "x": 116.21, "y": -14.03, "width": 16, "height": 174 }
+			},
+			"specialButton": {
+				"specialButton_": {
+					"x": -162.87,
+					"y": 88.64,
+					"scaleX": 0.9,
+					"scaleY": 0.9,
+					"width": 42,
+					"height": 42,
+					"sequence": { "count": 5, "digits": 1 }
+				}
+			},
+			"title": {
+				"title": {
+					"x": -51.57,
+					"y": 24.13,
+					"width": 262,
+					"height": 311,
+					"sequence": { "count": 7, "digits": 1 }
+				}
+			},
+			"x_button": {
+				"x_": {
+					"x": 120.82,
+					"y": 138.4,
+					"scaleX": 0.8,
+					"scaleY": 0.8,
+					"width": 44,
+					"height": 45,
+					"sequence": { "count": 3, "digits": 1 }
+				}
+			},
+			"x_symbol": {
+				"x_symbol": { "x": 120.82, "y": 138.4, "scaleX": 0.8, "scaleY": 0.8, "width": 23, "height": 23 }
+			}
+		}
+	}
+],
+"animations": {
+	"cards/disabled": {
+		"attachments": {
+			"default": {
+				"cardsButton": {
+					"cardsButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"cards/down": {
+		"attachments": {
+			"default": {
+				"cardsButton": {
+					"cardsButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"cards/over": {
+		"attachments": {
+			"default": {
+				"cardsButton": {
+					"cardsButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"cards/up": {
+		"attachments": {
+			"default": {
+				"cardsButton": {
+					"cardsButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"clothes/disabled": {
+		"attachments": {
+			"default": {
+				"clothesButton": {
+					"clothesButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"clothes/down": {
+		"attachments": {
+			"default": {
+				"clothesButton": {
+					"clothesButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"clothes/over": {
+		"attachments": {
+			"default": {
+				"clothesButton": {
+					"clothesButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"clothes/up": {
+		"attachments": {
+			"default": {
+				"clothesButton": {
+					"clothesButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"main/disabled": {
+		"attachments": {
+			"default": {
+				"mainButton": {
+					"mainButton_": {
+						"sequence": [
+							{ "mode": "loop", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"main/down": {
+		"attachments": {
+			"default": {
+				"mainButton": {
+					"mainButton_": {
+						"sequence": [
+							{ "mode": "loop", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"main/over": {
+		"attachments": {
+			"default": {
+				"mainButton": {
+					"mainButton_": {
+						"sequence": [
+							{ "mode": "loop", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"main/up": {
+		"attachments": {
+			"default": {
+				"mainButton": {
+					"mainButton_": {
+						"sequence": [
+							{ "mode": "loop", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"placeable/disabled": {
+		"attachments": {
+			"default": {
+				"placeableButton": {
+					"placeableButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"placeable/down": {
+		"attachments": {
+			"default": {
+				"placeableButton": {
+					"placeableButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"placeable/over": {
+		"attachments": {
+			"default": {
+				"placeableButton": {
+					"placeableButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"placeable/up": {
+		"attachments": {
+			"default": {
+				"placeableButton": {
+					"placeableButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"plants/disabled": {
+		"attachments": {
+			"default": {
+				"plantsButton": {
+					"plantsButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"plants/down": {
+		"attachments": {
+			"default": {
+				"plantsButton": {
+					"plantsButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"plants/over": {
+		"attachments": {
+			"default": {
+				"plantsButton": {
+					"plantsButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"plants/up": {
+		"attachments": {
+			"default": {
+				"plantsButton": {
+					"plantsButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"produce/disabled": {
+		"attachments": {
+			"default": {
+				"produceButton": {
+					"produceButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"produce/down": {
+		"attachments": {
+			"default": {
+				"produceButton": {
+					"produceButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"produce/over": {
+		"attachments": {
+			"default": {
+				"produceButton": {
+					"produceButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"produce/up": {
+		"attachments": {
+			"default": {
+				"produceButton": {
+					"produceButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"scroll/hide": {
+		"slots": {
+			"scrollBar": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			}
+		}
+	},
+	"scroll/visible": {
+		"slots": {
+			"scrollBar": {
+				"rgba": [
+					{ "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"select/cards": {
+		"attachments": {
+			"default": {
+				"cardsButton": {
+					"cardsButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "index": 5, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"select/clothes": {
+		"attachments": {
+			"default": {
+				"clothesButton": {
+					"clothesButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"select/main": {
+		"attachments": {
+			"default": {
+				"mainButton": {
+					"mainButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"select/placeable": {
+		"attachments": {
+			"default": {
+				"placeableButton": {
+					"placeableButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"select/plants": {
+		"attachments": {
+			"default": {
+				"plantsButton": {
+					"plantsButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "index": 3, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"select/produce": {
+		"attachments": {
+			"default": {
+				"produceButton": {
+					"produceButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "index": 6, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"select/special": {
+		"attachments": {
+			"default": {
+				"specialButton": {
+					"specialButton_": {
+						"sequence": [
+							{ "mode": "loop", "delay": 0.0833 }
+						]
+					}
+				},
+				"title": {
+					"title": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"special/disabled": {
+		"attachments": {
+			"default": {
+				"specialButton": {
+					"specialButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 4, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"special/down": {
+		"attachments": {
+			"default": {
+				"specialButton": {
+					"specialButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"special/over": {
+		"attachments": {
+			"default": {
+				"specialButton": {
+					"specialButton_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"special/up": {
+		"attachments": {
+			"default": {
+				"specialButton": {
+					"specialButton_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"x/down": {
+		"attachments": {
+			"default": {
+				"x_button": {
+					"x_": {
+						"sequence": [
+							{ "mode": "once", "index": 2, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"x/over": {
+		"slots": {
+			"x_symbol": {
+				"rgba": [
+					{ "color": "ffffff80" }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"x_button": {
+					"x_": {
+						"sequence": [
+							{ "mode": "once", "index": 1, "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"x/up": {
+		"slots": {
+			"x_symbol": {
+				"rgba": [
+					{ "color": "ffffff80" }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"x_button": {
+					"x_": {
+						"sequence": [
+							{ "mode": "once", "delay": 0.0833 }
+						]
+					}
+				}
+			}
+		}
+	}
+}
+}

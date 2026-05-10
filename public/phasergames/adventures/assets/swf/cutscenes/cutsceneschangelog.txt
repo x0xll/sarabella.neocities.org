@@ -1,0 +1,5 @@
+- 17 Dec 2025:
+    - FP04.swf :
+        - Link to externalInterface to allow finished event
+            - "ExternalInterface.call("onFlashFinished");" in frame125() in MainTimeline.as
+            - "import flash.external.ExternalInterface;" in MainTimeline.as

@@ -18,10 +18,18 @@
         ]
     },
     {
+        "title" : "English Translators",
+        "people" :[
+        {
+            "name": "shadowspark04"
+        }
+        ]
+    },
+    {
         "title" : "Japanese Translators",
         "people" :[
         {
-            "name": "bellasaraarchivist"
+            "name": "forestsandtea"
         }
         ]
     },
@@ -58,6 +66,9 @@
         },
         {
             "name": "edencupid"
+        },
+        {
+            "name": "_lexou"
         },
         {
             "name": "singala"
