@@ -56,6 +56,7 @@ const horses = [
     'mellonie',
     'mireldis',
     'nike',
+    'nimiipuu',
     'nori',
     'nuala',
     'pegasus',
