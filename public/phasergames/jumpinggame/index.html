@@ -62,7 +62,10 @@
                 xmlHttp.send();
 
 
-
+                // For ?debug=true in the url to turn on debug mode
+                const searchQueryString = window.location.search;
+                const urlParameters = new URLSearchParams(searchQueryString);
+                
                 let config = {
                     parent: "gameDiv",
                     type: Phaser.CANVAS,
@@ -72,7 +75,7 @@
                     physics: {
                         default: 'arcade',
                         arcade: {
-                            debug: false
+                            debug: urlParameters.get('debug')
                         }
                     },
                     scene: [
