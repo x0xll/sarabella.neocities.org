@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "obW7Cz/WBss",
+	"spine": "4.2.43",
+	"x": -21.5,
+	"y": -19.27,
+	"width": 43,
+	"height": 65,
+	"images": "../../Zones/CanterFarms/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Main", "bone": "root", "attachment": "T0179/1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Main": {
+				"T0179/1": { "y": 13.23, "width": 43, "height": 65 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle": {}
+}
+}

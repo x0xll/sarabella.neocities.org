@@ -1,0 +1,135 @@
+{
+"skeleton": {
+	"hash": "jXKOUESM+X8",
+	"spine": "4.2.43",
+	"x": -165.72,
+	"y": -20,
+	"width": 370,
+	"height": 479.71,
+	"images": "./Main/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "scaleX": 0.5, "scaleY": 0.5 }
+],
+"slots": [
+	{ "name": "Main_night", "bone": "bone", "attachment": "Main" },
+	{ "name": "Main", "bone": "bone" }
+],
+"skins": [
+	{
+		"name": "P033/1",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.1_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/2",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.2_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/3",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.3_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/4",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.4_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/5",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.5_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/6",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.6_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/7",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.7_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/8_day",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.8_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	},
+	{
+		"name": "P033/8_night",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.8_Night", "x": 32.37, "y": 394.35, "width": 770, "height": 794 }
+			}
+		}
+	},
+	{
+		"name": "P033/Wilted",
+		"attachments": {
+			"Main": {
+				"Main": { "name": "Empty", "x": -3.01, "y": 49.06, "width": 80, "height": 40 }
+			},
+			"Main_night": {
+				"Main": { "name": "P033_Day/P033.Wilted_Day", "x": 16.5, "y": 354.19, "width": 606, "height": 714 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

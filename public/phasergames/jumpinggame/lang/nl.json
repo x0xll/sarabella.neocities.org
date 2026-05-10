@@ -1,0 +1,19 @@
+{
+    "start_game": "Start spel",
+    "start": "START!",
+    "score": "SCORE",
+    "time": "TIJD",
+    "time_bonus": "Tijdsbonus",
+    "gem_bonus": "Juwelen-bonus",
+    "level_score": "Level Score",
+    "points": "Punten",
+    "succeed_title": "Geweldig gesprongen",
+    "succeed_level_select": "Verdergaan naar het volgende level!",
+    "fail_title": "Goede poging.",
+    "fail_level_select": "Je was net niet snel genoeg. Probeer het nog eens!",
+    "levels":"Voltooi levels om Fiona, Jewel en Thunder te ontgrendelen!",
+    "level_one": "Level Een",
+    "level_two": "Level Twee",
+    "level_three": "Level Drie",
+    "level_four": "Level Vier"
+}

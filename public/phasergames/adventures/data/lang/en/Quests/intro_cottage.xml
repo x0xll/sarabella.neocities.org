@@ -1,0 +1,152 @@
+<adventures id="ADS-0000001163" description="Cottage Introduction">
+  <adventure id="ADV-0000001798">
+    <description>Canter Farms Cottage</description>
+    <quest id="QUE-0000006273">
+      <description>Introduction quest to the Cottage</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ApplicationStartTrigger" />
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006239</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006239">
+      <description>Talk to Cade</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>C001</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueChoiceAction">
+            <text>Hi there! You now have your very own cottage in Canter Farms. Let me tell you about it.</text>
+            <choice id="line 1">Yes, please tell me about it.</choice>
+            <choice id="line 2">No thank you, I'll stop by later.</choice>
+          </object>
+        </actions>
+      </line>
+      <line description="Complete - Line 1">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line 1</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>This cottage is yours to decorate as you wish. Enter in the front door behind me.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Any object you can &lt;b&gt;PLACE&lt;/b&gt; from your inventory bag. Just open your inventory and drag and item to your room.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Please take this gift to start your decorating. Take this item into your room and set it down.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0536Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006259</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+      <line description="Complete - Line 2">
+        <trigger>
+          <object type="questData.DialogueChoiceTrigger">
+            <identifier>line 2</identifier>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>OK. Come back when you have the time.</text>
+            <identifier>C001</identifier>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006259" targetZone="R001">
+      <description>Enter your room</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.EnterZoneTrigger">
+            <zoneName>R001</zoneName>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>Welcome! Take a look around.</text>
+            <identifier>C001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>&lt;b&gt;PLACE&lt;/b&gt; your new item anywhere in the room.</text>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000006260</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000006260" targetTemplate="T0536Template" targetZone="R001">
+      <description>Décore ta pièce</description>
+      <line description="Complete">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>T0536Template</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.LogQuestEndAction" />
+          <object type="questData.DialogueAction">
+            <text>That's a great place! You can always &lt;b&gt;MOVE&lt;/b&gt; an object once you have set it down.</text>
+            <identifier>C001</identifier>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>You can &lt;b&gt;ROTATE&lt;/b&gt; some objects as well. Use &lt;b&gt;PICK UP&lt;/b&gt; to remove an object from the room.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Here are some more things and some horseshoes to buy more. Have fun!</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0537Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I0538Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>20</count>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveQuestFileAction">
+            <fileName>intro_cottage.xml</fileName>
+          </object>
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>

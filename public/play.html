@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <script src="/language.js"></script>
+    <script src="/save.js"></script>
+<script src="/language.js"></script>
 
     <body onload="loadLanguagePref(); setupUserDropdown(); checkPlayPageDefault();">
         <script src="/header.js"></script>
@@ -42,10 +43,10 @@
                 <h2 data-il8n="play_recreatedgames_title">Recreated Games</h2>
                 <em data-il8n="play_recreatedgames_desc">These are games which have been recreated with new code</em><br>
                 <ul>
+                    <!-- <li><a href="./phasergames/adventures/index.html" data-il8n="game_adventure">Adventures</a></li> -->
                     <li><a href="./phasergames/stablesrecreation/index.html" data-il8n="gamestables">Stables</a></li>
                     <li><a href="./phasergames/citrustacked/index.html" data-il8n="game_citrustacked_wip">Citrustacked (WIP)</a></li>
                     <li><a href="./phasergames/jumpinggame/index.html" data-il8n="game_spectacularjumpinggame_wip">Spectacular Jumping Game (WIP)</a></li>
-                    <li><a href="./phasergames/quiz/belloquiz/original/index.html" data-il8n="game_belloquiz">Bello's Quiz</a></li>
                     <li><a href="./phasergames/memory/yinyang/original/index.html" data-il8n="game_yinyangmemory">Yin and Yang's Memory Game</a></li>
                     <li><a href="./phasergames/bellapedia/index.html" data-il8n="game_bellapedia">Bellapedia</a></li>
                 </ul>
@@ -57,6 +58,7 @@
                     <li><a href="./flash/foal/index.html" data-il8n="game_myhorse">My Horse (white foal sprite only)</a></li>
                     <li><a href="./flash/cottage/cottage.html" data-il8n="game_cottage">My Cottage</a></li>
                     <li><a href="./flash/citrustacked/citrustacked.html" data-il8n="game_citrustacked">Citrustacked</a></li>
+                    <li><a href="./flash/wheelofwonders/wheelofwonders.html" data-il8n="game_wow">Wheel of Wonders</a></li>
                     <li><a href="./flash/bellisimojumpingcontest/bellisimojumpingcontest.html" data-il8n="game_bellisimojumpingcontest">Bellisimo's Jumping Contest</a></li>
                 </ul>
 
@@ -65,6 +67,7 @@
                 <ul>
                     <li><a href="./phasergames/artrandomiser/index.html" data-il8n="game_randomartideagenerator">Random Art Idea Generator</a></li>
                     <li><a href="./phasergames/stablesrecreation/dressup.html" data-il8n="game_dressupstables">Dress Up Game</a></li>
+                    <li><a href="./phasergames/quiz/belloquiz/sarabella/index.html" data-il8n="game_sarabellaquiz">SaraBella's Quiz</a></li>
                     <li><a href="./phasergames/quiz/belloquiz/adventures/index.html" data-il8n="game_adventuresquiz">Adventures Quiz</a></li>
                     <li><a href="./phasergames/quiz/belloquiz/autumnjourney/index.html" data-il8n="game_autumnjourneyquiz">Autumn Journey Quiz</a></li>
                 </ul>
@@ -80,11 +83,11 @@
 
     </body>
 
-    <script src="/userManager.js"></script>
+    <script src="/userManagerUpdatev2.js"></script>
     <script>
         function checkPlayPageDefault()
         {
-            if (!isGuest() && loadData(DATA_TYPE_SETTINGS_MAPPLAYPAGE))
+            if (!isGuest() && loadData(DATA_TYPES.mapPlayPage))
                 window.location.href = "/flash/worldmap/worldmap_custom.html"
             else if (!isGuest())
                 document.getElementById("gotomap").style.display = "none";

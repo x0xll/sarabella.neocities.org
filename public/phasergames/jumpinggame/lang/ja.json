@@ -1,0 +1,23 @@
+{
+    "start_game": "プレイ",
+    "start": "スタート！",
+    "score": "スコア",
+    "time": "時間",
+    "time_bonus": "時間のボーナス",
+    "gem_bonus": "宝石のボーナス",
+    "level_score": "レベルのスコア",
+    "points": "点",
+    "succeed_title": "素晴らしいジャンプ！",
+    "succeed_level_select": "次のレベルへ進む",
+    "fail_title": "いい試みですね。",
+    "fail_level_select": "速さが足りません。もう一度試してください！",
+    "levels":"ステージをクリアして、フィオナ、ジュエル、そしてサンダーを解放しよう。",
+    "level_one": "レベル１",
+    "level_two": "レベル２",
+    "level_three": "レベル３",
+    "level_four": "レベル４",
+    "level_one_name": "ベラ",
+    "level_two_name": "フィオナ",
+    "level_three_name": "ジュエル",
+    "level_four_name": "サンダー"
+}

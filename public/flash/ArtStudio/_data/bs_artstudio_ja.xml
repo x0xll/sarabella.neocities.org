@@ -131,7 +131,7 @@
 		<P><FONT SIZE="14">音楽のオフとオン。</FONT></P>
 	</Text>
 	<Text id="txtEditSaved3">
-		<P><FONT SIZE="14">保存した絵を編集する。/FONT></P>
+		<P><FONT SIZE="14">保存した絵を編集する。</FONT></P>
 	</Text>
 	<Text id="txtDeleteCreation2">
 		<P><FONT SIZE="14">保存した絵を消す。</FONT></P>
@@ -200,10 +200,10 @@
 		<P><FONT SIZE="14">保存した絵の編集と削除。</FONT></P>
 	</Text>
   <Text id="txtSlotAButton">
-		<P><FONT SIZE="10">スロットA</FONT></P>
+		<P><FONT SIZE="6">スロットA</FONT></P>
 	</Text>
   <Text id="txtSlotBButton">
-		<P><FONT SIZE="10">スロットB</FONT></P>
+		<P><FONT SIZE="6">スロットB</FONT></P>
 	</Text>
     </Texts>
 	</BuiltInTexts>

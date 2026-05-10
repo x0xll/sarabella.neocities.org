@@ -89,6 +89,8 @@ function getCurrentLanguageCode()
 function getLocalizedText(key, name = NEOCITIES_KEY)
 {
     // Note that the key should be a string!
+    if (localizedDatas[name] === undefined)
+        return defaultLocas[name][key];
     var txt = localizedDatas[name][key];
     if (txt == undefined) // Go back to english if the translation is not done yet
          return defaultLocas[name][key];
@@ -99,11 +101,14 @@ function getLocalizedText(key, name = NEOCITIES_KEY)
 
 async function loadNewLocalizationFile(pathjson = NEOCITIES_PATH + currentLang + '.json', pathjsonDefault = NEOCITIES_DEFAULT_PATH, name = NEOCITIES_KEY)
 {
-    const jsonFile = await fetch(pathjson)
-                        .then(function(file) {return file.json();})
-                        .then(function(json) {
-                            localizedDatas[name] = json;
-                        })
+    if (isLocalizedFileExisting(pathjson))
+    {
+        const jsonFile = await fetch(pathjson)
+                    .then(function(file) {return file.json();})
+                    .then(function(json) {
+                        localizedDatas[name] = json;
+                    })
+    }
 
     const jsonFileDefault = await fetch(pathjsonDefault)
     .then(function(file) {return file.json();})

@@ -11,17 +11,22 @@ class Load extends Phaser.Scene
     preload ()
     {
         this.load.image('card_back', './images/selector/card_back.png');
+        this.load.json('horseData', `./images/horses/${horseName}/data.json`);
     }
 
     create ()
     { 
         if (loadInto === "Stables") {
+            horseData = this.cache.json.get('horseData')
 
             let langFile = null
             if (horseData.type === 'dressup') {
                 langFile = `./lang/dressup`
             } else {
-                langFile = `./lang/${horseData.type}`
+                let type = horseData.type;
+                if (type.includes("foal"))
+                    type = type.substring("foal".length).toLowerCase();
+                langFile = `./lang/${type}`
             }
             if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
                 locale ='en'

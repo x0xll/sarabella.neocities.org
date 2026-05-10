@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<root>
+
+	<!-- button text goes here -->
+	<help_btn>ヘルプ</help_btn>
+	<pause_btn>一時停止</pause_btn>
+	<start_btn>ゲームを始める</start_btn>
+
+	<turbobtn>ターボをプレイ</turbobtn>
+
+	<pauseheading>ゲームは一時停止されています。</pauseheading>
+	<pause2>このウィンドウを閉じて、再生を再開してください。</pause2>
+
+	<how_to_play_btn>チュートリアル</how_to_play_btn>
+
+	<play_again_btn>う一度プレイ</play_again_btn>
+
+	<!-- intro text goes here -->
+	<intro>XMLからの導入</intro>
+
+	<!-- how to play title goes here -->
+	<how_to_play_title>チュートリアル</how_to_play_title>
+
+	<!-- how to play text goes here -->
+	<how_to_play2>ペガサスと一緒に、王国の空を飛ぶ途中で特別な花を集めましょう。
+
+スペースバーを押すか、マウスをクリックして、彼女の羽を羽ばたかせます。
+
+日没までにできるだけ多くの花を集めてください。
+
+がんばれ！</how_to_play2>
+
+	<!-- win message -->
+	<win>おめでとう！</win>
+
+	<win2>よくできました！もう一度プレイしたいですか？</win2>
+
+	<!-- Non translated texts in original -->
+	<score>現在のスコア</score>
+	<intro_howto>ペガサスと一緒に、王国の空を飛ぶ途中で特別な花を集めましょう。スペースバーを押すか、マウスをクリックして、彼女の羽を羽ばたかせます。日没までにできるだけ多くの花を集めてください。</intro_howto>
+	<enterName>お名前を入力してください</enterName>
+	<greatFlying>素晴らしい飛行！</greatFlying>
+	<end>旅は終わった。</end>
+	<end2>もう集める花はありません。</end2>
+
+</root>
