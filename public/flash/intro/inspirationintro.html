@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="icon" href="/images/favicons/favicon.ico">
+        <title data-il8n="title">Bella Sara Digital Archive</title>
+        <script src="/ruffle/ruffle.js"></script>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <script src="/language.js"></script>
+
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown();">
+        <script src="/header.js"></script>
+        
+        <script>
+          window.RufflePlayer = {
+            config: {
+              autoplay: "on"
+            }
+          };
+        </script>
+
+        <div class="swf" dir="ltr" rbidi="on">
+        </div>
+        
+        <div id="footer" class="footer">
+          <script src="/footer.js"></script>
+          <script>
+            generateFooter({githubLink: 'https://github.com/x0xll/sarabella.neocities.org/tree/main/public/flash/intro'});
+          </script>
+        </div>
+
+        <script src="/flags.js"></script>
+<script src="/userManager.js"></script>
+<script src="/flash/common/js/flashWSOverride.js"></script>
+
+        <!-- Load correct localized version of the game -->
+        <script>
+          var swfParent = document.getElementsByClassName('swf')[0];
+          var swfPlayer = document.createElement('embed');
+          swfPlayer.height = '521';
+          swfPlayer.width = '887';
+          swfPlayer.pluginspage = 'http://www.macromedia.com/go/getflashplayer';
+          swfPlayer.src = 'inspirationintro.swf';
+          swfPlayer.type = 'application/x-shockwave-flash';
+          swfPlayer.setAttribute("allowscriptaccess", "always");
+          swfParent.appendChild(swfPlayer);
+        </script>
+  </body>
+</html>
+
+
