@@ -255,6 +255,8 @@ class LevelThree extends Phaser.Scene
 
         // Jumps
         this.jumpsArray = [
+            this.physics.add.sprite(1570, 335, 'jumps', 'wall'),
+            this.physics.add.sprite(3760, 370, 'jumps', 'stump')
             
         ]
         
