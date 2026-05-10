@@ -255,8 +255,28 @@ class LevelThree extends Phaser.Scene
 
         // Jumps
         this.jumpsArray = [
-            this.physics.add.sprite(1570, 335, 'jumps', 'wall'),
-            this.physics.add.sprite(3760, 370, 'jumps', 'stump')
+            this.physics.add.sprite(1570, 355, 'jumps', 'wall'),
+            this.physics.add.sprite(3760, 370, 'jumps', 'stump'),
+            this.physics.add.sprite(4610, 360, 'jumps', 'stump'),
+            this.physics.add.sprite(6158, 360, 'jumps', 'hedge'),
+            this.physics.add.sprite(7889, 350, 'jumps', 'woodenFence'),
+            this.physics.add.sprite(10180, 365, 'jumps', 'waterTrough'),
+            this.physics.add.sprite(12338, 357, 'jumps', 'log'),
+            this.physics.add.sprite(13940, 355, 'jumps', 'stump'),
+            this.physics.add.sprite(15865, 360, 'jumps', 'hayBale'),
+            this.physics.add.sprite(17760, 352, 'jumps', 'wall'),
+            this.physics.add.sprite(20160, 350, 'jumps', 'woodenFence'),
+            this.physics.add.sprite(22288, 355, 'jumps', 'hedgeSmall'),
+            this.physics.add.sprite(23691, 347, 'jumps', 'woodenFence'),
+            this.physics.add.sprite(25781, 355, 'jumps', 'hayBale'), //Check jump type with reference material
+            this.physics.add.sprite(26077, 363, 'jumps', 'hedge'),
+            this.physics.add.sprite(26442, 348, 'jumps', 'log'),
+            this.physics.add.sprite(27650, 355, 'jumps', 'hedgeSmall'),
+            this.physics.add.sprite(30630, 365, 'jumps', 'stump'),
+            this.physics.add.sprite(34638, 343, 'jumps', 'woodenFence'),
+            this.physics.add.sprite(36291, 350, 'jumps', 'waterTrough')
+
+
             
         ]
         
