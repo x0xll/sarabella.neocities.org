@@ -5,7 +5,7 @@ class LevelFour extends Phaser.Scene
     levelEnd = 37440
     levelTime = 67
     canUnlockNext = false
-    addLevelRef = false
+    addLevelRef = true
 
     constructor ()
     {
