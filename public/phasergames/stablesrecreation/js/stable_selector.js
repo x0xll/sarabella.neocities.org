@@ -61,6 +61,7 @@ const horses = [
     'pegasus',
     'persephone',
     'rose',
+    'royce',
     'sarah',
     'sasha',
     'savros',
@@ -76,6 +77,7 @@ const horses = [
     'vesta',
     'viking',
     'virstan',
+    'waterpearl',
     'wavebreaker',
     'zephan',
     'zombie'
