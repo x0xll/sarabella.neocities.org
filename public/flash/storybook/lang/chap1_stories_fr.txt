@@ -1,0 +1,19 @@
+&intro=<html><b>INTRODUCTION</b>
+<p><b>No one knows</b> how long horses have lived in the land of North of North--maybe a few thousand years, maybe longer.</p>
+<p>We do know North of North is home to more unusual, magical breeds of horses than anywhere else. Some say that there is a different horse here for every child alive, and each one is unique.</p></html>
+
+
+&land_story=<html><b>THE LAND HORSES</b>
+<p>Les <b>chevaux terrestres</b> du nord du septentrion sont magnifiques et incroyablement variés. Tu trouveras là tes races favorites depuis les minuscules chevaux falabella jusqu'aux énormes clydesdales, mais certains te surprendrons peut être par leur couleur... Les licornes, qui sont devenues très rares dans tout le reste du monde, parcourent librement les forêts. D'autres races uniques comme les spectaculaires chevaux à queue de paon, ne vivent que dans le nord du septentrion.</p>
+<p>De tout les chevaux du nord du septentrion, les chevaux terrestres sont les plus amicaux envers les humains. Nombre d'entre eux aiment vivre dans des écuries auprès d'eux. Certains parmi les plus sauvages préfèrent dormir à la belle étoile ou partager une caverne avec leur troupeau.</p></html>
+
+&air_story=<html><b>THE AIR HORSES</b>
+<p>Il existe plus de 30 race différentes de <b>chevaux volants</b>, et la plupart vivent au nord du septentrion. Le climat y est idéal : beaucoup de soleil, des vents doux et une température agréable.</p>
+<p>Ceux qui s'en viennent du nord du septentrion sont assurés de croisé des nuées de chevaux volants. Certains chevaux sauvages cherchent les arbres imenses pour faire leur nid à l'aide de branches et de feuilles. D'autres nichent dans les crevasses des hautes falaises qui bordent l'océan. Les plus raffinés comme les pur sang volants, préfèrent vivre dans des maisons en bois. Leurs foyers se balancent aux branches des arbres ou reposent sur des mâts en bois qui peuvent atteindre plus de 15 mètres de haut !</p></html>
+
+&water_story=<html><b>THE WATER HORSES</b>
+<p>Les océans purs et merveilleux du nord du septentrion fournissent un habitat riche aux diverses espèces de <b>chevaux marins</b>. Il est facile, par exemple, de repérer les bancs de chevaux-dauphins dans les eaux peu profondes, près de la côte. D'autres comme les chevaux de mer ou les chevaux hippocampes préfèrent vivre dans des eaux plus profondes où ils peuvent s'abriter dans les vastes forêts de laminaires.</p>
+<p>On trouve aussi beaucoup de chevaux d'eau douce dans ce pays. Il suffit d'attendre patiemment au bord d'un lac pour apercevoir l'un des timides chevaux à crinière verte qui nagent le long de ses rives. Les rivières et les ruisseaux sont le foyer des chevaux-ondins, qui peuvent aussi se rendre sur la terre ferme pendant de courtes périodes.</p></html>
+
+&conclusion=<html><p><b>Some of the horses</b> in North of North look exactly like horses in our world, so at first glance you might not be able to tell the difference.</p><p>But if you meet a horse from North of North, you will know it in your heart, for you will feel its magic.</p></html>
+

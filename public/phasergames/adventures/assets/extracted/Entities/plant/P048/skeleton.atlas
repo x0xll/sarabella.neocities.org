@@ -1,0 +1,17 @@
+skeleton.png
+size:226,645
+filter:Linear,Linear
+Empty
+bounds:2,642,1,1
+P048_Day/P048.1_Day
+bounds:5,536,174,107
+offsets:21,5,222,211
+P048_Day/P048.2_Day
+bounds:2,214,211,160
+offsets:5,0,222,211
+P048_Day/P048.3_Day
+bounds:2,2,222,210
+offsets:0,1,222,211
+P048_Day/P048.Wilted_Day
+bounds:2,376,221,158
+offsets:0,1,222,211

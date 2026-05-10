@@ -1,0 +1,79 @@
+10 Nov 2025:
+    - Override WS calls with custom JS ones
+        -> Add "import flash.external.*;" in WheelOfWonderService.as
+        -> Replace the content of the SpinWheel function in WheelOfWonderService.as by:
+            spinWheelResultHandler();
+        -> Remove args of spinWheelResultHandler function in WheelOfWonderService.as and of the onSpinWheelWebServiceResponse function call inside
+        -> Remove mentions or param1 in onSpinWheelWebServiceResponse function in WheelWonder.as
+        -> Replace the content of the GetInspiration function in WheelOfWonderService.as by:
+            var result:Object = ExternalInterface.call("getInspiration");
+            getInspirationResultHandler(result);
+        -> Replace the content of InitWheel function in WheelOfWonderService.as by:
+            var result:Object = ExternalInterface.call("initWheel");
+            initWheelResultHandler(result);
+        -> Replace WheelOfWonderService.as constructor by:
+            public function WheelOfWonderService(param1:WheelWonder, param2:String)
+            {
+                super();
+                this.locale = param2;
+                wheelWonderInst = param1;
+            }
+        -> In SetServiceProvider function in ShellConnector.as replace the m_wheelService initialization by:
+            m_wheelService = new WheelOfWonderService(WheelWonder(this),m_lang);
+        -> At the end of the ShellConnector constructor add:
+            m_wheelService = new WheelOfWonderService(WheelWonder(this),m_lang);
+            m_wheelService.InitWheel();
+        -> Replace onLoadComplete function in Orb.as by:
+            var loader:Loader = param1.currentTarget.loader;
+            loader.scaleX = this.width * 0.65 / (loader.width * 1.5);
+            loader.scaleY = this.height * 0.65 / (loader.height * 1.5);
+            loader.x = 0;
+            loader.y = 0;
+            addChild(new mcOrb_OL());
+        -> Replace loadObject function in Orb.as by:
+            if(_item != "")
+            {
+                var request:URLRequest = new URLRequest(_item);
+                _loader = new Loader();
+                _loader.contentLoaderInfo.addEventListener(Event.COMPLETE,param1);
+                _loader.load(request);
+                addChild(_loader);
+            }
+        -> Remove the while(true) nested infinite loop in Update function in WheelWonder.as, in the Decel switch case and replace it with "UpdateLoc2();"
+        -> Create a "UpdateLoc2();" function in WheelWonder.as with the following content:
+            private function UpdateLoc2() : *
+            {
+                var i:* = 0;
+                while(i < 12)
+                {
+                    _orbPosVectors[i].rotate(_angVel);
+                    i++;
+                }
+            }
+        -> Replace "_winningOID = param1" in onSpinWheelWebServiceResponse function in WheelWonder.as
+            var specialPrize:* = Math.floor(Math.random() * 10);
+            if(specialPrize > 0)
+                _winningOID = Math.floor(Math.random() * 9);
+            else
+            {
+                var freespinwon = Math.floor(Math.random() * 2) + 1;
+                _winningOID = freespinwon * -1;
+            }
+            var horseshoes:int = ExternalInterface.call("getHorseshoes");
+            if(horseshoes < 10)
+                _winningOID = OUT_OF_HORSESHOES;
+        -> Change gallery url in cottagePrizeDialogClick function in WheelWonder.as by "/flash/gallery/gallery.html"
+        -> Add "ExternalInterface.call("removeHorseshoes",10);" in confirmDialogYes function in WheelWonder.as
+        -> In update function in WheelWonder.as, after "++_numFreeSpins", add "ExternalInterface.call("addFreeSpin");"
+        -> In freeSpinButtonClick function in WheelWonder.as, after "--_numFreeSpins", add "ExternalInterface.call("removeFreeSpin");"
+        -> Replace the content of the onDuplicateDOLoadComplete function in WheelWonder.as by:
+            _loc3_ = this.theWheel.btnRP;
+            var loader:Loader = param1.currentTarget.loader;
+            loader.scaleX = _loc3_.width * 0.6 / loader.width;
+            loader.scaleY = _loc3_.height * 0.6 / loader.height;
+            loader.x = 0;
+            loader.y = 0;
+            _loc3_.prizeHolder.addChild(loader);
+        -> In update, after getting the prize in update function of WheelWonder.as add:
+            var objName:* = _loc10_.objectName;
+            ExternalInterface.call("addGalleryItem",objName);

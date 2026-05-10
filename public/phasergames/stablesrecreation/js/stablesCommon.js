@@ -145,7 +145,8 @@ class StablesManager {
             brushSmall: 'brush_small',
             hoofpick: 'hoofpick',
             apple: 'apple',
-            grainScoop: 'grain_scoop'
+            grainScoop: 'grain_scoop',
+            bottle: 'bottle'
         }
         this.#game.handCurrent = this.#game.HAND.empty;
         this.#game.waterFilled = false;
@@ -161,7 +162,8 @@ class StablesManager {
             drink: 'drink',
             rear: 'rear',
             eatingFood: 'eat_food',
-            eatingApple: 'eat_apple'
+            eatingApple: 'eat_apple',
+            drinkbottle: 'drink_bottle'
         }
         this.#game.horseAnimationQueue = []
         this.#game.statBoxBusy = false
@@ -198,6 +200,11 @@ class StablesManager {
                 // TODO: make smaller head hitbox for this bit
                 game.handCurrent = game.HAND.empty;
                 game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingApple)
+            }
+            else if (game.handCurrent === game.HAND.bottle) {
+                // TODO: make smaller head hitbox for this bit
+                game.handCurrent = game.HAND.empty;
+                game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.drinkbottle)
             }
         })
     }
@@ -515,6 +522,10 @@ class StablesManager {
             game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('apple');
             game.headInteractive.setInteractive()
         }
+        else if (game.handCurrent === game.HAND.bottle) {
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle');
+            game.headInteractive.setInteractive()
+        }
         else {
             game.cursor.setVisible(false);
             game.headInteractive.disableInteractive()
@@ -678,11 +689,13 @@ class StablesManager {
      */
     #addConstantAnimation() {
         for (let index = 0; index < this.#game.horseOverlay.skeleton.data.animations.length; index++) {
-            if (this.#game.horse.skeleton.data.animations[index].name === "constant") {
-                this.#game.horse.animationState.addAnimation(1, "constant", true)
-            }
             if (this.#game.horseOverlay.skeleton.data.animations[index].name === "constant") {
                 this.#game.horseOverlay.animationState.addAnimation(1, "constant", true)
+            }
+        }
+        for (let index = 0; index < this.#game.horse.skeleton.data.animations.length; index++) {
+            if (this.#game.horse.skeleton.data.animations[index].name === "constant") {
+                this.#game.horse.animationState.addAnimation(1, "constant", true)
             }
         }
     }
@@ -716,6 +729,21 @@ class StablesManager {
         this.#game.anims.create({
             key: animationName,
             frames: game.anims.generateFrameNumbers(sprite.texture.key, { frames: frames }),
+            frameRate: frameRate
+        });
+    }
+
+    /**
+     * Adds an animation for the given sprite.
+     * @param {*} image The sprite to add the animation to
+     * @param {string} animationName The name of the animation
+     * @param {array} frames An array of animation frames
+     * @param {number} frameRate The framerate to use. Default is 24 fps
+     */
+    addImageAnims(image, animationName, frames, frameRate = 24) {
+        this.#game.anims.create({
+            key: animationName,
+            frames: game.anims.generateFrameNumbers(image, { frames: frames }),
             frameRate: frameRate
         });
     }

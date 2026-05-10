@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map tileWidth="80" tileHeight="40" tileDepth="60">
+  <files>
+    <file id="Lb000" fileName="flash/Adventures/Art/Tilesets/ForestCave.swf"/>
+    <file id="Lb001" fileName="flash/Adventures/Art/Zones/Zone26.swf"/>
+  </files>
+  <grounds>
+    <ground id="Gr0000" file="Lb000" className="T0198"/>
+    <ground id="Gr0001" file="Lb000" className="T0033e"/>
+    <ground id="Gr0002" file="Lb000" className="T0033d"/>
+    <ground id="Gr0003" file="Lb000" className="T0033f"/>
+  </grounds>
+  <skins>
+    <skin id="Sk0000" file="Lb000" className="Overlay_ExitNS"/>
+  </skins>
+  <tiles>
+    <tile id="Ti001b" walkable="false" grounds="Gr0000"/>
+    <tile id="Ti002b" walkable="false" grounds="Gr0003"/>
+    <tile id="Ti003b" walkable="false" grounds="Gr0001"/>
+    <tile id="Ti000w" walkable="true" skins="Sk0000" entities="ExitToZone22b"/>
+    <tile id="Ti004b" walkable="false" grounds="Gr0002"/>
+    <tile id="." walkable="true"/>
+    <tile id="x" walkable="false"/>
+  </tiles>
+  <backgrounds>
+    <background id="b10" file="Lb001" className="Z026_1x0" left="1500" top="0" width="1500" height="2000"/>
+    <background id="b00" file="Lb001" className="Z026_0x0" left="0" top="0" width="1500" height="2000"/>
+  </backgrounds>
+  <layout width="35" height="28">
+    <levels>
+      <level id="0">
+        <backgrounds width="1500" height="2000" rows="1" columns="2" x="-350" y="-1000">
+          <backgroundRow>b00,b10</backgroundRow>
+        </backgrounds>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,x,x,x</levelRow>
+        <levelRow>x,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,Ti000w,x,x</levelRow>
+        <levelRow>x,.,.,.,.,.,.,x,x,x,Ti001b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,Ti000w,x</levelRow>
+        <levelRow>x,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,x,.,x,x</levelRow>
+        <levelRow>Ti003b,x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,x,Ti003b,x,x</levelRow>
+        <levelRow>x,x,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,.,x,x,x,x</levelRow>
+        <levelRow>x,x,x,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,x,x,x,x,x</levelRow>
+        <levelRow>x,Ti004b,x,.,.,.,x,x,x,Ti001b,x,x,x,x,x,x,x,x,x,Ti001b,x,x,x,x,x,x,x,.,.,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,.,.,.,.,.,.,x,x,x,x,Ti001b,x,x,x,x,x,x,x,x,x,x,x,x,x,.,.,.,x,x,x,x,x,x</levelRow>
+        <levelRow>x,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,Ti003b,x,x,x,Ti003b,x,x,.,.,.,x,x,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,Ti002b,x,x,x,x,x,x,x,x,x,.,.,.,.,.,x,Ti004b,x,.,.,x,x,x,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,Ti003b,x,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,.,.,.,x,Ti003b,x,x,x,x,.,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>.,.,.,.,.,.,.,.,.,.,.,.,Ti003b,x,x,x,x,.,.,.,x,x,Ti004b,x,Ti002b,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,.,.,.,.,.,.,.,.,.,.,.,.,Ti004b,x,x,x,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,x,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,Ti003b,x,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,Ti004b,x,x,.,.,.,.,.,.,.,.,.,.,.,.,.,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,Ti002b,x,.,.,.,.,.,.,.,.,.,.,Ti003b,x,Ti002b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,Ti004b,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+        <levelRow>x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x</levelRow>
+      </level>
+    </levels>
+  </layout>
+</map>

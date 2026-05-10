@@ -1,0 +1,243 @@
+<adventures id="ADS-0000000806" description="GP1.07">
+  <adventure id="ADV-0000000857">
+    <description>Le Tour du Château</description>
+    <quest id="QUE-0000001920">
+      <description>Parle à Diamond</description>
+      <line description="Diamond grant">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H017</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.LogAdventureBeginAction" />
+          <object type="questData.DialogueAction">
+            <text>Coucou. Je suis Diamond. Je trouve que Rolandsgaard est magnifique, pas toi ?</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>Mais le château a connu des temps meilleurs et je crains qu’il ne soit de plus en plus délabré au fil des ans. Mais j'ai une idée.</text>
+          </object>
+          <object type="questData.DialogueAction">
+            <text>S'il te plaît, fais visiter chacune des salles du château à ma bonne amie Pixxle, ici présente, afin qu'elle les peigne pour la postérité (pour que tout le monde se souvienne à quoi elles ressemblaient). Quant elle a terminé un tableau, prends-la et amène la à la salle suivante.</text>
+          </object>
+          <object type="questData.AddMultipleInventoryAction">
+            <itemId>I104Template</itemId>
+            <count>1</count>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001921</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001923</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001924</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001925</questId>
+          </object>
+          <object type="questData.AddQuestAction">
+            <questId>QUE-0000001922</questId>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001921" targetTemplate="M018aTemplate">
+      <description>Place Pixxle dans chaque salle du château</description>
+      <line description="Diamond complete">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H017</identifier>
+            <isPrimary>true</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.TokenGreaterThanOrEqualCondition">
+            <key>QUE-0000001921</key>
+            <valueText>4</valueText>
+          </object>
+          <object type="questData.HasMultipleItemsCondition">
+            <template>I104Template</template>
+            <count>1</count>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Magnifique ! Pixxle a peint des tableaux des quatre salles du château. Dorénavant, n’importe quel nouveau venu dans le Nord du Septentrion saura à quoi ressemble le Château de Rolandsgaard.</text>
+          </object>
+          <object type="questData.AddHorseshoesAction">
+            <count>3</count>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+          <object type="questData.RemoveMultipleInventoryAction">
+            <template>I104Template</template>
+            <count>1</count>
+          </object>
+          <object type="questData.LogAdventureEndAction" />
+          <object type="questData.RemoveTokenAction">
+            <key>QUE-0000001921</key>
+          </object>
+          <object type="questData.ShowAdventureCompleteAction" />
+        </actions>
+      </line>
+      <line description="Diamond reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>H017</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Pixxle a-t-elle fini de peindre ses quatre tableaux ? Tu devras l’installer dans chacune des salles du château. N’oublie pas de me la ramener quand tu auras fini.</text>
+          </object>
+        </actions>
+      </line>
+      <line description="Pixxle done reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M018a</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.TokenGreaterThanOrEqualCondition">
+            <key>QUE-0000001921</key>
+            <valueText>4</valueText>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Les quatre tableaux sont terminés, hourra ! Allons voir Diamond.</text>
+          </object>
+        </actions>
+      </line>
+      <line description="Pixxle reminder">
+        <trigger>
+          <object type="questData.TalkQuestTrigger">
+            <identifier>M018</identifier>
+            <isPrimary>false</isPrimary>
+          </object>
+        </trigger>
+        <conditions />
+        <actions>
+          <object type="questData.DialogueAction">
+            <text>Prête à aller dans la salle suivante.</text>
+          </object>
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001922" targetZone="Z003" visible="False">
+      <description unusedLocId="LOC-0000004675">Entry</description>
+      <line description="">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.CharacterNearCondition">
+            <zoneId>Z003</zoneId>
+            <centerX>25</centerX>
+            <centerY>25</centerY>
+            <radius>50</radius>
+          </object>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>M018aTemplate</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.IncrementTokenAction">
+            <key>QUE-0000001921</key>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001923" targetZone="Z005" visible="False">
+      <description unusedLocId="LOC-0000004676">Fountain</description>
+      <line description="">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.CharacterNearCondition">
+            <zoneId>Z005</zoneId>
+            <centerX>25</centerX>
+            <centerY>25</centerY>
+            <radius>50</radius>
+          </object>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>M018aTemplate</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.IncrementTokenAction">
+            <key>QUE-0000001921</key>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001924" targetZone="Z006" visible="False">
+      <description unusedLocId="LOC-0000004677">Royal</description>
+      <line description="">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.CharacterNearCondition">
+            <zoneId>Z006</zoneId>
+            <centerX>25</centerX>
+            <centerY>25</centerY>
+            <radius>50</radius>
+          </object>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>M018aTemplate</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.IncrementTokenAction">
+            <key>QUE-0000001921</key>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+    <quest id="QUE-0000001925" targetZone="Z004" visible="False">
+      <description unusedLocId="LOC-0000004678">Garden</description>
+      <line description="">
+        <trigger>
+          <object type="questData.ActionTrigger">
+            <className>actions::PlaceEntityAction</className>
+          </object>
+        </trigger>
+        <conditions>
+          <object type="questData.CharacterNearCondition">
+            <zoneId>Z004</zoneId>
+            <centerX>25</centerX>
+            <centerY>25</centerY>
+            <radius>50</radius>
+          </object>
+          <object type="questData.ActionOnTemplateCondition">
+            <template>M018aTemplate</template>
+          </object>
+        </conditions>
+        <actions>
+          <object type="questData.IncrementTokenAction">
+            <key>QUE-0000001921</key>
+          </object>
+          <object type="questData.RemoveQuestAction" />
+        </actions>
+      </line>
+    </quest>
+  </adventure>
+</adventures>
