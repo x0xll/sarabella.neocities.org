@@ -233,6 +233,23 @@ function addHorseshoes(amountAdded)
     saveData(DATA_TYPES.horseshoes, currentAmount);
 }
 
+function removeHorseshoes(amountRemoved)
+{
+    if (typeof(amountRemoved) !== "number")
+    {
+        amountRemoved = parseInt(amountRemoved);
+    }
+
+    currentAmount = loadData(DATA_TYPES.horseshoes);
+    
+    if (currentAmount - amountRemoved < 0)
+        currentAmount = 0;
+    else
+        currentAmount -= amountRemoved;
+
+    saveData(DATA_TYPES.horseshoes, currentAmount);
+}
+
 function updateHighscore(data)
 {
     splittedData = data.split("@");

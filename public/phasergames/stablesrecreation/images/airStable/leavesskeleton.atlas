@@ -1,0 +1,27 @@
+leavesskeleton.png
+size:1860,155
+filter:Linear,Linear
+Leaf Pile/1
+bounds:2,2,414,151
+offsets:72,49,538,312
+Leaf Pile/2
+bounds:418,2,414,151
+offsets:72,49,538,312
+Leaf Pile/3
+bounds:834,2,414,151
+offsets:72,49,538,312
+Leaf Pile/4
+bounds:1250,2,414,151
+offsets:72,49,538,312
+Leaf/1
+bounds:1666,85,95,68
+offsets:505,236,1075,624
+Leaf/2
+bounds:1666,15,95,68
+offsets:505,236,1075,624
+Leaf/3
+bounds:1763,85,95,68
+offsets:505,236,1075,624
+Leaf/4
+bounds:1763,15,95,68
+offsets:505,236,1075,624

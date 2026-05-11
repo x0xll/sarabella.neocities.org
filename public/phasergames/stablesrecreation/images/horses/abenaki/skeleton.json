@@ -1,14 +1,5 @@
 {
-"skeleton": {
-	"hash": "BUGKHrHZXqU",
-	"spine": "4.2.43",
-	"x": -236.74,
-	"y": -172.78,
-	"width": 460.03,
-	"height": 385.29,
-	"images": "./Parts/",
-	"audio": "C:/Users/antsg/OneDrive/Documents/Bella Sara Shennanigans/stables game/images/horse/peter"
-},
+"skeleton": { "hash": "I//YRhfY+WM", "spine": "4.2.43", "x": -238.35, "y": -172.78, "width": 461.64, "height": 378.08 },
 "bones": [
 	{ "name": "root", "length": 40, "rotation": -90, "x": 68.7, "y": 65.07 },
 	{ "name": "Body", "parent": "root", "length": 160, "rotation": -83.91, "x": 25.41, "y": -6.03 },
@@ -27,6 +18,8 @@
 	{ "name": "HoofFR", "parent": "LowerForeR", "length": 15, "rotation": -27.05, "x": 56.09, "y": -3.86 },
 	{ "name": "HoofHR", "parent": "LowerHindR", "length": 15, "rotation": -21.05, "x": 60.63, "y": -4.2 },
 	{ "name": "HoofHL", "parent": "LowerHindL", "length": 15, "rotation": -24.05, "x": 73.96, "y": -5.8 },
+	{ "name": "Mane", "parent": "Neck", "length": 120, "rotation": 9.79, "x": 5.14, "y": -30.85 },
+	{ "name": "Ear", "parent": "Head", "length": 15, "rotation": -127.71, "x": -12.33, "y": -15.42 },
 	{ "name": "Jaw", "parent": "Head", "length": 15, "x": 48.13, "y": 8.84 },
 	{ "name": "Apple", "parent": "Head", "length": 15, "x": 47.75, "y": 3.35 },
 	{ "name": "Shadow", "parent": "root", "x": 40 }
@@ -58,15 +51,7 @@
 		"name": "default",
 		"attachments": {
 			"Apple": {
-				"Apple": {
-					"x": -90.63,
-					"y": 176.91,
-					"scaleX": 0.8,
-					"scaleY": 0.8,
-					"rotation": 134.81,
-					"width": 538,
-					"height": 454
-				}
+				"Apple": { "x": 6.11, "y": 1.02, "rotation": 135.68, "width": 55, "height": 37 }
 			},
 			"Body": {
 				"Body": {
@@ -474,6 +459,13 @@
 	},
 	"ear_twitch": {
 		"bones": {
+			"Ear": {
+				"rotate": [
+					{ "time": 0.0333 },
+					{ "time": 0.1333, "value": -24.28 },
+					{ "time": 0.2667 }
+				]
+			},
 			"Head": {
 				"translate": [
 					{ "time": 0.6667 }
@@ -522,6 +514,29 @@
 					{ "time": 1.7667, "x": -1.77, "y": -0.5 },
 					{ "time": 1.9333, "x": 5.35, "y": -0.27 },
 					{ "time": 2.0333 }
+				]
+			},
+			"Ear": {
+				"rotate": [
+					{ "time": 0.0667 },
+					{ "time": 0.2, "value": -2.67 },
+					{ "time": 0.3333, "value": -19.19, "curve": "stepped" },
+					{ "time": 2.0333, "value": -19.19 },
+					{ "time": 2.5 }
+				]
+			},
+			"Mane": {
+				"rotate": [
+					{ "time": 0.0667 },
+					{ "time": 0.3333, "value": 1.48, "curve": "stepped" },
+					{ "time": 2.0333, "value": 1.48 },
+					{ "time": 2.5 }
+				],
+				"translate": [
+					{ "time": 0.0667 },
+					{ "time": 0.3333, "x": -3.32, "y": 1.05, "curve": "stepped" },
+					{ "time": 2.0333, "x": -3.32, "y": 1.05 },
+					{ "time": 2.5 }
 				]
 			},
 			"HoofHR": {
@@ -698,6 +713,18 @@
 					{ "time": 1.5333 }
 				]
 			},
+			"Mane": {
+				"rotate": [
+					{ "time": 1.5667 },
+					{ "time": 1.7667, "value": -0.85 },
+					{ "time": 2 }
+				],
+				"translate": [
+					{ "time": 1.5667 },
+					{ "time": 1.7667, "x": -8.57, "y": -3.36 },
+					{ "time": 2 }
+				]
+			},
 			"LowerHindR": {
 				"rotate": [
 					{ "time": 0.0667 },
@@ -835,6 +862,18 @@
 	},
 	"flank_twitch": {
 		"bones": {
+			"Mane": {
+				"rotate": [
+					{ "time": 0.0667 },
+					{ "time": 1, "value": 1.35 },
+					{ "time": 1.9333 }
+				],
+				"translate": [
+					{ "time": 0.0667 },
+					{ "time": 1, "x": 1.71, "y": -3.93 },
+					{ "time": 1.9333 }
+				]
+			},
 			"HindLegR": {
 				"rotate": [
 					{ "time": 0.0667 },
@@ -961,6 +1000,23 @@
 	},
 	"head_turn": {
 		"bones": {
+			"Ear": {
+				"rotate": [
+					{ "time": 0.1 },
+					{ "time": 1.0667, "value": 21.13, "curve": "stepped" },
+					{ "time": 1.5333, "value": 21.13 },
+					{ "time": 1.9667, "value": 21.21 },
+					{ "time": 2.4333 }
+				]
+			},
+			"Mane": {
+				"translate": [
+					{ "time": 0.1 },
+					{ "time": 1.0667, "x": -3.24, "y": -0.74, "curve": "stepped" },
+					{ "time": 1.9667, "x": -3.24, "y": -0.74 },
+					{ "time": 2.4333 }
+				]
+			},
 			"Head": {
 				"rotate": [
 					{ "time": 0.1 },
@@ -1005,6 +1061,13 @@
 	},
 	"nod": {
 		"bones": {
+			"Ear": {
+				"rotate": [
+					{ "time": 0.2 },
+					{ "time": 0.4, "value": 26.11 },
+					{ "time": 0.6333 }
+				]
+			},
 			"Head": {
 				"rotate": [
 					{ "time": 0.0333 },
@@ -1038,6 +1101,13 @@
 	},
 	"paw_ground": {
 		"bones": {
+			"Mane": {
+				"rotate": [
+					{ "time": 0.2 },
+					{ "time": 0.4, "value": 1 },
+					{ "time": 1 }
+				]
+			},
 			"HoofFL": {
 				"rotate": [
 					{ "time": 0.0333 },
@@ -1166,6 +1236,19 @@
 	},
 	"rear": {
 		"bones": {
+			"Mane": {
+				"rotate": [
+					{},
+					{ "time": 0.9333, "value": 5.77 },
+					{ "time": 1.5333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.2, "x": 0.85, "y": -3.6 },
+					{ "time": 0.9333, "x": 0.64, "y": -8.66 },
+					{ "time": 1.5333 }
+				]
+			},
 			"HoofHL": {
 				"rotate": [
 					{},

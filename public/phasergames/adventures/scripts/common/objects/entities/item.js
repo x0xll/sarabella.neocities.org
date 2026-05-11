@@ -159,10 +159,14 @@ class InventorySlot
 
     setInventoryMask() {
         // Set mask
-        const mask = this.phaserScene.sharedData.inventory.ui.elements.scrollMask
-        this.background.setMask(mask);
-        this.image.setMask(mask);
-        this.text.setMask(mask);
+        // const mask = this.phaserScene.sharedData.inventory.ui.elements.scrollMask
+        // this.background.setMask(mask);
+        // this.image.setMask(mask);
+        // this.text.setMask(mask);
+
+        this.background.enableFilters().filters.external.addMask(this.phaserScene.sharedData.inventory.ui.elements.scrollMask);
+        this.image.enableFilters().filters.external.addMask(this.phaserScene.sharedData.inventory.ui.elements.scrollMask);
+        this.text.enableFilters().filters.external.addMask(this.phaserScene.sharedData.inventory.ui.elements.scrollMask);
     }
 
     resetSlot(scroll = 0, slotNumber = this.slotNumber, xSlotReposition = 0) {

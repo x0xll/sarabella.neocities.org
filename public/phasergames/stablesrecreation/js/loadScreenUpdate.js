@@ -39,6 +39,10 @@ class Load extends Phaser.Scene
                     }
                 }
             } else {
+                let type = horseData.type;
+                if (type.includes("foal"))
+                    type = type.substring("foal".length).toLowerCase();                
+
                 if (accurateTrad)
                     langFile = `./lang/og/${horseData.type}`
                 else
@@ -55,6 +59,9 @@ class Load extends Phaser.Scene
                         langFile = `./lang/og/${horseData.type}`
                     }
                 }
+            }
+            if (!locale || !urlExists(`${langFile}_${locale}.json`)) {
+                locale ='en'
             }
             const xmlHttplocale = new XMLHttpRequest();
             xmlHttplocale.onload = function() {

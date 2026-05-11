@@ -118,8 +118,7 @@ class uiQuest extends uiManagerBase
         var questIcon = this.phaserScene.add.image(430, 190, "closeBtn", "up")
                             .setOrigin(0)
                             .setScrollFactor(0);
-        const mask = new Phaser.Display.Masks.BitmapMask(this.phaserScene, questMask);
-        questIcon.setMask(mask);
+        questIcon.enableFilters().filters.external.addMask(questMask);
 
         var closeBtn = this.phaserScene.add.sprite(687, 112, "closeBtn", "up")
                         .setOrigin(0)
@@ -130,8 +129,9 @@ class uiQuest extends uiManagerBase
         
         // Left page
         //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(115, 150, 260, 300).setAlpha(.5).setScrollFactor(0);
-        const scrollMask = new Phaser.Display.Masks.GeometryMask(this.phaserScene, this.phaserScene.make.graphics().fillRect(115, 150, 280, 300)
-                        .setScrollFactor(0))
+        const scrollMask = this.phaserScene.add.rectangle(115, 150, 280, 300, 0x000000).setVisible(false)
+                        .setScrollFactor(0)
+                        .setOrigin(0)
         //this.phaserScene.add.graphics().fillStyle(0x000000).fillRect(380, 150, 20, 300).setAlpha(.5).setScrollFactor(0);
         const scrollZone = this.phaserScene.add.zone(380, 150, 20, 300)
                         .setScrollFactor(0)
