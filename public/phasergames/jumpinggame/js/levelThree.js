@@ -196,6 +196,7 @@ class LevelThree extends Phaser.Scene
             this.physics.add.sprite(25612, 328, 'gems', 'gemBlue5'),
             this.physics.add.sprite(25703, 328, 'gems', 'gemBlue5'),
             this.physics.add.sprite(25781, 212, 'gems', 'gemPink55'),
+            this.physics.add.sprite(25781, 342, 'gems', 'gemYellow75'),
             this.physics.add.sprite(25856, 328, 'gems', 'gemBlue5'),
             this.physics.add.sprite(25946, 328, 'gems', 'gemBlue5'),
             this.physics.add.sprite(26354, 232, 'gems', 'gemPink10'),
@@ -268,7 +269,6 @@ class LevelThree extends Phaser.Scene
             this.physics.add.sprite(20160, 350, 'jumps', 'woodenFence'),
             this.physics.add.sprite(22288, 355, 'jumps', 'hedgeSmall'),
             this.physics.add.sprite(23691, 347, 'jumps', 'woodenFence'),
-            this.physics.add.sprite(25781, 355, 'jumps', 'hayBale'), //Check jump type with reference material
             this.physics.add.sprite(26077, 363, 'jumps', 'hedge'),
             this.physics.add.sprite(26442, 348, 'jumps', 'log'),
             this.physics.add.sprite(27650, 355, 'jumps', 'hedgeSmall'),
