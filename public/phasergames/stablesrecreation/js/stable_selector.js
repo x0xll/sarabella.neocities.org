@@ -62,6 +62,7 @@ const horses = [
     'nuala',
     'pegasus',
     'persephone',
+    'petal',
     'rose',
     'royce',
     'sarah',
