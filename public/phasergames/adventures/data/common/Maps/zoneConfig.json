@@ -781,8 +781,8 @@
     "Z027": {
         "ID": "Z027",
 
-        "tileXOffset": -1200,
-        "tileYOffset": 2000,
+        "tileXOffset": -1124,
+        "tileYOffset": 1888,
         "tileAssets": [
             "common",
             "ruralskymain",
