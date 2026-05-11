@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "t8gqYApz9nM",
+	"hash": "FqUleQzvmxE",
 	"spine": "4.2.43",
 	"x": -416.5,
 	"y": -223.95,
@@ -187,7 +187,6 @@
 			},
 			"Head": {
 				"rotate": [
-					{ "value": -360 },
 					{ "time": 0.0333 },
 					{ "time": 0.0667, "value": 1.32 },
 					{ "time": 0.2, "value": -8.79 },
