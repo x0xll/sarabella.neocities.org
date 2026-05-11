@@ -36,7 +36,7 @@ class Load extends Phaser.Scene
         }
 
         if (this.physics.config.debug) { 
-            this.levelUnlocked = [true, true, true, false]
+            this.levelUnlocked = [true, true, true, true]
         }
 
         // Music
