@@ -60,6 +60,7 @@ const horses = [
     'nimiipuu',
     'nori',
     'nuala',
+    'obrylin',
     'parlez',
     'pegasus',
     'persephone',
