@@ -1,4 +1,5 @@
 {
 "name": "Tiffi",
-"type": "water"
+"type": "water",
+"dirtSkeleton": "hippocampus"
 }

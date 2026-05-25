@@ -107,7 +107,11 @@ class StablesManager {
             this.#game.load.image('horse_image', `./images/horses/${horseName}/card_image.jpg`);
         }
 
-        if (horseName === "skeleton") {
+        if  (horseData.dirtSkeleton) {
+            this.#game.load.spineAtlas("horse_dirty-atlas", `./images/${horseData.type}Stable/${horseData.dirtSkeleton}_dirty/dirt_skeleton.atlas`);
+            this.#game.load.spineJson("horse_dirty-json", `./images/${horseData.type}Stable/${horseData.dirtSkeleton}_dirty/dirt_skeleton.json`);
+        }
+        else if (horseName === "skeleton") {
             this.#game.load.spineAtlas("horse_dirty-atlas", `./images/landStable/skeleton_dirty/dirt_skeleton.atlas`);
             this.#game.load.spineJson("horse_dirty-json", `./images/landStable/skeleton_dirty/dirt_skeleton.json`);
         }
