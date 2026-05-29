@@ -41,6 +41,7 @@ const horses = [
     'faxon',
     'fiona',
     'firewalker',
+    'flora',
     'gaia',
     'generosity',
     'ghost',
