@@ -94,6 +94,17 @@ class StablesManager {
         });
     }
 
+    preloadHorse(horseType) {
+        this.#game.load.spineAtlas("horse-atlas", `./images/${horseFolder}/${horseName}/skeleton.atlas`);
+        this.#game.load.spineJson("horse-json", `./images/${horseFolder}/${horseName}/skeleton.json`);
+        if (isDressup) {
+            this.#game.load.spineAtlas("horsePicAtlas", `./images/${horseFolder}/${horseName}/picture/skeleton.atlas`);
+            this.#game.load.spineJson("horsePicJson", `./images/${horseFolder}/${horseName}/picture/skeleton.json`);
+        } else {
+            this.#game.load.image('horse_image', `./images/${horseFolder}/${horseName}/card_image.jpg`);
+        }
+    }
+
     preloadAudio(additionalSounds) {
         const path = './sounds/'
         this.#gameSounds = {
@@ -129,15 +140,24 @@ class StablesManager {
         Object.keys(this.#gameSounds).forEach(key => {
             this.#game[key] = this.#game.sound.add(key);
         });
-        this.#game.playMusic = true;
-        this.#game.backgroundMusic.loop = true; 
-        this.#game.backgroundMusic.play();
+        if (this.#game.data.playMusic !== undefined) {
+            this.#game.playMusic = this.#game.data.playMusic
+            this.#game.backgroundMusic = this.#game.data.backgroundMusic
+        } else {
+            this.#game.playMusic = true;
+            this.#game.backgroundMusic = this.#game.sound.add('backgroundMusic');
+            this.#game.backgroundMusic.loop = true; 
+            this.#game.backgroundMusic.play();
+        }
 
         this.#game.add.image(444, 260, 'stable_bg');
+        this.#game.switchQuote = null;
+        this.#game.familyTreeOpen = true;
 
         // Variables
         this.#game.HAND = {
             empty: 'empty',
+            emptyAlt: 'emptyAlt',
             shovel: 'shovel',
             fork: 'fork',
             forkFilled: 'fork_filled',
@@ -169,16 +189,110 @@ class StablesManager {
         this.#game.statBoxBusy = false
         this.#game.statBoxQueue = []
         this.#game.awardsLink = '/flash/awards/awards.html' // TODO: Add real link once awards page is added
+
+        if (isDressup) {
+            for (let [key, value] of Object.entries(dressupLocaleData)) {
+                localeData[key] = value
+            }
+        }
+    }
+
+    createFoalInspiration(posX, posY, scale, magnifierX = 52, magnifierY = 96) {
+        const game = this.#game
+        game.familyTreeOpen = false
+        for (let index = 0; index < family.ids.length; index++) {
+            let type = family.data[index].type
+            family.data[index].quote = quoteData[family.data[index].type][family.ids[index] + "Quote"]
+        }
+        this.#placeFamilyTreeUI(posX, posY, scale, magnifierX, magnifierY)
+
+        this.#game.parentImage = this.#game.add.image(0, 0, family.ids[0])
+        this.#addQuotesInteraction(this.#game.parentImage, family.data[0].quote)
+
+        this.#game.childImages = []
+        this.#game.childImages.push(this.#game.add.image(0, 0, 'horse_image'))
+        this.#addQuotesInteraction(this.#game.childImages[0], null)
+
+        for (let index = 1; index < family.ids.length; index++) {
+            this.#game.childImages.push(this.#game.add.image(0, 0, family.ids[index]))
+            this.#addQuotesInteraction(this.#game.childImages[index], family.data[index].quote)
+        }
+
+        this.placeFoalImages(posX, posY, scale)
+        
+    }
+
+    #placeFamilyTreeUI(posX, posY, scale, magnifierX, magnifierY) {
+        const game = this.#game
+        const helper = this
+        game.familyTree = game.add.image(444, 261, 'family_tree').setScale(1.5).setAlpha(0);
+        const familyXButton = this.addHitbox(536, 105, 50, 50)
+            familyXButton.on('pointerover', function (pointer){
+                game.inspirationHover.play()
+            });
+            familyXButton.on('pointerdown', function (pointer) { 
+                game.familyTree.setAlpha(0).setDepth(0)
+                helper.placeFoalImages(posX, posY, scale)
+                game.canPlayInspiration = false
+                game.familyTreeOpen = false
+                game.handCurrent = game.HAND.empty
+            })
+
+        game.magnifier = game.add.image(magnifierX, magnifierY, 'magnifier').setScale(.15).setInteractive();
+            game.magnifier.on('pointerdown', function (pointer) { 
+                if (game.handCurrent === game.HAND.empty) {
+                    game.familyTree.setAlpha(1).setDepth(2)
+                    helper.placeFoalImages(460, 200, .45, 2)
+                    game.canPlayInspiration = true
+                    game.familyTreeOpen = true
+                    game.handCurrent = game.HAND.emptyAlt
+                }
+            })
+
+    }
+    placeFoalImages(posX, posY, scale, depth = 0) {
+        const game = this.#game
+
+        this.#game.parentImage.setPosition(posX, posY).setScale(scale).setDepth(depth)
+        this.#placeSiblingImages(this.#game.childImages[0], 1, scale, depth)
+        if (family.ids.length > 1)
+            this.#placeSiblingImages(this.#game.childImages[1], 0, scale, depth)
+        if (family.ids.length > 2)
+            this.#placeSiblingImages(this.#game.childImages[2], 2, scale, depth)
+
+    }
+    #placeSiblingImages(image, locationIndex, scale, depth) {
+        const game = this.#game
+        const separation = 30 * scale
+        image.setPosition(
+            game.parentImage.x - ((game.parentImage.displayWidth) + separation) + ((game.parentImage.displayWidth + separation) * locationIndex), 
+            game.parentImage.y + (game.parentImage.displayHeight) + separation
+        ).setScale(scale).setDepth(depth)
+    }
+    #addQuotesInteraction(image, quote) {
+        image.setInteractive();
+        const game = this.#game
+        // TODO: add hover highlight
+        image.on('pointerover', function (pointer){
+            if (game.canPlayInspiration) {
+                // game.frame.setFrame('hover');
+                game.inspirationHover.play()
+            }
+        });
+        // image.on('pointerout', function (pointer) { game.frame.setFrame('idle') });
+        image.on('pointerdown', function (pointer) { 
+            if (game.canPlayInspiration) {
+                game.playInspiration = true 
+                game.switchQuote = quote
+                game.inspirationSound.play()
+            }
+        })
     }
 
     createHorseHitbox(x, y, width, height, hoofpickAction = () => {}, headOffsetX = -75, headOffsetY = 0) {
         const game = this.#game
-        if (urlParameters.get('debug')) {
-            game.add.graphics().fillStyle(0x000000).fillRect(x, y, width, height).setAlpha(.5);
-            game.add.graphics().fillStyle(0x000000).fillRect(x+headOffsetX, y+headOffsetY, 150, 150).setAlpha(.5);
-        }
-        const horseInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x, y, width, height), Phaser.Geom.Rectangle.Contains);
-        game.headInteractive = game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x+headOffsetX, y+headOffsetY, 150, 150), Phaser.Geom.Rectangle.Contains);
+        const horseInteractive = this.addHitbox(x, y, width, height)
+        game.headInteractive = this.addHitbox(x+headOffsetX, y+headOffsetY, 150, 150)
         // interact with horse
         horseInteractive.on('pointerdown', function (pointer) {
             if (game.handCurrent === game.HAND.brush) {
@@ -197,27 +311,24 @@ class StablesManager {
         });
         game.headInteractive.on('pointerdown', function (pointer) {
             if (game.handCurrent === game.HAND.apple) {
-                // TODO: make smaller head hitbox for this bit
                 game.handCurrent = game.HAND.empty;
                 game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingApple)
             }
             else if (game.handCurrent === game.HAND.bottle) {
-                // TODO: make smaller head hitbox for this bit
                 game.handCurrent = game.HAND.empty;
-                game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.drinkbottle)
+                game.stablesManager.addToQueue(game.horseAnimationQueue, game.HORSE_STATES.eatingFood)
             }
         })
     }
 
     createHorse(x, y, angle, scale = 1) {
+            angle = isDressup ? 0 : angle;
             const game = this.#game
-            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale);
-            game.horse.animationState.setAnimation(0, "idle", false)
-            game.horseDirty = game.add.spine(x, y, 'horse_dirty-json', 'horse_dirty-atlas').setAngle(angle).setScale(scale);
-            game.horseDirty.animationState.setAnimation(0, "idle", false)
-            game.horseOverlay = game.add.spine(x, y, 'horse_overlay-json', 'horse_overlay-atlas').setAngle(angle).setScale(scale);
-            game.horseOverlay.animationState.setAnimation(0, "idle", false)
+
+            game.horse = game.add.spine(x, y, 'horse-json', 'horse-atlas').setAngle(angle).setScale(scale).setDepth(1);
             
+            this.setBrushLevel(1);
+            game.horse.animationState.setAnimation(0, "idle", false)
             this.#addConstantAnimation()
             game.horse.animationState.addListener({
                 // start: (entry) => console.log(`Started animation ${entry.animation.name}`),
@@ -277,8 +388,6 @@ class StablesManager {
                             
                             const delay = game.stablesManager.randomIntFromInterval(3, 5)
                             game.horse.animationState.addAnimation(0, animation, false, delay);
-                            game.horseDirty.animationState.addAnimation(0, animation, false, delay);
-                            game.horseOverlay.animationState.addAnimation(0, animation, false, delay);
                         }
                         // allow next animation to play
                         game.horseBusy = false
@@ -293,8 +402,12 @@ class StablesManager {
                         game.splash1Sound.play()
                     }
                 }          
+            })}
+
+            if (isDressup) {
+                //TODO: add dressup version
+                game.data.resetHorseSprite(game.horse, game.horseOverlay, game.horsePic)
             }
-        )}
     }
 
     /**
@@ -303,8 +416,8 @@ class StablesManager {
      * @param {*} y position of stat box
      */
     createStatBox(x, y) {
-        this.#game.statBox = this.#game.add.image(x, y, 'stat_box').setAlpha(0)
-        this.#game.statBoxText = this.#game.add.text(x, y, 'Static Text Object', this.hoverTextSettingsMain).setAlpha(0);
+        this.#game.statBox = this.#game.add.image(x, y, 'stat_box').setAlpha(0).setDepth(1)
+        this.#game.statBoxText = this.#game.add.text(x, y, 'Static Text Object', this.hoverTextSettingsMain).setAlpha(0).setDepth(1);
         this.#game.statBoxText.setOrigin(.5, .5)
     }
 
@@ -325,8 +438,8 @@ class StablesManager {
                 settings = this.hoverTextSettingsMain
                 break;
         }
-        const gotoWorldBg = this.#game.add.image(x, y, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(scaleX, scaleY);
-        const gotoWorldTxt = this.#game.add.text(x, y, 'Static Text Object', settings).setAlpha(0).setOrigin(.5, .5);
+        const gotoWorldBg = this.#game.add.image(x, y, 'goworld_box').setAlpha(0.01).setOrigin(.5).setInteractive().setScale(scaleX, scaleY).setDepth(1);
+        const gotoWorldTxt = this.#game.add.text(x, y, 'Static Text Object', settings).setAlpha(0).setOrigin(.5, .5).setDepth(1);
         gotoWorldTxt.text = localeData.txtToWorld;
         gotoWorldBg.on('pointerover', function (pointer) {
                 gotoWorldBg.setAlpha(1);
@@ -344,12 +457,12 @@ class StablesManager {
     /** Creates the UI elements  */
     createUI(helpTexts) {
         const game = this.#game
-        this.#game.add.image(444, 260, 'stable_fg');
+        this.#game.add.image(444, 260, 'stable_fg').setDepth(1);
         this.#createInspirationalMessage()
 
         // Horse name
-        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' });
-        game.horseNameText.text = localeData[horseName + "Name"];
+        game.horseNameText =game.add.text(444, 478, 'Static Text Object', { fontFamily: this.#font, fontSize: 12, color: '#ffffff', align: 'center' }).setDepth(1);
+        game.horseNameText.text = isDressup ? horseData.name : localeData[horseName + "Name"];
         game.horseNameText.setOrigin(.5, .5)
 
         // Stat bars
@@ -360,25 +473,26 @@ class StablesManager {
         // Buttons
         this.#createHelpButton(helpTexts)
         this.#createMusicButton()
+        if (isDressup) { this.#createDressupButtons() }
 
         // Cursor
-        game.cursor = game.add.sprite(0, 0, 'brush_small', 'hold').setVisible(false);
+        game.cursor = game.add.sprite(0, 0, 'brush_small', 'hold').setVisible(false).setDepth(4);
     }
 
     /** Adds the visuals, text and sounds for displaying the inspirational message */
     #createInspirationalMessage() {
-        this.#game.playInspiration = true
+        this.#game.playInspiration = !isDressup || (isDressup && /\S/.test(horseData.message))
         this.#game.canPlayInspiration = false
 
-        this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false);
+        this.#game.inspiration = this.#game.add.image(430, 150, 'inspiration').setScale(.93).setVisible(false).setDepth(2);
         this.#game.inspirationMessage = this.#game.add.text(444, 133, 'Static Text Object', { 
             fontFamily: this.#font, 
             fontSize: 55, 
             color: '#ffffff', 
             align: 'center' ,
             wordWrap: { width: 800 } 
-        }).setVisible(false);
-        this.#game.inspirationMessage.text = localeData[horseName + "Quote"];
+        }).setVisible(false).setDepth(2);
+        this.#game.inspirationMessage.text = isDressup ? horseData.message : localeData[horseName + "Quote"];
         this.#game.inspirationMessage.setOrigin(0.5)
         this.#game.inspirationMessage.setShadow(2, 2, '#000000', 7, true, true)
     }
@@ -387,19 +501,19 @@ class StablesManager {
         const game = this.#game
         const pos = x - 32 + (startLevel*this.#bar/2)
         const width = 1 + startLevel*this.#bar
-        game.add.rectangle(x, 505, 66, 2, color1);
+        game.add.rectangle(x, 505, 66, 2, color1).setDepth(5);
 
         const newBar = {
             x: x,
-            leftShine: game.add.rectangle(pos - width/2 - 1, 510, 3, 10, shineColor),
-            rightShade: game.add.rectangle(pos + width/2 + 1, 510, 3, 10, shadeColor),
-            topShine: game.add.rectangle(pos, 506, width, 3, shineColor),
-            bottomShade: game.add.rectangle(pos, 514, width, 2, shadeColor),
-            progress: game.add.rectangle(pos, 510, width, 7, color2),
+            leftShine: game.add.rectangle(pos - width/2 - 1, 510, 3, 10, shineColor).setDepth(1),
+            rightShade: game.add.rectangle(pos + width/2 + 1, 510, 3, 10, shadeColor).setDepth(1),
+            topShine: game.add.rectangle(pos, 506, width, 3, shineColor).setDepth(1),
+            bottomShade: game.add.rectangle(pos, 514, width, 2, shadeColor).setDepth(1),
+            progress: game.add.rectangle(pos, 510, width, 7, color2).setDepth(1),
             level: startLevel
         }
 
-        game.add.image(x-2, 509, image);
+        game.add.image(x-2, 509, image).setDepth(1);
         const text = game.add.text(x-2, 498, 'Static Text Object', { 
             fontFamily: this.#font, 
             fontSize: 11.5, 
@@ -407,7 +521,7 @@ class StablesManager {
         });
         text.text = statName;
         text.setColor(color3);
-        text.setOrigin(0.5)
+        text.setOrigin(0.5).setDepth(1)
 
         return newBar
     }
@@ -415,7 +529,7 @@ class StablesManager {
     #createHelpButton(helpTexts) {
         const game = this.#game
         game.helpPopups = [];
-        game.helpButton =game.add.sprite(444, 261, 'help_button', 'idle').setInteractive(this.#game.input.makePixelPerfect(150));
+        game.helpButton =game.add.sprite(444, 261, 'help_button', 'idle').setDepth(3);
         helpTexts.forEach(helptext => {
             switch (helptext[3]) {
                 case "OneLine":
@@ -433,14 +547,15 @@ class StablesManager {
             }
             this.#showLocalizedHelpTexts(helptext[0], helptext[1], helptext[2], helptext[3]);
         });
-       game.helpButton.on('pointerover', function (pointer) { 
-            this.setFrame('help') 
+        let helpHitbox = this.addHitbox(0, 469, 50, 50);
+        helpHitbox.on('pointerover', function (pointer) { 
+            game.helpButton.setFrame('help') 
             game.helpPopups.forEach(helpTxt => {
                 helpTxt.setAlpha(1);
             });
-        });
-       game.helpButton.on('pointerout', function (pointer) { 
-            this.setFrame('idle') 
+            });
+        helpHitbox.on('pointerout', function (pointer) { 
+            game.helpButton.setFrame('idle') 
             game.helpPopups.forEach(helpTxt => {
                 helpTxt.setAlpha(0);
             });
@@ -449,7 +564,7 @@ class StablesManager {
 
     #createMusicButton() {
         const game = this.#game
-        game.musicButton =game.add.sprite(867, 498, 'music_button', 'music_on').setInteractive({ pixelPerfect: true });
+        game.musicButton =game.add.sprite(867, 498, 'music_button', game.playMusic ? 'music_on' : 'music_off').setDepth(1).setInteractive({ pixelPerfect: true });
         game.musicButton.on('pointerdown', function (pointer)
         {
             if (game.playMusic) {
@@ -466,6 +581,47 @@ class StablesManager {
         game.musicButton.on('pointerout', function (pointer) { game.musicButton.setFrame(`music_${game.playMusic ? 'on' : 'off'}`) });
     }
 
+    #createDressupButtons() {
+        const game = this.#game
+        const playButton = game.add.text(150, 465, localeData.txtDressupBack, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5).setDepth(5);
+            playButton.setInteractive({ useHandCursor: true });
+            playButton.on('pointerover', () => {
+                playButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            playButton.on('pointerout', () => {
+                playButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            playButton.on('pointerdown', () => {
+                game.scene.start('dressupStable', {horseData: horseData, backgroundMusic: game.backgroundMusic, playMusic: game.playMusic});
+            })
+        // Copy Button
+        const copyButton = game.add.text(150, 500, localeData.txtDressupCopy, {
+            fontFamily: 'Arial',
+            fontSize: '12px',
+            color: '#ffffff',
+            align: 'center',
+            fixedWidth: 100,
+            backgroundColor: COLOR_PRIMARY_HEX
+        }).setPadding(6).setOrigin(0.5).setDepth(5);
+            copyButton.setInteractive({ useHandCursor: true });
+            copyButton.on('pointerover', () => {
+                copyButton.setBackgroundColor(COLOR_SECONDARY_HEX);
+            });
+            copyButton.on('pointerout', () => {
+                copyButton.setBackgroundColor(COLOR_PRIMARY_HEX);
+            });
+            copyButton.on('pointerdown', () => {
+                game.data.copy()
+            })
+    }
+
     // /* ---------- UPDATE ---------- */
     updateCursor({
         shovelXOffset = -18, shovelYOffset = 35,
@@ -479,13 +635,13 @@ class StablesManager {
 
         // Display held items under cursor
         if (game.handCurrent === game.HAND.shovel) {
-            game.cursor.setPosition(pointer.worldX+shovelXOffset, pointer.worldY+shovelYOffset);
+            game.cursor.setPosition(pointer.worldX+shovelXOffset, pointer.worldY+shovelYOffset).setAngle(0).setScale(1);;
             if (!game.cursor.visible) {
                 game.cursor.setVisible(true).play('shovel_pickup');
             }
         }
         else if (game.handCurrent === game.HAND.fork) {
-            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset)
+            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset).setAngle(0).setScale(1);
             if (!game.cursor.visible) {
                 game.cursor.setVisible(true).play('fork_pickup');
             }
@@ -494,13 +650,13 @@ class StablesManager {
             }
         }
         else if (game.handCurrent === game.HAND.forkFilled) {
-            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset)
+            game.cursor.setPosition(pointer.worldX+forkXOffset, pointer.worldY+forkYOffset).setAngle(0).setScale(1);
             if (game.cursor.anims.getName() === 'fork_pickup' || game.cursor.anims.getName() === 'fork_place') {
                 game.cursor.play('fork_fill')
             }
         }
         else if (game.handCurrent === game.HAND.grainScoop) {
-            game.cursor.setPosition(pointer.worldX, pointer.worldY)
+            game.cursor.setPosition(pointer.worldX, pointer.worldY).setAngle(0).setScale(1);
             if (!game.cursor.visible) {
                 game.cursor.setAlpha(0).setVisible(true).setTexture('grain_scoop')
                 game.time.delayedCall(630, function () {game.cursor.setAlpha(.5)});
@@ -519,11 +675,11 @@ class StablesManager {
             this.#updateGameCursor(game.HAND.hoofpick, 'hold', hoofpickXOffset, hoofpickYOffset)
         }
         else if (game.handCurrent === game.HAND.apple) {
-            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('apple');
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('apple').setAngle(0).setScale(1);
             game.headInteractive.setInteractive()
         }
         else if (game.handCurrent === game.HAND.bottle) {
-            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle');
+            game.cursor.setVisible(true).setPosition(pointer.worldX, pointer.worldY).setTexture('bottle').setAngle(90).setScale(-.75, .75);
             game.headInteractive.setInteractive()
         }
         else {
@@ -541,7 +697,7 @@ class StablesManager {
     #updateGameCursor(sprite, frame, xOffset, yOffset) {
             const game = this.#game
             const pointer = game.input.activePointer;
-            game.cursor.setPosition(pointer.worldX+xOffset, pointer.worldY+yOffset);
+            game.cursor.setPosition(pointer.worldX+xOffset, pointer.worldY+yOffset).setAngle(0).setScale(1);
             if (!game.cursor.visible) {
                 game.cursor.setTexture(sprite).setFrame(frame)
                 game.cursor.setAlpha(0).setVisible(true)
@@ -555,11 +711,15 @@ class StablesManager {
             game.playInspiration = false
             game.canPlayInspiration = false
 
-            if (localizedQuote)
-                game.inspirationMessage.text = localeData[horseName + "Quote"];
-            else
-                game.inspirationMessage.text = englishData[horseName + "Quote"];
-
+            if (!isDressup){
+                if (localizedQuote && game.switchQuote === null)
+                    game.inspirationMessage.text = localeData[horseName + "Quote"];
+                else if (game.switchQuote === null)
+                    game.inspirationMessage.text = englishData[horseName + "Quote"];
+                else
+                    game.inspirationMessage.text = game.switchQuote;
+            }
+            
             game.inspiration.setVisible(true).setAlpha(0)
             game.inspirationMessage.setVisible(true).setAlpha(0)
             game.time.delayedCall(40, function () {game.inspiration.setAlpha(.1); game.inspirationMessage.setAlpha(0.1)});
@@ -584,7 +744,7 @@ class StablesManager {
             game.time.delayedCall(3320, function () {
                 game.inspiration.setAlpha(0); 
                 game.inspirationMessage.setAlpha(0); 
-                game.canPlayInspiration = true;
+                game.canPlayInspiration = game.familyTreeOpen;
             });
         }
     }
@@ -619,11 +779,11 @@ class StablesManager {
             this.#game.brushLevel += 1;
             this.updateBar(this.#game.cleanlinessBar, 1/3)
             this.updateBar(this.#game.happinessBar, 1/6)
-            this.#game.horseDirty.skeleton.color.a = 0.25 * (4 - this.#game.brushLevel)
+            this.#game.stablesManager.setBrushLevel(this.#game.brushLevel+1)
         }
         else if (this.#game.brushLevel === 2) {
             this.#game.brushLevel += 1;
-            if (horseData.type === 'air') {
+            if (horseData.type === 'air' || horseData.type === 'foalAir') {
                 this.addToQueue(this.#game.statBoxQueue, localeData.txtReadyToBeOiled)
             } else {
                 this.addToQueue(this.#game.statBoxQueue, localeData.txtBrushClean)
@@ -631,8 +791,15 @@ class StablesManager {
             this.checkClean()
             this.updateBar(this.#game.cleanlinessBar, 1/3)
             this.updateBar(this.#game.happinessBar, 1/6)
-            this.#game.horseDirty.setAlpha(0)
+            this.#game.stablesManager.setBrushLevel(4)
         }
+    }
+    setBrushLevel(level) {
+        const skeletonData = this.#game.horse.skeleton.data;
+        const skin = new spine.Skin("custom");
+        skin.addSkin(skeletonData.findSkin(`Dirt${level}`));
+        this.#game.horse.skeleton.setSkin(skin);
+        this.#game.horse.skeleton.setToSetupPose();
     }
     checkClean() {
         if (this.#game.brushLevel === 3 && this.#game.additionalCleanCondition()) {
@@ -650,7 +817,7 @@ class StablesManager {
     #showLocalizedHelpTexts(xPos, yPos, localeTxtKey, settings) {
         const helpTxt = this.#game.add.text(xPos, yPos, 'Static Text Object', settings).setAlpha(0);
         helpTxt.text = localeTxtKey;
-        helpTxt.setOrigin(0.5)
+        helpTxt.setOrigin(0.5).setDepth(3)
         this.#game.helpPopups.push(helpTxt);
     }
 
@@ -688,11 +855,6 @@ class StablesManager {
      * Starts the horse's constant animation (e.g. constant sparkles or aura) if it exists
      */
     #addConstantAnimation() {
-        for (let index = 0; index < this.#game.horseOverlay.skeleton.data.animations.length; index++) {
-            if (this.#game.horseOverlay.skeleton.data.animations[index].name === "constant") {
-                this.#game.horseOverlay.animationState.addAnimation(1, "constant", true)
-            }
-        }
         for (let index = 0; index < this.#game.horse.skeleton.data.animations.length; index++) {
             if (this.#game.horse.skeleton.data.animations[index].name === "constant") {
                 this.#game.horse.animationState.addAnimation(1, "constant", true)
@@ -702,8 +864,6 @@ class StablesManager {
 
     horsePlayAnimation(animation) {
         this.#game.horse.animationState.setAnimation(0, animation, false);
-        this.#game.horseDirty.animationState.setAnimation(0, animation, false);
-        this.#game.horseOverlay.animationState.setAnimation(0, animation, false);
     }
     
 
@@ -794,5 +954,12 @@ class StablesManager {
             this.#game.handCurrent = this.#game.HAND.empty;
             sprite.play(place)
         }
+    }
+
+    addHitbox (x, y, width, height) {
+        if (urlParameters.get('debug')) {
+            this.#game.add.graphics().fillStyle(0x000000).fillRect(x, y, width, height).setAlpha(.5);
+        }
+        return this.#game.add.graphics().setInteractive(new Phaser.Geom.Rectangle(x, y, width, height), Phaser.Geom.Rectangle.Contains);
     }
 }

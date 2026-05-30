@@ -11,7 +11,9 @@ class Load extends Phaser.Scene
     preload ()
     {
         this.load.image('card_back', './images/selector/card_back.png');
-        this.load.json('horseData', `./images/horses/${horseName}/data.json`);
+        if (loadInto === "Stables") {
+            this.load.json('horseData', `./images/${horseFolder}/${horseName}/data.json`);
+        }
     }
 
     create ()
@@ -35,22 +37,30 @@ class Load extends Phaser.Scene
             xmlHttplocale.onload = function() {
                 const myObj = JSON.parse(this.responseText);
                 localeData = myObj
+                if (isDressup) {
+                    dressupLocaleData = myObj;
+                }
             }
             xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
             xmlHttplocale.send();
 
             if (horseData.type !== 'dressup'){
-            const xmlHttpEnglish = new XMLHttpRequest();
-            xmlHttpEnglish.onload = function() {
-                const myObj = JSON.parse(this.responseText);
-                englishData = myObj
-            }
-            xmlHttpEnglish.open("GET", `${langFile}_en.json`);
-            xmlHttpEnglish.send();
+                const xmlHttpEnglish = new XMLHttpRequest();
+                xmlHttpEnglish.onload = function() {
+                    const myObj = JSON.parse(this.responseText);
+                    englishData = myObj
+                }
+                xmlHttpEnglish.open("GET", `${langFile}_en.json`);
+                xmlHttpEnglish.send();
             }
 
-            loadInto = `${horseData.type}Stable`
+            if (horseData.type.includes("foal")) {
+                family.ids = horseData.family
+                loadInto = `loadFamily`
+            } else {
+                loadInto = `${horseData.type}Stable`
+            }
         }
-        this.scene.start(loadInto);
+        this.scene.start(loadInto, {});
     }
 }

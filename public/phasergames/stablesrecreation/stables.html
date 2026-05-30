@@ -6,9 +6,9 @@
         <meta charset="UTF-8" />
         <script src="//cdn.jsdelivr.net/npm/phaser@4.0.0/dist/phaser.js"></script>
         <script src="https://unpkg.com/@esotericsoftware/spine-phaser-v4@4.2.*/dist/iife/spine-phaser-v4.js"></script>
-        <script src="./js/stablesCommonUpdateV2.js"></script> 
-        <script src="./js/loadScreenUpdateV2.js"></script> 
-        <script src="./js/loadFoalFamilyUpdateV2.js"></script> 
+        <script src="./js/stablesCommonUpdateV3.js"></script> 
+        <script src="./js/loadScreenUpdateV3.js"></script> 
+        <script src="./js/loadFoalFamilyUpdateV3.js"></script> 
         <script src="./js/landStableUpdateV2.js"></script> 
         <script src="./js/foalLandStableUpdateV2.js"></script> 
         <script src="./js/airStableUpdateV2.js"></script> 
@@ -30,6 +30,7 @@
         <div id="gameDiv" style="padding-top: 10px; padding-bottom: 10px;">
             <script type="text/javascript">
                 loadLanguagePref(false);
+                const horseFolder = "horsesV2"
                 
                 // Gets info about the horse from data.json file
                 const searchQueryString = window.location.search;
@@ -47,7 +48,7 @@
                     return http.status!=404;
                 }
 
-                if (!horseName || !urlExists(`./images/horses/${horseName}/data.json`)) {
+                if (!horseName || !urlExists(`./images/${horseFolder}/${horseName}/data.json`)) {
                     horseName ='peter'
                 }
                 let horseData
