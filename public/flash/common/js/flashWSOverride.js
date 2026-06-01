@@ -1,4 +1,52 @@
 /* General - WS Calls */
+/**
+ * Replace activateCode(string userId, string countryCode, string code) call
+ * @returns an object with the activation result (string activateCodeResult)
+ */
+function activateCode(userId, countryCode, code)
+{
+    let codeActivation = {
+        result: {
+            string: "" // TODO: Figure out the value expected here
+        }
+    }
+    return codeActivation;
+}
+
+/**
+ * Replace activateCodeDebug(string userId, string countryCode, string code) call
+ * @returns an object with the activation result (string activateCodeResult)
+ */
+function activateCodeDebug(userId, countryCode, code)
+{
+    return activateCode(userId, countryCode, code);
+}
+
+/**
+ * Replace activateUserGift(string tokenHigh, string tokenLow, string giftID) call
+ * @returns an object with the activation result (string activateUserGiftResponse)
+ */
+function activateUserGift(tokenHigh, tokenLow, giftID)
+{
+    let userGift = { result: { } }
+    return userGift;
+}
+
+/**
+ * Replace addCurrency(string uid, string currency) call
+ * @returns an object with the activation result (xml addCurrencyResponse)
+ */
+function addCurrency(uid, currency)
+{
+    let response = {
+        result: {
+            xml: "" // TODO: Figure out what was send here
+        }
+    }
+    return response;
+}
+
+
 const INSPIRATIONS = [
     "Test inspiration",
     "Another test"
