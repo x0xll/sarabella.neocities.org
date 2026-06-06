@@ -1,7 +1,7 @@
 <BellaSara>
   <World>
     <Settings>
-      <WebService url="http://www.bellasara.com:80/BellaWebService/?WSDL" />
+      <WebService url="" />
       <Locations>
         <Location id="airStablePage" url="/flashloader_allstalls.aspx" />
         <Location id="awardsAlbum" url="/AwardsAlbum.aspx" />

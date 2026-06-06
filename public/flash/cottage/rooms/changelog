@@ -1,0 +1,4 @@
+Jun 6
+
+- remove assignFlashVar("bellasara_wsdl_url","http://andre.hcginc.local/bellawebservice/bellaws.asmx?WSDL"); lines from most rooms
+- remove assignFlashVar("bellasara_wsdl_url","WSDL CALL"); lines from living room
