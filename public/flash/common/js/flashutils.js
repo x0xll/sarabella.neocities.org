@@ -6,6 +6,7 @@ function setupRuffle()
         config: {
             autoplay: "on",
             unmuteOverlay: "hidden",
+            //logLevel: "trace"
         }
     };
 }
