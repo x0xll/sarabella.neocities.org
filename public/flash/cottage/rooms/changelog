@@ -1,4 +1,11 @@
 Jun 6
-
 - remove assignFlashVar("bellasara_wsdl_url","http://andre.hcginc.local/bellawebservice/bellaws.asmx?WSDL"); lines from most rooms
 - remove assignFlashVar("bellasara_wsdl_url","WSDL CALL"); lines from living room
+
+Jun 7
+- change _loc1_ = objRef._categoriesSampleXml; -> = flash.external.ExternalInterface.call("getCategories");
+- change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllThings");
+- change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllThings");
+- change _loc1_ = objRef._thingsSampleXml; -> = flash.external.ExternalInterface.call("getThingsInMyThings");
+- change _loc1_ = objRef._thingsSampleXml; -> = flash.external.ExternalInterface.call("getThings");
+- change _loc2_ = objRef._visitorThingsSampleXml; -> = flash.external.ExternalInterface.call("getVisitorThings");

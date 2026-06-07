@@ -62,6 +62,7 @@
 <script src="/userManagerUpdatev2.js"></script>
 
         <script src="/flash/common/js/flashutils.js"></script>
+        <script src="/flash/common/js/flashWSOverride.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>
@@ -100,7 +101,7 @@
                 swf = "theatre.swf";
               break;
           }
-          loadSWF(swf, '500', '887', locale)
+          loadSWF(swf, '500', '887', locale, "debug=true")
         </script>
     </body>
 </html>

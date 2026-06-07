@@ -1,3 +1,8 @@
+function printLine(string)
+{
+    console.log(string);
+}
+
 /* General - WS Calls */
 /**
  * Replace activateCode(string userId, string countryCode, string code) call
@@ -217,34 +222,19 @@ function spinWheel()
  */
 function getCategories()
 {
-    const CATEGORIES_ID = [
-        "art",
-        "furniture",
-        "flooring",
-        "toys",
-        "wallhanging",
-        "homedecor",
-        "holiday",
-        "knickknack",
-        "curios",
-        "jewelry"
-    ]
-
-    let CategoriesValues = {result: { categories:[]}}
-
-    for (let i = 0; i < 10; i++)
-    {
-        let index = i + 1;
-
-        CategoriesValues.result.categories.push({
-            name: getLocalizedText(CATEGORIES_ID[i], "categoriesItems"),
-            catid: index
-        })
-    }
-
-    console.log(CategoriesValues);
-
-    return CategoriesValues;
+    return "<categories>" +
+    "<category name=\"Art\" catid=\"1\" />" +
+    "<category name=\"Furniture\" catid=\"2\" />" +
+    "<category name=\"Flooring\" catid=\"3\" />" +
+    "<category name=\"Toys\" catid=\"4\" />" +
+    "<category name=\"Wall Hangings\" catid=\"5\" />" +
+    "<category name=\"Home Decor\" catid=\"6\" />" +
+    "<category name=\"Holiday\" catid=\"7\" />" +
+    "<category name=\"Knick-Knacks\" catid=\"8\" />" +
+    "<category name=\"Curios\" catid=\"9\" />" +
+    "<category name=\"Jewelry\" catid=\"10\" />" +
+    "<category name=\"Doors\" catid=\"11\" />" +
+    "</categories>";
 }
 
 /**
@@ -253,36 +243,50 @@ function getCategories()
  */
 function getAllThings()
 {
-    // TODO: Fill correctly
-    const ITEMS = [
-        {
-            itid: 10001,
-            name: "Bird", 
-            price1: 25,
-            description: "Cat Description",
-            catid: 1,
-            thumb: "/flash/gallery/data/items/bird/",
-            swf: "/flash/gallery/data/items/bird/bird.swf"
-        }
-    ]
-
-    let ThingsValue = {result: { items:[]}}
-
-    for (let i = 0; i < ITEMS.length; i++)
-    {
-        ThingsValue.result.items.push(ITEMS[i])
-    }
-
-    console.log(ThingsValue);
-
-    return ThingsValue;
+    return "<items>" +
+    "<item itid=\"10001\" name=\"Door4\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"path\" swf=\"/flash/things/Door-04.swf\" />" +
+    "<item itid=\"10002\" name=\"Bella Poster\" price1=\"25\" description=\"Description\" catid=\"1\" thumb=\"path\" swf=\"/flash/things/ART-HORSES-037.swf\" />" +
+    "<item itid=\"10003\" name=\"Gazebo?\" price1=\"25\" description=\"Description\" catid=\"1\" thumb=\"path\" swf=\"/flash/things/EN-NOL-05.swf\" />" +
+    "<item itid=\"10004\" name=\"Horse\" price1=\"25\" description=\"Description\" catid=\"1\" thumb=\"path\" swf=\"/flash/things/KK-HORSEMINIS-212.swf\" />" +
+    "<item itid=\"10005\" name=\"Basket\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"path\" swf=\"/flash/things/WALL-BSKT-01.swf\" />" +
+    "<item itid=\"10006\" name=\"Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"path\" swf=\"/flash/things/FTR-STAR-04.swf\" />" +
+    "</items>"
 }
+function getAllActiveThings() {return getAllThings()}
+
+function getThings()
+{
+    return "<items>" +
+    "<item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"099\" itid=\"10019\" rid=\"1\" x=\"0\" y=\"0\" z=\"1019\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"099\" itid=\"10020\" rid=\"1\" x=\"0\" y=\"0\" z=\"1020\" s=\"100\" a=\"1\" />" +
+    "</items>";
+}
+function getVisitorThings() {return getThings()}
+function getThingsInMyThings() {return getThings()}
 
 /**
  * Replace getThingsInRoom() call
  * @returns an object with the things present in a room informations (used in My Things, Cottage, Bazaar, etc.)
  */
-function getAllThings()
+function getThingsInRoom()
 {
         // TODO: Fill correctly
     const ITEMS = [
@@ -307,6 +311,30 @@ function getAllThings()
     console.log(ThingsValue);
 
     return ThingsValue;
+}
+
+function getVisitorThings()
+{
+    return "<items>" +
+    "<item iid=\"101\" itid=\"10001\" rid=\"3\" x=\"10\" y=\"20\" z=\"1001\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"102\" itid=\"10002\" rid=\"3\" x=\"40\" y=\"100\" z=\"1002\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"103\" itid=\"10003\" rid=\"3\" x=\"200\" y=\"200\" z=\"1003\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"104\" itid=\"10004\" rid=\"3\" x=\"300\" y=\"300\" z=\"1004\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"105\" itid=\"10005\" rid=\"3\" x=\"100\" y=\"327\" z=\"1005\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"106\" itid=\"10006\" rid=\"3\" x=\"50\" y=\"221\" z=\"1006\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"107\" itid=\"10007\" rid=\"6\" x=\"400\" y=\"30\" z=\"1007\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"108\" itid=\"10008\" rid=\"6\" x=\"500\" y=\"300\" z=\"1008\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"109\" itid=\"10009\" rid=\"6\" x=\"56\" y=\"126\" z=\"1009\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"110\" itid=\"10010\" rid=\"6\" x=\"150\" y=\"80\" z=\"1010\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"111\" itid=\"10011\" rid=\"6\" x=\"250\" y=\"400\" z=\"1011\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"112\" itid=\"10012\" rid=\"6\" x=\"300\" y=\"240\" z=\"1012\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"113\" itid=\"10013\" rid=\"3\" x=\"290\" y=\"200\" z=\"1013\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"114\" itid=\"10014\" rid=\"3\" x=\"250\" y=\"140\" z=\"1014\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"115\" itid=\"10015\" rid=\"3\" x=\"100\" y=\"130\" z=\"1015\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"116\" itid=\"10016\" rid=\"6\" x=\"140\" y=\"29\" z=\"1016\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"117\" itid=\"10017\" rid=\"3\" x=\"140\" y=\"350\" z=\"1017\" s=\"100\" a=\"1\" />" +
+    "<item iid=\"118\" itid=\"10018\" rid=\"6\" x=\"360\" y=\"370\" z=\"1018\" s=\"100\" a=\"1\" />" +
+    "</items>";
 }
 
 function getHorseshoes()
