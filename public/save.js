@@ -423,16 +423,34 @@ function getItid(itemName)
             break;
         // TODO: setup the correct itid for each of those charms
         case "Golden Bella Charm":
+            itid = 1;
+            break;
         case "Purple Flying Horse Charm":
+            itid = 2;
+            break;
         case "Orange Flower Charm":
+            itid = 3;
+            break;
         case "Golden Heart Charm":
+            itid = 4;
+            break;
         case "Silver Horseshoe Charm":
+            itid = 5;
+            break;
         case "Blue Moon Charm":
+            itid = 6;
+            break;
         case "Silver Logo Charm":
+            itid = 7;
+            break;
         case "Pink Running Horse Charm":
+            itid = 8;
+            break;
         case "Green Standing Horse Charm":
+            itid = 9;
+            break;
         case "Teal Water Horse Charm":
-            itid = 0;
+            itid = 10;
             break;
     }
 
