@@ -21,6 +21,8 @@ function setupUserDropdown()
 {
     userDropdown = document.getElementById("currentUserDropdown");
     userAmount = localStorage.getItem(USER_AMOUNT_KEY);
+    
+    fixUserNamesSeparator();
     userNames = localStorage.getItem(USER_NAMES_KEY);
 
     for (let i = userDropdown.options.length - 1; i >= 3; i--)
@@ -30,12 +32,6 @@ function setupUserDropdown()
 
     if (userAmount > 0)
     {
-        if (userNames.includes(OLD_USER_SEPARATOR))
-        {
-            userNames = userNames.replaceAll(OLD_USER_SEPARATOR, USER_SEPARATOR);
-            localStorage.setItem(USER_NAMES_KEY, userNames);
-        }
-
         splittedUserNames = userNames.split(USER_SEPARATOR);
         for (let i = 0; i < userAmount; i++) {
             userDropdown.options[userDropdown.options.length] = new Option(splittedUserNames[i], splittedUserNames[i]);  
@@ -201,14 +197,8 @@ function deleteUser()
             }
         }   
 
+        fixUserNamesSeparator();
         userNames = localStorage.getItem(USER_NAMES_KEY);
-
-        if (userNames.includes(OLD_USER_SEPARATOR))
-        {
-            userNames = userNames.replaceAll(OLD_USER_SEPARATOR, USER_SEPARATOR);
-            localStorage.setItem(USER_NAMES_KEY, userNames);
-        }
-
         splittedUserNames = userNames.split(USER_SEPARATOR);
         userNames = "";
         for (let i = splittedUserNames.length - 1; i >= 0; i--) {
@@ -341,3 +331,17 @@ function isGuest()
     return getCurrentUsername() === "guest";
 }
 //------- END HELPERS -------
+
+//------- SAVE UPDATES ------
+function fixUserNamesSeparator()
+{
+    userNames = localStorage.getItem(USER_NAMES_KEY);
+    if (userNames.includes(OLD_USER_SEPARATOR))
+    {
+        userNames = userNames.replaceAll("^2", USER_SEPARATOR); // If people got the weird bug
+        userNames = userNames.replaceAll(OLD_USER_SEPARATOR, USER_SEPARATOR);
+        localStorage.setItem(USER_NAMES_KEY, userNames);
+        return userNames;
+    }
+}
+//------- END SAVE UPDATES -----
