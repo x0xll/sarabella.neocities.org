@@ -10,8 +10,7 @@ const USER_NAMES_KEY = "neocities_besa_userNames";
 const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
 const MANAGER_VERSION = 1; // To track user version in case data structure gets updated
-const USER_SEPARATOR = ",";
-const OLD_USER_SEPARATOR = "²";
+const USER_SEPARATOR = "²";
 
 let currentUser = undefined;
 let currentGame = undefined;
@@ -21,8 +20,6 @@ function setupUserDropdown()
 {
     userDropdown = document.getElementById("currentUserDropdown");
     userAmount = localStorage.getItem(USER_AMOUNT_KEY);
-    
-    fixUserNamesSeparator();
     userNames = localStorage.getItem(USER_NAMES_KEY);
 
     for (let i = userDropdown.options.length - 1; i >= 3; i--)
@@ -53,22 +50,9 @@ function createUser()
         return;
     }
 
-    // TODO: setup a regex for special charas, for now there's at least 3 we know we don't want at all, so we just check manually
     if (username.includes("\""))
     {
         alert("Please remove \"\"\" character from your username.")
-        return;
-    }
-
-    if (username.includes(","))
-    {
-        alert("Please remove \",\" character from your username.")
-        return;
-    }
-
-    if (username.includes("²"))
-    {
-        alert("Please remove \"²\" character from your username.")
         return;
     }
 
@@ -197,7 +181,6 @@ function deleteUser()
             }
         }   
 
-        fixUserNamesSeparator();
         userNames = localStorage.getItem(USER_NAMES_KEY);
         splittedUserNames = userNames.split(USER_SEPARATOR);
         userNames = "";
@@ -331,17 +314,3 @@ function isGuest()
     return getCurrentUsername() === "guest";
 }
 //------- END HELPERS -------
-
-//------- SAVE UPDATES ------
-function fixUserNamesSeparator()
-{
-    userNames = localStorage.getItem(USER_NAMES_KEY);
-    if (userNames.includes(OLD_USER_SEPARATOR))
-    {
-        userNames = userNames.replaceAll("^2", USER_SEPARATOR); // If people got the weird bug
-        userNames = userNames.replaceAll(OLD_USER_SEPARATOR, USER_SEPARATOR);
-        localStorage.setItem(USER_NAMES_KEY, userNames);
-        return userNames;
-    }
-}
-//------- END SAVE UPDATES -----
