@@ -298,6 +298,9 @@ function importUser()
 //-------- HELPERS -------
 function getCurrentUsername()
 {
+    if (currentUser === "guest")
+        return getLocalizedText("user_guest");
+
     return currentUser;
 }
 
