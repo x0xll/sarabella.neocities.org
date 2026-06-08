@@ -10,6 +10,8 @@ const USER_NAMES_KEY = "neocities_besa_userNames";
 const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
 const MANAGER_VERSION = 1; // To track user version in case data structure gets updated
+const USER_SEPARATOR = ",";
+const OLD_USER_SEPARATOR = "²";
 
 let currentUser = undefined;
 let currentGame = undefined;
@@ -28,7 +30,13 @@ function setupUserDropdown()
 
     if (userAmount > 0)
     {
-        splittedUserNames = userNames.split("²");
+        if (userNames.includes(OLD_USER_SEPARATOR))
+        {
+            userNames = userNames.replaceAll(OLD_USER_SEPARATOR, USER_SEPARATOR);
+            localStorage.setItem(USER_NAMES_KEY, userNames);
+        }
+
+        splittedUserNames = userNames.split(USER_SEPARATOR);
         for (let i = 0; i < userAmount; i++) {
             userDropdown.options[userDropdown.options.length] = new Option(splittedUserNames[i], splittedUserNames[i]);  
         }
@@ -49,9 +57,22 @@ function createUser()
         return;
     }
 
+    // TODO: setup a regex for special charas, for now there's at least 3 we know we don't want at all, so we just check manually
     if (username.includes("\""))
     {
         alert("Please remove \"\"\" character from your username.")
+        return;
+    }
+
+    if (username.includes(","))
+    {
+        alert("Please remove \",\" character from your username.")
+        return;
+    }
+
+    if (username.includes("²"))
+    {
+        alert("Please remove \"²\" character from your username.")
         return;
     }
 
@@ -85,7 +106,7 @@ function createUser()
         if (userNames === null || userNames === undefined || userNames === "")
             userNames = username;
         else
-            userNames += "²" + username;
+            userNames += USER_SEPARATOR + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
         saveData(DATA_TYPES.horseshoes, 100)
@@ -181,7 +202,14 @@ function deleteUser()
         }   
 
         userNames = localStorage.getItem(USER_NAMES_KEY);
-        splittedUserNames = userNames.split("²");
+
+        if (userNames.includes(OLD_USER_SEPARATOR))
+        {
+            userNames = userNames.replaceAll(OLD_USER_SEPARATOR, USER_SEPARATOR);
+            localStorage.setItem(USER_NAMES_KEY, userNames);
+        }
+
+        splittedUserNames = userNames.split(USER_SEPARATOR);
         userNames = "";
         for (let i = splittedUserNames.length - 1; i >= 0; i--) {
             if (splittedUserNames[i] === username) continue;
@@ -189,7 +217,7 @@ function deleteUser()
             if (userNames === "")
                 userNames = splittedUserNames[i];
             else
-                userNames += "²" + splittedUserNames[i];
+                userNames += USER_SEPARATOR + splittedUserNames[i];
         }
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
