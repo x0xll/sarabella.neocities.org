@@ -617,33 +617,6 @@ function getThingsInMyThings() {
     return getThings()
 }
 
-/**
- * 
- * @returns The save data for the rooms
- */
-function getRoomData() {
-    roomData = loadData(DATA_TYPES.roomData, GAME_ID.MyCottage)
-    return roomData
-}
-/**
- * Updates the room data with a new value
- * @param {*} data the new data for the rooms
- */
-function updateRoomData(data) {
-    console.log("updating room data", roomID, data)
-    saveData(DATA_TYPES.roomData, data, GAME_ID.MyCottage)
-}
-
-function getHorseshoes()
-{
-    return loadData(DATA_TYPES.horseshoes);
-}
-
-function getCurrentUser()
-{
-    return currentUser
-}
-
 
 /* Extract helper from .swf
                            "<categories><category name=\"Art\" catid=\"1\" /><category name=\"Furniture\" catid=\"2\" /><category name=\"Flooring\" catid=\"3\" /><category name=\"Toys\" catid=\"4\" /><category name=\"Wall Hangings\" catid=\"5\" /><category name=\"Home Decor\" catid=\"6\" /><category name=\"Holiday\" catid=\"7\" /><category name=\"Knick-Knacks\" catid=\"8\" /><category name=\"Curios\" catid=\"9\" /><category name=\"Jewelry\" catid=\"10\" /></categories>";
