@@ -51,7 +51,8 @@ const DATA_TYPES = {
     translatedQuotes : "settings_tdqt",
     originalTranslations : "settings_tdog",
     horseshoesMultiplier : "settings_hsmul",
-    mapPlayPage : "settings_mpp"
+    mapPlayPage : "settings_mpp",
+    roomData : "roomData"
 }
 
 const DATA_DEFAULT = {
@@ -178,6 +179,7 @@ function loadData(dataType, gameID = "")
                     return data[dataType]
                 }
             case DATA_TYPES.lastPlayed: 
+            case DATA_TYPES.roomData: 
             case DATA_TYPES.gallery: 
             case DATA_TYPES.translatedQuotes: 
             case DATA_TYPES.game: 

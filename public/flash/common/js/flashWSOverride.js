@@ -1,6 +1,14 @@
-function printLine(string)
+function log(string)
 {
     console.log(string);
+}
+function warn(string)
+{
+    console.warn(string);
+}
+function error(string)
+{
+    console.error(string);
 }
 
 /* General - WS Calls */
@@ -223,17 +231,17 @@ function spinWheel()
 function getCategories()
 {
     return "<categories>" +
-    "<category name=\"Art\" catid=\"1\" />" +
+    "<category name=\"Storybooks\" catid=\"1\" />" +
     "<category name=\"Furniture\" catid=\"2\" />" +
     "<category name=\"Flooring\" catid=\"3\" />" +
-    "<category name=\"Toys\" catid=\"4\" />" +
+    "<category name=\"Toys\" catid=\"4\" />" + // includes Magic Match
     "<category name=\"Wall Hangings\" catid=\"5\" />" +
     "<category name=\"Home Decor\" catid=\"6\" />" +
     "<category name=\"Holiday\" catid=\"7\" />" +
     "<category name=\"Knick-Knacks\" catid=\"8\" />" +
-    "<category name=\"Curios\" catid=\"9\" />" +
-    "<category name=\"Jewelry\" catid=\"10\" />" +
-    "<category name=\"Doors\" catid=\"11\" />" +
+    "<category name=\"Wonders\" catid=\"9\" />" +
+    "<category name=\"Animals\" catid=\"10\" />" +
+    "<category name=\"Doorways\" catid=\"11\" />" +
     "</categories>";
 }
 
@@ -243,98 +251,387 @@ function getCategories()
  */
 function getAllThings()
 {
-    return "<items>" +
-    "<item itid=\"10001\" name=\"Door4\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"path\" swf=\"/flash/things/Door-04.swf\" />" +
-    "<item itid=\"10002\" name=\"Bella Poster\" price1=\"25\" description=\"Description\" catid=\"1\" thumb=\"path\" swf=\"/flash/things/ART-HORSES-037.swf\" />" +
-    "<item itid=\"10003\" name=\"Gazebo?\" price1=\"25\" description=\"Description\" catid=\"1\" thumb=\"path\" swf=\"/flash/things/EN-NOL-05.swf\" />" +
-    "<item itid=\"10004\" name=\"Horse\" price1=\"25\" description=\"Description\" catid=\"1\" thumb=\"path\" swf=\"/flash/things/KK-HORSEMINIS-212.swf\" />" +
-    "<item itid=\"10005\" name=\"Basket\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"path\" swf=\"/flash/things/WALL-BSKT-01.swf\" />" +
-    "<item itid=\"10006\" name=\"Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"path\" swf=\"/flash/things/FTR-STAR-04.swf\" />" +
+    console.log("getting all things")
+    let index = 10000
+    let items = "<items>" +
+    // Furniture
+    `<item itid=\"${index++}\" name=\"Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BED-01.swf\" swf=\"/flash/things/FTR-BED-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BED-02.swf\" swf=\"/flash/things/FTR-BED-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BED-04.swf\" swf=\"/flash/things/FTR-BED-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BED-07.swf\" swf=\"/flash/things/FTR-BED-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BED-08.swf\" swf=\"/flash/things/FTR-BED-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Box\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BOX-01.swf\" swf=\"/flash/things/FTR-BOX-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Box\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BOX-02.swf\" swf=\"/flash/things/FTR-BOX-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Box\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-BOX-03.swf\" swf=\"/flash/things/FTR-BOX-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-07.swf\" swf=\"/flash/things/FTR-CAB-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-08.swf\" swf=\"/flash/things/FTR-CAB-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-09.swf\" swf=\"/flash/things/FTR-CAB-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-12.swf\" swf=\"/flash/things/FTR-CAB-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-13.swf\" swf=\"/flash/things/FTR-CAB-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-14.swf\" swf=\"/flash/things/FTR-CAB-14.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CAB-15.swf\" swf=\"/flash/things/FTR-CAB-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Clock\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CLK-01.swf\" swf=\"/flash/things/FTR-CLK-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Clock\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CLK-02.swf\" swf=\"/flash/things/FTR-CLK-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Clock\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CLK-03.swf\" swf=\"/flash/things/FTR-CLK-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Clock\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-CLK-04.swf\" swf=\"/flash/things/FTR-CLK-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Desk\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-DSK-01.swf\" swf=\"/flash/things/FTR-DSK-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Fence\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-FENCE-01.swf\" swf=\"/flash/things/FTR-FENCE-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-SOFA-02.swf\" swf=\"/flash/things/FTR-SOFA-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-SOFA-06.swf\" swf=\"/flash/things/FTR-SOFA-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-SOFA-07.swf\" swf=\"/flash/things/FTR-SOFA-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-STAR-04.swf\" swf=\"/flash/things/FTR-STAR-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Table\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-TBL-06.swf\" swf=\"/flash/things/FTR-TBL-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Table\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-TBL-07.swf\" swf=\"/flash/things/FTR-TBL-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Table\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/things/FTR-TBL-08.swf\" swf=\"/flash/things/FTR-TBL-08.swf\" />` +
+    
+    // Flooring
+    `<item itid=\"${index++}\" name=\"Rug 1\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-09.swf\" swf=\"/flash/things/FLR-RUG-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 2\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-12.swf\" swf=\"/flash/things/FLR-RUG-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 3\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-04.swf\" swf=\"/flash/things/FLR-RUG-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 4\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-16.swf\" swf=\"/flash/things/FLR-RUG-16.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 5\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-11.swf\" swf=\"/flash/things/FLR-RUG-11.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 6\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-01.swf\" swf=\"/flash/things/FLR-RUG-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 7\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-08.swf\" swf=\"/flash/things/FLR-RUG-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 8\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-05.swf\" swf=\"/flash/things/FLR-RUG-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 9\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-07.swf\" swf=\"/flash/things/FLR-RUG-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 10\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-14.swf\" swf=\"/flash/things/FLR-RUG-14.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 11\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-13.swf\" swf=\"/flash/things/FLR-RUG-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 12\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-17.swf\" swf=\"/flash/things/FLR-RUG-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 13\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-18.swf\" swf=\"/flash/things/FLR-RUG-18.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 14\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-19.swf\" swf=\"/flash/things/FLR-RUG-19.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Rug 15\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/things/FLR-RUG-03.swf\" swf=\"/flash/things/FLR-RUG-03.swf\" />` +
+
+    // Toys
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-BALL-07.swf\" swf=\"/flash/things/TOY-BALL-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-BALL-08.swf\" swf=\"/flash/things/TOY-BALL-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-BALL-10.swf\" swf=\"/flash/things/TOY-BALL-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-BLN-02.swf\" swf=\"/flash/things/TOY-BLN-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-BLN-08.swf\" swf=\"/flash/things/TOY-BLN-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-DOLL-03.swf\" swf=\"/flash/things/TOY-DOLL-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-DOLL-06.swf\" swf=\"/flash/things/TOY-DOLL-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-DOLL-07.swf\" swf=\"/flash/things/TOY-DOLL-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-GEN-07.swf\" swf=\"/flash/things/TOY-GEN-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-GEN-17.swf\" swf=\"/flash/things/TOY-GEN-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-GEN-18.swf\" swf=\"/flash/things/TOY-GEN-18.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-01.swf\" swf=\"/flash/things/TOY-MF-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-17.swf\" swf=\"/flash/things/TOY-MF-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-42.swf\" swf=\"/flash/things/TOY-MF-42.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-53.swf\" swf=\"/flash/things/TOY-MF-53.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-78.swf\" swf=\"/flash/things/TOY-MF-78.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-79.swf\" swf=\"/flash/things/TOY-MF-79.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-80.swf\" swf=\"/flash/things/TOY-MF-80.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-81.swf\" swf=\"/flash/things/TOY-MF-81.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-83.swf\" swf=\"/flash/things/TOY-MF-83.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-84.swf\" swf=\"/flash/things/TOY-MF-84.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-MF-85.swf\" swf=\"/flash/things/TOY-MF-85.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-02.swf\" swf=\"/flash/things/TOY-PLSH-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-03.swf\" swf=\"/flash/things/TOY-PLSH-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-08.swf\" swf=\"/flash/things/TOY-PLSH-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-09.swf\" swf=\"/flash/things/TOY-PLSH-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-10.swf\" swf=\"/flash/things/TOY-PLSH-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-12.swf\" swf=\"/flash/things/TOY-PLSH-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PLSH-13.swf\" swf=\"/flash/things/TOY-PLSH-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PPT-01.swf\" swf=\"/flash/things/TOY-PPT-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Toy\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/TOY-PPT-03.swf\" swf=\"/flash/things/TOY-PPT-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-01.swf\" swf=\"/flash/things/MM-PLSH-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-02.swf\" swf=\"/flash/things/MM-PLSH-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-03.swf\" swf=\"/flash/things/MM-PLSH-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-04.swf\" swf=\"/flash/things/MM-PLSH-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-07.swf\" swf=\"/flash/things/MM-PLSH-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-08.swf\" swf=\"/flash/things/MM-PLSH-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-09.swf\" swf=\"/flash/things/MM-PLSH-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-10.swf\" swf=\"/flash/things/MM-PLSH-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-12.swf\" swf=\"/flash/things/MM-PLSH-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-13.swf\" swf=\"/flash/things/MM-PLSH-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-15.swf\" swf=\"/flash/things/MM-PLSH-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-16.swf\" swf=\"/flash/things/MM-PLSH-16.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-17.swf\" swf=\"/flash/things/MM-PLSH-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-19.swf\" swf=\"/flash/things/MM-PLSH-19.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-20.swf\" swf=\"/flash/things/MM-PLSH-20.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/things/MM-PLSH-21.swf\" swf=\"/flash/things/MM-PLSH-21.swf\" />` +
+    
+    // Wall Hangings
+    `<item itid=\"${index++}\" name=\"Basket\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/WALL-BSKT-01.swf\" swf=\"/flash/things/WALL-BSKT-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Sign\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/WALL-SIGN-02.swf\" swf=\"/flash/things/WALL-SIGN-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Amor Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-533.swf\" swf=\"/flash/things/ART-HORSES-533.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Bella Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-037.swf\" swf=\"/flash/things/ART-HORSES-037.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Fiona Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-040.swf\" swf=\"/flash/things/ART-HORSES-040.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Flora Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-492.swf\" swf=\"/flash/things/ART-HORSES-492.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Froya Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-245.swf\" swf=\"/flash/things/ART-HORSES-245.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Iceking Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-246.swf\" swf=\"/flash/things/ART-HORSES-246.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Jewel Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-041.swf\" swf=\"/flash/things/ART-HORSES-041.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Mandalay Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-222.swf\" swf=\"/flash/things/ART-HORSES-222.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Misla Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-251.swf\" swf=\"/flash/things/ART-HORSES-251.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Nike Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-518.swf\" swf=\"/flash/things/ART-HORSES-518.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Triton Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-HORSES-520.swf\" swf=\"/flash/things/ART-HORSES-520.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Tapestry 3\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-TPST-03.swf\" swf=\"/flash/things/ART-TPST-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Tapestry 2\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/things/ART-TPST-02.swf\" swf=\"/flash/things/ART-TPST-02.swf\" />` +
+
+    // Home Decor
+    `<item itid=\"${index++}\" name=\"Shelf\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/WALL-SHLF-02.swf\" swf=\"/flash/things/WALL-SHLF-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-BOWL-01.swf\" swf=\"/flash/things/HD-BOWL-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-01.swf\" swf=\"/flash/things/HD-CLNG-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-02.swf\" swf=\"/flash/things/HD-CLNG-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-05.swf\" swf=\"/flash/things/HD-CLNG-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-06.swf\" swf=\"/flash/things/HD-CLNG-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-07.swf\" swf=\"/flash/things/HD-CLNG-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-08.swf\" swf=\"/flash/things/HD-CLNG-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-09.swf\" swf=\"/flash/things/HD-CLNG-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-10.swf\" swf=\"/flash/things/HD-CLNG-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-11.swf\" swf=\"/flash/things/HD-CLNG-11.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-CLNG-12.swf\" swf=\"/flash/things/HD-CLNG-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-HW-07.swf\" swf=\"/flash/things/HD-HW-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-HW-09.swf\" swf=\"/flash/things/HD-HW-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-HW-10.swf\" swf=\"/flash/things/HD-HW-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-HW-11.swf\" swf=\"/flash/things/HD-HW-11.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-HW-12.swf\" swf=\"/flash/things/HD-HW-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-HW-13.swf\" swf=\"/flash/things/HD-HW-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-LITE-01.swf\" swf=\"/flash/things/HD-LITE-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-LITE-02.swf\" swf=\"/flash/things/HD-LITE-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-01.swf\" swf=\"/flash/things/HD-PLNT-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-06.swf\" swf=\"/flash/things/HD-PLNT-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-07.swf\" swf=\"/flash/things/HD-PLNT-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-09.swf\" swf=\"/flash/things/HD-PLNT-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-10.swf\" swf=\"/flash/things/HD-PLNT-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-12.swf\" swf=\"/flash/things/HD-PLNT-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-16.swf\" swf=\"/flash/things/HD-PLNT-16.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-17.swf\" swf=\"/flash/things/HD-PLNT-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-18.swf\" swf=\"/flash/things/HD-PLNT-18.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-19.swf\" swf=\"/flash/things/HD-PLNT-19.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Decor\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/things/HD-PLNT-20.swf\" swf=\"/flash/things/HD-PLNT-20.swf\" />` +
+
+    // Holiday
+    `<item itid=\"${index++}\" name=\"Wreath\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/WALL-WRTH-02.swf\" swf=\"/flash/things/WALL-WRTH-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-EAS-01.swf\" swf=\"/flash/things/HOL-EAS-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-EAS-02.swf\" swf=\"/flash/things/HOL-EAS-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-VALD-15.swf\" swf=\"/flash/things/HOL-VALD-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-01.swf\" swf=\"/flash/things/HOL-XMAS-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-02.swf\" swf=\"/flash/things/HOL-XMAS-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-04.swf\" swf=\"/flash/things/HOL-XMAS-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-05.swf\" swf=\"/flash/things/HOL-XMAS-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-06.swf\" swf=\"/flash/things/HOL-XMAS-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-07.swf\" swf=\"/flash/things/HOL-XMAS-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-10.swf\" swf=\"/flash/things/HOL-XMAS-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-11.swf\" swf=\"/flash/things/HOL-XMAS-11.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-12.swf\" swf=\"/flash/things/HOL-XMAS-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-14.swf\" swf=\"/flash/things/HOL-XMAS-14.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Holiday\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/things/HOL-XMAS-15.swf\" swf=\"/flash/things/HOL-XMAS-15.swf\" />` +
+
+    // Knick-Knacks
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-01.swf\" swf=\"/flash/things/KK-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-02.swf\" swf=\"/flash/things/KK-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-09.swf\" swf=\"/flash/things/KK-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-13.swf\" swf=\"/flash/things/KK-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-15.swf\" swf=\"/flash/things/KK-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-22.swf\" swf=\"/flash/things/KK-22.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-31.swf\" swf=\"/flash/things/KK-31.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-32.swf\" swf=\"/flash/things/KK-32.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-34.swf\" swf=\"/flash/things/KK-34.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-35.swf\" swf=\"/flash/things/KK-35.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-36.swf\" swf=\"/flash/things/KK-36.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-37.swf\" swf=\"/flash/things/KK-37.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-38.swf\" swf=\"/flash/things/KK-38.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-39.swf\" swf=\"/flash/things/KK-39.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-212.swf\" swf=\"/flash/things/KK-HORSEMINIS-212.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-213.swf\" swf=\"/flash/things/KK-HORSEMINIS-213.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-216.swf\" swf=\"/flash/things/KK-HORSEMINIS-216.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-220.swf\" swf=\"/flash/things/KK-HORSEMINIS-220.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-227.swf\" swf=\"/flash/things/KK-HORSEMINIS-227.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-235.swf\" swf=\"/flash/things/KK-HORSEMINIS-235.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-243.swf\" swf=\"/flash/things/KK-HORSEMINIS-243.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-244.swf\" swf=\"/flash/things/KK-HORSEMINIS-244.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-245.swf\" swf=\"/flash/things/KK-HORSEMINIS-245.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-247.swf\" swf=\"/flash/things/KK-HORSEMINIS-247.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-250.swf\" swf=\"/flash/things/KK-HORSEMINIS-250.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Knick-Knack\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/things/KK-HORSEMINIS-254.swf\" swf=\"/flash/things/KK-HORSEMINIS-254.swf\" />` +
+
+    // Wonders
+    `<item itid=\"${index++}\" name=\"Sculpture 1\" price1=\"25\" description=\"Description\" catid=\"9\" thumb=\"/flash/things/ART-SCLP-01.swf\" swf=\"/flash/things/ART-SCLP-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Sculpture 4\" price1=\"25\" description=\"Description\" catid=\"9\" thumb=\"/flash/things/ART-SCLP-04.swf\" swf=\"/flash/things/ART-SCLP-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Lilac Gazebo\" price1=\"25\" description=\"Description\" catid=\"9\" thumb=\"/flash/things/EN-NOL-05.swf\" swf=\"/flash/things/EN-NOL-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Winged Horse Statue\" price1=\"25\" description=\"Description\" catid=\"9\" thumb=\"/flash/things/EN-NOL-09.swf\" swf=\"/flash/things/EN-NOL-09.swf\" />` +
+
+    // Animals
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-01.swf\" swf=\"/flash/things/ANM-MF-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-02.swf\" swf=\"/flash/things/ANM-MF-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-03.swf\" swf=\"/flash/things/ANM-MF-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-04.swf\" swf=\"/flash/things/ANM-MF-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-05.swf\" swf=\"/flash/things/ANM-MF-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-06.swf\" swf=\"/flash/things/ANM-MF-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-07.swf\" swf=\"/flash/things/ANM-MF-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-08.swf\" swf=\"/flash/things/ANM-MF-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-09.swf\" swf=\"/flash/things/ANM-MF-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-10.swf\" swf=\"/flash/things/ANM-MF-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-11.swf\" swf=\"/flash/things/ANM-MF-11.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-12.swf\" swf=\"/flash/things/ANM-MF-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-13.swf\" swf=\"/flash/things/ANM-MF-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-14.swf\" swf=\"/flash/things/ANM-MF-14.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-15.swf\" swf=\"/flash/things/ANM-MF-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-16.swf\" swf=\"/flash/things/ANM-MF-16.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-17.swf\" swf=\"/flash/things/ANM-MF-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-18.swf\" swf=\"/flash/things/ANM-MF-18.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-19.swf\" swf=\"/flash/things/ANM-MF-19.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-20.swf\" swf=\"/flash/things/ANM-MF-20.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-21.swf\" swf=\"/flash/things/ANM-MF-21.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-22.swf\" swf=\"/flash/things/ANM-MF-22.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-23.swf\" swf=\"/flash/things/ANM-MF-23.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-24.swf\" swf=\"/flash/things/ANM-MF-24.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-25.swf\" swf=\"/flash/things/ANM-MF-25.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-26.swf\" swf=\"/flash/things/ANM-MF-26.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-27.swf\" swf=\"/flash/things/ANM-MF-27.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-28.swf\" swf=\"/flash/things/ANM-MF-28.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-29.swf\" swf=\"/flash/things/ANM-MF-29.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-30.swf\" swf=\"/flash/things/ANM-MF-30.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-31.swf\" swf=\"/flash/things/ANM-MF-31.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-32.swf\" swf=\"/flash/things/ANM-MF-32.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-33.swf\" swf=\"/flash/things/ANM-MF-33.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-34.swf\" swf=\"/flash/things/ANM-MF-34.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-35.swf\" swf=\"/flash/things/ANM-MF-35.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-36.swf\" swf=\"/flash/things/ANM-MF-36.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-37.swf\" swf=\"/flash/things/ANM-MF-37.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-38.swf\" swf=\"/flash/things/ANM-MF-38.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-39.swf\" swf=\"/flash/things/ANM-MF-39.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-40.swf\" swf=\"/flash/things/ANM-MF-40.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-41.swf\" swf=\"/flash/things/ANM-MF-41.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-42.swf\" swf=\"/flash/things/ANM-MF-42.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-43.swf\" swf=\"/flash/things/ANM-MF-43.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-44.swf\" swf=\"/flash/things/ANM-MF-44.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-45.swf\" swf=\"/flash/things/ANM-MF-45.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANM-MF-46.swf\" swf=\"/flash/things/ANM-MF-46.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-01.swf\" swf=\"/flash/things/ANML-NVL-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-02.swf\" swf=\"/flash/things/ANML-NVL-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-03.swf\" swf=\"/flash/things/ANML-NVL-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-04.swf\" swf=\"/flash/things/ANML-NVL-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-05.swf\" swf=\"/flash/things/ANML-NVL-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-06.swf\" swf=\"/flash/things/ANML-NVL-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-07.swf\" swf=\"/flash/things/ANML-NVL-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-08.swf\" swf=\"/flash/things/ANML-NVL-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-09.swf\" swf=\"/flash/things/ANML-NVL-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-10.swf\" swf=\"/flash/things/ANML-NVL-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-11.swf\" swf=\"/flash/things/ANML-NVL-11.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-12.swf\" swf=\"/flash/things/ANML-NVL-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-13.swf\" swf=\"/flash/things/ANML-NVL-13.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-14.swf\" swf=\"/flash/things/ANML-NVL-14.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-15.swf\" swf=\"/flash/things/ANML-NVL-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-16.swf\" swf=\"/flash/things/ANML-NVL-16.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-17.swf\" swf=\"/flash/things/ANML-NVL-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-18.swf\" swf=\"/flash/things/ANML-NVL-18.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-19.swf\" swf=\"/flash/things/ANML-NVL-19.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-20.swf\" swf=\"/flash/things/ANML-NVL-20.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-21.swf\" swf=\"/flash/things/ANML-NVL-21.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-22.swf\" swf=\"/flash/things/ANML-NVL-22.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-23.swf\" swf=\"/flash/things/ANML-NVL-23.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-24.swf\" swf=\"/flash/things/ANML-NVL-24.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-25.swf\" swf=\"/flash/things/ANML-NVL-25.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-26.swf\" swf=\"/flash/things/ANML-NVL-26.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-27.swf\" swf=\"/flash/things/ANML-NVL-27.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-28.swf\" swf=\"/flash/things/ANML-NVL-28.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-29.swf\" swf=\"/flash/things/ANML-NVL-29.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-30.swf\" swf=\"/flash/things/ANML-NVL-30.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-31.swf\" swf=\"/flash/things/ANML-NVL-31.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-32.swf\" swf=\"/flash/things/ANML-NVL-32.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-33.swf\" swf=\"/flash/things/ANML-NVL-33.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-34.swf\" swf=\"/flash/things/ANML-NVL-34.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-35.swf\" swf=\"/flash/things/ANML-NVL-35.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-36.swf\" swf=\"/flash/things/ANML-NVL-36.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-37.swf\" swf=\"/flash/things/ANML-NVL-37.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-38.swf\" swf=\"/flash/things/ANML-NVL-38.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-39.swf\" swf=\"/flash/things/ANML-NVL-39.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-40.swf\" swf=\"/flash/things/ANML-NVL-40.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-41.swf\" swf=\"/flash/things/ANML-NVL-41.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-42.swf\" swf=\"/flash/things/ANML-NVL-42.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-43.swf\" swf=\"/flash/things/ANML-NVL-43.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-44.swf\" swf=\"/flash/things/ANML-NVL-44.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-45.swf\" swf=\"/flash/things/ANML-NVL-45.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-46.swf\" swf=\"/flash/things/ANML-NVL-46.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-47.swf\" swf=\"/flash/things/ANML-NVL-47.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-48.swf\" swf=\"/flash/things/ANML-NVL-48.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-49.swf\" swf=\"/flash/things/ANML-NVL-49.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-50.swf\" swf=\"/flash/things/ANML-NVL-50.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-51.swf\" swf=\"/flash/things/ANML-NVL-51.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-52.swf\" swf=\"/flash/things/ANML-NVL-52.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-53.swf\" swf=\"/flash/things/ANML-NVL-53.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-54.swf\" swf=\"/flash/things/ANML-NVL-54.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-55.swf\" swf=\"/flash/things/ANML-NVL-55.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-NVL-56.swf\" swf=\"/flash/things/ANML-NVL-56.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-01.swf\" swf=\"/flash/things/ANML-01.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-02.swf\" swf=\"/flash/things/ANML-02.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-03.swf\" swf=\"/flash/things/ANML-03.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-05.swf\" swf=\"/flash/things/ANML-05.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-06.swf\" swf=\"/flash/things/ANML-06.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-07.swf\" swf=\"/flash/things/ANML-07.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-08.swf\" swf=\"/flash/things/ANML-08.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-09.swf\" swf=\"/flash/things/ANML-09.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-10.swf\" swf=\"/flash/things/ANML-10.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-12.swf\" swf=\"/flash/things/ANML-12.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-14.swf\" swf=\"/flash/things/ANML-14.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-15.swf\" swf=\"/flash/things/ANML-15.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-16.swf\" swf=\"/flash/things/ANML-16.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-17.swf\" swf=\"/flash/things/ANML-17.swf\" />` +
+    `<item itid=\"${index++}\" name=\"Animal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/things/ANML-18.swf\" swf=\"/flash/things/ANML-18.swf\" />` +
+
+    // Doors
+    `<item itid=\"637\" name=\"Door3\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/things/DOOR-03-THUMB.swf\" swf=\"/flash/things/DOOR-03-THUMB.swf\" />` +
+    `<item itid=\"635\" name=\"Door1\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/things/DOOR-01-THUMB.swf\" swf=\"/flash/things/DOOR-01-THUMB.swf\" />` +
+    `<item itid=\"636\" name=\"Door2\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/things/DOOR-02-THUMB.swf\" swf=\"/flash/things/DOOR-02-THUMB.swf\" />` +
+    `<item itid=\"725\" name=\"Door4\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/things/Door-04-Thumb.swf\" swf=\"/flash/things/Door-04.swf\" />` +
+    `<item itid=\"${index++}\" name=\"BellaSara\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/things/ROY-Bellasara-Thumb.swf\" />` +
+
     "</items>"
+
+    // console.log(index)
+    return items
 }
-function getAllActiveThings() {return getAllThings()}
+function getAllActiveThings() {
+    console.log("getting all active things")
+    return getAllThings()
+}
 
 function getThings()
 {
-    return "<items>" +
-    "<item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"099\" itid=\"10019\" rid=\"1\" x=\"0\" y=\"0\" z=\"1019\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"099\" itid=\"10020\" rid=\"1\" x=\"0\" y=\"0\" z=\"1020\" s=\"100\" a=\"1\" />" +
-    "</items>";
-}
-function getVisitorThings() {return getThings()}
-function getThingsInMyThings() {return getThings()}
+    console.log("getting things")
 
-/**
- * Replace getThingsInRoom() call
- * @returns an object with the things present in a room informations (used in My Things, Cottage, Bazaar, etc.)
- */
-function getThingsInRoom()
-{
-        // TODO: Fill correctly
-    const ITEMS = [
-        {
-            itid: 10001,
-            name: "Bird", 
-            price1: 25,
-            description: "Cat Description",
-            catid: 1,
-            thumb: "/flash/gallery/data/items/bird/",
-            swf: "/flash/gallery/data/items/bird/bird.swf"
-        }
+    const knownIDs = [
+        "635",
+        "636",
+        "637",
+        "725",
+        "468"
     ]
 
-    let ThingsValue = {result: { items:[]}}
-
-    for (let i = 0; i < ITEMS.length; i++)
-    {
-        ThingsValue.result.items.push(ITEMS[i])
+    let things = "<items>"
+    for (let index = 0; index < knownIDs.length; index++) {
+        things = things + `<item iid=\"${101+index}\" itid=\"${knownIDs[index]}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index}\" s=\"100\" a=\"1\" />`
     }
 
-    console.log(ThingsValue);
+    for (let index = 0; index < knownIDs.length+299; index++) {
+        things = things + `<item iid=\"${101 + index + knownIDs.length}\" itid=\"${10000 + index}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index + knownIDs.length}\" s=\"100\" a=\"1\" />`
+    }
 
-    return ThingsValue;
+    return things + "</items>";
+
+    // return "<items><item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" /><item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" /><item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" /><item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" /><item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" /><item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" /><item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" /><item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" /><item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" /><item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" /><item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" /><item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" /><item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" /><item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" /><item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" /><item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" /><item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" /><item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" /></items>";
+}
+function getVisitorThings() {return getThings()}
+function getThingsInMyThings() {
+    return getThings()
 }
 
-function getVisitorThings()
-{
-    return "<items>" +
-    "<item iid=\"101\" itid=\"10001\" rid=\"3\" x=\"10\" y=\"20\" z=\"1001\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"102\" itid=\"10002\" rid=\"3\" x=\"40\" y=\"100\" z=\"1002\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"103\" itid=\"10003\" rid=\"3\" x=\"200\" y=\"200\" z=\"1003\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"104\" itid=\"10004\" rid=\"3\" x=\"300\" y=\"300\" z=\"1004\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"105\" itid=\"10005\" rid=\"3\" x=\"100\" y=\"327\" z=\"1005\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"106\" itid=\"10006\" rid=\"3\" x=\"50\" y=\"221\" z=\"1006\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"107\" itid=\"10007\" rid=\"6\" x=\"400\" y=\"30\" z=\"1007\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"108\" itid=\"10008\" rid=\"6\" x=\"500\" y=\"300\" z=\"1008\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"109\" itid=\"10009\" rid=\"6\" x=\"56\" y=\"126\" z=\"1009\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"110\" itid=\"10010\" rid=\"6\" x=\"150\" y=\"80\" z=\"1010\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"111\" itid=\"10011\" rid=\"6\" x=\"250\" y=\"400\" z=\"1011\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"112\" itid=\"10012\" rid=\"6\" x=\"300\" y=\"240\" z=\"1012\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"113\" itid=\"10013\" rid=\"3\" x=\"290\" y=\"200\" z=\"1013\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"114\" itid=\"10014\" rid=\"3\" x=\"250\" y=\"140\" z=\"1014\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"115\" itid=\"10015\" rid=\"3\" x=\"100\" y=\"130\" z=\"1015\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"116\" itid=\"10016\" rid=\"6\" x=\"140\" y=\"29\" z=\"1016\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"117\" itid=\"10017\" rid=\"3\" x=\"140\" y=\"350\" z=\"1017\" s=\"100\" a=\"1\" />" +
-    "<item iid=\"118\" itid=\"10018\" rid=\"6\" x=\"360\" y=\"370\" z=\"1018\" s=\"100\" a=\"1\" />" +
-    "</items>";
+/**
+ * 
+ * @returns The save data for the rooms
+ */
+function getRoomData() {
+    roomData = loadData(DATA_TYPES.roomData, GAME_ID.MyCottage)
+    return roomData
+}
+/**
+ * Updates the room data with a new value
+ * @param {*} data the new data for the rooms
+ */
+function updateRoomData(data) {
+    console.log("updating room data", roomID, data)
+    saveData(DATA_TYPES.roomData, data, GAME_ID.MyCottage)
 }
 
 function getHorseshoes()
@@ -342,8 +639,14 @@ function getHorseshoes()
     return loadData(DATA_TYPES.horseshoes);
 }
 
+function getCurrentUser()
+{
+    return currentUser
+}
+
 
 /* Extract helper from .swf
+                           "<categories><category name=\"Art\" catid=\"1\" /><category name=\"Furniture\" catid=\"2\" /><category name=\"Flooring\" catid=\"3\" /><category name=\"Toys\" catid=\"4\" /><category name=\"Wall Hangings\" catid=\"5\" /><category name=\"Home Decor\" catid=\"6\" /><category name=\"Holiday\" catid=\"7\" /><category name=\"Knick-Knacks\" catid=\"8\" /><category name=\"Curios\" catid=\"9\" /><category name=\"Jewelry\" catid=\"10\" /></categories>";
 var _categoriesSampleXml = "<categories><category name=\"Art\" catid=\"1\" /><category name=\"Furniture\" catid=\"2\" /><category name=\"Flooring\" catid=\"3\" /><category name=\"Toys\" catid=\"4\" /><category name=\"Wall Hangings\" catid=\"5\" /><category name=\"Home Decor\" catid=\"6\" /><category name=\"Holiday\" catid=\"7\" /><category name=\"Knick-Knacks\" catid=\"8\" /><category name=\"Curios\" catid=\"9\" /><category name=\"Jewelry\" catid=\"10\" /></categories>";
    var _allThingsSampleXml = "<items><item itid=\"10001\" name=\"Bird\" price1=\"25\" description=\"Bird Description\" catid=\"1\" thumb=\"path\" swf=\"../things/bird.swf\" /><item itid=\"10002\" name=\"Cat\" price1=\"26\" description=\"Cat Description\" catid=\"1\" thumb=\"path\" swf=\"../things/cat.swf\" /><item itid=\"10003\" name=\"Chair\" price1=\"27\" description=\"Stuffed Description\" catid=\"1\" thumb=\"path\" swf=\"../things/chair.swf\" /><item itid=\"10004\" name=\"Chandelier\" price1=\"28\" description=\"Chandelier Description\" catid=\"2\" thumb=\"path\" swf=\"../things/chandelier.swf\" /><item itid=\"10005\" name=\"Crystals\" price1=\"29\" description=\"Crystals Description\" catid=\"1\" thumb=\"path\" swf=\"../things/crystals.swf\" /><item itid=\"10006\" name=\"Feathers\" price1=\"30\" description=\"Feathers Description\" catid=\"1\" thumb=\"path\" swf=\"../things/feathers.swf\" /><item itid=\"10007\" name=\"Glass Sculpture\" price1=\"31\" description=\"Glass Sculpture Description\" catid=\"2\" thumb=\"path\" swf=\"../things/glass_sculpture.swf\" /><item itid=\"10008\" name=\"Harp\" price1=\"32\" description=\"Harp Description\" catid=\"1\" thumb=\"path\" swf=\"../things/harp.swf\" /><item itid=\"10009\" name=\"Jelly Beans\" price1=\"33\" description=\"Jelly Beans Description\" catid=\"1\" thumb=\"path\" swf=\"../things/jellybeans.swf\" /><item itid=\"10010\" name=\"Orchid\" price1=\"25\" description=\"Orchid Description\" catid=\"1\" thumb=\"path\" swf=\"../things/orchid.swf\" /><item itid=\"10011\" name=\"Ribbon1\" price1=\"26\" description=\"Ribbon1 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/ribbon1.swf\" /><item itid=\"10012\" name=\"Ribbon2\" price1=\"27\" description=\"Ribbon2 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/ribbon2.swf\" /><item itid=\"10013\" name=\"Ribbon3\" price1=\"28\" description=\"Ribbon3 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/ribbon3.swf\" /><item itid=\"10014\" name=\"Rug\" price1=\"29\" description=\"Rug Description\" catid=\"2\" thumb=\"path\" swf=\"../things/rug.swf\" /><item itid=\"10015\" name=\"Table\" price1=\"250\" description=\"Table Description\" catid=\"1\" thumb=\"path\" swf=\"../things/table.swf\" /><item itid=\"10016\" name=\"Tree\" price1=\"41\" description=\"Tree Description\" catid=\"1\" thumb=\"path\" swf=\"../things/tree.swf\" /><item itid=\"10017\" name=\"Trophy1\" price1=\"42\" description=\"Trophy1 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/trophy1.swf\" /><item itid=\"10018\" name=\"Trophy2\" price1=\"43\" description=\"Trophy2 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/trophy2.swf\" /><item itid=\"10019\" name=\"Feathers2\" price1=\"30\" description=\"Feathers2 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/feathers.swf\" /></items>";
    var _thingsSampleXml = "<items><item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" /><item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" /><item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" /><item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" /><item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" /><item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" /><item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" /><item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" /><item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" /><item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" /><item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" /><item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" /><item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" /><item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" /><item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" /><item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" /><item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" /><item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" /></items>";

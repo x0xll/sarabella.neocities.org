@@ -43,11 +43,11 @@
               <li><a href="rooms.html?roomId=3">Base Living Room</a></li>
               <li><a href="rooms.html?roomId=6">Base Bedroom</a></li>
               <li><a href="rooms.html?roomId=11">Patio</a></li>
-              <li><a href="rooms.html?roomId=1">Rollandsgaard Castle</a></li>
+              <li><a href="rooms.html?roomId=7">Rollandsgaard Castle</a></li>
               <li><a href="rooms.html?roomId=12">Shahazar Castle</a></li>
               <li><a href="rooms.html?roomId=8">Theatre</a></li>
-              <li><a href="rooms.html?roomId=2">Astronomy Tower</a></li>
-              <li><a href="rooms.html?roomId=4">Bedroom</a></li>
+              <li><a href="rooms.html?roomId=9">Astronomy Tower</a></li>
+              <li><a href="rooms.html?roomId=10">Bedroom</a></li>
               <li><a href="rooms.html?roomId=5">Valeryk Castle</a></li>
             </ul>
           </div>
@@ -79,17 +79,8 @@
               case "3":
                 swf = 'livingroom.swf';
               break;
-              case "11":
-                swf = 'patio.swf';
-              break;
-              case "1": // TODO: Find correct id
+              case "7": // TODO: Find correct id
                 swf = 'rollandsgaardcastle.swf';
-              break;
-              case "2": // TODO: Find correct id
-                swf = 'astronomy.swf';
-              break;
-              case "4": // TODO: Find correct id
-                swf = 'bedroom2.swf';
               break;
               case "5": // TODO: Find correct id
                 swf = 'valerykcastle.swf';
@@ -99,6 +90,15 @@
               break;
               case "8":
                 swf = "theatre.swf";
+              break;
+              case "9": // TODO: Find correct id
+                swf = 'astronomy.swf';
+              break;
+              case "10": // TODO: Find correct id
+                swf = 'bedroom2.swf';
+              break;
+              case "11":
+                swf = 'patio.swf';
               break;
           }
           loadSWF(swf, '500', '887', locale, "debug=true")

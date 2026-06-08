@@ -3,9 +3,21 @@ Jun 6
 - remove assignFlashVar("bellasara_wsdl_url","WSDL CALL"); lines from living room
 
 Jun 7
+in rooms:
 - change _loc1_ = objRef._categoriesSampleXml; -> = flash.external.ExternalInterface.call("getCategories");
 - change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllThings");
-- change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllThings");
+- change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllActiveThings");
 - change _loc1_ = objRef._thingsSampleXml; -> = flash.external.ExternalInterface.call("getThingsInMyThings");
 - change _loc1_ = objRef._thingsSampleXml; -> = flash.external.ExternalInterface.call("getThings");
 - change _loc2_ = objRef._visitorThingsSampleXml; -> = flash.external.ExternalInterface.call("getVisitorThings");
+
+Jun 8
+in rooms:
+- change BellaSaraWorldDataCache - gotThingsInRoom - _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); -> = flash.external.ExternalInterface.call("getRoomData");
+  - _loc3_.data.things -> _loc3_
+- change BellaSaraWorldDataCache - getThingsInMyThings - _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); -> = flash.external.ExternalInterface.call("getRoomData");
+  - _loc3_.data.things -> _loc3_
+- Add flash.external.ExternalInterface.call("updateRoomData",_loc6_); under _loc7_ in BellaSaraWorldDataCache - updateThings
+- change roomID variable to correct <number>  with assignFlashVar("roomId",<number>>);
+in CottageEntry
+- change displayname = "Fairy Star" -> = flash.external.ExternalInterface.call("getCurrentUser");
