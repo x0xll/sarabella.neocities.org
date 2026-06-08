@@ -6,6 +6,8 @@ function setupRuffle()
         config: {
             autoplay: "on",
             unmuteOverlay: "hidden",
+            splashScreen: false,
+            // logLevel: "debug"
         }
     };
 }
