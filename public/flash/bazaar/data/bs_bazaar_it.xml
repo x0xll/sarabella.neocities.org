@@ -22,6 +22,24 @@
             <Text id="txtCouldNotPurchase">
                 <a>Non è possibile acquistare questo oggetto.</a>
             </Text>
+			<Text id="txtBazaarCategory">
+				<P><FONT SIZE="14">Choose a CATEGORY to search for items.</FONT></P>
+			</Text>
+			<Text id="txtMusic">
+				<P><FONT SIZE="14">Turn the music ON/OFF</FONT></P>
+			</Text>
+			<Text id="txtBazaarItem">
+				<P><FONT SIZE="12">Hover your mouse over an item to see its price in HORSESHOES. Click BUY to add it to MY ITEMS.</FONT></P>
+			</Text>
+			<Text id="txtBazaarExitTent">
+				<P><FONT SIZE="14">Choose another CATEGORY.</FONT></P>
+			</Text>
+			<Text id="txtCloseHelp">
+				<P><FONT SIZE="13"><b>Close Help</b></FONT></P>
+			</Text>
+			<Text id="txtMoreObjects">
+				<P><FONT SIZE="14">See more items.</FONT></P>
+			</Text>
         </Texts>
     </BuiltInTexts>
 </Bazaar>
