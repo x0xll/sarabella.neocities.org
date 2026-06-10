@@ -1,0 +1,20 @@
+Jun 6
+- remove assignFlashVar("bellasara_wsdl_url","http://andre.hcginc.local/bellawebservice/bellaws.asmx?WSDL"); lines
+
+Jun 7
+- change _loc1_ = objRef._categoriesSampleXml; -> = flash.external.ExternalInterface.call("getCategories");
+- change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllThings");
+- change _loc1_ = objRef._allThingsSampleXml; -> = flash.external.ExternalInterface.call("getAllActiveThings");
+- change _loc1_ = objRef._thingsSampleXml; -> = flash.external.ExternalInterface.call("getThingsInMyThings");
+- change _loc1_ = objRef._thingsSampleXml; -> = flash.external.ExternalInterface.call("getThings");
+- change _loc2_ = objRef._visitorThingsSampleXml; -> = flash.external.ExternalInterface.call("getVisitorThings");
+
+Jun 8
+- remove BellaSaraWorldDataCache - gotThingsInRoom - _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); and shared object case
+- remove BellaSaraWorldDataCache - getThingsInMyThings - _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); and shared object case
+- Add flash.external.ExternalInterface.call("updateRoomData",_loc6_); under _loc7_ in BellaSaraWorldDataCache - updateThings
+
+Jun 10
+- change _loc2_ = objRef._purchaseSampleXml; -> = flash.external.ExternalInterface.call("buyThing",itid);
+- change _loc2_ = objRef._balanceSampleXml; -> = flash.external.ExternalInterface.call("getBalance");
+- remove PURCHASED text from chid 192

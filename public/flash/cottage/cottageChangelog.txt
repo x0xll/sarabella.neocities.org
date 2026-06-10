@@ -13,8 +13,11 @@ in rooms:
 
 Jun 8
 in rooms:
+- change BellaSaraWorldDataCache - gotThingsInRoom - _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); -> = flash.external.ExternalInterface.call("getRoomData");
+  - _loc3_.data.things -> _loc3_
+- change BellaSaraWorldDataCache - getThingsInMyThings - _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); -> = flash.external.ExternalInterface.call("getRoomData");
+  - _loc3_.data.things -> _loc3_
 - Add flash.external.ExternalInterface.call("updateRoomData",_loc6_); under _loc7_ in BellaSaraWorldDataCache - updateThings
 - change roomID variable to correct <number>  with assignFlashVar("roomId",<number>>);
-- Remove from _loc3_ = SharedObject.getLocal("BellaSaraRoomData","/"); to else, in gotThingsInMyThings in BellaSaraWorldDataCache
 in CottageEntry
-- change displayname = "Fairy Star" -> = flash.external.ExternalInterface.call("getCurrentUsername");
+- change displayname = "Fairy Star" -> = flash.external.ExternalInterface.call("getCurrentUser");

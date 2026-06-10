@@ -599,11 +599,11 @@ function getAllThings()
     `<item itid=\"${index++}\" name=\"Dragonfly\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-16.swf\" swf=\"/flash/common/swf/things/ANML-16.swf\" />` +
 
     // Doors
-    `<item itid=\"637\" name=\"Bedroom\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" />` +
-    `<item itid=\"635\" name=\"Theatre\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" />` +
-    `<item itid=\"636\" name=\"Astronamy\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" />` +
-    `<item itid=\"725\" name=\"Patio\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Door-04-Thumb.swf\" swf=\"/flash/common/swf/things/Door-04.swf\" />` +
-    `<item itid=\"${index++}\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" />` +
+    `<item itid=\"637\" name=\"Bedroom\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"635\" name=\"Theatre\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"636\" name=\"Astronamy\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"725\" name=\"Patio\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Door-04-Thumb.swf\" swf=\"/flash/common/swf/things/Door-04.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"${index++}\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" allowmultipurchase=\"False\" />` +
 
     "</items>"
 
@@ -615,34 +615,159 @@ function getAllActiveThings() {
     return getAllThings()
 }
 
+// function forceRefreshThingsData()
+// {
+//     let test = true
+//     if (loadData(DATA_TYPES.roomData, GAME_ID.MyCottage)) {
+//         test = false
+//     }
+//     return test
+// }
+
 function getThings()
 {
-    console.log("getting things")
+    let things = getRoomData()
+    if (!things) {
+        console.log("No existing things data - resetting things")
 
-    const knownIDs = [
-        "635",
-        "636",
-        "637",
-        "725",
-        "468"
-    ]
 
-    let things = "<items>"
-    for (let index = 0; index < knownIDs.length; index++) {
-        things = things + `<item iid=\"${101+index}\" itid=\"${knownIDs[index]}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index}\" s=\"100\" a=\"1\" />`
+        things = "<items>"
+        // TODO: do we want to add a default inventory?
+        // const knownIDs = [
+        //     "635",
+        //     "636",
+        //     "637",
+        //     "725",
+        //     "468"
+        // ]
+
+        // for (let index = 0; index < knownIDs.length; index++) {
+        //     things = things + `<item iid=\"${101+index}\" itid=\"${knownIDs[index]}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index}\" s=\"100\" a=\"1\" />`
+        // }
+
+        // for (let index = 0; index < knownIDs.length+299; index++) {
+        //     things = things + `<item iid=\"${101 + index + knownIDs.length}\" itid=\"${10000 + index}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index + knownIDs.length}\" s=\"100\" a=\"1\" />`
+        // }
+        things = things + "</items>"
     }
 
-    for (let index = 0; index < knownIDs.length+299; index++) {
-        things = things + `<item iid=\"${101 + index + knownIDs.length}\" itid=\"${10000 + index}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index + knownIDs.length}\" s=\"100\" a=\"1\" />`
-    }
-
-    return things + "</items>";
+    return things;
 
     // return "<items><item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" /><item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" /><item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" /><item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" /><item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" /><item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" /><item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" /><item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" /><item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" /><item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" /><item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" /><item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" /><item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" /><item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" /><item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" /><item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" /><item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" /><item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" /></items>";
 }
 function getVisitorThings() {return getThings()}
-function getThingsInMyThings() {
-    return getThings()
+function getThingsInMyThings() {return getThings()}
+/**
+ * Updates the room data with a new value
+ * @param {*} data the new data for the rooms
+ */
+function updateRoomData(data, alreadyMini = false) {
+    console.log("updating room data", roomID, data)
+    if (!alreadyMini) {
+        data = minifyInventoryData(data)
+    }
+    saveData(DATA_TYPES.roomData, data, GAME_ID.MyCottage)
+}
+function minifyInventoryData(data)
+{
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(data,"text/xml");
+    if (xmlDoc.getElementsByTagName("items") && xmlDoc.getElementsByTagName("items")[0] && xmlDoc.getElementsByTagName("items")[0].childNodes) {
+        let items = xmlDoc.getElementsByTagName("items")[0].childNodes
+        let minify = ""
+
+        for (let index = 0; index < items.length; index++) {
+            const item = items[index].attributes;
+            minify = minify + "_" + minifyInventoryItemData(item)
+        }
+        return minify.slice(1)
+    }
+    return ""
+}
+function minifyInventoryItemData(item)
+{
+    const separator = "*"
+    let itemData = item.itid.nodeValue+separator+item.rid.nodeValue+
+    separator+item.x.nodeValue+separator+item.y.nodeValue+separator+item.z.nodeValue+separator+item.s.nodeValue+separator+item.a.nodeValue
+    return itemData
+}
+/**
+ * 
+ * @returns The save data for the rooms
+ */
+function getRoomData(unminify = true) {
+    roomData = loadData(DATA_TYPES.roomData, GAME_ID.MyCottage)
+    if (roomData && unminify) {
+        roomData = unminifyInventoryData(roomData)
+    }
+    return roomData
+}
+function unminifyInventoryData(itemsData) {
+    things = "<items>"
+    itemsDataArray = itemsData.split("_")
+    for (let index = 0; index < itemsDataArray.length; index++) {
+        const itemData = itemsDataArray[index];
+        itemDataArray = itemData.split("*")
+        item = `<item iid=\"${101+index}\" itid=\"${itemDataArray[0]}\" rid=\"${itemDataArray[1]}\" x=\"${itemDataArray[2]}\" y=\"${itemDataArray[3]}\" z=\"${itemDataArray[4]}\" s=\"${itemDataArray[5]}\" a=\"${itemDataArray[6]}\" />`
+        things = things+item
+    }
+    return things + "</items>";
+}
+
+function getHorseshoes()
+{
+    return loadData(DATA_TYPES.horseshoes);
+}
+
+function getCurrentUser()
+{
+    return currentUser
+}    
+
+function getBalance() {
+    return `<balance><user currency1=\"${loadData(DATA_TYPES.horseshoes)}\" /></balance>`
+}
+
+function buyThing(itid) {
+    const xml = getAllThings()
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xml,"text/xml");
+    let items = xmlDoc.getElementsByTagName("items")[0].childNodes
+
+    let itemPurchased = "no"
+    let currency1 = loadData(DATA_TYPES.horseshoes)
+    let cost = 0
+
+    for (let index = 0; index < items.length; index++) {
+        const item = items[index];
+        if (item.attributes.itid.nodeValue === itid) {
+            console.log(item.attributes)
+            cost = parseInt(item.attributes.price1.nodeValue)
+            if (cost <= currency1) {
+                itemPurchased = "yes"
+                removeHorseshoes(cost)
+                addThingToMyThings(itid)
+            }
+            break
+        }
+    }
+
+    // console.log(itemPurchased, currency1-cost)
+    return `<bazaarpurchase><item purchased=\"${itemPurchased}\" currency1=\"${currency1 - cost}\" /></bazaarpurchase>`
+}
+
+function addThingToMyThings(itid) {
+    let things = getThingsInMyThings()
+    things = minifyInventoryData(things.toString())
+    newItem = `${itid}*1*0*0*1000*100*1`
+    if (things) {
+        things = things+"_"+newItem
+    }
+    else {
+        things = newItem
+    }
+
+    updateRoomData(things, true)
 }
 
 

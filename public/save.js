@@ -1,7 +1,5 @@
 const CACHE_DATA = {
     AS: getBaseUrl() + "//BellaSaraArtStudioData",
-    COT1: getBaseUrl() + "//BellaSaraRoomData",
-    COT2: getBaseUrl() + "//BellSaraSignatureData"
 }
 
 const GAME_ID = {
@@ -54,8 +52,7 @@ const DATA_TYPES = {
     originalTranslations : "settings_tdog",
     horseshoesMultiplier : "settings_hsmul",
     mapPlayPage : "settings_mpp",
-    roomData : "roomData",
-    roomSignature : "roomSignature"
+    roomData : "roomData"
 }
 
 const DATA_DEFAULT = {
@@ -70,9 +67,7 @@ const DATA_DEFAULT = {
     translatedQuotes : true,
     originalTranslations : false,
     horseshoesMultiplier : 1,
-    mapPlayPage : false,
-    roomData : null,
-    roomSignature : null
+    mapPlayPage : false
 }
 
 const SAVE_VERSION = 2;
@@ -113,16 +108,8 @@ function saveData(dataType, userData, gameID = "")
                 data.gameData[gameIndex][dataType] = userData; 
             } else {
                 data.gameData[gameIndex][dataType] = localStorage.getItem(CACHE_DATA[gameID]); 
-                updateSWFLocaleDatas(gameID, gameID, dataType); 
+                updateSWFLocaleDatas(gameID); 
             }
-            break;
-        }
-        case DATA_TYPES.roomData:
-        case DATA_TYPES.roomSignature: {
-            data.gameData[gameIndex][DATA_TYPES.roomData] = localStorage.getItem(CACHE_DATA["COT1"]); 
-            data.gameData[gameIndex][DATA_TYPES.roomSignature] = localStorage.getItem(CACHE_DATA["COT2"]); 
-            updateSWFLocaleDatas(gameID, "COT1", DATA_TYPES.roomData); 
-            updateSWFLocaleDatas(gameID, "COT2", DATA_TYPES.roomSignature); 
             break;
         }
         default: {
@@ -197,7 +184,6 @@ function loadData(dataType, gameID = "")
                 }
             case DATA_TYPES.lastPlayed: 
             case DATA_TYPES.roomData: 
-            case DATA_TYPES.roomSignature: 
             case DATA_TYPES.gallery: 
             case DATA_TYPES.translatedQuotes: 
             case DATA_TYPES.game: 
@@ -360,15 +346,6 @@ function updateLastDatePlayed(gameID)
     playedDate = loadData(DATA_TYPES.lastPlayed, gameID);
     playedDate = date.getDate().toString() + "/" + (date.getMonth() + 1).toString() + "/" + date.getFullYear().toString();
     saveData(DATA_TYPES.lastPlayed, playedDate , gameID);
-}
-
-/**
- * Updates the room data with a new value
- * @param {*} data the new data for the rooms
- */
-function updateRoomData(data) {
-    console.log("updating room data", roomID, data)
-    saveData(DATA_TYPES.roomData, data, GAME_ID.MyCottage)
 }
 
 function removeFreeSpin()
