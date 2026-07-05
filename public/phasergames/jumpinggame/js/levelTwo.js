@@ -2,7 +2,7 @@ class LevelTwo extends Phaser.Scene
 {
     debugStartX = 200
     levelEnd = 31628
-    levelTime = 67
+    levelTime = 90
     canUnlockNext = true
     addLevelRef = false
 

@@ -24,8 +24,8 @@ class LevelHelper {
         }
   
     score = 0
-    canterSpeed = 350
-    gallopSpeed = 500
+    canterSpeed = 260 //350
+    gallopSpeed = 420 //500
     skidSpeed = 300
     runHeight = 290
     skidLoop = 0
@@ -234,8 +234,8 @@ class LevelHelper {
                         y = 35
                         break;
                     case 'log':
-                        x = 10
-                        y = 20
+                        x = 40 //10
+                        y = 30 //20
                         break;
                     case 'stump':
                         x = 30

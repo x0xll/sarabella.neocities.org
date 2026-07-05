@@ -1,10 +1,10 @@
 class LevelThree extends Phaser.Scene 
 {
-    debugStartX = 200
+    debugStartX = 26000
     levelEnd = 37440
-    levelTime = 67
-    canUnlockNext = false
-    addLevelRef = true
+    levelTime = 110
+    canUnlockNext = true
+    addLevelRef = false
 
     constructor ()
     {
