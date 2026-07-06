@@ -33,6 +33,7 @@ const horses = [
     'cindra',
     'clio',
     'colour',
+    'connora',
     'cosima',
     'cupid',
     'dart',
