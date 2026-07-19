@@ -47,22 +47,9 @@ function createUser()
         return;
     }
 
-    // TODO: setup a regex for special charas, for now there's at least 3 we know we don't want at all, so we just check manually
     if (username.includes("\""))
     {
         alert("Please remove \"\"\" character from your username.")
-        return;
-    }
-
-    if (username.includes(","))
-    {
-        alert("Please remove \",\" character from your username.")
-        return;
-    }
-
-    if (username.includes("²"))
-    {
-        alert("Please remove \"²\" character from your username.")
         return;
     }
 
@@ -302,6 +289,9 @@ function importUser()
 //-------- HELPERS -------
 function getCurrentUsername()
 {
+    if (currentUser === "guest")
+        return getLocalizedText("user_guest");
+
     return currentUser;
 }
 
