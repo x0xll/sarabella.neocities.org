@@ -163,11 +163,11 @@ class dressupStable extends Phaser.Scene
 
         this.load.scenePlugin({
             key: 'rexuiplugin',
-            url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+            url: '/phasergames/_phaserbackup/rexuiplugin.min.js',
             sceneKey: 'rexUI'
         });
         // Loading an older version of the text input plugin to allow the textarea input type
-        this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
+        this.load.plugin('rexinputtextplugin', '/phasergames/_phaserbackup/rexinputtextplugin.min.js', true);
 
         
         function splitHex(color) {
@@ -615,21 +615,6 @@ class dressupStable extends Phaser.Scene
         }
 
         if (!data.horseData && urlParameters.get('data')) {
-            let type = horseData.type;
-
-            // Get language file for stable type
-            if (type.includes("foal")) { type = type.substring("foal".length).toLowerCase() }
-            let langFile = `./lang/${type}`
-            if (!locale || !urlExists(`${langFile}_${locale}.json`)) { locale ='en' }
-
-            const xmlHttplocale = new XMLHttpRequest();
-            xmlHttplocale.onload = function() {
-                const myObj = JSON.parse(this.responseText);
-                localeData = myObj
-            }
-            xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
-            xmlHttplocale.send();
-
             // Open stable
             openStableScene();
         }
@@ -1169,6 +1154,23 @@ class dressupStable extends Phaser.Scene
         }
 
         function openStableScene() {
+
+            let type = horseData.type;
+
+            // Get language file for stable type
+            if (type.includes("foal")) { type = type.substring("foal".length).toLowerCase() }
+            let langFile = `./lang/${type}`
+            if (!locale || !urlExists(`${langFile}_${locale}.json`)) { locale ='en' }
+
+            const xmlHttplocale = new XMLHttpRequest();
+            xmlHttplocale.onload = function() {
+                const myObj = JSON.parse(this.responseText);
+                localeData = myObj
+            }
+            xmlHttplocale.open("GET", `${langFile}_${locale}.json`);
+            xmlHttplocale.send();
+            // console.log(localeData)
+
             game.scene.start(`${horseData.type}Stable`, sharedData);
         }
         
