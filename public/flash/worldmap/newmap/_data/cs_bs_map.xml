@@ -128,7 +128,7 @@
 			</scroll>
 
       <menu itemSpacing="0" _x="40" _y="-35" floatRight="10">
-        <item link="https://bellasara.wiki.gg/wiki/Bazaar_Tent">
+        <item link="/flash/bazaar/bazaar.html">
 					<label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bazaar Stan</p>]]></label>
 				</item>
 			</menu>
