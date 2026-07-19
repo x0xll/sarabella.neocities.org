@@ -95,6 +95,7 @@ const horses = [
     'pinkLady',
     'pirouette',
     'potpourri',
+    'potpourri2',
     'prisma',
     'rimfaxe',
     'rose',
