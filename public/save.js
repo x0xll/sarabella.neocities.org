@@ -317,28 +317,6 @@ function updateSWFLocaleDatas(game, cache, dataType)
         localStorage.setItem(CACHE_DATA[cache], loadedDatas);
 }
 
-function addGalleryItem(item)
-{
-    gallery = loadData(DATA_TYPES.gallery);
-    if (gallery == null)
-        gallery = []
-
-    // Setup the correct itid if the item isn't already one 
-    let itid = 0;
-    if (typeof item === 'number')
-    {
-        itid = item;
-    }
-    else
-    {
-        itid = getItid(item);
-    }
-
-    gallery.push(itid)
-    
-    saveData(DATA_TYPES.gallery, gallery);
-}
-
 function updateLastDatePlayed(gameID)
 {
     gameID = (GAME_ID[gameID] !== undefined) ? GAME_ID[gameID] : gameID;

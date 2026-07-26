@@ -61,8 +61,11 @@ function addCurrency(uid, currency)
 
 
 const INSPIRATIONS = [
-    "Test inspiration",
-    "Another test"
+    "Think positive every day! Feel the bliss of joy and energy that comes with it.",
+    "Be the hero in your own story.",
+    "I give you courage. Now you can release your fears.",
+    "I will help you stay in a steady flow of abundance.",
+    "Have the courage to trust yourself."
 ]
 
 /**
@@ -73,12 +76,10 @@ function getInspiration()
 {
     // TODO: Handle depending on loca
     let InspirationValue = {
-        result: {
-            string: INSPIRATIONS[Math.random() * INSPIRATIONS.length]
-        }
+        result: `${INSPIRATIONS[Math.floor(Math.random() * (INSPIRATIONS.length))]}`
     }
 
-    console.log("InspirationValue: " + InspirationValue.result.string);
+    console.log("InspirationValue: " + InspirationValue.result);
 
     return InspirationValue;
 }
@@ -603,11 +604,25 @@ function getAllThings()
     `<item itid=\"635\" name=\"Theatre\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"636\" name=\"Astronamy\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"725\" name=\"Patio\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Door-04-Thumb.swf\" swf=\"/flash/common/swf/things/Door-04.swf\" allowmultipurchase=\"False\" />` +
-    `<item itid=\"${index++}\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"${index++}\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" allowmultipurchase=\"False\" />`
+    
 
-    "</items>"
+    if (!isBazaar) {
+        items = items + `<item itid=\"1\" name=\"Bella Gold\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Bella_Gold.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Bella_Gold.swf\" />` +
+        `<item itid=\"2\" name=\"Flying Purple Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_FlyingHorse_Purple.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_FlyingHorse_Purple.swf\" />` +
+        `<item itid=\"3\" name=\"Orange Flower\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Flower_Orange.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Flower_Orange.swf\" />` +
+        `<item itid=\"4\" name=\"Gold Heart\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Heart_Gold.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Heart_Gold.swf\" />` +
+        `<item itid=\"5\" name=\"Silver Horseshoe\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Horseshoe_Silver.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Horseshoe_Silver.swf\" />` +
+        `<item itid=\"6\" name=\"Blue Moon\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Moon_Blue.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Moon_Blue.swf\" />` +
+        `<item itid=\"7\" name=\"Silver Logo\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Logo_Silver.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Logo_Silver.swf\" />` +
+        `<item itid=\"8\" name=\"Pink Running Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_RunningHorse_pink.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_RunningHorse_pink.swf\" />` +
+        `<item itid=\"9\" name=\"Green Standing Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_StandingHorse_Green.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_StandingHorse_Green.swf\" />` +
+        `<item itid=\"10\" name=\"Teal Water Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_WaterHorse_Teal.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_WaterHorse_Teal.swf\" />`
+    }
 
-    // console.log(index)
+    items = items + "</items>"
+
+    // console.log(items)
     return items
 }
 function getAllActiveThings() {
@@ -758,6 +773,7 @@ function buyThing(itid) {
 
 function addThingToMyThings(itid) {
     let things = getThingsInMyThings()
+    console.log(things)
     things = minifyInventoryData(things.toString())
     newItem = `${itid}*1*0*0*1000*100*1`
     if (things) {
@@ -768,6 +784,37 @@ function addThingToMyThings(itid) {
     }
 
     updateRoomData(things, true)
+}
+/** Adds item from WoW */
+function addGalleryItem(item)
+{
+    console.log("won item: ",item)
+
+    gallery = loadData(DATA_TYPES.gallery);
+    gallery.forEach(element => {
+        let itid = 0;
+        let quantity = 1
+        if (typeof element === 'number') { itid = element; }
+        else { 
+            itid = getItid(element.name); 
+            quantity = element.quantity
+        }
+        
+        for (let index = 0; index < quantity; index++) {
+            console.log(itid, element)
+            addThingToMyThings(itid)
+        }
+    });
+    saveData(DATA_TYPES.gallery, []);
+    // if (gallery == null)
+    //     gallery = []
+
+    // Setup the correct itid if the item isn't already one 
+    let itid = 0;
+    if (typeof item === 'number') { itid = item; }
+    else { itid = getItid(item); }
+    
+    addThingToMyThings(itid)
 }
 
 

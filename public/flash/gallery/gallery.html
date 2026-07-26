@@ -38,6 +38,7 @@
         <!-- Load correct localized version of the game -->
         <script>
           setupRuffle();
+          isBazaar = false
           var locale = checkLocalizedFiles(`./data/gallery_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           loadSWF(`gallery.swf`, '500', '887', locale)
         </script>
