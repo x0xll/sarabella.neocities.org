@@ -153,7 +153,7 @@ class LevelHelper {
                     repeat: -1
                 }); */
                 this.phaserScene.anims.create({
-                    key: `run${this.levelNumber}`,
+                    key: `gallop${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
                         'run0000', 'run0001', 'run0002', 'run0003', 'run0004', 'run0005', 'run0006', 'run0007'
                     ] }),
@@ -197,24 +197,24 @@ class LevelHelper {
                     frameRate: 20
                 }); */
                 this.phaserScene.anims.create({
-                    key: `buttslide${this.levelNumber}`,
+                    key: `slideStart${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
-                        'buttslide0000', 'buttslide0001'
+                        'buttslide0000', 'buttslide0001', 'buttslide0002', 'buttslide0003'
                     ] }),
                     frameRate: 20
                 });
                 this.phaserScene.anims.create({
-                    key: `buttslide${this.levelNumber}`,
+                    key: `slide${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
-                        'buttslide0002', 'buttslide0003', 'buttslide0004', 'buttslide0005', 'buttslide0006'
+                        'buttslide0004', 'buttslide0005', 'buttslide0006', 'buttslide0007', 'buttslide0008'
                     ] }),
                     frameRate: 20,
                     repeat: -1
                 });
                 this.phaserScene.anims.create({
-                    key: `buttslide${this.levelNumber}`,
+                    key: `slideEnd${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
-                        'buttslide0007', 'buttslide0008', 'stand0000', 'stand0001', 'stand0002', 'stand0003' //Temp removed slide009 for testing with Bella, who's missing a buttslide frame
+                        'stand0000', 'stand0001', 'stand0002', 'stand0003' //Temp removed slide009 for testing with Bella, who's missing a buttslide frame
                     ] }),
                     frameRate: 20
                 });
@@ -441,25 +441,25 @@ class LevelHelper {
                 this.phaserScene.data.runningSound.stop()
                 this.phaserScene.data.canterSound.stop()
                 // Start slide animation
-                if (!this.phaserScene.horse.frame.name.includes('slide')) {
+                if (!this.phaserScene.horse.frame.name.includes('slide') && !this.phaserScene.horse.frame.name.includes('stand')) {
                     this.phaserScene.horse.play(`slideStart${this.levelNumber}`)
                     this.phaserScene.data.buttslideSound.play()
                     this.skidLoop = 0
                     this.phaserScene.horse.setVelocityX(this.skidSpeed);
                     this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 95);
                 }
-                // Loop sliding animation
-                else if ((this.phaserScene.horse.frame.name === 'slide0001' || this.phaserScene.horse.frame.name === 'slide0006') && this.skidLoop < 3) {
+                // Loop sliding animation - frame names should match last frame of slideStart and slide animations
+                else if ((this.phaserScene.horse.frame.name === 'buttslide0003' || this.phaserScene.horse.frame.name === 'buttslide0008') && this.skidLoop < 3) {
                     // console.log('Frame: ' + this.phaserScene.horse.frame.name + ' Loop: ' + this.skidLoop)
                     this.phaserScene.horse.play(`slide${this.levelNumber}`)
                     this.skidLoop += 1
                 }
-                // End slide animation
-                else if (this.phaserScene.horse.frame.name === 'slide0006' && this.skidLoop >= 3) {
+                // End slide animation - frame name should match last frame of slide animations
+                else if (this.phaserScene.horse.frame.name === 'buttslide0008' && this.skidLoop >= 3) {
                     this.phaserScene.horse.play(`slideEnd${this.levelNumber}`)
                 }
                 // Return to running after done sliding
-                else if (this.phaserScene.horse.frame.name === 'slide0009') {
+                else if (this.phaserScene.horse.frame.name === 'stand0003') {
                     this.phaserScene.horseMovement = this.horseMovements.cantering
                 }
             }
@@ -473,6 +473,7 @@ class LevelHelper {
                 }
                 // Adjust horse hitbox position whilst jumping
                 switch (this.phaserScene.horse.frame.name) {
+                    // TODO: These cases need to be adjusted for the updated sprites
                     case 'jump0001':
                         this.phaserScene.horse.body.setSize(150, 105, false).setOffset(90, 70);
                         break;
@@ -504,7 +505,7 @@ class LevelHelper {
                         this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 55);
                         break;
                         
-                    case 'land0000':
+                    case 'jumo0017':
                         this.phaserScene.horse.body.setSize(150, 105, false).setOffset(90, 85);
                         this.phaserScene.horseMovement = this.horseMovements.cantering
                         break;
@@ -529,7 +530,7 @@ class LevelHelper {
                 }
             }
             else if (this.phaserScene.horseMovement === this.horseMovements.galloping) {
-                if (!this.phaserScene.horse.frame.name.includes('gallop')) {
+                if (!this.phaserScene.horse.frame.name.includes('run')) {
                     this.phaserScene.data.canterSound.stop()
                     this.phaserScene.data.buttslideSound.stop()
                     this.phaserScene.horse.setVelocityX(this.gallopSpeed);
@@ -539,7 +540,7 @@ class LevelHelper {
                 }
             }
             else if (this.phaserScene.horseMovement === this.horseMovements.backwards) {
-                if (!this.phaserScene.horse.frame.name.includes('gallop')) {
+                if (!this.phaserScene.horse.frame.name.includes('run')) {
                     this.phaserScene.data.canterSound.stop()
                     this.phaserScene.data.buttslideSound.stop()
                     this.phaserScene.horse.setVelocityX(-this.gallopSpeed);
