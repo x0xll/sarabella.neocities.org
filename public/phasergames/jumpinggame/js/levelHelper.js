@@ -124,7 +124,7 @@ class LevelHelper {
         }
 
         createHorse(){
-            this.phaserScene.horse = this.phaserScene.physics.add.sprite(-100, this.runHeight, `horse${this.levelNumber}`, 'canter0000')
+            /* this.phaserScene.horse = this.phaserScene.physics.add.sprite(-100, this.runHeight, `horse${this.levelNumber}`, 'canter0000')
             if (!this.phaserScene.anims.exists(`canter${this.levelNumber}`)) {
                 this.phaserScene.anims.create({
                     key: `canter${this.levelNumber}`,
@@ -133,23 +133,48 @@ class LevelHelper {
                     ] }),
                     frameRate: 20,
                     repeat: -1
-                });
+                }); */
+                this.phaserScene.horse = this.phaserScene.physics.add.sprite(-100, this.runHeight, `horse${this.levelNumber}`, 'canter0000')
+            if (!this.phaserScene.anims.exists(`canter${this.levelNumber}`)) {
                 this.phaserScene.anims.create({
+                    key: `canter${this.levelNumber}`,
+                    frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
+                        'canter0000', 'canter0001', 'canter0002', 'canter0003', 'canter0004', 'canter0005', 'canter0006', 'canter0007', 'canter0008', 'canter0009', 'canter0010', 'canter0011', 'canter0012', 'canter0013', 'canter0014', 'canter0015'
+                    ] }),
+                    frameRate: 20,
+                    repeat: -1
+                });
+                /* this.phaserScene.anims.create({
                     key: `gallop${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
                         'gallop0000', 'gallop0001', 'gallop0002', 'gallop0003', 'gallop0004', 'gallop0005', 'gallop0006'
                     ] }),
                     frameRate: 20,
                     repeat: -1
-                });
+                }); */
                 this.phaserScene.anims.create({
+                    key: `run${this.levelNumber}`,
+                    frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
+                        'run0000', 'run0001', 'run0002', 'run0003', 'run0004', 'run0005', 'run0006', 'run0007'
+                    ] }),
+                    frameRate: 20,
+                    repeat: -1
+                });
+                /* this.phaserScene.anims.create({
                     key: `jump${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
                         'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'land0000'
                     ] }),
                     frameRate: 16
-                });
+                }); */
                 this.phaserScene.anims.create({
+                    key: `jump${this.levelNumber}`,
+                    frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
+                        'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'jump0011', 'jump0012', 'jump0013', 'jump0014', 'jump0015', 'jump0016', 'jump0017'
+                    ] }),
+                    frameRate: 16
+                });
+                /* this.phaserScene.anims.create({
                     key: `slideStart${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
                         'slide0000', 'slide0001'
@@ -168,6 +193,28 @@ class LevelHelper {
                     key: `slideEnd${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
                         'slide0007', 'slide0008', 'slide0009'
+                    ] }),
+                    frameRate: 20
+                }); */
+                this.phaserScene.anims.create({
+                    key: `buttslide${this.levelNumber}`,
+                    frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
+                        'buttslide0000', 'buttslide0001'
+                    ] }),
+                    frameRate: 20
+                });
+                this.phaserScene.anims.create({
+                    key: `buttslide${this.levelNumber}`,
+                    frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
+                        'buttslide0002', 'buttslide0003', 'buttslide0004', 'buttslide0005', 'buttslide0006'
+                    ] }),
+                    frameRate: 20,
+                    repeat: -1
+                });
+                this.phaserScene.anims.create({
+                    key: `buttslide${this.levelNumber}`,
+                    frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
+                        'buttslide0007', 'buttslide0008', 'stand0000', 'stand0001', 'stand0002', 'stand0003' //Temp removed slide009 for testing with Bella, who's missing a buttslide frame
                     ] }),
                     frameRate: 20
                 });
