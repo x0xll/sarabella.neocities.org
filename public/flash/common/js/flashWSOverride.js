@@ -790,7 +790,8 @@ function addGalleryItem(item)
 {
     console.log("won item: ",item)
 
-    gallery = loadData(DATA_TYPES.gallery);
+    let gallery = loadData(DATA_TYPES.gallery);
+    if (!gallery) {gallery = []}
     gallery.forEach(element => {
         let itid = 0;
         let quantity = 1
@@ -806,9 +807,7 @@ function addGalleryItem(item)
         }
     });
     saveData(DATA_TYPES.gallery, []);
-    // if (gallery == null)
-    //     gallery = []
-
+    
     // Setup the correct itid if the item isn't already one 
     let itid = 0;
     if (typeof item === 'number') { itid = item; }
