@@ -170,7 +170,7 @@ class LevelHelper {
                 this.phaserScene.anims.create({
                     key: `jump${this.levelNumber}`,
                     frames: this.phaserScene.anims.generateFrameNumbers(`horse${this.levelNumber}`, { frames: [
-                        'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'jump0011', 'jump0012', 'jump0013', 'jump0014', 'jump0015', 'jump0016', 'jump0017'
+                        'jump0000', 'jump0001', 'jump0002', 'jump0003', 'jump0004', 'jump0005', 'jump0006', 'jump0007', 'jump0008', 'jump0009', 'jump0010', 'jump0011', 'jump0012', 'jump0013', 'jump0014', 'jump0015', 'jump0016', 'jump0017', 'jump0018'
                     ] }),
                     frameRate: 16
                 });
@@ -475,43 +475,63 @@ class LevelHelper {
                 switch (this.phaserScene.horse.frame.name) {
                     // TODO: These cases need to be adjusted for the updated sprites
                     case 'jump0001':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(90, 70);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(50, 50); //90, 70
                         break;
                     case 'jump0002':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 35);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 15); //110, 35
                         break;
                     case 'jump0003':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 25);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 5); //110, 25
                         break;
                     case 'jump0004':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 20);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 0); //110, 20
                         break;
                     case 'jump0005':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 20);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 0);
                         break;
                     case 'jump0006':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 20);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 0);
                         break;
                     case 'jump0007':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 20);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 0);
                         break;
                     case 'jump0008':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(115, 25);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(75, 5); //115, 25
                         break;
                     case 'jump0009':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 35);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 15);
                         break;
                     case 'jump0010':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(110, 55);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 15);
                         break;
-                        
-                    case 'jumo0017':
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(90, 85);
+                    case 'jump0011':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 25);
+                        break;
+                    case 'jump0012':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(75, 25);
+                        break;
+                    case 'jump0013':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(75, 25);
+                        break;
+                    case 'jump0014':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 45);
+                        break;
+                    case 'jump0015':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 55);
+                        break;
+                    case 'jump0016':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(60, 55);
+                        break;
+                    case 'jump0017':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(60, 65);
+                        break;
+                    case 'jump0018':
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(50, 85);
                         this.phaserScene.horseMovement = this.horseMovements.cantering
                         break;
                 
                     default:
-                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 95);
+                        this.phaserScene.horse.body.setSize(150, 105, false).setOffset(30, 75);
                         this.phaserScene.horseMovement = this.horseMovements.cantering
                         break;
                 }
@@ -534,7 +554,7 @@ class LevelHelper {
                     this.phaserScene.data.canterSound.stop()
                     this.phaserScene.data.buttslideSound.stop()
                     this.phaserScene.horse.setVelocityX(this.gallopSpeed);
-                    this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 95);
+                    this.phaserScene.horse.body.setSize(150, 105, false).setOffset(30, 75); //70, 95
                     this.phaserScene.horse.play(`gallop${this.levelNumber}`)
                     this.phaserScene.data.runningSound.play()
                 }
@@ -544,7 +564,7 @@ class LevelHelper {
                     this.phaserScene.data.canterSound.stop()
                     this.phaserScene.data.buttslideSound.stop()
                     this.phaserScene.horse.setVelocityX(-this.gallopSpeed);
-                    this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 95);
+                    this.phaserScene.horse.body.setSize(150, 105, false).setOffset(30, 75);
                     this.phaserScene.horse.play(`gallop${this.levelNumber}`)
                     this.phaserScene.data.runningSound.play()
                 }
@@ -554,7 +574,7 @@ class LevelHelper {
                 this.phaserScene.data.buttslideSound.stop()
                 if (!this.phaserScene.horse.frame.name.includes('canter')) {
                     this.phaserScene.horse.setVelocityX(this.canterSpeed);
-                    this.phaserScene.horse.body.setSize(150, 105, false).setOffset(70, 95);
+                    this.phaserScene.horse.body.setSize(150, 105, false).setOffset(30, 75);
                     this.phaserScene.horse.play(`canter${this.levelNumber}`)
                     this.phaserScene.data.canterSound.play()
                 }
