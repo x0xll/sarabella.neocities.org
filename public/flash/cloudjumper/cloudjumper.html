@@ -39,7 +39,7 @@
         <script>
           // Turbo mode will become visible if showTurbo=true
           const urlParams = new URLSearchParams(window.location.search);
-          const showTurbo = urlParams.get('showTurbo');
+          const showTurbo = urlParams.get('showTurbo') !== "false";
           setupRuffle();
           var locale = checkLocalizedFiles(`./xml/game_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           let swf = './swf/cloudjumper' + versionFile + '.swf'+ `?bTurboAvailable=${showTurbo}`;
