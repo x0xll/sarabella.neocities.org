@@ -34,6 +34,7 @@ const horses = [
     'clio',
     'colour',
     'connora',
+    'coral',
     'cosima',
     'cupid',
     'dart',
@@ -43,6 +44,7 @@ const horses = [
     'echo',
     'epona',
     'euros',
+    'excelsior',
     'faith',
     'falcha',
     'farfalla',
@@ -121,6 +123,7 @@ const horses = [
     'virstan',
     'waterpearl',
     'wavebreaker',
+    'yellow',
     'zephan',
     'zombie'
 ]
