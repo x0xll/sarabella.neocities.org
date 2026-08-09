@@ -1,6 +1,6 @@
 class LevelThree extends Phaser.Scene 
 {
-    debugStartX = 26000
+    debugStartX = 200
     levelEnd = 37440
     levelTime = 110
     canUnlockNext = true
@@ -13,7 +13,8 @@ class LevelThree extends Phaser.Scene
 
     preload ()
     {
-        this.load.atlas('horse3', './images/horseJewel.png', './images/horse.json');
+        //this.load.atlas('horse3', './images/horseJewel.png', './images/horse.json');
+        this.load.atlas('horse3', './newsprites/Jewel/spritesJewel.png', './newsprites/Jewel/spritesJewel.json');
         this.levelHelper = new LevelHelper(this, 3, this.addLevelRef)
     }
 

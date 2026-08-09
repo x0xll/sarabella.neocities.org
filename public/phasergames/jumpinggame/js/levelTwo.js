@@ -13,7 +13,8 @@ class LevelTwo extends Phaser.Scene
 
     preload ()
     {
-        this.load.atlas('horse2', './images/horseFiona.png', './images/horse.json');
+        //this.load.atlas('horse2', './images/horseFiona.png', './images/horse.json');
+        this.load.atlas('horse2', './newsprites/Fiona/spritesFiona.png', './newsprites/Fiona/spritesFiona.json');
         this.levelHelper = new LevelHelper(this, 2, this.addLevelRef)
     }
 
