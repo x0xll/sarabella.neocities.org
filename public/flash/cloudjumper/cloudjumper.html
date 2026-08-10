@@ -37,11 +37,14 @@
 
         <!-- Load correct localized version of the game -->
         <script>
+          // Turbo mode will become visible if showTurbo=true
+          const urlParams = new URLSearchParams(window.location.search);
+          const showTurbo = urlParams.get('showTurbo') !== "false";
           setupRuffle();
           var locale = checkLocalizedFiles(`./xml/game_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
-          let swf = './swf/cloudjumper' + versionFile + '.swf';
+          let swf = './swf/cloudjumper' + versionFile + '.swf'+ `?bTurboAvailable=${showTurbo}`;
           if (locale == 'ja')
-            swf = './swf/cloudjumper' + versionFile + '_ja.swf';
+            swf = './swf/cloudjumper' + versionFile + '_ja.swf'+ `?bTurboAvailable=${showTurbo}`;
           else if (locale == 'en')
             locale = '';
           loadSWF(swf, '521', '887', locale, '', false)

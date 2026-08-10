@@ -1,7 +1,71 @@
+function log(string)
+{
+    console.log(string);
+}
+function warn(string)
+{
+    console.warn(string);
+}
+function error(string)
+{
+    console.error(string);
+}
+
 /* General - WS Calls */
+/**
+ * Replace activateCode(string userId, string countryCode, string code) call
+ * @returns an object with the activation result (string activateCodeResult)
+ */
+function activateCode(userId, countryCode, code)
+{
+    let codeActivation = {
+        result: {
+            string: "" // TODO: Figure out the value expected here
+        }
+    }
+    return codeActivation;
+}
+
+/**
+ * Replace activateCodeDebug(string userId, string countryCode, string code) call
+ * @returns an object with the activation result (string activateCodeResult)
+ */
+function activateCodeDebug(userId, countryCode, code)
+{
+    return activateCode(userId, countryCode, code);
+}
+
+/**
+ * Replace activateUserGift(string tokenHigh, string tokenLow, string giftID) call
+ * @returns an object with the activation result (string activateUserGiftResponse)
+ */
+function activateUserGift(tokenHigh, tokenLow, giftID)
+{
+    let userGift = { result: { } }
+    return userGift;
+}
+
+/**
+ * Replace addCurrency(string uid, string currency) call
+ * @returns an object with the activation result (xml addCurrencyResponse)
+ */
+function addCurrency(uid, currency)
+{
+    let response = {
+        result: {
+            xml: "" // TODO: Figure out what was send here
+        }
+    }
+    return response;
+}
+
+
 const INSPIRATIONS = [
-    "Test inspiration",
-    "Another test"
+    "Think positive every day! Feel the bliss of joy and energy that comes with it.",
+    "Be the hero in your own story.",
+    "I give you courage. Now you can release your fears.",
+    "I will help you stay in a steady flow of abundance.",
+    "Have the courage to trust yourself."
 ]
 
 /**
@@ -12,12 +76,10 @@ function getInspiration()
 {
     // TODO: Handle depending on loca
     let InspirationValue = {
-        result: {
-            string: INSPIRATIONS[Math.random() * INSPIRATIONS.length]
-        }
+        result: `${INSPIRATIONS[Math.floor(Math.random() * (INSPIRATIONS.length))]}`
     }
 
-    console.log("InspirationValue: " + InspirationValue.result.string);
+    console.log("InspirationValue: " + InspirationValue.result);
 
     return InspirationValue;
 }
@@ -169,34 +231,19 @@ function spinWheel()
  */
 function getCategories()
 {
-    const CATEGORIES_ID = [
-        "art",
-        "furniture",
-        "flooring",
-        "toys",
-        "wallhanging",
-        "homedecor",
-        "holiday",
-        "knickknack",
-        "curios",
-        "jewelry"
-    ]
-
-    let CategoriesValues = {result: { categories:[]}}
-
-    for (let i = 0; i < 10; i++)
-    {
-        let index = i + 1;
-
-        CategoriesValues.result.categories.push({
-            name: getLocalizedText(CATEGORIES_ID[i], "categoriesItems"),
-            catid: index
-        })
-    }
-
-    console.log(CategoriesValues);
-
-    return CategoriesValues;
+    return "<categories>" +
+    "<category name=\"Storybooks\" catid=\"1\" />" +
+    "<category name=\"Furniture\" catid=\"2\" />" +
+    "<category name=\"Flooring\" catid=\"3\" />" +
+    "<category name=\"Toys\" catid=\"4\" />" + // includes Magic Match
+    "<category name=\"Wall Hangings\" catid=\"5\" />" +
+    "<category name=\"Home Decor\" catid=\"6\" />" +
+    "<category name=\"Holiday\" catid=\"7\" />" +
+    "<category name=\"Knick-Knacks\" catid=\"8\" />" +
+    "<category name=\"Wonders\" catid=\"9\" />" +
+    "<category name=\"Animals\" catid=\"10\" />" +
+    "<category name=\"Doorways\" catid=\"11\" />" +
+    "</categories>";
 }
 
 /**
@@ -205,60 +252,481 @@ function getCategories()
  */
 function getAllThings()
 {
-    // TODO: Fill correctly
-    const ITEMS = [
-        {
-            itid: 10001,
-            name: "Bird", 
-            price1: 25,
-            description: "Cat Description",
-            catid: 1,
-            thumb: "/flash/gallery/data/items/bird/",
-            swf: "/flash/gallery/data/items/bird/bird.swf"
-        }
-    ]
+    console.log("getting all things")
+    let index = 10300
+    let items = "<items>" +
+    // Furniture
+    //pg1
+    `<item itid=\"${10000}\" name=\"Clock1\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CLK-04.swf\" swf=\"/flash/common/swf/things/FTR-CLK-04.swf\" />` +
+    `<item itid=\"${10001}\" name=\"Fence\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-FENCE-01.swf\" swf=\"/flash/common/swf/things/FTR-FENCE-01.swf\" />` +
+    `<item itid=\"${10002}\" name=\"Table\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-TBL-06.swf\" swf=\"/flash/common/swf/things/FTR-TBL-06.swf\" />` +
+    `<item itid=\"${10003}\" name=\"Ottoman\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-SOFA-07.swf\" swf=\"/flash/common/swf/things/FTR-SOFA-07.swf\" />` +
+    `<item itid=\"${10004}\" name=\"Box\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BOX-01.swf\" swf=\"/flash/common/swf/things/FTR-BOX-01.swf\" />` +
+    `<item itid=\"${10005}\" name=\"Toy Chest\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BOX-03.swf\" swf=\"/flash/common/swf/things/FTR-BOX-03.swf\" />` +
+    `<item itid=\"${10006}\" name=\"Clock2\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CLK-03.swf\" swf=\"/flash/common/swf/things/FTR-CLK-03.swf\" />` +
+    //pg2
+    `<item itid=\"${10007}\" name=\"Star Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-STAR-04.swf\" swf=\"/flash/common/swf/things/FTR-STAR-04.swf\" />` +
+    `<item itid=\"${10008}\" name=\"Yellow Bunk Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BED-08.swf\" swf=\"/flash/common/swf/things/FTR-BED-08.swf\" />` +
+    `<item itid=\"${10009}\" name=\"Small Star Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-08.swf\" swf=\"/flash/common/swf/things/FTR-CAB-08.swf\" />` +
+    `<item itid=\"${10010}\" name=\"Purple Bunk Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BED-07.swf\" swf=\"/flash/common/swf/things/FTR-BED-07.swf\" />` +
+    `<item itid=\"${10011}\" name=\"Brown Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-13.swf\" swf=\"/flash/common/swf/things/FTR-CAB-13.swf\" />` +
+    `<item itid=\"${10012}\" name=\"Pink Bunk Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BED-01.swf\" swf=\"/flash/common/swf/things/FTR-BED-01.swf\" />` +
+    `<item itid=\"${10013}\" name=\"Small Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-SOFA-06.swf\" swf=\"/flash/common/swf/things/FTR-SOFA-06.swf\" />` +
+    //pg3
+    `<item itid=\"${10014}\" name=\"Yellow Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-12.swf\" swf=\"/flash/common/swf/things/FTR-CAB-12.swf\" />` +
+    `<item itid=\"${10015}\" name=\"Brown Dresser\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-09.swf\" swf=\"/flash/common/swf/things/FTR-CAB-09.swf\" />` +
+    `<item itid=\"${10016}\" name=\"Clock3\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CLK-01.swf\" swf=\"/flash/common/swf/things/FTR-CLK-01.swf\" />` +
+    `<item itid=\"${10017}\" name=\"Clock4\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CLK-02.swf\" swf=\"/flash/common/swf/things/FTR-CLK-02.swf\" />` +
+    `<item itid=\"${10018}\" name=\"Yellow Dresser\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-15.swf\" swf=\"/flash/common/swf/things/FTR-CAB-15.swf\" />` +
+    `<item itid=\"${10019}\" name=\"Treasure Chest\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BOX-02.swf\" swf=\"/flash/common/swf/things/FTR-BOX-02.swf\" />` +
+    `<item itid=\"${10020}\" name=\"Star Dresser\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-14.swf\" swf=\"/flash/common/swf/things/FTR-CAB-14.swf\" />` +
+    `<item itid=\"${10021}\" name=\"Large Star Cabinet\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-CAB-07.swf\" swf=\"/flash/common/swf/things/FTR-CAB-07.swf\" />` +
+    `<item itid=\"${10022}\" name=\"Purple Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BED-02.swf\" swf=\"/flash/common/swf/things/FTR-BED-02.swf\" />` +
+    `<item itid=\"${10023}\" name=\"Blue Bed\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-BED-04.swf\" swf=\"/flash/common/swf/things/FTR-BED-04.swf\" />` +
+    `<item itid=\"${10024}\" name=\"Glass Table\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-TBL-07.swf\" swf=\"/flash/common/swf/things/FTR-TBL-07.swf\" />` +
+    `<item itid=\"${10025}\" name=\"Desk\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-DSK-01.swf\" swf=\"/flash/common/swf/things/FTR-DSK-01.swf\" />` +
+    `<item itid=\"${10026}\" name=\"Large Sofa\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-SOFA-02.swf\" swf=\"/flash/common/swf/things/FTR-SOFA-02.swf\" />` +
+    `<item itid=\"${10027}\" name=\"Table\" price1=\"25\" description=\"Description\" catid=\"2\" thumb=\"/flash/common/swf/things/FTR-TBL-08.swf\" swf=\"/flash/common/swf/things/FTR-TBL-08.swf\" />` +
 
-    let ThingsValue = {result: { items:[]}}
+    
+    // Flooring
+    `<item itid=\"${10028}\" name=\"Rug 1\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-09.swf\" swf=\"/flash/common/swf/things/FLR-RUG-09.swf\" />` +
+    `<item itid=\"${10029}\" name=\"Rug 2\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-12.swf\" swf=\"/flash/common/swf/things/FLR-RUG-12.swf\" />` +
+    `<item itid=\"${10030}\" name=\"Rug 3\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-04.swf\" swf=\"/flash/common/swf/things/FLR-RUG-04.swf\" />` +
+    `<item itid=\"${10031}\" name=\"Rug 4\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-16.swf\" swf=\"/flash/common/swf/things/FLR-RUG-16.swf\" />` +
+    `<item itid=\"${10032}\" name=\"Rug 5\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-11.swf\" swf=\"/flash/common/swf/things/FLR-RUG-11.swf\" />` +
+    `<item itid=\"${10033}\" name=\"Rug 6\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-01.swf\" swf=\"/flash/common/swf/things/FLR-RUG-01.swf\" />` +
+    `<item itid=\"${10034}\" name=\"Rug 7\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-08.swf\" swf=\"/flash/common/swf/things/FLR-RUG-08.swf\" />` +
+    `<item itid=\"${10035}\" name=\"Rug 8\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-05.swf\" swf=\"/flash/common/swf/things/FLR-RUG-05.swf\" />` +
+    `<item itid=\"${10036}\" name=\"Rug 9\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-07.swf\" swf=\"/flash/common/swf/things/FLR-RUG-07.swf\" />` +
+    `<item itid=\"${10037}\" name=\"Rug 10\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-14.swf\" swf=\"/flash/common/swf/things/FLR-RUG-14.swf\" />` +
+    `<item itid=\"${10038}\" name=\"Rug 11\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-13.swf\" swf=\"/flash/common/swf/things/FLR-RUG-13.swf\" />` +
+    `<item itid=\"${10039}\" name=\"Rug 12\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-17.swf\" swf=\"/flash/common/swf/things/FLR-RUG-17.swf\" />` +
+    `<item itid=\"${10040}\" name=\"Rug 13\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-18.swf\" swf=\"/flash/common/swf/things/FLR-RUG-18.swf\" />` +
+    `<item itid=\"${10041}\" name=\"Rug 14\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-19.swf\" swf=\"/flash/common/swf/things/FLR-RUG-19.swf\" />` +
+    `<item itid=\"${10042}\" name=\"Rug 15\" price1=\"25\" description=\"Description\" catid=\"3\" thumb=\"/flash/common/swf/things/FLR-RUG-03.swf\" swf=\"/flash/common/swf/things/FLR-RUG-03.swf\" />` +
 
-    for (let i = 0; i < ITEMS.length; i++)
-    {
-        ThingsValue.result.items.push(ITEMS[i])
+    // Toys
+    //pg1
+    `<item itid=\"${10043}\" name=\"Flower Flitter Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-01.swf\" swf=\"/flash/common/swf/things/TOY-MF-01.swf\" />` +
+    `<item itid=\"${10044}\" name=\"Malachite Crab Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-17.swf\" swf=\"/flash/common/swf/things/TOY-MF-17.swf\" />` +
+    `<item itid=\"${10045}\" name=\"Rose Dragon Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-53.swf\" swf=\"/flash/common/swf/things/TOY-MF-53.swf\" />` +
+    `<item itid=\"${10046}\" name=\"Yarn Yak Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-85.swf\" swf=\"/flash/common/swf/things/TOY-MF-85.swf\" />` +
+    //pg2
+    `<item itid=\"${10047}\" name=\"Rocking Horse\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-GEN-17.swf\" swf=\"/flash/common/swf/things/TOY-GEN-17.swf\" />` +
+    `<item itid=\"${10048}\" name=\"Pink Doll\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-DOLL-03.swf\" swf=\"/flash/common/swf/things/TOY-DOLL-03.swf\" />` +
+    `<item itid=\"${10049}\" name=\"Raccoon Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-12.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-12.swf\" />` +
+    `<item itid=\"${10050}\" name=\"Horse Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-08.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-08.swf\" />` +
+    `<item itid=\"${10051}\" name=\"Soccor Ball\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-BALL-08.swf\" swf=\"/flash/common/swf/things/TOY-BALL-08.swf\" />` +
+    `<item itid=\"${10052}\" name=\"Volleyball\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-BALL-10.swf\" swf=\"/flash/common/swf/things/TOY-BALL-10.swf\" />` +
+    `<item itid=\"${10053}\" name=\"Purple Doll\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-DOLL-06.swf\" swf=\"/flash/common/swf/things/TOY-DOLL-06.swf\" />` +
+    `<item itid=\"${10054}\" name=\"Cow Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-03.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-03.swf\" />` +
+    `<item itid=\"${10055}\" name=\"Turtle Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-13.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-13.swf\" />` +
+    `<item itid=\"${10056}\" name=\"Chess\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-GEN-07.swf\" swf=\"/flash/common/swf/things/TOY-GEN-07.swf\" />` +
+    `<item itid=\"${10057}\" name=\"Lion Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-09.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-09.swf\" />` +
+    `<item itid=\"${10058}\" name=\"Puppet\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PPT-03.swf\" swf=\"/flash/common/swf/things/TOY-PPT-03.swf\" />` +
+    `<item itid=\"${10059}\" name=\"Pig Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-10.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-10.swf\" />` +
+    //pg3
+    `<item itid=\"${10060}\" name=\"Skateboard\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-GEN-18.swf\" swf=\"/flash/common/swf/things/TOY-GEN-18.swf\" />` +
+    `<item itid=\"${10061}\" name=\"Cat Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PLSH-02.swf\" swf=\"/flash/common/swf/things/TOY-PLSH-02.swf\" />` +
+    //pg4
+    `<item itid=\"${10062}\" name=\"Glow-Eyed Catkin Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-84.swf\" swf=\"/flash/common/swf/things/TOY-MF-84.swf\" />` +
+    `<item itid=\"${10063}\" name=\"Cat Puppet\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-PPT-01.swf\" swf=\"/flash/common/swf/things/TOY-PPT-01.swf\" />` +
+    `<item itid=\"${10064}\" name=\"Purple Balloon\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-BLN-02.swf\" swf=\"/flash/common/swf/things/TOY-BLN-02.swf\" />` +
+    `<item itid=\"${10065}\" name=\"Blue Balloon\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-BLN-08.swf\" swf=\"/flash/common/swf/things/TOY-BLN-08.swf\" />` +
+    `<item itid=\"${10066}\" name=\"Ball\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-BALL-07.swf\" swf=\"/flash/common/swf/things/TOY-BALL-07.swf\" />` +
+    `<item itid=\"${10067}\" name=\"Red Doll\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-DOLL-07.swf\" swf=\"/flash/common/swf/things/TOY-DOLL-07.swf\" />` +
+    //pg5
+    `<item itid=\"${10068}\" name=\"Ramshaggle Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-78.swf\" swf=\"/flash/common/swf/things/TOY-MF-78.swf\" />` +
+    `<item itid=\"${10069}\" name=\"Heart-Tailed Lizard Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-79.swf\" swf=\"/flash/common/swf/things/TOY-MF-79.swf\" />` +
+    `<item itid=\"${10070}\" name=\"Dream Mouse Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-80.swf\" swf=\"/flash/common/swf/things/TOY-MF-80.swf\" />` +
+    `<item itid=\"${10071}\" name=\"Rainbow Wheebee Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-81.swf\" swf=\"/flash/common/swf/things/TOY-MF-81.swf\" />` +
+    `<item itid=\"${10072}\" name=\"Bearn Terrier Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-83.swf\" swf=\"/flash/common/swf/things/TOY-MF-83.swf\" />` +
+    //pg6
+    `<item itid=\"${10073}\" name=\"Duskpaw Cub Plush\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/TOY-MF-42.swf\" swf=\"/flash/common/swf/things/TOY-MF-42.swf\" />` +
+    //magic match (not in bazaar)
+    `<item itid=\"${10074}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-01.swf\" swf=\"/flash/common/swf/things/MM-PLSH-01.swf\" />` +
+    `<item itid=\"${10075}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-02.swf\" swf=\"/flash/common/swf/things/MM-PLSH-02.swf\" />` +
+    `<item itid=\"${10076}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-03.swf\" swf=\"/flash/common/swf/things/MM-PLSH-03.swf\" />` +
+    `<item itid=\"${10077}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-04.swf\" swf=\"/flash/common/swf/things/MM-PLSH-04.swf\" />` +
+    `<item itid=\"${10078}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-07.swf\" swf=\"/flash/common/swf/things/MM-PLSH-07.swf\" />` +
+    `<item itid=\"${10079}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-08.swf\" swf=\"/flash/common/swf/things/MM-PLSH-08.swf\" />` +
+    `<item itid=\"${10080}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-09.swf\" swf=\"/flash/common/swf/things/MM-PLSH-09.swf\" />` +
+    `<item itid=\"${10081}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-10.swf\" swf=\"/flash/common/swf/things/MM-PLSH-10.swf\" />` +
+    `<item itid=\"${10082}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-12.swf\" swf=\"/flash/common/swf/things/MM-PLSH-12.swf\" />` +
+    `<item itid=\"${10083}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-13.swf\" swf=\"/flash/common/swf/things/MM-PLSH-13.swf\" />` +
+    `<item itid=\"${10084}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-15.swf\" swf=\"/flash/common/swf/things/MM-PLSH-15.swf\" />` +
+    `<item itid=\"${10085}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-16.swf\" swf=\"/flash/common/swf/things/MM-PLSH-16.swf\" />` +
+    `<item itid=\"${10086}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-17.swf\" swf=\"/flash/common/swf/things/MM-PLSH-17.swf\" />` +
+    `<item itid=\"${10087}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-19.swf\" swf=\"/flash/common/swf/things/MM-PLSH-19.swf\" />` +
+    `<item itid=\"${10088}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-20.swf\" swf=\"/flash/common/swf/things/MM-PLSH-20.swf\" />` +
+    `<item itid=\"${10089}\" name=\"Magic Match\" price1=\"25\" description=\"Description\" catid=\"4\" thumb=\"/flash/common/swf/things/MM-PLSH-21.swf\" swf=\"/flash/common/swf/things/MM-PLSH-21.swf\" />` +
+    
+    // Wall Hangings
+    `<item itid=\"${10090}\" name=\"Basket\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/WALL-BSKT-01.swf\" swf=\"/flash/common/swf/things/WALL-BSKT-01.swf\" />` +
+    `<item itid=\"${10091}\" name=\"Sign\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/WALL-SIGN-02.swf\" swf=\"/flash/common/swf/things/WALL-SIGN-02.swf\" />` +
+    `<item itid=\"${10092}\" name=\"Amor Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-533.swf\" swf=\"/flash/common/swf/things/ART-HORSES-533.swf\" />` +
+    `<item itid=\"${10093}\" name=\"Bella Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-037.swf\" swf=\"/flash/common/swf/things/ART-HORSES-037.swf\" />` +
+    `<item itid=\"${10094}\" name=\"Fiona Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-040.swf\" swf=\"/flash/common/swf/things/ART-HORSES-040.swf\" />` +
+    `<item itid=\"${10095}\" name=\"Flora Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-492.swf\" swf=\"/flash/common/swf/things/ART-HORSES-492.swf\" />` +
+    `<item itid=\"${10096}\" name=\"Froya Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-245.swf\" swf=\"/flash/common/swf/things/ART-HORSES-245.swf\" />` +
+    `<item itid=\"${10097}\" name=\"Iceking Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-246.swf\" swf=\"/flash/common/swf/things/ART-HORSES-246.swf\" />` +
+    `<item itid=\"${10098}\" name=\"Jewel Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-041.swf\" swf=\"/flash/common/swf/things/ART-HORSES-041.swf\" />` +
+    `<item itid=\"${10099}\" name=\"Mandalay Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-222.swf\" swf=\"/flash/common/swf/things/ART-HORSES-222.swf\" />` +
+    `<item itid=\"${10100}\" name=\"Misla Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-251.swf\" swf=\"/flash/common/swf/things/ART-HORSES-251.swf\" />` +
+    `<item itid=\"${10101}\" name=\"Nike Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-518.swf\" swf=\"/flash/common/swf/things/ART-HORSES-518.swf\" />` +
+    `<item itid=\"${10102}\" name=\"Triton Poster\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-HORSES-520.swf\" swf=\"/flash/common/swf/things/ART-HORSES-520.swf\" />` +
+    `<item itid=\"${10103}\" name=\"Tapestry 3\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-TPST-03.swf\" swf=\"/flash/common/swf/things/ART-TPST-03.swf\" />` +
+    `<item itid=\"${10104}\" name=\"Tapestry 2\" price1=\"25\" description=\"Description\" catid=\"5\" thumb=\"/flash/common/swf/things/ART-TPST-02.swf\" swf=\"/flash/common/swf/things/ART-TPST-02.swf\" />` +
+
+    // Home Decor
+    //pg1
+    `<item itid=\"${10105}\" name=\"Fruit Bowl\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-BOWL-01.swf\" swf=\"/flash/common/swf/things/HD-BOWL-01.swf\" />` +
+    `<item itid=\"${10106}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-19.swf\" swf=\"/flash/common/swf/things/HD-PLNT-19.swf\" />` +
+    `<item itid=\"${10107}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-16.swf\" swf=\"/flash/common/swf/things/HD-PLNT-16.swf\" />` +
+    //pg2
+    `<item itid=\"${10108}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-06.swf\" swf=\"/flash/common/swf/things/HD-PLNT-06.swf\" />` +
+    `<item itid=\"${10109}\" name=\"Tea Set\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-HW-10.swf\" swf=\"/flash/common/swf/things/HD-HW-10.swf\" />` +
+    `<item itid=\"${10110}\" name=\"Windchime\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-11.swf\" swf=\"/flash/common/swf/things/HD-CLNG-11.swf\" />` +
+    `<item itid=\"${10111}\" name=\"Chandelier\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-05.swf\" swf=\"/flash/common/swf/things/HD-CLNG-05.swf\" />` +
+    `<item itid=\"${10112}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-01.swf\" swf=\"/flash/common/swf/things/HD-PLNT-01.swf\" />` +
+    `<item itid=\"${10113}\" name=\"Carousel Chime\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-08.swf\" swf=\"/flash/common/swf/things/HD-CLNG-08.swf\" />` +
+    `<item itid=\"${10114}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-10.swf\" swf=\"/flash/common/swf/things/HD-PLNT-10.swf\" />` +
+    `<item itid=\"${10115}\" name=\"Crystal Chime\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-06.swf\" swf=\"/flash/common/swf/things/HD-CLNG-06.swf\" />` +
+    `<item itid=\"${10116}\" name=\"Bell\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-02.swf\" swf=\"/flash/common/swf/things/HD-CLNG-02.swf\" />` +
+    `<item itid=\"${10117}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-07.swf\" swf=\"/flash/common/swf/things/HD-PLNT-07.swf\" />` +
+    //pg3
+    `<item itid=\"${10118}\" name=\"Lemonade\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-HW-09.swf\" swf=\"/flash/common/swf/things/HD-HW-09.swf\" />` +
+    `<item itid=\"${10119}\" name=\"Windchime\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-12.swf\" swf=\"/flash/common/swf/things/HD-CLNG-12.swf\" />` +
+    `<item itid=\"${10120}\" name=\"Swing\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-10.swf\" swf=\"/flash/common/swf/things/HD-CLNG-10.swf\" />` +
+    `<item itid=\"${10121}\" name=\"Ocean Chime\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-09.swf\" swf=\"/flash/common/swf/things/HD-CLNG-09.swf\" />` +
+    `<item itid=\"${10122}\" name=\"Pitcher\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-HW-07.swf\" swf=\"/flash/common/swf/things/HD-HW-07.swf\" />` +
+    `<item itid=\"${10123}\" name=\"Light\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-LITE-01.swf\" swf=\"/flash/common/swf/things/HD-LITE-01.swf\" />` +
+    `<item itid=\"${10124}\" name=\"Shelf\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/WALL-SHLF-02.swf\" swf=\"/flash/common/swf/things/WALL-SHLF-02.swf\" />` +
+    `<item itid=\"${10125}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-12.swf\" swf=\"/flash/common/swf/things/HD-PLNT-12.swf\" />` +
+    `<item itid=\"${10126}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-20.swf\" swf=\"/flash/common/swf/things/HD-PLNT-20.swf\" />` +
+    `<item itid=\"${10127}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-17.swf\" swf=\"/flash/common/swf/things/HD-PLNT-17.swf\" />` +
+    `<item itid=\"${10128}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-18.swf\" swf=\"/flash/common/swf/things/HD-PLNT-18.swf\" />` +
+    //pg4
+    `<item itid=\"${10129}\" name=\"Blue Crystal\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-HW-11.swf\" swf=\"/flash/common/swf/things/HD-HW-11.swf\" />` +
+    `<item itid=\"${10130}\" name=\"Ship\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-01.swf\" swf=\"/flash/common/swf/things/HD-CLNG-01.swf\" />` +
+    `<item itid=\"${10131}\" name=\"Horse Sculpture\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/ART-SCLP-04.swf\" swf=\"/flash/common/swf/things/ART-SCLP-04.swf\" />` +
+    `<item itid=\"${10132}\" name=\"Light\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-LITE-02.swf\" swf=\"/flash/common/swf/things/HD-LITE-02.swf\" />` +
+    `<item itid=\"${10133}\" name=\"Sculpture\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/ART-SCLP-01.swf\" swf=\"/flash/common/swf/things/ART-SCLP-01.swf\" />` +
+    `<item itid=\"${10134}\" name=\"Green Crystal\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-HW-13.swf\" swf=\"/flash/common/swf/things/HD-HW-13.swf\" />` +
+    `<item itid=\"${10135}\" name=\"Purple Crystal\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-HW-12.swf\" swf=\"/flash/common/swf/things/HD-HW-12.swf\" />` +
+    `<item itid=\"${10136}\" name=\"Hot Air Balloon\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-CLNG-07.swf\" swf=\"/flash/common/swf/things/HD-CLNG-07.swf\" />` +
+    `<item itid=\"${10137}\" name=\"Plant\" price1=\"25\" description=\"Description\" catid=\"6\" thumb=\"/flash/common/swf/things/HD-PLNT-09.swf\" swf=\"/flash/common/swf/things/HD-PLNT-09.swf\" />` +
+
+    // Holiday
+    `<item itid=\"${10138}\" name=\"Bunny\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-EAS-01.swf\" swf=\"/flash/common/swf/things/HOL-EAS-01.swf\" />` +
+    `<item itid=\"${10139}\" name=\"Christmas Star\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-01.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-01.swf\" />` +
+    `<item itid=\"${10140}\" name=\"Stocking\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-02.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-02.swf\" />` +
+    `<item itid=\"${10141}\" name=\"Stocking\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-14.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-14.swf\" />` +
+    `<item itid=\"${10142}\" name=\"Gift\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-15.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-15.swf\" />` +
+    `<item itid=\"${10143}\" name=\"Gift\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-07.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-07.swf\" />` +
+    `<item itid=\"${10144}\" name=\"Baskey\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-EAS-02.swf\" swf=\"/flash/common/swf/things/HOL-EAS-02.swf\" />` +
+    `<item itid=\"${10145}\" name=\"Bunnies\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-VALD-15.swf\" swf=\"/flash/common/swf/things/HOL-VALD-15.swf\" />` +
+    `<item itid=\"${10146}\" name=\"Christmas Tree\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-04.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-04.swf\" />` +
+    `<item itid=\"${10147}\" name=\"Snowman\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-06.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-06.swf\" />` +
+    `<item itid=\"${10148}\" name=\"Christmas Village\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-12.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-12.swf\" />` +
+    `<item itid=\"${10149}\" name=\"Wreath\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/WALL-WRTH-02.swf\" swf=\"/flash/common/swf/things/WALL-WRTH-02.swf\" />` +
+    `<item itid=\"${10150}\" name=\"Nutcracker\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-05.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-05.swf\" />` +
+    `<item itid=\"${10151}\" name=\"Snowglobe\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-11.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-11.swf\" />` +
+    `<item itid=\"${10152}\" name=\"Angel\" price1=\"25\" description=\"Description\" catid=\"7\" thumb=\"/flash/common/swf/things/HOL-XMAS-10.swf\" swf=\"/flash/common/swf/things/HOL-XMAS-10.swf\" />` +
+
+    // Knick-Knacks
+    //pg1
+    `<item itid=\"${10153}\" name=\"Mint Candle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-39.swf\" swf=\"/flash/common/swf/things/KK-39.swf\" />` +
+    `<item itid=\"${10154}\" name=\"Mint Candle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-38.swf\" swf=\"/flash/common/swf/things/KK-38.swf\" />` +
+    `<item itid=\"${10155}\" name=\"Chocolate Candle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-37.swf\" swf=\"/flash/common/swf/things/KK-37.swf\" />` +
+    `<item itid=\"${10156}\" name=\"Chocolate Cndle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-36.swf\" swf=\"/flash/common/swf/things/KK-36.swf\" />` +
+    `<item itid=\"${10157}\" name=\"Lemon Candle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-35.swf\" swf=\"/flash/common/swf/things/KK-35.swf\" />` +
+    `<item itid=\"${10158}\" name=\"Lime Candle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-34.swf\" swf=\"/flash/common/swf/things/KK-34.swf\" />` +
+    `<item itid=\"${10159}\" name=\"Orange Candle\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-31.swf\" swf=\"/flash/common/swf/things/KK-31.swf\" />` +
+    `<item itid=\"${10160}\" name=\"Potions\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-32.swf\" swf=\"/flash/common/swf/things/KK-32.swf\" />` +
+    `<item itid=\"${10161}\" name=\"Letter\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-15.swf\" swf=\"/flash/common/swf/things/KK-15.swf\" />` +
+    `<item itid=\"${10162}\" name=\"Fairy\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-01.swf\" swf=\"/flash/common/swf/things/KK-01.swf\" />` +
+    `<item itid=\"${10163}\" name=\"Echo\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-227.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-227.swf\" />` +
+    //pg2
+    `<item itid=\"${10164}\" name=\"Hecate\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-235.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-235.swf\" />` +
+    `<item itid=\"${10165}\" name=\"Naiad\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-243.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-243.swf\" />` +
+    `<item itid=\"${10166}\" name=\"Neptune\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-244.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-244.swf\" />` +
+    `<item itid=\"${10167}\" name=\"Nike\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-245.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-245.swf\" />` +
+    `<item itid=\"${10168}\" name=\"Pandora\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-247.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-247.swf\" />` +
+    `<item itid=\"${10169}\" name=\"Thalia\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-250.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-250.swf\" />` +
+    `<item itid=\"${10170}\" name=\"Uranus\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-254.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-254.swf\" />` +
+    `<item itid=\"${10171}\" name=\"Achilles\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-212.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-212.swf\" />` +
+    `<item itid=\"${10172}\" name=\"Amor\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-213.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-213.swf\" />` +
+    `<item itid=\"${10173}\" name=\"Apollo\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-216.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-216.swf\" />` +
+    `<item itid=\"${10174}\" name=\"Bukefalos\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-HORSEMINIS-220.swf\" swf=\"/flash/common/swf/things/KK-HORSEMINIS-220.swf\" />` +
+    `<item itid=\"${10175}\" name=\"Jewellery Box\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-22.swf\" swf=\"/flash/common/swf/things/KK-22.swf\" />` +
+    `<item itid=\"${10176}\" name=\"Potions\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-13.swf\" swf=\"/flash/common/swf/things/KK-13.swf\" />` +
+    `<item itid=\"${10177}\" name=\"Snow Globe\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-09.swf\" swf=\"/flash/common/swf/things/KK-09.swf\" />` +
+    `<item itid=\"${10178}\" name=\"Music Box\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/common/swf/things/KK-02.swf\" swf=\"/flash/common/swf/things/KK-02.swf\" />` +
+
+    // Wonders
+    // From cards - not in bazaar
+    `<item itid=\"${10179}\" name=\"Lilac Gazebo\" price1=\"25\" description=\"Description\" catid=\"9\" thumb=\"/flash/common/swf/things/EN-NOL-05.swf\" swf=\"/flash/common/swf/things/EN-NOL-05.swf\" />` +
+    `<item itid=\"${10180}\" name=\"Winged Horse Statue\" price1=\"25\" description=\"Description\" catid=\"9\" thumb=\"/flash/common/swf/things/EN-NOL-09.swf\" swf=\"/flash/common/swf/things/EN-NOL-09.swf\" />` +
+
+    // Animals
+    //pg1
+    `<item itid=\"${10181}\" name=\"Grouse\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_02.swf\" swf=\"/flash/common/swf/things/ANML_NVL_02.swf\" />` +
+        // `<item itid=\"${10182}\" name=\"Deer\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_13.swf\" swf=\"/flash/common/swf/things/ANML_NVL_13.swf\" />` +
+    `<item itid=\"${10183}\" name=\"Hamster\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-06.swf\" swf=\"/flash/common/swf/things/ANML-06.swf\" />` +
+    `<item itid=\"${10184}\" name=\"Flamingo\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_53.swf\" swf=\"/flash/common/swf/things/ANML_NVL_53.swf\" />` +
+    `<item itid=\"${10185}\" name=\"Moose\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_09.swf\" swf=\"/flash/common/swf/things/ANML_NVL_09.swf\" />` +
+    `<item itid=\"${10186}\" name=\"Mouse\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_10.swf\" swf=\"/flash/common/swf/things/ANML_NVL_10.swf\" />` +
+    `<item itid=\"${10187}\" name=\"Opossum\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_17.swf\" swf=\"/flash/common/swf/things/ANML_NVL_17.swf\" />` +
+        // Starfish?
+    `<item itid=\"${10188}\" name=\"Cowlick Grouse\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-31.swf\" swf=\"/flash/common/swf/things/ANM-MF-31.swf\" />` +
+    `<item itid=\"${10189}\" name=\"Fey Mouseling\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-32.swf\" swf=\"/flash/common/swf/things/ANM-MF-32.swf\" />` +
+    `<item itid=\"${10190}\" name=\"Sun Cat\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-13.swf\" swf=\"/flash/common/swf/things/ANM-MF-13.swf\" />` +
+    `<item itid=\"${10191}\" name=\"Melonchilla\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-24.swf\" swf=\"/flash/common/swf/things/ANM-MF-24.swf\" />` +
+    `<item itid=\"${10192}\" name=\"Sand-Dollar Crawdad\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-27.swf\" swf=\"/flash/common/swf/things/ANM-MF-27.swf\" />` +
+    `<item itid=\"${10193}\" name=\"Glimmer Eel\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-38.swf\" swf=\"/flash/common/swf/things/ANM-MF-38.swf\" />` +
+    `<item itid=\"${10194}\" name=\"Sealky\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-39.swf\" swf=\"/flash/common/swf/things/ANM-MF-39.swf\" />` +
+    //pg2
+    `<item itid=\"${10195}\" name=\"Tea-Leaf Panda\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-09.swf\" swf=\"/flash/common/swf/things/ANM-MF-09.swf\" />` +
+    `<item itid=\"${10196}\" name=\"Lotus Hedgehog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-22.swf\" swf=\"/flash/common/swf/things/ANM-MF-22.swf\" />` +
+    `<item itid=\"${10197}\" name=\"Sweetpea Reindeer\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-23.swf\" swf=\"/flash/common/swf/things/ANM-MF-23.swf\" />` +
+    `<item itid=\"${10198}\" name=\"Seastelly\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-04.swf\" swf=\"/flash/common/swf/things/ANM-MF-04.swf\" />` +
+    `<item itid=\"${10199}\" name=\"Bat\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-07.swf\" swf=\"/flash/common/swf/things/ANML-07.swf\" />` +
+    `<item itid=\"${10200}\" name=\"Bird\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-02.swf\" swf=\"/flash/common/swf/things/ANML-02.swf\" />` +
+    `<item itid=\"${10201}\" name=\"Ant Farm\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-01.swf\" swf=\"/flash/common/swf/things/ANML-01.swf\" />` +
+    `<item itid=\"${10202}\" name=\"Starstone Otter\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-05.swf\" swf=\"/flash/common/swf/things/ANM-MF-05.swf\" />` +
+    `<item itid=\"${10203}\" name=\"Gemdigger Dog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-19.swf\" swf=\"/flash/common/swf/things/ANM-MF-19.swf\" />` +
+    `<item itid=\"${10204}\" name=\"Quixie Faun\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-15.swf\" swf=\"/flash/common/swf/things/ANM-MF-15.swf\" />` +
+    `<item itid=\"${10205}\" name=\"Blackcomb Lion\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-36.swf\" swf=\"/flash/common/swf/things/ANM-MF-36.swf\" />` +
+    `<item itid=\"${10206}\" name=\"Beehive\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-03.swf\" swf=\"/flash/common/swf/things/ANML-03.swf\" />` +
+    `<item itid=\"${10207}\" name=\"Snail\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-12.swf\" swf=\"/flash/common/swf/things/ANML-12.swf\" />` +
+    `<item itid=\"${10208}\" name=\"Deer\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-17.swf\" swf=\"/flash/common/swf/things/ANML-17.swf\" />` +
+    `<item itid=\"${10209}\" name=\"Whale\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_11.swf\" swf=\"/flash/common/swf/things/ANML_NVL_11.swf\" />` +
+    //pg3
+    `<item itid=\"${10210}\" name=\"Fringed Newt\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-10.swf\" swf=\"/flash/common/swf/things/ANM-MF-10.swf\" />` +
+    `<item itid=\"${10211}\" name=\"Fire Spoop\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-12.swf\" swf=\"/flash/common/swf/things/ANM-MF-12.swf\" />` +
+    `<item itid=\"${10212}\" name=\"Grasspool Otter\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-29.swf\" swf=\"/flash/common/swf/things/ANM-MF-29.swf\" />` +
+    `<item itid=\"${10213}\" name=\"Tassel Mouse\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-25.swf\" swf=\"/flash/common/swf/things/ANM-MF-25.swf\" />` +
+    `<item itid=\"${10214}\" name=\"Pipsqueak Longtail\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-14.swf\" swf=\"/flash/common/swf/things/ANM-MF-14.swf\" />` +
+    `<item itid=\"${10215}\" name=\"Caperberry Hob\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-33.swf\" swf=\"/flash/common/swf/things/ANM-MF-33.swf\" />` +
+    `<item itid=\"${10216}\" name=\"Starfall Beetle\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-34.swf\" swf=\"/flash/common/swf/things/ANM-MF-34.swf\" />` +
+    `<item itid=\"${10217}\" name=\"Glowball Pooch\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-35.swf\" swf=\"/flash/common/swf/things/ANM-MF-35.swf\" />` +
+    `<item itid=\"${10218}\" name=\"Cunning Flitkit\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-37.swf\" swf=\"/flash/common/swf/things/ANM-MF-37.swf\" />` +
+    `<item itid=\"${10219}\" name=\"Sprayer Whale\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-26.swf\" swf=\"/flash/common/swf/things/ANM-MF-26.swf\" />` +
+    `<item itid=\"${10220}\" name=\"Bubble Turtle\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-30.swf\" swf=\"/flash/common/swf/things/ANM-MF-30.swf\" />` +
+    `<item itid=\"${10221}\" name=\"Nebulaphin\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-28.swf\" swf=\"/flash/common/swf/things/ANM-MF-28.swf\" />` +
+    `<item itid=\"${10222}\" name=\"Twinkle Imp\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-06.swf\" swf=\"/flash/common/swf/things/ANM-MF-06.swf\" />` +
+    `<item itid=\"${10223}\" name=\"Flapuppy\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-11.swf\" swf=\"/flash/common/swf/things/ANM-MF-11.swf\" />` +
+    `<item itid=\"${10224}\" name=\"Bobolink\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-08.swf\" swf=\"/flash/common/swf/things/ANM-MF-08.swf\" />` +
+    //pg54
+        // Yellow otter thing?
+    `<item itid=\"${10225}\" name=\"Swordfish\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_55.swf\" swf=\"/flash/common/swf/things/ANML_NVL_55.swf\" />` +
+    `<item itid=\"${10226}\" name=\"Polar Bear\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_48.swf\" swf=\"/flash/common/swf/things/ANML_NVL_48.swf\" />` +
+    `<item itid=\"${10227}\" name=\"Ant\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_12.swf\" swf=\"/flash/common/swf/things/ANML_NVL_12.swf\" />` +
+    `<item itid=\"${10228}\" name=\"Seal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_46.swf\" swf=\"/flash/common/swf/things/ANML_NVL_46.swf\" />` +
+    `<item itid=\"${10229}\" name=\"Snake\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_38.swf\" swf=\"/flash/common/swf/things/ANML_NVL_38.swf\" />` +
+    `<item itid=\"${10230}\" name=\"Dolphin\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_33.swf\" swf=\"/flash/common/swf/things/ANML_NVL_33.swf\" />` +
+    `<item itid=\"${10231}\" name=\"Raven\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_34.swf\" swf=\"/flash/common/swf/things/ANML_NVL_34.swf\" />` +
+    `<item itid=\"${10232}\" name=\"Rabbit\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_27.swf\" swf=\"/flash/common/swf/things/ANML_NVL_27.swf\" />` +
+    `<item itid=\"${10233}\" name=\"Armadillo\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_18.swf\" swf=\"/flash/common/swf/things/ANML_NVL_18.swf\" />` +
+    `<item itid=\"${10234}\" name=\"Falltide Leafkin\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-03.swf\" swf=\"/flash/common/swf/things/ANM-MF-03.swf\" />` +
+    `<item itid=\"${10235}\" name=\"Whiffle Bear\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-01.swf\" swf=\"/flash/common/swf/things/ANM-MF-01.swf\" />` +
+    `<item itid=\"${10236}\" name=\"Swineswimmer\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-18.swf\" swf=\"/flash/common/swf/things/ANM-MF-18.swf\" />` +
+    `<item itid=\"${10237}\" name=\"Prawn Sprite\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-20.swf\" swf=\"/flash/common/swf/things/ANM-MF-20.swf\" />` +
+    `<item itid=\"${10238}\" name=\"Violet Pixie\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-21.swf\" swf=\"/flash/common/swf/things/ANM-MF-21.swf\" />` +
+    //pg5
+    `<item itid=\"${10239}\" name=\"Fish\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-18.swf\" swf=\"/flash/common/swf/things/ANML-18.swf\" />` +
+    `<item itid=\"${10240}\" name=\"Groundhog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-09.swf\" swf=\"/flash/common/swf/things/ANML-09.swf\" />` +
+    `<item itid=\"${10241}\" name=\"Lizard\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_14.swf\" swf=\"/flash/common/swf/things/ANML_NVL_14.swf\" />` +
+    `<item itid=\"${10242}\" name=\"Lynx\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_15.swf\" swf=\"/flash/common/swf/things/ANML_NVL_15.swf\" />` +
+    `<item itid=\"${10243}\" name=\"Badger\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_16.swf\" swf=\"/flash/common/swf/things/ANML_NVL_16.swf\" />` +
+    `<item itid=\"${10244}\" name=\"Dog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_06.swf\" swf=\"/flash/common/swf/things/ANML_NVL_06.swf\" />` +
+    `<item itid=\"${10245}\" name=\"Coyote\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_07.swf\" swf=\"/flash/common/swf/things/ANML_NVL_07.swf\" />` +
+    `<item itid=\"${10246}\" name=\"Ladybug\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-08.swf\" swf=\"/flash/common/swf/things/ANML-08.swf\" />` +
+    `<item itid=\"${10247}\" name=\"Bird\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-15.swf\" swf=\"/flash/common/swf/things/ANML-15.swf\" />` +
+    `<item itid=\"${10248}\" name=\"Cat\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-14.swf\" swf=\"/flash/common/swf/things/ANML-14.swf\" />` +
+    `<item itid=\"${10249}\" name=\"Dog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-05.swf\" swf=\"/flash/common/swf/things/ANML-05.swf\" />` +
+    `<item itid=\"${10250}\" name=\"Mountain Lion\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_05.swf\" swf=\"/flash/common/swf/things/ANML_NVL_05.swf\" />` +
+    `<item itid=\"${10251}\" name=\"Bat\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_03.swf\" swf=\"/flash/common/swf/things/ANML_NVL_03.swf\" />` +
+    `<item itid=\"${10252}\" name=\"Manatee\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_51.swf\" swf=\"/flash/common/swf/things/ANML_NVL_51.swf\" />` +
+    `<item itid=\"${10253}\" name=\"Roadrunner\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_52.swf\" swf=\"/flash/common/swf/things/ANML_NVL_52.swf\" />` +
+    //pg6
+    `<item itid=\"${10254}\" name=\"Wolf\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_26.swf\" swf=\"/flash/common/swf/things/ANML_NVL_26.swf\" />` +
+    `<item itid=\"${10255}\" name=\"Antelope\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_31.swf\" swf=\"/flash/common/swf/things/ANML_NVL_31.swf\" />` +
+        // `<item itid=\"${10256}\" name=\"Eagle\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_32.swf\" swf=\"/flash/common/swf/things/ANML_NVL_32.swf\" />` +
+    `<item itid=\"${10257}\" name=\"Swan\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_35.swf\" swf=\"/flash/common/swf/things/ANML_NVL_35.swf\" />` +
+    `<item itid=\"${10258}\" name=\"Hummingbird\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_36.swf\" swf=\"/flash/common/swf/things/ANML_NVL_36.swf\" />` +
+    `<item itid=\"${10259}\" name=\"Buffalo\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_37.swf\" swf=\"/flash/common/swf/things/ANML_NVL_37.swf\" />` +
+    `<item itid=\"${10260}\" name=\"Elk\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_28.swf\" swf=\"/flash/common/swf/things/ANML_NVL_28.swf\" />` +
+    `<item itid=\"${10261}\" name=\"Bear\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_29.swf\" swf=\"/flash/common/swf/things/ANML_NVL_29.swf\" />` +
+    `<item itid=\"${10262}\" name=\"Horse\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_39.swf\" swf=\"/flash/common/swf/things/ANML_NVL_39.swf\" />` +
+    `<item itid=\"${10263}\" name=\"Squirrel\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_41.swf\" swf=\"/flash/common/swf/things/ANML_NVL_41.swf\" />` +
+    `<item itid=\"${10264}\" name=\"Fox\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_43.swf\" swf=\"/flash/common/swf/things/ANML_NVL_43.swf\" />` +
+    `<item itid=\"${10265}\" name=\"Duck\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_47.swf\" swf=\"/flash/common/swf/things/ANML_NVL_47.swf\" />` +
+    `<item itid=\"${10266}\" name=\"Cardinal\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_56.swf\" swf=\"/flash/common/swf/things/ANML_NVL_56.swf\" />` +
+    `<item itid=\"${10267}\" name=\"Falcon\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_49.swf\" swf=\"/flash/common/swf/things/ANML_NVL_49.swf\" />` +
+    `<item itid=\"${10268}\" name=\"Big-Horned Sheep\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_50.swf\" swf=\"/flash/common/swf/things/ANML_NVL_50.swf\" />` +
+    //pg7
+    `<item itid=\"${10269}\" name=\"Spark Turtle\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-40.swf\" swf=\"/flash/common/swf/things/ANM-MF-40.swf\" />` +
+    `<item itid=\"${10270}\" name=\"Neon Frog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-41.swf\" swf=\"/flash/common/swf/things/ANM-MF-41.swf\" />` +
+    `<item itid=\"${10271}\" name=\"Chocolate Sparrow\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-42.swf\" swf=\"/flash/common/swf/things/ANM-MF-42.swf\" />` +
+    `<item itid=\"${10272}\" name=\"Marsh Blix\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-43.swf\" swf=\"/flash/common/swf/things/ANM-MF-43.swf\" />` +
+    `<item itid=\"${10273}\" name=\"Tufted Trollbuck\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-44.swf\" swf=\"/flash/common/swf/things/ANM-MF-44.swf\" />` +
+    `<item itid=\"${10274}\" name=\"Fairyphant\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-45.swf\" swf=\"/flash/common/swf/things/ANM-MF-45.swf\" />` +
+    `<item itid=\"${10275}\" name=\"Fuzzhorn\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-46.swf\" swf=\"/flash/common/swf/things/ANM-MF-46.swf\" />` +
+    `<item itid=\"${10276}\" name=\"Blazoned Leonis\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-07.swf\" swf=\"/flash/common/swf/things/ANM-MF-07.swf\" />` +
+    `<item itid=\"${10277}\" name=\"Yulung Dragon\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-16.swf\" swf=\"/flash/common/swf/things/ANM-MF-16.swf\" />` +
+    `<item itid=\"${10278}\" name=\"Ivy-Tailed Dragon\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-17.swf\" swf=\"/flash/common/swf/things/ANM-MF-17.swf\" />` +
+    `<item itid=\"${10279}\" name=\"Squawking Teaser\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANM-MF-02.swf\" swf=\"/flash/common/swf/things/ANM-MF-02.swf\" />` +
+    `<item itid=\"${10280}\" name=\"Hawk\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_19.swf\" swf=\"/flash/common/swf/things/ANML_NVL_19.swf\" />` +
+    `<item itid=\"${10281}\" name=\"Porcupine\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_20.swf\" swf=\"/flash/common/swf/things/ANML_NVL_20.swf\" />` +
+    `<item itid=\"${10282}\" name=\"Owl\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_22.swf\" swf=\"/flash/common/swf/things/ANML_NVL_22.swf\" />` +
+    `<item itid=\"${10283}\" name=\"Turkey\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_24.swf\" swf=\"/flash/common/swf/things/ANML_NVL_24.swf\" />` +
+    //pg8
+    `<item itid=\"${10284}\" name=\"Weasel\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_23.swf\" swf=\"/flash/common/swf/things/ANML_NVL_23.swf\" />` +
+    `<item itid=\"${10285}\" name=\"Beaver\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_21.swf\" swf=\"/flash/common/swf/things/ANML_NVL_21.swf\" />` +
+    `<item itid=\"${10286}\" name=\"Turtle\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_25.swf\" swf=\"/flash/common/swf/things/ANML_NVL_25.swf\" />` +
+    `<item itid=\"${10287}\" name=\"Butterflies\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_40.swf\" swf=\"/flash/common/swf/things/ANML_NVL_40.swf\" />` +
+    `<item itid=\"${10288}\" name=\"Orca\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_30.swf\" swf=\"/flash/common/swf/things/ANML_NVL_30.swf\" />` +
+    `<item itid=\"${10289}\" name=\"Otter\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_44.swf\" swf=\"/flash/common/swf/things/ANML_NVL_44.swf\" />` +
+    `<item itid=\"${10290}\" name=\"Dragonfly\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_45.swf\" swf=\"/flash/common/swf/things/ANML_NVL_45.swf\" />` +
+    `<item itid=\"${10291}\" name=\"Frog\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_42.swf\" swf=\"/flash/common/swf/things/ANML_NVL_42.swf\" />` +
+    `<item itid=\"${10292}\" name=\"Salmon\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_54.swf\" swf=\"/flash/common/swf/things/ANML_NVL_54.swf\" />` +
+    `<item itid=\"${10293}\" name=\"Spider\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_04.swf\" swf=\"/flash/common/swf/things/ANML_NVL_04.swf\" />` +
+    `<item itid=\"${10294}\" name=\"Skunk\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_01.swf\" swf=\"/flash/common/swf/things/ANML_NVL_01.swf\" />` +
+    `<item itid=\"${10295}\" name=\"Crow\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML_NVL_08.swf\" swf=\"/flash/common/swf/things/ANML_NVL_08.swf\" />` +
+    `<item itid=\"${10296}\" name=\"Hamster\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-10.swf\" swf=\"/flash/common/swf/things/ANML-10.swf\" />` +
+    `<item itid=\"${10297}\" name=\"Dragonfly\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-16.swf\" swf=\"/flash/common/swf/things/ANML-16.swf\" />` +
+
+    // Doors
+    `<item itid=\"637\" name=\"Bedroom\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"635\" name=\"Theatre\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"636\" name=\"Astronamy\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"725\" name=\"Patio\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Door-04-Thumb.swf\" swf=\"/flash/common/swf/things/Door-04.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"${10298}\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" allowmultipurchase=\"False\" />`
+    
+
+    if (!isBazaar) {
+        items = items + `<item itid=\"1\" name=\"Bella Gold\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Bella_Gold.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Bella_Gold.swf\" />` +
+        `<item itid=\"2\" name=\"Flying Purple Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_FlyingHorse_Purple.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_FlyingHorse_Purple.swf\" />` +
+        `<item itid=\"3\" name=\"Orange Flower\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Flower_Orange.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Flower_Orange.swf\" />` +
+        `<item itid=\"4\" name=\"Gold Heart\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Heart_Gold.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Heart_Gold.swf\" />` +
+        `<item itid=\"5\" name=\"Silver Horseshoe\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Horseshoe_Silver.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Horseshoe_Silver.swf\" />` +
+        `<item itid=\"6\" name=\"Blue Moon\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Moon_Blue.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Icon_Moon_Blue.swf\" />` +
+        `<item itid=\"7\" name=\"Silver Logo\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_Logo_Silver.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_Logo_Silver.swf\" />` +
+        `<item itid=\"8\" name=\"Pink Running Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_RunningHorse_pink.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_RunningHorse_pink.swf\" />` +
+        `<item itid=\"9\" name=\"Green Standing Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_StandingHorse_Green.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_StandingHorse_Green.swf\" />` +
+        `<item itid=\"10\" name=\"Teal Water Horse\" price1=\"25\" description=\"Description\" catid=\"8\" thumb=\"/flash/wheelofwonders/swf/WOW_Charm_WaterHorse_Teal.swf\" swf=\"/flash/wheelofwonders/swf/WOW_Charm_WaterHorse_Teal.swf\" />`
     }
 
-    console.log(ThingsValue);
+    items = items + "</items>"
 
-    return ThingsValue;
+    // console.log(items)
+    return items
+}
+function getAllActiveThings() {
+    console.log("getting all active things")
+    return getAllThings()
 }
 
-/**
- * Replace getThingsInRoom() call
- * @returns an object with the things present in a room informations (used in My Things, Cottage, Bazaar, etc.)
- */
-function getAllThings()
+// function forceRefreshThingsData()
+// {
+//     let test = true
+//     if (loadData(DATA_TYPES.roomData, GAME_ID.MyCottage)) {
+//         test = false
+//     }
+//     return test
+// }
+
+function getThings()
 {
-        // TODO: Fill correctly
-    const ITEMS = [
-        {
-            itid: 10001,
-            name: "Bird", 
-            price1: 25,
-            description: "Cat Description",
-            catid: 1,
-            thumb: "/flash/gallery/data/items/bird/",
-            swf: "/flash/gallery/data/items/bird/bird.swf"
-        }
-    ]
+    let things = getRoomData()
+    if (!things) {
+        console.log("No existing things data - resetting things")
 
-    let ThingsValue = {result: { items:[]}}
 
-    for (let i = 0; i < ITEMS.length; i++)
-    {
-        ThingsValue.result.items.push(ITEMS[i])
+        things = "<items>"
+        // TODO: do we want to add a default inventory?
+        // const knownIDs = [
+        //     "635",
+        //     "636",
+        //     "637",
+        //     "725",
+        //     "468"
+        // ]
+
+        // for (let index = 0; index < knownIDs.length; index++) {
+        //     things = things + `<item iid=\"${101+index}\" itid=\"${knownIDs[index]}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index}\" s=\"100\" a=\"1\" />`
+        // }
+
+        // for (let index = 0; index < knownIDs.length+299; index++) {
+        //     things = things + `<item iid=\"${101 + index + knownIDs.length}\" itid=\"${10000 + index}\" rid=\"1\" x=\"0\" y=\"0\" z=\"${1001 + index + knownIDs.length}\" s=\"100\" a=\"1\" />`
+        // }
+        things = things + "</items>"
     }
 
-    console.log(ThingsValue);
+    return things;
 
-    return ThingsValue;
+    // return "<items><item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" /><item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" /><item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" /><item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" /><item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" /><item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" /><item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" /><item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" /><item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" /><item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" /><item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" /><item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" /><item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" /><item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" /><item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" /><item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" /><item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" /><item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" /></items>";
+}
+function getVisitorThings() {return getThings()}
+function getThingsInMyThings() {return getThings()}
+/**
+ * Updates the room data with a new value
+ * @param {*} data the new data for the rooms
+ */
+function updateRoomData(data, alreadyMini = false) {
+    console.log("updating room data", roomID, data)
+    if (!alreadyMini) {
+        data = minifyInventoryData(data)
+    }
+    saveData(DATA_TYPES.roomData, data, GAME_ID.MyCottage)
+}
+function minifyInventoryData(data)
+{
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(data,"text/xml");
+    if (xmlDoc.getElementsByTagName("items") && xmlDoc.getElementsByTagName("items")[0] && xmlDoc.getElementsByTagName("items")[0].childNodes) {
+        let items = xmlDoc.getElementsByTagName("items")[0].childNodes
+        let minify = ""
+
+        for (let index = 0; index < items.length; index++) {
+            const item = items[index].attributes;
+            minify = minify + "_" + minifyInventoryItemData(item)
+        }
+        return minify.slice(1)
+    }
+    return ""
+}
+function minifyInventoryItemData(item)
+{
+    const separator = "*"
+    let itemData = item.itid.nodeValue+separator+item.rid.nodeValue+
+    separator+item.x.nodeValue+separator+item.y.nodeValue+separator+item.z.nodeValue+separator+item.s.nodeValue+separator+item.a.nodeValue
+    return itemData
+}
+/**
+ * 
+ * @returns The save data for the rooms
+ */
+function getRoomData(unminify = true) {
+    roomData = loadData(DATA_TYPES.roomData, GAME_ID.MyCottage)
+    if (roomData && unminify) {
+        roomData = unminifyInventoryData(roomData)
+    }
+    return roomData
+}
+function unminifyInventoryData(itemsData) {
+    things = "<items>"
+    itemsDataArray = itemsData.split("_")
+    for (let index = 0; index < itemsDataArray.length; index++) {
+        const itemData = itemsDataArray[index];
+        itemDataArray = itemData.split("*")
+        item = `<item iid=\"${101+index}\" itid=\"${itemDataArray[0]}\" rid=\"${itemDataArray[1]}\" x=\"${itemDataArray[2]}\" y=\"${itemDataArray[3]}\" z=\"${itemDataArray[4]}\" s=\"${itemDataArray[5]}\" a=\"${itemDataArray[6]}\" />`
+        things = things+item
+    }
+    return things + "</items>";
 }
 
 function getHorseshoes()
@@ -266,8 +734,91 @@ function getHorseshoes()
     return loadData(DATA_TYPES.horseshoes);
 }
 
+function getCurrentUser()
+{
+    return currentUser
+}    
+
+function getBalance() {
+    return `<balance><user currency1=\"${loadData(DATA_TYPES.horseshoes)}\" /></balance>`
+}
+
+function buyThing(itid) {
+    const xml = getAllThings()
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xml,"text/xml");
+    let items = xmlDoc.getElementsByTagName("items")[0].childNodes
+
+    let itemPurchased = "no"
+    let currency1 = loadData(DATA_TYPES.horseshoes)
+    let cost = 0
+
+    for (let index = 0; index < items.length; index++) {
+        const item = items[index];
+        if (item.attributes.itid.nodeValue === itid) {
+            console.log(item.attributes)
+            cost = parseInt(item.attributes.price1.nodeValue)
+            if (cost <= currency1) {
+                itemPurchased = "yes"
+                removeHorseshoes(cost)
+                addThingToMyThings(itid)
+            }
+            break
+        }
+    }
+
+    // console.log(itemPurchased, currency1-cost)
+    return `<bazaarpurchase><item purchased=\"${itemPurchased}\" currency1=\"${currency1 - cost}\" /></bazaarpurchase>`
+}
+
+function addThingToMyThings(itid) {
+    let things = getThingsInMyThings()
+    console.log(things)
+    things = minifyInventoryData(things.toString())
+    newItem = `${itid}*1*0*0*1000*100*1`
+    if (things) {
+        things = things+"_"+newItem
+    }
+    else {
+        things = newItem
+    }
+
+    updateRoomData(things, true)
+}
+/** Adds item from WoW */
+function addGalleryItem(item)
+{
+    console.log("won item: ",item)
+
+    let gallery = loadData(DATA_TYPES.gallery);
+    if (!gallery) {gallery = []}
+    gallery.forEach(element => {
+        let itid = 0;
+        let quantity = 1
+        if (typeof element === 'number') { itid = element; }
+        else { 
+            itid = getItid(element.name); 
+            quantity = element.quantity
+        }
+        
+        for (let index = 0; index < quantity; index++) {
+            console.log(itid, element)
+            addThingToMyThings(itid)
+        }
+    });
+    saveData(DATA_TYPES.gallery, []);
+    
+    // Setup the correct itid if the item isn't already one 
+    let itid = 0;
+    if (typeof item === 'number') { itid = item; }
+    else { itid = getItid(item); }
+    
+    addThingToMyThings(itid)
+}
+
 
 /* Extract helper from .swf
+                           "<categories><category name=\"Art\" catid=\"1\" /><category name=\"Furniture\" catid=\"2\" /><category name=\"Flooring\" catid=\"3\" /><category name=\"Toys\" catid=\"4\" /><category name=\"Wall Hangings\" catid=\"5\" /><category name=\"Home Decor\" catid=\"6\" /><category name=\"Holiday\" catid=\"7\" /><category name=\"Knick-Knacks\" catid=\"8\" /><category name=\"Curios\" catid=\"9\" /><category name=\"Jewelry\" catid=\"10\" /></categories>";
 var _categoriesSampleXml = "<categories><category name=\"Art\" catid=\"1\" /><category name=\"Furniture\" catid=\"2\" /><category name=\"Flooring\" catid=\"3\" /><category name=\"Toys\" catid=\"4\" /><category name=\"Wall Hangings\" catid=\"5\" /><category name=\"Home Decor\" catid=\"6\" /><category name=\"Holiday\" catid=\"7\" /><category name=\"Knick-Knacks\" catid=\"8\" /><category name=\"Curios\" catid=\"9\" /><category name=\"Jewelry\" catid=\"10\" /></categories>";
    var _allThingsSampleXml = "<items><item itid=\"10001\" name=\"Bird\" price1=\"25\" description=\"Bird Description\" catid=\"1\" thumb=\"path\" swf=\"../things/bird.swf\" /><item itid=\"10002\" name=\"Cat\" price1=\"26\" description=\"Cat Description\" catid=\"1\" thumb=\"path\" swf=\"../things/cat.swf\" /><item itid=\"10003\" name=\"Chair\" price1=\"27\" description=\"Stuffed Description\" catid=\"1\" thumb=\"path\" swf=\"../things/chair.swf\" /><item itid=\"10004\" name=\"Chandelier\" price1=\"28\" description=\"Chandelier Description\" catid=\"2\" thumb=\"path\" swf=\"../things/chandelier.swf\" /><item itid=\"10005\" name=\"Crystals\" price1=\"29\" description=\"Crystals Description\" catid=\"1\" thumb=\"path\" swf=\"../things/crystals.swf\" /><item itid=\"10006\" name=\"Feathers\" price1=\"30\" description=\"Feathers Description\" catid=\"1\" thumb=\"path\" swf=\"../things/feathers.swf\" /><item itid=\"10007\" name=\"Glass Sculpture\" price1=\"31\" description=\"Glass Sculpture Description\" catid=\"2\" thumb=\"path\" swf=\"../things/glass_sculpture.swf\" /><item itid=\"10008\" name=\"Harp\" price1=\"32\" description=\"Harp Description\" catid=\"1\" thumb=\"path\" swf=\"../things/harp.swf\" /><item itid=\"10009\" name=\"Jelly Beans\" price1=\"33\" description=\"Jelly Beans Description\" catid=\"1\" thumb=\"path\" swf=\"../things/jellybeans.swf\" /><item itid=\"10010\" name=\"Orchid\" price1=\"25\" description=\"Orchid Description\" catid=\"1\" thumb=\"path\" swf=\"../things/orchid.swf\" /><item itid=\"10011\" name=\"Ribbon1\" price1=\"26\" description=\"Ribbon1 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/ribbon1.swf\" /><item itid=\"10012\" name=\"Ribbon2\" price1=\"27\" description=\"Ribbon2 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/ribbon2.swf\" /><item itid=\"10013\" name=\"Ribbon3\" price1=\"28\" description=\"Ribbon3 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/ribbon3.swf\" /><item itid=\"10014\" name=\"Rug\" price1=\"29\" description=\"Rug Description\" catid=\"2\" thumb=\"path\" swf=\"../things/rug.swf\" /><item itid=\"10015\" name=\"Table\" price1=\"250\" description=\"Table Description\" catid=\"1\" thumb=\"path\" swf=\"../things/table.swf\" /><item itid=\"10016\" name=\"Tree\" price1=\"41\" description=\"Tree Description\" catid=\"1\" thumb=\"path\" swf=\"../things/tree.swf\" /><item itid=\"10017\" name=\"Trophy1\" price1=\"42\" description=\"Trophy1 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/trophy1.swf\" /><item itid=\"10018\" name=\"Trophy2\" price1=\"43\" description=\"Trophy2 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/trophy2.swf\" /><item itid=\"10019\" name=\"Feathers2\" price1=\"30\" description=\"Feathers2 Description\" catid=\"1\" thumb=\"path\" swf=\"../things/feathers.swf\" /></items>";
    var _thingsSampleXml = "<items><item iid=\"101\" itid=\"10001\" rid=\"1\" x=\"0\" y=\"0\" z=\"1001\" s=\"100\" a=\"1\" /><item iid=\"102\" itid=\"10002\" rid=\"1\" x=\"0\" y=\"0\" z=\"1002\" s=\"100\" a=\"1\" /><item iid=\"103\" itid=\"10003\" rid=\"1\" x=\"0\" y=\"0\" z=\"1003\" s=\"100\" a=\"1\" /><item iid=\"104\" itid=\"10004\" rid=\"1\" x=\"0\" y=\"0\" z=\"1004\" s=\"100\" a=\"1\" /><item iid=\"105\" itid=\"10005\" rid=\"1\" x=\"0\" y=\"0\" z=\"1005\" s=\"100\" a=\"1\" /><item iid=\"106\" itid=\"10006\" rid=\"1\" x=\"0\" y=\"0\" z=\"1006\" s=\"100\" a=\"1\" /><item iid=\"107\" itid=\"10007\" rid=\"1\" x=\"0\" y=\"0\" z=\"1007\" s=\"100\" a=\"1\" /><item iid=\"108\" itid=\"10008\" rid=\"1\" x=\"0\" y=\"0\" z=\"1008\" s=\"100\" a=\"1\" /><item iid=\"109\" itid=\"10009\" rid=\"1\" x=\"0\" y=\"0\" z=\"1009\" s=\"100\" a=\"1\" /><item iid=\"110\" itid=\"10010\" rid=\"1\" x=\"0\" y=\"0\" z=\"1010\" s=\"100\" a=\"1\" /><item iid=\"111\" itid=\"10011\" rid=\"1\" x=\"0\" y=\"0\" z=\"1011\" s=\"100\" a=\"1\" /><item iid=\"112\" itid=\"10012\" rid=\"1\" x=\"0\" y=\"0\" z=\"1012\" s=\"100\" a=\"1\" /><item iid=\"113\" itid=\"10013\" rid=\"1\" x=\"0\" y=\"0\" z=\"1013\" s=\"100\" a=\"1\" /><item iid=\"114\" itid=\"10014\" rid=\"1\" x=\"0\" y=\"0\" z=\"1014\" s=\"100\" a=\"1\" /><item iid=\"115\" itid=\"10015\" rid=\"1\" x=\"0\" y=\"0\" z=\"1015\" s=\"100\" a=\"1\" /><item iid=\"116\" itid=\"10016\" rid=\"1\" x=\"0\" y=\"0\" z=\"1016\" s=\"100\" a=\"1\" /><item iid=\"117\" itid=\"10017\" rid=\"1\" x=\"0\" y=\"0\" z=\"1017\" s=\"100\" a=\"1\" /><item iid=\"118\" itid=\"10018\" rid=\"1\" x=\"0\" y=\"0\" z=\"1018\" s=\"100\" a=\"1\" /></items>";

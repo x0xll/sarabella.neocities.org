@@ -38,6 +38,7 @@
 
         <!-- Load correct localized version of the game -->
         <script>
+          let roomID = 1
           setupRuffle();
           var locale = checkLocalizedFiles(`./lang/bs_wheelofwonder_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           loadSWF(`WoW.swf`, '466', '887', locale)

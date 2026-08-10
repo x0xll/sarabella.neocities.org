@@ -210,14 +210,26 @@ class Player extends Entity {
     }
 
     /**
+     * Check if the player has gone passed the target as a fallback check for slower devices
+     * @returns 
+     */
+    #passedTarget() {
+        this.flagPassedX = this.flagPassedX || this.moveTowardsPlusX ? this.sprite.x > this.target.x : this.sprite.x < this.target.x
+        this.flagPassedY = this.flagPassedY || this.moveTowardsPlusY ? this.sprite.y > this.target.y : this.sprite.y < this.target.y
+        return this.flagPassedX && this.flagPassedY
+    }
+
+    /**
      * If close to target, stop the player at target position and recheck sprite depth
      */
     #checkIfReachedDestination() {
         this.playerMove = false
         if (this.sprite.body.speed > 0) {
             const distanceFromTarget = this.distanceBetweenPoints(this.sprite.x, this.sprite.y, this.target.x, this.target.y)
-            if (distanceFromTarget < 20) {
+            if (this.#passedTarget() || distanceFromTarget < 10) { 
                 this.sprite.body.reset(this.target.x, this.target.y);
+                this.flagPassedX = false
+                this.flagPassedY = false
                 
                 // Check if we are in a quest trigger -> if so, we stop further movement and start the quest
                 let triggerInfo = this.isoToGridMap(this.target.x, this.target.y);
@@ -257,6 +269,8 @@ class Player extends Entity {
             let playerGridPosition = this.isoToGridMap(this.sprite.x, this.sprite.y)
             if (playerGridPosition.x === this.nextX && playerGridPosition.y === this.nextY) return null
             path = await this.aStar.Calculate(playerGridPosition.x, playerGridPosition.y, this.nextX, this.nextY);
+            this.moveTowardsPlusX = playerGridPosition.x < this.nextX
+            this.moveTowardsPlusY = playerGridPosition.y < this.nextY
             
             let lastMatch = null
             if (path === null || path.length === null) {return}

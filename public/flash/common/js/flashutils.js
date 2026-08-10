@@ -6,6 +6,8 @@ function setupRuffle()
         config: {
             autoplay: "on",
             unmuteOverlay: "hidden",
+            // logLevel: "debug",
+            "publicPath": "/ruffle", // Ruffle sometimes runs into memory issues if not included. Should = path to folder containing ruffle.js
         }
     };
 }

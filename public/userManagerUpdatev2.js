@@ -10,6 +10,7 @@ const USER_NAMES_KEY = "neocities_besa_userNames";
 const CURRENT_USER_KEY = "neocities_besa_currentUser"; 
 
 const MANAGER_VERSION = 1; // To track user version in case data structure gets updated
+const USER_SEPARATOR = ",";
 
 let currentUser = undefined;
 let currentGame = undefined;
@@ -18,20 +19,17 @@ let currentGame = undefined;
 function setupUserDropdown()
 {
     userDropdown = document.getElementById("currentUserDropdown");
-    userAmount = localStorage.getItem(USER_AMOUNT_KEY);
-    userNames = localStorage.getItem(USER_NAMES_KEY);
+    fixUserNamesSeparator("²")
 
+    // Reset dropdown
     for (let i = userDropdown.options.length - 1; i >= 3; i--)
     {
         userDropdown.options.remove(i);
     }
 
-    if (userAmount > 0)
-    {
-        splittedUserNames = userNames.split("²");
-        for (let i = 0; i < userAmount; i++) {
-            userDropdown.options[userDropdown.options.length] = new Option(splittedUserNames[i], splittedUserNames[i]);  
-        }
+    splitUserNames = getSplitUserNames()
+    for (let i = 0; i < splitUserNames.length; i++) {
+        userDropdown.options[userDropdown.options.length] = new Option(splitUserNames[i], splitUserNames[i]);  
     }
     forceChooseUser(localStorage.getItem(CURRENT_USER_KEY));
 }
@@ -43,7 +41,7 @@ function createUser()
 {
     username = document.getElementById("signup_username").value;
 
-    if (username == undefined)
+    if (username === undefined)
     {
         alert("Please choose a username to create a user session."); // TODO : localize
         return;
@@ -61,7 +59,7 @@ function createUser()
         return;
     }
 
-    var currentUserAmount = (localStorage.getItem(USER_AMOUNT_KEY)) ? localStorage.getItem(USER_AMOUNT_KEY) : 0;
+    var currentUserAmount = getSplitUserNames().length
     if (currentUserAmount < MAX_USERS)
     {
         if (localStorage.getItem(USER_KEY + username))
@@ -79,13 +77,11 @@ function createUser()
         }
 
         localStorage.setItem(USER_KEY + username, JSON.stringify(userData));
-        currentUserAmount++;
-        localStorage.setItem(USER_AMOUNT_KEY, currentUserAmount);
         userNames = localStorage.getItem(USER_NAMES_KEY);
         if (userNames === null || userNames === undefined || userNames === "")
             userNames = username;
         else
-            userNames += "²" + username;
+            userNames += USER_SEPARATOR + username;
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
         saveData(DATA_TYPES.horseshoes, 100)
@@ -164,12 +160,10 @@ function deleteUser()
         return;
     }
 
-    var currentUserAmount = (localStorage.getItem(USER_AMOUNT_KEY)) ? localStorage.getItem(USER_AMOUNT_KEY) : 0;
+    var currentUserAmount = getSplitUserNames().length
     if (currentUserAmount > 0)
     {
         localStorage.removeItem(USER_KEY + username);
-        currentUserAmount--;
-        localStorage.setItem(USER_AMOUNT_KEY, currentUserAmount);
 
         for(let i = userDropdown.options.length - 1; i >= 1; i--)
         {
@@ -181,15 +175,15 @@ function deleteUser()
         }   
 
         userNames = localStorage.getItem(USER_NAMES_KEY);
-        splittedUserNames = userNames.split("²");
+        splitUserNames = userNames.split(USER_SEPARATOR);
         userNames = "";
-        for (let i = splittedUserNames.length - 1; i >= 0; i--) {
-            if (splittedUserNames[i] === username) continue;
+        for (let i = splitUserNames.length - 1; i >= 0; i--) {
+            if (splitUserNames[i] === username) continue;
             
             if (userNames === "")
-                userNames = splittedUserNames[i];
+                userNames = splitUserNames[i];
             else
-                userNames += "²" + splittedUserNames[i];
+                userNames += USER_SEPARATOR + splitUserNames[i];
         }
         localStorage.setItem(USER_NAMES_KEY, userNames);
 
@@ -250,9 +244,9 @@ function importUser()
         allUsernames = localStorage.getItem(USER_NAMES_KEY);
         if (allUsernames != undefined && allUsernames != "" && allUsernames != null)
         {
-            splittedUsernames = allUsernames.split("²");
+            splitUserNames = allUsernames.split("²");
             let existingUser = false;
-            splittedUserNames.forEach(user => {
+            splitUserNames.forEach(user => {
                 if (user === username)
                 {
                     localStorage.setItem(USER_KEY + username, userData);
@@ -269,15 +263,13 @@ function importUser()
             }
         }
         
-        userAmount = localStorage.getItem(USER_AMOUNT_KEY);
+        userAmount = getSplitUserNames().length
         if (userAmount >= MAX_USERS)
         {
             alert("Too many users. Please delete an account before importing a new one.")
             return;
         }
 
-        userAmount++;
-        localStorage.setItem(USER_AMOUNT_KEY, userAmount);
         localStorage.setItem(USER_KEY + username, userData);
 
         if (allUsernames === null || allUsernames === undefined || allUsernames === "")
@@ -297,6 +289,9 @@ function importUser()
 //-------- HELPERS -------
 function getCurrentUsername()
 {
+    if (currentUser === "guest")
+        return getLocalizedText("user_guest");
+
     return currentUser;
 }
 
@@ -312,4 +307,23 @@ function isGuest()
 {
     return getCurrentUsername() === "guest";
 }
+
+function getSplitUserNames() {
+    splitUserNames = localStorage.getItem(USER_NAMES_KEY) ? localStorage.getItem(USER_NAMES_KEY).split(USER_SEPARATOR): [];
+    return splitUserNames
+}
 //------- END HELPERS -------
+
+//------- SAVE UPDATES ------
+function fixUserNamesSeparator(oldUserSeparator)
+{
+    userNames = localStorage.getItem(USER_NAMES_KEY) ? localStorage.getItem(USER_NAMES_KEY): "";
+
+    // Update separator
+    if (userNames.includes(oldUserSeparator) && (window.location.href.includes("play") || window.location.href.includes("userSettings") ||  window.location.href.includes("signup"))) {
+        userNames = userNames.replace(oldUserSeparator, USER_SEPARATOR)
+        localStorage.setItem(USER_NAMES_KEY, userNames);
+    }
+    return userNames
+}
+//------- END SAVE UPDATES -----
