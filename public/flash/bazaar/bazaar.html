@@ -10,14 +10,9 @@
     <script src="/save.js"></script>
 <script src="/language.js"></script>
 
-    <body class="game" onload="loadLanguagePref(); setupUserDropdown()">
+    <body class="game" onload="loadLanguagePref(); setupUserDropdown(); updateSWFLocaleDatas(GAME_ID.MyCottage, 'COT1', DATA_TYPES.roomData);">
         <script src="/header.js"></script>
-
-        <div class="alert">
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <p data-il8n="bazaar_warning">Currently, the text is not yet working everywhere and you will need to right click the game and hit play to get past the loading screen. Objects are also not appearing.</p>
-        </div> 
-
+        
         <div class="swf" dir="ltr" rbidi="on">
         </div>
 
@@ -30,13 +25,14 @@
 
 
         <script src="/flags.js"></script>
-<script src="/userManagerUpdatev2.js"></script>
-
-
+        <script src="/userManagerUpdatev2.js"></script>
         <script src="/flash/common/js/flashutils.js"></script>
+        <script src="/flash/common/js/flashWSOverride.js"></script>
 
         <!-- Load correct localized version of the game -->
         <script>
+          isBazaar = true
+          roomID = 1
           setupRuffle();
           var locale = checkLocalizedFiles(`./data/bs_bazaar_${UTILS_LOCA_PATH_LANG_VALUE}.xml`);
           loadSWF(`bazaar.swf`, '467', '887', locale)

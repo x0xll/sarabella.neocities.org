@@ -6,37 +6,58 @@ const horses = [
     'peter',
     'abenaki',
     'achilles',
+    'akama',
     'amor',
+    'andromeda',
     'anemone',
     'angel',
     'aphaia',
+    // 'arapaho', // Has unique pose that requires unique dirt layer handling
+    'aurora',
+    'autumn',
+    'balto',
     'bella',
+    'bello',
     'beran',
+    'bifrost',
+    'bliss',
     'blossom',
     'bosi',
+    'briar',
     'calyx',
     'cantaro',
     'ceratos',
     'ceres',
     'chitra',
+    'chromasia',
+    'cindra',
     'clio',
     'colour',
+    'connora',
+    'coral',
     'cosima',
+    'cupid',
     'dart',
     'diana',
+    'dino',
     'donn',
     'echo',
     'epona',
+    'euros',
+    'excelsior',
     'faith',
     'falcha',
+    'farfalla',
     'faxon',
     'fiona',
     'firewalker',
+    'flora',
     'gaia',
     'generosity',
     'ghost',
     'halloween',
     'hecate',
+    'helia',
     'hera',
     'hercules',
     'honey',
@@ -45,22 +66,46 @@ const horses = [
     'jaida',
     'jewel',
     'juno',
+    'jupiter',
     'kendra',
     'king',
+    'larena',
+    'lenape',
+    'lien',
     'lillova',
     'magic1',
     'magic2',
     'mellonie',
+    'memory',
     'mireldis',
+    'mirth',
+    'mistral',
+    'moonlight',
+    'muskogee',
+    'neptune',
     'nike',
+    'nimiipuu',
+    'ninja',
     'nori',
     'nuala',
+    'obrylin',
+    'parlez',
     'pegasus',
+    'peregrine',
     'persephone',
+    'petal',
+    'pinkLady',
+    'pirouette',
+    'potpourri',
+    'potpourri2',
+    'prisma',
+    'rimfaxe',
     'rose',
+    'royce',
     'sarah',
     'sasha',
     'savros',
+    'serenity',
     'skeleton',
     'sleipnir',
     'socorro',
@@ -68,11 +113,17 @@ const horses = [
     'starunna',
     'thunder',
     'tiffi',
+    'tlingit',
+    'triton',
+    'tsimshian',
     'uranus',
+    'urd',
     'vesta',
     'viking',
     'virstan',
+    'waterpearl',
     'wavebreaker',
+    'yellow',
     'zephan',
     'zombie'
 ]
@@ -247,7 +298,7 @@ class Selector extends Phaser.Scene
         const nextButton = this.add.sprite(864, 498, 'next', 'idle').setScale(.75).setInteractive({ pixelPerfect: true });
             nextButton.on('pointerdown', function (pointer) {
                 // Change the page being displayed
-                if (horses.length > (page + 1)*displayHorses.length) {
+                if (horses.length+1 > (page + 1)*displayHorses.length) {
                     page += 1
                 }
                 checkNext()
@@ -255,7 +306,7 @@ class Selector extends Phaser.Scene
                 setDisplayHorses()
             });
             nextButton.on('pointerover', function (pointer) {
-                if (horses.length > (page + 1)*displayHorses.length) {
+                if (horses.length+1 > (page + 1)*displayHorses.length) {
                     nextButton.setFrame('hover')
                 }
             });
@@ -279,7 +330,7 @@ class Selector extends Phaser.Scene
          * Check if there is a next page and dull the next button if no next page exists
          */
         function checkNext() {
-            if (horses.length > (page + 1)*displayHorses.length) {
+            if (horses.length+1 > (page + 1)*displayHorses.length) {
                 // previous page
                 nextButton.setFrame('idle')
             } else {

@@ -51,7 +51,8 @@ const DATA_TYPES = {
     translatedQuotes : "settings_tdqt",
     originalTranslations : "settings_tdog",
     horseshoesMultiplier : "settings_hsmul",
-    mapPlayPage : "settings_mpp"
+    mapPlayPage : "settings_mpp",
+    roomData : "roomData"
 }
 
 const DATA_DEFAULT = {
@@ -69,7 +70,7 @@ const DATA_DEFAULT = {
     mapPlayPage : false
 }
 
-const SAVE_VERSION = 1;
+const SAVE_VERSION = 2;
 
 /** Saved the data to the correct user in localstorage
 * @param dataType : the type of data (eg: horseshoe, adventure_quest, etc) to be saved, string
@@ -129,6 +130,7 @@ function saveData(dataType, userData, gameID = "")
 
     localStorage.setItem(USER_KEY + currentUser, JSON.stringify(data));
     setupUserDropdown();
+    save_v1_to_v2(data);
 }
 
 /** Load the data of a specific user from the localstorage
@@ -161,6 +163,9 @@ function loadData(dataType, gameID = "")
             gameData: []
         }
     }
+
+    save_v1_to_v2(data);
+
     let gameIndex = getGameIdSaveIndex(gameID, data);
 
     if ((gameID === "" && data[dataType] === undefined) ||
@@ -178,6 +183,7 @@ function loadData(dataType, gameID = "")
                     return data[dataType]
                 }
             case DATA_TYPES.lastPlayed: 
+            case DATA_TYPES.roomData: 
             case DATA_TYPES.gallery: 
             case DATA_TYPES.translatedQuotes: 
             case DATA_TYPES.game: 
@@ -301,44 +307,14 @@ function updateAdventuresData(data)
     saveData(DATA_TYPES.game, data, GAME_ID.Adventures);
 }
 
-function updateSWFLocaleDatas(game)
+function updateSWFLocaleDatas(game, cache, dataType)
 {
     game = (GAME_ID[game] !== undefined) ? GAME_ID[game] : game;
-    let loadedDatas = loadData(DATA_TYPES.creations, game);
+    let loadedDatas = loadData(dataType, game);
     if (loadedDatas === "" || loadedDatas === undefined || loadedDatas === null)
-        localStorage.removeItem(CACHE_DATA[game]);
+        localStorage.removeItem(CACHE_DATA[cache]);
     else
-        localStorage.setItem(CACHE_DATA[game], loadedDatas);
-}
-
-function addGalleryItem(itemName)
-{
-    gallery = loadData(DATA_TYPES.gallery);
-    if (gallery == null)
-        gallery = []
-
-    let existed = false;
-
-    gallery.forEach(item => {
-        if (item.name == itemName)
-        {
-            existed = true;
-            item.quantity++;
-            saveData(DATA_TYPES.gallery, gallery);
-            return;
-        }
-    });
-
-    if (existed) return;
-
-    gallery.push(
-        {
-            name: itemName,
-            quantity: 1
-        }
-    )
-    
-    saveData(DATA_TYPES.gallery, gallery);
+        localStorage.setItem(CACHE_DATA[cache], loadedDatas);
 }
 
 function updateLastDatePlayed(gameID)
@@ -386,3 +362,74 @@ function getKeyByValue(object, value) {
     return Object.keys(object).find(key =>
         object[key] === value);
 }
+
+function getHorseshoes()
+{
+    return loadData(DATA_TYPES.horseshoes);
+}
+
+function getItid(itemName)
+{
+    // Probably a better way to handle this, but for now we can probably set manually here when needed
+    switch(itemName)
+    {
+        default:
+            itid = 0;
+            break;
+        // TODO: setup the correct itid for each of those charms
+        case "Golden Bella Charm":
+            itid = 1;
+            break;
+        case "Purple Flying Horse Charm":
+            itid = 2;
+            break;
+        case "Orange Flower Charm":
+            itid = 3;
+            break;
+        case "Golden Heart Charm":
+            itid = 4;
+            break;
+        case "Silver Horseshoe Charm":
+            itid = 5;
+            break;
+        case "Blue Moon Charm":
+            itid = 6;
+            break;
+        case "Silver Logo Charm":
+            itid = 7;
+            break;
+        case "Pink Running Horse Charm":
+            itid = 8;
+            break;
+        case "Green Standing Horse Charm":
+            itid = 9;
+            break;
+        case "Teal Water Horse Charm":
+            itid = 10;
+            break;
+    }
+
+    return itid;
+}
+
+// ------- SAVE UPDATES --------
+function save_v1_to_v2(data)
+{
+    if (data.version != 1)
+        return;
+
+    // Update the charms to have the correct format
+    let newGallery = [];
+
+    data.gallery.forEach(item => {
+        for (let i = 0; i < item.quantity; i++){
+            newGallery.push(getItid(item.name));
+        }
+    });
+
+    data.gallery = newGallery;
+    data.version = 2;
+
+    localStorage.setItem(USER_KEY + currentUser, JSON.stringify(data));
+}
+// ------- END SAVE UPDATES -------
