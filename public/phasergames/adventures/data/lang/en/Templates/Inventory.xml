@@ -258,7 +258,7 @@
       <identifier>P002_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bulbe d'ail</name>
+      <name>Garlic bulb</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -366,7 +366,7 @@
       <identifier>P005_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bouture d'orchidée papillon</name>
+      <name>Butterfly orchid cutting</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -387,7 +387,7 @@
       <identifier>P005_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Orchidée papillon</name>
+      <name>Butterfly orchid</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -402,7 +402,7 @@
       <identifier>P006_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de lys de l'aurore</name>
+      <name>Aurora lily seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -423,7 +423,7 @@
       <identifier>P006_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Lys de l'aurore</name>
+      <name>Aurora lily</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -510,7 +510,7 @@
       <identifier>P009_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bouture de cannelier</name>
+      <name>Cinnamon tree cutting</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -531,7 +531,7 @@
       <identifier>P009_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Ecorce de cannelle</name>
+      <name>Cinnamon bark</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -618,7 +618,7 @@
       <identifier>P012_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de lanterne aux fées</name>
+      <name>Fairy lantern seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -639,7 +639,7 @@
       <identifier>P012_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Lanterne aux fées</name>
+      <name>Fairy lantern</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -654,7 +654,7 @@
       <identifier>P013_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de tulipe de feu</name>
+      <name>Fire tulip seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -675,7 +675,7 @@
       <identifier>P013_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Tulipe de feu</name>
+      <name>Fire tulip</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -690,7 +690,7 @@
       <identifier>P014_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de piment ardent</name>
+      <name>Flaming pepper seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -711,7 +711,7 @@
       <identifier>P014_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Piment ardent</name>
+      <name>Flaming pepper</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -726,7 +726,7 @@
       <identifier>P015_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de jeune pousse de poulain</name>
+      <name>Foal sprouts seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -747,7 +747,7 @@
       <identifier>P015_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Jeune pousse</name>
+      <name>Foal sprouts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -762,7 +762,7 @@
       <identifier>P016_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de gommier</name>
+      <name>Gum tree seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -783,7 +783,7 @@
       <identifier>P016_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Gomme</name>
+      <name>Gum</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -798,7 +798,7 @@
       <identifier>P017_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de petits pois de glace</name>
+      <name>Ice peas seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -819,7 +819,7 @@
       <identifier>P017_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Petits pois de glace</name>
+      <name>Ice peas</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -834,7 +834,7 @@
       <identifier>P018_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de citronnier bicolore</name>
+      <name>Lemon-Lime seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -855,7 +855,7 @@
       <identifier>P018_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Citron bicolore</name>
+      <name>Lemon-Lime</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -870,7 +870,7 @@
       <identifier>P019_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de bouton d'or rouge à lèvres</name>
+      <name>Lipstick buttercup seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -891,7 +891,7 @@
       <identifier>P019_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Bouton d'or rouge à lèvres</name>
+      <name>Lipstick buttercup</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -906,7 +906,7 @@
       <identifier>P020_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de magnolia</name>
+      <name>Magnolia seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -978,7 +978,7 @@
       <identifier>P022_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de marguerite-soleil</name>
+      <name>Pinwheel daisy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -999,7 +999,7 @@
       <identifier>P022_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Marguerite-soleil</name>
+      <name>Pinwheel daisy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1014,7 +1014,7 @@
       <identifier>P023_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de framboisier</name>
+      <name>Raspberry seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1035,7 +1035,7 @@
       <identifier>P023_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Framboise</name>
+      <name>Raspberry</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1050,7 +1050,7 @@
       <identifier>P024_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de muflier</name>
+      <name>Snapdragon seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1071,7 +1071,7 @@
       <identifier>P024_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Muflier</name>
+      <name>Snapdragon</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1086,7 +1086,7 @@
       <identifier>P025_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bouture de canne à sucre</name>
+      <name>Sugarcane cutting</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1107,7 +1107,7 @@
       <identifier>P025_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Sugar cane</name>
+      <name>Sugarcane</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1122,7 +1122,7 @@
       <identifier>P026_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de lotus soleil</name>
+      <name>Sun lotus seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1143,7 +1143,7 @@
       <identifier>P026_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Lotus soleil</name>
+      <name>Sun lotus</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1230,7 +1230,7 @@
       <identifier>P029_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bouture de thé de bambou</name>
+      <name>Bamboo tea cutting</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1251,7 +1251,7 @@
       <identifier>P029_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Thé</name>
+      <name>Tea</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1338,7 +1338,7 @@
       <identifier>P032_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine d'orchidée royale</name>
+      <name>Royal orchid seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1359,7 +1359,7 @@
       <identifier>P032_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Orchidée royale</name>
+      <name>Royal orchid</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1374,7 +1374,7 @@
       <identifier>P033_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bouture d'érable lunaire</name>
+      <name>Lunar maple cutting</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1395,7 +1395,7 @@
       <identifier>P033_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Sirup</name>
+      <name>Syrup</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1410,7 +1410,7 @@
       <identifier>P034_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de papyrus</name>
+      <name>Papyrus seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1482,7 +1482,7 @@
       <identifier>P036_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Spore de champignon steak</name>
+      <name>Steak mushroom spore</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1503,7 +1503,7 @@
       <identifier>P036_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Champignon steak</name>
+      <name>Steak mushroom</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1518,7 +1518,7 @@
       <identifier>P037_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de baie épicée</name>
+      <name>Spiceberry seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1539,7 +1539,7 @@
       <identifier>P037_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Baie épicée</name>
+      <name>Spiceberry</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1554,7 +1554,7 @@
       <identifier>P038_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Bouture de plumberry</name>
+      <name>Plumberry cutting</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1590,7 +1590,7 @@
       <identifier>P039_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de starshine</name>
+      <name>Starshine seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1626,7 +1626,7 @@
       <identifier>P040_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de baobab</name>
+      <name>Baobab seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1662,7 +1662,7 @@
       <identifier>P041_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de barbe de serpent</name>
+      <name>Dragon’s beard seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1683,7 +1683,7 @@
       <identifier>P041_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Barbe de serpent</name>
+      <name>Dragon’s beard</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1698,7 +1698,7 @@
       <identifier>P042_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine d'iris drapeau bleu</name>
+      <name>Blue flag iris seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1719,7 +1719,7 @@
       <identifier>P042_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Iris drapeau bleu</name>
+      <name>Blue flag iris</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1755,7 +1755,7 @@
       <identifier>P043_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Gousse de vanille</name>
+      <name>Vanilla pod</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1770,7 +1770,7 @@
       <identifier>P044_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de fleurs de pétales de glace</name>
+      <name>Snowdrop seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1791,7 +1791,7 @@
       <identifier>P044_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de pétale de glace</name>
+      <name>Snowdrop</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1806,7 +1806,7 @@
       <identifier>P045_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de lys araignée</name>
+      <name>Spider lily seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1827,7 +1827,7 @@
       <identifier>P045_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Lys araignée</name>
+      <name>Spider lily</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1842,7 +1842,7 @@
       <identifier>P046_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de fleur de lait de miel</name>
+      <name>Honeysuckle seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1863,7 +1863,7 @@
       <identifier>P046_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de lait de miel</name>
+      <name>Honeysuckle</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1878,7 +1878,7 @@
       <identifier>P047_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de sifflet des loups</name>
+      <name>Wolf whistle seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1899,7 +1899,7 @@
       <identifier>P047_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Sifflet des loups</name>
+      <name>Wolf whistle</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1914,7 +1914,7 @@
       <identifier>P048_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de chou-putois</name>
+      <name>Skunk cabbage seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1935,7 +1935,7 @@
       <identifier>P048_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Chou-putois</name>
+      <name>Skunk cabbage</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1950,7 +1950,7 @@
       <identifier>P049_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine d'ombrenuit</name>
+      <name>Nightshade seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1971,7 +1971,7 @@
       <identifier>P049_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Ombrenuit</name>
+      <name>Nightshade</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -1986,7 +1986,7 @@
       <identifier>P050_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine d'orchidée pantoufle des dames</name>
+      <name>Lady’s slipper orchid seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2007,7 +2007,7 @@
       <identifier>P050_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Orchidée pantoufle des dames</name>
+      <name>Lady’s slipper orchid</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2022,7 +2022,7 @@
       <identifier>P051_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de fraisier</name>
+      <name>Strawberry seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2043,7 +2043,7 @@
       <identifier>P051_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Fraise</name>
+      <name>Strawberry</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2058,7 +2058,7 @@
       <identifier>P052_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine d'indigo</name>
+      <name>Indigo seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2094,7 +2094,7 @@
       <identifier>P054_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de perle de Lune</name>
+      <name>Lunar Pearl seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2115,7 +2115,7 @@
       <identifier>P054_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Perle de Luna</name>
+      <name>Lunar Pearl</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2130,7 +2130,7 @@
       <identifier>P055_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de potiron des fées</name>
+      <name>Fairy squash seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2151,7 +2151,7 @@
       <identifier>P055_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Potiron des fées</name>
+      <name>Fairy squash</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2166,7 +2166,7 @@
       <identifier>P056_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de melon à nectar</name>
+      <name>Nectarmelon seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2187,7 +2187,7 @@
       <identifier>P056_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Melon à nectar</name>
+      <name>Nectarmelon</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2202,7 +2202,7 @@
       <identifier>P057_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de valériane rouge</name>
+      <name>Red valerian seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2223,7 +2223,7 @@
       <identifier>P057_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Valériane rouge</name>
+      <name>Red valerian</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2238,7 +2238,7 @@
       <identifier>P058_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine d'hibiscus</name>
+      <name>Hibiscus seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2274,7 +2274,7 @@
       <identifier>P059_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de laurier ionique</name>
+      <name>Ionic laurel seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2295,7 +2295,7 @@
       <identifier>P059_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Laurier ionique</name>
+      <name>Ionic laurel</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2310,7 +2310,7 @@
       <identifier>P060_Seed</identifier>
     </component>
     <component name="Name">
-      <name>Graine de rose du désert</name>
+      <name>Desert rose seed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2331,7 +2331,7 @@
       <identifier>P060_Produce</identifier>
     </component>
     <component name="Name">
-      <name>Rose du désert</name>
+      <name>Desert rose</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/plantinventory.swf</fileName>
@@ -2419,7 +2419,7 @@
       <identifier>I002a</identifier>
     </component>
     <component name="Name">
-      <name>Sandwiches sucrés à la canelle</name>
+      <name>Sweet cinnamon sandwich</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2431,7 +2431,7 @@
       <identifier>I002b</identifier>
     </component>
     <component name="Name">
-      <name>Tartes tinsy</name>
+      <name>Tinsy tarts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2491,7 +2491,7 @@
       <identifier>I004a</identifier>
     </component>
     <component name="Name">
-      <name>Gants ignifugés</name>
+      <name>Fireproof gloves</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2503,7 +2503,7 @@
       <identifier>I004b</identifier>
     </component>
     <component name="Name">
-      <name>Cisailles</name>
+      <name>Shears</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2580,7 +2580,7 @@
       <identifier>I008</identifier>
     </component>
     <component name="Name">
-      <name>Liste de jardinage de la main verte</name>
+      <name>Green thumbed gardening list</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2592,7 +2592,7 @@
       <identifier>I009</identifier>
     </component>
     <component name="Name">
-      <name>Ruban</name>
+      <name>Ribbon</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2640,7 +2640,7 @@
       <identifier>I011</identifier>
     </component>
     <component name="Name">
-      <name>Potion de d'étoile filante</name>
+      <name>Shooting star potion</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2688,7 +2688,7 @@
       <identifier>I013c</identifier>
     </component>
     <component name="Name">
-      <name>Framboise</name>
+      <name>Raspberry</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2700,7 +2700,7 @@
       <identifier>I013d</identifier>
     </component>
     <component name="Name">
-      <name>Tarte au citron meringuée</name>
+      <name>Lemon meringue pie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2712,7 +2712,7 @@
       <identifier>I013e</identifier>
     </component>
     <component name="Name">
-      <name>Tarte au citron bicolore</name>
+      <name>Lemon-Lime pie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2760,7 +2760,7 @@
       <identifier>I015e</identifier>
     </component>
     <component name="Name">
-      <name>Lei en fleurs</name>
+      <name>Lei garland</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2772,7 +2772,7 @@
       <identifier>I016</identifier>
     </component>
     <component name="Name">
-      <name>Pétard</name>
+      <name>Firecracker</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2844,7 +2844,7 @@
       <identifier>I019</identifier>
     </component>
     <component name="Name">
-      <name>Un peu de mortier</name>
+      <name>Lump of mortar</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2880,7 +2880,7 @@
       <identifier>I022</identifier>
     </component>
     <component name="Name">
-      <name>Encrier</name>
+      <name>Inkwell</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2892,7 +2892,7 @@
       <identifier>I023a</identifier>
     </component>
     <component name="Name">
-      <name>Bocal de coccinelles</name>
+      <name>Jar of seashells</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2904,7 +2904,7 @@
       <identifier>I023b</identifier>
     </component>
     <component name="Name">
-      <name>Bocal de papillons</name>
+      <name>Jar of butterflies</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2916,7 +2916,7 @@
       <identifier>I023c</identifier>
     </component>
     <component name="Name">
-      <name>Bocal vide</name>
+      <name>Empty jar</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -2928,7 +2928,7 @@
       <identifier>I023d</identifier>
     </component>
     <component name="Name">
-      <name>Bocal de mouches</name>
+      <name>Jar of flies</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3056,7 +3056,7 @@
       <identifier>I032</identifier>
     </component>
     <component name="Name">
-      <name>Crottin</name>
+      <name>Droppings</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3092,7 +3092,7 @@
       <identifier>I035</identifier>
     </component>
     <component name="Name">
-      <name>Cloud coton</name>
+      <name>Cloud cotton</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3104,7 +3104,7 @@
       <identifier>I036</identifier>
     </component>
     <component name="Name">
-      <name>Distillateur d'essence florale</name>
+      <name>Floral extract distillery</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3116,7 +3116,7 @@
       <identifier>I037</identifier>
     </component>
     <component name="Name">
-      <name>Essence florale</name>
+      <name>Floral extract</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3140,7 +3140,7 @@
       <identifier>I039</identifier>
     </component>
     <component name="Name">
-      <name>Perle des songes</name>
+      <name>Pearl of dreams</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3164,7 +3164,7 @@
       <identifier>I041</identifier>
     </component>
     <component name="Name">
-      <name>Etoile de mer</name>
+      <name>Starfish</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3176,7 +3176,7 @@
       <identifier>I042</identifier>
     </component>
     <component name="Name">
-      <name>Beignets ardents</name>
+      <name>Fiery fritters</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3188,7 +3188,7 @@
       <identifier>I043</identifier>
     </component>
     <component name="Name">
-      <name>Baratte à beurre</name>
+      <name>Butter churn</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3212,7 +3212,7 @@
       <identifier>I044</identifier>
     </component>
     <component name="Name">
-      <name>Moules à tarte</name>
+      <name>Tart pans</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3236,7 +3236,7 @@
       <identifier>I047</identifier>
     </component>
     <component name="Name">
-      <name>Livre intitulé « Septentrion de la Gastronomie : Desserts et Rafraîchissements »</name>
+      <name>Book titled “North of North Gastronomy: Desserts and Refreshments”</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3248,7 +3248,7 @@
       <identifier>I050</identifier>
     </component>
     <component name="Name">
-      <name>Crinière d'Allegra</name>
+      <name>Allegra’s mane</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3292,7 +3292,7 @@
       <identifier>I049</identifier>
     </component>
     <component name="Name">
-      <name>Pignon de pin</name>
+      <name>Pine nut</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3316,7 +3316,7 @@
       <identifier>I052</identifier>
     </component>
     <component name="Name">
-      <name>Feu</name>
+      <name>Fire</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3340,7 +3340,7 @@
       <identifier>I054</identifier>
     </component>
     <component name="Name">
-      <name>Sac de terreau</name>
+      <name>Bag of soil</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3392,7 +3392,7 @@
       <identifier>I058</identifier>
     </component>
     <component name="Name">
-      <name>Loquet</name>
+      <name>Locket</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3428,7 +3428,7 @@
       <identifier>I061</identifier>
     </component>
     <component name="Name">
-      <name>Conque</name>
+      <name>Conch</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3452,7 +3452,7 @@
       <identifier>I063</identifier>
     </component>
     <component name="Name">
-      <name>Baguette de tonnerre</name>
+      <name>Thunder wand</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3587,7 +3587,7 @@
       <identifier>I073</identifier>
     </component>
     <component name="Name">
-      <name>Pâturin bleu</name>
+      <name>Bluegrass</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3611,7 +3611,7 @@
       <identifier>I075</identifier>
     </component>
     <component name="Name">
-      <name>Paillasson Welcome</name>
+      <name>Welcome mat</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3676,7 +3676,7 @@
       <identifier>I080</identifier>
     </component>
     <component name="Name">
-      <name>Armature de cerf-volant en bois</name>
+      <name>Wooden kite frame</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3700,7 +3700,7 @@
       <identifier>I082</identifier>
     </component>
     <component name="Name">
-      <name>Manteau rouge</name>
+      <name>Red coat</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3808,7 +3808,7 @@
       <identifier>I090</identifier>
     </component>
     <component name="Name">
-      <name>Résine noire</name>
+      <name>Black resin</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3844,7 +3844,7 @@
       <identifier>I093</identifier>
     </component>
     <component name="Name">
-      <name>Gants isolants</name>
+      <name>Insulating gloves</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3914,7 +3914,7 @@
       <identifier>I097</identifier>
     </component>
     <component name="Name">
-      <name>Mangeoire à oiseau sur piquet</name>
+      <name>Bird feeder on a pole</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3931,7 +3931,7 @@
       <identifier>I098</identifier>
     </component>
     <component name="Name">
-      <name>Cadran solaire</name>
+      <name>Sundial</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3948,7 +3948,7 @@
       <identifier>I099a</identifier>
     </component>
     <component name="Name">
-      <name>Treillis blanc</name>
+      <name>White trellis</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3965,7 +3965,7 @@
       <identifier>I099b</identifier>
     </component>
     <component name="Name">
-      <name>Treillis brun</name>
+      <name>Brown trellis</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3982,7 +3982,7 @@
       <identifier>I099c</identifier>
     </component>
     <component name="Name">
-      <name>Treillis blanc à fleurs</name>
+      <name>White trellis with flowers</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -3999,7 +3999,7 @@
       <identifier>I099d</identifier>
     </component>
     <component name="Name">
-      <name>Treillis brun à fleurs</name>
+      <name>Brown trellis with flowers</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4033,7 +4033,7 @@
       <identifier>I101</identifier>
     </component>
     <component name="Name">
-      <name>Vasque à oiseaux</name>
+      <name>Bird bath</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4050,7 +4050,7 @@
       <identifier>I102</identifier>
     </component>
     <component name="Name">
-      <name>Grenouille Puddle Jumper</name>
+      <name>Puddle Jumper Frog</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4118,7 +4118,7 @@
       <identifier>I105</identifier>
     </component>
     <component name="Name">
-      <name>Girouette</name>
+      <name>Weathervane</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4152,7 +4152,7 @@
       <identifier>I107</identifier>
     </component>
     <component name="Name">
-      <name>Sculpture vivante</name>
+      <name>Living sculpture</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4186,7 +4186,7 @@
       <identifier>I110</identifier>
     </component>
     <component name="Name">
-      <name>Sculpture de glace de cheval terrestre (verte)</name>
+      <name>Ice sculpture of a land horse (green)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4338,7 +4338,7 @@
       <identifier>I119</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Sealky</name>
+      <name>Sealky Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4389,7 +4389,7 @@
       <identifier>I122</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Twinkle Imp </name>
+      <name>Twinkle Imp Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4511,7 +4511,7 @@
       <identifier>I129</identifier>
     </component>
     <component name="Name">
-      <name>Swetpea Reindeer Toy</name>
+      <name>Sweetpea Reindeer Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4619,7 +4619,7 @@
       <identifier>I135a</identifier>
     </component>
     <component name="Name">
-      <name>Doll Gertrude</name>
+      <name>Gertrude Doll</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4639,7 +4639,7 @@
       <identifier>I135b</identifier>
     </component>
     <component name="Name">
-      <name>Doll Gertrude</name>
+      <name>Gertrude Doll</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4656,7 +4656,7 @@
       <identifier>I135c</identifier>
     </component>
     <component name="Name">
-      <name>Doll Gertrude</name>
+      <name>Gertrude Doll</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4673,7 +4673,7 @@
       <identifier>I135d</identifier>
     </component>
     <component name="Name">
-      <name>Doll Gertrude</name>
+      <name>Gertrude Doll</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4690,7 +4690,7 @@
       <identifier>I135e</identifier>
     </component>
     <component name="Name">
-      <name>Doll Gertrude</name>
+      <name>Gertrude Doll</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4775,7 +4775,7 @@
       <identifier>I138c</identifier>
     </component>
     <component name="Name">
-      <name>Snowmane</name>
+      <name>Snowman</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4826,7 +4826,7 @@
       <identifier>I139</identifier>
     </component>
     <component name="Name">
-      <name>Traîneau</name>
+      <name>Sled</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4860,7 +4860,7 @@
       <identifier>I141a</identifier>
     </component>
     <component name="Name">
-      <name>Pétale de Sunstone - Rose du désert</name>
+      <name>Sunstone Petal - Desert rose</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4872,7 +4872,7 @@
       <identifier>I141b</identifier>
     </component>
     <component name="Name">
-      <name>Pétale de Sunstone - Hibiscus de l'océan</name>
+      <name>Sunstone Petal - Ocean hibiscus</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4884,7 +4884,7 @@
       <identifier>I141c</identifier>
     </component>
     <component name="Name">
-      <name>Pétale de Sunstone - Fleur de pétales de glace</name>
+      <name>Sunstone Petal - Snowdrop</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4896,7 +4896,7 @@
       <identifier>I141d</identifier>
     </component>
     <component name="Name">
-      <name>Pétale de Sunstone - Laurier ionique</name>
+      <name>Sunstone Petal - Ionic laurel</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4908,7 +4908,7 @@
       <identifier>I141e</identifier>
     </component>
     <component name="Name">
-      <name>Pétale de Sunstone - Orchidée royale</name>
+      <name>Sunstone Petal - Royal orchid</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4949,7 +4949,7 @@
       <identifier>I143a</identifier>
     </component>
     <component name="Name">
-      <name>Jarre en terre cuite - vide</name>
+      <name>Clay pot - empty</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4961,7 +4961,7 @@
       <identifier>I143b</identifier>
     </component>
     <component name="Name">
-      <name>Jarre en terre cuite - remplie</name>
+      <name>Clay pot - full</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -4985,7 +4985,7 @@
       <identifier>I145</identifier>
     </component>
     <component name="Name">
-      <name>Colophane pour violon</name>
+      <name>Violin rosin</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5009,7 +5009,7 @@
       <identifier>I147</identifier>
     </component>
     <component name="Name">
-      <name>Pin éternel</name>
+      <name>Eternal pine</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5078,7 +5078,7 @@
       <identifier>I151</identifier>
     </component>
     <component name="Name">
-      <name>Ventilateur à manivelle</name>
+      <name>Manual fan</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5090,7 +5090,7 @@
       <identifier>I152a</identifier>
     </component>
     <component name="Name">
-      <name>Orange piller</name>
+      <name>Orange pillow</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5138,7 +5138,7 @@
       <identifier>I152e</identifier>
     </component>
     <component name="Name">
-      <name>Oreiller sarcelle</name>
+      <name>Teal pillow</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5258,7 +5258,7 @@
       <identifier>I155a</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de Sunstone Rose du désert</name>
+      <name>Desert rose Sunstone Flower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5270,7 +5270,7 @@
       <identifier>I155b</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de Sunstone Hibiscus de l'océan</name>
+      <name>Ocean hibiscus Sunstone Flower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5282,7 +5282,7 @@
       <identifier>I155c</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de Sunstone Fleur de pétales de glace</name>
+      <name>Snowdrop Sunstone Flower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5294,7 +5294,7 @@
       <identifier>I155d</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de Sunstone Laurier ioniquer</name>
+      <name>Ionic laurel Sunstone Flower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5306,7 +5306,7 @@
       <identifier>I155e</identifier>
     </component>
     <component name="Name">
-      <name>Fleur de Sunstone Orchidée royale</name>
+      <name>Royal orchid Sunstone Flower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5318,7 +5318,7 @@
       <identifier>I156a</identifier>
     </component>
     <component name="Name">
-      <name>Service à thé 1</name>
+      <name>Tea set 1</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5335,7 +5335,7 @@
       <identifier>I156b</identifier>
     </component>
     <component name="Name">
-      <name>Service à thé 2</name>
+      <name>Tea set 2</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5352,7 +5352,7 @@
       <identifier>I156c</identifier>
     </component>
     <component name="Name">
-      <name>Service à thé 3</name>
+      <name>Tea set 3</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5370,7 +5370,7 @@
       <identifier>I169</identifier>
     </component>
     <component name="Name">
-      <name>Treillis de jardin rose</name>
+      <name>Pink garden trellis</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5387,7 +5387,7 @@
       <identifier>I170</identifier>
     </component>
     <component name="Name">
-      <name>Vasque pour oiseaux</name>
+      <name>Bird bath</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5404,7 +5404,7 @@
       <identifier>I171</identifier>
     </component>
     <component name="Name">
-      <name>Table et chaises de patio</name>
+      <name>Patio table and chairs</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5506,7 +5506,7 @@
       <identifier>I177</identifier>
     </component>
     <component name="Name">
-      <name>Banc jardin céleste</name>
+      <name>Celestial garden bench</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5540,7 +5540,7 @@
       <identifier>I179</identifier>
     </component>
     <component name="Name">
-      <name>Mât floral croissant de lune</name>
+      <name>Crescent moon flower pole</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5557,7 +5557,7 @@
       <identifier>I158a</identifier>
     </component>
     <component name="Name">
-      <name>Gemme ronde (rouge)</name>
+      <name>Round gemstone (red)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5574,7 +5574,7 @@
       <identifier>I158b</identifier>
     </component>
     <component name="Name">
-      <name>Gemme carrée (rouge)</name>
+      <name>Square gemstone (red)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5591,7 +5591,7 @@
       <identifier>I158c</identifier>
     </component>
     <component name="Name">
-      <name>Gemme ronde (bleue)</name>
+      <name>Round gemstone (blue)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5608,7 +5608,7 @@
       <identifier>I158d</identifier>
     </component>
     <component name="Name">
-      <name>Gemme carrée (bleue)</name>
+      <name>Square gemstone (blue)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5625,7 +5625,7 @@
       <identifier>I158e</identifier>
     </component>
     <component name="Name">
-      <name>Gemme ronde (verte)</name>
+      <name>Round gemstone (green)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5642,7 +5642,7 @@
       <identifier>I158f</identifier>
     </component>
     <component name="Name">
-      <name>Gemme carrée (verte)</name>
+      <name>Square gemstone (green)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5659,7 +5659,7 @@
       <identifier>I158g</identifier>
     </component>
     <component name="Name">
-      <name>Gemme ronde (violette)</name>
+      <name>Round gemstone (purple)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5676,7 +5676,7 @@
       <identifier>I158h</identifier>
     </component>
     <component name="Name">
-      <name>Gemme carrée (violette)</name>
+      <name>Square gemstone (purple)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5693,7 +5693,7 @@
       <identifier>I158i</identifier>
     </component>
     <component name="Name">
-      <name>Gemme ronde (rose)</name>
+      <name>Round gemstone (pink)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5710,7 +5710,7 @@
       <identifier>I158j</identifier>
     </component>
     <component name="Name">
-      <name>Gemme carrée (rose)</name>
+      <name>Square gemstone (pink)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5727,7 +5727,7 @@
       <identifier>I159a</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (rouge)</name>
+      <name>Rainbow stone (Red)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5739,7 +5739,7 @@
       <identifier>I159b</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (orange)</name>
+      <name>Rainbow stone (Orange)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5751,7 +5751,7 @@
       <identifier>I159c</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (jaune)</name>
+      <name>Rainbow stone (Yellow)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5763,7 +5763,7 @@
       <identifier>I159d</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (verte)</name>
+      <name>Rainbow stone (Green)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5775,7 +5775,7 @@
       <identifier>I159e</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (bleue)</name>
+      <name>Rainbow stone (Blue)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5787,7 +5787,7 @@
       <identifier>I159f</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (indigo)</name>
+      <name>Rainbow stone (Indigo)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5799,7 +5799,7 @@
       <identifier>I159g</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de l'arc-en-ciel (violette)</name>
+      <name>Rainbow stone (Violet)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5835,7 +5835,7 @@
       <identifier>I162</identifier>
     </component>
     <component name="Name">
-      <name>Lettre de remerciements</name>
+      <name>Thank you letter</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -5968,7 +5968,7 @@
       <identifier>I167a</identifier>
     </component>
     <component name="Name">
-      <name>Arbre fleuri rose</name>
+      <name>Pink blossom tree</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6070,7 +6070,7 @@
       <identifier>I185</identifier>
     </component>
     <component name="Name">
-      <name>Commode</name>
+      <name>Chest of drawers</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6222,7 +6222,7 @@
       <identifier>I0500</identifier>
     </component>
     <component name="Name">
-      <name>Jouet peluche Purrwing</name>
+      <name>Purrwing plushie toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6239,7 +6239,7 @@
       <identifier>I0501</identifier>
     </component>
     <component name="Name">
-      <name>Jouet peluche Frostbite</name>
+      <name>Frostbite plushie toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6256,7 +6256,7 @@
       <identifier>I0514</identifier>
     </component>
     <component name="Name">
-      <name>Champignon vénéneux violet</name>
+      <name>Purple poisonous mushroom</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6268,7 +6268,7 @@
       <identifier>I0506</identifier>
     </component>
     <component name="Name">
-      <name>Pierre de lune</name>
+      <name>Moonstone</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6280,7 +6280,7 @@
       <identifier>I0504a</identifier>
     </component>
     <component name="Name">
-      <name>Clochettes de traineau cassées</name>
+      <name>Broken sleigh bells</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6292,7 +6292,7 @@
       <identifier>I0504b</identifier>
     </component>
     <component name="Name">
-      <name>Clochettes de traineau</name>
+      <name>Sleigh bells</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6304,7 +6304,7 @@
       <identifier>I257</identifier>
     </component>
     <component name="Name">
-      <name>Friandises glacées de Snowshire</name>
+      <name>Snowshire’s iced sweets</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6328,7 +6328,7 @@
       <identifier>I256</identifier>
     </component>
     <component name="Name">
-      <name>Affiche chiot perdu</name>
+      <name>Lost puppy poster</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6340,7 +6340,7 @@
       <identifier>I250</identifier>
     </component>
     <component name="Name">
-      <name>Marmite à friandises</name>
+      <name>Pot of sweets</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6357,7 +6357,7 @@
       <identifier>I251</identifier>
     </component>
     <component name="Name">
-      <name>Friandise à la fraise</name>
+      <name>Strawberry sweet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6374,7 +6374,7 @@
       <identifier>I252</identifier>
     </component>
     <component name="Name">
-      <name>Friandise à la pastèque</name>
+      <name>Watermelon sweet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6391,7 +6391,7 @@
       <identifier>I253</identifier>
     </component>
     <component name="Name">
-      <name>Friandise au citron bicolore</name>
+      <name>Lemon-Lime sweet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6408,7 +6408,7 @@
       <identifier>I254</identifier>
     </component>
     <component name="Name">
-      <name>Friandise à la cannelle</name>
+      <name>Cinnamon sweet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6425,7 +6425,7 @@
       <identifier>I255</identifier>
     </component>
     <component name="Name">
-      <name>Friandise au chewing-gum</name>
+      <name>Bubblegum sweet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6442,7 +6442,7 @@
       <identifier>I0503</identifier>
     </component>
     <component name="Name">
-      <name>Patins à glace</name>
+      <name>Ice skates</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6454,7 +6454,7 @@
       <identifier>I258</identifier>
     </component>
     <component name="Name">
-      <name>Cristaux de neige</name>
+      <name>Snow crystals</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6472,7 +6472,7 @@
       <identifier>I0605</identifier>
     </component>
     <component name="Name">
-      <name>Fleur sauvage jaune</name>
+      <name>Yellow wildflower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -6489,7 +6489,7 @@
       <identifier>I0606</identifier>
     </component>
     <component name="Name">
-      <name>Fleur sauvage violette</name>
+      <name>Purple wildflower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -6506,7 +6506,7 @@
       <identifier>I0607</identifier>
     </component>
     <component name="Name">
-      <name>Fleur sauvage rouge</name>
+      <name>Red wildflower</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -6524,7 +6524,7 @@
       <identifier>I0510a</identifier>
     </component>
     <component name="Name">
-      <name>Gâteau d'anniversaire de Geoffrey</name>
+      <name>Geoffrey’s birthday cake</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6541,7 +6541,7 @@
       <identifier>I0511</identifier>
     </component>
     <component name="Name">
-      <name>Trophée Odyssée</name>
+      <name>Odyssey Trophy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6558,7 +6558,7 @@
       <identifier>I0512</identifier>
     </component>
     <component name="Name">
-      <name>Trophée de l'Aube</name>
+      <name>Dawn Trophy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -6607,7 +6607,7 @@
   <!-- ======== DEFAULT CLOTHING ITEMS ============================================================================ -->
   <template name="DefaultTShirtTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Tee-shirt uni à manches courtes</name>
+      <name>Short sleeved t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6641,7 +6641,7 @@
   </template>
   <template name="DefaultShoesTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Baskets (sans chaussettes)</name>
+      <name>Sneakers (without socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6658,7 +6658,7 @@
   </template>
   <template name="DefaultHairTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Queue de cheval bouclée (bandeau)</name>
+      <name>Curly ponytail (headband)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6675,7 +6675,7 @@
   </template>
   <template name="DefaultAccessoryTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Retirer accessoires</name>
+      <name>Take off accessories</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6696,7 +6696,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Tee-shirt uni à manches courtes</name>
+      <name>Plain short sleeved t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6716,7 +6716,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Tee-shirt rayé à manches courtes</name>
+      <name>Striped short sleeved t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6736,7 +6736,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Tee-Shirt de baseball</name>
+      <name>Baseball t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6756,7 +6756,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Tee-shirt hippie</name>
+      <name>Hippie t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6776,7 +6776,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>T-shirt coeur</name>
+      <name>Heart t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6793,7 +6793,7 @@
   </template>
   <template name="IS001fTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Tee-shirt fantasy</name>
+      <name>Fantasy t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6810,7 +6810,7 @@
   </template>
   <template name="IS001gTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>T-shirt (avec coquillages)</name>
+      <name>T-shirt (with seashells)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6830,7 +6830,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>T-shirt (avec logo Bella)</name>
+      <name>T-shirt (with Bella logo)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6850,7 +6850,7 @@
       <value>40</value>
     </component>
     <component name="Name">
-      <name>Tee-shirt dégradé à manches longues</name>
+      <name>Long sleeved gradient t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6867,7 +6867,7 @@
   </template>
   <template name="IS001jTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Tee-shirt Daisy</name>
+      <name>Daisy t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6884,7 +6884,7 @@
   </template>
   <template name="IS001kTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Tee-shirt Bluebell</name>
+      <name>Bluebell t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6901,7 +6901,7 @@
   </template>
   <template name="IS001lTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Haut de pyjama Tomtomme</name>
+      <name>Tomtomme pyjama top</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6921,7 +6921,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Haut de pyjama Cami</name>
+      <name>Cami pyjama top</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6938,7 +6938,7 @@
   </template>
   <template name="IS001pTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Chemise feuilles</name>
+      <name>Leaves shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6958,7 +6958,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Chemise fées</name>
+      <name>Fairy shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6975,7 +6975,7 @@
   </template>
   <template name="IS001rTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Chemise fleurie</name>
+      <name>Flowery shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -6995,7 +6995,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Chemise tropicale</name>
+      <name>Tropical shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7012,7 +7012,7 @@
   </template>
   <template name="IS001tTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Pull d'hiver</name>
+      <name>Winter jumper</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7029,7 +7029,7 @@
   </template>
   <template name="IS001uTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Tee shirt citrustack</name>
+      <name>Citrustack t-shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7046,7 +7046,7 @@
   </template>
   <template name="IS001vTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Chemise étoile filante</name>
+      <name>Shooting star shirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7063,7 +7063,7 @@
   </template>
   <template name="IS001wTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Haut Avalynn Fairy</name>
+      <name>Avalynn Fairy top</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7114,7 +7114,7 @@
   </template>
   <template name="IS003bTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Pantalon écossais</name>
+      <name>Tartan pants</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7134,7 +7134,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Pantalon feu</name>
+      <name>Fire pants</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7154,7 +7154,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Pantalon Fantasy</name>
+      <name>Fantasy Pants</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7174,7 +7174,7 @@
       <value>125</value>
     </component>
     <component name="Name">
-      <name>Pantalon rétro</name>
+      <name>Retro pants</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7194,7 +7194,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Short kaki</name>
+      <name>Kaki shorts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7211,7 +7211,7 @@
   </template>
   <template name="IS003gTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Short à carreaux</name>
+      <name>Checkered shorts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7231,7 +7231,7 @@
       <value>40</value>
     </component>
     <component name="Name">
-      <name>Short cargo</name>
+      <name>Cargo shorts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7251,7 +7251,7 @@
       <value>40</value>
     </component>
     <component name="Name">
-      <name>Short de football</name>
+      <name>Football shorts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7271,7 +7271,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Short fantasy</name>
+      <name>Fantasy shorts</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7291,7 +7291,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Bas de pyjama mince</name>
+      <name>Skinny pyjama bottoms</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7311,7 +7311,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Jeans retroussés</name>
+      <name>Cuffed jeans</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7328,7 +7328,7 @@
   </template>
   <template name="IS003mTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Bas de pyjama ample</name>
+      <name>Wide pyjama bottoms</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7345,7 +7345,7 @@
   </template>
   <template name="IS003nTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Pantalon feuilles</name>
+      <name>Leaf pants</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7365,7 +7365,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Pantalon Pixie</name>
+      <name>Pixie pants</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7385,7 +7385,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Jupe écossaise</name>
+      <name>Tartan skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7405,7 +7405,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Jupe en jean</name>
+      <name>Jean skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7422,7 +7422,7 @@
   </template>
   <template name="IS003rTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe logo Bella</name>
+      <name>Bella logo skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7442,7 +7442,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Jupe unie</name>
+      <name>Plain skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7462,7 +7462,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Jupe florale Lacey</name>
+      <name>Lacey floral skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7479,7 +7479,7 @@
   </template>
   <template name="IS003uTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe à pois</name>
+      <name>Polka-dot skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7496,7 +7496,7 @@
   </template>
   <template name="IS003vTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe patchwork</name>
+      <name>Patchwork skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7516,7 +7516,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Jupe à volant</name>
+      <name>Ruffled skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7533,7 +7533,7 @@
   </template>
   <template name="IS003xTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe fantasy</name>
+      <name>Fantasy skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7553,7 +7553,7 @@
       <value>125</value>
     </component>
     <component name="Name">
-      <name>Jupe tropicale</name>
+      <name>Tropical skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7570,7 +7570,7 @@
   </template>
   <template name="IS003zTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe étoile filante</name>
+      <name>Shooting star skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7587,7 +7587,7 @@
   </template>
   <template name="IS003aaTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe Avalynn Fairy</name>
+      <name>Avalynn Fairy skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7604,7 +7604,7 @@
   </template>
   <template name="IS003abTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Jupe Thunder</name>
+      <name>Thunder skirt</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7624,7 +7624,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Baskets (sans chaussettes)</name>
+      <name>Sneakers (without socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7644,7 +7644,7 @@
       <value>40</value>
     </component>
     <component name="Name">
-      <name>Baskets (chaussettes)</name>
+      <name>Sneakers (socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7664,7 +7664,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Baskets (chaussettes montantes rayées)</name>
+      <name>Sneakers (long stripey socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7684,7 +7684,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Baskets (chaussettes montantes unies)</name>
+      <name>Sneakers (plain long socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7704,7 +7704,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Baskets (chaussettes montantes logo Bella)</name>
+      <name>Sneakers (long Bella logo socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7721,7 +7721,7 @@
   </template>
   <template name="IS004fTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Mary Janes (sans chaussettes)</name>
+      <name>Mary Janes (without socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7741,7 +7741,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Mary Janes (chaussettes)</name>
+      <name>Mary Janes (socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7758,7 +7758,7 @@
   </template>
   <template name="IS004hTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Mary Janes (chaussettes montantes rayées)</name>
+      <name>Mary Janes (long stripey socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7775,7 +7775,7 @@
   </template>
   <template name="IS004iTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Mary Janes (chaussettes montantes unies)</name>
+      <name>Mary Janes (long plain socks)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7795,7 +7795,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Mary Janes (chaussettes montantes logo Bella)</name>
+      <name>Mary Janes (long socks with Bella logo)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7815,7 +7815,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Chaussettes montantes rayées</name>
+      <name>Long stripey socks</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7835,7 +7835,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Bottes d'équitation</name>
+      <name>Riding boots</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7855,7 +7855,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Sandales fleurs</name>
+      <name>Flower sandals</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7875,7 +7875,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Sandales papillon</name>
+      <name>Butterfly sandals</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7895,7 +7895,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Tongs de plage</name>
+      <name>Beach flip-flops</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7912,7 +7912,7 @@
   </template>
   <template name="IS004pTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Bottes d'hiver</name>
+      <name>Winter boots</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7929,7 +7929,7 @@
   </template>
   <template name="IS004qTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Chaussures Avalynn Fairy</name>
+      <name>Avalynn Fairy shoes</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7966,7 +7966,7 @@
       <value>40</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval bouclée (bandeau)</name>
+      <name>Curly ponytail (headband)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -7986,7 +7986,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval bouclée (barrettes)</name>
+      <name>Curly ponytail (hairclips)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8003,7 +8003,7 @@
   </template>
   <template name="IS005cTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Queue de cheval bouclée (casquette)</name>
+      <name>Curly ponytail (cap)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8020,7 +8020,7 @@
   </template>
   <template name="IS005dTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Queue de cheval bouclée (casquette à l'envers)</name>
+      <name>Curly ponytail (backwards cap)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8040,7 +8040,7 @@
       <value>40</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval (bandeau)</name>
+      <name>Ponytail (headband)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8060,7 +8060,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval (barrettes)</name>
+      <name>Ponytail (hairclips)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8080,7 +8080,7 @@
       <value>15</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval (casquette)</name>
+      <name>Ponytail (cap)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8100,7 +8100,7 @@
       <value>15</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval bouclée (casquette à l'envers)</name>
+      <name>Curly ponytail (backwards cap)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8117,7 +8117,7 @@
   </template>
   <template name="IS005iTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Queue de cheval bouclée (tiare)</name>
+      <name>Curly ponytail (tiara)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8134,7 +8134,7 @@
   </template>
   <template name="IS005jTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Queue de cheval droite (tiare)</name>
+      <name>Straight ponytail (tiara)</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8154,7 +8154,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval bouclée</name>
+      <name>Curly ponytail</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8174,7 +8174,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Queue de cheval droite</name>
+      <name>Straight ponytail</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8194,7 +8194,7 @@
       <value>25</value>
     </component>
     <component name="Name">
-      <name>Natte</name>
+      <name>Cornrows</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8214,7 +8214,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Tresse</name>
+      <name>Braid</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8234,7 +8234,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Chapeau de jardin printemps</name>
+      <name>Spring garden hat</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8254,7 +8254,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Bombe d'équitation</name>
+      <name>Riding helmet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8271,7 +8271,7 @@
   </template>
   <template name="IS005vTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Chapeau de cowboy violet et queue de cheval</name>
+      <name>Violet cowboy hat and ponytail</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8288,7 +8288,7 @@
   </template>
   <template name="IS005wTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Oreilles de lapin roses et natte</name>
+      <name>Pink bunny ears and cornrows</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8305,7 +8305,7 @@
   </template>
   <template name="IS005xTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Chapeau d'hiver à pompons</name>
+      <name>Pompom winter hat</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8322,7 +8322,7 @@
   </template>
   <template name="IS005yTemplate" template="HairItemTemplate">
     <component name="Name">
-      <name>Poil d'araignée</name>
+      <name>Spider skin</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8342,7 +8342,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Couronne Avalynn Fairy</name>
+      <name>Avalynn Fairy crown</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8362,7 +8362,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Bindi Jewel avec tresses</name>
+      <name>Jewel bindi with braids</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8379,7 +8379,7 @@
   </template>
   <template name="IS006aTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Ailes de fée</name>
+      <name>Fairy wings</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8399,7 +8399,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Ailes de papillon florales</name>
+      <name>Floral butterfly wings</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8419,7 +8419,7 @@
       <value>150</value>
     </component>
     <component name="Name">
-      <name>Ailes feuilles fantaisie</name>
+      <name>Fantasy leaf wings</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8436,7 +8436,7 @@
   </template>
   <template name="IS006dTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Ailes d'ange</name>
+      <name>Angel wings</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8456,7 +8456,7 @@
       <value>125</value>
     </component>
     <component name="Name">
-      <name>Aile d'angelot</name>
+      <name>Cherub wings</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8493,7 +8493,7 @@
       <value>75</value>
     </component>
     <component name="Name">
-      <name>Lunettes de soleil</name>
+      <name>Sunglasses</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8513,7 +8513,7 @@
       <value>50</value>
     </component>
     <component name="Name">
-      <name>Lunettes de soleil yeux de chat</name>
+      <name>Cat eye sunglasses</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8533,7 +8533,7 @@
       <value>100</value>
     </component>
     <component name="Name">
-      <name>Lunette à grosse monture</name>
+      <name>Oversized glasses</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8550,7 +8550,7 @@
   </template>
   <template name="IS006uTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Retirer accessoire</name>
+      <name>Remove accessory</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8567,7 +8567,7 @@
   </template>
   <template name="IS006vTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Lunettes de soleil Star Power</name>
+      <name>Star Power sunglasses</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8584,7 +8584,7 @@
   </template>
   <template name="IS006wTemplate" template="ClothingItemTemplate">
     <component name="Name">
-      <name>Lunettes givrées</name>
+      <name>Frosted glasses</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8602,7 +8602,7 @@
   <!-- ======== Items attached to simple naked Avatar ============================================================================ -->
   <template name="IA101aTemplate" template="AvatarCustomizationItemTemplate">
     <component name="Name">
-      <name>Couleur de peau de base</name>
+      <name>Base skin color</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8623,24 +8623,24 @@
       <colorString>.5,.6,.52,1,147,81,86,255</colorString>
     </component>
     <component type="components.DyeComponent" name="Skin2">
-      <color>Moyenne</color>
+      <color>Medium</color>
       <isDefaultDye>true</isDefaultDye>
       <colorString>.4,.5,.56,1,147,81,25,255</colorString>
     </component>
     <component type="components.DyeComponent" name="Skin3">
-      <color>Bronzage moyen</color>
+      <color>Medium tan</color>
       <isDefaultDye>true</isDefaultDye>
       <colorString>.56,.5,.5,1,71,30,-31,255</colorString>
     </component>
     <component type="components.DyeComponent" name="Skin4">
-      <color>Sombre</color>
+      <color>Dark</color>
       <isDefaultDye>true</isDefaultDye>
       <colorString>.38,.38,.52,1,61,0,-77,255</colorString>
     </component>
   </template>
   <template name="IA102aTemplate" template="AvatarCustomizationItemTemplate">
     <component name="Name">
-      <name>Couleur des yeux de base</name>
+      <name>Base eye color</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/clothesinventory.swf</fileName>
@@ -8656,17 +8656,17 @@
       <skinTemplate>SA102aTemplate</skinTemplate>
     </component>
     <component type="components.DyeComponent" name="BrownDye">
-      <color>Marron</color>
+      <color>Brown</color>
       <isDefaultDye>true</isDefaultDye>
       <colorString>.5,.38,.34,1,71,20,-41,255</colorString>
     </component>
     <component type="components.DyeComponent" name="GreenDye">
-      <color>Vert</color>
+      <color>Green</color>
       <isDefaultDye>true</isDefaultDye>
       <colorString>.6,.46,.4,1,40,132,-194,255</colorString>
     </component>
     <component type="components.DyeComponent" name="LightBlueDye">
-      <color>Bleu</color>
+      <color>Blue</color>
       <isDefaultDye>true</isDefaultDye>
       <colorString>.84,.66,.36,1,-199,40,255,255</colorString>
     </component>
@@ -8682,7 +8682,7 @@
       <identifier>I157a</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Banane éclatante</name>
+      <name>Dye - Banana blast</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8701,7 +8701,7 @@
       <identifier>I157b</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Orange épicée</name>
+      <name>Dye - Spicy orange</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8720,7 +8720,7 @@
       <identifier>I157c</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Erable orange</name>
+      <name>Dye - Orange maple</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8739,7 +8739,7 @@
       <identifier>I157d</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Pomme rouge</name>
+      <name>Dye - Red apple</name>
     </component>
     <component name="Dyed">
       <colorFilter>.56,0,0,1,71,0,0,0</colorFilter>
@@ -8758,7 +8758,7 @@
       <identifier>I157e</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Rouge ardent</name>
+      <name>Dye - Flaming red</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8777,7 +8777,7 @@
       <identifier>I157f</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Tomate rose</name>
+      <name>Dye - Pink tomato</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8796,7 +8796,7 @@
       <identifier>I157g</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Rose magnolia</name>
+      <name>Dye - Magnolia pink</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8815,7 +8815,7 @@
       <identifier>I157h</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Rose framboise </name>
+      <name>Dye - Raspberry pink </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8834,7 +8834,7 @@
       <identifier>I157i</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Rouge fraise</name>
+      <name>Dye - Strawberry red</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8853,7 +8853,7 @@
       <identifier>I157j</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Brun cannelle</name>
+      <name>Dye - Cinnamon brown</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8872,7 +8872,7 @@
       <identifier>I157k</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Brun cacao</name>
+      <name>Dye - Cocoa brown</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8891,7 +8891,7 @@
       <identifier>I157l</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Pourpre plumberry</name>
+      <name>Dye - Plumberry purple</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8910,7 +8910,7 @@
       <identifier>I157m</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Bleu boule de gomme</name>
+      <name>Dye - Gumdrop blue</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8929,7 +8929,7 @@
       <identifier>I157n</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Bleu glacé</name>
+      <name>Dye - Wintery ice blue</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8948,7 +8948,7 @@
       <identifier>I157o</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Vert citron</name>
+      <name>Dye - Lemon-lime green</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -8967,14 +8967,14 @@
       <identifier>I157p</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Vert vanille</name>
+      <name>Dye - Lemon-lime green</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
       <className>I157</className>
     </component>
     <component name="Dye">
-      <color>Dye - Green Vanilla</color>
+      <color>Dye - Lemon-lime Green</color>
       <colorString>.14,.3,.3,1,10,86,10,0</colorString>
     </component>
     <component name="Dyed">
@@ -8986,7 +8986,7 @@
       <identifier>I157q</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Blanc</name>
+      <name>Dye - White</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -9005,7 +9005,7 @@
       <identifier>I157r</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Gris</name>
+      <name>Dye - Grey</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -9024,7 +9024,7 @@
       <identifier>I157s</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Noir </name>
+      <name>Dye - Black </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -9043,7 +9043,7 @@
       <identifier>I157t</identifier>
     </component>
     <component name="Name">
-      <name>Teinture - Bleu roi</name>
+      <name>Dye - Royal blue</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -9063,7 +9063,7 @@
       <identifier>I149a</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Bella</name>
+      <name>Bella horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9075,7 +9075,7 @@
       <identifier>I149b</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Fiona</name>
+      <name>Fiona horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9087,7 +9087,7 @@
       <identifier>I149c</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Flame</name>
+      <name>Flame horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9099,7 +9099,7 @@
       <identifier>I149d</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Jewel</name>
+      <name>Jewel horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9111,7 +9111,7 @@
       <identifier>I149e</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Jordanna</name>
+      <name>Jordanna horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9123,7 +9123,7 @@
       <identifier>I149f</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Nike</name>
+      <name>Nike horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9135,7 +9135,7 @@
       <identifier>I149g</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Thunder</name>
+      <name>Thunder horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9147,7 +9147,7 @@
       <identifier>I149h</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Bello</name>
+      <name>Bello horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9159,7 +9159,7 @@
       <identifier>I149i</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Rodin </name>
+      <name>Rodin horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9171,7 +9171,7 @@
       <identifier>I149j</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Sleetmane </name>
+      <name>Sleetmane horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9183,7 +9183,7 @@
       <identifier>I149k</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Snowdreamer </name>
+      <name>Snowdreamer horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9195,7 +9195,7 @@
       <identifier>I149l</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Coral </name>
+      <name>Coral horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9207,7 +9207,7 @@
       <identifier>I149m</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Kona </name>
+      <name>Kona horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9219,7 +9219,7 @@
       <identifier>I149n</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Shamal </name>
+      <name>Shamal horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9231,7 +9231,7 @@
       <identifier>I149o</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Farah </name>
+      <name> Farah horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9243,7 +9243,7 @@
       <identifier>I149p</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Zephyros </name>
+      <name>Zephyros horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9255,7 +9255,7 @@
       <identifier>I149q</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Cosima </name>
+      <name>Cosima horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9267,7 +9267,7 @@
       <identifier>I149r</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Diamond </name>
+      <name>Diamond horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9279,7 +9279,7 @@
       <identifier>I149s</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Iceking </name>
+      <name>Iceking horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9291,7 +9291,7 @@
       <identifier>I149t</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Nyx </name>
+      <name>Nyx horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9303,7 +9303,7 @@
       <identifier>I149u</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Lien </name>
+      <name>Lien horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9315,7 +9315,7 @@
       <identifier>I149v</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Flora </name>
+      <name>Flora horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9327,7 +9327,7 @@
       <identifier>I149w</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Skipper </name>
+      <name>Skipper horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9339,7 +9339,7 @@
       <identifier>I149x</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Athena </name>
+      <name>Athena horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9351,7 +9351,7 @@
       <identifier>I149y</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Apollo </name>
+      <name>Apollo horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9363,7 +9363,7 @@
       <identifier>I149z</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Amor </name>
+      <name>Amor horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9375,7 +9375,7 @@
       <identifier>I149aa</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Venus </name>
+      <name>Venus horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9387,7 +9387,7 @@
       <identifier>I149ab</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Flipper </name>
+      <name>Flipper horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9399,7 +9399,7 @@
       <identifier>I149ac</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Ondine </name>
+      <name>Ondine horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9411,7 +9411,7 @@
       <identifier>I149ad</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Bryda </name>
+      <name>Bryda horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9423,7 +9423,7 @@
       <identifier>I149ae</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Allegra </name>
+      <name>Allegra horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9435,7 +9435,7 @@
       <identifier>I149af</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Celinda </name>
+      <name>Celinda horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9447,7 +9447,7 @@
       <identifier>I149ag</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Derik </name>
+      <name>Derik horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9459,7 +9459,7 @@
       <identifier>I149ah</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Dewdrop </name>
+      <name>Dewdrop horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9471,7 +9471,7 @@
       <identifier>I149ai</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Dewsparkle </name>
+      <name>Dewsparkle horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9483,7 +9483,7 @@
       <identifier>I149aj</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Seraphia </name>
+      <name>Seraphia horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9495,7 +9495,7 @@
       <identifier>I149ak</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Garnet </name>
+      <name>Garnet horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9507,7 +9507,7 @@
       <identifier>I149al</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Hyperion </name>
+      <name>Hyperion horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9519,7 +9519,7 @@
       <identifier>I149am</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Jikin </name>
+      <name>Jikin horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9531,7 +9531,7 @@
       <identifier>I149an</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Resauro </name>
+      <name>Resauro horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9543,7 +9543,7 @@
       <identifier>I149ao</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Misa </name>
+      <name>Misa horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9555,7 +9555,7 @@
       <identifier>I149ap</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Rodrigo </name>
+      <name>Rodrigo horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9567,7 +9567,7 @@
       <identifier>I149aq</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Silvia </name>
+      <name>Silvia horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9579,7 +9579,7 @@
       <identifier>I149ar</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Soot </name>
+      <name>Soot horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9591,7 +9591,7 @@
       <identifier>I149as</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Twig </name>
+      <name>Twig horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9603,7 +9603,7 @@
       <identifier>I149at</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Valentino </name>
+      <name>Valentino horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9615,7 +9615,7 @@
       <identifier>I149au</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Wings  </name>
+      <name>Wings horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9627,7 +9627,7 @@
       <identifier>I149av</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Colour </name>
+      <name>Colour horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9639,7 +9639,7 @@
       <identifier>I149aw</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Donnecha </name>
+      <name>Donnecha horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9651,7 +9651,7 @@
       <identifier>I149ax</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Blackie </name>
+      <name>Blackie horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9663,7 +9663,7 @@
       <identifier>I149ay</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Obrylin </name>
+      <name>Obrylin horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9675,7 +9675,7 @@
       <identifier>I149az</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Ponca </name>
+      <name>Ponca horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9687,7 +9687,7 @@
       <identifier>I149ba</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Rosebriar </name>
+      <name>Rosebriar horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9699,7 +9699,7 @@
       <identifier>I149bb</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Connora </name>
+      <name>Connora horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9711,7 +9711,7 @@
       <identifier>I149bc</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Uranus </name>
+      <name>Uranus horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9723,7 +9723,7 @@
       <identifier>I149bd</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Anemone </name>
+      <name>Anemone horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9735,7 +9735,7 @@
       <identifier>I149be</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Ronnie </name>
+      <name>Ronnie horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9747,7 +9747,7 @@
       <identifier>I149bf</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Bluebell </name>
+      <name>Bluebell horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9759,7 +9759,7 @@
       <identifier>I149bg</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Beran </name>
+      <name>Beran horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9771,7 +9771,7 @@
       <identifier>I149bh</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Generosity </name>
+      <name>Generosity horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9783,7 +9783,7 @@
       <identifier>I149bi</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Ceratos </name>
+      <name>Ceratos horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9795,7 +9795,7 @@
       <identifier>I149bj</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Autumn </name>
+      <name>Autumn horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9807,7 +9807,7 @@
       <identifier>I149bk</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Briar </name>
+      <name>Briar horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9819,7 +9819,7 @@
       <identifier>I149bl</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Calyx </name>
+      <name>Calyx horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9831,7 +9831,7 @@
       <identifier>I149bm</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Petal </name>
+      <name>Petal horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9843,7 +9843,7 @@
       <identifier>I149bn</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Oracle </name>
+      <name>Oracle horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9855,7 +9855,7 @@
       <identifier>I149bo</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Dowager </name>
+      <name>Dowager horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9867,7 +9867,7 @@
       <identifier>I149bp</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Cayenne </name>
+      <name>Cayenne horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9879,7 +9879,7 @@
       <identifier>I149bq</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Foxglove </name>
+      <name>Foxglove horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9891,7 +9891,7 @@
       <identifier>I149br</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Saffron </name>
+      <name>Saffron horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9903,7 +9903,7 @@
       <identifier>I149bs</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Foxtail </name>
+      <name>Foxtail horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9915,7 +9915,7 @@
       <identifier>I149bt</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Lavender </name>
+      <name>Lavender horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9927,7 +9927,7 @@
       <identifier>I149bu</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Snapdragon </name>
+      <name>Snapdragon horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9939,7 +9939,7 @@
       <identifier>I149bv</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Violet </name>
+      <name>Violet horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9951,7 +9951,7 @@
       <identifier>I149bw</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Hawthorn </name>
+      <name>Hawthorn horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9963,7 +9963,7 @@
       <identifier>I149bx</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Camellia </name>
+      <name>Camellia horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9975,7 +9975,7 @@
       <identifier>I149by</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Buttercup </name>
+      <name>Buttercup horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9987,7 +9987,7 @@
       <identifier>I149bz</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Bluefiddle </name>
+      <name>Bluefiddle horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -9999,7 +9999,7 @@
       <identifier>I149ca</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Larkspur </name>
+      <name>Larkspur horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10011,7 +10011,7 @@
       <identifier>I149cb</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Sunflower </name>
+      <name>Sunflower horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10023,7 +10023,7 @@
       <identifier>I149cc</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Waterlily </name>
+      <name>Waterlily horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10035,7 +10035,7 @@
       <identifier>I149cd</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Lotus </name>
+      <name>Lotus horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10047,7 +10047,7 @@
       <identifier>I149ce</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Cattail </name>
+      <name>Cattail horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10059,7 +10059,7 @@
       <identifier>I149cf</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Reed </name>
+      <name>Reed horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10071,7 +10071,7 @@
       <identifier>I149cg</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Shasta Daisy</name>
+      <name>Shasta Daisy horse card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10083,7 +10083,7 @@
       <identifier>I149ch</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Nutmeg </name>
+      <name>Nutmeg horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10095,7 +10095,7 @@
       <identifier>I149ci</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Tarragon </name>
+      <name>Tarragon horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10107,7 +10107,7 @@
       <identifier>I149cj</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Cinnamon </name>
+      <name>Cinnamon horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10119,7 +10119,7 @@
       <identifier>I149ck</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Fairybell </name>
+      <name>Fairybell horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10131,7 +10131,7 @@
       <identifier>I149cl</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Aster </name>
+      <name>Aster horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10143,7 +10143,7 @@
       <identifier>I149cm</identifier>
     </component>
     <component name="Name">
-      <name>Carte cheval Cabby </name>
+      <name>Cabby horse card </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/horsecardinventory.swf</fileName>
@@ -10156,7 +10156,7 @@
       <identifier>I0357</identifier>
     </component>
     <component name="Name">
-      <name>Carpette ferme</name>
+      <name>Farm carpet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10174,7 +10174,7 @@
       <identifier>I0515</identifier>
     </component>
     <component name="Name">
-      <name>Commode ferme</name>
+      <name>Farm chest of drawers</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10195,7 +10195,7 @@
       <identifier>I0516</identifier>
     </component>
     <component name="Name">
-      <name>Fenêtre ferme</name>
+      <name>Farm window</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10216,7 +10216,7 @@
       <identifier>I0517</identifier>
     </component>
     <component name="Name">
-      <name>Table ferme</name>
+      <name>Farm table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10237,7 +10237,7 @@
       <identifier>I0518</identifier>
     </component>
     <component name="Name">
-      <name>Table Maison de campagne</name>
+      <name>Cottage table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10258,7 +10258,7 @@
       <identifier>I0519</identifier>
     </component>
     <component name="Name">
-      <name>Chaise ferme</name>
+      <name>Farm chair</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10279,7 +10279,7 @@
       <identifier>I0520</identifier>
     </component>
     <component name="Name">
-      <name>Canapé ferme</name>
+      <name>Farm couch</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10300,7 +10300,7 @@
       <identifier>I0521</identifier>
     </component>
     <component name="Name">
-      <name>Lit ferme</name>
+      <name>Farm bed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10321,7 +10321,7 @@
       <identifier>I0522</identifier>
     </component>
     <component name="Name">
-      <name>Table de salon ferme</name>
+      <name>Farm living room table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10342,7 +10342,7 @@
       <identifier>I0523</identifier>
     </component>
     <component name="Name">
-      <name>Table de salon Maison de campagne</name>
+      <name>Cottage living room table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10363,7 +10363,7 @@
       <identifier>I0524</identifier>
     </component>
     <component name="Name">
-      <name>Table basse ferme</name>
+      <name>Farm coffee table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10384,7 +10384,7 @@
       <identifier>I0525</identifier>
     </component>
     <component name="Name">
-      <name>Table basse Maison de campagne</name>
+      <name>Cottage coffee table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10405,7 +10405,7 @@
       <identifier>I0526</identifier>
     </component>
     <component name="Name">
-      <name>Paravent ferme</name>
+      <name>Farm folding screen</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10426,7 +10426,7 @@
       <identifier>I0527</identifier>
     </component>
     <component name="Name">
-      <name>Lampadaire ferme</name>
+      <name>Farm lamp</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10447,7 +10447,7 @@
       <identifier>I0528</identifier>
     </component>
     <component name="Name">
-      <name>Porte-serviettes ferme</name>
+      <name>Farm towel rail</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10468,7 +10468,7 @@
       <identifier>I0529</identifier>
     </component>
     <component name="Name">
-      <name>Pot de fleurs ferme</name>
+      <name>Farm flowerpot</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10489,7 +10489,7 @@
       <identifier>I0530</identifier>
     </component>
     <component name="Name">
-      <name>Carpette ronde Starlight</name>
+      <name>Round Starlight carpet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10510,7 +10510,7 @@
       <identifier>I0531</identifier>
     </component>
     <component name="Name">
-      <name>Carpette carrée Starlight</name>
+      <name>Square Starlight carpet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10531,7 +10531,7 @@
       <identifier>I0532</identifier>
     </component>
     <component name="Name">
-      <name>Carte murale Starlight</name>
+      <name>Starlight mural map</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10552,7 +10552,7 @@
       <identifier>I0533</identifier>
     </component>
     <component name="Name">
-      <name>Commode Starlight</name>
+      <name>Starlight couch</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10573,7 +10573,7 @@
       <identifier>I0534</identifier>
     </component>
     <component name="Name">
-      <name>Fenêtre Starlight</name>
+      <name>Starlight window</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10593,7 +10593,7 @@
       <identifier>I0535</identifier>
     </component>
     <component name="Name">
-      <name>Table Starlight</name>
+      <name>Starlight table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10677,7 +10677,7 @@
       <identifier>I0539</identifier>
     </component>
     <component name="Name">
-      <name>Table de salon Starlight</name>
+      <name>Starlight living room table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10698,7 +10698,7 @@
       <identifier>I0540</identifier>
     </component>
     <component name="Name">
-      <name>Table basse Starlight</name>
+      <name>Starlight coffee table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10719,7 +10719,7 @@
       <identifier>I0541</identifier>
     </component>
     <component name="Name">
-      <name>Paravent Starlight</name>
+      <name>Starlight folding screen</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10740,7 +10740,7 @@
       <identifier>I0542</identifier>
     </component>
     <component name="Name">
-      <name>Lampadaire Starlight</name>
+      <name>Starlight lamp</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10761,7 +10761,7 @@
       <identifier>I0543</identifier>
     </component>
     <component name="Name">
-      <name>Lampadaire sphère brillante</name>
+      <name>Glowing sphere lamp</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10782,7 +10782,7 @@
       <identifier>I0544</identifier>
     </component>
     <component name="Name">
-      <name>Télescope Starlight</name>
+      <name>Starlight telescope</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10803,7 +10803,7 @@
       <identifier>I0545</identifier>
     </component>
     <component name="Name">
-      <name>Etoile Starlight</name>
+      <name>Starlight star</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10824,7 +10824,7 @@
       <identifier>I0546</identifier>
     </component>
     <component name="Name">
-      <name>Carpette thème cheval</name>
+      <name>Horse themed carpet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10845,7 +10845,7 @@
       <identifier>I0547</identifier>
     </component>
     <component name="Name">
-      <name>Décoration murale thème cheval</name>
+      <name>Horse themed mural decoration</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10865,7 +10865,7 @@
       <identifier>I0548</identifier>
     </component>
     <component name="Name">
-      <name>Commode thème cheval</name>
+      <name>Horse themed chest of drawers</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10886,7 +10886,7 @@
       <identifier>I0549</identifier>
     </component>
     <component name="Name">
-      <name>Fenêtre thème cheval</name>
+      <name>Horse themed window</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10906,7 +10906,7 @@
       <identifier>I0550</identifier>
     </component>
     <component name="Name">
-      <name>Table thème cheval</name>
+      <name>Horse themed table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10927,7 +10927,7 @@
       <identifier>I0551</identifier>
     </component>
     <component name="Name">
-      <name>Chaise thème cheval</name>
+      <name>Horse themed chair</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10948,7 +10948,7 @@
       <identifier>I0552</identifier>
     </component>
     <component name="Name">
-      <name>Canapé thème cheval</name>
+      <name>Horse themed couch</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10969,7 +10969,7 @@
       <identifier>I0553</identifier>
     </component>
     <component name="Name">
-      <name>Lit thème cheval</name>
+      <name>Horse themed bed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -10990,7 +10990,7 @@
       <identifier>I0554</identifier>
     </component>
     <component name="Name">
-      <name>Table de salon thème cheval</name>
+      <name>Horse themed living room table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11011,7 +11011,7 @@
       <identifier>I0555</identifier>
     </component>
     <component name="Name">
-      <name>Table basse thème cheval</name>
+      <name>Horse themed coffee table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11032,7 +11032,7 @@
       <identifier>I0556</identifier>
     </component>
     <component name="Name">
-      <name>Paravent thème cheval</name>
+      <name>Horse themed folding screen</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11053,7 +11053,7 @@
       <identifier>I0557</identifier>
     </component>
     <component name="Name">
-      <name>Lampadaire thème cheval</name>
+      <name>Horse themed lamp</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11074,7 +11074,7 @@
       <identifier>I0558</identifier>
     </component>
     <component name="Name">
-      <name>Tableau Bella et Bello</name>
+      <name>Bella and Bello picture</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11094,7 +11094,7 @@
       <identifier>I0559</identifier>
     </component>
     <component name="Name">
-      <name>Fenêtre Maison de campagne</name>
+      <name>Cottage window</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11114,7 +11114,7 @@
       <identifier>I0560</identifier>
     </component>
     <component name="Name">
-      <name>Fenêtre store floral</name>
+      <name>Floral blind</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11134,7 +11134,7 @@
       <identifier>I0561</identifier>
     </component>
     <component name="Name">
-      <name>Séparation de pièce Maison de campagne</name>
+      <name>Cottage room divider</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11155,7 +11155,7 @@
       <identifier>I0562</identifier>
     </component>
     <component name="Name">
-      <name>Porte-serviettes Maison de campagne</name>
+      <name>Cottage towel rail</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11176,7 +11176,7 @@
       <identifier>I0563</identifier>
     </component>
     <component name="Name">
-      <name>Tableau Starlight</name>
+      <name>Starlight picture</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11196,7 +11196,7 @@
       <identifier>I0564</identifier>
     </component>
     <component name="Name">
-      <name>Fenêtre vitrail Starlight</name>
+      <name>Starlight stained glass window</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11216,7 +11216,7 @@
       <identifier>I0565</identifier>
     </component>
     <component name="Name">
-      <name>Paravent Starlight Lunaire</name>
+      <name>Starlight Lunar folding screen</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -11237,7 +11237,7 @@
       <identifier>I0566</identifier>
     </component>
     <component name="Name">
-      <name>Couronne Papillon</name>
+      <name>Butterfly crown</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11257,7 +11257,7 @@
       <identifier>I0567</identifier>
     </component>
     <component name="Name">
-      <name>Tableau Ferme</name>
+      <name>Farm picture</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11277,7 +11277,7 @@
       <identifier>I0568</identifier>
     </component>
     <component name="Name">
-      <name>Carpette Maison de campagne</name>
+      <name>Cottage carpet</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11298,7 +11298,7 @@
       <identifier>I0569</identifier>
     </component>
     <component name="Name">
-      <name>Table goûter d'anniversaire</name>
+      <name>Birthday party table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11319,7 +11319,7 @@
       <identifier>I0570</identifier>
     </component>
     <component name="Name">
-      <name>Chaise Maison de campagne</name>
+      <name>Cottage chair</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11340,7 +11340,7 @@
       <identifier>I0571</identifier>
     </component>
     <component name="Name">
-      <name>Canapé Maison de campagne</name>
+      <name>Cottage couch</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11361,7 +11361,7 @@
       <identifier>I0572</identifier>
     </component>
     <component name="Name">
-      <name>Lit Maison de campagne</name>
+      <name>Cottage bed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11382,7 +11382,7 @@
       <identifier>I0573</identifier>
     </component>
     <component name="Name">
-      <name>Lampadaire Maison de campagne</name>
+      <name>Cottage lamp</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11404,7 +11404,7 @@
       <identifier>I0574</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Allegra</name>
+      <name>Allegra Plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11420,7 +11420,7 @@
       <identifier>I0575</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Chortlebones </name>
+      <name>Chortlebones plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11436,7 +11436,7 @@
       <identifier>I0576</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Chromasia </name>
+      <name>Chromasia plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11452,7 +11452,7 @@
       <identifier>I0577</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Kitty </name>
+      <name>Kitty plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11468,7 +11468,7 @@
       <identifier>I0578</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Kora </name>
+      <name>Kora plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11484,7 +11484,7 @@
       <identifier>I0579</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Lavender </name>
+      <name>Lavender plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11500,7 +11500,7 @@
       <identifier>I0580</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Lilova </name>
+      <name>Lilova plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11516,7 +11516,7 @@
       <identifier>I0581</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Seraphia </name>
+      <name>Seraphia plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11532,7 +11532,7 @@
       <identifier>I0582</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Sleetmane</name>
+      <name>Sleetmane plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11548,7 +11548,7 @@
       <identifier>I0583</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Slyphie </name>
+      <name>Slyphie plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11564,7 +11564,7 @@
       <identifier>I0584</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Venus </name>
+      <name>Venus plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11580,7 +11580,7 @@
       <identifier>I0585</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Foxglove </name>
+      <name>Foxglove plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11596,7 +11596,7 @@
       <identifier>I0586</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Bella Sal de Bal</name>
+      <name>Bella Ballroom plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11612,7 +11612,7 @@
       <identifier>I0587</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Violet </name>
+      <name>Violet plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11628,7 +11628,7 @@
       <identifier>I0588</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Sunflower </name>
+      <name>Sunflower plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11644,7 +11644,7 @@
       <identifier>I0589</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Bella </name>
+      <name>Bella plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11660,7 +11660,7 @@
       <identifier>I0590</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Nike </name>
+      <name>Nike plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11676,7 +11676,7 @@
       <identifier>I0591</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Thunder </name>
+      <name>Thunder plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11692,7 +11692,7 @@
       <identifier>I0592</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Jewel </name>
+      <name>Jewel plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11708,7 +11708,7 @@
       <identifier>I0593</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Fiona </name>
+      <name>Fiona plushie </name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11724,7 +11724,7 @@
       <identifier>I0594</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Flame </name>
+      <name>Flame plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11740,7 +11740,7 @@
       <identifier>I0595</identifier>
     </component>
     <component name="Name">
-      <name>Peluche Lapins qui s'embrassent</name>
+      <name>Kissing bunnies plushie</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11756,7 +11756,7 @@
       <identifier>I0596</identifier>
     </component>
     <component name="Name">
-      <name>Trophée carte promo Kona</name>
+      <name>Kona promo card trophy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11772,7 +11772,7 @@
       <identifier>I0597</identifier>
     </component>
     <component name="Name">
-      <name>Trophée carte promo Honora</name>
+      <name>Honora promo card trophy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11789,7 +11789,7 @@
       <identifier>I0598</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège Bella</name>
+      <name>Carousel horse Bella</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11801,7 +11801,7 @@
       <identifier>I0599</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège Jewel</name>
+      <name>Carousel horse Jewel</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11813,7 +11813,7 @@
       <identifier>I0600</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège Thunder</name>
+      <name>Carousel horse Thunder</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11825,7 +11825,7 @@
       <identifier>I0601</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège Fiona</name>
+      <name>Carousel horse Fiona</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11837,7 +11837,7 @@
       <identifier>I0602</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège Nike</name>
+      <name>Carousel horse Nike</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11849,7 +11849,7 @@
       <identifier>I0603</identifier>
     </component>
     <component name="Name">
-      <name>Manège</name>
+      <name>Carousel</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11868,7 +11868,7 @@
       <identifier>I0338</identifier>
     </component>
     <component name="Name">
-      <name>Table basse moderne</name>
+      <name>Modern coffee table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11886,7 +11886,7 @@
       <identifier>I0340</identifier>
     </component>
     <component name="Name">
-      <name>Chaise moderne</name>
+      <name>Modern chair</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11904,7 +11904,7 @@
       <identifier>I0341</identifier>
     </component>
     <component name="Name">
-      <name>Paravent moderne</name>
+      <name>Modern folding screen</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11922,7 +11922,7 @@
       <identifier>I0342</identifier>
     </component>
     <component name="Name">
-      <name>Lit moderne</name>
+      <name>Modern bed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11940,7 +11940,7 @@
       <identifier>I0343</identifier>
     </component>
     <component name="Name">
-      <name>Commode moderne</name>
+      <name>Modern chest of drawers</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11958,7 +11958,7 @@
       <identifier>I0623</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège dansant Bella</name>
+      <name>Dancing carousel horse Bella</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11976,7 +11976,7 @@
       <identifier>I0624</identifier>
     </component>
     <component name="Name">
-      <name>Cheval de manège dansant Thunder</name>
+      <name>Dancing carousel horse Thunder</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -11995,7 +11995,7 @@
       <identifier>I0608</identifier>
     </component>
     <component name="Name">
-      <name>Trophée Westro carte promo</name>
+      <name>Westro promo card trophy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12013,7 +12013,7 @@
       <identifier>I0609</identifier>
     </component>
     <component name="Name">
-      <name>Trophée Eastrin carte promo</name>
+      <name>Eastrin promo card trophy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12067,7 +12067,7 @@
       <identifier>I0611</identifier>
     </component>
     <component name="Name">
-      <name>Totem Spirituel du Volcan</name>
+      <name>Volcano Spirit Totem</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12079,7 +12079,7 @@
       <identifier>I0612</identifier>
     </component>
     <component name="Name">
-      <name>Totem Spirituel des Nuages</name>
+      <name>Cloud Spirit Totem</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12097,7 +12097,7 @@
       <identifier>I0613</identifier>
     </component>
     <component name="Name">
-      <name>Totem Spirituel de la Colline</name>
+      <name>Hill Spirit Totem</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12115,7 +12115,7 @@
       <identifier>I0614</identifier>
     </component>
     <component name="Name">
-      <name>Totem Spirituel du Fleuve</name>
+      <name>Rivier Spirit Totem</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12133,7 +12133,7 @@
       <identifier>I0615</identifier>
     </component>
     <component name="Name">
-      <name>Lit à baldaquin rustique</name>
+      <name>Rustic canopy bed</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12151,7 +12151,7 @@
       <identifier>I0616</identifier>
     </component>
     <component name="Name">
-      <name>Sofa rustique</name>
+      <name>Rustic sofa</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12169,7 +12169,7 @@
       <identifier>I0617</identifier>
     </component>
     <component name="Name">
-      <name>Table de salon rustique</name>
+      <name>Rustic living room table</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12187,7 +12187,7 @@
       <identifier>I0618</identifier>
     </component>
     <component name="Name">
-      <name>Chaise rustique</name>
+      <name>Rustic chair</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12205,7 +12205,7 @@
       <identifier>I0619</identifier>
     </component>
     <component name="Name">
-      <name>Lampe rustique</name>
+      <name>Rustic lamp</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12223,7 +12223,7 @@
       <identifier>I0620</identifier>
     </component>
     <component name="Name">
-      <name>Porte Magique vers Darkcomb Hedge</name>
+      <name>Darkcomb Hedge Magic Door</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12331,7 +12331,7 @@
       <identifier>I0621</identifier>
     </component>
     <component name="Name">
-      <name>Château Volant Wildscape</name>
+      <name>Wildscape Flying Castle</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12367,7 +12367,7 @@
       <identifier>I0622</identifier>
     </component>
     <component name="Name">
-      <name>Porte Magique vers Canter Farms</name>
+      <name>Canter Farms Magic Door</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12386,7 +12386,7 @@
       <identifier>I192</identifier>
     </component>
     <component name="Name">
-      <name>Jouet en peluche Tomtomme</name>
+      <name>Tomtomme plush toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -12403,7 +12403,7 @@
       <identifier>I193</identifier>
     </component>
     <component name="Name">
-      <name>Jouet en peluche Whiffle Bear</name>
+      <name>Whiffle Bear plush toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -12420,7 +12420,7 @@
       <identifier>I194</identifier>
     </component>
     <component name="Name">
-      <name>Jouet en peluche Steam Poppo </name>
+      <name>Steam Poppo plush toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -12437,7 +12437,7 @@
       <identifier>I195</identifier>
     </component>
     <component name="Name">
-      <name>Jouet en peluche Lotus Hedgehog </name>
+      <name>Lotus Hedgehog plush toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -12454,7 +12454,7 @@
       <identifier>I196</identifier>
     </component>
     <component name="Name">
-      <name>Jouet en peluche Tassel Mouse</name>
+      <name>Tassel Mouse plush toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -12471,7 +12471,7 @@
       <identifier>I197</identifier>
     </component>
     <component name="Name">
-      <name>Jouet en peluche Starstone Otter </name>
+      <name>Starstone Otter plush toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items.swf</fileName>
@@ -12489,7 +12489,7 @@
       <identifier>IStackingHaystackATemplate</identifier>
     </component>
     <component name="Name">
-      <name>Meule de foin à empiler A</name>
+      <name>Stacking haystack A</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/vtitems.swf</fileName>
@@ -12505,7 +12505,7 @@
       <identifier>I0625</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Citrustack</name>
+      <name>Chibi Citrustack Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12523,7 +12523,7 @@
       <identifier>I0626</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Tassel Mouse</name>
+      <name>Chibi Tassel Mouse Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12541,7 +12541,7 @@
       <identifier>I0627</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Bunnyfly</name>
+      <name>Chibi Bunnyfly Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12559,7 +12559,7 @@
       <identifier>I0628</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Purrwing Kitty</name>
+      <name>Chibi Purrwing KittyToy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12577,7 +12577,7 @@
       <identifier>I0629</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Lotus Hedgehog</name>
+      <name>Chibi Lotus Hedgehog Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12595,7 +12595,7 @@
       <identifier>I0630</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Steampoppo</name>
+      <name>Chibi Steampoppo Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12613,7 +12613,7 @@
       <identifier>I0631</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Ursa Minor</name>
+      <name>Chibi Ursa Minor Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12631,7 +12631,7 @@
       <identifier>I0632</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Valeryk Husky</name>
+      <name>Chibi Valeryk Husky Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12649,7 +12649,7 @@
       <identifier>I0633</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Whiffle Bear</name>
+      <name>Chibi Whiffle Bear Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12667,7 +12667,7 @@
       <identifier>I0634</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Starstone Otter</name>
+      <name>Chibi Starstone Otter Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12685,7 +12685,7 @@
       <identifier>I0635</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Leolynx</name>
+      <name>Chibi Leolynx Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12703,7 +12703,7 @@
       <identifier>I0636</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Tomtomme</name>
+      <name>Chibi Tomtomme Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12721,7 +12721,7 @@
       <identifier>I0637</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Bella</name>
+      <name>Chibi Bella Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12739,7 +12739,7 @@
       <identifier>I0638</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Thunder</name>
+      <name>Chibi Thunder Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12757,7 +12757,7 @@
       <identifier>I0639</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Mote</name>
+      <name>Chibi Mote Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12775,7 +12775,7 @@
       <identifier>I0640</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Nike</name>
+      <name>Chibi Nike Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12793,7 +12793,7 @@
       <identifier>I0641</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Bluebell</name>
+      <name>Chibi Bluebell Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12811,7 +12811,7 @@
       <identifier>I0642</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Coral</name>
+      <name>Chibi Coral Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12829,7 +12829,7 @@
       <identifier>I0643</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Pantheon</name>
+      <name>Chibi Pantheon Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12847,7 +12847,7 @@
       <identifier>I0644</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Pink Lady</name>
+      <name>Chibi Pink Lady Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12865,7 +12865,7 @@
       <identifier>I0645</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Fiona</name>
+      <name>Chibi Fiona Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12883,7 +12883,7 @@
       <identifier>I0646</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Jewel</name>
+      <name>Chibi Jewel Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12901,7 +12901,7 @@
       <identifier>I0647</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Sunflower</name>
+      <name>Chibi Sunflower Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12919,7 +12919,7 @@
       <identifier>I0648</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Tiara</name>
+      <name>Chibi Tiara Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12937,7 +12937,7 @@
       <identifier>I0649</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Costume sorcière</name>
+      <name>Chibi Toy Sorceress Costume</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12955,7 +12955,7 @@
       <identifier>I0650</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Costume fantôme</name>
+      <name>Chibi Toy Ghost Costume</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12973,7 +12973,7 @@
       <identifier>I0651</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Costume citrouille</name>
+      <name>Chibi Toy Pumpkin Costume</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -12992,7 +12992,7 @@
       <identifier>I0657</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Simon</name>
+      <name>Simon Chibi Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -13010,7 +13010,7 @@
       <identifier>I0658</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Ash</name>
+      <name>Ash Chibi Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -13028,7 +13028,7 @@
       <identifier>I0659</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Snowball</name>
+      <name>Snowball Chibi Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -13046,7 +13046,7 @@
       <identifier>I0660</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Ani</name>
+      <name>Ani Chibi Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -13064,7 +13064,7 @@
       <identifier>I0661</identifier>
     </component>
     <component name="Name">
-      <name>Jouet Chibi Flit</name>
+      <name>Flit Chibi Toy</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/items2.swf</fileName>
@@ -13083,7 +13083,7 @@
       <identifier>IEC001</identifier>
     </component>
     <component name="Name">
-      <name>Carte énergie Orchidée</name>
+      <name>Orchid energy card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13095,7 +13095,7 @@
       <identifier>IEC002</identifier>
     </component>
     <component name="Name">
-      <name>Carte énergie Soleil</name>
+      <name>Sun energy card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13107,7 +13107,7 @@
       <identifier>IEC003</identifier>
     </component>
     <component name="Name">
-      <name>Carte énergie Plume</name>
+      <name>Feather energy card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13119,7 +13119,7 @@
       <identifier>IEC004</identifier>
     </component>
     <component name="Name">
-      <name>Carte énergie Coquillage</name>
+      <name>Seashell energy card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13131,7 +13131,7 @@
       <identifier>IEC005</identifier>
     </component>
     <component name="Name">
-      <name>Carte énergie Flocon de neige</name>
+      <name>Snowflake energy card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13143,7 +13143,7 @@
       <identifier>IEC006</identifier>
     </component>
     <component name="Name">
-      <name>Carte énergie Nuage</name>
+      <name>Cloud energy card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13186,7 +13186,7 @@
       <identifier>ICF001</identifier>
     </component>
     <component name="Name">
-      <name>Carte poulain Ash</name>
+      <name>Ash Foal Card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13204,7 +13204,7 @@
       <identifier>ICF002</identifier>
     </component>
     <component name="Name">
-      <name>Carte poulain Simon</name>
+      <name>Simon Foal Card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13222,7 +13222,7 @@
       <identifier>ICF003</identifier>
     </component>
     <component name="Name">
-      <name>Carte poulain Snowball</name>
+      <name>Snowball Foal Card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13240,7 +13240,7 @@
       <identifier>ICF004</identifier>
     </component>
     <component name="Name">
-      <name>Carte poulain Ani</name>
+      <name>Ani Foal Card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13258,7 +13258,7 @@
       <identifier>ICF005</identifier>
     </component>
     <component name="Name">
-      <name>Carte poulain Flit</name>
+      <name>Flit Foal Card</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13294,7 +13294,7 @@
       <identifier>IHH001</identifier>
     </component>
     <component name="Name">
-      <name>Ash cheval adulte</name>
+      <name>Ash Grown Horse</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13311,7 +13311,7 @@
       <identifier>IHH002</identifier>
     </component>
     <component name="Name">
-      <name>Simon cheval adulte</name>
+      <name>Simon Grown Horse</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13328,7 +13328,7 @@
       <identifier>IHH003</identifier>
     </component>
     <component name="Name">
-      <name>Snowball cheval adulte</name>
+      <name>Snowball Grown Horse</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13345,7 +13345,7 @@
       <identifier>IHH004</identifier>
     </component>
     <component name="Name">
-      <name>Ani cheval adulte</name>
+      <name>Ani Grown Horse</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>
@@ -13362,7 +13362,7 @@
       <identifier>IHH005</identifier>
     </component>
     <component name="Name">
-      <name>Flit cheval adulte</name>
+      <name>Flit Grown Horse</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/inventory/herdcardinventory.swf</fileName>

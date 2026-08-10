@@ -1,9 +1,9 @@
 <adventures id="ADS-0000000821" description="Collectibles">
   <adventure id="ADV-0000000889">
-    <description>Collecte de coquillages</description>
+    <description>Seashell collection</description>
     <quest id="QUE-0000002074" targetTemplate="ConchShellTemplate" visible="False">
       <description unusedLocId="LOC-0000005052">Collect 10 Seashells for Shine Anders</description>
-      <line description="Complete - aready have seashells">
+      <line description="Complete - already have seashells">
         <trigger>
           <object type="questData.TalkQuestTrigger">
             <identifier>C011</identifier>
@@ -19,7 +19,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Oh ! Ces coquillages feront un magnifique collier. Merci ! Voici quelques fers à cheval pour ta peine. Reviens chaque fois que tu en auras trouvé de nouveaux.</text>
+            <text>Oh! These seashells will make a magnificent necklace. Thanks! Here are some horseshoes for your trouble. Come back when you have found some more.</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -46,7 +46,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Oh ! Ces coquillages feront un magnifique collier. Merci ! Voici quelques fers à cheval pour ta peine. Reviens chaque fois que tu en auras trouvé de nouveaux.</text>
+            <text>Oh! These seashells will make a magnificent necklace. Thanks! Here are some horseshoes for your trouble. Come back when you have found some more.</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -72,7 +72,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.MonologueAction">
-            <text>Shine cherche 10 coquillages pour faire des bijoux. Je devrais les lui apporter. </text>
+            <text>Shine is looking for 10 seashells to make jewelry. I should bring them to her. </text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000002814</questId>
@@ -95,7 +95,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.MonologueAction">
-            <text>Shine cherche 10 coquillages pour faire des bijoux. Je devrais les lui apporter. </text>
+            <text>Shine is looking for 10 seashells to make jewelry. I should bring them to her. </text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000002814</questId>
@@ -118,7 +118,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.MonologueAction">
-            <text>Shine cherche 10 coquillages pour faire des bijoux. Je devrais les lui apporter. </text>
+            <text>Shine is looking for 10 seashells to make jewelry. I should bring them to her. </text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000002814</questId>
@@ -136,16 +136,16 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>J'adore fabriquer des bijoux, même quand j'ai du temps libre. Ce que j'aimerais faire, c'est un collier en coquillages.</text>
+            <text>I love making jewelry, even in my spare time. What I would love to do is make a seashell necklace.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Si tu m'apportes 10 coquillages, je te donnerai des fers à cheval en échange.</text>
+            <text>If you bring me 10 seashells, I will give you some horseshoes in exchange.</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000002814">
-      <description>Apporte 10 coquillages à Shine Anders</description>
+      <description>Bring 10 seashells to Shine Anders</description>
       <line description="Complete - seashells">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -162,7 +162,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Oh, ces coquillages feront un délicieux collier. Merci ! Voici des fers à cheval pour ta peine. </text>
+            <text>Oh, these seashells will make a delightful necklace.Thanks! Here are some horseshoes for your trouble. </text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -193,7 +193,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Oh ! Ces coquillages feront un magnifique collier. Merci ! Voici quelques fers à cheval pour ta peine. Reviens chaque fois que tu en auras trouvé de nouveaux.</text>
+            <text>Oh! These seashells will make a magnificent necklace. Thanks! Here are some horseshoes for your trouble. Come back when you have found some more.</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -218,17 +218,17 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>J'aime fabriquer des bijoux pendant mon temps libre. J'ai pour projet de faire des colliers avec des coquillages. </text>
+            <text>I like making jewelry in my spare time. My current project is making necklaces out of seashells. </text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Si tu m'apportes 10 coquillages, je te les paierai en fers à cheval.</text>
+            <text>If you bring me 10 seashells, I will pay for them with horseshoes.</text>
           </object>
         </actions>
       </line>
     </quest>
   </adventure>
   <adventure id="ADV-0000000890">
-    <description>Collecte de soie d'araignée</description>
+    <description>Spider silk collection</description>
     <quest id="QUE-0000002075" visible="False">
       <description unusedLocId="LOC-0000005056">Collect 10 Spider Silk for Hannah Lovet</description>
       <line description="Complete - already have item">
@@ -247,7 +247,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>De la soie d'araignée ! Tu es vraiment courageuse. Tiens, prends ces fers à cheval. Cette soie d'araignée est tellement splendide qu'elle les vaut bien. Merci !</text>
+            <text>Spider silk! You’re very brave. Here, have these horseshoes. This spider silk is so splendid that it’s well worth it. Thanks!</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -273,7 +273,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.MonologueAction">
-            <text>Hannah adore faire des expériences avec de nouveaux types de fil. Je parie qu'elle adorerait cette soie d'araignée. Je devrais la lui apporter. </text>
+            <text>Hannah loves experimenting with different fabrics. I bet she’d love this spider silk. I should bring it to her. </text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000002811</questId>
@@ -291,16 +291,16 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>J'adore essayer de nouvelles matières à tisser. J'aimerais tenter le coup avec de la soie d'araignée, mais la Forêt de Darkcomb me fait tellement peur ! </text>
+            <text>I love trying to weave with new materials. I would like to give spider silk a try, but Darkcomb Forest really scares me!</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Si tu avais le courage de me trouver 10 soies d'araignée, je te serais très reconnaissante. Et je te paierais aussi !</text>
+            <text>If you were brave enough to find me 10 spider silks, I would be very grateful. And I’d pay you too!</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000002811">
-      <description>Apporte 10 Soies d'araignée à Hannah Lovet</description>
+      <description>Bring 10 Spider Silks to Hannah Lovet</description>
       <line description="Complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -317,7 +317,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>De la soie d'araignée ! Tu es si courageuse. Tiens, prends ces fers à cheval? Tu les as bien mérités en échange de cette soie magnifique. Merci !</text>
+            <text>Spider silk! You’re so brave. Here, take these horseshoes? You’ve earned them in exchange for this magnificent silk. Thanks!</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -342,17 +342,17 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>J'adore essayer de nouvelles matières à tisser. J'aimerais tenter le coup avec de la soie d'araignée, mais la Forêt de Darkcomb me fait tellement peur ! </text>
+            <text>I love trying to weave with new materials. I would like to give spider silk a try, but Darkcomb Forest really scares me! </text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Si tu avais le courage de me trouver 10 soies d'araignée, je te serais très reconnaissante. Et je te paierais aussi !</text>
+            <text>If you were brave enough to find me 10 spider silks, I would be very grateful to you. And I’d pay you too!</text>
           </object>
         </actions>
       </line>
     </quest>
   </adventure>
   <adventure id="ADV-0000001048">
-    <description>Travaux de forge avec le métal d'arborium</description>
+    <description>Working the forge with arborium metal</description>
     <quest id="QUE-0000002883" visible="False">
       <description unusedLocId="LOC-0000006147">Collect 3 Arborium Metal for Mr. Smithin</description>
       <line description="Complete - already have item">
@@ -371,7 +371,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Merveilleux, merveilleux. Le métal d'arborium est si rare et précieux. Merci beaucoup de l'avoir trouvé pour moi. Tiens, prends ces fers à cheval pour ta peine. </text>
+            <text>Marvellous, marvellous. Arborium metal is so rare and precious. Thank you for finding it for me. Here, take these horseshoes for your trouble. </text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -397,7 +397,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.MonologueAction">
-            <text>Je partie que Mr. Smithin me donnerait des fers à cheval si je lui apportait ce métal d'arborium.</text>
+            <text>I bet that Mr. Smithin would give me horseshoes if I brought him this arborium metal.</text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000002884</questId>
@@ -415,16 +415,16 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>As-tu  entendu parler de l'arborium ? C'est une substance magique formée à partir des météores qui traversent l'Auroborus, ce voile de lumière nocturne. </text>
+            <text>Have you heard about arborium? It’s a magical substance formed from meteors that pass through the Auroborus, the veil of nocturnal light. </text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Je te donnerai des fers à cheval si tu m'apportes trois morceaux de métal d'arborium. </text>
+            <text>I will give you some horseshoes if you bring me three pieces of arborium metal. </text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000002884">
-      <description>Apporte 3 morceaux de métal d'arborium à Mr. Smithin</description>
+      <description>Bring 2 pieces of arborium metal to Mr. Smithin</description>
       <line description="Complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -441,7 +441,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Merveilleux, merveilleux. Le métal d'arborium est si rare et précieux. Merci beaucoup de l'avoir trouvé pour moi. Tiens, prends ces fers à cheval pour ta peine. </text>
+            <text>Marvelous, marvelous. Arborium metal is so rare and precious. Thank you for finding it for me. Here, take these horseshoes for your trouble. </text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -466,17 +466,17 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>As-tu  entendu parler de l'arborium ? C'est une substance magique formée à partir des météores qui traversent l'Auroborus, ce voile de lumière nocturne. </text>
+            <text>Have you heard about arborium? It’s a magical substance formed from meteors that pass through the Auroborus, the veil of nocturnal light. </text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Je te donnerai des fers à cheval si tu m'apportes trois morceaux de métal d'arborium. </text>
+            <text>I will give you some horseshoes if you bring me 3 pieces of arborium metal. </text>
           </object>
         </actions>
       </line>
     </quest>
   </adventure>
   <adventure id="ADV-0000001050">
-    <description>Désinsectisation grâce aux coccinelles</description>
+    <description>Pest control with ladybugs</description>
     <quest id="QUE-0000002887" visible="False">
       <description unusedLocId="LOC-0000006164">Collect 6 Jars of Ladybugs for Marta Thomas</description>
       <line description="Complete - already have item">
@@ -495,7 +495,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Merveilleux ! Les coccinelles sont des amies utiles, tout comme toi ! Voici les fers à cheval que je t'avais promis. </text>
+            <text>Marvelous! Ladybugs are helpful friends, just like you! Here are the horseshoes that I promised you. </text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -521,7 +521,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.MonologueAction">
-            <text>Je pense que ces coccinelles pourraient aider Marta à maîtriser les insectes de sa ferme. Je devrais les lui apporter. </text>
+            <text>I think that these ladybugs could help Martha to control the pests on her farm. I should bring them to her. </text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000002888</questId>
@@ -539,16 +539,16 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>As-tu déjà vu des coccinelles ? Elles ont l'excellente habitude de manger les insectes qui s'en prennent aux récoltes. Et elles sont mignonnes, en plus.</text>
+            <text>Have you seen some ladybugs? They have the excellent habit of eating the insects that attack crops. And they’re cute as well. </text>
           </object>
           <object type="questData.DialogueAction">
-            <text>J'aimerais beaucoup que tu m'apportes toutes les coccinelles que tu trouveras. Je te paiera si tu m'en apportes au moins 6.</text>
+            <text>I would really like it if you brought me all of the ladybugs that you find. I will pay you if you bring me at least 6.</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000002888">
-      <description>Apporte 6 bocaux de coccinelles à Marta Thomas</description>
+      <description>Bring 6 jars of ladybugs to Marta Thomas</description>
       <line description="Complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -565,7 +565,7 @@
         <actions>
           <object type="questData.LogQuestEndAction" />
           <object type="questData.DialogueAction">
-            <text>Merveilleux ! Les coccinelles sont des amies utiles, tout comme toi ! Voici les fers à cheval que je t'avais promis. </text>
+            <text>Marvelous! Ladybugs are helpful friends, just like you! Here are the horseshoes that I promised you. </text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>3</count>
@@ -590,10 +590,10 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>As-tu déjà vu des coccinelles ? Elles ont l'excellente habitude de manger les insectes qui s'en prennent aux récoltes. Et elles sont mignonnes, en plus.</text>
+            <text>Have you seen some ladybugs? They have the excellent habit of eating insects that attack crops. And they’re cute as well.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>J'aimerais beaucoup que tu m'apportes toutes les coccinelles que tu trouveras. Je te paiera si tu m'en apportes au moins 6.</text>
+            <text>I would really like it if you bring me all of the ladybugs that you find. I will pay you if you bring me at least 6.</text>
           </object>
         </actions>
       </line>

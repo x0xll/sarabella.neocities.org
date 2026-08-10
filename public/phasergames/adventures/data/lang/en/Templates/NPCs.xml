@@ -224,9 +224,9 @@
     <component type="components.commands.TalkCommand" name="TalkCommand">
       <text>Hello!</text>
       <text>It's such a pretty day today.</text>
-      <text>Donne-moi des friandises et je te ferai un tour !</text>
-      <text>Tu peux utiliser des plantes pour créer des teintures colorées.</text>
-      <text>Rends visite à M. Bartholomew pour obtenir des graines de jolies fleurs. </text>
+      <text>Give me some candies and I’ll give you a tour!</text>
+      <text>You can use plants to create colored dyes.</text>
+      <text>Go visit Mr Bartholomew to get some seeds for beautiful flowers. </text>
       <!--<text locId="NPC-002">It's such a pretty day today.</text>
       <text locId="NPC-003">Have you been growing as many plants as you can?</text>
       <text locId="NPC-004">Growing plants brings magic back to North of North.</text>
@@ -1024,7 +1024,7 @@
   </template>
   <template name="C024Template" template="NPCTemplate">
     <component name="Name">
-      <name>Camp Couselor Marta</name>
+      <name>Camp Counselor Marta</name>
     </component>
     <component name="MovieClip">
       <fileName>flash/adventures/art/npcs/humans.swf</fileName>
@@ -1520,9 +1520,9 @@
     </component>
     <component name="TalkCommand">
       <shouldMovePlayer>false</shouldMovePlayer>
-      <text>Salut... Tu as l'air délicieuse !</text>
-      <text>N'approchez pas vos lanternes !</text>
-      <text>Je suis l'araignée, et Boda est ma reine.</text>
+      <text>Hello… You look delicious!</text>
+      <text>Keep your lanterns away!</text>
+      <text>I am the spider, and Boda is my queen.</text>
     </component>
     <component name="Thumbnail">
       <fileName>flash/adventures/art/npcs/magicalfriendsthumbnail.swf</fileName>
@@ -2203,9 +2203,9 @@
       <identifier>H001</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Pense positivement chaque jour ! Ressens la sérénité que t’apporte la joie et l’énergie qu’elle suscite.</text>
-      <text>Bonjour. Mon nom est Bella.</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>Think positive every day! Feel the bliss of joy and energy that comes with it.</text>
+      <text>Hello. My name is Bella.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Bella</name>
@@ -2222,7 +2222,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Bella</description>
+        <description>Bella’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2252,7 +2252,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Bella pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Bella card for your collection.</text>
               <identifier>H001</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2283,9 +2283,9 @@
       <identifier>H002</identifier>
     </component>
     <component name="TalkCommand">
-      <text>La vie est un cadeau. Sache le recevoir et l’apprécier à sa juste valeur.</text>
-      <text>Bonjour. Mon nom est Bello.</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>Life is a gift. Receive it and love it.</text>
+      <text>Hello. My name is Bello.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Bello</name>
@@ -2299,7 +2299,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Bello</description>
+        <description>Bello’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2329,7 +2329,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Bello pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Bello card for your collection. </text>
               <identifier>H002</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2360,9 +2360,9 @@
       <identifier>H003</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Sois l'héroïne de ta propre histoire.</text>
-      <text>Bonjour. Mon nom est Fiona.</text>
-      <text>Je fais partie du troupeau Shahazar.</text>
+      <text>Be the hero in your own story.</text>
+      <text>Hello. My name is Fiona.</text>
+      <text>I'm from herd Shahazar.</text>
     </component>
     <component name="Name">
       <name>Fiona</name>
@@ -2376,7 +2376,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Fiona</description>
+        <description>Fiona’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2406,7 +2406,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Fiona pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Fiona card for your collection. </text>
               <identifier>H003</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2437,9 +2437,9 @@
       <identifier>H004</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je te donne le courage. Libère-toi de tes peurs.</text>
-      <text>Bonjour. Mon nom est Thunder .</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>I give you courage. Now you can release your fears.</text>
+      <text>Hello. My name is Thunder .</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Thunder</name>
@@ -2456,7 +2456,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Thunder</description>
+        <description>Thunder’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2486,7 +2486,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Thunder pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Thunder card for your collection. </text>
               <identifier>H004</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2517,9 +2517,9 @@
       <identifier>H005</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Grâce à moi, tu ne manqueras jamais de rien.</text>
-      <text>Bonjour. Mon nom est Jewel.</text>
-      <text>Je fais partie du troupeau Islandar.</text>
+      <text>I will help you stay in a steady flow of abundance.</text>
+      <text>Hello. My name is Jewel.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Jewel</name>
@@ -2533,7 +2533,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Jewel</description>
+        <description>Jewel’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2563,7 +2563,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Jewel pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Jewel card for your collection. </text>
               <identifier>H005</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2594,9 +2594,9 @@
       <identifier>H006</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aie le courage de croire en toi.</text>
-      <text>Bonjour. Mon nom est Nike.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>Have the courage to trust yourself.</text>
+      <text>Hello. My name is Nike.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Nike</name>
@@ -2610,7 +2610,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Nike</description>
+        <description>Nike’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2640,7 +2640,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Nike pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Nike card for your collection. </text>
               <identifier>H006</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2671,9 +2671,9 @@
       <identifier>H007</identifier>
     </component>
     <component name="TalkCommand">
-      <text>N'aie pas peur de pleurer. Les larmes ont le pouvoir de guérir les cœurs brisés.</text>
-      <text>Bonjour. Mon nom est Rodin.</text>
-      <text>Je fais partie du troupeau Islandar.</text>
+      <text>Don’t be afraid to cry. Tears have the magic to heal a broken heart.</text>
+      <text>Hello. My name is Rodin.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Rodin</name>
@@ -2687,7 +2687,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Rodin</description>
+        <description>Rodin’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2717,7 +2717,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! Ma nourriture favorite. Merci beaucoup. Prends cette carte Rodin pour ta collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Rodin card for your collection.</text>
               <identifier>H007</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2748,9 +2748,9 @@
       <identifier>H008</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je cours plus vite que le vent. Suis-moi et nous découvrirons ensemble un endroit magique.</text>
-      <text>Bonjour. Mon nom est Flame .</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>I run faster than the wind. Follow me and we will find a magical place.</text>
+      <text>Hello. My name is Flame .</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Flame</name>
@@ -2764,7 +2764,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Flame</description>
+        <description>Flame’s favourite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2794,7 +2794,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Flame pour ta collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Flame card for your collection.</text>
               <identifier>H008</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2825,9 +2825,9 @@
       <identifier>H009</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Imagine ton désir le plus cher. Aie confiance et il se réalisera.</text>
-      <text>Bonjour. Mon nom est Sleetmane.</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>Imagine your wish. Have faith that it will come true.</text>
+      <text>Hello. My name is Sleetmane.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Sleetmane</name>
@@ -2841,7 +2841,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Sleetmane</description>
+        <description>Sleetmane’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2871,7 +2871,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! Ma nourriture favorite. Merci beaucoup. Prends cette carte Sleetmane pour ta collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Sleetmane card for your collection.</text>
               <identifier>H009</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2902,9 +2902,9 @@
       <identifier>H010</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aie le courage d'aller là où t'emmènent tes rêves.</text>
-      <text>Bonjour. Mon nom est Snowdreamer.</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>Be brave enough to go wherever your dreams take you.</text>
+      <text>Hello. My name is Snowdreamer.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Snowdreamer</name>
@@ -2918,7 +2918,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Snowdreamer</description>
+        <description>Snowdreamer’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -2948,7 +2948,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! Ma nourriture favorite. Merci beaucoup. Prends cette carte Rodin pour ta collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Snowdreamer card for your collection.</text>
               <identifier>H010</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -2979,9 +2979,9 @@
       <identifier>H011</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Parfois, on reçoit de l'aide de la façon la plus inattendue.</text>
-      <text>Bonjour. Mon nom est Coral.</text>
-      <text>Je fais partie du troupeau Islandar.</text>
+      <text>Sometimes help comes from the most unlikely places.</text>
+      <text>Hello. My name is Coral.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Coral</name>
@@ -2995,7 +2995,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Coral</description>
+        <description>Coral’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3025,7 +3025,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Coral pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Coral card for your collection. </text>
               <identifier>H011</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3056,9 +3056,9 @@
       <identifier>H012</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Regarde sous la surface pour découvrir ta vraie force intérieure.</text>
-      <text>Bonjour. Mon nom est Kona.</text>
-      <text>Je fais partie du troupeau Islandar.</text>
+      <text>Look beneath the surface and find your inner power.</text>
+      <text>Hello. My name is Kona.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Kona</name>
@@ -3072,7 +3072,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Kona</description>
+        <description>Kona’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3102,7 +3102,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Kona pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Kona card for your collection. </text>
               <identifier>H012</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3133,9 +3133,9 @@
       <identifier>H013</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aie confiance : fais ce qui est juste, même si cela te semble incroyablement difficile.</text>
-      <text>Bonjour. Mon nom est Shamal.</text>
-      <text>Je fais partie du troupeau Shahazar.</text>
+      <text>Have the confidence to do what is right, no matter how hard it seems.</text>
+      <text>Hello. My name is Shamal.</text>
+      <text>I'm from Shahazar.</text>
     </component>
     <component name="Name">
       <name>Shamal</name>
@@ -3149,7 +3149,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Shamal </description>
+        <description>Shamal’s favorite food </description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3179,7 +3179,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Shamal pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Shamal card for your collection. </text>
               <identifier>H013</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3210,9 +3210,9 @@
       <identifier>H014</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Commence ton histoire par un rêve qui t'inspire.</text>
-      <text>Bonjour. Mon nom est Farah.</text>
-      <text>Je fais partie du troupeau Shahazar.</text>
+      <text>Begin your story with a dream that inspires you.</text>
+      <text>Hello. My name is Farah.</text>
+      <text>I'm from herd Shahazar.</text>
     </component>
     <component name="Name">
       <name>Farah</name>
@@ -3226,7 +3226,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Farah</description>
+        <description>Farah’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3256,7 +3256,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Farah pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Farah card for your collection. </text>
               <identifier>H014</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3287,9 +3287,9 @@
       <identifier>H015</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Chaque jour, tu choisis qui tu deviendras.</text>
-      <text>Bonjour. Mon nom est Zephyros.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>Every day, you choose who you will become.</text>
+      <text>Hello. My name is Zephyros.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Zephyros</name>
@@ -3303,7 +3303,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Zephyros</description>
+        <description>Zephyros’ favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3333,7 +3333,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Zephyros pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Zephyros card for your collection. </text>
               <identifier>H015</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3364,9 +3364,9 @@
       <identifier>H016</identifier>
     </component>
     <component name="TalkCommand">
-      <text>L'éducation est la clef qui t'ouvrira toutes les portes du monde.</text>
-      <text>Bonjour. Mon nom est Cosima.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>Learning is the key that opens up the whole world to you</text>
+      <text>Hello. My name is Cosima.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Cosima</name>
@@ -3380,7 +3380,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Cosima</description>
+        <description>Cosima’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3410,7 +3410,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Cosima pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Cosima card for your collection. </text>
               <identifier>H016</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3441,9 +3441,9 @@
       <identifier>H017</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aie confiance en moi : je suis là pour t'aider à devenir une amie aimante et agréable. </text>
-      <text>Bonjour. Mon nom est Diamond.</text>
-      <text>Je fais partie du troupeau Elemyn.</text>
+      <text>Trust me. I am here to help you become a loving and good friend. </text>
+      <text>Hello. My name is Diamond.</text>
+      <text>I'm from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Diamond</name>
@@ -3457,7 +3457,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Diamond</description>
+        <description>Diamond’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3487,7 +3487,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Diamond pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Diamond card for your collection. </text>
               <identifier>H017</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3518,9 +3518,9 @@
       <identifier>H018</identifier>
     </component>
     <component name="TalkCommand">
-      <text>L'espoir est une forme de magie qui te permet de rester pleine d'énergie. </text>
-      <text>Bonjour. Mon nom est Iceking.</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>Hope is like magic. It keeps you full of energy. </text>
+      <text>Hello. My name is Iceking.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Iceking</name>
@@ -3534,7 +3534,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Iceking</description>
+        <description>Iceking’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3564,7 +3564,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Iceking pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Iceking card for your collection. </text>
               <identifier>H018</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3595,9 +3595,9 @@
       <identifier>H019</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Laisse la vie t'emmener vers des lieux fascinants.</text>
-      <text>Bonjour. Mon nom est Nyx.</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>Let your life take you to exciting places.</text>
+      <text>Hello. My name is Nyx.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Nyx</name>
@@ -3611,7 +3611,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Nyx</description>
+        <description>Nyx’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3641,7 +3641,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Nyx pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Nyx card for your collection. </text>
               <identifier>H019</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3672,9 +3672,9 @@
       <identifier>H020</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Le moment le plus important de ta vie, c'est le moment présent.</text>
-      <text>Bonjour. Mon nom est Lien.</text>
-      <text>Je fais partie du troupeau Elemyn.</text>
+      <text>The most important time in your life is right now.</text>
+      <text>Hello. My name is Lien.</text>
+      <text>I'm from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Lien</name>
@@ -3688,7 +3688,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Lien</description>
+        <description>Lien’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3718,7 +3718,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Lien pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Lien card for your collection. </text>
               <identifier>H020</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3749,9 +3749,9 @@
       <identifier>H021</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Ouvre-toi comme une fleur et montre ta beauté intérieure.</text>
-      <text>Bonjour. Mon nom est Flora.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Open like a flower and show your inner beauty.</text>
+      <text>Hello. My name is Flora.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Flora</name>
@@ -3765,7 +3765,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Flora</description>
+        <description>Flora’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3795,7 +3795,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Flora pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Flora card for your collection. </text>
               <identifier>H021</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3826,9 +3826,9 @@
       <identifier>H022</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Crois en toi. Tu as beaucoup de valeur.</text>
-      <text>Bonjour. Mon nom est Skipper.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Believe in your worth. You are valuable.</text>
+      <text>Hello. My name is Skipper.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Skipper</name>
@@ -3842,7 +3842,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Skipper</description>
+        <description>Skipper’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3872,7 +3872,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Skipper pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Skipper card for your collection. </text>
               <identifier>H022</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3903,9 +3903,9 @@
       <identifier>H023</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Sois toi-même, sois libre et permets à autrui de l'être tout autant.</text>
-      <text>Bonjour. Mon nom est Athena.</text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>Be yourself, be free, and allow others the same freedom.</text>
+      <text>Hello. My name is Athena.</text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Athena</name>
@@ -3919,7 +3919,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Athena</description>
+        <description>Athena’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -3949,7 +3949,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Athena pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Athena card for your collection. </text>
               <identifier>H023</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -3980,9 +3980,9 @@
       <identifier>H024</identifier>
     </component>
     <component name="TalkCommand">
-      <text>C'est petit à petit que les grands rêves se réalisent.</text>
-      <text>Bonjour. Mon nom est Apollo.</text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>Lots of small steps make big dreams come true.</text>
+      <text>Hello. My name is Apollo.</text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Apollo</name>
@@ -3996,7 +3996,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Apollo</description>
+        <description>Apollo’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4026,7 +4026,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Apollo pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Apollo card for your collection. </text>
               <identifier>H024</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4057,9 +4057,9 @@
       <identifier>H025</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Sers-toi de ton amour pour répandre la paix dans le monde.</text>
-      <text>Bonjour. Mon nom est Amor.</text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>Use your love to bring peace to the world.</text>
+      <text>Hello. My name is Amor.</text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Amor</name>
@@ -4073,7 +4073,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Amor</description>
+        <description>Amor’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4103,7 +4103,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Amor pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Amor card for your collection. </text>
               <identifier>H025</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4134,9 +4134,9 @@
       <identifier>H026</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Répands ton amour afin que tous en profitent.</text>
-      <text>Bonjour. Mon nom est Venus.</text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>Spread your joy around for all to share.</text>
+      <text>Hello. My name is Venus.</text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Venus</name>
@@ -4150,7 +4150,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Venus</description>
+        <description>Venus’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4180,7 +4180,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Venus pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Venus card for your collection. </text>
               <identifier>H026</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4212,9 +4212,9 @@
     </component>
     <component name="TalkCommand">
       <shouldMovePlayer>false</shouldMovePlayer>
-      <text>Je te donnerai toute mon énergie et ma magie. Alors, tu n'auras plus rien à craindre.</text>
-      <text>Bonjour. Mon nom est Flipper.</text>
-      <text>Je fais partie du troupeau Moonfairy.</text>
+      <text>I will embrace you with extra energy and magic. Then you don’t have to be afraid.</text>
+      <text>Hello. My name is Flipper.</text>
+      <text>I'm from herd Moonfairy.</text>
     </component>
     <component name="GiveCommand">
       <shouldMovePlayer>false</shouldMovePlayer>
@@ -4231,7 +4231,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Flipper</description>
+        <description>Flipper’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4261,7 +4261,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Flipper pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Flipper card for your collection. </text>
               <identifier>H027</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4292,9 +4292,9 @@
       <identifier>H028</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Que chaque jour soit une nouvelle aventure !</text>
-      <text>Bonjour. Mon nom est Ondine.</text>
-      <text>Je fais partie du troupeau Moonfairy.</text>
+      <text>Make every day an adventure!</text>
+      <text>Hello. My name is Ondine.</text>
+      <text>I'm from herd Moonfairy.</text>
     </component>
     <component name="Name">
       <name>Ondine</name>
@@ -4308,7 +4308,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Ondine</description>
+        <description>Ondine’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4338,7 +4338,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Ondine pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Ondine card for your collection. </text>
               <identifier>H028</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4369,9 +4369,9 @@
       <identifier>H029</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Le véritable amour consiste à prendre soin de quelqu'un d'autre comme tu prends soin de toi. </text>
-      <text>Bonjour. Mon nom est Bryda.</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>True love means caring for someone else like you care for yourself. </text>
+      <text>Hello. My name is Bryda.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Bryda</name>
@@ -4385,7 +4385,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Bryda</description>
+        <description>Bryda’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4415,7 +4415,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Bryda pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Bryda card for your collection. </text>
               <identifier>H029</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4446,9 +4446,9 @@
       <identifier>H030</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Un seul moment spécial peut remplir ta journée de bonheur. </text>
-      <text>Bonjour. Mon nom est Allegra.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>One special moment can fill your whole day with delight. </text>
+      <text>Hello. My name is Allegra.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Allegra</name>
@@ -4462,7 +4462,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Allegra</description>
+        <description>Allegra’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4492,7 +4492,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Allegra pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Bella card for your collection. </text>
               <identifier>H030</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4523,9 +4523,9 @@
       <identifier>H031</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Détends ton esprit et laisse les idées créatives venir à toi.</text>
-      <text>Bonjour. Mon nom est Celinda.</text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>Relax your mind. Let creative ideas come to you.</text>
+      <text>Hello. My name is Celinda.</text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Celinda</name>
@@ -4539,7 +4539,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Celinda</description>
+        <description>Celinda’s favorite</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4569,7 +4569,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Celinda pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Celinda card for your collection. </text>
               <identifier>H031</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4600,9 +4600,9 @@
       <identifier>H032</identifier>
     </component>
     <component name="TalkCommand">
-      <text>En toi, je perçois énormément de bonté. Tu peux être fière de toi.</text>
-      <text>Bonjour. Mon nom est Derik.</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>I see so much good in you. You can be proud of who you are.</text>
+      <text>Hello. My name is Derik.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Derik</name>
@@ -4616,7 +4616,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Derik</description>
+        <description>Derik’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4646,7 +4646,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Derik pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Derik card for your collection. </text>
               <identifier>H032</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4677,9 +4677,9 @@
       <identifier>H033</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Laisse ton esprit ouvert aux idées nouvelles, mais ne renonce pas à tes idéaux.</text>
-      <text>Bonjour. Mon nom est Dewdrop.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Open your mind to new ideas, but don’t give up your ideals.</text>
+      <text>Hello. My name is Dewdrop.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Dewdrop</name>
@@ -4693,7 +4693,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Dewdrop</description>
+        <description>Dewdrop’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4723,7 +4723,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Dewdrop pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Dewdrop card for your collection. </text>
               <identifier>H033</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4754,9 +4754,9 @@
       <identifier>H034</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Prends le temps de te reposer. Tu pourras reprendre plus tard.</text>
-      <text>Bonjour. Mon nom est Dewsparkle.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Give yourself time to rest. You can do more later.</text>
+      <text>Hello. My name is Dewsparkle.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Dewsparkle</name>
@@ -4770,7 +4770,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Dewsparkle</description>
+        <description>Dewsparkle’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4800,7 +4800,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Dewsparkle pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Dewsparkle card for your collection. </text>
               <identifier>H034</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4831,9 +4831,9 @@
       <identifier>H035</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Tu sais déjà quoi faire. Agis, n'hésite pas !</text>
-      <text>Bonjour. Mon nom est Seraphia.</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>You already know what to do. Go ahead and do it!</text>
+      <text>Hello. My name is Seraphia.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Seraphia</name>
@@ -4847,7 +4847,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Seraphia</description>
+        <description>Seraphia’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4877,7 +4877,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Seraphia pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Seraphia card for your collection. </text>
               <identifier>H035</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4908,9 +4908,9 @@
       <identifier>H036</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Cela arrive à tout le monde de faire des erreurs. Fais de ton mieux pour les réparer.</text>
-      <text>Bonjour. Mon nom est Garnet.</text>
-      <text>Je fais partie du troupeau Elemyn.</text>
+      <text>It’s okay to make a mistake. Just do your best to fix it.</text>
+      <text>Hello. My name is Garnet.</text>
+      <text>I'm from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Garnet</name>
@@ -4924,7 +4924,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Garnet</description>
+        <description>Garnet’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -4954,7 +4954,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Garnet pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Garnet card for your collection. </text>
               <identifier>H036</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -4985,9 +4985,9 @@
       <identifier>H037</identifier>
     </component>
     <component name="TalkCommand">
-      <text>La seule responsable de tes actes, c'est toi.</text>
-      <text>Bonjour. Mon nom est Hyperion.</text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>You are the only one in charge of what you do.</text>
+      <text>Hello. My name is Hyperion.</text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Hyperion</name>
@@ -5001,7 +5001,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Hyperion</description>
+        <description>Hyperion’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5031,7 +5031,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Hyperion pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Hyperion card for your collection. </text>
               <identifier>H037</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5062,9 +5062,9 @@
       <identifier>H038</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Partage ta joie en dansant et en t'amusant !</text>
-      <text>Bonjour. Mon nom est Jikin.</text>
-      <text>Je fais partie du troupeau Elemyn.</text>
+      <text>Share your joy by dancing and having fun!</text>
+      <text>Hello. My name is Jikin.</text>
+      <text>I'm from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Jikin</name>
@@ -5078,7 +5078,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Jikin</description>
+        <description>Jikin’s favourite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5108,7 +5108,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Jikin pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Jikin card for your collection. </text>
               <identifier>H038</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5139,9 +5139,9 @@
       <identifier>H039</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Explore ton passé pour y découvrir les germes d'un brillant avenir.</text>
-      <text>Bonjour. Mon nom est Jordanna.</text>
-      <text>Je fais partie du troupeau Islandar.</text>
+      <text>Look to your past and find the seeds of a bright future.</text>
+      <text>Hello. My name is Jordanna.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Jordanna</name>
@@ -5155,7 +5155,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Jordanna</description>
+        <description>Jordanna’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5185,7 +5185,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Jordanna pour ta collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Jordanna card for your collection.</text>
               <identifier>H039</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5216,9 +5216,9 @@
       <identifier>H040</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Ta force et ton courage te tireront de tous les mauvais pas.</text>
-      <text>Bonjour. Mon nom est Resauro.</text>
-      <text>Je fais partie du troupeau Islandar.</text>
+      <text>Your strength and courage will get your through any troubles.</text>
+      <text>Hello. My name is Resauro.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Resauro</name>
@@ -5232,7 +5232,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Resauro</description>
+        <description>Resauro’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5262,7 +5262,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Resauro pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Resauro card for your collection. </text>
               <identifier>H040</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5293,9 +5293,9 @@
       <identifier>H041</identifier>
     </component>
     <component name="TalkCommand">
-      <text>La générosité est le premier pas du chemin qui mène au bonheur. </text>
-      <text>Bonjour. Mon nom est Misa.</text>
-      <text>Je fais partie du troupeau Valeryk.</text>
+      <text>Being generous is the first step toward being happy. </text>
+      <text>Hello. My name is Misa.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Misa</name>
@@ -5309,7 +5309,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Misa</description>
+        <description>Misa’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5339,7 +5339,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Misa pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Misa card for your collection. </text>
               <identifier>H041</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5370,9 +5370,9 @@
       <identifier>H042</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Il est bon de rester silencieux parfois. Il y a des choses qui n'ont pas besoin d'être dites à voix haute.</text>
-      <text>Bonjour. Mon nom est Rodrigo.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>It is okay to be quiet. Not everything needs to be said out loud.</text>
+      <text>Hello. My name is Rodrigo.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Rodrigo</name>
@@ -5386,7 +5386,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Rodrigo</description>
+        <description>Rodrigo’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5416,7 +5416,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Rodrigo pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Rodrigo card for your collection. </text>
               <identifier>H042</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5447,9 +5447,9 @@
       <identifier>H043</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Une amitié pleine de joie te donnera de l'énergie et t'aidera à grandir.</text>
-      <text>Bonjour. Mon nom est Silvia.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>A joyful friendship gives you energy and helps you grow.</text>
+      <text>Hello. My name is Silvia.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Silvia</name>
@@ -5463,7 +5463,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Silvia</description>
+        <description>Silvia’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5493,7 +5493,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Silvia pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Silvia card for your collection. </text>
               <identifier>H043</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5524,9 +5524,9 @@
       <identifier>H044</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aime la personne que tu es. Aie foi en celle que tu deviendras.</text>
-      <text>Bonjour. Mon nom est Soot.</text>
-      <text>Je fais partie du troupeau Elemyn.</text>
+      <text>Love who you are. Believe in who you can be.</text>
+      <text>Hello. My name is Soot.</text>
+      <text>I'm from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Soot</name>
@@ -5540,7 +5540,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Soot</description>
+        <description>Soot’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5570,7 +5570,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Soot pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Soot card for your collection. </text>
               <identifier>H044</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5601,9 +5601,9 @@
       <identifier>H045</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Consacre ton temps à ce qui te tient vraiment à cœur. Le reste se règlera de soi-même. </text>
-      <text>Bonjour. Mon nom est Twig.</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>Spend your time on things that matter. The rest will take care of itself. </text>
+      <text>Hello. My name is Twig.</text>
+      <text>I'm from herd Moonfairy.</text>
     </component>
     <component name="Name">
       <name>Twig</name>
@@ -5617,7 +5617,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Twig</description>
+        <description>Twig’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5647,7 +5647,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Twig pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Twig card for your collection. </text>
               <identifier>H045</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5678,9 +5678,9 @@
       <identifier>H046</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aie du respect pour toi-même et les autres t'en témoigneront.</text>
-      <text>Bonjour. Mon nom est Valentino.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Treat yourself with respect and others will treat you the same way.</text>
+      <text>Hello. My name is Valentino.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Valentino</name>
@@ -5694,7 +5694,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Valentino</description>
+        <description>Valentino’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5724,7 +5724,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Valentino pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Valentino card for your collection. </text>
               <identifier>H046</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5801,7 +5801,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Yum! That's my favorite thing to eat. Thank you so much. Take this Wings card for your collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Wings card for your collection.</text>
               <identifier>H047</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5832,9 +5832,9 @@
       <identifier>H048</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Ressens la joie dans tout ce que tu vois, tout ce que tu entends et tout ce que tu perçois.</text>
-      <text>Bonjour. Mon nom est Colour.</text>
-      <text>Je fais partie du troupeau.</text>
+      <text>Feel the joy in what you see, hear, and sense.</text>
+      <text>Hello. My name is Colour.</text>
+      <text>I'm from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Colour</name>
@@ -5848,7 +5848,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Colour</description>
+        <description>Colour’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5878,7 +5878,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Colour pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Colour card for your collection. </text>
               <identifier>H048</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5909,9 +5909,9 @@
       <identifier>H049</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Le moment présent est une occasion d'apprendre et de grandir.</text>
-      <text>Bonjour. Mon nom est Donnecha.</text>
-      <text>Je fais partie du troupeau.</text>
+      <text>This moment is full of chances for you to grow and learn.</text>
+      <text>Hello. My name is Donnecha.</text>
+      <text>I'm from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Donnecha</name>
@@ -5925,7 +5925,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Donnecha</description>
+        <description>Donnecha’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -5955,7 +5955,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Donnecha pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Donnecha card for your collection. </text>
               <identifier>H049</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -5986,9 +5986,9 @@
       <identifier>H050</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Poursuis tes rêves et ressens pleinement le bonheur que cela t’apporte.</text>
-      <text>Bonjour. Mon nom est Blackie.</text>
-      <text>Je fais partie du troupeau.</text>
+      <text>Follow your dreams. Feel the happiness it brings.</text>
+      <text>Hello. My name is Blackie.</text>
+      <text>I'm from herd Mustang.</text>
     </component>
     <component name="Name">
       <name>Blackie</name>
@@ -6002,7 +6002,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Blackie</description>
+        <description>Blackie’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6032,7 +6032,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Blackie pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Blackie card for your collection. </text>
               <identifier>H050</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6063,9 +6063,9 @@
       <identifier>H051</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Quand on est enjoué, on se sent fort et plein de santé.</text>
-      <text>Bonjour. Mon nom est Obrylin.</text>
-      <text>Je fais partie du troupeau.</text>
+      <text>A cheerful mind keeps you feeling healthy and strong.</text>
+      <text>Hello. My name is Obrylin.</text>
+      <text>I'm from herd Islandar.</text>
     </component>
     <component name="Name">
       <name>Obrylin</name>
@@ -6079,7 +6079,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Obrylin</description>
+        <description>Obrylin’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6109,7 +6109,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Obrylin pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Obrylin card for your collection. </text>
               <identifier>H051</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6140,9 +6140,9 @@
       <identifier>H052</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Un esprit vraiment joueur laisse chacun gagner.</text>
-      <text>Bonjour. Mon nom est Ponca.</text>
-      <text>Je fais partie du troupeau.</text>
+      <text>A truly playful spirit lets everyone win.</text>
+      <text>Hello. My name is Ponca.</text>
+      <text>I'm from herd Mustang.</text>
     </component>
     <component name="Name">
       <name>Ponca</name>
@@ -6156,7 +6156,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Ponca</description>
+        <description>Ponca’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6186,7 +6186,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Ponca pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Ponca card for your collection. </text>
               <identifier>H052</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6217,9 +6217,9 @@
       <identifier>H053</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Le monde est plein de liberté et d'amour qu'il t'appartient de trouver.</text>
-      <text>Bonjour. Mon nom est Rosebriar.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>The world is full of freedom and love for you to find.</text>
+      <text>Hello. My name is Rosebriar.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Rosebriar</name>
@@ -6233,7 +6233,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Rosebriar</description>
+        <description>Rosebriar’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6263,7 +6263,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Rosebriar pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Rosebriar card for your collection. </text>
               <identifier>H053</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6294,9 +6294,9 @@
       <identifier>H054</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Passe du temps avec un(e) ami(e). Faites quelque chose qui vous plaît à tou(te)s les deux.</text>
-      <text>Bonjour. Mon nom est Connora.</text>
-      <text>Je fais partie du troupeau.</text>
+      <text>Spend time with a friend. Do something you both enjoy.</text>
+      <text>Hello. My name is Connora.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Connora</name>
@@ -6310,7 +6310,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Connora</description>
+        <description>Connora’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6340,7 +6340,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Connora pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Connora card for your collection. </text>
               <identifier>H054</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6372,9 +6372,9 @@
       <identifier>H055</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Les pouvoirs de l'univers t'entourent et font partie de toi. Laisse-les te guider.</text>
-      <text>Salut. Mon nom est Uranus.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>The powers of the universe flow around you and in you. Let them guide you.</text>
+      <text>Hi. My name is Uranus.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Uranus</name>
@@ -6388,7 +6388,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Uranus</description>
+        <description>Uranus’ favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6418,7 +6418,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Uranus pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Uranus card for your collection. </text>
               <identifier>H055</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6450,9 +6450,9 @@
       <identifier>H056</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Ouvre grand ton coeur. Aie foi en l'amour, qu'il s'agisse de le donner ou de le recevoir.</text>
-      <text>Salut. Mon nom est Anemone.</text>
-      <text>Je fais partie du troupeau Airistos.</text>
+      <text>Keep your heart open. Believe in getting and giving love.</text>
+      <text>Hi. My name is Anemone.</text>
+      <text>I'm from herd Airistos.</text>
     </component>
     <component name="Name">
       <name>Anemone</name>
@@ -6466,7 +6466,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Anemone</description>
+        <description>Anemone’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6496,7 +6496,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Anemone pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Anemone card for your collection. </text>
               <identifier>H056</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6528,9 +6528,9 @@
       <identifier>H057</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Meilleurs voeux pour ces fêtes, qu'elles soient pleines de joie, et paix sur la terre.</text>
-      <text>Salut. Mon nom est Ronnie.</text>
-      <text>Je fais partie du troupeau</text>
+      <text>Best wishes for a joyful holiday season and peace on earth from the world of Bella Sara.</text>
+      <text>Hi. My name is Ronnie.</text>
+      <text>I'm from the herd.</text>
     </component>
     <component name="Name">
       <name>Ronnie</name>
@@ -6544,7 +6544,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Ronnie</description>
+        <description>Ronnie’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6574,7 +6574,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Ronnie pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Ronnie card for your collection. </text>
               <identifier>H057</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6605,9 +6605,9 @@
       <identifier>H058</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Notre amitié nous rend forts et libres. </text>
-      <text>Bonjour. Mon nom est Bluebell. </text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Our friendship keeps us strong and free. </text>
+      <text>Hello. My name is Bluebell. </text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Bluebell</name>
@@ -6621,7 +6621,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Bluebell</description>
+        <description>Bluebell’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6651,7 +6651,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Bluebell pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Bluebell card for your collection. </text>
               <identifier>H058</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6682,9 +6682,9 @@
       <identifier>H059</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Tu peux choisir le moment présent pour changer.</text>
-      <text>Bonjour, mon nom est Beran.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>You can choose this moment to change yourself.</text>
+      <text>Hello, my name is Beran.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Beran</name>
@@ -6698,7 +6698,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Beran</description>
+        <description>Beran’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6728,7 +6728,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Beran pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Beran card for your collection. </text>
               <identifier>H059</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6759,9 +6759,9 @@
       <identifier>H060</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Trouve l'amour en illuminant la journée de quelqu'un d'autre.</text>
-      <text>Bonjour. Mon nom est Generosity.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Find love by making someone else’s day brighter.</text>
+      <text>Hello. My name is Generosity.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Generosity</name>
@@ -6775,7 +6775,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Generosity</description>
+        <description>Generosity’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6805,7 +6805,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Generosity pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Generosity card for your collection. </text>
               <identifier>H060</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6836,9 +6836,9 @@
       <identifier>H061</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Tu vis dans un monde de merveilleuse abondance, crois-moi !</text>
-      <text>Bonjour, mon nom est Ceratos.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>You live in a world of amazing abundance. Believe it!</text>
+      <text>Hello, my name is Ceratos.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Ceratos</name>
@@ -6852,7 +6852,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Ceratos</description>
+        <description>Ceratos’ favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6882,7 +6882,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Ceratos pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Ceratos card for your collection. </text>
               <identifier>H061</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6913,9 +6913,9 @@
       <identifier>H062</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Finir ce que tu as commencé te donne de l'énergie.</text>
-      <text>Bonjour, mon nom est Autumn.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Finishing what you’ve started gives you energy.</text>
+      <text>Hello, my name is Autumn.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Autumn</name>
@@ -6929,7 +6929,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Autumn</description>
+        <description>Autumn’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -6959,7 +6959,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Autumn pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Autumn card for your collection. </text>
               <identifier>H062</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -6990,9 +6990,9 @@
       <identifier>H063</identifier>
     </component>
     <component name="TalkCommand">
-      <text>C'est en croyant en toi que tu améliores tout dans ta vie.</text>
-      <text>Bonjour, mon nom est Briar.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Believing in yourself makes things go better for you.</text>
+      <text>Hello, my name is Briar.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Briar</name>
@@ -7006,7 +7006,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Briar</description>
+        <description>Briar’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7036,7 +7036,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Briar pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Briar card for your collection. </text>
               <identifier>H063</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7067,9 +7067,9 @@
       <identifier>H064</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Ensemble, nous pouvons escalader les plus hautes montagnes.</text>
-      <text>Bonjour, mon nom est Calyx.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>We can climb mountains together.</text>
+      <text>Hello, my name is Calyx.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Calyx</name>
@@ -7083,7 +7083,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Calyx</description>
+        <description>Calyx’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7113,7 +7113,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Calyx pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Calyx card for your collection. </text>
               <identifier>H064</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7144,9 +7144,9 @@
       <identifier>H065</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Prépare une gentille surprise pour quelqu'un.</text>
-      <text>Bonjour, mon nom est Petal.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Plan a sweet surprise for someone.</text>
+      <text>Hello, my name is Petal.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Petal</name>
@@ -7160,7 +7160,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Petal</description>
+        <description>Petal’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7190,7 +7190,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Petal pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Petal card for your collection. </text>
               <identifier>H065</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7221,9 +7221,9 @@
       <identifier>H066</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Regarde encore, regarde mieux ! Les choses les plus importantes sont souvent les plus difficiles à voir.</text>
-      <text>Bonjour, mon nom est Oracle. </text>
-      <text>Je fais partie du troupeau Pantheon.</text>
+      <text>Look again. The most important things are often the hardest to see.</text>
+      <text>Hello, my name is Oracle. </text>
+      <text>I'm from herd Pantheon.</text>
     </component>
     <component name="Name">
       <name>Oracle</name>
@@ -7237,7 +7237,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Oracle</description>
+        <description>Oracle’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7267,7 +7267,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Oracle pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Oracle card for your collection. </text>
               <identifier>H066</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7298,9 +7298,9 @@
       <identifier>H067</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Ta gentillesse te rend aussi belle qu'un jardin rempli de fleurs.</text>
-      <text>Bonjour, mon nom est Dowager.</text>
-      <text>Je fais partie du troupeau Bellasara.</text>
+      <text>Your kindness is as beautiful as a garden full of flowers.</text>
+      <text>Hello, my name is Dowager.</text>
+      <text>I'm from herd Bellasara.</text>
     </component>
     <component name="Name">
       <name>Dowager</name>
@@ -7314,7 +7314,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Dowager</description>
+        <description>Dowager’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7344,7 +7344,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Dowager pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Dowager card for your collection. </text>
               <identifier>H067</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7375,10 +7375,9 @@
       <identifier>H068</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Cayenne.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Imagine yourself as a winner and you will grow and flower. </text>
+      <text>Hello, my name is Cayenne.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Cayenne</name>
@@ -7392,7 +7391,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Cayenne</description>
+        <description>Cayenne’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7422,7 +7421,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Cayenne pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Cayenne card for your collection. </text>
               <identifier>H068</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7453,10 +7452,9 @@
       <identifier>H069</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Foxglove.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Facing your fear is a way to get through it.</text>
+      <text>Hello, my name is Foxglove.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Foxglove</name>
@@ -7470,7 +7468,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Foxglove</description>
+        <description>Foxglove’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7500,7 +7498,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Foxglove pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Foxglove card for your collection. </text>
               <identifier>H069</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7531,10 +7529,9 @@
       <identifier>H070</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Saffron. </text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Your encouragement can be an inspiration to others.</text>
+      <text>Hello, my name is Saffron. </text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Saffron</name>
@@ -7548,7 +7545,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Saffron</description>
+        <description>Saffron’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7578,7 +7575,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Saffron pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Saffron card for your collection. </text>
               <identifier>H070</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7609,10 +7606,9 @@
       <identifier>H071</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Foxtail.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>A joyful life is waiting for you.</text>
+      <text>Hello, my name is Foxtail.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Foxtail</name>
@@ -7626,7 +7622,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Foxtail</description>
+        <description>Foxtail’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7656,7 +7652,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Foxtail pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Foxtail card for your collection. </text>
               <identifier>H071</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7687,10 +7683,9 @@
       <identifier>H072</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Lavender.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>You are like a magic flower, shining with beauty and harmony.</text>
+      <text>Hello, my name is Lavender.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Lavender</name>
@@ -7704,7 +7699,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Lavender</description>
+        <description>Lavender’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7734,7 +7729,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Lavender pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Lavender card for your collection. </text>
               <identifier>H072</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7765,10 +7760,9 @@
       <identifier>H073</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Snapdragon.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Now is a good time to do what you promised yourself to do.</text>
+      <text>Hello, my name is Snapdragon.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Snapdragon</name>
@@ -7782,7 +7776,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Snapdragon</description>
+        <description>Snapdragon’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7812,7 +7806,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Snapdragon pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Snapdragon card for your collection. </text>
               <identifier>H073</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7843,10 +7837,9 @@
       <identifier>H074</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Violet.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Joy gives you the power to reach your goals.</text>
+      <text>Hello, my name is Violet.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Violet</name>
@@ -7860,7 +7853,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Violet</description>
+        <description>Violet’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7890,7 +7883,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Violet pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Violet card for your collection. </text>
               <identifier>H074</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7921,10 +7914,9 @@
       <identifier>H075</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Hawthorn.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>When something comes to an end, new things can begin.</text>
+      <text>Hello, my name is Hawthorn.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Hawthorn</name>
@@ -7938,7 +7930,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Hawthorn</description>
+        <description>Hawthorn’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -7968,7 +7960,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que Hawthorn pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Hawthorn card for your collection. </text>
               <identifier>H075</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -7999,10 +7991,9 @@
       <identifier>H076</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Camellia.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>You are the only one who knows which path to take. </text>
+      <text>Hello, my name is Camellia.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Camellia</name>
@@ -8016,7 +8007,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Camellia</description>
+        <description>Camellia’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8046,7 +8037,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Camellia pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Camellia card for your collection. </text>
               <identifier>H076</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8077,10 +8068,9 @@
       <identifier>H077</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Buttercup.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Let your heart guide you. </text>
+      <text>Hello, my name is Buttercup.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Buttercup</name>
@@ -8094,7 +8084,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Buttercup</description>
+        <description>Buttercup’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8124,7 +8114,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Buttercup pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Buttercup card for your collection. </text>
               <identifier>H077</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8155,10 +8145,9 @@
       <identifier>H078</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Bluefiddle.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Good things will appear at the right time. </text>
+      <text>Hello, my name is Bluefiddle.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Bluefiddle</name>
@@ -8172,7 +8161,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Bluefiddle</description>
+        <description>Bluefiddle’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8202,7 +8191,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Bluefiddle pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Bluefiddle card for your collection. </text>
               <identifier>H078</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8233,10 +8222,9 @@
       <identifier>H079</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Larkspur.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Leaving anger behind is a gift you can give yourself. </text>
+      <text>Hello, my name is Larkspur.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Larkspur</name>
@@ -8250,7 +8238,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Larkspur</description>
+        <description>Larkspur’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8280,7 +8268,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Larkspur pour ta collection.</text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Larkspur card for your collection.</text>
               <identifier>H079</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8311,10 +8299,9 @@
       <identifier>H080</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Sunflower.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Look for the abundance of beauty all around you.</text>
+      <text>Hello, my name is Sunflower.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Sunflower</name>
@@ -8397,7 +8384,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Sunflower</description>
+        <description>Sunflower’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8427,7 +8414,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Sunflower pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Sunflower card for your collection. </text>
               <identifier>H080</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8458,10 +8445,9 @@
       <identifier>H081</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Waterlily.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>You can begin your journey whenever you want.</text>
+      <text>Hello, my name is Waterlily.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Waterlily</name>
@@ -8475,7 +8461,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Waterlily</description>
+        <description>Waterlily’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8505,7 +8491,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Waterlily pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Waterlily card for your collection. </text>
               <identifier>H081</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8536,10 +8522,9 @@
       <identifier>H082</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Lotus.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Focus on feeling as if your wishes have come true. Miracles will happen. </text>
+      <text>Hello, my name is Lotus.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Lotus</name>
@@ -8553,7 +8538,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Lotus</description>
+        <description>Lotus’ favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8583,7 +8568,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Lotus pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Lotus card for your collection. </text>
               <identifier>H082</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8614,10 +8599,9 @@
       <identifier>H083</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Cattail.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>New changes will unfold if you let them. </text>
+      <text>Hello, my name is Cattail.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Cattail</name>
@@ -8631,7 +8615,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Cattail</description>
+        <description>Cattail’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8661,7 +8645,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Cattail pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Cattail card for your collection. </text>
               <identifier>H083</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8692,10 +8676,9 @@
       <identifier>H084</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Reed.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Don’t be afraid of changes. They can deepen your friendships. </text>
+      <text>Hello, my name is Reed.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Reed</name>
@@ -8709,7 +8692,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Reed</description>
+        <description>Reed’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8739,7 +8722,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Reed pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Reed card for your collection.coup. </text>
               <identifier>H084</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8770,10 +8753,9 @@
       <identifier>H085</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Daisy.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Look for your special gifts and love what you find.</text>
+      <text>Hello, my name is Daisy.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Shasta Daisy</name>
@@ -8787,7 +8769,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Shasta Daisy</description>
+        <description>Shasta Daisy's favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8817,7 +8799,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Shasta Daisy pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Shasta Daisy card for your collection. </text>
               <identifier>H085</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8848,10 +8830,9 @@
       <identifier>H086</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Nutmeg.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Protect nature. It is unique, just like you are.</text>
+      <text>Hello, my name is Nutmeg.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Nutmeg</name>
@@ -8865,7 +8846,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Nutmeg</description>
+        <description>Nutmeg’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8895,7 +8876,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Nutmeg pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Nutmeg card for your collection. </text>
               <identifier>H086</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -8926,10 +8907,9 @@
       <identifier>H087</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Tarragon.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Value those you love, including yourself.</text>
+      <text>Hello, my name is Tarragon.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Tarragon</name>
@@ -8943,7 +8923,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Tarragon</description>
+        <description>Tarragon’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -8973,7 +8953,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Tarragon pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Tarragon card for your collection. </text>
               <identifier>H087</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9004,10 +8984,9 @@
       <identifier>H088</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Cinnamon.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Happiness comes from doing things that really matter to you. </text>
+      <text>Hello, my name is Cinnamon.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Cinnamon</name>
@@ -9021,7 +9000,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Cinnamon</description>
+        <description>Cinnamon’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9051,7 +9030,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Cinnamon pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Cinnamon card for your collection. </text>
               <identifier>H088</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9082,10 +9061,9 @@
       <identifier>H089</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Fairybell.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Look for friends who make you feel good.</text>
+      <text>Hello, my name is Fairybell.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Fairybell</name>
@@ -9099,7 +9077,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Fairybell</description>
+        <description>Fairybell’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9129,7 +9107,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Fairybell pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Fairybell card for your collection.</text>
               <identifier>H089</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9160,10 +9138,9 @@
       <identifier>H090</identifier>
     </component>
     <component name="TalkCommand">
-      <text>
-      </text>
-      <text>Bonjour, mon nom est Aster.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>Show your passion. It will shine through everything you do.</text>
+      <text>Hello, my name is Aster.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Aster</name>
@@ -9177,7 +9154,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Aster</description>
+        <description>Aster’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9207,7 +9184,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Aster pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Aster card for your collection. </text>
               <identifier>H090</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9238,9 +9215,9 @@
       <identifier>H091</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je peux t'emmener à Petalhome et te ramener.</text>
-      <text>Bonjour. Je m'appelle Cabby.</text>
-      <text>Je fais partie du troupeau Sunflower.</text>
+      <text>I can take you to and from Petalhome. </text>
+      <text>Hello. I’m Cabby.</text>
+      <text>I'm from herd Sunflower.</text>
     </component>
     <component name="Name">
       <name>Cabby</name>
@@ -9254,7 +9231,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Cabby</description>
+        <description>Cabby’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9284,7 +9261,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Cabby pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Cabby card for your collection. </text>
               <identifier>H091</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9315,9 +9292,9 @@
       <identifier>H092</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Aie foi en ce que tu fais et tu réussiras à coup sûr.</text>
-      <text>Salut, je m'appelle Starlight. </text>
-      <text>Je fais partie du troupeau Starlights</text>
+      <text>Believe it and it will work.</text>
+      <text>Hi, my name is Starlight. </text>
+      <text>I'm from herd Starlight.</text>
     </component>
     <component name="Name">
       <name>Starlight</name>
@@ -9331,7 +9308,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite de Starlight</description>
+        <description>Starlight’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9361,7 +9338,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Starlight pour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Starlight card for your collection. </text>
               <identifier>H092</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9392,9 +9369,9 @@
       <identifier>H093</identifier>
     </component>
     <component name="TalkCommand">
-      <text>L'amour t'enveloppe de sa lumière. Laisse-lui te donner la force. </text>
-      <text>Salut, je m'appelle Andromeda.</text>
-      <text>Je fais partie du troupeau Starlights.</text>
+      <text>Love is shining down on you. Let it give you strength. </text>
+      <text>Hi, I’m Andromeda.</text>
+      <text>I'm from herd Starlight.</text>
     </component>
     <component name="Name">
       <name>Andromeda</name>
@@ -9408,7 +9385,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-0000003307">
-        <description>La nourriture favorite d'Andromeda</description>
+        <description>Andromeda’s favorite food</description>
         <line description="Complete - with card">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9438,7 +9415,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! C'est ce que je préfère manger. Merci beaucoup. Prends cette carte Andromedapour ta collection. </text>
+              <text>Yummy! My favorite food. Thank you so much. Have this Andromeda card for your collection.</text>
               <identifier>H093</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -9469,9 +9446,9 @@
       <identifier>H097</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Quand tu te contentes d'être toi-même, tout le monde te respecte. </text>
-      <text>Salut, je m'appelle Shenandoah.</text>
-      <text>Je fais partie du troupeau Mustang.</text>
+      <text>Always be yourself and others will respect you. </text>
+      <text>Hi, I’m Shenandoah.</text>
+      <text>I'm from herd Mustang.</text>
     </component>
     <component name="Name">
       <name>Shenandoah</name>
@@ -9500,9 +9477,9 @@
       <identifier>H098</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Affronte tous les défis avec courage et force.</text>
-      <text>Salut, je m'appelle Zabarius.</text>
-      <text>Je fais partie du troupeau Mustang.</text>
+      <text>You can face any challenge with courage and strength.</text>
+      <text>Hi, I’m Zabarius.</text>
+      <text>I'm from herd Mustang.</text>
     </component>
     <component name="Name">
       <name>Zabarius</name>
@@ -9531,9 +9508,9 @@
       <identifier>H099</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Laisse la lune magique enflammer ton imagination.</text>
-      <text>Salut, je m'appelle Moonfairy.</text>
-      <text>Je fais partie du troupeau Moonfairy.</text>
+      <text>Let the magical full moon inspire your imagination.</text>
+      <text>Hi, I’m Moonfairy.</text>
+      <text>I'm from herd Moonfairy.</text>
     </component>
     <component name="Name">
       <name>Moonfairy</name>
@@ -9637,7 +9614,7 @@
     <!-- Advanced Behavior Logic Functionality -->
     <component name="Logic">
       <quest id="QUE-000000TURQ">
-        <description>Multiplication de Turq</description>
+        <description>Turq’s multiplication</description>
         <line description="Complete">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9686,7 +9663,7 @@
     <!-- Advanced Behavior Logic Functionality -->
     <component name="Logic">
       <quest id="QUE-000000ORAN">
-        <description>Nourris Oran</description>
+        <description>Feed Oran</description>
         <line description="Complete">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9735,7 +9712,7 @@
     <!-- Advanced Behavior Logic Functionality -->
     <component name="Logic">
       <quest id="QUE-00000YALLO">
-        <description>Nourris Yallo</description>
+        <description>Feed Yallo</description>
         <line description="Complete">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9784,7 +9761,7 @@
     <!-- Advanced Behavior Logic Functionality -->
     <component name="Logic">
       <quest id="QUE-0000FORRIE">
-        <description>Nourris Forrie</description>
+        <description>Feed Forrie</description>
         <line description="Complete">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9831,7 +9808,7 @@
     <component name="TalkCommand">
       <text>I'm Ginger. I'm from herd Mustang.</text>
       <text>Brush me to make me happy!</text>
-      <text>Water please! I'm thirsty</text>
+      <text>Water please! I'm thirsty.</text>
       <text>I'm hungry. Please give me hay.</text>
       <text>I love apples for a snack. Yummy!</text>
       <text>Thank you for taking care of me.</text>
@@ -9936,12 +9913,12 @@
       <identifier>HH001</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je m'appelle Ash. Je fais partie du troupeau Bella Sara.</text>
-      <text>Brosse-moi pour me rendre heureux !</text>
-      <text>De l'eau, s'il te plaît. J'ai soif.</text>
-      <text>J'ai faim. Donne-moi du foin.</text>
-      <text>J'aime manger des pommes. Miam.</text>
-      <text>Merci d'avoir pris soin de moi.</text>
+      <text>I’m Ash. I’m from herd Bella Sara.</text>
+      <text>Brush me to make me happy!</text>
+      <text>Water please! I’m thirsty.</text>
+      <text>I’m hungry. Please give me hay.</text>
+      <text>I love apples for a snack. Yummy!</text>
+      <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
       <name>Ash</name>
@@ -9963,7 +9940,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-HH001-WATER">
-        <description>Donne de l'eau à Ash.</description>
+        <description>Give Ash water.</description>
         <line description="Complete - Water">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9975,7 +9952,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>J'avais soif.</text>
+              <text>I was thirsty.</text>
               <identifier>HH001</identifier>
             </object>
             <object type="questData.AddMultipleInventoryAction">
@@ -9986,7 +9963,7 @@
         </line>
       </quest>
       <quest id="QUE-HH001-HAY">
-        <description>Donne du foin à Ash</description>
+        <description>Give Ash hay.</description>
         <line description="Complete - Hay">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -9997,14 +9974,14 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam, du foin ! Merci. </text>
+              <text>Yummy hay. Thank you. </text>
               <identifier>HH001</identifier>
             </object>
           </actions>
         </line>
       </quest>
       <quest id="QUE-HH001-SNACK">
-        <description>Donne un en-cas à Ash. </description>
+        <description>Give Ash a snack. </description>
         <line description="Complete - Snack">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10015,7 +9992,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! J'adore les pommes. </text>
+              <text>Yummy! I love to eat apples. </text>
               <identifier>HH001</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -10043,12 +10020,12 @@
       <identifier>HH002</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je m'appelle Simon. Je fais partie du troupeau Mustang.</text>
-      <text>Brosse-moi pour me rendre heureux !</text>
-      <text>De l'eau, s'il te plaît. J'ai soif.</text>
-      <text>J'ai faim. Donne-moi du foin.</text>
-      <text>J'aime manger des marguerites. Miam.</text>
-      <text>Merci d'avoir pris soin de moi.</text>
+      <text>I’m Simon. I’m from herd Mustang.</text>
+      <text>Brush me to make me happy!</text>
+      <text>Water please! I’m thirsty.</text>
+      <text>I’m hungry. Please give me hay.</text>
+      <text>I love daisies for a snack. Yummy!</text>
+      <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
       <name>Simon</name>
@@ -10070,7 +10047,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-HH002-WATER">
-        <description>Donne de l'eau à Simon.</description>
+        <description>Give Simon water.</description>
         <line description="Complete - Water">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10082,7 +10059,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>J'avais soif.</text>
+              <text>I was thirsty.</text>
               <identifier>HH002</identifier>
             </object>
             <object type="questData.AddMultipleInventoryAction">
@@ -10093,7 +10070,7 @@
         </line>
       </quest>
       <quest id="QUE-HH002-HAY">
-        <description>Donne du foin à Simon.</description>
+        <description>Give Simon hay.</description>
         <line description="Complete - Hay">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10104,14 +10081,14 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam, du foin ! Merci. </text>
+              <text>Yummy hay. Thank you. </text>
               <identifier>HH002</identifier>
             </object>
           </actions>
         </line>
       </quest>
       <quest id="QUE-HH002-SNACK">
-        <description>Donne un en-cas à Simon.</description>
+        <description>Give Simon a snack.</description>
         <line description="Complete - Snack">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10122,7 +10099,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! J'adore les marguerites. </text>
+              <text>Yummy! I love to eat daisies. </text>
               <identifier>HH002</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -10150,12 +10127,12 @@
       <identifier>HH003</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je m'appelle Snowball. Je fais partie du troupeau Valeryk.</text>
-      <text>Brosse-moi pour me rendre heureux !</text>
-      <text>De l'eau, s'il te plaît. J'ai soif.</text>
-      <text>J'ai faim. Donne-moi du foin.</text>
-      <text>J'aime manger des winterberries. Miam.</text>
-      <text>Merci d'avoir pris soin de moi.</text>
+      <text>I’m Snowball. I’m from herd Valeryk.</text>
+      <text>Brush me to make me happy!</text>
+      <text>Water please! I’m thirsty.</text>
+      <text>I’m hungry. Please give me hay.</text>
+      <text>I love winterberries for a snack. Yummy!</text>
+      <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
       <name>Snowball</name>
@@ -10177,7 +10154,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-HH003-WATER">
-        <description>Donne de l'eau à Snowball.</description>
+        <description>Give Snowball water.</description>
         <line description="Complete - Water">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10189,7 +10166,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>J'avais soif.</text>
+              <text>I was thirsty.</text>
               <identifier>HH003</identifier>
             </object>
             <object type="questData.AddMultipleInventoryAction">
@@ -10200,7 +10177,7 @@
         </line>
       </quest>
       <quest id="QUE-HH003-HAY">
-        <description>Donne du foin à Snowball.</description>
+        <description>Give Snowball hay.</description>
         <line description="Complete - Hay">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10211,14 +10188,14 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam, du foin ! Merci. </text>
+              <text>Yummy hay. Thank you. </text>
               <identifier>HH003</identifier>
             </object>
           </actions>
         </line>
       </quest>
       <quest id="QUE-HH003-SNACK">
-        <description>Donne un en-cas à Snowball.</description>
+        <description>Give Snowball a snack.</description>
         <line description="Complete - Snack">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10229,7 +10206,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! J'adore les winterberries!</text>
+              <text>Yummy! I love to eat winterberries.</text>
               <identifier>HH003</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -10257,12 +10234,12 @@
       <identifier>HH004</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je m'appelle Ani. Je fais partie du troupeau Shahazar.</text>
-      <text>Brosse-moi pour me rendre heureux </text>
-      <text>De l'eau, s'il te plaît. J'ai soif.</text>
-      <text>J'ai faim. Donne-moi du foin.</text>
-      <text>J'aime manger des carottes. Miam.</text>
-      <text>Merci d'avoir pris soin de moi.</text>
+      <text>I’m Ani. I’m from herd Shahazar.</text>
+      <text>Brush me to make me happy! </text>
+      <text>Water please! I’m thirsty.</text>
+      <text>I’m hungry. Please give me hay.</text>
+      <text>I love carrots for a snack. Yummy!</text>
+      <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
       <name>Ani</name>
@@ -10284,7 +10261,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-HH004-WATER">
-        <description>Donne de l'eau à Ani.</description>
+        <description>Give Ani water.</description>
         <line description="Complete - Water">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10296,7 +10273,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>J'avais soif.</text>
+              <text>I was thirsty.</text>
               <identifier>HH004</identifier>
             </object>
             <object type="questData.AddMultipleInventoryAction">
@@ -10307,7 +10284,7 @@
         </line>
       </quest>
       <quest id="QUE-HH004-HAY">
-        <description>Donne du foin à Ani.</description>
+        <description>Give Ani hay.</description>
         <line description="Complete - Hay">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10318,14 +10295,14 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam, du foin ! Merci. </text>
+              <text>Yummy hay. Thank you. </text>
               <identifier>HH004</identifier>
             </object>
           </actions>
         </line>
       </quest>
       <quest id="QUE-HH004-SNACK">
-        <description>Donne un en-cas à Ani.</description>
+        <description>Give Ani a snack.</description>
         <line description="Complete - Snack">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10336,7 +10313,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! J'adore les carottes.</text>
+              <text>Yummy! I love to eat carrots.</text>
               <identifier>HH004</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -10364,12 +10341,12 @@
       <identifier>HH005</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Je m'appelle Flit. Je fais partie du troupeau Airistos.</text>
-      <text>Brosse-moi pour me rendre heureux !</text>
-      <text>De l'eau, s'il te plaît. J'ai soif.</text>
-      <text>J'ai faim. Donne-moi du foin.</text>
-      <text>J'aime boire du lait de fraise. Miam !</text>
-      <text>Merci d'avoir pris soin de moi.</text>
+      <text>I’m Flit. I’m from herd Airistos.</text>
+      <text>Brush me to make me happy!</text>
+      <text>Water please! I’m thirsty.</text>
+      <text>I’m hungry. Please give me hay.</text>
+      <text>I love strawberry milk for a snack. Yummy!</text>
+      <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
       <name>Flit</name>
@@ -10391,7 +10368,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-HH005-WATER">
-        <description>Donne de l'eau à Flit.</description>
+        <description>Give Flit water.</description>
         <line description="Complete - Water">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10403,7 +10380,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>J'avais soif.</text>
+              <text>I was thirsty.</text>
               <identifier>HH005</identifier>
             </object>
             <object type="questData.AddMultipleInventoryAction">
@@ -10414,7 +10391,7 @@
         </line>
       </quest>
       <quest id="QUE-HH005-HAY">
-        <description>Donne du foin à Flit.</description>
+        <description>Give Flit hay.</description>
         <line description="Complete - Hay">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10425,14 +10402,14 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam, du foin ! Merci. </text>
+              <text>Yummy hay. Thank you. </text>
               <identifier>HH005</identifier>
             </object>
           </actions>
         </line>
       </quest>
       <quest id="QUE-HH005-SNACK">
-        <description>Donne un en-cas à Flit.</description>
+        <description>Give Flit a snack.</description>
         <line description="Complete - Snack">
           <trigger>
             <object type="questData.GiveItemTrigger">
@@ -10443,7 +10420,7 @@
           <conditions />
           <actions>
             <object type="questData.DialogueAction">
-              <text>Miam ! J'adore le lait de fraise.</text>
+              <text>Yummy! I love to drink strawberry milk.</text>
               <identifier>HH005</identifier>
             </object>
             <object type="questData.AddHorseshoesAction">
@@ -10472,9 +10449,9 @@
       <identifier>CF001</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Merci d'avoir pris soin de moi.</text>
-      <text>Je m'appelle Ash. J'adore les carottes !</text>
-      <text>Je suis du troupeau Bella Sara.</text>
+      <text>Thank you for taking care of me.</text>
+      <text>I’m Ash. I love to eat carrots!</text>
+      <text>I’m from herd Bella Sara.</text>
     </component>
     <component name="Name">
       <name>Ash</name>
@@ -10489,7 +10466,7 @@
     <component type="components.commands.GiveCommand" name="GiveCommand" />
     <component name="Logic">
       <quest id="QUE-CF001">
-        <description>Prends soin d'Ash. </description>
+        <description>Take care of Ash. </description>
         <line description="Complete - Placed">
           <trigger>
             <object type="questData.ActionTrigger">
@@ -10502,11 +10479,11 @@
               <fileName>horsecare/cf001.xml</fileName>
             </object>
             <object type="questData.DialogueAction">
-              <text>Prends soin de moi !</text>
+              <text>Take care of me!</text>
               <identifier>CF001</identifier>
             </object>
             <object type="questData.DialogueAction">
-              <text>Ce bébé cheval a besoin de toi ! Parle-lui pour savoir ce qu'il lui faut.</text>
+              <text>Ash needs you to take care of him. Talk to him to find out what he needs.</text>
               <identifier>C001</identifier>
             </object>
             <object type="questData.AddQuestAction">
@@ -10536,7 +10513,7 @@
     <component name="TalkCommand">
       <text>Thank you for taking care of me.</text>
       <text>My name is Ginger. I love to eat carrots!</text>
-      <text>I am from the herd Mustang. We're a bit more wild than most horses.</text>
+      <text>I am from herd Mustang. We're a bit more wild than most horses.</text>
     </component>
     <component name="Name">
       <name>Ginger</name>
@@ -10598,9 +10575,9 @@
       <identifier>CF002</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Merci d'avoir pris soin de moi.</text>
-      <text>Je m'appelle Simon. J'aime bien les pancakes, mais ce que je préfère, ce sont les carottes !</text>
-      <text>Je suis du troupeau Mustang. Nous sommes un peu plus sauvages que les autres chevaux !</text>
+      <text>Thank you for taking care of me.</text>
+      <text>I’m Simon. I like pancakes, but I prefer carrots!</text>
+      <text>I’m from herd Mustang. We’re a bit more wild than most horses.</text>
     </component>
     <component name="Name">
       <name>Simon</name>
@@ -10617,7 +10594,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-CF002">
-        <description>Prends soin de Simon.</description>
+        <description>Take care of Simon.</description>
         <line description="Complete - Placed">
           <trigger>
             <object type="questData.ActionTrigger">
@@ -10630,11 +10607,11 @@
               <fileName>horsecare/cf002.xml</fileName>
             </object>
             <object type="questData.DialogueAction">
-              <text>Prends soin de moi !</text>
+              <text>Take care of me!</text>
               <identifier>CF002</identifier>
             </object>
             <object type="questData.DialogueAction">
-              <text>Ce bébé cheval a besoin de toi ! Parle-lui pour savoir ce qu'il lui faut.</text>
+              <text>Simon needs you to take care of him. Talk to him to find out what he needs.</text>
               <identifier>C001</identifier>
             </object>
             <object type="questData.AddQuestAction">
@@ -10662,9 +10639,9 @@
       <identifier>CF003</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Salut, c'est moi, Snowball. Prends soin de moi pour que je puisse regagner ma maison dans la neige.</text>
-      <text>Mon en-cas préféré, ce sont les winterberries.</text>
-      <text>Je suis du troupeau de Thunder, Valeryk.</text>
+      <text>Hi! It’s me, Snowball. Take care of me so that I can return to my home in the snow.</text>
+      <text>My favorite snack is winterberries.</text>
+      <text>I’m from Thunder’s herd, Valeryk.</text>
     </component>
     <component name="Name">
       <name>Snowball</name>
@@ -10682,7 +10659,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-CF003">
-        <description>Prends soin de Snowball.</description>
+        <description>Take care of Snowball.</description>
         <line description="Complete - Placed">
           <trigger>
             <object type="questData.ActionTrigger">
@@ -10695,11 +10672,11 @@
               <fileName>horsecare/cf003.xml</fileName>
             </object>
             <object type="questData.DialogueAction">
-              <text>Prends soin de moi !</text>
+              <text>Take care of me!</text>
               <identifier>CF003</identifier>
             </object>
             <object type="questData.DialogueAction">
-              <text>Snowball a besoin que tu prennes soin d'elle.</text>
+              <text>Snowball needs you to take care of her.</text>
               <identifier>C001</identifier>
             </object>
             <object type="questData.AddQuestAction">
@@ -10727,9 +10704,9 @@
       <identifier>CF004</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Salut, mon nom est Ani. Prends soin de moi. </text>
-      <text>J'aime les carottes. Grâce à elles, j'ai de bons yeux pour voir dans le désert. </text>
-      <text>Je suis du troupeau de Fiona, Shahazar.</text>
+      <text>Hi! My name is Ani. Take care of me. </text>
+      <text>I like carrots. Thanks to them I have good eyes so that I can see in the desert. </text>
+      <text>I’m part of Fiona’s herd, Shahazar.</text>
     </component>
     <component name="Name">
       <name>Ani</name>
@@ -10748,7 +10725,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-CF004">
-        <description>Prends soin d'Ani. </description>
+        <description>Take care of Ani. </description>
         <line description="Complete - Placed">
           <trigger>
             <object type="questData.ActionTrigger">
@@ -10761,11 +10738,11 @@
               <fileName>horsecare/cf004.xml</fileName>
             </object>
             <object type="questData.DialogueAction">
-              <text>Prends soin de moi !</text>
+              <text>Take care of me!</text>
               <identifier>CF004</identifier>
             </object>
             <object type="questData.DialogueAction">
-              <text>Ani a besoin que tu prennes soin d'elle.</text>
+              <text>Ani needs you to take care of her.</text>
               <identifier>C001</identifier>
             </object>
             <object type="questData.AddQuestAction">
@@ -10793,9 +10770,9 @@
       <identifier>CF005</identifier>
     </component>
     <component name="TalkCommand">
-      <text>Prends soin de moi pour que je puisse retrouver ma maison dans les nuages.</text>
-      <text>Mon en-cas favori, c'est le lait de fraise !</text>
-      <text>Je suis du troupeau Airistos. Nous vivons dans les Skylands.</text>
+      <text>Take care of me so that I can go back to my home in the clouds.</text>
+      <text>My favorite snack is strawberry milk!</text>
+      <text>I’m from herd Airistos. We live in the Skylands.</text>
     </component>
     <component name="Name">
       <name>Flit</name>
@@ -10814,7 +10791,7 @@
     </component>
     <component name="Logic">
       <quest id="QUE-CF005">
-        <description>Prends soin de Flit.</description>
+        <description>Take care of Flit.</description>
         <line description="Complete - Placed">
           <trigger>
             <object type="questData.ActionTrigger">
@@ -10827,11 +10804,11 @@
               <fileName>horsecare/cf005.xml</fileName>
             </object>
             <object type="questData.DialogueAction">
-              <text>Prends soin de moi !</text>
+              <text>Take care of me!</text>
               <identifier>CF005</identifier>
             </object>
             <object type="questData.DialogueAction">
-              <text>Flit a besoin que tu prennes soin d'elle.</text>
+              <text>Flit needs you to take care of her.</text>
               <identifier>C001</identifier>
             </object>
             <object type="questData.AddQuestAction">
@@ -10860,9 +10837,8 @@
     </component>
     <component name="TalkCommand">
       <text>Take care of me so I can get back to my home.</text>
-      <text>
-      </text>
-      <text>I am from the herd Bellasara. We live in Canter Hollow.</text>
+      <text>My favorite snack is red valerian!</text>
+      <text>I am from herd Bellasara. We live in Canter Hollow.</text>
     </component>
     <component name="Name">
       <name>Bryda</name>
@@ -10927,8 +10903,8 @@
     </component>
     <component name="TalkCommand">
       <text>Take care of me so I can get back to my home.</text>
-      <text>My favorite treat is gum.</text>
-      <text>I am from the herd Shahazar. We live in the desert called the Autumn Sands.</text>
+      <text>My favorite snack is gum.</text>
+      <text>I am from herd Shahazar. We live in a desert called the Autumn Sands.</text>
     </component>
     <component name="Name">
       <name>Shamal</name>
@@ -11059,7 +11035,7 @@
     <component name="TalkCommand">
       <text>Take care of me so I can get back to my home.</text>
       <text>My favorite snack is sugarcane.</text>
-      <text>I am from the herd Elemyn.</text>
+      <text>I am from herd Elemyn.</text>
     </component>
     <component name="Name">
       <name>Lien</name>
@@ -11124,7 +11100,7 @@
     <component name="TalkCommand">
       <text>Take care of me so I can get back to my home.</text>
       <text>My favorite snack is pumpkin.</text>
-      <text>I am from the herd Valeryk.</text>
+      <text>I am from herd Valeryk.</text>
     </component>
     <component name="Name">
       <name>Blackie</name>
@@ -11192,9 +11168,8 @@
       <text>Brush me to make me happy!</text>
       <text>Water please! I'm thirsty</text>
       <text>I'm hungry. Please give me hay.</text>
-      <text>
-      </text>
-      <text>Touch me with the Herd Bella Sara Emblem to hear our story.</text>
+      <text>My favorite snack is red valerian.</text>
+      <text>Give me the Herd Bella Sara Emblem to hear our story.</text>
       <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
@@ -11325,8 +11300,8 @@
       <text>Brush me to make me happy!</text>
       <text>Water please! I'm thirsty</text>
       <text>I'm hungry. Please give me hay.</text>
-      <text>I love gum for a treat. Yum!</text>
-      <text>Touch me with the Herd Shahazar Emblem to hear our story.</text>
+      <text>I love gum as a snack. Yummy!</text>
+      <text>Give me the Herd Shahazar Emblem to hear our story.</text>
       <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
@@ -11434,7 +11409,7 @@
       </quest>
     </component>
   </template>
-  <!-- HNN Horse 3:  -->
+  <!-- HNN Horse 3: Rodin  -->
   <template name="HH009Template" template="HerdHorseTemplate">
     <component name="MovieClip">
       <fileName>flash/adventures/art/npcs/herdhorses.swf</fileName>
@@ -11456,7 +11431,7 @@
       <text>Water please! I'm thirsty</text>
       <text>I'm hungry. Please give me hay.</text>
       <text>I love cinnamon for a snack. Yum!</text>
-      <text>Touch me with the Herd Islander Emblem to hear our story.</text>
+      <text>Give me the Herd Islander Emblem to hear our story.</text>
       <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
@@ -11586,7 +11561,7 @@
       <text>Water please! I'm thirsty</text>
       <text>I'm hungry. Please give me hay.</text>
       <text>I love sugarcane for a snack. Yum!</text>
-      <text>Touch me with the Herd Elemyn Emblem to hear our story.</text>
+      <text>Give me the Herd Elemyn Emblem to hear our story.</text>
       <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
@@ -11715,8 +11690,8 @@
       <text>Brush me to make me happy!</text>
       <text>Water please! I'm thirsty</text>
       <text>I'm hungry. Please give me hay.</text>
-      <text>I love pumpkin for a snack. Yum!</text>
-      <text>Touch me with the Herd Valeryk Emblem to hear our story.</text>
+      <text>I love pumpkin as a snack. Yum!</text>
+      <text>Give me the Herd Valeryk Emblem to hear our story.</text>
       <text>Thank you for taking care of me.</text>
     </component>
     <component name="Name">
@@ -11900,5 +11875,4 @@
       <template>IM018fcTemplate</template>
     </component>
   </template>
-
 </things>

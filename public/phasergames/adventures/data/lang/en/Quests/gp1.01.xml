@@ -1,8 +1,8 @@
 <adventures id="ADS-0000000804" description="GP1.01">
   <adventure id="ADV-0000000855">
-    <description>Le Bovo errant</description>
+    <description>The runaway Bovo</description>
     <quest id="QUE-0000001914">
-      <description>Parle à Bella</description>
+      <description>Speak to Bella</description>
       <line description="Bella grant">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -13,10 +13,10 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>J'ai besoin de toi. Marta Thomas vient de m'avertir qu'un de ses bovos avait disparu. Il a dû dériver dans les airs depuis les Overgaard Skylands et atterrir sur la terre ferme !</text>
+            <text>I need your help. Marta Thomas has just told me that one of her bovos has gone missing. It must have drifted through the air from the Overgaard Skylands and landed on solid ground!</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>Tu pourras le ramener chez lui avec une carotte au bout d'un bâton. Tu peux faire pousser des carottes dans un jardin et tu trouveras des branches dans la Forêt de Darkcomb. Tu auras également besoin d'un épi de maïs barbu avec lequel nous ferons une ficelle. Apporte-moi tout ça et je t'aiderai.</text>
+            <text>You’ll be able to bring it back to her with a carrot on a stick. You can grow some carrots in a garden and you’ll find some branches in Darkcomb Forest. You will also need some tassel corn which we can make string from. Bring me all of that and I’ll help you. </text>
           </object>
           <object type="questData.LogAdventureBeginAction" />
           <object type="questData.AddQuestAction">
@@ -75,7 +75,7 @@
       </line>
     </quest>
     <quest id="QUE-0000001917" targetTemplate="DirtTemplate">
-      <description>Fais pousser une carotte et du maïs barbu et apporte-les à Bella</description>
+      <description>Grow a carrot and some tassel corn and bring them to Bella</description>
       <line description="Bella Complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -95,7 +95,7 @@
         </conditions>
         <actions>
           <object type="questData.DialogueAction">
-            <text>Beau travail ! À présent, il nous manque juste une branche. Va en chercher une dans la Forêt de Darkcomb.</text>
+            <text>Good work! Now we’re only missing a branch. Go look for one in Darkcomb Forest.</text>
           </object>
           <object type="questData.AddQuestAction">
             <questId>QUE-0000001915</questId>
@@ -124,13 +124,13 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Les carottes poussent dans le jardin. Tu devras aussi faire pousser un épi de Maïs Barbu pour en faire une ficelle.</text>
+            <text>The carrots are growing in the garden. You’ll also have to grow some Tassel Corn to make string.</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000001915" targetTemplate="T0034dTemplate">
-      <description>Trouve des branches et apporte-les à Bella.</description>
+      <description>Find some branches and bring them to Bella.</description>
       <line description="Bella complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -146,10 +146,10 @@
         </conditions>
         <actions>
           <object type="questData.DialogueAction">
-            <text>Bien joué. Maintenant que tu as une carotte, une branche et une ficelle à base de Maïs Barbu, nous allons pouvoir confectionner une sorte de “canne à pêche à Bovo” pour l’attirer jusqu’à chez lui.</text>
+            <text>Well done. Now that you have a carrot, a branch and some Tassel Corn string, we’ll be able to assemble a sort of “Bovo fishing rod” to entice it back home.</text>
           </object>
           <object type="questData.DialogueAction">
-            <text>J’ignore où se trouve le bovo, mais c’est probablement le seul à se promener sur la terre ferme. Quand tu l’auras trouvé, utilise la carotte au bout de la branche sur lui et il reviendra flotter dans les Overgaard Skylands. Parle à Marta Thomas quand tu l’auras fait : elle aura peut-être une récompense à te donner.</text>
+            <text>I’m not sure where the bovo is, but it’s probably the only one wandering around on solid ground. When you’ve  found it, use the carrot on a stick on it and it’ll float back to the Overgaard Skylands. Talk to Martha Thomas once you’ve done that: she might have a reward to give you.</text>
           </object>
           <object type="questData.RemoveMultipleInventoryAction">
             <template>I079Template</template>
@@ -175,13 +175,13 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Tu peux trouver des branches dans la Forêt de Darkcomb.</text>
+            <text>You can find some branches in Darkcomb Forest.</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000001916" targetTemplate="LostBovoTemplate" targetZone="Z012">
-      <description>Utilise la carotte au bout de la branche sur le bovo égaré</description>
+      <description>Use the carrot on a stick on the lost bovo</description>
       <line description="use COS">
         <trigger>
           <object type="questData.GiveItemTrigger">
@@ -214,13 +214,13 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Quand tu auras trouvé le bovo, utilise la carotte au bout de la branche sur lui et il reviendra flotter dans les Overgaard Skylands. Parle à Marta Thomas quand tu l’auras fait : elle aura peut-être une récompense à te donner.</text>
+            <text>When you’ve found the bovo, use the carrot on a stick on it and it will float back to the Overgaard Skylands. Talk to Marta Thomas once you’ve done that: she might have a reward to give you.</text>
           </object>
         </actions>
       </line>
     </quest>
     <quest id="QUE-0000001918">
-      <description>Parle à Marta Thomas</description>
+      <description>Talk to Marta Thomas</description>
       <line description="Marta complete">
         <trigger>
           <object type="questData.TalkQuestTrigger">
@@ -231,7 +231,7 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Oh, Bella m’a dit que tu m’avais aidée à retrouver mon Bovo. Il est revenu en flottant jusque chez lui. Quel soulagement ! Je n’aurais jamais dû le quitter des yeux. Merci.</text>
+            <text>Oh, Bella told me that you helped me find my Bovo. It came floating back home. What a relief! I’ll never let it out of my sight. Thanks.</text>
           </object>
           <object type="questData.AddHorseshoesAction">
             <count>10</count>
@@ -251,7 +251,7 @@
         <conditions />
         <actions>
           <object type="questData.DialogueAction">
-            <text>Quand tu auras trouvé le bovo, utilise la carotte au bout de la branche sur lui et il reviendra flotter dans les Overgaard Skylands. Parle à Marta Thomas quand tu l’auras fait : elle aura peut-être une récompense à te donner.</text>
+            <text>When you’ve found the bovo, use the carrot on a stick on it and it will float back to the Overgaard Skylands. Talk to Marta Thomas once you’ve done that: she might have a reward to give you.</text>
           </object>
         </actions>
       </line>
