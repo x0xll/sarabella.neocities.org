@@ -102,7 +102,7 @@
         <item link="/flash/treasureshunt/treasureshunt.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hledání Pokladu</p>]]></label>
         </item>
-        <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
+        <item link="/flash/wheelofwonders/wheelofwonders.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kolo zázraků</p>]]></label>
         </item>
 			</menu>
