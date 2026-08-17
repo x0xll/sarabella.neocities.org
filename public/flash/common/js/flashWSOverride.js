@@ -600,11 +600,14 @@ function getAllThings()
     `<item itid=\"${10297}\" name=\"Dragonfly\" price1=\"25\" description=\"Description\" catid=\"10\" thumb=\"/flash/common/swf/things/ANML-16.swf\" swf=\"/flash/common/swf/things/ANML-16.swf\" />` +
 
     // Doors
-    `<item itid=\"637\" name=\"Bedroom\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" allowmultipurchase=\"False\" />` +
-    `<item itid=\"635\" name=\"Theatre\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" allowmultipurchase=\"False\" />` +
-    `<item itid=\"636\" name=\"Astronamy\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" swf=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"637\" name=\"Bedroom\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-03-THUMB.swf\" swf=\"/flash/common/swf/things/Door-03.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"635\" name=\"Theatre\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-01-THUMB.swf\" swf=\"/flash/common/swf/things/Door-01.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"636\" name=\"Astronamy\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/DOOR-02-THUMB.swf\" swf=\"/flash/common/swf/things/Door-02.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"725\" name=\"Patio\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Door-04-Thumb.swf\" swf=\"/flash/common/swf/things/Door-04.swf\" allowmultipurchase=\"False\" />` +
-    `<item itid=\"${10298}\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" allowmultipurchase=\"False\" />`
+    `<item itid=\"881\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Door.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"899\" name=\"Valeryk Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Valeryk-Thumb.swf\" swf=\"/flash/common/swf/things/Valeryk-Door.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"886\" name=\"Shahazar Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Shahazar-Thumb.swf\" swf=\"/flash/common/swf/things/Shahazar-Door.swf\" allowmultipurchase=\"False\" />`
+    //`<item itid=\"${10301}\" name=\"AR\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/AR-Door.swf\" swf=\"/flash/common/swf/things/AR-Door.swf\" allowmultipurchase=\"False\" />`
     
 
     if (!isBazaar) {

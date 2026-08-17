@@ -29,13 +29,19 @@
         <item link="https://bellasara.wiki.gg/wiki/Bella%27s_Beauty_Box">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Truhla krásy Bella Sara</p>]]></label>
         </item>  
-        <item link="https://bellasara.wiki.gg/wiki/Category:Bellapedia">
+        <item link="/phasergames/bellapedia/index.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Bellapedia</p>]]></label>
         </item>
-        <item link="/phasergames/quiz/belloquiz/original/index.html">
+        <item link="/flash/quiz/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">BellaCard Quiz</p>]]></label>
+        </item>
+        <item link="/phasergames/quiz/belloquiz/sarabella/index.html">
+          <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">SaraBella's Quiz</p>]]></label>
+        </item>
+        <item link="https://bellasara.wiki.gg/wiki/Bello%27s_Quiz">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kvíz Bello</p>]]></label>
         </item>
-        <item link="/flash/quiz/index.html">
+        <item link="https://bellasara.wiki.gg/wiki/Santos%27s_Knowledge_Quiz">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kvíz znalosti Santos</p>]]></label>
         </item>
         <item link="/phasergames/memory/yinyang/original/index.html">
@@ -96,7 +102,7 @@
         <item link="/flash/treasureshunt/treasureshunt.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Hledání Pokladu</p>]]></label>
         </item>
-        <item link="https://bellasara.wiki.gg/wiki/Wheel_of_Wonder">
+        <item link="/flash/wheelofwonders/wheelofwonders.html">
           <label selectable='0' wordWrap="false"><![CDATA[<p class="location_item_label">Kolo zázraků</p>]]></label>
         </item>
 			</menu>
