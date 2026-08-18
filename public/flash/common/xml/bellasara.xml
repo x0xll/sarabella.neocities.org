@@ -20,7 +20,7 @@
         <Location id="cottageLoc" url="/flash/cottage/lang/cottage_en.xml" />
         <Location id="cottageMediaRoom" url="/cottagemediaroom.aspx" />
         <Location id="cottageRecRoom" url="/cottagerecroom.aspx" />
-        <Location id="roomPage" url="/flash/cottage/room.html" />
+        <Location id="roomPage" url="/flash/cottage/rooms/rooms.html" />
         <Location id="galleryLoc" url="/flash/gallery/lang/gallery_en.xml" />
         <Location id="galleryPage" url="/flash/gallery/gallery.html" />
         <Location id="headerSettings" url="/xml/fr/header.xml" />

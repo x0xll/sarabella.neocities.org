@@ -608,6 +608,7 @@ function getAllThings()
     `<item itid=\"899\" name=\"Valeryk Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Valeryk-Thumb.swf\" swf=\"/flash/common/swf/things/Valeryk-Door.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"886\" name=\"Shahazar Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Shahazar-Thumb.swf\" swf=\"/flash/common/swf/things/Shahazar-Door.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"865\" name=\"Airistos Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Airistos-Thumb.swf\" swf=\"/flash/common/swf/things/Airistos-Door.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"872\" name=\"Islandar Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Islandar-Thumb.swf\" swf=\"/flash/common/swf/things/Islandar-Door.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"907\" name=\"Ice Castle Interior\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/IceCastleInterior-Thumb.swf\" swf=\"/flash/common/swf/things/IceCastleInterior-Door.swf\" allowmultipurchase=\"False\" />`
     
 

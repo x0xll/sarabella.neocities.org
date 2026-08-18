@@ -28,25 +28,6 @@
         <div class="swf" dir="ltr" rbidi="on">
         </div>
 
-<!--
-        <div class="content textbox-parent" style="height: min-content;">
-          <div class="textbox" style="height: min-content;">
-            <h2>Go to other rooms:</h2>
-            <ul>
-              <li><a href="rooms.html?roomId=3">Base Living Room</a></li>
-              <li><a href="rooms.html?roomId=6">Base Bedroom</a></li>
-              <li><a href="rooms.html?roomId=11">Patio</a></li>
-              <li><a href="rooms.html?roomId=7">Rollandsgaard Castle</a></li>
-              <li><a href="rooms.html?roomId=12">Shahazar Castle</a></li>
-              <li><a href="rooms.html?roomId=8">Theatre</a></li>
-              <li><a href="rooms.html?roomId=9">Astronomy Tower</a></li>
-              <li><a href="rooms.html?roomId=10">Bedroom</a></li>
-              <li><a href="rooms.html?roomId=5">Valeryk Castle</a></li>
-            </ul>
-          </div>
-      </div>
--->
-
         <div class="footer">
             <a href="/index.html" class="global-lowernav-link" data-il8n="footer_home_linktxt">Home</a> |
             <a href="https://bellasara.wiki.gg/wiki/My_Cottage" class="global-lowernav-link" data-il8n="footer_wiki_linktxt">Wiki Page</a>
@@ -67,6 +48,8 @@
           switch(roomID)
           {
               default:
+                roomID = 0;
+              break;
               case "6":
                 swf = 'cottagebedroom.swf';
               break;
@@ -100,10 +83,10 @@
               case "19":
                 swf = "iceCastleInterior.swf";
               break;
-              /*
               case "13":
-                swf = "???.swf";
+                swf = "islandar.swf";
               break;
+              /*
               case "15":
                 swf = "???.swf";
               break;
