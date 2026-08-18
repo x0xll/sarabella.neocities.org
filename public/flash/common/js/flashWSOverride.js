@@ -606,8 +606,9 @@ function getAllThings()
     `<item itid=\"725\" name=\"Patio\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Door-04-Thumb.swf\" swf=\"/flash/common/swf/things/Door-04.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"881\" name=\"Rolandsgaard Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/ROY-Bellasara-Thumb.swf\" swf=\"/flash/common/swf/things/ROY-Bellasara-Door.swf\" allowmultipurchase=\"False\" />` +
     `<item itid=\"899\" name=\"Valeryk Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Valeryk-Thumb.swf\" swf=\"/flash/common/swf/things/Valeryk-Door.swf\" allowmultipurchase=\"False\" />` +
-    `<item itid=\"886\" name=\"Shahazar Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Shahazar-Thumb.swf\" swf=\"/flash/common/swf/things/Shahazar-Door.swf\" allowmultipurchase=\"False\" />`
-    //`<item itid=\"${10301}\" name=\"AR\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/AR-Door.swf\" swf=\"/flash/common/swf/things/AR-Door.swf\" allowmultipurchase=\"False\" />`
+    `<item itid=\"886\" name=\"Shahazar Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Shahazar-Thumb.swf\" swf=\"/flash/common/swf/things/Shahazar-Door.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"865\" name=\"Airistos Castle\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/Airistos-Door.swf\" swf=\"/flash/common/swf/things/Airistos-Door.swf\" allowmultipurchase=\"False\" />` +
+    `<item itid=\"907\" name=\"Ice Castle Interior\" price1=\"25\" description=\"Description\" catid=\"11\" thumb=\"/flash/common/swf/things/iceCastleInterior-Door.swf\" swf=\"/flash/common/swf/things/IceCastleInterior-Door.swf\" allowmultipurchase=\"False\" />`
     
 
     if (!isBazaar) {
